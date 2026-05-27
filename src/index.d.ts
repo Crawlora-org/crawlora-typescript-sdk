@@ -6,13 +6,17 @@ export interface CrawloraClientOptions {
   baseUrl?: string;
   timeout?: number;
   retries?: number;
+  retryDelay?: number;
   headers?: Record<string, string>;
+  userAgent?: string | false;
   fetch?: typeof globalThis.fetch;
 }
 
 export interface CrawloraRequestOptions {
   headers?: Record<string, string>;
   responseType?: "auto" | "json" | "text";
+  timeout?: number;
+  signal?: AbortSignal;
 }
 
 export type OperationMethod = <T = unknown>(
@@ -25,8 +29,8 @@ export interface OperationDefinition {
   method: string;
   path: string;
   pathParams: string[];
-  queryParams: Array<{ name: string; collectionFormat?: string }>;
-  formParams: Array<{ name: string; type?: string }>;
+  queryParams: Array<{ name: string; collectionFormat?: string; type?: string; required?: boolean; enum?: string[] }>;
+  formParams: Array<{ name: string; type?: string; required?: boolean; enum?: string[] }>;
   bodyParam?: string;
   consumes: string[];
   produces: string[];
@@ -37,7 +41,8 @@ export class CrawloraError extends Error {
   status: number;
   code?: number;
   body: unknown;
-  response: Response;
+  response?: Response;
+  cause?: unknown;
 }
 
 export class CrawloraClient {
@@ -57,3 +62,5 @@ export class CrawloraClient {
 
 export const operations: Record<string, OperationDefinition>;
 export const groups: Record<string, Record<string, string>>;
+export const operationCount: number;
+export const VERSION: string;

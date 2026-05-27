@@ -1,15 +1,18 @@
 import { operations, groups } from "./operations.js";
 
 const DEFAULT_BASE_URL = "https://api.crawlora.net/api/v1";
+export const VERSION = "1.2.0-sdk.2";
+const DEFAULT_USER_AGENT = `crawlora-js-sdk/${VERSION}`;
 
 export class CrawloraError extends Error {
-  constructor(message, { status, code, body, response }) {
+  constructor(message, { status = 0, code, body, response, cause } = {}) {
     super(message);
     this.name = "CrawloraError";
     this.status = status;
     this.code = code;
     this.body = body;
     this.response = response;
+    this.cause = cause;
   }
 }
 
@@ -20,7 +23,9 @@ export class CrawloraClient {
     this.baseUrl = (options.baseUrl || DEFAULT_BASE_URL).replace(/\/+$/, "");
     this.timeout = options.timeout ?? 30000;
     this.retries = options.retries ?? 0;
+    this.retryDelay = options.retryDelay ?? 250;
     this.headers = { ...(options.headers || {}) };
+    this.userAgent = options.userAgent === false ? "" : (options.userAgent || DEFAULT_USER_AGENT);
     this.fetch = options.fetch || globalThis.fetch;
 
     if (typeof this.fetch !== "function") {
@@ -55,6 +60,7 @@ export class CrawloraClient {
           throw error;
         }
         attempt++;
+        await sleep(retryDelay(this.retryDelay, attempt), options.signal);
       }
     }
   }
@@ -64,22 +70,27 @@ export class CrawloraClient {
     const headers = {
       ...this.headers,
       ...authHeaders(operation.security, this.apiKey, this.jwtToken),
+      ...userAgentHeader(this.userAgent),
       ...bodyHeaders,
       ...(options.headers || {})
     };
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), this.timeout);
+    const timeoutMs = options.timeout ?? this.timeout;
+    const timeout = timeoutMs > 0 ? setTimeout(() => controller.abort(), timeoutMs) : undefined;
+    const signal = composeSignal(controller, options.signal);
     let response;
     try {
       response = await this.fetch(url, {
         method: operation.method,
         headers,
         body,
-        signal: controller.signal
+        signal
       });
+    } catch (error) {
+      throw new CrawloraError("Crawlora transport error", { cause: error });
     } finally {
-      clearTimeout(timeout);
+      if (timeout) clearTimeout(timeout);
     }
 
     const parsed = await parseResponse(response, options.responseType || "auto");
@@ -154,10 +165,24 @@ function authHeaders(security, apiKey, jwtToken) {
   return headers;
 }
 
+function userAgentHeader(userAgent) {
+  if (!userAgent || typeof process === "undefined" || !process.versions?.node) {
+    return {};
+  }
+  return { "user-agent": userAgent };
+}
+
+function composeSignal(controller, signal) {
+  if (!signal) return controller.signal;
+  if (signal.aborted) controller.abort();
+  signal.addEventListener("abort", () => controller.abort(), { once: true });
+  return controller.signal;
+}
+
 async function parseResponse(response, responseType) {
   if (responseType === "text") return response.text();
   const contentType = response.headers.get("content-type") || "";
-  if (responseType === "json" || contentType.includes("application/json")) {
+  if (responseType === "json" || contentType.toLowerCase().includes("application/json")) {
     const text = await response.text();
     return text ? JSON.parse(text) : null;
   }
@@ -165,5 +190,27 @@ async function parseResponse(response, responseType) {
 }
 
 function shouldRetry(status) {
-  return status === 408 || status === 409 || status === 425 || status === 429 || status >= 500;
+  return status === 0 || status === 408 || status === 409 || status === 425 || status === 429 || status >= 500;
+}
+
+function retryDelay(baseDelay, attempt) {
+  if (!baseDelay || baseDelay <= 0) return 0;
+  const delay = baseDelay * 2 ** Math.max(0, attempt - 1);
+  const jitter = Math.floor(Math.random() * Math.max(1, baseDelay / 2));
+  return delay + jitter;
+}
+
+function sleep(ms, signal) {
+  if (!ms || ms <= 0) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    if (signal?.aborted) {
+      reject(new CrawloraError("Crawlora request aborted", { cause: signal.reason }));
+      return;
+    }
+    const timer = setTimeout(resolve, ms);
+    signal?.addEventListener("abort", () => {
+      clearTimeout(timer);
+      reject(new CrawloraError("Crawlora request aborted", { cause: signal.reason }));
+    }, { once: true });
+  });
 }

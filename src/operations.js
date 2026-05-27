@@ -57,7 +57,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -79,37 +80,49 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "location"
+        "name": "location",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "check_in"
+        "name": "check_in",
+        "type": "string"
       },
       {
-        "name": "check_out"
+        "name": "check_out",
+        "type": "string"
       },
       {
-        "name": "adults"
+        "name": "adults",
+        "type": "integer"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "currency"
+        "name": "currency",
+        "type": "string"
       },
       {
-        "name": "ne_lat"
+        "name": "ne_lat",
+        "type": "number"
       },
       {
-        "name": "ne_lng"
+        "name": "ne_lng",
+        "type": "number"
       },
       {
-        "name": "sw_lat"
+        "name": "sw_lat",
+        "type": "number"
       },
       {
-        "name": "sw_lng"
+        "name": "sw_lng",
+        "type": "number"
       },
       {
-        "name": "zoom"
+        "name": "zoom",
+        "type": "integer"
       }
     ],
     "security": [
@@ -133,10 +146,18 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "language"
+        "enum": [
+          "en_US"
+        ],
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "currency"
+        "enum": [
+          "USD"
+        ],
+        "name": "currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -158,13 +179,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "k"
+        "name": "k",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "s"
+        "name": "s",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -206,16 +231,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "collection"
+        "name": "collection",
+        "type": "string"
       },
       {
-        "name": "category"
+        "name": "category",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -237,19 +266,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "term"
+        "name": "term",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -271,19 +306,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "term"
+        "name": "term",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -307,10 +348,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -334,13 +377,16 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -362,19 +408,24 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "app_id"
+        "name": "app_id",
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "ratings"
+        "name": "ratings",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -398,10 +449,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -423,22 +476,28 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "collection"
+        "name": "collection",
+        "type": "string"
       },
       {
-        "name": "category"
+        "name": "category",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "num"
+        "name": "num",
+        "type": "integer"
       },
       {
-        "name": "full_detail"
+        "name": "full_detail",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -462,10 +521,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -487,16 +548,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "app_id"
+        "name": "app_id",
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -518,22 +583,32 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "app_id"
+        "name": "app_id",
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "sort"
+        "enum": [
+          "mostRecent",
+          "mostHelpful"
+        ],
+        "name": "sort",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -555,22 +630,29 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "term"
+        "name": "term",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "num"
+        "name": "num",
+        "type": "integer"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "ids_only"
+        "name": "ids_only",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -592,16 +674,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "app_id"
+        "name": "app_id",
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -625,7 +711,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       }
     ],
     "security": [
@@ -649,10 +736,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -710,25 +799,38 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "from"
+        "name": "from",
+        "type": "string"
       },
       {
-        "name": "to"
+        "name": "to",
+        "type": "string"
       },
       {
-        "name": "endpoint"
+        "name": "endpoint",
+        "type": "string"
       },
       {
-        "name": "request_id"
+        "name": "request_id",
+        "type": "string"
       },
       {
-        "name": "event_status"
+        "enum": [
+          "reserved",
+          "charged",
+          "non_billable",
+          "failed"
+        ],
+        "name": "event_status",
+        "type": "string"
       },
       {
-        "name": "billable"
+        "name": "billable",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -772,10 +874,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "include_events"
+        "name": "include_events",
+        "type": "boolean"
       },
       {
-        "name": "event_limit"
+        "name": "event_limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -817,7 +921,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -857,19 +962,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -891,19 +1002,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -925,19 +1042,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -959,16 +1082,21 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -990,19 +1118,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -1024,19 +1158,81 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "enum": [
+          "all",
+          "ar",
+          "at",
+          "au",
+          "be",
+          "br",
+          "ca",
+          "ch",
+          "cl",
+          "cn",
+          "de",
+          "dk",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "gr",
+          "hk",
+          "id",
+          "in",
+          "it",
+          "jp",
+          "kr",
+          "mx",
+          "my",
+          "nl",
+          "no",
+          "nz",
+          "ph",
+          "pl",
+          "pt",
+          "ru",
+          "sa",
+          "se",
+          "sg",
+          "tr",
+          "tw",
+          "us",
+          "za"
+        ],
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "enum": [
+          "de-de",
+          "en-ca",
+          "en-gb",
+          "en-in",
+          "en-us",
+          "fi-fi",
+          "fr-ca",
+          "fr-fr",
+          "ja-jp",
+          "pt-br",
+          "sq-al",
+          "sw-ke",
+          "zh-tw"
+        ],
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -1058,28 +1254,101 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "enum": [
+          "all",
+          "ar",
+          "at",
+          "au",
+          "be",
+          "br",
+          "ca",
+          "ch",
+          "cl",
+          "cn",
+          "de",
+          "dk",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "gr",
+          "hk",
+          "id",
+          "in",
+          "it",
+          "jp",
+          "kr",
+          "mx",
+          "my",
+          "nl",
+          "no",
+          "nz",
+          "ph",
+          "pl",
+          "pt",
+          "ru",
+          "sa",
+          "se",
+          "sg",
+          "tr",
+          "tw",
+          "us",
+          "za"
+        ],
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "enum": [
+          "de-de",
+          "en-ca",
+          "en-gb",
+          "en-in",
+          "en-us",
+          "fi-fi",
+          "fr-ca",
+          "fr-fr",
+          "ja-jp",
+          "pt-br",
+          "sq-al",
+          "sw-ke",
+          "zh-tw"
+        ],
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "time_range"
+        "enum": [
+          "any",
+          "day",
+          "week",
+          "month",
+          "year",
+          "custom"
+        ],
+        "name": "time_range",
+        "type": "string"
       },
       {
-        "name": "date_from"
+        "name": "date_from",
+        "type": "string"
       },
       {
-        "name": "date_to"
+        "name": "date_to",
+        "type": "string"
       }
     ],
     "security": [
@@ -1101,25 +1370,97 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "enum": [
+          "all",
+          "ar",
+          "at",
+          "au",
+          "be",
+          "br",
+          "ca",
+          "ch",
+          "cl",
+          "cn",
+          "de",
+          "dk",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "gr",
+          "hk",
+          "id",
+          "in",
+          "it",
+          "jp",
+          "kr",
+          "mx",
+          "my",
+          "nl",
+          "no",
+          "nz",
+          "ph",
+          "pl",
+          "pt",
+          "ru",
+          "sa",
+          "se",
+          "sg",
+          "tr",
+          "tw",
+          "us",
+          "za"
+        ],
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "enum": [
+          "de-de",
+          "en-ca",
+          "en-gb",
+          "en-in",
+          "en-us",
+          "fi-fi",
+          "fr-ca",
+          "fr-fr",
+          "ja-jp",
+          "pt-br",
+          "sq-al",
+          "sw-ke",
+          "zh-tw"
+        ],
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "time_range"
+        "enum": [
+          "any",
+          "day",
+          "week",
+          "month",
+          "year",
+          "custom"
+        ],
+        "name": "time_range",
+        "type": "string"
       },
       {
-        "name": "date_from"
+        "name": "date_from",
+        "type": "string"
       },
       {
-        "name": "date_to"
+        "name": "date_to",
+        "type": "string"
       }
     ],
     "security": [
@@ -1141,16 +1482,77 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "enum": [
+          "all",
+          "ar",
+          "at",
+          "au",
+          "be",
+          "br",
+          "ca",
+          "ch",
+          "cl",
+          "cn",
+          "de",
+          "dk",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "gr",
+          "hk",
+          "id",
+          "in",
+          "it",
+          "jp",
+          "kr",
+          "mx",
+          "my",
+          "nl",
+          "no",
+          "nz",
+          "ph",
+          "pl",
+          "pt",
+          "ru",
+          "sa",
+          "se",
+          "sg",
+          "tr",
+          "tw",
+          "us",
+          "za"
+        ],
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "enum": [
+          "de-de",
+          "en-ca",
+          "en-gb",
+          "en-in",
+          "en-us",
+          "fi-fi",
+          "fr-ca",
+          "fr-fr",
+          "ja-jp",
+          "pt-br",
+          "sq-al",
+          "sw-ke",
+          "zh-tw"
+        ],
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -1172,28 +1574,101 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "enum": [
+          "all",
+          "ar",
+          "at",
+          "au",
+          "be",
+          "br",
+          "ca",
+          "ch",
+          "cl",
+          "cn",
+          "de",
+          "dk",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "gr",
+          "hk",
+          "id",
+          "in",
+          "it",
+          "jp",
+          "kr",
+          "mx",
+          "my",
+          "nl",
+          "no",
+          "nz",
+          "ph",
+          "pl",
+          "pt",
+          "ru",
+          "sa",
+          "se",
+          "sg",
+          "tr",
+          "tw",
+          "us",
+          "za"
+        ],
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "enum": [
+          "de-de",
+          "en-ca",
+          "en-gb",
+          "en-in",
+          "en-us",
+          "fi-fi",
+          "fr-ca",
+          "fr-fr",
+          "ja-jp",
+          "pt-br",
+          "sq-al",
+          "sw-ke",
+          "zh-tw"
+        ],
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "time_range"
+        "enum": [
+          "any",
+          "day",
+          "week",
+          "month",
+          "year",
+          "custom"
+        ],
+        "name": "time_range",
+        "type": "string"
       },
       {
-        "name": "date_from"
+        "name": "date_from",
+        "type": "string"
       },
       {
-        "name": "date_to"
+        "name": "date_to",
+        "type": "string"
       }
     ],
     "security": [
@@ -1215,10 +1690,77 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1242,13 +1784,81 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1272,10 +1882,77 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1297,10 +1974,77 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1324,7 +2068,73 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1348,13 +2158,85 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       },
       {
-        "name": "range"
+        "enum": [
+          "24h",
+          "max"
+        ],
+        "name": "range",
+        "type": "string"
       },
       {
-        "name": "include_annotations"
+        "name": "include_annotations",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -1378,10 +2260,77 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1403,16 +2352,91 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "kind"
+        "enum": [
+          "spot",
+          "dex",
+          "derivatives",
+          "perp_dex"
+        ],
+        "name": "kind",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1434,10 +2458,77 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1477,13 +2568,31 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "kind"
+        "enum": [
+          "total_market_cap",
+          "bitcoin_dominance",
+          "altcoin_market_cap",
+          "defi_market_cap"
+        ],
+        "name": "kind",
+        "type": "string"
       },
       {
-        "name": "range"
+        "enum": [
+          "24h",
+          "7d",
+          "14d",
+          "30d",
+          "90d",
+          "1y",
+          "max"
+        ],
+        "name": "range",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -1505,10 +2614,22 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "category"
+        "enum": [
+          "all",
+          "latest",
+          "airdrop-guides",
+          "coins-and-tokens",
+          "guides",
+          "wallets-and-bridges",
+          "api",
+          "reviews"
+        ],
+        "name": "category",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -1530,13 +2651,81 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1558,13 +2747,81 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1586,7 +2843,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -1610,13 +2868,81 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1638,13 +2964,81 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1666,10 +3060,13 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -1691,7 +3088,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -1713,16 +3111,99 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "asset"
+        "enum": [
+          "all",
+          "bitcoin",
+          "ethereum",
+          "solana",
+          "bnb",
+          "xrp",
+          "tron"
+        ],
+        "name": "asset",
+        "type": "string"
       },
       {
-        "name": "holder_type"
+        "enum": [
+          "all",
+          "companies",
+          "governments"
+        ],
+        "name": "holder_type",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1744,10 +3225,77 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "vs_currency"
+        "enum": [
+          "btc",
+          "eth",
+          "ltc",
+          "bch",
+          "bnb",
+          "eos",
+          "xrp",
+          "xlm",
+          "link",
+          "dot",
+          "yfi",
+          "sol",
+          "usd",
+          "aed",
+          "ars",
+          "aud",
+          "bdt",
+          "bhd",
+          "bmd",
+          "brl",
+          "cad",
+          "chf",
+          "clp",
+          "cny",
+          "czk",
+          "dkk",
+          "eur",
+          "gbp",
+          "gel",
+          "hkd",
+          "huf",
+          "idr",
+          "ils",
+          "inr",
+          "jpy",
+          "krw",
+          "kwd",
+          "lkr",
+          "mmk",
+          "mxn",
+          "myr",
+          "ngn",
+          "nok",
+          "nzd",
+          "php",
+          "pkr",
+          "pln",
+          "rub",
+          "sar",
+          "sek",
+          "sgd",
+          "thb",
+          "try",
+          "twd",
+          "uah",
+          "vef",
+          "vnd",
+          "zar",
+          "xdr",
+          "xag",
+          "xau",
+          "bits",
+          "sats"
+        ],
+        "name": "vs_currency",
+        "type": "string"
       }
     ],
     "security": [
@@ -1809,52 +3357,69 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "facet"
+        "name": "facet",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "q"
+        "name": "q",
+        "type": "string"
       },
       {
-        "name": "category"
+        "name": "category",
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "state"
+        "name": "state",
+        "type": "string"
       },
       {
-        "name": "county"
+        "name": "county",
+        "type": "string"
       },
       {
-        "name": "city"
+        "name": "city",
+        "type": "string"
       },
       {
-        "name": "town"
+        "name": "town",
+        "type": "string"
       },
       {
-        "name": "min_rating"
+        "name": "min_rating",
+        "type": "number"
       },
       {
-        "name": "min_review_count"
+        "name": "min_review_count",
+        "type": "integer"
       },
       {
-        "name": "has_website"
+        "name": "has_website",
+        "type": "boolean"
       },
       {
-        "name": "has_phone"
+        "name": "has_phone",
+        "type": "boolean"
       },
       {
-        "name": "lat"
+        "name": "lat",
+        "type": "number"
       },
       {
-        "name": "lon"
+        "name": "lon",
+        "type": "number"
       },
       {
-        "name": "radius_m"
+        "name": "radius_m",
+        "type": "integer"
       },
       {
-        "name": "sort"
+        "name": "sort",
+        "type": "string"
       }
     ],
     "security": [
@@ -1896,28 +3461,39 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "lat"
+        "name": "lat",
+        "required": true,
+        "type": "number"
       },
       {
-        "name": "lon"
+        "name": "lon",
+        "required": true,
+        "type": "number"
       },
       {
-        "name": "radius_m"
+        "name": "radius_m",
+        "required": true,
+        "type": "integer"
       },
       {
-        "name": "category"
+        "name": "category",
+        "type": "string"
       },
       {
-        "name": "min_rating"
+        "name": "min_rating",
+        "type": "number"
       },
       {
-        "name": "min_review_count"
+        "name": "min_review_count",
+        "type": "integer"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "page_size"
+        "name": "page_size",
+        "type": "integer"
       }
     ],
     "security": [
@@ -1939,55 +3515,72 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "type": "string"
       },
       {
-        "name": "category"
+        "name": "category",
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "state"
+        "name": "state",
+        "type": "string"
       },
       {
-        "name": "county"
+        "name": "county",
+        "type": "string"
       },
       {
-        "name": "city"
+        "name": "city",
+        "type": "string"
       },
       {
-        "name": "town"
+        "name": "town",
+        "type": "string"
       },
       {
-        "name": "min_rating"
+        "name": "min_rating",
+        "type": "number"
       },
       {
-        "name": "min_review_count"
+        "name": "min_review_count",
+        "type": "integer"
       },
       {
-        "name": "has_website"
+        "name": "has_website",
+        "type": "boolean"
       },
       {
-        "name": "has_phone"
+        "name": "has_phone",
+        "type": "boolean"
       },
       {
-        "name": "lat"
+        "name": "lat",
+        "type": "number"
       },
       {
-        "name": "lon"
+        "name": "lon",
+        "type": "number"
       },
       {
-        "name": "radius_m"
+        "name": "radius_m",
+        "type": "integer"
       },
       {
-        "name": "sort"
+        "name": "sort",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "page_size"
+        "name": "page_size",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2107,10 +3700,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "per_page"
+        "enum": [
+          "24",
+          "48",
+          "72"
+        ],
+        "name": "per_page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2134,7 +3734,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2176,10 +3777,13 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2241,19 +3845,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "osm_ids"
+        "name": "osm_ids",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "accept_language"
+        "name": "accept_language",
+        "type": "string"
       },
       {
-        "name": "addressdetails"
+        "name": "addressdetails",
+        "type": "boolean"
       },
       {
-        "name": "extratags"
+        "name": "extratags",
+        "type": "boolean"
       },
       {
-        "name": "namedetails"
+        "name": "namedetails",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -2275,25 +3885,34 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "lat"
+        "name": "lat",
+        "required": true,
+        "type": "number"
       },
       {
-        "name": "lon"
+        "name": "lon",
+        "required": true,
+        "type": "number"
       },
       {
-        "name": "zoom"
+        "name": "zoom",
+        "type": "integer"
       },
       {
-        "name": "accept_language"
+        "name": "accept_language",
+        "type": "string"
       },
       {
-        "name": "addressdetails"
+        "name": "addressdetails",
+        "type": "boolean"
       },
       {
-        "name": "extratags"
+        "name": "extratags",
+        "type": "boolean"
       },
       {
-        "name": "namedetails"
+        "name": "namedetails",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -2315,43 +3934,56 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "type": "string"
       },
       {
-        "name": "street"
+        "name": "street",
+        "type": "string"
       },
       {
-        "name": "city"
+        "name": "city",
+        "type": "string"
       },
       {
-        "name": "county"
+        "name": "county",
+        "type": "string"
       },
       {
-        "name": "state"
+        "name": "state",
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "postalcode"
+        "name": "postalcode",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "countrycodes"
+        "name": "countrycodes",
+        "type": "string"
       },
       {
-        "name": "accept_language"
+        "name": "accept_language",
+        "type": "string"
       },
       {
-        "name": "addressdetails"
+        "name": "addressdetails",
+        "type": "boolean"
       },
       {
-        "name": "extratags"
+        "name": "extratags",
+        "type": "boolean"
       },
       {
-        "name": "namedetails"
+        "name": "namedetails",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -2395,7 +4027,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "window"
+        "name": "window",
+        "type": "string"
       }
     ],
     "security": [
@@ -2457,7 +4090,9 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -2501,7 +4136,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2525,7 +4161,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2619,13 +4256,16 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "categories"
+        "name": "categories",
+        "type": "string"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2647,10 +4287,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "metric"
+        "name": "metric",
+        "type": "integer"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2672,7 +4314,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2696,7 +4339,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2758,7 +4402,9 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -2782,7 +4428,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "window"
+        "name": "window",
+        "type": "string"
       }
     ],
     "security": [
@@ -2833,6 +4480,7 @@ export const operations = {
     "formParams": [
       {
         "name": "image",
+        "required": true,
         "type": "file"
       }
     ],
@@ -2973,16 +4621,21 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -3160,31 +4813,343 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "geo"
+        "enum": [
+          "AF",
+          "AX",
+          "AL",
+          "DZ",
+          "AS",
+          "AD",
+          "AO",
+          "AI",
+          "AQ",
+          "AG",
+          "AR",
+          "AM",
+          "AW",
+          "AU",
+          "AT",
+          "AZ",
+          "BS",
+          "BH",
+          "BD",
+          "BB",
+          "BY",
+          "BE",
+          "BZ",
+          "BJ",
+          "BM",
+          "BT",
+          "BO",
+          "BA",
+          "BW",
+          "BV",
+          "BR",
+          "IO",
+          "VG",
+          "BN",
+          "BG",
+          "BF",
+          "BI",
+          "KH",
+          "CM",
+          "CA",
+          "CV",
+          "BQ",
+          "KY",
+          "CF",
+          "TD",
+          "CL",
+          "CN",
+          "CX",
+          "CC",
+          "CO",
+          "KM",
+          "CG",
+          "CD",
+          "CK",
+          "CR",
+          "CI",
+          "HR",
+          "CU",
+          "CW",
+          "CY",
+          "CZ",
+          "DK",
+          "DJ",
+          "DM",
+          "DO",
+          "EC",
+          "EG",
+          "SV",
+          "GQ",
+          "ER",
+          "EE",
+          "SZ",
+          "ET",
+          "FK",
+          "FO",
+          "FJ",
+          "FI",
+          "FR",
+          "GF",
+          "PF",
+          "TF",
+          "GA",
+          "GM",
+          "GE",
+          "DE",
+          "GH",
+          "GI",
+          "GR",
+          "GL",
+          "GD",
+          "GP",
+          "GU",
+          "GT",
+          "GG",
+          "GN",
+          "GW",
+          "GY",
+          "HT",
+          "HM",
+          "HN",
+          "HK",
+          "HU",
+          "IS",
+          "IN",
+          "ID",
+          "IR",
+          "IQ",
+          "IE",
+          "IM",
+          "IL",
+          "IT",
+          "JM",
+          "JP",
+          "JE",
+          "JO",
+          "KZ",
+          "KE",
+          "KI",
+          "XK",
+          "KW",
+          "KG",
+          "LA",
+          "LV",
+          "LB",
+          "LS",
+          "LR",
+          "LY",
+          "LI",
+          "LT",
+          "LU",
+          "MO",
+          "MG",
+          "MW",
+          "MY",
+          "MV",
+          "ML",
+          "MT",
+          "MH",
+          "MQ",
+          "MR",
+          "MU",
+          "YT",
+          "MX",
+          "FM",
+          "MD",
+          "MC",
+          "MN",
+          "ME",
+          "MS",
+          "MA",
+          "MZ",
+          "MM",
+          "NA",
+          "NR",
+          "NP",
+          "NL",
+          "NC",
+          "NZ",
+          "NI",
+          "NE",
+          "NG",
+          "NU",
+          "NF",
+          "KP",
+          "MK",
+          "MP",
+          "NO",
+          "OM",
+          "PK",
+          "PW",
+          "PS",
+          "PA",
+          "PG",
+          "PY",
+          "PE",
+          "PH",
+          "PN",
+          "PL",
+          "PT",
+          "PR",
+          "QA",
+          "RE",
+          "RO",
+          "RU",
+          "RW",
+          "WS",
+          "SM",
+          "ST",
+          "SA",
+          "SN",
+          "RS",
+          "SC",
+          "SL",
+          "SG",
+          "SX",
+          "SK",
+          "SI",
+          "SB",
+          "SO",
+          "ZA",
+          "GS",
+          "KR",
+          "SS",
+          "ES",
+          "LK",
+          "BL",
+          "SH",
+          "KN",
+          "LC",
+          "MF",
+          "PM",
+          "VC",
+          "SD",
+          "SR",
+          "SJ",
+          "SE",
+          "CH",
+          "SY",
+          "TW",
+          "TJ",
+          "TZ",
+          "TH",
+          "TL",
+          "TG",
+          "TK",
+          "TO",
+          "TT",
+          "TN",
+          "TR",
+          "TM",
+          "TC",
+          "TV",
+          "UM",
+          "VI",
+          "UG",
+          "UA",
+          "AE",
+          "GB",
+          "US",
+          "UY",
+          "UZ",
+          "VU",
+          "VA",
+          "VE",
+          "VN",
+          "WF",
+          "EH",
+          "YE",
+          "ZM",
+          "ZW"
+        ],
+        "name": "geo",
+        "type": "string"
       },
       {
-        "name": "hl"
+        "name": "hl",
+        "type": "string"
       },
       {
-        "name": "tz"
+        "name": "tz",
+        "type": "integer"
       },
       {
-        "name": "window"
+        "enum": [
+          "4h",
+          "24h",
+          "48h",
+          "7d"
+        ],
+        "name": "window",
+        "type": "string"
       },
       {
-        "name": "time_range"
+        "enum": [
+          "4h",
+          "24h",
+          "48h",
+          "7d"
+        ],
+        "name": "time_range",
+        "type": "string"
       },
       {
-        "name": "category"
+        "enum": [
+          "0",
+          "3",
+          "47",
+          "44",
+          "22",
+          "12",
+          "5",
+          "7",
+          "71",
+          "8",
+          "45",
+          "65",
+          "11",
+          "13",
+          "958",
+          "19",
+          "16",
+          "299",
+          "14",
+          "66",
+          "29",
+          "533",
+          "174",
+          "18",
+          "20",
+          "67"
+        ],
+        "name": "category",
+        "type": "integer"
       },
       {
-        "name": "status"
+        "enum": [
+          "all",
+          "active",
+          "ended"
+        ],
+        "name": "status",
+        "type": "string"
       },
       {
-        "name": "sort_by"
+        "enum": [
+          "relevance",
+          "title",
+          "recency",
+          "search_volume"
+        ],
+        "name": "sort_by",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -3224,13 +5189,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "app_id"
+        "name": "app_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -3252,10 +5221,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -3277,10 +5248,13 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "app_id"
+        "name": "app_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -3304,16 +5278,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "num"
+        "name": "num",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "full_detail"
+        "name": "full_detail",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -3335,25 +5313,32 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "collection"
+        "name": "collection",
+        "type": "string"
       },
       {
-        "name": "category"
+        "name": "category",
+        "type": "string"
       },
       {
-        "name": "age"
+        "name": "age",
+        "type": "string"
       },
       {
-        "name": "num"
+        "name": "num",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "full_detail"
+        "name": "full_detail",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -3375,16 +5360,21 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "app_id"
+        "name": "app_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "short"
+        "name": "short",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -3406,25 +5396,33 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "app_id"
+        "name": "app_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "sort"
+        "name": "sort",
+        "type": "string"
       },
       {
-        "name": "num"
+        "name": "num",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "paginate"
+        "name": "paginate",
+        "type": "boolean"
       },
       {
-        "name": "next_pagination_token"
+        "name": "next_pagination_token",
+        "type": "string"
       }
     ],
     "security": [
@@ -3446,22 +5444,29 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "term"
+        "name": "term",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "num"
+        "name": "num",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "full_detail"
+        "name": "full_detail",
+        "type": "boolean"
       },
       {
-        "name": "price"
+        "name": "price",
+        "type": "string"
       }
     ],
     "security": [
@@ -3483,19 +5488,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "app_id"
+        "name": "app_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "num"
+        "name": "num",
+        "type": "integer"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "full_detail"
+        "name": "full_detail",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -3519,10 +5530,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -3587,7 +5600,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "max_id"
+        "name": "max_id",
+        "type": "string"
       }
     ],
     "security": [
@@ -3609,7 +5623,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       }
     ],
     "security": [
@@ -3631,31 +5646,52 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "type"
+        "enum": [
+          "all",
+          "movie",
+          "show"
+        ],
+        "name": "type",
+        "type": "string"
       },
       {
-        "name": "genres"
+        "name": "genres",
+        "type": "string"
       },
       {
-        "name": "providers"
+        "name": "providers",
+        "type": "string"
       },
       {
-        "name": "monetization_types"
+        "enum": [
+          "FLATRATE",
+          "FREE",
+          "ADS",
+          "RENT",
+          "BUY"
+        ],
+        "name": "monetization_types",
+        "type": "string"
       },
       {
-        "name": "year_min"
+        "name": "year_min",
+        "type": "integer"
       },
       {
-        "name": "year_max"
+        "name": "year_max",
+        "type": "integer"
       }
     ],
     "security": [
@@ -3677,13 +5713,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -3705,13 +5745,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "countries"
+        "name": "countries",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -3733,19 +5777,30 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "genre"
+        "name": "genre",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "type"
+        "enum": [
+          "all",
+          "movie",
+          "show"
+        ],
+        "name": "type",
+        "type": "string"
       }
     ],
     "security": [
@@ -3767,7 +5822,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -3789,19 +5845,37 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "monetization_type"
+        "enum": [
+          "FLATRATE",
+          "FREE",
+          "ADS",
+          "RENT",
+          "BUY"
+        ],
+        "name": "monetization_type",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "type"
+        "enum": [
+          "all",
+          "movie",
+          "show"
+        ],
+        "name": "type",
+        "type": "string"
       }
     ],
     "security": [
@@ -3823,16 +5897,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "type"
+        "enum": [
+          "all",
+          "movie",
+          "show"
+        ],
+        "name": "type",
+        "type": "string"
       }
     ],
     "security": [
@@ -3854,16 +5937,25 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "type"
+        "enum": [
+          "all",
+          "movie",
+          "show"
+        ],
+        "name": "type",
+        "type": "string"
       }
     ],
     "security": [
@@ -3885,19 +5977,30 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "provider"
+        "name": "provider",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "type"
+        "enum": [
+          "all",
+          "movie",
+          "show"
+        ],
+        "name": "type",
+        "type": "string"
       }
     ],
     "security": [
@@ -3919,7 +6022,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       }
     ],
     "security": [
@@ -3941,16 +6045,21 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "query"
+        "name": "query",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -3972,13 +6081,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -4000,13 +6113,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "season_id"
+        "name": "season_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -4028,13 +6145,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "show_id"
+        "name": "show_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -4056,10 +6177,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "path"
+        "name": "path",
+        "type": "string"
       },
       {
-        "name": "url"
+        "name": "url",
+        "type": "string"
       }
     ],
     "security": [
@@ -4081,10 +6204,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "path"
+        "name": "path",
+        "type": "string"
       },
       {
-        "name": "url"
+        "name": "url",
+        "type": "string"
       }
     ],
     "security": [
@@ -4106,13 +6231,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -4134,13 +6263,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -4162,13 +6295,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "countries"
+        "name": "countries",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       }
     ],
     "security": [
@@ -4190,16 +6327,21 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -4319,16 +6461,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "first"
+        "name": "first",
+        "type": "integer"
       },
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "string"
       },
       {
-        "name": "order"
+        "name": "order",
+        "type": "string"
       },
       {
-        "name": "tags"
+        "name": "tags",
+        "type": "string"
       }
     ],
     "security": [
@@ -4372,19 +6518,24 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "featured_only"
+        "name": "featured_only",
+        "type": "boolean"
       },
       {
-        "name": "order"
+        "name": "order",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "page_size"
+        "name": "page_size",
+        "type": "integer"
       },
       {
-        "name": "tags"
+        "name": "tags",
+        "type": "string"
       }
     ],
     "security": [
@@ -4408,28 +6559,36 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "order"
+        "name": "order",
+        "type": "string"
       },
       {
-        "name": "filter"
+        "name": "filter",
+        "type": "string"
       },
       {
-        "name": "threads_cursor"
+        "name": "threads_cursor",
+        "type": "string"
       },
       {
-        "name": "replies_cursor"
+        "name": "replies_cursor",
+        "type": "string"
       },
       {
-        "name": "include_thread_for_comment_id"
+        "name": "include_thread_for_comment_id",
+        "type": "string"
       },
       {
-        "name": "exclude_thread_for_comment_id"
+        "name": "exclude_thread_for_comment_id",
+        "type": "string"
       }
     ],
     "security": [
@@ -4453,13 +6612,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "order"
+        "enum": [
+          "customers",
+          "latest_launch"
+        ],
+        "name": "order",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "page_size"
+        "name": "page_size",
+        "type": "integer"
       }
     ],
     "security": [
@@ -4483,10 +6649,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "string"
       },
       {
-        "name": "order"
+        "name": "order",
+        "type": "string"
       }
     ],
     "security": [
@@ -4508,31 +6676,46 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "scope"
+        "enum": [
+          "daily",
+          "weekly",
+          "monthly",
+          "yearly"
+        ],
+        "name": "scope",
+        "type": "string"
       },
       {
-        "name": "date"
+        "name": "date",
+        "type": "string"
       },
       {
-        "name": "year"
+        "name": "year",
+        "type": "integer"
       },
       {
-        "name": "month"
+        "name": "month",
+        "type": "integer"
       },
       {
-        "name": "day"
+        "name": "day",
+        "type": "integer"
       },
       {
-        "name": "week"
+        "name": "week",
+        "type": "integer"
       },
       {
-        "name": "featured"
+        "name": "featured",
+        "type": "boolean"
       },
       {
-        "name": "order"
+        "name": "order",
+        "type": "string"
       },
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "string"
       }
     ],
     "security": [
@@ -4556,7 +6739,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "string"
       }
     ],
     "security": [
@@ -4618,19 +6802,30 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "query"
+        "name": "query",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "type"
+        "enum": [
+          "product",
+          "user",
+          "launch"
+        ],
+        "name": "type",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "featured"
+        "name": "featured",
+        "type": "boolean"
       },
       {
-        "name": "topics"
+        "name": "topics",
+        "type": "string"
       }
     ],
     "security": [
@@ -4702,7 +6897,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -4724,7 +6920,9 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -4766,16 +6964,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -4797,16 +6999,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -4828,31 +7034,41 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "number_of_top_results"
+        "name": "number_of_top_results",
+        "type": "integer"
       },
       {
-        "name": "include_audiobooks"
+        "name": "include_audiobooks",
+        "type": "boolean"
       },
       {
-        "name": "include_pre_releases"
+        "name": "include_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_album_pre_releases"
+        "name": "include_album_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_authors"
+        "name": "include_authors",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -4874,10 +7090,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       }
     ],
     "security": [
@@ -4899,22 +7117,28 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "type"
+        "name": "type",
+        "type": "string"
       },
       {
-        "name": "order"
+        "name": "order",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -4936,10 +7160,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       }
     ],
     "security": [
@@ -4961,10 +7187,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       }
     ],
     "security": [
@@ -4986,13 +7214,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5014,10 +7246,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       }
     ],
     "security": [
@@ -5039,16 +7273,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5070,31 +7308,41 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "number_of_top_results"
+        "name": "number_of_top_results",
+        "type": "integer"
       },
       {
-        "name": "include_audiobooks"
+        "name": "include_audiobooks",
+        "type": "boolean"
       },
       {
-        "name": "include_pre_releases"
+        "name": "include_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_album_pre_releases"
+        "name": "include_album_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_authors"
+        "name": "include_authors",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5116,10 +7364,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       }
     ],
     "security": [
@@ -5141,13 +7391,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5169,10 +7423,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country_code"
+        "name": "country_code",
+        "type": "string"
       },
       {
-        "name": "content_id"
+        "name": "content_id",
+        "type": "string"
       }
     ],
     "security": [
@@ -5194,22 +7450,28 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "page_offset"
+        "name": "page_offset",
+        "type": "integer"
       },
       {
-        "name": "page_limit"
+        "name": "page_limit",
+        "type": "integer"
       },
       {
-        "name": "section_offset"
+        "name": "section_offset",
+        "type": "integer"
       },
       {
-        "name": "section_limit"
+        "name": "section_limit",
+        "type": "integer"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5231,19 +7493,24 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "time_zone"
+        "name": "time_zone",
+        "type": "string"
       },
       {
-        "name": "sp_t"
+        "name": "sp_t",
+        "type": "string"
       },
       {
-        "name": "facet"
+        "name": "facet",
+        "type": "string"
       },
       {
-        "name": "section_items_limit"
+        "name": "section_items_limit",
+        "type": "integer"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5265,22 +7532,28 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "enable_watch_feed_entrypoint"
+        "name": "enable_watch_feed_entrypoint",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5302,31 +7575,41 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "number_of_top_results"
+        "name": "number_of_top_results",
+        "type": "integer"
       },
       {
-        "name": "include_audiobooks"
+        "name": "include_audiobooks",
+        "type": "boolean"
       },
       {
-        "name": "include_pre_releases"
+        "name": "include_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_album_pre_releases"
+        "name": "include_album_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_authors"
+        "name": "include_authors",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5348,22 +7631,28 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "page_offset"
+        "name": "page_offset",
+        "type": "integer"
       },
       {
-        "name": "page_limit"
+        "name": "page_limit",
+        "type": "integer"
       },
       {
-        "name": "section_offset"
+        "name": "section_offset",
+        "type": "integer"
       },
       {
-        "name": "section_limit"
+        "name": "section_limit",
+        "type": "integer"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5385,13 +7674,16 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "chart"
+        "name": "chart",
+        "type": "string"
       },
       {
-        "name": "region"
+        "name": "region",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5413,10 +7705,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       }
     ],
     "security": [
@@ -5438,22 +7732,28 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "page_offset"
+        "name": "page_offset",
+        "type": "integer"
       },
       {
-        "name": "page_limit"
+        "name": "page_limit",
+        "type": "integer"
       },
       {
-        "name": "section_offset"
+        "name": "section_offset",
+        "type": "integer"
       },
       {
-        "name": "section_limit"
+        "name": "section_limit",
+        "type": "integer"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5475,31 +7775,41 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "number_of_top_results"
+        "name": "number_of_top_results",
+        "type": "integer"
       },
       {
-        "name": "include_pre_releases"
+        "name": "include_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_album_pre_releases"
+        "name": "include_album_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_audiobooks"
+        "name": "include_audiobooks",
+        "type": "boolean"
       },
       {
-        "name": "include_authors"
+        "name": "include_authors",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5521,13 +7831,16 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "include_content_capability_trait"
+        "name": "include_content_capability_trait",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5549,16 +7862,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5580,7 +7897,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       }
     ],
     "security": [
@@ -5602,7 +7920,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "country_code"
+        "name": "country_code",
+        "type": "string"
       }
     ],
     "security": [
@@ -5624,22 +7943,28 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "username"
+        "name": "username",
+        "type": "string"
       },
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "url"
+        "name": "url",
+        "type": "string"
       },
       {
-        "name": "playlist_limit"
+        "name": "playlist_limit",
+        "type": "integer"
       },
       {
-        "name": "artist_limit"
+        "name": "artist_limit",
+        "type": "integer"
       },
       {
-        "name": "episode_limit"
+        "name": "episode_limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5661,19 +7986,24 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "username"
+        "name": "username",
+        "type": "string"
       },
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "url"
+        "name": "url",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5695,19 +8025,24 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "username"
+        "name": "username",
+        "type": "string"
       },
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "url"
+        "name": "url",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5729,31 +8064,41 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "number_of_top_results"
+        "name": "number_of_top_results",
+        "type": "integer"
       },
       {
-        "name": "include_audiobooks"
+        "name": "include_audiobooks",
+        "type": "boolean"
       },
       {
-        "name": "include_pre_releases"
+        "name": "include_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_album_pre_releases"
+        "name": "include_album_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_authors"
+        "name": "include_authors",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5775,37 +8120,49 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "number_of_top_results"
+        "name": "number_of_top_results",
+        "type": "integer"
       },
       {
-        "name": "include_audiobooks"
+        "name": "include_audiobooks",
+        "type": "boolean"
       },
       {
-        "name": "include_artist_has_concerts_field"
+        "name": "include_artist_has_concerts_field",
+        "type": "boolean"
       },
       {
-        "name": "include_pre_releases"
+        "name": "include_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_album_pre_releases"
+        "name": "include_album_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_authors"
+        "name": "include_authors",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       },
       {
-        "name": "is_prefix"
+        "name": "is_prefix",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5827,16 +8184,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5858,13 +8219,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5886,10 +8251,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       }
     ],
     "security": [
@@ -5911,13 +8278,16 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -5939,16 +8309,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "uri"
+        "name": "uri",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "albums_only"
+        "name": "albums_only",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -5970,31 +8344,41 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "number_of_top_results"
+        "name": "number_of_top_results",
+        "type": "integer"
       },
       {
-        "name": "include_audiobooks"
+        "name": "include_audiobooks",
+        "type": "boolean"
       },
       {
-        "name": "include_pre_releases"
+        "name": "include_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_album_pre_releases"
+        "name": "include_album_pre_releases",
+        "type": "boolean"
       },
       {
-        "name": "include_authors"
+        "name": "include_authors",
+        "type": "boolean"
       },
       {
-        "name": "include_episode_content_ratings_v2"
+        "name": "include_episode_content_ratings_v2",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -6054,10 +8438,13 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6117,19 +8504,35 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "sort_by"
+        "enum": [
+          "follower",
+          "engagement",
+          "avg_views"
+        ],
+        "name": "sort_by",
+        "type": "string"
       },
       {
-        "name": "creator_country"
+        "name": "creator_country",
+        "type": "string"
       },
       {
-        "name": "audience_count"
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "name": "audience_count",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6151,19 +8554,34 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "country_code"
+        "name": "country_code",
+        "type": "string"
       },
       {
-        "name": "order_by"
+        "enum": [
+          "vv",
+          "like",
+          "comment",
+          "repost"
+        ],
+        "name": "order_by",
+        "type": "string"
       },
       {
-        "name": "period"
+        "enum": [
+          "7",
+          "30"
+        ],
+        "name": "period",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6225,13 +8643,22 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "secUid"
+        "name": "secUid",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "integer"
       },
       {
-        "name": "sort_type"
+        "enum": [
+          "0",
+          "1",
+          "2"
+        ],
+        "name": "sort_type",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6253,13 +8680,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "keyword"
+        "name": "keyword",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6281,13 +8712,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "keyword"
+        "name": "keyword",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "integer"
       },
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6309,10 +8744,13 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "keyword"
+        "name": "keyword",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6334,13 +8772,29 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "material_id"
+        "name": "material_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "metric"
+        "enum": [
+          "retain_ctr",
+          "retain_cvr",
+          "click_cnt",
+          "convert_cnt",
+          "play_retain_cnt"
+        ],
+        "name": "metric",
+        "type": "string"
       },
       {
-        "name": "period_type"
+        "enum": [
+          "7",
+          "30",
+          "180"
+        ],
+        "name": "period_type",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6362,7 +8816,9 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "material_id"
+        "name": "material_id",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -6402,43 +8858,89 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "period"
+        "enum": [
+          "7",
+          "30",
+          "180"
+        ],
+        "name": "period",
+        "type": "integer"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "order_by"
+        "enum": [
+          "for_you",
+          "impression",
+          "ctr",
+          "play_2s_rate",
+          "play_6s_rate",
+          "cvr",
+          "like"
+        ],
+        "name": "order_by",
+        "type": "string"
       },
       {
-        "name": "country_code"
+        "name": "country_code",
+        "type": "string"
       },
       {
-        "name": "keyword"
+        "name": "keyword",
+        "type": "string"
       },
       {
-        "name": "industry"
+        "name": "industry",
+        "type": "string"
       },
       {
-        "name": "objective"
+        "name": "objective",
+        "type": "string"
       },
       {
-        "name": "ad_language"
+        "name": "ad_language",
+        "type": "string"
       },
       {
-        "name": "pattern_label"
+        "name": "pattern_label",
+        "type": "string"
       },
       {
-        "name": "duration"
+        "enum": [
+          "time-2",
+          "time-3",
+          "time-4",
+          "time-5",
+          "time-6",
+          "time-7"
+        ],
+        "name": "duration",
+        "type": "string"
       },
       {
-        "name": "like"
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "name": "like",
+        "type": "string"
       },
       {
-        "name": "ad_format"
+        "enum": [
+          "1",
+          "2"
+        ],
+        "name": "ad_format",
+        "type": "string"
       }
     ],
     "security": [
@@ -6460,7 +8962,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "module"
+        "name": "module",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6500,13 +9003,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "material_id"
+        "name": "material_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6546,10 +9053,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6571,10 +9080,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "scenario"
+        "name": "scenario",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6614,10 +9125,13 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "aweme_id"
+        "name": "aweme_id",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "cursor"
+        "name": "cursor",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6639,28 +9153,37 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "locale"
+        "name": "locale",
+        "type": "string"
       },
       {
-        "name": "scope_geo_id"
+        "name": "scope_geo_id",
+        "type": "integer"
       },
       {
-        "name": "type"
+        "name": "type",
+        "type": "string"
       },
       {
-        "name": "search_session_id"
+        "name": "search_session_id",
+        "type": "string"
       },
       {
-        "name": "typeahead_id"
+        "name": "typeahead_id",
+        "type": "string"
       },
       {
-        "name": "route_uid"
+        "name": "route_uid",
+        "type": "string"
       }
     ],
     "security": [
@@ -6698,44 +9221,58 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "geo_id"
+        "name": "geo_id",
+        "required": true,
+        "type": "integer"
       },
       {
-        "name": "filter_id"
+        "name": "filter_id",
+        "type": "string"
       },
       {
-        "name": "class"
+        "name": "class",
+        "type": "integer"
       },
       {
         "collectionFormat": "multi",
-        "name": "amenities"
+        "name": "amenities",
+        "type": "array"
       },
       {
-        "name": "price_min"
+        "name": "price_min",
+        "type": "integer"
       },
       {
-        "name": "price_max"
+        "name": "price_max",
+        "type": "integer"
       },
       {
-        "name": "pricing_mode"
+        "name": "pricing_mode",
+        "type": "string"
       },
       {
-        "name": "travelers_choice"
+        "name": "travelers_choice",
+        "type": "boolean"
       },
       {
-        "name": "travelers_choice_botb"
+        "name": "travelers_choice_botb",
+        "type": "boolean"
       },
       {
-        "name": "currency"
+        "name": "currency",
+        "type": "string"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "sort"
+        "name": "sort",
+        "type": "string"
       }
     ],
     "security": [
@@ -6757,10 +9294,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "url"
+        "name": "url",
+        "type": "string"
       },
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       }
     ],
     "security": [
@@ -6782,35 +9321,45 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "id"
+        "name": "id",
+        "type": "string"
       },
       {
-        "name": "url"
+        "name": "url",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "sort_type"
+        "name": "sort_type",
+        "type": "string"
       },
       {
-        "name": "sort_by"
+        "name": "sort_by",
+        "type": "string"
       },
       {
         "collectionFormat": "multi",
-        "name": "ratings"
+        "name": "ratings",
+        "type": "array"
       },
       {
-        "name": "do_machine_translation"
+        "name": "do_machine_translation",
+        "type": "boolean"
       },
       {
-        "name": "photos_per_review_limit"
+        "name": "photos_per_review_limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -6832,67 +9381,89 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "geo_id"
+        "name": "geo_id",
+        "required": true,
+        "type": "integer"
       },
       {
-        "name": "type"
+        "name": "type",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "filter_id"
+        "name": "filter_id",
+        "type": "string"
       },
       {
-        "name": "class"
-      },
-      {
-        "collectionFormat": "multi",
-        "name": "amenities"
-      },
-      {
-        "name": "price_min"
-      },
-      {
-        "name": "price_max"
-      },
-      {
-        "name": "pricing_mode"
-      },
-      {
-        "name": "travelers_choice"
-      },
-      {
-        "name": "travelers_choice_botb"
-      },
-      {
-        "name": "restaurant_date"
-      },
-      {
-        "name": "restaurant_time"
-      },
-      {
-        "name": "restaurant_guests"
+        "name": "class",
+        "type": "integer"
       },
       {
         "collectionFormat": "multi",
-        "name": "establishment_types"
+        "name": "amenities",
+        "type": "array"
+      },
+      {
+        "name": "price_min",
+        "type": "integer"
+      },
+      {
+        "name": "price_max",
+        "type": "integer"
+      },
+      {
+        "name": "pricing_mode",
+        "type": "string"
+      },
+      {
+        "name": "travelers_choice",
+        "type": "boolean"
+      },
+      {
+        "name": "travelers_choice_botb",
+        "type": "boolean"
+      },
+      {
+        "name": "restaurant_date",
+        "type": "string"
+      },
+      {
+        "name": "restaurant_time",
+        "type": "string"
+      },
+      {
+        "name": "restaurant_guests",
+        "type": "integer"
       },
       {
         "collectionFormat": "multi",
-        "name": "online_options"
+        "name": "establishment_types",
+        "type": "array"
       },
       {
-        "name": "offset"
+        "collectionFormat": "multi",
+        "name": "online_options",
+        "type": "array"
       },
       {
-        "name": "limit"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "locale"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "currency"
+        "name": "locale",
+        "type": "string"
       },
       {
-        "name": "sort"
+        "name": "currency",
+        "type": "string"
+      },
+      {
+        "name": "sort",
+        "type": "string"
       }
     ],
     "security": [
@@ -6956,28 +9527,36 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "stars"
+        "name": "stars",
+        "type": "integer"
       },
       {
-        "name": "verified"
+        "name": "verified",
+        "type": "boolean"
       },
       {
-        "name": "replied"
+        "name": "replied",
+        "type": "boolean"
       },
       {
-        "name": "language"
+        "name": "language",
+        "type": "string"
       },
       {
-        "name": "q"
+        "name": "q",
+        "type": "string"
       },
       {
-        "name": "date_from"
+        "name": "date_from",
+        "type": "string"
       },
       {
-        "name": "date_to"
+        "name": "date_to",
+        "type": "string"
       }
     ],
     "security": [
@@ -6999,16 +9578,21 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "page_size"
+        "name": "page_size",
+        "type": "integer"
       }
     ],
     "security": [
@@ -7050,7 +9634,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -7072,16 +9657,21 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "country"
+        "name": "country",
+        "type": "string"
       },
       {
-        "name": "locale"
+        "name": "locale",
+        "type": "string"
       },
       {
-        "name": "size"
+        "name": "size",
+        "type": "integer"
       }
     ],
     "security": [
@@ -7103,16 +9693,27 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "range"
+        "enum": [
+          "period",
+          "day",
+          "week",
+          "month",
+          "custom"
+        ],
+        "name": "range",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "from"
+        "name": "from",
+        "type": "string"
       },
       {
-        "name": "to"
+        "name": "to",
+        "type": "string"
       }
     ],
     "security": [
@@ -7134,13 +9735,23 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "range"
+        "enum": [
+          "period",
+          "day",
+          "week",
+          "month",
+          "custom"
+        ],
+        "name": "range",
+        "type": "string"
       },
       {
-        "name": "from"
+        "name": "from",
+        "type": "string"
       },
       {
-        "name": "to"
+        "name": "to",
+        "type": "string"
       }
     ],
     "security": [
@@ -7162,16 +9773,27 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "range"
+        "enum": [
+          "period",
+          "day",
+          "week",
+          "month",
+          "custom"
+        ],
+        "name": "range",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "from"
+        "name": "from",
+        "type": "string"
       },
       {
-        "name": "to"
+        "name": "to",
+        "type": "string"
       }
     ],
     "security": [
@@ -7193,19 +9815,35 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "range"
+        "enum": [
+          "period",
+          "day",
+          "week",
+          "month",
+          "custom"
+        ],
+        "name": "range",
+        "type": "string"
       },
       {
-        "name": "bucket"
+        "enum": [
+          "hour",
+          "day"
+        ],
+        "name": "bucket",
+        "type": "string"
       },
       {
-        "name": "endpoint"
+        "name": "endpoint",
+        "type": "string"
       },
       {
-        "name": "from"
+        "name": "from",
+        "type": "string"
       },
       {
-        "name": "to"
+        "name": "to",
+        "type": "string"
       }
     ],
     "security": [
@@ -7339,22 +9977,28 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "start"
+        "name": "start",
+        "type": "string"
       },
       {
-        "name": "end"
+        "name": "end",
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "market_cap"
+        "name": "market_cap",
+        "type": "number"
       },
       {
-        "name": "filter_most_active"
+        "name": "filter_most_active",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -7492,16 +10136,20 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       },
       {
-        "name": "sort_field"
+        "name": "sort_field",
+        "type": "string"
       },
       {
-        "name": "sort_asc"
+        "name": "sort_asc",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -7559,22 +10207,29 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "quotes_count"
+        "name": "quotes_count",
+        "type": "integer"
       },
       {
-        "name": "news_count"
+        "name": "news_count",
+        "type": "integer"
       },
       {
-        "name": "lists_count"
+        "name": "lists_count",
+        "type": "integer"
       },
       {
-        "name": "include_research"
+        "name": "include_research",
+        "type": "boolean"
       },
       {
-        "name": "enable_fuzzy_query"
+        "name": "enable_fuzzy_query",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -7756,10 +10411,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "offset"
+        "name": "offset",
+        "type": "integer"
       }
     ],
     "security": [
@@ -7783,10 +10440,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "statement"
+        "name": "statement",
+        "type": "string"
       },
       {
-        "name": "period"
+        "name": "period",
+        "type": "string"
       }
     ],
     "security": [
@@ -7830,34 +10489,44 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "period"
+        "name": "period",
+        "type": "string"
       },
       {
-        "name": "start"
+        "name": "start",
+        "type": "string"
       },
       {
-        "name": "end"
+        "name": "end",
+        "type": "string"
       },
       {
-        "name": "interval"
+        "name": "interval",
+        "type": "string"
       },
       {
-        "name": "include_prepost"
+        "name": "include_prepost",
+        "type": "boolean"
       },
       {
-        "name": "include_actions"
+        "name": "include_actions",
+        "type": "boolean"
       },
       {
-        "name": "auto_adjust"
+        "name": "auto_adjust",
+        "type": "boolean"
       },
       {
-        "name": "back_adjust"
+        "name": "back_adjust",
+        "type": "boolean"
       },
       {
-        "name": "keepna"
+        "name": "keepna",
+        "type": "boolean"
       },
       {
-        "name": "rounding"
+        "name": "rounding",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -7961,10 +10630,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       },
       {
-        "name": "tab"
+        "name": "tab",
+        "type": "string"
       }
     ],
     "security": [
@@ -8089,10 +10760,12 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "start"
+        "name": "start",
+        "type": "string"
       },
       {
-        "name": "end"
+        "name": "end",
+        "type": "string"
       }
     ],
     "security": [
@@ -8176,7 +10849,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "count"
+        "name": "count",
+        "type": "integer"
       }
     ],
     "security": [
@@ -8200,7 +10874,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -8224,7 +10899,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "continuation_token"
+        "name": "continuation_token",
+        "type": "string"
       }
     ],
     "security": [
@@ -8248,10 +10924,13 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "continuation_token"
+        "name": "continuation_token",
+        "type": "string"
       }
     ],
     "security": [
@@ -8295,7 +10974,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "continuation_token"
+        "name": "continuation_token",
+        "type": "string"
       }
     ],
     "security": [
@@ -8319,7 +10999,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "continuation_token"
+        "name": "continuation_token",
+        "type": "string"
       }
     ],
     "security": [
@@ -8343,7 +11024,8 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "continuation_token"
+        "name": "continuation_token",
+        "type": "string"
       }
     ],
     "security": [
@@ -8385,31 +11067,64 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "q"
+        "name": "q",
+        "type": "string"
       },
       {
-        "name": "search_query"
+        "name": "search_query",
+        "type": "string"
       },
       {
-        "name": "continuation_token"
+        "name": "continuation_token",
+        "type": "string"
       },
       {
-        "name": "type"
+        "enum": [
+          "video",
+          "channel",
+          "playlist",
+          "movie"
+        ],
+        "name": "type",
+        "type": "string"
       },
       {
-        "name": "sort_by"
+        "enum": [
+          "relevance",
+          "upload_date",
+          "view_count",
+          "rating"
+        ],
+        "name": "sort_by",
+        "type": "string"
       },
       {
-        "name": "upload_date"
+        "enum": [
+          "last_hour",
+          "today",
+          "this_week",
+          "this_month",
+          "this_year"
+        ],
+        "name": "upload_date",
+        "type": "string"
       },
       {
-        "name": "duration"
+        "enum": [
+          "short",
+          "medium",
+          "long"
+        ],
+        "name": "duration",
+        "type": "string"
       },
       {
-        "name": "features"
+        "name": "features",
+        "type": "string"
       },
       {
-        "name": "params"
+        "name": "params",
+        "type": "string"
       }
     ],
     "security": [
@@ -8433,10 +11148,16 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "type"
+        "enum": [
+          "all",
+          "shorts"
+        ],
+        "name": "type",
+        "type": "string"
       },
       {
-        "name": "continuation_token"
+        "name": "continuation_token",
+        "type": "string"
       }
     ],
     "security": [
@@ -8461,16 +11182,26 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "lang"
+        "name": "lang",
+        "type": "string"
       },
       {
-        "name": "translate_to"
+        "name": "translate_to",
+        "type": "string"
       },
       {
-        "name": "format"
+        "enum": [
+          "json",
+          "text",
+          "srt",
+          "vtt"
+        ],
+        "name": "format",
+        "type": "string"
       },
       {
-        "name": "timestamps"
+        "name": "timestamps",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -8532,13 +11263,17 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "query"
+        "name": "query",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "limit"
+        "name": "limit",
+        "type": "integer"
       },
       {
-        "name": "status"
+        "name": "status",
+        "type": "string"
       }
     ],
     "security": [
@@ -8580,31 +11315,41 @@ export const operations = {
     ],
     "queryParams": [
       {
-        "name": "location"
+        "name": "location",
+        "required": true,
+        "type": "string"
       },
       {
-        "name": "page"
+        "name": "page",
+        "type": "integer"
       },
       {
-        "name": "status"
+        "name": "status",
+        "type": "string"
       },
       {
-        "name": "region_id"
+        "name": "region_id",
+        "type": "integer"
       },
       {
-        "name": "region_type"
+        "name": "region_type",
+        "type": "integer"
       },
       {
-        "name": "west"
+        "name": "west",
+        "type": "number"
       },
       {
-        "name": "east"
+        "name": "east",
+        "type": "number"
       },
       {
-        "name": "south"
+        "name": "south",
+        "type": "number"
       },
       {
-        "name": "north"
+        "name": "north",
+        "type": "number"
       }
     ],
     "security": [
@@ -9001,3 +11746,5 @@ export const groups = {
     "search": "zillow-search"
   }
 };
+
+export const operationCount = 318;

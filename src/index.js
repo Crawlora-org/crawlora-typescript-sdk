@@ -1,2 +1,2 @@
-export { CrawloraClient, CrawloraError } from "./client.js";
-export { operations, groups } from "./operations.js";
+export { CrawloraClient, CrawloraError, VERSION } from "./client.js";
+export { operations, groups, operationCount } from "./operations.js";
