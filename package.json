@@ -1,6 +1,6 @@
 {
-  "name": "crawlora",
-  "version": "1.2.0-sdk.4",
+  "name": "@crawlora-org/sdk",
+  "version": "1.2.0-sdk.5",
   "description": "JavaScript and TypeScript SDK for the public Crawlora API.",
   "keywords": [
     "crawlora",
@@ -24,6 +24,9 @@
       "types": "./src/index.d.ts",
       "import": "./src/index.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "files": [
     "src",

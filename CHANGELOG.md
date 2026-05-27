@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0-sdk.5
+
+- Prepared the SDK for future npm publishing as `@crawlora-org/sdk`.
+- Updated package identity, public import examples, and registry-readiness
+  documentation.
+
 ## v1.2.0-sdk.4
 
 - Added release-readiness files, CI, license, fuller README guidance, and npm

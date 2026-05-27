@@ -6,13 +6,13 @@ and modern runtimes with `fetch`.
 ## Install
 
 ```sh
-npm install git+https://github.com/Crawlora-org/crawlora-typescript-sdk.git#v1.2.0-sdk.4
+npm install git+https://github.com/Crawlora-org/crawlora-typescript-sdk.git#v1.2.0-sdk.5
 ```
 
 ## Usage
 
 ```js
-import { CrawloraClient } from "crawlora";
+import { CrawloraClient } from "@crawlora-org/sdk";
 
 const crawlora = new CrawloraClient({ apiKey: process.env.CRAWLORA_API_KEY });
 const result = await crawlora.bing.search({ q: "coffee shops", count: 10 });
@@ -56,6 +56,17 @@ parsed `body`, and the original `response` when available.
 
 This SDK is currently released as Git beta tags. Pin an explicit tag in
 applications and upgrade intentionally.
+
+## Registry Readiness
+
+The future npm package target is `@crawlora-org/sdk`:
+
+```js
+import { CrawloraClient } from "@crawlora-org/sdk";
+```
+
+The package names `crawlora` and `@crawlora/sdk` are not used by this repository
+because they already exist on npm and point to a different package source.
 
 ## Regeneration
 
