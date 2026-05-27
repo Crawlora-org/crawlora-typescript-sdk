@@ -64,3 +64,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm publish --registry=https://npm.pkg.github.com --access public
+      - name: Verify install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tmp="$(mktemp -d)"
+          cd "$tmp"
+          printf '@crawlora-org:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}\n' > .npmrc
+          npm init -y
+          npm install "@crawlora-org/sdk@${{ steps.package.outputs.version }}"
+          node -e 'import("@crawlora-org/sdk").then((m) => console.log(Object.keys(m).sort().join(",")))'
