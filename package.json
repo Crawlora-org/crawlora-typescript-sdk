@@ -1,7 +1,21 @@
 {
   "name": "crawlora",
-  "version": "1.2.0-sdk.3",
+  "version": "1.2.0-sdk.4",
   "description": "JavaScript and TypeScript SDK for the public Crawlora API.",
+  "keywords": [
+    "crawlora",
+    "sdk",
+    "web-scraping",
+    "api-client"
+  ],
+  "homepage": "https://github.com/Crawlora-org/crawlora-typescript-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/Crawlora-org/crawlora-typescript-sdk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crawlora-org/crawlora-typescript-sdk.git"
+  },
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
@@ -14,12 +28,16 @@
   "files": [
     "src",
     "openapi/public.json",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "generate": "python3 scripts/generate.py",
+    "pack:check": "npm pack --dry-run",
+    "typecheck": "npx --yes -p typescript@5.5.4 tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --strict src/index.d.ts src/types.d.ts",
     "test": "node --test"
   },
+  "sideEffects": false,
   "engines": {
     "node": ">=18"
   },
