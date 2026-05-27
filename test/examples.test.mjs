@@ -4,7 +4,6 @@ import { test } from "node:test";
 
 const examples = [
   "examples/bing-search.mjs",
-  "examples/google-lens-upload.mjs",
   "examples/youtube-transcript.mjs"
 ];
 
@@ -25,7 +24,6 @@ function scrubLiveEnv(env) {
   const next = { ...env };
   delete next.CRAWLORA_API_KEY;
   delete next.CRAWLORA_BASE_URL;
-  delete next.CRAWLORA_LENS_IMAGE;
   delete next.CRAWLORA_YOUTUBE_VIDEO_ID;
   return next;
 }

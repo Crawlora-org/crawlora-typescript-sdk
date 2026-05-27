@@ -459,22 +459,6 @@ export interface CoinGeckoTrendingParams {
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type WebContactBody = CrawloraBody;
-export type WebContactResponse = CrawloraResponse;
-export interface WebContactParams {
-  "option": WebContactBody;
-}
-
-export type CrunchbaseOrganizationResponse = CrawloraResponse;
-export interface CrunchbaseOrganizationParams {
-  "id": string;
-}
-
-export type CrunchbasePersonResponse = CrawloraResponse;
-export interface CrunchbasePersonParams {
-  "id": string;
-}
-
 export type DatasetsListResponse = CrawloraResponse;
 export interface DatasetsListParams {
 }
@@ -569,27 +553,6 @@ export type EBayEbaySellerShopResponse = CrawloraResponse;
 export interface EBayEbaySellerShopParams {
   "seller": string;
   "page"?: number;
-}
-
-export type EtsyListingResponse = CrawloraResponse;
-export interface EtsyListingParams {
-  "id": string;
-}
-
-export type EtsySearchResponse = CrawloraResponse;
-export interface EtsySearchParams {
-  "q": string;
-  "page"?: number;
-}
-
-export type EtsyShopResponse = CrawloraResponse;
-export interface EtsyShopParams {
-  "id": string;
-}
-
-export type FacebookPageResponse = CrawloraResponse;
-export interface FacebookPageParams {
-  "page": string;
 }
 
 export type GeocodingLookupResponse = CrawloraResponse;
@@ -733,21 +696,10 @@ export interface GoogleFinanceTickerParams {
   "window"?: string;
 }
 
-export type GoogleImageBody = CrawloraBody;
-export type GoogleImageResponse = CrawloraResponse;
-export interface GoogleImageParams {
-  "searchOption": GoogleImageBody;
-}
-
 export type GoogleJobsBody = CrawloraBody;
 export type GoogleJobsResponse = CrawloraResponse;
 export interface GoogleJobsParams {
   "option": GoogleJobsBody;
-}
-
-export type GoogleLensResponse = CrawloraResponse;
-export interface GoogleLensParams {
-  "image": unknown;
 }
 
 export type GoogleMapPlaceResponse = CrawloraResponse;
@@ -761,28 +713,10 @@ export interface GoogleMapSearchParams {
   "mapSearchOption": GoogleMapSearchBody;
 }
 
-export type GoogleNewsDeprecatedBody = CrawloraBody;
-export type GoogleNewsDeprecatedResponse = CrawloraResponse;
-export interface GoogleNewsDeprecatedParams {
-  "searchOption": GoogleNewsDeprecatedBody;
-}
-
 export type GoogleSearchBody = CrawloraBody;
 export type GoogleSearchResponse = CrawloraResponse;
 export interface GoogleSearchParams {
   "searchOption": GoogleSearchBody;
-}
-
-export type GoogleShoppingBody = CrawloraBody;
-export type GoogleShoppingResponse = CrawloraResponse;
-export interface GoogleShoppingParams {
-  "searchOption": GoogleShoppingBody;
-}
-
-export type GoogleShoppingDetailBody = CrawloraBody;
-export type GoogleShoppingDetailResponse = CrawloraResponse;
-export interface GoogleShoppingDetailParams {
-  "ShoppingItemDetailOption": GoogleShoppingDetailBody;
 }
 
 export type GoogleSuggestResponse = CrawloraResponse;
@@ -1180,19 +1114,6 @@ export interface ProductHuntAlternativesParams {
   "cursor"?: string;
   "order"?: string;
   "tags"?: string;
-}
-
-export type ProductHuntCommentsResponse = CrawloraResponse;
-export interface ProductHuntCommentsParams {
-  "id": string;
-  "page"?: number;
-  "limit"?: number;
-  "order"?: string;
-  "filter"?: string;
-  "threads_cursor"?: string;
-  "replies_cursor"?: string;
-  "include_thread_for_comment_id"?: string;
-  "exclude_thread_for_comment_id"?: string;
 }
 
 export type ProductHuntCustomersResponse = CrawloraResponse;
@@ -1626,15 +1547,6 @@ export interface TiktokPopularTrendCreatorParams {
   "audience_count"?: "1" | "2" | "3" | "4";
 }
 
-export type TiktokPopularTrendVideoResponse = CrawloraResponse;
-export interface TiktokPopularTrendVideoParams {
-  "page"?: number;
-  "limit"?: number;
-  "country_code"?: string;
-  "order_by"?: "vv" | "like" | "comment" | "repost";
-  "period"?: "7" | "30";
-}
-
 export type TiktokPostResponse = CrawloraResponse;
 export interface TiktokPostParams {
   "id": string;
@@ -1914,12 +1826,6 @@ export interface UserMeApiKeysRotateParams {
 export type UserMeApiKeysRevealResponse = CrawloraResponse;
 export interface UserMeApiKeysRevealParams {
   "id": string;
-}
-
-export type WebParseBody = CrawloraBody;
-export type WebParseResponse = CrawloraResponse;
-export interface WebParseParams {
-  "parseWebOption": WebParseBody;
 }
 
 export type YahooFinanceCalendarsResponse = CrawloraResponse;
@@ -2341,16 +2247,6 @@ export interface CoinGeckoService {
   trending<T = CoinGeckoTrendingResponse>(params?: CoinGeckoTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
-export interface WebService {
-  contact<T = WebContactResponse>(params: WebContactParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  parse<T = WebParseResponse>(params: WebParseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-}
-
-export interface CrunchbaseService {
-  organization<T = CrunchbaseOrganizationResponse>(params: CrunchbaseOrganizationParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  person<T = CrunchbasePersonResponse>(params: CrunchbasePersonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-}
-
 export interface DatasetsService {
   list<T = DatasetsListResponse>(params?: DatasetsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesFacets<T = DatasetsGoogleMapBusinessesFacetsResponse>(params: DatasetsGoogleMapBusinessesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -2366,16 +2262,6 @@ export interface EBayService {
   ebaySellerAbout<T = EBayEbaySellerAboutResponse>(params: EBayEbaySellerAboutParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySellerFeedback<T = EBayEbaySellerFeedbackResponse>(params: EBayEbaySellerFeedbackParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySellerShop<T = EBayEbaySellerShopResponse>(params: EBayEbaySellerShopParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-}
-
-export interface EtsyService {
-  listing<T = EtsyListingResponse>(params: EtsyListingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  search<T = EtsySearchResponse>(params: EtsySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  shop<T = EtsyShopResponse>(params: EtsyShopParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-}
-
-export interface FacebookService {
-  page<T = FacebookPageResponse>(params: FacebookPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GeocodingService {
@@ -2405,15 +2291,10 @@ export interface GoogleService {
   financeRelated<T = GoogleFinanceRelatedResponse>(params: GoogleFinanceRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   financeSearch<T = GoogleFinanceSearchResponse>(params: GoogleFinanceSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   financeTicker<T = GoogleFinanceTickerResponse>(params: GoogleFinanceTickerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  image<T = GoogleImageResponse>(params: GoogleImageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobs<T = GoogleJobsResponse>(params: GoogleJobsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  lens<T = GoogleLensResponse>(params: GoogleLensParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mapPlace<T = GoogleMapPlaceResponse>(params: GoogleMapPlaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mapSearch<T = GoogleMapSearchResponse>(params: GoogleMapSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  newsDeprecated<T = GoogleNewsDeprecatedResponse>(params: GoogleNewsDeprecatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = GoogleSearchResponse>(params: GoogleSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  shopping<T = GoogleShoppingResponse>(params: GoogleShoppingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  shoppingDetail<T = GoogleShoppingDetailResponse>(params: GoogleShoppingDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   suggest<T = GoogleSuggestResponse>(params: GoogleSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trendsCategories<T = GoogleTrendsCategoriesResponse>(params?: GoogleTrendsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trendsEnums<T = GoogleTrendsEnumsResponse>(params?: GoogleTrendsEnumsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -2489,7 +2370,6 @@ export interface ProductHuntService {
   product<T = ProductHuntProductResponse>(params: ProductHuntProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   about<T = ProductHuntAboutResponse>(params: ProductHuntAboutParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   alternatives<T = ProductHuntAlternativesResponse>(params: ProductHuntAlternativesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  comments<T = ProductHuntCommentsResponse>(params: ProductHuntCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   customers<T = ProductHuntCustomersResponse>(params: ProductHuntCustomersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   launches<T = ProductHuntLaunchesResponse>(params: ProductHuntLaunchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   makers<T = ProductHuntMakersResponse>(params: ProductHuntMakersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -2560,7 +2440,6 @@ export interface TiktokService {
   challengeList<T = TiktokChallengeListResponse>(params: TiktokChallengeListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   popularTrendCountryIndustryMeta<T = TiktokPopularTrendCountryIndustryMetaResponse>(params?: TiktokPopularTrendCountryIndustryMetaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   popularTrendCreator<T = TiktokPopularTrendCreatorResponse>(params?: TiktokPopularTrendCreatorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  popularTrendVideo<T = TiktokPopularTrendVideoResponse>(params?: TiktokPopularTrendVideoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   post<T = TiktokPostResponse>(params: TiktokPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profilePost<T = TiktokProfilePostResponse>(params: TiktokProfilePostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = TiktokProfileResponse>(params: TiktokProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -2685,12 +2564,8 @@ export interface CrawloraGeneratedGroups {
   bing: BingService;
   brave: BraveService;
   coinGecko: CoinGeckoService;
-  web: WebService;
-  crunchbase: CrunchbaseService;
   datasets: DatasetsService;
   eBay: EBayService;
-  etsy: EtsyService;
-  facebook: FacebookService;
   geocoding: GeocodingService;
   google: GoogleService;
   googlePlay: GooglePlayService;
@@ -2775,9 +2650,6 @@ export type OperationId =
   | "coingecko-token-unlocks"
   | "coingecko-treasuries"
   | "coingecko-trending"
-  | "web-contact"
-  | "crunchbase-organization"
-  | "crunchbase-person"
   | "datasets-list"
   | "datasets-google-map-businesses-facets"
   | "datasets-google-map-businesses-item"
@@ -2789,10 +2661,6 @@ export type OperationId =
   | "ebay-seller-about"
   | "ebay-seller-feedback"
   | "ebay-seller-shop"
-  | "etsy-listing"
-  | "etsy-search"
-  | "etsy-shop"
-  | "facebook-page"
   | "geocoding-lookup"
   | "geocoding-reverse"
   | "geocoding-search"
@@ -2816,15 +2684,10 @@ export type OperationId =
   | "google-finance-related"
   | "google-finance-search"
   | "google-finance-ticker"
-  | "google-image"
   | "google-jobs"
-  | "google-lens"
   | "google-map-place"
   | "google-map-search"
-  | "google-news-deprecated"
   | "google-search"
-  | "google-shopping"
-  | "google-shopping-detail"
   | "google-suggest"
   | "google-trends-categories"
   | "google-trends-enums"
@@ -2881,7 +2744,6 @@ export type OperationId =
   | "producthunt-product"
   | "producthunt-about"
   | "producthunt-alternatives"
-  | "producthunt-comments"
   | "producthunt-customers"
   | "producthunt-launches"
   | "producthunt-makers"
@@ -2938,7 +2800,6 @@ export type OperationId =
   | "tiktok-challenge-list"
   | "tiktok-popular-trend-country-industry-meta"
   | "tiktok-popular-trend-creator"
-  | "tiktok-popular-trend-video"
   | "tiktok-post"
   | "tiktok-profile-post"
   | "tiktok-profile"
@@ -2977,7 +2838,6 @@ export type OperationId =
   | "user-me-api-keys"
   | "user-me-api-keys-rotate"
   | "user-me-api-keys-reveal"
-  | "web-parse"
   | "yahoo-finance-calendars"
   | "yahoo-finance-calendar"
   | "yahoo-finance-download"

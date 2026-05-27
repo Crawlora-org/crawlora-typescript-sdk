@@ -151,21 +151,6 @@ test("serializes JSON body requests", async () => {
   assert.equal(body, JSON.stringify({ q: "coffee" }));
 });
 
-test("serializes multipart uploads", async () => {
-  let body;
-  const client = new CrawloraClient({
-    apiKey: "api_test",
-    baseUrl: "https://example.test/api/v1",
-    fetch: async (_url, init) => {
-      body = init.body;
-      return jsonResponse({ code: 200, msg: "OK", data: {} });
-    }
-  });
-
-  await client.google.lens({ image: new Blob(["image-bytes"]) });
-  assert.equal(body instanceof FormData, true);
-});
-
 test("wraps API errors with status code and body", async () => {
   const client = new CrawloraClient({
     apiKey: "api_test",
@@ -227,7 +212,11 @@ test("wraps transport errors", async () => {
 });
 
 test("operation metadata count is stable", () => {
-  assert.equal(operationCount, 318);
+  assert.equal(operationCount, 303);
+});
+
+test("deprecated endpoints are not generated", () => {
+  assert.equal(typeof new CrawloraClient({ fetch: async () => jsonResponse({}) }).google.lens, "undefined");
 });
 
 test("generated declarations include typed endpoint groups", () => {

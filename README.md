@@ -7,7 +7,7 @@ and modern runtimes with `fetch`.
 
 ```sh
 npm config set @crawlora-org:registry https://npm.pkg.github.com
-npm install @crawlora-org/sdk@1.2.0-sdk.7
+npm install @crawlora-org/sdk@1.2.0-sdk.8
 ```
 
 GitHub Packages npm installs require GitHub npm registry authentication. For
@@ -48,12 +48,6 @@ const text = await crawlora.youtube.transcript(
 );
 ```
 
-Multipart upload endpoints accept values supported by `FormData`:
-
-```js
-const result = await crawlora.google.lens({ image: new Blob(["image-bytes"]) });
-```
-
 Failed API calls throw `CrawloraError` with `status`, optional API `code`,
 parsed `body`, and the original `response` when available.
 
@@ -64,7 +58,6 @@ Runnable examples live under `examples/`:
 ```sh
 CRAWLORA_API_KEY=... npm run example:bing-search
 CRAWLORA_API_KEY=... CRAWLORA_YOUTUBE_VIDEO_ID=... npm run example:youtube-transcript
-CRAWLORA_API_KEY=... CRAWLORA_LENS_IMAGE=./image.jpg npm run example:google-lens
 ```
 
 Each example also accepts `CRAWLORA_BASE_URL` for staging or local API testing.
