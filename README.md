@@ -6,7 +6,7 @@ and modern runtimes with `fetch`.
 ## Install
 
 ```sh
-npm install git+https://github.com/Crawlora-org/crawlora-typescript-sdk.git#v1.2.0-sdk.5
+npm install git+https://github.com/Crawlora-org/crawlora-typescript-sdk.git#v1.2.0-sdk.6
 ```
 
 ## Usage
@@ -52,6 +52,20 @@ const result = await crawlora.google.lens({ image: new Blob(["image-bytes"]) });
 Failed API calls throw `CrawloraError` with `status`, optional API `code`,
 parsed `body`, and the original `response` when available.
 
+## Examples
+
+Runnable examples live under `examples/`:
+
+```sh
+CRAWLORA_API_KEY=... npm run example:bing-search
+CRAWLORA_API_KEY=... CRAWLORA_YOUTUBE_VIDEO_ID=... npm run example:youtube-transcript
+CRAWLORA_API_KEY=... CRAWLORA_LENS_IMAGE=./image.jpg npm run example:google-lens
+```
+
+Each example also accepts `CRAWLORA_BASE_URL` for staging or local API testing.
+The examples exit without making a request when the required live environment
+variables are not set. `npm run smoke:live` runs all live examples in sequence.
+
 ## Versioning
 
 This SDK is currently released as Git beta tags. Pin an explicit tag in
@@ -81,6 +95,6 @@ npm run typecheck
 
 ## Optional Live Smoke Test
 
-Default tests use mock `fetch` implementations. For live API checks, set
-`CRAWLORA_API_KEY` in your own environment and call a low-cost endpoint
-manually. Live calls are not part of default CI.
+Default tests use mock `fetch` implementations. The programs under `examples/`
+can be used as optional live smoke tests when `CRAWLORA_API_KEY` is available.
+Live calls are not part of default CI.

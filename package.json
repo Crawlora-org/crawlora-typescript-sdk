@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/sdk",
-  "version": "1.2.0-sdk.5",
+  "version": "1.2.0-sdk.6",
   "description": "JavaScript and TypeScript SDK for the public Crawlora API.",
   "keywords": [
     "crawlora",
@@ -29,14 +29,19 @@
     "access": "public"
   },
   "files": [
+    "examples",
     "src",
     "openapi/public.json",
     "README.md",
     "CHANGELOG.md"
   ],
   "scripts": {
+    "example:bing-search": "node examples/bing-search.mjs",
+    "example:google-lens": "node examples/google-lens-upload.mjs",
+    "example:youtube-transcript": "node examples/youtube-transcript.mjs",
     "generate": "python3 scripts/generate.py",
     "pack:check": "npm pack --dry-run",
+    "smoke:live": "npm run example:bing-search && npm run example:youtube-transcript && npm run example:google-lens",
     "typecheck": "npx --yes -p typescript@5.5.4 tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --strict src/index.d.ts src/types.d.ts",
     "test": "node --test"
   },

@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.2.0-sdk.6
+
+- Added runnable Bing search, YouTube transcript, and Google Lens upload
+  examples.
+- Added npm example scripts and an optional `smoke:live` command that skips
+  cleanly when live credentials or inputs are absent.
+
 ## v1.2.0-sdk.5
 
 - Prepared the SDK for future npm publishing as `@crawlora-org/sdk`.
