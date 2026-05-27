@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0-sdk.9
+
+- Added fail-fast enum validation for generated query and form parameters.
+- Wrapped malformed JSON responses in `CrawloraError` with response status,
+  raw response text, and parser cause details.
+
 ## v1.2.0-sdk.8
 
 - Regenerated from the SDK spec that excludes deprecated endpoints.

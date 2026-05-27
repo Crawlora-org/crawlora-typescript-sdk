@@ -74,6 +74,24 @@ test("fails before fetch when required parameters are missing", async () => {
   assert.equal(calls, 0);
 });
 
+test("fails before fetch when enum parameters are invalid", async () => {
+  let calls = 0;
+  const client = new CrawloraClient({
+    apiKey: "api_test",
+    baseUrl: "https://example.test/api/v1",
+    fetch: async () => {
+      calls++;
+      return jsonResponse({ code: 200, msg: "OK", data: {} });
+    }
+  });
+
+  await assert.rejects(
+    () => client.operation("amazon-product", { asin: "B000000000", language: "fr_FR" }),
+    /invalid query parameter language: expected one of en_US/
+  );
+  assert.equal(calls, 0);
+});
+
 test("normalizes negative retry options", () => {
   const client = new CrawloraClient({
     retries: -3,
@@ -136,6 +154,21 @@ test("sends custom headers and preserves false zero and arrays", async () => {
   assert.match(calls[1].url, /online_options=4/);
 });
 
+test("serializes valid enum parameters", async () => {
+  const calls = [];
+  const client = new CrawloraClient({
+    apiKey: "api_test",
+    baseUrl: "https://example.test/api/v1",
+    fetch: async (url, init) => {
+      calls.push({ url, init });
+      return jsonResponse({ code: 200, msg: "OK", data: {} });
+    }
+  });
+
+  await client.operation("amazon-product", { asin: "B000000000", language: "en_US" });
+  assert.match(calls[0].url, /language=en_US/);
+});
+
 test("serializes JSON body requests", async () => {
   let body;
   const client = new CrawloraClient({
@@ -166,6 +199,30 @@ test("wraps API errors with status code and body", async () => {
       assert.equal(error.code, 429);
       assert.equal(error.message, "rate limited");
       assert.equal(error.body.msg, "rate limited");
+      return true;
+    }
+  );
+});
+
+test("wraps invalid JSON responses", async () => {
+  const parseCauseName = "SyntaxError";
+  const client = new CrawloraClient({
+    apiKey: "api_test",
+    baseUrl: "https://example.test/api/v1",
+    fetch: async () => new Response("{not-json", {
+      status: 200,
+      headers: { "content-type": "application/json" }
+    })
+  });
+
+  await assert.rejects(
+    () => client.bing.search({ q: "coffee" }),
+    (error) => {
+      assert.equal(error instanceof CrawloraError, true);
+      assert.equal(error.status, 200);
+      assert.equal(error.message, "Crawlora JSON parse error");
+      assert.equal(error.body, "{not-json");
+      assert.equal(error.cause.name, parseCauseName);
       return true;
     }
   );

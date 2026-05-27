@@ -75,7 +75,7 @@ def operation_definition(operation_id, method, path, operation):
                 **({"collectionFormat": p["collectionFormat"]} if "collectionFormat" in p else {}),
                 **({"type": p["type"]} if "type" in p else {}),
                 **({"required": True} if p.get("required") else {}),
-                **({"enum": [str(v) for v in p["enum"]]} if p.get("enum") else {}),
+                **({"enum": enum_values(p)} if enum_values(p) else {}),
             }
             for p in params
             if p.get("in") == "query"
@@ -86,7 +86,7 @@ def operation_definition(operation_id, method, path, operation):
                 "in": "formData",
                 **({"type": p["type"]} if "type" in p else {}),
                 **({"required": True} if p.get("required") else {}),
-                **({"enum": [str(v) for v in p["enum"]]} if p.get("enum") else {}),
+                **({"enum": enum_values(p)} if enum_values(p) else {}),
             }
             for p in params
             if p.get("in") == "formData"
@@ -97,6 +97,10 @@ def operation_definition(operation_id, method, path, operation):
         "produces": operation.get("produces", []),
         "security": security,
     }
+
+
+def enum_values(param):
+    return [str(value) for value in (param.get("enum") or param.get("items", {}).get("enum") or [])]
 
 
 def type_name(*parts):

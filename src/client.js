@@ -1,7 +1,7 @@
 import { operations, groups } from "./operations.js";
 
 const DEFAULT_BASE_URL = "https://api.crawlora.net/api/v1";
-export const VERSION = "1.2.0-sdk.8";
+export const VERSION = "1.2.0-sdk.9";
 const DEFAULT_USER_AGENT = `crawlora-js-sdk/${VERSION}`;
 
 export class CrawloraError extends Error {
@@ -112,6 +112,7 @@ export class CrawloraClient {
 
 function buildRequest(operation, baseUrl, params) {
   validateRequiredParams(operation, params);
+  validateEnumParams(operation, params);
   let path = operation.path;
   for (const name of operation.pathParams) {
     const value = params[name];
@@ -168,6 +169,18 @@ function validateRequiredParams(operation, params) {
   }
 }
 
+function validateEnumParams(operation, params) {
+  for (const parameter of [...operation.queryParams, ...operation.formParams]) {
+    if (!parameter.enum?.length || isMissing(params[parameter.name])) continue;
+    const values = Array.isArray(params[parameter.name]) ? params[parameter.name] : [params[parameter.name]];
+    for (const value of values) {
+      if (!parameter.enum.includes(String(value))) {
+        throw new TypeError(`invalid ${parameter.in || "request"} parameter ${parameter.name}: expected one of ${parameter.enum.join(", ")}`);
+      }
+    }
+  }
+}
+
 function isMissing(value) {
   return value === undefined || value === null || value === "" || (Array.isArray(value) && value.length === 0);
 }
@@ -202,7 +215,16 @@ async function parseResponse(response, responseType) {
   const contentType = response.headers.get("content-type") || "";
   if (responseType === "json" || contentType.toLowerCase().includes("application/json")) {
     const text = await response.text();
-    return text ? JSON.parse(text) : null;
+    try {
+      return text ? JSON.parse(text) : null;
+    } catch (error) {
+      throw new CrawloraError("Crawlora JSON parse error", {
+        status: response.status,
+        body: text,
+        response,
+        cause: error
+      });
+    }
   }
   return response.text();
 }
