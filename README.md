@@ -19,7 +19,7 @@ with a GitHub token that can read packages.
 For reproducible builds, pin the current beta package version:
 
 ```sh
-npm install @crawlora-org/sdk@1.2.0-sdk.9
+npm install @crawlora-org/sdk@1.2.0-sdk.10
 ```
 
 ## Usage
@@ -77,7 +77,7 @@ variables are not set. `npm run smoke:live` runs all live examples in sequence.
 This SDK is currently released as GitHub Packages beta versions. The package
 `latest` dist-tag and the moving Git tag named `latest` track the current
 promoted beta. Explicit package versions and Git beta tags such as
-`1.2.0-sdk.9` / `v1.2.0-sdk.9` remain available for reproducible builds. Pin an
+`1.2.0-sdk.10` / `v1.2.0-sdk.10` remain available for reproducible builds. Pin an
 explicit version in production applications and upgrade intentionally.
 
 ## Package Name

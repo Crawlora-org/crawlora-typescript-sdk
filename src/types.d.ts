@@ -3,23 +3,8629 @@
 export type CrawloraResponse<T = unknown> = T;
 export type CrawloraBody<T = Record<string, unknown>> = T;
 
-export type AirbnbRoomResponse = CrawloraResponse;
+export interface ModelAirbnbCalendarMonth {
+  "month"?: string;
+  "year"?: number;
+}
+
+export interface ModelAirbnbCalendarResponse {
+  "id"?: string;
+  "months"?: Array<ModelAirbnbCalendarMonth>;
+}
+
+export interface ModelAirbnbListingItem {
+  "host"?: string;
+  "id"?: string;
+  "image"?: string;
+  "latitude"?: number;
+  "location"?: string;
+  "longitude"?: number;
+  "price"?: number;
+  "rating"?: number;
+  "review_count"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelAirbnbReviewItem {
+  "author"?: string;
+  "date"?: string;
+  "rating"?: number;
+  "text"?: string;
+}
+
+export interface ModelAirbnbReviewsResponse {
+  "id"?: string;
+  "page"?: number;
+  "reviews"?: Array<ModelAirbnbReviewItem>;
+}
+
+export interface ModelAirbnbRoomResponse {
+  "amenities"?: Array<string>;
+  "description"?: string;
+  "host"?: string;
+  "id"?: string;
+  "image"?: string;
+  "latitude"?: number;
+  "location"?: string;
+  "longitude"?: number;
+  "price"?: number;
+  "rating"?: number;
+  "review_count"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelAirbnbSearchResponse {
+  "location"?: string;
+  "page"?: number;
+  "results"?: Array<ModelAirbnbListingItem>;
+}
+
+export interface ModelAmazonProduct {
+  "about"?: string;
+  "asin"?: string;
+  "availability"?: boolean;
+  "brand_link"?: string;
+  "brand_name"?: string;
+  "customers_say"?: string;
+  "description"?: string;
+  "images"?: Array<string>;
+  "is_free_delivery"?: boolean;
+  "is_free_return"?: boolean;
+  "link"?: string;
+  "number_of_bought_in_last_month"?: number;
+  "overview"?: Record<string, string>;
+  "price"?: number;
+  "rating"?: number;
+  "rating_hist"?: Record<string, number>;
+  "review_count"?: number;
+  "review_images"?: Array<ModelAmazonReviewImage>;
+  "review_insights"?: Array<ModelAmazonReviewInsight>;
+  "reviews"?: Array<ModelAmazonReview>;
+  "seller_link"?: string;
+  "seller_name"?: string;
+  "title"?: string;
+}
+
+export interface ModelAmazonReview {
+  "content"?: string;
+  "country"?: string;
+  "helpful_count"?: number;
+  "link"?: string;
+  "rating"?: number;
+  "review_date"?: string;
+  "title"?: string;
+  "user_link"?: string;
+  "user_name"?: string;
+  "verified_purchase"?: boolean;
+}
+
+export interface ModelAmazonReviewImage {
+  "review_id"?: string;
+  "thumbnail"?: string;
+  "url"?: string;
+}
+
+export interface ModelAmazonReviewInsight {
+  "label"?: string;
+  "mention_percent"?: number;
+  "mentions"?: number;
+  "sentiment"?: string;
+  "summary"?: string;
+}
+
+export interface ModelAmazonSearchResponseItem {
+  "asin"?: string;
+  "image"?: string;
+  "is_free_delivery"?: boolean;
+  "is_sponsored"?: boolean;
+  "link"?: string;
+  "list_price"?: number;
+  "more_choice"?: string;
+  "number_of_bought_in_last_month"?: number;
+  "price"?: number;
+  "rating"?: number;
+  "review_count"?: number;
+  "title"?: string;
+}
+
+export interface ModelAmazonProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelAmazonProduct;
+  "msg"?: string;
+}
+
+export interface ModelAmazonSearchResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelAmazonSearchResponseItem>;
+  "msg"?: string;
+}
+
+export interface ModelAmazonSuggestResponseDoc {
+  "code"?: number;
+  "data"?: Array<string>;
+  "msg"?: string;
+}
+
+export interface ModelApiComponentStatus {
+  "error"?: string;
+  "ready"?: boolean;
+}
+
+export interface ModelApiPingResponseDoc {
+  "code"?: number;
+  "data"?: ModelBuildinfoInfo;
+  "msg"?: string;
+}
+
+export interface ModelApiReadinessResponseDoc {
+  "code"?: number;
+  "data"?: ModelApiReadinessState;
+  "msg"?: string;
+}
+
+export interface ModelApiReadinessState {
+  "checked_at"?: string;
+  "components"?: Record<string, ModelApiComponentStatus>;
+  "ready"?: boolean;
+}
+
+export interface ModelAppResponse {
+  "code"?: number;
+  "data"?: unknown;
+  "msg"?: unknown;
+}
+
+export interface ModelApplepodcastsGenre {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelApplepodcastsPodcastChartItem {
+  "artist_name"?: string;
+  "artist_url"?: string;
+  "artwork_url"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "free"?: boolean;
+  "genre"?: string;
+  "genre_id"?: number;
+  "id"?: number;
+  "name"?: string;
+  "price"?: number;
+  "release_date"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplepodcastsPodcastEpisode {
+  "artwork_url_160"?: string;
+  "artwork_url_60"?: string;
+  "artwork_url_600"?: string;
+  "closed_captioning"?: string;
+  "content_advisory_rating"?: string;
+  "country"?: string;
+  "description"?: string;
+  "duration_millis"?: number;
+  "episode_content_type"?: string;
+  "episode_file_extension"?: string;
+  "episode_guid"?: string;
+  "episode_url"?: string;
+  "feed_url"?: string;
+  "genres"?: Array<ModelApplepodcastsGenre>;
+  "id"?: number;
+  "preview_url"?: string;
+  "release_date"?: string;
+  "short_description"?: string;
+  "show_id"?: number;
+  "show_name"?: string;
+  "show_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplepodcastsPodcastShow {
+  "artist_id"?: number;
+  "artist_name"?: string;
+  "artist_url"?: string;
+  "artwork_url_100"?: string;
+  "artwork_url_30"?: string;
+  "artwork_url_60"?: string;
+  "artwork_url_600"?: string;
+  "collection_explicitness"?: string;
+  "collection_name"?: string;
+  "content_advisory_rating"?: string;
+  "country"?: string;
+  "currency"?: string;
+  "feed_url"?: string;
+  "genre_ids"?: Array<string>;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "primary_genre_name"?: string;
+  "release_date"?: string;
+  "track_count"?: number;
+  "track_explicitness"?: string;
+  "track_name"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplepodcastsShowEpisodesResult {
+  "episodes"?: Array<ModelApplepodcastsPodcastEpisode>;
+  "show"?: ModelApplepodcastsPodcastShow;
+}
+
+export interface ModelApplepodcastsChartsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplepodcastsPodcastChartItem>;
+  "msg"?: string;
+}
+
+export interface ModelApplepodcastsEpisodeSearchResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplepodcastsPodcastEpisode>;
+  "msg"?: string;
+}
+
+export interface ModelApplepodcastsSearchResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplepodcastsPodcastShow>;
+  "msg"?: string;
+}
+
+export interface ModelApplepodcastsShowEpisodesResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplepodcastsShowEpisodesResult;
+  "msg"?: string;
+}
+
+export interface ModelApplepodcastsShowResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplepodcastsPodcastShow;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreApp {
+  "app_id"?: string;
+  "appletv_screenshots"?: Array<string>;
+  "content_rating"?: string;
+  "currency"?: string;
+  "current_version_reviews"?: number;
+  "current_version_score"?: number;
+  "description"?: string;
+  "developer"?: string;
+  "developer_id"?: number;
+  "developer_url"?: string;
+  "developer_website"?: string;
+  "free"?: boolean;
+  "genre_ids"?: Array<string>;
+  "genres"?: Array<string>;
+  "histogram"?: Record<string, number>;
+  "icon"?: string;
+  "id"?: number;
+  "ipad_screenshots"?: Array<string>;
+  "languages"?: Array<string>;
+  "price"?: number;
+  "primary_genre"?: string;
+  "primary_genre_id"?: number;
+  "ratings"?: number;
+  "release_notes"?: string;
+  "released"?: string;
+  "required_os_version"?: string;
+  "reviews"?: number;
+  "score"?: number;
+  "screenshots"?: Array<string>;
+  "size"?: string;
+  "supported_devices"?: Array<string>;
+  "title"?: string;
+  "updated"?: string;
+  "url"?: string;
+  "version"?: string;
+}
+
+export interface ModelAppstorePrivacyCategory {
+  "data_category"?: string;
+  "data_types"?: Array<string>;
+  "identifier"?: string;
+}
+
+export interface ModelAppstorePrivacyDetails {
+  "manage_privacy_choices_url"?: string;
+  "privacy_policy_url"?: string;
+  "privacy_types"?: Array<ModelAppstorePrivacyType>;
+}
+
+export interface ModelAppstorePrivacyPurpose {
+  "data_categories"?: Array<ModelAppstorePrivacyCategory>;
+  "identifier"?: string;
+  "purpose"?: string;
+}
+
+export interface ModelAppstorePrivacyType {
+  "data_categories"?: Array<ModelAppstorePrivacyCategory>;
+  "description"?: string;
+  "identifier"?: string;
+  "privacy_type"?: string;
+  "purposes"?: Array<ModelAppstorePrivacyPurpose>;
+}
+
+export interface ModelAppstoreRatingsResult {
+  "histogram"?: Record<string, number>;
+  "ratings"?: number;
+}
+
+export interface ModelAppstoreReview {
+  "id"?: string;
+  "score"?: number;
+  "text"?: string;
+  "title"?: string;
+  "updated"?: string;
+  "url"?: string;
+  "user_name"?: string;
+  "user_url"?: string;
+  "version"?: string;
+}
+
+export interface ModelAppstoreSuggestion {
+  "term"?: string;
+}
+
+export interface ModelAppstoreVersionHistoryItem {
+  "release_date"?: string;
+  "release_notes"?: string;
+  "release_timestamp"?: string;
+  "version_display"?: string;
+}
+
+export interface ModelAppstoreAppDetailsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAppstoreApp;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreDeveloperResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelAppstoreApp>;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreListResultsResponseDoc {
+  "code"?: number;
+  "data"?: Array<unknown>;
+  "msg"?: string;
+}
+
+export interface ModelAppstorePrivacyResponseDoc {
+  "code"?: number;
+  "data"?: ModelAppstorePrivacyDetails;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreRatingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAppstoreRatingsResult;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreReviewsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelAppstoreReview>;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreSearchResultsResponseDoc {
+  "code"?: number;
+  "data"?: Array<unknown>;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreSimilarResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelAppstoreApp>;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreSuggestResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelAppstoreSuggestion>;
+  "msg"?: string;
+}
+
+export interface ModelAppstoreVersionHistoryResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelAppstoreVersionHistoryItem>;
+  "msg"?: string;
+}
+
+export interface ModelBillingAdminPlanChangeRequestDoc {
+  "currency"?: string;
+  "monthly_price_cents"?: number;
+  "plan": string;
+}
+
+export interface ModelBillingAdminPlanChangeResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingBillingSnapshotDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingConsistencyEndpointBreakdownDoc {
+  "actual_credits"?: number;
+  "actual_overage"?: number;
+  "endpoint"?: string;
+  "expected_credits"?: number;
+  "expected_overage"?: number;
+}
+
+export interface ModelBillingBillingConsistencyIssueDoc {
+  "actual_credits"?: number;
+  "actual_overage"?: number;
+  "created_at"?: string;
+  "detail"?: string;
+  "endpoint_breakdown"?: Array<ModelBillingBillingConsistencyEndpointBreakdownDoc>;
+  "expected_credits"?: number;
+  "expected_overage"?: number;
+  "frozen_at"?: string;
+  "issue_id"?: string;
+  "issue_type"?: string;
+  "period_key"?: string;
+  "repair_method"?: string;
+  "repair_path"?: string;
+  "request_id"?: string;
+  "severity"?: string;
+  "source_updated_at"?: string;
+  "statement_id"?: string;
+  "stripe_invoice_id"?: string;
+  "suggested_action"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelBillingBillingConsistencyReportDoc {
+  "checked_from"?: string;
+  "checked_to"?: string;
+  "counts_by_severity"?: Record<string, number>;
+  "counts_by_type"?: Record<string, number>;
+  "generated_at"?: string;
+  "issues"?: Array<ModelBillingBillingConsistencyIssueDoc>;
+}
+
+export interface ModelBillingBillingConsistencyResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingBillingConsistencyReportDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingEndpointLedgerDoc {
+  "charged_requests"?: number;
+  "credits"?: number;
+  "endpoint"?: string;
+  "failed_requests"?: number;
+  "non_billable_requests"?: number;
+  "overage"?: number;
+  "requests"?: number;
+}
+
+export interface ModelBillingBillingEventDoc {
+  "billable"?: boolean;
+  "charged_at"?: string;
+  "created_at"?: string;
+  "credit_cost"?: number;
+  "credits_remaining_after"?: number;
+  "credits_remaining_before"?: number;
+  "credits_used_after"?: number;
+  "credits_used_before"?: number;
+  "daily_key"?: string;
+  "endpoint"?: string;
+  "event_status"?: string;
+  "failure_reason"?: string;
+  "finalized_at"?: string;
+  "idempotency_key"?: string;
+  "method"?: string;
+  "non_billable_reason"?: string;
+  "overage_credits_delta"?: number;
+  "period_key"?: string;
+  "plan"?: string;
+  "principal_type"?: string;
+  "request_id"?: string;
+  "route_pattern"?: string;
+  "status_code"?: number;
+  "user_id"?: string;
+}
+
+export interface ModelBillingBillingEventsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingBillingEventDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingFinanceAgingBucketDoc {
+  "amount_remaining_cents"?: number;
+  "bucket"?: string;
+  "invoice_count"?: number;
+}
+
+export interface ModelBillingBillingFinanceAgingResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingBillingFinanceAgingBucketDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingFinanceOverviewDoc {
+  "active_customers"?: number;
+  "at_risk_mrr_cents"?: number;
+  "booked_expected_total_cents"?: number;
+  "booked_overage_cents"?: number;
+  "booked_subscription_cents"?: number;
+  "cash_collected_cents"?: number;
+  "currency"?: string;
+  "current_outstanding_ar_cents"?: number;
+  "grace_period_customers"?: number;
+  "invoice_count"?: number;
+  "invoiced_amount_due_cents"?: number;
+  "mismatch_invoice_count"?: number;
+  "mismatch_total_cents"?: number;
+  "mrr_cents"?: number;
+  "paid_invoice_count"?: number;
+  "past_due_customers"?: number;
+  "payment_failed_invoice_count"?: number;
+  "plan_breakdown"?: Array<ModelBillingBillingFinancePlanBreakdownDoc>;
+  "stripe_actual_credit_note_cents"?: number;
+  "stripe_actual_discount_cents"?: number;
+  "stripe_actual_net_cash_cents"?: number;
+  "stripe_actual_refund_cents"?: number;
+  "stripe_actual_tax_cents"?: number;
+  "stripe_actual_total_cents"?: number;
+  "uncollectible_invoice_count"?: number;
+  "voided_invoice_count"?: number;
+}
+
+export interface ModelBillingBillingFinanceOverviewResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingBillingFinanceOverviewDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingFinancePeriodItemDoc {
+  "amount_paid_cents"?: number;
+  "amount_remaining_cents"?: number;
+  "customers"?: number;
+  "expected_total_amount_cents"?: number;
+  "invoice_amount_due_cents"?: number;
+  "invoice_count"?: number;
+  "mismatch_invoice_count"?: number;
+  "mismatch_total_cents"?: number;
+  "overage_amount_cents"?: number;
+  "paid_invoice_count"?: number;
+  "payment_failed_invoice_count"?: number;
+  "period_key"?: string;
+  "stripe_actual_credit_note_cents"?: number;
+  "stripe_actual_discount_cents"?: number;
+  "stripe_actual_net_cash_cents"?: number;
+  "stripe_actual_refund_cents"?: number;
+  "stripe_actual_tax_cents"?: number;
+  "stripe_actual_total_cents"?: number;
+  "subscription_amount_cents"?: number;
+}
+
+export interface ModelBillingBillingFinancePeriodsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingBillingFinancePeriodItemDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingFinancePlanBreakdownDoc {
+  "active_customers"?: number;
+  "at_risk_mrr_cents"?: number;
+  "booked_expected_total_cents"?: number;
+  "booked_overage_cents"?: number;
+  "booked_subscription_cents"?: number;
+  "cash_collected_cents"?: number;
+  "current_outstanding_ar_cents"?: number;
+  "customers"?: number;
+  "grace_period_customers"?: number;
+  "invoice_count"?: number;
+  "invoiced_amount_due_cents"?: number;
+  "mismatch_invoice_count"?: number;
+  "mismatch_total_cents"?: number;
+  "mrr_cents"?: number;
+  "paid_invoice_count"?: number;
+  "past_due_customers"?: number;
+  "payment_failed_invoice_count"?: number;
+  "plan"?: string;
+  "stripe_actual_credit_note_cents"?: number;
+  "stripe_actual_discount_cents"?: number;
+  "stripe_actual_net_cash_cents"?: number;
+  "stripe_actual_refund_cents"?: number;
+  "stripe_actual_tax_cents"?: number;
+  "stripe_actual_total_cents"?: number;
+  "uncollectible_invoice_count"?: number;
+  "voided_invoice_count"?: number;
+}
+
+export interface ModelBillingBillingPeriodCloseErrorDoc {
+  "error"?: string;
+  "period_key"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelBillingBillingPeriodCloseSummaryDoc {
+  "closed"?: number;
+  "errors"?: Array<ModelBillingBillingPeriodCloseErrorDoc>;
+  "failed"?: number;
+  "scanned"?: number;
+  "skipped"?: number;
+  "snapshot_skipped"?: number;
+  "snapshots_created"?: number;
+}
+
+export interface ModelBillingBillingPeriodCloseSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingBillingPeriodCloseSummaryDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingPeriodLedgerDoc {
+  "charged_requests"?: number;
+  "closed_at"?: string;
+  "credits_used"?: number;
+  "currency"?: string;
+  "endpoint_breakdown"?: Array<ModelBillingBillingEndpointLedgerDoc>;
+  "expected_subscription_amount_cents"?: number;
+  "expected_total_amount_cents"?: number;
+  "failed_requests"?: number;
+  "generated_at"?: string;
+  "included_credits"?: number;
+  "mismatch_flags"?: Array<string>;
+  "mismatch_total_cents"?: number;
+  "non_billable_requests"?: number;
+  "overage_amount_cents"?: number;
+  "overage_credits"?: number;
+  "overage_price_per_1000"?: number;
+  "period_end"?: string;
+  "period_key"?: string;
+  "period_start"?: string;
+  "plan"?: string;
+  "pricing_source"?: string;
+  "status"?: string;
+  "stripe_actual_amount_due_cents"?: number;
+  "stripe_actual_amount_paid_cents"?: number;
+  "stripe_actual_amount_remaining_cents"?: number;
+  "stripe_actual_credit_note_cents"?: number;
+  "stripe_actual_discount_cents"?: number;
+  "stripe_actual_net_cash_cents"?: number;
+  "stripe_actual_one_time_cents"?: number;
+  "stripe_actual_overage_cents"?: number;
+  "stripe_actual_proration_cents"?: number;
+  "stripe_actual_refund_cents"?: number;
+  "stripe_actual_subscription_cents"?: number;
+  "stripe_actual_tax_cents"?: number;
+  "stripe_actual_total_cents"?: number;
+  "stripe_customer_id"?: string;
+  "stripe_invoice_amount_due"?: number;
+  "stripe_invoice_amount_paid"?: number;
+  "stripe_invoice_amount_remaining"?: number;
+  "stripe_invoice_currency"?: string;
+  "stripe_invoice_due_date"?: string;
+  "stripe_invoice_effective_due_date"?: string;
+  "stripe_invoice_finalized_at"?: string;
+  "stripe_invoice_hosted_url"?: string;
+  "stripe_invoice_id"?: string;
+  "stripe_invoice_last_event_created"?: string;
+  "stripe_invoice_last_event_id"?: string;
+  "stripe_invoice_number"?: string;
+  "stripe_invoice_paid_at"?: string;
+  "stripe_invoice_payment_failed_at"?: string;
+  "stripe_invoice_pdf"?: string;
+  "stripe_invoice_period_end"?: string;
+  "stripe_invoice_period_start"?: string;
+  "stripe_invoice_reconciliation_error"?: string;
+  "stripe_invoice_reconciliation_status"?: string;
+  "stripe_invoice_status"?: string;
+  "stripe_meter_event_identifier"?: string;
+  "stripe_meter_event_name"?: string;
+  "stripe_snapshot_updated_at"?: string;
+  "stripe_sync_attempts"?: number;
+  "stripe_sync_error"?: string;
+  "stripe_sync_first_attempt_at"?: string;
+  "stripe_sync_last_attempt_at"?: string;
+  "stripe_sync_status"?: string;
+  "stripe_synced_at"?: string;
+  "subscription_price_cents"?: number;
+  "updated_at"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelBillingBillingPeriodLedgerResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingBillingPeriodLedgerDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingPeriodLedgersResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingBillingPeriodLedgerDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingPeriodStatementDoc {
+  "accounts_receivable"?: ModelBillingBillingStatementAccountsReceivableDoc;
+  "adjustment_events"?: Array<ModelBillingBillingStatementAdjustmentEvidenceDoc>;
+  "endpoint_breakdown"?: Array<ModelBillingBillingEndpointLedgerDoc>;
+  "events"?: Array<ModelBillingBillingStatementEventItemDoc>;
+  "expected"?: ModelBillingBillingStatementExpectedRevenueDoc;
+  "generated_at"?: string;
+  "invoice"?: ModelBillingBillingStatementInvoiceEvidenceDoc;
+  "invoice_events"?: Array<ModelBillingBillingStatementInvoiceEventEvidenceDoc>;
+  "mismatch"?: ModelBillingBillingStatementMismatchDoc;
+  "period"?: ModelBillingBillingStatementPeriodDoc;
+  "plan"?: string;
+  "repair"?: ModelBillingBillingStatementRepairDoc;
+  "snapshot"?: ModelBillingBillingStatementSnapshotMetadataDoc;
+  "stripe_actual"?: ModelBillingBillingStatementStripeActualDoc;
+  "user"?: ModelBillingBillingStatementUserDoc;
+}
+
+export interface ModelBillingBillingPeriodStatementResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingBillingPeriodStatementDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingPeriodStatementSnapshotSummaryDoc {
+  "adjustment_event_count"?: number;
+  "canonical_json_sha256"?: string;
+  "event_count"?: number;
+  "frozen_at"?: string;
+  "generated_at"?: string;
+  "generated_by"?: string;
+  "invoice_event_count"?: number;
+  "period_key"?: string;
+  "plan"?: string;
+  "revision"?: number;
+  "source_ledger_updated_at"?: string;
+  "source_snapshot_updated_at"?: string;
+  "statement_id"?: string;
+  "statement_version"?: string;
+  "status"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelBillingBillingPeriodStatementSnapshotsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingBillingPeriodStatementSnapshotSummaryDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingPeriodStatementVerificationDoc {
+  "canonical_json_byte_count"?: number;
+  "computed_sha256"?: string;
+  "frozen_at"?: string;
+  "period_key"?: string;
+  "revision"?: number;
+  "statement_id"?: string;
+  "statement_version"?: string;
+  "stored_sha256"?: string;
+  "user_id"?: string;
+  "valid"?: boolean;
+}
+
+export interface ModelBillingBillingPeriodStatementVerificationResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingBillingPeriodStatementVerificationDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingSnapshotDoc {
+  "allow_overage"?: boolean;
+  "credits_remaining"?: number;
+  "credits_used"?: number;
+  "currency"?: string;
+  "daily_credit_limit"?: number;
+  "daily_credits_remaining"?: number;
+  "daily_credits_used"?: number;
+  "daily_key"?: string;
+  "expected_subscription_amount_cents"?: number;
+  "expected_total_amount_cents"?: number;
+  "hard_limit"?: boolean;
+  "included_credits"?: number;
+  "overage_credits"?: number;
+  "period_end"?: string;
+  "period_key"?: string;
+  "period_start"?: string;
+  "plan"?: string;
+  "pricing_source"?: string;
+  "subscription_price_cents"?: number;
+  "user_id"?: string;
+}
+
+export interface ModelBillingBillingStateDoc {
+  "allow_overage"?: boolean;
+  "created_at"?: string;
+  "credits_remaining"?: number;
+  "credits_used"?: number;
+  "currency"?: string;
+  "daily_credit_limit"?: number;
+  "daily_credits_remaining"?: number;
+  "daily_credits_used"?: number;
+  "daily_key"?: string;
+  "expected_subscription_amount_cents"?: number;
+  "expected_total_amount_cents"?: number;
+  "hard_limit"?: boolean;
+  "included_credits"?: number;
+  "overage_credits"?: number;
+  "period_end"?: string;
+  "period_key"?: string;
+  "period_start"?: string;
+  "plan"?: string;
+  "pricing_source"?: string;
+  "subscription_price_cents"?: number;
+  "updated_at"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelBillingBillingStateResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingBillingStateDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingBillingStatementAccountsReceivableDoc {
+  "amount_due_cents"?: number;
+  "amount_paid_cents"?: number;
+  "amount_remaining_cents"?: number;
+  "due_date"?: string;
+  "effective_due_date"?: string;
+  "finalized_at"?: string;
+  "invoice_status"?: string;
+  "paid_at"?: string;
+  "payment_failed_at"?: string;
+}
+
+export interface ModelBillingBillingStatementAdjustmentEvidenceDoc {
+  "amount_cents"?: number;
+  "currency"?: string;
+  "error"?: string;
+  "event_created"?: string;
+  "event_id"?: string;
+  "event_type"?: string;
+  "kind"?: string;
+  "match_status"?: string;
+  "processed_at"?: string;
+  "reconciliation_status"?: string;
+  "repair_attempts"?: number;
+  "repair_last_error"?: string;
+  "repair_status"?: string;
+  "resource_id"?: string;
+  "resource_status"?: string;
+  "stripe_invoice_id"?: string;
+}
+
+export interface ModelBillingBillingStatementAdminEvidenceDoc {
+  "adjustment_events"?: Array<ModelBillingBillingStatementAdjustmentEvidenceDoc>;
+  "invoice"?: ModelBillingBillingStatementInvoiceEvidenceDoc;
+  "invoice_events"?: Array<ModelBillingBillingStatementInvoiceEventEvidenceDoc>;
+  "repair"?: ModelBillingBillingStatementRepairDoc;
+}
+
+export interface ModelBillingBillingStatementEventItemDoc {
+  "billable"?: boolean;
+  "created_at"?: string;
+  "credit_cost"?: number;
+  "endpoint"?: string;
+  "event_status"?: string;
+  "non_billable_reason"?: string;
+  "request_id"?: string;
+  "status_code"?: number;
+}
+
+export interface ModelBillingBillingStatementEvidencePackDoc {
+  "admin_evidence"?: ModelBillingBillingStatementAdminEvidenceDoc;
+  "customer_statement"?: ModelBillingBillingPeriodStatementDoc;
+  "snapshot"?: ModelBillingBillingPeriodStatementSnapshotSummaryDoc;
+  "verification"?: ModelBillingBillingPeriodStatementVerificationDoc;
+}
+
+export interface ModelBillingBillingStatementExpectedRevenueDoc {
+  "credits_used"?: number;
+  "currency"?: string;
+  "expected_subscription_amount_cents"?: number;
+  "expected_total_amount_cents"?: number;
+  "included_credits"?: number;
+  "overage_amount_cents"?: number;
+  "overage_credits"?: number;
+  "overage_price_per_1000"?: number;
+  "pricing_source"?: string;
+  "subscription_price_cents"?: number;
+}
+
+export interface ModelBillingBillingStatementInvoiceEventEvidenceDoc {
+  "error"?: string;
+  "event_created"?: string;
+  "event_id"?: string;
+  "event_type"?: string;
+  "match_status"?: string;
+  "processed_at"?: string;
+  "reconciliation_status"?: string;
+  "repair_attempts"?: number;
+  "repair_last_error"?: string;
+  "repair_status"?: string;
+  "stripe_invoice_id"?: string;
+  "stripe_invoice_status"?: string;
+}
+
+export interface ModelBillingBillingStatementInvoiceEvidenceDoc {
+  "amount_due_cents"?: number;
+  "amount_paid_cents"?: number;
+  "amount_remaining_cents"?: number;
+  "currency"?: string;
+  "due_date"?: string;
+  "effective_due_date"?: string;
+  "finalized_at"?: string;
+  "hosted_invoice_url"?: string;
+  "invoice_pdf"?: string;
+  "line_items"?: Array<ModelBillingStripeInvoiceLineItemDoc>;
+  "mismatch_flags"?: Array<string>;
+  "mismatch_total_cents"?: number;
+  "paid_at"?: string;
+  "period_end"?: string;
+  "period_start"?: string;
+  "reconciliation_status"?: string;
+  "repair_attempts"?: number;
+  "repair_error"?: string;
+  "repair_status"?: string;
+  "stripe_invoice_id"?: string;
+  "stripe_invoice_number"?: string;
+  "stripe_invoice_status"?: string;
+}
+
+export interface ModelBillingBillingStatementMismatchDoc {
+  "mismatch_flags"?: Array<string>;
+  "mismatch_total_cents"?: number;
+}
+
+export interface ModelBillingBillingStatementPeriodDoc {
+  "closed_at"?: string;
+  "period_end"?: string;
+  "period_key"?: string;
+  "period_start"?: string;
+  "status"?: string;
+}
+
+export interface ModelBillingBillingStatementRepairDoc {
+  "repair_attempts"?: number;
+  "repair_last_attempt_at"?: string;
+  "repair_last_error"?: string;
+  "repair_status"?: string;
+  "stripe_sync_attempts"?: number;
+  "stripe_sync_error"?: string;
+  "stripe_sync_status"?: string;
+  "stripe_synced_at"?: string;
+}
+
+export interface ModelBillingBillingStatementSnapshotMetadataDoc {
+  "canonical_json_sha256"?: string;
+  "frozen_at"?: string;
+  "generated_at"?: string;
+  "revision"?: number;
+  "snapshot_status"?: string;
+  "source_ledger_updated_at"?: string;
+  "source_snapshot_updated_at"?: string;
+  "statement_id"?: string;
+  "statement_version"?: string;
+}
+
+export interface ModelBillingBillingStatementStripeActualDoc {
+  "amount_due_cents"?: number;
+  "amount_paid_cents"?: number;
+  "amount_remaining_cents"?: number;
+  "credit_note_cents"?: number;
+  "currency"?: string;
+  "discount_cents"?: number;
+  "net_cash_cents"?: number;
+  "one_time_cents"?: number;
+  "overage_cents"?: number;
+  "proration_cents"?: number;
+  "refund_cents"?: number;
+  "snapshot_updated_at"?: string;
+  "subscription_cents"?: number;
+  "tax_cents"?: number;
+  "total_cents"?: number;
+}
+
+export interface ModelBillingBillingStatementUserDoc {
+  "email"?: string;
+  "plan"?: string;
+  "stripe_customer_id"?: string;
+  "user_id"?: string;
+  "username"?: string;
+}
+
+export interface ModelBillingBillingSummaryItemDoc {
+  "billable"?: boolean;
+  "charged_requests"?: number;
+  "credits"?: number;
+  "endpoint"?: string;
+  "failed_requests"?: number;
+  "non_billable_requests"?: number;
+  "overage"?: number;
+  "plan"?: string;
+  "requests"?: number;
+}
+
+export interface ModelBillingBillingSummaryResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingBillingSummaryItemDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeAdjustmentEventDoc {
+  "amount_cents"?: number;
+  "charge_id"?: string;
+  "currency"?: string;
+  "error"?: string;
+  "event_created"?: string;
+  "event_id"?: string;
+  "event_type"?: string;
+  "invoice_payment_ids"?: Array<string>;
+  "kind"?: string;
+  "match_status"?: string;
+  "matched_period_key"?: string;
+  "matched_stripe_invoice_id"?: string;
+  "matched_user_id"?: string;
+  "payment_intent_id"?: string;
+  "post_payment_credit_note_cents"?: number;
+  "pre_payment_credit_note_cents"?: number;
+  "processed_at"?: string;
+  "reconciliation_status"?: string;
+  "refund_cents"?: number;
+  "repair_attempts"?: number;
+  "repair_last_attempt_at"?: string;
+  "repair_last_error"?: string;
+  "repair_source"?: string;
+  "repair_status"?: string;
+  "resource_id"?: string;
+  "resource_status"?: string;
+  "stripe_customer_id"?: string;
+  "stripe_invoice_id"?: string;
+}
+
+export interface ModelBillingStripeAdjustmentEventsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingStripeAdjustmentEventDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeAdjustmentReconcileErrorDoc {
+  "error"?: string;
+  "event_id"?: string;
+  "resource_id"?: string;
+  "stripe_invoice_id"?: string;
+}
+
+export interface ModelBillingStripeAdjustmentReconcileSummaryDoc {
+  "errors"?: Array<ModelBillingStripeAdjustmentReconcileErrorDoc>;
+  "failed"?: number;
+  "matched"?: number;
+  "scanned"?: number;
+  "skipped"?: number;
+  "unmatched"?: number;
+}
+
+export interface ModelBillingStripeAdjustmentReconcileSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeAdjustmentReconcileSummaryDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeCheckoutRequestDoc {
+  "cancel_url"?: string;
+  "plan"?: string;
+  "success_url"?: string;
+}
+
+export interface ModelBillingStripeInvoiceEventDoc {
+  "amount_due"?: number;
+  "amount_paid"?: number;
+  "amount_remaining"?: number;
+  "charge_id"?: string;
+  "currency"?: string;
+  "discount_cents"?: number;
+  "due_date"?: string;
+  "error"?: string;
+  "event_created"?: string;
+  "event_id"?: string;
+  "event_type"?: string;
+  "hosted_invoice_url"?: string;
+  "invoice_payment_ids"?: Array<string>;
+  "invoice_pdf"?: string;
+  "line_items"?: Array<ModelBillingStripeInvoiceLineItemDoc>;
+  "match_status"?: string;
+  "matched_period_key"?: string;
+  "matched_user_id"?: string;
+  "payment_intent_id"?: string;
+  "period_end"?: string;
+  "period_start"?: string;
+  "post_payment_credit_note_cents"?: number;
+  "pre_payment_credit_note_cents"?: number;
+  "processed_at"?: string;
+  "reconciliation_status"?: string;
+  "repair_attempts"?: number;
+  "repair_last_attempt_at"?: string;
+  "repair_last_error"?: string;
+  "repair_source"?: string;
+  "repair_status"?: string;
+  "stripe_customer_id"?: string;
+  "stripe_invoice_id"?: string;
+  "stripe_invoice_number"?: string;
+  "stripe_invoice_status"?: string;
+  "subtotal_cents"?: number;
+  "subtotal_excluding_tax_cents"?: number;
+  "tax_cents"?: number;
+  "total_cents"?: number;
+  "total_excluding_tax_cents"?: number;
+}
+
+export interface ModelBillingStripeInvoiceEventsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingStripeInvoiceEventDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeInvoiceLineItemDoc {
+  "amount_cents"?: number;
+  "category"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "line_id"?: string;
+  "period_end"?: string;
+  "period_start"?: string;
+  "proration"?: boolean;
+  "source_ref"?: string;
+  "type"?: string;
+}
+
+export interface ModelBillingStripeInvoiceReconcileErrorDoc {
+  "error"?: string;
+  "event_id"?: string;
+  "stripe_invoice_id"?: string;
+}
+
+export interface ModelBillingStripeInvoiceReconcileSummaryDoc {
+  "errors"?: Array<ModelBillingStripeInvoiceReconcileErrorDoc>;
+  "failed"?: number;
+  "matched"?: number;
+  "scanned"?: number;
+  "skipped"?: number;
+  "unmatched"?: number;
+}
+
+export interface ModelBillingStripeInvoiceReconcileSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeInvoiceReconcileSummaryDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeInvoiceSnapshotDetailDoc {
+  "adjustment_events"?: Array<ModelBillingStripeAdjustmentEventDoc>;
+  "invoice_events"?: Array<ModelBillingStripeInvoiceEventDoc>;
+  "ledger"?: ModelBillingBillingPeriodLedgerDoc;
+  "snapshot"?: ModelBillingStripeInvoiceSnapshotDoc;
+}
+
+export interface ModelBillingStripeInvoiceSnapshotDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeInvoiceSnapshotDetailDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeInvoiceSnapshotDoc {
+  "actual_one_time_cents"?: number;
+  "actual_overage_cents"?: number;
+  "actual_proration_cents"?: number;
+  "actual_subscription_cents"?: number;
+  "amount_due_cents"?: number;
+  "amount_paid_cents"?: number;
+  "amount_remaining_cents"?: number;
+  "charge_id"?: string;
+  "created_at"?: string;
+  "currency"?: string;
+  "discount_cents"?: number;
+  "due_date"?: string;
+  "effective_due_date"?: string;
+  "expected_total_cents"?: number;
+  "finalized_at"?: string;
+  "hosted_invoice_url"?: string;
+  "invoice_payment_ids"?: Array<string>;
+  "invoice_pdf"?: string;
+  "last_event_created"?: string;
+  "last_event_id"?: string;
+  "line_items"?: Array<ModelBillingStripeInvoiceLineItemDoc>;
+  "matched_period_key"?: string;
+  "matched_user_id"?: string;
+  "mismatch_flags"?: Array<string>;
+  "mismatch_total_cents"?: number;
+  "net_cash_cents"?: number;
+  "paid_at"?: string;
+  "payment_intent_id"?: string;
+  "period_end"?: string;
+  "period_start"?: string;
+  "plan"?: string;
+  "post_payment_credit_note_cents"?: number;
+  "pre_payment_credit_note_cents"?: number;
+  "reconciliation_status"?: string;
+  "refund_cents"?: number;
+  "repair_attempts"?: number;
+  "repair_error"?: string;
+  "repair_last_attempt_at"?: string;
+  "repair_last_success_at"?: string;
+  "repair_status"?: string;
+  "stripe_customer_id"?: string;
+  "stripe_invoice_id"?: string;
+  "stripe_invoice_number"?: string;
+  "stripe_invoice_status"?: string;
+  "subtotal_cents"?: number;
+  "subtotal_excluding_tax_cents"?: number;
+  "tax_cents"?: number;
+  "total_cents"?: number;
+  "total_excluding_tax_cents"?: number;
+  "updated_at"?: string;
+}
+
+export interface ModelBillingStripeInvoiceSnapshotsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelBillingStripeInvoiceSnapshotDoc>;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeMismatchSummaryDoc {
+  "auto_repairable"?: Array<ModelBillingStripeMismatchSummaryItemDoc>;
+  "manual_review"?: Array<ModelBillingStripeMismatchSummaryItemDoc>;
+}
+
+export interface ModelBillingStripeMismatchSummaryItemDoc {
+  "actual_total_cents"?: number;
+  "delta_total_cents"?: number;
+  "expected_total_cents"?: number;
+  "invoice_count"?: number;
+  "mismatch_flag"?: string;
+}
+
+export interface ModelBillingStripeMismatchSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeMismatchSummaryDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeOverageSyncErrorDoc {
+  "error"?: string;
+  "period_key"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelBillingStripeOverageSyncSummaryDoc {
+  "ambiguous"?: number;
+  "errors"?: Array<ModelBillingStripeOverageSyncErrorDoc>;
+  "failed"?: number;
+  "not_required"?: number;
+  "scanned"?: number;
+  "skipped"?: number;
+  "synced"?: number;
+}
+
+export interface ModelBillingStripeOverageSyncSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeOverageSyncSummaryDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripePortalRequestDoc {
+  "return_url"?: string;
+}
+
+export interface ModelBillingStripeRepairBacklogBucketDoc {
+  "by_attempt_bucket"?: Array<ModelBillingStripeRepairStatusCountDoc>;
+  "by_source"?: Array<ModelBillingStripeRepairStatusCountDoc>;
+  "by_status"?: Array<ModelBillingStripeRepairStatusCountDoc>;
+  "total"?: number;
+}
+
+export interface ModelBillingStripeRepairBacklogSummaryDoc {
+  "adjustment_events"?: ModelBillingStripeRepairBacklogBucketDoc;
+  "auto_retry_exhausted_count"?: number;
+  "invoice_events"?: ModelBillingStripeRepairBacklogBucketDoc;
+  "recent_errors"?: Array<ModelBillingStripeRepairRecentErrorDoc>;
+  "snapshots"?: ModelBillingStripeRepairBacklogBucketDoc;
+}
+
+export interface ModelBillingStripeRepairBacklogSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeRepairBacklogSummaryDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeRepairErrorDoc {
+  "candidate_kind"?: string;
+  "error"?: string;
+  "event_id"?: string;
+  "invoice_id"?: string;
+  "resource_id"?: string;
+}
+
+export interface ModelBillingStripeRepairRecentErrorDoc {
+  "candidate_kind"?: string;
+  "event_id"?: string;
+  "invoice_id"?: string;
+  "repair_attempts"?: number;
+  "repair_last_attempt_at"?: string;
+  "repair_last_error"?: string;
+  "repair_status"?: string;
+  "resource_id"?: string;
+}
+
+export interface ModelBillingStripeRepairResetDoc {
+  "candidate_kind"?: string;
+  "event_id"?: string;
+  "invoice_id"?: string;
+  "previous_repair_attempts"?: number;
+  "previous_repair_status"?: string;
+  "repair_attempts"?: number;
+  "repair_source"?: string;
+  "repair_status"?: string;
+  "reset_at"?: string;
+}
+
+export interface ModelBillingStripeRepairResetRequestDoc {
+  "candidate_kind": string;
+  "event_id"?: string;
+  "invoice_id"?: string;
+}
+
+export interface ModelBillingStripeRepairResetResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeRepairResetDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeRepairStatusCountDoc {
+  "count"?: number;
+  "key"?: string;
+}
+
+export interface ModelBillingStripeRepairSummaryDoc {
+  "adjustment_repaired"?: number;
+  "errors"?: Array<ModelBillingStripeRepairErrorDoc>;
+  "failed"?: number;
+  "invoice_repaired"?: number;
+  "scanned"?: number;
+  "skipped"?: number;
+  "succeeded"?: number;
+}
+
+export interface ModelBillingStripeRepairSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeRepairSummaryDoc;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeSessionDoc {
+  "id"?: string;
+  "url"?: string;
+}
+
+export interface ModelBillingStripeSessionResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeSessionDoc;
+  "msg"?: string;
+}
+
+export interface ModelBingContextAttribute {
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelBingImageResult {
+  "height"?: number;
+  "image_url"?: string;
+  "position"?: number;
+  "source"?: string;
+  "source_url"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelBingImagesResponse {
+  "pagination"?: ModelBingSearchPagination;
+  "results"?: Array<ModelBingImageResult>;
+}
+
+export interface ModelBingNewsResponse {
+  "pagination"?: ModelBingSearchPagination;
+  "results"?: Array<ModelBingNewsResult>;
+}
+
+export interface ModelBingNewsResult {
+  "age"?: string;
+  "age_timestamp"?: number;
+  "description"?: string;
+  "position"?: number;
+  "related_count"?: number;
+  "source"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBingSearchContext {
+  "attributes"?: Array<ModelBingContextAttribute>;
+  "description"?: string;
+  "image"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBingSearchPagination {
+  "count"?: number;
+  "next_page"?: number;
+  "page"?: number;
+  "previous_page"?: number;
+}
+
+export interface ModelBingSearchResponse {
+  "context"?: ModelBingSearchContext;
+  "news"?: Array<ModelBingNewsResult>;
+  "pagination"?: ModelBingSearchPagination;
+  "people_also_ask"?: Array<string>;
+  "related_queries"?: Array<string>;
+  "results"?: Array<ModelBingSearchResult>;
+  "videos"?: Array<ModelBingVideoResult>;
+}
+
+export interface ModelBingSearchResult {
+  "age"?: string;
+  "age_timestamp"?: number;
+  "description"?: string;
+  "display_url"?: string;
+  "favicon"?: string;
+  "hostname"?: string;
+  "position"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBingSuggestResponse {
+  "query"?: string;
+  "suggestions"?: Array<ModelBingSuggestionResult>;
+}
+
+export interface ModelBingSuggestionResult {
+  "position"?: number;
+  "query"?: string;
+}
+
+export interface ModelBingVideoResult {
+  "age"?: string;
+  "age_timestamp"?: number;
+  "creator"?: string;
+  "duration"?: string;
+  "platform"?: string;
+  "position"?: number;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+  "views"?: string;
+}
+
+export interface ModelBingVideosResponse {
+  "pagination"?: ModelBingSearchPagination;
+  "results"?: Array<ModelBingVideoResult>;
+}
+
+export interface ModelBingImagesResponseDoc {
+  "code"?: number;
+  "data"?: ModelBingImagesResponse;
+  "msg"?: string;
+}
+
+export interface ModelBingNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBingNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBingSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelBingSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelBingSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelBingSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelBingVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelBingVideosResponse;
+  "msg"?: string;
+}
+
+export interface ModelBraveDiscussion {
+  "age"?: string;
+  "comment_count"?: number;
+  "description"?: string;
+  "favicon"?: string;
+  "forum"?: string;
+  "hostname"?: string;
+  "path"?: string;
+  "position"?: number;
+  "score"?: number;
+  "title"?: string;
+  "top_comment"?: string;
+  "url"?: string;
+}
+
+export interface ModelBraveImageResult {
+  "age"?: string;
+  "height"?: number;
+  "image_url"?: string;
+  "position"?: number;
+  "source"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelBraveImagesResponse {
+  "pagination"?: ModelBraveSearchPagination;
+  "results"?: Array<ModelBraveImageResult>;
+}
+
+export interface ModelBraveKnowledgeCard {
+  "category"?: string;
+  "description"?: string;
+  "image"?: string;
+  "long_description"?: string;
+  "provider"?: ModelBraveKnowledgeCardProvider;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBraveKnowledgeCardProvider {
+  "icon"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelBraveNewsResponse {
+  "pagination"?: ModelBraveSearchPagination;
+  "results"?: Array<ModelBraveNewsResult>;
+}
+
+export interface ModelBraveNewsResult {
+  "age"?: string;
+  "description"?: string;
+  "favicon"?: string;
+  "hostname"?: string;
+  "path"?: string;
+  "position"?: number;
+  "source"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBraveSearchPagination {
+  "next_offset"?: number;
+  "offset"?: number;
+  "previous_offset"?: number;
+}
+
+export interface ModelBraveSearchResponse {
+  "discussions"?: Array<ModelBraveDiscussion>;
+  "knowledge_card"?: ModelBraveKnowledgeCard;
+  "pagination"?: ModelBraveSearchPagination;
+  "related_queries"?: Array<string>;
+  "results"?: Array<ModelBraveSearchResult>;
+  "videos"?: Array<ModelBraveVideoResult>;
+}
+
+export interface ModelBraveSearchResult {
+  "age"?: string;
+  "description"?: string;
+  "favicon"?: string;
+  "hostname"?: string;
+  "path"?: string;
+  "position"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBraveSuggestResponse {
+  "query"?: string;
+  "suggestions"?: Array<ModelBraveSuggestionResult>;
+}
+
+export interface ModelBraveSuggestionResult {
+  "position"?: number;
+  "query"?: string;
+}
+
+export interface ModelBraveVideoResult {
+  "age"?: string;
+  "creator"?: string;
+  "description"?: string;
+  "duration"?: string;
+  "favicon"?: string;
+  "hostname"?: string;
+  "path"?: string;
+  "platform"?: string;
+  "position"?: number;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+  "views"?: string;
+}
+
+export interface ModelBraveVideosResponse {
+  "pagination"?: ModelBraveSearchPagination;
+  "results"?: Array<ModelBraveVideoResult>;
+}
+
+export interface ModelBraveImagesResponseDoc {
+  "code"?: number;
+  "data"?: ModelBraveImagesResponse;
+  "msg"?: string;
+}
+
+export interface ModelBraveNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBraveNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBraveSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelBraveSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelBraveSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelBraveSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelBraveVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelBraveVideosResponse;
+  "msg"?: string;
+}
+
+export interface ModelBuildinfoInfo {
+  "api"?: string;
+  "build_time"?: string;
+  "commit"?: string;
+  "commit_short"?: string;
+  "dirty"?: boolean;
+  "service"?: string;
+  "status"?: string;
+  "version"?: string;
+}
+
+export interface ModelCoingeckoAnalysisResponse {
+  "absolute_change"?: number;
+  "annotations"?: Array<Record<string, unknown>>;
+  "annotations_point_count"?: number;
+  "annotations_source_url"?: string;
+  "fetched_at"?: string;
+  "first_price"?: number;
+  "high_low_range_percent"?: number;
+  "id"?: string;
+  "last_price"?: number;
+  "max_price"?: number;
+  "min_price"?: number;
+  "percent_change"?: number;
+  "points"?: Array<ModelCoingeckoChartPoint>;
+  "points_count"?: number;
+  "range"?: string;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoCategoriesResponse {
+  "categories"?: Array<ModelCoingeckoCategoryRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoCategoryCoinRow {
+  "change_1h_percent"?: number;
+  "change_24h_percent"?: number;
+  "change_30d_percent"?: number;
+  "change_7d_percent"?: number;
+  "fully_diluted_valuation"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "market_cap"?: number;
+  "market_cap_fdv_ratio"?: number;
+  "name"?: string;
+  "price"?: number;
+  "rank"?: number;
+  "symbol"?: string;
+  "url"?: string;
+  "volume_24h"?: number;
+}
+
+export interface ModelCoingeckoCategoryCoinsResponse {
+  "coins"?: Array<ModelCoingeckoCategoryCoinRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "name"?: string;
+  "page"?: number;
+  "slug"?: string;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoCategoryRow {
+  "change_1h_percent"?: number;
+  "change_24h_percent"?: number;
+  "change_7d_percent"?: number;
+  "coin_count"?: number;
+  "id"?: string;
+  "market_cap"?: number;
+  "name"?: string;
+  "rank"?: number;
+  "slug"?: string;
+  "url"?: string;
+  "volume_24h"?: number;
+}
+
+export interface ModelCoingeckoChainDetailResponse {
+  "coins"?: Array<ModelCoingeckoCategoryCoinRow>;
+  "collections"?: Array<ModelCoingeckoNftcollectionRow>;
+  "exchanges"?: Array<ModelCoingeckoChainExchangeRow>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "limit"?: number;
+  "name"?: string;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoChainExchangeRow {
+  "id"?: string;
+  "image_url"?: string;
+  "market_share_percent"?: number;
+  "name"?: string;
+  "rank"?: number;
+  "url"?: string;
+  "volume_24h"?: number;
+  "volume_24h_text"?: string;
+}
+
+export interface ModelCoingeckoChainRow {
+  "change_24h_percent"?: number;
+  "change_30d_percent"?: number;
+  "change_7d_percent"?: number;
+  "coin_count"?: number;
+  "dominance_percent"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "rank"?: number;
+  "top_gainers"?: Array<string>;
+  "tvl"?: number;
+  "url"?: string;
+  "volume_24h"?: number;
+}
+
+export interface ModelCoingeckoChainsResponse {
+  "chains"?: Array<ModelCoingeckoChainRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoChartPoint {
+  "datetime"?: string;
+  "price"?: number;
+  "timestamp"?: number;
+}
+
+export interface ModelCoingeckoCoinResponse {
+  "categories"?: Array<string>;
+  "change_1h_percent"?: number;
+  "change_24h_percent"?: number;
+  "change_7d_percent"?: number;
+  "circulating_supply"?: number;
+  "fetched_at"?: string;
+  "fully_diluted_valuation"?: number;
+  "id"?: string;
+  "links"?: Record<string, string>;
+  "market_cap"?: number;
+  "max_supply"?: number;
+  "name"?: string;
+  "price"?: number;
+  "rank"?: number;
+  "source_url"?: string;
+  "symbol"?: string;
+  "total_supply"?: number;
+  "volume_24h"?: number;
+}
+
+export interface ModelCoingeckoExchangeDetailResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "kind"?: string;
+  "limit"?: number;
+  "markets"?: Array<ModelCoingeckoExchangeMarketRow>;
+  "name"?: string;
+  "source_url"?: string;
+  "trust_score"?: number;
+  "volume_24h"?: number;
+  "volume_24h_text"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoExchangeMarketRow {
+  "coin_id"?: string;
+  "coin_name"?: string;
+  "coin_symbol"?: string;
+  "coin_url"?: string;
+  "depth_minus_2_percent"?: number;
+  "depth_plus_2_percent"?: number;
+  "last_updated"?: string;
+  "pair"?: string;
+  "price"?: number;
+  "rank"?: number;
+  "spread_percent"?: number;
+  "volume_24h"?: number;
+  "volume_percent"?: number;
+}
+
+export interface ModelCoingeckoExchangeRow {
+  "id"?: string;
+  "image_url"?: string;
+  "kind"?: string;
+  "name"?: string;
+  "rank"?: number;
+  "trust_score"?: number;
+  "url"?: string;
+  "volume_24h"?: number;
+  "volume_24h_text"?: string;
+}
+
+export interface ModelCoingeckoExchangesResponse {
+  "exchanges"?: Array<ModelCoingeckoExchangeRow>;
+  "fetched_at"?: string;
+  "kind"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoGainerLoserRow {
+  "change_24h_percent"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "price"?: number;
+  "rank"?: number;
+  "symbol"?: string;
+  "url"?: string;
+  "volume_24h"?: number;
+}
+
+export interface ModelCoingeckoGainersLosersResponse {
+  "fetched_at"?: string;
+  "gainers"?: Array<ModelCoingeckoGainerLoserRow>;
+  "limit"?: number;
+  "losers"?: Array<ModelCoingeckoGainerLoserRow>;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoGlobalChartPoint {
+  "datetime"?: string;
+  "timestamp"?: number;
+  "value"?: number;
+}
+
+export interface ModelCoingeckoGlobalChartSeries {
+  "name"?: string;
+  "points"?: Array<ModelCoingeckoGlobalChartPoint>;
+}
+
+export interface ModelCoingeckoGlobalChartsResponse {
+  "fetched_at"?: string;
+  "kind"?: string;
+  "limit"?: number;
+  "range"?: string;
+  "series"?: Array<ModelCoingeckoGlobalChartSeries>;
+  "source_url"?: string;
+}
+
+export interface ModelCoingeckoGlobalResponse {
+  "bitcoin_dominance_percent"?: number;
+  "bitcoin_market_cap_usd"?: number;
+  "categories_tracked"?: number;
+  "coins_tracked"?: number;
+  "ethereum_dominance_percent"?: number;
+  "exchanges_tracked"?: number;
+  "fetched_at"?: string;
+  "market_cap_change_1y_percent"?: number;
+  "market_cap_change_24h_percent"?: number;
+  "market_cap_usd"?: number;
+  "source_url"?: string;
+  "stablecoin_market_cap_usd"?: number;
+  "stablecoin_share_percent"?: number;
+}
+
+export interface ModelCoingeckoLearnArticle {
+  "author"?: string;
+  "category"?: string;
+  "excerpt"?: string;
+  "image_url"?: string;
+  "published_date"?: string;
+  "rating_score"?: number;
+  "rating_text"?: string;
+  "rating_votes"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoLearnArticlesResponse {
+  "articles"?: Array<ModelCoingeckoLearnArticle>;
+  "category"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelCoingeckoMarketCoin {
+  "change_1h_percent"?: number;
+  "change_24h_percent"?: number;
+  "change_7d_percent"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "market_cap"?: number;
+  "name"?: string;
+  "price"?: number;
+  "rank"?: number;
+  "symbol"?: string;
+  "url"?: string;
+  "volume_24h"?: number;
+}
+
+export interface ModelCoingeckoMarketsResponse {
+  "coins"?: Array<ModelCoingeckoMarketCoin>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoNftcategoryResponse {
+  "collections"?: Array<ModelCoingeckoNftcollectionRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "name"?: string;
+  "page"?: number;
+  "slug"?: string;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoNftcollectionRow {
+  "chain"?: string;
+  "change_24h_percent"?: number;
+  "change_30d_percent"?: number;
+  "change_7d_percent"?: number;
+  "floor_price_native"?: number;
+  "floor_price_usd"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "market_cap_native"?: number;
+  "market_cap_usd"?: number;
+  "name"?: string;
+  "rank"?: number;
+  "sales_24h"?: number;
+  "url"?: string;
+  "volume_24h_native"?: number;
+  "volume_24h_usd"?: number;
+}
+
+export interface ModelCoingeckoNftsResponse {
+  "collections"?: Array<ModelCoingeckoNftcollectionRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoNewCoinRow {
+  "chain"?: string;
+  "change_1h_percent"?: number;
+  "change_24h_percent"?: number;
+  "fully_diluted_valuation"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "last_added"?: string;
+  "name"?: string;
+  "price"?: number;
+  "rank"?: number;
+  "symbol"?: string;
+  "url"?: string;
+  "volume_24h"?: number;
+}
+
+export interface ModelCoingeckoNewCoinsResponse {
+  "coins"?: Array<ModelCoingeckoNewCoinRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoNewsArticle {
+  "coins"?: Array<ModelCoingeckoNewsCoin>;
+  "image_url"?: string;
+  "published_text"?: string;
+  "publisher"?: string;
+  "summary"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoNewsCoin {
+  "change_percent"?: number;
+  "id"?: string;
+  "name"?: string;
+  "symbol"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoNewsResponse {
+  "articles"?: Array<ModelCoingeckoNewsArticle>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelCoingeckoSearchAssetPlatform {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoSearchCategory {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoSearchCoin {
+  "id"?: string;
+  "image_url"?: string;
+  "market_cap_rank"?: number;
+  "name"?: string;
+  "symbol"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoSearchMarket {
+  "id"?: string;
+  "name"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoSearchNftcontract {
+  "address"?: string;
+  "asset_platform_id"?: string;
+  "id"?: string;
+  "name"?: string;
+  "symbol"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoSearchPost {
+  "description"?: string;
+  "id"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoSearchResponse {
+  "asset_platforms"?: Array<ModelCoingeckoSearchAssetPlatform>;
+  "categories"?: Array<ModelCoingeckoSearchCategory>;
+  "coins"?: Array<ModelCoingeckoSearchCoin>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "markets"?: Array<ModelCoingeckoSearchMarket>;
+  "nft_contracts"?: Array<ModelCoingeckoSearchNftcontract>;
+  "posts"?: Array<ModelCoingeckoSearchPost>;
+  "query"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelCoingeckoTokenUnlockRow {
+  "change_1h_percent"?: number;
+  "change_24h_percent"?: number;
+  "change_7d_percent"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "market_cap"?: number;
+  "name"?: string;
+  "next_unlock_amount"?: number;
+  "next_unlock_percent"?: number;
+  "next_unlock_symbol"?: string;
+  "next_unlock_time_left"?: string;
+  "next_unlock_value_usd"?: number;
+  "price"?: number;
+  "rank"?: number;
+  "released_percent"?: number;
+  "symbol"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoTokenUnlocksResponse {
+  "coins"?: Array<ModelCoingeckoTokenUnlockRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelCoingeckoTreasuriesResponse {
+  "asset"?: string;
+  "entities"?: Array<ModelCoingeckoTreasuryEntityRow>;
+  "fetched_at"?: string;
+  "holder_type"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoTreasuryEntityRow {
+  "activity_30d"?: string;
+  "country"?: string;
+  "entity_type"?: string;
+  "id"?: string;
+  "mnav"?: number;
+  "name"?: string;
+  "rank"?: number;
+  "ticker"?: string;
+  "today_value_usd"?: number;
+  "top_holdings"?: string;
+  "total_cost_usd"?: number;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoTrendingCategory {
+  "change_1h_percent"?: number;
+  "change_24h_percent"?: number;
+  "change_7d_percent"?: number;
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoTrendingCoin {
+  "change_1h_percent"?: number;
+  "change_24h_percent"?: number;
+  "change_7d_percent"?: number;
+  "id"?: string;
+  "name"?: string;
+  "price"?: number;
+  "symbol"?: string;
+  "url"?: string;
+}
+
+export interface ModelCoingeckoTrendingResponse {
+  "categories"?: Array<ModelCoingeckoTrendingCategory>;
+  "coins"?: Array<ModelCoingeckoTrendingCoin>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+  "vs_currency"?: string;
+}
+
+export interface ModelCoingeckoAnalysisResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoAnalysisResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoCategoryCoinsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoCategoryCoinsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoChainDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoChainDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoChainsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoChainsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoCoinResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoCoinResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoExchangeDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoExchangeDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoExchangesResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoExchangesResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoGainersLosersResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoGainersLosersResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoGlobalChartsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoGlobalChartsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoGlobalResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoGlobalResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoLearnArticlesResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoLearnArticlesResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoMarketsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoMarketsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoNewCoinsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoNewCoinsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoNftCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoNftcategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoNftsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoNftsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoTokenUnlocksResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoTokenUnlocksResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoTreasuriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoTreasuriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelCoingeckoTrendingResponseDoc {
+  "code"?: number;
+  "data"?: ModelCoingeckoTrendingResponse;
+  "msg"?: string;
+}
+
+export interface ModelContactContact {
+  "emails"?: Array<string>;
+  "socials"?: { "facebook"?: string; "instagram"?: string; "linkedin"?: string; "tiktok"?: string; "twitter"?: string; "youtube"?: string };
+  "url"?: string;
+}
+
+export interface ModelContactContactOption {
+  "url": string;
+}
+
+export interface ModelDatasetsDatasetInfo {
+  "capabilities"?: Array<string>;
+  "description"?: string;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelDatasetsDatasetListResponse {
+  "items"?: Array<ModelDatasetsDatasetInfo>;
+}
+
+export interface ModelDatasetsGoogleBusinessFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsGoogleBusinessDatasetFacetItem>;
+}
+
+export interface ModelDatasetsGoogleBusinessSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsGoogleBusinessDatasetItem>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsGoogleMapBusinessResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsGoogleBusiness;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGoogleMapBusinessesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsGoogleBusinessFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGoogleMapBusinessesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsGoogleBusinessSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsDatasetListResponse;
+  "msg"?: string;
+}
+
+export interface ModelEbayItem {
+  "availability"?: string;
+  "condition"?: string;
+  "description"?: string;
+  "images"?: Array<string>;
+  "item_feedback_count"?: number;
+  "item_id"?: string;
+  "item_specifics"?: Record<string, string>;
+  "link"?: string;
+  "location"?: string;
+  "price"?: number;
+  "price_text"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "sale_status"?: string;
+  "seller_categories"?: Array<string>;
+  "seller_description"?: string;
+  "seller_detailed_ratings"?: Record<string, number>;
+  "seller_feedback_score"?: number;
+  "seller_followers"?: number;
+  "seller_items_sold"?: number;
+  "seller_link"?: string;
+  "seller_logo_url"?: string;
+  "seller_member_since"?: string;
+  "seller_name"?: string;
+  "seller_positive_feedback"?: number;
+  "seller_store_name"?: string;
+  "seller_total_feedback_count"?: number;
+  "shipping"?: string;
+  "title"?: string;
+}
+
+export interface ModelEbaySearchItem {
+  "bid_count"?: number;
+  "caption"?: string;
+  "image"?: string;
+  "is_authenticity_guaranteed"?: boolean;
+  "item_id"?: string;
+  "link"?: string;
+  "location"?: string;
+  "logistic"?: string;
+  "offer_note"?: string;
+  "price"?: number;
+  "price_from"?: number;
+  "price_to"?: number;
+  "rating"?: number;
+  "rating_num"?: number;
+  "seller"?: string;
+  "sold_count"?: number;
+  "sub_title"?: string;
+  "title"?: string;
+  "watcher_count"?: number;
+}
+
+export interface ModelEbaySearchOption {
+  "keyword": string;
+  "limit"?: "60" | "120" | "240";
+  "listing_type"?: "active" | "sold" | "completed" | "sold_completed";
+  "page"?: number;
+}
+
+export interface ModelEbaySearchResp {
+  "has_more"?: boolean;
+  "page"?: number;
+  "result"?: Array<ModelEbaySearchItem>;
+  "total"?: number;
+}
+
+export interface ModelEbaySeller {
+  "description"?: string;
+  "detailed_seller_ratings"?: Record<string, number>;
+  "display_name"?: string;
+  "feedback_count"?: number;
+  "feedback_summary"?: Record<string, number>;
+  "followers"?: number;
+  "items_sold"?: number;
+  "location"?: string;
+  "member_since"?: string;
+  "positive_feedback_percent"?: number;
+  "profile_url"?: string;
+  "seller"?: string;
+  "store_name"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelEbaySellerAbout {
+  "banner_url"?: string;
+  "categories"?: Array<ModelEbaySellerAboutCategory>;
+  "contact_seller_url"?: string;
+  "description"?: string;
+  "followers"?: number;
+  "items_sold"?: number;
+  "location"?: string;
+  "logo_url"?: string;
+  "member_since"?: string;
+  "positive_feedback_percent"?: number;
+  "seller"?: string;
+  "store_name"?: string;
+  "store_url"?: string;
+  "top_rated_seller"?: boolean;
+  "top_rated_seller_summary"?: string;
+}
+
+export interface ModelEbaySellerAboutCategory {
+  "name"?: string;
+  "subcategories"?: Array<ModelEbaySellerAboutSubcategory>;
+  "url"?: string;
+}
+
+export interface ModelEbaySellerAboutSubcategory {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelEbaySellerFeedback {
+  "description"?: string;
+  "detailed_seller_ratings"?: Record<string, number>;
+  "followers"?: number;
+  "has_more"?: boolean;
+  "items_sold"?: number;
+  "next_page"?: number;
+  "overall_rating_summary"?: Record<string, number>;
+  "page"?: number;
+  "per_page"?: number;
+  "positive_feedback_percent"?: number;
+  "reviews"?: Array<ModelEbaySellerReview>;
+  "seller"?: string;
+  "store_name"?: string;
+  "store_url"?: string;
+  "total_feedback_count"?: number;
+}
+
+export interface ModelEbaySellerReview {
+  "buyer"?: string;
+  "buyer_feedback"?: number;
+  "comment"?: string;
+  "period"?: string;
+  "rating"?: string;
+  "verified_purchase"?: boolean;
+}
+
+export interface ModelEbayItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbayItem;
+  "msg"?: unknown;
+}
+
+export interface ModelEbaySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbaySearchResp;
+  "msg"?: unknown;
+}
+
+export interface ModelEbaySellerAboutResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbaySellerAbout;
+  "msg"?: unknown;
+}
+
+export interface ModelEbaySellerFeedbackResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbaySellerFeedback;
+  "msg"?: unknown;
+}
+
+export interface ModelEbaySellerResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbaySeller;
+  "msg"?: unknown;
+}
+
+export interface ModelEbaySellerShopResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbaySearchResp;
+  "msg"?: unknown;
+}
+
+export interface ModelEsGeoPoint {
+  "lat"?: number;
+  "lon"?: number;
+}
+
+export interface ModelEsGoogleBusiness {
+  "address"?: string;
+  "amenities"?: Array<string>;
+  "category"?: Array<string>;
+  "city"?: string;
+  "contact"?: ModelContactContact;
+  "contact_is_updated"?: boolean;
+  "country"?: string;
+  "county"?: string;
+  "created_at"?: string;
+  "description"?: string;
+  "geo"?: ModelEsGeoPoint;
+  "geo_is_updated"?: boolean;
+  "id"?: string;
+  "image"?: string;
+  "locations"?: Array<string>;
+  "name"?: string;
+  "phone"?: string;
+  "place_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "similarweb"?: ModelSimilarwebSimilarWebResp;
+  "state"?: string;
+  "town"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+  "website"?: string;
+  "website_status"?: ModelEsWebsiteStatus;
+}
+
+export interface ModelEsGoogleBusinessDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsGoogleBusinessDatasetItem {
+  "address"?: string;
+  "amenities"?: Array<string>;
+  "category"?: Array<string>;
+  "city"?: string;
+  "contact"?: ModelContactContact;
+  "contact_is_updated"?: boolean;
+  "country"?: string;
+  "county"?: string;
+  "created_at"?: string;
+  "description"?: string;
+  "distance_m"?: number;
+  "geo"?: ModelEsGeoPoint;
+  "geo_is_updated"?: boolean;
+  "id"?: string;
+  "image"?: string;
+  "locations"?: Array<string>;
+  "name"?: string;
+  "phone"?: string;
+  "place_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "similarweb"?: ModelSimilarwebSimilarWebResp;
+  "state"?: string;
+  "town"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+  "website"?: string;
+  "website_status"?: ModelEsWebsiteStatus;
+}
+
+export interface ModelEsWebsiteStatus {
+  "checked_at"?: string;
+  "dns_resolvable"?: boolean;
+  "error"?: string;
+  "http_reachable"?: boolean;
+  "status_code"?: number;
+  "url"?: string;
+}
+
+export interface ModelFinanceAbout {
+  "about"?: string;
+  "ceo"?: string;
+  "employees"?: number;
+  "founded"?: string;
+  "headquarters"?: string;
+  "website"?: string;
+}
+
+export interface ModelFinanceBalanceSheet {
+  "cash_and_short_term_change_yy"?: number;
+  "cash_and_short_term_investments"?: number;
+  "price_to_book"?: number;
+  "quarter"?: number;
+  "return_on_assets"?: number;
+  "return_on_capital"?: number;
+  "shares_outstanding"?: number;
+  "total_assets"?: number;
+  "total_assets_change_yy"?: number;
+  "total_equity"?: number;
+  "total_liabilities"?: number;
+  "total_liabilities_change_yy"?: number;
+  "year"?: number;
+}
+
+export interface ModelFinanceCashFlow {
+  "cash_from_financing"?: number;
+  "cash_from_financing_change_yy"?: number;
+  "cash_from_investing"?: number;
+  "cash_from_investing_change_yy"?: number;
+  "cash_from_operations"?: number;
+  "cash_from_operations_change_yy"?: number;
+  "free_cash_flow"?: number;
+  "free_cash_flow_change_yy"?: number;
+  "net_change_in_cash"?: number;
+  "net_change_in_cash_change_yy"?: number;
+  "net_income"?: number;
+  "net_income_change_yy"?: number;
+  "quarter"?: number;
+  "year"?: number;
+}
+
+export interface ModelFinanceCategoryNewsResponse {
+  "category"?: string;
+  "items"?: Array<ModelFinanceFinanceArticle>;
+  "offset"?: number;
+}
+
+export interface ModelFinanceCategoryStocksResponse {
+  "category"?: string;
+  "items"?: Array<ModelFinanceInstrument>;
+  "offset"?: number;
+}
+
+export interface ModelFinanceChartResponse {
+  "instrument"?: ModelFinanceInstrument;
+  "points"?: Array<ModelFinanceTicker>;
+  "previous_close"?: number;
+  "window"?: string;
+}
+
+export interface ModelFinanceClassificationResponse {
+  "categories"?: Array<string>;
+  "instrument"?: ModelFinanceInstrument;
+}
+
+export interface ModelFinanceCompanyInfo {
+  "ceo"?: string;
+  "description"?: string;
+  "employees"?: number;
+  "fifty_two_week_high"?: number;
+  "fifty_two_week_low"?: number;
+  "headquarters"?: string;
+  "high"?: number;
+  "low"?: number;
+  "market_cap"?: number;
+  "open"?: number;
+  "pe_ratio"?: number;
+  "sector"?: string;
+  "volume"?: number;
+}
+
+export interface ModelFinanceContextResponse {
+  "items"?: Array<ModelFinanceInstrument>;
+  "query"?: string;
+}
+
+export interface ModelFinanceEarningsCalendarResponse {
+  "items"?: Array<ModelFinanceEarningsEvent>;
+}
+
+export interface ModelFinanceEarningsEvent {
+  "company_name"?: string;
+  "conference_phone"?: string;
+  "conference_url"?: string;
+  "event_time"?: string;
+  "event_unix"?: number;
+  "fiscal_period"?: string;
+  "instrument"?: ModelFinanceInstrument;
+}
+
+export interface ModelFinanceFinanceArticle {
+  "published_at"?: string;
+  "published_unix"?: number;
+  "related"?: Array<ModelFinanceInstrument>;
+  "source"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFinanceFinancialPeriod {
+  "capital_expenditure"?: number;
+  "ebitda"?: number;
+  "eps"?: number;
+  "eps_diluted"?: number;
+  "free_cash_flow"?: number;
+  "net_income"?: number;
+  "operating_cash_flow"?: number;
+  "operating_income"?: number;
+  "operating_margin"?: number;
+  "pe_ratio"?: number;
+  "period"?: string;
+  "period_end"?: string;
+  "profit_margin"?: number;
+  "revenue"?: number;
+  "revenue_growth_yoy"?: number;
+  "shares_outstanding"?: number;
+  "total_assets"?: number;
+  "total_equity"?: number;
+  "total_liabilities"?: number;
+}
+
+export interface ModelFinanceFinancialsResponse {
+  "annual"?: Array<ModelFinanceFinancialPeriod>;
+  "currency"?: string;
+  "quarterly"?: Array<ModelFinanceFinancialPeriod>;
+}
+
+export interface ModelFinanceHeadlineResponse {
+  "article"?: ModelFinanceFinanceArticle;
+}
+
+export interface ModelFinanceIncomeStatement {
+  "earnings_per_share"?: number;
+  "earnings_per_share_change_yy"?: number;
+  "ebitda"?: number;
+  "ebitda_change_yy"?: number;
+  "effective_tax_rate"?: number;
+  "net_income"?: number;
+  "net_income_change_yy"?: number;
+  "net_profit_margin"?: number;
+  "net_profit_margin_change_yy"?: number;
+  "operating_expense"?: number;
+  "operating_expense_change_yy"?: number;
+  "quarter"?: number;
+  "revenue"?: number;
+  "revenue_change_yy"?: number;
+  "year"?: number;
+}
+
+export interface ModelFinanceInstrument {
+  "after_hours"?: ModelFinancePriceChange;
+  "change"?: number;
+  "change_percent"?: number;
+  "country"?: string;
+  "currency"?: string;
+  "exchange"?: string;
+  "google_id"?: string;
+  "identifier"?: string;
+  "last_update_unix"?: number;
+  "name"?: string;
+  "previous_close"?: number;
+  "price"?: number;
+  "ticker"?: string;
+  "timezone"?: string;
+  "type"?: string;
+}
+
+export interface ModelFinanceInvestment {
+  "balance_sheet"?: Array<ModelFinanceBalanceSheet>;
+  "cash_flow"?: Array<ModelFinanceCashFlow>;
+  "income_statement"?: Array<ModelFinanceIncomeStatement>;
+}
+
+export interface ModelFinanceKeyStats {
+  "avg_volume"?: number;
+  "climate_change_score"?: string;
+  "currency"?: string;
+  "day_range"?: ModelFinanceRange;
+  "dividend_yield"?: number;
+  "market_cap"?: number;
+  "pe_ratio"?: number;
+  "previous_close"?: number;
+  "primary_exchange"?: string;
+  "tags"?: Array<string>;
+  "year_range"?: ModelFinanceRange;
+}
+
+export interface ModelFinanceMarketMoversResponse {
+  "categories"?: Array<number>;
+  "count"?: number;
+  "items"?: Array<ModelFinanceInstrument>;
+  "offset"?: number;
+}
+
+export interface ModelFinanceNews {
+  "source"?: string;
+  "time"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFinancePriceChange {
+  "change"?: number;
+  "change_percent"?: number;
+  "price"?: number;
+}
+
+export interface ModelFinanceQuoteResp {
+  "about"?: ModelFinanceAbout;
+  "investment"?: ModelFinanceInvestment;
+  "key_stats"?: ModelFinanceKeyStats;
+  "news"?: Array<ModelFinanceNews>;
+  "tickers"?: Array<ModelFinanceTicker>;
+  "title"?: string;
+}
+
+export interface ModelFinanceRange {
+  "from"?: number;
+  "to"?: number;
+}
+
+export interface ModelFinanceRelatedResponse {
+  "instrument"?: ModelFinanceInstrument;
+  "items"?: Array<ModelFinanceInstrument>;
+}
+
+export interface ModelFinanceStockData {
+  "change"?: number;
+  "company_name"?: string;
+  "currency"?: string;
+  "exchange"?: string;
+  "percentage"?: number;
+  "price"?: number;
+  "ticker"?: string;
+}
+
+export interface ModelFinanceTicker {
+  "price"?: number;
+  "time"?: string;
+  "volume"?: number;
+}
+
+export interface ModelFinanceTopStocksResponse {
+  "items"?: Array<ModelFinanceInstrument>;
+  "metric"?: number;
+  "page"?: number;
+}
+
+export interface ModelFinanceArticlesResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelFinanceFinanceArticle>;
+  "msg"?: string;
+}
+
+export interface ModelFinanceCategoryNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceCategoryNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceCategoryStocksResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceCategoryStocksResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceChartResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceChartResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceClassificationResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceClassificationResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceCompanyResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceCompanyInfo;
+  "msg"?: string;
+}
+
+export interface ModelFinanceContextResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceContextResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceEarningsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceEarningsCalendarResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceFinancialsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceFinancialsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceHeadlineResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceHeadlineResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceInstrumentsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelFinanceInstrument>;
+  "msg"?: string;
+}
+
+export interface ModelFinanceMarketMoversResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceMarketMoversResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceQuoteResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceQuoteResp;
+  "msg"?: string;
+}
+
+export interface ModelFinanceRelatedResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceRelatedResponse;
+  "msg"?: string;
+}
+
+export interface ModelFinanceSearchResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelFinanceStockData>;
+  "msg"?: string;
+}
+
+export interface ModelFinanceTickerResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelFinanceTicker>;
+  "msg"?: string;
+}
+
+export interface ModelFinanceTopStocksResponseDoc {
+  "code"?: number;
+  "data"?: ModelFinanceTopStocksResponse;
+  "msg"?: string;
+}
+
+export interface ModelGeocodingAddress {
+  "ISO3166-2-lvl4"?: string;
+  "ISO3166-2-lvl6"?: string;
+  "city"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "county"?: string;
+  "house_number"?: string;
+  "neighbourhood"?: string;
+  "office"?: string;
+  "postcode"?: string;
+  "road"?: string;
+  "state"?: string;
+  "state_district"?: string;
+  "suburb"?: string;
+  "town"?: string;
+  "village"?: string;
+}
+
+export interface ModelGeocodingLookupResponse {
+  "query"?: string;
+  "results"?: Array<ModelGeocodingPlace>;
+}
+
+export interface ModelGeocodingPlace {
+  "address"?: ModelGeocodingAddress;
+  "addresstype"?: string;
+  "boundingbox"?: Array<string>;
+  "category"?: string;
+  "display_name"?: string;
+  "extratags"?: Record<string, string>;
+  "importance"?: number;
+  "lat"?: string;
+  "licence"?: string;
+  "lon"?: string;
+  "name"?: string;
+  "namedetails"?: Record<string, string>;
+  "osm_id"?: number;
+  "osm_type"?: string;
+  "place_id"?: number;
+  "place_rank"?: number;
+  "type"?: string;
+}
+
+export interface ModelGeocodingSearchResponse {
+  "query"?: string;
+  "results"?: Array<ModelGeocodingPlace>;
+}
+
+export interface ModelGeocodingLookupResponseDoc {
+  "code"?: number;
+  "data"?: ModelGeocodingLookupResponse;
+  "msg"?: string;
+}
+
+export interface ModelGeocodingReverseResponseDoc {
+  "code"?: number;
+  "data"?: ModelGeocodingPlace;
+  "msg"?: string;
+}
+
+export interface ModelGeocodingSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelGeocodingSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoogleJobItem {
+  "company"?: string;
+  "employment"?: string;
+  "location"?: string;
+  "posted_at"?: string;
+  "snippet"?: string;
+  "source"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelGoogleJobsOption {
+  "location"?: string;
+  "page"?: number;
+  "query": string;
+}
+
+export interface ModelGoogleJobsResponse {
+  "location"?: string;
+  "page"?: number;
+  "query"?: string;
+  "results"?: Array<ModelGoogleJobItem>;
+}
+
+export interface ModelGoogleKgAttrItem {
+  "id"?: string;
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelGoogleKnowledgeGraph {
+  "attributes"?: Array<ModelGoogleKgAttrItem>;
+  "description"?: string;
+  "sub_title"?: string;
+  "title"?: string;
+  "wikipedia_link"?: string;
+}
+
+export interface ModelGoogleMapSearchOption {
+  "country"?: string;
+  "keyword"?: string;
+  "language"?: string;
+}
+
+export interface ModelGooglePeopleAlsoAskItem {
+  "answer"?: string;
+  "date"?: string;
+  "link"?: string;
+  "question"?: string;
+  "title"?: string;
+}
+
+export interface ModelGooglePlace {
+  "address"?: string;
+  "amenities"?: Array<string>;
+  "category"?: Array<string>;
+  "description"?: string;
+  "image"?: string;
+  "latitude"?: number;
+  "locations"?: Array<string>;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "place_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "url"?: string;
+  "website"?: string;
+}
+
+export interface ModelGoogleSearchItem {
+  "Snippet"?: string;
+  "icon"?: string;
+  "link"?: string;
+  "position"?: number;
+  "time"?: string;
+  "title"?: string;
+  "website_name"?: string;
+}
+
+export interface ModelGoogleSearchOption {
+  "country": string;
+  "keyword": string;
+  "language": string;
+  "limit"?: number;
+  "page"?: number;
+}
+
+export interface ModelGoogleSearchResp {
+  "knowledge_graph"?: ModelGoogleKnowledgeGraph;
+  "people_also_ask"?: Array<ModelGooglePeopleAlsoAskItem>;
+  "people_also_search_for"?: Array<string>;
+  "related_searches"?: Array<string>;
+  "result"?: Array<ModelGoogleSearchItem>;
+}
+
+export interface ModelGoogleShoppingItemDetailOption {
+  "cid"?: string;
+  "gid"?: string;
+  "oid": string;
+}
+
+export interface ModelGoogleSuggestResponse {
+  "query"?: string;
+  "suggestions"?: Array<ModelGoogleSuggestionResult>;
+}
+
+export interface ModelGoogleSuggestionResult {
+  "position"?: number;
+  "query"?: string;
+}
+
+export interface ModelGoogleMapPlaceResponseDoc {
+  "code"?: number;
+  "data"?: ModelGooglePlace;
+  "msg"?: string;
+}
+
+export interface ModelGoogleMapSearchResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelGooglePlace>;
+  "msg"?: string;
+}
+
+export interface ModelGoogleSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoogleSearchResp;
+  "msg"?: string;
+}
+
+export interface ModelGoogleSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoogleSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplayApp {
+  "ad_supported"?: boolean;
+  "android_max_version"?: string;
+  "android_version"?: string;
+  "android_version_text"?: string;
+  "app_id"?: string;
+  "available"?: boolean;
+  "categories"?: Array<ModelGoogleplayCategory>;
+  "comments"?: Array<string>;
+  "content_rating"?: string;
+  "content_rating_description"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "description_html"?: string;
+  "developer"?: string;
+  "developer_address"?: string;
+  "developer_email"?: string;
+  "developer_id"?: string;
+  "developer_internal_id"?: string;
+  "developer_legal_address"?: string;
+  "developer_legal_email"?: string;
+  "developer_legal_name"?: string;
+  "developer_legal_phone_number"?: string;
+  "developer_website"?: string;
+  "discount_end_date"?: string;
+  "early_access_enabled"?: boolean;
+  "features"?: Array<ModelGoogleplayFeature>;
+  "free"?: boolean;
+  "genre"?: string;
+  "genre_id"?: string;
+  "header_image"?: string;
+  "histogram"?: Record<string, unknown>;
+  "iap_range"?: string;
+  "icon"?: string;
+  "installs"?: string;
+  "is_available_in_play_pass"?: boolean;
+  "max_installs"?: number;
+  "min_installs"?: number;
+  "offers_iap"?: boolean;
+  "original_price"?: number;
+  "preregister"?: boolean;
+  "preview_video"?: string;
+  "price"?: number;
+  "price_text"?: string;
+  "privacy_policy"?: string;
+  "ratings"?: number;
+  "recent_changes"?: string;
+  "released"?: string;
+  "reviews"?: number;
+  "score"?: number;
+  "score_text"?: string;
+  "screenshots"?: Array<string>;
+  "summary"?: string;
+  "title"?: string;
+  "updated"?: number;
+  "url"?: string;
+  "version"?: string;
+  "video"?: string;
+  "video_image"?: string;
+}
+
+export interface ModelGoogleplayAppDetailsResponse {
+  "code"?: number;
+  "data"?: ModelGoogleplayApp;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplayCategory {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelGoogleplayDataSafetyEntry {
+  "data"?: string;
+  "optional"?: boolean;
+  "purpose"?: string;
+  "type"?: string;
+}
+
+export interface ModelGoogleplayDataSafetyResult {
+  "collected_data"?: Array<ModelGoogleplayDataSafetyEntry>;
+  "privacy_policy_url"?: string;
+  "security_practices"?: Array<ModelGoogleplaySecurityPractice>;
+  "shared_data"?: Array<ModelGoogleplayDataSafetyEntry>;
+}
+
+export interface ModelGoogleplayFeature {
+  "description"?: string;
+  "title"?: string;
+}
+
+export interface ModelGoogleplayReview {
+  "criterias"?: Array<ModelGoogleplayReviewCriteria>;
+  "date"?: string;
+  "id"?: string;
+  "reply_date"?: string;
+  "reply_text"?: string;
+  "score"?: number;
+  "score_text"?: string;
+  "text"?: string;
+  "thumbs_up"?: number;
+  "title"?: string;
+  "url"?: string;
+  "user_image"?: string;
+  "user_name"?: string;
+  "version"?: string;
+}
+
+export interface ModelGoogleplayReviewCriteria {
+  "criteria"?: string;
+  "rating"?: number;
+}
+
+export interface ModelGoogleplayReviewsResult {
+  "data"?: Array<ModelGoogleplayReview>;
+  "next_pagination_token"?: string;
+}
+
+export interface ModelGoogleplaySecurityPractice {
+  "description"?: string;
+  "practice"?: string;
+}
+
+export interface ModelGoogleplaySuggestion {
+  "term"?: string;
+}
+
+export interface ModelGoogleplayCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: Array<string>;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplayDataSafetyResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoogleplayDataSafetyResult;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplayDeveloperResultsResponseDoc {
+  "code"?: number;
+  "data"?: Array<unknown>;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplayListResultsResponseDoc {
+  "code"?: number;
+  "data"?: Array<unknown>;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplayPermissionsResultsResponseDoc {
+  "code"?: number;
+  "data"?: Array<unknown>;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplayReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoogleplayReviewsResult;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplaySearchResultsResponseDoc {
+  "code"?: number;
+  "data"?: Array<unknown>;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplaySimilarResultsResponseDoc {
+  "code"?: number;
+  "data"?: Array<unknown>;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplaySuggestResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelGoogleplaySuggestion>;
+  "msg"?: string;
+}
+
+export interface ModelInstagramBusinessAddress {
+  "city_name"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "street_address"?: string;
+  "zip_code"?: string;
+}
+
+export interface ModelInstagramCaption {
+  "text"?: string;
+  "user"?: ModelInstagramUser;
+}
+
+export interface ModelInstagramClipsMetadata {
+  "audio_type"?: string;
+  "is_shared_to_fb"?: boolean;
+  "original_sound_info"?: ModelInstagramOriginalSoundInfo;
+}
+
+export interface ModelInstagramIgartist {
+  "id"?: string;
+  "username"?: string;
+}
+
+export interface ModelInstagramIgcaption {
+  "created_at"?: number;
+  "pk"?: string;
+  "text"?: string;
+}
+
+export interface ModelInstagramIgowner {
+  "id"?: string;
+  "is_private"?: boolean;
+  "pk"?: string;
+  "profile_pic_url"?: string;
+  "username"?: string;
+}
+
+export interface ModelInstagramIguser {
+  "full_name"?: string;
+  "id"?: string;
+  "is_private"?: boolean;
+  "is_verified"?: boolean;
+  "pk"?: string;
+  "profile_pic_url"?: string;
+  "username"?: string;
+}
+
+export interface ModelInstagramImageCandidate {
+  "height"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelInstagramImageVersions {
+  "candidates"?: Array<ModelInstagramImageCandidate>;
+}
+
+export interface ModelInstagramImageVersions2 {
+  "candidates"?: Array<ModelInstagramImageCandidate>;
+}
+
+export interface ModelInstagramItem {
+  "media"?: ModelInstagramMedia;
+}
+
+export interface ModelInstagramMedia {
+  "caption"?: ModelInstagramCaption;
+  "code"?: string;
+  "comment_count"?: number;
+  "display_uri"?: string;
+  "id"?: string;
+  "image_versions2"?: ModelInstagramImageVersions;
+  "like_count"?: number;
+  "media_type"?: number;
+  "play_count"?: number;
+  "taken_at"?: number;
+}
+
+export interface ModelInstagramMediaItem {
+  "accessibility_caption"?: string;
+  "caption"?: ModelInstagramIgcaption;
+  "clips_metadata"?: ModelInstagramClipsMetadata;
+  "code"?: string;
+  "comment_count"?: number;
+  "display_uri"?: string;
+  "has_audio"?: boolean;
+  "id"?: string;
+  "image_versions2"?: ModelInstagramImageVersions2;
+  "like_count"?: number;
+  "link"?: string;
+  "media_type"?: number;
+  "original_height"?: number;
+  "original_width"?: number;
+  "owner"?: ModelInstagramIgowner;
+  "pk"?: string;
+  "product_type"?: string;
+  "taken_at"?: number;
+  "user"?: ModelInstagramIguser;
+  "video_versions"?: Array<ModelInstagramVideoVersion>;
+  "view_count"?: number;
+}
+
+export interface ModelInstagramOriginalSoundInfo {
+  "audio_asset_id"?: string;
+  "ig_artist"?: ModelInstagramIgartist;
+  "is_explicit"?: boolean;
+  "original_audio_title"?: string;
+  "should_mute_audio"?: boolean;
+}
+
+export interface ModelInstagramPagingInfo {
+  "max_id"?: string;
+  "more_available"?: boolean;
+}
+
+export interface ModelInstagramPost {
+  "caption"?: string;
+  "children"?: Array<ModelInstagramPost>;
+  "comment_count"?: number;
+  "height"?: number;
+  "id"?: string;
+  "is_video"?: boolean;
+  "like_count"?: number;
+  "media_url"?: string;
+  "product_type"?: string;
+  "shortcode"?: string;
+  "taken_at"?: string;
+  "video_url"?: string;
+  "view_count"?: number;
+  "width"?: number;
+}
+
+export interface ModelInstagramReelResponse {
+  "items"?: Array<ModelInstagramItem>;
+  "paging_info"?: ModelInstagramPagingInfo;
+}
+
+export interface ModelInstagramRelatedProfile {
+  "full_name"?: string;
+  "id"?: string;
+  "is_private"?: boolean;
+  "is_verified"?: boolean;
+  "profile_pic_url"?: string;
+  "username"?: string;
+}
+
+export interface ModelInstagramUser {
+  "full_name"?: string;
+  "id"?: string;
+  "username"?: string;
+}
+
+export interface ModelInstagramUserProfile {
+  "bio_links"?: Array<string>;
+  "biography"?: string;
+  "category_name"?: string;
+  "external_url"?: string;
+  "fbid"?: string;
+  "followers_count"?: number;
+  "following_count"?: number;
+  "full_name"?: string;
+  "id"?: string;
+  "is_private"?: boolean;
+  "is_verified"?: boolean;
+  "location"?: ModelInstagramBusinessAddress;
+  "posts"?: Array<ModelInstagramPost>;
+  "posts_count"?: number;
+  "profile_pic_url"?: string;
+  "related_profiles"?: Array<ModelInstagramRelatedProfile>;
+  "username"?: string;
+}
+
+export interface ModelInstagramVideoVersion {
+  "height"?: number;
+  "type"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelInstagramPostResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstagramMediaItem;
+  "msg"?: string;
+}
+
+export interface ModelInstagramProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstagramUserProfile;
+  "msg"?: string;
+}
+
+export interface ModelInstagramReelsResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstagramReelResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchAgeCertification {
+  "technical_name"?: string;
+}
+
+export interface ModelJustwatchAgeCertificationsResponse {
+  "age_certifications"?: Array<ModelJustwatchAgeCertification>;
+  "country"?: string;
+}
+
+export interface ModelJustwatchAnalysisResponse {
+  "summary"?: ModelJustwatchAnalysisSummary;
+  "title"?: ModelJustwatchTitleResponse;
+}
+
+export interface ModelJustwatchAnalysisSummary {
+  "available"?: boolean;
+  "best_buy"?: ModelJustwatchOffer;
+  "best_free"?: ModelJustwatchOffer;
+  "best_rent"?: ModelJustwatchOffer;
+  "best_subscription"?: ModelJustwatchOffer;
+  "format_counts"?: Record<string, number>;
+  "monetization_counts"?: Record<string, number>;
+  "price_ranges"?: Record<string, ModelJustwatchPriceRange>;
+  "provider_count"?: number;
+  "total_offers"?: number;
+}
+
+export interface ModelJustwatchBackdrop {
+  "url"?: string;
+}
+
+export interface ModelJustwatchClip {
+  "external_id"?: string;
+  "provider"?: string;
+  "url"?: string;
+}
+
+export interface ModelJustwatchCredit {
+  "character_name"?: string;
+  "name"?: string;
+  "person_id"?: number;
+  "role"?: string;
+}
+
+export interface ModelJustwatchDiscoverResponse {
+  "country"?: string;
+  "genres"?: Array<string>;
+  "language"?: string;
+  "monetization_types"?: Array<string>;
+  "providers"?: Array<string>;
+  "results"?: Array<ModelJustwatchSearchTitle>;
+  "type"?: string;
+  "year_max"?: number;
+  "year_min"?: number;
+}
+
+export interface ModelJustwatchEpisodeByIdresponse {
+  "country"?: string;
+  "episode"?: ModelJustwatchEpisodeSummary;
+  "language"?: string;
+}
+
+export interface ModelJustwatchEpisodeCountryOffers {
+  "country"?: string;
+  "episode"?: ModelJustwatchEpisodeSummary;
+  "offers"?: Array<ModelJustwatchOffer>;
+}
+
+export interface ModelJustwatchEpisodeOffersResponse {
+  "countries"?: Array<ModelJustwatchEpisodeCountryOffers>;
+  "id"?: string;
+  "language"?: string;
+}
+
+export interface ModelJustwatchEpisodeSummary {
+  "description"?: string;
+  "episode_number"?: number;
+  "id"?: string;
+  "object_id"?: number;
+  "object_type"?: string;
+  "offers"?: Array<ModelJustwatchOffer>;
+  "path"?: string;
+  "poster_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "year"?: number;
+}
+
+export interface ModelJustwatchGenre {
+  "short_name"?: string;
+  "translation"?: string;
+}
+
+export interface ModelJustwatchGenreTitlesResponse {
+  "country"?: string;
+  "genre"?: string;
+  "language"?: string;
+  "results"?: Array<ModelJustwatchSearchTitle>;
+  "type"?: string;
+}
+
+export interface ModelJustwatchGenresResponse {
+  "genres"?: Array<ModelJustwatchGenre>;
+  "language"?: string;
+}
+
+export interface ModelJustwatchMonetizationTitlesResponse {
+  "country"?: string;
+  "language"?: string;
+  "monetization_type"?: string;
+  "results"?: Array<ModelJustwatchSearchTitle>;
+  "type"?: string;
+}
+
+export interface ModelJustwatchNewTitlesResponse {
+  "country"?: string;
+  "language"?: string;
+  "results"?: Array<ModelJustwatchSearchTitle>;
+  "type"?: string;
+}
+
+export interface ModelJustwatchOffer {
+  "availability"?: string;
+  "category"?: string;
+  "currency"?: string;
+  "monetization_type"?: string;
+  "presentation_type"?: string;
+  "price"?: number;
+  "provider"?: string;
+  "provider_id"?: number;
+  "provider_short"?: string;
+  "provider_technical"?: string;
+  "url"?: string;
+}
+
+export interface ModelJustwatchPopularResponse {
+  "country"?: string;
+  "language"?: string;
+  "results"?: Array<ModelJustwatchSearchTitle>;
+  "type"?: string;
+}
+
+export interface ModelJustwatchPriceRange {
+  "currency"?: string;
+  "max"?: number;
+  "min"?: number;
+}
+
+export interface ModelJustwatchProvider {
+  "clear_name"?: string;
+  "icon_url"?: string;
+  "id"?: number;
+  "short_name"?: string;
+  "technical_name"?: string;
+}
+
+export interface ModelJustwatchProviderTitlesResponse {
+  "country"?: string;
+  "language"?: string;
+  "provider"?: string;
+  "results"?: Array<ModelJustwatchSearchTitle>;
+  "type"?: string;
+}
+
+export interface ModelJustwatchProvidersResponse {
+  "country"?: string;
+  "providers"?: Array<ModelJustwatchProvider>;
+}
+
+export interface ModelJustwatchScoring {
+  "best_rating"?: string;
+  "certified_fresh"?: boolean;
+  "imdb_score"?: number;
+  "imdb_votes"?: number;
+  "justwatch_rating"?: number;
+  "rating_count"?: number;
+  "tmdb_popularity"?: number;
+  "tmdb_score"?: number;
+  "tomato_meter"?: number;
+}
+
+export interface ModelJustwatchSearchResponse {
+  "country"?: string;
+  "language"?: string;
+  "query"?: string;
+  "results"?: Array<ModelJustwatchSearchTitle>;
+}
+
+export interface ModelJustwatchSearchTitle {
+  "id"?: string;
+  "object_id"?: number;
+  "object_type"?: string;
+  "offers"?: Array<ModelJustwatchOffer>;
+  "path"?: string;
+  "poster_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "year"?: number;
+}
+
+export interface ModelJustwatchSeasonByIdresponse {
+  "country"?: string;
+  "language"?: string;
+  "season"?: ModelJustwatchSeasonSummary;
+}
+
+export interface ModelJustwatchSeasonEpisodesResponse {
+  "country"?: string;
+  "episodes"?: Array<ModelJustwatchEpisodeSummary>;
+  "language"?: string;
+  "season"?: ModelJustwatchSeasonSummary;
+}
+
+export interface ModelJustwatchSeasonSummary {
+  "description"?: string;
+  "id"?: string;
+  "object_id"?: number;
+  "object_type"?: string;
+  "path"?: string;
+  "poster_url"?: string;
+  "season_number"?: number;
+  "title"?: string;
+  "url"?: string;
+  "year"?: number;
+}
+
+export interface ModelJustwatchShowSeasonsResponse {
+  "country"?: string;
+  "language"?: string;
+  "seasons"?: Array<ModelJustwatchSeasonSummary>;
+  "show"?: ModelJustwatchTitleResponse;
+}
+
+export interface ModelJustwatchSimilarTitlesResponse {
+  "country"?: string;
+  "id"?: string;
+  "language"?: string;
+  "results"?: Array<ModelJustwatchSearchTitle>;
+}
+
+export interface ModelJustwatchTitleCountryOffers {
+  "country"?: string;
+  "offers"?: Array<ModelJustwatchOffer>;
+  "title"?: ModelJustwatchTitleResponse;
+}
+
+export interface ModelJustwatchTitleMediaResponse {
+  "backdrops"?: Array<ModelJustwatchBackdrop>;
+  "clips"?: Array<ModelJustwatchClip>;
+  "country"?: string;
+  "credits"?: Array<ModelJustwatchCredit>;
+  "id"?: string;
+  "language"?: string;
+  "title"?: string;
+}
+
+export interface ModelJustwatchTitleOffersResponse {
+  "countries"?: Array<ModelJustwatchTitleCountryOffers>;
+  "id"?: string;
+  "language"?: string;
+}
+
+export interface ModelJustwatchTitleResponse {
+  "content_rating"?: string;
+  "description"?: string;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "object_id"?: number;
+  "object_type"?: string;
+  "offers"?: Array<ModelJustwatchOffer>;
+  "path"?: string;
+  "poster_url"?: string;
+  "release_date"?: string;
+  "runtime"?: string;
+  "scoring"?: ModelJustwatchScoring;
+  "title"?: string;
+  "url"?: string;
+  "year"?: number;
+}
+
+export interface ModelJustwatchAgeCertificationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchAgeCertificationsResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchAnalysisResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchAnalysisResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchDiscoverResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchDiscoverResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchEpisodeByIdresponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchEpisodeByIdresponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchEpisodeOffersResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchEpisodeOffersResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchGenreTitlesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchGenreTitlesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchGenresResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchGenresResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchMonetizationTitlesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchMonetizationTitlesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchNewTitlesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchNewTitlesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchPopularResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchPopularResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchProviderTitlesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchProviderTitlesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchProvidersResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchProvidersResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchSeasonByIdresponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchSeasonByIdresponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchSeasonEpisodesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchSeasonEpisodesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchShowSeasonsResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchShowSeasonsResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchSimilarTitlesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchSimilarTitlesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchTitleMediaResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchTitleMediaResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchTitleOffersResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchTitleOffersResponse;
+  "msg"?: string;
+}
+
+export interface ModelJustwatchTitleResponseDoc {
+  "code"?: number;
+  "data"?: ModelJustwatchTitleResponse;
+  "msg"?: string;
+}
+
+export interface ModelLinkedinCustomer {
+  "follower_count"?: number;
+  "industry"?: string;
+  "link"?: string;
+  "logo"?: string;
+  "name"?: string;
+}
+
+export interface ModelLinkedinLinkedinCompanyResponse {
+  "about"?: string;
+  "affiliated_pages"?: Array<ModelLinkedinPage>;
+  "company_size"?: string;
+  "follower_count"?: number;
+  "founded_on"?: number;
+  "headline"?: string;
+  "headquarters"?: string;
+  "industry"?: string;
+  "link"?: string;
+  "locations"?: Array<ModelLinkedinLocation>;
+  "logo"?: string;
+  "name"?: string;
+  "num_of_employees_on_linkedin"?: number;
+  "similar_pages"?: Array<ModelLinkedinPage>;
+  "specialties"?: string;
+  "type"?: string;
+  "updates"?: Array<ModelLinkedinUpdate>;
+  "website"?: string;
+}
+
+export interface ModelLinkedinLinkedinProductResponse {
+  "about"?: string;
+  "category_link"?: string;
+  "category_name"?: string;
+  "cover_image"?: string;
+  "external_link"?: string;
+  "featured_customers"?: Array<ModelLinkedinCustomer>;
+  "link"?: string;
+  "logo"?: string;
+  "medias"?: Array<ModelLinkedinMedia>;
+  "name"?: string;
+  "organization_link"?: string;
+  "organization_name"?: string;
+  "other_products"?: Array<ModelLinkedinProduct>;
+  "similar_products"?: Array<ModelLinkedinProduct>;
+}
+
+export interface ModelLinkedinLocation {
+  "address"?: string;
+  "is_primary"?: boolean;
+}
+
+export interface ModelLinkedinMedia {
+  "link"?: string;
+  "name"?: string;
+}
+
+export interface ModelLinkedinPage {
+  "address"?: string;
+  "industry"?: string;
+  "link"?: string;
+  "name"?: string;
+}
+
+export interface ModelLinkedinProduct {
+  "category_link"?: string;
+  "category_name"?: string;
+  "link"?: string;
+  "logo"?: string;
+  "name"?: string;
+}
+
+export interface ModelLinkedinUpdate {
+  "author"?: string;
+  "author_link"?: string;
+  "images"?: Array<string>;
+  "is_reposted"?: boolean;
+  "logo"?: string;
+  "num_of_comments"?: number;
+  "num_of_reactions"?: number;
+  "post_link"?: string;
+  "published_at"?: string;
+  "summary"?: string;
+  "videos"?: Array<string>;
+}
+
+export interface ModelLinkedinCompanyResponseDoc {
+  "code"?: number;
+  "data"?: ModelLinkedinLinkedinCompanyResponse;
+  "msg"?: string;
+}
+
+export interface ModelLinkedinProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelLinkedinLinkedinProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelLinkedinShowcaseResponseDoc {
+  "code"?: number;
+  "data"?: ModelLinkedinLinkedinCompanyResponse;
+  "msg"?: string;
+}
+
+export interface ModelPopularTrendCountryIndustryMeta {
+  "country"?: Array<ModelPopularTrendCountryIndustryMetaItem>;
+  "industry"?: Array<ModelPopularTrendCountryIndustryMetaItem>;
+}
+
+export interface ModelPopularTrendCountryIndustryMetaItem {
+  "id"?: string;
+  "value"?: string;
+}
+
+export interface ModelPopularTrendCreatorTrendResp {
+  "code"?: number;
+  "data"?: { "creators"?: Array<{ "avatar_url"?: string; "country_code"?: string; "follower_cnt"?: number; "items"?: Array<{ "cover_url"?: string; "create_time"?: number; "item_id"?: string; "liked_cnt"?: number; "tt_link"?: string; "vv"?: number }>; "liked_cnt"?: number; "nick_name"?: string; "tcm_id"?: string; "tcm_link"?: string; "tt_link"?: string; "user_id"?: string }>; "pagination"?: { "has_more"?: boolean; "page"?: number; "size"?: number; "total"?: number } };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsAnalysisPoint {
+  "second"?: number;
+  "value"?: number;
+}
+
+export interface ModelPopularTrendTopAdsAnalysisResp {
+  "code"?: number;
+  "data"?: { "analysis"?: Array<ModelPopularTrendTopAdsAnalysisPoint>; "duration"?: number; "highlight"?: Array<number>; "metric"?: string; "metric_label"?: string; "percentile"?: number; "percentile_data"?: Record<string, number>; "percentile_metric"?: string; "period_type"?: number };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsDetailResp {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsMaterial;
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsFilterItem {
+  "has_conversion"?: boolean;
+  "id"?: Record<string, unknown>;
+  "label"?: string;
+  "parent_id"?: Record<string, unknown>;
+  "value"?: string;
+}
+
+export interface ModelPopularTrendTopAdsFiltersResp {
+  "code"?: number;
+  "data"?: { "ad_format"?: Array<ModelPopularTrendTopAdsFilterItem>; "ad_language"?: Array<ModelPopularTrendTopAdsFilterItem>; "analysis_metric"?: Array<ModelPopularTrendTopAdsFilterItem>; "country"?: Array<ModelPopularTrendTopAdsFilterItem>; "duration"?: Array<ModelPopularTrendTopAdsFilterItem>; "industry"?: Array<ModelPopularTrendTopAdsFilterItem>; "like"?: Array<ModelPopularTrendTopAdsFilterItem>; "objective"?: Array<ModelPopularTrendTopAdsFilterItem>; "order_by"?: Array<ModelPopularTrendTopAdsFilterItem>; "pattern_label"?: Array<ModelPopularTrendTopAdsFilterItem>; "period"?: Array<ModelPopularTrendTopAdsFilterItem> };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsListResp {
+  "code"?: number;
+  "data"?: { "materials"?: Array<ModelPopularTrendTopAdsMaterial>; "pagination"?: ModelPopularTrendTopAdsPagination };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsLocationInfoResp {
+  "code"?: number;
+  "data"?: { "first_industry"?: Record<string, unknown>; "initial_country"?: Array<string>; "l1_industry"?: number; "l2_industry"?: number; "second_industry"?: Record<string, unknown> };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsLocationsResp {
+  "code"?: number;
+  "data"?: { "country"?: Array<ModelPopularTrendTopAdsFilterItem> };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsMaterial {
+  "ad_title"?: string;
+  "brand_name"?: string;
+  "comment"?: number;
+  "cost"?: number;
+  "country_code"?: Array<string>;
+  "ctr"?: number;
+  "favorite"?: boolean;
+  "has_summary"?: boolean;
+  "highlight"?: string;
+  "highlight_text"?: string;
+  "id"?: string;
+  "industry_key"?: string;
+  "is_search"?: boolean;
+  "keyword_list"?: Array<string>;
+  "landing_page"?: string;
+  "like"?: number;
+  "objective_key"?: string;
+  "objectives"?: Array<ModelPopularTrendTopAdsFilterItem>;
+  "pattern_label"?: Array<ModelPopularTrendTopAdsFilterItem>;
+  "share"?: number;
+  "source"?: string;
+  "source_key"?: number;
+  "video_info"?: ModelPopularTrendTopAdsVideoInfo;
+  "voice_over"?: boolean;
+}
+
+export interface ModelPopularTrendTopAdsPagination {
+  "has_more"?: boolean;
+  "page"?: number;
+  "size"?: number;
+  "total"?: number;
+  "total_count"?: number;
+}
+
+export interface ModelPopularTrendTopAdsRecommendResp {
+  "code"?: number;
+  "data"?: { "materials"?: Array<ModelPopularTrendTopAdsMaterial> };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsSafetyResp {
+  "code"?: number;
+  "data"?: { "cc_banner_key"?: string; "creator_search"?: number; "hashtag_search"?: number; "keyword_search"?: number; "sound_search"?: number; "top_ads_search"?: number };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsSpotlightResp {
+  "code"?: number;
+  "data"?: { "materials"?: Array<ModelPopularTrendTopAdsMaterial>; "pagination"?: ModelPopularTrendTopAdsPagination };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsSuggestionsResp {
+  "code"?: number;
+  "data"?: { "query"?: Array<string> };
+  "msg"?: string;
+  "request_id"?: string;
+}
+
+export interface ModelPopularTrendTopAdsVideoInfo {
+  "cover"?: string;
+  "duration"?: number;
+  "height"?: number;
+  "vid"?: string;
+  "video_url"?: Record<string, string>;
+  "width"?: number;
+}
+
+export interface ModelPopulartrendCountryIndustryMetaResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendCountryIndustryMeta;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendCreatorTrendResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendCreatorTrendResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsAnalysisResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsAnalysisResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsDetailResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsFiltersResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsListResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsLocationInfoResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsLocationInfoResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsLocationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsLocationsResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsRecommendResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsRecommendResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsSafetyResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsSafetyResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsSpotlightResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsSpotlightResp;
+  "msg"?: string;
+}
+
+export interface ModelPopulartrendTopAdsSuggestionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPopularTrendTopAdsSuggestionsResp;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntLeaderboardAdItem {
+  "channel_kind"?: string;
+  "id"?: string;
+  "large_asset_uuid"?: string;
+  "name"?: string;
+  "post"?: ModelProducthuntLeaderboardAdPost;
+  "small_asset_uuid"?: string;
+  "subject"?: string;
+  "tagline"?: string;
+  "thumbnail_uuid"?: string;
+  "url"?: string;
+  "variation_id"?: string;
+}
+
+export interface ModelProducthuntLeaderboardAdPost {
+  "comments_count"?: number;
+  "created_at"?: string;
+  "disabled_when_scheduled"?: boolean;
+  "embargo_preview_at"?: string;
+  "featured_at"?: string;
+  "featured_comment"?: ModelProducthuntProductCategoryAdComment;
+  "has_voted"?: boolean;
+  "hide_votes_count"?: boolean;
+  "id"?: string;
+  "latest_score"?: number;
+  "launch_day_score"?: number;
+  "name"?: string;
+  "product"?: ModelProducthuntLeaderboardProductRef;
+  "randomization_status"?: ModelProducthuntLeaderboardRandomizationStatus;
+  "slug"?: string;
+  "topics"?: Array<ModelProducthuntLeaderboardTopic>;
+  "updated_at"?: string;
+}
+
+export interface ModelProducthuntLeaderboardGhostItem {
+  "id"?: string;
+  "subject"?: string;
+}
+
+export interface ModelProducthuntLeaderboardItem {
+  "ad"?: ModelProducthuntLeaderboardAdItem;
+  "ghost_ad"?: ModelProducthuntLeaderboardGhostItem;
+  "post"?: ModelProducthuntLeaderboardPostItem;
+  "type"?: string;
+}
+
+export interface ModelProducthuntLeaderboardPage {
+  "connection"?: string;
+  "day"?: number;
+  "end_cursor"?: string;
+  "featured"?: boolean;
+  "golden_kitty_years"?: Array<number>;
+  "has_next_page"?: boolean;
+  "items"?: Array<ModelProducthuntLeaderboardItem>;
+  "month"?: number;
+  "order"?: string;
+  "raw_page_info"?: Record<string, unknown>;
+  "scope"?: string;
+  "total_count"?: number;
+  "week"?: number;
+  "year"?: number;
+}
+
+export interface ModelProducthuntLeaderboardPostItem {
+  "comments_count"?: number;
+  "created_at"?: string;
+  "daily_rank"?: number;
+  "disabled_when_scheduled"?: boolean;
+  "embargo_preview_at"?: string;
+  "featured_at"?: string;
+  "friend_voters_count"?: number;
+  "has_voted"?: boolean;
+  "hide_votes_count"?: boolean;
+  "id"?: string;
+  "is_subscribed"?: boolean;
+  "latest_score"?: number;
+  "launch_day_score"?: number;
+  "monthly_rank"?: number;
+  "name"?: string;
+  "product"?: ModelProducthuntLeaderboardProductRef;
+  "product_state"?: string;
+  "randomization_status"?: ModelProducthuntLeaderboardRandomizationStatus;
+  "scheduled_at"?: string;
+  "shortened_url"?: string;
+  "slug"?: string;
+  "tagline"?: string;
+  "thumbnail_image_uuid"?: string;
+  "topics"?: Array<ModelProducthuntLeaderboardTopic>;
+  "updated_at"?: string;
+  "weekly_rank"?: number;
+}
+
+export interface ModelProducthuntLeaderboardProductRef {
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "is_subscribed"?: boolean;
+  "is_top_product"?: boolean;
+  "logo_uuid"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelProducthuntLeaderboardRandomizationStatus {
+  "active"?: boolean;
+  "next_transition_at"?: string;
+  "random_day"?: boolean;
+  "randomize_order"?: boolean;
+}
+
+export interface ModelProducthuntLeaderboardTopic {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelProducthuntProduct {
+  "categories"?: Array<string>;
+  "daily_rank"?: number;
+  "date_published"?: string;
+  "description"?: string;
+  "followers_count"?: number;
+  "id"?: string;
+  "monthly_rank"?: number;
+  "name"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "similar_products"?: Array<ModelProducthuntSimilarProduct>;
+  "social_links"?: Array<string>;
+  "tagline"?: string;
+  "website"?: string;
+  "weekly_rank"?: number;
+}
+
+export interface ModelProducthuntProductAboutAd {
+  "channel_kind"?: string;
+  "id"?: string;
+  "large_asset_uuid"?: string;
+  "name"?: string;
+  "small_asset_uuid"?: string;
+  "subject"?: string;
+  "tagline"?: string;
+  "thumbnail_uuid"?: string;
+  "url"?: string;
+  "variation_id"?: string;
+}
+
+export interface ModelProducthuntProductAboutDiscussionForum {
+  "id"?: string;
+  "path"?: string;
+  "threads"?: Array<ModelProducthuntProductAboutDiscussionThread>;
+  "total_count"?: number;
+}
+
+export interface ModelProducthuntProductAboutDiscussionThread {
+  "commentable_id"?: string;
+  "comments_count"?: number;
+  "created_at"?: string;
+  "description_preview"?: string;
+  "forum"?: ModelProducthuntProductAboutForumRef;
+  "has_voted"?: boolean;
+  "id"?: string;
+  "is_featured"?: boolean;
+  "is_pinned"?: boolean;
+  "path"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "user"?: ModelProducthuntProductCategoryUser;
+  "votes_count"?: number;
+}
+
+export interface ModelProducthuntProductAboutForumRef {
+  "id"?: string;
+  "path"?: string;
+  "slug"?: string;
+  "subject"?: ModelProducthuntProductAboutForumSubject;
+}
+
+export interface ModelProducthuntProductAboutForumSubject {
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "logo_uuid"?: string;
+  "name"?: string;
+}
+
+export interface ModelProducthuntProductAboutGhostAd {
+  "id"?: string;
+  "subject"?: string;
+}
+
+export interface ModelProducthuntProductAboutLatestLaunch {
+  "id"?: string;
+  "is_maker"?: boolean;
+  "launch_number"?: number;
+  "launched_this_week"?: boolean;
+  "launching_today"?: boolean;
+  "name"?: string;
+  "product_state"?: string;
+  "scheduled_at"?: string;
+  "slug"?: string;
+  "tagline"?: string;
+  "thumbnail_image_uuid"?: string;
+}
+
+export interface ModelProducthuntProductAboutLaunch {
+  "ad1"?: ModelProducthuntProductAboutGhostAd;
+  "ad2"?: ModelProducthuntProductAboutGhostAd;
+  "badges"?: Array<ModelProducthuntProductCategoryListBadge>;
+  "can_deputy_manage"?: boolean;
+  "can_manage"?: boolean;
+  "comments_count"?: number;
+  "created_at"?: string;
+  "daily_rank"?: number;
+  "description"?: string;
+  "detailed_reviews"?: Array<ModelProducthuntProductAboutShoutout>;
+  "disabled_when_scheduled"?: boolean;
+  "embargo_preview_at"?: string;
+  "featured"?: boolean;
+  "featured_at"?: string;
+  "has_voted"?: boolean;
+  "hide_votes_count"?: boolean;
+  "id"?: string;
+  "is_archived"?: boolean;
+  "is_available"?: boolean;
+  "is_hunter"?: boolean;
+  "is_maker"?: boolean;
+  "is_top_launch"?: boolean;
+  "latest_score"?: number;
+  "launch_day_score"?: number;
+  "launch_number"?: number;
+  "launch_state"?: string;
+  "launched_this_week"?: boolean;
+  "launching_today"?: boolean;
+  "links"?: Array<ModelProducthuntProductAboutLink>;
+  "makers"?: Array<ModelProducthuntProductAboutUser>;
+  "media"?: Array<ModelProducthuntProductAboutMedia>;
+  "meta"?: ModelProducthuntProductAboutMeta;
+  "moderation_reason"?: string;
+  "name"?: string;
+  "pricing_type"?: string;
+  "primary_link"?: ModelProducthuntProductAboutPrimaryLink;
+  "product"?: ModelProducthuntProductAboutLaunchProduct;
+  "product_state"?: string;
+  "promo"?: Record<string, unknown>;
+  "redirect_to_product"?: ModelProducthuntLeaderboardProductRef;
+  "scheduled_at"?: string;
+  "slug"?: string;
+  "tagline"?: string;
+  "thumbnail_image_uuid"?: string;
+  "topics"?: Array<ModelProducthuntProductCategoryRef>;
+  "trashed_at"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+  "user"?: ModelProducthuntProductAboutUser;
+  "weekly_rank"?: number;
+}
+
+export interface ModelProducthuntProductAboutLaunchFlags {
+  "id"?: string;
+  "launched_this_week"?: boolean;
+  "launching_today"?: boolean;
+}
+
+export interface ModelProducthuntProductAboutLaunchProduct {
+  "can_claim"?: boolean;
+  "can_edit"?: boolean;
+  "clean_url"?: string;
+  "detailed_review"?: Record<string, unknown>;
+  "first_launch"?: boolean;
+  "id"?: string;
+  "is_claimed"?: boolean;
+  "is_no_longer_online"?: boolean;
+  "is_subscribed"?: boolean;
+  "is_top_product"?: boolean;
+  "is_viewer_team_member"?: Record<string, unknown>;
+  "latest_launch"?: ModelProducthuntProductAboutLaunchFlags;
+  "logo_uuid"?: string;
+  "name"?: string;
+  "posts_count"?: number;
+  "pro_con_tags"?: Array<ModelProducthuntProductDetailedReviewTag>;
+  "review_questions"?: Array<ModelProducthuntProductAboutReviewQuestion>;
+  "reviews_rating"?: number;
+  "slug"?: string;
+  "tagline"?: string;
+  "viewer_pending_team_request"?: Record<string, unknown>;
+  "website_domain"?: string;
+  "website_url"?: string;
+}
+
+export interface ModelProducthuntProductAboutLink {
+  "devices"?: Array<string>;
+  "id"?: string;
+  "redirect_path"?: string;
+  "store_name"?: string;
+  "website_name"?: string;
+}
+
+export interface ModelProducthuntProductAboutMedia {
+  "id"?: string;
+  "image_uuid"?: string;
+  "interactive_demo_id"?: string;
+  "interactive_demo_type"?: string;
+  "media_type"?: string;
+  "original_height"?: number;
+  "original_width"?: number;
+  "platform"?: string;
+  "thumbnail_height"?: number;
+  "thumbnail_width"?: number;
+  "url"?: string;
+  "video_id"?: string;
+}
+
+export interface ModelProducthuntProductAboutMentionedProduct {
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "logo_uuid"?: string;
+  "name"?: string;
+  "path"?: string;
+  "slug"?: string;
+  "tagline"?: string;
+}
+
+export interface ModelProducthuntProductAboutMeta {
+  "title"?: string;
+}
+
+export interface ModelProducthuntProductAboutPage {
+  "ad"?: ModelProducthuntProductAboutAd;
+  "launch"?: ModelProducthuntProductAboutLaunch;
+  "page_variant_typename"?: string;
+  "product"?: ModelProducthuntProductAboutProduct;
+  "product_id"?: string;
+  "viewer"?: ModelProducthuntProductAboutViewer;
+}
+
+export interface ModelProducthuntProductAboutPageVariant {
+  "launch_id"?: string;
+  "typename"?: string;
+}
+
+export interface ModelProducthuntProductAboutPost {
+  "badges"?: Array<ModelProducthuntProductCategoryListBadge>;
+  "comments_count"?: number;
+  "created_at"?: string;
+  "daily_rank"?: number;
+  "disabled_when_scheduled"?: boolean;
+  "embargo_preview_at"?: string;
+  "featured_at"?: string;
+  "has_voted"?: boolean;
+  "hide_votes_count"?: boolean;
+  "id"?: string;
+  "latest_score"?: number;
+  "launch_day_score"?: number;
+  "monthly_rank"?: number;
+  "name"?: string;
+  "product"?: ModelProducthuntLeaderboardProductRef;
+  "product_state"?: string;
+  "randomization_status"?: ModelProducthuntLeaderboardRandomizationStatus;
+  "redirect_to_product"?: ModelProducthuntLeaderboardProductRef;
+  "shortened_url"?: string;
+  "slug"?: string;
+  "tagline"?: string;
+  "thumbnail_image_uuid"?: string;
+  "updated_at"?: string;
+  "weekly_rank"?: number;
+}
+
+export interface ModelProducthuntProductAboutPrimaryLink {
+  "id"?: string;
+  "url"?: string;
+}
+
+export interface ModelProducthuntProductAboutProduct {
+  "badges"?: Array<ModelProducthuntProductCategoryListBadge>;
+  "detailed_review"?: Record<string, unknown>;
+  "discussion_forum"?: ModelProducthuntProductAboutDiscussionForum;
+  "followers_count"?: number;
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "is_subscribed"?: boolean;
+  "latest_launch"?: ModelProducthuntProductAboutLatestLaunch;
+  "logo_uuid"?: string;
+  "media"?: Array<ModelProducthuntProductAboutMedia>;
+  "name"?: string;
+  "page_variant"?: ModelProducthuntProductAboutPageVariant;
+  "posts"?: Array<ModelProducthuntProductAboutPost>;
+  "posts_count"?: number;
+  "pro_con_tags"?: Array<ModelProducthuntProductDetailedReviewTag>;
+  "review_questions"?: Array<ModelProducthuntProductAboutReviewQuestion>;
+  "reviews_rating"?: number;
+  "screenshots"?: Array<ModelProducthuntProductAboutScreenshot>;
+  "slug"?: string;
+  "tagline"?: string;
+  "url"?: string;
+}
+
+export interface ModelProducthuntProductAboutReviewQuestion {
+  "category"?: string;
+  "id"?: string;
+  "question"?: string;
+}
+
+export interface ModelProducthuntProductAboutScreenshot {
+  "id"?: string;
+  "image_uuid"?: string;
+  "media_type"?: string;
+  "original_height"?: number;
+  "original_width"?: number;
+}
+
+export interface ModelProducthuntProductAboutShoutout {
+  "alternative_products"?: Array<ModelProducthuntProductAboutMentionedProduct>;
+  "id"?: string;
+  "product"?: ModelProducthuntProductAboutMentionedProduct;
+  "shoutout_note"?: string;
+}
+
+export interface ModelProducthuntProductAboutUser {
+  "avatar_url"?: string;
+  "headline"?: string;
+  "id"?: string;
+  "name"?: string;
+  "username"?: string;
+}
+
+export interface ModelProducthuntProductAboutViewer {
+  "is_featured_post_maker"?: boolean;
+  "recent_launch"?: Record<string, unknown>;
+}
+
+export interface ModelProducthuntProductAlternativeBadge {
+  "date"?: string;
+  "id"?: string;
+  "period"?: string;
+  "position"?: number;
+  "post_name"?: string;
+  "post_slug"?: string;
+}
+
+export interface ModelProducthuntProductAlternativeDiscussion {
+  "comments_count"?: number;
+  "created_at"?: string;
+  "description_preview"?: string;
+  "has_voted"?: boolean;
+  "id"?: string;
+  "path"?: string;
+  "pinned"?: boolean;
+  "primary_forum"?: ModelProducthuntProductAlternativeDiscussionForum;
+  "slug"?: string;
+  "title"?: string;
+  "user"?: ModelProducthuntProductAlternativeDiscussionUser;
+  "votes_count"?: number;
+}
+
+export interface ModelProducthuntProductAlternativeDiscussionForum {
+  "id"?: string;
+  "slug"?: string;
+  "subject_id"?: string;
+  "subject_name"?: string;
+}
+
+export interface ModelProducthuntProductAlternativeDiscussionUser {
+  "avatar_url"?: string;
+  "id"?: string;
+  "name"?: string;
+  "username"?: string;
+}
+
+export interface ModelProducthuntProductAlternativeItem {
+  "category_score"?: number;
+  "category_weight"?: number;
+  "combined_score"?: number;
+  "embedding_score"?: number;
+  "embedding_weight"?: number;
+  "id"?: string;
+  "product"?: ModelProducthuntProductAlternativeProduct;
+  "rating_score"?: number;
+  "rating_weight"?: number;
+}
+
+export interface ModelProducthuntProductAlternativeProduct {
+  "badges"?: Array<ModelProducthuntProductAlternativeBadge>;
+  "categories"?: Array<string>;
+  "followers_count"?: number;
+  "id"?: string;
+  "is_subscribed"?: boolean;
+  "is_top_product"?: boolean;
+  "logo_uuid"?: string;
+  "name"?: string;
+  "reviews_count"?: number;
+  "reviews_rating"?: number;
+  "slug"?: string;
+  "structured_data"?: ModelProducthuntProductAlternativeStructuredData;
+  "tagline"?: string;
+  "tags"?: Array<string>;
+}
+
+export interface ModelProducthuntProductAlternativeStructuredData {
+  "application_category"?: string;
+  "context"?: string;
+  "date_modified"?: string;
+  "date_published"?: string;
+  "description"?: string;
+  "id"?: string;
+  "image"?: string;
+  "name"?: string;
+  "operating_system"?: string;
+  "screenshot"?: Array<string>;
+  "url"?: string;
+}
+
+export interface ModelProducthuntProductAlternativeTag {
+  "count"?: number;
+  "name"?: string;
+}
+
+export interface ModelProducthuntProductAlternativesPage {
+  "alternative_tags"?: Array<ModelProducthuntProductAlternativeTag>;
+  "alternatives_markdown_description"?: string;
+  "categories"?: Array<string>;
+  "discussions"?: Array<ModelProducthuntProductAlternativeDiscussion>;
+  "discussions_has_next_page"?: boolean;
+  "end_cursor"?: string;
+  "followers_count"?: number;
+  "has_next_page"?: boolean;
+  "items"?: Array<ModelProducthuntProductAlternativeItem>;
+  "name"?: string;
+  "product_id"?: string;
+  "slug"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelProducthuntProductCategoryAd {
+  "channel_kind"?: string;
+  "id"?: string;
+  "large_asset_uuid"?: string;
+  "name"?: string;
+  "post"?: ModelProducthuntProductCategoryAdPost;
+  "small_asset_uuid"?: string;
+  "subject"?: string;
+  "tagline"?: string;
+  "thumbnail_uuid"?: string;
+  "url"?: string;
+  "variation_id"?: string;
+}
+
+export interface ModelProducthuntProductCategoryAdComment {
+  "body_text"?: string;
+  "id"?: string;
+  "is_pinned"?: boolean;
+  "path"?: string;
+  "subject_id"?: string;
+  "user"?: ModelProducthuntProductCategoryUser;
+}
+
+export interface ModelProducthuntProductCategoryAdPost {
+  "comments_count"?: number;
+  "created_at"?: string;
+  "disabled_when_scheduled"?: boolean;
+  "embargo_preview_at"?: string;
+  "featured_at"?: string;
+  "featured_comment"?: ModelProducthuntProductCategoryAdComment;
+  "has_voted"?: boolean;
+  "hide_votes_count"?: boolean;
+  "id"?: string;
+  "latest_score"?: number;
+  "launch_day_score"?: number;
+  "name"?: string;
+  "product_id"?: string;
+  "product_slug"?: string;
+  "product_subscribed"?: boolean;
+  "randomization_status"?: ModelProducthuntProductCategoryRandomizationStatus;
+  "slug"?: string;
+  "topics"?: Array<ModelProducthuntProductCategoryTopic>;
+  "updated_at"?: string;
+}
+
+export interface ModelProducthuntProductCategoryAnswer {
+  "body"?: ModelProducthuntProductCategoryMarkdown;
+  "id"?: string;
+  "sources"?: Array<ModelProducthuntProductCategorySource>;
+}
+
+export interface ModelProducthuntProductCategoryFounderPost {
+  "badges"?: Array<ModelProducthuntProductCategoryListBadge>;
+  "id"?: string;
+  "name"?: string;
+  "product_id"?: string;
+  "product_slug"?: string;
+  "product_state"?: string;
+  "slug"?: string;
+  "thumbnail_image_uuid"?: string;
+}
+
+export interface ModelProducthuntProductCategoryFounderShoutout {
+  "from_post"?: ModelProducthuntProductCategoryFounderPost;
+  "id"?: string;
+  "product_id"?: string;
+}
+
+export interface ModelProducthuntProductCategoryHeroProduct {
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "logo_uuid"?: string;
+  "name"?: string;
+}
+
+export interface ModelProducthuntProductCategoryLatestLaunch {
+  "id"?: string;
+  "scheduled_at"?: string;
+}
+
+export interface ModelProducthuntProductCategoryListBadge {
+  "category"?: string;
+  "date"?: string;
+  "id"?: string;
+  "period"?: string;
+  "position"?: number;
+  "post_id"?: string;
+  "post_name"?: string;
+  "post_slug"?: string;
+  "year"?: string;
+}
+
+export interface ModelProducthuntProductCategoryListProduct {
+  "badges"?: Array<ModelProducthuntProductCategoryListBadge>;
+  "categories"?: Array<ModelProducthuntProductCategoryRef>;
+  "detailed_reviews_count"?: number;
+  "followers_count"?: number;
+  "founder_reviews_count"?: number;
+  "founder_shoutouts"?: Array<ModelProducthuntProductCategoryFounderShoutout>;
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "is_subscribed"?: boolean;
+  "is_top_product"?: boolean;
+  "latest_launch"?: ModelProducthuntProductCategoryLatestLaunch;
+  "logo_uuid"?: string;
+  "name"?: string;
+  "posts_count"?: number;
+  "reviews_count"?: number;
+  "reviews_rating"?: number;
+  "slug"?: string;
+  "structured_data"?: ModelProducthuntProductAlternativeStructuredData;
+  "tagline"?: string;
+  "tags"?: Array<string>;
+}
+
+export interface ModelProducthuntProductCategoryMarkdown {
+  "markdown"?: string;
+  "text"?: string;
+}
+
+export interface ModelProducthuntProductCategoryPage {
+  "description"?: string;
+  "discussions"?: Array<ModelProducthuntProductAlternativeDiscussion>;
+  "discussions_has_next_page"?: boolean;
+  "expandable_html"?: string;
+  "hero_products"?: Array<ModelProducthuntProductCategoryHeroProduct>;
+  "hero_products_count"?: number;
+  "id"?: string;
+  "last_updated_at"?: string;
+  "meta_title"?: string;
+  "name"?: string;
+  "parent"?: ModelProducthuntProductCategoryParent;
+  "path"?: string;
+  "questions"?: Array<ModelProducthuntProductCategoryQuestion>;
+  "raw_relevant_reviews"?: Array<Record<string, unknown>>;
+  "recent_launches_count"?: number;
+  "recent_summary"?: ModelProducthuntProductCategoryRecentSummary;
+  "reviews_count"?: number;
+  "slug"?: string;
+  "sub_categories"?: Array<ModelProducthuntProductCategoryRef>;
+  "targeted_ad"?: ModelProducthuntProductCategoryAd;
+}
+
+export interface ModelProducthuntProductCategoryParent {
+  "id"?: string;
+  "name"?: string;
+  "path"?: string;
+  "sub_categories"?: Array<ModelProducthuntProductCategoryRef>;
+}
+
+export interface ModelProducthuntProductCategoryProductsPage {
+  "ai_summary"?: string;
+  "category_tags"?: Array<ModelProducthuntProductAlternativeTag>;
+  "connection"?: string;
+  "description"?: string;
+  "end_cursor"?: string;
+  "featured_only"?: boolean;
+  "has_next_page"?: boolean;
+  "has_previous_page"?: boolean;
+  "id"?: string;
+  "items"?: Array<ModelProducthuntProductCategoryListProduct>;
+  "last_updated_at"?: string;
+  "name"?: string;
+  "order"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "path"?: string;
+  "slug"?: string;
+  "tags"?: Array<string>;
+  "total_count"?: number;
+}
+
+export interface ModelProducthuntProductCategoryQuestion {
+  "body"?: ModelProducthuntProductCategoryMarkdown;
+  "id"?: string;
+  "top_answer"?: ModelProducthuntProductCategoryAnswer;
+}
+
+export interface ModelProducthuntProductCategoryRandomizationStatus {
+  "active"?: boolean;
+  "next_transition_at"?: string;
+  "random_day"?: boolean;
+}
+
+export interface ModelProducthuntProductCategoryRecentSummary {
+  "products"?: Array<ModelProducthuntProductCategorySummaryProduct>;
+  "summary"?: string;
+}
+
+export interface ModelProducthuntProductCategoryRef {
+  "id"?: string;
+  "name"?: string;
+  "path"?: string;
+  "slug"?: string;
+}
+
+export interface ModelProducthuntProductCategorySource {
+  "badges"?: Array<string>;
+  "id"?: string;
+  "path"?: string;
+  "subject_id"?: string;
+  "type"?: string;
+  "user"?: ModelProducthuntProductCategoryUser;
+  "visible_at"?: string;
+}
+
+export interface ModelProducthuntProductCategorySummaryProduct {
+  "badges"?: Array<ModelProducthuntProductAlternativeBadge>;
+  "categories"?: Array<ModelProducthuntProductCategoryRef>;
+  "followers_count"?: number;
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "is_subscribed"?: boolean;
+  "is_top_product"?: boolean;
+  "latest_launch"?: ModelProducthuntProductCategoryLatestLaunch;
+  "logo_uuid"?: string;
+  "name"?: string;
+  "reviews_count"?: number;
+  "reviews_rating"?: number;
+  "slug"?: string;
+  "tagline"?: string;
+  "tags"?: Array<string>;
+}
+
+export interface ModelProducthuntProductCategoryTopic {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelProducthuntProductCategoryUser {
+  "avatar_url"?: string;
+  "id"?: string;
+  "name"?: string;
+  "username"?: string;
+}
+
+export interface ModelProducthuntProductCustomersPage {
+  "connection"?: string;
+  "end_cursor"?: string;
+  "has_next_page"?: boolean;
+  "has_previous_page"?: boolean;
+  "items"?: Array<ModelProducthuntProductCategoryListProduct>;
+  "name"?: string;
+  "order"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "pages_count"?: number;
+  "product_id"?: string;
+  "raw_page_info"?: Record<string, unknown>;
+  "slug"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelProducthuntProductDetailedReview {
+  "alternative_products"?: Array<ModelProducthuntProductDetailedReviewProduct>;
+  "alternatives_feedback"?: string;
+  "can_destroy"?: boolean;
+  "can_moderate"?: boolean;
+  "can_reply"?: boolean;
+  "can_update"?: boolean;
+  "comments_count"?: number;
+  "created_at"?: string;
+  "customization_rating"?: number;
+  "ease_of_use_rating"?: number;
+  "follow_product"?: ModelProducthuntProductDetailedReviewFollowProduct;
+  "from_post"?: ModelProducthuntProductDetailedReviewPost;
+  "has_voted"?: boolean;
+  "id"?: string;
+  "impression_count"?: number;
+  "is_hidden"?: boolean;
+  "llm_content_quality_grade"?: string;
+  "llm_content_quality_reason"?: string;
+  "negative_feedback"?: string;
+  "overall_experience"?: string;
+  "overall_rating"?: number;
+  "positive_feedback"?: string;
+  "product"?: ModelProducthuntProductDetailedReviewProduct;
+  "question_answers"?: Array<ModelProducthuntProductDetailedReviewQuestionAnswer>;
+  "reliability_rating"?: number;
+  "review_type"?: string;
+  "selected_cons"?: Array<ModelProducthuntProductDetailedReviewTag>;
+  "selected_pros"?: Array<ModelProducthuntProductDetailedReviewTag>;
+  "status"?: string;
+  "threads_end_cursor"?: string;
+  "threads_has_next_page"?: boolean;
+  "threads_total_count"?: number;
+  "user"?: ModelProducthuntProductDetailedReviewUser;
+  "value_for_money_rating"?: number;
+  "votes_count"?: number;
+}
+
+export interface ModelProducthuntProductDetailedReviewFollowProduct {
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "is_subscribed"?: boolean;
+  "logo_uuid"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelProducthuntProductDetailedReviewPost {
+  "badges"?: Array<ModelProducthuntProductCategoryListBadge>;
+  "id"?: string;
+  "is_top_launch"?: boolean;
+  "latest_score"?: number;
+  "name"?: string;
+  "product_id"?: string;
+  "product_is_top_product"?: boolean;
+  "product_slug"?: string;
+  "product_state"?: string;
+  "slug"?: string;
+  "thumbnail_image_uuid"?: string;
+}
+
+export interface ModelProducthuntProductDetailedReviewProduct {
+  "id"?: string;
+  "is_no_longer_online"?: boolean;
+  "logo_uuid"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelProducthuntProductDetailedReviewQuestionAnswer {
+  "answer"?: string;
+  "id"?: string;
+  "question"?: string;
+  "question_id"?: string;
+}
+
+export interface ModelProducthuntProductDetailedReviewTag {
+  "count"?: number;
+  "id"?: string;
+  "name"?: string;
+  "type"?: string;
+}
+
+export interface ModelProducthuntProductDetailedReviewUser {
+  "avatar_url"?: string;
+  "headline"?: string;
+  "id"?: string;
+  "is_account_verified"?: boolean;
+  "is_ambassador"?: boolean;
+  "is_followed"?: boolean;
+  "name"?: string;
+  "reviews_count"?: number;
+  "selected_byline_product"?: ModelProducthuntProductDetailedReviewProduct;
+  "top_hunter_badge"?: Record<string, unknown>;
+  "top_launch_badge"?: Record<string, unknown>;
+  "top_product_badge"?: Record<string, unknown>;
+  "username"?: string;
+}
+
+export interface ModelProducthuntProductDetailedReviewsPage {
+  "connection"?: string;
+  "detailed_review"?: Record<string, unknown>;
+  "detailed_reviews_count"?: number;
+  "end_cursor"?: string;
+  "founder_detailed_reviews_count"?: number;
+  "has_next_page"?: boolean;
+  "is_maker"?: boolean;
+  "is_trashed"?: boolean;
+  "items"?: Array<ModelProducthuntProductDetailedReview>;
+  "name"?: string;
+  "other_detailed_reviews_count"?: number;
+  "product_id"?: string;
+  "raw_page_info"?: Record<string, unknown>;
+  "reviews_count"?: number;
+  "reviews_rating"?: number;
+  "reviews_recent_rating"?: number;
+  "slug"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelProducthuntProductLaunchesPage {
+  "connection"?: string;
+  "end_cursor"?: string;
+  "has_next_page"?: boolean;
+  "items"?: Array<ModelProducthuntProductAboutPost>;
+  "name"?: string;
+  "order"?: string;
+  "product_id"?: string;
+  "raw_page_info"?: Record<string, unknown>;
+  "slug"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelProducthuntProductMaker {
+  "avatar_url"?: string;
+  "followers_count"?: number;
+  "headline"?: string;
+  "id"?: string;
+  "is_followed"?: boolean;
+  "made_posts"?: Array<ModelProducthuntProductMakerPost>;
+  "name"?: string;
+  "username"?: string;
+}
+
+export interface ModelProducthuntProductMakerPost {
+  "id"?: string;
+  "name"?: string;
+  "product_id"?: string;
+  "product_slug"?: string;
+  "product_state"?: string;
+  "slug"?: string;
+  "thumbnail_image_uuid"?: string;
+}
+
+export interface ModelProducthuntProductMakersPage {
+  "can_claim"?: boolean;
+  "connection"?: string;
+  "end_cursor"?: string;
+  "has_next_page"?: boolean;
+  "is_claimed"?: boolean;
+  "is_trashed"?: boolean;
+  "items"?: Array<ModelProducthuntProductMaker>;
+  "name"?: string;
+  "product_id"?: string;
+  "raw_page_info"?: Record<string, unknown>;
+  "slug"?: string;
+  "total_count"?: number;
+  "viewer_pending_team_request"?: Record<string, unknown>;
+}
+
+export interface ModelProducthuntSimilarProduct {
+  "categories"?: Array<string>;
+  "id"?: string;
+  "name"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+}
+
+export interface ModelProducthuntAboutResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProductAboutPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntAlternativesResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProductAlternativesPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntCategoryProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProductCategoryProductsPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProductCategoryPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntCustomersResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProductCustomersPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntLaunchesResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProductLaunchesPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntLeaderboardResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntLeaderboardPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntMakersResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProductMakersPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProduct;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntProductDetailedReviewsPage;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntSearchAggregationsDoc {
+  "topics"?: Array<ModelProducthuntSearchTopicDoc>;
+}
+
+export interface ModelProducthuntSearchDataDoc {
+  "aggregations"?: ModelProducthuntSearchAggregationsDoc;
+  "edges"?: Array<ModelProducthuntSearchEdgeDoc>;
+  "pageInfo"?: ModelProducthuntSearchPageInfoDoc;
+  "pagesCount"?: number;
+}
+
+export interface ModelProducthuntSearchEdgeDoc {
+  "node"?: Record<string, unknown>;
+}
+
+export interface ModelProducthuntSearchPageInfoDoc {
+  "hasNextPage"?: boolean;
+  "hasPreviousPage"?: boolean;
+  "page"?: number;
+}
+
+export interface ModelProducthuntSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelProducthuntSearchDataDoc;
+  "msg"?: string;
+}
+
+export interface ModelProducthuntSearchTopicDoc {
+  "count"?: number;
+  "topic"?: { "id"?: string; "name"?: string };
+}
+
+export interface ModelReferralsAdminReferralAttributionDoc {
+  "attribution"?: ModelReferralsAdminReferralAttributionRecordDoc;
+  "rewards"?: Array<ModelReferralsAdminReferralRewardDoc>;
+}
+
+export interface ModelReferralsAdminReferralAttributionRecordDoc {
+  "click_id"?: string;
+  "code"?: string;
+  "created_at"?: string;
+  "error"?: string;
+  "expires_at"?: string;
+  "first_paid_invoice_id"?: string;
+  "id"?: string;
+  "landing_path"?: string;
+  "qualified_at"?: string;
+  "referred_user_id"?: string;
+  "referrer_user_id"?: string;
+  "review_reason"?: string;
+  "reviewed_at"?: string;
+  "reviewed_by"?: string;
+  "rewarded_at"?: string;
+  "risk_flags"?: Array<string>;
+  "skip_reason"?: string;
+  "status"?: "attributed" | "qualified" | "review_required" | "rewarded" | "expired" | "capped" | "failed" | "rejected";
+  "stripe_event_id"?: string;
+  "stripe_invoice_id"?: string;
+  "utm_campaign"?: string;
+  "utm_medium"?: string;
+  "utm_source"?: string;
+}
+
+export interface ModelReferralsAdminReferralDetailResponseDoc {
+  "attribution"?: ModelReferralsAdminReferralAttributionRecordDoc;
+  "rewards"?: Array<ModelReferralsAdminReferralRewardDoc>;
+}
+
+export interface ModelReferralsAdminReferralRecoveryResponseDoc {
+  "attempted"?: number;
+  "errors"?: Array<string>;
+  "recovered"?: number;
+}
+
+export interface ModelReferralsAdminReferralRejectRequestDoc {
+  "reason"?: string;
+}
+
+export interface ModelReferralsAdminReferralReviewResponseDoc {
+  "attribution"?: ModelReferralsAdminReferralAttributionRecordDoc;
+  "rewards"?: Array<ModelReferralsAdminReferralRewardDoc>;
+}
+
+export interface ModelReferralsAdminReferralRewardDoc {
+  "attribution_id"?: string;
+  "created_at"?: string;
+  "credits"?: number;
+  "credits_grant_error"?: string;
+  "credits_grant_key"?: string;
+  "credits_granted_at"?: string;
+  "id"?: string;
+  "role"?: "referrer" | "referred";
+  "stripe_invoice_id"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelReferralsAdminReferralStatsResponseDoc {
+  "attributed_signups"?: number;
+  "capped_referrals"?: number;
+  "clicks"?: number;
+  "qualification_rate"?: number;
+  "qualified_referrals"?: number;
+  "rejected_referrals"?: number;
+  "review_required"?: number;
+  "reward_rate"?: number;
+  "rewarded_referrals"?: number;
+  "signup_rate"?: number;
+}
+
+export interface ModelReferralsAdminReferralsListResponseDoc {
+  "items"?: Array<ModelReferralsAdminReferralAttributionDoc>;
+}
+
+export interface ModelReferralsReferralAttributionDoc {
+  "campaign"?: string;
+  "code"?: string;
+  "created_at"?: string;
+  "expires_at"?: string;
+  "id"?: string;
+  "qualified_at"?: string;
+  "reward_credits"?: number;
+  "rewarded_at"?: string;
+  "role"?: "referrer" | "referred";
+  "status"?: "attributed" | "qualified" | "review_required" | "rewarded" | "expired" | "capped" | "failed" | "rejected";
+}
+
+export interface ModelReferralsReferralClickRequestDoc {
+  "click_id"?: string;
+  "code"?: string;
+  "landing_path"?: string;
+  "utm_campaign"?: string;
+  "utm_medium"?: string;
+  "utm_source"?: string;
+}
+
+export interface ModelReferralsReferralClickResponseDoc {
+  "click_id"?: string;
+  "code"?: string;
+}
+
+export interface ModelReferralsReferralsEventsResponseDoc {
+  "items"?: Array<ModelReferralsReferralAttributionDoc>;
+}
+
+export interface ModelReferralsReferralsMeResponseDoc {
+  "attribution_window_days"?: number;
+  "code"?: string;
+  "items"?: Array<ModelReferralsReferralAttributionDoc>;
+  "monthly_referrer_reward_cap"?: number;
+  "referred_reward_credits"?: number;
+  "reward_credits"?: number;
+  "share_path"?: string;
+  "stats"?: ModelReferralsReferralsStatsDoc;
+}
+
+export interface ModelReferralsReferralsStatsDoc {
+  "attributed"?: number;
+  "capped"?: number;
+  "expired"?: number;
+  "qualified"?: number;
+  "rejected"?: number;
+  "review_required"?: number;
+  "rewarded"?: number;
+}
+
+export interface ModelSimilarwebSearchResp {
+  "apps"?: { "appStore"?: Array<{ "appKey"?: string; "id"?: string; "image"?: string; "name"?: string; "publisher"?: string; "ratings"?: number; "store"?: string }>; "googlePlay"?: Array<{ "appKey"?: string; "id"?: string; "image"?: string; "name"?: string; "publisher"?: string; "ratings"?: number; "store"?: string }> };
+  "companies"?: Array<{ "domain"?: string; "logoUrl"?: string; "name"?: string }>;
+  "websites"?: Array<{ "image"?: string; "isVirtual"?: boolean; "name"?: string }>;
+}
+
+export interface ModelSimilarwebSimilarWebResp {
+  "Category"?: string;
+  "CategoryRank"?: { "Category"?: string; "Rank"?: string };
+  "Competitors"?: { "TopSimilarityCompetitors"?: Array<unknown> };
+  "Countries"?: Array<{ "Code"?: string; "Name"?: string; "UrlCode"?: string }>;
+  "CountryRank"?: { "Country"?: number; "CountryCode"?: string; "Rank"?: number };
+  "Description"?: string;
+  "Engagments"?: { "BounceRate"?: string; "Month"?: string; "PagePerVisit"?: string; "TimeOnSite"?: string; "Visits"?: string; "Year"?: string };
+  "EstimatedMonthlyVisits"?: { "2024-09-01"?: number; "2024-10-01"?: number; "2024-11-01"?: number };
+  "GlobalCategoryRank"?: unknown;
+  "GlobalRank"?: { "Rank"?: number };
+  "IsDataFromGa"?: boolean;
+  "IsSmall"?: boolean;
+  "LargeScreenshot"?: string;
+  "Notification"?: { "Content"?: unknown };
+  "Policy"?: number;
+  "SiteName"?: string;
+  "SnapshotDate"?: string;
+  "Title"?: string;
+  "TopCountryShares"?: Array<{ "Country"?: number; "CountryCode"?: string; "Value"?: number }>;
+  "TopKeywords"?: Array<{ "Cpc"?: number; "EstimatedValue"?: number; "Name"?: string; "Volume"?: number }>;
+  "TrafficSources"?: { "Direct"?: number; "Mail"?: number; "Paid Referrals"?: number; "Referrals"?: number; "Search"?: number; "Social"?: number };
+  "Version"?: number;
+}
+
+export interface ModelSimilarwebSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelSimilarwebSearchResp;
+  "msg"?: string;
+}
+
+export interface ModelSimilarwebWebResponseDoc {
+  "code"?: number;
+  "data"?: ModelSimilarwebSimilarWebResp;
+  "msg"?: string;
+}
+
+export interface ModelSpotifyAlbumMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+  "trackCount"?: number;
+}
+
+export interface ModelSpotifyAlbumResponse {
+  "albumType"?: string;
+  "artists"?: Array<ModelSpotifySearchResultSummary>;
+  "copyrights"?: Array<string>;
+  "durationMs"?: number;
+  "externalUrl"?: string;
+  "id"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "isExplicit"?: boolean;
+  "isPlayable"?: boolean;
+  "limit"?: number;
+  "meta"?: ModelSpotifyAlbumMeta;
+  "name"?: string;
+  "offset"?: number;
+  "releaseDate"?: string;
+  "shareUrl"?: string;
+  "totalTracks"?: number;
+  "tracks"?: Array<ModelSpotifySearchResultSummary>;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyArtistAlbumsMeta {
+  "appVersion"?: string;
+  "count"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyArtistAlbumsResponse {
+  "id"?: string;
+  "items"?: Array<ModelSpotifySearchResultSummary>;
+  "limit"?: number;
+  "meta"?: ModelSpotifyArtistAlbumsMeta;
+  "offset"?: number;
+  "order"?: string;
+  "total"?: number;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyArtistCollectionMeta {
+  "appVersion"?: string;
+  "count"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyArtistCollectionResponse {
+  "id"?: string;
+  "items"?: Array<ModelSpotifySearchResultSummary>;
+  "meta"?: ModelSpotifyArtistCollectionMeta;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyArtistMeta {
+  "appVersion"?: string;
+  "discographyCount"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+  "playlistCount"?: number;
+  "relatedCount"?: number;
+  "topTrackCount"?: number;
+}
+
+export interface ModelSpotifyArtistResponse {
+  "biography"?: string;
+  "discography"?: Array<ModelSpotifySearchResultSummary>;
+  "externalUrl"?: string;
+  "followers"?: number;
+  "id"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "meta"?: ModelSpotifyArtistMeta;
+  "monthlyUsers"?: number;
+  "name"?: string;
+  "playlists"?: Array<ModelSpotifySearchResultSummary>;
+  "related"?: Array<ModelSpotifySearchResultSummary>;
+  "shareUrl"?: string;
+  "topTracks"?: Array<ModelSpotifySearchResultSummary>;
+  "type"?: string;
+  "uri"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelSpotifyAudiobookChaptersMeta {
+  "appVersion"?: string;
+  "count"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyAudiobookChaptersResponse {
+  "chapters"?: Array<ModelSpotifyPodcastEpisodeSummary>;
+  "id"?: string;
+  "limit"?: number;
+  "meta"?: ModelSpotifyAudiobookChaptersMeta;
+  "offset"?: number;
+  "total"?: number;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyAudiobookMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyAudiobookResponse {
+  "authors"?: Array<string>;
+  "description"?: string;
+  "externalUrl"?: string;
+  "id"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "isExplicit"?: boolean;
+  "mediaType"?: string;
+  "meta"?: ModelSpotifyAudiobookMeta;
+  "name"?: string;
+  "narrators"?: Array<string>;
+  "publisher"?: string;
+  "totalChapters"?: number;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyBrowsePageItem {
+  "description"?: string;
+  "externalUrl"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "publisher"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyBrowsePageMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+  "sectionCount"?: number;
+}
+
+export interface ModelSpotifyBrowsePageResponse {
+  "meta"?: ModelSpotifyBrowsePageMeta;
+  "sections"?: Array<ModelSpotifyBrowsePageSection>;
+  "subtitle"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyBrowsePageSection {
+  "items"?: Array<ModelSpotifyBrowsePageItem>;
+  "subtitle"?: string;
+  "title"?: string;
+  "totalCount"?: number;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyBrowseSectionMeta {
+  "appVersion"?: string;
+  "count"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyBrowseSectionResponse {
+  "items"?: Array<ModelSpotifyBrowsePageItem>;
+  "limit"?: number;
+  "meta"?: ModelSpotifyBrowseSectionMeta;
+  "offset"?: number;
+  "subtitle"?: string;
+  "title"?: string;
+  "totalCount"?: number;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyChartItem {
+  "description"?: string;
+  "episodeDescription"?: string;
+  "episodeExternalUrl"?: string;
+  "episodeImageUrl"?: string;
+  "episodeName"?: string;
+  "episodeUri"?: string;
+  "externalUrl"?: string;
+  "imageUrl"?: string;
+  "name"?: string;
+  "publisher"?: string;
+  "rank"?: number;
+  "rankMove"?: string;
+  "showDescription"?: string;
+  "showExternalUrl"?: string;
+  "showImageUrl"?: string;
+  "showName"?: string;
+  "showPublisher"?: string;
+  "showUri"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyChartMeta {
+  "count"?: number;
+  "fetchedAt"?: string;
+  "sourceUrl"?: string;
+}
+
+export interface ModelSpotifyChartResponse {
+  "chart"?: string;
+  "chartName"?: string;
+  "chartType"?: string;
+  "items"?: Array<ModelSpotifyChartItem>;
+  "limit"?: number;
+  "meta"?: ModelSpotifyChartMeta;
+  "region"?: string;
+  "regionName"?: string;
+}
+
+export interface ModelSpotifyCountryHubContentId {
+  "id"?: string;
+  "title"?: string;
+}
+
+export interface ModelSpotifyCountryHubContentMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "itemCount"?: number;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyCountryHubContentResponse {
+  "contentId"?: string;
+  "countryCode"?: string;
+  "countryName"?: string;
+  "hexColor"?: string;
+  "items"?: Array<ModelSpotifyCountryHubItem>;
+  "meta"?: ModelSpotifyCountryHubContentMeta;
+  "supportedContentIds"?: Array<ModelSpotifyCountryHubContentId>;
+  "supportedCountries"?: Array<ModelSpotifyPopularCountry>;
+  "title"?: string;
+}
+
+export interface ModelSpotifyCountryHubItem {
+  "album"?: ModelSpotifySearchResultSummary;
+  "artists"?: Array<ModelSpotifySearchResultSummary>;
+  "attributes"?: Record<string, string>;
+  "description"?: string;
+  "externalUrl"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "owner"?: ModelSpotifySearchResultSummary;
+  "subtitle"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyCountryHubMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "itemCount"?: number;
+  "operationName"?: string;
+  "sectionCount"?: number;
+}
+
+export interface ModelSpotifyCountryHubResponse {
+  "countryCode"?: string;
+  "countryName"?: string;
+  "hexColor"?: string;
+  "meta"?: ModelSpotifyCountryHubMeta;
+  "sections"?: Array<ModelSpotifyCountryHubSection>;
+  "supportedCountries"?: Array<ModelSpotifyPopularCountry>;
+}
+
+export interface ModelSpotifyCountryHubSection {
+  "contentId"?: string;
+  "items"?: Array<ModelSpotifyCountryHubItem>;
+  "title"?: string;
+  "totalCount"?: number;
+}
+
+export interface ModelSpotifyHomeMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+  "sectionCount"?: number;
+}
+
+export interface ModelSpotifyHomeResponse {
+  "facet"?: string;
+  "greeting"?: string;
+  "meta"?: ModelSpotifyHomeMeta;
+  "sections"?: Array<ModelSpotifyBrowsePageSection>;
+  "timeZone"?: string;
+}
+
+export interface ModelSpotifyImageAsset {
+  "height"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelSpotifyPlaylistMeta {
+  "appVersion"?: string;
+  "episodeCount"?: number;
+  "fetchedAt"?: string;
+  "itemCount"?: number;
+  "operationName"?: string;
+  "trackCount"?: number;
+}
+
+export interface ModelSpotifyPlaylistResponse {
+  "collaborative"?: boolean;
+  "description"?: string;
+  "episodes"?: Array<ModelSpotifySearchResultSummary>;
+  "externalUrl"?: string;
+  "followers"?: number;
+  "id"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "items"?: Array<ModelSpotifySearchResultSummary>;
+  "limit"?: number;
+  "meta"?: ModelSpotifyPlaylistMeta;
+  "name"?: string;
+  "offset"?: number;
+  "owner"?: ModelSpotifySearchResultSummary;
+  "shareUrl"?: string;
+  "total"?: number;
+  "tracks"?: Array<ModelSpotifySearchResultSummary>;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyPodcastEpisodeMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+  "sourceUrl"?: string;
+}
+
+export interface ModelSpotifyPodcastEpisodeResponse {
+  "description"?: string;
+  "durationMs"?: number;
+  "externalUrl"?: string;
+  "htmlDescription"?: string;
+  "id"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "isExplicit"?: boolean;
+  "isPaywallContent"?: boolean;
+  "isPlayable"?: boolean;
+  "mediaTypes"?: Array<string>;
+  "meta"?: ModelSpotifyPodcastEpisodeMeta;
+  "name"?: string;
+  "playabilityReason"?: string;
+  "previewAudioUrl"?: string;
+  "previewAudioUrls"?: Array<string>;
+  "previewVideoUrl"?: string;
+  "releaseDate"?: string;
+  "releaseDatePrecision"?: string;
+  "shareUrl"?: string;
+  "show"?: ModelSpotifyPodcastEpisodeShowSummary;
+  "transcriptCount"?: number;
+  "type"?: string;
+  "unplayabilityReasons"?: Array<string>;
+  "uri"?: string;
+  "videoThumbnailUrl"?: string;
+  "videoThumbnails"?: Array<ModelSpotifyImageAsset>;
+}
+
+export interface ModelSpotifyPodcastEpisodeShowSummary {
+  "description"?: string;
+  "externalUrl"?: string;
+  "id"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "mediaType"?: string;
+  "name"?: string;
+  "publisher"?: string;
+  "showTypes"?: Array<string>;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyPodcastEpisodeSummary {
+  "description"?: string;
+  "durationMs"?: number;
+  "externalUrl"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "isExplicit"?: boolean;
+  "isPlayable"?: boolean;
+  "name"?: string;
+  "releaseDate"?: string;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyPodcastEpisodesMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyPodcastEpisodesResponse {
+  "episodes"?: Array<ModelSpotifyPodcastEpisodeSummary>;
+  "limit"?: number;
+  "meta"?: ModelSpotifyPodcastEpisodesMeta;
+  "offset"?: number;
+  "total"?: number;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyPopularCountry {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelSpotifyRecommendationSummary {
+  "description"?: string;
+  "externalUrl"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "publisher"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifySearchMeta {
+  "albumCount"?: number;
+  "appVersion"?: string;
+  "artistCount"?: number;
+  "audiobookCount"?: number;
+  "episodeCount"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+  "playlistCount"?: number;
+  "resultCount"?: number;
+  "showCount"?: number;
+  "topCount"?: number;
+  "trackCount"?: number;
+  "userCount"?: number;
+}
+
+export interface ModelSpotifySearchPodcastsMeta {
+  "appVersion"?: string;
+  "episodeCount"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+  "showCount"?: number;
+  "topCount"?: number;
+}
+
+export interface ModelSpotifySearchPodcastsResponse {
+  "episodes"?: Array<ModelSpotifyPodcastEpisodeSummary>;
+  "limit"?: number;
+  "meta"?: ModelSpotifySearchPodcastsMeta;
+  "offset"?: number;
+  "searchTerm"?: string;
+  "shows"?: Array<ModelSpotifyRecommendationSummary>;
+  "topResults"?: Array<ModelSpotifySearchResultSummary>;
+}
+
+export interface ModelSpotifySearchResponse {
+  "albums"?: Array<ModelSpotifySearchResultSummary>;
+  "artists"?: Array<ModelSpotifySearchResultSummary>;
+  "audiobooks"?: Array<ModelSpotifySearchResultSummary>;
+  "episodes"?: Array<ModelSpotifySearchResultSummary>;
+  "limit"?: number;
+  "meta"?: ModelSpotifySearchMeta;
+  "offset"?: number;
+  "playlists"?: Array<ModelSpotifySearchResultSummary>;
+  "results"?: Array<ModelSpotifySearchResultSummary>;
+  "searchTerm"?: string;
+  "shows"?: Array<ModelSpotifySearchResultSummary>;
+  "topResults"?: Array<ModelSpotifySearchResultSummary>;
+  "tracks"?: Array<ModelSpotifySearchResultSummary>;
+  "users"?: Array<ModelSpotifySearchResultSummary>;
+}
+
+export interface ModelSpotifySearchResultSummary {
+  "description"?: string;
+  "externalUrl"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "publisher"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyShowMetadataMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyShowMetadataResponse {
+  "description"?: string;
+  "externalUrl"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "isExplicit"?: boolean;
+  "mediaType"?: string;
+  "meta"?: ModelSpotifyShowMetadataMeta;
+  "name"?: string;
+  "publisher"?: string;
+  "totalEpisodes"?: number;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyShowRecommendationsMeta {
+  "appVersion"?: string;
+  "count"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyShowRecommendationsResponse {
+  "meta"?: ModelSpotifyShowRecommendationsMeta;
+  "recommendations"?: Array<ModelSpotifyRecommendationSummary>;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyTrackMeta {
+  "appVersion"?: string;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyTrackRecommendedMeta {
+  "appVersion"?: string;
+  "count"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyTrackRecommendedResponse {
+  "limit"?: number;
+  "meta"?: ModelSpotifyTrackRecommendedMeta;
+  "recommendations"?: Array<ModelSpotifyRecommendationSummary>;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyTrackResponse {
+  "album"?: ModelSpotifySearchResultSummary;
+  "artists"?: Array<ModelSpotifySearchResultSummary>;
+  "discNumber"?: number;
+  "durationMs"?: number;
+  "externalUrl"?: string;
+  "id"?: string;
+  "imageUrl"?: string;
+  "images"?: Array<ModelSpotifyImageAsset>;
+  "isExplicit"?: boolean;
+  "isPlayable"?: boolean;
+  "meta"?: ModelSpotifyTrackMeta;
+  "name"?: string;
+  "playabilityReason"?: string;
+  "playcount"?: string;
+  "previewAudioUrl"?: string;
+  "previewAudioUrls"?: Array<string>;
+  "shareUrl"?: string;
+  "trackNumber"?: number;
+  "type"?: string;
+  "unplayabilityReasons"?: Array<string>;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyTrackSimilarAlbumsMeta {
+  "appVersion"?: string;
+  "count"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+}
+
+export interface ModelSpotifyTrackSimilarAlbumsResponse {
+  "albums"?: Array<ModelSpotifySearchResultSummary>;
+  "albumsOnly"?: boolean;
+  "limit"?: number;
+  "meta"?: ModelSpotifyTrackSimilarAlbumsMeta;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyUserProfileFollowersResponse {
+  "limit"?: number;
+  "meta"?: ModelSpotifyUserProfileMeta;
+  "offset"?: number;
+  "profiles"?: Array<ModelSpotifyUserProfileSummary>;
+  "total"?: number;
+  "uri"?: string;
+  "username"?: string;
+}
+
+export interface ModelSpotifyUserProfileMeta {
+  "appVersion"?: string;
+  "artistCount"?: number;
+  "fetchedAt"?: string;
+  "operationName"?: string;
+  "playlistCount"?: number;
+  "profileCount"?: number;
+}
+
+export interface ModelSpotifyUserProfilePlaylist {
+  "externalUrl"?: string;
+  "followersCount"?: number;
+  "id"?: string;
+  "imageUrl"?: string;
+  "isFollowing"?: boolean;
+  "name"?: string;
+  "ownerName"?: string;
+  "ownerUri"?: string;
+  "ownerUrl"?: string;
+  "ownerUsername"?: string;
+  "uri"?: string;
+}
+
+export interface ModelSpotifyUserProfilePlaylistsResponse {
+  "limit"?: number;
+  "meta"?: ModelSpotifyUserProfileMeta;
+  "offset"?: number;
+  "publicPlaylists"?: Array<ModelSpotifyUserProfilePlaylist>;
+  "totalPublicPlaylistsCount"?: number;
+  "uri"?: string;
+  "username"?: string;
+}
+
+export interface ModelSpotifyUserProfileResponse {
+  "allowFollows"?: boolean;
+  "color"?: number;
+  "externalUrl"?: string;
+  "followersCount"?: number;
+  "followingCount"?: number;
+  "hasSpotifyImage"?: boolean;
+  "hasSpotifyName"?: boolean;
+  "imageUrl"?: string;
+  "isCurrentUser"?: boolean;
+  "isVerified"?: boolean;
+  "meta"?: ModelSpotifyUserProfileMeta;
+  "name"?: string;
+  "publicPlaylists"?: Array<ModelSpotifyUserProfilePlaylist>;
+  "recentlyPlayedArtists"?: Array<ModelSpotifyUserProfileSummary>;
+  "showFollows"?: boolean;
+  "topArtists"?: ModelSpotifyUserProfileTopArtists;
+  "totalPublicPlaylistsCount"?: number;
+  "uri"?: string;
+  "username"?: string;
+}
+
+export interface ModelSpotifyUserProfileSummary {
+  "color"?: number;
+  "externalUrl"?: string;
+  "followersCount"?: number;
+  "imageUrl"?: string;
+  "isFollowing"?: boolean;
+  "name"?: string;
+  "uri"?: string;
+  "username"?: string;
+}
+
+export interface ModelSpotifyUserProfileTopArtists {
+  "imageUrl"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "topArtistsPageUri"?: string;
+}
+
+export interface ModelSpotifyAlbumResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyAlbumResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyArtistAlbumsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyArtistAlbumsResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyArtistCollectionResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyArtistCollectionResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyArtistResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyArtistResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyAudiobookChaptersResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyAudiobookChaptersResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyAudiobookResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyAudiobookResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyBrowsePageResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyBrowsePageResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyBrowseSectionResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyBrowseSectionResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyChartsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyChartResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyCountryHubContentResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyCountryHubContentResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyCountryHubResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyCountryHubResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyEpisodeResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyPodcastEpisodeResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyHomeResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyPlaylistResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyPlaylistResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifySearchCatalogResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifySearchResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifySearchPodcastsResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyShowEpisodesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyPodcastEpisodesResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyShowRecommendationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyShowRecommendationsResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyShowResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyShowMetadataResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyTrackRecommendedResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyTrackRecommendedResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyTrackResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyTrackResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyTrackSimilarAlbumsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyTrackSimilarAlbumsResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyUserProfileFollowersResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyUserProfileFollowersResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyUserProfilePlaylistsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyUserProfilePlaylistsResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelSpotifyUserProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelSpotifyUserProfileResponse;
+  "msg"?: unknown;
+}
+
+export interface ModelTiktokCategory {
+  "name"?: string;
+  "type"?: string;
+}
+
+export interface ModelTiktokChallengeDetailResp {
+  "challengeInfo"?: unknown;
+  "extra"?: { "fatal_item_ids"?: Array<unknown>; "logid"?: string; "now"?: number };
+  "log_pb"?: { "impr_id"?: string };
+  "shareMeta"?: { "desc"?: string; "title"?: string };
+  "statusCode"?: number;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokChallengeListResp {
+  "cursor"?: string;
+  "extra"?: { "fatal_item_ids"?: Array<unknown>; "logid"?: string; "now"?: number };
+  "hasMore"?: boolean;
+  "itemList"?: Array<unknown>;
+  "log_pb"?: { "impr_id"?: string };
+  "statusCode"?: number;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokCommentResp {
+  "alias_comment_deleted"?: boolean;
+  "comments"?: Array<unknown>;
+  "cursor"?: number;
+  "extra"?: { "api_debug_info"?: unknown; "fatal_item_ids"?: unknown; "now"?: number };
+  "has_filtered_comments"?: number;
+  "has_more"?: number;
+  "log_pb"?: { "impr_id"?: string };
+  "reply_style"?: number;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "top_gifts"?: unknown;
+  "total"?: number;
+}
+
+export interface ModelTiktokExploreResp {
+  "cursor"?: string;
+  "extra"?: { "fatal_item_ids"?: Array<unknown>; "logid"?: string; "now"?: number };
+  "hasMore"?: boolean;
+  "itemList"?: Array<unknown>;
+  "log_pb"?: { "impr_id"?: string };
+  "statusCode"?: number;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokProfile {
+  "stats"?: ModelTiktokProfileStats;
+  "user"?: ModelTiktokUser;
+}
+
+export interface ModelTiktokProfileStats {
+  "diggCount"?: number;
+  "followerCount"?: number;
+  "followingCount"?: number;
+  "friendCount"?: number;
+  "heart"?: number;
+  "heartCount"?: number;
+  "videoCount"?: number;
+}
+
+export interface ModelTiktokSearchHashtagResp {
+  "challenge_list"?: Array<unknown>;
+  "cursor"?: number;
+  "extra"?: unknown;
+  "has_more"?: number;
+  "input_keyword"?: string;
+  "log_pb"?: { "impr_id"?: string };
+  "music_list"?: unknown;
+  "qc"?: string;
+  "rid"?: string;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "type"?: number;
+  "user_list"?: unknown;
+}
+
+export interface ModelTiktokSearchResp {
+  "cursor"?: number;
+  "data"?: Array<unknown>;
+  "extra"?: unknown;
+  "feedback_type"?: string;
+  "has_more"?: number;
+  "input_keyword"?: string;
+  "itemList"?: Array<unknown>;
+  "log_pb"?: { "impr_id"?: string };
+  "qc"?: string;
+  "rid"?: string;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "type"?: number;
+}
+
+export interface ModelTiktokSearchUserResp {
+  "challenge_list"?: unknown;
+  "cursor"?: number;
+  "extra"?: unknown;
+  "feedback_type"?: string;
+  "global_doodle_config"?: unknown;
+  "has_more"?: number;
+  "input_keyword"?: string;
+  "log_pb"?: { "impr_id"?: string };
+  "music_list"?: unknown;
+  "qc"?: string;
+  "rid"?: string;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "type"?: number;
+  "user_list"?: Array<unknown>;
+}
+
+export interface ModelTiktokTrendingResp {
+  "cursor"?: string;
+  "extra"?: { "fatal_item_ids"?: Array<unknown>; "logid"?: string; "now"?: number };
+  "hasMore"?: boolean;
+  "itemList"?: Array<unknown>;
+  "log_pb"?: { "impr_id"?: string };
+  "statusCode"?: number;
+  "statusMsg"?: string;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "trendingTopics"?: Array<unknown>;
+}
+
+export interface ModelTiktokUser {
+  "avatarLarger"?: string;
+  "bioLink"?: { "link"?: string };
+  "commerceUserInfo"?: { "category"?: string; "commerceUser"?: boolean };
+  "createTime"?: number;
+  "id"?: string;
+  "isOrganization"?: number;
+  "language"?: string;
+  "nickname"?: string;
+  "privateAccount"?: boolean;
+  "region"?: string;
+  "secUid"?: string;
+  "secret"?: boolean;
+  "signature"?: string;
+  "ttSeller"?: boolean;
+  "uniqueId"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelTiktokUserPostLinkResp {
+  "cursor"?: string;
+  "extra"?: { "fatal_item_ids"?: Array<unknown>; "logid"?: string; "now"?: number };
+  "hasMore"?: boolean;
+  "itemList"?: Array<unknown>;
+  "log_pb"?: { "impr_id"?: string };
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokVideoDetailResp {
+  "extra"?: { "fatal_item_ids"?: Array<unknown>; "logid"?: string; "now"?: number };
+  "itemInfo"?: unknown;
+  "log_pb"?: { "impr_id"?: string };
+  "shareMeta"?: { "desc"?: string; "title"?: string };
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokCategoryResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelTiktokCategory>;
+  "msg"?: string;
+}
+
+export interface ModelTiktokChallengeListResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokChallengeListResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokChallengeResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokChallengeDetailResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokCommentResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokExploreResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokExploreResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokPostResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokVideoDetailResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokProfilePostResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokUserPostLinkResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokProfile;
+  "msg"?: string;
+}
+
+export interface ModelTiktokSearchHashtagResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokSearchHashtagResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokSearchResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokSearchUserResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokSearchUserResp;
+  "msg"?: string;
+}
+
+export interface ModelTiktokTrendingResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokTrendingResp;
+  "msg"?: string;
+}
+
+export interface ModelTrendsExploreQueriesResponse {
+  "category"?: number;
+  "geo"?: string;
+  "hl"?: string;
+  "keywords"?: Array<string>;
+  "property"?: string;
+  "queries"?: Array<ModelTrendsRelatedGroup>;
+  "query_type"?: string;
+  "time_range"?: string;
+  "type"?: string;
+  "tz"?: number;
+}
+
+export interface ModelTrendsExploreRequest {
+  "category"?: number;
+  "geo"?: "WORLDWIDE" | "AF" | "AX" | "AL" | "DZ" | "AS" | "AD" | "AO" | "AI" | "AQ" | "AG" | "AR" | "AM" | "AW" | "AU" | "AT" | "AZ" | "BS" | "BH" | "BD" | "BB" | "BY" | "BE" | "BZ" | "BJ" | "BM" | "BT" | "BO" | "BA" | "BW" | "BV" | "BR" | "IO" | "VG" | "BN" | "BG" | "BF" | "BI" | "KH" | "CM" | "CA" | "CV" | "BQ" | "KY" | "CF" | "TD" | "CL" | "CN" | "CX" | "CC" | "CO" | "KM" | "CG" | "CD" | "CK" | "CR" | "CI" | "HR" | "CU" | "CW" | "CY" | "CZ" | "DK" | "DJ" | "DM" | "DO" | "EC" | "EG" | "SV" | "GQ" | "ER" | "EE" | "SZ" | "ET" | "FK" | "FO" | "FJ" | "FI" | "FR" | "GF" | "PF" | "TF" | "GA" | "GM" | "GE" | "DE" | "GH" | "GI" | "GR" | "GL" | "GD" | "GP" | "GU" | "GT" | "GG" | "GN" | "GW" | "GY" | "HT" | "HM" | "HN" | "HK" | "HU" | "IS" | "IN" | "ID" | "IR" | "IQ" | "IE" | "IM" | "IL" | "IT" | "JM" | "JP" | "JE" | "JO" | "KZ" | "KE" | "KI" | "XK" | "KW" | "KG" | "LA" | "LV" | "LB" | "LS" | "LR" | "LY" | "LI" | "LT" | "LU" | "MO" | "MG" | "MW" | "MY" | "MV" | "ML" | "MT" | "MH" | "MQ" | "MR" | "MU" | "YT" | "MX" | "FM" | "MD" | "MC" | "MN" | "ME" | "MS" | "MA" | "MZ" | "MM" | "NA" | "NR" | "NP" | "NL" | "NC" | "NZ" | "NI" | "NE" | "NG" | "NU" | "NF" | "KP" | "MK" | "MP" | "NO" | "OM" | "PK" | "PW" | "PS" | "PA" | "PG" | "PY" | "PE" | "PH" | "PN" | "PL" | "PT" | "PR" | "QA" | "RE" | "RO" | "RU" | "RW" | "WS" | "SM" | "ST" | "SA" | "SN" | "RS" | "SC" | "SL" | "SG" | "SX" | "SK" | "SI" | "SB" | "SO" | "ZA" | "GS" | "KR" | "SS" | "ES" | "LK" | "BL" | "SH" | "KN" | "LC" | "MF" | "PM" | "VC" | "SD" | "SR" | "SJ" | "SE" | "CH" | "SY" | "TW" | "TJ" | "TZ" | "TH" | "TL" | "TG" | "TK" | "TO" | "TT" | "TN" | "TR" | "TM" | "TC" | "TV" | "UM" | "VI" | "UG" | "UA" | "AE" | "GB" | "US" | "UY" | "UZ" | "VU" | "VA" | "VE" | "VN" | "WF" | "EH" | "YE" | "ZM" | "ZW";
+  "hl"?: string;
+  "keywords"?: Array<string>;
+  "property"?: string;
+  "time_range"?: "now 1-H" | "now 4-H" | "now 1-d" | "now 7-d" | "today 1-m" | "today 3-m" | "today 12-m" | "today 5-y" | "all";
+  "type"?: "web" | "image" | "news" | "youtube" | "shopping";
+  "tz"?: number;
+}
+
+export interface ModelTrendsExploreResponse {
+  "category"?: number;
+  "geo"?: string;
+  "hl"?: string;
+  "interest_by_region"?: Array<ModelTrendsRegionInterest>;
+  "interest_over_time"?: Array<ModelTrendsInterestPoint>;
+  "keywords"?: Array<string>;
+  "property"?: string;
+  "related_queries"?: Array<ModelTrendsRelatedGroup>;
+  "related_topics"?: Array<ModelTrendsRelatedGroup>;
+  "rising_queries"?: Array<ModelTrendsRelatedGroup>;
+  "time_range"?: string;
+  "top_queries"?: Array<ModelTrendsRelatedGroup>;
+  "type"?: string;
+  "tz"?: number;
+}
+
+export interface ModelTrendsInterestByRegionResponse {
+  "category"?: number;
+  "geo"?: string;
+  "hl"?: string;
+  "interest_by_region"?: Array<ModelTrendsRegionInterest>;
+  "keywords"?: Array<string>;
+  "property"?: string;
+  "time_range"?: string;
+  "type"?: string;
+  "tz"?: number;
+}
+
+export interface ModelTrendsInterestOverTimeResponse {
+  "category"?: number;
+  "geo"?: string;
+  "hl"?: string;
+  "interest_over_time"?: Array<ModelTrendsInterestPoint>;
+  "keywords"?: Array<string>;
+  "property"?: string;
+  "time_range"?: string;
+  "type"?: string;
+  "tz"?: number;
+}
+
+export interface ModelTrendsInterestPoint {
+  "formatted_axis_time"?: string;
+  "formatted_time"?: string;
+  "time"?: string;
+  "values"?: Array<ModelTrendsTrendValue>;
+}
+
+export interface ModelTrendsRegionInterest {
+  "geo_code"?: string;
+  "geo_name"?: string;
+  "values"?: Array<ModelTrendsTrendValue>;
+}
+
+export interface ModelTrendsRelatedGroup {
+  "items"?: Array<ModelTrendsRelatedItem>;
+  "keyword"?: string;
+}
+
+export interface ModelTrendsRelatedItem {
+  "formatted_value"?: string;
+  "link"?: string;
+  "query"?: string;
+  "topic_mid"?: string;
+  "topic_title"?: string;
+  "topic_type"?: string;
+  "value"?: number;
+}
+
+export interface ModelTrendsRelatedTopicsResponse {
+  "category"?: number;
+  "geo"?: string;
+  "hl"?: string;
+  "keywords"?: Array<string>;
+  "property"?: string;
+  "related_topics"?: Array<ModelTrendsRelatedGroup>;
+  "time_range"?: string;
+  "type"?: string;
+  "tz"?: number;
+}
+
+export interface ModelTrendsTrendCategory {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelTrendsTrendValue {
+  "formatted_value"?: string;
+  "has_data"?: boolean;
+  "keyword"?: string;
+  "value"?: number;
+}
+
+export interface ModelTrendsTrendingArticle {
+  "source"?: string;
+  "time"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTrendsTrendingDetailRequest {
+  "category"?: number;
+  "geo"?: "WORLDWIDE" | "AF" | "AX" | "AL" | "DZ" | "AS" | "AD" | "AO" | "AI" | "AQ" | "AG" | "AR" | "AM" | "AW" | "AU" | "AT" | "AZ" | "BS" | "BH" | "BD" | "BB" | "BY" | "BE" | "BZ" | "BJ" | "BM" | "BT" | "BO" | "BA" | "BW" | "BV" | "BR" | "IO" | "VG" | "BN" | "BG" | "BF" | "BI" | "KH" | "CM" | "CV" | "CA" | "BQ" | "KY" | "CF" | "TD" | "CL" | "CN" | "CX" | "CC" | "CO" | "KM" | "CG" | "CD" | "CK" | "CR" | "CI" | "HR" | "CU" | "CW" | "CY" | "CZ" | "DK" | "DJ" | "DM" | "DO" | "EC" | "EG" | "SV" | "GQ" | "ER" | "EE" | "SZ" | "ET" | "FK" | "FO" | "FJ" | "FI" | "FR" | "GF" | "PF" | "TF" | "GA" | "GM" | "GE" | "DE" | "GH" | "GI" | "GR" | "GL" | "GD" | "GP" | "GU" | "GT" | "GG" | "GN" | "GW" | "GY" | "HT" | "HM" | "HN" | "HK" | "HU" | "IS" | "IN" | "ID" | "IR" | "IQ" | "IE" | "IM" | "IL" | "IT" | "JM" | "JP" | "JE" | "JO" | "KZ" | "KE" | "KI" | "XK" | "KW" | "KG" | "LA" | "LV" | "LB" | "LS" | "LR" | "LY" | "LI" | "LT" | "LU" | "MO" | "MG" | "MW" | "MY" | "MV" | "ML" | "MT" | "MH" | "MQ" | "MR" | "MU" | "YT" | "MX" | "FM" | "MD" | "MC" | "MN" | "ME" | "MS" | "MA" | "MZ" | "MM" | "NA" | "NR" | "NP" | "NL" | "NC" | "NZ" | "NI" | "NE" | "NG" | "NU" | "NF" | "KP" | "MK" | "MP" | "NO" | "OM" | "PK" | "PW" | "PS" | "PA" | "PG" | "PY" | "PE" | "PH" | "PN" | "PL" | "PT" | "PR" | "QA" | "RE" | "RO" | "RU" | "RW" | "WS" | "SM" | "ST" | "SA" | "SN" | "RS" | "SC" | "SL" | "SG" | "SX" | "SK" | "SI" | "SB" | "SO" | "ZA" | "GS" | "KR" | "SS" | "ES" | "LK" | "BL" | "SH" | "KN" | "LC" | "MF" | "PM" | "VC" | "SD" | "SR" | "SJ" | "SE" | "CH" | "SY" | "TW" | "TJ" | "TZ" | "TH" | "TL" | "TG" | "TK" | "TO" | "TT" | "TN" | "TR" | "TM" | "TC" | "TV" | "UM" | "VI" | "UG" | "UA" | "AE" | "GB" | "US" | "UY" | "UZ" | "VU" | "VA" | "VE" | "VN" | "WF" | "EH" | "YE" | "ZM" | "ZW";
+  "hl"?: string;
+  "property"?: string;
+  "query"?: string;
+  "time_range"?: "now 1-H" | "now 4-H" | "now 1-d" | "now 7-d" | "today 1-m" | "today 3-m" | "today 12-m" | "today 5-y" | "all";
+  "type"?: "web" | "image" | "news" | "youtube" | "shopping";
+  "tz"?: number;
+}
+
+export interface ModelTrendsTrendingItem {
+  "articles"?: Array<ModelTrendsTrendingArticle>;
+  "explore_url"?: string;
+  "query"?: string;
+  "rank"?: number;
+  "related_terms"?: Array<string>;
+  "share_url"?: string;
+  "started_unix"?: number;
+  "status"?: string;
+  "title"?: string;
+  "traffic"?: string;
+  "updated_unix"?: number;
+}
+
+export interface ModelTrendsTrendingResponse {
+  "category"?: number;
+  "geo"?: string;
+  "hl"?: string;
+  "items"?: Array<ModelTrendsTrendingItem>;
+  "sort_by"?: string;
+  "status"?: string;
+  "time_range"?: string;
+  "tz"?: number;
+  "window"?: string;
+}
+
+export interface ModelTrendsTrendsCategoriesResponse {
+  "categories"?: Array<ModelTrendsTrendCategory>;
+}
+
+export interface ModelTrendsTrendsEnumsResponse {
+  "explore_time_ranges"?: Array<string>;
+  "locations"?: Array<string>;
+  "search_types"?: Array<string>;
+  "trend_statuses"?: Array<string>;
+  "trending_categories"?: Array<ModelTrendsTrendCategory>;
+  "trending_sort_bys"?: Array<string>;
+  "trending_time_ranges"?: Array<string>;
+}
+
+export interface ModelTrendsTrendsLocationsResponse {
+  "locations"?: Array<string>;
+}
+
+export interface ModelTrendsExploreQueriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsExploreQueriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrendsExploreResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsExploreResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrendsInterestByRegionResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsInterestByRegionResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrendsInterestOverTimeResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsInterestOverTimeResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrendsRelatedTopicsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsRelatedTopicsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrendsTrendingResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsTrendingResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrendsTrendsCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsTrendsCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrendsTrendsEnumsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsTrendsEnumsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrendsTrendsLocationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrendsTrendsLocationsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTripadvisorAutocompleteResponse {
+  "locale"?: string;
+  "query"?: string;
+  "results"?: Array<ModelTripadvisorSearchItem>;
+  "scope_geo_id"?: number;
+}
+
+export interface ModelTripadvisorEnumsResponse {
+  "attraction_categories"?: Array<string>;
+  "attraction_category_ids"?: Record<string, string>;
+  "currencies"?: Array<string>;
+  "filter_ids"?: Array<string>;
+  "hotel_amenities"?: Array<number>;
+  "hotel_classes"?: Array<number>;
+  "languages"?: Array<string>;
+  "listing_types"?: Array<string>;
+  "locales"?: Array<string>;
+  "pricing_modes"?: Array<string>;
+  "restaurant_options"?: Array<number>;
+  "restaurant_types"?: Array<number>;
+  "sorts"?: Array<string>;
+  "unsupported_entity_types"?: Array<string>;
+}
+
+export interface ModelTripadvisorHotelItem {
+  "address"?: string;
+  "currency"?: string;
+  "id"?: string;
+  "image"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "parent"?: string;
+  "phone"?: string;
+  "price"?: string;
+  "provider"?: string;
+  "rank"?: number;
+  "rank_label"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "review_rating"?: number;
+  "review_snippet"?: string;
+  "review_title"?: string;
+  "star_rating"?: number;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelTripadvisorHotelListResponse {
+  "currency"?: string;
+  "full_matches"?: number;
+  "geo_id"?: number;
+  "limit"?: number;
+  "offset"?: number;
+  "results"?: Array<ModelTripadvisorHotelItem>;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelTripadvisorNestedSearchItem {
+  "query"?: string;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelTripadvisorPlaceAddressParts {
+  "country"?: string;
+  "locality"?: string;
+  "postal_code"?: string;
+  "region"?: string;
+  "street"?: string;
+}
+
+export interface ModelTripadvisorPlaceImage {
+  "caption"?: string;
+  "height"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelTripadvisorPlaceItem {
+  "address"?: string;
+  "booking_url"?: string;
+  "categories"?: Array<string>;
+  "cuisines"?: Array<string>;
+  "currency"?: string;
+  "id"?: string;
+  "image"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "parent"?: string;
+  "phone"?: string;
+  "price"?: string;
+  "price_level"?: string;
+  "provider"?: string;
+  "rank"?: number;
+  "rank_label"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "review_rating"?: number;
+  "review_snippet"?: string;
+  "review_title"?: string;
+  "star_rating"?: number;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelTripadvisorPlaceLink {
+  "label"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelTripadvisorPlaceResponse {
+  "address"?: string;
+  "address_parts"?: ModelTripadvisorPlaceAddressParts;
+  "amenities"?: Array<string>;
+  "awards"?: Array<string>;
+  "breadcrumbs"?: Array<string>;
+  "canonical_url"?: string;
+  "categories"?: Array<string>;
+  "cuisines"?: Array<string>;
+  "description"?: string;
+  "features"?: Array<string>;
+  "geo_id"?: string;
+  "id"?: string;
+  "image"?: string;
+  "images"?: Array<ModelTripadvisorPlaceImage>;
+  "latitude"?: number;
+  "links"?: Array<ModelTripadvisorPlaceLink>;
+  "longitude"?: number;
+  "opening_hours"?: Array<string>;
+  "phone"?: string;
+  "price_level"?: string;
+  "price_range"?: string;
+  "rank"?: number;
+  "rank_label"?: string;
+  "rating"?: number;
+  "reviews"?: number;
+  "summary"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+  "website_url"?: string;
+}
+
+export interface ModelTripadvisorReviewItem {
+  "author"?: string;
+  "author_avatar"?: string;
+  "author_hometown"?: string;
+  "author_id"?: string;
+  "author_url"?: string;
+  "created_date"?: string;
+  "date"?: string;
+  "helpful"?: number;
+  "id"?: string;
+  "language"?: string;
+  "original_language"?: string;
+  "photos"?: Array<string>;
+  "rating"?: number;
+  "stay_date"?: string;
+  "text"?: string;
+  "title"?: string;
+  "trip_type"?: string;
+  "url"?: string;
+}
+
+export interface ModelTripadvisorReviewsResponse {
+  "id"?: string;
+  "language"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "reviews"?: Array<ModelTripadvisorReviewItem>;
+  "total"?: number;
+  "url"?: string;
+}
+
+export interface ModelTripadvisorSearchItem {
+  "document_id"?: string;
+  "id"?: string;
+  "image"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "nested_results"?: Array<ModelTripadvisorNestedSearchItem>;
+  "parent"?: string;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelTripadvisorSearchResponse {
+  "currency"?: string;
+  "geo_id"?: number;
+  "limit"?: number;
+  "locale"?: string;
+  "offset"?: number;
+  "results"?: Array<ModelTripadvisorPlaceItem>;
+  "sort"?: string;
+  "source"?: string;
+  "type"?: string;
+  "unsupported_types"?: Array<string>;
+}
+
+export interface ModelTripadvisorTripadvisorAutocompleteResponseDoc {
+  "code"?: number;
+  "data"?: ModelTripadvisorAutocompleteResponse;
+  "msg"?: string;
+}
+
+export interface ModelTripadvisorTripadvisorEnumsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTripadvisorEnumsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTripadvisorTripadvisorHotelsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTripadvisorHotelListResponse;
+  "msg"?: string;
+}
+
+export interface ModelTripadvisorTripadvisorReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTripadvisorReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTripadvisorTripadvisorSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTripadvisorSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustpilotBusinessAbout {
+  "business_country_code"?: string;
+  "contact"?: ModelTrustpilotBusinessContact;
+  "description_html"?: string;
+  "description_text"?: string;
+  "facebook_url"?: string;
+  "has_company_elements"?: boolean;
+  "information_source"?: string;
+  "promotion_points"?: Array<string>;
+  "promotion_title"?: string;
+}
+
+export interface ModelTrustpilotBusinessActivity {
+  "claimed_date"?: string;
+  "has_business_unit_merge_history"?: boolean;
+  "has_subscription"?: boolean;
+  "is_asking_for_reviews"?: boolean;
+  "is_claimed"?: boolean;
+  "is_using_ai_responses"?: boolean;
+  "is_using_paid_features"?: boolean;
+  "previously_claimed"?: boolean;
+  "verification"?: ModelTrustpilotBusinessVerification;
+}
+
+export interface ModelTrustpilotBusinessBreadcrumb {
+  "id"?: string;
+  "level"?: string;
+  "name"?: string;
+}
+
+export interface ModelTrustpilotBusinessCategory {
+  "cardinality"?: number;
+  "id"?: string;
+  "is_primary"?: boolean;
+  "name"?: string;
+  "rank"?: number;
+}
+
+export interface ModelTrustpilotBusinessCompanyReply {
+  "message"?: string;
+  "published_at_text"?: string;
+  "updated_at_text"?: string;
+}
+
+export interface ModelTrustpilotBusinessContact {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "email"?: string;
+  "phone"?: string;
+  "zip_code"?: string;
+}
+
+export interface ModelTrustpilotBusinessPageLanguage {
+  "iso_language"?: string;
+  "language_code"?: string;
+  "locale"?: string;
+  "uri"?: string;
+}
+
+export interface ModelTrustpilotBusinessPageMeta {
+  "canonical_url"?: string;
+  "domain"?: string;
+  "languages"?: Array<ModelTrustpilotBusinessPageLanguage>;
+  "locale"?: string;
+}
+
+export interface ModelTrustpilotBusinessRatingHistogram {
+  "five"?: number;
+  "four"?: number;
+  "one"?: number;
+  "three"?: number;
+  "total"?: number;
+  "two"?: number;
+}
+
+export interface ModelTrustpilotBusinessRelatedResponse {
+  "business"?: ModelTrustpilotBusinessHeader;
+  "items"?: Array<ModelTrustpilotRelatedBusiness>;
+}
+
+export interface ModelTrustpilotBusinessReplyMetrics {
+  "average_days_to_reply"?: number;
+  "last_reply_to_negative_review"?: string;
+  "negative_reviews_with_replies"?: number;
+  "reply_percentage"?: number;
+  "total_negative_reviews"?: number;
+}
+
+export interface ModelTrustpilotBusinessResponse {
+  "about"?: ModelTrustpilotBusinessAbout;
+  "breadcrumbs"?: Array<ModelTrustpilotBusinessBreadcrumb>;
+  "categories"?: Array<ModelTrustpilotBusinessCategory>;
+  "claimed"?: boolean;
+  "company_activity"?: ModelTrustpilotBusinessActivity;
+  "name"?: string;
+  "page_meta"?: ModelTrustpilotBusinessPageMeta;
+  "paid_subscription"?: boolean;
+  "rating"?: number;
+  "rating_histogram"?: ModelTrustpilotBusinessRatingHistogram;
+  "reply_metrics"?: ModelTrustpilotBusinessReplyMetrics;
+  "review_count"?: number;
+  "review_summary"?: ModelTrustpilotBusinessReviewSummary;
+  "review_topics"?: Array<ModelTrustpilotBusinessReviewTopic>;
+  "slug"?: string;
+  "trust_score"?: number;
+  "trustpilot_url"?: string;
+  "website_url"?: string;
+}
+
+export interface ModelTrustpilotBusinessReviewItem {
+  "author_country"?: string;
+  "author_name"?: string;
+  "author_review_count"?: number;
+  "body"?: string;
+  "company_reply"?: ModelTrustpilotBusinessCompanyReply;
+  "experienced_at_text"?: string;
+  "id"?: string;
+  "invited"?: boolean;
+  "labels"?: ModelTrustpilotBusinessReviewLabels;
+  "published_at_text"?: string;
+  "rating"?: number;
+  "title"?: string;
+  "updated_at_text"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelTrustpilotBusinessReviewLabels {
+  "filtered"?: boolean;
+  "merged"?: string;
+  "pending"?: boolean;
+  "review_source"?: string;
+  "verification_level"?: string;
+  "verification_source"?: string;
+}
+
+export interface ModelTrustpilotBusinessReviewSummary {
+  "model_version"?: string;
+  "status"?: string;
+  "summary"?: string;
+  "updated_at"?: string;
+}
+
+export interface ModelTrustpilotBusinessReviewTopic {
+  "model_version"?: string;
+  "order"?: number;
+  "summary"?: string;
+  "topic"?: string;
+  "updated_at"?: string;
+}
+
+export interface ModelTrustpilotBusinessReviewsAppliedFilters {
+  "language"?: string;
+  "query"?: string;
+  "replied"?: boolean;
+  "stars"?: number;
+  "verified"?: boolean;
+}
+
+export interface ModelTrustpilotBusinessReviewsPagination {
+  "has_next_page"?: boolean;
+  "next_page"?: number;
+  "page"?: number;
+  "per_page"?: number;
+  "total_pages"?: number;
+  "total_reviews"?: number;
+}
+
+export interface ModelTrustpilotBusinessReviewsResponse {
+  "applied_filters"?: ModelTrustpilotBusinessReviewsAppliedFilters;
+  "business"?: ModelTrustpilotBusinessHeader;
+  "items"?: Array<ModelTrustpilotBusinessReviewItem>;
+  "pagination"?: ModelTrustpilotBusinessReviewsPagination;
+}
+
+export interface ModelTrustpilotBusinessVerification {
+  "verified_by_google"?: boolean;
+  "verified_payment_method"?: boolean;
+  "verified_user_identity"?: boolean;
+}
+
+export interface ModelTrustpilotCategoriesResponse {
+  "groups"?: Array<ModelTrustpilotCategoryGroup>;
+}
+
+export interface ModelTrustpilotCategoryBusiness {
+  "business_unit_id"?: string;
+  "categories"?: Array<ModelTrustpilotCategoryBusinessTag>;
+  "display_name"?: string;
+  "email"?: string;
+  "identifying_name"?: string;
+  "location"?: ModelTrustpilotCategoryBusinessLocation;
+  "logo_url"?: string;
+  "phone"?: string;
+  "recommended"?: boolean;
+  "review_count"?: number;
+  "stars"?: number;
+  "trust_score"?: number;
+  "trustpilot_url"?: string;
+  "website_url"?: string;
+}
+
+export interface ModelTrustpilotCategoryBusinessLocation {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "zip_code"?: string;
+}
+
+export interface ModelTrustpilotCategoryBusinessTag {
+  "category_id"?: string;
+  "display_name"?: string;
+  "is_predicted"?: boolean;
+  "is_primary"?: boolean;
+}
+
+export interface ModelTrustpilotCategoryGroup {
+  "items"?: Array<ModelTrustpilotCategoryLink>;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelTrustpilotCategoryLink {
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelTrustpilotCategoryPagination {
+  "has_next_page"?: boolean;
+  "next_page"?: number;
+  "page"?: number;
+  "per_page"?: number;
+  "total_hits"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelTrustpilotCategoryResponse {
+  "breadcrumbs"?: Array<ModelTrustpilotCategoryLink>;
+  "country"?: string;
+  "items"?: Array<ModelTrustpilotCategoryBusiness>;
+  "name"?: string;
+  "newest_companies"?: Array<ModelTrustpilotCategoryBusiness>;
+  "page"?: number;
+  "pagination"?: ModelTrustpilotCategoryPagination;
+  "recently_reviewed_companies"?: Array<ModelTrustpilotCategoryBusiness>;
+  "related_categories"?: Array<ModelTrustpilotCategoryLink>;
+  "slug"?: string;
+  "sort"?: string;
+  "trustpilot_url"?: string;
+}
+
+export interface ModelTrustpilotCategorySearchResponse {
+  "categories"?: Array<ModelTrustpilotCategorySearchResult>;
+  "country"?: string;
+  "locale"?: string;
+  "query"?: string;
+  "size"?: number;
+}
+
+export interface ModelTrustpilotCategorySearchResult {
+  "category_id"?: string;
+  "display_name"?: string;
+  "top_level_category_id"?: string;
+}
+
+export interface ModelTrustpilotRelatedBusiness {
+  "business_unit_id"?: string;
+  "display_name"?: string;
+  "identifying_name"?: string;
+  "logo_url"?: string;
+  "review_count"?: number;
+  "source"?: string;
+  "stars"?: number;
+  "trust_score"?: number;
+  "trustpilot_url"?: string;
+}
+
+export interface ModelTrustpilotSearchAddress {
+  "approximate_area"?: ModelTrustpilotSearchAreaBounds;
+  "city"?: string;
+  "coordinates"?: ModelTrustpilotSearchCoordinates;
+  "country"?: string;
+  "country_code"?: string;
+  "postcode"?: string;
+  "street"?: string;
+}
+
+export interface ModelTrustpilotSearchAreaBounds {
+  "north_west"?: ModelTrustpilotSearchCoordinates;
+  "south_east"?: ModelTrustpilotSearchCoordinates;
+}
+
+export interface ModelTrustpilotSearchCategory {
+  "id"?: string;
+  "name"?: string;
+  "primary"?: boolean;
+}
+
+export interface ModelTrustpilotSearchCoordinates {
+  "lat"?: number;
+  "lon"?: number;
+}
+
+export interface ModelTrustpilotSearchResponse {
+  "country"?: string;
+  "items"?: Array<ModelTrustpilotSearchResult>;
+  "page"?: number;
+  "page_size"?: number;
+  "query"?: string;
+  "search_mode"?: string;
+  "total_hits"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelTrustpilotSearchResult {
+  "address"?: ModelTrustpilotSearchAddress;
+  "business_unit_id"?: string;
+  "categories"?: Array<ModelTrustpilotSearchCategory>;
+  "country_code"?: string;
+  "display_name"?: string;
+  "email"?: string;
+  "identifying_name"?: string;
+  "logo_url"?: string;
+  "phone"?: string;
+  "predicted_top_category"?: ModelTrustpilotSearchCategory;
+  "review_count"?: number;
+  "stars"?: number;
+  "trust_score"?: number;
+  "trustpilot_url"?: string;
+  "verified"?: boolean;
+  "website_url"?: string;
+}
+
+export interface ModelTrustpilotBusinessHeader {
+  "claimed"?: boolean;
+  "name"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "slug"?: string;
+  "trust_score"?: number;
+  "trustpilot_url"?: string;
+  "website_url"?: string;
+}
+
+export interface ModelTrustpilotBusinessProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustpilotBusinessResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustpilotBusinessRelatedResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustpilotBusinessRelatedResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustpilotBusinessReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustpilotBusinessReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustpilotBusinessSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustpilotSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustpilotCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustpilotCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustpilotCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustpilotCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustpilotCategorySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustpilotCategorySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelUsageUsageBillingStateDoc {
+  "allow_overage"?: boolean;
+  "created_at"?: string;
+  "credits_remaining"?: number;
+  "credits_used"?: number;
+  "currency"?: string;
+  "daily_credit_limit"?: number;
+  "daily_credits_remaining"?: number;
+  "daily_credits_used"?: number;
+  "daily_key"?: string;
+  "expected_subscription_amount_cents"?: number;
+  "expected_total_amount_cents"?: number;
+  "hard_limit"?: boolean;
+  "included_credits"?: number;
+  "overage_credits"?: number;
+  "period_end"?: string;
+  "period_key"?: string;
+  "period_start"?: string;
+  "plan"?: string;
+  "pricing_source"?: string;
+  "subscription_price_cents"?: number;
+  "updated_at"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelUsageUsageEndpointItemDoc {
+  "charged_requests"?: number;
+  "credits"?: number;
+  "endpoint"?: string;
+  "failed_requests"?: number;
+  "non_billable_requests"?: number;
+  "overage"?: number;
+  "requests"?: number;
+}
+
+export interface ModelUsageUsageEndpointsDoc {
+  "from"?: string;
+  "items"?: Array<ModelUsageUsageEndpointItemDoc>;
+  "range"?: string;
+  "to"?: string;
+}
+
+export interface ModelUsageUsageEndpointsResponseDoc {
+  "code"?: number;
+  "data"?: ModelUsageUsageEndpointsDoc;
+  "msg"?: string;
+}
+
+export interface ModelUsageUsageOverviewDoc {
+  "billing"?: ModelUsageUsageBillingStateDoc;
+  "from"?: string;
+  "range"?: string;
+  "requests"?: ModelUsageUsageRequestSummaryDoc;
+  "to"?: string;
+  "usage"?: ModelUsageUsageWindowSummaryDoc;
+}
+
+export interface ModelUsageUsageOverviewResponseDoc {
+  "code"?: number;
+  "data"?: ModelUsageUsageOverviewDoc;
+  "msg"?: string;
+}
+
+export interface ModelUsageUsageRecentIpitemDoc {
+  "error_count"?: number;
+  "ip"?: string;
+  "last_seen_at"?: string;
+  "last_user_agent"?: string;
+  "request_count"?: number;
+  "success_count"?: number;
+}
+
+export interface ModelUsageUsageRecentIpsDoc {
+  "from"?: string;
+  "items"?: Array<ModelUsageUsageRecentIpitemDoc>;
+  "range"?: string;
+  "to"?: string;
+}
+
+export interface ModelUsageUsageRecentIpsResponseDoc {
+  "code"?: number;
+  "data"?: ModelUsageUsageRecentIpsDoc;
+  "msg"?: string;
+}
+
+export interface ModelUsageUsageRequestSummaryDoc {
+  "avg_latency_ms"?: number;
+  "distinct_ip_count"?: number;
+  "error_requests"?: number;
+  "last_request_at"?: string;
+  "requests"?: number;
+  "success_requests"?: number;
+}
+
+export interface ModelUsageUsageTimeseriesDoc {
+  "bucket"?: string;
+  "from"?: string;
+  "items"?: Array<ModelUsageUsageTimeseriesItemDoc>;
+  "range"?: string;
+  "to"?: string;
+}
+
+export interface ModelUsageUsageTimeseriesItemDoc {
+  "bucket_end"?: string;
+  "bucket_start"?: string;
+  "charged_requests"?: number;
+  "credits"?: number;
+  "failed_requests"?: number;
+  "non_billable_requests"?: number;
+  "overage"?: number;
+  "requests"?: number;
+}
+
+export interface ModelUsageUsageTimeseriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelUsageUsageTimeseriesDoc;
+  "msg"?: string;
+}
+
+export interface ModelUsageUsageWindowSummaryDoc {
+  "charged_requests"?: number;
+  "credits"?: number;
+  "failed_requests"?: number;
+  "non_billable_requests"?: number;
+  "overage"?: number;
+  "requests"?: number;
+}
+
+export interface ModelUserUserApikeyItemDoc {
+  "created_at"?: string;
+  "expires_at"?: string;
+  "id"?: string;
+  "key_prefix"?: string;
+  "key_suffix"?: string;
+  "last_used_at"?: string;
+  "last_used_ip"?: string;
+  "masked_key"?: string;
+  "rotated_at"?: string;
+  "source"?: string;
+  "status"?: string;
+  "updated_at"?: string;
+}
+
+export interface ModelUserUserApikeysDoc {
+  "items"?: Array<ModelUserUserApikeyItemDoc>;
+}
+
+export interface ModelUserUserApikeysResponseDoc {
+  "code"?: number;
+  "data"?: ModelUserUserApikeysDoc;
+  "msg"?: string;
+}
+
+export interface ModelUserUserMeDoc {
+  "email"?: string;
+  "id"?: string;
+  "plan"?: string;
+  "username"?: string;
+}
+
+export interface ModelUserUserMeResponseDoc {
+  "code"?: number;
+  "data"?: ModelUserUserMeDoc;
+  "msg"?: string;
+}
+
+export interface ModelUserUserRevealApikeyDoc {
+  "api_key"?: string;
+  "key"?: ModelUserUserApikeyItemDoc;
+}
+
+export interface ModelUserUserRevealApikeyResponseDoc {
+  "code"?: number;
+  "data"?: ModelUserUserRevealApikeyDoc;
+  "msg"?: string;
+}
+
+export interface ModelUserUserRotateApikeyDoc {
+  "active_key"?: ModelUserUserApikeyItemDoc;
+  "grace_period_seconds"?: number;
+  "new_api_key"?: string;
+  "previous_key"?: ModelUserUserApikeyItemDoc;
+}
+
+export interface ModelUserUserRotateApikeyResponseDoc {
+  "code"?: number;
+  "data"?: ModelUserUserRotateApikeyDoc;
+  "msg"?: string;
+}
+
+export interface ModelWebParseWebOption {
+  "enablejs"?: boolean;
+  "format"?: "html" | "markdown";
+  "url": string;
+}
+
+export interface ModelYahoofinanceActionEvents {
+  "capital_gains"?: Array<Record<string, unknown>>;
+  "dividends"?: Array<Record<string, unknown>>;
+  "splits"?: Array<Record<string, unknown>>;
+}
+
+export interface ModelYahoofinanceCalendarResponse {
+  "end"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "rows"?: Array<Record<string, unknown>>;
+  "start"?: string;
+  "type"?: string;
+}
+
+export interface ModelYahoofinanceCalendarsResponse {
+  "calendars"?: Array<string>;
+}
+
+export interface ModelYahoofinanceDomainListResponse {
+  "items"?: Array<ModelYahoofinanceDomainRef>;
+}
+
+export interface ModelYahoofinanceDomainRef {
+  "key"?: string;
+  "name"?: string;
+}
+
+export interface ModelYahoofinanceDownloadRequest {
+  "auto_adjust"?: boolean;
+  "back_adjust"?: boolean;
+  "end"?: string;
+  "include_actions"?: boolean;
+  "include_prepost"?: boolean;
+  "interval"?: string;
+  "keepna"?: boolean;
+  "period"?: string;
+  "rounding"?: boolean;
+  "start"?: string;
+  "symbols": Array<string>;
+}
+
+export interface ModelYahoofinanceDownloadResponse {
+  "results"?: Array<ModelYahoofinanceDownloadResult>;
+}
+
+export interface ModelYahoofinanceDownloadResult {
+  "error"?: string;
+  "history"?: ModelYahoofinanceHistoryResponse;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceEarningsDatesResponse {
+  "limit"?: number;
+  "offset"?: number;
+  "rows"?: Array<Record<string, unknown>>;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceFinancialsResponse {
+  "modules"?: Record<string, unknown>;
+  "period"?: string;
+  "statement"?: string;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceHistoryMetadataResponse {
+  "meta"?: Record<string, unknown>;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceHistoryResponse {
+  "events"?: ModelYahoofinanceActionEvents;
+  "meta"?: Record<string, unknown>;
+  "points"?: Array<ModelYahoofinancePricePoint>;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceIsinresponse {
+  "isin"?: string;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceIndustryResponse {
+  "key"?: string;
+  "name"?: string;
+  "overview"?: Record<string, unknown>;
+  "research_reports"?: Array<Record<string, unknown>>;
+  "sector_key"?: string;
+  "sector_name"?: string;
+  "symbol"?: string;
+  "top_companies"?: Array<Record<string, unknown>>;
+  "top_growth_companies"?: Array<Record<string, unknown>>;
+  "top_performing_companies"?: Array<Record<string, unknown>>;
+}
+
+export interface ModelYahoofinanceInfoResponse {
+  "modules"?: Record<string, unknown>;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceMarketStatusResponse {
+  "market"?: string;
+  "status"?: Record<string, unknown>;
+}
+
+export interface ModelYahoofinanceMarketSummaryResponse {
+  "market"?: string;
+  "summary"?: Array<Record<string, unknown>>;
+}
+
+export interface ModelYahoofinanceModuleResponse {
+  "modules"?: Record<string, unknown>;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceOptionExpiration {
+  "calls"?: Array<Record<string, unknown>>;
+  "expiration_date"?: number;
+  "puts"?: Array<Record<string, unknown>>;
+}
+
+export interface ModelYahoofinanceOptionsResponse {
+  "expiration_dates"?: Array<number>;
+  "options"?: Array<ModelYahoofinanceOptionExpiration>;
+  "symbol"?: string;
+  "underlying"?: Record<string, unknown>;
+}
+
+export interface ModelYahoofinancePricePoint {
+  "adj_close"?: number;
+  "close"?: number;
+  "datetime"?: string;
+  "high"?: number;
+  "low"?: number;
+  "open"?: number;
+  "timestamp"?: number;
+  "volume"?: number;
+}
+
+export interface ModelYahoofinanceQuoteResponse {
+  "quotes"?: Array<Record<string, unknown>>;
+  "symbols"?: Array<string>;
+}
+
+export interface ModelYahoofinanceScreenerRequest {
+  "count"?: number;
+  "offset"?: number;
+  "query": Record<string, unknown>;
+  "quote_type"?: string;
+  "sort_asc"?: boolean;
+  "sort_field"?: string;
+}
+
+export interface ModelYahoofinanceScreenerResponse {
+  "description"?: string;
+  "id"?: string;
+  "meta"?: Record<string, unknown>;
+  "quotes"?: Array<Record<string, unknown>>;
+  "title"?: string;
+  "total"?: number;
+}
+
+export interface ModelYahoofinanceScreenersResponse {
+  "screeners"?: Array<string>;
+}
+
+export interface ModelYahoofinanceSearchResponse {
+  "lists"?: Array<Record<string, unknown>>;
+  "news"?: Array<Record<string, unknown>>;
+  "query"?: string;
+  "quotes"?: Array<Record<string, unknown>>;
+  "research"?: Array<Record<string, unknown>>;
+}
+
+export interface ModelYahoofinanceSectorResponse {
+  "industries"?: Array<Record<string, unknown>>;
+  "key"?: string;
+  "name"?: string;
+  "overview"?: Record<string, unknown>;
+  "research_reports"?: Array<Record<string, unknown>>;
+  "symbol"?: string;
+  "top_companies"?: Array<Record<string, unknown>>;
+  "top_etfs"?: Record<string, string>;
+  "top_mutual_funds"?: Record<string, string>;
+}
+
+export interface ModelYahoofinanceSharesFullResponse {
+  "end"?: string;
+  "points"?: Array<Record<string, unknown>>;
+  "start"?: string;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceSharesResponse {
+  "shares"?: Record<string, unknown>;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceTrendingResponse {
+  "count"?: number;
+  "job_timestamp"?: number;
+  "region"?: string;
+  "start_interval"?: number;
+  "symbols"?: Array<string>;
+}
+
+export interface ModelYahoofinanceValuationResponse {
+  "headers"?: Array<string>;
+  "rows"?: Array<Record<string, unknown>>;
+  "symbol"?: string;
+}
+
+export interface ModelYahoofinanceActionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceActionEvents;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceCalendarResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceCalendarResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceCalendarsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceCalendarsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceDomainListResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceDomainListResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceDownloadResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceDownloadResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceEarningsDatesResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceEarningsDatesResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceFinancialsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceFinancialsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceHistoryMetadataResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceHistoryMetadataResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceIndustryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceIndustryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceInfoResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceInfoResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceIsinResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceIsinresponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceMarketStatusResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceMarketStatusResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceMarketSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceMarketSummaryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceModuleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceModuleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceOptionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceOptionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceQuoteResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceQuoteResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceScreenerResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceScreenerResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceScreenersResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceScreenersResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceSectorResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceSectorResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceSharesFullResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceSharesFullResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceSharesResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceSharesResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceTrendingResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceTrendingResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceValuationResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceValuationResponse;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeCaption {
+  "duration"?: number;
+  "start"?: number;
+  "text"?: string;
+}
+
+export interface ModelYoutubeChannelFeedResponse {
+  "channel_id"?: string;
+  "channel_title"?: string;
+  "channel_url"?: string;
+  "continuation_token"?: string;
+  "handle"?: string;
+  "items"?: Array<ModelYoutubeSearchItem>;
+  "query"?: string;
+  "thumbnail"?: string;
+}
+
+export interface ModelYoutubeChannelShort {
+  "position"?: number;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+  "video_id"?: string;
+  "view_count"?: string;
+}
+
+export interface ModelYoutubeChannelShortsResponse {
+  "channel_id"?: string;
+  "channel_title"?: string;
+  "channel_url"?: string;
+  "handle"?: string;
+  "shorts"?: Array<ModelYoutubeChannelShort>;
+  "thumbnail"?: string;
+}
+
+export interface ModelYoutubeComment {
+  "channel_id"?: string;
+  "comment_id"?: string;
+  "content"?: string;
+  "continuation_token"?: string;
+  "likes_count"?: number;
+  "published_time"?: string;
+  "reply_count"?: number;
+  "user_name"?: string;
+}
+
+export interface ModelYoutubeCommentResponse {
+  "comments"?: Array<ModelYoutubeComment>;
+  "continuation_token"?: string;
+}
+
+export interface ModelYoutubePlaylistResponse {
+  "channel_id"?: string;
+  "channel_title"?: string;
+  "continuation_token"?: string;
+  "items"?: Array<ModelYoutubeSearchItem>;
+  "playlist_id"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+  "video_count"?: string;
+}
+
+export interface ModelYoutubeProfile {
+  "bio"?: string;
+  "channel_id"?: string;
+  "channel_name"?: string;
+  "channel_url"?: string;
+  "created_at"?: string;
+  "id"?: string;
+  "joined_date"?: string;
+  "links"?: Array<string>;
+  "profile_pic"?: string;
+  "region"?: string;
+  "stats"?: ModelYoutubeProfileStats;
+  "updated_at"?: string;
+}
+
+export interface ModelYoutubeProfileStats {
+  "followers_count"?: number;
+  "videos_count"?: number;
+  "views_count"?: number;
+}
+
+export interface ModelYoutubeSearchItem {
+  "badges"?: Array<string>;
+  "channel_id"?: string;
+  "channel_thumbnail"?: string;
+  "channel_title"?: string;
+  "description_snippet"?: string;
+  "duration"?: string;
+  "duration_seconds"?: number;
+  "handle"?: string;
+  "is_live"?: boolean;
+  "is_short"?: boolean;
+  "is_verified"?: boolean;
+  "playlist_id"?: string;
+  "position"?: number;
+  "published_text"?: string;
+  "short_view_count"?: string;
+  "subscriber_count"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+  "video_count"?: string;
+  "video_id"?: string;
+  "view_count"?: string;
+}
+
+export interface ModelYoutubeSearchResponse {
+  "continuation_token"?: string;
+  "estimated_results"?: number;
+  "items"?: Array<ModelYoutubeSearchItem>;
+  "query"?: string;
+}
+
+export interface ModelYoutubeTagResp {
+  "continuation_token"?: string;
+  "meta"?: ModelYoutubeTagMeta;
+  "videos"?: Array<ModelYoutubeVideoDetail>;
+}
+
+export interface ModelYoutubeTranscriptLanguage {
+  "is_generated"?: boolean;
+  "is_translatable"?: boolean;
+  "language"?: string;
+  "language_code"?: string;
+}
+
+export interface ModelYoutubeTranscriptResponse {
+  "is_generated"?: boolean;
+  "language"?: string;
+  "language_code"?: string;
+  "segments"?: Array<ModelYoutubeTranscriptSegment>;
+  "text"?: string;
+  "translation_language"?: string;
+  "video_id"?: string;
+}
+
+export interface ModelYoutubeTranscriptSegment {
+  "duration"?: number;
+  "start"?: number;
+  "text"?: string;
+}
+
+export interface ModelYoutubeVideoDetail {
+  "channel_id"?: string;
+  "channel_title"?: string;
+  "comments_count"?: number;
+  "description"?: string;
+  "dislikes_count"?: number;
+  "duration_seconds"?: number;
+  "id"?: string;
+  "likes_count"?: number;
+  "published_at"?: string;
+  "title"?: string;
+  "views_count"?: number;
+}
+
+export interface ModelYoutubeCaptionsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelYoutubeCaption>;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeChannelFeedResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeChannelFeedResponse;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeChannelSearchResponseDataDoc {
+  "channel_id"?: string;
+  "channel_title"?: string;
+  "channel_url"?: string;
+  "continuation_token"?: string;
+  "handle"?: string;
+  "items"?: Array<ModelYoutubeSearchItem>;
+  "query"?: string;
+  "thumbnail"?: string;
+}
+
+export interface ModelYoutubeChannelSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeChannelSearchResponseDataDoc;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeChannelShortsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeChannelShortsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeCommentResponse;
+  "msg"?: string;
+}
+
+export interface ModelYoutubePlaylistResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubePlaylistResponse;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeProfile;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeTagMeta {
+  "channelsCount"?: number;
+  "videosCount"?: number;
+}
+
+export interface ModelYoutubeTagResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeTagResp;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeTranscriptLanguagesResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelYoutubeTranscriptLanguage>;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeTranscriptResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeTranscriptResponse;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeVideoResponseDoc {
+  "code"?: number;
+  "data"?: ModelYoutubeVideoDetail;
+  "msg"?: string;
+}
+
+export interface ModelZillowAutocompleteItem {
+  "city"?: string;
+  "county"?: string;
+  "id"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "near_me"?: boolean;
+  "plid"?: string;
+  "region_display_ids"?: Array<string>;
+  "region_id"?: number;
+  "region_ids"?: Array<number>;
+  "region_type"?: number;
+  "region_types"?: Array<number>;
+  "school_district_ids"?: Array<number>;
+  "school_ids"?: Array<number>;
+  "state"?: string;
+  "sub_type"?: string;
+  "view_latitude_delta"?: number;
+}
+
+export interface ModelZillowAutocompleteResponse {
+  "query"?: string;
+  "request_id"?: string;
+  "results"?: Array<ModelZillowAutocompleteItem>;
+}
+
+export interface ModelZillowPropertyAddressParts {
+  "city"?: string;
+  "county"?: string;
+  "neighborhood"?: string;
+  "state"?: string;
+  "street"?: string;
+  "subdivision"?: string;
+  "zipcode"?: string;
+}
+
+export interface ModelZillowPropertyAgent {
+  "email"?: string;
+  "name"?: string;
+  "phone"?: string;
+  "type"?: string;
+}
+
+export interface ModelZillowPropertyArea {
+  "text"?: string;
+  "unit"?: string;
+  "value"?: number;
+}
+
+export interface ModelZillowPropertyFact {
+  "key"?: string;
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelZillowPropertyFacts {
+  "accessibility_features"?: Array<string>;
+  "additional"?: Array<ModelZillowPropertyFact>;
+  "appliances"?: Array<string>;
+  "architectural_style"?: string;
+  "basement"?: string;
+  "bathrooms"?: number;
+  "bathrooms_full"?: number;
+  "bathrooms_half"?: number;
+  "bathrooms_one_quarter"?: number;
+  "bathrooms_three_quarter"?: number;
+  "bedrooms"?: number;
+  "builder_model"?: string;
+  "builder_name"?: string;
+  "community_features"?: Array<string>;
+  "construction_materials"?: Array<string>;
+  "cooling"?: Array<string>;
+  "exterior_features"?: Array<string>;
+  "fireplace_features"?: Array<string>;
+  "flooring"?: Array<string>;
+  "foundation_details"?: Array<string>;
+  "garage_spaces"?: number;
+  "has_fireplace"?: boolean;
+  "heating"?: Array<string>;
+  "hoa_fee"?: string;
+  "home_type"?: string;
+  "laundry_features"?: Array<string>;
+  "levels"?: Array<string>;
+  "living_area"?: ModelZillowPropertyArea;
+  "lot_size"?: ModelZillowPropertyArea;
+  "lot_size_dimensions"?: string;
+  "parcel_number"?: string;
+  "parking_capacity"?: number;
+  "parking_features"?: Array<string>;
+  "patio_and_porch_features"?: Array<string>;
+  "pool_features"?: Array<string>;
+  "property_sub_type"?: Array<string>;
+  "roof"?: string;
+  "rooms"?: Array<string>;
+  "security_features"?: Array<string>;
+  "sewer"?: Array<string>;
+  "spa_features"?: Array<string>;
+  "stories"?: number;
+  "structure_type"?: string;
+  "tax_annual_amount"?: number;
+  "tax_assessed_value"?: number;
+  "utilities"?: Array<string>;
+  "view"?: Array<string>;
+  "water_source"?: Array<string>;
+  "waterfront_features"?: Array<string>;
+  "year_built"?: number;
+  "zoning"?: string;
+}
+
+export interface ModelZillowPropertyHistory {
+  "price"?: Array<ModelZillowPropertyPriceHistoryEntry>;
+  "tax"?: Array<ModelZillowPropertyTaxHistoryEntry>;
+}
+
+export interface ModelZillowPropertyItem {
+  "address"?: string;
+  "baths"?: number;
+  "beds"?: number;
+  "broker_name"?: string;
+  "currency"?: string;
+  "days_on_zillow"?: number;
+  "detail_text"?: string;
+  "has_3d_model"?: boolean;
+  "has_video"?: boolean;
+  "home_status"?: string;
+  "home_type"?: string;
+  "image"?: string;
+  "is_showcase"?: boolean;
+  "latitude"?: number;
+  "listing_sub_type"?: Array<string>;
+  "living_area"?: number;
+  "longitude"?: number;
+  "lot_area"?: number;
+  "lot_area_unit"?: string;
+  "photos"?: Array<string>;
+  "price"?: number;
+  "price_text"?: string;
+  "rent_zestimate"?: number;
+  "status_text"?: string;
+  "url"?: string;
+  "zestimate"?: number;
+  "zpid"?: string;
+}
+
+export interface ModelZillowPropertyListing {
+  "agent_name"?: string;
+  "agents"?: Array<ModelZillowPropertyAgent>;
+  "attribution_text"?: string;
+  "broker_name"?: string;
+  "broker_phone"?: string;
+  "date_posted"?: string;
+  "date_updated"?: string;
+  "days_on_zillow"?: number;
+  "listing_id"?: string;
+  "mls_id"?: string;
+  "open_houses"?: Array<ModelZillowPropertyOpenHouse>;
+  "provider"?: string;
+  "provider_listing_id"?: string;
+  "source"?: string;
+  "status"?: string;
+  "sub_types"?: Array<string>;
+  "time_on_zillow"?: string;
+  "type"?: string;
+}
+
+export interface ModelZillowPropertyMedia {
+  "has_3d_model"?: boolean;
+  "has_video"?: boolean;
+  "photo_count"?: number;
+  "photos"?: Array<ModelZillowPropertyPhoto>;
+  "primary_image"?: string;
+  "video_url"?: string;
+  "virtual_tour_url"?: string;
+}
+
+export interface ModelZillowPropertyNearby {
+  "address"?: string;
+  "baths"?: number;
+  "beds"?: number;
+  "home_status"?: string;
+  "living_area"?: number;
+  "price"?: number;
+  "price_text"?: string;
+  "url"?: string;
+  "zpid"?: string;
+}
+
+export interface ModelZillowPropertyOpenHouse {
+  "end_time"?: string;
+  "start_time"?: string;
+  "text"?: string;
+}
+
+export interface ModelZillowPropertyPhoto {
+  "height"?: number;
+  "source"?: string;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelZillowPropertyPriceHistoryEntry {
+  "buyer_agent"?: string;
+  "change"?: number;
+  "date"?: string;
+  "event"?: string;
+  "price"?: number;
+  "price_text"?: string;
+  "seller_agent"?: string;
+  "source"?: string;
+  "time"?: number;
+}
+
+export interface ModelZillowPropertyPricing {
+  "currency"?: string;
+  "estimated_monthly_payment"?: number;
+  "monthly_hoa_fee"?: number;
+  "price"?: number;
+  "price_per_square_foot"?: number;
+  "price_text"?: string;
+  "property_tax_rate"?: number;
+  "rent_zestimate"?: number;
+  "zestimate"?: number;
+}
+
+export interface ModelZillowPropertyResponse {
+  "address"?: string;
+  "address_parts"?: ModelZillowPropertyAddressParts;
+  "baths"?: number;
+  "beds"?: number;
+  "broker_name"?: string;
+  "currency"?: string;
+  "days_on_zillow"?: number;
+  "description"?: string;
+  "detail_text"?: string;
+  "facts"?: ModelZillowPropertyFacts;
+  "has_3d_model"?: boolean;
+  "has_video"?: boolean;
+  "history"?: ModelZillowPropertyHistory;
+  "home_status"?: string;
+  "home_type"?: string;
+  "image"?: string;
+  "is_showcase"?: boolean;
+  "latitude"?: number;
+  "listing"?: ModelZillowPropertyListing;
+  "listing_sub_type"?: Array<string>;
+  "living_area"?: number;
+  "longitude"?: number;
+  "lot_area"?: number;
+  "lot_area_unit"?: string;
+  "media"?: ModelZillowPropertyMedia;
+  "nearby"?: Array<ModelZillowPropertyNearby>;
+  "photos"?: Array<string>;
+  "price"?: number;
+  "price_text"?: string;
+  "pricing"?: ModelZillowPropertyPricing;
+  "rent_zestimate"?: number;
+  "schools"?: Array<ModelZillowPropertySchool>;
+  "status_text"?: string;
+  "url"?: string;
+  "zestimate"?: number;
+  "zpid"?: string;
+}
+
+export interface ModelZillowPropertySchool {
+  "assigned"?: boolean;
+  "distance"?: number;
+  "district"?: string;
+  "grades"?: string;
+  "id"?: string;
+  "level"?: string;
+  "link"?: string;
+  "name"?: string;
+  "rating"?: number;
+  "type"?: string;
+}
+
+export interface ModelZillowPropertyTaxHistoryEntry {
+  "tax_increase"?: number;
+  "tax_paid"?: number;
+  "time"?: number;
+  "value"?: number;
+  "value_increase"?: number;
+  "year"?: number;
+}
+
+export interface ModelZillowSearchResponse {
+  "location"?: string;
+  "page"?: number;
+  "results"?: Array<ModelZillowPropertyItem>;
+}
+
+export type AirbnbRoomResponse = CrawloraResponse<ModelAirbnbRoomResponse>;
 export interface AirbnbRoomParams {
   "id": string;
 }
 
-export type AirbnbRoomCalendarResponse = CrawloraResponse;
+export type AirbnbRoomCalendarResponse = CrawloraResponse<ModelAirbnbCalendarResponse>;
 export interface AirbnbRoomCalendarParams {
   "id": string;
 }
 
-export type AirbnbRoomReviewsResponse = CrawloraResponse;
+export type AirbnbRoomReviewsResponse = CrawloraResponse<ModelAirbnbReviewsResponse>;
 export interface AirbnbRoomReviewsParams {
   "id": string;
   "page"?: number;
 }
 
-export type AirbnbSearchResponse = CrawloraResponse;
+export type AirbnbSearchResponse = CrawloraResponse<ModelAirbnbSearchResponse>;
 export interface AirbnbSearchParams {
   "location": string;
   "check_in"?: string;
@@ -34,26 +8640,26 @@ export interface AirbnbSearchParams {
   "zoom"?: number;
 }
 
-export type AmazonProductResponse = CrawloraResponse;
+export type AmazonProductResponse = CrawloraResponse<ModelAmazonProductResponseDoc>;
 export interface AmazonProductParams {
   "asin": string;
   "language"?: "en_US";
   "currency"?: "USD";
 }
 
-export type AmazonSearchResponse = CrawloraResponse;
+export type AmazonSearchResponse = CrawloraResponse<ModelAmazonSearchResponseDoc>;
 export interface AmazonSearchParams {
   "k": string;
   "s"?: string;
   "page"?: number;
 }
 
-export type AmazonSuggestResponse = CrawloraResponse;
+export type AmazonSuggestResponse = CrawloraResponse<ModelAmazonSuggestResponseDoc>;
 export interface AmazonSuggestParams {
   "keyword": string;
 }
 
-export type ApplePodcastsChartsResponse = CrawloraResponse;
+export type ApplePodcastsChartsResponse = CrawloraResponse<ModelApplepodcastsChartsResponseDoc>;
 export interface ApplePodcastsChartsParams {
   "collection"?: string;
   "category"?: number;
@@ -61,7 +8667,7 @@ export interface ApplePodcastsChartsParams {
   "limit"?: number;
 }
 
-export type ApplePodcastsEpisodesSearchResponse = CrawloraResponse;
+export type ApplePodcastsEpisodesSearchResponse = CrawloraResponse<ModelApplepodcastsEpisodeSearchResponseDoc>;
 export interface ApplePodcastsEpisodesSearchParams {
   "term": string;
   "country"?: string;
@@ -70,7 +8676,7 @@ export interface ApplePodcastsEpisodesSearchParams {
   "page"?: number;
 }
 
-export type ApplePodcastsSearchResponse = CrawloraResponse;
+export type ApplePodcastsSearchResponse = CrawloraResponse<ModelApplepodcastsSearchResponseDoc>;
 export interface ApplePodcastsSearchParams {
   "term": string;
   "country"?: string;
@@ -79,14 +8685,14 @@ export interface ApplePodcastsSearchParams {
   "page"?: number;
 }
 
-export type ApplePodcastsShowResponse = CrawloraResponse;
+export type ApplePodcastsShowResponse = CrawloraResponse<ModelApplepodcastsShowResponseDoc>;
 export interface ApplePodcastsShowParams {
   "id": string;
   "country"?: string;
   "lang"?: string;
 }
 
-export type ApplePodcastsShowEpisodesResponse = CrawloraResponse;
+export type ApplePodcastsShowEpisodesResponse = CrawloraResponse<ModelApplepodcastsShowEpisodesResponseDoc>;
 export interface ApplePodcastsShowEpisodesParams {
   "id": string;
   "country"?: string;
@@ -94,7 +8700,7 @@ export interface ApplePodcastsShowEpisodesParams {
   "limit"?: number;
 }
 
-export type AppStoreAppResponse = CrawloraResponse;
+export type AppStoreAppResponse = CrawloraResponse<ModelAppstoreAppDetailsResponseDoc>;
 export interface AppStoreAppParams {
   "id"?: string;
   "app_id"?: string;
@@ -103,14 +8709,14 @@ export interface AppStoreAppParams {
   "ratings"?: boolean;
 }
 
-export type AppStoreDeveloperResponse = CrawloraResponse;
+export type AppStoreDeveloperResponse = CrawloraResponse<ModelAppstoreDeveloperResponseDoc>;
 export interface AppStoreDeveloperParams {
   "dev_id": string;
   "country"?: string;
   "lang"?: string;
 }
 
-export type AppStoreListResponse = CrawloraResponse;
+export type AppStoreListResponse = CrawloraResponse<ModelAppstoreListResultsResponseDoc>;
 export interface AppStoreListParams {
   "collection"?: string;
   "category"?: number;
@@ -120,14 +8726,14 @@ export interface AppStoreListParams {
   "full_detail"?: boolean;
 }
 
-export type AppStorePrivacyResponse = CrawloraResponse;
+export type AppStorePrivacyResponse = CrawloraResponse<ModelAppstorePrivacyResponseDoc>;
 export interface AppStorePrivacyParams {
   "id": string;
   "country"?: string;
   "lang"?: string;
 }
 
-export type AppStoreRatingsResponse = CrawloraResponse;
+export type AppStoreRatingsResponse = CrawloraResponse<ModelAppstoreRatingsResponseDoc>;
 export interface AppStoreRatingsParams {
   "id"?: string;
   "app_id"?: string;
@@ -135,7 +8741,7 @@ export interface AppStoreRatingsParams {
   "lang"?: string;
 }
 
-export type AppStoreReviewsResponse = CrawloraResponse;
+export type AppStoreReviewsResponse = CrawloraResponse<ModelAppstoreReviewsResponseDoc>;
 export interface AppStoreReviewsParams {
   "id"?: string;
   "app_id"?: string;
@@ -145,7 +8751,7 @@ export interface AppStoreReviewsParams {
   "lang"?: string;
 }
 
-export type AppStoreSearchResponse = CrawloraResponse;
+export type AppStoreSearchResponse = CrawloraResponse<ModelAppstoreSearchResultsResponseDoc>;
 export interface AppStoreSearchParams {
   "term": string;
   "num"?: number;
@@ -155,7 +8761,7 @@ export interface AppStoreSearchParams {
   "ids_only"?: boolean;
 }
 
-export type AppStoreSimilarResponse = CrawloraResponse;
+export type AppStoreSimilarResponse = CrawloraResponse<ModelAppstoreSimilarResponseDoc>;
 export interface AppStoreSimilarParams {
   "id"?: string;
   "app_id"?: string;
@@ -163,30 +8769,30 @@ export interface AppStoreSimilarParams {
   "lang"?: string;
 }
 
-export type AppStoreSuggestResponse = CrawloraResponse;
+export type AppStoreSuggestResponse = CrawloraResponse<ModelAppstoreSuggestResponseDoc>;
 export interface AppStoreSuggestParams {
   "term": string;
   "country"?: string;
 }
 
-export type AppStoreVersionHistoryResponse = CrawloraResponse;
+export type AppStoreVersionHistoryResponse = CrawloraResponse<ModelAppstoreVersionHistoryResponseDoc>;
 export interface AppStoreVersionHistoryParams {
   "id": string;
   "country"?: string;
   "lang"?: string;
 }
 
-export type BillingMeResponse = CrawloraResponse;
+export type BillingMeResponse = CrawloraResponse<ModelBillingBillingStateResponseDoc>;
 export interface BillingMeParams {
 }
 
-export type BillingMeCheckoutBody = CrawloraBody;
-export type BillingMeCheckoutResponse = CrawloraResponse;
+export type BillingMeCheckoutBody = CrawloraBody<ModelBillingStripeCheckoutRequestDoc>;
+export type BillingMeCheckoutResponse = CrawloraResponse<ModelBillingStripeSessionResponseDoc>;
 export interface BillingMeCheckoutParams {
   "request": BillingMeCheckoutBody;
 }
 
-export type BillingMeEventsResponse = CrawloraResponse;
+export type BillingMeEventsResponse = CrawloraResponse<ModelBillingBillingEventsResponseDoc>;
 export interface BillingMeEventsParams {
   "limit"?: number;
   "from"?: string;
@@ -197,35 +8803,35 @@ export interface BillingMeEventsParams {
   "billable"?: boolean;
 }
 
-export type BillingMePeriodsResponse = CrawloraResponse;
+export type BillingMePeriodsResponse = CrawloraResponse<ModelBillingBillingPeriodLedgersResponseDoc>;
 export interface BillingMePeriodsParams {
   "limit"?: number;
 }
 
-export type BillingMePeriodResponse = CrawloraResponse;
+export type BillingMePeriodResponse = CrawloraResponse<ModelBillingBillingPeriodLedgerResponseDoc>;
 export interface BillingMePeriodParams {
   "period_key": string;
 }
 
-export type BillingMePeriodStatementResponse = CrawloraResponse;
+export type BillingMePeriodStatementResponse = CrawloraResponse<ModelBillingBillingPeriodStatementResponseDoc>;
 export interface BillingMePeriodStatementParams {
   "period_key": string;
   "include_events"?: boolean;
   "event_limit"?: number;
 }
 
-export type BillingMePeriodStatementDownloadResponse = CrawloraResponse;
+export type BillingMePeriodStatementDownloadResponse = CrawloraResponse<string>;
 export interface BillingMePeriodStatementDownloadParams {
   "period_key": string;
 }
 
-export type BillingMePortalBody = CrawloraBody;
-export type BillingMePortalResponse = CrawloraResponse;
+export type BillingMePortalBody = CrawloraBody<ModelBillingStripePortalRequestDoc>;
+export type BillingMePortalResponse = CrawloraResponse<ModelBillingStripeSessionResponseDoc>;
 export interface BillingMePortalParams {
   "request": BillingMePortalBody;
 }
 
-export type BingImagesResponse = CrawloraResponse;
+export type BingImagesResponse = CrawloraResponse<ModelBingImagesResponseDoc>;
 export interface BingImagesParams {
   "q": string;
   "page"?: number;
@@ -234,7 +8840,7 @@ export interface BingImagesParams {
   "lang"?: string;
 }
 
-export type BingNewsResponse = CrawloraResponse;
+export type BingNewsResponse = CrawloraResponse<ModelBingNewsResponseDoc>;
 export interface BingNewsParams {
   "q": string;
   "page"?: number;
@@ -243,7 +8849,7 @@ export interface BingNewsParams {
   "lang"?: string;
 }
 
-export type BingSearchResponse = CrawloraResponse;
+export type BingSearchResponse = CrawloraResponse<ModelBingSearchResponseDoc>;
 export interface BingSearchParams {
   "q": string;
   "page"?: number;
@@ -252,7 +8858,7 @@ export interface BingSearchParams {
   "lang"?: string;
 }
 
-export type BingSuggestResponse = CrawloraResponse;
+export type BingSuggestResponse = CrawloraResponse<ModelBingSuggestResponseDoc>;
 export interface BingSuggestParams {
   "q": string;
   "count"?: number;
@@ -260,7 +8866,7 @@ export interface BingSuggestParams {
   "lang"?: string;
 }
 
-export type BingVideosResponse = CrawloraResponse;
+export type BingVideosResponse = CrawloraResponse<ModelBingVideosResponseDoc>;
 export interface BingVideosParams {
   "q": string;
   "page"?: number;
@@ -269,7 +8875,7 @@ export interface BingVideosParams {
   "lang"?: string;
 }
 
-export type BraveImagesResponse = CrawloraResponse;
+export type BraveImagesResponse = CrawloraResponse<ModelBraveImagesResponseDoc>;
 export interface BraveImagesParams {
   "q": string;
   "offset"?: number;
@@ -278,7 +8884,7 @@ export interface BraveImagesParams {
   "lang"?: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw";
 }
 
-export type BraveNewsResponse = CrawloraResponse;
+export type BraveNewsResponse = CrawloraResponse<ModelBraveNewsResponseDoc>;
 export interface BraveNewsParams {
   "q": string;
   "offset"?: number;
@@ -290,7 +8896,7 @@ export interface BraveNewsParams {
   "date_to"?: string;
 }
 
-export type BraveSearchResponse = CrawloraResponse;
+export type BraveSearchResponse = CrawloraResponse<ModelBraveSearchResponseDoc>;
 export interface BraveSearchParams {
   "q": string;
   "offset"?: number;
@@ -301,7 +8907,7 @@ export interface BraveSearchParams {
   "date_to"?: string;
 }
 
-export type BraveSuggestResponse = CrawloraResponse;
+export type BraveSuggestResponse = CrawloraResponse<ModelBraveSuggestResponseDoc>;
 export interface BraveSuggestParams {
   "q": string;
   "count"?: number;
@@ -309,7 +8915,7 @@ export interface BraveSuggestParams {
   "lang"?: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw";
 }
 
-export type BraveVideosResponse = CrawloraResponse;
+export type BraveVideosResponse = CrawloraResponse<ModelBraveVideosResponseDoc>;
 export interface BraveVideosParams {
   "q": string;
   "offset"?: number;
@@ -321,13 +8927,13 @@ export interface BraveVideosParams {
   "date_to"?: string;
 }
 
-export type CoinGeckoCategoriesResponse = CrawloraResponse;
+export type CoinGeckoCategoriesResponse = CrawloraResponse<ModelCoingeckoCategoriesResponseDoc>;
 export interface CoinGeckoCategoriesParams {
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoCategoryCoinsResponse = CrawloraResponse;
+export type CoinGeckoCategoryCoinsResponse = CrawloraResponse<ModelCoingeckoCategoryCoinsResponseDoc>;
 export interface CoinGeckoCategoryCoinsParams {
   "slug": string;
   "page"?: number;
@@ -335,26 +8941,26 @@ export interface CoinGeckoCategoryCoinsParams {
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoChainsResponse = CrawloraResponse;
+export type CoinGeckoChainsResponse = CrawloraResponse<ModelCoingeckoChainsResponseDoc>;
 export interface CoinGeckoChainsParams {
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoChainResponse = CrawloraResponse;
+export type CoinGeckoChainResponse = CrawloraResponse<ModelCoingeckoChainDetailResponseDoc>;
 export interface CoinGeckoChainParams {
   "id": string;
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoCoinResponse = CrawloraResponse;
+export type CoinGeckoCoinResponse = CrawloraResponse<ModelCoingeckoCoinResponseDoc>;
 export interface CoinGeckoCoinParams {
   "id": string;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoCoinAnalysisResponse = CrawloraResponse;
+export type CoinGeckoCoinAnalysisResponse = CrawloraResponse<ModelCoingeckoAnalysisResponseDoc>;
 export interface CoinGeckoCoinAnalysisParams {
   "id": string;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
@@ -362,14 +8968,14 @@ export interface CoinGeckoCoinAnalysisParams {
   "include_annotations"?: boolean;
 }
 
-export type CoinGeckoExchangeResponse = CrawloraResponse;
+export type CoinGeckoExchangeResponse = CrawloraResponse<ModelCoingeckoExchangeDetailResponseDoc>;
 export interface CoinGeckoExchangeParams {
   "id": string;
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoExchangesResponse = CrawloraResponse;
+export type CoinGeckoExchangesResponse = CrawloraResponse<ModelCoingeckoExchangesResponseDoc>;
 export interface CoinGeckoExchangesParams {
   "kind"?: "spot" | "dex" | "derivatives" | "perp_dex";
   "page"?: number;
@@ -377,49 +8983,49 @@ export interface CoinGeckoExchangesParams {
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoGainersLosersResponse = CrawloraResponse;
+export type CoinGeckoGainersLosersResponse = CrawloraResponse<ModelCoingeckoGainersLosersResponseDoc>;
 export interface CoinGeckoGainersLosersParams {
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoGlobalResponse = CrawloraResponse;
+export type CoinGeckoGlobalResponse = CrawloraResponse<ModelCoingeckoGlobalResponseDoc>;
 export interface CoinGeckoGlobalParams {
 }
 
-export type CoinGeckoGlobalChartsResponse = CrawloraResponse;
+export type CoinGeckoGlobalChartsResponse = CrawloraResponse<ModelCoingeckoGlobalChartsResponseDoc>;
 export interface CoinGeckoGlobalChartsParams {
   "kind"?: "total_market_cap" | "bitcoin_dominance" | "altcoin_market_cap" | "defi_market_cap";
   "range"?: "24h" | "7d" | "14d" | "30d" | "90d" | "1y" | "max";
   "limit"?: number;
 }
 
-export type CoinGeckoLearnArticlesResponse = CrawloraResponse;
+export type CoinGeckoLearnArticlesResponse = CrawloraResponse<ModelCoingeckoLearnArticlesResponseDoc>;
 export interface CoinGeckoLearnArticlesParams {
   "category"?: "all" | "latest" | "airdrop-guides" | "coins-and-tokens" | "guides" | "wallets-and-bridges" | "api" | "reviews";
   "limit"?: number;
 }
 
-export type CoinGeckoMarketsResponse = CrawloraResponse;
+export type CoinGeckoMarketsResponse = CrawloraResponse<ModelCoingeckoMarketsResponseDoc>;
 export interface CoinGeckoMarketsParams {
   "page"?: number;
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoNewCoinsResponse = CrawloraResponse;
+export type CoinGeckoNewCoinsResponse = CrawloraResponse<ModelCoingeckoNewCoinsResponseDoc>;
 export interface CoinGeckoNewCoinsParams {
   "page"?: number;
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoNewsResponse = CrawloraResponse;
+export type CoinGeckoNewsResponse = CrawloraResponse<ModelCoingeckoNewsResponseDoc>;
 export interface CoinGeckoNewsParams {
   "limit"?: number;
 }
 
-export type CoinGeckoNftCategoryResponse = CrawloraResponse;
+export type CoinGeckoNftCategoryResponse = CrawloraResponse<ModelCoingeckoNftCategoryResponseDoc>;
 export interface CoinGeckoNftCategoryParams {
   "slug": string;
   "page"?: number;
@@ -427,25 +9033,25 @@ export interface CoinGeckoNftCategoryParams {
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoNftsResponse = CrawloraResponse;
+export type CoinGeckoNftsResponse = CrawloraResponse<ModelCoingeckoNftsResponseDoc>;
 export interface CoinGeckoNftsParams {
   "page"?: number;
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoSearchResponse = CrawloraResponse;
+export type CoinGeckoSearchResponse = CrawloraResponse<ModelCoingeckoSearchResponseDoc>;
 export interface CoinGeckoSearchParams {
   "q": string;
   "limit"?: number;
 }
 
-export type CoinGeckoTokenUnlocksResponse = CrawloraResponse;
+export type CoinGeckoTokenUnlocksResponse = CrawloraResponse<ModelCoingeckoTokenUnlocksResponseDoc>;
 export interface CoinGeckoTokenUnlocksParams {
   "limit"?: number;
 }
 
-export type CoinGeckoTreasuriesResponse = CrawloraResponse;
+export type CoinGeckoTreasuriesResponse = CrawloraResponse<ModelCoingeckoTreasuriesResponseDoc>;
 export interface CoinGeckoTreasuriesParams {
   "asset"?: "all" | "bitcoin" | "ethereum" | "solana" | "bnb" | "xrp" | "tron";
   "holder_type"?: "all" | "companies" | "governments";
@@ -453,17 +9059,17 @@ export interface CoinGeckoTreasuriesParams {
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type CoinGeckoTrendingResponse = CrawloraResponse;
+export type CoinGeckoTrendingResponse = CrawloraResponse<ModelCoingeckoTrendingResponseDoc>;
 export interface CoinGeckoTrendingParams {
   "limit"?: number;
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
-export type DatasetsListResponse = CrawloraResponse;
+export type DatasetsListResponse = CrawloraResponse<ModelDatasetsListResponseDoc>;
 export interface DatasetsListParams {
 }
 
-export type DatasetsGoogleMapBusinessesFacetsResponse = CrawloraResponse;
+export type DatasetsGoogleMapBusinessesFacetsResponse = CrawloraResponse<ModelDatasetsGoogleMapBusinessesFacetResponseDoc>;
 export interface DatasetsGoogleMapBusinessesFacetsParams {
   "facet": string;
   "q"?: string;
@@ -483,12 +9089,12 @@ export interface DatasetsGoogleMapBusinessesFacetsParams {
   "sort"?: string;
 }
 
-export type DatasetsGoogleMapBusinessesItemResponse = CrawloraResponse;
+export type DatasetsGoogleMapBusinessesItemResponse = CrawloraResponse<ModelDatasetsGoogleMapBusinessResponseDoc>;
 export interface DatasetsGoogleMapBusinessesItemParams {
   "place_id": string;
 }
 
-export type DatasetsGoogleMapBusinessesNearbyResponse = CrawloraResponse;
+export type DatasetsGoogleMapBusinessesNearbyResponse = CrawloraResponse<ModelDatasetsGoogleMapBusinessesSearchResponseDoc>;
 export interface DatasetsGoogleMapBusinessesNearbyParams {
   "lat": number;
   "lon": number;
@@ -500,7 +9106,7 @@ export interface DatasetsGoogleMapBusinessesNearbyParams {
   "page_size"?: number;
 }
 
-export type DatasetsGoogleMapBusinessesSearchResponse = CrawloraResponse;
+export type DatasetsGoogleMapBusinessesSearchResponse = CrawloraResponse<ModelDatasetsGoogleMapBusinessesSearchResponseDoc>;
 export interface DatasetsGoogleMapBusinessesSearchParams {
   "q"?: string;
   "category"?: string;
@@ -521,41 +9127,41 @@ export interface DatasetsGoogleMapBusinessesSearchParams {
   "page_size"?: number;
 }
 
-export type EBayEbayItemResponse = CrawloraResponse;
+export type EBayEbayItemResponse = CrawloraResponse<ModelEbayItemResponseDoc>;
 export interface EBayEbayItemParams {
   "item_id": string;
 }
 
-export type EBayEbaySearchBody = CrawloraBody;
-export type EBayEbaySearchResponse = CrawloraResponse;
+export type EBayEbaySearchBody = CrawloraBody<ModelEbaySearchOption>;
+export type EBayEbaySearchResponse = CrawloraResponse<ModelEbaySearchResponseDoc>;
 export interface EBayEbaySearchParams {
   "option": EBayEbaySearchBody;
 }
 
-export type EBayEbaySellerResponse = CrawloraResponse;
+export type EBayEbaySellerResponse = CrawloraResponse<ModelEbaySellerResponseDoc>;
 export interface EBayEbaySellerParams {
   "seller": string;
 }
 
-export type EBayEbaySellerAboutResponse = CrawloraResponse;
+export type EBayEbaySellerAboutResponse = CrawloraResponse<ModelEbaySellerAboutResponseDoc>;
 export interface EBayEbaySellerAboutParams {
   "seller": string;
 }
 
-export type EBayEbaySellerFeedbackResponse = CrawloraResponse;
+export type EBayEbaySellerFeedbackResponse = CrawloraResponse<ModelEbaySellerFeedbackResponseDoc>;
 export interface EBayEbaySellerFeedbackParams {
   "seller": string;
   "page"?: number;
   "per_page"?: "24" | "48" | "72";
 }
 
-export type EBayEbaySellerShopResponse = CrawloraResponse;
+export type EBayEbaySellerShopResponse = CrawloraResponse<ModelEbaySellerShopResponseDoc>;
 export interface EBayEbaySellerShopParams {
   "seller": string;
   "page"?: number;
 }
 
-export type GeocodingLookupResponse = CrawloraResponse;
+export type GeocodingLookupResponse = CrawloraResponse<ModelGeocodingLookupResponseDoc>;
 export interface GeocodingLookupParams {
   "osm_ids": string;
   "accept_language"?: string;
@@ -564,7 +9170,7 @@ export interface GeocodingLookupParams {
   "namedetails"?: boolean;
 }
 
-export type GeocodingReverseResponse = CrawloraResponse;
+export type GeocodingReverseResponse = CrawloraResponse<ModelGeocodingReverseResponseDoc>;
 export interface GeocodingReverseParams {
   "lat": number;
   "lon": number;
@@ -575,7 +9181,7 @@ export interface GeocodingReverseParams {
   "namedetails"?: boolean;
 }
 
-export type GeocodingSearchResponse = CrawloraResponse;
+export type GeocodingSearchResponse = CrawloraResponse<ModelGeocodingSearchResponseDoc>;
 export interface GeocodingSearchParams {
   "q"?: string;
   "street"?: string;
@@ -592,134 +9198,134 @@ export interface GeocodingSearchParams {
   "namedetails"?: boolean;
 }
 
-export type GoogleFinanceAnalystArticlesResponse = CrawloraResponse;
+export type GoogleFinanceAnalystArticlesResponse = CrawloraResponse<ModelFinanceArticlesResponseDoc>;
 export interface GoogleFinanceAnalystArticlesParams {
   "quote": string;
 }
 
-export type GoogleFinanceChartResponse = CrawloraResponse;
+export type GoogleFinanceChartResponse = CrawloraResponse<ModelFinanceChartResponseDoc>;
 export interface GoogleFinanceChartParams {
   "quote": string;
   "window"?: string;
 }
 
-export type GoogleFinanceClassificationResponse = CrawloraResponse;
+export type GoogleFinanceClassificationResponse = CrawloraResponse<ModelFinanceClassificationResponseDoc>;
 export interface GoogleFinanceClassificationParams {
   "quote": string;
 }
 
-export type GoogleFinanceCompanyResponse = CrawloraResponse;
+export type GoogleFinanceCompanyResponse = CrawloraResponse<ModelFinanceCompanyResponseDoc>;
 export interface GoogleFinanceCompanyParams {
   "quote": string;
 }
 
-export type GoogleFinanceContextResponse = CrawloraResponse;
+export type GoogleFinanceContextResponse = CrawloraResponse<ModelFinanceContextResponseDoc>;
 export interface GoogleFinanceContextParams {
   "q": string;
 }
 
-export type GoogleFinanceFinancialsResponse = CrawloraResponse;
+export type GoogleFinanceFinancialsResponse = CrawloraResponse<ModelFinanceFinancialsResponseDoc>;
 export interface GoogleFinanceFinancialsParams {
   "quote": string;
 }
 
-export type GoogleFinanceMarketsCategoryNewsResponse = CrawloraResponse;
+export type GoogleFinanceMarketsCategoryNewsResponse = CrawloraResponse<ModelFinanceCategoryNewsResponseDoc>;
 export interface GoogleFinanceMarketsCategoryNewsParams {
   "category": string;
   "offset"?: number;
 }
 
-export type GoogleFinanceMarketsCategoryStocksResponse = CrawloraResponse;
+export type GoogleFinanceMarketsCategoryStocksResponse = CrawloraResponse<ModelFinanceCategoryStocksResponseDoc>;
 export interface GoogleFinanceMarketsCategoryStocksParams {
   "category": string;
   "offset"?: number;
 }
 
-export type GoogleFinanceMarketsEarningsResponse = CrawloraResponse;
+export type GoogleFinanceMarketsEarningsResponse = CrawloraResponse<ModelFinanceEarningsResponseDoc>;
 export interface GoogleFinanceMarketsEarningsParams {
 }
 
-export type GoogleFinanceMarketsFeaturedResponse = CrawloraResponse;
+export type GoogleFinanceMarketsFeaturedResponse = CrawloraResponse<ModelFinanceInstrumentsResponseDoc>;
 export interface GoogleFinanceMarketsFeaturedParams {
 }
 
-export type GoogleFinanceMarketsHeadlineResponse = CrawloraResponse;
+export type GoogleFinanceMarketsHeadlineResponse = CrawloraResponse<ModelFinanceHeadlineResponseDoc>;
 export interface GoogleFinanceMarketsHeadlineParams {
 }
 
-export type GoogleFinanceMarketsIndicesResponse = CrawloraResponse;
+export type GoogleFinanceMarketsIndicesResponse = CrawloraResponse<ModelFinanceInstrumentsResponseDoc>;
 export interface GoogleFinanceMarketsIndicesParams {
 }
 
-export type GoogleFinanceMarketsMoversResponse = CrawloraResponse;
+export type GoogleFinanceMarketsMoversResponse = CrawloraResponse<ModelFinanceMarketMoversResponseDoc>;
 export interface GoogleFinanceMarketsMoversParams {
   "categories"?: string;
   "count"?: number;
   "offset"?: number;
 }
 
-export type GoogleFinanceMarketsTopResponse = CrawloraResponse;
+export type GoogleFinanceMarketsTopResponse = CrawloraResponse<ModelFinanceTopStocksResponseDoc>;
 export interface GoogleFinanceMarketsTopParams {
   "metric"?: number;
   "page"?: number;
 }
 
-export type GoogleFinanceMarketsTrendingResponse = CrawloraResponse;
+export type GoogleFinanceMarketsTrendingResponse = CrawloraResponse<ModelFinanceInstrumentsResponseDoc>;
 export interface GoogleFinanceMarketsTrendingParams {
   "limit"?: number;
 }
 
-export type GoogleFinanceNewsResponse = CrawloraResponse;
+export type GoogleFinanceNewsResponse = CrawloraResponse<ModelFinanceArticlesResponseDoc>;
 export interface GoogleFinanceNewsParams {
   "quote": string;
   "limit"?: number;
 }
 
-export type GoogleFinanceQuoteResponse = CrawloraResponse;
+export type GoogleFinanceQuoteResponse = CrawloraResponse<ModelFinanceQuoteResponseDoc>;
 export interface GoogleFinanceQuoteParams {
   "quote": string;
 }
 
-export type GoogleFinanceRelatedResponse = CrawloraResponse;
+export type GoogleFinanceRelatedResponse = CrawloraResponse<ModelFinanceRelatedResponseDoc>;
 export interface GoogleFinanceRelatedParams {
   "quote": string;
 }
 
-export type GoogleFinanceSearchResponse = CrawloraResponse;
+export type GoogleFinanceSearchResponse = CrawloraResponse<ModelFinanceSearchResponseDoc>;
 export interface GoogleFinanceSearchParams {
   "q": string;
 }
 
-export type GoogleFinanceTickerResponse = CrawloraResponse;
+export type GoogleFinanceTickerResponse = CrawloraResponse<ModelFinanceTickerResponseDoc>;
 export interface GoogleFinanceTickerParams {
   "ticker": string;
   "window"?: string;
 }
 
-export type GoogleJobsBody = CrawloraBody;
-export type GoogleJobsResponse = CrawloraResponse;
+export type GoogleJobsBody = CrawloraBody<ModelGoogleJobsOption>;
+export type GoogleJobsResponse = CrawloraResponse<ModelGoogleJobsResponse>;
 export interface GoogleJobsParams {
   "option": GoogleJobsBody;
 }
 
-export type GoogleMapPlaceResponse = CrawloraResponse;
+export type GoogleMapPlaceResponse = CrawloraResponse<ModelGoogleMapPlaceResponseDoc>;
 export interface GoogleMapPlaceParams {
   "place_id": string;
 }
 
-export type GoogleMapSearchBody = CrawloraBody;
-export type GoogleMapSearchResponse = CrawloraResponse;
+export type GoogleMapSearchBody = CrawloraBody<ModelGoogleMapSearchOption>;
+export type GoogleMapSearchResponse = CrawloraResponse<ModelGoogleMapSearchResponseDoc>;
 export interface GoogleMapSearchParams {
   "mapSearchOption": GoogleMapSearchBody;
 }
 
-export type GoogleSearchBody = CrawloraBody;
-export type GoogleSearchResponse = CrawloraResponse;
+export type GoogleSearchBody = CrawloraBody<ModelGoogleSearchOption>;
+export type GoogleSearchResponse = CrawloraResponse<ModelGoogleSearchResponseDoc>;
 export interface GoogleSearchParams {
   "searchOption": GoogleSearchBody;
 }
 
-export type GoogleSuggestResponse = CrawloraResponse;
+export type GoogleSuggestResponse = CrawloraResponse<ModelGoogleSuggestResponseDoc>;
 export interface GoogleSuggestParams {
   "q": string;
   "count"?: number;
@@ -727,55 +9333,55 @@ export interface GoogleSuggestParams {
   "lang"?: string;
 }
 
-export type GoogleTrendsCategoriesResponse = CrawloraResponse;
+export type GoogleTrendsCategoriesResponse = CrawloraResponse<ModelTrendsTrendsCategoriesResponseDoc>;
 export interface GoogleTrendsCategoriesParams {
 }
 
-export type GoogleTrendsEnumsResponse = CrawloraResponse;
+export type GoogleTrendsEnumsResponse = CrawloraResponse<ModelTrendsTrendsEnumsResponseDoc>;
 export interface GoogleTrendsEnumsParams {
 }
 
-export type GoogleTrendsExploreBody = CrawloraBody;
-export type GoogleTrendsExploreResponse = CrawloraResponse;
+export type GoogleTrendsExploreBody = CrawloraBody<ModelTrendsExploreRequest>;
+export type GoogleTrendsExploreResponse = CrawloraResponse<ModelTrendsExploreResponseDoc>;
 export interface GoogleTrendsExploreParams {
   "request": GoogleTrendsExploreBody;
 }
 
-export type GoogleTrendsExploreInterestByRegionBody = CrawloraBody;
-export type GoogleTrendsExploreInterestByRegionResponse = CrawloraResponse;
+export type GoogleTrendsExploreInterestByRegionBody = CrawloraBody<ModelTrendsExploreRequest>;
+export type GoogleTrendsExploreInterestByRegionResponse = CrawloraResponse<ModelTrendsInterestByRegionResponseDoc>;
 export interface GoogleTrendsExploreInterestByRegionParams {
   "request": GoogleTrendsExploreInterestByRegionBody;
 }
 
-export type GoogleTrendsExploreInterestOverTimeBody = CrawloraBody;
-export type GoogleTrendsExploreInterestOverTimeResponse = CrawloraResponse;
+export type GoogleTrendsExploreInterestOverTimeBody = CrawloraBody<ModelTrendsExploreRequest>;
+export type GoogleTrendsExploreInterestOverTimeResponse = CrawloraResponse<ModelTrendsInterestOverTimeResponseDoc>;
 export interface GoogleTrendsExploreInterestOverTimeParams {
   "request": GoogleTrendsExploreInterestOverTimeBody;
 }
 
-export type GoogleTrendsExploreRelatedTopicsBody = CrawloraBody;
-export type GoogleTrendsExploreRelatedTopicsResponse = CrawloraResponse;
+export type GoogleTrendsExploreRelatedTopicsBody = CrawloraBody<ModelTrendsExploreRequest>;
+export type GoogleTrendsExploreRelatedTopicsResponse = CrawloraResponse<ModelTrendsRelatedTopicsResponseDoc>;
 export interface GoogleTrendsExploreRelatedTopicsParams {
   "request": GoogleTrendsExploreRelatedTopicsBody;
 }
 
-export type GoogleTrendsExploreRisingQueriesBody = CrawloraBody;
-export type GoogleTrendsExploreRisingQueriesResponse = CrawloraResponse;
+export type GoogleTrendsExploreRisingQueriesBody = CrawloraBody<ModelTrendsExploreRequest>;
+export type GoogleTrendsExploreRisingQueriesResponse = CrawloraResponse<ModelTrendsExploreQueriesResponseDoc>;
 export interface GoogleTrendsExploreRisingQueriesParams {
   "request": GoogleTrendsExploreRisingQueriesBody;
 }
 
-export type GoogleTrendsExploreTopQueriesBody = CrawloraBody;
-export type GoogleTrendsExploreTopQueriesResponse = CrawloraResponse;
+export type GoogleTrendsExploreTopQueriesBody = CrawloraBody<ModelTrendsExploreRequest>;
+export type GoogleTrendsExploreTopQueriesResponse = CrawloraResponse<ModelTrendsExploreQueriesResponseDoc>;
 export interface GoogleTrendsExploreTopQueriesParams {
   "request": GoogleTrendsExploreTopQueriesBody;
 }
 
-export type GoogleTrendsLocationsResponse = CrawloraResponse;
+export type GoogleTrendsLocationsResponse = CrawloraResponse<ModelTrendsTrendsLocationsResponseDoc>;
 export interface GoogleTrendsLocationsParams {
 }
 
-export type GoogleTrendsTrendingResponse = CrawloraResponse;
+export type GoogleTrendsTrendingResponse = CrawloraResponse<ModelTrendsTrendingResponseDoc>;
 export interface GoogleTrendsTrendingParams {
   "geo"?: "AF" | "AX" | "AL" | "DZ" | "AS" | "AD" | "AO" | "AI" | "AQ" | "AG" | "AR" | "AM" | "AW" | "AU" | "AT" | "AZ" | "BS" | "BH" | "BD" | "BB" | "BY" | "BE" | "BZ" | "BJ" | "BM" | "BT" | "BO" | "BA" | "BW" | "BV" | "BR" | "IO" | "VG" | "BN" | "BG" | "BF" | "BI" | "KH" | "CM" | "CA" | "CV" | "BQ" | "KY" | "CF" | "TD" | "CL" | "CN" | "CX" | "CC" | "CO" | "KM" | "CG" | "CD" | "CK" | "CR" | "CI" | "HR" | "CU" | "CW" | "CY" | "CZ" | "DK" | "DJ" | "DM" | "DO" | "EC" | "EG" | "SV" | "GQ" | "ER" | "EE" | "SZ" | "ET" | "FK" | "FO" | "FJ" | "FI" | "FR" | "GF" | "PF" | "TF" | "GA" | "GM" | "GE" | "DE" | "GH" | "GI" | "GR" | "GL" | "GD" | "GP" | "GU" | "GT" | "GG" | "GN" | "GW" | "GY" | "HT" | "HM" | "HN" | "HK" | "HU" | "IS" | "IN" | "ID" | "IR" | "IQ" | "IE" | "IM" | "IL" | "IT" | "JM" | "JP" | "JE" | "JO" | "KZ" | "KE" | "KI" | "XK" | "KW" | "KG" | "LA" | "LV" | "LB" | "LS" | "LR" | "LY" | "LI" | "LT" | "LU" | "MO" | "MG" | "MW" | "MY" | "MV" | "ML" | "MT" | "MH" | "MQ" | "MR" | "MU" | "YT" | "MX" | "FM" | "MD" | "MC" | "MN" | "ME" | "MS" | "MA" | "MZ" | "MM" | "NA" | "NR" | "NP" | "NL" | "NC" | "NZ" | "NI" | "NE" | "NG" | "NU" | "NF" | "KP" | "MK" | "MP" | "NO" | "OM" | "PK" | "PW" | "PS" | "PA" | "PG" | "PY" | "PE" | "PH" | "PN" | "PL" | "PT" | "PR" | "QA" | "RE" | "RO" | "RU" | "RW" | "WS" | "SM" | "ST" | "SA" | "SN" | "RS" | "SC" | "SL" | "SG" | "SX" | "SK" | "SI" | "SB" | "SO" | "ZA" | "GS" | "KR" | "SS" | "ES" | "LK" | "BL" | "SH" | "KN" | "LC" | "MF" | "PM" | "VC" | "SD" | "SR" | "SJ" | "SE" | "CH" | "SY" | "TW" | "TJ" | "TZ" | "TH" | "TL" | "TG" | "TK" | "TO" | "TT" | "TN" | "TR" | "TM" | "TC" | "TV" | "UM" | "VI" | "UG" | "UA" | "AE" | "GB" | "US" | "UY" | "UZ" | "VU" | "VA" | "VE" | "VN" | "WF" | "EH" | "YE" | "ZM" | "ZW";
   "hl"?: string;
@@ -788,32 +9394,32 @@ export interface GoogleTrendsTrendingParams {
   "limit"?: number;
 }
 
-export type GoogleTrendsTrendingDetailBody = CrawloraBody;
-export type GoogleTrendsTrendingDetailResponse = CrawloraResponse;
+export type GoogleTrendsTrendingDetailBody = CrawloraBody<ModelTrendsTrendingDetailRequest>;
+export type GoogleTrendsTrendingDetailResponse = CrawloraResponse<ModelTrendsExploreResponseDoc>;
 export interface GoogleTrendsTrendingDetailParams {
   "request": GoogleTrendsTrendingDetailBody;
 }
 
-export type GooglePlayAppResponse = CrawloraResponse;
+export type GooglePlayAppResponse = CrawloraResponse<ModelGoogleplayAppDetailsResponse>;
 export interface GooglePlayAppParams {
   "app_id": string;
   "country"?: string;
   "lang"?: string;
 }
 
-export type GooglePlayCategoriesResponse = CrawloraResponse;
+export type GooglePlayCategoriesResponse = CrawloraResponse<ModelGoogleplayCategoriesResponseDoc>;
 export interface GooglePlayCategoriesParams {
   "country"?: string;
   "lang"?: string;
 }
 
-export type GooglePlayDatasafetyResponse = CrawloraResponse;
+export type GooglePlayDatasafetyResponse = CrawloraResponse<ModelGoogleplayDataSafetyResponseDoc>;
 export interface GooglePlayDatasafetyParams {
   "app_id": string;
   "lang"?: string;
 }
 
-export type GooglePlayDeveloperResponse = CrawloraResponse;
+export type GooglePlayDeveloperResponse = CrawloraResponse<ModelGoogleplayDeveloperResultsResponseDoc>;
 export interface GooglePlayDeveloperParams {
   "dev_id": string;
   "num"?: number;
@@ -822,7 +9428,7 @@ export interface GooglePlayDeveloperParams {
   "full_detail"?: boolean;
 }
 
-export type GooglePlayListResponse = CrawloraResponse;
+export type GooglePlayListResponse = CrawloraResponse<ModelGoogleplayListResultsResponseDoc>;
 export interface GooglePlayListParams {
   "collection"?: string;
   "category"?: string;
@@ -833,7 +9439,7 @@ export interface GooglePlayListParams {
   "full_detail"?: boolean;
 }
 
-export type GooglePlayPermissionsResponse = CrawloraResponse;
+export type GooglePlayPermissionsResponse = CrawloraResponse<ModelGoogleplayPermissionsResultsResponseDoc>;
 export interface GooglePlayPermissionsParams {
   "app_id": string;
   "country"?: string;
@@ -841,7 +9447,7 @@ export interface GooglePlayPermissionsParams {
   "short"?: boolean;
 }
 
-export type GooglePlayReviewsResponse = CrawloraResponse;
+export type GooglePlayReviewsResponse = CrawloraResponse<ModelGoogleplayReviewsResponseDoc>;
 export interface GooglePlayReviewsParams {
   "app_id": string;
   "sort"?: string;
@@ -852,7 +9458,7 @@ export interface GooglePlayReviewsParams {
   "next_pagination_token"?: string;
 }
 
-export type GooglePlaySearchResponse = CrawloraResponse;
+export type GooglePlaySearchResponse = CrawloraResponse<ModelGoogleplaySearchResultsResponseDoc>;
 export interface GooglePlaySearchParams {
   "term": string;
   "num"?: number;
@@ -862,7 +9468,7 @@ export interface GooglePlaySearchParams {
   "price"?: string;
 }
 
-export type GooglePlaySimilarResponse = CrawloraResponse;
+export type GooglePlaySimilarResponse = CrawloraResponse<ModelGoogleplaySimilarResultsResponseDoc>;
 export interface GooglePlaySimilarParams {
   "app_id": string;
   "num"?: number;
@@ -871,36 +9477,36 @@ export interface GooglePlaySimilarParams {
   "full_detail"?: boolean;
 }
 
-export type GooglePlaySuggestResponse = CrawloraResponse;
+export type GooglePlaySuggestResponse = CrawloraResponse<ModelGoogleplaySuggestResponseDoc>;
 export interface GooglePlaySuggestParams {
   "term": string;
   "country"?: string;
   "lang"?: string;
 }
 
-export type InstagramPostResponse = CrawloraResponse;
+export type InstagramPostResponse = CrawloraResponse<ModelInstagramPostResponseDoc>;
 export interface InstagramPostParams {
   "id": string;
   "post_id": string;
 }
 
-export type InstagramProfileResponse = CrawloraResponse;
+export type InstagramProfileResponse = CrawloraResponse<ModelInstagramProfileResponseDoc>;
 export interface InstagramProfileParams {
   "username": string;
 }
 
-export type InstagramReelsResponse = CrawloraResponse;
+export type InstagramReelsResponse = CrawloraResponse<ModelInstagramReelsResponseDoc>;
 export interface InstagramReelsParams {
   "id": string;
   "max_id"?: string;
 }
 
-export type JustWatchJustwatchAgeCertificationsResponse = CrawloraResponse;
+export type JustWatchJustwatchAgeCertificationsResponse = CrawloraResponse<ModelJustwatchAgeCertificationsResponseDoc>;
 export interface JustWatchJustwatchAgeCertificationsParams {
   "country"?: string;
 }
 
-export type JustWatchJustwatchDiscoverResponse = CrawloraResponse;
+export type JustWatchJustwatchDiscoverResponse = CrawloraResponse<ModelJustwatchDiscoverResponseDoc>;
 export interface JustWatchJustwatchDiscoverParams {
   "country"?: string;
   "language"?: string;
@@ -913,21 +9519,21 @@ export interface JustWatchJustwatchDiscoverParams {
   "year_max"?: number;
 }
 
-export type JustWatchJustwatchEpisodeByIdResponse = CrawloraResponse;
+export type JustWatchJustwatchEpisodeByIdResponse = CrawloraResponse<ModelJustwatchEpisodeByIdresponseDoc>;
 export interface JustWatchJustwatchEpisodeByIdParams {
   "id": string;
   "country"?: string;
   "language"?: string;
 }
 
-export type JustWatchJustwatchEpisodeOffersResponse = CrawloraResponse;
+export type JustWatchJustwatchEpisodeOffersResponse = CrawloraResponse<ModelJustwatchEpisodeOffersResponseDoc>;
 export interface JustWatchJustwatchEpisodeOffersParams {
   "id": string;
   "countries"?: string;
   "language"?: string;
 }
 
-export type JustWatchJustwatchGenreTitlesResponse = CrawloraResponse;
+export type JustWatchJustwatchGenreTitlesResponse = CrawloraResponse<ModelJustwatchGenreTitlesResponseDoc>;
 export interface JustWatchJustwatchGenreTitlesParams {
   "genre": string;
   "country"?: string;
@@ -936,12 +9542,12 @@ export interface JustWatchJustwatchGenreTitlesParams {
   "type"?: "all" | "movie" | "show";
 }
 
-export type JustWatchJustwatchGenresResponse = CrawloraResponse;
+export type JustWatchJustwatchGenresResponse = CrawloraResponse<ModelJustwatchGenresResponseDoc>;
 export interface JustWatchJustwatchGenresParams {
   "language"?: string;
 }
 
-export type JustWatchJustwatchMonetizationTitlesResponse = CrawloraResponse;
+export type JustWatchJustwatchMonetizationTitlesResponse = CrawloraResponse<ModelJustwatchMonetizationTitlesResponseDoc>;
 export interface JustWatchJustwatchMonetizationTitlesParams {
   "monetization_type": "FLATRATE" | "FREE" | "ADS" | "RENT" | "BUY";
   "country"?: string;
@@ -950,7 +9556,7 @@ export interface JustWatchJustwatchMonetizationTitlesParams {
   "type"?: "all" | "movie" | "show";
 }
 
-export type JustWatchJustwatchNewResponse = CrawloraResponse;
+export type JustWatchJustwatchNewResponse = CrawloraResponse<ModelJustwatchNewTitlesResponseDoc>;
 export interface JustWatchJustwatchNewParams {
   "country"?: string;
   "language"?: string;
@@ -958,7 +9564,7 @@ export interface JustWatchJustwatchNewParams {
   "type"?: "all" | "movie" | "show";
 }
 
-export type JustWatchJustwatchPopularResponse = CrawloraResponse;
+export type JustWatchJustwatchPopularResponse = CrawloraResponse<ModelJustwatchPopularResponseDoc>;
 export interface JustWatchJustwatchPopularParams {
   "country"?: string;
   "language"?: string;
@@ -966,7 +9572,7 @@ export interface JustWatchJustwatchPopularParams {
   "type"?: "all" | "movie" | "show";
 }
 
-export type JustWatchJustwatchProviderTitlesResponse = CrawloraResponse;
+export type JustWatchJustwatchProviderTitlesResponse = CrawloraResponse<ModelJustwatchProviderTitlesResponseDoc>;
 export interface JustWatchJustwatchProviderTitlesParams {
   "provider": string;
   "country"?: string;
@@ -975,12 +9581,12 @@ export interface JustWatchJustwatchProviderTitlesParams {
   "type"?: "all" | "movie" | "show";
 }
 
-export type JustWatchJustwatchProvidersResponse = CrawloraResponse;
+export type JustWatchJustwatchProvidersResponse = CrawloraResponse<ModelJustwatchProvidersResponseDoc>;
 export interface JustWatchJustwatchProvidersParams {
   "country"?: string;
 }
 
-export type JustWatchJustwatchSearchResponse = CrawloraResponse;
+export type JustWatchJustwatchSearchResponse = CrawloraResponse<ModelJustwatchSearchResponseDoc>;
 export interface JustWatchJustwatchSearchParams {
   "query": string;
   "country"?: string;
@@ -988,61 +9594,61 @@ export interface JustWatchJustwatchSearchParams {
   "limit"?: number;
 }
 
-export type JustWatchJustwatchSeasonByIdResponse = CrawloraResponse;
+export type JustWatchJustwatchSeasonByIdResponse = CrawloraResponse<ModelJustwatchSeasonByIdresponseDoc>;
 export interface JustWatchJustwatchSeasonByIdParams {
   "id": string;
   "country"?: string;
   "language"?: string;
 }
 
-export type JustWatchJustwatchSeasonEpisodesResponse = CrawloraResponse;
+export type JustWatchJustwatchSeasonEpisodesResponse = CrawloraResponse<ModelJustwatchSeasonEpisodesResponseDoc>;
 export interface JustWatchJustwatchSeasonEpisodesParams {
   "season_id": string;
   "country"?: string;
   "language"?: string;
 }
 
-export type JustWatchJustwatchShowSeasonsResponse = CrawloraResponse;
+export type JustWatchJustwatchShowSeasonsResponse = CrawloraResponse<ModelJustwatchShowSeasonsResponseDoc>;
 export interface JustWatchJustwatchShowSeasonsParams {
   "show_id": string;
   "country"?: string;
   "language"?: string;
 }
 
-export type JustWatchJustwatchTitleResponse = CrawloraResponse;
+export type JustWatchJustwatchTitleResponse = CrawloraResponse<ModelJustwatchTitleResponseDoc>;
 export interface JustWatchJustwatchTitleParams {
   "path"?: string;
   "url"?: string;
 }
 
-export type JustWatchJustwatchTitleAnalysisResponse = CrawloraResponse;
+export type JustWatchJustwatchTitleAnalysisResponse = CrawloraResponse<ModelJustwatchAnalysisResponseDoc>;
 export interface JustWatchJustwatchTitleAnalysisParams {
   "path"?: string;
   "url"?: string;
 }
 
-export type JustWatchJustwatchTitleByIdResponse = CrawloraResponse;
+export type JustWatchJustwatchTitleByIdResponse = CrawloraResponse<ModelJustwatchTitleResponseDoc>;
 export interface JustWatchJustwatchTitleByIdParams {
   "id": string;
   "country"?: string;
   "language"?: string;
 }
 
-export type JustWatchJustwatchTitleMediaResponse = CrawloraResponse;
+export type JustWatchJustwatchTitleMediaResponse = CrawloraResponse<ModelJustwatchTitleMediaResponseDoc>;
 export interface JustWatchJustwatchTitleMediaParams {
   "id": string;
   "country"?: string;
   "language"?: string;
 }
 
-export type JustWatchJustwatchTitleOffersResponse = CrawloraResponse;
+export type JustWatchJustwatchTitleOffersResponse = CrawloraResponse<ModelJustwatchTitleOffersResponseDoc>;
 export interface JustWatchJustwatchTitleOffersParams {
   "id": string;
   "countries"?: string;
   "language"?: string;
 }
 
-export type JustWatchJustwatchTitleSimilarResponse = CrawloraResponse;
+export type JustWatchJustwatchTitleSimilarResponse = CrawloraResponse<ModelJustwatchSimilarTitlesResponseDoc>;
 export interface JustWatchJustwatchTitleSimilarParams {
   "id": string;
   "country"?: string;
@@ -1050,31 +9656,31 @@ export interface JustWatchJustwatchTitleSimilarParams {
   "limit"?: number;
 }
 
-export type LinkedInLinkedinCompanyResponse = CrawloraResponse;
+export type LinkedInLinkedinCompanyResponse = CrawloraResponse<ModelLinkedinCompanyResponseDoc>;
 export interface LinkedInLinkedinCompanyParams {
   "id": string;
 }
 
-export type LinkedInLinkedinProductResponse = CrawloraResponse;
+export type LinkedInLinkedinProductResponse = CrawloraResponse<ModelLinkedinProductResponseDoc>;
 export interface LinkedInLinkedinProductParams {
   "id": string;
 }
 
-export type LinkedInLinkedinShowcaseResponse = CrawloraResponse;
+export type LinkedInLinkedinShowcaseResponse = CrawloraResponse<ModelLinkedinShowcaseResponseDoc>;
 export interface LinkedInLinkedinShowcaseParams {
   "id": string;
 }
 
-export type MetaPingResponse = CrawloraResponse;
+export type MetaPingResponse = CrawloraResponse<ModelApiPingResponseDoc>;
 export interface MetaPingParams {
 }
 
-export type ProductHuntCategoryResponse = CrawloraResponse;
+export type ProductHuntCategoryResponse = CrawloraResponse<ModelProducthuntCategoryResponseDoc>;
 export interface ProductHuntCategoryParams {
   "slug": string;
 }
 
-export type ProductHuntCategoryProductsResponse = CrawloraResponse;
+export type ProductHuntCategoryProductsResponse = CrawloraResponse<ModelProducthuntCategoryProductsResponseDoc>;
 export interface ProductHuntCategoryProductsParams {
   "slug": string;
   "featured_only"?: boolean;
@@ -1084,7 +9690,7 @@ export interface ProductHuntCategoryProductsParams {
   "tags"?: string;
 }
 
-export type ProductHuntLeaderboardResponse = CrawloraResponse;
+export type ProductHuntLeaderboardResponse = CrawloraResponse<ModelProducthuntLeaderboardResponseDoc>;
 export interface ProductHuntLeaderboardParams {
   "scope"?: "daily" | "weekly" | "monthly" | "yearly";
   "date"?: string;
@@ -1097,17 +9703,17 @@ export interface ProductHuntLeaderboardParams {
   "cursor"?: string;
 }
 
-export type ProductHuntProductResponse = CrawloraResponse;
+export type ProductHuntProductResponse = CrawloraResponse<ModelProducthuntProductResponseDoc>;
 export interface ProductHuntProductParams {
   "id": string;
 }
 
-export type ProductHuntAboutResponse = CrawloraResponse;
+export type ProductHuntAboutResponse = CrawloraResponse<ModelProducthuntAboutResponseDoc>;
 export interface ProductHuntAboutParams {
   "id": string;
 }
 
-export type ProductHuntAlternativesResponse = CrawloraResponse;
+export type ProductHuntAlternativesResponse = CrawloraResponse<ModelProducthuntAlternativesResponseDoc>;
 export interface ProductHuntAlternativesParams {
   "id": string;
   "first"?: number;
@@ -1116,7 +9722,7 @@ export interface ProductHuntAlternativesParams {
   "tags"?: string;
 }
 
-export type ProductHuntCustomersResponse = CrawloraResponse;
+export type ProductHuntCustomersResponse = CrawloraResponse<ModelProducthuntCustomersResponseDoc>;
 export interface ProductHuntCustomersParams {
   "id": string;
   "order"?: "customers" | "latest_launch";
@@ -1124,25 +9730,25 @@ export interface ProductHuntCustomersParams {
   "page_size"?: number;
 }
 
-export type ProductHuntLaunchesResponse = CrawloraResponse;
+export type ProductHuntLaunchesResponse = CrawloraResponse<ModelProducthuntLaunchesResponseDoc>;
 export interface ProductHuntLaunchesParams {
   "id": string;
   "cursor"?: string;
   "order"?: string;
 }
 
-export type ProductHuntMakersResponse = CrawloraResponse;
+export type ProductHuntMakersResponse = CrawloraResponse<ModelProducthuntMakersResponseDoc>;
 export interface ProductHuntMakersParams {
   "id": string;
   "cursor"?: string;
 }
 
-export type ProductHuntReviewsResponse = CrawloraResponse;
+export type ProductHuntReviewsResponse = CrawloraResponse<ModelProducthuntReviewsResponseDoc>;
 export interface ProductHuntReviewsParams {
   "id": string;
 }
 
-export type ProductHuntSearchResponse = CrawloraResponse;
+export type ProductHuntSearchResponse = CrawloraResponse<ModelProducthuntSearchResponseDoc>;
 export interface ProductHuntSearchParams {
   "query": string;
   "type"?: "product" | "user" | "launch";
@@ -1151,36 +9757,36 @@ export interface ProductHuntSearchParams {
   "topics"?: string;
 }
 
-export type MetaReadyResponse = CrawloraResponse;
+export type MetaReadyResponse = CrawloraResponse<ModelApiReadinessResponseDoc>;
 export interface MetaReadyParams {
 }
 
-export type ReferralsClickBody = CrawloraBody;
-export type ReferralsClickResponse = CrawloraResponse;
+export type ReferralsClickBody = CrawloraBody<ModelReferralsReferralClickRequestDoc>;
+export type ReferralsClickResponse = CrawloraResponse<ModelReferralsReferralClickResponseDoc>;
 export interface ReferralsClickParams {
   "request": ReferralsClickBody;
 }
 
-export type ReferralsMeResponse = CrawloraResponse;
+export type ReferralsMeResponse = CrawloraResponse<ModelReferralsReferralsMeResponseDoc>;
 export interface ReferralsMeParams {
 }
 
-export type ReferralsMeEventsResponse = CrawloraResponse;
+export type ReferralsMeEventsResponse = CrawloraResponse<ModelReferralsReferralsEventsResponseDoc>;
 export interface ReferralsMeEventsParams {
   "limit"?: number;
 }
 
-export type SimilarWebSearchResponse = CrawloraResponse;
+export type SimilarWebSearchResponse = CrawloraResponse<ModelSimilarwebSearchResponseDoc>;
 export interface SimilarWebSearchParams {
   "q": string;
 }
 
-export type SimilarWebWebResponse = CrawloraResponse;
+export type SimilarWebWebResponse = CrawloraResponse<ModelSimilarwebWebResponseDoc>;
 export interface SimilarWebWebParams {
   "domain": string;
 }
 
-export type SpotifyPodcastsCategoriesResponse = CrawloraResponse;
+export type SpotifyPodcastsCategoriesResponse = CrawloraResponse<ModelSpotifyBrowsePageResponseDoc>;
 export interface SpotifyPodcastsCategoriesParams {
   "uri"?: string;
   "page_offset"?: number;
@@ -1190,20 +9796,20 @@ export interface SpotifyPodcastsCategoriesParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyPodcastsChartsResponse = CrawloraResponse;
+export type SpotifyPodcastsChartsResponse = CrawloraResponse<ModelSpotifyChartsResponseDoc>;
 export interface SpotifyPodcastsChartsParams {
   "chart"?: string;
   "region"?: string;
   "limit"?: number;
 }
 
-export type SpotifyPodcastsEpisodeResponse = CrawloraResponse;
+export type SpotifyPodcastsEpisodeResponse = CrawloraResponse<ModelSpotifyEpisodeResponseDoc>;
 export interface SpotifyPodcastsEpisodeParams {
   "uri"?: string;
   "id"?: string;
 }
 
-export type SpotifyPodcastsHomeResponse = CrawloraResponse;
+export type SpotifyPodcastsHomeResponse = CrawloraResponse<ModelSpotifyBrowsePageResponseDoc>;
 export interface SpotifyPodcastsHomeParams {
   "uri"?: string;
   "page_offset"?: number;
@@ -1213,7 +9819,7 @@ export interface SpotifyPodcastsHomeParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyPodcastsSearchResponse = CrawloraResponse;
+export type SpotifyPodcastsSearchResponse = CrawloraResponse<ModelSpotifySearchResponseDoc>;
 export interface SpotifyPodcastsSearchParams {
   "q": string;
   "offset"?: number;
@@ -1226,14 +9832,14 @@ export interface SpotifyPodcastsSearchParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyPodcastsShowResponse = CrawloraResponse;
+export type SpotifyPodcastsShowResponse = CrawloraResponse<ModelSpotifyShowResponseDoc>;
 export interface SpotifyPodcastsShowParams {
   "uri"?: string;
   "include_content_capability_trait"?: boolean;
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyPodcastsShowEpisodesResponse = CrawloraResponse;
+export type SpotifyPodcastsShowEpisodesResponse = CrawloraResponse<ModelSpotifyShowEpisodesResponseDoc>;
 export interface SpotifyPodcastsShowEpisodesParams {
   "uri"?: string;
   "offset"?: number;
@@ -1241,12 +9847,12 @@ export interface SpotifyPodcastsShowEpisodesParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyPodcastsShowRecommendationsResponse = CrawloraResponse;
+export type SpotifyPodcastsShowRecommendationsResponse = CrawloraResponse<ModelSpotifyShowRecommendationsResponseDoc>;
 export interface SpotifyPodcastsShowRecommendationsParams {
   "uri"?: string;
 }
 
-export type SpotifyAlbumResponse = CrawloraResponse;
+export type SpotifyAlbumResponse = CrawloraResponse<ModelSpotifyAlbumResponseDoc>;
 export interface SpotifyAlbumParams {
   "uri"?: string;
   "id"?: string;
@@ -1254,7 +9860,7 @@ export interface SpotifyAlbumParams {
   "limit"?: number;
 }
 
-export type SpotifyAlbumTracksResponse = CrawloraResponse;
+export type SpotifyAlbumTracksResponse = CrawloraResponse<ModelSpotifyAlbumResponseDoc>;
 export interface SpotifyAlbumTracksParams {
   "uri"?: string;
   "id"?: string;
@@ -1262,7 +9868,7 @@ export interface SpotifyAlbumTracksParams {
   "limit"?: number;
 }
 
-export type SpotifyAlbumsSearchResponse = CrawloraResponse;
+export type SpotifyAlbumsSearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifyAlbumsSearchParams {
   "q": string;
   "offset"?: number;
@@ -1275,13 +9881,13 @@ export interface SpotifyAlbumsSearchParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyArtistResponse = CrawloraResponse;
+export type SpotifyArtistResponse = CrawloraResponse<ModelSpotifyArtistResponseDoc>;
 export interface SpotifyArtistParams {
   "uri"?: string;
   "id"?: string;
 }
 
-export type SpotifyArtistAlbumsResponse = CrawloraResponse;
+export type SpotifyArtistAlbumsResponse = CrawloraResponse<ModelSpotifyArtistAlbumsResponseDoc>;
 export interface SpotifyArtistAlbumsParams {
   "uri"?: string;
   "id"?: string;
@@ -1291,32 +9897,32 @@ export interface SpotifyArtistAlbumsParams {
   "limit"?: number;
 }
 
-export type SpotifyArtistPlaylistsResponse = CrawloraResponse;
+export type SpotifyArtistPlaylistsResponse = CrawloraResponse<ModelSpotifyArtistCollectionResponseDoc>;
 export interface SpotifyArtistPlaylistsParams {
   "uri"?: string;
   "id"?: string;
 }
 
-export type SpotifyArtistRelatedResponse = CrawloraResponse;
+export type SpotifyArtistRelatedResponse = CrawloraResponse<ModelSpotifyArtistCollectionResponseDoc>;
 export interface SpotifyArtistRelatedParams {
   "uri"?: string;
   "id"?: string;
 }
 
-export type SpotifyArtistsSearchResponse = CrawloraResponse;
+export type SpotifyArtistsSearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifyArtistsSearchParams {
   "q": string;
   "offset"?: number;
   "limit"?: number;
 }
 
-export type SpotifyAudiobookResponse = CrawloraResponse;
+export type SpotifyAudiobookResponse = CrawloraResponse<ModelSpotifyAudiobookResponseDoc>;
 export interface SpotifyAudiobookParams {
   "uri"?: string;
   "id"?: string;
 }
 
-export type SpotifyAudiobookChaptersResponse = CrawloraResponse;
+export type SpotifyAudiobookChaptersResponse = CrawloraResponse<ModelSpotifyAudiobookChaptersResponseDoc>;
 export interface SpotifyAudiobookChaptersParams {
   "uri"?: string;
   "id"?: string;
@@ -1324,7 +9930,7 @@ export interface SpotifyAudiobookChaptersParams {
   "limit"?: number;
 }
 
-export type SpotifyAudiobooksSearchResponse = CrawloraResponse;
+export type SpotifyAudiobooksSearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifyAudiobooksSearchParams {
   "q": string;
   "offset"?: number;
@@ -1337,26 +9943,26 @@ export interface SpotifyAudiobooksSearchParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyChapterResponse = CrawloraResponse;
+export type SpotifyChapterResponse = CrawloraResponse<ModelSpotifyEpisodeResponseDoc>;
 export interface SpotifyChapterParams {
   "uri"?: string;
   "id"?: string;
 }
 
-export type SpotifyEpisodesSearchResponse = CrawloraResponse;
+export type SpotifyEpisodesSearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifyEpisodesSearchParams {
   "q": string;
   "offset"?: number;
   "limit"?: number;
 }
 
-export type SpotifyFeaturedChartsByCountryResponse = CrawloraResponse;
+export type SpotifyFeaturedChartsByCountryResponse = CrawloraResponse<ModelSpotifyCountryHubContentResponseDoc>;
 export interface SpotifyFeaturedChartsByCountryParams {
   "country_code"?: string;
   "content_id"?: string;
 }
 
-export type SpotifyGenreResponse = CrawloraResponse;
+export type SpotifyGenreResponse = CrawloraResponse<ModelSpotifyBrowsePageResponseDoc>;
 export interface SpotifyGenreParams {
   "uri"?: string;
   "page_offset"?: number;
@@ -1366,7 +9972,7 @@ export interface SpotifyGenreParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyHomeResponse = CrawloraResponse;
+export type SpotifyHomeResponse = CrawloraResponse<ModelSpotifyHomeResponseDoc>;
 export interface SpotifyHomeParams {
   "time_zone"?: string;
   "sp_t"?: string;
@@ -1375,7 +9981,7 @@ export interface SpotifyHomeParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyPlaylistResponse = CrawloraResponse;
+export type SpotifyPlaylistResponse = CrawloraResponse<ModelSpotifyPlaylistResponseDoc>;
 export interface SpotifyPlaylistParams {
   "uri"?: string;
   "id"?: string;
@@ -1385,7 +9991,7 @@ export interface SpotifyPlaylistParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyPlaylistsSearchResponse = CrawloraResponse;
+export type SpotifyPlaylistsSearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifyPlaylistsSearchParams {
   "q": string;
   "offset"?: number;
@@ -1398,12 +10004,12 @@ export interface SpotifyPlaylistsSearchParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyPopularByCountryResponse = CrawloraResponse;
+export type SpotifyPopularByCountryResponse = CrawloraResponse<ModelSpotifyCountryHubResponseDoc>;
 export interface SpotifyPopularByCountryParams {
   "country_code"?: string;
 }
 
-export type SpotifyProfileResponse = CrawloraResponse;
+export type SpotifyProfileResponse = CrawloraResponse<ModelSpotifyUserProfileResponseDoc>;
 export interface SpotifyProfileParams {
   "username"?: string;
   "uri"?: string;
@@ -1413,7 +10019,7 @@ export interface SpotifyProfileParams {
   "episode_limit"?: number;
 }
 
-export type SpotifyProfileFollowersResponse = CrawloraResponse;
+export type SpotifyProfileFollowersResponse = CrawloraResponse<ModelSpotifyUserProfileFollowersResponseDoc>;
 export interface SpotifyProfileFollowersParams {
   "username"?: string;
   "uri"?: string;
@@ -1422,7 +10028,7 @@ export interface SpotifyProfileFollowersParams {
   "limit"?: number;
 }
 
-export type SpotifyProfilePlaylistsResponse = CrawloraResponse;
+export type SpotifyProfilePlaylistsResponse = CrawloraResponse<ModelSpotifyUserProfilePlaylistsResponseDoc>;
 export interface SpotifyProfilePlaylistsParams {
   "username"?: string;
   "uri"?: string;
@@ -1431,7 +10037,7 @@ export interface SpotifyProfilePlaylistsParams {
   "limit"?: number;
 }
 
-export type SpotifyProfilesSearchResponse = CrawloraResponse;
+export type SpotifyProfilesSearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifyProfilesSearchParams {
   "q": string;
   "offset"?: number;
@@ -1444,7 +10050,7 @@ export interface SpotifyProfilesSearchParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifySearchResponse = CrawloraResponse;
+export type SpotifySearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifySearchParams {
   "q": string;
   "offset"?: number;
@@ -1459,7 +10065,7 @@ export interface SpotifySearchParams {
   "is_prefix"?: boolean;
 }
 
-export type SpotifySectionResponse = CrawloraResponse;
+export type SpotifySectionResponse = CrawloraResponse<ModelSpotifyBrowseSectionResponseDoc>;
 export interface SpotifySectionParams {
   "uri"?: string;
   "offset"?: number;
@@ -1467,27 +10073,27 @@ export interface SpotifySectionParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type SpotifyShowsSearchResponse = CrawloraResponse;
+export type SpotifyShowsSearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifyShowsSearchParams {
   "q": string;
   "offset"?: number;
   "limit"?: number;
 }
 
-export type SpotifyTrackResponse = CrawloraResponse;
+export type SpotifyTrackResponse = CrawloraResponse<ModelSpotifyTrackResponseDoc>;
 export interface SpotifyTrackParams {
   "uri"?: string;
   "id"?: string;
 }
 
-export type SpotifyTrackRecommendedResponse = CrawloraResponse;
+export type SpotifyTrackRecommendedResponse = CrawloraResponse<ModelSpotifyTrackRecommendedResponseDoc>;
 export interface SpotifyTrackRecommendedParams {
   "uri"?: string;
   "id"?: string;
   "limit"?: number;
 }
 
-export type SpotifyTrackSimilarAlbumsResponse = CrawloraResponse;
+export type SpotifyTrackSimilarAlbumsResponse = CrawloraResponse<ModelSpotifyTrackSimilarAlbumsResponseDoc>;
 export interface SpotifyTrackSimilarAlbumsParams {
   "uri"?: string;
   "id"?: string;
@@ -1495,7 +10101,7 @@ export interface SpotifyTrackSimilarAlbumsParams {
   "albums_only"?: boolean;
 }
 
-export type SpotifyTracksSearchResponse = CrawloraResponse;
+export type SpotifyTracksSearchResponse = CrawloraResponse<ModelSpotifySearchCatalogResponseDoc>;
 export interface SpotifyTracksSearchParams {
   "q": string;
   "offset"?: number;
@@ -1508,37 +10114,37 @@ export interface SpotifyTracksSearchParams {
   "include_episode_content_ratings_v2"?: boolean;
 }
 
-export type TiktokCategoryResponse = CrawloraResponse;
+export type TiktokCategoryResponse = CrawloraResponse<ModelTiktokCategoryResponseDoc>;
 export interface TiktokCategoryParams {
 }
 
-export type TiktokVideoCommentsResponse = CrawloraResponse;
+export type TiktokVideoCommentsResponse = CrawloraResponse<ModelTiktokCommentsResponseDoc>;
 export interface TiktokVideoCommentsParams {
   "aweme_id": string;
   "cursor"?: number;
 }
 
-export type TiktokExploreResponse = CrawloraResponse;
+export type TiktokExploreResponse = CrawloraResponse<ModelTiktokExploreResponseDoc>;
 export interface TiktokExploreParams {
   "id": number;
 }
 
-export type TiktokChallengeResponse = CrawloraResponse;
+export type TiktokChallengeResponse = CrawloraResponse<ModelTiktokChallengeResponseDoc>;
 export interface TiktokChallengeParams {
   "name": string;
 }
 
-export type TiktokChallengeListResponse = CrawloraResponse;
+export type TiktokChallengeListResponse = CrawloraResponse<ModelTiktokChallengeListResponseDoc>;
 export interface TiktokChallengeListParams {
   "id": string;
   "cursor"?: number;
 }
 
-export type TiktokPopularTrendCountryIndustryMetaResponse = CrawloraResponse;
+export type TiktokPopularTrendCountryIndustryMetaResponse = CrawloraResponse<ModelPopulartrendCountryIndustryMetaResponseDoc>;
 export interface TiktokPopularTrendCountryIndustryMetaParams {
 }
 
-export type TiktokPopularTrendCreatorResponse = CrawloraResponse;
+export type TiktokPopularTrendCreatorResponse = CrawloraResponse<ModelPopulartrendCreatorTrendResponseDoc>;
 export interface TiktokPopularTrendCreatorParams {
   "page"?: number;
   "limit"?: number;
@@ -1547,60 +10153,60 @@ export interface TiktokPopularTrendCreatorParams {
   "audience_count"?: "1" | "2" | "3" | "4";
 }
 
-export type TiktokPostResponse = CrawloraResponse;
+export type TiktokPostResponse = CrawloraResponse<ModelTiktokPostResponseDoc>;
 export interface TiktokPostParams {
   "id": string;
 }
 
-export type TiktokProfilePostResponse = CrawloraResponse;
+export type TiktokProfilePostResponse = CrawloraResponse<ModelTiktokProfilePostResponseDoc>;
 export interface TiktokProfilePostParams {
   "secUid": string;
   "cursor"?: number;
   "sort_type"?: "0" | "1" | "2";
 }
 
-export type TiktokProfileResponse = CrawloraResponse;
+export type TiktokProfileResponse = CrawloraResponse<ModelTiktokProfileResponseDoc>;
 export interface TiktokProfileParams {
   "handler": string;
 }
 
-export type TiktokSearchResponse = CrawloraResponse;
+export type TiktokSearchResponse = CrawloraResponse<ModelTiktokSearchResponseDoc>;
 export interface TiktokSearchParams {
   "keyword": string;
   "cursor"?: number;
   "count"?: number;
 }
 
-export type TiktokSearchHashtagResponse = CrawloraResponse;
+export type TiktokSearchHashtagResponse = CrawloraResponse<ModelTiktokSearchHashtagResponseDoc>;
 export interface TiktokSearchHashtagParams {
   "keyword": string;
   "cursor"?: number;
   "count"?: number;
 }
 
-export type TiktokSearchUserResponse = CrawloraResponse;
+export type TiktokSearchUserResponse = CrawloraResponse<ModelTiktokSearchUserResponseDoc>;
 export interface TiktokSearchUserParams {
   "keyword": string;
   "cursor"?: number;
 }
 
-export type TiktokTopAdsAnalysisResponse = CrawloraResponse;
+export type TiktokTopAdsAnalysisResponse = CrawloraResponse<ModelPopulartrendTopAdsAnalysisResponseDoc>;
 export interface TiktokTopAdsAnalysisParams {
   "material_id": string;
   "metric"?: "retain_ctr" | "retain_cvr" | "click_cnt" | "convert_cnt" | "play_retain_cnt";
   "period_type"?: "7" | "30" | "180";
 }
 
-export type TiktokTopAdsDetailResponse = CrawloraResponse;
+export type TiktokTopAdsDetailResponse = CrawloraResponse<ModelPopulartrendTopAdsDetailResponseDoc>;
 export interface TiktokTopAdsDetailParams {
   "material_id": string;
 }
 
-export type TiktokTopAdsFiltersResponse = CrawloraResponse;
+export type TiktokTopAdsFiltersResponse = CrawloraResponse<ModelPopulartrendTopAdsFiltersResponseDoc>;
 export interface TiktokTopAdsFiltersParams {
 }
 
-export type TiktokTopAdsListResponse = CrawloraResponse;
+export type TiktokTopAdsListResponse = CrawloraResponse<ModelPopulartrendTopAdsListResponseDoc>;
 export interface TiktokTopAdsListParams {
   "period"?: "7" | "30" | "180";
   "page"?: number;
@@ -1617,43 +10223,43 @@ export interface TiktokTopAdsListParams {
   "ad_format"?: "1" | "2";
 }
 
-export type TiktokTopAdsLocationInfoResponse = CrawloraResponse;
+export type TiktokTopAdsLocationInfoResponse = CrawloraResponse<ModelPopulartrendTopAdsLocationInfoResponseDoc>;
 export interface TiktokTopAdsLocationInfoParams {
   "module"?: number;
 }
 
-export type TiktokTopAdsLocationsResponse = CrawloraResponse;
+export type TiktokTopAdsLocationsResponse = CrawloraResponse<ModelPopulartrendTopAdsLocationsResponseDoc>;
 export interface TiktokTopAdsLocationsParams {
 }
 
-export type TiktokTopAdsRecommendResponse = CrawloraResponse;
+export type TiktokTopAdsRecommendResponse = CrawloraResponse<ModelPopulartrendTopAdsRecommendResponseDoc>;
 export interface TiktokTopAdsRecommendParams {
   "material_id": string;
   "page"?: number;
   "limit"?: number;
 }
 
-export type TiktokTopAdsSafetyResponse = CrawloraResponse;
+export type TiktokTopAdsSafetyResponse = CrawloraResponse<ModelPopulartrendTopAdsSafetyResponseDoc>;
 export interface TiktokTopAdsSafetyParams {
 }
 
-export type TiktokTopAdsSpotlightResponse = CrawloraResponse;
+export type TiktokTopAdsSpotlightResponse = CrawloraResponse<ModelPopulartrendTopAdsSpotlightResponseDoc>;
 export interface TiktokTopAdsSpotlightParams {
   "page"?: number;
   "limit"?: number;
 }
 
-export type TiktokTopAdsSuggestionsResponse = CrawloraResponse;
+export type TiktokTopAdsSuggestionsResponse = CrawloraResponse<ModelPopulartrendTopAdsSuggestionsResponseDoc>;
 export interface TiktokTopAdsSuggestionsParams {
   "count"?: number;
   "scenario"?: number;
 }
 
-export type TiktokTrendingResponse = CrawloraResponse;
+export type TiktokTrendingResponse = CrawloraResponse<ModelTiktokTrendingResponseDoc>;
 export interface TiktokTrendingParams {
 }
 
-export type TripAdvisorTripadvisorAutocompleteResponse = CrawloraResponse;
+export type TripAdvisorTripadvisorAutocompleteResponse = CrawloraResponse<ModelTripadvisorTripadvisorAutocompleteResponseDoc>;
 export interface TripAdvisorTripadvisorAutocompleteParams {
   "q": string;
   "limit"?: number;
@@ -1665,11 +10271,11 @@ export interface TripAdvisorTripadvisorAutocompleteParams {
   "route_uid"?: string;
 }
 
-export type TripAdvisorTripadvisorEnumsResponse = CrawloraResponse;
+export type TripAdvisorTripadvisorEnumsResponse = CrawloraResponse<ModelTripadvisorTripadvisorEnumsResponseDoc>;
 export interface TripAdvisorTripadvisorEnumsParams {
 }
 
-export type TripAdvisorTripadvisorHotelsResponse = CrawloraResponse;
+export type TripAdvisorTripadvisorHotelsResponse = CrawloraResponse<ModelTripadvisorTripadvisorHotelsResponseDoc>;
 export interface TripAdvisorTripadvisorHotelsParams {
   "geo_id": number;
   "filter_id"?: string;
@@ -1686,13 +10292,13 @@ export interface TripAdvisorTripadvisorHotelsParams {
   "sort"?: string;
 }
 
-export type TripAdvisorTripadvisorPlaceResponse = CrawloraResponse;
+export type TripAdvisorTripadvisorPlaceResponse = CrawloraResponse<ModelTripadvisorPlaceResponse>;
 export interface TripAdvisorTripadvisorPlaceParams {
   "url"?: string;
   "id"?: string;
 }
 
-export type TripAdvisorTripadvisorReviewsResponse = CrawloraResponse;
+export type TripAdvisorTripadvisorReviewsResponse = CrawloraResponse<ModelTripadvisorTripadvisorReviewsResponseDoc>;
 export interface TripAdvisorTripadvisorReviewsParams {
   "id"?: string;
   "url"?: string;
@@ -1706,7 +10312,7 @@ export interface TripAdvisorTripadvisorReviewsParams {
   "photos_per_review_limit"?: number;
 }
 
-export type TripAdvisorTripadvisorSearchResponse = CrawloraResponse;
+export type TripAdvisorTripadvisorSearchResponse = CrawloraResponse<ModelTripadvisorTripadvisorSearchResponseDoc>;
 export interface TripAdvisorTripadvisorSearchParams {
   "geo_id": number;
   "type": string;
@@ -1730,7 +10336,7 @@ export interface TripAdvisorTripadvisorSearchParams {
   "sort"?: string;
 }
 
-export type TrustpilotBusinessSearchResponse = CrawloraResponse;
+export type TrustpilotBusinessSearchResponse = CrawloraResponse<ModelTrustpilotBusinessSearchResponseDoc>;
 export interface TrustpilotBusinessSearchParams {
   "q": string;
   "country"?: string;
@@ -1738,17 +10344,17 @@ export interface TrustpilotBusinessSearchParams {
   "page_size"?: number;
 }
 
-export type TrustpilotBusinessResponse = CrawloraResponse;
+export type TrustpilotBusinessResponse = CrawloraResponse<ModelTrustpilotBusinessProfileResponseDoc>;
 export interface TrustpilotBusinessParams {
   "slug": string;
 }
 
-export type TrustpilotBusinessRelatedResponse = CrawloraResponse;
+export type TrustpilotBusinessRelatedResponse = CrawloraResponse<ModelTrustpilotBusinessRelatedResponseDoc>;
 export interface TrustpilotBusinessRelatedParams {
   "slug": string;
 }
 
-export type TrustpilotBusinessReviewsResponse = CrawloraResponse;
+export type TrustpilotBusinessReviewsResponse = CrawloraResponse<ModelTrustpilotBusinessReviewsResponseDoc>;
 export interface TrustpilotBusinessReviewsParams {
   "slug": string;
   "page"?: number;
@@ -1761,11 +10367,11 @@ export interface TrustpilotBusinessReviewsParams {
   "date_to"?: string;
 }
 
-export type TrustpilotCategoriesResponse = CrawloraResponse;
+export type TrustpilotCategoriesResponse = CrawloraResponse<ModelTrustpilotCategoriesResponseDoc>;
 export interface TrustpilotCategoriesParams {
 }
 
-export type TrustpilotCategorySearchResponse = CrawloraResponse;
+export type TrustpilotCategorySearchResponse = CrawloraResponse<ModelTrustpilotCategorySearchResponseDoc>;
 export interface TrustpilotCategorySearchParams {
   "q": string;
   "country"?: string;
@@ -1773,13 +10379,13 @@ export interface TrustpilotCategorySearchParams {
   "size"?: number;
 }
 
-export type TrustpilotCategoryResponse = CrawloraResponse;
+export type TrustpilotCategoryResponse = CrawloraResponse<ModelTrustpilotCategoryResponseDoc>;
 export interface TrustpilotCategoryParams {
   "slug": string;
   "page"?: number;
 }
 
-export type UsageMeEndpointsResponse = CrawloraResponse;
+export type UsageMeEndpointsResponse = CrawloraResponse<ModelUsageUsageEndpointsResponseDoc>;
 export interface UsageMeEndpointsParams {
   "range"?: "period" | "day" | "week" | "month" | "custom";
   "limit"?: number;
@@ -1787,14 +10393,14 @@ export interface UsageMeEndpointsParams {
   "to"?: string;
 }
 
-export type UsageMeOverviewResponse = CrawloraResponse;
+export type UsageMeOverviewResponse = CrawloraResponse<ModelUsageUsageOverviewResponseDoc>;
 export interface UsageMeOverviewParams {
   "range"?: "period" | "day" | "week" | "month" | "custom";
   "from"?: string;
   "to"?: string;
 }
 
-export type UsageMeRecentIpsResponse = CrawloraResponse;
+export type UsageMeRecentIpsResponse = CrawloraResponse<ModelUsageUsageRecentIpsResponseDoc>;
 export interface UsageMeRecentIpsParams {
   "range"?: "period" | "day" | "week" | "month" | "custom";
   "limit"?: number;
@@ -1802,7 +10408,7 @@ export interface UsageMeRecentIpsParams {
   "to"?: string;
 }
 
-export type UsageMeTimeseriesResponse = CrawloraResponse;
+export type UsageMeTimeseriesResponse = CrawloraResponse<ModelUsageUsageTimeseriesResponseDoc>;
 export interface UsageMeTimeseriesParams {
   "range"?: "period" | "day" | "week" | "month" | "custom";
   "bucket"?: "hour" | "day";
@@ -1811,28 +10417,28 @@ export interface UsageMeTimeseriesParams {
   "to"?: string;
 }
 
-export type UserMeResponse = CrawloraResponse;
+export type UserMeResponse = CrawloraResponse<ModelUserUserMeResponseDoc>;
 export interface UserMeParams {
 }
 
-export type UserMeApiKeysResponse = CrawloraResponse;
+export type UserMeApiKeysResponse = CrawloraResponse<ModelUserUserApikeysResponseDoc>;
 export interface UserMeApiKeysParams {
 }
 
-export type UserMeApiKeysRotateResponse = CrawloraResponse;
+export type UserMeApiKeysRotateResponse = CrawloraResponse<ModelUserUserRotateApikeyResponseDoc>;
 export interface UserMeApiKeysRotateParams {
 }
 
-export type UserMeApiKeysRevealResponse = CrawloraResponse;
+export type UserMeApiKeysRevealResponse = CrawloraResponse<ModelUserUserRevealApikeyResponseDoc>;
 export interface UserMeApiKeysRevealParams {
   "id": string;
 }
 
-export type YahooFinanceCalendarsResponse = CrawloraResponse;
+export type YahooFinanceCalendarsResponse = CrawloraResponse<ModelYahoofinanceCalendarsResponseDoc>;
 export interface YahooFinanceCalendarsParams {
 }
 
-export type YahooFinanceCalendarResponse = CrawloraResponse;
+export type YahooFinanceCalendarResponse = CrawloraResponse<ModelYahoofinanceCalendarResponseDoc>;
 export interface YahooFinanceCalendarParams {
   "type": string;
   "start"?: string;
@@ -1843,38 +10449,38 @@ export interface YahooFinanceCalendarParams {
   "filter_most_active"?: boolean;
 }
 
-export type YahooFinanceDownloadBody = CrawloraBody;
-export type YahooFinanceDownloadResponse = CrawloraResponse;
+export type YahooFinanceDownloadBody = CrawloraBody<ModelYahoofinanceDownloadRequest>;
+export type YahooFinanceDownloadResponse = CrawloraResponse<ModelYahoofinanceDownloadResponseDoc>;
 export interface YahooFinanceDownloadParams {
   "request": YahooFinanceDownloadBody;
 }
 
-export type YahooFinanceIndustriesResponse = CrawloraResponse;
+export type YahooFinanceIndustriesResponse = CrawloraResponse<ModelYahoofinanceDomainListResponseDoc>;
 export interface YahooFinanceIndustriesParams {
 }
 
-export type YahooFinanceIndustryResponse = CrawloraResponse;
+export type YahooFinanceIndustryResponse = CrawloraResponse<ModelYahoofinanceIndustryResponseDoc>;
 export interface YahooFinanceIndustryParams {
   "key": string;
 }
 
-export type YahooFinanceMarketStatusResponse = CrawloraResponse;
+export type YahooFinanceMarketStatusResponse = CrawloraResponse<ModelYahoofinanceMarketStatusResponseDoc>;
 export interface YahooFinanceMarketStatusParams {
   "market": string;
 }
 
-export type YahooFinanceMarketSummaryResponse = CrawloraResponse;
+export type YahooFinanceMarketSummaryResponse = CrawloraResponse<ModelYahoofinanceMarketSummaryResponseDoc>;
 export interface YahooFinanceMarketSummaryParams {
   "market": string;
 }
 
-export type YahooFinanceScreenerCustomBody = CrawloraBody;
-export type YahooFinanceScreenerCustomResponse = CrawloraResponse;
+export type YahooFinanceScreenerCustomBody = CrawloraBody<ModelYahoofinanceScreenerRequest>;
+export type YahooFinanceScreenerCustomResponse = CrawloraResponse<ModelYahoofinanceScreenerResponseDoc>;
 export interface YahooFinanceScreenerCustomParams {
   "request": YahooFinanceScreenerCustomBody;
 }
 
-export type YahooFinanceScreenerResponse = CrawloraResponse;
+export type YahooFinanceScreenerResponse = CrawloraResponse<ModelYahoofinanceScreenerResponseDoc>;
 export interface YahooFinanceScreenerParams {
   "id": string;
   "count"?: number;
@@ -1883,11 +10489,11 @@ export interface YahooFinanceScreenerParams {
   "sort_asc"?: boolean;
 }
 
-export type YahooFinanceScreenersResponse = CrawloraResponse;
+export type YahooFinanceScreenersResponse = CrawloraResponse<ModelYahoofinanceScreenersResponseDoc>;
 export interface YahooFinanceScreenersParams {
 }
 
-export type YahooFinanceSearchResponse = CrawloraResponse;
+export type YahooFinanceSearchResponse = CrawloraResponse<ModelYahoofinanceSearchResponseDoc>;
 export interface YahooFinanceSearchParams {
   "q": string;
   "quotes_count"?: number;
@@ -1897,65 +10503,65 @@ export interface YahooFinanceSearchParams {
   "enable_fuzzy_query"?: boolean;
 }
 
-export type YahooFinanceSectorsResponse = CrawloraResponse;
+export type YahooFinanceSectorsResponse = CrawloraResponse<ModelYahoofinanceDomainListResponseDoc>;
 export interface YahooFinanceSectorsParams {
 }
 
-export type YahooFinanceSectorResponse = CrawloraResponse;
+export type YahooFinanceSectorResponse = CrawloraResponse<ModelYahoofinanceSectorResponseDoc>;
 export interface YahooFinanceSectorParams {
   "key": string;
 }
 
-export type YahooFinanceTickerActionsResponse = CrawloraResponse;
+export type YahooFinanceTickerActionsResponse = CrawloraResponse<ModelYahoofinanceActionsResponseDoc>;
 export interface YahooFinanceTickerActionsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerAnalystsResponse = CrawloraResponse;
+export type YahooFinanceTickerAnalystsResponse = CrawloraResponse<ModelYahoofinanceModuleResponseDoc>;
 export interface YahooFinanceTickerAnalystsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerCalendarResponse = CrawloraResponse;
+export type YahooFinanceTickerCalendarResponse = CrawloraResponse<ModelYahoofinanceModuleResponseDoc>;
 export interface YahooFinanceTickerCalendarParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerCapitalGainsResponse = CrawloraResponse;
+export type YahooFinanceTickerCapitalGainsResponse = CrawloraResponse<ModelYahoofinanceActionsResponseDoc>;
 export interface YahooFinanceTickerCapitalGainsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerDividendsResponse = CrawloraResponse;
+export type YahooFinanceTickerDividendsResponse = CrawloraResponse<ModelYahoofinanceActionsResponseDoc>;
 export interface YahooFinanceTickerDividendsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerEarningsResponse = CrawloraResponse;
+export type YahooFinanceTickerEarningsResponse = CrawloraResponse<ModelYahoofinanceModuleResponseDoc>;
 export interface YahooFinanceTickerEarningsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerEarningsDatesResponse = CrawloraResponse;
+export type YahooFinanceTickerEarningsDatesResponse = CrawloraResponse<ModelYahoofinanceEarningsDatesResponseDoc>;
 export interface YahooFinanceTickerEarningsDatesParams {
   "symbol": string;
   "limit"?: number;
   "offset"?: number;
 }
 
-export type YahooFinanceTickerFinancialsResponse = CrawloraResponse;
+export type YahooFinanceTickerFinancialsResponse = CrawloraResponse<ModelYahoofinanceFinancialsResponseDoc>;
 export interface YahooFinanceTickerFinancialsParams {
   "symbol": string;
   "statement"?: string;
   "period"?: string;
 }
 
-export type YahooFinanceTickerFundsResponse = CrawloraResponse;
+export type YahooFinanceTickerFundsResponse = CrawloraResponse<ModelYahoofinanceModuleResponseDoc>;
 export interface YahooFinanceTickerFundsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerHistoryResponse = CrawloraResponse;
+export type YahooFinanceTickerHistoryResponse = CrawloraResponse<ModelYahoofinanceHistoryResponseDoc>;
 export interface YahooFinanceTickerHistoryParams {
   "symbol": string;
   "period"?: string;
@@ -1970,135 +10576,135 @@ export interface YahooFinanceTickerHistoryParams {
   "rounding"?: boolean;
 }
 
-export type YahooFinanceTickerHistoryMetadataResponse = CrawloraResponse;
+export type YahooFinanceTickerHistoryMetadataResponse = CrawloraResponse<ModelYahoofinanceHistoryMetadataResponseDoc>;
 export interface YahooFinanceTickerHistoryMetadataParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerHoldersResponse = CrawloraResponse;
+export type YahooFinanceTickerHoldersResponse = CrawloraResponse<ModelYahoofinanceModuleResponseDoc>;
 export interface YahooFinanceTickerHoldersParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerInfoResponse = CrawloraResponse;
+export type YahooFinanceTickerInfoResponse = CrawloraResponse<ModelYahoofinanceInfoResponseDoc>;
 export interface YahooFinanceTickerInfoParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerIsinResponse = CrawloraResponse;
+export type YahooFinanceTickerIsinResponse = CrawloraResponse<ModelYahoofinanceIsinResponseDoc>;
 export interface YahooFinanceTickerIsinParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerNewsResponse = CrawloraResponse;
+export type YahooFinanceTickerNewsResponse = CrawloraResponse<ModelYahoofinanceSearchResponseDoc>;
 export interface YahooFinanceTickerNewsParams {
   "symbol": string;
   "count"?: number;
   "tab"?: string;
 }
 
-export type YahooFinanceTickerOptionsResponse = CrawloraResponse;
+export type YahooFinanceTickerOptionsResponse = CrawloraResponse<ModelYahoofinanceOptionsResponseDoc>;
 export interface YahooFinanceTickerOptionsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerOptionsExpirationResponse = CrawloraResponse;
+export type YahooFinanceTickerOptionsExpirationResponse = CrawloraResponse<ModelYahoofinanceOptionsResponseDoc>;
 export interface YahooFinanceTickerOptionsExpirationParams {
   "symbol": string;
   "expiration": string;
 }
 
-export type YahooFinanceTickerQuoteResponse = CrawloraResponse;
+export type YahooFinanceTickerQuoteResponse = CrawloraResponse<ModelYahoofinanceQuoteResponseDoc>;
 export interface YahooFinanceTickerQuoteParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerSecFilingsResponse = CrawloraResponse;
+export type YahooFinanceTickerSecFilingsResponse = CrawloraResponse<ModelYahoofinanceModuleResponseDoc>;
 export interface YahooFinanceTickerSecFilingsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerSharesResponse = CrawloraResponse;
+export type YahooFinanceTickerSharesResponse = CrawloraResponse<ModelYahoofinanceSharesResponseDoc>;
 export interface YahooFinanceTickerSharesParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerSharesFullResponse = CrawloraResponse;
+export type YahooFinanceTickerSharesFullResponse = CrawloraResponse<ModelYahoofinanceSharesFullResponseDoc>;
 export interface YahooFinanceTickerSharesFullParams {
   "symbol": string;
   "start"?: string;
   "end"?: string;
 }
 
-export type YahooFinanceTickerSplitsResponse = CrawloraResponse;
+export type YahooFinanceTickerSplitsResponse = CrawloraResponse<ModelYahoofinanceActionsResponseDoc>;
 export interface YahooFinanceTickerSplitsParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerSustainabilityResponse = CrawloraResponse;
+export type YahooFinanceTickerSustainabilityResponse = CrawloraResponse<ModelYahoofinanceModuleResponseDoc>;
 export interface YahooFinanceTickerSustainabilityParams {
   "symbol": string;
 }
 
-export type YahooFinanceTickerValuationResponse = CrawloraResponse;
+export type YahooFinanceTickerValuationResponse = CrawloraResponse<ModelYahoofinanceValuationResponseDoc>;
 export interface YahooFinanceTickerValuationParams {
   "symbol": string;
 }
 
-export type YahooFinanceTrendingResponse = CrawloraResponse;
+export type YahooFinanceTrendingResponse = CrawloraResponse<ModelYahoofinanceTrendingResponseDoc>;
 export interface YahooFinanceTrendingParams {
   "region": string;
   "count"?: number;
 }
 
-export type YoutubeCaptionsResponse = CrawloraResponse;
+export type YoutubeCaptionsResponse = CrawloraResponse<ModelYoutubeCaptionsResponseDoc>;
 export interface YoutubeCaptionsParams {
   "id": string;
   "lang"?: string;
 }
 
-export type YoutubeChannelPlaylistsResponse = CrawloraResponse;
+export type YoutubeChannelPlaylistsResponse = CrawloraResponse<ModelYoutubeChannelFeedResponseDoc>;
 export interface YoutubeChannelPlaylistsParams {
   "id": string;
   "continuation_token"?: string;
 }
 
-export type YoutubeChannelSearchResponse = CrawloraResponse;
+export type YoutubeChannelSearchResponse = CrawloraResponse<ModelYoutubeChannelSearchResponseDoc>;
 export interface YoutubeChannelSearchParams {
   "id": string;
   "q": string;
   "continuation_token"?: string;
 }
 
-export type YoutubeChannelShortsResponse = CrawloraResponse;
+export type YoutubeChannelShortsResponse = CrawloraResponse<ModelYoutubeChannelShortsResponseDoc>;
 export interface YoutubeChannelShortsParams {
   "id": string;
 }
 
-export type YoutubeChannelVideosResponse = CrawloraResponse;
+export type YoutubeChannelVideosResponse = CrawloraResponse<ModelYoutubeChannelFeedResponseDoc>;
 export interface YoutubeChannelVideosParams {
   "id": string;
   "continuation_token"?: string;
 }
 
-export type YoutubeCommentsResponse = CrawloraResponse;
+export type YoutubeCommentsResponse = CrawloraResponse<ModelYoutubeCommentsResponseDoc>;
 export interface YoutubeCommentsParams {
   "id": string;
   "continuation_token"?: string;
 }
 
-export type YoutubePlaylistResponse = CrawloraResponse;
+export type YoutubePlaylistResponse = CrawloraResponse<ModelYoutubePlaylistResponseDoc>;
 export interface YoutubePlaylistParams {
   "id": string;
   "continuation_token"?: string;
 }
 
-export type YoutubeProfileResponse = CrawloraResponse;
+export type YoutubeProfileResponse = CrawloraResponse<ModelYoutubeProfileResponseDoc>;
 export interface YoutubeProfileParams {
   "id": string;
 }
 
-export type YoutubeSearchResponse = CrawloraResponse;
+export type YoutubeSearchResponse = CrawloraResponse<ModelYoutubeSearchResponseDoc>;
 export interface YoutubeSearchParams {
   "q"?: string;
   "search_query"?: string;
@@ -2111,14 +10717,14 @@ export interface YoutubeSearchParams {
   "params"?: string;
 }
 
-export type YoutubeTagResponse = CrawloraResponse;
+export type YoutubeTagResponse = CrawloraResponse<ModelYoutubeTagResponseDoc>;
 export interface YoutubeTagParams {
   "tag": string;
   "type"?: "all" | "shorts";
   "continuation_token"?: string;
 }
 
-export type YoutubeTranscriptResponse = CrawloraResponse;
+export type YoutubeTranscriptResponse = CrawloraResponse<ModelYoutubeTranscriptResponseDoc>;
 export interface YoutubeTranscriptParams {
   "id": string;
   "lang"?: string;
@@ -2127,29 +10733,29 @@ export interface YoutubeTranscriptParams {
   "timestamps"?: boolean;
 }
 
-export type YoutubeTranscriptLanguagesResponse = CrawloraResponse;
+export type YoutubeTranscriptLanguagesResponse = CrawloraResponse<ModelYoutubeTranscriptLanguagesResponseDoc>;
 export interface YoutubeTranscriptLanguagesParams {
   "id": string;
 }
 
-export type YoutubeVideoResponse = CrawloraResponse;
+export type YoutubeVideoResponse = CrawloraResponse<ModelYoutubeVideoResponseDoc>;
 export interface YoutubeVideoParams {
   "id": string;
 }
 
-export type ZillowAutocompleteResponse = CrawloraResponse;
+export type ZillowAutocompleteResponse = CrawloraResponse<ModelZillowAutocompleteResponse>;
 export interface ZillowAutocompleteParams {
   "query": string;
   "limit"?: number;
   "status"?: string;
 }
 
-export type ZillowPropertyResponse = CrawloraResponse;
+export type ZillowPropertyResponse = CrawloraResponse<ModelZillowPropertyResponse>;
 export interface ZillowPropertyParams {
   "zpid": string;
 }
 
-export type ZillowSearchResponse = CrawloraResponse;
+export type ZillowSearchResponse = CrawloraResponse<ModelZillowSearchResponse>;
 export interface ZillowSearchParams {
   "location": string;
   "page"?: number;

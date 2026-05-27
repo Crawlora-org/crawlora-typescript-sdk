@@ -278,10 +278,16 @@ test("deprecated endpoints are not generated", () => {
 
 test("generated declarations include typed endpoint groups", () => {
   const types = readFileSync(new URL("../src/types.d.ts", import.meta.url), "utf8");
+  assert.match(types, /export interface ModelBingSearchResponse/);
+  assert.match(types, /"results"\?: Array<ModelBingSearchResult>;/);
+  assert.match(types, /export interface ModelBingSearchResponseDoc/);
+  assert.match(types, /"data"\?: ModelBingSearchResponse;/);
+  assert.match(types, /export type BingSearchResponse = CrawloraResponse<ModelBingSearchResponseDoc>;/);
   assert.match(types, /export interface BingSearchParams/);
   assert.match(types, /"q": string;/);
   assert.match(types, /"count"\?: number;/);
   assert.match(types, /export interface GoogleSearchParams/);
+  assert.match(types, /export type GoogleSearchBody = CrawloraBody<ModelGoogleSearchOption>;/);
   assert.match(types, /"searchOption": GoogleSearchBody;/);
   assert.match(types, /export interface CrawloraGeneratedGroups/);
 });
