@@ -1,0 +1,66 @@
+name: Publish GitHub Packages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/publish-github-packages.yml"
+      - "CHANGELOG.md"
+      - "README.md"
+      - "package.json"
+      - "openapi/public.json"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@crawlora-org"
+      - name: Regenerate SDK
+        run: npm run generate
+      - name: Check generated files
+        run: git diff --exit-code
+      - name: Test
+        run: npm test
+      - name: Typecheck declarations
+        run: npm run typecheck
+      - name: Pack check
+        run: npm run pack:check
+      - name: Check package version
+        id: package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="$(node -p 'require("./package.json").version')"
+          if npm view "@crawlora-org/sdk@$version" version --registry=https://npm.pkg.github.com >/tmp/package-version.txt 2>/tmp/package-view.err; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "version=$version" >> "$GITHUB_OUTPUT"
+            cat /tmp/package-version.txt
+          else
+            code=$?
+            if grep -q "E404" /tmp/package-view.err; then
+              echo "published=false" >> "$GITHUB_OUTPUT"
+              echo "version=$version" >> "$GITHUB_OUTPUT"
+            else
+              cat /tmp/package-view.err
+              exit "$code"
+            fi
+          fi
+      - name: Publish
+        if: steps.package.outputs.published == 'false'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish --registry=https://npm.pkg.github.com --access public

@@ -1,13 +1,18 @@
 # Crawlora JavaScript SDK
 
-Git-installable beta SDK for the public Crawlora API. It works in Node.js 18+
+GitHub Packages beta SDK for the public Crawlora API. It works in Node.js 18+
 and modern runtimes with `fetch`.
 
 ## Install
 
 ```sh
-npm install git+https://github.com/Crawlora-org/crawlora-typescript-sdk.git#v1.2.0-sdk.6
+npm config set @crawlora-org:registry https://npm.pkg.github.com
+npm install @crawlora-org/sdk@1.2.0-sdk.6
 ```
+
+GitHub Packages npm installs require GitHub npm registry authentication. For
+project-local installs, add the scoped registry to `.npmrc` and authenticate
+with a GitHub token that can read packages.
 
 ## Usage
 
@@ -68,12 +73,13 @@ variables are not set. `npm run smoke:live` runs all live examples in sequence.
 
 ## Versioning
 
-This SDK is currently released as Git beta tags. Pin an explicit tag in
+This SDK is currently released as GitHub Packages beta versions. Git beta tags
+remain available for Git install workflows. Pin an explicit version in
 applications and upgrade intentionally.
 
-## Registry Readiness
+## Package Name
 
-The future npm package target is `@crawlora-org/sdk`:
+The npm package name is `@crawlora-org/sdk`:
 
 ```js
 import { CrawloraClient } from "@crawlora-org/sdk";

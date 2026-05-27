@@ -6,6 +6,7 @@
   examples.
 - Added npm example scripts and an optional `smoke:live` command that skips
   cleanly when live credentials or inputs are absent.
+- Published the beta SDK to GitHub Packages as `@crawlora-org/sdk`.
 
 ## v1.2.0-sdk.5
 
