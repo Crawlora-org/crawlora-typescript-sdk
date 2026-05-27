@@ -89,17 +89,6 @@ import { CrawloraClient } from "@crawlora-org/sdk";
 The package names `crawlora` and `@crawlora/sdk` are not used by this repository
 because they already exist on npm and point to a different package source.
 
-## Regeneration
-
-The committed `openapi/public.json` is the SDK contract source. Regenerate after
-updating that file:
-
-```sh
-npm run generate
-npm test
-npm run typecheck
-```
-
 ## Optional Live Smoke Test
 
 Default tests use mock `fetch` implementations. The programs under `examples/`
