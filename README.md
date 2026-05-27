@@ -7,7 +7,7 @@ and modern runtimes with `fetch`.
 
 ```sh
 npm config set @crawlora-org:registry https://npm.pkg.github.com
-npm install @crawlora-org/sdk@1.2.0-sdk.6
+npm install @crawlora-org/sdk@1.2.0-sdk.7
 ```
 
 GitHub Packages npm installs require GitHub npm registry authentication. For

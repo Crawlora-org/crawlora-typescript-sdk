@@ -31,9 +31,10 @@ export interface OperationDefinition {
   method: string;
   path: string;
   pathParams: string[];
-  queryParams: Array<{ name: string; collectionFormat?: string; type?: string; required?: boolean; enum?: string[] }>;
-  formParams: Array<{ name: string; type?: string; required?: boolean; enum?: string[] }>;
+  queryParams: Array<{ name: string; in?: "query"; collectionFormat?: string; type?: string; required?: boolean; enum?: string[] }>;
+  formParams: Array<{ name: string; in?: "formData"; type?: string; required?: boolean; enum?: string[] }>;
   bodyParam?: string;
+  bodyRequired?: boolean;
   consumes: string[];
   produces: string[];
   security: string[];

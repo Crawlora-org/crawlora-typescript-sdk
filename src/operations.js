@@ -2,6 +2,7 @@
 export const operations = {
   "airbnb-room": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -22,6 +23,7 @@ export const operations = {
   },
   "airbnb-room-calendar": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -42,6 +44,7 @@ export const operations = {
   },
   "airbnb-room-reviews": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -57,6 +60,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       }
@@ -67,6 +71,7 @@ export const operations = {
   },
   "airbnb-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -80,47 +85,58 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "location",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "check_in",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "check_out",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "adults",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "currency",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "ne_lat",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "ne_lng",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "sw_lat",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "sw_lng",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "zoom",
         "type": "integer"
       }
@@ -131,6 +147,7 @@ export const operations = {
   },
   "amazon-product": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -149,6 +166,7 @@ export const operations = {
         "enum": [
           "en_US"
         ],
+        "in": "query",
         "name": "language",
         "type": "string"
       },
@@ -156,6 +174,7 @@ export const operations = {
         "enum": [
           "USD"
         ],
+        "in": "query",
         "name": "currency",
         "type": "string"
       }
@@ -166,6 +185,7 @@ export const operations = {
   },
   "amazon-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -179,15 +199,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "k",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "s",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       }
@@ -198,6 +221,7 @@ export const operations = {
   },
   "amazon-suggest": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -218,6 +242,7 @@ export const operations = {
   },
   "apple-podcasts-charts": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -231,18 +256,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "collection",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "category",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -253,6 +282,7 @@ export const operations = {
   },
   "apple-podcasts-episodes-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -266,23 +296,28 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "term",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       }
@@ -293,6 +328,7 @@ export const operations = {
   },
   "apple-podcasts-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -306,23 +342,28 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "term",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       }
@@ -333,6 +374,7 @@ export const operations = {
   },
   "apple-podcasts-show": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -348,10 +390,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -362,6 +406,7 @@ export const operations = {
   },
   "apple-podcasts-show-episodes": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -377,14 +422,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -395,6 +443,7 @@ export const operations = {
   },
   "appstore-app": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -408,22 +457,27 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "app_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "ratings",
         "type": "boolean"
       }
@@ -434,6 +488,7 @@ export const operations = {
   },
   "appstore-developer": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -449,10 +504,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -463,6 +520,7 @@ export const operations = {
   },
   "appstore-list": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -476,26 +534,32 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "collection",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "category",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "num",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "full_detail",
         "type": "boolean"
       }
@@ -506,6 +570,7 @@ export const operations = {
   },
   "appstore-privacy": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -521,10 +586,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -535,6 +602,7 @@ export const operations = {
   },
   "appstore-ratings": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -548,18 +616,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "app_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -570,6 +642,7 @@ export const operations = {
   },
   "appstore-reviews": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -583,18 +656,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "app_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
@@ -603,10 +680,12 @@ export const operations = {
           "mostRecent",
           "mostHelpful"
         ],
+        "in": "query",
         "name": "sort",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -617,6 +696,7 @@ export const operations = {
   },
   "appstore-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -630,27 +710,33 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "term",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "num",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "ids_only",
         "type": "boolean"
       }
@@ -661,6 +747,7 @@ export const operations = {
   },
   "appstore-similar": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -674,18 +761,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "app_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -696,6 +787,7 @@ export const operations = {
   },
   "appstore-suggest": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -711,6 +803,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       }
@@ -721,6 +814,7 @@ export const operations = {
   },
   "appstore-version-history": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -736,10 +830,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -750,6 +846,7 @@ export const operations = {
   },
   "billing-me": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -768,6 +865,7 @@ export const operations = {
   },
   "billing-me-checkout": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -786,6 +884,7 @@ export const operations = {
   },
   "billing-me-events": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -799,22 +898,27 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "to",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "endpoint",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "request_id",
         "type": "string"
       },
@@ -825,10 +929,12 @@ export const operations = {
           "non_billable",
           "failed"
         ],
+        "in": "query",
         "name": "event_status",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "billable",
         "type": "boolean"
       }
@@ -839,6 +945,7 @@ export const operations = {
   },
   "billing-me-period": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -859,6 +966,7 @@ export const operations = {
   },
   "billing-me-period-statement": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -874,10 +982,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "include_events",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "event_limit",
         "type": "integer"
       }
@@ -888,6 +998,7 @@ export const operations = {
   },
   "billing-me-period-statement-download": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -908,6 +1019,7 @@ export const operations = {
   },
   "billing-me-periods": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -921,6 +1033,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -931,6 +1044,7 @@ export const operations = {
   },
   "billing-me-portal": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -949,6 +1063,7 @@ export const operations = {
   },
   "bing-images": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -962,23 +1077,28 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -989,6 +1109,7 @@ export const operations = {
   },
   "bing-news": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1002,23 +1123,28 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -1029,6 +1155,7 @@ export const operations = {
   },
   "bing-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1042,23 +1169,28 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -1069,6 +1201,7 @@ export const operations = {
   },
   "bing-suggest": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1082,19 +1215,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -1105,6 +1242,7 @@ export const operations = {
   },
   "bing-videos": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1118,23 +1256,28 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -1145,6 +1288,7 @@ export const operations = {
   },
   "brave-images": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1158,15 +1302,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
@@ -1212,6 +1359,7 @@ export const operations = {
           "us",
           "za"
         ],
+        "in": "query",
         "name": "country",
         "type": "string"
       },
@@ -1231,6 +1379,7 @@ export const operations = {
           "sw-ke",
           "zh-tw"
         ],
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -1241,6 +1390,7 @@ export const operations = {
   },
   "brave-news": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1254,15 +1404,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
@@ -1308,6 +1461,7 @@ export const operations = {
           "us",
           "za"
         ],
+        "in": "query",
         "name": "country",
         "type": "string"
       },
@@ -1327,6 +1481,7 @@ export const operations = {
           "sw-ke",
           "zh-tw"
         ],
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
@@ -1339,14 +1494,17 @@ export const operations = {
           "year",
           "custom"
         ],
+        "in": "query",
         "name": "time_range",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date_from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date_to",
         "type": "string"
       }
@@ -1357,6 +1515,7 @@ export const operations = {
   },
   "brave-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1370,11 +1529,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
@@ -1420,6 +1581,7 @@ export const operations = {
           "us",
           "za"
         ],
+        "in": "query",
         "name": "country",
         "type": "string"
       },
@@ -1439,6 +1601,7 @@ export const operations = {
           "sw-ke",
           "zh-tw"
         ],
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
@@ -1451,14 +1614,17 @@ export const operations = {
           "year",
           "custom"
         ],
+        "in": "query",
         "name": "time_range",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date_from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date_to",
         "type": "string"
       }
@@ -1469,6 +1635,7 @@ export const operations = {
   },
   "brave-suggest": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1482,11 +1649,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
@@ -1532,6 +1701,7 @@ export const operations = {
           "us",
           "za"
         ],
+        "in": "query",
         "name": "country",
         "type": "string"
       },
@@ -1551,6 +1721,7 @@ export const operations = {
           "sw-ke",
           "zh-tw"
         ],
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -1561,6 +1732,7 @@ export const operations = {
   },
   "brave-videos": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1574,15 +1746,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
@@ -1628,6 +1803,7 @@ export const operations = {
           "us",
           "za"
         ],
+        "in": "query",
         "name": "country",
         "type": "string"
       },
@@ -1647,6 +1823,7 @@ export const operations = {
           "sw-ke",
           "zh-tw"
         ],
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
@@ -1659,14 +1836,17 @@ export const operations = {
           "year",
           "custom"
         ],
+        "in": "query",
         "name": "time_range",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date_from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date_to",
         "type": "string"
       }
@@ -1677,6 +1857,7 @@ export const operations = {
   },
   "coingecko-categories": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1690,6 +1871,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -1759,6 +1941,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -1769,6 +1952,7 @@ export const operations = {
   },
   "coingecko-category-coins": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1784,10 +1968,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -1857,6 +2043,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -1867,6 +2054,7 @@ export const operations = {
   },
   "coingecko-chain": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1882,6 +2070,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -1951,6 +2140,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -1961,6 +2151,7 @@ export const operations = {
   },
   "coingecko-chains": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -1974,6 +2165,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -2043,6 +2235,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -2053,6 +2246,7 @@ export const operations = {
   },
   "coingecko-coin": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2133,6 +2327,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -2143,6 +2338,7 @@ export const operations = {
   },
   "coingecko-coin-analysis": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2223,6 +2419,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       },
@@ -2231,10 +2428,12 @@ export const operations = {
           "24h",
           "max"
         ],
+        "in": "query",
         "name": "range",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "include_annotations",
         "type": "boolean"
       }
@@ -2245,6 +2444,7 @@ export const operations = {
   },
   "coingecko-exchange": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2260,6 +2460,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -2329,6 +2530,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -2339,6 +2541,7 @@ export const operations = {
   },
   "coingecko-exchanges": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2358,14 +2561,17 @@ export const operations = {
           "derivatives",
           "perp_dex"
         ],
+        "in": "query",
         "name": "kind",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -2435,6 +2641,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -2445,6 +2652,7 @@ export const operations = {
   },
   "coingecko-gainers-losers": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2458,6 +2666,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -2527,6 +2736,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -2537,6 +2747,7 @@ export const operations = {
   },
   "coingecko-global": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2555,6 +2766,7 @@ export const operations = {
   },
   "coingecko-global-charts": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2574,6 +2786,7 @@ export const operations = {
           "altcoin_market_cap",
           "defi_market_cap"
         ],
+        "in": "query",
         "name": "kind",
         "type": "string"
       },
@@ -2587,10 +2800,12 @@ export const operations = {
           "1y",
           "max"
         ],
+        "in": "query",
         "name": "range",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -2601,6 +2816,7 @@ export const operations = {
   },
   "coingecko-learn-articles": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2624,10 +2840,12 @@ export const operations = {
           "api",
           "reviews"
         ],
+        "in": "query",
         "name": "category",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -2638,6 +2856,7 @@ export const operations = {
   },
   "coingecko-markets": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2651,10 +2870,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -2724,6 +2945,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -2734,6 +2956,7 @@ export const operations = {
   },
   "coingecko-new-coins": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2747,10 +2970,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -2820,6 +3045,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -2830,6 +3056,7 @@ export const operations = {
   },
   "coingecko-news": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2843,6 +3070,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -2853,6 +3081,7 @@ export const operations = {
   },
   "coingecko-nft-category": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2868,10 +3097,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -2941,6 +3172,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -2951,6 +3183,7 @@ export const operations = {
   },
   "coingecko-nfts": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -2964,10 +3197,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -3037,6 +3272,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -3047,6 +3283,7 @@ export const operations = {
   },
   "coingecko-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3060,11 +3297,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -3075,6 +3314,7 @@ export const operations = {
   },
   "coingecko-token-unlocks": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3088,6 +3328,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -3098,6 +3339,7 @@ export const operations = {
   },
   "coingecko-treasuries": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3120,6 +3362,7 @@ export const operations = {
           "xrp",
           "tron"
         ],
+        "in": "query",
         "name": "asset",
         "type": "string"
       },
@@ -3129,10 +3372,12 @@ export const operations = {
           "companies",
           "governments"
         ],
+        "in": "query",
         "name": "holder_type",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -3202,6 +3447,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -3212,6 +3458,7 @@ export const operations = {
   },
   "coingecko-trending": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3225,6 +3472,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -3294,6 +3542,7 @@ export const operations = {
           "bits",
           "sats"
         ],
+        "in": "query",
         "name": "vs_currency",
         "type": "string"
       }
@@ -3304,6 +3553,7 @@ export const operations = {
   },
   "crunchbase-organization": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3324,6 +3574,7 @@ export const operations = {
   },
   "crunchbase-person": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3344,6 +3595,7 @@ export const operations = {
   },
   "datasets-google-map-businesses-facets": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3357,67 +3609,83 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "facet",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "q",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "category",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "state",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "county",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "city",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "town",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "min_rating",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "min_review_count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "has_website",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "has_phone",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "lat",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "lon",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "radius_m",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "sort",
         "type": "string"
       }
@@ -3428,6 +3696,7 @@ export const operations = {
   },
   "datasets-google-map-businesses-item": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3448,6 +3717,7 @@ export const operations = {
   },
   "datasets-google-map-businesses-nearby": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3461,37 +3731,45 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "lat",
         "required": true,
         "type": "number"
       },
       {
+        "in": "query",
         "name": "lon",
         "required": true,
         "type": "number"
       },
       {
+        "in": "query",
         "name": "radius_m",
         "required": true,
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "category",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "min_rating",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "min_review_count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page_size",
         "type": "integer"
       }
@@ -3502,6 +3780,7 @@ export const operations = {
   },
   "datasets-google-map-businesses-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3515,70 +3794,87 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "category",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "state",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "county",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "city",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "town",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "min_rating",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "min_review_count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "has_website",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "has_phone",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "lat",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "lon",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "radius_m",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "sort",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page_size",
         "type": "integer"
       }
@@ -3589,6 +3885,7 @@ export const operations = {
   },
   "datasets-list": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3607,6 +3904,7 @@ export const operations = {
   },
   "ebay-item": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3627,6 +3925,7 @@ export const operations = {
   },
   "ebay-search": {
     "bodyParam": "option",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -3645,6 +3944,7 @@ export const operations = {
   },
   "ebay-seller": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3665,6 +3965,7 @@ export const operations = {
   },
   "ebay-seller-about": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3685,6 +3986,7 @@ export const operations = {
   },
   "ebay-seller-feedback": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3700,6 +4002,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
@@ -3709,6 +4012,7 @@ export const operations = {
           "48",
           "72"
         ],
+        "in": "query",
         "name": "per_page",
         "type": "integer"
       }
@@ -3719,6 +4023,7 @@ export const operations = {
   },
   "ebay-seller-shop": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3734,6 +4039,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       }
@@ -3744,6 +4050,7 @@ export const operations = {
   },
   "etsy-listing": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3764,6 +4071,7 @@ export const operations = {
   },
   "etsy-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3777,11 +4085,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       }
@@ -3792,6 +4102,7 @@ export const operations = {
   },
   "etsy-shop": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3812,6 +4123,7 @@ export const operations = {
   },
   "facebook-page": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3832,6 +4144,7 @@ export const operations = {
   },
   "geocoding-lookup": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3845,23 +4158,28 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "osm_ids",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "accept_language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "addressdetails",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "extratags",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "namedetails",
         "type": "boolean"
       }
@@ -3872,6 +4190,7 @@ export const operations = {
   },
   "geocoding-reverse": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3885,32 +4204,39 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "lat",
         "required": true,
         "type": "number"
       },
       {
+        "in": "query",
         "name": "lon",
         "required": true,
         "type": "number"
       },
       {
+        "in": "query",
         "name": "zoom",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "accept_language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "addressdetails",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "extratags",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "namedetails",
         "type": "boolean"
       }
@@ -3921,6 +4247,7 @@ export const operations = {
   },
   "geocoding-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -3934,54 +4261,67 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "street",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "city",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "county",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "state",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "postalcode",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "countrycodes",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "accept_language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "addressdetails",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "extratags",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "namedetails",
         "type": "boolean"
       }
@@ -3992,6 +4332,7 @@ export const operations = {
   },
   "google-finance-analyst-articles": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4012,6 +4353,7 @@ export const operations = {
   },
   "google-finance-chart": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4027,6 +4369,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "window",
         "type": "string"
       }
@@ -4037,6 +4380,7 @@ export const operations = {
   },
   "google-finance-classification": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4057,6 +4401,7 @@ export const operations = {
   },
   "google-finance-company": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4077,6 +4422,7 @@ export const operations = {
   },
   "google-finance-context": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4090,6 +4436,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
@@ -4101,6 +4448,7 @@ export const operations = {
   },
   "google-finance-financials": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4121,6 +4469,7 @@ export const operations = {
   },
   "google-finance-markets-category-news": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4136,6 +4485,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       }
@@ -4146,6 +4496,7 @@ export const operations = {
   },
   "google-finance-markets-category-stocks": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4161,6 +4512,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       }
@@ -4171,6 +4523,7 @@ export const operations = {
   },
   "google-finance-markets-earnings": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4189,6 +4542,7 @@ export const operations = {
   },
   "google-finance-markets-featured": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4207,6 +4561,7 @@ export const operations = {
   },
   "google-finance-markets-headline": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4225,6 +4580,7 @@ export const operations = {
   },
   "google-finance-markets-indices": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4243,6 +4599,7 @@ export const operations = {
   },
   "google-finance-markets-movers": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4256,14 +4613,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "categories",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       }
@@ -4274,6 +4634,7 @@ export const operations = {
   },
   "google-finance-markets-top": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4287,10 +4648,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "metric",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       }
@@ -4301,6 +4664,7 @@ export const operations = {
   },
   "google-finance-markets-trending": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4314,6 +4678,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -4324,6 +4689,7 @@ export const operations = {
   },
   "google-finance-news": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4339,6 +4705,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -4349,6 +4716,7 @@ export const operations = {
   },
   "google-finance-quote": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4369,6 +4737,7 @@ export const operations = {
   },
   "google-finance-related": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4389,6 +4758,7 @@ export const operations = {
   },
   "google-finance-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4402,6 +4772,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
@@ -4413,6 +4784,7 @@ export const operations = {
   },
   "google-finance-ticker": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4428,6 +4800,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "window",
         "type": "string"
       }
@@ -4438,6 +4811,7 @@ export const operations = {
   },
   "google-image": {
     "bodyParam": "searchOption",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4456,6 +4830,7 @@ export const operations = {
   },
   "google-jobs": {
     "bodyParam": "option",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4474,11 +4849,13 @@ export const operations = {
   },
   "google-lens": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "multipart/form-data"
     ],
     "formParams": [
       {
+        "in": "formData",
         "name": "image",
         "required": true,
         "type": "file"
@@ -4498,6 +4875,7 @@ export const operations = {
   },
   "google-map-place": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4518,6 +4896,7 @@ export const operations = {
   },
   "google-map-search": {
     "bodyParam": "mapSearchOption",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4536,6 +4915,7 @@ export const operations = {
   },
   "google-news-deprecated": {
     "bodyParam": "searchOption",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4554,6 +4934,7 @@ export const operations = {
   },
   "google-search": {
     "bodyParam": "searchOption",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4572,6 +4953,7 @@ export const operations = {
   },
   "google-shopping": {
     "bodyParam": "searchOption",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4590,6 +4972,7 @@ export const operations = {
   },
   "google-shopping-detail": {
     "bodyParam": "ShoppingItemDetailOption",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4608,6 +4991,7 @@ export const operations = {
   },
   "google-suggest": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -4621,19 +5005,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -4644,6 +5032,7 @@ export const operations = {
   },
   "google-trends-categories": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [],
     "formParams": [],
     "id": "google-trends-categories",
@@ -4660,6 +5049,7 @@ export const operations = {
   },
   "google-trends-enums": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [],
     "formParams": [],
     "id": "google-trends-enums",
@@ -4676,6 +5066,7 @@ export const operations = {
   },
   "google-trends-explore": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4694,6 +5085,7 @@ export const operations = {
   },
   "google-trends-explore-interest-by-region": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4712,6 +5104,7 @@ export const operations = {
   },
   "google-trends-explore-interest-over-time": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4730,6 +5123,7 @@ export const operations = {
   },
   "google-trends-explore-related-topics": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4748,6 +5142,7 @@ export const operations = {
   },
   "google-trends-explore-rising-queries": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4766,6 +5161,7 @@ export const operations = {
   },
   "google-trends-explore-top-queries": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -4784,6 +5180,7 @@ export const operations = {
   },
   "google-trends-locations": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [],
     "formParams": [],
     "id": "google-trends-locations",
@@ -4800,6 +5197,7 @@ export const operations = {
   },
   "google-trends-trending": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5065,14 +5463,17 @@ export const operations = {
           "ZM",
           "ZW"
         ],
+        "in": "query",
         "name": "geo",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "hl",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "tz",
         "type": "integer"
       },
@@ -5083,6 +5484,7 @@ export const operations = {
           "48h",
           "7d"
         ],
+        "in": "query",
         "name": "window",
         "type": "string"
       },
@@ -5093,6 +5495,7 @@ export const operations = {
           "48h",
           "7d"
         ],
+        "in": "query",
         "name": "time_range",
         "type": "string"
       },
@@ -5125,6 +5528,7 @@ export const operations = {
           "20",
           "67"
         ],
+        "in": "query",
         "name": "category",
         "type": "integer"
       },
@@ -5134,6 +5538,7 @@ export const operations = {
           "active",
           "ended"
         ],
+        "in": "query",
         "name": "status",
         "type": "string"
       },
@@ -5144,10 +5549,12 @@ export const operations = {
           "recency",
           "search_volume"
         ],
+        "in": "query",
         "name": "sort_by",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -5158,6 +5565,7 @@ export const operations = {
   },
   "google-trends-trending-detail": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -5176,6 +5584,7 @@ export const operations = {
   },
   "googleplay-app": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5189,15 +5598,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "app_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -5208,6 +5620,7 @@ export const operations = {
   },
   "googleplay-categories": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5221,10 +5634,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -5235,6 +5650,7 @@ export const operations = {
   },
   "googleplay-datasafety": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5248,11 +5664,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "app_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -5263,6 +5681,7 @@ export const operations = {
   },
   "googleplay-developer": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5278,18 +5697,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "num",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "full_detail",
         "type": "boolean"
       }
@@ -5300,6 +5723,7 @@ export const operations = {
   },
   "googleplay-list": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5313,30 +5737,37 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "collection",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "category",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "age",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "num",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "full_detail",
         "type": "boolean"
       }
@@ -5347,6 +5778,7 @@ export const operations = {
   },
   "googleplay-permissions": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5360,19 +5792,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "app_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "short",
         "type": "boolean"
       }
@@ -5383,6 +5819,7 @@ export const operations = {
   },
   "googleplay-reviews": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5396,31 +5833,38 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "app_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "sort",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "num",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "paginate",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "next_pagination_token",
         "type": "string"
       }
@@ -5431,6 +5875,7 @@ export const operations = {
   },
   "googleplay-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5444,27 +5889,33 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "term",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "num",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "full_detail",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "price",
         "type": "string"
       }
@@ -5475,6 +5926,7 @@ export const operations = {
   },
   "googleplay-similar": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5488,23 +5940,28 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "app_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "num",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "full_detail",
         "type": "boolean"
       }
@@ -5515,6 +5972,7 @@ export const operations = {
   },
   "googleplay-suggest": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5530,10 +5988,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -5544,6 +6004,7 @@ export const operations = {
   },
   "instagram-post": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5565,6 +6026,7 @@ export const operations = {
   },
   "instagram-profile": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5585,6 +6047,7 @@ export const operations = {
   },
   "instagram-reels": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5600,6 +6063,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "max_id",
         "type": "string"
       }
@@ -5610,6 +6074,7 @@ export const operations = {
   },
   "justwatch-age-certifications": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5623,6 +6088,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       }
@@ -5633,6 +6099,7 @@ export const operations = {
   },
   "justwatch-discover": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5646,14 +6113,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -5663,14 +6133,17 @@ export const operations = {
           "movie",
           "show"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "genres",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "providers",
         "type": "string"
       },
@@ -5682,14 +6155,17 @@ export const operations = {
           "RENT",
           "BUY"
         ],
+        "in": "query",
         "name": "monetization_types",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "year_min",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "year_max",
         "type": "integer"
       }
@@ -5700,6 +6176,7 @@ export const operations = {
   },
   "justwatch-episode-by-id": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5713,15 +6190,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -5732,6 +6212,7 @@ export const operations = {
   },
   "justwatch-episode-offers": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5745,15 +6226,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "countries",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -5764,6 +6248,7 @@ export const operations = {
   },
   "justwatch-genre-titles": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5777,19 +6262,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "genre",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -5799,6 +6288,7 @@ export const operations = {
           "movie",
           "show"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       }
@@ -5809,6 +6299,7 @@ export const operations = {
   },
   "justwatch-genres": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5822,6 +6313,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -5832,6 +6324,7 @@ export const operations = {
   },
   "justwatch-monetization-titles": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5852,19 +6345,23 @@ export const operations = {
           "RENT",
           "BUY"
         ],
+        "in": "query",
         "name": "monetization_type",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -5874,6 +6371,7 @@ export const operations = {
           "movie",
           "show"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       }
@@ -5884,6 +6382,7 @@ export const operations = {
   },
   "justwatch-new": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5897,14 +6396,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -5914,6 +6416,7 @@ export const operations = {
           "movie",
           "show"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       }
@@ -5924,6 +6427,7 @@ export const operations = {
   },
   "justwatch-popular": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5937,14 +6441,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -5954,6 +6461,7 @@ export const operations = {
           "movie",
           "show"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       }
@@ -5964,6 +6472,7 @@ export const operations = {
   },
   "justwatch-provider-titles": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -5977,19 +6486,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "provider",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -5999,6 +6512,7 @@ export const operations = {
           "movie",
           "show"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       }
@@ -6009,6 +6523,7 @@ export const operations = {
   },
   "justwatch-providers": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6022,6 +6537,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       }
@@ -6032,6 +6548,7 @@ export const operations = {
   },
   "justwatch-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6045,19 +6562,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "query",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -6068,6 +6589,7 @@ export const operations = {
   },
   "justwatch-season-by-id": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6081,15 +6603,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -6100,6 +6625,7 @@ export const operations = {
   },
   "justwatch-season-episodes": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6113,15 +6639,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "season_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -6132,6 +6661,7 @@ export const operations = {
   },
   "justwatch-show-seasons": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6145,15 +6675,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "show_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -6164,6 +6697,7 @@ export const operations = {
   },
   "justwatch-title": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6177,10 +6711,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "path",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "url",
         "type": "string"
       }
@@ -6191,6 +6727,7 @@ export const operations = {
   },
   "justwatch-title-analysis": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6204,10 +6741,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "path",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "url",
         "type": "string"
       }
@@ -6218,6 +6757,7 @@ export const operations = {
   },
   "justwatch-title-by-id": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6231,15 +6771,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -6250,6 +6793,7 @@ export const operations = {
   },
   "justwatch-title-media": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6263,15 +6807,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -6282,6 +6829,7 @@ export const operations = {
   },
   "justwatch-title-offers": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6295,15 +6843,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "countries",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       }
@@ -6314,6 +6865,7 @@ export const operations = {
   },
   "justwatch-title-similar": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6327,19 +6879,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -6350,6 +6906,7 @@ export const operations = {
   },
   "linkedin-company": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6370,6 +6927,7 @@ export const operations = {
   },
   "linkedin-product": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6390,6 +6948,7 @@ export const operations = {
   },
   "linkedin-showcase": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6410,6 +6969,7 @@ export const operations = {
   },
   "ping": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6426,6 +6986,7 @@ export const operations = {
   },
   "producthunt-about": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6446,6 +7007,7 @@ export const operations = {
   },
   "producthunt-alternatives": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6461,18 +7023,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "first",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "cursor",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "order",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "tags",
         "type": "string"
       }
@@ -6483,6 +7049,7 @@ export const operations = {
   },
   "producthunt-category": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6503,6 +7070,7 @@ export const operations = {
   },
   "producthunt-category-products": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6518,22 +7086,27 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "featured_only",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "order",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page_size",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "tags",
         "type": "string"
       }
@@ -6544,6 +7117,7 @@ export const operations = {
   },
   "producthunt-comments": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6559,34 +7133,42 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "order",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "filter",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "threads_cursor",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "replies_cursor",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "include_thread_for_comment_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "exclude_thread_for_comment_id",
         "type": "string"
       }
@@ -6597,6 +7179,7 @@ export const operations = {
   },
   "producthunt-customers": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6616,14 +7199,17 @@ export const operations = {
           "customers",
           "latest_launch"
         ],
+        "in": "query",
         "name": "order",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page_size",
         "type": "integer"
       }
@@ -6634,6 +7220,7 @@ export const operations = {
   },
   "producthunt-launches": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6649,10 +7236,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "cursor",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "order",
         "type": "string"
       }
@@ -6663,6 +7252,7 @@ export const operations = {
   },
   "producthunt-leaderboard": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6682,38 +7272,47 @@ export const operations = {
           "monthly",
           "yearly"
         ],
+        "in": "query",
         "name": "scope",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "year",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "month",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "day",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "week",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "featured",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "order",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "cursor",
         "type": "string"
       }
@@ -6724,6 +7323,7 @@ export const operations = {
   },
   "producthunt-makers": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6739,6 +7339,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "cursor",
         "type": "string"
       }
@@ -6749,6 +7350,7 @@ export const operations = {
   },
   "producthunt-product": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6769,6 +7371,7 @@ export const operations = {
   },
   "producthunt-reviews": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6789,6 +7392,7 @@ export const operations = {
   },
   "producthunt-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6802,6 +7406,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "query",
         "required": true,
         "type": "string"
@@ -6812,18 +7417,22 @@ export const operations = {
           "user",
           "launch"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "featured",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "topics",
         "type": "string"
       }
@@ -6834,6 +7443,7 @@ export const operations = {
   },
   "ready": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6850,6 +7460,7 @@ export const operations = {
   },
   "referrals-click": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -6866,6 +7477,7 @@ export const operations = {
   },
   "referrals-me": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6884,6 +7496,7 @@ export const operations = {
   },
   "referrals-me-events": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6897,6 +7510,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -6907,6 +7521,7 @@ export const operations = {
   },
   "similarweb-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6920,6 +7535,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
@@ -6931,6 +7547,7 @@ export const operations = {
   },
   "similarweb-web": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6951,6 +7568,7 @@ export const operations = {
   },
   "spotify-album": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6964,18 +7582,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -6986,6 +7608,7 @@ export const operations = {
   },
   "spotify-album-tracks": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -6999,18 +7622,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -7021,6 +7648,7 @@ export const operations = {
   },
   "spotify-albums-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7034,39 +7662,48 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "number_of_top_results",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_audiobooks",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_album_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_authors",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7077,6 +7714,7 @@ export const operations = {
   },
   "spotify-artist": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7090,10 +7728,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       }
@@ -7104,6 +7744,7 @@ export const operations = {
   },
   "spotify-artist-albums": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7117,26 +7758,32 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "type",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "order",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -7147,6 +7794,7 @@ export const operations = {
   },
   "spotify-artist-playlists": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7160,10 +7808,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       }
@@ -7174,6 +7824,7 @@ export const operations = {
   },
   "spotify-artist-related": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7187,10 +7838,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       }
@@ -7201,6 +7854,7 @@ export const operations = {
   },
   "spotify-artists-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7214,15 +7868,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -7233,6 +7890,7 @@ export const operations = {
   },
   "spotify-audiobook": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7246,10 +7904,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       }
@@ -7260,6 +7920,7 @@ export const operations = {
   },
   "spotify-audiobook-chapters": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7273,18 +7934,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -7295,6 +7960,7 @@ export const operations = {
   },
   "spotify-audiobooks-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7308,39 +7974,48 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "number_of_top_results",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_audiobooks",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_album_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_authors",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7351,6 +8026,7 @@ export const operations = {
   },
   "spotify-chapter": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7364,10 +8040,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       }
@@ -7378,6 +8056,7 @@ export const operations = {
   },
   "spotify-episodes-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7391,15 +8070,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -7410,6 +8092,7 @@ export const operations = {
   },
   "spotify-featured-charts-by-country": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7423,10 +8106,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country_code",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "content_id",
         "type": "string"
       }
@@ -7437,6 +8122,7 @@ export const operations = {
   },
   "spotify-genre": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7450,26 +8136,32 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page_offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "section_offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "section_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7480,6 +8172,7 @@ export const operations = {
   },
   "spotify-home": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7493,22 +8186,27 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "time_zone",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "sp_t",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "facet",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "section_items_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7519,6 +8217,7 @@ export const operations = {
   },
   "spotify-playlist": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7532,26 +8231,32 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "enable_watch_feed_entrypoint",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7562,6 +8267,7 @@ export const operations = {
   },
   "spotify-playlists-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7575,39 +8281,48 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "number_of_top_results",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_audiobooks",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_album_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_authors",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7618,6 +8333,7 @@ export const operations = {
   },
   "spotify-podcasts-categories": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7631,26 +8347,32 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page_offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "section_offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "section_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7661,6 +8383,7 @@ export const operations = {
   },
   "spotify-podcasts-charts": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7674,14 +8397,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "chart",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "region",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -7692,6 +8418,7 @@ export const operations = {
   },
   "spotify-podcasts-episode": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7705,10 +8432,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       }
@@ -7719,6 +8448,7 @@ export const operations = {
   },
   "spotify-podcasts-home": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7732,26 +8462,32 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page_offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "section_offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "section_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7762,6 +8498,7 @@ export const operations = {
   },
   "spotify-podcasts-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7775,39 +8512,48 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "number_of_top_results",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_album_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_audiobooks",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_authors",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7818,6 +8564,7 @@ export const operations = {
   },
   "spotify-podcasts-show": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7831,14 +8578,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "include_content_capability_trait",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7849,6 +8599,7 @@ export const operations = {
   },
   "spotify-podcasts-show-episodes": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7862,18 +8613,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -7884,6 +8639,7 @@ export const operations = {
   },
   "spotify-podcasts-show-recommendations": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7897,6 +8653,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       }
@@ -7907,6 +8664,7 @@ export const operations = {
   },
   "spotify-popular-by-country": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7920,6 +8678,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "country_code",
         "type": "string"
       }
@@ -7930,6 +8689,7 @@ export const operations = {
   },
   "spotify-profile": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7943,26 +8703,32 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "username",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "url",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "playlist_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "artist_limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "episode_limit",
         "type": "integer"
       }
@@ -7973,6 +8739,7 @@ export const operations = {
   },
   "spotify-profile-followers": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -7986,22 +8753,27 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "username",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "url",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -8012,6 +8784,7 @@ export const operations = {
   },
   "spotify-profile-playlists": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8025,22 +8798,27 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "username",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "url",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -8051,6 +8829,7 @@ export const operations = {
   },
   "spotify-profiles-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8064,39 +8843,48 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "number_of_top_results",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_audiobooks",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_album_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_authors",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -8107,6 +8895,7 @@ export const operations = {
   },
   "spotify-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8120,47 +8909,58 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "number_of_top_results",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_audiobooks",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_artist_has_concerts_field",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_album_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_authors",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "is_prefix",
         "type": "boolean"
       }
@@ -8171,6 +8971,7 @@ export const operations = {
   },
   "spotify-section": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8184,18 +8985,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -8206,6 +9011,7 @@ export const operations = {
   },
   "spotify-shows-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8219,15 +9025,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -8238,6 +9047,7 @@ export const operations = {
   },
   "spotify-track": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8251,10 +9061,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       }
@@ -8265,6 +9077,7 @@ export const operations = {
   },
   "spotify-track-recommended": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8278,14 +9091,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -8296,6 +9112,7 @@ export const operations = {
   },
   "spotify-track-similar-albums": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8309,18 +9126,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "uri",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "albums_only",
         "type": "boolean"
       }
@@ -8331,6 +9152,7 @@ export const operations = {
   },
   "spotify-tracks-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8344,39 +9166,48 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "number_of_top_results",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_audiobooks",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_album_pre_releases",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_authors",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
       }
@@ -8387,6 +9218,7 @@ export const operations = {
   },
   "tiktok-category": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8405,6 +9237,7 @@ export const operations = {
   },
   "tiktok-challenge": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8425,6 +9258,7 @@ export const operations = {
   },
   "tiktok-challenge-list": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8438,11 +9272,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "cursor",
         "type": "integer"
       }
@@ -8453,6 +9289,7 @@ export const operations = {
   },
   "tiktok-explore": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8473,6 +9310,7 @@ export const operations = {
   },
   "tiktok-popular-trend-country-industry-meta": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8491,6 +9329,7 @@ export const operations = {
   },
   "tiktok-popular-trend-creator": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8504,10 +9343,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -8517,10 +9358,12 @@ export const operations = {
           "engagement",
           "avg_views"
         ],
+        "in": "query",
         "name": "sort_by",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "creator_country",
         "type": "string"
       },
@@ -8531,6 +9374,7 @@ export const operations = {
           "3",
           "4"
         ],
+        "in": "query",
         "name": "audience_count",
         "type": "integer"
       }
@@ -8541,6 +9385,7 @@ export const operations = {
   },
   "tiktok-popular-trend-video": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8554,14 +9399,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "country_code",
         "type": "string"
       },
@@ -8572,6 +9420,7 @@ export const operations = {
           "comment",
           "repost"
         ],
+        "in": "query",
         "name": "order_by",
         "type": "string"
       },
@@ -8580,6 +9429,7 @@ export const operations = {
           "7",
           "30"
         ],
+        "in": "query",
         "name": "period",
         "type": "integer"
       }
@@ -8590,6 +9440,7 @@ export const operations = {
   },
   "tiktok-post": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8610,6 +9461,7 @@ export const operations = {
   },
   "tiktok-profile": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8630,6 +9482,7 @@ export const operations = {
   },
   "tiktok-profile-post": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8643,11 +9496,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "secUid",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "cursor",
         "type": "integer"
       },
@@ -8657,6 +9512,7 @@ export const operations = {
           "1",
           "2"
         ],
+        "in": "query",
         "name": "sort_type",
         "type": "integer"
       }
@@ -8667,6 +9523,7 @@ export const operations = {
   },
   "tiktok-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8680,15 +9537,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "keyword",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "cursor",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       }
@@ -8699,6 +9559,7 @@ export const operations = {
   },
   "tiktok-search-hashtag": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8712,15 +9573,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "keyword",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "cursor",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       }
@@ -8731,6 +9595,7 @@ export const operations = {
   },
   "tiktok-search-user": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8744,11 +9609,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "keyword",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "cursor",
         "type": "integer"
       }
@@ -8759,6 +9626,7 @@ export const operations = {
   },
   "tiktok-top-ads-analysis": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8772,6 +9640,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "material_id",
         "required": true,
         "type": "string"
@@ -8784,6 +9653,7 @@ export const operations = {
           "convert_cnt",
           "play_retain_cnt"
         ],
+        "in": "query",
         "name": "metric",
         "type": "string"
       },
@@ -8793,6 +9663,7 @@ export const operations = {
           "30",
           "180"
         ],
+        "in": "query",
         "name": "period_type",
         "type": "integer"
       }
@@ -8803,6 +9674,7 @@ export const operations = {
   },
   "tiktok-top-ads-detail": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8816,6 +9688,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "material_id",
         "required": true,
         "type": "string"
@@ -8827,6 +9700,7 @@ export const operations = {
   },
   "tiktok-top-ads-filters": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8845,6 +9719,7 @@ export const operations = {
   },
   "tiktok-top-ads-list": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8863,14 +9738,17 @@ export const operations = {
           "30",
           "180"
         ],
+        "in": "query",
         "name": "period",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
@@ -8884,30 +9762,37 @@ export const operations = {
           "cvr",
           "like"
         ],
+        "in": "query",
         "name": "order_by",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country_code",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "keyword",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "industry",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "objective",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "ad_language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "pattern_label",
         "type": "string"
       },
@@ -8920,6 +9805,7 @@ export const operations = {
           "time-6",
           "time-7"
         ],
+        "in": "query",
         "name": "duration",
         "type": "string"
       },
@@ -8931,6 +9817,7 @@ export const operations = {
           "4",
           "5"
         ],
+        "in": "query",
         "name": "like",
         "type": "string"
       },
@@ -8939,6 +9826,7 @@ export const operations = {
           "1",
           "2"
         ],
+        "in": "query",
         "name": "ad_format",
         "type": "string"
       }
@@ -8949,6 +9837,7 @@ export const operations = {
   },
   "tiktok-top-ads-location-info": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8962,6 +9851,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "module",
         "type": "integer"
       }
@@ -8972,6 +9862,7 @@ export const operations = {
   },
   "tiktok-top-ads-locations": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -8990,6 +9881,7 @@ export const operations = {
   },
   "tiktok-top-ads-recommend": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9003,15 +9895,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "material_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -9022,6 +9917,7 @@ export const operations = {
   },
   "tiktok-top-ads-safety": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9040,6 +9936,7 @@ export const operations = {
   },
   "tiktok-top-ads-spotlight": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9053,10 +9950,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       }
@@ -9067,6 +9966,7 @@ export const operations = {
   },
   "tiktok-top-ads-suggestions": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9080,10 +9980,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "scenario",
         "type": "integer"
       }
@@ -9094,6 +9996,7 @@ export const operations = {
   },
   "tiktok-trending": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9112,6 +10015,7 @@ export const operations = {
   },
   "tiktok-video-comments": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9125,11 +10029,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "aweme_id",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "cursor",
         "type": "integer"
       }
@@ -9140,6 +10046,7 @@ export const operations = {
   },
   "tripadvisor-autocomplete": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9153,35 +10060,43 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "locale",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "scope_geo_id",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "type",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "search_session_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "typeahead_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "route_uid",
         "type": "string"
       }
@@ -9192,6 +10107,7 @@ export const operations = {
   },
   "tripadvisor-enums": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [],
     "formParams": [],
     "id": "tripadvisor-enums",
@@ -9208,6 +10124,7 @@ export const operations = {
   },
   "tripadvisor-hotels": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9221,56 +10138,69 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "geo_id",
         "required": true,
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "filter_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "class",
         "type": "integer"
       },
       {
         "collectionFormat": "multi",
+        "in": "query",
         "name": "amenities",
         "type": "array"
       },
       {
+        "in": "query",
         "name": "price_min",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "price_max",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "pricing_mode",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "travelers_choice",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "travelers_choice_botb",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "currency",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "sort",
         "type": "string"
       }
@@ -9281,6 +10211,7 @@ export const operations = {
   },
   "tripadvisor-place": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9294,10 +10225,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "url",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       }
@@ -9308,6 +10241,7 @@ export const operations = {
   },
   "tripadvisor-reviews": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9321,43 +10255,53 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "url",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "sort_type",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "sort_by",
         "type": "string"
       },
       {
         "collectionFormat": "multi",
+        "in": "query",
         "name": "ratings",
         "type": "array"
       },
       {
+        "in": "query",
         "name": "do_machine_translation",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "photos_per_review_limit",
         "type": "integer"
       }
@@ -9368,6 +10312,7 @@ export const operations = {
   },
   "tripadvisor-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9381,87 +10326,107 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "geo_id",
         "required": true,
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "type",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "filter_id",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "class",
         "type": "integer"
       },
       {
         "collectionFormat": "multi",
+        "in": "query",
         "name": "amenities",
         "type": "array"
       },
       {
+        "in": "query",
         "name": "price_min",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "price_max",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "pricing_mode",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "travelers_choice",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "travelers_choice_botb",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "restaurant_date",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "restaurant_time",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "restaurant_guests",
         "type": "integer"
       },
       {
         "collectionFormat": "multi",
+        "in": "query",
         "name": "establishment_types",
         "type": "array"
       },
       {
         "collectionFormat": "multi",
+        "in": "query",
         "name": "online_options",
         "type": "array"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "locale",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "currency",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "sort",
         "type": "string"
       }
@@ -9472,6 +10437,7 @@ export const operations = {
   },
   "trustpilot-business": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9492,6 +10458,7 @@ export const operations = {
   },
   "trustpilot-business-related": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9512,6 +10479,7 @@ export const operations = {
   },
   "trustpilot-business-reviews": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9527,34 +10495,42 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "stars",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "verified",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "replied",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "language",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "q",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date_from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "date_to",
         "type": "string"
       }
@@ -9565,6 +10541,7 @@ export const operations = {
   },
   "trustpilot-business-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9578,19 +10555,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "page_size",
         "type": "integer"
       }
@@ -9601,6 +10582,7 @@ export const operations = {
   },
   "trustpilot-categories": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9619,6 +10601,7 @@ export const operations = {
   },
   "trustpilot-category": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9634,6 +10617,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       }
@@ -9644,6 +10628,7 @@ export const operations = {
   },
   "trustpilot-category-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9657,19 +10642,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "country",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "locale",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "size",
         "type": "integer"
       }
@@ -9680,6 +10669,7 @@ export const operations = {
   },
   "usage-me-endpoints": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9700,18 +10690,22 @@ export const operations = {
           "month",
           "custom"
         ],
+        "in": "query",
         "name": "range",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "to",
         "type": "string"
       }
@@ -9722,6 +10716,7 @@ export const operations = {
   },
   "usage-me-overview": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9742,14 +10737,17 @@ export const operations = {
           "month",
           "custom"
         ],
+        "in": "query",
         "name": "range",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "to",
         "type": "string"
       }
@@ -9760,6 +10758,7 @@ export const operations = {
   },
   "usage-me-recent-ips": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9780,18 +10779,22 @@ export const operations = {
           "month",
           "custom"
         ],
+        "in": "query",
         "name": "range",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "to",
         "type": "string"
       }
@@ -9802,6 +10805,7 @@ export const operations = {
   },
   "usage-me-timeseries": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9822,6 +10826,7 @@ export const operations = {
           "month",
           "custom"
         ],
+        "in": "query",
         "name": "range",
         "type": "string"
       },
@@ -9830,18 +10835,22 @@ export const operations = {
           "hour",
           "day"
         ],
+        "in": "query",
         "name": "bucket",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "endpoint",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "from",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "to",
         "type": "string"
       }
@@ -9852,6 +10861,7 @@ export const operations = {
   },
   "user-me": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9870,6 +10880,7 @@ export const operations = {
   },
   "user-me-api-keys": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9888,6 +10899,7 @@ export const operations = {
   },
   "user-me-api-keys-reveal": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9908,6 +10920,7 @@ export const operations = {
   },
   "user-me-api-keys-rotate": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9926,6 +10939,7 @@ export const operations = {
   },
   "web-contact": {
     "bodyParam": "option",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -9944,6 +10958,7 @@ export const operations = {
   },
   "web-parse": {
     "bodyParam": "parseWebOption",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -9962,6 +10977,7 @@ export const operations = {
   },
   "yahoo-finance-calendar": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -9977,26 +10993,32 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "start",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "end",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "market_cap",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "filter_most_active",
         "type": "boolean"
       }
@@ -10007,6 +11029,7 @@ export const operations = {
   },
   "yahoo-finance-calendars": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10025,6 +11048,7 @@ export const operations = {
   },
   "yahoo-finance-download": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -10043,6 +11067,7 @@ export const operations = {
   },
   "yahoo-finance-industries": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10061,6 +11086,7 @@ export const operations = {
   },
   "yahoo-finance-industry": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10081,6 +11107,7 @@ export const operations = {
   },
   "yahoo-finance-market-status": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10101,6 +11128,7 @@ export const operations = {
   },
   "yahoo-finance-market-summary": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10121,6 +11149,7 @@ export const operations = {
   },
   "yahoo-finance-screener": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10136,18 +11165,22 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "sort_field",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "sort_asc",
         "type": "boolean"
       }
@@ -10158,6 +11191,7 @@ export const operations = {
   },
   "yahoo-finance-screener-custom": {
     "bodyParam": "request",
+    "bodyRequired": true,
     "consumes": [
       "application/json"
     ],
@@ -10176,6 +11210,7 @@ export const operations = {
   },
   "yahoo-finance-screeners": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10194,6 +11229,7 @@ export const operations = {
   },
   "yahoo-finance-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10207,27 +11243,33 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "quotes_count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "news_count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "lists_count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "include_research",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "enable_fuzzy_query",
         "type": "boolean"
       }
@@ -10238,6 +11280,7 @@ export const operations = {
   },
   "yahoo-finance-sector": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10258,6 +11301,7 @@ export const operations = {
   },
   "yahoo-finance-sectors": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10276,6 +11320,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-actions": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10296,6 +11341,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-analysts": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10316,6 +11362,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-calendar": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10336,6 +11383,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-capital-gains": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10356,6 +11404,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-dividends": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10376,6 +11425,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-earnings": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10396,6 +11446,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-earnings-dates": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10411,10 +11462,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "offset",
         "type": "integer"
       }
@@ -10425,6 +11478,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-financials": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10440,10 +11494,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "statement",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "period",
         "type": "string"
       }
@@ -10454,6 +11510,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-funds": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10474,6 +11531,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-history": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10489,42 +11547,52 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "period",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "start",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "end",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "interval",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "include_prepost",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "include_actions",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "auto_adjust",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "back_adjust",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "keepna",
         "type": "boolean"
       },
       {
+        "in": "query",
         "name": "rounding",
         "type": "boolean"
       }
@@ -10535,6 +11603,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-history-metadata": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10555,6 +11624,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-holders": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10575,6 +11645,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-info": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10595,6 +11666,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-isin": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10615,6 +11687,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-news": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10630,10 +11703,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "tab",
         "type": "string"
       }
@@ -10644,6 +11719,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-options": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10664,6 +11740,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-options-expiration": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10685,6 +11762,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-quote": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10705,6 +11783,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-sec-filings": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10725,6 +11804,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-shares": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10745,6 +11825,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-shares-full": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10760,10 +11841,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "start",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "end",
         "type": "string"
       }
@@ -10774,6 +11857,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-splits": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10794,6 +11878,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-sustainability": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10814,6 +11899,7 @@ export const operations = {
   },
   "yahoo-finance-ticker-valuation": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10834,6 +11920,7 @@ export const operations = {
   },
   "yahoo-finance-trending": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10849,6 +11936,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "count",
         "type": "integer"
       }
@@ -10859,6 +11947,7 @@ export const operations = {
   },
   "youtube-captions": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10874,6 +11963,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       }
@@ -10884,6 +11974,7 @@ export const operations = {
   },
   "youtube-channel-playlists": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10899,6 +11990,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "continuation_token",
         "type": "string"
       }
@@ -10909,6 +12001,7 @@ export const operations = {
   },
   "youtube-channel-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10924,11 +12017,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "continuation_token",
         "type": "string"
       }
@@ -10939,6 +12034,7 @@ export const operations = {
   },
   "youtube-channel-shorts": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10959,6 +12055,7 @@ export const operations = {
   },
   "youtube-channel-videos": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10974,6 +12071,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "continuation_token",
         "type": "string"
       }
@@ -10984,6 +12082,7 @@ export const operations = {
   },
   "youtube-comments": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -10999,6 +12098,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "continuation_token",
         "type": "string"
       }
@@ -11009,6 +12109,7 @@ export const operations = {
   },
   "youtube-playlist": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11024,6 +12125,7 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "continuation_token",
         "type": "string"
       }
@@ -11034,6 +12136,7 @@ export const operations = {
   },
   "youtube-profile": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11054,6 +12157,7 @@ export const operations = {
   },
   "youtube-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11067,14 +12171,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "q",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "search_query",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "continuation_token",
         "type": "string"
       },
@@ -11085,6 +12192,7 @@ export const operations = {
           "playlist",
           "movie"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       },
@@ -11095,6 +12203,7 @@ export const operations = {
           "view_count",
           "rating"
         ],
+        "in": "query",
         "name": "sort_by",
         "type": "string"
       },
@@ -11106,6 +12215,7 @@ export const operations = {
           "this_month",
           "this_year"
         ],
+        "in": "query",
         "name": "upload_date",
         "type": "string"
       },
@@ -11115,14 +12225,17 @@ export const operations = {
           "medium",
           "long"
         ],
+        "in": "query",
         "name": "duration",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "features",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "params",
         "type": "string"
       }
@@ -11133,6 +12246,7 @@ export const operations = {
   },
   "youtube-tag": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11152,10 +12266,12 @@ export const operations = {
           "all",
           "shorts"
         ],
+        "in": "query",
         "name": "type",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "continuation_token",
         "type": "string"
       }
@@ -11166,6 +12282,7 @@ export const operations = {
   },
   "youtube-transcript": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11182,10 +12299,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "lang",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "translate_to",
         "type": "string"
       },
@@ -11196,10 +12315,12 @@ export const operations = {
           "srt",
           "vtt"
         ],
+        "in": "query",
         "name": "format",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "timestamps",
         "type": "boolean"
       }
@@ -11210,6 +12331,7 @@ export const operations = {
   },
   "youtube-transcript-languages": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11230,6 +12352,7 @@ export const operations = {
   },
   "youtube-video": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11250,6 +12373,7 @@ export const operations = {
   },
   "zillow-autocomplete": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11263,15 +12387,18 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "query",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "limit",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "status",
         "type": "string"
       }
@@ -11282,6 +12409,7 @@ export const operations = {
   },
   "zillow-property": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11302,6 +12430,7 @@ export const operations = {
   },
   "zillow-search": {
     "bodyParam": null,
+    "bodyRequired": false,
     "consumes": [
       "application/json"
     ],
@@ -11315,39 +12444,48 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "in": "query",
         "name": "location",
         "required": true,
         "type": "string"
       },
       {
+        "in": "query",
         "name": "page",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "status",
         "type": "string"
       },
       {
+        "in": "query",
         "name": "region_id",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "region_type",
         "type": "integer"
       },
       {
+        "in": "query",
         "name": "west",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "east",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "south",
         "type": "number"
       },
       {
+        "in": "query",
         "name": "north",
         "type": "number"
       }

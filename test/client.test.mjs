@@ -37,6 +37,54 @@ test("sends JWT auth for self-service endpoints", async () => {
   assert.equal(headers.Authorization, "Token jwt_test");
 });
 
+test("preserves existing JWT auth schemes case-insensitively", async () => {
+  let headers;
+  const client = new CrawloraClient({
+    jwtToken: "bearer jwt_test",
+    baseUrl: "https://example.test/api/v1",
+    fetch: async (_url, init) => {
+      headers = init.headers;
+      return jsonResponse({ code: 200, msg: "OK", data: {} });
+    }
+  });
+
+  await client.user.me();
+  assert.equal(headers.Authorization, "bearer jwt_test");
+});
+
+test("fails before fetch when required parameters are missing", async () => {
+  let calls = 0;
+  const client = new CrawloraClient({
+    apiKey: "api_test",
+    baseUrl: "https://example.test/api/v1",
+    fetch: async () => {
+      calls++;
+      return jsonResponse({ code: 200, msg: "OK", data: {} });
+    }
+  });
+
+  await assert.rejects(
+    () => client.bing.search(),
+    /Missing required query parameter: q/
+  );
+  await assert.rejects(
+    () => client.google.search(),
+    /Missing required body parameter: searchOption/
+  );
+  assert.equal(calls, 0);
+});
+
+test("normalizes negative retry options", () => {
+  const client = new CrawloraClient({
+    retries: -3,
+    retryDelay: -10,
+    fetch: async () => jsonResponse({ code: 200, msg: "OK", data: {} })
+  });
+
+  assert.equal(client.retries, 0);
+  assert.equal(client.retryDelay, 0);
+});
+
 test("returns text responses", async () => {
   const client = new CrawloraClient({
     apiKey: "api_test",
@@ -77,6 +125,8 @@ test("sends custom headers and preserves false zero and arrays", async () => {
 
   await client.operation("tripadvisor-search", {
     q: "hotel",
+    geo_id: "293919",
+    type: "hotel",
     amenities: [1, 2],
     online_options: ["3", "4"]
   });

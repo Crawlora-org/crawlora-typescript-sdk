@@ -71,6 +71,7 @@ def operation_definition(operation_id, method, path, operation):
         "queryParams": [
             {
                 "name": p["name"],
+                "in": "query",
                 **({"collectionFormat": p["collectionFormat"]} if "collectionFormat" in p else {}),
                 **({"type": p["type"]} if "type" in p else {}),
                 **({"required": True} if p.get("required") else {}),
@@ -82,6 +83,7 @@ def operation_definition(operation_id, method, path, operation):
         "formParams": [
             {
                 "name": p["name"],
+                "in": "formData",
                 **({"type": p["type"]} if "type" in p else {}),
                 **({"required": True} if p.get("required") else {}),
                 **({"enum": [str(v) for v in p["enum"]]} if p.get("enum") else {}),
@@ -90,6 +92,7 @@ def operation_definition(operation_id, method, path, operation):
             if p.get("in") == "formData"
         ],
         "bodyParam": next((p["name"] for p in params if p.get("in") == "body"), None),
+        "bodyRequired": any(p.get("in") == "body" and p.get("required") for p in params),
         "consumes": operation.get("consumes", []),
         "produces": operation.get("produces", []),
         "security": security,

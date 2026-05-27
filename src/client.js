@@ -1,7 +1,7 @@
 import { operations, groups } from "./operations.js";
 
 const DEFAULT_BASE_URL = "https://api.crawlora.net/api/v1";
-export const VERSION = "1.2.0-sdk.6";
+export const VERSION = "1.2.0-sdk.7";
 const DEFAULT_USER_AGENT = `crawlora-js-sdk/${VERSION}`;
 
 export class CrawloraError extends Error {
@@ -22,8 +22,8 @@ export class CrawloraClient {
     this.jwtToken = options.jwtToken || "";
     this.baseUrl = (options.baseUrl || DEFAULT_BASE_URL).replace(/\/+$/, "");
     this.timeout = options.timeout ?? 30000;
-    this.retries = options.retries ?? 0;
-    this.retryDelay = options.retryDelay ?? 250;
+    this.retries = normalizeNonNegativeInteger(options.retries ?? 0);
+    this.retryDelay = normalizeNonNegativeNumber(options.retryDelay ?? 250);
     this.headers = { ...(options.headers || {}) };
     this.userAgent = options.userAgent === false ? "" : (options.userAgent || DEFAULT_USER_AGENT);
     this.fetch = options.fetch || globalThis.fetch;
@@ -50,6 +50,8 @@ export class CrawloraClient {
     if (!operation) {
       throw new TypeError(`Unknown Crawlora operation: ${operationId}`);
     }
+    params = params ?? {};
+    options = options ?? {};
 
     let attempt = 0;
     for (;;) {
@@ -109,6 +111,7 @@ export class CrawloraClient {
 }
 
 function buildRequest(operation, baseUrl, params) {
+  validateRequiredParams(operation, params);
   let path = operation.path;
   for (const name of operation.pathParams) {
     const value = params[name];
@@ -152,6 +155,21 @@ function buildRequest(operation, baseUrl, params) {
   }
 
   return { url, body, bodyHeaders };
+}
+
+function validateRequiredParams(operation, params) {
+  for (const parameter of [...operation.pathParams.map((name) => ({ name, in: "path", required: true })), ...operation.queryParams, ...operation.formParams]) {
+    if (parameter.required && isMissing(params[parameter.name])) {
+      throw new TypeError(`Missing required ${parameter.in || "request"} parameter: ${parameter.name}`);
+    }
+  }
+  if (operation.bodyRequired && isMissing(params[operation.bodyParam]) && isMissing(params.body)) {
+    throw new TypeError(`Missing required body parameter: ${operation.bodyParam}`);
+  }
+}
+
+function isMissing(value) {
+  return value === undefined || value === null || value === "" || (Array.isArray(value) && value.length === 0);
 }
 
 function authHeaders(security, apiKey, jwtToken) {
@@ -198,6 +216,18 @@ function retryDelay(baseDelay, attempt) {
   const delay = baseDelay * 2 ** Math.max(0, attempt - 1);
   const jitter = Math.floor(Math.random() * Math.max(1, baseDelay / 2));
   return delay + jitter;
+}
+
+function normalizeNonNegativeInteger(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number <= 0) return 0;
+  return Math.trunc(number);
+}
+
+function normalizeNonNegativeNumber(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number <= 0) return 0;
+  return number;
 }
 
 function sleep(ms, signal) {

@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/sdk",
-  "version": "1.2.0-sdk.6",
+  "version": "1.2.0-sdk.7",
   "description": "JavaScript and TypeScript SDK for the public Crawlora API.",
   "keywords": [
     "crawlora",

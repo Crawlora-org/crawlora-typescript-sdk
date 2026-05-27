@@ -12,6 +12,7 @@ on:
       - "openapi/public.json"
       - "scripts/**"
       - "src/**"
+      - "test/**"
       - "tests/**"
   workflow_dispatch:
 
