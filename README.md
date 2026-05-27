@@ -3,6 +3,8 @@
 GitHub Packages beta SDK for the public Crawlora API. It works in Node.js 18+
 and modern runtimes with `fetch`.
 
+Website: [crawlora.net](https://crawlora.net)
+
 ## Install
 
 ```sh
