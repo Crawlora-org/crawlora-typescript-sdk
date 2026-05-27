@@ -1,3 +1,5 @@
+import type { CrawloraGeneratedGroups, OperationId } from "./types.js";
+
 export type CrawloraParams = Record<string, unknown>;
 
 export interface CrawloraClientOptions {
@@ -48,19 +50,22 @@ export class CrawloraError extends Error {
 export class CrawloraClient {
   constructor(options?: CrawloraClientOptions);
   request<T = unknown>(
-    operationId: string,
+    operationId: OperationId,
     params?: CrawloraParams,
     options?: CrawloraRequestOptions
   ): Promise<T>;
   operation<T = unknown>(
-    operationId: string,
+    operationId: OperationId,
     params?: CrawloraParams,
     options?: CrawloraRequestOptions
   ): Promise<T>;
   [group: string]: unknown;
 }
 
+export interface CrawloraClient extends CrawloraGeneratedGroups {}
+
 export const operations: Record<string, OperationDefinition>;
 export const groups: Record<string, Record<string, string>>;
 export const operationCount: number;
 export const VERSION: string;
+export * from "./types.js";

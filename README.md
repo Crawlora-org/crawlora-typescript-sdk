@@ -5,7 +5,7 @@ Git-only beta SDK for the public Crawlora API.
 ## Install
 
 ```sh
-npm install git+https://github.com/Crawlora-org/crawlora-typescript-sdk.git#v1.2.0-sdk.2
+npm install git+https://github.com/Crawlora-org/crawlora-typescript-sdk.git#v1.2.0-sdk.3
 ```
 
 ## Usage
@@ -16,6 +16,9 @@ import { CrawloraClient } from "crawlora";
 const crawlora = new CrawloraClient({ apiKey: process.env.CRAWLORA_API_KEY });
 const result = await crawlora.bing.search({ q: "coffee shops", count: 10 });
 ```
+
+Generated TypeScript declarations cover operation ids, endpoint groups,
+parameter objects, enum values, and response aliases.
 
 ## Configuration
 

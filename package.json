@@ -1,6 +1,6 @@
 {
   "name": "crawlora",
-  "version": "1.2.0-sdk.2",
+  "version": "1.2.0-sdk.3",
   "description": "JavaScript and TypeScript SDK for the public Crawlora API.",
   "type": "module",
   "main": "./src/index.js",

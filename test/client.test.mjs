@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import { CrawloraClient, CrawloraError, operationCount } from "../src/index.js";
 
@@ -177,4 +178,14 @@ test("wraps transport errors", async () => {
 
 test("operation metadata count is stable", () => {
   assert.equal(operationCount, 318);
+});
+
+test("generated declarations include typed endpoint groups", () => {
+  const types = readFileSync(new URL("../src/types.d.ts", import.meta.url), "utf8");
+  assert.match(types, /export interface BingSearchParams/);
+  assert.match(types, /"q": string;/);
+  assert.match(types, /"count"\?: number;/);
+  assert.match(types, /export interface GoogleSearchParams/);
+  assert.match(types, /"searchOption": GoogleSearchBody;/);
+  assert.match(types, /export interface CrawloraGeneratedGroups/);
 });
