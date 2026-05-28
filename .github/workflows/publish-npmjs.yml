@@ -73,5 +73,14 @@ jobs:
           tmp="$(mktemp -d)"
           cd "$tmp"
           npm init -y
-          npm install "${PACKAGE_NAME}@${{ steps.package.outputs.version }}" --registry=https://registry.npmjs.org
+          for attempt in $(seq 1 12); do
+            if npm install "${PACKAGE_NAME}@${{ steps.package.outputs.version }}" --registry=https://registry.npmjs.org; then
+              break
+            fi
+            if [ "$attempt" = "12" ]; then
+              exit 1
+            fi
+            echo "Package not installable yet; retrying in 10 seconds (${attempt}/12)"
+            sleep 10
+          done
           node -e 'import("@crawlora-org/sdk").then((m) => console.log(Object.keys(m).sort().join(",")))'
