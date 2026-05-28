@@ -154,6 +154,26 @@ test("sends custom headers and preserves false zero and arrays", async () => {
   assert.match(calls[1].url, /online_options=4/);
 });
 
+test("request headers override default auth and content headers", async () => {
+  let headers;
+  const client = new CrawloraClient({
+    apiKey: "api_default",
+    baseUrl: "https://example.test/api/v1",
+    fetch: async (_url, init) => {
+      headers = init.headers;
+      return jsonResponse({ code: 200, msg: "OK", data: {} });
+    }
+  });
+
+  await client.google.search(
+    { searchOption: { q: "coffee" } },
+    { headers: { "x-api-key": "api_request", "content-type": "application/custom+json" } }
+  );
+
+  assert.equal(headers["x-api-key"], "api_request");
+  assert.equal(headers["content-type"], "application/custom+json");
+});
+
 test("serializes valid enum parameters", async () => {
   const calls = [];
   const client = new CrawloraClient({

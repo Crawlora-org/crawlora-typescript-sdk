@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.0-sdk.14
+
+- Aligned the promoted SDK beta tag with the Python and Go SDKs.
+- Added explicit coverage for request-level header overrides.
+
 ## v1.2.0-sdk.13
 
 - Updated the published npmjs package homepage to `https://crawlora.net`.
