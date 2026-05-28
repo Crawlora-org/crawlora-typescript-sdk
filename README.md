@@ -5,6 +5,12 @@ JavaScript and TypeScript SDK for the public Crawlora API. It works in Node.js
 
 Website: [crawlora.net](https://crawlora.net)
 
+## Get an API Key
+
+Create or sign in to your Crawlora account at [crawlora.net](https://crawlora.net),
+then open the dashboard and create an API key. Set it as `CRAWLORA_API_KEY` in
+your environment before running the examples or using the SDK.
+
 ## Install
 
 ```sh
