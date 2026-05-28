@@ -1,25 +1,20 @@
 # Crawlora JavaScript SDK
 
-GitHub Packages beta SDK for the public Crawlora API. It works in Node.js 18+
-and modern runtimes with `fetch`.
+JavaScript and TypeScript SDK for the public Crawlora API. It works in Node.js
+18+ and modern runtimes with `fetch`.
 
 Website: [crawlora.net](https://crawlora.net)
 
 ## Install
 
 ```sh
-npm config set @crawlora-org:registry https://npm.pkg.github.com
 npm install @crawlora-org/sdk@latest
 ```
 
-GitHub Packages npm installs require GitHub npm registry authentication. For
-project-local installs, add the scoped registry to `.npmrc` and authenticate
-with a GitHub token that can read packages.
-
-For reproducible builds, pin the current beta package version:
+For reproducible builds, pin the current package version:
 
 ```sh
-npm install @crawlora-org/sdk@1.2.0-sdk.11
+npm install @crawlora-org/sdk@1.2.0-sdk.12
 ```
 
 ## Usage
@@ -65,6 +60,11 @@ const text = await crawlora.youtube.transcript(
 Failed API calls throw `CrawloraError` with `status`, optional API `code`,
 parsed `body`, and the original `response` when available.
 
+## Reference
+
+- [Operation reference](docs/operations.md)
+- [Usage recipes](docs/recipes.md)
+
 ## Examples
 
 Runnable examples live under `examples/`:
@@ -80,11 +80,15 @@ variables are not set. `npm run smoke:live` runs all live examples in sequence.
 
 ## Versioning
 
-This SDK is currently released as GitHub Packages beta versions. The package
+This SDK is published to npmjs and mirrored to GitHub Packages. The package
 `latest` dist-tag and the moving Git tag named `latest` track the current
 promoted beta. Explicit package versions and Git beta tags such as
-`1.2.0-sdk.11` / `v1.2.0-sdk.11` remain available for reproducible builds. Pin an
-explicit version in production applications and upgrade intentionally.
+`1.2.0-sdk.12` / `v1.2.0-sdk.12` remain available for reproducible builds. Pin
+an explicit version in production applications and upgrade intentionally.
+
+GitHub Packages installs require a project `.npmrc` that maps the
+`@crawlora-org` scope to `https://npm.pkg.github.com` and a GitHub token that
+can read packages.
 
 ## Package Name
 

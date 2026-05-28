@@ -1,11 +1,19 @@
 # Changelog
 
+## v1.2.0-sdk.12
+
+- Added tag/manual CI/CD workflows for npmjs publishing and GitHub Packages
+  mirroring.
+- Added generated public operation reference docs and usage recipes.
+- Included docs in the published package for easier offline reference.
+
 ## v1.2.0-sdk.11
 
 - Added operation-id parameter and response maps so dynamic `request` and
   `operation` calls infer types from literal operation ids.
 - Added type-usage coverage for typed dynamic calls and kept runtime call
   shapes unchanged.
+- Published the SDK to npmjs while keeping the GitHub Packages mirror active.
 
 ## v1.2.0-sdk.10
 

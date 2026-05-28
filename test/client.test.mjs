@@ -296,3 +296,19 @@ test("generated declarations include typed endpoint groups", () => {
   assert.match(types, /"bing-search": BingSearchResponse;/);
   assert.match(types, /export type OperationRequestArgs<I extends OperationId>/);
 });
+
+test("docs cover operations and recipes", () => {
+  const operationsDoc = readFileSync(new URL("../docs/operations.md", import.meta.url), "utf8");
+  const recipesDoc = readFileSync(new URL("../docs/recipes.md", import.meta.url), "utf8");
+
+  assert.match(operationsDoc, /Total operations: `303`/);
+  assert.match(operationsDoc, /`bing-search`/);
+  assert.match(operationsDoc, /`GET \/bing\/search`/);
+  assert.match(operationsDoc, /`bing\.search`/);
+  assert.match(operationsDoc, /`BingSearchResponse`/);
+  assert.doesNotMatch(operationsDoc, /google-lens/);
+
+  assert.match(recipesDoc, /Typed Dynamic Operations/);
+  assert.match(recipesDoc, /crawlora\.request\("bing-search"/);
+  assert.match(recipesDoc, /responseType: "text"/);
+});
