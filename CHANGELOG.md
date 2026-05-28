@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0-sdk.13
+
+- Updated the published npmjs package homepage to `https://crawlora.net`.
+
 ## v1.2.0-sdk.12
 
 - Added tag/manual CI/CD workflows for npmjs publishing and GitHub Packages

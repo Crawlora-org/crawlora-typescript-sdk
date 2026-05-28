@@ -20,7 +20,7 @@ npm install @crawlora-org/sdk@latest
 For reproducible builds, pin the current package version:
 
 ```sh
-npm install @crawlora-org/sdk@1.2.0-sdk.12
+npm install @crawlora-org/sdk@1.2.0-sdk.13
 ```
 
 ## Usage
@@ -89,7 +89,7 @@ variables are not set. `npm run smoke:live` runs all live examples in sequence.
 This SDK is published to npmjs and mirrored to GitHub Packages. The package
 `latest` dist-tag and the moving Git tag named `latest` track the current
 promoted beta. Explicit package versions and Git beta tags such as
-`1.2.0-sdk.12` / `v1.2.0-sdk.12` remain available for reproducible builds. Pin
+`1.2.0-sdk.13` / `v1.2.0-sdk.13` remain available for reproducible builds. Pin
 an explicit version in production applications and upgrade intentionally.
 
 GitHub Packages installs require a project `.npmrc` that maps the

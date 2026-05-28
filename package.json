@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/sdk",
-  "version": "1.2.0-sdk.12",
+  "version": "1.2.0-sdk.13",
   "description": "JavaScript and TypeScript SDK for the public Crawlora API.",
   "keywords": [
     "crawlora",
@@ -8,7 +8,7 @@
     "web-scraping",
     "api-client"
   ],
-  "homepage": "https://github.com/Crawlora-org/crawlora-typescript-sdk#readme",
+  "homepage": "https://crawlora.net",
   "bugs": {
     "url": "https://github.com/Crawlora-org/crawlora-typescript-sdk/issues"
   },
