@@ -49,8 +49,10 @@ export class CrawloraError extends Error {
   status: number;
   code?: number;
   body: unknown;
+  headers: Record<string, string>;
   response?: Response;
   cause?: unknown;
+  retryable?: boolean;
 }
 
 export class CrawloraClient {

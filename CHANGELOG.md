@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.0-sdk.15
+
+- Added case-insensitive request header overrides across auth, user-agent, and
+  content headers.
+- Added strict response mode validation, response headers on SDK errors, and
+  `Retry-After` aware retry delays capped at 30 seconds.
+- Clarified timeout and external abort errors without retrying user-aborted
+  requests.
+
 ## v1.2.0-sdk.14
 
 - Aligned the promoted SDK beta tag with the Python and Go SDKs.

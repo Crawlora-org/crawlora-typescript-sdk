@@ -1,18 +1,20 @@
 import { operations, groups } from "./operations.js";
 
 const DEFAULT_BASE_URL = "https://api.crawlora.net/api/v1";
-export const VERSION = "1.2.0-sdk.14";
+export const VERSION = "1.2.0-sdk.15";
 const DEFAULT_USER_AGENT = `crawlora-js-sdk/${VERSION}`;
 
 export class CrawloraError extends Error {
-  constructor(message, { status = 0, code, body, response, cause } = {}) {
+  constructor(message, { status = 0, code, body, headers = {}, response, cause, retryable } = {}) {
     super(message);
     this.name = "CrawloraError";
     this.status = status;
     this.code = code;
     this.body = body;
+    this.headers = headers;
     this.response = response;
     this.cause = cause;
+    this.retryable = retryable;
   }
 }
 
@@ -52,34 +54,39 @@ export class CrawloraClient {
     }
     params = params ?? {};
     options = options ?? {};
+    const responseType = validateResponseType(options.responseType || "auto");
 
     let attempt = 0;
     for (;;) {
       try {
-        return await this.#send(operation, params, options);
+        return await this.#send(operation, params, options, responseType);
       } catch (error) {
-        if (!(error instanceof CrawloraError) || attempt >= this.retries || !shouldRetry(error.status)) {
+        if (!(error instanceof CrawloraError) || error.retryable === false || attempt >= this.retries || !shouldRetry(error.status)) {
           throw error;
         }
         attempt++;
-        await sleep(retryDelay(this.retryDelay, attempt), options.signal);
+        await sleep(retryDelayForError(error, this.retryDelay, attempt), options.signal);
       }
     }
   }
 
-  async #send(operation, params, options) {
+  async #send(operation, params, options, responseType) {
     const { url, body, bodyHeaders } = buildRequest(operation, this.baseUrl, params);
-    const headers = {
-      ...this.headers,
-      ...authHeaders(operation.security, this.apiKey, this.jwtToken),
-      ...userAgentHeader(this.userAgent),
-      ...bodyHeaders,
-      ...(options.headers || {})
-    };
+    const headers = mergeHeaders(
+      this.headers,
+      authHeaders(operation.security, this.apiKey, this.jwtToken),
+      userAgentHeader(this.userAgent),
+      bodyHeaders,
+      options.headers
+    );
 
     const controller = new AbortController();
     const timeoutMs = options.timeout ?? this.timeout;
-    const timeout = timeoutMs > 0 ? setTimeout(() => controller.abort(), timeoutMs) : undefined;
+    let timedOut = false;
+    const timeout = timeoutMs > 0 ? setTimeout(() => {
+      timedOut = true;
+      controller.abort();
+    }, timeoutMs) : undefined;
     const signal = composeSignal(controller, options.signal);
     let response;
     try {
@@ -90,12 +97,19 @@ export class CrawloraClient {
         signal
       });
     } catch (error) {
+      if (options.signal?.aborted) {
+        throw new CrawloraError("Crawlora request aborted", { cause: error, retryable: false });
+      }
+      if (timedOut) {
+        throw new CrawloraError("Crawlora request timed out", { cause: error, retryable: false });
+      }
       throw new CrawloraError("Crawlora transport error", { cause: error });
     } finally {
       if (timeout) clearTimeout(timeout);
     }
 
-    const parsed = await parseResponse(response, options.responseType || "auto");
+    const headersObject = responseHeaders(response);
+    const parsed = await parseResponse(response, responseType, headersObject);
     if (!response.ok) {
       const code = parsed && typeof parsed === "object" ? parsed.code : undefined;
       const message = parsed && typeof parsed === "object" && parsed.msg ? parsed.msg : response.statusText;
@@ -103,6 +117,7 @@ export class CrawloraClient {
         status: response.status,
         code,
         body: parsed,
+        headers: headersObject,
         response
       });
     }
@@ -203,6 +218,22 @@ function userAgentHeader(userAgent) {
   return { "user-agent": userAgent };
 }
 
+function mergeHeaders(...sources) {
+  const headers = {};
+  const names = new Map();
+  for (const source of sources) {
+    for (const [name, value] of Object.entries(source || {})) {
+      if (value === undefined || value === null) continue;
+      const lower = name.toLowerCase();
+      const existing = names.get(lower);
+      if (existing && existing !== name) delete headers[existing];
+      headers[name] = String(value);
+      names.set(lower, name);
+    }
+  }
+  return headers;
+}
+
 function composeSignal(controller, signal) {
   if (!signal) return controller.signal;
   if (signal.aborted) controller.abort();
@@ -210,7 +241,14 @@ function composeSignal(controller, signal) {
   return controller.signal;
 }
 
-async function parseResponse(response, responseType) {
+function validateResponseType(responseType) {
+  if (responseType === "auto" || responseType === "json" || responseType === "text") {
+    return responseType;
+  }
+  throw new TypeError("Invalid responseType: expected one of auto, json, text");
+}
+
+async function parseResponse(response, responseType, headers) {
   if (responseType === "text") return response.text();
   const contentType = response.headers.get("content-type") || "";
   if (responseType === "json" || contentType.toLowerCase().includes("application/json")) {
@@ -221,6 +259,7 @@ async function parseResponse(response, responseType) {
       throw new CrawloraError("Crawlora JSON parse error", {
         status: response.status,
         body: text,
+        headers,
         response,
         cause: error
       });
@@ -240,6 +279,36 @@ function retryDelay(baseDelay, attempt) {
   return delay + jitter;
 }
 
+function retryDelayForError(error, baseDelay, attempt) {
+  return parseRetryAfter(error.headers) ?? retryDelay(baseDelay, attempt);
+}
+
+function parseRetryAfter(headers) {
+  const value = headerValue(headers, "retry-after");
+  if (!value) return undefined;
+  const seconds = Number(value);
+  if (Number.isFinite(seconds) && seconds > 0) {
+    return Math.min(seconds * 1000, 30000);
+  }
+  const date = Date.parse(value);
+  if (Number.isFinite(date)) {
+    const delay = date - Date.now();
+    if (delay > 0) return Math.min(delay, 30000);
+  }
+  return undefined;
+}
+
+function headerValue(headers, name) {
+  for (const [key, value] of Object.entries(headers || {})) {
+    if (key.toLowerCase() === name.toLowerCase()) return value;
+  }
+  return "";
+}
+
+function responseHeaders(response) {
+  return Object.fromEntries(response.headers.entries());
+}
+
 function normalizeNonNegativeInteger(value) {
   const number = Number(value);
   if (!Number.isFinite(number) || number <= 0) return 0;
@@ -256,13 +325,13 @@ function sleep(ms, signal) {
   if (!ms || ms <= 0) return Promise.resolve();
   return new Promise((resolve, reject) => {
     if (signal?.aborted) {
-      reject(new CrawloraError("Crawlora request aborted", { cause: signal.reason }));
+      reject(new CrawloraError("Crawlora request aborted", { cause: signal.reason, retryable: false }));
       return;
     }
     const timer = setTimeout(resolve, ms);
     signal?.addEventListener("abort", () => {
       clearTimeout(timer);
-      reject(new CrawloraError("Crawlora request aborted", { cause: signal.reason }));
+      reject(new CrawloraError("Crawlora request aborted", { cause: signal.reason, retryable: false }));
     }, { once: true });
   });
 }
