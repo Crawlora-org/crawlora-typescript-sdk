@@ -87,7 +87,9 @@ const crawlora = new CrawloraClient({
 ```
 
 Per-request options can override headers, timeout, abort signal, and response
-mode:
+mode. Header names are matched case-insensitively, so request headers can
+override default auth, user-agent, and content headers without duplicating
+variants such as `x-api-key` and `X-API-KEY`:
 
 ```js
 const controller = new AbortController();
@@ -104,8 +106,9 @@ const response = await crawlora.bing.search(
 
 ## Text Responses
 
-Most endpoints return JSON. Endpoints that support alternate text output, such
-as YouTube transcripts, can opt into text mode:
+Most endpoints return JSON. `responseType` must be `auto`, `json`, or `text`.
+Endpoints that support alternate text output, such as YouTube transcripts, can
+opt into text mode:
 
 ```js
 const transcript = await crawlora.youtube.transcript(
@@ -133,8 +136,11 @@ try {
 }
 ```
 
-The error includes `status`, optional API `code`, parsed `body`, the original
-`response` when available, and a parser or transport `cause` when relevant.
+The error includes `status`, optional API `code`, parsed `body`, response
+`headers`, the original `response` when available, and a parser or transport
+`cause` when relevant. Retryable responses honor positive `Retry-After`
+headers, capped at 30 seconds. Externally aborted requests fail with
+`Crawlora request aborted` and are not retried.
 
 ## Examples
 

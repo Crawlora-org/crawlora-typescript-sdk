@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.2.0-sdk.16
+
+- Documented response headers on `CrawloraError`, case-insensitive header
+  overrides, strict response modes, `Retry-After` retries, and abort semantics.
+- Added docs coverage checks for the release-polish behavior.
+- Kept the generated operation contract unchanged.
+
 ## v1.2.0-sdk.15
 
 - Added case-insensitive request header overrides across auth, user-agent, and

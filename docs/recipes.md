@@ -47,7 +47,13 @@ const result = await crawlora.bing.search(
 );
 ```
 
+Request headers override default auth, user-agent, and content headers
+case-insensitively. Retryable API responses honor positive `Retry-After`
+headers, capped at 30 seconds. Externally aborted requests are not retried.
+
 ## Text Responses
+
+`responseType` must be `auto`, `json`, or `text`.
 
 ```js
 const text = await crawlora.youtube.transcript(
@@ -63,7 +69,7 @@ try {
   await crawlora.bing.search({ q: "coffee shops" });
 } catch (error) {
   if (error instanceof CrawloraError) {
-    console.log(error.status, error.code, error.body);
+    console.log(error.status, error.code, error.body, error.headers);
   }
 }
 ```

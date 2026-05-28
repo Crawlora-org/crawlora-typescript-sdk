@@ -414,4 +414,6 @@ test("docs cover operations and recipes", () => {
   assert.match(recipesDoc, /Typed Dynamic Operations/);
   assert.match(recipesDoc, /crawlora\.request\("bing-search"/);
   assert.match(recipesDoc, /responseType: "text"/);
+  assert.match(recipesDoc, /Retry-After/);
+  assert.match(recipesDoc, /error\.headers/);
 });
