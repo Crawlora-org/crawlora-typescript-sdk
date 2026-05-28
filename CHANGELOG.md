@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.2.0-sdk.11
+
+- Added operation-id parameter and response maps so dynamic `request` and
+  `operation` calls infer types from literal operation ids.
+- Added type-usage coverage for typed dynamic calls and kept runtime call
+  shapes unchanged.
+
 ## v1.2.0-sdk.10
 
 - Generated OpenAPI schema model interfaces and aliases for endpoint responses

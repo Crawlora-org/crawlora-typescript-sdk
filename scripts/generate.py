@@ -238,10 +238,32 @@ def type_declarations(grouped, operation_meta):
         lines.append(f"  {group_name}: {type_name(group_name, 'service')};")
     lines.append("}")
     lines.append("")
-    lines.append("export type OperationId =")
-    for operation_id in operation_meta:
-        if operation_id == "definitions":
-            continue
+    operation_ids = [operation_id for operation_id in operation_meta if operation_id != "definitions"]
+    lines.append("export interface OperationParamsMap {")
+    for operation_id in operation_ids:
+        lines.append(f"  {json.dumps(operation_id)}: {operation_meta[operation_id]['typeBase']}Params;")
+    lines.append("}")
+    lines.append("")
+    lines.append("export interface OperationResponseMap {")
+    for operation_id in operation_ids:
+        lines.append(f"  {json.dumps(operation_id)}: {operation_meta[operation_id]['typeBase']}Response;")
+    lines.append("}")
+    lines.append("")
+    lines.append("export interface OperationRequiredParamsMap {")
+    for operation_id in operation_ids:
+        required = "true" if operation_meta[operation_id]["hasRequiredParams"] else "false"
+        lines.append(f"  {json.dumps(operation_id)}: {required};")
+    lines.append("}")
+    lines.append("")
+    lines.append("export type OperationId = keyof OperationParamsMap;")
+    lines.append("")
+    lines.append("export type OperationRequestArgs<I extends OperationId> =")
+    lines.append("  OperationRequiredParamsMap[I] extends true")
+    lines.append("    ? [params: OperationParamsMap[I], options?: import('./index.js').CrawloraRequestOptions]")
+    lines.append("    : [params?: OperationParamsMap[I], options?: import('./index.js').CrawloraRequestOptions];")
+    lines.append("")
+    lines.append("export type OperationIdLiteral =")
+    for operation_id in operation_ids:
         lines.append(f"  | {json.dumps(operation_id)}")
     lines[-1] += ";"
     lines.append("")

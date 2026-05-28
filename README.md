@@ -19,7 +19,7 @@ with a GitHub token that can read packages.
 For reproducible builds, pin the current beta package version:
 
 ```sh
-npm install @crawlora-org/sdk@1.2.0-sdk.10
+npm install @crawlora-org/sdk@1.2.0-sdk.11
 ```
 
 ## Usage
@@ -34,6 +34,12 @@ console.log(result);
 
 Generated TypeScript declarations cover operation ids, endpoint groups,
 parameter objects, enum values, request options, and response aliases.
+Dynamic calls infer parameter and response types from literal operation ids:
+
+```ts
+const result = await crawlora.request("bing-search", { q: "coffee shops" });
+result.data?.results?.[0]?.title;
+```
 
 ## Configuration
 
@@ -77,7 +83,7 @@ variables are not set. `npm run smoke:live` runs all live examples in sequence.
 This SDK is currently released as GitHub Packages beta versions. The package
 `latest` dist-tag and the moving Git tag named `latest` track the current
 promoted beta. Explicit package versions and Git beta tags such as
-`1.2.0-sdk.10` / `v1.2.0-sdk.10` remain available for reproducible builds. Pin an
+`1.2.0-sdk.11` / `v1.2.0-sdk.11` remain available for reproducible builds. Pin an
 explicit version in production applications and upgrade intentionally.
 
 ## Package Name

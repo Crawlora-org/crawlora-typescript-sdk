@@ -290,4 +290,9 @@ test("generated declarations include typed endpoint groups", () => {
   assert.match(types, /export type GoogleSearchBody = CrawloraBody<ModelGoogleSearchOption>;/);
   assert.match(types, /"searchOption": GoogleSearchBody;/);
   assert.match(types, /export interface CrawloraGeneratedGroups/);
+  assert.match(types, /export interface OperationParamsMap/);
+  assert.match(types, /"bing-search": BingSearchParams;/);
+  assert.match(types, /export interface OperationResponseMap/);
+  assert.match(types, /"bing-search": BingSearchResponse;/);
+  assert.match(types, /export type OperationRequestArgs<I extends OperationId>/);
 });
