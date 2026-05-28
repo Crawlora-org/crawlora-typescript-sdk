@@ -70,6 +70,7 @@ parsed `body`, and the original `response` when available.
 
 - [Operation reference](docs/operations.md)
 - [Usage recipes](docs/recipes.md)
+- [Publishing notes](docs/publishing.md)
 
 ## Examples
 
