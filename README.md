@@ -1,46 +1,75 @@
 # Crawlora JavaScript SDK
 
-JavaScript and TypeScript SDK for the public Crawlora API. It works in Node.js
-18+ and modern runtimes with `fetch`.
+Official JavaScript and TypeScript client for the public Crawlora API. Use it
+to call Crawlora scraping, search, marketplace, media, maps, finance, and usage
+endpoints with a small `fetch`-based client and generated TypeScript types.
 
-Website: [crawlora.net](https://crawlora.net)
-
-## Get an API Key
-
-Create or sign in to your Crawlora account at [crawlora.net](https://crawlora.net),
-then open the dashboard and create an API key. Set it as `CRAWLORA_API_KEY` in
-your environment before running the examples or using the SDK.
+- Runtime: Node.js 18+ or any modern runtime with `fetch`
+- Auth: `x-api-key`
+- Default API base URL: `https://api.crawlora.net/api/v1`
+- Reference: [operations](docs/operations.md) and [recipes](docs/recipes.md)
 
 ## Install
 
-```sh
-npm install @crawlora-org/sdk@latest
-```
-
-For reproducible builds, pin the current package version:
+Install the latest published npm package:
 
 ```sh
-npm install @crawlora-org/sdk@1.2.0-sdk.14
+npm install @crawlora-org/sdk
 ```
 
-## Usage
+For reproducible builds, pin a published package version:
+
+```sh
+npm install @crawlora-org/sdk@VERSION
+```
+
+## API Key
+
+Create or sign in to your Crawlora account at [crawlora.net](https://crawlora.net),
+then create an API key in the dashboard.
+
+```sh
+read -r CRAWLORA_API_KEY
+export CRAWLORA_API_KEY
+```
+
+## First Request
 
 ```js
 import { CrawloraClient } from "@crawlora-org/sdk";
 
-const crawlora = new CrawloraClient({ apiKey: process.env.CRAWLORA_API_KEY });
-const result = await crawlora.bing.search({ q: "coffee shops", count: 10 });
-console.log(result);
+const crawlora = new CrawloraClient({
+  apiKey: process.env.CRAWLORA_API_KEY
+});
+
+const response = await crawlora.bing.search({
+  q: "coffee shops",
+  count: 10
+});
+
+console.log(response.data?.results?.[0]);
 ```
 
-Generated TypeScript declarations cover operation ids, endpoint groups,
-parameter objects, enum values, request options, and response aliases.
-Dynamic calls infer parameter and response types from literal operation ids:
+Endpoint groups are generated from the public API contract, so common calls are
+available as methods such as `crawlora.bing.search(...)`,
+`crawlora.youtube.transcript(...)`, and `crawlora.google.mapSearch(...)`.
+
+## Typed Dynamic Calls
+
+You can also call by operation id. Literal operation ids infer parameter and
+response types in TypeScript:
 
 ```ts
-const result = await crawlora.request("bing-search", { q: "coffee shops" });
-result.data?.results?.[0]?.title;
+const response = await crawlora.request("bing-search", {
+  q: "coffee shops",
+  count: 10
+});
+
+response.data?.results?.[0]?.title;
 ```
+
+Generated declarations include operation ids, endpoint groups, request
+parameters, enum values, response aliases, and request options.
 
 ## Configuration
 
@@ -48,55 +77,78 @@ result.data?.results?.[0]?.title;
 const crawlora = new CrawloraClient({
   apiKey: process.env.CRAWLORA_API_KEY,
   baseUrl: "https://api.crawlora.net/api/v1",
+  timeout: 30_000,
   retries: 2,
   retryDelay: 250,
-  headers: { "x-client": "example" }
+  headers: {
+    "x-client": "my-app"
+  }
 });
 ```
 
-Per-request options support headers, timeout, abort signals, and response mode:
+Per-request options can override headers, timeout, abort signal, and response
+mode:
 
 ```js
-const text = await crawlora.youtube.transcript(
-  { id: "VIDEO_ID", format: "text" },
-  { responseType: "text", timeout: 10000 }
+const controller = new AbortController();
+
+const response = await crawlora.bing.search(
+  { q: "coffee shops" },
+  {
+    timeout: 10_000,
+    signal: controller.signal,
+    headers: { "x-request-id": "search-001" }
+  }
 );
 ```
 
-Failed API calls throw `CrawloraError` with `status`, optional API `code`,
-parsed `body`, and the original `response` when available.
+## Text Responses
 
-## Reference
+Most endpoints return JSON. Endpoints that support alternate text output, such
+as YouTube transcripts, can opt into text mode:
 
-- [Operation reference](docs/operations.md)
-- [Usage recipes](docs/recipes.md)
+```js
+const transcript = await crawlora.youtube.transcript(
+  { id: "VIDEO_ID", format: "text" },
+  { responseType: "text" }
+);
+
+console.log(transcript);
+```
+
+## Errors
+
+Failed API calls throw `CrawloraError`:
+
+```js
+import { CrawloraClient, CrawloraError } from "@crawlora-org/sdk";
+
+try {
+  await crawlora.bing.search({ q: "coffee shops" });
+} catch (error) {
+  if (error instanceof CrawloraError) {
+    console.error(error.status, error.code, error.body);
+  }
+  throw error;
+}
+```
+
+The error includes `status`, optional API `code`, parsed `body`, the original
+`response` when available, and a parser or transport `cause` when relevant.
 
 ## Examples
 
-Runnable examples live under `examples/`:
+Runnable examples live under `examples/` and skip cleanly when required
+environment variables are missing:
 
 ```sh
-CRAWLORA_API_KEY=... npm run example:bing-search
-CRAWLORA_API_KEY=... CRAWLORA_YOUTUBE_VIDEO_ID=... npm run example:youtube-transcript
+npm run example:bing-search
+npm run example:youtube-transcript
 ```
 
-Each example also accepts `CRAWLORA_BASE_URL` for staging or local API testing.
-The examples exit without making a request when the required live environment
-variables are not set. `npm run smoke:live` runs all live examples in sequence.
+Set `CRAWLORA_BASE_URL` to point examples at a staging or local API.
 
-## Versioning
-
-This SDK is published to npmjs and mirrored to GitHub Packages. The package
-`latest` dist-tag and the moving Git tag named `latest` track the current
-promoted beta. Explicit package versions and Git beta tags such as
-`1.2.0-sdk.14` / `v1.2.0-sdk.14` remain available for reproducible builds. Pin
-an explicit version in production applications and upgrade intentionally.
-
-GitHub Packages installs require a project `.npmrc` that maps the
-`@crawlora-org` scope to `https://npm.pkg.github.com` and a GitHub token that
-can read packages.
-
-## Package Name
+## Package Notes
 
 The npm package name is `@crawlora-org/sdk`:
 
@@ -104,11 +156,10 @@ The npm package name is `@crawlora-org/sdk`:
 import { CrawloraClient } from "@crawlora-org/sdk";
 ```
 
-The package names `crawlora` and `@crawlora/sdk` are not used by this repository
-because they already exist on npm and point to a different package source.
+The package names `crawlora` and `@crawlora/sdk` are not used by this
+repository because they already exist on npm and point to different package
+sources.
 
-## Optional Live Smoke Test
-
-Default tests use mock `fetch` implementations. The programs under `examples/`
-can be used as optional live smoke tests when `CRAWLORA_API_KEY` is available.
-Live calls are not part of default CI.
+This SDK is published to npmjs and may also be mirrored to GitHub Packages. Pin
+an explicit published version for production applications and upgrade
+intentionally.
