@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0-sdk.17
+
+- Expanded npmjs package keywords for Crawlora SDK, scraping API, data
+  extraction, search, marketplace, media, maps, and finance discovery.
+- Kept the generated operation contract unchanged.
+
 ## v1.2.0-sdk.16
 
 - Documented response headers on `CrawloraError`, case-insensitive header
