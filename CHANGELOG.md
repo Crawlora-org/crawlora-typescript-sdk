@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0-sdk.19
+
+- Regenerated the public SDK contract with the promoted Shopify endpoint family.
+- Added the generated `shopify` group with 11 active Shopify operations.
+- Updated the generated operation reference to 330 public SDK operations.
+
 ## v1.2.0-sdk.18
 
 - Regenerated the public SDK contract for the Shop.app endpoint family.

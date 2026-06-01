@@ -7717,6 +7717,389 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "shopify-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-collection-products",
+    "method": "GET",
+    "path": "/shopify/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-collections",
+    "method": "GET",
+    "path": "/shopify/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-page",
+    "method": "GET",
+    "path": "/shopify/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-pages",
+    "method": "GET",
+    "path": "/shopify/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-product",
+    "method": "GET",
+    "path": "/shopify/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-product-recommendations",
+    "method": "GET",
+    "path": "/shopify/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-products",
+    "method": "GET",
+    "path": "/shopify/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-search-suggest",
+    "method": "GET",
+    "path": "/shopify/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-sitemap-urls",
+    "method": "GET",
+    "path": "/shopify/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-sitemaps",
+    "method": "GET",
+    "path": "/shopify/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shopify-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shopify-store",
+    "method": "GET",
+    "path": "/shopify/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "similarweb-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -12822,6 +13205,19 @@ export const groups = {
     "shopTypeahead": "shop-app-shop-typeahead",
     "suggestions": "shop-app-suggestions"
   },
+  "shopify": {
+    "collectionProducts": "shopify-collection-products",
+    "collections": "shopify-collections",
+    "page": "shopify-page",
+    "pages": "shopify-pages",
+    "product": "shopify-product",
+    "productRecommendations": "shopify-product-recommendations",
+    "products": "shopify-products",
+    "searchSuggest": "shopify-search-suggest",
+    "sitemapUrls": "shopify-sitemap-urls",
+    "sitemaps": "shopify-sitemaps",
+    "store": "shopify-store"
+  },
   "similarWeb": {
     "search": "similarweb-search",
     "web": "similarweb-web"
@@ -12985,4 +13381,4 @@ export const groups = {
   }
 };
 
-export const operationCount = 319;
+export const operationCount = 330;

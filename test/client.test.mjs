@@ -372,7 +372,7 @@ test("wraps transport errors", async () => {
 });
 
 test("operation metadata count is stable", () => {
-  assert.equal(operationCount, 319);
+  assert.equal(operationCount, 330);
 });
 
 test("deprecated endpoints are not generated", () => {
@@ -404,11 +404,14 @@ test("docs cover operations and recipes", () => {
   const operationsDoc = readFileSync(new URL("../docs/operations.md", import.meta.url), "utf8");
   const recipesDoc = readFileSync(new URL("../docs/recipes.md", import.meta.url), "utf8");
 
-  assert.match(operationsDoc, /Total operations: `319`/);
+  assert.match(operationsDoc, /Total operations: `330`/);
   assert.match(operationsDoc, /`bing-search`/);
   assert.match(operationsDoc, /`GET \/bing\/search`/);
   assert.match(operationsDoc, /`bing\.search`/);
   assert.match(operationsDoc, /`BingSearchResponse`/);
+  assert.match(operationsDoc, /`shopify-store`/);
+  assert.match(operationsDoc, /`GET \/shopify\/store`/);
+  assert.match(operationsDoc, /`shopify\.store`/);
   assert.doesNotMatch(operationsDoc, /google-lens/);
 
   assert.match(recipesDoc, /Typed Dynamic Operations/);

@@ -5221,6 +5221,276 @@ export interface ModelShopappVariantsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelShopifyCollectionItem {
+  "created_at"?: string;
+  "description"?: string;
+  "handle"?: string;
+  "id"?: string;
+  "products_count"?: number;
+  "published_at"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopifyCollectionProductsResponse {
+  "collection"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "products"?: Array<ModelShopifyProductItem>;
+  "source_url"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelShopifyCollectionsResponse {
+  "collections"?: Array<ModelShopifyCollectionItem>;
+  "limit"?: number;
+  "page"?: number;
+  "source_url"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelShopifyImageItem {
+  "alt"?: string;
+  "created_at"?: string;
+  "height"?: number;
+  "id"?: string;
+  "position"?: number;
+  "updated_at"?: string;
+  "url"?: string;
+  "variant_ids"?: Array<string>;
+  "width"?: number;
+}
+
+export interface ModelShopifyOptionItem {
+  "name"?: string;
+  "position"?: number;
+  "values"?: Array<string>;
+}
+
+export interface ModelShopifyPageItem {
+  "content"?: string;
+  "created_at"?: string;
+  "handle"?: string;
+  "id"?: string;
+  "published_at"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopifyPageResponse {
+  "page"?: ModelShopifyPageItem;
+  "source_url"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelShopifyPagesResponse {
+  "limit"?: number;
+  "page"?: number;
+  "pages"?: Array<ModelShopifyPageItem>;
+  "source_url"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelShopifyProductItem {
+  "available"?: boolean;
+  "compare_at_price"?: number;
+  "created_at"?: string;
+  "description"?: string;
+  "featured_image"?: string;
+  "handle"?: string;
+  "id"?: string;
+  "images"?: Array<ModelShopifyImageItem>;
+  "options"?: Array<ModelShopifyOptionItem>;
+  "price"?: number;
+  "product_type"?: string;
+  "published_at"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+  "variants"?: Array<ModelShopifyVariantItem>;
+  "vendor"?: string;
+}
+
+export interface ModelShopifyProductRecommendationsResponse {
+  "handle"?: string;
+  "intent"?: string;
+  "limit"?: number;
+  "product_id"?: string;
+  "products"?: Array<ModelShopifyProductItem>;
+  "source_url"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelShopifyProductResponse {
+  "product"?: ModelShopifyProductItem;
+  "source_url"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelShopifyProductsResponse {
+  "limit"?: number;
+  "page"?: number;
+  "products"?: Array<ModelShopifyProductItem>;
+  "source_url"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelShopifySearchQueryItem {
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopifySearchSuggestResponse {
+  "collections"?: Array<ModelShopifyCollectionItem>;
+  "limit"?: number;
+  "products"?: Array<ModelShopifyProductItem>;
+  "queries"?: Array<ModelShopifySearchQueryItem>;
+  "query"?: string;
+  "source_url"?: string;
+  "store_url"?: string;
+  "types"?: Array<string>;
+}
+
+export interface ModelShopifySitemapImage {
+  "caption"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopifySitemapIndexResponse {
+  "sitemaps"?: Array<ModelShopifySitemapItem>;
+  "source_url"?: string;
+  "store_url"?: string;
+}
+
+export interface ModelShopifySitemapItem {
+  "loc"?: string;
+  "type"?: string;
+}
+
+export interface ModelShopifySitemapUrlitem {
+  "changefreq"?: string;
+  "handle"?: string;
+  "images"?: Array<ModelShopifySitemapImage>;
+  "lastmod"?: string;
+  "loc"?: string;
+  "type"?: string;
+}
+
+export interface ModelShopifySitemapUrlsResponse {
+  "limit"?: number;
+  "source_url"?: string;
+  "store_url"?: string;
+  "type"?: string;
+  "urls"?: Array<ModelShopifySitemapUrlitem>;
+}
+
+export interface ModelShopifyStoreResponse {
+  "city"?: string;
+  "country"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "domain"?: string;
+  "myshopify_domain"?: string;
+  "name"?: string;
+  "province"?: string;
+  "published_collections_count"?: number;
+  "published_products_count"?: number;
+  "requested_url"?: string;
+  "source_domain"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelShopifyVariantItem {
+  "available"?: boolean;
+  "barcode"?: string;
+  "compare_at_price"?: number;
+  "created_at"?: string;
+  "featured_image"?: string;
+  "grams"?: number;
+  "id"?: string;
+  "option1"?: string;
+  "option2"?: string;
+  "option3"?: string;
+  "position"?: number;
+  "price"?: number;
+  "product_id"?: string;
+  "requires_shipping"?: boolean;
+  "sku"?: string;
+  "taxable"?: boolean;
+  "title"?: string;
+  "updated_at"?: string;
+}
+
+export interface ModelShopifyCollectionProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyCollectionProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifyCollectionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyCollectionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifyPageResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyPageResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifyPagesResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyPagesResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifyProductRecommendationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyProductRecommendationsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifyProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifyProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifySearchSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifySearchSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifySitemapIndexResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifySitemapIndexResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifySitemapUrlsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifySitemapUrlsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifyStoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyStoreResponse;
+  "msg"?: string;
+}
+
 export interface ModelSimilarwebSearchResp {
   "apps"?: { "appStore"?: Array<{ "appKey"?: string; "id"?: string; "image"?: string; "name"?: string; "publisher"?: string; "ratings"?: number; "store"?: string }>; "googlePlay"?: Array<{ "appKey"?: string; "id"?: string; "image"?: string; "name"?: string; "publisher"?: string; "ratings"?: number; "store"?: string }> };
   "companies"?: Array<{ "domain"?: string; "logoUrl"?: string; "name"?: string }>;
@@ -9558,6 +9828,80 @@ export interface ShopAppSuggestionsParams {
   "limit"?: number;
 }
 
+export type ShopifyCollectionsResponse = CrawloraResponse<ModelShopifyCollectionsResponseDoc>;
+export interface ShopifyCollectionsParams {
+  "url": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ShopifyCollectionProductsResponse = CrawloraResponse<ModelShopifyCollectionProductsResponseDoc>;
+export interface ShopifyCollectionProductsParams {
+  "handle": string;
+  "url": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ShopifyPagesResponse = CrawloraResponse<ModelShopifyPagesResponseDoc>;
+export interface ShopifyPagesParams {
+  "url": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ShopifyPageResponse = CrawloraResponse<ModelShopifyPageResponseDoc>;
+export interface ShopifyPageParams {
+  "handle": string;
+  "url": string;
+}
+
+export type ShopifyProductsResponse = CrawloraResponse<ModelShopifyProductsResponseDoc>;
+export interface ShopifyProductsParams {
+  "url": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ShopifyProductResponse = CrawloraResponse<ModelShopifyProductResponseDoc>;
+export interface ShopifyProductParams {
+  "handle": string;
+  "url": string;
+}
+
+export type ShopifyProductRecommendationsResponse = CrawloraResponse<ModelShopifyProductRecommendationsResponseDoc>;
+export interface ShopifyProductRecommendationsParams {
+  "handle": string;
+  "url": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type ShopifySearchSuggestResponse = CrawloraResponse<ModelShopifySearchSuggestResponseDoc>;
+export interface ShopifySearchSuggestParams {
+  "url": string;
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type ShopifySitemapUrlsResponse = CrawloraResponse<ModelShopifySitemapUrlsResponseDoc>;
+export interface ShopifySitemapUrlsParams {
+  "url": string;
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type ShopifySitemapsResponse = CrawloraResponse<ModelShopifySitemapIndexResponseDoc>;
+export interface ShopifySitemapsParams {
+  "url": string;
+}
+
+export type ShopifyStoreResponse = CrawloraResponse<ModelShopifyStoreResponseDoc>;
+export interface ShopifyStoreParams {
+  "url": string;
+}
+
 export type SimilarWebSearchResponse = CrawloraResponse<ModelSimilarwebSearchResponseDoc>;
 export interface SimilarWebSearchParams {
   "q": string;
@@ -10790,6 +11134,20 @@ export interface ShopAppService {
   suggestions<T = ShopAppSuggestionsResponse>(params: ShopAppSuggestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface ShopifyService {
+  collections<T = ShopifyCollectionsResponse>(params: ShopifyCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  collectionProducts<T = ShopifyCollectionProductsResponse>(params: ShopifyCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pages<T = ShopifyPagesResponse>(params: ShopifyPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  page<T = ShopifyPageResponse>(params: ShopifyPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  products<T = ShopifyProductsResponse>(params: ShopifyProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = ShopifyProductResponse>(params: ShopifyProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRecommendations<T = ShopifyProductRecommendationsResponse>(params: ShopifyProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchSuggest<T = ShopifySearchSuggestResponse>(params: ShopifySearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapUrls<T = ShopifySitemapUrlsResponse>(params: ShopifySitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = ShopifySitemapsResponse>(params: ShopifySitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = ShopifyStoreResponse>(params: ShopifyStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface SimilarWebService {
   search<T = SimilarWebSearchResponse>(params: SimilarWebSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   web<T = SimilarWebWebResponse>(params: SimilarWebWebParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -10983,6 +11341,7 @@ export interface CrawloraGeneratedGroups {
   productHunt: ProductHuntService;
   referrals: ReferralsService;
   shopApp: ShopAppService;
+  shopify: ShopifyService;
   similarWeb: SimilarWebService;
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
@@ -11177,6 +11536,17 @@ export interface OperationParamsMap {
   "shop-app-shop-reviews": ShopAppShopReviewsParams;
   "shop-app-shop-typeahead": ShopAppShopTypeaheadParams;
   "shop-app-suggestions": ShopAppSuggestionsParams;
+  "shopify-collections": ShopifyCollectionsParams;
+  "shopify-collection-products": ShopifyCollectionProductsParams;
+  "shopify-pages": ShopifyPagesParams;
+  "shopify-page": ShopifyPageParams;
+  "shopify-products": ShopifyProductsParams;
+  "shopify-product": ShopifyProductParams;
+  "shopify-product-recommendations": ShopifyProductRecommendationsParams;
+  "shopify-search-suggest": ShopifySearchSuggestParams;
+  "shopify-sitemap-urls": ShopifySitemapUrlsParams;
+  "shopify-sitemaps": ShopifySitemapsParams;
+  "shopify-store": ShopifyStoreParams;
   "similarweb-search": SimilarWebSearchParams;
   "similarweb-web": SimilarWebWebParams;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesParams;
@@ -11499,6 +11869,17 @@ export interface OperationResponseMap {
   "shop-app-shop-reviews": ShopAppShopReviewsResponse;
   "shop-app-shop-typeahead": ShopAppShopTypeaheadResponse;
   "shop-app-suggestions": ShopAppSuggestionsResponse;
+  "shopify-collections": ShopifyCollectionsResponse;
+  "shopify-collection-products": ShopifyCollectionProductsResponse;
+  "shopify-pages": ShopifyPagesResponse;
+  "shopify-page": ShopifyPageResponse;
+  "shopify-products": ShopifyProductsResponse;
+  "shopify-product": ShopifyProductResponse;
+  "shopify-product-recommendations": ShopifyProductRecommendationsResponse;
+  "shopify-search-suggest": ShopifySearchSuggestResponse;
+  "shopify-sitemap-urls": ShopifySitemapUrlsResponse;
+  "shopify-sitemaps": ShopifySitemapsResponse;
+  "shopify-store": ShopifyStoreResponse;
   "similarweb-search": SimilarWebSearchResponse;
   "similarweb-web": SimilarWebWebResponse;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesResponse;
@@ -11821,6 +12202,17 @@ export interface OperationRequiredParamsMap {
   "shop-app-shop-reviews": true;
   "shop-app-shop-typeahead": true;
   "shop-app-suggestions": true;
+  "shopify-collections": true;
+  "shopify-collection-products": true;
+  "shopify-pages": true;
+  "shopify-page": true;
+  "shopify-products": true;
+  "shopify-product": true;
+  "shopify-product-recommendations": true;
+  "shopify-search-suggest": true;
+  "shopify-sitemap-urls": true;
+  "shopify-sitemaps": true;
+  "shopify-store": true;
   "similarweb-search": true;
   "similarweb-web": true;
   "spotify-podcasts-categories": false;
@@ -12150,6 +12542,17 @@ export type OperationIdLiteral =
   | "shop-app-shop-reviews"
   | "shop-app-shop-typeahead"
   | "shop-app-suggestions"
+  | "shopify-collections"
+  | "shopify-collection-products"
+  | "shopify-pages"
+  | "shopify-page"
+  | "shopify-products"
+  | "shopify-product"
+  | "shopify-product-recommendations"
+  | "shopify-search-suggest"
+  | "shopify-sitemap-urls"
+  | "shopify-sitemaps"
+  | "shopify-store"
   | "similarweb-search"
   | "similarweb-web"
   | "spotify-podcasts-categories"
