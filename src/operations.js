@@ -7219,6 +7219,504 @@ export const operations = {
       "JWTAuth"
     ]
   },
+  "shop-app-analysis": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-analysis",
+    "method": "GET",
+    "path": "/shop-app/analysis",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "in_stock",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "on_sale",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "deep_search",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-categories",
+    "method": "GET",
+    "path": "/shop-app/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-collection-products",
+    "method": "GET",
+    "path": "/shop-app/shops/{handle}/collections/{collection_id}/products",
+    "pathParams": [
+      "handle",
+      "collection_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "MOST_SALES",
+          "PRICE_LOW_TO_HIGH",
+          "PRICE_HIGH_TO_LOW",
+          "RELEVANCE"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "in_stock",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-product",
+    "method": "GET",
+    "path": "/shop-app/products/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "variant_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-product-related": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-product-related",
+    "method": "GET",
+    "path": "/shop-app/products/{id}/related",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-product-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-product-reviews",
+    "method": "GET",
+    "path": "/shop-app/products/{id}/reviews",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-product-shop": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-product-shop",
+    "method": "GET",
+    "path": "/shop-app/products/{id}/shop",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-product-variant": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-product-variant",
+    "method": "GET",
+    "path": "/shop-app/products/{id}/variant",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "selected_options",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-product-variants": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-product-variants",
+    "method": "GET",
+    "path": "/shop-app/products/{id}/variants",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "selected_options",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-search",
+    "method": "GET",
+    "path": "/shop-app/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "in_stock",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "on_sale",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "deep_search",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-shop": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-shop",
+    "method": "GET",
+    "path": "/shop-app/shops/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-shop-locations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-shop-locations",
+    "method": "GET",
+    "path": "/shop-app/shops/{handle}/locations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-shop-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-shop-products",
+    "method": "GET",
+    "path": "/shop-app/shops/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "MOST_SALES",
+          "PRICE_LOW_TO_HIGH",
+          "PRICE_HIGH_TO_LOW",
+          "RELEVANCE"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "in_stock",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-shop-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-shop-reviews",
+    "method": "GET",
+    "path": "/shop-app/shops/{handle}/reviews",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-shop-typeahead": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-shop-typeahead",
+    "method": "GET",
+    "path": "/shop-app/shops/{handle}/typeahead",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shop-app-suggestions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shop-app-suggestions",
+    "method": "GET",
+    "path": "/shop-app/suggestions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "similarweb-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -12306,6 +12804,24 @@ export const groups = {
     "me": "referrals-me",
     "meEvents": "referrals-me-events"
   },
+  "shopApp": {
+    "analysis": "shop-app-analysis",
+    "categories": "shop-app-categories",
+    "collectionProducts": "shop-app-collection-products",
+    "product": "shop-app-product",
+    "productRelated": "shop-app-product-related",
+    "productReviews": "shop-app-product-reviews",
+    "productShop": "shop-app-product-shop",
+    "productVariant": "shop-app-product-variant",
+    "productVariants": "shop-app-product-variants",
+    "search": "shop-app-search",
+    "shop": "shop-app-shop",
+    "shopLocations": "shop-app-shop-locations",
+    "shopProducts": "shop-app-shop-products",
+    "shopReviews": "shop-app-shop-reviews",
+    "shopTypeahead": "shop-app-shop-typeahead",
+    "suggestions": "shop-app-suggestions"
+  },
   "similarWeb": {
     "search": "similarweb-search",
     "web": "similarweb-web"
@@ -12469,4 +12985,4 @@ export const groups = {
   }
 };
 
-export const operationCount = 303;
+export const operationCount = 319;

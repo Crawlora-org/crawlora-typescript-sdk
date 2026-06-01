@@ -436,64 +436,6 @@ export interface ModelAppstoreVersionHistoryResponseDoc {
   "msg"?: string;
 }
 
-export interface ModelBillingAdminPlanChangeRequestDoc {
-  "currency"?: string;
-  "monthly_price_cents"?: number;
-  "plan": string;
-}
-
-export interface ModelBillingAdminPlanChangeResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingBillingSnapshotDoc;
-  "msg"?: string;
-}
-
-export interface ModelBillingBillingConsistencyEndpointBreakdownDoc {
-  "actual_credits"?: number;
-  "actual_overage"?: number;
-  "endpoint"?: string;
-  "expected_credits"?: number;
-  "expected_overage"?: number;
-}
-
-export interface ModelBillingBillingConsistencyIssueDoc {
-  "actual_credits"?: number;
-  "actual_overage"?: number;
-  "created_at"?: string;
-  "detail"?: string;
-  "endpoint_breakdown"?: Array<ModelBillingBillingConsistencyEndpointBreakdownDoc>;
-  "expected_credits"?: number;
-  "expected_overage"?: number;
-  "frozen_at"?: string;
-  "issue_id"?: string;
-  "issue_type"?: string;
-  "period_key"?: string;
-  "repair_method"?: string;
-  "repair_path"?: string;
-  "request_id"?: string;
-  "severity"?: string;
-  "source_updated_at"?: string;
-  "statement_id"?: string;
-  "stripe_invoice_id"?: string;
-  "suggested_action"?: string;
-  "user_id"?: string;
-}
-
-export interface ModelBillingBillingConsistencyReportDoc {
-  "checked_from"?: string;
-  "checked_to"?: string;
-  "counts_by_severity"?: Record<string, number>;
-  "counts_by_type"?: Record<string, number>;
-  "generated_at"?: string;
-  "issues"?: Array<ModelBillingBillingConsistencyIssueDoc>;
-}
-
-export interface ModelBillingBillingConsistencyResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingBillingConsistencyReportDoc;
-  "msg"?: string;
-}
-
 export interface ModelBillingBillingEndpointLedgerDoc {
   "charged_requests"?: number;
   "credits"?: number;
@@ -534,132 +476,6 @@ export interface ModelBillingBillingEventDoc {
 export interface ModelBillingBillingEventsResponseDoc {
   "code"?: number;
   "data"?: Array<ModelBillingBillingEventDoc>;
-  "msg"?: string;
-}
-
-export interface ModelBillingBillingFinanceAgingBucketDoc {
-  "amount_remaining_cents"?: number;
-  "bucket"?: string;
-  "invoice_count"?: number;
-}
-
-export interface ModelBillingBillingFinanceAgingResponseDoc {
-  "code"?: number;
-  "data"?: Array<ModelBillingBillingFinanceAgingBucketDoc>;
-  "msg"?: string;
-}
-
-export interface ModelBillingBillingFinanceOverviewDoc {
-  "active_customers"?: number;
-  "at_risk_mrr_cents"?: number;
-  "booked_expected_total_cents"?: number;
-  "booked_overage_cents"?: number;
-  "booked_subscription_cents"?: number;
-  "cash_collected_cents"?: number;
-  "currency"?: string;
-  "current_outstanding_ar_cents"?: number;
-  "grace_period_customers"?: number;
-  "invoice_count"?: number;
-  "invoiced_amount_due_cents"?: number;
-  "mismatch_invoice_count"?: number;
-  "mismatch_total_cents"?: number;
-  "mrr_cents"?: number;
-  "paid_invoice_count"?: number;
-  "past_due_customers"?: number;
-  "payment_failed_invoice_count"?: number;
-  "plan_breakdown"?: Array<ModelBillingBillingFinancePlanBreakdownDoc>;
-  "stripe_actual_credit_note_cents"?: number;
-  "stripe_actual_discount_cents"?: number;
-  "stripe_actual_net_cash_cents"?: number;
-  "stripe_actual_refund_cents"?: number;
-  "stripe_actual_tax_cents"?: number;
-  "stripe_actual_total_cents"?: number;
-  "uncollectible_invoice_count"?: number;
-  "voided_invoice_count"?: number;
-}
-
-export interface ModelBillingBillingFinanceOverviewResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingBillingFinanceOverviewDoc;
-  "msg"?: string;
-}
-
-export interface ModelBillingBillingFinancePeriodItemDoc {
-  "amount_paid_cents"?: number;
-  "amount_remaining_cents"?: number;
-  "customers"?: number;
-  "expected_total_amount_cents"?: number;
-  "invoice_amount_due_cents"?: number;
-  "invoice_count"?: number;
-  "mismatch_invoice_count"?: number;
-  "mismatch_total_cents"?: number;
-  "overage_amount_cents"?: number;
-  "paid_invoice_count"?: number;
-  "payment_failed_invoice_count"?: number;
-  "period_key"?: string;
-  "stripe_actual_credit_note_cents"?: number;
-  "stripe_actual_discount_cents"?: number;
-  "stripe_actual_net_cash_cents"?: number;
-  "stripe_actual_refund_cents"?: number;
-  "stripe_actual_tax_cents"?: number;
-  "stripe_actual_total_cents"?: number;
-  "subscription_amount_cents"?: number;
-}
-
-export interface ModelBillingBillingFinancePeriodsResponseDoc {
-  "code"?: number;
-  "data"?: Array<ModelBillingBillingFinancePeriodItemDoc>;
-  "msg"?: string;
-}
-
-export interface ModelBillingBillingFinancePlanBreakdownDoc {
-  "active_customers"?: number;
-  "at_risk_mrr_cents"?: number;
-  "booked_expected_total_cents"?: number;
-  "booked_overage_cents"?: number;
-  "booked_subscription_cents"?: number;
-  "cash_collected_cents"?: number;
-  "current_outstanding_ar_cents"?: number;
-  "customers"?: number;
-  "grace_period_customers"?: number;
-  "invoice_count"?: number;
-  "invoiced_amount_due_cents"?: number;
-  "mismatch_invoice_count"?: number;
-  "mismatch_total_cents"?: number;
-  "mrr_cents"?: number;
-  "paid_invoice_count"?: number;
-  "past_due_customers"?: number;
-  "payment_failed_invoice_count"?: number;
-  "plan"?: string;
-  "stripe_actual_credit_note_cents"?: number;
-  "stripe_actual_discount_cents"?: number;
-  "stripe_actual_net_cash_cents"?: number;
-  "stripe_actual_refund_cents"?: number;
-  "stripe_actual_tax_cents"?: number;
-  "stripe_actual_total_cents"?: number;
-  "uncollectible_invoice_count"?: number;
-  "voided_invoice_count"?: number;
-}
-
-export interface ModelBillingBillingPeriodCloseErrorDoc {
-  "error"?: string;
-  "period_key"?: string;
-  "user_id"?: string;
-}
-
-export interface ModelBillingBillingPeriodCloseSummaryDoc {
-  "closed"?: number;
-  "errors"?: Array<ModelBillingBillingPeriodCloseErrorDoc>;
-  "failed"?: number;
-  "scanned"?: number;
-  "skipped"?: number;
-  "snapshot_skipped"?: number;
-  "snapshots_created"?: number;
-}
-
-export interface ModelBillingBillingPeriodCloseSummaryResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingBillingPeriodCloseSummaryDoc;
   "msg"?: string;
 }
 
@@ -770,73 +586,6 @@ export interface ModelBillingBillingPeriodStatementResponseDoc {
   "msg"?: string;
 }
 
-export interface ModelBillingBillingPeriodStatementSnapshotSummaryDoc {
-  "adjustment_event_count"?: number;
-  "canonical_json_sha256"?: string;
-  "event_count"?: number;
-  "frozen_at"?: string;
-  "generated_at"?: string;
-  "generated_by"?: string;
-  "invoice_event_count"?: number;
-  "period_key"?: string;
-  "plan"?: string;
-  "revision"?: number;
-  "source_ledger_updated_at"?: string;
-  "source_snapshot_updated_at"?: string;
-  "statement_id"?: string;
-  "statement_version"?: string;
-  "status"?: string;
-  "user_id"?: string;
-}
-
-export interface ModelBillingBillingPeriodStatementSnapshotsResponseDoc {
-  "code"?: number;
-  "data"?: Array<ModelBillingBillingPeriodStatementSnapshotSummaryDoc>;
-  "msg"?: string;
-}
-
-export interface ModelBillingBillingPeriodStatementVerificationDoc {
-  "canonical_json_byte_count"?: number;
-  "computed_sha256"?: string;
-  "frozen_at"?: string;
-  "period_key"?: string;
-  "revision"?: number;
-  "statement_id"?: string;
-  "statement_version"?: string;
-  "stored_sha256"?: string;
-  "user_id"?: string;
-  "valid"?: boolean;
-}
-
-export interface ModelBillingBillingPeriodStatementVerificationResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingBillingPeriodStatementVerificationDoc;
-  "msg"?: string;
-}
-
-export interface ModelBillingBillingSnapshotDoc {
-  "allow_overage"?: boolean;
-  "credits_remaining"?: number;
-  "credits_used"?: number;
-  "currency"?: string;
-  "daily_credit_limit"?: number;
-  "daily_credits_remaining"?: number;
-  "daily_credits_used"?: number;
-  "daily_key"?: string;
-  "expected_subscription_amount_cents"?: number;
-  "expected_total_amount_cents"?: number;
-  "hard_limit"?: boolean;
-  "included_credits"?: number;
-  "overage_credits"?: number;
-  "period_end"?: string;
-  "period_key"?: string;
-  "period_start"?: string;
-  "plan"?: string;
-  "pricing_source"?: string;
-  "subscription_price_cents"?: number;
-  "user_id"?: string;
-}
-
 export interface ModelBillingBillingStateDoc {
   "allow_overage"?: boolean;
   "created_at"?: string;
@@ -899,13 +648,6 @@ export interface ModelBillingBillingStatementAdjustmentEvidenceDoc {
   "stripe_invoice_id"?: string;
 }
 
-export interface ModelBillingBillingStatementAdminEvidenceDoc {
-  "adjustment_events"?: Array<ModelBillingBillingStatementAdjustmentEvidenceDoc>;
-  "invoice"?: ModelBillingBillingStatementInvoiceEvidenceDoc;
-  "invoice_events"?: Array<ModelBillingBillingStatementInvoiceEventEvidenceDoc>;
-  "repair"?: ModelBillingBillingStatementRepairDoc;
-}
-
 export interface ModelBillingBillingStatementEventItemDoc {
   "billable"?: boolean;
   "created_at"?: string;
@@ -915,13 +657,6 @@ export interface ModelBillingBillingStatementEventItemDoc {
   "non_billable_reason"?: string;
   "request_id"?: string;
   "status_code"?: number;
-}
-
-export interface ModelBillingBillingStatementEvidencePackDoc {
-  "admin_evidence"?: ModelBillingBillingStatementAdminEvidenceDoc;
-  "customer_statement"?: ModelBillingBillingPeriodStatementDoc;
-  "snapshot"?: ModelBillingBillingPeriodStatementSnapshotSummaryDoc;
-  "verification"?: ModelBillingBillingPeriodStatementVerificationDoc;
 }
 
 export interface ModelBillingBillingStatementExpectedRevenueDoc {
@@ -1039,135 +774,10 @@ export interface ModelBillingBillingStatementUserDoc {
   "username"?: string;
 }
 
-export interface ModelBillingBillingSummaryItemDoc {
-  "billable"?: boolean;
-  "charged_requests"?: number;
-  "credits"?: number;
-  "endpoint"?: string;
-  "failed_requests"?: number;
-  "non_billable_requests"?: number;
-  "overage"?: number;
-  "plan"?: string;
-  "requests"?: number;
-}
-
-export interface ModelBillingBillingSummaryResponseDoc {
-  "code"?: number;
-  "data"?: Array<ModelBillingBillingSummaryItemDoc>;
-  "msg"?: string;
-}
-
-export interface ModelBillingStripeAdjustmentEventDoc {
-  "amount_cents"?: number;
-  "charge_id"?: string;
-  "currency"?: string;
-  "error"?: string;
-  "event_created"?: string;
-  "event_id"?: string;
-  "event_type"?: string;
-  "invoice_payment_ids"?: Array<string>;
-  "kind"?: string;
-  "match_status"?: string;
-  "matched_period_key"?: string;
-  "matched_stripe_invoice_id"?: string;
-  "matched_user_id"?: string;
-  "payment_intent_id"?: string;
-  "post_payment_credit_note_cents"?: number;
-  "pre_payment_credit_note_cents"?: number;
-  "processed_at"?: string;
-  "reconciliation_status"?: string;
-  "refund_cents"?: number;
-  "repair_attempts"?: number;
-  "repair_last_attempt_at"?: string;
-  "repair_last_error"?: string;
-  "repair_source"?: string;
-  "repair_status"?: string;
-  "resource_id"?: string;
-  "resource_status"?: string;
-  "stripe_customer_id"?: string;
-  "stripe_invoice_id"?: string;
-}
-
-export interface ModelBillingStripeAdjustmentEventsResponseDoc {
-  "code"?: number;
-  "data"?: Array<ModelBillingStripeAdjustmentEventDoc>;
-  "msg"?: string;
-}
-
-export interface ModelBillingStripeAdjustmentReconcileErrorDoc {
-  "error"?: string;
-  "event_id"?: string;
-  "resource_id"?: string;
-  "stripe_invoice_id"?: string;
-}
-
-export interface ModelBillingStripeAdjustmentReconcileSummaryDoc {
-  "errors"?: Array<ModelBillingStripeAdjustmentReconcileErrorDoc>;
-  "failed"?: number;
-  "matched"?: number;
-  "scanned"?: number;
-  "skipped"?: number;
-  "unmatched"?: number;
-}
-
-export interface ModelBillingStripeAdjustmentReconcileSummaryResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingStripeAdjustmentReconcileSummaryDoc;
-  "msg"?: string;
-}
-
 export interface ModelBillingStripeCheckoutRequestDoc {
   "cancel_url"?: string;
   "plan"?: string;
   "success_url"?: string;
-}
-
-export interface ModelBillingStripeInvoiceEventDoc {
-  "amount_due"?: number;
-  "amount_paid"?: number;
-  "amount_remaining"?: number;
-  "charge_id"?: string;
-  "currency"?: string;
-  "discount_cents"?: number;
-  "due_date"?: string;
-  "error"?: string;
-  "event_created"?: string;
-  "event_id"?: string;
-  "event_type"?: string;
-  "hosted_invoice_url"?: string;
-  "invoice_payment_ids"?: Array<string>;
-  "invoice_pdf"?: string;
-  "line_items"?: Array<ModelBillingStripeInvoiceLineItemDoc>;
-  "match_status"?: string;
-  "matched_period_key"?: string;
-  "matched_user_id"?: string;
-  "payment_intent_id"?: string;
-  "period_end"?: string;
-  "period_start"?: string;
-  "post_payment_credit_note_cents"?: number;
-  "pre_payment_credit_note_cents"?: number;
-  "processed_at"?: string;
-  "reconciliation_status"?: string;
-  "repair_attempts"?: number;
-  "repair_last_attempt_at"?: string;
-  "repair_last_error"?: string;
-  "repair_source"?: string;
-  "repair_status"?: string;
-  "stripe_customer_id"?: string;
-  "stripe_invoice_id"?: string;
-  "stripe_invoice_number"?: string;
-  "stripe_invoice_status"?: string;
-  "subtotal_cents"?: number;
-  "subtotal_excluding_tax_cents"?: number;
-  "tax_cents"?: number;
-  "total_cents"?: number;
-  "total_excluding_tax_cents"?: number;
-}
-
-export interface ModelBillingStripeInvoiceEventsResponseDoc {
-  "code"?: number;
-  "data"?: Array<ModelBillingStripeInvoiceEventDoc>;
-  "msg"?: string;
 }
 
 export interface ModelBillingStripeInvoiceLineItemDoc {
@@ -1183,227 +793,8 @@ export interface ModelBillingStripeInvoiceLineItemDoc {
   "type"?: string;
 }
 
-export interface ModelBillingStripeInvoiceReconcileErrorDoc {
-  "error"?: string;
-  "event_id"?: string;
-  "stripe_invoice_id"?: string;
-}
-
-export interface ModelBillingStripeInvoiceReconcileSummaryDoc {
-  "errors"?: Array<ModelBillingStripeInvoiceReconcileErrorDoc>;
-  "failed"?: number;
-  "matched"?: number;
-  "scanned"?: number;
-  "skipped"?: number;
-  "unmatched"?: number;
-}
-
-export interface ModelBillingStripeInvoiceReconcileSummaryResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingStripeInvoiceReconcileSummaryDoc;
-  "msg"?: string;
-}
-
-export interface ModelBillingStripeInvoiceSnapshotDetailDoc {
-  "adjustment_events"?: Array<ModelBillingStripeAdjustmentEventDoc>;
-  "invoice_events"?: Array<ModelBillingStripeInvoiceEventDoc>;
-  "ledger"?: ModelBillingBillingPeriodLedgerDoc;
-  "snapshot"?: ModelBillingStripeInvoiceSnapshotDoc;
-}
-
-export interface ModelBillingStripeInvoiceSnapshotDetailResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingStripeInvoiceSnapshotDetailDoc;
-  "msg"?: string;
-}
-
-export interface ModelBillingStripeInvoiceSnapshotDoc {
-  "actual_one_time_cents"?: number;
-  "actual_overage_cents"?: number;
-  "actual_proration_cents"?: number;
-  "actual_subscription_cents"?: number;
-  "amount_due_cents"?: number;
-  "amount_paid_cents"?: number;
-  "amount_remaining_cents"?: number;
-  "charge_id"?: string;
-  "created_at"?: string;
-  "currency"?: string;
-  "discount_cents"?: number;
-  "due_date"?: string;
-  "effective_due_date"?: string;
-  "expected_total_cents"?: number;
-  "finalized_at"?: string;
-  "hosted_invoice_url"?: string;
-  "invoice_payment_ids"?: Array<string>;
-  "invoice_pdf"?: string;
-  "last_event_created"?: string;
-  "last_event_id"?: string;
-  "line_items"?: Array<ModelBillingStripeInvoiceLineItemDoc>;
-  "matched_period_key"?: string;
-  "matched_user_id"?: string;
-  "mismatch_flags"?: Array<string>;
-  "mismatch_total_cents"?: number;
-  "net_cash_cents"?: number;
-  "paid_at"?: string;
-  "payment_intent_id"?: string;
-  "period_end"?: string;
-  "period_start"?: string;
-  "plan"?: string;
-  "post_payment_credit_note_cents"?: number;
-  "pre_payment_credit_note_cents"?: number;
-  "reconciliation_status"?: string;
-  "refund_cents"?: number;
-  "repair_attempts"?: number;
-  "repair_error"?: string;
-  "repair_last_attempt_at"?: string;
-  "repair_last_success_at"?: string;
-  "repair_status"?: string;
-  "stripe_customer_id"?: string;
-  "stripe_invoice_id"?: string;
-  "stripe_invoice_number"?: string;
-  "stripe_invoice_status"?: string;
-  "subtotal_cents"?: number;
-  "subtotal_excluding_tax_cents"?: number;
-  "tax_cents"?: number;
-  "total_cents"?: number;
-  "total_excluding_tax_cents"?: number;
-  "updated_at"?: string;
-}
-
-export interface ModelBillingStripeInvoiceSnapshotsResponseDoc {
-  "code"?: number;
-  "data"?: Array<ModelBillingStripeInvoiceSnapshotDoc>;
-  "msg"?: string;
-}
-
-export interface ModelBillingStripeMismatchSummaryDoc {
-  "auto_repairable"?: Array<ModelBillingStripeMismatchSummaryItemDoc>;
-  "manual_review"?: Array<ModelBillingStripeMismatchSummaryItemDoc>;
-}
-
-export interface ModelBillingStripeMismatchSummaryItemDoc {
-  "actual_total_cents"?: number;
-  "delta_total_cents"?: number;
-  "expected_total_cents"?: number;
-  "invoice_count"?: number;
-  "mismatch_flag"?: string;
-}
-
-export interface ModelBillingStripeMismatchSummaryResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingStripeMismatchSummaryDoc;
-  "msg"?: string;
-}
-
-export interface ModelBillingStripeOverageSyncErrorDoc {
-  "error"?: string;
-  "period_key"?: string;
-  "user_id"?: string;
-}
-
-export interface ModelBillingStripeOverageSyncSummaryDoc {
-  "ambiguous"?: number;
-  "errors"?: Array<ModelBillingStripeOverageSyncErrorDoc>;
-  "failed"?: number;
-  "not_required"?: number;
-  "scanned"?: number;
-  "skipped"?: number;
-  "synced"?: number;
-}
-
-export interface ModelBillingStripeOverageSyncSummaryResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingStripeOverageSyncSummaryDoc;
-  "msg"?: string;
-}
-
 export interface ModelBillingStripePortalRequestDoc {
   "return_url"?: string;
-}
-
-export interface ModelBillingStripeRepairBacklogBucketDoc {
-  "by_attempt_bucket"?: Array<ModelBillingStripeRepairStatusCountDoc>;
-  "by_source"?: Array<ModelBillingStripeRepairStatusCountDoc>;
-  "by_status"?: Array<ModelBillingStripeRepairStatusCountDoc>;
-  "total"?: number;
-}
-
-export interface ModelBillingStripeRepairBacklogSummaryDoc {
-  "adjustment_events"?: ModelBillingStripeRepairBacklogBucketDoc;
-  "auto_retry_exhausted_count"?: number;
-  "invoice_events"?: ModelBillingStripeRepairBacklogBucketDoc;
-  "recent_errors"?: Array<ModelBillingStripeRepairRecentErrorDoc>;
-  "snapshots"?: ModelBillingStripeRepairBacklogBucketDoc;
-}
-
-export interface ModelBillingStripeRepairBacklogSummaryResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingStripeRepairBacklogSummaryDoc;
-  "msg"?: string;
-}
-
-export interface ModelBillingStripeRepairErrorDoc {
-  "candidate_kind"?: string;
-  "error"?: string;
-  "event_id"?: string;
-  "invoice_id"?: string;
-  "resource_id"?: string;
-}
-
-export interface ModelBillingStripeRepairRecentErrorDoc {
-  "candidate_kind"?: string;
-  "event_id"?: string;
-  "invoice_id"?: string;
-  "repair_attempts"?: number;
-  "repair_last_attempt_at"?: string;
-  "repair_last_error"?: string;
-  "repair_status"?: string;
-  "resource_id"?: string;
-}
-
-export interface ModelBillingStripeRepairResetDoc {
-  "candidate_kind"?: string;
-  "event_id"?: string;
-  "invoice_id"?: string;
-  "previous_repair_attempts"?: number;
-  "previous_repair_status"?: string;
-  "repair_attempts"?: number;
-  "repair_source"?: string;
-  "repair_status"?: string;
-  "reset_at"?: string;
-}
-
-export interface ModelBillingStripeRepairResetRequestDoc {
-  "candidate_kind": string;
-  "event_id"?: string;
-  "invoice_id"?: string;
-}
-
-export interface ModelBillingStripeRepairResetResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingStripeRepairResetDoc;
-  "msg"?: string;
-}
-
-export interface ModelBillingStripeRepairStatusCountDoc {
-  "count"?: number;
-  "key"?: string;
-}
-
-export interface ModelBillingStripeRepairSummaryDoc {
-  "adjustment_repaired"?: number;
-  "errors"?: Array<ModelBillingStripeRepairErrorDoc>;
-  "failed"?: number;
-  "invoice_repaired"?: number;
-  "scanned"?: number;
-  "skipped"?: number;
-  "succeeded"?: number;
-}
-
-export interface ModelBillingStripeRepairSummaryResponseDoc {
-  "code"?: number;
-  "data"?: ModelBillingStripeRepairSummaryDoc;
-  "msg"?: string;
 }
 
 export interface ModelBillingStripeSessionDoc {
@@ -2376,10 +1767,6 @@ export interface ModelContactContact {
   "url"?: string;
 }
 
-export interface ModelContactContactOption {
-  "url": string;
-}
-
 export interface ModelDatasetsDatasetInfo {
   "capabilities"?: Array<string>;
   "description"?: string;
@@ -3210,12 +2597,6 @@ export interface ModelGoogleSearchResp {
   "people_also_search_for"?: Array<string>;
   "related_searches"?: Array<string>;
   "result"?: Array<ModelGoogleSearchItem>;
-}
-
-export interface ModelGoogleShoppingItemDetailOption {
-  "cid"?: string;
-  "gid"?: string;
-  "oid": string;
 }
 
 export interface ModelGoogleSuggestResponse {
@@ -5405,87 +4786,6 @@ export interface ModelProducthuntSearchTopicDoc {
   "topic"?: { "id"?: string; "name"?: string };
 }
 
-export interface ModelReferralsAdminReferralAttributionDoc {
-  "attribution"?: ModelReferralsAdminReferralAttributionRecordDoc;
-  "rewards"?: Array<ModelReferralsAdminReferralRewardDoc>;
-}
-
-export interface ModelReferralsAdminReferralAttributionRecordDoc {
-  "click_id"?: string;
-  "code"?: string;
-  "created_at"?: string;
-  "error"?: string;
-  "expires_at"?: string;
-  "first_paid_invoice_id"?: string;
-  "id"?: string;
-  "landing_path"?: string;
-  "qualified_at"?: string;
-  "referred_user_id"?: string;
-  "referrer_user_id"?: string;
-  "review_reason"?: string;
-  "reviewed_at"?: string;
-  "reviewed_by"?: string;
-  "rewarded_at"?: string;
-  "risk_flags"?: Array<string>;
-  "skip_reason"?: string;
-  "status"?: "attributed" | "qualified" | "review_required" | "rewarded" | "expired" | "capped" | "failed" | "rejected";
-  "stripe_event_id"?: string;
-  "stripe_invoice_id"?: string;
-  "utm_campaign"?: string;
-  "utm_medium"?: string;
-  "utm_source"?: string;
-}
-
-export interface ModelReferralsAdminReferralDetailResponseDoc {
-  "attribution"?: ModelReferralsAdminReferralAttributionRecordDoc;
-  "rewards"?: Array<ModelReferralsAdminReferralRewardDoc>;
-}
-
-export interface ModelReferralsAdminReferralRecoveryResponseDoc {
-  "attempted"?: number;
-  "errors"?: Array<string>;
-  "recovered"?: number;
-}
-
-export interface ModelReferralsAdminReferralRejectRequestDoc {
-  "reason"?: string;
-}
-
-export interface ModelReferralsAdminReferralReviewResponseDoc {
-  "attribution"?: ModelReferralsAdminReferralAttributionRecordDoc;
-  "rewards"?: Array<ModelReferralsAdminReferralRewardDoc>;
-}
-
-export interface ModelReferralsAdminReferralRewardDoc {
-  "attribution_id"?: string;
-  "created_at"?: string;
-  "credits"?: number;
-  "credits_grant_error"?: string;
-  "credits_grant_key"?: string;
-  "credits_granted_at"?: string;
-  "id"?: string;
-  "role"?: "referrer" | "referred";
-  "stripe_invoice_id"?: string;
-  "user_id"?: string;
-}
-
-export interface ModelReferralsAdminReferralStatsResponseDoc {
-  "attributed_signups"?: number;
-  "capped_referrals"?: number;
-  "clicks"?: number;
-  "qualification_rate"?: number;
-  "qualified_referrals"?: number;
-  "rejected_referrals"?: number;
-  "review_required"?: number;
-  "reward_rate"?: number;
-  "rewarded_referrals"?: number;
-  "signup_rate"?: number;
-}
-
-export interface ModelReferralsAdminReferralsListResponseDoc {
-  "items"?: Array<ModelReferralsAdminReferralAttributionDoc>;
-}
-
 export interface ModelReferralsReferralAttributionDoc {
   "campaign"?: string;
   "code"?: string;
@@ -5536,6 +4836,389 @@ export interface ModelReferralsReferralsStatsDoc {
   "rejected"?: number;
   "review_required"?: number;
   "rewarded"?: number;
+}
+
+export interface ModelShopappAnalysisResponse {
+  "currencies"?: Array<string>;
+  "discounts"?: ModelShopappDiscountSummary;
+  "groups_count"?: number;
+  "prices_by_currency"?: Array<ModelShopappCurrencyPriceSummary>;
+  "products_count"?: number;
+  "query"?: string;
+  "sale_count"?: number;
+  "sampled_product_ids"?: Array<string>;
+  "shops_count"?: number;
+  "top_shops"?: Array<ModelShopappShopSummary>;
+}
+
+export interface ModelShopappCategoriesResponse {
+  "categories"?: Array<ModelShopappCategoryItem>;
+}
+
+export interface ModelShopappCategoryItem {
+  "children"?: Array<ModelShopappCategoryItem>;
+  "gid"?: string;
+  "has_children"?: boolean;
+  "id"?: string;
+  "image"?: string;
+  "name"?: string;
+  "path"?: Array<ModelShopappCategoryPath>;
+  "slug"?: string;
+}
+
+export interface ModelShopappCategoryPath {
+  "gid"?: string;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelShopappCurrencyPriceSummary {
+  "average"?: number;
+  "count"?: number;
+  "currency"?: string;
+  "max"?: number;
+  "min"?: number;
+}
+
+export interface ModelShopappDiscountSummary {
+  "average_percent"?: number;
+  "max_percent"?: number;
+  "min_percent"?: number;
+}
+
+export interface ModelShopappImageItem {
+  "alt"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopappLocationAddress {
+  "address1"?: string;
+  "address2"?: string;
+  "city"?: string;
+  "country"?: string;
+  "postal_code"?: string;
+  "zone_code"?: string;
+}
+
+export interface ModelShopappOptionGroup {
+  "name"?: string;
+  "values"?: Array<string>;
+}
+
+export interface ModelShopappProductDetail {
+  "available"?: boolean;
+  "currency"?: string;
+  "description"?: string;
+  "external_url"?: string;
+  "id"?: string;
+  "images"?: Array<ModelShopappImageItem>;
+  "option_groups"?: Array<ModelShopappOptionGroup>;
+  "original_price"?: number;
+  "price"?: number;
+  "rating"?: number;
+  "related_products"?: Array<ModelShopappProductItem>;
+  "reviews"?: Array<ModelShopappReviewItem>;
+  "reviews_count"?: number;
+  "shop_handle"?: string;
+  "shop_id"?: string;
+  "shop_name"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "url"?: string;
+  "variant_id"?: string;
+}
+
+export interface ModelShopappProductDetailResponse {
+  "product"?: ModelShopappProductDetail;
+}
+
+export interface ModelShopappProductItem {
+  "currency"?: string;
+  "group_query"?: string;
+  "group_title"?: string;
+  "id"?: string;
+  "image"?: string;
+  "image_alt"?: string;
+  "on_sale"?: boolean;
+  "original_price"?: number;
+  "position"?: number;
+  "price"?: number;
+  "shop_id"?: string;
+  "shop_name"?: string;
+  "title"?: string;
+  "url"?: string;
+  "variant_id"?: string;
+}
+
+export interface ModelShopappProductShopResponse {
+  "product_id"?: string;
+  "shop"?: ModelShopappShopDetail;
+}
+
+export interface ModelShopappProductVariantResponse {
+  "product_id"?: string;
+  "variant"?: ModelShopappVariantItem;
+}
+
+export interface ModelShopappRelatedResponse {
+  "limit"?: number;
+  "product_id"?: string;
+  "products"?: Array<ModelShopappProductItem>;
+}
+
+export interface ModelShopappReviewItem {
+  "author"?: string;
+  "body"?: string;
+  "date"?: string;
+  "helpful_count"?: number;
+  "id"?: string;
+  "product"?: ModelShopappReviewProduct;
+  "rating"?: number;
+  "title"?: string;
+  "variant_label"?: string;
+}
+
+export interface ModelShopappReviewProduct {
+  "id"?: string;
+  "image"?: string;
+  "image_alt"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "url"?: string;
+  "variant"?: string;
+}
+
+export interface ModelShopappReviewsResponse {
+  "limit"?: number;
+  "product_id"?: string;
+  "reviews"?: Array<ModelShopappReviewItem>;
+}
+
+export interface ModelShopappSearchGroup {
+  "product_ids"?: Array<string>;
+  "products_seen"?: number;
+  "query"?: string;
+  "title"?: string;
+}
+
+export interface ModelShopappSearchResponse {
+  "groups"?: Array<ModelShopappSearchGroup>;
+  "limit"?: number;
+  "products"?: Array<ModelShopappProductItem>;
+  "query"?: string;
+}
+
+export interface ModelShopappShopCollection {
+  "id"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopappShopDetail {
+  "banner"?: string;
+  "collections"?: Array<ModelShopappShopCollection>;
+  "description"?: string;
+  "handle"?: string;
+  "id"?: string;
+  "logo"?: string;
+  "name"?: string;
+  "rating"?: number;
+  "reviews_count"?: number;
+  "shopify_id"?: string;
+  "storefront"?: string;
+  "url"?: string;
+  "uuid"?: string;
+}
+
+export interface ModelShopappShopLocationItem {
+  "address"?: ModelShopappLocationAddress;
+  "id"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+}
+
+export interface ModelShopappShopLocationsResponse {
+  "limit"?: number;
+  "locations"?: Array<ModelShopappShopLocationItem>;
+  "next_cursor"?: string;
+  "shop_handle"?: string;
+  "shop_id"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelShopappShopProductsResponse {
+  "collection"?: ModelShopappShopCollection;
+  "collection_id"?: string;
+  "limit"?: number;
+  "next_cursor"?: string;
+  "products"?: Array<ModelShopappProductItem>;
+  "shop_handle"?: string;
+  "sort_by"?: string;
+}
+
+export interface ModelShopappShopResponse {
+  "shop"?: ModelShopappShopDetail;
+}
+
+export interface ModelShopappShopReviewsResponse {
+  "limit"?: number;
+  "next_cursor"?: string;
+  "reviews"?: Array<ModelShopappReviewItem>;
+  "shop_handle"?: string;
+  "shop_id"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelShopappShopSummary {
+  "count"?: number;
+  "shop_id"?: string;
+  "shop_name"?: string;
+}
+
+export interface ModelShopappShopTypeaheadItem {
+  "collection"?: ModelShopappShopCollection;
+  "id"?: string;
+  "position"?: number;
+  "product"?: ModelShopappProductItem;
+  "text"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopappShopTypeaheadResponse {
+  "limit"?: number;
+  "query"?: string;
+  "shop_handle"?: string;
+  "shop_id"?: string;
+  "suggestions"?: Array<ModelShopappShopTypeaheadItem>;
+}
+
+export interface ModelShopappSuggestResponse {
+  "limit"?: number;
+  "query"?: string;
+  "suggestions"?: Array<ModelShopappSuggestionItem>;
+}
+
+export interface ModelShopappSuggestionItem {
+  "image"?: string;
+  "rating"?: number;
+  "shop_handle"?: string;
+  "shop_id"?: string;
+  "shop_name"?: string;
+  "text"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopappVariantItem {
+  "available_for_sale"?: boolean;
+  "currency"?: string;
+  "gid"?: string;
+  "id"?: string;
+  "image"?: ModelShopappImageItem;
+  "options"?: Record<string, string>;
+  "original_price"?: number;
+  "price"?: number;
+  "requires_shipping"?: boolean;
+  "title"?: string;
+}
+
+export interface ModelShopappVariantsResponse {
+  "limit"?: number;
+  "product_id"?: string;
+  "variants"?: Array<ModelShopappVariantItem>;
+}
+
+export interface ModelShopappAnalysisResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappAnalysisResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappProductShopResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappProductShopResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappProductVariantResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappProductVariantResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappRelatedResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappRelatedResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappShopLocationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappShopLocationsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappShopProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappShopProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappShopResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappShopResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappShopReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappShopReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappShopTypeaheadResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappShopTypeaheadResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappSuggestionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopappVariantsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopappVariantsResponse;
+  "msg"?: string;
 }
 
 export interface ModelSimilarwebSearchResp {
@@ -7701,12 +7384,6 @@ export interface ModelUserUserRotateApikeyResponseDoc {
   "msg"?: string;
 }
 
-export interface ModelWebParseWebOption {
-  "enablejs"?: boolean;
-  "format"?: "html" | "markdown";
-  "url": string;
-}
-
 export interface ModelYahoofinanceActionEvents {
   "capital_gains"?: Array<Record<string, unknown>>;
   "dividends"?: Array<Record<string, unknown>>;
@@ -9776,6 +9453,111 @@ export interface ReferralsMeEventsParams {
   "limit"?: number;
 }
 
+export type ShopAppAnalysisResponse = CrawloraResponse<ModelShopappAnalysisResponseDoc>;
+export interface ShopAppAnalysisParams {
+  "query": string;
+  "limit"?: number;
+  "in_stock"?: boolean;
+  "on_sale"?: boolean;
+  "deep_search"?: boolean;
+}
+
+export type ShopAppCategoriesResponse = CrawloraResponse<ModelShopappCategoriesResponseDoc>;
+export interface ShopAppCategoriesParams {
+}
+
+export type ShopAppProductResponse = CrawloraResponse<ModelShopappProductResponseDoc>;
+export interface ShopAppProductParams {
+  "id": string;
+  "variant_id"?: string;
+}
+
+export type ShopAppProductRelatedResponse = CrawloraResponse<ModelShopappRelatedResponseDoc>;
+export interface ShopAppProductRelatedParams {
+  "id": string;
+  "limit"?: number;
+}
+
+export type ShopAppProductReviewsResponse = CrawloraResponse<ModelShopappReviewsResponseDoc>;
+export interface ShopAppProductReviewsParams {
+  "id": string;
+  "limit"?: number;
+}
+
+export type ShopAppProductShopResponse = CrawloraResponse<ModelShopappProductShopResponseDoc>;
+export interface ShopAppProductShopParams {
+  "id": string;
+}
+
+export type ShopAppProductVariantResponse = CrawloraResponse<ModelShopappProductVariantResponseDoc>;
+export interface ShopAppProductVariantParams {
+  "id": string;
+  "selected_options"?: string;
+}
+
+export type ShopAppProductVariantsResponse = CrawloraResponse<ModelShopappVariantsResponseDoc>;
+export interface ShopAppProductVariantsParams {
+  "id": string;
+  "selected_options"?: string;
+  "limit"?: number;
+}
+
+export type ShopAppSearchResponse = CrawloraResponse<ModelShopappSearchResponseDoc>;
+export interface ShopAppSearchParams {
+  "query": string;
+  "limit"?: number;
+  "in_stock"?: boolean;
+  "on_sale"?: boolean;
+  "deep_search"?: boolean;
+}
+
+export type ShopAppShopResponse = CrawloraResponse<ModelShopappShopResponseDoc>;
+export interface ShopAppShopParams {
+  "handle": string;
+}
+
+export type ShopAppCollectionProductsResponse = CrawloraResponse<ModelShopappShopProductsResponseDoc>;
+export interface ShopAppCollectionProductsParams {
+  "handle": string;
+  "collection_id": string;
+  "limit"?: number;
+  "sort_by"?: "MOST_SALES" | "PRICE_LOW_TO_HIGH" | "PRICE_HIGH_TO_LOW" | "RELEVANCE";
+  "in_stock"?: boolean;
+}
+
+export type ShopAppShopLocationsResponse = CrawloraResponse<ModelShopappShopLocationsResponseDoc>;
+export interface ShopAppShopLocationsParams {
+  "handle": string;
+  "limit"?: number;
+}
+
+export type ShopAppShopProductsResponse = CrawloraResponse<ModelShopappShopProductsResponseDoc>;
+export interface ShopAppShopProductsParams {
+  "handle": string;
+  "limit"?: number;
+  "sort_by"?: "MOST_SALES" | "PRICE_LOW_TO_HIGH" | "PRICE_HIGH_TO_LOW" | "RELEVANCE";
+  "in_stock"?: boolean;
+}
+
+export type ShopAppShopReviewsResponse = CrawloraResponse<ModelShopappShopReviewsResponseDoc>;
+export interface ShopAppShopReviewsParams {
+  "handle": string;
+  "limit"?: number;
+}
+
+export type ShopAppShopTypeaheadResponse = CrawloraResponse<ModelShopappShopTypeaheadResponseDoc>;
+export interface ShopAppShopTypeaheadParams {
+  "handle": string;
+  "query": string;
+  "limit"?: number;
+}
+
+export type ShopAppSuggestionsResponse = CrawloraResponse<ModelShopappSuggestionsResponseDoc>;
+export interface ShopAppSuggestionsParams {
+  "query": string;
+  "limit"?: number;
+}
+
 export type SimilarWebSearchResponse = CrawloraResponse<ModelSimilarwebSearchResponseDoc>;
 export interface SimilarWebSearchParams {
   "q": string;
@@ -10989,6 +10771,25 @@ export interface ReferralsService {
   meEvents<T = ReferralsMeEventsResponse>(params?: ReferralsMeEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface ShopAppService {
+  analysis<T = ShopAppAnalysisResponse>(params: ShopAppAnalysisParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categories<T = ShopAppCategoriesResponse>(params?: ShopAppCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = ShopAppProductResponse>(params: ShopAppProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRelated<T = ShopAppProductRelatedResponse>(params: ShopAppProductRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productReviews<T = ShopAppProductReviewsResponse>(params: ShopAppProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productShop<T = ShopAppProductShopResponse>(params: ShopAppProductShopParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productVariant<T = ShopAppProductVariantResponse>(params: ShopAppProductVariantParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productVariants<T = ShopAppProductVariantsResponse>(params: ShopAppProductVariantsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = ShopAppSearchResponse>(params: ShopAppSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shop<T = ShopAppShopResponse>(params: ShopAppShopParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  collectionProducts<T = ShopAppCollectionProductsResponse>(params: ShopAppCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shopLocations<T = ShopAppShopLocationsResponse>(params: ShopAppShopLocationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shopProducts<T = ShopAppShopProductsResponse>(params: ShopAppShopProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shopReviews<T = ShopAppShopReviewsResponse>(params: ShopAppShopReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shopTypeahead<T = ShopAppShopTypeaheadResponse>(params: ShopAppShopTypeaheadParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggestions<T = ShopAppSuggestionsResponse>(params: ShopAppSuggestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface SimilarWebService {
   search<T = SimilarWebSearchResponse>(params: SimilarWebSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   web<T = SimilarWebWebResponse>(params: SimilarWebWebParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -11181,6 +10982,7 @@ export interface CrawloraGeneratedGroups {
   meta: MetaService;
   productHunt: ProductHuntService;
   referrals: ReferralsService;
+  shopApp: ShopAppService;
   similarWeb: SimilarWebService;
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
@@ -11359,6 +11161,22 @@ export interface OperationParamsMap {
   "referrals-click": ReferralsClickParams;
   "referrals-me": ReferralsMeParams;
   "referrals-me-events": ReferralsMeEventsParams;
+  "shop-app-analysis": ShopAppAnalysisParams;
+  "shop-app-categories": ShopAppCategoriesParams;
+  "shop-app-product": ShopAppProductParams;
+  "shop-app-product-related": ShopAppProductRelatedParams;
+  "shop-app-product-reviews": ShopAppProductReviewsParams;
+  "shop-app-product-shop": ShopAppProductShopParams;
+  "shop-app-product-variant": ShopAppProductVariantParams;
+  "shop-app-product-variants": ShopAppProductVariantsParams;
+  "shop-app-search": ShopAppSearchParams;
+  "shop-app-shop": ShopAppShopParams;
+  "shop-app-collection-products": ShopAppCollectionProductsParams;
+  "shop-app-shop-locations": ShopAppShopLocationsParams;
+  "shop-app-shop-products": ShopAppShopProductsParams;
+  "shop-app-shop-reviews": ShopAppShopReviewsParams;
+  "shop-app-shop-typeahead": ShopAppShopTypeaheadParams;
+  "shop-app-suggestions": ShopAppSuggestionsParams;
   "similarweb-search": SimilarWebSearchParams;
   "similarweb-web": SimilarWebWebParams;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesParams;
@@ -11665,6 +11483,22 @@ export interface OperationResponseMap {
   "referrals-click": ReferralsClickResponse;
   "referrals-me": ReferralsMeResponse;
   "referrals-me-events": ReferralsMeEventsResponse;
+  "shop-app-analysis": ShopAppAnalysisResponse;
+  "shop-app-categories": ShopAppCategoriesResponse;
+  "shop-app-product": ShopAppProductResponse;
+  "shop-app-product-related": ShopAppProductRelatedResponse;
+  "shop-app-product-reviews": ShopAppProductReviewsResponse;
+  "shop-app-product-shop": ShopAppProductShopResponse;
+  "shop-app-product-variant": ShopAppProductVariantResponse;
+  "shop-app-product-variants": ShopAppProductVariantsResponse;
+  "shop-app-search": ShopAppSearchResponse;
+  "shop-app-shop": ShopAppShopResponse;
+  "shop-app-collection-products": ShopAppCollectionProductsResponse;
+  "shop-app-shop-locations": ShopAppShopLocationsResponse;
+  "shop-app-shop-products": ShopAppShopProductsResponse;
+  "shop-app-shop-reviews": ShopAppShopReviewsResponse;
+  "shop-app-shop-typeahead": ShopAppShopTypeaheadResponse;
+  "shop-app-suggestions": ShopAppSuggestionsResponse;
   "similarweb-search": SimilarWebSearchResponse;
   "similarweb-web": SimilarWebWebResponse;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesResponse;
@@ -11971,6 +11805,22 @@ export interface OperationRequiredParamsMap {
   "referrals-click": true;
   "referrals-me": false;
   "referrals-me-events": false;
+  "shop-app-analysis": true;
+  "shop-app-categories": false;
+  "shop-app-product": true;
+  "shop-app-product-related": true;
+  "shop-app-product-reviews": true;
+  "shop-app-product-shop": true;
+  "shop-app-product-variant": true;
+  "shop-app-product-variants": true;
+  "shop-app-search": true;
+  "shop-app-shop": true;
+  "shop-app-collection-products": true;
+  "shop-app-shop-locations": true;
+  "shop-app-shop-products": true;
+  "shop-app-shop-reviews": true;
+  "shop-app-shop-typeahead": true;
+  "shop-app-suggestions": true;
   "similarweb-search": true;
   "similarweb-web": true;
   "spotify-podcasts-categories": false;
@@ -12284,6 +12134,22 @@ export type OperationIdLiteral =
   | "referrals-click"
   | "referrals-me"
   | "referrals-me-events"
+  | "shop-app-analysis"
+  | "shop-app-categories"
+  | "shop-app-product"
+  | "shop-app-product-related"
+  | "shop-app-product-reviews"
+  | "shop-app-product-shop"
+  | "shop-app-product-variant"
+  | "shop-app-product-variants"
+  | "shop-app-search"
+  | "shop-app-shop"
+  | "shop-app-collection-products"
+  | "shop-app-shop-locations"
+  | "shop-app-shop-products"
+  | "shop-app-shop-reviews"
+  | "shop-app-shop-typeahead"
+  | "shop-app-suggestions"
   | "similarweb-search"
   | "similarweb-web"
   | "spotify-podcasts-categories"
