@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.3.0-sdk.1
+
+- Added `CrawloraClientError`, `CrawloraServerError`, and `CrawloraNetworkError`
+  subclasses of `CrawloraError` so callers can branch on 4xx vs 5xx vs transport
+  failures.
+- Added `client.paginate(operationId, params, options?)`, an async iterator that
+  advances the page/offset query parameter and stops on an empty page.
+- Added the generated `OperationIds` map for typo-safe dynamic operation ids,
+  e.g. `client.request(OperationIds.BingSearch, { q: "coffee" })`.
+- The generator now shares a single language-neutral core with the Go and Python
+  SDKs; generated output is unchanged.
+
 ## v1.2.0-sdk.19
 
 - Regenerated the public SDK contract with the promoted Shopify endpoint family.

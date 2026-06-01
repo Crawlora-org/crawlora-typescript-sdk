@@ -1,179 +1,41 @@
 #!/usr/bin/env python3
+"""TypeScript SDK emitter.
+
+Language-neutral spec parsing, grouping, aliasing, and the operations docs table
+live in the vendored `scripts/_sdkgen/core.py` (synced from the API repo). This
+file only maps OpenAPI schemas to TypeScript types and writes the TS artifacts.
+"""
 import json
 import os
-import re
 import shutil
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _sdkgen import core  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SPEC = ROOT / "openapi" / "public.json"
 SPEC_PATH = Path(os.environ.get("CRAWLORA_OPENAPI_SPEC", DEFAULT_SPEC))
-TAG_GROUP_OVERRIDES = {
-    "AppStore": "appStore",
-    "CoinGecko": "coinGecko",
-    "GooglePlay": "googlePlay",
-    "ProductHunt": "productHunt",
-    "SimilarWeb": "similarWeb",
-    "SpotifyPodcasts": "spotifyPodcasts",
-    "TikTok": "tiktok",
-    "YouTube": "youtube",
-}
-TAG_PREFIX_OVERRIDES = {
-    "AppStore": "appstore",
-    "CoinGecko": "coingecko",
-    "GooglePlay": "googleplay",
-    "ProductHunt": "producthunt",
-    "SimilarWeb": "similarweb",
-    "SpotifyPodcasts": "spotify-podcasts",
-    "TikTok": "tiktok",
-    "YouTube": "youtube",
-}
 
-
-def words(value):
-    value = re.sub(r"([a-z0-9])([A-Z])", r"\1-\2", value)
-    return [part for part in re.split(r"[^A-Za-z0-9]+", value.lower()) if part]
-
-
-def camel(parts):
-    if not parts:
-        return "call"
-    return parts[0] + "".join(part[:1].upper() + part[1:] for part in parts[1:])
-
-
-def alias(operation_id, tag, used):
-    op_words = words(operation_id)
-    tag_words = words(TAG_PREFIX_OVERRIDES.get(tag, tag))
-    if op_words[: len(tag_words)] == tag_words:
-        op_words = op_words[len(tag_words) :]
-    name = camel(op_words)
-    if not name or name in used:
-        name = camel(words(operation_id))
-    base = name
-    i = 2
-    while name in used:
-        name = f"{base}{i}"
-        i += 1
-    used.add(name)
-    return name
-
-
-def md_escape(value):
-    return str(value).replace("|", "\\|").replace("\n", " ")
-
-
-def md_code(value):
-    return f"`{md_escape(value)}`"
-
-
-def operation_definition(operation_id, method, path, operation):
-    params = operation.get("parameters", [])
-    security = []
-    for requirement in operation.get("security", []):
-        security.extend(requirement.keys())
-    return {
-        "id": operation_id,
-        "method": method.upper(),
-        "path": path,
-        "pathParams": [p["name"] for p in params if p.get("in") == "path"],
-        "queryParams": [
-            {
-                "name": p["name"],
-                "in": "query",
-                **({"collectionFormat": p["collectionFormat"]} if "collectionFormat" in p else {}),
-                **({"type": p["type"]} if "type" in p else {}),
-                **({"required": True} if p.get("required") else {}),
-                **({"enum": enum_values(p)} if enum_values(p) else {}),
-            }
-            for p in params
-            if p.get("in") == "query"
-        ],
-        "formParams": [
-            {
-                "name": p["name"],
-                "in": "formData",
-                **({"type": p["type"]} if "type" in p else {}),
-                **({"required": True} if p.get("required") else {}),
-                **({"enum": enum_values(p)} if enum_values(p) else {}),
-            }
-            for p in params
-            if p.get("in") == "formData"
-        ],
-        "bodyParam": next((p["name"] for p in params if p.get("in") == "body"), None),
-        "bodyRequired": any(p.get("in") == "body" and p.get("required") for p in params),
-        "consumes": operation.get("consumes", []),
-        "produces": operation.get("produces", []),
-        "security": security,
-    }
-
-
-def enum_values(param):
-    return [str(value) for value in (param.get("enum") or param.get("items", {}).get("enum") or [])]
-
-
-def type_name(*parts):
-    raw = "".join(part[:1].upper() + part[1:] for part in words("-".join(parts)))
-    return raw or "Operation"
-
-
-def param_doc(params):
-    if not params:
-        return "none"
-    entries = []
-    for param in params:
-        required = " required" if param.get("required") else ""
-        location = param.get("in", "param")
-        entries.append(f"{md_code(param['name'])} ({location} {md_escape(ts_type(param))}{required})")
-    return "<br>".join(entries)
-
-
-def auth_doc(security):
-    return ", ".join(md_code(item) for item in security) if security else "none"
-
-
-def operation_note(operation_id, operation):
-    produces = [str(item).lower() for item in operation.get("produces", [])]
-    if "text/plain" in produces or operation_id == "youtube-transcript":
-        return "Supports text response mode."
-    return ""
-
-
-def operation_docs(grouped, operation_meta, operation_count):
-    lines = [
-        "# Crawlora JavaScript SDK Operations",
-        "",
-        "Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.",
-        "",
-        f"Total operations: `{operation_count}`",
-        "",
-        "| Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- |",
-    ]
-    for group_name, methods in grouped.items():
-        for method_name, operation_id in methods.items():
-            meta = operation_meta[operation_id]
-            lines.append(
-                "| "
-                + " | ".join(
-                    [
-                        md_escape(group_name),
-                        md_code(f"{group_name}.{method_name}"),
-                        md_code(operation_id),
-                        md_code(f"{meta['method']} {meta['path']}"),
-                        param_doc(meta["params"]),
-                        auth_doc(meta["security"]),
-                        md_code(meta["typeBase"] + "Response"),
-                        md_escape(meta["note"]),
-                    ]
-                )
-                + " |"
-            )
-    lines.append("")
-    return "\n".join(lines)
+POLICY = core.NamingPolicy(
+    case_fn=lambda parts: (parts[0] + "".join(p[:1].upper() + p[1:] for p in parts[1:])) if parts else "call",
+    dedup_sep="",
+    tag_group_overrides={
+        "AppStore": "appStore",
+        "CoinGecko": "coinGecko",
+        "GooglePlay": "googlePlay",
+        "ProductHunt": "productHunt",
+        "SimilarWeb": "similarWeb",
+        "SpotifyPodcasts": "spotifyPodcasts",
+        "TikTok": "tiktok",
+        "YouTube": "youtube",
+    },
+)
 
 
 def schema_type_name(value):
-    return "Model" + type_name(value)
+    return "Model" + core.type_name(value)
 
 
 def schema_ref_name(schema):
@@ -245,7 +107,7 @@ def type_property(name, typ, required):
     return f"  {json.dumps(name)}{optional}: {typ};"
 
 
-def type_declarations(grouped, operation_meta):
+def type_declarations(model):
     lines = [
         "// Generated by scripts/generate.py. Do not edit manually.",
         "",
@@ -253,7 +115,7 @@ def type_declarations(grouped, operation_meta):
         "export type CrawloraBody<T = Record<string, unknown>> = T;",
         "",
     ]
-    for schema_name, schema in operation_meta["definitions"].items():
+    for schema_name, schema in model.definitions.items():
         model_name = schema_type_name(schema_name)
         if schema.get("type") == "object" and schema.get("properties"):
             required = set(schema.get("required") or [])
@@ -266,12 +128,10 @@ def type_declarations(grouped, operation_meta):
             continue
         lines.append(f"export type {model_name} = {ts_schema_type(schema)};")
         lines.append("")
-    for operation_id, meta in operation_meta.items():
-        if operation_id == "definitions":
-            continue
-        base = meta["typeBase"]
-        body_type = meta["bodyType"]
-        response_type = meta["responseType"]
+    for operation_id, meta in model.meta.items():
+        base = meta["type_base"]
+        body_type = ts_schema_type(meta["body_schema"])
+        response_type = ts_schema_type(meta["response_schema"])
         if body_type != "unknown":
             lines.append(f"export type {base}Body = CrawloraBody<{body_type}>;")
         lines.append(f"export type {base}Response = CrawloraResponse<{response_type}>;")
@@ -284,38 +144,38 @@ def type_declarations(grouped, operation_meta):
             lines.append(type_property(param["name"], typ, bool(param.get("required"))))
         lines.append("}")
         lines.append("")
-    for group_name, methods in grouped.items():
-        lines.append(f"export interface {type_name(group_name, 'service')} {{")
+    for group_name, methods in model.groups.items():
+        lines.append(f"export interface {core.type_name(group_name, 'service')} {{")
         for method_name, operation_id in methods.items():
-            meta = operation_meta[operation_id]
-            param_optional = "?" if not meta["hasRequiredParams"] else ""
+            meta = model.meta[operation_id]
+            param_optional = "?" if not meta["has_required_params"] else ""
             lines.append(
-                f"  {method_name}<T = {meta['typeBase']}Response>("
-                f"params{param_optional}: {meta['typeBase']}Params, "
+                f"  {method_name}<T = {meta['type_base']}Response>("
+                f"params{param_optional}: {meta['type_base']}Params, "
                 "options?: import('./index.js').CrawloraRequestOptions"
                 "): Promise<T>;"
             )
         lines.append("}")
         lines.append("")
     lines.append("export interface CrawloraGeneratedGroups {")
-    for group_name in grouped:
-        lines.append(f"  {group_name}: {type_name(group_name, 'service')};")
+    for group_name in model.groups:
+        lines.append(f"  {group_name}: {core.type_name(group_name, 'service')};")
     lines.append("}")
     lines.append("")
-    operation_ids = [operation_id for operation_id in operation_meta if operation_id != "definitions"]
+    operation_ids = list(model.meta.keys())
     lines.append("export interface OperationParamsMap {")
     for operation_id in operation_ids:
-        lines.append(f"  {json.dumps(operation_id)}: {operation_meta[operation_id]['typeBase']}Params;")
+        lines.append(f"  {json.dumps(operation_id)}: {model.meta[operation_id]['type_base']}Params;")
     lines.append("}")
     lines.append("")
     lines.append("export interface OperationResponseMap {")
     for operation_id in operation_ids:
-        lines.append(f"  {json.dumps(operation_id)}: {operation_meta[operation_id]['typeBase']}Response;")
+        lines.append(f"  {json.dumps(operation_id)}: {model.meta[operation_id]['type_base']}Response;")
     lines.append("}")
     lines.append("")
     lines.append("export interface OperationRequiredParamsMap {")
     for operation_id in operation_ids:
-        required = "true" if operation_meta[operation_id]["hasRequiredParams"] else "false"
+        required = "true" if model.meta[operation_id]["has_required_params"] else "false"
         lines.append(f"  {json.dumps(operation_id)}: {required};")
     lines.append("}")
     lines.append("")
@@ -331,6 +191,11 @@ def type_declarations(grouped, operation_meta):
         lines.append(f"  | {json.dumps(operation_id)}")
     lines[-1] += ";"
     lines.append("")
+    lines.append("export declare const OperationIds: Readonly<{")
+    for operation_id in sorted(operation_ids, key=lambda oid: model.meta[oid]["type_base"]):
+        lines.append(f"  {model.meta[operation_id]['type_base']}: {json.dumps(operation_id)};")
+    lines.append("}>;")
+    lines.append("")
     return "\n".join(lines)
 
 
@@ -343,48 +208,26 @@ def main():
     if SPEC_PATH.resolve() != target_spec.resolve():
         shutil.copyfile(SPEC_PATH, target_spec)
 
-    operations = {}
-    grouped = {}
-    operation_meta = {}
-    used_by_group = {}
-    for path, methods in sorted(spec["paths"].items()):
-        for method, operation in sorted(methods.items()):
-            operation_id = operation["operationId"]
-            tag = (operation.get("tags") or ["default"])[0]
-            group_name = TAG_GROUP_OVERRIDES.get(tag, camel(words(tag)))
-            grouped.setdefault(group_name, {})
-            used_by_group.setdefault(group_name, set())
-            method_name = alias(operation_id, tag, used_by_group[group_name])
-            operations[operation_id] = operation_definition(operation_id, method, path, operation)
-            grouped[group_name][method_name] = operation_id
-            params = operation.get("parameters", [])
-            body_schema = next((p.get("schema") for p in params if p.get("in") == "body"), None)
-            response_schema = operation.get("responses", {}).get("200", {}).get("schema")
-            typed_params = [p for p in params if p.get("in") in {"path", "query", "formData", "body"}]
-            operation_meta[operation_id] = {
-                "typeBase": type_name(group_name, method_name),
-                "method": method.upper(),
-                "path": path,
-                "params": typed_params,
-                "bodyType": ts_schema_type(body_schema),
-                "responseType": ts_schema_type(response_schema),
-                "hasRequiredParams": any(p.get("required") for p in typed_params),
-                "security": [key for req in operation.get("security", []) for key in req.keys()],
-                "note": operation_note(operation_id, operation),
-            }
-    operation_meta["definitions"] = spec.get("definitions", {})
+    model = core.build_model(spec, POLICY)
 
+    operation_ids = {
+        meta["type_base"]: operation_id
+        for operation_id, meta in sorted(model.meta.items(), key=lambda item: item[1]["type_base"])
+    }
     content = (
         "// Generated by scripts/generate.py. Do not edit manually.\n"
-        f"export const operations = {json.dumps(operations, indent=2, sort_keys=True)};\n\n"
-        f"export const groups = {json.dumps(grouped, indent=2, sort_keys=True)};\n\n"
-        f"export const operationCount = {sum(len(methods) for methods in spec['paths'].values())};\n"
+        f"export const operations = {json.dumps(model.operations, indent=2, sort_keys=True)};\n\n"
+        f"export const groups = {json.dumps(model.groups, indent=2, sort_keys=True)};\n\n"
+        f"export const operationCount = {model.operation_count};\n\n"
+        "// PascalCase aliases for every operation id, for discoverable, typo-safe\n"
+        "// dynamic calls: client.request(OperationIds.BingSearch, { q: \"coffee\" }).\n"
+        f"export const OperationIds = Object.freeze({json.dumps(operation_ids, indent=2, sort_keys=True)});\n"
     )
     (ROOT / "src" / "operations.js").write_text(content)
-    (ROOT / "src" / "types.d.ts").write_text(type_declarations(grouped, operation_meta))
+    (ROOT / "src" / "types.d.ts").write_text(type_declarations(model))
     (ROOT / "docs").mkdir(exist_ok=True)
     (ROOT / "docs" / "operations.md").write_text(
-        operation_docs(grouped, operation_meta, sum(len(methods) for methods in spec["paths"].values()))
+        core.operation_docs(model, title="Crawlora JavaScript SDK Operations", type_render=ts_type)
     )
 
 

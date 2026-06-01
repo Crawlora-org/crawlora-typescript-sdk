@@ -1,7 +1,7 @@
 import { operations, groups } from "./operations.js";
 
 const DEFAULT_BASE_URL = "https://api.crawlora.net/api/v1";
-export const VERSION = "1.2.0-sdk.19";
+export const VERSION = "1.3.0-sdk.1";
 const DEFAULT_USER_AGENT = `crawlora-js-sdk/${VERSION}`;
 
 export class CrawloraError extends Error {
@@ -16,6 +16,35 @@ export class CrawloraError extends Error {
     this.cause = cause;
     this.retryable = retryable;
   }
+}
+
+// Response status 4xx: the request was rejected by the API (bad params, auth,
+// not found). Usually not retryable.
+export class CrawloraClientError extends CrawloraError {
+  constructor(message, options) {
+    super(message, options);
+    this.name = "CrawloraClientError";
+  }
+}
+
+// Response status 5xx: the API failed to handle a valid request. Retryable.
+export class CrawloraServerError extends CrawloraError {
+  constructor(message, options) {
+    super(message, options);
+    this.name = "CrawloraServerError";
+  }
+}
+
+// Transport failure, timeout, or abort before a response was received.
+export class CrawloraNetworkError extends CrawloraError {
+  constructor(message, options) {
+    super(message, options);
+    this.name = "CrawloraNetworkError";
+  }
+}
+
+function apiErrorClass(status) {
+  return status >= 500 ? CrawloraServerError : CrawloraClientError;
 }
 
 export class CrawloraClient {
@@ -98,12 +127,12 @@ export class CrawloraClient {
       });
     } catch (error) {
       if (options.signal?.aborted) {
-        throw new CrawloraError("Crawlora request aborted", { cause: error, retryable: false });
+        throw new CrawloraNetworkError("Crawlora request aborted", { cause: error, retryable: false });
       }
       if (timedOut) {
-        throw new CrawloraError("Crawlora request timed out", { cause: error, retryable: false });
+        throw new CrawloraNetworkError("Crawlora request timed out", { cause: error, retryable: false });
       }
-      throw new CrawloraError("Crawlora transport error", { cause: error });
+      throw new CrawloraNetworkError("Crawlora transport error", { cause: error });
     } finally {
       if (timeout) clearTimeout(timeout);
     }
@@ -113,7 +142,8 @@ export class CrawloraClient {
     if (!response.ok) {
       const code = parsed && typeof parsed === "object" ? parsed.code : undefined;
       const message = parsed && typeof parsed === "object" && parsed.msg ? parsed.msg : response.statusText;
-      throw new CrawloraError(message || `Crawlora request failed with status ${response.status}`, {
+      const ApiError = apiErrorClass(response.status);
+      throw new ApiError(message || `Crawlora request failed with status ${response.status}`, {
         status: response.status,
         code,
         body: parsed,
@@ -123,6 +153,50 @@ export class CrawloraClient {
     }
     return parsed;
   }
+
+  // Async iterator over pages of a paginated operation. Advances the numeric
+  // page/offset query parameter and stops when a page returns no data.
+  //   for await (const page of client.paginate("ebay-seller-feedback", { seller })) { ... }
+  async *paginate(operationId, params = {}, options = {}) {
+    const operation = operations[operationId];
+    if (!operation) {
+      throw new TypeError(`Unknown Crawlora operation: ${operationId}`);
+    }
+    const pageParam = options.pageParam || detectPageParam(operation);
+    if (!pageParam) {
+      throw new TypeError(`Operation ${operationId} has no page or offset query parameter to paginate`);
+    }
+    const step = options.step ?? 1;
+    const maxPages = options.maxPages ?? Infinity;
+    let pageValue = options.start ?? (pageParam === "offset" ? 0 : 1);
+    for (let i = 0; i < maxPages; i++) {
+      const response = await this.request(operationId, { ...params, [pageParam]: pageValue }, options);
+      yield response;
+      if (pageIsEmpty(response)) break;
+      pageValue += step;
+    }
+  }
+}
+
+const PAGE_PARAM_NAMES = ["page", "offset"];
+
+function detectPageParam(operation) {
+  for (const name of PAGE_PARAM_NAMES) {
+    if (operation.queryParams.some((parameter) => parameter.name === name)) return name;
+  }
+  return undefined;
+}
+
+function pageIsEmpty(response) {
+  if (response === undefined || response === null) return true;
+  let data = response;
+  if (typeof response === "object" && !Array.isArray(response) && "data" in response) {
+    data = response.data;
+  }
+  if (data === undefined || data === null) return true;
+  if (Array.isArray(data)) return data.length === 0;
+  if (typeof data === "object") return Object.keys(data).length === 0;
+  return !data;
 }
 
 function buildRequest(operation, baseUrl, params) {

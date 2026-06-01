@@ -142,6 +142,23 @@ The error includes `status`, optional API `code`, parsed `body`, response
 headers, capped at 30 seconds. Externally aborted requests fail with
 `Crawlora request aborted` and are not retried.
 
+`CrawloraError` has three subclasses so you can branch on the failure kind:
+`CrawloraClientError` (4xx, request rejected), `CrawloraServerError` (5xx), and
+`CrawloraNetworkError` (transport failure, timeout, or abort before a response).
+
+## Pagination
+
+`client.paginate` is an async iterator that advances the page/offset query
+parameter and stops when a page returns no data:
+
+```js
+for await (const page of crawlora.paginate("ebay-seller-feedback", { seller: "acme" })) {
+  for (const review of page.data) console.log(review);
+}
+```
+
+Override detection with `{ pageParam, start, step, maxPages }`.
+
 ## Examples
 
 Runnable examples live under `examples/` and skip cleanly when required
