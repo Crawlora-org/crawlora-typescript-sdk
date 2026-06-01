@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.4.0-sdk.1
+
+- Configurable retries: `maxRetryDelay`, `retryStatuses`, and an `isRetryable`
+  predicate; added an `onRetry` hook, opt-in `requestId` (x-request-id, also on
+  `error.requestId`), and a `logger` event sink.
+- Pagination: cursor/token mode (`cursorParam` + `nextCursor`) and a
+  `paginateItems` per-item async iterator; operation metadata now exposes
+  `paginatable` and `cursorParams`.
+- Streaming: `responseType: "stream"` returns the raw `Response` on success.
+- Config: `CRAWLORA_API_KEY` / `CRAWLORA_BASE_URL` environment fallback.
+
 ## v1.3.0-sdk.1
 
 - Added `CrawloraClientError`, `CrawloraServerError`, and `CrawloraNetworkError`

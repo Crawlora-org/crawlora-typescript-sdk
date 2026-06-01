@@ -8,6 +8,8 @@ import type {
 
 export type CrawloraParams = Record<string, unknown>;
 
+export type CrawloraLogEvent = { event: string; [key: string]: unknown };
+
 export interface CrawloraClientOptions {
   apiKey?: string;
   jwtToken?: string;
@@ -15,6 +17,18 @@ export interface CrawloraClientOptions {
   timeout?: number;
   retries?: number;
   retryDelay?: number;
+  /** Cap on backoff and Retry-After delays in ms (default 30000). */
+  maxRetryDelay?: number;
+  /** Override the retryable HTTP status set (network status 0 stays retryable). */
+  retryStatuses?: Iterable<number>;
+  /** Full predicate; supersedes retryStatuses when set. */
+  isRetryable?: (status: number, error: CrawloraError) => boolean;
+  /** Called before each retry sleep with (attempt, error, delayMs). */
+  onRetry?: (attempt: number, error: CrawloraError, delay: number) => void;
+  /** Generate an x-request-id header when absent. */
+  requestId?: boolean;
+  /** Structured event sink (request/retry); never logs on its own. */
+  logger?: (event: CrawloraLogEvent) => void;
   headers?: Record<string, string>;
   userAgent?: string | false;
   fetch?: typeof globalThis.fetch;
@@ -22,7 +36,7 @@ export interface CrawloraClientOptions {
 
 export interface CrawloraRequestOptions {
   headers?: Record<string, string>;
-  responseType?: "auto" | "json" | "text";
+  responseType?: "auto" | "json" | "text" | "stream";
   timeout?: number;
   signal?: AbortSignal;
 }
@@ -44,6 +58,8 @@ export interface OperationDefinition {
   consumes: string[];
   produces: string[];
   security: string[];
+  paginatable?: boolean;
+  cursorParams?: string[];
 }
 
 export class CrawloraError extends Error {
@@ -54,6 +70,7 @@ export class CrawloraError extends Error {
   response?: Response;
   cause?: unknown;
   retryable?: boolean;
+  requestId?: string;
 }
 
 // Thrown for 4xx API responses (request rejected by the API).
@@ -64,14 +81,23 @@ export class CrawloraServerError extends CrawloraError {}
 export class CrawloraNetworkError extends CrawloraError {}
 
 export interface CrawloraPaginateOptions extends CrawloraRequestOptions {
-  // Query parameter to advance. Auto-detected as "page" or "offset" when omitted.
+  // Numeric query parameter to advance. Auto-detected as "page" or "offset".
   pageParam?: string;
-  // First value for the page parameter. Defaults to 1 for "page", 0 for "offset".
-  start?: number;
+  // Cursor/token query parameter (cursor mode). Requires nextCursor.
+  cursorParam?: string;
+  // Extracts the next cursor from a page; iteration stops when it returns falsy.
+  nextCursor?: (page: unknown) => unknown;
+  // First page value (numeric) or initial cursor value.
+  start?: unknown;
   // Amount added to the page parameter after each page. Defaults to 1.
   step?: number;
   // Maximum number of pages to fetch. Defaults to unbounded.
   maxPages?: number;
+}
+
+export interface CrawloraPaginateItemsOptions extends CrawloraPaginateOptions {
+  // Extracts the item list from a page (default: the `data` array).
+  items?: (page: unknown) => Iterable<unknown>;
 }
 
 export class CrawloraClient {
@@ -89,6 +115,11 @@ export class CrawloraClient {
     params?: OperationParamsMap[I],
     options?: CrawloraPaginateOptions
   ): AsyncGenerator<OperationResponseMap[I], void, unknown>;
+  paginateItems<I extends OperationId>(
+    operationId: I,
+    params?: OperationParamsMap[I],
+    options?: CrawloraPaginateItemsOptions
+  ): AsyncGenerator<unknown, void, unknown>;
   [group: string]: unknown;
 }
 

@@ -1,11 +1,11 @@
 import { operations, groups } from "./operations.js";
 
 const DEFAULT_BASE_URL = "https://api.crawlora.net/api/v1";
-export const VERSION = "1.3.0-sdk.1";
+export const VERSION = "1.4.0-sdk.1";
 const DEFAULT_USER_AGENT = `crawlora-js-sdk/${VERSION}`;
 
 export class CrawloraError extends Error {
-  constructor(message, { status = 0, code, body, headers = {}, response, cause, retryable } = {}) {
+  constructor(message, { status = 0, code, body, headers = {}, response, cause, retryable, requestId } = {}) {
     super(message);
     this.name = "CrawloraError";
     this.status = status;
@@ -15,6 +15,7 @@ export class CrawloraError extends Error {
     this.response = response;
     this.cause = cause;
     this.retryable = retryable;
+    this.requestId = requestId;
   }
 }
 
@@ -49,12 +50,19 @@ function apiErrorClass(status) {
 
 export class CrawloraClient {
   constructor(options = {}) {
-    this.apiKey = options.apiKey || "";
+    // Precedence: explicit option > environment variable > default.
+    this.apiKey = options.apiKey || envVar("CRAWLORA_API_KEY") || "";
     this.jwtToken = options.jwtToken || "";
-    this.baseUrl = (options.baseUrl || DEFAULT_BASE_URL).replace(/\/+$/, "");
+    this.baseUrl = (options.baseUrl || envVar("CRAWLORA_BASE_URL") || DEFAULT_BASE_URL).replace(/\/+$/, "");
     this.timeout = options.timeout ?? 30000;
     this.retries = normalizeNonNegativeInteger(options.retries ?? 0);
     this.retryDelay = normalizeNonNegativeNumber(options.retryDelay ?? 250);
+    this.maxRetryDelay = normalizeNonNegativeNumber(options.maxRetryDelay ?? 30000);
+    this.retryStatuses = options.retryStatuses ? new Set(options.retryStatuses) : null;
+    this.isRetryable = typeof options.isRetryable === "function" ? options.isRetryable : null;
+    this.onRetry = typeof options.onRetry === "function" ? options.onRetry : null;
+    this.requestId = options.requestId === true;
+    this.logger = typeof options.logger === "function" ? options.logger : null;
     this.headers = { ...(options.headers || {}) };
     this.userAgent = options.userAgent === false ? "" : (options.userAgent || DEFAULT_USER_AGENT);
     this.fetch = options.fetch || globalThis.fetch;
@@ -84,19 +92,38 @@ export class CrawloraClient {
     params = params ?? {};
     options = options ?? {};
     const responseType = validateResponseType(options.responseType || "auto");
+    this.#log({ event: "request", operation: operationId });
 
     let attempt = 0;
     for (;;) {
       try {
         return await this.#send(operation, params, options, responseType);
       } catch (error) {
-        if (!(error instanceof CrawloraError) || error.retryable === false || attempt >= this.retries || !shouldRetry(error.status)) {
+        if (!(error instanceof CrawloraError) || error.retryable === false || attempt >= this.retries || !this.#isRetryable(error.status, error)) {
           throw error;
         }
         attempt++;
-        await sleep(retryDelayForError(error, this.retryDelay, attempt), options.signal);
+        const delay = this.#retryDelayFor(error, attempt);
+        this.#log({ event: "retry", operation: operationId, attempt, status: error.status, delay });
+        if (this.onRetry) this.onRetry(attempt, error, delay);
+        await sleep(delay, options.signal);
       }
     }
+  }
+
+  #isRetryable(status, error) {
+    if (this.isRetryable) return !!this.isRetryable(status, error);
+    if (this.retryStatuses) return status === 0 || this.retryStatuses.has(status);
+    return shouldRetry(status);
+  }
+
+  #retryDelayFor(error, attempt) {
+    const retryAfter = parseRetryAfter(error.headers, this.maxRetryDelay);
+    return retryAfter ?? retryDelay(this.retryDelay, attempt);
+  }
+
+  #log(event) {
+    if (this.logger) this.logger(event);
   }
 
   async #send(operation, params, options, responseType) {
@@ -108,6 +135,7 @@ export class CrawloraClient {
       bodyHeaders,
       options.headers
     );
+    const requestId = this.requestId ? ensureRequestId(headers) : (headerValue(headers, "x-request-id") || undefined);
 
     const controller = new AbortController();
     const timeoutMs = options.timeout ?? this.timeout;
@@ -127,18 +155,22 @@ export class CrawloraClient {
       });
     } catch (error) {
       if (options.signal?.aborted) {
-        throw new CrawloraNetworkError("Crawlora request aborted", { cause: error, retryable: false });
+        throw new CrawloraNetworkError("Crawlora request aborted", { cause: error, retryable: false, requestId });
       }
       if (timedOut) {
-        throw new CrawloraNetworkError("Crawlora request timed out", { cause: error, retryable: false });
+        throw new CrawloraNetworkError("Crawlora request timed out", { cause: error, retryable: false, requestId });
       }
-      throw new CrawloraNetworkError("Crawlora transport error", { cause: error });
+      throw new CrawloraNetworkError("Crawlora transport error", { cause: error, requestId });
     } finally {
       if (timeout) clearTimeout(timeout);
     }
 
     const headersObject = responseHeaders(response);
-    const parsed = await parseResponse(response, responseType, headersObject);
+    // Streaming success returns the raw Response; the caller reads response.body.
+    if (responseType === "stream" && response.ok) {
+      return response;
+    }
+    const parsed = await parseResponse(response, responseType === "stream" ? "auto" : responseType, headersObject, requestId);
     if (!response.ok) {
       const code = parsed && typeof parsed === "object" ? parsed.code : undefined;
       const message = parsed && typeof parsed === "object" && parsed.msg ? parsed.msg : response.statusText;
@@ -148,26 +180,48 @@ export class CrawloraClient {
         code,
         body: parsed,
         headers: headersObject,
-        response
+        response,
+        requestId
       });
     }
     return parsed;
   }
 
-  // Async iterator over pages of a paginated operation. Advances the numeric
-  // page/offset query parameter and stops when a page returns no data.
+  // Async iterator over pages of a paginated operation. Numeric mode advances
+  // the page/offset query parameter and stops on an empty page; cursor mode
+  // (cursorParam + nextCursor) sends the cursor and stops when nextCursor is falsy.
   //   for await (const page of client.paginate("ebay-seller-feedback", { seller })) { ... }
   async *paginate(operationId, params = {}, options = {}) {
     const operation = operations[operationId];
     if (!operation) {
       throw new TypeError(`Unknown Crawlora operation: ${operationId}`);
     }
+    const maxPages = options.maxPages ?? Infinity;
+
+    if (options.cursorParam || options.nextCursor) {
+      if (!(options.cursorParam && options.nextCursor)) {
+        throw new TypeError("cursor pagination requires both cursorParam and nextCursor");
+      }
+      if (!operation.queryParams.some((parameter) => parameter.name === options.cursorParam)) {
+        throw new TypeError(`cursorParam ${options.cursorParam} is not a query parameter of ${operationId}`);
+      }
+      let cursor = options.start;
+      for (let i = 0; i < maxPages; i++) {
+        const pageParams = { ...params };
+        if (cursor !== undefined && cursor !== null) pageParams[options.cursorParam] = cursor;
+        const response = await this.request(operationId, pageParams, options);
+        yield response;
+        cursor = options.nextCursor(response);
+        if (!cursor) break;
+      }
+      return;
+    }
+
     const pageParam = options.pageParam || detectPageParam(operation);
     if (!pageParam) {
       throw new TypeError(`Operation ${operationId} has no page or offset query parameter to paginate`);
     }
     const step = options.step ?? 1;
-    const maxPages = options.maxPages ?? Infinity;
     let pageValue = options.start ?? (pageParam === "offset" ? 0 : 1);
     for (let i = 0; i < maxPages; i++) {
       const response = await this.request(operationId, { ...params, [pageParam]: pageValue }, options);
@@ -176,9 +230,24 @@ export class CrawloraClient {
       pageValue += step;
     }
   }
+
+  // Async iterator over individual items across pages. `items` extracts the list
+  // from a page (default: the Crawlora `data` array).
+  async *paginateItems(operationId, params = {}, options = {}) {
+    const extract = options.items || defaultItems;
+    for await (const page of this.paginate(operationId, params, options)) {
+      for (const item of extract(page)) yield item;
+    }
+  }
 }
 
 const PAGE_PARAM_NAMES = ["page", "offset"];
+
+function defaultItems(response) {
+  if (response && typeof response === "object" && Array.isArray(response.data)) return response.data;
+  if (Array.isArray(response)) return response;
+  return [];
+}
 
 function detectPageParam(operation) {
   for (const name of PAGE_PARAM_NAMES) {
@@ -316,13 +385,13 @@ function composeSignal(controller, signal) {
 }
 
 function validateResponseType(responseType) {
-  if (responseType === "auto" || responseType === "json" || responseType === "text") {
+  if (responseType === "auto" || responseType === "json" || responseType === "text" || responseType === "stream") {
     return responseType;
   }
-  throw new TypeError("Invalid responseType: expected one of auto, json, text");
+  throw new TypeError("Invalid responseType: expected one of auto, json, text, stream");
 }
 
-async function parseResponse(response, responseType, headers) {
+async function parseResponse(response, responseType, headers, requestId) {
   if (responseType === "text") return response.text();
   const contentType = response.headers.get("content-type") || "";
   if (responseType === "json" || contentType.toLowerCase().includes("application/json")) {
@@ -335,7 +404,8 @@ async function parseResponse(response, responseType, headers) {
         body: text,
         headers,
         response,
-        cause: error
+        cause: error,
+        requestId
       });
     }
   }
@@ -353,23 +423,31 @@ function retryDelay(baseDelay, attempt) {
   return delay + jitter;
 }
 
-function retryDelayForError(error, baseDelay, attempt) {
-  return parseRetryAfter(error.headers) ?? retryDelay(baseDelay, attempt);
-}
-
-function parseRetryAfter(headers) {
+function parseRetryAfter(headers, cap = 30000) {
   const value = headerValue(headers, "retry-after");
   if (!value) return undefined;
   const seconds = Number(value);
   if (Number.isFinite(seconds) && seconds > 0) {
-    return Math.min(seconds * 1000, 30000);
+    return Math.min(seconds * 1000, cap);
   }
   const date = Date.parse(value);
   if (Number.isFinite(date)) {
     const delay = date - Date.now();
-    if (delay > 0) return Math.min(delay, 30000);
+    if (delay > 0) return Math.min(delay, cap);
   }
   return undefined;
+}
+
+function envVar(name) {
+  return (typeof process !== "undefined" && process.env && process.env[name]) || undefined;
+}
+
+function ensureRequestId(headers) {
+  const existing = headerValue(headers, "x-request-id");
+  if (existing) return existing;
+  const id = (typeof crypto !== "undefined" && crypto.randomUUID) ? crypto.randomUUID() : `req-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  headers["x-request-id"] = id;
+  return id;
 }
 
 function headerValue(headers, name) {

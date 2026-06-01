@@ -51,6 +51,7 @@ export const operations = {
     "formParams": [],
     "id": "airbnb-room-reviews",
     "method": "GET",
+    "paginatable": true,
     "path": "/airbnb/room/{id}/reviews",
     "pathParams": [
       "id"
@@ -78,6 +79,7 @@ export const operations = {
     "formParams": [],
     "id": "airbnb-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/airbnb/search",
     "pathParams": [],
     "produces": [
@@ -192,6 +194,7 @@ export const operations = {
     "formParams": [],
     "id": "amazon-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/amazon/search",
     "pathParams": [],
     "produces": [
@@ -289,6 +292,7 @@ export const operations = {
     "formParams": [],
     "id": "apple-podcasts-episodes-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/apple-podcasts/episodes/search",
     "pathParams": [],
     "produces": [
@@ -335,6 +339,7 @@ export const operations = {
     "formParams": [],
     "id": "apple-podcasts-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/apple-podcasts/search",
     "pathParams": [],
     "produces": [
@@ -649,6 +654,7 @@ export const operations = {
     "formParams": [],
     "id": "appstore-reviews",
     "method": "GET",
+    "paginatable": true,
     "path": "/appstore/reviews",
     "pathParams": [],
     "produces": [
@@ -703,6 +709,7 @@ export const operations = {
     "formParams": [],
     "id": "appstore-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/appstore/search",
     "pathParams": [],
     "produces": [
@@ -1070,6 +1077,7 @@ export const operations = {
     "formParams": [],
     "id": "bing-images",
     "method": "GET",
+    "paginatable": true,
     "path": "/bing/images",
     "pathParams": [],
     "produces": [
@@ -1116,6 +1124,7 @@ export const operations = {
     "formParams": [],
     "id": "bing-news",
     "method": "GET",
+    "paginatable": true,
     "path": "/bing/news",
     "pathParams": [],
     "produces": [
@@ -1162,6 +1171,7 @@ export const operations = {
     "formParams": [],
     "id": "bing-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/bing/search",
     "pathParams": [],
     "produces": [
@@ -1249,6 +1259,7 @@ export const operations = {
     "formParams": [],
     "id": "bing-videos",
     "method": "GET",
+    "paginatable": true,
     "path": "/bing/videos",
     "pathParams": [],
     "produces": [
@@ -1295,6 +1306,7 @@ export const operations = {
     "formParams": [],
     "id": "brave-images",
     "method": "GET",
+    "paginatable": true,
     "path": "/brave/images",
     "pathParams": [],
     "produces": [
@@ -1397,6 +1409,7 @@ export const operations = {
     "formParams": [],
     "id": "brave-news",
     "method": "GET",
+    "paginatable": true,
     "path": "/brave/news",
     "pathParams": [],
     "produces": [
@@ -1522,6 +1535,7 @@ export const operations = {
     "formParams": [],
     "id": "brave-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/brave/search",
     "pathParams": [],
     "produces": [
@@ -1739,6 +1753,7 @@ export const operations = {
     "formParams": [],
     "id": "brave-videos",
     "method": "GET",
+    "paginatable": true,
     "path": "/brave/videos",
     "pathParams": [],
     "produces": [
@@ -1959,6 +1974,7 @@ export const operations = {
     "formParams": [],
     "id": "coingecko-category-coins",
     "method": "GET",
+    "paginatable": true,
     "path": "/coingecko/category/{slug}/coins",
     "pathParams": [
       "slug"
@@ -2548,6 +2564,7 @@ export const operations = {
     "formParams": [],
     "id": "coingecko-exchanges",
     "method": "GET",
+    "paginatable": true,
     "path": "/coingecko/exchanges",
     "pathParams": [],
     "produces": [
@@ -2863,6 +2880,7 @@ export const operations = {
     "formParams": [],
     "id": "coingecko-markets",
     "method": "GET",
+    "paginatable": true,
     "path": "/coingecko/markets",
     "pathParams": [],
     "produces": [
@@ -2963,6 +2981,7 @@ export const operations = {
     "formParams": [],
     "id": "coingecko-new-coins",
     "method": "GET",
+    "paginatable": true,
     "path": "/coingecko/new-coins",
     "pathParams": [],
     "produces": [
@@ -3088,6 +3107,7 @@ export const operations = {
     "formParams": [],
     "id": "coingecko-nft-category",
     "method": "GET",
+    "paginatable": true,
     "path": "/coingecko/nft/category/{slug}",
     "pathParams": [
       "slug"
@@ -3190,6 +3210,7 @@ export const operations = {
     "formParams": [],
     "id": "coingecko-nfts",
     "method": "GET",
+    "paginatable": true,
     "path": "/coingecko/nfts",
     "pathParams": [],
     "produces": [
@@ -3682,6 +3703,7 @@ export const operations = {
     "formParams": [],
     "id": "datasets-google-map-businesses-nearby",
     "method": "GET",
+    "paginatable": true,
     "path": "/datasets/google-map-businesses/nearby",
     "pathParams": [],
     "produces": [
@@ -3745,6 +3767,7 @@ export const operations = {
     "formParams": [],
     "id": "datasets-google-map-businesses-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/datasets/google-map-businesses/search",
     "pathParams": [],
     "produces": [
@@ -3951,6 +3974,7 @@ export const operations = {
     "formParams": [],
     "id": "ebay-seller-feedback",
     "method": "GET",
+    "paginatable": true,
     "path": "/ebay/seller/{seller}/feedback",
     "pathParams": [
       "seller"
@@ -3988,6 +4012,7 @@ export const operations = {
     "formParams": [],
     "id": "ebay-seller-shop",
     "method": "GET",
+    "paginatable": true,
     "path": "/ebay/seller/{seller}/shop",
     "pathParams": [
       "seller"
@@ -4340,6 +4365,7 @@ export const operations = {
     "formParams": [],
     "id": "google-finance-markets-category-news",
     "method": "GET",
+    "paginatable": true,
     "path": "/google/finance/markets/categories/{category}/news",
     "pathParams": [
       "category"
@@ -4367,6 +4393,7 @@ export const operations = {
     "formParams": [],
     "id": "google-finance-markets-category-stocks",
     "method": "GET",
+    "paginatable": true,
     "path": "/google/finance/markets/categories/{category}/stocks",
     "pathParams": [
       "category"
@@ -4470,6 +4497,7 @@ export const operations = {
     "formParams": [],
     "id": "google-finance-markets-movers",
     "method": "GET",
+    "paginatable": true,
     "path": "/google/finance/markets/movers",
     "pathParams": [],
     "produces": [
@@ -4505,6 +4533,7 @@ export const operations = {
     "formParams": [],
     "id": "google-finance-markets-top",
     "method": "GET",
+    "paginatable": true,
     "path": "/google/finance/markets/top",
     "pathParams": [],
     "produces": [
@@ -6773,9 +6802,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "producthunt-alternatives",
     "method": "GET",
+    "paginatable": true,
     "path": "/producthunt/product/{id}/alternatives",
     "pathParams": [
       "id"
@@ -6839,6 +6872,7 @@ export const operations = {
     "formParams": [],
     "id": "producthunt-category-products",
     "method": "GET",
+    "paginatable": true,
     "path": "/producthunt/category/{slug}/products",
     "pathParams": [
       "slug"
@@ -6886,6 +6920,7 @@ export const operations = {
     "formParams": [],
     "id": "producthunt-customers",
     "method": "GET",
+    "paginatable": true,
     "path": "/producthunt/product/{id}/customers",
     "pathParams": [
       "id"
@@ -6924,9 +6959,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "producthunt-launches",
     "method": "GET",
+    "paginatable": true,
     "path": "/producthunt/product/{id}/launches",
     "pathParams": [
       "id"
@@ -6956,9 +6995,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "producthunt-leaderboard",
     "method": "GET",
+    "paginatable": true,
     "path": "/producthunt/leaderboard",
     "pathParams": [],
     "produces": [
@@ -7027,9 +7070,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "producthunt-makers",
     "method": "GET",
+    "paginatable": true,
     "path": "/producthunt/product/{id}/makers",
     "pathParams": [
       "id"
@@ -7099,6 +7146,7 @@ export const operations = {
     "formParams": [],
     "id": "producthunt-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/producthunt/search",
     "pathParams": [],
     "produces": [
@@ -7726,6 +7774,7 @@ export const operations = {
     "formParams": [],
     "id": "shopify-collection-products",
     "method": "GET",
+    "paginatable": true,
     "path": "/shopify/collections/{handle}/products",
     "pathParams": [
       "handle"
@@ -7764,6 +7813,7 @@ export const operations = {
     "formParams": [],
     "id": "shopify-collections",
     "method": "GET",
+    "paginatable": true,
     "path": "/shopify/collections",
     "pathParams": [],
     "produces": [
@@ -7828,6 +7878,7 @@ export const operations = {
     "formParams": [],
     "id": "shopify-pages",
     "method": "GET",
+    "paginatable": true,
     "path": "/shopify/pages",
     "pathParams": [],
     "produces": [
@@ -7934,6 +7985,7 @@ export const operations = {
     "formParams": [],
     "id": "shopify-products",
     "method": "GET",
+    "paginatable": true,
     "path": "/shopify/products",
     "pathParams": [],
     "produces": [
@@ -8156,6 +8208,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-album",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/album",
     "pathParams": [],
     "produces": [
@@ -8196,6 +8249,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-album-tracks",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/album/tracks",
     "pathParams": [],
     "produces": [
@@ -8236,6 +8290,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-albums-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/albums/search",
     "pathParams": [],
     "produces": [
@@ -8332,6 +8387,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-artist-albums",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/artist/albums",
     "pathParams": [],
     "produces": [
@@ -8442,6 +8498,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-artists-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/artists/search",
     "pathParams": [],
     "produces": [
@@ -8508,6 +8565,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-audiobook-chapters",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/audiobook/chapters",
     "pathParams": [],
     "produces": [
@@ -8548,6 +8606,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-audiobooks-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/audiobooks/search",
     "pathParams": [],
     "produces": [
@@ -8644,6 +8703,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-episodes-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/episodes/search",
     "pathParams": [],
     "produces": [
@@ -8805,6 +8865,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-playlist",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/playlist",
     "pathParams": [],
     "produces": [
@@ -8855,6 +8916,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-playlists-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/playlists/search",
     "pathParams": [],
     "produces": [
@@ -9086,6 +9148,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-podcasts-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify-podcasts/search",
     "pathParams": [],
     "produces": [
@@ -9187,6 +9250,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-podcasts-show-episodes",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify-podcasts/show/episodes",
     "pathParams": [],
     "produces": [
@@ -9327,6 +9391,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-profile-followers",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/profile/followers",
     "pathParams": [],
     "produces": [
@@ -9372,6 +9437,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-profile-playlists",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/profile/playlists",
     "pathParams": [],
     "produces": [
@@ -9417,6 +9483,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-profiles-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/profiles/search",
     "pathParams": [],
     "produces": [
@@ -9483,6 +9550,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/search",
     "pathParams": [],
     "produces": [
@@ -9559,6 +9627,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-section",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/section",
     "pathParams": [],
     "produces": [
@@ -9599,6 +9668,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-shows-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/shows/search",
     "pathParams": [],
     "produces": [
@@ -9740,6 +9810,7 @@ export const operations = {
     "formParams": [],
     "id": "spotify-tracks-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/spotify/tracks/search",
     "pathParams": [],
     "produces": [
@@ -9843,9 +9914,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "tiktok-challenge-list",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/hashtags",
     "pathParams": [],
     "produces": [
@@ -9917,6 +9992,7 @@ export const operations = {
     "formParams": [],
     "id": "tiktok-popular-trend-creator",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/popular-trend/creator",
     "pathParams": [],
     "produces": [
@@ -10012,9 +10088,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "tiktok-profile-post",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/posts",
     "pathParams": [],
     "produces": [
@@ -10053,9 +10133,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "tiktok-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/search",
     "pathParams": [],
     "produces": [
@@ -10089,9 +10173,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "tiktok-search-hashtag",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/search/hashtag",
     "pathParams": [],
     "produces": [
@@ -10125,9 +10213,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "tiktok-search-user",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/search/user",
     "pathParams": [],
     "produces": [
@@ -10252,6 +10344,7 @@ export const operations = {
     "formParams": [],
     "id": "tiktok-top-ads-list",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/top-ads/list",
     "pathParams": [],
     "produces": [
@@ -10414,6 +10507,7 @@ export const operations = {
     "formParams": [],
     "id": "tiktok-top-ads-recommend",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/top-ads/recommend",
     "pathParams": [],
     "produces": [
@@ -10469,6 +10563,7 @@ export const operations = {
     "formParams": [],
     "id": "tiktok-top-ads-spotlight",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/top-ads/spotlight",
     "pathParams": [],
     "produces": [
@@ -10545,9 +10640,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "cursor"
+    ],
     "formParams": [],
     "id": "tiktok-video-comments",
     "method": "GET",
+    "paginatable": true,
     "path": "/tiktok/comments",
     "pathParams": [],
     "produces": [
@@ -10657,6 +10756,7 @@ export const operations = {
     "formParams": [],
     "id": "tripadvisor-hotels",
     "method": "GET",
+    "paginatable": true,
     "path": "/tripadvisor/hotels",
     "pathParams": [],
     "produces": [
@@ -10774,6 +10874,7 @@ export const operations = {
     "formParams": [],
     "id": "tripadvisor-reviews",
     "method": "GET",
+    "paginatable": true,
     "path": "/tripadvisor/reviews",
     "pathParams": [],
     "produces": [
@@ -10845,6 +10946,7 @@ export const operations = {
     "formParams": [],
     "id": "tripadvisor-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/tripadvisor/search",
     "pathParams": [],
     "produces": [
@@ -11012,6 +11114,7 @@ export const operations = {
     "formParams": [],
     "id": "trustpilot-business-reviews",
     "method": "GET",
+    "paginatable": true,
     "path": "/trustpilot/business/{slug}/reviews",
     "pathParams": [
       "slug"
@@ -11074,6 +11177,7 @@ export const operations = {
     "formParams": [],
     "id": "trustpilot-business-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/trustpilot/business-units/search",
     "pathParams": [],
     "produces": [
@@ -11134,6 +11238,7 @@ export const operations = {
     "formParams": [],
     "id": "trustpilot-category",
     "method": "GET",
+    "paginatable": true,
     "path": "/trustpilot/category/{slug}",
     "pathParams": [
       "slug"
@@ -11469,9 +11574,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "start"
+    ],
     "formParams": [],
     "id": "yahoo-finance-calendar",
     "method": "GET",
+    "paginatable": true,
     "path": "/yahoo-finance/calendars/{type}",
     "pathParams": [
       "type"
@@ -11644,6 +11753,7 @@ export const operations = {
     "formParams": [],
     "id": "yahoo-finance-screener",
     "method": "GET",
+    "paginatable": true,
     "path": "/yahoo-finance/screener/{id}",
     "pathParams": [
       "id"
@@ -11941,6 +12051,7 @@ export const operations = {
     "formParams": [],
     "id": "yahoo-finance-ticker-earnings-dates",
     "method": "GET",
+    "paginatable": true,
     "path": "/yahoo-finance/ticker/{symbol}/earnings-dates",
     "pathParams": [
       "symbol"
@@ -12023,9 +12134,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "start"
+    ],
     "formParams": [],
     "id": "yahoo-finance-ticker-history",
     "method": "GET",
+    "paginatable": true,
     "path": "/yahoo-finance/ticker/{symbol}/history",
     "pathParams": [
       "symbol"
@@ -12317,9 +12432,13 @@ export const operations = {
     "consumes": [
       "application/json"
     ],
+    "cursorParams": [
+      "start"
+    ],
     "formParams": [],
     "id": "yahoo-finance-ticker-shares-full",
     "method": "GET",
+    "paginatable": true,
     "path": "/yahoo-finance/ticker/{symbol}/shares-full",
     "pathParams": [
       "symbol"
@@ -12925,6 +13044,7 @@ export const operations = {
     "formParams": [],
     "id": "zillow-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/zillow/search",
     "pathParams": [],
     "produces": [

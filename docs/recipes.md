@@ -74,6 +74,51 @@ try {
 }
 ```
 
+## Custom Retries And Observability
+
+```js
+const crawlora = new CrawloraClient({
+  retries: 3,
+  maxRetryDelay: 10000,
+  retryStatuses: [429, 503],                       // or:
+  isRetryable: (status, error) => status >= 500,
+  onRetry: (attempt, error, delay) => console.warn(`retry ${attempt} after ${delay}ms`, error.status),
+  requestId: true,                                  // sets x-request-id; available as error.requestId
+  logger: (event) => console.debug(event)
+});
+```
+
+Branch on `CrawloraClientError` (4xx), `CrawloraServerError` (5xx), and
+`CrawloraNetworkError` (transport).
+
+## Pagination
+
+```js
+// page/offset (auto-detected)
+for await (const page of crawlora.paginate("ebay-seller-feedback", { seller: "acme" })) { /* ... */ }
+
+// per-item iteration
+for await (const item of crawlora.paginateItems("ebay-seller-feedback", { seller: "acme" })) { /* ... */ }
+
+// cursor/token pagination
+for await (const page of crawlora.paginate("producthunt-leaderboard", {}, {
+  cursorParam: "cursor",
+  nextCursor: (p) => p.next_cursor
+})) { /* ... */ }
+```
+
+## Streaming Responses
+
+```js
+const res = await crawlora.request("bing-search", { q: "coffee" }, { responseType: "stream" });
+for await (const chunk of res.body) { /* ... */ }
+```
+
+## Environment Variables
+
+`CRAWLORA_API_KEY` and `CRAWLORA_BASE_URL` are used when not set explicitly
+(precedence: option > env > default).
+
 ## Optional Live Smoke Tests
 
 ```sh

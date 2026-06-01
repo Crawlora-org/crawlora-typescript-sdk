@@ -2,3 +2,7 @@ node_modules/
 coverage/
 *.tgz
 .DS_Store
+
+# Python bytecode from the vendored generator core
+__pycache__/
+*.pyc
