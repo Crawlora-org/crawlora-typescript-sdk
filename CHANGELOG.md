@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.0-sdk.18
+
+- Regenerated the public SDK contract for the Shop.app endpoint family.
+- Added the generated `shopApp` group with 16 active Shop.app operations.
+- Kept not-yet-promoted Shopify routes out of the public SDK contract.
+
 ## v1.2.0-sdk.17
 
 - Expanded npmjs package keywords for Crawlora SDK, scraping API, data
