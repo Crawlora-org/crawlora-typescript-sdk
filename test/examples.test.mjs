@@ -4,7 +4,8 @@ import { test } from "node:test";
 
 const examples = [
   "examples/bing-search.mjs",
-  "examples/youtube-transcript.mjs"
+  "examples/youtube-transcript.mjs",
+  "examples/paginate.mjs"
 ];
 
 test("examples skip cleanly without live credentials", () => {

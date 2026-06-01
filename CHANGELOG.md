@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.5.0-sdk.1
+
+- Added `beforeRequest`/`afterResponse` middleware hooks (mutate the outgoing
+  request context, transform the parsed response).
+- Added opt-in `idempotencyKeys` (stable `Idempotency-Key` on POST/PATCH, reused
+  across retries) and per-request `retries`/`isRetryable` overrides.
+- Added client-side `rateLimit` (requests/sec) and `maxConcurrency` throttling.
+- Errors now carry `requestId`.
+
 ## v1.4.0-sdk.1
 
 - Configurable retries: `maxRetryDelay`, `retryStatuses`, and an `isRetryable`

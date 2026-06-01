@@ -119,6 +119,32 @@ for await (const chunk of res.body) { /* ... */ }
 `CRAWLORA_API_KEY` and `CRAWLORA_BASE_URL` are used when not set explicitly
 (precedence: option > env > default).
 
+## Middleware
+
+```js
+const crawlora = new CrawloraClient({
+  beforeRequest: (ctx) => { ctx.headers["x-signature"] = sign(ctx); },
+  afterResponse: (operationId, status, headers, body) => body // return a value to transform
+});
+```
+
+## Idempotency And Per-Request Retries
+
+```js
+const crawlora = new CrawloraClient({ idempotencyKeys: true }); // stable key on POST/PATCH retries
+
+await crawlora.request("bing-search", { q: "coffee" }, {
+  retries: 5,
+  isRetryable: (status) => status >= 500
+});
+```
+
+## Rate Limiting
+
+```js
+const crawlora = new CrawloraClient({ rateLimit: 10, maxConcurrency: 4 });
+```
+
 ## Optional Live Smoke Tests
 
 ```sh

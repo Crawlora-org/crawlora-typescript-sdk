@@ -10,6 +10,20 @@ export type CrawloraParams = Record<string, unknown>;
 
 export type CrawloraLogEvent = { event: string; [key: string]: unknown };
 
+export interface CrawloraRequestContext {
+  operationId: string;
+  method: string;
+  url: string;
+  headers: Record<string, string>;
+}
+export type CrawloraBeforeRequest = (ctx: CrawloraRequestContext) => void | Promise<void>;
+export type CrawloraAfterResponse = (
+  operationId: string,
+  status: number,
+  headers: Record<string, string>,
+  body: unknown
+) => unknown;
+
 export interface CrawloraClientOptions {
   apiKey?: string;
   jwtToken?: string;
@@ -27,8 +41,18 @@ export interface CrawloraClientOptions {
   onRetry?: (attempt: number, error: CrawloraError, delay: number) => void;
   /** Generate an x-request-id header when absent. */
   requestId?: boolean;
+  /** Attach a stable Idempotency-Key on POST/PATCH, reused across retries. */
+  idempotencyKeys?: boolean;
+  /** Cap outgoing requests to at most this many per second. */
+  rateLimit?: number;
+  /** Cap the number of in-flight requests. */
+  maxConcurrency?: number;
   /** Structured event sink (request/retry); never logs on its own. */
   logger?: (event: CrawloraLogEvent) => void;
+  /** Hook(s) run before each request; mutate ctx.headers / ctx.url. */
+  beforeRequest?: CrawloraBeforeRequest | Iterable<CrawloraBeforeRequest>;
+  /** Hook(s) run on the parsed success body; return a value to replace it. */
+  afterResponse?: CrawloraAfterResponse | Iterable<CrawloraAfterResponse>;
   headers?: Record<string, string>;
   userAgent?: string | false;
   fetch?: typeof globalThis.fetch;
@@ -39,6 +63,10 @@ export interface CrawloraRequestOptions {
   responseType?: "auto" | "json" | "text" | "stream";
   timeout?: number;
   signal?: AbortSignal;
+  /** Per-request retry count, overriding the client default. */
+  retries?: number;
+  /** Per-request retry predicate, overriding the client default. */
+  isRetryable?: (status: number, error: CrawloraError) => boolean;
 }
 
 export type OperationMethod = <T = unknown>(

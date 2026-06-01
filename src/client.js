@@ -1,7 +1,7 @@
 import { operations, groups } from "./operations.js";
 
 const DEFAULT_BASE_URL = "https://api.crawlora.net/api/v1";
-export const VERSION = "1.4.0-sdk.1";
+export const VERSION = "1.5.0-sdk.1";
 const DEFAULT_USER_AGENT = `crawlora-js-sdk/${VERSION}`;
 
 export class CrawloraError extends Error {
@@ -48,6 +48,16 @@ function apiErrorClass(status) {
   return status >= 500 ? CrawloraServerError : CrawloraClientError;
 }
 
+/**
+ * Client for the Crawlora API.
+ *
+ * Call operations via grouped helpers (`client.bing.search({ q })`) or
+ * dynamically (`client.request("bing-search", { q })`). Supports configurable
+ * retries, an `onRetry` hook, opt-in `requestId` and `idempotencyKeys`,
+ * `beforeRequest`/`afterResponse` middleware, client-side `rateLimit` /
+ * `maxConcurrency`, pagination (`paginate`/`paginateItems`), and
+ * `responseType: "stream"`.
+ */
 export class CrawloraClient {
   constructor(options = {}) {
     // Precedence: explicit option > environment variable > default.
@@ -62,7 +72,13 @@ export class CrawloraClient {
     this.isRetryable = typeof options.isRetryable === "function" ? options.isRetryable : null;
     this.onRetry = typeof options.onRetry === "function" ? options.onRetry : null;
     this.requestId = options.requestId === true;
+    this.idempotencyKeys = options.idempotencyKeys === true;
     this.logger = typeof options.logger === "function" ? options.logger : null;
+    this.beforeRequest = asHookList(options.beforeRequest);
+    this.afterResponse = asHookList(options.afterResponse);
+    this.limiter = (options.rateLimit > 0 || options.maxConcurrency > 0)
+      ? new RateLimiter(options.rateLimit || 0, options.maxConcurrency || 0)
+      : null;
     this.headers = { ...(options.headers || {}) };
     this.userAgent = options.userAgent === false ? "" : (options.userAgent || DEFAULT_USER_AGENT);
     this.fetch = options.fetch || globalThis.fetch;
@@ -93,13 +109,19 @@ export class CrawloraClient {
     options = options ?? {};
     const responseType = validateResponseType(options.responseType || "auto");
     this.#log({ event: "request", operation: operationId });
+    const maxRetries = options.retries ?? this.retries;
+    const isRetryable = typeof options.isRetryable === "function" ? options.isRetryable : null;
+    const idempotencyKey = (this.idempotencyKeys && (operation.method === "POST" || operation.method === "PATCH"))
+      ? generateId() : undefined;
 
     let attempt = 0;
     for (;;) {
       try {
-        return await this.#send(operation, params, options, responseType);
+        const run = () => this.#send(operation, params, options, responseType, idempotencyKey);
+        return await (this.limiter ? this.limiter.run(run, options.signal) : run());
       } catch (error) {
-        if (!(error instanceof CrawloraError) || error.retryable === false || attempt >= this.retries || !this.#isRetryable(error.status, error)) {
+        const retryable = isRetryable ? !!isRetryable(error.status, error) : this.#isRetryable(error.status, error);
+        if (!(error instanceof CrawloraError) || error.retryable === false || attempt >= maxRetries || !retryable) {
           throw error;
         }
         attempt++;
@@ -126,7 +148,7 @@ export class CrawloraClient {
     if (this.logger) this.logger(event);
   }
 
-  async #send(operation, params, options, responseType) {
+  async #send(operation, params, options, responseType, idempotencyKey) {
     const { url, body, bodyHeaders } = buildRequest(operation, this.baseUrl, params);
     const headers = mergeHeaders(
       this.headers,
@@ -136,6 +158,18 @@ export class CrawloraClient {
       options.headers
     );
     const requestId = this.requestId ? ensureRequestId(headers) : (headerValue(headers, "x-request-id") || undefined);
+    if (idempotencyKey && !headerValue(headers, "idempotency-key")) {
+      headers["Idempotency-Key"] = idempotencyKey;
+    }
+
+    let requestUrl = url;
+    let requestHeaders = headers;
+    if (this.beforeRequest.length) {
+      const ctx = { operationId: operation.id, method: operation.method, url: requestUrl, headers: requestHeaders };
+      for (const hook of this.beforeRequest) await hook(ctx);
+      requestUrl = ctx.url;
+      requestHeaders = ctx.headers;
+    }
 
     const controller = new AbortController();
     const timeoutMs = options.timeout ?? this.timeout;
@@ -147,9 +181,9 @@ export class CrawloraClient {
     const signal = composeSignal(controller, options.signal);
     let response;
     try {
-      response = await this.fetch(url, {
+      response = await this.fetch(requestUrl, {
         method: operation.method,
-        headers,
+        headers: requestHeaders,
         body,
         signal
       });
@@ -170,7 +204,7 @@ export class CrawloraClient {
     if (responseType === "stream" && response.ok) {
       return response;
     }
-    const parsed = await parseResponse(response, responseType === "stream" ? "auto" : responseType, headersObject, requestId);
+    let parsed = await parseResponse(response, responseType === "stream" ? "auto" : responseType, headersObject, requestId);
     if (!response.ok) {
       const code = parsed && typeof parsed === "object" ? parsed.code : undefined;
       const message = parsed && typeof parsed === "object" && parsed.msg ? parsed.msg : response.statusText;
@@ -183,6 +217,12 @@ export class CrawloraClient {
         response,
         requestId
       });
+    }
+    if (this.afterResponse.length) {
+      for (const hook of this.afterResponse) {
+        const result = await hook(operation.id, response.status, headersObject, parsed);
+        if (result !== undefined) parsed = result;
+      }
     }
     return parsed;
   }
@@ -438,14 +478,67 @@ function parseRetryAfter(headers, cap = 30000) {
   return undefined;
 }
 
+function asHookList(value) {
+  if (!value) return [];
+  return typeof value === "function" ? [value] : Array.from(value);
+}
+
+// Optional client-side throttle: caps concurrency and spaces requests to a
+// maximum rate (requests per second).
+class RateLimiter {
+  constructor(rps, concurrency) {
+    this.interval = rps > 0 ? 1000 / rps : 0;
+    this.limit = concurrency > 0 ? concurrency : Infinity;
+    this.active = 0;
+    this.waiters = [];
+    this.nextAllowed = 0;
+  }
+
+  async run(fn, signal) {
+    await this.#acquire();
+    try {
+      await this.#rateWait(signal);
+      return await fn();
+    } finally {
+      const next = this.waiters.shift();
+      if (next) {
+        next(); // transfer the slot to the next waiter (active unchanged)
+      } else {
+        this.active--;
+      }
+    }
+  }
+
+  #acquire() {
+    if (this.active < this.limit) {
+      this.active++;
+      return Promise.resolve();
+    }
+    // Wait for a slot to be transferred to us (active stays at the limit).
+    return new Promise((resolve) => this.waiters.push(resolve));
+  }
+
+  async #rateWait(signal) {
+    if (!this.interval) return;
+    const now = Date.now();
+    const wait = Math.max(0, this.nextAllowed - now);
+    this.nextAllowed = Math.max(now, this.nextAllowed) + this.interval;
+    if (wait > 0) await sleep(wait, signal);
+  }
+}
+
 function envVar(name) {
   return (typeof process !== "undefined" && process.env && process.env[name]) || undefined;
+}
+
+function generateId() {
+  return (typeof crypto !== "undefined" && crypto.randomUUID) ? crypto.randomUUID() : `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
 
 function ensureRequestId(headers) {
   const existing = headerValue(headers, "x-request-id");
   if (existing) return existing;
-  const id = (typeof crypto !== "undefined" && crypto.randomUUID) ? crypto.randomUUID() : `req-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  const id = generateId();
   headers["x-request-id"] = id;
   return id;
 }
