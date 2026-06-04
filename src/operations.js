@@ -1297,6 +1297,52 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "brand-retrieve": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brand-retrieve",
+    "method": "GET",
+    "path": "/brand/retrieve",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "domain",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "force_language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "maxSpeed",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "maxAgeMs",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "timeoutMS",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "brave-images": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -7206,6 +7252,194 @@ export const operations = {
     "queryParams": [],
     "security": []
   },
+  "reddit-comments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-comments",
+    "method": "GET",
+    "path": "/reddit/comments/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "confidence",
+          "top",
+          "new",
+          "controversial",
+          "old",
+          "qa"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "depth",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-post": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-post",
+    "method": "GET",
+    "path": "/reddit/post/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-search",
+    "method": "GET",
+    "path": "/reddit/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subreddit",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "hot",
+          "new",
+          "top",
+          "comments"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "hour",
+          "day",
+          "week",
+          "month",
+          "year",
+          "all"
+        ],
+        "in": "query",
+        "name": "time",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "after",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-subreddit-posts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-subreddit-posts",
+    "method": "GET",
+    "path": "/reddit/subreddit/{subreddit}/posts",
+    "pathParams": [
+      "subreddit"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "hot",
+          "new",
+          "top",
+          "rising"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "hour",
+          "day",
+          "week",
+          "month",
+          "year",
+          "all"
+        ],
+        "in": "query",
+        "name": "time",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "after",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "referrals-click": {
     "bodyParam": "request",
     "bodyRequired": true,
@@ -11342,7 +11576,7 @@ export const operations = {
       }
     ],
     "security": [
-      "JWTAuth"
+      "ApiKeyAuth"
     ]
   },
   "usage-me-overview": {
@@ -11384,7 +11618,7 @@ export const operations = {
       }
     ],
     "security": [
-      "JWTAuth"
+      "ApiKeyAuth"
     ]
   },
   "usage-me-recent-ips": {
@@ -11431,7 +11665,7 @@ export const operations = {
       }
     ],
     "security": [
-      "JWTAuth"
+      "ApiKeyAuth"
     ]
   },
   "usage-me-timeseries": {
@@ -11487,7 +11721,7 @@ export const operations = {
       }
     ],
     "security": [
-      "JWTAuth"
+      "ApiKeyAuth"
     ]
   },
   "user-me": {
@@ -11698,6 +11932,61 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yahoo-finance-lookup": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "start"
+    ],
+    "formParams": [],
+    "id": "yahoo-finance-lookup",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/yahoo-finance/lookup",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "equity",
+          "etf",
+          "mutualfund",
+          "index",
+          "future",
+          "currency",
+          "cryptocurrency"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "start",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -13152,6 +13441,9 @@ export const groups = {
     "suggest": "bing-suggest",
     "videos": "bing-videos"
   },
+  "brand": {
+    "retrieve": "brand-retrieve"
+  },
   "brave": {
     "images": "brave-images",
     "news": "brave-news",
@@ -13302,6 +13594,12 @@ export const groups = {
     "reviews": "producthunt-reviews",
     "search": "producthunt-search"
   },
+  "reddit": {
+    "comments": "reddit-comments",
+    "post": "reddit-post",
+    "search": "reddit-search",
+    "subredditPosts": "reddit-subreddit-posts"
+  },
   "referrals": {
     "click": "referrals-click",
     "me": "referrals-me",
@@ -13445,6 +13743,7 @@ export const groups = {
     "download": "yahoo-finance-download",
     "industries": "yahoo-finance-industries",
     "industry": "yahoo-finance-industry",
+    "lookup": "yahoo-finance-lookup",
     "marketStatus": "yahoo-finance-market-status",
     "marketSummary": "yahoo-finance-market-summary",
     "screener": "yahoo-finance-screener",
@@ -13501,7 +13800,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 330;
+export const operationCount = 336;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -13541,6 +13840,7 @@ export const OperationIds = Object.freeze({
   "BingSearch": "bing-search",
   "BingSuggest": "bing-suggest",
   "BingVideos": "bing-videos",
+  "BrandRetrieve": "brand-retrieve",
   "BraveImages": "brave-images",
   "BraveNews": "brave-news",
   "BraveSearch": "brave-search",
@@ -13667,6 +13967,10 @@ export const OperationIds = Object.freeze({
   "ProductHuntProduct": "producthunt-product",
   "ProductHuntReviews": "producthunt-reviews",
   "ProductHuntSearch": "producthunt-search",
+  "RedditComments": "reddit-comments",
+  "RedditPost": "reddit-post",
+  "RedditSearch": "reddit-search",
+  "RedditSubredditPosts": "reddit-subreddit-posts",
   "ReferralsClick": "referrals-click",
   "ReferralsMe": "referrals-me",
   "ReferralsMeEvents": "referrals-me-events",
@@ -13787,6 +14091,7 @@ export const OperationIds = Object.freeze({
   "YahooFinanceDownload": "yahoo-finance-download",
   "YahooFinanceIndustries": "yahoo-finance-industries",
   "YahooFinanceIndustry": "yahoo-finance-industry",
+  "YahooFinanceLookup": "yahoo-finance-lookup",
   "YahooFinanceMarketStatus": "yahoo-finance-market-status",
   "YahooFinanceMarketSummary": "yahoo-finance-market-summary",
   "YahooFinanceScreener": "yahoo-finance-screener",

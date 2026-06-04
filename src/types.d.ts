@@ -943,6 +943,100 @@ export interface ModelBingVideosResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelBrandAddress {
+  "city"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "postal_code"?: string;
+  "state_code"?: string;
+  "state_province"?: string;
+  "street"?: string;
+}
+
+export interface ModelBrandBackdrop {
+  "colors"?: Array<ModelBrandColor>;
+  "resolution"?: ModelBrandResolution;
+  "url"?: string;
+}
+
+export interface ModelBrandBrandResponse {
+  "address"?: ModelBrandAddress;
+  "backdrops"?: Array<ModelBrandBackdrop>;
+  "colors"?: Array<ModelBrandColor>;
+  "description"?: string;
+  "domain"?: string;
+  "email"?: string;
+  "industries"?: ModelBrandIndustries;
+  "is_nsfw"?: boolean;
+  "links"?: ModelBrandLinks;
+  "logos"?: Array<ModelBrandLogo>;
+  "phone"?: string;
+  "primary_language"?: string;
+  "slogan"?: string;
+  "socials"?: Array<ModelBrandSocial>;
+  "source"?: ModelBrandSourceDetail;
+  "stock"?: ModelBrandStock;
+  "title"?: string;
+}
+
+export interface ModelBrandColor {
+  "hex"?: string;
+  "name"?: string;
+}
+
+export interface ModelBrandEic {
+  "industry"?: string;
+  "subindustry"?: string;
+}
+
+export interface ModelBrandIndustries {
+  "eic"?: Array<ModelBrandEic>;
+}
+
+export interface ModelBrandLinks {
+  "blog"?: string;
+  "careers"?: string;
+  "contact"?: string;
+  "pricing"?: string;
+  "privacy"?: string;
+  "terms"?: string;
+}
+
+export interface ModelBrandLogo {
+  "colors"?: Array<ModelBrandColor>;
+  "mode"?: string;
+  "resolution"?: ModelBrandResolution;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelBrandResolution {
+  "aspect_ratio"?: number;
+  "height"?: number;
+  "width"?: number;
+}
+
+export interface ModelBrandSocial {
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelBrandSourceDetail {
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelBrandStock {
+  "exchange"?: string;
+  "ticker"?: string;
+}
+
+export interface ModelBrandRetrieveResponseDoc {
+  "code"?: number;
+  "data"?: ModelBrandBrandResponse;
+  "msg"?: string;
+}
+
 export interface ModelBraveDiscussion {
   "age"?: string;
   "comment_count"?: number;
@@ -4786,6 +4880,114 @@ export interface ModelProducthuntSearchTopicDoc {
   "topic"?: { "id"?: string; "name"?: string };
 }
 
+export interface ModelRedditAuthor {
+  "name"?: string;
+  "profile_url"?: string;
+}
+
+export interface ModelRedditComment {
+  "author"?: ModelRedditAuthor;
+  "body"?: string;
+  "created"?: string;
+  "created_utc"?: number;
+  "depth"?: number;
+  "id"?: string;
+  "name"?: string;
+  "parent_id"?: string;
+  "permalink"?: string;
+  "replies"?: Array<ModelRedditComment>;
+  "score"?: number;
+}
+
+export interface ModelRedditCommentsResponse {
+  "comments"?: Array<ModelRedditComment>;
+  "post"?: ModelRedditPost;
+  "source"?: ModelRedditSourceDetail;
+}
+
+export interface ModelRedditPagination {
+  "after"?: string;
+  "limit"?: number;
+}
+
+export interface ModelRedditPost {
+  "author"?: ModelRedditAuthor;
+  "comment_count"?: number;
+  "created"?: string;
+  "created_utc"?: number;
+  "domain"?: string;
+  "flair"?: string;
+  "id"?: string;
+  "is_self"?: boolean;
+  "is_video"?: boolean;
+  "locked"?: boolean;
+  "name"?: string;
+  "over_18"?: boolean;
+  "permalink"?: string;
+  "score"?: number;
+  "selftext"?: string;
+  "source_feed_url"?: string;
+  "stickied"?: boolean;
+  "subreddit"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "upvote_ratio"?: number;
+  "url"?: string;
+}
+
+export interface ModelRedditPostResponse {
+  "post"?: ModelRedditPost;
+  "source"?: ModelRedditSourceDetail;
+}
+
+export interface ModelRedditSearchResponse {
+  "pagination"?: ModelRedditPagination;
+  "posts"?: Array<ModelRedditPost>;
+  "query"?: string;
+  "sort"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "subreddit"?: string;
+  "time"?: string;
+}
+
+export interface ModelRedditSourceDetail {
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelRedditSubredditPostsResponse {
+  "pagination"?: ModelRedditPagination;
+  "posts"?: Array<ModelRedditPost>;
+  "sort"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "subreddit"?: string;
+  "time"?: string;
+}
+
+export interface ModelRedditCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditCommentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditPostResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditPostResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditSubredditPostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditSubredditPostsResponse;
+  "msg"?: string;
+}
+
 export interface ModelReferralsReferralAttributionDoc {
   "campaign"?: string;
   "code"?: string;
@@ -7755,6 +7957,15 @@ export interface ModelYahoofinanceInfoResponse {
   "symbol"?: string;
 }
 
+export interface ModelYahoofinanceLookupResponse {
+  "count"?: number;
+  "documents"?: Array<Record<string, unknown>>;
+  "query"?: string;
+  "start"?: number;
+  "total"?: number;
+  "type"?: string;
+}
+
 export interface ModelYahoofinanceMarketStatusResponse {
   "market"?: string;
   "status"?: Record<string, unknown>;
@@ -7936,6 +8147,12 @@ export interface ModelYahoofinanceInfoResponseDoc {
 export interface ModelYahoofinanceIsinResponseDoc {
   "code"?: number;
   "data"?: ModelYahoofinanceIsinresponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoofinanceLookupResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoofinanceLookupResponse;
   "msg"?: string;
 }
 
@@ -8820,6 +9037,15 @@ export interface BingVideosParams {
   "count"?: number;
   "country"?: string;
   "lang"?: string;
+}
+
+export type BrandRetrieveResponse = CrawloraResponse<ModelBrandRetrieveResponseDoc>;
+export interface BrandRetrieveParams {
+  "domain": string;
+  "force_language"?: string;
+  "maxSpeed"?: boolean;
+  "maxAgeMs"?: number;
+  "timeoutMS"?: number;
 }
 
 export type BraveImagesResponse = CrawloraResponse<ModelBraveImagesResponseDoc>;
@@ -9708,6 +9934,38 @@ export type MetaReadyResponse = CrawloraResponse<ModelApiReadinessResponseDoc>;
 export interface MetaReadyParams {
 }
 
+export type RedditCommentsResponse = CrawloraResponse<ModelRedditCommentsResponseDoc>;
+export interface RedditCommentsParams {
+  "id": string;
+  "sort"?: "confidence" | "top" | "new" | "controversial" | "old" | "qa";
+  "limit"?: number;
+  "depth"?: number;
+}
+
+export type RedditPostResponse = CrawloraResponse<ModelRedditPostResponseDoc>;
+export interface RedditPostParams {
+  "id": string;
+}
+
+export type RedditSearchResponse = CrawloraResponse<ModelRedditSearchResponseDoc>;
+export interface RedditSearchParams {
+  "q": string;
+  "subreddit"?: string;
+  "sort"?: "relevance" | "hot" | "new" | "top" | "comments";
+  "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
+  "limit"?: number;
+  "after"?: string;
+}
+
+export type RedditSubredditPostsResponse = CrawloraResponse<ModelRedditSubredditPostsResponseDoc>;
+export interface RedditSubredditPostsParams {
+  "subreddit": string;
+  "sort"?: "hot" | "new" | "top" | "rising";
+  "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
+  "limit"?: number;
+  "after"?: string;
+}
+
 export type ReferralsClickBody = CrawloraBody<ModelReferralsReferralClickRequestDoc>;
 export type ReferralsClickResponse = CrawloraResponse<ModelReferralsReferralClickResponseDoc>;
 export interface ReferralsClickParams {
@@ -10590,6 +10848,14 @@ export interface YahooFinanceIndustryParams {
   "key": string;
 }
 
+export type YahooFinanceLookupResponse = CrawloraResponse<ModelYahoofinanceLookupResponseDoc>;
+export interface YahooFinanceLookupParams {
+  "query": string;
+  "type"?: "all" | "equity" | "etf" | "mutualfund" | "index" | "future" | "currency" | "cryptocurrency";
+  "count"?: number;
+  "start"?: number;
+}
+
 export type YahooFinanceMarketStatusResponse = CrawloraResponse<ModelYahoofinanceMarketStatusResponseDoc>;
 export interface YahooFinanceMarketStatusParams {
   "market": string;
@@ -10947,6 +11213,10 @@ export interface BingService {
   videos<T = BingVideosResponse>(params: BingVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface BrandService {
+  retrieve<T = BrandRetrieveResponse>(params: BrandRetrieveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface BraveService {
   images<T = BraveImagesResponse>(params: BraveImagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = BraveNewsResponse>(params: BraveNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -11109,6 +11379,13 @@ export interface ProductHuntService {
   search<T = ProductHuntSearchResponse>(params: ProductHuntSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface RedditService {
+  comments<T = RedditCommentsResponse>(params: RedditCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  post<T = RedditPostResponse>(params: RedditPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = RedditSearchResponse>(params: RedditSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  subredditPosts<T = RedditSubredditPostsResponse>(params: RedditSubredditPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ReferralsService {
   click<T = ReferralsClickResponse>(params: ReferralsClickParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   me<T = ReferralsMeResponse>(params?: ReferralsMeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -11263,6 +11540,7 @@ export interface YahooFinanceService {
   download<T = YahooFinanceDownloadResponse>(params: YahooFinanceDownloadParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   industries<T = YahooFinanceIndustriesResponse>(params?: YahooFinanceIndustriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   industry<T = YahooFinanceIndustryResponse>(params: YahooFinanceIndustryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lookup<T = YahooFinanceLookupResponse>(params: YahooFinanceLookupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   marketStatus<T = YahooFinanceMarketStatusResponse>(params: YahooFinanceMarketStatusParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   marketSummary<T = YahooFinanceMarketSummaryResponse>(params: YahooFinanceMarketSummaryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   screenerCustom<T = YahooFinanceScreenerCustomResponse>(params: YahooFinanceScreenerCustomParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -11327,6 +11605,7 @@ export interface CrawloraGeneratedGroups {
   appStore: AppStoreService;
   billing: BillingService;
   bing: BingService;
+  brand: BrandService;
   brave: BraveService;
   coinGecko: CoinGeckoService;
   datasets: DatasetsService;
@@ -11339,6 +11618,7 @@ export interface CrawloraGeneratedGroups {
   linkedIn: LinkedInService;
   meta: MetaService;
   productHunt: ProductHuntService;
+  reddit: RedditService;
   referrals: ReferralsService;
   shopApp: ShopAppService;
   shopify: ShopifyService;
@@ -11391,6 +11671,7 @@ export interface OperationParamsMap {
   "bing-search": BingSearchParams;
   "bing-suggest": BingSuggestParams;
   "bing-videos": BingVideosParams;
+  "brand-retrieve": BrandRetrieveParams;
   "brave-images": BraveImagesParams;
   "brave-news": BraveNewsParams;
   "brave-search": BraveSearchParams;
@@ -11517,6 +11798,10 @@ export interface OperationParamsMap {
   "producthunt-reviews": ProductHuntReviewsParams;
   "producthunt-search": ProductHuntSearchParams;
   "ready": MetaReadyParams;
+  "reddit-comments": RedditCommentsParams;
+  "reddit-post": RedditPostParams;
+  "reddit-search": RedditSearchParams;
+  "reddit-subreddit-posts": RedditSubredditPostsParams;
   "referrals-click": ReferralsClickParams;
   "referrals-me": ReferralsMeParams;
   "referrals-me-events": ReferralsMeEventsParams;
@@ -11637,6 +11922,7 @@ export interface OperationParamsMap {
   "yahoo-finance-download": YahooFinanceDownloadParams;
   "yahoo-finance-industries": YahooFinanceIndustriesParams;
   "yahoo-finance-industry": YahooFinanceIndustryParams;
+  "yahoo-finance-lookup": YahooFinanceLookupParams;
   "yahoo-finance-market-status": YahooFinanceMarketStatusParams;
   "yahoo-finance-market-summary": YahooFinanceMarketSummaryParams;
   "yahoo-finance-screener-custom": YahooFinanceScreenerCustomParams;
@@ -11724,6 +12010,7 @@ export interface OperationResponseMap {
   "bing-search": BingSearchResponse;
   "bing-suggest": BingSuggestResponse;
   "bing-videos": BingVideosResponse;
+  "brand-retrieve": BrandRetrieveResponse;
   "brave-images": BraveImagesResponse;
   "brave-news": BraveNewsResponse;
   "brave-search": BraveSearchResponse;
@@ -11850,6 +12137,10 @@ export interface OperationResponseMap {
   "producthunt-reviews": ProductHuntReviewsResponse;
   "producthunt-search": ProductHuntSearchResponse;
   "ready": MetaReadyResponse;
+  "reddit-comments": RedditCommentsResponse;
+  "reddit-post": RedditPostResponse;
+  "reddit-search": RedditSearchResponse;
+  "reddit-subreddit-posts": RedditSubredditPostsResponse;
   "referrals-click": ReferralsClickResponse;
   "referrals-me": ReferralsMeResponse;
   "referrals-me-events": ReferralsMeEventsResponse;
@@ -11970,6 +12261,7 @@ export interface OperationResponseMap {
   "yahoo-finance-download": YahooFinanceDownloadResponse;
   "yahoo-finance-industries": YahooFinanceIndustriesResponse;
   "yahoo-finance-industry": YahooFinanceIndustryResponse;
+  "yahoo-finance-lookup": YahooFinanceLookupResponse;
   "yahoo-finance-market-status": YahooFinanceMarketStatusResponse;
   "yahoo-finance-market-summary": YahooFinanceMarketSummaryResponse;
   "yahoo-finance-screener-custom": YahooFinanceScreenerCustomResponse;
@@ -12057,6 +12349,7 @@ export interface OperationRequiredParamsMap {
   "bing-search": true;
   "bing-suggest": true;
   "bing-videos": true;
+  "brand-retrieve": true;
   "brave-images": true;
   "brave-news": true;
   "brave-search": true;
@@ -12183,6 +12476,10 @@ export interface OperationRequiredParamsMap {
   "producthunt-reviews": true;
   "producthunt-search": true;
   "ready": false;
+  "reddit-comments": true;
+  "reddit-post": true;
+  "reddit-search": true;
+  "reddit-subreddit-posts": true;
   "referrals-click": true;
   "referrals-me": false;
   "referrals-me-events": false;
@@ -12303,6 +12600,7 @@ export interface OperationRequiredParamsMap {
   "yahoo-finance-download": true;
   "yahoo-finance-industries": false;
   "yahoo-finance-industry": true;
+  "yahoo-finance-lookup": true;
   "yahoo-finance-market-status": true;
   "yahoo-finance-market-summary": true;
   "yahoo-finance-screener-custom": true;
@@ -12397,6 +12695,7 @@ export type OperationIdLiteral =
   | "bing-search"
   | "bing-suggest"
   | "bing-videos"
+  | "brand-retrieve"
   | "brave-images"
   | "brave-news"
   | "brave-search"
@@ -12523,6 +12822,10 @@ export type OperationIdLiteral =
   | "producthunt-reviews"
   | "producthunt-search"
   | "ready"
+  | "reddit-comments"
+  | "reddit-post"
+  | "reddit-search"
+  | "reddit-subreddit-posts"
   | "referrals-click"
   | "referrals-me"
   | "referrals-me-events"
@@ -12643,6 +12946,7 @@ export type OperationIdLiteral =
   | "yahoo-finance-download"
   | "yahoo-finance-industries"
   | "yahoo-finance-industry"
+  | "yahoo-finance-lookup"
   | "yahoo-finance-market-status"
   | "yahoo-finance-market-summary"
   | "yahoo-finance-screener-custom"
@@ -12729,6 +13033,7 @@ export declare const OperationIds: Readonly<{
   BingSearch: "bing-search";
   BingSuggest: "bing-suggest";
   BingVideos: "bing-videos";
+  BrandRetrieve: "brand-retrieve";
   BraveImages: "brave-images";
   BraveNews: "brave-news";
   BraveSearch: "brave-search";
@@ -12855,6 +13160,10 @@ export declare const OperationIds: Readonly<{
   ProductHuntProduct: "producthunt-product";
   ProductHuntReviews: "producthunt-reviews";
   ProductHuntSearch: "producthunt-search";
+  RedditComments: "reddit-comments";
+  RedditPost: "reddit-post";
+  RedditSearch: "reddit-search";
+  RedditSubredditPosts: "reddit-subreddit-posts";
   ReferralsClick: "referrals-click";
   ReferralsMe: "referrals-me";
   ReferralsMeEvents: "referrals-me-events";
@@ -12975,6 +13284,7 @@ export declare const OperationIds: Readonly<{
   YahooFinanceDownload: "yahoo-finance-download";
   YahooFinanceIndustries: "yahoo-finance-industries";
   YahooFinanceIndustry: "yahoo-finance-industry";
+  YahooFinanceLookup: "yahoo-finance-lookup";
   YahooFinanceMarketStatus: "yahoo-finance-market-status";
   YahooFinanceMarketSummary: "yahoo-finance-market-summary";
   YahooFinanceScreener: "yahoo-finance-screener";

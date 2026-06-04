@@ -30,6 +30,15 @@ Literal operation ids infer parameter and response types in TypeScript. Use the
 grouped endpoint methods when you want the shortest call shape, and dynamic
 operation calls when you store operation ids in app-level routing or jobs.
 
+## Reddit And Brand
+
+Newer platforms are grouped like every other endpoint:
+
+```ts
+const posts = await crawlora.reddit.search({ q: "typescript", subreddit: "programming" });
+const brand = await crawlora.brand.retrieve({ domain: "stripe.com" });
+```
+
 ## Retries, Timeouts, Headers, And Abort Signals
 
 ```js
