@@ -2641,6 +2641,21 @@ export interface ModelGoogleMapSearchOption {
   "language"?: string;
 }
 
+export interface ModelGoogleNewsResponse {
+  "pagination"?: ModelGoogleVerticalPagination;
+  "results"?: Array<ModelGoogleNewsResult>;
+}
+
+export interface ModelGoogleNewsResult {
+  "age"?: string;
+  "description"?: string;
+  "position"?: number;
+  "source"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
 export interface ModelGooglePeopleAlsoAskItem {
   "answer"?: string;
   "date"?: string;
@@ -2703,6 +2718,28 @@ export interface ModelGoogleSuggestionResult {
   "query"?: string;
 }
 
+export interface ModelGoogleVerticalPagination {
+  "next_page"?: number;
+  "page"?: number;
+  "previous_page"?: number;
+}
+
+export interface ModelGoogleVideoResult {
+  "age"?: string;
+  "description"?: string;
+  "duration"?: string;
+  "platform"?: string;
+  "position"?: number;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelGoogleVideosResponse {
+  "pagination"?: ModelGoogleVerticalPagination;
+  "results"?: Array<ModelGoogleVideoResult>;
+}
+
 export interface ModelGoogleMapPlaceResponseDoc {
   "code"?: number;
   "data"?: ModelGooglePlace;
@@ -2715,6 +2752,12 @@ export interface ModelGoogleMapSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelGoogleNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoogleNewsResponse;
+  "msg"?: string;
+}
+
 export interface ModelGoogleSearchResponseDoc {
   "code"?: number;
   "data"?: ModelGoogleSearchResp;
@@ -2724,6 +2767,12 @@ export interface ModelGoogleSearchResponseDoc {
 export interface ModelGoogleSuggestResponseDoc {
   "code"?: number;
   "data"?: ModelGoogleSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoogleVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoogleVideosResponse;
   "msg"?: string;
 }
 
@@ -9492,6 +9541,15 @@ export interface GoogleMapSearchParams {
   "mapSearchOption": GoogleMapSearchBody;
 }
 
+export type GoogleNewsResponse = CrawloraResponse<ModelGoogleNewsResponseDoc>;
+export interface GoogleNewsParams {
+  "q": string;
+  "page"?: number;
+  "count"?: number;
+  "country"?: string;
+  "lang"?: string;
+}
+
 export type GoogleSearchBody = CrawloraBody<ModelGoogleSearchOption>;
 export type GoogleSearchResponse = CrawloraResponse<ModelGoogleSearchResponseDoc>;
 export interface GoogleSearchParams {
@@ -9571,6 +9629,15 @@ export type GoogleTrendsTrendingDetailBody = CrawloraBody<ModelTrendsTrendingDet
 export type GoogleTrendsTrendingDetailResponse = CrawloraResponse<ModelTrendsExploreResponseDoc>;
 export interface GoogleTrendsTrendingDetailParams {
   "request": GoogleTrendsTrendingDetailBody;
+}
+
+export type GoogleVideosResponse = CrawloraResponse<ModelGoogleVideosResponseDoc>;
+export interface GoogleVideosParams {
+  "q": string;
+  "page"?: number;
+  "count"?: number;
+  "country"?: string;
+  "lang"?: string;
 }
 
 export type GooglePlayAppResponse = CrawloraResponse<ModelGoogleplayAppDetailsResponse>;
@@ -11296,6 +11363,7 @@ export interface GoogleService {
   jobs<T = GoogleJobsResponse>(params: GoogleJobsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mapPlace<T = GoogleMapPlaceResponse>(params: GoogleMapPlaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mapSearch<T = GoogleMapSearchResponse>(params: GoogleMapSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  news<T = GoogleNewsResponse>(params: GoogleNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = GoogleSearchResponse>(params: GoogleSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   suggest<T = GoogleSuggestResponse>(params: GoogleSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trendsCategories<T = GoogleTrendsCategoriesResponse>(params?: GoogleTrendsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -11309,6 +11377,7 @@ export interface GoogleService {
   trendsLocations<T = GoogleTrendsLocationsResponse>(params?: GoogleTrendsLocationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trendsTrending<T = GoogleTrendsTrendingResponse>(params?: GoogleTrendsTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trendsTrendingDetail<T = GoogleTrendsTrendingDetailResponse>(params: GoogleTrendsTrendingDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  videos<T = GoogleVideosResponse>(params: GoogleVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GooglePlayService {
@@ -11735,6 +11804,7 @@ export interface OperationParamsMap {
   "google-jobs": GoogleJobsParams;
   "google-map-place": GoogleMapPlaceParams;
   "google-map-search": GoogleMapSearchParams;
+  "google-news": GoogleNewsParams;
   "google-search": GoogleSearchParams;
   "google-suggest": GoogleSuggestParams;
   "google-trends-categories": GoogleTrendsCategoriesParams;
@@ -11748,6 +11818,7 @@ export interface OperationParamsMap {
   "google-trends-locations": GoogleTrendsLocationsParams;
   "google-trends-trending": GoogleTrendsTrendingParams;
   "google-trends-trending-detail": GoogleTrendsTrendingDetailParams;
+  "google-videos": GoogleVideosParams;
   "googleplay-app": GooglePlayAppParams;
   "googleplay-categories": GooglePlayCategoriesParams;
   "googleplay-datasafety": GooglePlayDatasafetyParams;
@@ -12074,6 +12145,7 @@ export interface OperationResponseMap {
   "google-jobs": GoogleJobsResponse;
   "google-map-place": GoogleMapPlaceResponse;
   "google-map-search": GoogleMapSearchResponse;
+  "google-news": GoogleNewsResponse;
   "google-search": GoogleSearchResponse;
   "google-suggest": GoogleSuggestResponse;
   "google-trends-categories": GoogleTrendsCategoriesResponse;
@@ -12087,6 +12159,7 @@ export interface OperationResponseMap {
   "google-trends-locations": GoogleTrendsLocationsResponse;
   "google-trends-trending": GoogleTrendsTrendingResponse;
   "google-trends-trending-detail": GoogleTrendsTrendingDetailResponse;
+  "google-videos": GoogleVideosResponse;
   "googleplay-app": GooglePlayAppResponse;
   "googleplay-categories": GooglePlayCategoriesResponse;
   "googleplay-datasafety": GooglePlayDatasafetyResponse;
@@ -12413,6 +12486,7 @@ export interface OperationRequiredParamsMap {
   "google-jobs": true;
   "google-map-place": true;
   "google-map-search": true;
+  "google-news": true;
   "google-search": true;
   "google-suggest": true;
   "google-trends-categories": false;
@@ -12426,6 +12500,7 @@ export interface OperationRequiredParamsMap {
   "google-trends-locations": false;
   "google-trends-trending": false;
   "google-trends-trending-detail": true;
+  "google-videos": true;
   "googleplay-app": true;
   "googleplay-categories": false;
   "googleplay-datasafety": true;
@@ -12759,6 +12834,7 @@ export type OperationIdLiteral =
   | "google-jobs"
   | "google-map-place"
   | "google-map-search"
+  | "google-news"
   | "google-search"
   | "google-suggest"
   | "google-trends-categories"
@@ -12772,6 +12848,7 @@ export type OperationIdLiteral =
   | "google-trends-locations"
   | "google-trends-trending"
   | "google-trends-trending-detail"
+  | "google-videos"
   | "googleplay-app"
   | "googleplay-categories"
   | "googleplay-datasafety"
@@ -13097,6 +13174,7 @@ export declare const OperationIds: Readonly<{
   GoogleJobs: "google-jobs";
   GoogleMapPlace: "google-map-place";
   GoogleMapSearch: "google-map-search";
+  GoogleNews: "google-news";
   GooglePlayApp: "googleplay-app";
   GooglePlayCategories: "googleplay-categories";
   GooglePlayDatasafety: "googleplay-datasafety";
@@ -13120,6 +13198,7 @@ export declare const OperationIds: Readonly<{
   GoogleTrendsLocations: "google-trends-locations";
   GoogleTrendsTrending: "google-trends-trending";
   GoogleTrendsTrendingDetail: "google-trends-trending-detail";
+  GoogleVideos: "google-videos";
   InstagramPost: "instagram-post";
   InstagramProfile: "instagram-profile";
   InstagramReels: "instagram-reels";

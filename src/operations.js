@@ -4807,6 +4807,53 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "google-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "google-news",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/google/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "google-search": {
     "bodyParam": "searchOption",
     "bodyRequired": true,
@@ -5415,6 +5462,53 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "google-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "google-videos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/google/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -13518,6 +13612,7 @@ export const groups = {
     "jobs": "google-jobs",
     "mapPlace": "google-map-place",
     "mapSearch": "google-map-search",
+    "news": "google-news",
     "search": "google-search",
     "suggest": "google-suggest",
     "trendsCategories": "google-trends-categories",
@@ -13530,7 +13625,8 @@ export const groups = {
     "trendsExploreTopQueries": "google-trends-explore-top-queries",
     "trendsLocations": "google-trends-locations",
     "trendsTrending": "google-trends-trending",
-    "trendsTrendingDetail": "google-trends-trending-detail"
+    "trendsTrendingDetail": "google-trends-trending-detail",
+    "videos": "google-videos"
   },
   "googlePlay": {
     "app": "googleplay-app",
@@ -13800,7 +13896,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 336;
+export const operationCount = 338;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -13904,6 +14000,7 @@ export const OperationIds = Object.freeze({
   "GoogleJobs": "google-jobs",
   "GoogleMapPlace": "google-map-place",
   "GoogleMapSearch": "google-map-search",
+  "GoogleNews": "google-news",
   "GooglePlayApp": "googleplay-app",
   "GooglePlayCategories": "googleplay-categories",
   "GooglePlayDatasafety": "googleplay-datasafety",
@@ -13927,6 +14024,7 @@ export const OperationIds = Object.freeze({
   "GoogleTrendsLocations": "google-trends-locations",
   "GoogleTrendsTrending": "google-trends-trending",
   "GoogleTrendsTrendingDetail": "google-trends-trending-detail",
+  "GoogleVideos": "google-videos",
   "InstagramPost": "instagram-post",
   "InstagramProfile": "instagram-profile",
   "InstagramReels": "instagram-reels",
