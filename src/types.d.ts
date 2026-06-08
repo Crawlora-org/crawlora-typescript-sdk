@@ -943,6 +943,600 @@ export interface ModelBingVideosResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelBoxofficemojoCalendarChangeDay {
+  "change_date"?: string;
+  "changes"?: Array<ModelBoxofficemojoCalendarChangeRow>;
+}
+
+export interface ModelBoxofficemojoCalendarChangeRow {
+  "distributor"?: string;
+  "new_date"?: string;
+  "new_date_path"?: string;
+  "new_date_url"?: string;
+  "old_date"?: string;
+  "old_date_path"?: string;
+  "old_date_url"?: string;
+  "release"?: string;
+  "release_path"?: string;
+  "release_url"?: string;
+  "scale"?: string;
+}
+
+export interface ModelBoxofficemojoCalendarChangesResponse {
+  "fetched_at"?: string;
+  "offset"?: number;
+  "public_page_derived"?: boolean;
+  "range"?: string;
+  "results"?: Array<ModelBoxofficemojoCalendarChangeDay>;
+  "source_url"?: string;
+}
+
+export interface ModelBoxofficemojoCalendarDateResponse {
+  "date"?: string;
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoCalendarReleaseRow>;
+  "source_url"?: string;
+}
+
+export interface ModelBoxofficemojoCalendarDateRows {
+  "date"?: string;
+  "releases"?: Array<ModelBoxofficemojoCalendarReleaseRow>;
+}
+
+export interface ModelBoxofficemojoCalendarReleaseRow {
+  "cast"?: Array<string>;
+  "distributor"?: string;
+  "genres"?: Array<string>;
+  "image_hi_res_url"?: string;
+  "image_url"?: string;
+  "release"?: string;
+  "release_path"?: string;
+  "release_url"?: string;
+  "scale"?: string;
+}
+
+export interface ModelBoxofficemojoCalendarResponse {
+  "fetched_at"?: string;
+  "month"?: number;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoCalendarDateRows>;
+  "source_url"?: string;
+  "year"?: number;
+}
+
+export interface ModelBoxofficemojoDomesticDateResponse {
+  "date"?: string;
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoDomesticDateRow>;
+  "source_url"?: string;
+}
+
+export interface ModelBoxofficemojoDomesticDateRow {
+  "average"?: number;
+  "average_raw"?: string;
+  "daily_gross"?: number;
+  "daily_gross_raw"?: string;
+  "day_change"?: number;
+  "days"?: number;
+  "distributor"?: string;
+  "rank"?: number;
+  "release"?: string;
+  "release_path"?: string;
+  "release_url"?: string;
+  "theaters"?: number;
+  "total_gross"?: number;
+  "total_gross_raw"?: string;
+  "week_change"?: number;
+  "yesterday_rank"?: number;
+}
+
+export interface ModelBoxofficemojoDomesticWeekendResponse {
+  "date_range"?: string;
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoDomesticWeekendRow>;
+  "source_url"?: string;
+  "week"?: number;
+  "year"?: number;
+}
+
+export interface ModelBoxofficemojoDomesticWeekendRow {
+  "average"?: number;
+  "average_raw"?: string;
+  "change_percent"?: number;
+  "distributor"?: string;
+  "estimated"?: boolean;
+  "gross"?: number;
+  "gross_raw"?: string;
+  "last_week_rank"?: number;
+  "new_this_week"?: boolean;
+  "rank"?: number;
+  "release"?: string;
+  "theater_change"?: number;
+  "theaters"?: number;
+  "title_id"?: string;
+  "title_path"?: string;
+  "title_url"?: string;
+  "total_gross"?: number;
+  "total_gross_raw"?: string;
+  "weeks"?: number;
+}
+
+export interface ModelBoxofficemojoDomesticYearResponse {
+  "fetched_at"?: string;
+  "grosses_option"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoDomesticYearRow>;
+  "source_url"?: string;
+  "year"?: number;
+}
+
+export interface ModelBoxofficemojoDomesticYearRow {
+  "distributor"?: string;
+  "gross"?: number;
+  "gross_raw"?: string;
+  "new_this_year"?: boolean;
+  "rank"?: number;
+  "release"?: string;
+  "release_date"?: string;
+  "release_path"?: string;
+  "release_url"?: string;
+  "theaters"?: number;
+  "total_gross"?: number;
+  "total_gross_raw"?: string;
+}
+
+export interface ModelBoxofficemojoLifetimeGrossRow {
+  "lifetime_gross"?: number;
+  "lifetime_gross_raw"?: string;
+  "rank"?: number;
+  "title"?: string;
+  "title_id"?: string;
+  "title_path"?: string;
+  "title_url"?: string;
+  "year"?: number;
+}
+
+export interface ModelBoxofficemojoLifetimeGrossesResponse {
+  "area"?: string;
+  "fetched_at"?: string;
+  "offset"?: number;
+  "public_page_derived"?: boolean;
+  "range"?: string;
+  "results"?: Array<ModelBoxofficemojoLifetimeGrossRow>;
+  "source_url"?: string;
+}
+
+export interface ModelBoxofficemojoMarketGross {
+  "gross_raw"?: string;
+  "lifetime_gross"?: number;
+  "market"?: string;
+  "rank"?: number;
+  "release_count"?: number;
+}
+
+export interface ModelBoxofficemojoMarketGrossTable {
+  "markets"?: Array<ModelBoxofficemojoMarketGross>;
+  "region"?: string;
+}
+
+export interface ModelBoxofficemojoReleaseDailyRow {
+  "average"?: number;
+  "average_raw"?: string;
+  "daily_gross"?: number;
+  "daily_gross_raw"?: string;
+  "date"?: string;
+  "day"?: number;
+  "day_change"?: number;
+  "day_of_week"?: string;
+  "rank"?: number;
+  "theaters"?: number;
+  "total_gross"?: number;
+  "total_gross_raw"?: string;
+  "week_change"?: number;
+}
+
+export interface ModelBoxofficemojoReleaseGroup {
+  "domestic"?: number;
+  "domestic_raw"?: string;
+  "international"?: number;
+  "international_raw"?: string;
+  "markets"?: string;
+  "name"?: string;
+  "path"?: string;
+  "rollout"?: string;
+  "url"?: string;
+  "worldwide"?: number;
+  "worldwide_raw"?: string;
+}
+
+export interface ModelBoxofficemojoReleaseGroupMarketRow {
+  "gross"?: number;
+  "gross_raw"?: string;
+  "market"?: string;
+  "opening"?: number;
+  "opening_raw"?: string;
+  "release_date"?: string;
+  "release_path"?: string;
+  "release_url"?: string;
+}
+
+export interface ModelBoxofficemojoReleaseGroupRegionTable {
+  "markets"?: Array<ModelBoxofficemojoReleaseGroupMarketRow>;
+  "region"?: string;
+}
+
+export interface ModelBoxofficemojoReleaseGroupResponse {
+  "fetched_at"?: string;
+  "path"?: string;
+  "public_page_derived"?: boolean;
+  "regions"?: Array<ModelBoxofficemojoReleaseGroupRegionTable>;
+  "release_group_id"?: string;
+  "source_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBoxofficemojoReleaseResponse {
+  "daily_grosses"?: Array<ModelBoxofficemojoReleaseDailyRow>;
+  "fetched_at"?: string;
+  "path"?: string;
+  "public_page_derived"?: boolean;
+  "release_id"?: string;
+  "source_url"?: string;
+  "summary"?: ModelBoxofficemojoReleaseSummary;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBoxofficemojoReleaseSummary {
+  "budget"?: number;
+  "budget_raw"?: string;
+  "distributor"?: string;
+  "genres"?: string;
+  "mpaa"?: string;
+  "opening"?: number;
+  "opening_raw"?: string;
+  "opening_theaters"?: number;
+  "release_date"?: string;
+  "running_time"?: string;
+  "widest_release"?: number;
+  "widest_release_raw"?: string;
+}
+
+export interface ModelBoxofficemojoShowdownRelease {
+  "close_date"?: string;
+  "distributor"?: string;
+  "domestic_gross"?: number;
+  "domestic_gross_raw"?: string;
+  "domestic_share"?: number;
+  "foreign_gross"?: number;
+  "foreign_gross_raw"?: string;
+  "foreign_share"?: number;
+  "genre"?: string;
+  "gross_to_date"?: number;
+  "gross_to_date_raw"?: string;
+  "mpa_rating"?: string;
+  "opening_share"?: number;
+  "opening_weekend"?: number;
+  "opening_weekend_raw"?: string;
+  "production_budget"?: number;
+  "production_budget_raw"?: string;
+  "release"?: string;
+  "release_date"?: string;
+  "release_path"?: string;
+  "release_url"?: string;
+  "running_time"?: string;
+  "weekends_at_number_one"?: number;
+  "weekends_in_top_ten"?: number;
+  "widest_release"?: number;
+  "worldwide_gross"?: number;
+  "worldwide_gross_raw"?: string;
+}
+
+export interface ModelBoxofficemojoShowdownResponse {
+  "fetched_at"?: string;
+  "name"?: string;
+  "path"?: string;
+  "public_page_derived"?: boolean;
+  "releases"?: Array<ModelBoxofficemojoShowdownRelease>;
+  "showdown_id"?: string;
+  "source_url"?: string;
+  "summary"?: ModelBoxofficemojoShowdownSummary;
+  "url"?: string;
+}
+
+export interface ModelBoxofficemojoShowdownRow {
+  "name"?: string;
+  "num_releases"?: number;
+  "path"?: string;
+  "showdown_id"?: string;
+  "top_release"?: string;
+  "top_release_gross"?: number;
+  "top_release_gross_raw"?: string;
+  "top_release_path"?: string;
+  "top_release_url"?: string;
+  "total_gross"?: number;
+  "total_gross_raw"?: string;
+  "url"?: string;
+}
+
+export interface ModelBoxofficemojoShowdownSummary {
+  "highest_opening_release"?: string;
+  "highest_opening_weekend"?: number;
+  "release_count"?: number;
+  "top_domestic_gross"?: number;
+  "top_domestic_release"?: string;
+  "top_worldwide_gross"?: number;
+  "top_worldwide_release"?: string;
+  "total_domestic_gross"?: number;
+  "total_worldwide_gross"?: number;
+}
+
+export interface ModelBoxofficemojoShowdownsResponse {
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoShowdownRow>;
+  "source_url"?: string;
+}
+
+export interface ModelBoxofficemojoTaxonomyDetailResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "kind"?: string;
+  "name"?: string;
+  "path"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoTaxonomyMovieRow>;
+  "source_url"?: string;
+  "summary"?: ModelBoxofficemojoTaxonomySummary;
+  "url"?: string;
+}
+
+export interface ModelBoxofficemojoTaxonomyListResponse {
+  "fetched_at"?: string;
+  "kind"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoTaxonomyListRow>;
+  "source_url"?: string;
+}
+
+export interface ModelBoxofficemojoTaxonomyListRow {
+  "id"?: string;
+  "lifetime_gross"?: number;
+  "lifetime_gross_raw"?: string;
+  "name"?: string;
+  "path"?: string;
+  "rank"?: number;
+  "releases"?: number;
+  "url"?: string;
+}
+
+export interface ModelBoxofficemojoTaxonomyMovieRow {
+  "distributor"?: string;
+  "lifetime_gross"?: number;
+  "lifetime_gross_raw"?: string;
+  "max_theaters"?: number;
+  "open_theaters"?: number;
+  "opening"?: number;
+  "opening_raw"?: string;
+  "rank"?: number;
+  "release"?: string;
+  "release_date"?: string;
+  "title_id"?: string;
+  "title_path"?: string;
+  "title_url"?: string;
+}
+
+export interface ModelBoxofficemojoTaxonomySummary {
+  "movie_count"?: number;
+  "top_distributor"?: string;
+  "top_release"?: string;
+  "top_release_gross"?: number;
+  "total_gross"?: number;
+}
+
+export interface ModelBoxofficemojoTitleResponse {
+  "fetched_at"?: string;
+  "market_grosses"?: Array<ModelBoxofficemojoMarketGrossTable>;
+  "path"?: string;
+  "public_page_derived"?: boolean;
+  "release_groups"?: Array<ModelBoxofficemojoReleaseGroup>;
+  "source_url"?: string;
+  "title"?: string;
+  "title_id"?: string;
+  "url"?: string;
+}
+
+export interface ModelBoxofficemojoWeekendDistributorResponse {
+  "date_range"?: string;
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoWeekendDistributorRow>;
+  "source_url"?: string;
+  "week"?: number;
+  "year"?: number;
+}
+
+export interface ModelBoxofficemojoWeekendDistributorRow {
+  "change_percent"?: number;
+  "distributor"?: string;
+  "gross_share"?: number;
+  "last_week_rank"?: number;
+  "rank"?: number;
+  "releases"?: number;
+  "share"?: number;
+  "top_release"?: string;
+  "top_release_path"?: string;
+  "top_release_url"?: string;
+  "total_gross"?: number;
+  "total_gross_raw"?: string;
+  "week_in_release"?: number;
+  "weekend_gross"?: number;
+  "weekend_gross_raw"?: string;
+}
+
+export interface ModelBoxofficemojoWeekendEstimateRow {
+  "actual_gross"?: number;
+  "actual_gross_raw"?: string;
+  "actual_rank"?: number;
+  "actual_total"?: number;
+  "actual_total_raw"?: string;
+  "distributor"?: string;
+  "estimated_gross"?: number;
+  "estimated_gross_raw"?: string;
+  "estimated_rank"?: number;
+  "estimated_total"?: number;
+  "estimated_total_raw"?: string;
+  "gross_diff"?: number;
+  "gross_diff_percent"?: number;
+  "gross_diff_raw"?: string;
+  "rank_diff"?: number;
+  "release"?: string;
+  "release_path"?: string;
+  "release_url"?: string;
+  "theaters"?: number;
+  "weekend_in_release"?: number;
+}
+
+export interface ModelBoxofficemojoWeekendEstimatesResponse {
+  "date_range"?: string;
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoWeekendEstimateRow>;
+  "source_url"?: string;
+  "week"?: number;
+  "year"?: number;
+}
+
+export interface ModelBoxofficemojoWorldwideYearResponse {
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelBoxofficemojoWorldwideYearRow>;
+  "source_url"?: string;
+  "year"?: number;
+}
+
+export interface ModelBoxofficemojoWorldwideYearRow {
+  "domestic"?: number;
+  "domestic_raw"?: string;
+  "domestic_share"?: number;
+  "foreign"?: number;
+  "foreign_raw"?: string;
+  "foreign_share"?: number;
+  "rank"?: number;
+  "release_group"?: string;
+  "title_id"?: string;
+  "title_path"?: string;
+  "title_url"?: string;
+  "worldwide"?: number;
+  "worldwide_raw"?: string;
+}
+
+export interface ModelBoxofficemojoCalendarChangesResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoCalendarChangesResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoCalendarDateResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoCalendarDateResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoCalendarResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoCalendarResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoDomesticDateResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoDomesticDateResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoDomesticWeekendResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoDomesticWeekendResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoDomesticYearResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoDomesticYearResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoLifetimeGrossesResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoLifetimeGrossesResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoReleaseGroupResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoReleaseGroupResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoReleaseResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoReleaseResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoShowdownResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoShowdownResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoShowdownsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoShowdownsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoTaxonomyDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoTaxonomyDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoTaxonomyListResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoTaxonomyListResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoTitleResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoTitleResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoWeekendDistributorResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoWeekendDistributorResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoWeekendEstimatesResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoWeekendEstimatesResponse;
+  "msg"?: string;
+}
+
+export interface ModelBoxofficemojoWorldwideYearResponseDoc {
+  "code"?: number;
+  "data"?: ModelBoxofficemojoWorldwideYearResponse;
+  "msg"?: string;
+}
+
 export interface ModelBrandAddress {
   "city"?: string;
   "country"?: string;
@@ -2957,6 +3551,422 @@ export interface ModelGoogleplaySuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelImdbAlternateTitle {
+  "country"?: string;
+  "title"?: string;
+  "type"?: string;
+}
+
+export interface ModelImdbAwardItem {
+  "award"?: string;
+  "category"?: string;
+  "event"?: string;
+  "notes"?: string;
+  "public_signals"?: number;
+  "recipients"?: Array<ModelImdbPerson>;
+  "result"?: string;
+  "titles"?: Array<ModelImdbAwardTitle>;
+  "year"?: string;
+}
+
+export interface ModelImdbAwardTitle {
+  "id"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbCompanyItem {
+  "name"?: string;
+  "note"?: string;
+  "public_signals"?: number;
+  "url"?: string;
+}
+
+export interface ModelImdbCompanySection {
+  "companies"?: Array<ModelImdbCompanyItem>;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelImdbCreditItem {
+  "character"?: string;
+  "name"?: string;
+  "role"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbCreditSection {
+  "credits"?: Array<ModelImdbCreditItem>;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelImdbCreditsResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "public_page_derived"?: boolean;
+  "sections"?: Array<ModelImdbCreditSection>;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbEpisodeItem {
+  "air_date"?: string;
+  "episode"?: number;
+  "id"?: string;
+  "plot"?: string;
+  "public_signals"?: number;
+  "rating_count"?: number;
+  "rating_value"?: number;
+  "season"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbEpisodesResponse {
+  "episodes"?: Array<ModelImdbEpisodeItem>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "limit"?: number;
+  "public_page_derived"?: boolean;
+  "season"?: number;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbKeywordItem {
+  "keyword"?: string;
+  "public_signals"?: number;
+  "url"?: string;
+}
+
+export interface ModelImdbLocationItem {
+  "location"?: string;
+  "note"?: string;
+  "public_signals"?: number;
+}
+
+export interface ModelImdbNameAwardsResponse {
+  "awards"?: Array<ModelImdbAwardItem>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbNameCreditItem {
+  "episodes"?: string;
+  "id"?: string;
+  "role"?: string;
+  "title"?: string;
+  "url"?: string;
+  "year"?: string;
+}
+
+export interface ModelImdbNameCreditSection {
+  "credits"?: Array<ModelImdbNameCreditItem>;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelImdbNameCreditsResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "public_page_derived"?: boolean;
+  "sections"?: Array<ModelImdbNameCreditSection>;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbNameKnownForItem {
+  "category"?: string;
+  "id"?: string;
+  "title"?: string;
+  "url"?: string;
+  "year"?: string;
+}
+
+export interface ModelImdbNameResponse {
+  "bio"?: string;
+  "birth_date"?: string;
+  "birth_place"?: string;
+  "death_date"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "known_for"?: Array<ModelImdbNameKnownForItem>;
+  "name"?: string;
+  "professions"?: Array<string>;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbParentalGuideCategory {
+  "items"?: Array<string>;
+  "name"?: string;
+  "severity"?: string;
+  "slug"?: string;
+}
+
+export interface ModelImdbParentalGuideResponse {
+  "categories"?: Array<ModelImdbParentalGuideCategory>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "summary"?: ModelImdbParentalGuideSummary;
+  "url"?: string;
+}
+
+export interface ModelImdbParentalGuideSummary {
+  "categories_count"?: number;
+  "highest_severity"?: string;
+  "item_count"?: number;
+  "present_categories"?: Array<string>;
+  "public_page_signals"?: number;
+  "severity_counts"?: Record<string, number>;
+}
+
+export interface ModelImdbPerson {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbPublicFactItem {
+  "public_signals"?: number;
+  "spoiler"?: boolean;
+  "text"?: string;
+}
+
+export interface ModelImdbPublicFactsAnalysisSummary {
+  "company_count"?: number;
+  "company_section_count"?: number;
+  "filming_location_count"?: number;
+  "goof_count"?: number;
+  "keyword_count"?: number;
+  "public_fact_coverage_pages"?: number;
+  "public_page_signals"?: number;
+  "quote_count"?: number;
+  "spoiler_fact_count"?: number;
+  "trivia_count"?: number;
+}
+
+export interface ModelImdbReleaseInfoItem {
+  "country"?: string;
+  "date"?: string;
+  "note"?: string;
+}
+
+export interface ModelImdbReleaseInfoResponse {
+  "alternate_titles"?: Array<ModelImdbAlternateTitle>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "public_page_derived"?: boolean;
+  "releases"?: Array<ModelImdbReleaseInfoItem>;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbReviewItem {
+  "author"?: string;
+  "date"?: string;
+  "helpful_votes"?: number;
+  "helpfulness"?: string;
+  "id"?: string;
+  "public_signals"?: number;
+  "rating"?: number;
+  "spoiler"?: boolean;
+  "text"?: string;
+  "title"?: string;
+  "total_votes"?: number;
+  "url"?: string;
+}
+
+export interface ModelImdbReviewsResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "limit"?: number;
+  "public_page_derived"?: boolean;
+  "reviews"?: Array<ModelImdbReviewItem>;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbSearchItem {
+  "description"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "title"?: string;
+  "title_type"?: string;
+  "url"?: string;
+  "year"?: string;
+}
+
+export interface ModelImdbSearchResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "query"?: string;
+  "results"?: Array<ModelImdbSearchItem>;
+  "source_url"?: string;
+}
+
+export interface ModelImdbTechnicalSpecItem {
+  "name"?: string;
+  "slug"?: string;
+  "values"?: Array<string>;
+}
+
+export interface ModelImdbTechnicalSpecsResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "specs"?: Array<ModelImdbTechnicalSpecItem>;
+  "url"?: string;
+}
+
+export interface ModelImdbTitleAwardsResponse {
+  "awards"?: Array<ModelImdbAwardItem>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbTitlePublicFactsAnalysisResponse {
+  "company_credits"?: ModelImdbTitlePublicFactsResponse;
+  "filming_locations"?: ModelImdbTitlePublicFactsResponse;
+  "goofs"?: ModelImdbTitlePublicFactsResponse;
+  "keywords"?: ModelImdbTitlePublicFactsResponse;
+  "not_viewing_advice"?: boolean;
+  "public_page_derived"?: boolean;
+  "quotes"?: ModelImdbTitlePublicFactsResponse;
+  "summary"?: ModelImdbPublicFactsAnalysisSummary;
+  "trivia"?: ModelImdbTitlePublicFactsResponse;
+}
+
+export interface ModelImdbTitlePublicFactsResponse {
+  "company_credits"?: Array<ModelImdbCompanySection>;
+  "facts"?: Array<ModelImdbPublicFactItem>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "keywords"?: Array<ModelImdbKeywordItem>;
+  "locations"?: Array<ModelImdbLocationItem>;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelImdbTitleResponse {
+  "cast"?: Array<ModelImdbPerson>;
+  "content_rating"?: string;
+  "directors"?: Array<ModelImdbPerson>;
+  "fetched_at"?: string;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "image_url"?: string;
+  "plot"?: string;
+  "popularity_rank"?: number;
+  "public_page_derived"?: boolean;
+  "rating_count"?: number;
+  "rating_value"?: number;
+  "release_date"?: string;
+  "runtime_minutes"?: number;
+  "source_url"?: string;
+  "title"?: string;
+  "title_type"?: string;
+  "url"?: string;
+  "year"?: string;
+}
+
+export interface ModelImdbCreditsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbCreditsResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbEpisodesResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbEpisodesResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbNameAwardsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbNameAwardsResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbNameCreditsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbNameCreditsResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbNameResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbNameResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbParentalGuideResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbParentalGuideResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbReleaseInfoResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbReleaseInfoResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbTechnicalSpecsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbTechnicalSpecsResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbTitleAwardsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbTitleAwardsResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbTitlePublicFactsAnalysisResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbTitlePublicFactsAnalysisResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbTitlePublicFactsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbTitlePublicFactsResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbTitleResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbTitleResponse;
+  "msg"?: string;
+}
+
 export interface ModelInstagramBusinessAddress {
   "city_name"?: string;
   "latitude"?: number;
@@ -3555,6 +4565,429 @@ export interface ModelJustwatchTitleResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelKalshiBatchMarketHistoryResponse {
+  "end_ts"?: number;
+  "fetched_at"?: string;
+  "include_latest_before_start"?: boolean;
+  "markets"?: Array<ModelKalshiMarketHistoryResponse>;
+  "period_interval"?: number;
+  "source_url"?: string;
+  "start_ts"?: number;
+  "tickers"?: Array<string>;
+}
+
+export interface ModelKalshiBatchOrderBookResponse {
+  "books"?: Array<ModelKalshiOrderBookResponse>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "tickers"?: Array<string>;
+}
+
+export interface ModelKalshiCandleOhlc {
+  "close"?: number;
+  "high"?: number;
+  "low"?: number;
+  "mean"?: number;
+  "open"?: number;
+  "previous"?: number;
+}
+
+export interface ModelKalshiCompetition {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelKalshiEventHistoryResponse {
+  "adjusted_end_ts"?: number;
+  "end_ts"?: number;
+  "event_ticker"?: string;
+  "fetched_at"?: string;
+  "include_latest_before_start"?: boolean;
+  "market_tickers"?: Array<string>;
+  "markets"?: Array<ModelKalshiMarketHistoryResponse>;
+  "period_interval"?: number;
+  "series_ticker"?: string;
+  "source_url"?: string;
+  "start_ts"?: number;
+}
+
+export interface ModelKalshiEventMetadataResponse {
+  "competition"?: ModelKalshiCompetition;
+  "competition_scope"?: string;
+  "event_ticker"?: string;
+  "featured_image_url"?: string;
+  "fetched_at"?: string;
+  "image_url"?: string;
+  "market_details"?: Array<ModelKalshiMarketDetail>;
+  "settlement_sources"?: Array<ModelKalshiSettlementSource>;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiEventResponse {
+  "event"?: ModelKalshiEventRow;
+  "fetched_at"?: string;
+  "markets"?: Array<ModelKalshiMarketRow>;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiEventRow {
+  "available_on_brokers"?: boolean;
+  "category"?: string;
+  "collateral_return_type"?: string;
+  "event_ticker"?: string;
+  "last_updated"?: string;
+  "markets"?: Array<ModelKalshiMarketRow>;
+  "mutually_exclusive"?: boolean;
+  "series_ticker"?: string;
+  "strike_period"?: string;
+  "sub_title"?: string;
+  "title"?: string;
+}
+
+export interface ModelKalshiEventsResponse {
+  "cursor"?: string;
+  "events"?: Array<ModelKalshiEventRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiExchangeHoursBlock {
+  "close_time"?: string;
+  "open_time"?: string;
+}
+
+export interface ModelKalshiExchangeMaintenanceWindow {
+  "end_time"?: string;
+  "reason"?: string;
+  "start_time"?: string;
+}
+
+export interface ModelKalshiExchangeScheduleResponse {
+  "fetched_at"?: string;
+  "maintenance_windows"?: Array<ModelKalshiExchangeMaintenanceWindow>;
+  "source_url"?: string;
+  "standard_hours"?: Array<ModelKalshiExchangeStandardHours>;
+}
+
+export interface ModelKalshiExchangeStandardHours {
+  "end_time"?: string;
+  "friday"?: Array<ModelKalshiExchangeHoursBlock>;
+  "monday"?: Array<ModelKalshiExchangeHoursBlock>;
+  "saturday"?: Array<ModelKalshiExchangeHoursBlock>;
+  "start_time"?: string;
+  "sunday"?: Array<ModelKalshiExchangeHoursBlock>;
+  "thursday"?: Array<ModelKalshiExchangeHoursBlock>;
+  "tuesday"?: Array<ModelKalshiExchangeHoursBlock>;
+  "wednesday"?: Array<ModelKalshiExchangeHoursBlock>;
+}
+
+export interface ModelKalshiExchangeStatusResponse {
+  "exchange_active"?: boolean;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "trading_active"?: boolean;
+}
+
+export interface ModelKalshiHistoricalCutoffResponse {
+  "fetched_at"?: string;
+  "market_settled_at"?: string;
+  "orders_updated_at"?: string;
+  "source_url"?: string;
+  "trades_created_at"?: string;
+}
+
+export interface ModelKalshiHistoricalMarketResponse {
+  "fetched_at"?: string;
+  "market"?: ModelKalshiMarketRow;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiHistoricalMarketsResponse {
+  "cursor"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "markets"?: Array<ModelKalshiMarketRow>;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiHistoricalTradesResponse {
+  "cursor"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "max_ts"?: number;
+  "min_ts"?: number;
+  "source_url"?: string;
+  "ticker"?: string;
+  "trades"?: Array<ModelKalshiTradeRow>;
+}
+
+export interface ModelKalshiMarketCandlestick {
+  "end_period_at"?: string;
+  "end_period_ts"?: number;
+  "open_interest"?: number;
+  "price"?: ModelKalshiCandleOhlc;
+  "volume"?: number;
+  "yes_ask"?: ModelKalshiCandleOhlc;
+  "yes_bid"?: ModelKalshiCandleOhlc;
+}
+
+export interface ModelKalshiMarketDetail {
+  "color_code"?: string;
+  "image_url"?: string;
+  "market_ticker"?: string;
+}
+
+export interface ModelKalshiMarketHistoryResponse {
+  "candlesticks"?: Array<ModelKalshiMarketCandlestick>;
+  "end_ts"?: number;
+  "fetched_at"?: string;
+  "include_latest_before_start"?: boolean;
+  "period_interval"?: number;
+  "series_ticker"?: string;
+  "source_url"?: string;
+  "start_ts"?: number;
+  "ticker"?: string;
+}
+
+export interface ModelKalshiMarketResponse {
+  "fetched_at"?: string;
+  "market"?: ModelKalshiMarketRow;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiMarketRow {
+  "close_time"?: string;
+  "event_ticker"?: string;
+  "expiration_time"?: string;
+  "last_price"?: number;
+  "liquidity"?: number;
+  "market_type"?: string;
+  "no_ask"?: number;
+  "no_bid"?: number;
+  "open_interest"?: number;
+  "open_time"?: string;
+  "previous_price"?: number;
+  "response_price_unit"?: string;
+  "result"?: string;
+  "rules_primary"?: string;
+  "status"?: string;
+  "sub_title"?: string;
+  "ticker"?: string;
+  "title"?: string;
+  "volume"?: number;
+  "volume_24h"?: number;
+  "yes_ask"?: number;
+  "yes_bid"?: number;
+}
+
+export interface ModelKalshiMarketsResponse {
+  "cursor"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "markets"?: Array<ModelKalshiMarketRow>;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiMultivariateEventsResponse {
+  "cursor"?: string;
+  "events"?: Array<ModelKalshiEventRow>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiOrderBookLevel {
+  "price"?: number;
+  "size"?: number;
+}
+
+export interface ModelKalshiOrderBookResponse {
+  "fetched_at"?: string;
+  "no"?: Array<ModelKalshiOrderBookLevel>;
+  "raw_unit_hint"?: string;
+  "source_url"?: string;
+  "ticker"?: string;
+  "yes"?: Array<ModelKalshiOrderBookLevel>;
+}
+
+export interface ModelKalshiSeriesDetailResponse {
+  "fetched_at"?: string;
+  "series"?: ModelKalshiSeriesRow;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiSeriesResponse {
+  "cursor"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "series"?: Array<ModelKalshiSeriesRow>;
+  "source_url"?: string;
+}
+
+export interface ModelKalshiSeriesRow {
+  "category"?: string;
+  "contract_terms_url"?: string;
+  "contract_url"?: string;
+  "fee_multiplier"?: number;
+  "fee_type"?: string;
+  "frequency"?: string;
+  "last_updated"?: string;
+  "series_ticker"?: string;
+  "settlement_sources"?: Array<ModelKalshiSettlementSource>;
+  "title"?: string;
+}
+
+export interface ModelKalshiSettlementSource {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelKalshiTradeRow {
+  "count"?: number;
+  "created_time"?: string;
+  "created_ts"?: number;
+  "is_block_trade"?: boolean;
+  "no_price"?: number;
+  "taker_book_side"?: string;
+  "taker_outcome_side"?: string;
+  "taker_side"?: string;
+  "ticker"?: string;
+  "trade_id"?: string;
+  "yes_price"?: number;
+}
+
+export interface ModelKalshiTradesResponse {
+  "cursor"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "max_ts"?: number;
+  "min_ts"?: number;
+  "source_url"?: string;
+  "ticker"?: string;
+  "trades"?: Array<ModelKalshiTradeRow>;
+}
+
+export interface ModelKalshiBatchMarketHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiBatchMarketHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiBatchOrderBookResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiBatchOrderBookResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiEventHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiEventHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiEventMetadataResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiEventMetadataResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiEventResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiEventResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiExchangeScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiExchangeScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiExchangeStatusResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiExchangeStatusResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiHistoricalCutoffResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiHistoricalCutoffResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiHistoricalMarketResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiHistoricalMarketResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiHistoricalMarketsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiHistoricalMarketsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiHistoricalTradesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiHistoricalTradesResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiMarketHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiMarketHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiMarketResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiMarketResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiMarketsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiMarketsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiMultivariateEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiMultivariateEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiOrderBookResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiOrderBookResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiSeriesDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiSeriesDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiSeriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiSeriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelKalshiTradesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKalshiTradesResponse;
+  "msg"?: string;
+}
+
 export interface ModelLinkedinCustomer {
   "follower_count"?: number;
   "industry"?: string;
@@ -3655,6 +5088,885 @@ export interface ModelLinkedinProductResponseDoc {
 export interface ModelLinkedinShowcaseResponseDoc {
   "code"?: number;
   "data"?: ModelLinkedinLinkedinCompanyResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetaculusForecastHistoryPoint {
+  "center"?: number;
+  "centers"?: Array<number>;
+  "end_time"?: string;
+  "end_ts"?: number;
+  "forecaster_count"?: number;
+  "interval_lower_bounds"?: Array<number>;
+  "interval_upper_bounds"?: Array<number>;
+  "lower"?: number;
+  "start_time"?: string;
+  "start_ts"?: number;
+  "upper"?: number;
+}
+
+export interface ModelMetaculusForecastHistoryResponse {
+  "fetched_at"?: string;
+  "max_points"?: number;
+  "method"?: string;
+  "points"?: Array<ModelMetaculusForecastHistoryPoint>;
+  "points_count"?: number;
+  "public_page_derived"?: boolean;
+  "question"?: ModelMetaculusQuestionRow;
+  "source_url"?: string;
+}
+
+export interface ModelMetaculusForecastSummary {
+  "center"?: number;
+  "centers"?: Array<number>;
+  "forecaster_count"?: number;
+  "history_points"?: number;
+  "interval_lower_bounds"?: Array<number>;
+  "interval_upper_bounds"?: Array<number>;
+  "lower"?: number;
+  "method"?: string;
+  "upper"?: number;
+}
+
+export interface ModelMetaculusForecastsResponse {
+  "fetched_at"?: string;
+  "methods"?: Array<ModelMetaculusForecastSummary>;
+  "methods_count"?: number;
+  "public_page_derived"?: boolean;
+  "question"?: ModelMetaculusQuestionRow;
+  "source_url"?: string;
+}
+
+export interface ModelMetaculusOptionForecast {
+  "center"?: number;
+  "forecast_value"?: number;
+  "forecaster_count"?: number;
+  "index"?: number;
+  "label"?: string;
+  "lower"?: number;
+  "mean"?: number;
+  "upper"?: number;
+}
+
+export interface ModelMetaculusOptionsChange {
+  "changed_at"?: string;
+  "options"?: Array<string>;
+}
+
+export interface ModelMetaculusOptionsResponse {
+  "fetched_at"?: string;
+  "method"?: string;
+  "options"?: Array<ModelMetaculusOptionForecast>;
+  "options_count"?: number;
+  "options_history"?: Array<ModelMetaculusOptionsChange>;
+  "public_page_derived"?: boolean;
+  "question"?: ModelMetaculusQuestionRow;
+  "source_url"?: string;
+}
+
+export interface ModelMetaculusProject {
+  "emoji"?: string;
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+  "type"?: string;
+}
+
+export interface ModelMetaculusQuestionMetadataResponse {
+  "actual_close_time"?: string;
+  "actual_resolve_time"?: string;
+  "all_options_ever"?: Array<string>;
+  "default_aggregation_method"?: string;
+  "default_score_type"?: string;
+  "fetched_at"?: string;
+  "group_variable"?: string;
+  "inbound_outcome_count"?: number;
+  "include_bots_in_aggregates"?: boolean;
+  "open_lower_bound"?: boolean;
+  "open_upper_bound"?: boolean;
+  "options"?: Array<string>;
+  "options_history"?: Array<ModelMetaculusOptionsChange>;
+  "options_order"?: string;
+  "possibilities"?: string;
+  "public_page_derived"?: boolean;
+  "question"?: ModelMetaculusQuestionRow;
+  "resolution"?: string;
+  "resolution_set_time"?: string;
+  "scaling"?: ModelMetaculusQuestionScaling;
+  "short_title"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelMetaculusQuestionResponse {
+  "fetched_at"?: string;
+  "question"?: ModelMetaculusQuestionRow;
+  "source_url"?: string;
+}
+
+export interface ModelMetaculusQuestionRow {
+  "categories"?: Array<ModelMetaculusProject>;
+  "comment_count"?: number;
+  "edited_at"?: string;
+  "forecaster_count"?: number;
+  "forecasts_count"?: number;
+  "id"?: number;
+  "latest_forecast_center"?: number;
+  "latest_forecast_lower"?: number;
+  "latest_forecast_upper"?: number;
+  "open_time"?: string;
+  "projects"?: Array<ModelMetaculusProject>;
+  "public_page_derived"?: boolean;
+  "published_at"?: string;
+  "question_id"?: number;
+  "question_title"?: string;
+  "question_type"?: string;
+  "resolved"?: boolean;
+  "scheduled_close_time"?: string;
+  "scheduled_resolve_time"?: string;
+  "slug"?: string;
+  "status"?: string;
+  "title"?: string;
+  "unit"?: string;
+  "url"?: string;
+}
+
+export interface ModelMetaculusQuestionScaling {
+  "continuous_range"?: Array<string>;
+  "inbound_outcome_count"?: number;
+  "nominal_max"?: number;
+  "nominal_min"?: number;
+  "open_lower_bound"?: boolean;
+  "open_upper_bound"?: boolean;
+  "range_max"?: number;
+  "range_min"?: number;
+  "zero_point"?: number;
+}
+
+export interface ModelMetaculusQuestionsResponse {
+  "feed"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "questions"?: Array<ModelMetaculusQuestionRow>;
+  "source_url"?: string;
+}
+
+export interface ModelMetaculusForecastHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetaculusForecastHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetaculusForecastsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetaculusForecastsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetaculusMetadataResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetaculusQuestionMetadataResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetaculusOptionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetaculusOptionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetaculusQuestionResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetaculusQuestionResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetaculusQuestionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetaculusQuestionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketActivityTradesResponse {
+  "event_id"?: string;
+  "fetched_at"?: string;
+  "filter_amount"?: string;
+  "filter_type"?: string;
+  "limit"?: number;
+  "market"?: string;
+  "offset"?: number;
+  "source_url"?: string;
+  "taker_only"?: string;
+  "trades"?: Array<ModelPolymarketTradeSummary>;
+}
+
+export interface ModelPolymarketBatchTokenMidpoint {
+  "midpoint"?: number;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketBatchTokenMidpointsOption {
+  "token_ids": Array<string>;
+}
+
+export interface ModelPolymarketBatchTokenMidpointsResponse {
+  "fetched_at"?: string;
+  "midpoints"?: Array<ModelPolymarketBatchTokenMidpoint>;
+  "missing"?: Array<string>;
+  "source_url"?: string;
+  "token_ids"?: Array<string>;
+}
+
+export interface ModelPolymarketBatchTokenOrderBooksOption {
+  "token_ids": Array<string>;
+}
+
+export interface ModelPolymarketBatchTokenOrderBooksResponse {
+  "books"?: Array<ModelPolymarketOrderBookSummary>;
+  "fetched_at"?: string;
+  "missing"?: Array<string>;
+  "source_url"?: string;
+  "token_ids"?: Array<string>;
+}
+
+export interface ModelPolymarketBatchTokenPrice {
+  "buy_price"?: number;
+  "sell_price"?: number;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketBatchTokenPricesOption {
+  "side"?: string;
+  "token_ids": Array<string>;
+}
+
+export interface ModelPolymarketBatchTokenPricesResponse {
+  "fetched_at"?: string;
+  "missing"?: Array<string>;
+  "prices"?: Array<ModelPolymarketBatchTokenPrice>;
+  "side"?: string;
+  "source_url"?: string;
+  "token_ids"?: Array<string>;
+}
+
+export interface ModelPolymarketBatchTokenSpread {
+  "spread"?: number;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketBatchTokenSpreadsOption {
+  "token_ids": Array<string>;
+}
+
+export interface ModelPolymarketBatchTokenSpreadsResponse {
+  "fetched_at"?: string;
+  "missing"?: Array<string>;
+  "source_url"?: string;
+  "spreads"?: Array<ModelPolymarketBatchTokenSpread>;
+  "token_ids"?: Array<string>;
+}
+
+export interface ModelPolymarketClobMarketResponse {
+  "condition_id"?: string;
+  "fetched_at"?: string;
+  "market"?: ModelPolymarketClobMarketSummary;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketClobMarketSummary {
+  "accepting_order_timestamp"?: string;
+  "accepting_orders"?: boolean;
+  "active"?: boolean;
+  "archived"?: boolean;
+  "closed"?: boolean;
+  "condition_id"?: string;
+  "description"?: string;
+  "enable_order_book"?: boolean;
+  "end_date"?: string;
+  "game_start_time"?: string;
+  "icon_url"?: string;
+  "image_url"?: string;
+  "is_50_50_outcome"?: boolean;
+  "maker_base_fee"?: number;
+  "market_slug"?: string;
+  "market_url"?: string;
+  "minimum_order_size"?: number;
+  "minimum_tick_size"?: number;
+  "neg_risk"?: boolean;
+  "neg_risk_market_id"?: string;
+  "neg_risk_request_id"?: string;
+  "notifications_enabled"?: boolean;
+  "question"?: string;
+  "question_id"?: string;
+  "rewards"?: ModelPolymarketClobRewardsSummary;
+  "seconds_delay"?: number;
+  "tags"?: Array<string>;
+  "taker_base_fee"?: number;
+  "tokens"?: Array<ModelPolymarketClobTokenSummary>;
+}
+
+export interface ModelPolymarketClobRewardRate {
+  "asset_address"?: string;
+  "rewards_daily_rate"?: number;
+}
+
+export interface ModelPolymarketClobRewardsSummary {
+  "max_spread"?: number;
+  "min_size"?: number;
+  "rates"?: Array<ModelPolymarketClobRewardRate>;
+}
+
+export interface ModelPolymarketClobTokenSummary {
+  "outcome"?: string;
+  "price"?: number;
+  "token_id"?: string;
+  "winner"?: boolean;
+}
+
+export interface ModelPolymarketEventDetailResponse {
+  "event"?: ModelPolymarketEventSummary;
+  "fetched_at"?: string;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketEventSummary {
+  "active"?: boolean;
+  "closed"?: boolean;
+  "comment_count"?: number;
+  "description"?: string;
+  "end_date"?: string;
+  "featured"?: boolean;
+  "icon_url"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "liquidity"?: number;
+  "markets"?: Array<ModelPolymarketMarketSummary>;
+  "markets_count"?: number;
+  "open_interest"?: number;
+  "restricted"?: boolean;
+  "slug"?: string;
+  "start_date"?: string;
+  "tags"?: Array<ModelPolymarketTagSummary>;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+  "volume"?: number;
+  "volume_24h"?: number;
+}
+
+export interface ModelPolymarketEventsResponse {
+  "ascending"?: boolean;
+  "closed"?: string;
+  "events"?: Array<ModelPolymarketEventSummary>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketHomepageFeedResponse {
+  "cursor"?: string;
+  "events"?: Array<ModelPolymarketEventSummary>;
+  "feed"?: string;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "markets"?: Array<ModelPolymarketMarketSummary>;
+  "next_cursor"?: string;
+  "source_kind"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketLeaderboardEntry {
+  "profile_image_url"?: string;
+  "profit_loss"?: number;
+  "proxy_wallet"?: string;
+  "rank"?: string;
+  "user_name"?: string;
+  "verified_badge"?: boolean;
+  "volume"?: number;
+  "x_username"?: string;
+}
+
+export interface ModelPolymarketLeaderboardResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "rows"?: Array<ModelPolymarketLeaderboardEntry>;
+  "sort_by"?: string;
+  "source_url"?: string;
+  "window"?: string;
+}
+
+export interface ModelPolymarketMacroDashboardResponse {
+  "cursor"?: string;
+  "events"?: Array<ModelPolymarketEventSummary>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "next_cursor"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketMarketDetailResponse {
+  "condition_id"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "market"?: ModelPolymarketMarketSummary;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketMarketLiquidityResponse {
+  "clob_market"?: ModelPolymarketClobMarketSummary;
+  "condition_id"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "market"?: ModelPolymarketMarketSummary;
+  "slug"?: string;
+  "source_urls"?: Array<string>;
+  "tokens"?: Array<ModelPolymarketMarketLiquidityTokenSummary>;
+}
+
+export interface ModelPolymarketMarketLiquidityTokenSummary {
+  "ask_depth"?: number;
+  "bid_depth"?: number;
+  "buy_price"?: number;
+  "clob_price"?: number;
+  "gamma_price"?: number;
+  "last_trade_price"?: number;
+  "midpoint"?: number;
+  "orderbook_best_ask"?: number;
+  "orderbook_best_bid"?: number;
+  "orderbook_spread"?: number;
+  "outcome"?: string;
+  "sell_price"?: number;
+  "spread"?: number;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketMarketSummary {
+  "active"?: boolean;
+  "best_ask"?: number;
+  "best_bid"?: number;
+  "closed"?: boolean;
+  "condition_id"?: string;
+  "end_date"?: string;
+  "id"?: string;
+  "last_trade_price"?: number;
+  "liquidity"?: number;
+  "outcomes"?: Array<ModelPolymarketOutcomePricePoint>;
+  "question"?: string;
+  "slug"?: string;
+  "token_ids"?: Array<string>;
+  "url"?: string;
+  "volume"?: number;
+  "volume_24h"?: number;
+}
+
+export interface ModelPolymarketMarketsResponse {
+  "ascending"?: boolean;
+  "closed"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "markets"?: Array<ModelPolymarketMarketSummary>;
+  "offset"?: number;
+  "order"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketOrderBookLevel {
+  "price"?: number;
+  "size"?: number;
+}
+
+export interface ModelPolymarketOrderBookSummary {
+  "asks"?: Array<ModelPolymarketOrderBookLevel>;
+  "bids"?: Array<ModelPolymarketOrderBookLevel>;
+  "condition_id"?: string;
+  "hash"?: string;
+  "last_trade_price"?: number;
+  "min_order_size"?: number;
+  "neg_risk"?: boolean;
+  "tick_size"?: number;
+  "timestamp"?: string;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketOutcomePricePoint {
+  "best_ask"?: number;
+  "best_bid"?: number;
+  "last_trade_price"?: number;
+  "liquidity"?: number;
+  "market_id"?: string;
+  "market_slug"?: string;
+  "outcome"?: string;
+  "price"?: number;
+  "question"?: string;
+  "volume"?: number;
+}
+
+export interface ModelPolymarketPredictionsResponse {
+  "cursor"?: string;
+  "events"?: Array<ModelPolymarketEventSummary>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "next_cursor"?: string;
+  "recurrence"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+  "status"?: string;
+  "tag"?: string;
+}
+
+export interface ModelPolymarketPriceHistoryPoint {
+  "price"?: number;
+  "timestamp"?: number;
+}
+
+export interface ModelPolymarketProfileMatch {
+  "id"?: string;
+  "name"?: string;
+  "username"?: string;
+}
+
+export interface ModelPolymarketPublicDataResponse {
+  "data"?: Record<string, unknown>;
+  "fetched_at"?: string;
+  "route"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketRewardsConfigSummary {
+  "asset_address"?: string;
+  "end_date"?: string;
+  "id"?: number;
+  "rate_per_day"?: number;
+  "start_date"?: string;
+  "total_rewards"?: number;
+}
+
+export interface ModelPolymarketRewardsMarketResponse {
+  "condition_id"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "market"?: ModelPolymarketRewardsMarketSummary;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketRewardsMarketSummary {
+  "condition_id"?: string;
+  "daily_reward_rate"?: number;
+  "earning_percentage"?: number;
+  "earnings"?: Array<Record<string, unknown>>;
+  "event_id"?: string;
+  "event_slug"?: string;
+  "event_url"?: string;
+  "image_url"?: string;
+  "maker_address"?: string;
+  "market_competitiveness"?: number;
+  "market_id"?: string;
+  "market_slug"?: string;
+  "market_url"?: string;
+  "question"?: string;
+  "rewards_config"?: Array<ModelPolymarketRewardsConfigSummary>;
+  "rewards_max_spread"?: number;
+  "rewards_min_size"?: number;
+  "spread"?: number;
+  "tokens"?: Array<ModelPolymarketRewardsTokenSummary>;
+  "total_configured_rewards"?: number;
+  "volume_24h"?: number;
+}
+
+export interface ModelPolymarketRewardsMarketsResponse {
+  "count"?: number;
+  "cursor"?: string;
+  "date"?: string;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "markets"?: Array<ModelPolymarketRewardsMarketSummary>;
+  "next_cursor"?: string;
+  "order_by"?: string;
+  "position"?: string;
+  "q"?: string;
+  "source_url"?: string;
+  "tag_slug"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelPolymarketRewardsTokenSummary {
+  "outcome"?: string;
+  "price"?: number;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketSearchResponse {
+  "ascending"?: boolean;
+  "events"?: Array<ModelPolymarketEventSummary>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "profiles"?: Array<ModelPolymarketProfileMatch>;
+  "query"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+  "status"?: string;
+  "tags"?: Array<ModelPolymarketTagSummary>;
+  "total_results"?: number;
+}
+
+export interface ModelPolymarketSimilarEventsResponse {
+  "events"?: Array<ModelPolymarketEventSummary>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelPolymarketTagResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "tag"?: ModelPolymarketTagSummary;
+}
+
+export interface ModelPolymarketTagSummary {
+  "id"?: string;
+  "label"?: string;
+  "slug"?: string;
+}
+
+export interface ModelPolymarketTagsResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "source_url"?: string;
+  "tags"?: Array<ModelPolymarketTagSummary>;
+}
+
+export interface ModelPolymarketTokenMidpointResponse {
+  "fetched_at"?: string;
+  "midpoint"?: number;
+  "source_url"?: string;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketTokenOrderBookResponse {
+  "book"?: ModelPolymarketOrderBookSummary;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketTokenPriceHistoryResponse {
+  "end_ts"?: number;
+  "fetched_at"?: string;
+  "fidelity"?: number;
+  "interval"?: string;
+  "points"?: Array<ModelPolymarketPriceHistoryPoint>;
+  "source_url"?: string;
+  "start_ts"?: number;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketTokenPriceResponse {
+  "fetched_at"?: string;
+  "price"?: number;
+  "side"?: string;
+  "source_url"?: string;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketTokenSpreadResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "spread"?: number;
+  "token_id"?: string;
+}
+
+export interface ModelPolymarketTradeSummary {
+  "asset"?: string;
+  "bio"?: string;
+  "condition_id"?: string;
+  "event_slug"?: string;
+  "icon_url"?: string;
+  "name"?: string;
+  "outcome"?: string;
+  "outcome_index"?: number;
+  "price"?: number;
+  "profile_image_optimized"?: string;
+  "profile_image_url"?: string;
+  "proxy_wallet"?: string;
+  "pseudonym"?: string;
+  "side"?: string;
+  "size"?: number;
+  "slug"?: string;
+  "timestamp"?: number;
+  "title"?: string;
+  "transaction_hash"?: string;
+  "url"?: string;
+  "value"?: number;
+}
+
+export interface ModelPolymarketActivityTradesResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketActivityTradesResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketBatchTokenMidpointsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketBatchTokenMidpointsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketBatchTokenOrderBooksResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketBatchTokenOrderBooksResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketBatchTokenPricesResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketBatchTokenPricesResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketBatchTokenSpreadsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketBatchTokenSpreadsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketClobMarketResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketClobMarketResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketEventDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketEventDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketHomepageFeedResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketHomepageFeedResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketLeaderboardResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketLeaderboardResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketMacroDashboardResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketMacroDashboardResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketMarketDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketMarketDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketMarketLiquidityResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketMarketLiquidityResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketMarketsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketMarketsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketPredictionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketPredictionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketPublicDataResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketPublicDataResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketRewardsMarketResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketRewardsMarketResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketRewardsMarketsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketRewardsMarketsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketSimilarEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketSimilarEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketTagResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketTagResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketTagsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketTagsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketTokenMidpointResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketTokenMidpointResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketTokenOrderBookResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketTokenOrderBookResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketTokenPriceHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketTokenPriceHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketTokenPriceResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketTokenPriceResponse;
+  "msg"?: string;
+}
+
+export interface ModelPolymarketTokenSpreadResponseDoc {
+  "code"?: number;
+  "data"?: ModelPolymarketTokenSpreadResponse;
   "msg"?: string;
 }
 
@@ -4954,6 +7266,24 @@ export interface ModelRedditCommentsResponse {
   "source"?: ModelRedditSourceDetail;
 }
 
+export interface ModelRedditDomainPostsResponse {
+  "domain"?: string;
+  "pagination"?: ModelRedditPagination;
+  "posts"?: Array<ModelRedditPost>;
+  "sort"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "time"?: string;
+}
+
+export interface ModelRedditMultiSubredditPostsResponse {
+  "pagination"?: ModelRedditPagination;
+  "posts"?: Array<ModelRedditPost>;
+  "sort"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "subreddits"?: Array<string>;
+  "time"?: string;
+}
+
 export interface ModelRedditPagination {
   "after"?: string;
   "limit"?: number;
@@ -5004,6 +7334,26 @@ export interface ModelRedditSourceDetail {
   "url"?: string;
 }
 
+export interface ModelRedditSubredditAboutResponse {
+  "display_name"?: string;
+  "feed_url"?: string;
+  "latest_post_created"?: string;
+  "latest_post_created_utc"?: number;
+  "public_url"?: string;
+  "recent_post_count"?: number;
+  "sample_posts"?: Array<ModelRedditPost>;
+  "source"?: ModelRedditSourceDetail;
+  "subreddit"?: string;
+  "title"?: string;
+}
+
+export interface ModelRedditSubredditCommentsResponse {
+  "comments"?: Array<ModelRedditComment>;
+  "pagination"?: ModelRedditPagination;
+  "source"?: ModelRedditSourceDetail;
+  "subreddit"?: string;
+}
+
 export interface ModelRedditSubredditPostsResponse {
   "pagination"?: ModelRedditPagination;
   "posts"?: Array<ModelRedditPost>;
@@ -5013,9 +7363,43 @@ export interface ModelRedditSubredditPostsResponse {
   "time"?: string;
 }
 
+export interface ModelRedditTrendsResponse {
+  "pagination"?: ModelRedditPagination;
+  "posts"?: Array<ModelRedditPost>;
+  "sort"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "time"?: string;
+}
+
+export interface ModelRedditUserCommentsResponse {
+  "comments"?: Array<ModelRedditComment>;
+  "pagination"?: ModelRedditPagination;
+  "source"?: ModelRedditSourceDetail;
+  "username"?: string;
+}
+
+export interface ModelRedditUserPostsResponse {
+  "pagination"?: ModelRedditPagination;
+  "posts"?: Array<ModelRedditPost>;
+  "source"?: ModelRedditSourceDetail;
+  "username"?: string;
+}
+
 export interface ModelRedditCommentsResponseDoc {
   "code"?: number;
   "data"?: ModelRedditCommentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditDomainPostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditDomainPostsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditMultiSubredditPostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditMultiSubredditPostsResponse;
   "msg"?: string;
 }
 
@@ -5031,9 +7415,39 @@ export interface ModelRedditSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelRedditSubredditAboutResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditSubredditAboutResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditSubredditCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditSubredditCommentsResponse;
+  "msg"?: string;
+}
+
 export interface ModelRedditSubredditPostsResponseDoc {
   "code"?: number;
   "data"?: ModelRedditSubredditPostsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditTrendsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditTrendsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditUserCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditUserCommentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditUserPostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditUserPostsResponse;
   "msg"?: string;
 }
 
@@ -5087,6 +7501,359 @@ export interface ModelReferralsReferralsStatsDoc {
   "rejected"?: number;
   "review_required"?: number;
   "rewarded"?: number;
+}
+
+export interface ModelRottentomatoesBrowseItem {
+  "critics_review_count"?: number;
+  "date_created"?: string;
+  "image_url"?: string;
+  "media_type"?: string;
+  "path"?: string;
+  "position"?: number;
+  "title"?: string;
+  "tomatometer_score"?: number;
+  "url"?: string;
+  "video"?: ModelRottentomatoesEpisodeVideo;
+}
+
+export interface ModelRottentomatoesBrowseResponse {
+  "fetched_at"?: string;
+  "items"?: Array<ModelRottentomatoesBrowseItem>;
+  "limit"?: number;
+  "list"?: string;
+  "public_page_derived"?: boolean;
+  "sort"?: string;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelRottentomatoesEpisodeResponse {
+  "air_date"?: string;
+  "audience_score"?: ModelRottentomatoesScore;
+  "cast"?: Array<ModelRottentomatoesPerson>;
+  "critics_score"?: ModelRottentomatoesScore;
+  "description"?: string;
+  "directors"?: Array<ModelRottentomatoesPerson>;
+  "ems_id"?: string;
+  "episode_number"?: number;
+  "fetched_at"?: string;
+  "genres"?: Array<string>;
+  "image_url"?: string;
+  "lifecycle"?: string;
+  "media_type"?: string;
+  "parent_season"?: ModelRottentomatoesSeasonSummary;
+  "parent_series"?: ModelRottentomatoesSeriesSummary;
+  "path"?: string;
+  "producers"?: Array<ModelRottentomatoesPerson>;
+  "public_page_derived"?: boolean;
+  "season_number"?: number;
+  "source_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "video"?: ModelRottentomatoesEpisodeVideo;
+}
+
+export interface ModelRottentomatoesEpisodeVideo {
+  "description"?: string;
+  "duration"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "upload_date"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesMovieResponse {
+  "audience_reviews"?: Array<ModelRottentomatoesReview>;
+  "audience_score"?: ModelRottentomatoesScore;
+  "cast"?: Array<ModelRottentomatoesPerson>;
+  "content_rating"?: string;
+  "critics_score"?: ModelRottentomatoesScore;
+  "description"?: string;
+  "directors"?: Array<ModelRottentomatoesPerson>;
+  "ems_id"?: string;
+  "fetched_at"?: string;
+  "genres"?: Array<string>;
+  "image_url"?: string;
+  "media_type"?: string;
+  "path"?: string;
+  "producers"?: Array<ModelRottentomatoesPerson>;
+  "public_page_derived"?: boolean;
+  "release_date"?: string;
+  "reviews_url"?: string;
+  "source_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesMovieReview {
+  "created_at"?: string;
+  "critic_url"?: string;
+  "display_name"?: string;
+  "has_profanity"?: boolean;
+  "has_spoilers"?: boolean;
+  "id"?: string;
+  "original_score"?: string;
+  "publication"?: string;
+  "publication_approved"?: boolean;
+  "publication_review_url"?: string;
+  "rating"?: number;
+  "rating_label"?: string;
+  "review"?: string;
+  "score_sentiment"?: string;
+  "super_reviewer"?: boolean;
+  "tomatometer_approved"?: boolean;
+  "top_critic"?: boolean;
+  "top_publication"?: boolean;
+  "top_review"?: boolean;
+  "type"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelRottentomatoesPerson {
+  "image_url"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesPersonCredit {
+  "audience_score"?: ModelRottentomatoesScore;
+  "credits"?: string;
+  "critics_score"?: ModelRottentomatoesScore;
+  "path"?: string;
+  "position"?: number;
+  "poster_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "years_featured"?: string;
+}
+
+export interface ModelRottentomatoesPersonRatedTitle {
+  "path"?: string;
+  "score"?: number;
+  "title"?: string;
+  "url"?: string;
+  "year"?: string;
+}
+
+export interface ModelRottentomatoesPersonResponse {
+  "birth_date"?: string;
+  "birthplace"?: string;
+  "description"?: string;
+  "ems_id"?: string;
+  "fetched_at"?: string;
+  "filmography"?: Array<ModelRottentomatoesPersonCredit>;
+  "filmography_api_url"?: string;
+  "highest_rated"?: ModelRottentomatoesPersonRatedTitle;
+  "image_url"?: string;
+  "lowest_rated"?: ModelRottentomatoesPersonRatedTitle;
+  "name"?: string;
+  "page_info"?: ModelRottentomatoesReviewPageInfo;
+  "path"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesReview {
+  "display_date"?: string;
+  "display_name"?: string;
+  "fandango_review"?: boolean;
+  "rating"?: number;
+  "rating_id"?: string;
+  "rating_range"?: string;
+  "review"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelRottentomatoesReviewMovieSummary {
+  "ems_id"?: string;
+  "media_type"?: string;
+  "path"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesReviewPageInfo {
+  "end_cursor"?: string;
+  "has_next_page"?: boolean;
+}
+
+export interface ModelRottentomatoesReviewsResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "movie"?: ModelRottentomatoesReviewMovieSummary;
+  "page_info"?: ModelRottentomatoesReviewPageInfo;
+  "public_page_derived"?: boolean;
+  "reviews"?: Array<ModelRottentomatoesMovieReview>;
+  "reviews_api_url"?: string;
+  "source_url"?: string;
+  "type"?: string;
+}
+
+export interface ModelRottentomatoesScore {
+  "average_rating"?: string;
+  "banded_rating_count"?: string;
+  "certified"?: boolean;
+  "liked_count"?: number;
+  "not_liked_count"?: number;
+  "rating_count"?: number;
+  "review_count"?: number;
+  "reviews_page_url"?: string;
+  "score"?: number;
+  "score_percent"?: string;
+  "score_type"?: string;
+  "sentiment"?: string;
+  "title"?: string;
+}
+
+export interface ModelRottentomatoesSearchMovie {
+  "cast"?: string;
+  "certified_fresh"?: boolean;
+  "end_year"?: string;
+  "image_url"?: string;
+  "path"?: string;
+  "release_year"?: string;
+  "start_year"?: string;
+  "title"?: string;
+  "tomatometer_score"?: number;
+  "tomatometer_sentiment"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesSearchResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "query"?: string;
+  "results"?: Array<ModelRottentomatoesSearchMovie>;
+  "source_url"?: string;
+}
+
+export interface ModelRottentomatoesSeasonEpisode {
+  "air_date"?: string;
+  "description"?: string;
+  "episode_number"?: string;
+  "path"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesSeasonResponse {
+  "audience_score"?: ModelRottentomatoesScore;
+  "cast"?: Array<ModelRottentomatoesPerson>;
+  "critics_score"?: ModelRottentomatoesScore;
+  "description"?: string;
+  "directors"?: Array<ModelRottentomatoesPerson>;
+  "ems_id"?: string;
+  "episode_count"?: number;
+  "episodes"?: Array<ModelRottentomatoesSeasonEpisode>;
+  "fetched_at"?: string;
+  "genres"?: Array<string>;
+  "image_url"?: string;
+  "lifecycle"?: string;
+  "media_type"?: string;
+  "parent_series"?: ModelRottentomatoesSeriesSummary;
+  "path"?: string;
+  "producers"?: Array<ModelRottentomatoesPerson>;
+  "public_page_derived"?: boolean;
+  "release_date"?: string;
+  "season_number"?: number;
+  "source_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesSeasonSummary {
+  "ems_id"?: string;
+  "path"?: string;
+  "season_number"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesSeriesResponse {
+  "audience_score"?: ModelRottentomatoesScore;
+  "cast"?: Array<ModelRottentomatoesPerson>;
+  "content_rating"?: string;
+  "critics_score"?: ModelRottentomatoesScore;
+  "description"?: string;
+  "directors"?: Array<ModelRottentomatoesPerson>;
+  "ems_id"?: string;
+  "end_date"?: string;
+  "fetched_at"?: string;
+  "genres"?: Array<string>;
+  "image_url"?: string;
+  "lifecycle"?: string;
+  "media_type"?: string;
+  "number_of_seasons"?: number;
+  "path"?: string;
+  "producers"?: Array<ModelRottentomatoesPerson>;
+  "public_page_derived"?: boolean;
+  "seasons"?: Array<ModelRottentomatoesTvseason>;
+  "source_url"?: string;
+  "start_date"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesSeriesSummary {
+  "ems_id"?: string;
+  "path"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesTvseason {
+  "name"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesBrowseResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesBrowseResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesEpisodeResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesEpisodeResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesMovieResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesMovieResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesPersonResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesPersonResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesSeasonResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesSeasonResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesSeriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesSeriesResponse;
+  "msg"?: string;
 }
 
 export interface ModelShopappAnalysisResponse {
@@ -9088,6 +11855,126 @@ export interface BingVideosParams {
   "lang"?: string;
 }
 
+export type BoxOfficeMojoBoxofficemojoBrandResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyDetailResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoBrandParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export type BoxOfficeMojoBoxofficemojoBrandsResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyListResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoBrandsParams {
+}
+
+export type BoxOfficeMojoBoxofficemojoCalendarResponse = CrawloraResponse<ModelBoxofficemojoCalendarResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoCalendarParams {
+  "year": number;
+  "month": number;
+}
+
+export type BoxOfficeMojoBoxofficemojoCalendarChangesResponse = CrawloraResponse<ModelBoxofficemojoCalendarChangesResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoCalendarChangesParams {
+  "offset"?: number;
+}
+
+export type BoxOfficeMojoBoxofficemojoCalendarDateResponse = CrawloraResponse<ModelBoxofficemojoCalendarDateResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoCalendarDateParams {
+  "date": string;
+}
+
+export type BoxOfficeMojoBoxofficemojoDateDomesticResponse = CrawloraResponse<ModelBoxofficemojoDomesticDateResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoDateDomesticParams {
+  "date": string;
+}
+
+export type BoxOfficeMojoBoxofficemojoFranchiseResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyDetailResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoFranchiseParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export type BoxOfficeMojoBoxofficemojoFranchisesResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyListResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoFranchisesParams {
+}
+
+export type BoxOfficeMojoBoxofficemojoGenreResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyDetailResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoGenreParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export type BoxOfficeMojoBoxofficemojoGenresResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyListResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoGenresParams {
+}
+
+export type BoxOfficeMojoBoxofficemojoLifetimeGrossesResponse = CrawloraResponse<ModelBoxofficemojoLifetimeGrossesResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoLifetimeGrossesParams {
+  "area"?: "worldwide" | "domestic";
+  "offset"?: number;
+}
+
+export type BoxOfficeMojoBoxofficemojoReleaseResponse = CrawloraResponse<ModelBoxofficemojoReleaseResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoReleaseParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export type BoxOfficeMojoBoxofficemojoReleaseGroupResponse = CrawloraResponse<ModelBoxofficemojoReleaseGroupResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoReleaseGroupParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export type BoxOfficeMojoBoxofficemojoShowdownResponse = CrawloraResponse<ModelBoxofficemojoShowdownResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoShowdownParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export type BoxOfficeMojoBoxofficemojoShowdownsResponse = CrawloraResponse<ModelBoxofficemojoShowdownsResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoShowdownsParams {
+}
+
+export type BoxOfficeMojoBoxofficemojoTitleResponse = CrawloraResponse<ModelBoxofficemojoTitleResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoTitleParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export type BoxOfficeMojoBoxofficemojoWeekendDomesticResponse = CrawloraResponse<ModelBoxofficemojoDomesticWeekendResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoWeekendDomesticParams {
+  "year": number;
+  "week": number;
+}
+
+export type BoxOfficeMojoBoxofficemojoWeekendDomesticByDistributorResponse = CrawloraResponse<ModelBoxofficemojoWeekendDistributorResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoWeekendDomesticByDistributorParams {
+  "year": number;
+  "week": number;
+}
+
+export type BoxOfficeMojoBoxofficemojoWeekendDomesticEstimatesResponse = CrawloraResponse<ModelBoxofficemojoWeekendEstimatesResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoWeekendDomesticEstimatesParams {
+  "year": number;
+  "week": number;
+}
+
+export type BoxOfficeMojoBoxofficemojoYearDomesticResponse = CrawloraResponse<ModelBoxofficemojoDomesticYearResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoYearDomesticParams {
+  "year": number;
+}
+
+export type BoxOfficeMojoBoxofficemojoYearWorldwideResponse = CrawloraResponse<ModelBoxofficemojoWorldwideYearResponseDoc>;
+export interface BoxOfficeMojoBoxofficemojoYearWorldwideParams {
+  "year": number;
+}
+
 export type BrandRetrieveResponse = CrawloraResponse<ModelBrandRetrieveResponseDoc>;
 export interface BrandRetrieveParams {
   "domain": string;
@@ -9724,6 +12611,123 @@ export interface GooglePlaySuggestParams {
   "lang"?: string;
 }
 
+export type ImdbNameResponse = CrawloraResponse<ModelImdbNameResponseDoc>;
+export interface ImdbNameParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbNameAwardsResponse = CrawloraResponse<ModelImdbNameAwardsResponseDoc>;
+export interface ImdbNameAwardsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbNameCreditsResponse = CrawloraResponse<ModelImdbNameCreditsResponseDoc>;
+export interface ImdbNameCreditsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbSearchResponse = CrawloraResponse<ModelImdbSearchResponseDoc>;
+export interface ImdbSearchParams {
+  "query": string;
+  "limit"?: number;
+}
+
+export type ImdbTitleResponse = CrawloraResponse<ModelImdbTitleResponseDoc>;
+export interface ImdbTitleParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleAwardsResponse = CrawloraResponse<ModelImdbTitleAwardsResponseDoc>;
+export interface ImdbTitleAwardsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleCompanyCreditsResponse = CrawloraResponse<ModelImdbTitlePublicFactsResponseDoc>;
+export interface ImdbTitleCompanyCreditsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleCreditsResponse = CrawloraResponse<ModelImdbCreditsResponseDoc>;
+export interface ImdbTitleCreditsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleEpisodesResponse = CrawloraResponse<ModelImdbEpisodesResponseDoc>;
+export interface ImdbTitleEpisodesParams {
+  "id"?: string;
+  "url"?: string;
+  "season"?: number;
+  "limit"?: number;
+}
+
+export type ImdbTitleFilmingLocationsResponse = CrawloraResponse<ModelImdbTitlePublicFactsResponseDoc>;
+export interface ImdbTitleFilmingLocationsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleGoofsResponse = CrawloraResponse<ModelImdbTitlePublicFactsResponseDoc>;
+export interface ImdbTitleGoofsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleKeywordsResponse = CrawloraResponse<ModelImdbTitlePublicFactsResponseDoc>;
+export interface ImdbTitleKeywordsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleParentalGuideResponse = CrawloraResponse<ModelImdbParentalGuideResponseDoc>;
+export interface ImdbTitleParentalGuideParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitlePublicFactsAnalysisResponse = CrawloraResponse<ModelImdbTitlePublicFactsAnalysisResponseDoc>;
+export interface ImdbTitlePublicFactsAnalysisParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleQuotesResponse = CrawloraResponse<ModelImdbTitlePublicFactsResponseDoc>;
+export interface ImdbTitleQuotesParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleReleaseInfoResponse = CrawloraResponse<ModelImdbReleaseInfoResponseDoc>;
+export interface ImdbTitleReleaseInfoParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleReviewsResponse = CrawloraResponse<ModelImdbReviewsResponseDoc>;
+export interface ImdbTitleReviewsParams {
+  "id"?: string;
+  "url"?: string;
+  "limit"?: number;
+}
+
+export type ImdbTitleTechnicalSpecsResponse = CrawloraResponse<ModelImdbTechnicalSpecsResponseDoc>;
+export interface ImdbTitleTechnicalSpecsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type ImdbTitleTriviaResponse = CrawloraResponse<ModelImdbTitlePublicFactsResponseDoc>;
+export interface ImdbTitleTriviaParams {
+  "id"?: string;
+  "url"?: string;
+}
+
 export type InstagramPostResponse = CrawloraResponse<ModelInstagramPostResponseDoc>;
 export interface InstagramPostParams {
   "id": string;
@@ -9896,6 +12900,153 @@ export interface JustWatchJustwatchTitleSimilarParams {
   "limit"?: number;
 }
 
+export type KalshiEventResponse = CrawloraResponse<ModelKalshiEventResponseDoc>;
+export interface KalshiEventParams {
+  "event_ticker": string;
+}
+
+export type KalshiEventHistoryResponse = CrawloraResponse<ModelKalshiEventHistoryResponseDoc>;
+export interface KalshiEventHistoryParams {
+  "event_ticker": string;
+  "series_ticker"?: string;
+  "start_ts"?: number;
+  "end_ts"?: number;
+  "period_interval"?: number;
+  "include_latest_before_start"?: boolean;
+}
+
+export type KalshiEventMetadataResponse = CrawloraResponse<ModelKalshiEventMetadataResponseDoc>;
+export interface KalshiEventMetadataParams {
+  "event_ticker": string;
+}
+
+export type KalshiEventsResponse = CrawloraResponse<ModelKalshiEventsResponseDoc>;
+export interface KalshiEventsParams {
+  "limit"?: number;
+  "cursor"?: string;
+  "series_ticker"?: string;
+  "category"?: string;
+  "status"?: "open" | "closed" | "settled";
+  "with_nested_markets"?: boolean;
+  "with_milestones"?: boolean;
+  "min_close_ts"?: number;
+  "min_updated_ts"?: number;
+}
+
+export type KalshiMultivariateEventsResponse = CrawloraResponse<ModelKalshiMultivariateEventsResponseDoc>;
+export interface KalshiMultivariateEventsParams {
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type KalshiExchangeScheduleResponse = CrawloraResponse<ModelKalshiExchangeScheduleResponseDoc>;
+export interface KalshiExchangeScheduleParams {
+}
+
+export type KalshiExchangeStatusResponse = CrawloraResponse<ModelKalshiExchangeStatusResponseDoc>;
+export interface KalshiExchangeStatusParams {
+}
+
+export type KalshiHistoricalCutoffResponse = CrawloraResponse<ModelKalshiHistoricalCutoffResponseDoc>;
+export interface KalshiHistoricalCutoffParams {
+}
+
+export type KalshiHistoricalMarketResponse = CrawloraResponse<ModelKalshiHistoricalMarketResponseDoc>;
+export interface KalshiHistoricalMarketParams {
+  "ticker": string;
+}
+
+export type KalshiHistoricalMarketHistoryResponse = CrawloraResponse<ModelKalshiMarketHistoryResponseDoc>;
+export interface KalshiHistoricalMarketHistoryParams {
+  "ticker": string;
+  "start_ts"?: number;
+  "end_ts"?: number;
+  "period_interval"?: number;
+}
+
+export type KalshiHistoricalMarketsResponse = CrawloraResponse<ModelKalshiHistoricalMarketsResponseDoc>;
+export interface KalshiHistoricalMarketsParams {
+  "limit"?: number;
+  "cursor"?: string;
+  "tickers"?: string;
+  "event_ticker"?: string;
+  "series_ticker"?: string;
+  "mve_filter"?: "exclude";
+}
+
+export type KalshiHistoricalTradesResponse = CrawloraResponse<ModelKalshiHistoricalTradesResponseDoc>;
+export interface KalshiHistoricalTradesParams {
+  "limit"?: number;
+  "cursor"?: string;
+  "ticker"?: string;
+  "min_ts"?: number;
+  "max_ts"?: number;
+}
+
+export type KalshiMarketResponse = CrawloraResponse<ModelKalshiMarketResponseDoc>;
+export interface KalshiMarketParams {
+  "ticker": string;
+}
+
+export type KalshiMarketHistoryResponse = CrawloraResponse<ModelKalshiMarketHistoryResponseDoc>;
+export interface KalshiMarketHistoryParams {
+  "ticker": string;
+  "series_ticker"?: string;
+  "start_ts"?: number;
+  "end_ts"?: number;
+  "period_interval"?: number;
+  "include_latest_before_start"?: boolean;
+}
+
+export type KalshiMarketOrderbookResponse = CrawloraResponse<ModelKalshiOrderBookResponseDoc>;
+export interface KalshiMarketOrderbookParams {
+  "ticker": string;
+}
+
+export type KalshiMarketsResponse = CrawloraResponse<ModelKalshiMarketsResponseDoc>;
+export interface KalshiMarketsParams {
+  "limit"?: number;
+  "cursor"?: string;
+  "event_ticker"?: string;
+  "series_ticker"?: string;
+  "status"?: "unopened" | "open" | "closed" | "settled";
+  "ticker"?: string;
+}
+
+export type KalshiMarketsHistoryResponse = CrawloraResponse<ModelKalshiBatchMarketHistoryResponseDoc>;
+export interface KalshiMarketsHistoryParams {
+  "market_tickers": string;
+  "start_ts"?: number;
+  "end_ts"?: number;
+  "period_interval"?: number;
+  "include_latest_before_start"?: boolean;
+}
+
+export type KalshiMarketsOrderbooksResponse = CrawloraResponse<ModelKalshiBatchOrderBookResponseDoc>;
+export interface KalshiMarketsOrderbooksParams {
+  "tickers": string;
+}
+
+export type KalshiSeriesResponse = CrawloraResponse<ModelKalshiSeriesResponseDoc>;
+export interface KalshiSeriesParams {
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type KalshiSeriesDetailResponse = CrawloraResponse<ModelKalshiSeriesDetailResponseDoc>;
+export interface KalshiSeriesDetailParams {
+  "series_ticker": string;
+}
+
+export type KalshiTradesResponse = CrawloraResponse<ModelKalshiTradesResponseDoc>;
+export interface KalshiTradesParams {
+  "limit"?: number;
+  "cursor"?: string;
+  "ticker"?: string;
+  "min_ts"?: number;
+  "max_ts"?: number;
+}
+
 export type LinkedInLinkedinCompanyResponse = CrawloraResponse<ModelLinkedinCompanyResponseDoc>;
 export interface LinkedInLinkedinCompanyParams {
   "id": string;
@@ -9911,8 +13062,516 @@ export interface LinkedInLinkedinShowcaseParams {
   "id": string;
 }
 
+export type MetaculusCategoryQuestionsResponse = CrawloraResponse<ModelMetaculusQuestionsResponseDoc>;
+export interface MetaculusCategoryQuestionsParams {
+  "slug": "artificial-intelligence" | "computing-and-math" | "cryptocurrencies" | "economy-business" | "elections" | "environment-climate" | "geopolitics" | "health-pandemics" | "law" | "metaculus" | "natural-sciences" | "nuclear" | "politics" | "social-sciences" | "space" | "sports-entertainment" | "technology";
+  "limit"?: number;
+}
+
+export type MetaculusCommentsFeedResponse = CrawloraResponse<ModelMetaculusQuestionsResponseDoc>;
+export interface MetaculusCommentsFeedParams {
+  "limit"?: number;
+  "topic"?: string;
+}
+
+export type MetaculusProjectQuestionsResponse = CrawloraResponse<ModelMetaculusQuestionsResponseDoc>;
+export interface MetaculusProjectQuestionsParams {
+  "slug": string;
+  "limit"?: number;
+}
+
+export type MetaculusQuestionResponse = CrawloraResponse<ModelMetaculusQuestionResponseDoc>;
+export interface MetaculusQuestionParams {
+  "id": string;
+}
+
+export type MetaculusQuestionForecastHistoryResponse = CrawloraResponse<ModelMetaculusForecastHistoryResponseDoc>;
+export interface MetaculusQuestionForecastHistoryParams {
+  "id": string;
+  "method"?: "recency_weighted" | "unweighted" | "single_aggregation";
+  "max_points"?: number;
+}
+
+export type MetaculusQuestionForecastsResponse = CrawloraResponse<ModelMetaculusForecastsResponseDoc>;
+export interface MetaculusQuestionForecastsParams {
+  "id": string;
+}
+
+export type MetaculusQuestionMetadataResponse = CrawloraResponse<ModelMetaculusMetadataResponseDoc>;
+export interface MetaculusQuestionMetadataParams {
+  "id": string;
+}
+
+export type MetaculusQuestionOptionsResponse = CrawloraResponse<ModelMetaculusOptionsResponseDoc>;
+export interface MetaculusQuestionOptionsParams {
+  "id": string;
+  "method"?: "recency_weighted" | "unweighted" | "single_aggregation";
+}
+
+export type MetaculusQuestionsResponse = CrawloraResponse<ModelMetaculusQuestionsResponseDoc>;
+export interface MetaculusQuestionsParams {
+  "limit"?: number;
+  "topic"?: string;
+}
+
+export type MetaculusTopCommentsResponse = CrawloraResponse<ModelMetaculusQuestionsResponseDoc>;
+export interface MetaculusTopCommentsParams {
+  "limit"?: number;
+  "topic"?: string;
+}
+
+export type MetaculusTournamentQuestionsResponse = CrawloraResponse<ModelMetaculusQuestionsResponseDoc>;
+export interface MetaculusTournamentQuestionsParams {
+  "slug": string;
+  "limit"?: number;
+}
+
 export type MetaPingResponse = CrawloraResponse<ModelApiPingResponseDoc>;
 export interface MetaPingParams {
+}
+
+export type PolymarketActivityTradesResponse = CrawloraResponse<ModelPolymarketActivityTradesResponseDoc>;
+export interface PolymarketActivityTradesParams {
+  "limit"?: number;
+  "offset"?: number;
+  "taker_only"?: "true" | "false";
+  "filter_type"?: "CASH";
+  "filter_amount"?: "1" | "5" | "10" | "100" | "1000" | "10000" | "100000";
+  "event_id"?: string;
+  "market"?: string;
+}
+
+export type PolymarketClobMarketResponse = CrawloraResponse<ModelPolymarketClobMarketResponseDoc>;
+export interface PolymarketClobMarketParams {
+  "condition_id": string;
+}
+
+export type PolymarketDashboardMacroResponse = CrawloraResponse<ModelPolymarketMacroDashboardResponseDoc>;
+export interface PolymarketDashboardMacroParams {
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type PolymarketDataFollowersResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketDataFollowersParams {
+  "address": string;
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: string;
+  "ascending"?: boolean;
+  "after_cursor"?: string;
+}
+
+export type PolymarketDataFollowingResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketDataFollowingParams {
+  "address": string;
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: string;
+  "ascending"?: boolean;
+  "after_cursor"?: string;
+}
+
+export type PolymarketDataFollowsCountsResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketDataFollowsCountsParams {
+  "address": string;
+}
+
+export type PolymarketEventDetailByIdResponse = CrawloraResponse<ModelPolymarketEventDetailResponseDoc>;
+export interface PolymarketEventDetailByIdParams {
+  "id": string;
+}
+
+export type PolymarketEventActivityByIdResponse = CrawloraResponse<ModelPolymarketActivityTradesResponseDoc>;
+export interface PolymarketEventActivityByIdParams {
+  "id": string;
+  "limit"?: number;
+  "offset"?: number;
+  "taker_only"?: "true" | "false";
+  "filter_type"?: "CASH";
+  "filter_amount"?: "1" | "5" | "10" | "100" | "1000" | "10000" | "100000";
+}
+
+export type PolymarketEventDetailResponse = CrawloraResponse<ModelPolymarketEventDetailResponseDoc>;
+export interface PolymarketEventDetailParams {
+  "slug": string;
+}
+
+export type PolymarketEventActivityResponse = CrawloraResponse<ModelPolymarketActivityTradesResponseDoc>;
+export interface PolymarketEventActivityParams {
+  "slug": string;
+  "limit"?: number;
+  "offset"?: number;
+  "taker_only"?: "true" | "false";
+  "filter_type"?: "CASH";
+  "filter_amount"?: "1" | "5" | "10" | "100" | "1000" | "10000" | "100000";
+}
+
+export type PolymarketEventsResponse = CrawloraResponse<ModelPolymarketEventsResponseDoc>;
+export interface PolymarketEventsParams {
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: "volume24hr" | "volume" | "liquidity" | "endDate" | "updatedAt" | "createdAt" | "id" | "slug" | "title" | "question" | "label";
+  "ascending"?: boolean;
+  "closed"?: "true" | "false";
+}
+
+export type PolymarketEventsSimilarResponse = CrawloraResponse<ModelPolymarketSimilarEventsResponseDoc>;
+export interface PolymarketEventsSimilarParams {
+  "id"?: number;
+  "event_title"?: string;
+  "event_slug"?: string;
+  "market_title"?: string;
+  "market_slug"?: string;
+  "limit"?: number;
+  "closed"?: "true" | "false";
+}
+
+export type PolymarketEventTagsResponse = CrawloraResponse<ModelPolymarketTagsResponseDoc>;
+export interface PolymarketEventTagsParams {
+  "id": string;
+}
+
+export type PolymarketFeeTypesResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketFeeTypesParams {
+  "active"?: "true" | "false";
+  "search"?: string;
+}
+
+export type PolymarketGamesResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketGamesParams {
+  "sport"?: string;
+  "ticker"?: string;
+}
+
+export type PolymarketHomepageFeedResponse = CrawloraResponse<ModelPolymarketHomepageFeedResponseDoc>;
+export interface PolymarketHomepageFeedParams {
+  "feed"?: "trending" | "breaking" | "new" | "politics" | "sports" | "crypto" | "esports" | "iran" | "finance" | "geopolitics" | "tech" | "culture" | "economy" | "weather" | "mentions" | "elections";
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type PolymarketLeaderboardResponse = CrawloraResponse<ModelPolymarketLeaderboardResponseDoc>;
+export interface PolymarketLeaderboardParams {
+  "window"?: "1d" | "7d" | "30d" | "all";
+  "sort_by"?: "profit" | "volume";
+  "limit"?: number;
+}
+
+export type PolymarketMarketClarificationsResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketMarketClarificationsParams {
+  "market_id"?: string;
+  "event_id"?: string;
+  "state"?: string;
+  "question_id"?: string;
+  "tx_hash"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: string;
+  "ascending"?: boolean;
+  "after_cursor"?: string;
+}
+
+export type PolymarketMarketDetailByConditionResponse = CrawloraResponse<ModelPolymarketMarketDetailResponseDoc>;
+export interface PolymarketMarketDetailByConditionParams {
+  "condition_id": string;
+}
+
+export type PolymarketMarketActivityByConditionResponse = CrawloraResponse<ModelPolymarketActivityTradesResponseDoc>;
+export interface PolymarketMarketActivityByConditionParams {
+  "condition_id": string;
+  "limit"?: number;
+  "offset"?: number;
+  "taker_only"?: "true" | "false";
+  "filter_type"?: "CASH";
+  "filter_amount"?: "1" | "5" | "10" | "100" | "1000" | "10000" | "100000";
+}
+
+export type PolymarketMarketLiquidityByConditionResponse = CrawloraResponse<ModelPolymarketMarketLiquidityResponseDoc>;
+export interface PolymarketMarketLiquidityByConditionParams {
+  "condition_id": string;
+}
+
+export type PolymarketMarketDetailBySlugResponse = CrawloraResponse<ModelPolymarketMarketDetailResponseDoc>;
+export interface PolymarketMarketDetailBySlugParams {
+  "slug": string;
+}
+
+export type PolymarketMarketLiquidityBySlugResponse = CrawloraResponse<ModelPolymarketMarketLiquidityResponseDoc>;
+export interface PolymarketMarketLiquidityBySlugParams {
+  "slug": string;
+}
+
+export type PolymarketMarketDetailResponse = CrawloraResponse<ModelPolymarketMarketDetailResponseDoc>;
+export interface PolymarketMarketDetailParams {
+  "id": string;
+}
+
+export type PolymarketMarketLiquidityResponse = CrawloraResponse<ModelPolymarketMarketLiquidityResponseDoc>;
+export interface PolymarketMarketLiquidityParams {
+  "id": string;
+}
+
+export type PolymarketMarketTagsResponse = CrawloraResponse<ModelPolymarketTagsResponseDoc>;
+export interface PolymarketMarketTagsParams {
+  "id": string;
+}
+
+export type PolymarketMarketsResponse = CrawloraResponse<ModelPolymarketMarketsResponseDoc>;
+export interface PolymarketMarketsParams {
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: "volume24hr" | "volume" | "liquidity" | "endDate" | "updatedAt" | "createdAt" | "id" | "slug" | "title" | "question" | "label";
+  "ascending"?: boolean;
+  "closed"?: "true" | "false";
+}
+
+export type PolymarketPredictionsResponse = CrawloraResponse<ModelPolymarketPredictionsResponseDoc>;
+export interface PolymarketPredictionsParams {
+  "status"?: "active" | "resolved" | "all";
+  "sort"?: "competitive" | "volume" | "volume_24hr" | "ending_soon" | "liquidity" | "newest" | "closed_time";
+  "tag"?: string;
+  "recurrence"?: "hourly" | "daily" | "weekly" | "monthly" | "yearly";
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type PolymarketRewardsMarketResponse = CrawloraResponse<ModelPolymarketRewardsMarketResponseDoc>;
+export interface PolymarketRewardsMarketParams {
+  "condition_id": string;
+}
+
+export type PolymarketRewardsMarketsResponse = CrawloraResponse<ModelPolymarketRewardsMarketsResponseDoc>;
+export interface PolymarketRewardsMarketsParams {
+  "order_by"?: "market" | "earnings" | "max_spread" | "min_size" | "rate_per_day" | "price" | "earning_percentage" | "spread";
+  "position"?: "asc" | "desc";
+  "date"?: string;
+  "q"?: string;
+  "tag_slug"?: "all" | "politics" | "sports" | "crypto" | "pop-culture" | "middle-east" | "business" | "science";
+  "cursor"?: string;
+  "limit"?: number;
+}
+
+export type PolymarketSearchResponse = CrawloraResponse<ModelPolymarketSearchResponseDoc>;
+export interface PolymarketSearchParams {
+  "q": string;
+  "limit"?: number;
+  "status"?: "open" | "closed" | "all";
+  "sort"?: "relevance" | "volume24hr" | "volume" | "liquidity" | "endDate";
+  "ascending"?: boolean;
+  "include_tags"?: boolean;
+  "include_profiles"?: boolean;
+}
+
+export type PolymarketSportsResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSportsParams {
+}
+
+export type PolymarketSportsByPartnerResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSportsByPartnerParams {
+  "partner"?: string;
+  "external_id"?: string;
+}
+
+export type PolymarketSportsMarketTypesResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSportsMarketTypesParams {
+}
+
+export type PolymarketSportsSummaryResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSportsSummaryParams {
+}
+
+export type PolymarketSportResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSportParams {
+  "id": number;
+}
+
+export type PolymarketSportExternalPartnersResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSportExternalPartnersParams {
+  "id": number;
+}
+
+export type PolymarketSportExternalPartnerResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSportExternalPartnerParams {
+  "id": number;
+  "partner_ref": string;
+}
+
+export type PolymarketSpotlightsResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSpotlightsParams {
+}
+
+export type PolymarketSpotlightsKeysetResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSpotlightsKeysetParams {
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: string;
+  "ascending"?: boolean;
+  "after_cursor"?: string;
+}
+
+export type PolymarketSpotlightResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketSpotlightParams {
+  "slug": string;
+}
+
+export type PolymarketStatusResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketStatusParams {
+}
+
+export type PolymarketTagBySlugResponse = CrawloraResponse<ModelPolymarketTagResponseDoc>;
+export interface PolymarketTagBySlugParams {
+  "slug": string;
+  "locale"?: string;
+}
+
+export type PolymarketRelatedTagsBySlugResponse = CrawloraResponse<ModelPolymarketTagsResponseDoc>;
+export interface PolymarketRelatedTagsBySlugParams {
+  "slug": string;
+  "omit_empty"?: "true" | "false";
+  "status"?: string;
+  "locale"?: string;
+}
+
+export type PolymarketRelatedTagRowsBySlugResponse = CrawloraResponse<ModelPolymarketTagsResponseDoc>;
+export interface PolymarketRelatedTagRowsBySlugParams {
+  "slug": string;
+  "omit_empty"?: "true" | "false";
+  "status"?: string;
+  "locale"?: string;
+}
+
+export type PolymarketTagResponse = CrawloraResponse<ModelPolymarketTagResponseDoc>;
+export interface PolymarketTagParams {
+  "id": string;
+  "include_template"?: boolean;
+  "locale"?: string;
+}
+
+export type PolymarketRelatedTagsResponse = CrawloraResponse<ModelPolymarketTagsResponseDoc>;
+export interface PolymarketRelatedTagsParams {
+  "id": string;
+  "omit_empty"?: "true" | "false";
+  "status"?: string;
+  "locale"?: string;
+}
+
+export type PolymarketRelatedTagRowsResponse = CrawloraResponse<ModelPolymarketTagsResponseDoc>;
+export interface PolymarketRelatedTagRowsParams {
+  "id": string;
+  "omit_empty"?: "true" | "false";
+  "status"?: string;
+  "locale"?: string;
+}
+
+export type PolymarketTagsResponse = CrawloraResponse<ModelPolymarketTagsResponseDoc>;
+export interface PolymarketTagsParams {
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: "volume24hr" | "volume" | "liquidity" | "endDate" | "updatedAt" | "createdAt" | "id" | "slug" | "title" | "question" | "label";
+  "ascending"?: "true" | "false";
+  "locale"?: string;
+}
+
+export type PolymarketTeamsResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketTeamsParams {
+  "league"?: string;
+  "name"?: string;
+  "abbreviation"?: string;
+  "provider_id"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: string;
+  "ascending"?: boolean;
+}
+
+export type PolymarketTeamsByPartnerResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketTeamsByPartnerParams {
+  "partner"?: string;
+  "external_id"?: string;
+}
+
+export type PolymarketTeamResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketTeamParams {
+  "id": number;
+}
+
+export type PolymarketTeamExternalPartnersResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketTeamExternalPartnersParams {
+  "id": number;
+}
+
+export type PolymarketTeamExternalPartnerResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketTeamExternalPartnerParams {
+  "id": number;
+  "partner_ref": string;
+}
+
+export type PolymarketTokenMidpointResponse = CrawloraResponse<ModelPolymarketTokenMidpointResponseDoc>;
+export interface PolymarketTokenMidpointParams {
+  "token_id": string;
+}
+
+export type PolymarketTokenOrderbookResponse = CrawloraResponse<ModelPolymarketTokenOrderBookResponseDoc>;
+export interface PolymarketTokenOrderbookParams {
+  "token_id": string;
+}
+
+export type PolymarketTokenPriceResponse = CrawloraResponse<ModelPolymarketTokenPriceResponseDoc>;
+export interface PolymarketTokenPriceParams {
+  "token_id": string;
+  "side"?: "buy" | "sell";
+}
+
+export type PolymarketTokenPriceHistoryResponse = CrawloraResponse<ModelPolymarketTokenPriceHistoryResponseDoc>;
+export interface PolymarketTokenPriceHistoryParams {
+  "token_id": string;
+  "interval"?: "1m" | "1h" | "6h" | "1d" | "1w" | "all" | "max";
+  "fidelity"?: number;
+  "start_ts"?: number;
+  "end_ts"?: number;
+}
+
+export type PolymarketTokenSpreadResponse = CrawloraResponse<ModelPolymarketTokenSpreadResponseDoc>;
+export interface PolymarketTokenSpreadParams {
+  "token_id": string;
+}
+
+export type PolymarketTokensMidpointsBody = CrawloraBody<ModelPolymarketBatchTokenMidpointsOption>;
+export type PolymarketTokensMidpointsResponse = CrawloraResponse<ModelPolymarketBatchTokenMidpointsResponseDoc>;
+export interface PolymarketTokensMidpointsParams {
+  "body": PolymarketTokensMidpointsBody;
+}
+
+export type PolymarketTokensOrderbooksBody = CrawloraBody<ModelPolymarketBatchTokenOrderBooksOption>;
+export type PolymarketTokensOrderbooksResponse = CrawloraResponse<ModelPolymarketBatchTokenOrderBooksResponseDoc>;
+export interface PolymarketTokensOrderbooksParams {
+  "body": PolymarketTokensOrderbooksBody;
+}
+
+export type PolymarketTokensPricesBody = CrawloraBody<ModelPolymarketBatchTokenPricesOption>;
+export type PolymarketTokensPricesResponse = CrawloraResponse<ModelPolymarketBatchTokenPricesResponseDoc>;
+export interface PolymarketTokensPricesParams {
+  "body": PolymarketTokensPricesBody;
+}
+
+export type PolymarketTokensSpreadsBody = CrawloraBody<ModelPolymarketBatchTokenSpreadsOption>;
+export type PolymarketTokensSpreadsResponse = CrawloraResponse<ModelPolymarketBatchTokenSpreadsResponseDoc>;
+export interface PolymarketTokensSpreadsParams {
+  "body": PolymarketTokensSpreadsBody;
+}
+
+export type PolymarketTournamentsResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketTournamentsParams {
+  "limit"?: number;
+  "offset"?: number;
+  "order"?: string;
+  "ascending"?: boolean;
+}
+
+export type PolymarketTournamentResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
+export interface PolymarketTournamentParams {
+  "id": number;
 }
 
 export type ProductHuntCategoryResponse = CrawloraResponse<ModelProducthuntCategoryResponseDoc>;
@@ -10009,6 +13668,15 @@ export interface RedditCommentsParams {
   "depth"?: number;
 }
 
+export type RedditDomainPostsResponse = CrawloraResponse<ModelRedditDomainPostsResponseDoc>;
+export interface RedditDomainPostsParams {
+  "domain": string;
+  "sort"?: "hot" | "new" | "top" | "rising";
+  "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
+  "limit"?: number;
+  "after"?: string;
+}
+
 export type RedditPostResponse = CrawloraResponse<ModelRedditPostResponseDoc>;
 export interface RedditPostParams {
   "id": string;
@@ -10024,11 +13692,55 @@ export interface RedditSearchParams {
   "after"?: string;
 }
 
+export type RedditSubredditAboutResponse = CrawloraResponse<ModelRedditSubredditAboutResponseDoc>;
+export interface RedditSubredditAboutParams {
+  "subreddit": string;
+  "limit"?: number;
+}
+
+export type RedditSubredditCommentsResponse = CrawloraResponse<ModelRedditSubredditCommentsResponseDoc>;
+export interface RedditSubredditCommentsParams {
+  "subreddit": string;
+  "limit"?: number;
+  "after"?: string;
+}
+
 export type RedditSubredditPostsResponse = CrawloraResponse<ModelRedditSubredditPostsResponseDoc>;
 export interface RedditSubredditPostsParams {
   "subreddit": string;
   "sort"?: "hot" | "new" | "top" | "rising";
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
+  "limit"?: number;
+  "after"?: string;
+}
+
+export type RedditSubredditsPostsResponse = CrawloraResponse<ModelRedditMultiSubredditPostsResponseDoc>;
+export interface RedditSubredditsPostsParams {
+  "subreddits": string;
+  "sort"?: "hot" | "new" | "top" | "rising";
+  "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
+  "limit"?: number;
+  "after"?: string;
+}
+
+export type RedditTrendsResponse = CrawloraResponse<ModelRedditTrendsResponseDoc>;
+export interface RedditTrendsParams {
+  "sort"?: "hot" | "new" | "rising" | "top";
+  "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
+  "limit"?: number;
+  "after"?: string;
+}
+
+export type RedditUserCommentsResponse = CrawloraResponse<ModelRedditUserCommentsResponseDoc>;
+export interface RedditUserCommentsParams {
+  "username": string;
+  "limit"?: number;
+  "after"?: string;
+}
+
+export type RedditUserPostsResponse = CrawloraResponse<ModelRedditUserPostsResponseDoc>;
+export interface RedditUserPostsParams {
+  "username": string;
   "limit"?: number;
   "after"?: string;
 }
@@ -10046,6 +13758,65 @@ export interface ReferralsMeParams {
 export type ReferralsMeEventsResponse = CrawloraResponse<ModelReferralsReferralsEventsResponseDoc>;
 export interface ReferralsMeEventsParams {
   "limit"?: number;
+}
+
+export type RottenTomatoesRottentomatoesBrowseMoviesResponse = CrawloraResponse<ModelRottentomatoesBrowseResponseDoc>;
+export interface RottenTomatoesRottentomatoesBrowseMoviesParams {
+  "list"?: "movies_in_theaters" | "movies_at_home" | "movies_coming_soon";
+  "sort"?: "popular" | "newest" | "top_box_office";
+  "limit"?: number;
+}
+
+export type RottenTomatoesRottentomatoesBrowseTvResponse = CrawloraResponse<ModelRottentomatoesBrowseResponseDoc>;
+export interface RottenTomatoesRottentomatoesBrowseTvParams {
+  "list"?: "tv_series_browse";
+  "sort"?: "popular" | "newest";
+  "limit"?: number;
+}
+
+export type RottenTomatoesRottentomatoesEpisodeResponse = CrawloraResponse<ModelRottentomatoesEpisodeResponseDoc>;
+export interface RottenTomatoesRottentomatoesEpisodeParams {
+  "path"?: string;
+  "url"?: string;
+}
+
+export type RottenTomatoesRottentomatoesMovieResponse = CrawloraResponse<ModelRottentomatoesMovieResponseDoc>;
+export interface RottenTomatoesRottentomatoesMovieParams {
+  "path"?: string;
+  "url"?: string;
+}
+
+export type RottenTomatoesRottentomatoesMovieReviewsResponse = CrawloraResponse<ModelRottentomatoesReviewsResponseDoc>;
+export interface RottenTomatoesRottentomatoesMovieReviewsParams {
+  "path"?: string;
+  "url"?: string;
+  "type"?: "critics" | "top-critics" | "audience" | "verified-audience";
+  "limit"?: number;
+  "after"?: string;
+}
+
+export type RottenTomatoesRottentomatoesPersonResponse = CrawloraResponse<ModelRottentomatoesPersonResponseDoc>;
+export interface RottenTomatoesRottentomatoesPersonParams {
+  "path"?: string;
+  "url"?: string;
+}
+
+export type RottenTomatoesRottentomatoesSearchResponse = CrawloraResponse<ModelRottentomatoesSearchResponseDoc>;
+export interface RottenTomatoesRottentomatoesSearchParams {
+  "query": string;
+  "limit"?: number;
+}
+
+export type RottenTomatoesRottentomatoesSeasonResponse = CrawloraResponse<ModelRottentomatoesSeasonResponseDoc>;
+export interface RottenTomatoesRottentomatoesSeasonParams {
+  "path"?: string;
+  "url"?: string;
+}
+
+export type RottenTomatoesRottentomatoesSeriesResponse = CrawloraResponse<ModelRottentomatoesSeriesResponseDoc>;
+export interface RottenTomatoesRottentomatoesSeriesParams {
+  "path"?: string;
+  "url"?: string;
 }
 
 export type ShopAppAnalysisResponse = CrawloraResponse<ModelShopappAnalysisResponseDoc>;
@@ -11280,6 +15051,30 @@ export interface BingService {
   videos<T = BingVideosResponse>(params: BingVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface BoxOfficeMojoService {
+  boxofficemojoBrand<T = BoxOfficeMojoBoxofficemojoBrandResponse>(params?: BoxOfficeMojoBoxofficemojoBrandParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoBrands<T = BoxOfficeMojoBoxofficemojoBrandsResponse>(params?: BoxOfficeMojoBoxofficemojoBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoCalendar<T = BoxOfficeMojoBoxofficemojoCalendarResponse>(params: BoxOfficeMojoBoxofficemojoCalendarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoCalendarChanges<T = BoxOfficeMojoBoxofficemojoCalendarChangesResponse>(params?: BoxOfficeMojoBoxofficemojoCalendarChangesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoCalendarDate<T = BoxOfficeMojoBoxofficemojoCalendarDateResponse>(params: BoxOfficeMojoBoxofficemojoCalendarDateParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoDateDomestic<T = BoxOfficeMojoBoxofficemojoDateDomesticResponse>(params: BoxOfficeMojoBoxofficemojoDateDomesticParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoFranchise<T = BoxOfficeMojoBoxofficemojoFranchiseResponse>(params?: BoxOfficeMojoBoxofficemojoFranchiseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoFranchises<T = BoxOfficeMojoBoxofficemojoFranchisesResponse>(params?: BoxOfficeMojoBoxofficemojoFranchisesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoGenre<T = BoxOfficeMojoBoxofficemojoGenreResponse>(params?: BoxOfficeMojoBoxofficemojoGenreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoGenres<T = BoxOfficeMojoBoxofficemojoGenresResponse>(params?: BoxOfficeMojoBoxofficemojoGenresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoLifetimeGrosses<T = BoxOfficeMojoBoxofficemojoLifetimeGrossesResponse>(params?: BoxOfficeMojoBoxofficemojoLifetimeGrossesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoRelease<T = BoxOfficeMojoBoxofficemojoReleaseResponse>(params?: BoxOfficeMojoBoxofficemojoReleaseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoReleaseGroup<T = BoxOfficeMojoBoxofficemojoReleaseGroupResponse>(params?: BoxOfficeMojoBoxofficemojoReleaseGroupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoShowdown<T = BoxOfficeMojoBoxofficemojoShowdownResponse>(params?: BoxOfficeMojoBoxofficemojoShowdownParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoShowdowns<T = BoxOfficeMojoBoxofficemojoShowdownsResponse>(params?: BoxOfficeMojoBoxofficemojoShowdownsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoTitle<T = BoxOfficeMojoBoxofficemojoTitleResponse>(params?: BoxOfficeMojoBoxofficemojoTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoWeekendDomestic<T = BoxOfficeMojoBoxofficemojoWeekendDomesticResponse>(params: BoxOfficeMojoBoxofficemojoWeekendDomesticParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoWeekendDomesticByDistributor<T = BoxOfficeMojoBoxofficemojoWeekendDomesticByDistributorResponse>(params: BoxOfficeMojoBoxofficemojoWeekendDomesticByDistributorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoWeekendDomesticEstimates<T = BoxOfficeMojoBoxofficemojoWeekendDomesticEstimatesResponse>(params: BoxOfficeMojoBoxofficemojoWeekendDomesticEstimatesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoYearDomestic<T = BoxOfficeMojoBoxofficemojoYearDomesticResponse>(params: BoxOfficeMojoBoxofficemojoYearDomesticParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoYearWorldwide<T = BoxOfficeMojoBoxofficemojoYearWorldwideResponse>(params: BoxOfficeMojoBoxofficemojoYearWorldwideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface BrandService {
   retrieve<T = BrandRetrieveResponse>(params: BrandRetrieveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
@@ -11393,6 +15188,28 @@ export interface GooglePlayService {
   suggest<T = GooglePlaySuggestResponse>(params: GooglePlaySuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface ImdbService {
+  name<T = ImdbNameResponse>(params?: ImdbNameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  nameAwards<T = ImdbNameAwardsResponse>(params?: ImdbNameAwardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  nameCredits<T = ImdbNameCreditsResponse>(params?: ImdbNameCreditsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = ImdbSearchResponse>(params: ImdbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  title<T = ImdbTitleResponse>(params?: ImdbTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleAwards<T = ImdbTitleAwardsResponse>(params?: ImdbTitleAwardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleCompanyCredits<T = ImdbTitleCompanyCreditsResponse>(params?: ImdbTitleCompanyCreditsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleCredits<T = ImdbTitleCreditsResponse>(params?: ImdbTitleCreditsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleEpisodes<T = ImdbTitleEpisodesResponse>(params?: ImdbTitleEpisodesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleFilmingLocations<T = ImdbTitleFilmingLocationsResponse>(params?: ImdbTitleFilmingLocationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleGoofs<T = ImdbTitleGoofsResponse>(params?: ImdbTitleGoofsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleKeywords<T = ImdbTitleKeywordsResponse>(params?: ImdbTitleKeywordsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleParentalGuide<T = ImdbTitleParentalGuideResponse>(params?: ImdbTitleParentalGuideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titlePublicFactsAnalysis<T = ImdbTitlePublicFactsAnalysisResponse>(params?: ImdbTitlePublicFactsAnalysisParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleQuotes<T = ImdbTitleQuotesResponse>(params?: ImdbTitleQuotesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleReleaseInfo<T = ImdbTitleReleaseInfoResponse>(params?: ImdbTitleReleaseInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleReviews<T = ImdbTitleReviewsResponse>(params?: ImdbTitleReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleTechnicalSpecs<T = ImdbTitleTechnicalSpecsResponse>(params?: ImdbTitleTechnicalSpecsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleTrivia<T = ImdbTitleTriviaResponse>(params?: ImdbTitleTriviaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface InstagramService {
   post<T = InstagramPostResponse>(params: InstagramPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = InstagramProfileResponse>(params: InstagramProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -11423,15 +15240,121 @@ export interface JustWatchService {
   justwatchTitleSimilar<T = JustWatchJustwatchTitleSimilarResponse>(params: JustWatchJustwatchTitleSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface KalshiService {
+  event<T = KalshiEventResponse>(params: KalshiEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventHistory<T = KalshiEventHistoryResponse>(params: KalshiEventHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventMetadata<T = KalshiEventMetadataResponse>(params: KalshiEventMetadataParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  events<T = KalshiEventsResponse>(params?: KalshiEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  multivariateEvents<T = KalshiMultivariateEventsResponse>(params?: KalshiMultivariateEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  exchangeSchedule<T = KalshiExchangeScheduleResponse>(params?: KalshiExchangeScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  exchangeStatus<T = KalshiExchangeStatusResponse>(params?: KalshiExchangeStatusParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  historicalCutoff<T = KalshiHistoricalCutoffResponse>(params?: KalshiHistoricalCutoffParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  historicalMarket<T = KalshiHistoricalMarketResponse>(params: KalshiHistoricalMarketParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  historicalMarketHistory<T = KalshiHistoricalMarketHistoryResponse>(params: KalshiHistoricalMarketHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  historicalMarkets<T = KalshiHistoricalMarketsResponse>(params?: KalshiHistoricalMarketsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  historicalTrades<T = KalshiHistoricalTradesResponse>(params?: KalshiHistoricalTradesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  market<T = KalshiMarketResponse>(params: KalshiMarketParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketHistory<T = KalshiMarketHistoryResponse>(params: KalshiMarketHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketOrderbook<T = KalshiMarketOrderbookResponse>(params: KalshiMarketOrderbookParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  markets<T = KalshiMarketsResponse>(params?: KalshiMarketsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketsHistory<T = KalshiMarketsHistoryResponse>(params: KalshiMarketsHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketsOrderbooks<T = KalshiMarketsOrderbooksResponse>(params: KalshiMarketsOrderbooksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  series<T = KalshiSeriesResponse>(params?: KalshiSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  seriesDetail<T = KalshiSeriesDetailResponse>(params: KalshiSeriesDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trades<T = KalshiTradesResponse>(params?: KalshiTradesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface LinkedInService {
   linkedinCompany<T = LinkedInLinkedinCompanyResponse>(params: LinkedInLinkedinCompanyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   linkedinProduct<T = LinkedInLinkedinProductResponse>(params: LinkedInLinkedinProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   linkedinShowcase<T = LinkedInLinkedinShowcaseResponse>(params: LinkedInLinkedinShowcaseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface MetaculusService {
+  categoryQuestions<T = MetaculusCategoryQuestionsResponse>(params: MetaculusCategoryQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  commentsFeed<T = MetaculusCommentsFeedResponse>(params?: MetaculusCommentsFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  projectQuestions<T = MetaculusProjectQuestionsResponse>(params: MetaculusProjectQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  question<T = MetaculusQuestionResponse>(params: MetaculusQuestionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  questionForecastHistory<T = MetaculusQuestionForecastHistoryResponse>(params: MetaculusQuestionForecastHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  questionForecasts<T = MetaculusQuestionForecastsResponse>(params: MetaculusQuestionForecastsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  questionMetadata<T = MetaculusQuestionMetadataResponse>(params: MetaculusQuestionMetadataParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  questionOptions<T = MetaculusQuestionOptionsResponse>(params: MetaculusQuestionOptionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  questions<T = MetaculusQuestionsResponse>(params?: MetaculusQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  topComments<T = MetaculusTopCommentsResponse>(params?: MetaculusTopCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournamentQuestions<T = MetaculusTournamentQuestionsResponse>(params: MetaculusTournamentQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface MetaService {
   ping<T = MetaPingResponse>(params?: MetaPingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ready<T = MetaReadyResponse>(params?: MetaReadyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface PolymarketService {
+  activityTrades<T = PolymarketActivityTradesResponse>(params?: PolymarketActivityTradesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  clobMarket<T = PolymarketClobMarketResponse>(params: PolymarketClobMarketParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dashboardMacro<T = PolymarketDashboardMacroResponse>(params?: PolymarketDashboardMacroParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dataFollowers<T = PolymarketDataFollowersResponse>(params: PolymarketDataFollowersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dataFollowing<T = PolymarketDataFollowingResponse>(params: PolymarketDataFollowingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dataFollowsCounts<T = PolymarketDataFollowsCountsResponse>(params: PolymarketDataFollowsCountsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventDetailById<T = PolymarketEventDetailByIdResponse>(params: PolymarketEventDetailByIdParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventActivityById<T = PolymarketEventActivityByIdResponse>(params: PolymarketEventActivityByIdParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventDetail<T = PolymarketEventDetailResponse>(params: PolymarketEventDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventActivity<T = PolymarketEventActivityResponse>(params: PolymarketEventActivityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  events<T = PolymarketEventsResponse>(params?: PolymarketEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventsSimilar<T = PolymarketEventsSimilarResponse>(params?: PolymarketEventsSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventTags<T = PolymarketEventTagsResponse>(params: PolymarketEventTagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  feeTypes<T = PolymarketFeeTypesResponse>(params?: PolymarketFeeTypesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  games<T = PolymarketGamesResponse>(params?: PolymarketGamesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  homepageFeed<T = PolymarketHomepageFeedResponse>(params?: PolymarketHomepageFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  leaderboard<T = PolymarketLeaderboardResponse>(params?: PolymarketLeaderboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketClarifications<T = PolymarketMarketClarificationsResponse>(params?: PolymarketMarketClarificationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketDetailByCondition<T = PolymarketMarketDetailByConditionResponse>(params: PolymarketMarketDetailByConditionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketActivityByCondition<T = PolymarketMarketActivityByConditionResponse>(params: PolymarketMarketActivityByConditionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketLiquidityByCondition<T = PolymarketMarketLiquidityByConditionResponse>(params: PolymarketMarketLiquidityByConditionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketDetailBySlug<T = PolymarketMarketDetailBySlugResponse>(params: PolymarketMarketDetailBySlugParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketLiquidityBySlug<T = PolymarketMarketLiquidityBySlugResponse>(params: PolymarketMarketLiquidityBySlugParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketDetail<T = PolymarketMarketDetailResponse>(params: PolymarketMarketDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketLiquidity<T = PolymarketMarketLiquidityResponse>(params: PolymarketMarketLiquidityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketTags<T = PolymarketMarketTagsResponse>(params: PolymarketMarketTagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  markets<T = PolymarketMarketsResponse>(params?: PolymarketMarketsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  predictions<T = PolymarketPredictionsResponse>(params?: PolymarketPredictionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rewardsMarket<T = PolymarketRewardsMarketResponse>(params: PolymarketRewardsMarketParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rewardsMarkets<T = PolymarketRewardsMarketsResponse>(params?: PolymarketRewardsMarketsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = PolymarketSearchResponse>(params: PolymarketSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sports<T = PolymarketSportsResponse>(params?: PolymarketSportsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sportsByPartner<T = PolymarketSportsByPartnerResponse>(params?: PolymarketSportsByPartnerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sportsMarketTypes<T = PolymarketSportsMarketTypesResponse>(params?: PolymarketSportsMarketTypesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sportsSummary<T = PolymarketSportsSummaryResponse>(params?: PolymarketSportsSummaryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sport<T = PolymarketSportResponse>(params: PolymarketSportParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sportExternalPartners<T = PolymarketSportExternalPartnersResponse>(params: PolymarketSportExternalPartnersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sportExternalPartner<T = PolymarketSportExternalPartnerResponse>(params: PolymarketSportExternalPartnerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  spotlights<T = PolymarketSpotlightsResponse>(params?: PolymarketSpotlightsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  spotlightsKeyset<T = PolymarketSpotlightsKeysetResponse>(params?: PolymarketSpotlightsKeysetParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  spotlight<T = PolymarketSpotlightResponse>(params: PolymarketSpotlightParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  status<T = PolymarketStatusResponse>(params?: PolymarketStatusParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tagBySlug<T = PolymarketTagBySlugResponse>(params: PolymarketTagBySlugParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  relatedTagsBySlug<T = PolymarketRelatedTagsBySlugResponse>(params: PolymarketRelatedTagsBySlugParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  relatedTagRowsBySlug<T = PolymarketRelatedTagRowsBySlugResponse>(params: PolymarketRelatedTagRowsBySlugParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tag<T = PolymarketTagResponse>(params: PolymarketTagParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  relatedTags<T = PolymarketRelatedTagsResponse>(params: PolymarketRelatedTagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  relatedTagRows<T = PolymarketRelatedTagRowsResponse>(params: PolymarketRelatedTagRowsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tags<T = PolymarketTagsResponse>(params?: PolymarketTagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teams<T = PolymarketTeamsResponse>(params?: PolymarketTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamsByPartner<T = PolymarketTeamsByPartnerResponse>(params?: PolymarketTeamsByPartnerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  team<T = PolymarketTeamResponse>(params: PolymarketTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamExternalPartners<T = PolymarketTeamExternalPartnersResponse>(params: PolymarketTeamExternalPartnersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamExternalPartner<T = PolymarketTeamExternalPartnerResponse>(params: PolymarketTeamExternalPartnerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokenMidpoint<T = PolymarketTokenMidpointResponse>(params: PolymarketTokenMidpointParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokenOrderbook<T = PolymarketTokenOrderbookResponse>(params: PolymarketTokenOrderbookParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokenPrice<T = PolymarketTokenPriceResponse>(params: PolymarketTokenPriceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokenPriceHistory<T = PolymarketTokenPriceHistoryResponse>(params: PolymarketTokenPriceHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokenSpread<T = PolymarketTokenSpreadResponse>(params: PolymarketTokenSpreadParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokensMidpoints<T = PolymarketTokensMidpointsResponse>(params: PolymarketTokensMidpointsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokensOrderbooks<T = PolymarketTokensOrderbooksResponse>(params: PolymarketTokensOrderbooksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokensPrices<T = PolymarketTokensPricesResponse>(params: PolymarketTokensPricesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tokensSpreads<T = PolymarketTokensSpreadsResponse>(params: PolymarketTokensSpreadsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournaments<T = PolymarketTournamentsResponse>(params?: PolymarketTournamentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournament<T = PolymarketTournamentResponse>(params: PolymarketTournamentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ProductHuntService {
@@ -11450,15 +15373,34 @@ export interface ProductHuntService {
 
 export interface RedditService {
   comments<T = RedditCommentsResponse>(params: RedditCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  domainPosts<T = RedditDomainPostsResponse>(params: RedditDomainPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   post<T = RedditPostResponse>(params: RedditPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = RedditSearchResponse>(params: RedditSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  subredditAbout<T = RedditSubredditAboutResponse>(params: RedditSubredditAboutParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  subredditComments<T = RedditSubredditCommentsResponse>(params: RedditSubredditCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   subredditPosts<T = RedditSubredditPostsResponse>(params: RedditSubredditPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  subredditsPosts<T = RedditSubredditsPostsResponse>(params: RedditSubredditsPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trends<T = RedditTrendsResponse>(params?: RedditTrendsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  userComments<T = RedditUserCommentsResponse>(params: RedditUserCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  userPosts<T = RedditUserPostsResponse>(params: RedditUserPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ReferralsService {
   click<T = ReferralsClickResponse>(params: ReferralsClickParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   me<T = ReferralsMeResponse>(params?: ReferralsMeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meEvents<T = ReferralsMeEventsResponse>(params?: ReferralsMeEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface RottenTomatoesService {
+  rottentomatoesBrowseMovies<T = RottenTomatoesRottentomatoesBrowseMoviesResponse>(params?: RottenTomatoesRottentomatoesBrowseMoviesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesBrowseTv<T = RottenTomatoesRottentomatoesBrowseTvResponse>(params?: RottenTomatoesRottentomatoesBrowseTvParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesEpisode<T = RottenTomatoesRottentomatoesEpisodeResponse>(params?: RottenTomatoesRottentomatoesEpisodeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesMovie<T = RottenTomatoesRottentomatoesMovieResponse>(params?: RottenTomatoesRottentomatoesMovieParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesMovieReviews<T = RottenTomatoesRottentomatoesMovieReviewsResponse>(params?: RottenTomatoesRottentomatoesMovieReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesPerson<T = RottenTomatoesRottentomatoesPersonResponse>(params?: RottenTomatoesRottentomatoesPersonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesSearch<T = RottenTomatoesRottentomatoesSearchResponse>(params: RottenTomatoesRottentomatoesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesSeason<T = RottenTomatoesRottentomatoesSeasonResponse>(params?: RottenTomatoesRottentomatoesSeasonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesSeries<T = RottenTomatoesRottentomatoesSeriesResponse>(params?: RottenTomatoesRottentomatoesSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ShopAppService {
@@ -11674,6 +15616,7 @@ export interface CrawloraGeneratedGroups {
   appStore: AppStoreService;
   billing: BillingService;
   bing: BingService;
+  boxOfficeMojo: BoxOfficeMojoService;
   brand: BrandService;
   brave: BraveService;
   coinGecko: CoinGeckoService;
@@ -11682,13 +15625,18 @@ export interface CrawloraGeneratedGroups {
   geocoding: GeocodingService;
   google: GoogleService;
   googlePlay: GooglePlayService;
+  imdb: ImdbService;
   instagram: InstagramService;
   justWatch: JustWatchService;
+  kalshi: KalshiService;
   linkedIn: LinkedInService;
+  metaculus: MetaculusService;
   meta: MetaService;
+  polymarket: PolymarketService;
   productHunt: ProductHuntService;
   reddit: RedditService;
   referrals: ReferralsService;
+  rottenTomatoes: RottenTomatoesService;
   shopApp: ShopAppService;
   shopify: ShopifyService;
   similarWeb: SimilarWebService;
@@ -11740,6 +15688,27 @@ export interface OperationParamsMap {
   "bing-search": BingSearchParams;
   "bing-suggest": BingSuggestParams;
   "bing-videos": BingVideosParams;
+  "boxofficemojo-brand": BoxOfficeMojoBoxofficemojoBrandParams;
+  "boxofficemojo-brands": BoxOfficeMojoBoxofficemojoBrandsParams;
+  "boxofficemojo-calendar": BoxOfficeMojoBoxofficemojoCalendarParams;
+  "boxofficemojo-calendar-changes": BoxOfficeMojoBoxofficemojoCalendarChangesParams;
+  "boxofficemojo-calendar-date": BoxOfficeMojoBoxofficemojoCalendarDateParams;
+  "boxofficemojo-date-domestic": BoxOfficeMojoBoxofficemojoDateDomesticParams;
+  "boxofficemojo-franchise": BoxOfficeMojoBoxofficemojoFranchiseParams;
+  "boxofficemojo-franchises": BoxOfficeMojoBoxofficemojoFranchisesParams;
+  "boxofficemojo-genre": BoxOfficeMojoBoxofficemojoGenreParams;
+  "boxofficemojo-genres": BoxOfficeMojoBoxofficemojoGenresParams;
+  "boxofficemojo-lifetime-grosses": BoxOfficeMojoBoxofficemojoLifetimeGrossesParams;
+  "boxofficemojo-release": BoxOfficeMojoBoxofficemojoReleaseParams;
+  "boxofficemojo-release-group": BoxOfficeMojoBoxofficemojoReleaseGroupParams;
+  "boxofficemojo-showdown": BoxOfficeMojoBoxofficemojoShowdownParams;
+  "boxofficemojo-showdowns": BoxOfficeMojoBoxofficemojoShowdownsParams;
+  "boxofficemojo-title": BoxOfficeMojoBoxofficemojoTitleParams;
+  "boxofficemojo-weekend-domestic": BoxOfficeMojoBoxofficemojoWeekendDomesticParams;
+  "boxofficemojo-weekend-domestic-by-distributor": BoxOfficeMojoBoxofficemojoWeekendDomesticByDistributorParams;
+  "boxofficemojo-weekend-domestic-estimates": BoxOfficeMojoBoxofficemojoWeekendDomesticEstimatesParams;
+  "boxofficemojo-year-domestic": BoxOfficeMojoBoxofficemojoYearDomesticParams;
+  "boxofficemojo-year-worldwide": BoxOfficeMojoBoxofficemojoYearWorldwideParams;
   "brand-retrieve": BrandRetrieveParams;
   "brave-images": BraveImagesParams;
   "brave-news": BraveNewsParams;
@@ -11829,6 +15798,25 @@ export interface OperationParamsMap {
   "googleplay-search": GooglePlaySearchParams;
   "googleplay-similar": GooglePlaySimilarParams;
   "googleplay-suggest": GooglePlaySuggestParams;
+  "imdb-name": ImdbNameParams;
+  "imdb-name-awards": ImdbNameAwardsParams;
+  "imdb-name-credits": ImdbNameCreditsParams;
+  "imdb-search": ImdbSearchParams;
+  "imdb-title": ImdbTitleParams;
+  "imdb-title-awards": ImdbTitleAwardsParams;
+  "imdb-title-company-credits": ImdbTitleCompanyCreditsParams;
+  "imdb-title-credits": ImdbTitleCreditsParams;
+  "imdb-title-episodes": ImdbTitleEpisodesParams;
+  "imdb-title-filming-locations": ImdbTitleFilmingLocationsParams;
+  "imdb-title-goofs": ImdbTitleGoofsParams;
+  "imdb-title-keywords": ImdbTitleKeywordsParams;
+  "imdb-title-parental-guide": ImdbTitleParentalGuideParams;
+  "imdb-title-public-facts-analysis": ImdbTitlePublicFactsAnalysisParams;
+  "imdb-title-quotes": ImdbTitleQuotesParams;
+  "imdb-title-release-info": ImdbTitleReleaseInfoParams;
+  "imdb-title-reviews": ImdbTitleReviewsParams;
+  "imdb-title-technical-specs": ImdbTitleTechnicalSpecsParams;
+  "imdb-title-trivia": ImdbTitleTriviaParams;
   "instagram-post": InstagramPostParams;
   "instagram-profile": InstagramProfileParams;
   "instagram-reels": InstagramReelsParams;
@@ -11853,10 +15841,107 @@ export interface OperationParamsMap {
   "justwatch-title-media": JustWatchJustwatchTitleMediaParams;
   "justwatch-title-offers": JustWatchJustwatchTitleOffersParams;
   "justwatch-title-similar": JustWatchJustwatchTitleSimilarParams;
+  "kalshi-event": KalshiEventParams;
+  "kalshi-event-history": KalshiEventHistoryParams;
+  "kalshi-event-metadata": KalshiEventMetadataParams;
+  "kalshi-events": KalshiEventsParams;
+  "kalshi-multivariate-events": KalshiMultivariateEventsParams;
+  "kalshi-exchange-schedule": KalshiExchangeScheduleParams;
+  "kalshi-exchange-status": KalshiExchangeStatusParams;
+  "kalshi-historical-cutoff": KalshiHistoricalCutoffParams;
+  "kalshi-historical-market": KalshiHistoricalMarketParams;
+  "kalshi-historical-market-history": KalshiHistoricalMarketHistoryParams;
+  "kalshi-historical-markets": KalshiHistoricalMarketsParams;
+  "kalshi-historical-trades": KalshiHistoricalTradesParams;
+  "kalshi-market": KalshiMarketParams;
+  "kalshi-market-history": KalshiMarketHistoryParams;
+  "kalshi-market-orderbook": KalshiMarketOrderbookParams;
+  "kalshi-markets": KalshiMarketsParams;
+  "kalshi-markets-history": KalshiMarketsHistoryParams;
+  "kalshi-markets-orderbooks": KalshiMarketsOrderbooksParams;
+  "kalshi-series": KalshiSeriesParams;
+  "kalshi-series-detail": KalshiSeriesDetailParams;
+  "kalshi-trades": KalshiTradesParams;
   "linkedin-company": LinkedInLinkedinCompanyParams;
   "linkedin-product": LinkedInLinkedinProductParams;
   "linkedin-showcase": LinkedInLinkedinShowcaseParams;
+  "metaculus-category-questions": MetaculusCategoryQuestionsParams;
+  "metaculus-comments-feed": MetaculusCommentsFeedParams;
+  "metaculus-project-questions": MetaculusProjectQuestionsParams;
+  "metaculus-question": MetaculusQuestionParams;
+  "metaculus-question-forecast-history": MetaculusQuestionForecastHistoryParams;
+  "metaculus-question-forecasts": MetaculusQuestionForecastsParams;
+  "metaculus-question-metadata": MetaculusQuestionMetadataParams;
+  "metaculus-question-options": MetaculusQuestionOptionsParams;
+  "metaculus-questions": MetaculusQuestionsParams;
+  "metaculus-top-comments": MetaculusTopCommentsParams;
+  "metaculus-tournament-questions": MetaculusTournamentQuestionsParams;
   "ping": MetaPingParams;
+  "polymarket-activity-trades": PolymarketActivityTradesParams;
+  "polymarket-clob-market": PolymarketClobMarketParams;
+  "polymarket-dashboard-macro": PolymarketDashboardMacroParams;
+  "polymarket-data-followers": PolymarketDataFollowersParams;
+  "polymarket-data-following": PolymarketDataFollowingParams;
+  "polymarket-data-follows-counts": PolymarketDataFollowsCountsParams;
+  "polymarket-event-detail-by-id": PolymarketEventDetailByIdParams;
+  "polymarket-event-activity-by-id": PolymarketEventActivityByIdParams;
+  "polymarket-event-detail": PolymarketEventDetailParams;
+  "polymarket-event-activity": PolymarketEventActivityParams;
+  "polymarket-events": PolymarketEventsParams;
+  "polymarket-events-similar": PolymarketEventsSimilarParams;
+  "polymarket-event-tags": PolymarketEventTagsParams;
+  "polymarket-fee-types": PolymarketFeeTypesParams;
+  "polymarket-games": PolymarketGamesParams;
+  "polymarket-homepage-feed": PolymarketHomepageFeedParams;
+  "polymarket-leaderboard": PolymarketLeaderboardParams;
+  "polymarket-market-clarifications": PolymarketMarketClarificationsParams;
+  "polymarket-market-detail-by-condition": PolymarketMarketDetailByConditionParams;
+  "polymarket-market-activity-by-condition": PolymarketMarketActivityByConditionParams;
+  "polymarket-market-liquidity-by-condition": PolymarketMarketLiquidityByConditionParams;
+  "polymarket-market-detail-by-slug": PolymarketMarketDetailBySlugParams;
+  "polymarket-market-liquidity-by-slug": PolymarketMarketLiquidityBySlugParams;
+  "polymarket-market-detail": PolymarketMarketDetailParams;
+  "polymarket-market-liquidity": PolymarketMarketLiquidityParams;
+  "polymarket-market-tags": PolymarketMarketTagsParams;
+  "polymarket-markets": PolymarketMarketsParams;
+  "polymarket-predictions": PolymarketPredictionsParams;
+  "polymarket-rewards-market": PolymarketRewardsMarketParams;
+  "polymarket-rewards-markets": PolymarketRewardsMarketsParams;
+  "polymarket-search": PolymarketSearchParams;
+  "polymarket-sports": PolymarketSportsParams;
+  "polymarket-sports-by-partner": PolymarketSportsByPartnerParams;
+  "polymarket-sports-market-types": PolymarketSportsMarketTypesParams;
+  "polymarket-sports-summary": PolymarketSportsSummaryParams;
+  "polymarket-sport": PolymarketSportParams;
+  "polymarket-sport-external-partners": PolymarketSportExternalPartnersParams;
+  "polymarket-sport-external-partner": PolymarketSportExternalPartnerParams;
+  "polymarket-spotlights": PolymarketSpotlightsParams;
+  "polymarket-spotlights-keyset": PolymarketSpotlightsKeysetParams;
+  "polymarket-spotlight": PolymarketSpotlightParams;
+  "polymarket-status": PolymarketStatusParams;
+  "polymarket-tag-by-slug": PolymarketTagBySlugParams;
+  "polymarket-related-tags-by-slug": PolymarketRelatedTagsBySlugParams;
+  "polymarket-related-tag-rows-by-slug": PolymarketRelatedTagRowsBySlugParams;
+  "polymarket-tag": PolymarketTagParams;
+  "polymarket-related-tags": PolymarketRelatedTagsParams;
+  "polymarket-related-tag-rows": PolymarketRelatedTagRowsParams;
+  "polymarket-tags": PolymarketTagsParams;
+  "polymarket-teams": PolymarketTeamsParams;
+  "polymarket-teams-by-partner": PolymarketTeamsByPartnerParams;
+  "polymarket-team": PolymarketTeamParams;
+  "polymarket-team-external-partners": PolymarketTeamExternalPartnersParams;
+  "polymarket-team-external-partner": PolymarketTeamExternalPartnerParams;
+  "polymarket-token-midpoint": PolymarketTokenMidpointParams;
+  "polymarket-token-orderbook": PolymarketTokenOrderbookParams;
+  "polymarket-token-price": PolymarketTokenPriceParams;
+  "polymarket-token-price-history": PolymarketTokenPriceHistoryParams;
+  "polymarket-token-spread": PolymarketTokenSpreadParams;
+  "polymarket-tokens-midpoints": PolymarketTokensMidpointsParams;
+  "polymarket-tokens-orderbooks": PolymarketTokensOrderbooksParams;
+  "polymarket-tokens-prices": PolymarketTokensPricesParams;
+  "polymarket-tokens-spreads": PolymarketTokensSpreadsParams;
+  "polymarket-tournaments": PolymarketTournamentsParams;
+  "polymarket-tournament": PolymarketTournamentParams;
   "producthunt-category": ProductHuntCategoryParams;
   "producthunt-category-products": ProductHuntCategoryProductsParams;
   "producthunt-leaderboard": ProductHuntLeaderboardParams;
@@ -11870,12 +15955,28 @@ export interface OperationParamsMap {
   "producthunt-search": ProductHuntSearchParams;
   "ready": MetaReadyParams;
   "reddit-comments": RedditCommentsParams;
+  "reddit-domain-posts": RedditDomainPostsParams;
   "reddit-post": RedditPostParams;
   "reddit-search": RedditSearchParams;
+  "reddit-subreddit-about": RedditSubredditAboutParams;
+  "reddit-subreddit-comments": RedditSubredditCommentsParams;
   "reddit-subreddit-posts": RedditSubredditPostsParams;
+  "reddit-subreddits-posts": RedditSubredditsPostsParams;
+  "reddit-trends": RedditTrendsParams;
+  "reddit-user-comments": RedditUserCommentsParams;
+  "reddit-user-posts": RedditUserPostsParams;
   "referrals-click": ReferralsClickParams;
   "referrals-me": ReferralsMeParams;
   "referrals-me-events": ReferralsMeEventsParams;
+  "rottentomatoes-browse-movies": RottenTomatoesRottentomatoesBrowseMoviesParams;
+  "rottentomatoes-browse-tv": RottenTomatoesRottentomatoesBrowseTvParams;
+  "rottentomatoes-episode": RottenTomatoesRottentomatoesEpisodeParams;
+  "rottentomatoes-movie": RottenTomatoesRottentomatoesMovieParams;
+  "rottentomatoes-movie-reviews": RottenTomatoesRottentomatoesMovieReviewsParams;
+  "rottentomatoes-person": RottenTomatoesRottentomatoesPersonParams;
+  "rottentomatoes-search": RottenTomatoesRottentomatoesSearchParams;
+  "rottentomatoes-season": RottenTomatoesRottentomatoesSeasonParams;
+  "rottentomatoes-series": RottenTomatoesRottentomatoesSeriesParams;
   "shop-app-analysis": ShopAppAnalysisParams;
   "shop-app-categories": ShopAppCategoriesParams;
   "shop-app-product": ShopAppProductParams;
@@ -12081,6 +16182,27 @@ export interface OperationResponseMap {
   "bing-search": BingSearchResponse;
   "bing-suggest": BingSuggestResponse;
   "bing-videos": BingVideosResponse;
+  "boxofficemojo-brand": BoxOfficeMojoBoxofficemojoBrandResponse;
+  "boxofficemojo-brands": BoxOfficeMojoBoxofficemojoBrandsResponse;
+  "boxofficemojo-calendar": BoxOfficeMojoBoxofficemojoCalendarResponse;
+  "boxofficemojo-calendar-changes": BoxOfficeMojoBoxofficemojoCalendarChangesResponse;
+  "boxofficemojo-calendar-date": BoxOfficeMojoBoxofficemojoCalendarDateResponse;
+  "boxofficemojo-date-domestic": BoxOfficeMojoBoxofficemojoDateDomesticResponse;
+  "boxofficemojo-franchise": BoxOfficeMojoBoxofficemojoFranchiseResponse;
+  "boxofficemojo-franchises": BoxOfficeMojoBoxofficemojoFranchisesResponse;
+  "boxofficemojo-genre": BoxOfficeMojoBoxofficemojoGenreResponse;
+  "boxofficemojo-genres": BoxOfficeMojoBoxofficemojoGenresResponse;
+  "boxofficemojo-lifetime-grosses": BoxOfficeMojoBoxofficemojoLifetimeGrossesResponse;
+  "boxofficemojo-release": BoxOfficeMojoBoxofficemojoReleaseResponse;
+  "boxofficemojo-release-group": BoxOfficeMojoBoxofficemojoReleaseGroupResponse;
+  "boxofficemojo-showdown": BoxOfficeMojoBoxofficemojoShowdownResponse;
+  "boxofficemojo-showdowns": BoxOfficeMojoBoxofficemojoShowdownsResponse;
+  "boxofficemojo-title": BoxOfficeMojoBoxofficemojoTitleResponse;
+  "boxofficemojo-weekend-domestic": BoxOfficeMojoBoxofficemojoWeekendDomesticResponse;
+  "boxofficemojo-weekend-domestic-by-distributor": BoxOfficeMojoBoxofficemojoWeekendDomesticByDistributorResponse;
+  "boxofficemojo-weekend-domestic-estimates": BoxOfficeMojoBoxofficemojoWeekendDomesticEstimatesResponse;
+  "boxofficemojo-year-domestic": BoxOfficeMojoBoxofficemojoYearDomesticResponse;
+  "boxofficemojo-year-worldwide": BoxOfficeMojoBoxofficemojoYearWorldwideResponse;
   "brand-retrieve": BrandRetrieveResponse;
   "brave-images": BraveImagesResponse;
   "brave-news": BraveNewsResponse;
@@ -12170,6 +16292,25 @@ export interface OperationResponseMap {
   "googleplay-search": GooglePlaySearchResponse;
   "googleplay-similar": GooglePlaySimilarResponse;
   "googleplay-suggest": GooglePlaySuggestResponse;
+  "imdb-name": ImdbNameResponse;
+  "imdb-name-awards": ImdbNameAwardsResponse;
+  "imdb-name-credits": ImdbNameCreditsResponse;
+  "imdb-search": ImdbSearchResponse;
+  "imdb-title": ImdbTitleResponse;
+  "imdb-title-awards": ImdbTitleAwardsResponse;
+  "imdb-title-company-credits": ImdbTitleCompanyCreditsResponse;
+  "imdb-title-credits": ImdbTitleCreditsResponse;
+  "imdb-title-episodes": ImdbTitleEpisodesResponse;
+  "imdb-title-filming-locations": ImdbTitleFilmingLocationsResponse;
+  "imdb-title-goofs": ImdbTitleGoofsResponse;
+  "imdb-title-keywords": ImdbTitleKeywordsResponse;
+  "imdb-title-parental-guide": ImdbTitleParentalGuideResponse;
+  "imdb-title-public-facts-analysis": ImdbTitlePublicFactsAnalysisResponse;
+  "imdb-title-quotes": ImdbTitleQuotesResponse;
+  "imdb-title-release-info": ImdbTitleReleaseInfoResponse;
+  "imdb-title-reviews": ImdbTitleReviewsResponse;
+  "imdb-title-technical-specs": ImdbTitleTechnicalSpecsResponse;
+  "imdb-title-trivia": ImdbTitleTriviaResponse;
   "instagram-post": InstagramPostResponse;
   "instagram-profile": InstagramProfileResponse;
   "instagram-reels": InstagramReelsResponse;
@@ -12194,10 +16335,107 @@ export interface OperationResponseMap {
   "justwatch-title-media": JustWatchJustwatchTitleMediaResponse;
   "justwatch-title-offers": JustWatchJustwatchTitleOffersResponse;
   "justwatch-title-similar": JustWatchJustwatchTitleSimilarResponse;
+  "kalshi-event": KalshiEventResponse;
+  "kalshi-event-history": KalshiEventHistoryResponse;
+  "kalshi-event-metadata": KalshiEventMetadataResponse;
+  "kalshi-events": KalshiEventsResponse;
+  "kalshi-multivariate-events": KalshiMultivariateEventsResponse;
+  "kalshi-exchange-schedule": KalshiExchangeScheduleResponse;
+  "kalshi-exchange-status": KalshiExchangeStatusResponse;
+  "kalshi-historical-cutoff": KalshiHistoricalCutoffResponse;
+  "kalshi-historical-market": KalshiHistoricalMarketResponse;
+  "kalshi-historical-market-history": KalshiHistoricalMarketHistoryResponse;
+  "kalshi-historical-markets": KalshiHistoricalMarketsResponse;
+  "kalshi-historical-trades": KalshiHistoricalTradesResponse;
+  "kalshi-market": KalshiMarketResponse;
+  "kalshi-market-history": KalshiMarketHistoryResponse;
+  "kalshi-market-orderbook": KalshiMarketOrderbookResponse;
+  "kalshi-markets": KalshiMarketsResponse;
+  "kalshi-markets-history": KalshiMarketsHistoryResponse;
+  "kalshi-markets-orderbooks": KalshiMarketsOrderbooksResponse;
+  "kalshi-series": KalshiSeriesResponse;
+  "kalshi-series-detail": KalshiSeriesDetailResponse;
+  "kalshi-trades": KalshiTradesResponse;
   "linkedin-company": LinkedInLinkedinCompanyResponse;
   "linkedin-product": LinkedInLinkedinProductResponse;
   "linkedin-showcase": LinkedInLinkedinShowcaseResponse;
+  "metaculus-category-questions": MetaculusCategoryQuestionsResponse;
+  "metaculus-comments-feed": MetaculusCommentsFeedResponse;
+  "metaculus-project-questions": MetaculusProjectQuestionsResponse;
+  "metaculus-question": MetaculusQuestionResponse;
+  "metaculus-question-forecast-history": MetaculusQuestionForecastHistoryResponse;
+  "metaculus-question-forecasts": MetaculusQuestionForecastsResponse;
+  "metaculus-question-metadata": MetaculusQuestionMetadataResponse;
+  "metaculus-question-options": MetaculusQuestionOptionsResponse;
+  "metaculus-questions": MetaculusQuestionsResponse;
+  "metaculus-top-comments": MetaculusTopCommentsResponse;
+  "metaculus-tournament-questions": MetaculusTournamentQuestionsResponse;
   "ping": MetaPingResponse;
+  "polymarket-activity-trades": PolymarketActivityTradesResponse;
+  "polymarket-clob-market": PolymarketClobMarketResponse;
+  "polymarket-dashboard-macro": PolymarketDashboardMacroResponse;
+  "polymarket-data-followers": PolymarketDataFollowersResponse;
+  "polymarket-data-following": PolymarketDataFollowingResponse;
+  "polymarket-data-follows-counts": PolymarketDataFollowsCountsResponse;
+  "polymarket-event-detail-by-id": PolymarketEventDetailByIdResponse;
+  "polymarket-event-activity-by-id": PolymarketEventActivityByIdResponse;
+  "polymarket-event-detail": PolymarketEventDetailResponse;
+  "polymarket-event-activity": PolymarketEventActivityResponse;
+  "polymarket-events": PolymarketEventsResponse;
+  "polymarket-events-similar": PolymarketEventsSimilarResponse;
+  "polymarket-event-tags": PolymarketEventTagsResponse;
+  "polymarket-fee-types": PolymarketFeeTypesResponse;
+  "polymarket-games": PolymarketGamesResponse;
+  "polymarket-homepage-feed": PolymarketHomepageFeedResponse;
+  "polymarket-leaderboard": PolymarketLeaderboardResponse;
+  "polymarket-market-clarifications": PolymarketMarketClarificationsResponse;
+  "polymarket-market-detail-by-condition": PolymarketMarketDetailByConditionResponse;
+  "polymarket-market-activity-by-condition": PolymarketMarketActivityByConditionResponse;
+  "polymarket-market-liquidity-by-condition": PolymarketMarketLiquidityByConditionResponse;
+  "polymarket-market-detail-by-slug": PolymarketMarketDetailBySlugResponse;
+  "polymarket-market-liquidity-by-slug": PolymarketMarketLiquidityBySlugResponse;
+  "polymarket-market-detail": PolymarketMarketDetailResponse;
+  "polymarket-market-liquidity": PolymarketMarketLiquidityResponse;
+  "polymarket-market-tags": PolymarketMarketTagsResponse;
+  "polymarket-markets": PolymarketMarketsResponse;
+  "polymarket-predictions": PolymarketPredictionsResponse;
+  "polymarket-rewards-market": PolymarketRewardsMarketResponse;
+  "polymarket-rewards-markets": PolymarketRewardsMarketsResponse;
+  "polymarket-search": PolymarketSearchResponse;
+  "polymarket-sports": PolymarketSportsResponse;
+  "polymarket-sports-by-partner": PolymarketSportsByPartnerResponse;
+  "polymarket-sports-market-types": PolymarketSportsMarketTypesResponse;
+  "polymarket-sports-summary": PolymarketSportsSummaryResponse;
+  "polymarket-sport": PolymarketSportResponse;
+  "polymarket-sport-external-partners": PolymarketSportExternalPartnersResponse;
+  "polymarket-sport-external-partner": PolymarketSportExternalPartnerResponse;
+  "polymarket-spotlights": PolymarketSpotlightsResponse;
+  "polymarket-spotlights-keyset": PolymarketSpotlightsKeysetResponse;
+  "polymarket-spotlight": PolymarketSpotlightResponse;
+  "polymarket-status": PolymarketStatusResponse;
+  "polymarket-tag-by-slug": PolymarketTagBySlugResponse;
+  "polymarket-related-tags-by-slug": PolymarketRelatedTagsBySlugResponse;
+  "polymarket-related-tag-rows-by-slug": PolymarketRelatedTagRowsBySlugResponse;
+  "polymarket-tag": PolymarketTagResponse;
+  "polymarket-related-tags": PolymarketRelatedTagsResponse;
+  "polymarket-related-tag-rows": PolymarketRelatedTagRowsResponse;
+  "polymarket-tags": PolymarketTagsResponse;
+  "polymarket-teams": PolymarketTeamsResponse;
+  "polymarket-teams-by-partner": PolymarketTeamsByPartnerResponse;
+  "polymarket-team": PolymarketTeamResponse;
+  "polymarket-team-external-partners": PolymarketTeamExternalPartnersResponse;
+  "polymarket-team-external-partner": PolymarketTeamExternalPartnerResponse;
+  "polymarket-token-midpoint": PolymarketTokenMidpointResponse;
+  "polymarket-token-orderbook": PolymarketTokenOrderbookResponse;
+  "polymarket-token-price": PolymarketTokenPriceResponse;
+  "polymarket-token-price-history": PolymarketTokenPriceHistoryResponse;
+  "polymarket-token-spread": PolymarketTokenSpreadResponse;
+  "polymarket-tokens-midpoints": PolymarketTokensMidpointsResponse;
+  "polymarket-tokens-orderbooks": PolymarketTokensOrderbooksResponse;
+  "polymarket-tokens-prices": PolymarketTokensPricesResponse;
+  "polymarket-tokens-spreads": PolymarketTokensSpreadsResponse;
+  "polymarket-tournaments": PolymarketTournamentsResponse;
+  "polymarket-tournament": PolymarketTournamentResponse;
   "producthunt-category": ProductHuntCategoryResponse;
   "producthunt-category-products": ProductHuntCategoryProductsResponse;
   "producthunt-leaderboard": ProductHuntLeaderboardResponse;
@@ -12211,12 +16449,28 @@ export interface OperationResponseMap {
   "producthunt-search": ProductHuntSearchResponse;
   "ready": MetaReadyResponse;
   "reddit-comments": RedditCommentsResponse;
+  "reddit-domain-posts": RedditDomainPostsResponse;
   "reddit-post": RedditPostResponse;
   "reddit-search": RedditSearchResponse;
+  "reddit-subreddit-about": RedditSubredditAboutResponse;
+  "reddit-subreddit-comments": RedditSubredditCommentsResponse;
   "reddit-subreddit-posts": RedditSubredditPostsResponse;
+  "reddit-subreddits-posts": RedditSubredditsPostsResponse;
+  "reddit-trends": RedditTrendsResponse;
+  "reddit-user-comments": RedditUserCommentsResponse;
+  "reddit-user-posts": RedditUserPostsResponse;
   "referrals-click": ReferralsClickResponse;
   "referrals-me": ReferralsMeResponse;
   "referrals-me-events": ReferralsMeEventsResponse;
+  "rottentomatoes-browse-movies": RottenTomatoesRottentomatoesBrowseMoviesResponse;
+  "rottentomatoes-browse-tv": RottenTomatoesRottentomatoesBrowseTvResponse;
+  "rottentomatoes-episode": RottenTomatoesRottentomatoesEpisodeResponse;
+  "rottentomatoes-movie": RottenTomatoesRottentomatoesMovieResponse;
+  "rottentomatoes-movie-reviews": RottenTomatoesRottentomatoesMovieReviewsResponse;
+  "rottentomatoes-person": RottenTomatoesRottentomatoesPersonResponse;
+  "rottentomatoes-search": RottenTomatoesRottentomatoesSearchResponse;
+  "rottentomatoes-season": RottenTomatoesRottentomatoesSeasonResponse;
+  "rottentomatoes-series": RottenTomatoesRottentomatoesSeriesResponse;
   "shop-app-analysis": ShopAppAnalysisResponse;
   "shop-app-categories": ShopAppCategoriesResponse;
   "shop-app-product": ShopAppProductResponse;
@@ -12422,6 +16676,27 @@ export interface OperationRequiredParamsMap {
   "bing-search": true;
   "bing-suggest": true;
   "bing-videos": true;
+  "boxofficemojo-brand": false;
+  "boxofficemojo-brands": false;
+  "boxofficemojo-calendar": true;
+  "boxofficemojo-calendar-changes": false;
+  "boxofficemojo-calendar-date": true;
+  "boxofficemojo-date-domestic": true;
+  "boxofficemojo-franchise": false;
+  "boxofficemojo-franchises": false;
+  "boxofficemojo-genre": false;
+  "boxofficemojo-genres": false;
+  "boxofficemojo-lifetime-grosses": false;
+  "boxofficemojo-release": false;
+  "boxofficemojo-release-group": false;
+  "boxofficemojo-showdown": false;
+  "boxofficemojo-showdowns": false;
+  "boxofficemojo-title": false;
+  "boxofficemojo-weekend-domestic": true;
+  "boxofficemojo-weekend-domestic-by-distributor": true;
+  "boxofficemojo-weekend-domestic-estimates": true;
+  "boxofficemojo-year-domestic": true;
+  "boxofficemojo-year-worldwide": true;
   "brand-retrieve": true;
   "brave-images": true;
   "brave-news": true;
@@ -12511,6 +16786,25 @@ export interface OperationRequiredParamsMap {
   "googleplay-search": true;
   "googleplay-similar": true;
   "googleplay-suggest": true;
+  "imdb-name": false;
+  "imdb-name-awards": false;
+  "imdb-name-credits": false;
+  "imdb-search": true;
+  "imdb-title": false;
+  "imdb-title-awards": false;
+  "imdb-title-company-credits": false;
+  "imdb-title-credits": false;
+  "imdb-title-episodes": false;
+  "imdb-title-filming-locations": false;
+  "imdb-title-goofs": false;
+  "imdb-title-keywords": false;
+  "imdb-title-parental-guide": false;
+  "imdb-title-public-facts-analysis": false;
+  "imdb-title-quotes": false;
+  "imdb-title-release-info": false;
+  "imdb-title-reviews": false;
+  "imdb-title-technical-specs": false;
+  "imdb-title-trivia": false;
   "instagram-post": true;
   "instagram-profile": true;
   "instagram-reels": true;
@@ -12535,10 +16829,107 @@ export interface OperationRequiredParamsMap {
   "justwatch-title-media": true;
   "justwatch-title-offers": true;
   "justwatch-title-similar": true;
+  "kalshi-event": true;
+  "kalshi-event-history": true;
+  "kalshi-event-metadata": true;
+  "kalshi-events": false;
+  "kalshi-multivariate-events": false;
+  "kalshi-exchange-schedule": false;
+  "kalshi-exchange-status": false;
+  "kalshi-historical-cutoff": false;
+  "kalshi-historical-market": true;
+  "kalshi-historical-market-history": true;
+  "kalshi-historical-markets": false;
+  "kalshi-historical-trades": false;
+  "kalshi-market": true;
+  "kalshi-market-history": true;
+  "kalshi-market-orderbook": true;
+  "kalshi-markets": false;
+  "kalshi-markets-history": true;
+  "kalshi-markets-orderbooks": true;
+  "kalshi-series": false;
+  "kalshi-series-detail": true;
+  "kalshi-trades": false;
   "linkedin-company": true;
   "linkedin-product": true;
   "linkedin-showcase": true;
+  "metaculus-category-questions": true;
+  "metaculus-comments-feed": false;
+  "metaculus-project-questions": true;
+  "metaculus-question": true;
+  "metaculus-question-forecast-history": true;
+  "metaculus-question-forecasts": true;
+  "metaculus-question-metadata": true;
+  "metaculus-question-options": true;
+  "metaculus-questions": false;
+  "metaculus-top-comments": false;
+  "metaculus-tournament-questions": true;
   "ping": false;
+  "polymarket-activity-trades": false;
+  "polymarket-clob-market": true;
+  "polymarket-dashboard-macro": false;
+  "polymarket-data-followers": true;
+  "polymarket-data-following": true;
+  "polymarket-data-follows-counts": true;
+  "polymarket-event-detail-by-id": true;
+  "polymarket-event-activity-by-id": true;
+  "polymarket-event-detail": true;
+  "polymarket-event-activity": true;
+  "polymarket-events": false;
+  "polymarket-events-similar": false;
+  "polymarket-event-tags": true;
+  "polymarket-fee-types": false;
+  "polymarket-games": false;
+  "polymarket-homepage-feed": false;
+  "polymarket-leaderboard": false;
+  "polymarket-market-clarifications": false;
+  "polymarket-market-detail-by-condition": true;
+  "polymarket-market-activity-by-condition": true;
+  "polymarket-market-liquidity-by-condition": true;
+  "polymarket-market-detail-by-slug": true;
+  "polymarket-market-liquidity-by-slug": true;
+  "polymarket-market-detail": true;
+  "polymarket-market-liquidity": true;
+  "polymarket-market-tags": true;
+  "polymarket-markets": false;
+  "polymarket-predictions": false;
+  "polymarket-rewards-market": true;
+  "polymarket-rewards-markets": false;
+  "polymarket-search": true;
+  "polymarket-sports": false;
+  "polymarket-sports-by-partner": false;
+  "polymarket-sports-market-types": false;
+  "polymarket-sports-summary": false;
+  "polymarket-sport": true;
+  "polymarket-sport-external-partners": true;
+  "polymarket-sport-external-partner": true;
+  "polymarket-spotlights": false;
+  "polymarket-spotlights-keyset": false;
+  "polymarket-spotlight": true;
+  "polymarket-status": false;
+  "polymarket-tag-by-slug": true;
+  "polymarket-related-tags-by-slug": true;
+  "polymarket-related-tag-rows-by-slug": true;
+  "polymarket-tag": true;
+  "polymarket-related-tags": true;
+  "polymarket-related-tag-rows": true;
+  "polymarket-tags": false;
+  "polymarket-teams": false;
+  "polymarket-teams-by-partner": false;
+  "polymarket-team": true;
+  "polymarket-team-external-partners": true;
+  "polymarket-team-external-partner": true;
+  "polymarket-token-midpoint": true;
+  "polymarket-token-orderbook": true;
+  "polymarket-token-price": true;
+  "polymarket-token-price-history": true;
+  "polymarket-token-spread": true;
+  "polymarket-tokens-midpoints": true;
+  "polymarket-tokens-orderbooks": true;
+  "polymarket-tokens-prices": true;
+  "polymarket-tokens-spreads": true;
+  "polymarket-tournaments": false;
+  "polymarket-tournament": true;
   "producthunt-category": true;
   "producthunt-category-products": true;
   "producthunt-leaderboard": false;
@@ -12552,12 +16943,28 @@ export interface OperationRequiredParamsMap {
   "producthunt-search": true;
   "ready": false;
   "reddit-comments": true;
+  "reddit-domain-posts": true;
   "reddit-post": true;
   "reddit-search": true;
+  "reddit-subreddit-about": true;
+  "reddit-subreddit-comments": true;
   "reddit-subreddit-posts": true;
+  "reddit-subreddits-posts": true;
+  "reddit-trends": false;
+  "reddit-user-comments": true;
+  "reddit-user-posts": true;
   "referrals-click": true;
   "referrals-me": false;
   "referrals-me-events": false;
+  "rottentomatoes-browse-movies": false;
+  "rottentomatoes-browse-tv": false;
+  "rottentomatoes-episode": false;
+  "rottentomatoes-movie": false;
+  "rottentomatoes-movie-reviews": false;
+  "rottentomatoes-person": false;
+  "rottentomatoes-search": true;
+  "rottentomatoes-season": false;
+  "rottentomatoes-series": false;
   "shop-app-analysis": true;
   "shop-app-categories": false;
   "shop-app-product": true;
@@ -12770,6 +17177,27 @@ export type OperationIdLiteral =
   | "bing-search"
   | "bing-suggest"
   | "bing-videos"
+  | "boxofficemojo-brand"
+  | "boxofficemojo-brands"
+  | "boxofficemojo-calendar"
+  | "boxofficemojo-calendar-changes"
+  | "boxofficemojo-calendar-date"
+  | "boxofficemojo-date-domestic"
+  | "boxofficemojo-franchise"
+  | "boxofficemojo-franchises"
+  | "boxofficemojo-genre"
+  | "boxofficemojo-genres"
+  | "boxofficemojo-lifetime-grosses"
+  | "boxofficemojo-release"
+  | "boxofficemojo-release-group"
+  | "boxofficemojo-showdown"
+  | "boxofficemojo-showdowns"
+  | "boxofficemojo-title"
+  | "boxofficemojo-weekend-domestic"
+  | "boxofficemojo-weekend-domestic-by-distributor"
+  | "boxofficemojo-weekend-domestic-estimates"
+  | "boxofficemojo-year-domestic"
+  | "boxofficemojo-year-worldwide"
   | "brand-retrieve"
   | "brave-images"
   | "brave-news"
@@ -12859,6 +17287,25 @@ export type OperationIdLiteral =
   | "googleplay-search"
   | "googleplay-similar"
   | "googleplay-suggest"
+  | "imdb-name"
+  | "imdb-name-awards"
+  | "imdb-name-credits"
+  | "imdb-search"
+  | "imdb-title"
+  | "imdb-title-awards"
+  | "imdb-title-company-credits"
+  | "imdb-title-credits"
+  | "imdb-title-episodes"
+  | "imdb-title-filming-locations"
+  | "imdb-title-goofs"
+  | "imdb-title-keywords"
+  | "imdb-title-parental-guide"
+  | "imdb-title-public-facts-analysis"
+  | "imdb-title-quotes"
+  | "imdb-title-release-info"
+  | "imdb-title-reviews"
+  | "imdb-title-technical-specs"
+  | "imdb-title-trivia"
   | "instagram-post"
   | "instagram-profile"
   | "instagram-reels"
@@ -12883,10 +17330,107 @@ export type OperationIdLiteral =
   | "justwatch-title-media"
   | "justwatch-title-offers"
   | "justwatch-title-similar"
+  | "kalshi-event"
+  | "kalshi-event-history"
+  | "kalshi-event-metadata"
+  | "kalshi-events"
+  | "kalshi-multivariate-events"
+  | "kalshi-exchange-schedule"
+  | "kalshi-exchange-status"
+  | "kalshi-historical-cutoff"
+  | "kalshi-historical-market"
+  | "kalshi-historical-market-history"
+  | "kalshi-historical-markets"
+  | "kalshi-historical-trades"
+  | "kalshi-market"
+  | "kalshi-market-history"
+  | "kalshi-market-orderbook"
+  | "kalshi-markets"
+  | "kalshi-markets-history"
+  | "kalshi-markets-orderbooks"
+  | "kalshi-series"
+  | "kalshi-series-detail"
+  | "kalshi-trades"
   | "linkedin-company"
   | "linkedin-product"
   | "linkedin-showcase"
+  | "metaculus-category-questions"
+  | "metaculus-comments-feed"
+  | "metaculus-project-questions"
+  | "metaculus-question"
+  | "metaculus-question-forecast-history"
+  | "metaculus-question-forecasts"
+  | "metaculus-question-metadata"
+  | "metaculus-question-options"
+  | "metaculus-questions"
+  | "metaculus-top-comments"
+  | "metaculus-tournament-questions"
   | "ping"
+  | "polymarket-activity-trades"
+  | "polymarket-clob-market"
+  | "polymarket-dashboard-macro"
+  | "polymarket-data-followers"
+  | "polymarket-data-following"
+  | "polymarket-data-follows-counts"
+  | "polymarket-event-detail-by-id"
+  | "polymarket-event-activity-by-id"
+  | "polymarket-event-detail"
+  | "polymarket-event-activity"
+  | "polymarket-events"
+  | "polymarket-events-similar"
+  | "polymarket-event-tags"
+  | "polymarket-fee-types"
+  | "polymarket-games"
+  | "polymarket-homepage-feed"
+  | "polymarket-leaderboard"
+  | "polymarket-market-clarifications"
+  | "polymarket-market-detail-by-condition"
+  | "polymarket-market-activity-by-condition"
+  | "polymarket-market-liquidity-by-condition"
+  | "polymarket-market-detail-by-slug"
+  | "polymarket-market-liquidity-by-slug"
+  | "polymarket-market-detail"
+  | "polymarket-market-liquidity"
+  | "polymarket-market-tags"
+  | "polymarket-markets"
+  | "polymarket-predictions"
+  | "polymarket-rewards-market"
+  | "polymarket-rewards-markets"
+  | "polymarket-search"
+  | "polymarket-sports"
+  | "polymarket-sports-by-partner"
+  | "polymarket-sports-market-types"
+  | "polymarket-sports-summary"
+  | "polymarket-sport"
+  | "polymarket-sport-external-partners"
+  | "polymarket-sport-external-partner"
+  | "polymarket-spotlights"
+  | "polymarket-spotlights-keyset"
+  | "polymarket-spotlight"
+  | "polymarket-status"
+  | "polymarket-tag-by-slug"
+  | "polymarket-related-tags-by-slug"
+  | "polymarket-related-tag-rows-by-slug"
+  | "polymarket-tag"
+  | "polymarket-related-tags"
+  | "polymarket-related-tag-rows"
+  | "polymarket-tags"
+  | "polymarket-teams"
+  | "polymarket-teams-by-partner"
+  | "polymarket-team"
+  | "polymarket-team-external-partners"
+  | "polymarket-team-external-partner"
+  | "polymarket-token-midpoint"
+  | "polymarket-token-orderbook"
+  | "polymarket-token-price"
+  | "polymarket-token-price-history"
+  | "polymarket-token-spread"
+  | "polymarket-tokens-midpoints"
+  | "polymarket-tokens-orderbooks"
+  | "polymarket-tokens-prices"
+  | "polymarket-tokens-spreads"
+  | "polymarket-tournaments"
+  | "polymarket-tournament"
   | "producthunt-category"
   | "producthunt-category-products"
   | "producthunt-leaderboard"
@@ -12900,12 +17444,28 @@ export type OperationIdLiteral =
   | "producthunt-search"
   | "ready"
   | "reddit-comments"
+  | "reddit-domain-posts"
   | "reddit-post"
   | "reddit-search"
+  | "reddit-subreddit-about"
+  | "reddit-subreddit-comments"
   | "reddit-subreddit-posts"
+  | "reddit-subreddits-posts"
+  | "reddit-trends"
+  | "reddit-user-comments"
+  | "reddit-user-posts"
   | "referrals-click"
   | "referrals-me"
   | "referrals-me-events"
+  | "rottentomatoes-browse-movies"
+  | "rottentomatoes-browse-tv"
+  | "rottentomatoes-episode"
+  | "rottentomatoes-movie"
+  | "rottentomatoes-movie-reviews"
+  | "rottentomatoes-person"
+  | "rottentomatoes-search"
+  | "rottentomatoes-season"
+  | "rottentomatoes-series"
   | "shop-app-analysis"
   | "shop-app-categories"
   | "shop-app-product"
@@ -13110,6 +17670,27 @@ export declare const OperationIds: Readonly<{
   BingSearch: "bing-search";
   BingSuggest: "bing-suggest";
   BingVideos: "bing-videos";
+  BoxOfficeMojoBoxofficemojoBrand: "boxofficemojo-brand";
+  BoxOfficeMojoBoxofficemojoBrands: "boxofficemojo-brands";
+  BoxOfficeMojoBoxofficemojoCalendar: "boxofficemojo-calendar";
+  BoxOfficeMojoBoxofficemojoCalendarChanges: "boxofficemojo-calendar-changes";
+  BoxOfficeMojoBoxofficemojoCalendarDate: "boxofficemojo-calendar-date";
+  BoxOfficeMojoBoxofficemojoDateDomestic: "boxofficemojo-date-domestic";
+  BoxOfficeMojoBoxofficemojoFranchise: "boxofficemojo-franchise";
+  BoxOfficeMojoBoxofficemojoFranchises: "boxofficemojo-franchises";
+  BoxOfficeMojoBoxofficemojoGenre: "boxofficemojo-genre";
+  BoxOfficeMojoBoxofficemojoGenres: "boxofficemojo-genres";
+  BoxOfficeMojoBoxofficemojoLifetimeGrosses: "boxofficemojo-lifetime-grosses";
+  BoxOfficeMojoBoxofficemojoRelease: "boxofficemojo-release";
+  BoxOfficeMojoBoxofficemojoReleaseGroup: "boxofficemojo-release-group";
+  BoxOfficeMojoBoxofficemojoShowdown: "boxofficemojo-showdown";
+  BoxOfficeMojoBoxofficemojoShowdowns: "boxofficemojo-showdowns";
+  BoxOfficeMojoBoxofficemojoTitle: "boxofficemojo-title";
+  BoxOfficeMojoBoxofficemojoWeekendDomestic: "boxofficemojo-weekend-domestic";
+  BoxOfficeMojoBoxofficemojoWeekendDomesticByDistributor: "boxofficemojo-weekend-domestic-by-distributor";
+  BoxOfficeMojoBoxofficemojoWeekendDomesticEstimates: "boxofficemojo-weekend-domestic-estimates";
+  BoxOfficeMojoBoxofficemojoYearDomestic: "boxofficemojo-year-domestic";
+  BoxOfficeMojoBoxofficemojoYearWorldwide: "boxofficemojo-year-worldwide";
   BrandRetrieve: "brand-retrieve";
   BraveImages: "brave-images";
   BraveNews: "brave-news";
@@ -13199,6 +17780,25 @@ export declare const OperationIds: Readonly<{
   GoogleTrendsTrending: "google-trends-trending";
   GoogleTrendsTrendingDetail: "google-trends-trending-detail";
   GoogleVideos: "google-videos";
+  ImdbName: "imdb-name";
+  ImdbNameAwards: "imdb-name-awards";
+  ImdbNameCredits: "imdb-name-credits";
+  ImdbSearch: "imdb-search";
+  ImdbTitle: "imdb-title";
+  ImdbTitleAwards: "imdb-title-awards";
+  ImdbTitleCompanyCredits: "imdb-title-company-credits";
+  ImdbTitleCredits: "imdb-title-credits";
+  ImdbTitleEpisodes: "imdb-title-episodes";
+  ImdbTitleFilmingLocations: "imdb-title-filming-locations";
+  ImdbTitleGoofs: "imdb-title-goofs";
+  ImdbTitleKeywords: "imdb-title-keywords";
+  ImdbTitleParentalGuide: "imdb-title-parental-guide";
+  ImdbTitlePublicFactsAnalysis: "imdb-title-public-facts-analysis";
+  ImdbTitleQuotes: "imdb-title-quotes";
+  ImdbTitleReleaseInfo: "imdb-title-release-info";
+  ImdbTitleReviews: "imdb-title-reviews";
+  ImdbTitleTechnicalSpecs: "imdb-title-technical-specs";
+  ImdbTitleTrivia: "imdb-title-trivia";
   InstagramPost: "instagram-post";
   InstagramProfile: "instagram-profile";
   InstagramReels: "instagram-reels";
@@ -13223,11 +17823,108 @@ export declare const OperationIds: Readonly<{
   JustWatchJustwatchTitleMedia: "justwatch-title-media";
   JustWatchJustwatchTitleOffers: "justwatch-title-offers";
   JustWatchJustwatchTitleSimilar: "justwatch-title-similar";
+  KalshiEvent: "kalshi-event";
+  KalshiEventHistory: "kalshi-event-history";
+  KalshiEventMetadata: "kalshi-event-metadata";
+  KalshiEvents: "kalshi-events";
+  KalshiExchangeSchedule: "kalshi-exchange-schedule";
+  KalshiExchangeStatus: "kalshi-exchange-status";
+  KalshiHistoricalCutoff: "kalshi-historical-cutoff";
+  KalshiHistoricalMarket: "kalshi-historical-market";
+  KalshiHistoricalMarketHistory: "kalshi-historical-market-history";
+  KalshiHistoricalMarkets: "kalshi-historical-markets";
+  KalshiHistoricalTrades: "kalshi-historical-trades";
+  KalshiMarket: "kalshi-market";
+  KalshiMarketHistory: "kalshi-market-history";
+  KalshiMarketOrderbook: "kalshi-market-orderbook";
+  KalshiMarkets: "kalshi-markets";
+  KalshiMarketsHistory: "kalshi-markets-history";
+  KalshiMarketsOrderbooks: "kalshi-markets-orderbooks";
+  KalshiMultivariateEvents: "kalshi-multivariate-events";
+  KalshiSeries: "kalshi-series";
+  KalshiSeriesDetail: "kalshi-series-detail";
+  KalshiTrades: "kalshi-trades";
   LinkedInLinkedinCompany: "linkedin-company";
   LinkedInLinkedinProduct: "linkedin-product";
   LinkedInLinkedinShowcase: "linkedin-showcase";
   MetaPing: "ping";
   MetaReady: "ready";
+  MetaculusCategoryQuestions: "metaculus-category-questions";
+  MetaculusCommentsFeed: "metaculus-comments-feed";
+  MetaculusProjectQuestions: "metaculus-project-questions";
+  MetaculusQuestion: "metaculus-question";
+  MetaculusQuestionForecastHistory: "metaculus-question-forecast-history";
+  MetaculusQuestionForecasts: "metaculus-question-forecasts";
+  MetaculusQuestionMetadata: "metaculus-question-metadata";
+  MetaculusQuestionOptions: "metaculus-question-options";
+  MetaculusQuestions: "metaculus-questions";
+  MetaculusTopComments: "metaculus-top-comments";
+  MetaculusTournamentQuestions: "metaculus-tournament-questions";
+  PolymarketActivityTrades: "polymarket-activity-trades";
+  PolymarketClobMarket: "polymarket-clob-market";
+  PolymarketDashboardMacro: "polymarket-dashboard-macro";
+  PolymarketDataFollowers: "polymarket-data-followers";
+  PolymarketDataFollowing: "polymarket-data-following";
+  PolymarketDataFollowsCounts: "polymarket-data-follows-counts";
+  PolymarketEventActivity: "polymarket-event-activity";
+  PolymarketEventActivityById: "polymarket-event-activity-by-id";
+  PolymarketEventDetail: "polymarket-event-detail";
+  PolymarketEventDetailById: "polymarket-event-detail-by-id";
+  PolymarketEventTags: "polymarket-event-tags";
+  PolymarketEvents: "polymarket-events";
+  PolymarketEventsSimilar: "polymarket-events-similar";
+  PolymarketFeeTypes: "polymarket-fee-types";
+  PolymarketGames: "polymarket-games";
+  PolymarketHomepageFeed: "polymarket-homepage-feed";
+  PolymarketLeaderboard: "polymarket-leaderboard";
+  PolymarketMarketActivityByCondition: "polymarket-market-activity-by-condition";
+  PolymarketMarketClarifications: "polymarket-market-clarifications";
+  PolymarketMarketDetail: "polymarket-market-detail";
+  PolymarketMarketDetailByCondition: "polymarket-market-detail-by-condition";
+  PolymarketMarketDetailBySlug: "polymarket-market-detail-by-slug";
+  PolymarketMarketLiquidity: "polymarket-market-liquidity";
+  PolymarketMarketLiquidityByCondition: "polymarket-market-liquidity-by-condition";
+  PolymarketMarketLiquidityBySlug: "polymarket-market-liquidity-by-slug";
+  PolymarketMarketTags: "polymarket-market-tags";
+  PolymarketMarkets: "polymarket-markets";
+  PolymarketPredictions: "polymarket-predictions";
+  PolymarketRelatedTagRows: "polymarket-related-tag-rows";
+  PolymarketRelatedTagRowsBySlug: "polymarket-related-tag-rows-by-slug";
+  PolymarketRelatedTags: "polymarket-related-tags";
+  PolymarketRelatedTagsBySlug: "polymarket-related-tags-by-slug";
+  PolymarketRewardsMarket: "polymarket-rewards-market";
+  PolymarketRewardsMarkets: "polymarket-rewards-markets";
+  PolymarketSearch: "polymarket-search";
+  PolymarketSport: "polymarket-sport";
+  PolymarketSportExternalPartner: "polymarket-sport-external-partner";
+  PolymarketSportExternalPartners: "polymarket-sport-external-partners";
+  PolymarketSports: "polymarket-sports";
+  PolymarketSportsByPartner: "polymarket-sports-by-partner";
+  PolymarketSportsMarketTypes: "polymarket-sports-market-types";
+  PolymarketSportsSummary: "polymarket-sports-summary";
+  PolymarketSpotlight: "polymarket-spotlight";
+  PolymarketSpotlights: "polymarket-spotlights";
+  PolymarketSpotlightsKeyset: "polymarket-spotlights-keyset";
+  PolymarketStatus: "polymarket-status";
+  PolymarketTag: "polymarket-tag";
+  PolymarketTagBySlug: "polymarket-tag-by-slug";
+  PolymarketTags: "polymarket-tags";
+  PolymarketTeam: "polymarket-team";
+  PolymarketTeamExternalPartner: "polymarket-team-external-partner";
+  PolymarketTeamExternalPartners: "polymarket-team-external-partners";
+  PolymarketTeams: "polymarket-teams";
+  PolymarketTeamsByPartner: "polymarket-teams-by-partner";
+  PolymarketTokenMidpoint: "polymarket-token-midpoint";
+  PolymarketTokenOrderbook: "polymarket-token-orderbook";
+  PolymarketTokenPrice: "polymarket-token-price";
+  PolymarketTokenPriceHistory: "polymarket-token-price-history";
+  PolymarketTokenSpread: "polymarket-token-spread";
+  PolymarketTokensMidpoints: "polymarket-tokens-midpoints";
+  PolymarketTokensOrderbooks: "polymarket-tokens-orderbooks";
+  PolymarketTokensPrices: "polymarket-tokens-prices";
+  PolymarketTokensSpreads: "polymarket-tokens-spreads";
+  PolymarketTournament: "polymarket-tournament";
+  PolymarketTournaments: "polymarket-tournaments";
   ProductHuntAbout: "producthunt-about";
   ProductHuntAlternatives: "producthunt-alternatives";
   ProductHuntCategory: "producthunt-category";
@@ -13240,12 +17937,28 @@ export declare const OperationIds: Readonly<{
   ProductHuntReviews: "producthunt-reviews";
   ProductHuntSearch: "producthunt-search";
   RedditComments: "reddit-comments";
+  RedditDomainPosts: "reddit-domain-posts";
   RedditPost: "reddit-post";
   RedditSearch: "reddit-search";
+  RedditSubredditAbout: "reddit-subreddit-about";
+  RedditSubredditComments: "reddit-subreddit-comments";
   RedditSubredditPosts: "reddit-subreddit-posts";
+  RedditSubredditsPosts: "reddit-subreddits-posts";
+  RedditTrends: "reddit-trends";
+  RedditUserComments: "reddit-user-comments";
+  RedditUserPosts: "reddit-user-posts";
   ReferralsClick: "referrals-click";
   ReferralsMe: "referrals-me";
   ReferralsMeEvents: "referrals-me-events";
+  RottenTomatoesRottentomatoesBrowseMovies: "rottentomatoes-browse-movies";
+  RottenTomatoesRottentomatoesBrowseTv: "rottentomatoes-browse-tv";
+  RottenTomatoesRottentomatoesEpisode: "rottentomatoes-episode";
+  RottenTomatoesRottentomatoesMovie: "rottentomatoes-movie";
+  RottenTomatoesRottentomatoesMovieReviews: "rottentomatoes-movie-reviews";
+  RottenTomatoesRottentomatoesPerson: "rottentomatoes-person";
+  RottenTomatoesRottentomatoesSearch: "rottentomatoes-search";
+  RottenTomatoesRottentomatoesSeason: "rottentomatoes-season";
+  RottenTomatoesRottentomatoesSeries: "rottentomatoes-series";
   ShopAppAnalysis: "shop-app-analysis";
   ShopAppCategories: "shop-app-categories";
   ShopAppCollectionProducts: "shop-app-collection-products";
