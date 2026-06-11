@@ -148,6 +148,43 @@ export interface ModelAmazonSuggestResponseDoc {
   "msg"?: string;
 }
 
+export type ModelAntibotBand = "easy" | "medium" | "hard" | "very_hard" | "blocked" | "unknown";
+
+export interface ModelAntibotProtection {
+  "confidence"?: string;
+  "evidence"?: Array<string>;
+  "kind"?: string;
+  "vendor"?: string;
+}
+
+export interface ModelAntibotSignals {
+  "attempts_passed"?: number;
+  "attempts_run"?: number;
+  "attempts_skipped"?: number;
+  "block_markers"?: Array<string>;
+  "blocked_status"?: boolean;
+  "captcha_detected"?: boolean;
+  "challenge_detected"?: boolean;
+  "js_render_likely"?: boolean;
+  "rate_limited"?: boolean;
+}
+
+export interface ModelAntibotVerdict {
+  "coverage"?: string;
+  "difficulty_band"?: ModelAntibotBand;
+  "difficulty_score"?: number;
+  "easiest_working_transport"?: string;
+  "gated_layers"?: Array<string>;
+  "notes"?: Array<string>;
+  "protections"?: Array<ModelAntibotProtection>;
+  "recommended_approach"?: string;
+  "recommended_profile"?: string;
+  "scrapeable"?: boolean;
+  "signals"?: ModelAntibotSignals;
+  "summary"?: string;
+  "url"?: string;
+}
+
 export interface ModelApiComponentStatus {
   "error"?: string;
   "ready"?: boolean;
@@ -2455,6 +2492,48 @@ export interface ModelContactContact {
   "url"?: string;
 }
 
+export interface ModelContactContactRequest {
+  "independents_only"?: boolean;
+  "max_pages"?: number;
+  "url": string;
+  "verify"?: boolean;
+}
+
+export interface ModelContactContactResult {
+  "crawl_status"?: "ok" | "blocked" | "unreachable";
+  "crawled_pages"?: Array<string>;
+  "domain"?: string;
+  "domain_type"?: "independent" | "chain" | "social" | "builder" | "directory";
+  "emails"?: Array<ModelContactEmailContact>;
+  "phones"?: Array<ModelContactPhoneContact>;
+  "socials"?: Array<ModelContactSocialProfile>;
+  "website"?: string;
+}
+
+export interface ModelContactEmailContact {
+  "address"?: string;
+  "source_page"?: string;
+  "status"?: "verified" | "risky" | "unverified" | "invalid";
+  "type"?: "generic" | "role" | "personal";
+}
+
+export interface ModelContactPhoneContact {
+  "number"?: string;
+  "source_page"?: string;
+}
+
+export interface ModelContactSocialProfile {
+  "handle"?: string;
+  "network"?: string;
+  "url"?: string;
+}
+
+export interface ModelContactContactResponseDoc {
+  "code"?: number;
+  "data"?: ModelContactContactResult;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsDatasetInfo {
   "capabilities"?: Array<string>;
   "description"?: string;
@@ -2502,6 +2581,17 @@ export interface ModelDatasetsGoogleMapBusinessesSearchResponseDoc {
 export interface ModelDatasetsListResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsDatasetListResponse;
+  "msg"?: string;
+}
+
+export interface ModelDiagnosticsAntibotCheckRequest {
+  "fast"?: boolean;
+  "url": string;
+}
+
+export interface ModelDiagnosticsAntibotCheckResponseDoc {
+  "code"?: number;
+  "data"?: ModelAntibotVerdict;
   "msg"?: string;
 }
 
@@ -7451,6 +7541,107 @@ export interface ModelRedditUserPostsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelRedfinEstimateResponse {
+  "address"?: string;
+  "baths"?: number;
+  "beds"?: number;
+  "city_time_series"?: Array<number>;
+  "county_time_series"?: Array<number>;
+  "estimate"?: number;
+  "estimate_text"?: string;
+  "latitude"?: number;
+  "listing_price"?: number;
+  "longitude"?: number;
+  "postal_code_time_series"?: Array<number>;
+  "property_id"?: string;
+  "property_time_series"?: Array<number>;
+  "sqft"?: number;
+  "updated_at"?: number;
+  "year_built"?: number;
+}
+
+export interface ModelRedfinPropertyItem {
+  "address"?: string;
+  "baths"?: number;
+  "beds"?: number;
+  "city"?: string;
+  "days_on_market"?: number;
+  "hoa_monthly"?: number;
+  "image"?: string;
+  "latitude"?: number;
+  "listing_id"?: string;
+  "longitude"?: number;
+  "lot_size"?: number;
+  "mls_number"?: string;
+  "price"?: number;
+  "price_per_sqft"?: number;
+  "property_id"?: string;
+  "property_type"?: string;
+  "sqft"?: number;
+  "state"?: string;
+  "status"?: string;
+  "url"?: string;
+  "year_built"?: number;
+  "zip"?: string;
+}
+
+export interface ModelRedfinPropertyResponse {
+  "address"?: string;
+  "baths"?: number;
+  "beds"?: number;
+  "city"?: string;
+  "days_on_market"?: number;
+  "description"?: string;
+  "facts"?: Array<string>;
+  "hoa_monthly"?: number;
+  "image"?: string;
+  "latitude"?: number;
+  "listing_id"?: string;
+  "longitude"?: number;
+  "lot_size"?: number;
+  "mls_number"?: string;
+  "price"?: number;
+  "price_per_sqft"?: number;
+  "property_id"?: string;
+  "property_type"?: string;
+  "sqft"?: number;
+  "state"?: string;
+  "status"?: string;
+  "url"?: string;
+  "year_built"?: number;
+  "zip"?: string;
+}
+
+export interface ModelRedfinRegionTrendsResponse {
+  "avg_days_on_market"?: string;
+  "avg_down_payment"?: string;
+  "avg_num_offers"?: string;
+  "median_list_per_sqft"?: string;
+  "median_list_price"?: string;
+  "median_sale_per_list"?: string;
+  "median_sale_per_sqft"?: string;
+  "median_sale_price"?: string;
+  "num_homes_on_market"?: string;
+  "num_homes_sold"?: string;
+  "region_id"?: number;
+  "region_type"?: number;
+  "yoy_sale_per_sqft"?: string;
+  "yoy_sale_price"?: string;
+}
+
+export interface ModelRedfinSearchResponse {
+  "location"?: string;
+  "page"?: number;
+  "region_id"?: number;
+  "region_type"?: number;
+  "results"?: Array<ModelRedfinPropertyItem>;
+}
+
+export interface ModelRedfinSimilarResponse {
+  "property_id"?: string;
+  "results"?: Array<ModelRedfinPropertyItem>;
+}
+
 export interface ModelReferralsReferralAttributionDoc {
   "campaign"?: string;
   "code"?: string;
@@ -8791,6 +8982,7 @@ export interface ModelSpotifyCountryHubContentMeta {
   "fetchedAt"?: string;
   "itemCount"?: number;
   "operationName"?: string;
+  "partialErrors"?: number;
 }
 
 export interface ModelSpotifyCountryHubContentResponse {
@@ -8825,6 +9017,7 @@ export interface ModelSpotifyCountryHubMeta {
   "fetchedAt"?: string;
   "itemCount"?: number;
   "operationName"?: string;
+  "partialErrors"?: number;
   "sectionCount"?: number;
 }
 
@@ -10672,6 +10865,65 @@ export interface ModelUserUserRotateApikeyResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelWebScrapeInfo {
+  "backend"?: string;
+  "cache_state"?: string;
+  "cached_at"?: string;
+  "escalated"?: boolean;
+  "method"?: string;
+}
+
+export interface ModelWebScrapeLink {
+  "href"?: string;
+  "rel"?: string;
+  "text"?: string;
+}
+
+export interface ModelWebScrapeMetadata {
+  "author"?: string;
+  "canonical_url"?: string;
+  "content_type"?: string;
+  "description"?: string;
+  "final_url"?: string;
+  "image"?: string;
+  "language"?: string;
+  "modified_at"?: string;
+  "published_at"?: string;
+  "section"?: string;
+  "site_name"?: string;
+  "source_url"?: string;
+  "status_code"?: number;
+  "title"?: string;
+}
+
+export interface ModelWebScrapeOption {
+  "backend"?: string;
+  "formats"?: Array<string>;
+  "max_age"?: number;
+  "only_main_content"?: boolean;
+  "proxy"?: string;
+  "render"?: "auto" | "http" | "browser" | "unblocker";
+  "store_in_cache"?: boolean;
+  "url": string;
+  "wait_for"?: number;
+}
+
+export interface ModelWebScrapeResult {
+  "html"?: string;
+  "link_details"?: Array<ModelWebScrapeLink>;
+  "links"?: Array<string>;
+  "markdown"?: string;
+  "metadata"?: ModelWebScrapeMetadata;
+  "raw_html"?: string;
+  "scrape"?: ModelWebScrapeInfo;
+}
+
+export interface ModelWebScrapeResponseDoc {
+  "code"?: number;
+  "data"?: ModelWebScrapeResult;
+  "msg"?: string;
+}
+
 export interface ModelYahoofinanceActionEvents {
   "capital_gains"?: Array<Record<string, unknown>>;
   "dividends"?: Array<Record<string, unknown>>;
@@ -12174,6 +12426,12 @@ export interface CoinGeckoTrendingParams {
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
+export type WebContactBody = CrawloraBody<ModelContactContactRequest>;
+export type WebContactResponse = CrawloraResponse<ModelContactContactResponseDoc>;
+export interface WebContactParams {
+  "option": WebContactBody;
+}
+
 export type DatasetsListResponse = CrawloraResponse<ModelDatasetsListResponseDoc>;
 export interface DatasetsListParams {
 }
@@ -12234,6 +12492,12 @@ export interface DatasetsGoogleMapBusinessesSearchParams {
   "sort"?: string;
   "page"?: number;
   "page_size"?: number;
+}
+
+export type WebAntibotCheckBody = CrawloraBody<ModelDiagnosticsAntibotCheckRequest>;
+export type WebAntibotCheckResponse = CrawloraResponse<ModelDiagnosticsAntibotCheckResponseDoc>;
+export interface WebAntibotCheckParams {
+  "request": WebAntibotCheckBody;
 }
 
 export type EBayEbayItemResponse = CrawloraResponse<ModelEbayItemResponseDoc>;
@@ -13745,6 +14009,42 @@ export interface RedditUserPostsParams {
   "after"?: string;
 }
 
+export type RedfinEstimateResponse = CrawloraResponse<ModelRedfinEstimateResponse>;
+export interface RedfinEstimateParams {
+  "property_id": string;
+}
+
+export type RedfinPropertyResponse = CrawloraResponse<ModelRedfinPropertyResponse>;
+export interface RedfinPropertyParams {
+  "url"?: string;
+  "property_id"?: string;
+  "listing_id"?: string;
+}
+
+export type RedfinRegionTrendsResponse = CrawloraResponse<ModelRedfinRegionTrendsResponse>;
+export interface RedfinRegionTrendsParams {
+  "region_id": number;
+  "region_type"?: number;
+}
+
+export type RedfinSearchResponse = CrawloraResponse<ModelRedfinSearchResponse>;
+export interface RedfinSearchParams {
+  "location"?: string;
+  "page"?: number;
+  "region_id"?: number;
+  "region_type"?: number;
+  "status"?: string;
+  "min_price"?: number;
+  "max_price"?: number;
+  "min_beds"?: number;
+  "min_baths"?: number;
+}
+
+export type RedfinSimilarResponse = CrawloraResponse<ModelRedfinSimilarResponse>;
+export interface RedfinSimilarParams {
+  "property_id": string;
+}
+
 export type ReferralsClickBody = CrawloraBody<ModelReferralsReferralClickRequestDoc>;
 export type ReferralsClickResponse = CrawloraResponse<ModelReferralsReferralClickResponseDoc>;
 export interface ReferralsClickParams {
@@ -14656,6 +14956,12 @@ export interface UserMeApiKeysRevealParams {
   "id": string;
 }
 
+export type WebScrapeBody = CrawloraBody<ModelWebScrapeOption>;
+export type WebScrapeResponse = CrawloraResponse<ModelWebScrapeResponseDoc>;
+export interface WebScrapeParams {
+  "scrapeOption": WebScrapeBody;
+}
+
 export type YahooFinanceCalendarsResponse = CrawloraResponse<ModelYahoofinanceCalendarsResponseDoc>;
 export interface YahooFinanceCalendarsParams {
 }
@@ -15111,6 +15417,12 @@ export interface CoinGeckoService {
   trending<T = CoinGeckoTrendingResponse>(params?: CoinGeckoTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface WebService {
+  contact<T = WebContactResponse>(params: WebContactParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  antibotCheck<T = WebAntibotCheckResponse>(params: WebAntibotCheckParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  scrape<T = WebScrapeResponse>(params: WebScrapeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface DatasetsService {
   list<T = DatasetsListResponse>(params?: DatasetsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesFacets<T = DatasetsGoogleMapBusinessesFacetsResponse>(params: DatasetsGoogleMapBusinessesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -15385,6 +15697,14 @@ export interface RedditService {
   userPosts<T = RedditUserPostsResponse>(params: RedditUserPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface RedfinService {
+  estimate<T = RedfinEstimateResponse>(params: RedfinEstimateParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  property<T = RedfinPropertyResponse>(params?: RedfinPropertyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  regionTrends<T = RedfinRegionTrendsResponse>(params: RedfinRegionTrendsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = RedfinSearchResponse>(params?: RedfinSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  similar<T = RedfinSimilarResponse>(params: RedfinSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ReferralsService {
   click<T = ReferralsClickResponse>(params: ReferralsClickParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   me<T = ReferralsMeResponse>(params?: ReferralsMeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -15620,6 +15940,7 @@ export interface CrawloraGeneratedGroups {
   brand: BrandService;
   brave: BraveService;
   coinGecko: CoinGeckoService;
+  web: WebService;
   datasets: DatasetsService;
   eBay: EBayService;
   geocoding: GeocodingService;
@@ -15635,6 +15956,7 @@ export interface CrawloraGeneratedGroups {
   polymarket: PolymarketService;
   productHunt: ProductHuntService;
   reddit: RedditService;
+  redfin: RedfinService;
   referrals: ReferralsService;
   rottenTomatoes: RottenTomatoesService;
   shopApp: ShopAppService;
@@ -15736,11 +16058,13 @@ export interface OperationParamsMap {
   "coingecko-token-unlocks": CoinGeckoTokenUnlocksParams;
   "coingecko-treasuries": CoinGeckoTreasuriesParams;
   "coingecko-trending": CoinGeckoTrendingParams;
+  "contact": WebContactParams;
   "datasets-list": DatasetsListParams;
   "datasets-google-map-businesses-facets": DatasetsGoogleMapBusinessesFacetsParams;
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemParams;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyParams;
   "datasets-google-map-businesses-search": DatasetsGoogleMapBusinessesSearchParams;
+  "antibot-check": WebAntibotCheckParams;
   "ebay-item": EBayEbayItemParams;
   "ebay-search": EBayEbaySearchParams;
   "ebay-seller": EBayEbaySellerParams;
@@ -15965,6 +16289,11 @@ export interface OperationParamsMap {
   "reddit-trends": RedditTrendsParams;
   "reddit-user-comments": RedditUserCommentsParams;
   "reddit-user-posts": RedditUserPostsParams;
+  "redfin-estimate": RedfinEstimateParams;
+  "redfin-property": RedfinPropertyParams;
+  "redfin-region-trends": RedfinRegionTrendsParams;
+  "redfin-search": RedfinSearchParams;
+  "redfin-similar": RedfinSimilarParams;
   "referrals-click": ReferralsClickParams;
   "referrals-me": ReferralsMeParams;
   "referrals-me-events": ReferralsMeEventsParams;
@@ -16089,6 +16418,7 @@ export interface OperationParamsMap {
   "user-me-api-keys": UserMeApiKeysParams;
   "user-me-api-keys-rotate": UserMeApiKeysRotateParams;
   "user-me-api-keys-reveal": UserMeApiKeysRevealParams;
+  "web-scrape": WebScrapeParams;
   "yahoo-finance-calendars": YahooFinanceCalendarsParams;
   "yahoo-finance-calendar": YahooFinanceCalendarParams;
   "yahoo-finance-download": YahooFinanceDownloadParams;
@@ -16230,11 +16560,13 @@ export interface OperationResponseMap {
   "coingecko-token-unlocks": CoinGeckoTokenUnlocksResponse;
   "coingecko-treasuries": CoinGeckoTreasuriesResponse;
   "coingecko-trending": CoinGeckoTrendingResponse;
+  "contact": WebContactResponse;
   "datasets-list": DatasetsListResponse;
   "datasets-google-map-businesses-facets": DatasetsGoogleMapBusinessesFacetsResponse;
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemResponse;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyResponse;
   "datasets-google-map-businesses-search": DatasetsGoogleMapBusinessesSearchResponse;
+  "antibot-check": WebAntibotCheckResponse;
   "ebay-item": EBayEbayItemResponse;
   "ebay-search": EBayEbaySearchResponse;
   "ebay-seller": EBayEbaySellerResponse;
@@ -16459,6 +16791,11 @@ export interface OperationResponseMap {
   "reddit-trends": RedditTrendsResponse;
   "reddit-user-comments": RedditUserCommentsResponse;
   "reddit-user-posts": RedditUserPostsResponse;
+  "redfin-estimate": RedfinEstimateResponse;
+  "redfin-property": RedfinPropertyResponse;
+  "redfin-region-trends": RedfinRegionTrendsResponse;
+  "redfin-search": RedfinSearchResponse;
+  "redfin-similar": RedfinSimilarResponse;
   "referrals-click": ReferralsClickResponse;
   "referrals-me": ReferralsMeResponse;
   "referrals-me-events": ReferralsMeEventsResponse;
@@ -16583,6 +16920,7 @@ export interface OperationResponseMap {
   "user-me-api-keys": UserMeApiKeysResponse;
   "user-me-api-keys-rotate": UserMeApiKeysRotateResponse;
   "user-me-api-keys-reveal": UserMeApiKeysRevealResponse;
+  "web-scrape": WebScrapeResponse;
   "yahoo-finance-calendars": YahooFinanceCalendarsResponse;
   "yahoo-finance-calendar": YahooFinanceCalendarResponse;
   "yahoo-finance-download": YahooFinanceDownloadResponse;
@@ -16724,11 +17062,13 @@ export interface OperationRequiredParamsMap {
   "coingecko-token-unlocks": false;
   "coingecko-treasuries": false;
   "coingecko-trending": false;
+  "contact": true;
   "datasets-list": false;
   "datasets-google-map-businesses-facets": true;
   "datasets-google-map-businesses-item": true;
   "datasets-google-map-businesses-nearby": true;
   "datasets-google-map-businesses-search": false;
+  "antibot-check": true;
   "ebay-item": true;
   "ebay-search": true;
   "ebay-seller": true;
@@ -16953,6 +17293,11 @@ export interface OperationRequiredParamsMap {
   "reddit-trends": false;
   "reddit-user-comments": true;
   "reddit-user-posts": true;
+  "redfin-estimate": true;
+  "redfin-property": false;
+  "redfin-region-trends": true;
+  "redfin-search": false;
+  "redfin-similar": true;
   "referrals-click": true;
   "referrals-me": false;
   "referrals-me-events": false;
@@ -17077,6 +17422,7 @@ export interface OperationRequiredParamsMap {
   "user-me-api-keys": false;
   "user-me-api-keys-rotate": false;
   "user-me-api-keys-reveal": true;
+  "web-scrape": true;
   "yahoo-finance-calendars": false;
   "yahoo-finance-calendar": true;
   "yahoo-finance-download": true;
@@ -17225,11 +17571,13 @@ export type OperationIdLiteral =
   | "coingecko-token-unlocks"
   | "coingecko-treasuries"
   | "coingecko-trending"
+  | "contact"
   | "datasets-list"
   | "datasets-google-map-businesses-facets"
   | "datasets-google-map-businesses-item"
   | "datasets-google-map-businesses-nearby"
   | "datasets-google-map-businesses-search"
+  | "antibot-check"
   | "ebay-item"
   | "ebay-search"
   | "ebay-seller"
@@ -17454,6 +17802,11 @@ export type OperationIdLiteral =
   | "reddit-trends"
   | "reddit-user-comments"
   | "reddit-user-posts"
+  | "redfin-estimate"
+  | "redfin-property"
+  | "redfin-region-trends"
+  | "redfin-search"
+  | "redfin-similar"
   | "referrals-click"
   | "referrals-me"
   | "referrals-me-events"
@@ -17578,6 +17931,7 @@ export type OperationIdLiteral =
   | "user-me-api-keys"
   | "user-me-api-keys-rotate"
   | "user-me-api-keys-reveal"
+  | "web-scrape"
   | "yahoo-finance-calendars"
   | "yahoo-finance-calendar"
   | "yahoo-finance-download"
@@ -17947,6 +18301,11 @@ export declare const OperationIds: Readonly<{
   RedditTrends: "reddit-trends";
   RedditUserComments: "reddit-user-comments";
   RedditUserPosts: "reddit-user-posts";
+  RedfinEstimate: "redfin-estimate";
+  RedfinProperty: "redfin-property";
+  RedfinRegionTrends: "redfin-region-trends";
+  RedfinSearch: "redfin-search";
+  RedfinSimilar: "redfin-similar";
   ReferralsClick: "referrals-click";
   ReferralsMe: "referrals-me";
   ReferralsMeEvents: "referrals-me-events";
@@ -18071,6 +18430,9 @@ export declare const OperationIds: Readonly<{
   UserMeApiKeys: "user-me-api-keys";
   UserMeApiKeysReveal: "user-me-api-keys-reveal";
   UserMeApiKeysRotate: "user-me-api-keys-rotate";
+  WebAntibotCheck: "antibot-check";
+  WebContact: "contact";
+  WebScrape: "web-scrape";
   YahooFinanceCalendar: "yahoo-finance-calendar";
   YahooFinanceCalendars: "yahoo-finance-calendars";
   YahooFinanceDownload: "yahoo-finance-download";

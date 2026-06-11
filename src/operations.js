@@ -243,6 +243,25 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "antibot-check": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "antibot-check",
+    "method": "POST",
+    "path": "/diagnostics/antibot-check",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "apple-podcasts-charts": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -4228,6 +4247,25 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "contact": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "contact",
+    "method": "POST",
+    "path": "/contact",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -12368,6 +12406,190 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "redfin-estimate": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "redfin-estimate",
+    "method": "GET",
+    "path": "/redfin/estimate",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "property_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "redfin-property": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "redfin-property",
+    "method": "GET",
+    "path": "/redfin/property",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "property_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "listing_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "redfin-region-trends": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "redfin-region-trends",
+    "method": "GET",
+    "path": "/redfin/region-trends",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "region_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "region_type",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "redfin-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "redfin-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/redfin/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "region_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "region_type",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_beds",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_baths",
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "redfin-similar": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "redfin-similar",
+    "method": "GET",
+    "path": "/redfin/similar",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "property_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "referrals-click": {
     "bodyParam": "request",
     "bodyRequired": true,
@@ -17049,6 +17271,25 @@ export const operations = {
       "JWTAuth"
     ]
   },
+  "web-scrape": {
+    "bodyParam": "scrapeOption",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "web-scrape",
+    "method": "POST",
+    "path": "/web/scrape",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "yahoo-finance-calendar": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -19003,6 +19244,13 @@ export const groups = {
     "userComments": "reddit-user-comments",
     "userPosts": "reddit-user-posts"
   },
+  "redfin": {
+    "estimate": "redfin-estimate",
+    "property": "redfin-property",
+    "regionTrends": "redfin-region-trends",
+    "search": "redfin-search",
+    "similar": "redfin-similar"
+  },
   "referrals": {
     "click": "referrals-click",
     "me": "referrals-me",
@@ -19151,6 +19399,11 @@ export const groups = {
     "meApiKeysReveal": "user-me-api-keys-reveal",
     "meApiKeysRotate": "user-me-api-keys-rotate"
   },
+  "web": {
+    "antibotCheck": "antibot-check",
+    "contact": "contact",
+    "scrape": "web-scrape"
+  },
   "yahooFinance": {
     "calendar": "yahoo-finance-calendar",
     "calendars": "yahoo-finance-calendars",
@@ -19214,7 +19467,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 491;
+export const operationCount = 499;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -19531,6 +19784,11 @@ export const OperationIds = Object.freeze({
   "RedditTrends": "reddit-trends",
   "RedditUserComments": "reddit-user-comments",
   "RedditUserPosts": "reddit-user-posts",
+  "RedfinEstimate": "redfin-estimate",
+  "RedfinProperty": "redfin-property",
+  "RedfinRegionTrends": "redfin-region-trends",
+  "RedfinSearch": "redfin-search",
+  "RedfinSimilar": "redfin-similar",
   "ReferralsClick": "referrals-click",
   "ReferralsMe": "referrals-me",
   "ReferralsMeEvents": "referrals-me-events",
@@ -19655,6 +19913,9 @@ export const OperationIds = Object.freeze({
   "UserMeApiKeys": "user-me-api-keys",
   "UserMeApiKeysReveal": "user-me-api-keys-reveal",
   "UserMeApiKeysRotate": "user-me-api-keys-rotate",
+  "WebAntibotCheck": "antibot-check",
+  "WebContact": "contact",
+  "WebScrape": "web-scrape",
   "YahooFinanceCalendar": "yahoo-finance-calendar",
   "YahooFinanceCalendars": "yahoo-finance-calendars",
   "YahooFinanceDownload": "yahoo-finance-download",
