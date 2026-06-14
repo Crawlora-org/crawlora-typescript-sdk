@@ -151,10 +151,15 @@ export interface ModelAmazonSuggestResponseDoc {
 export type ModelAntibotBand = "easy" | "medium" | "hard" | "very_hard" | "blocked" | "unknown";
 
 export interface ModelAntibotProtection {
+  "captcha_mode"?: string;
+  "captcha_type"?: string;
   "confidence"?: string;
+  "confidence_score"?: number;
+  "custom_vm"?: boolean;
   "evidence"?: Array<string>;
   "kind"?: string;
   "vendor"?: string;
+  "vm_vendor"?: string;
 }
 
 export interface ModelAntibotSignals {
@@ -170,19 +175,28 @@ export interface ModelAntibotSignals {
 }
 
 export interface ModelAntibotVerdict {
+  "auth_required"?: boolean;
+  "block_detail"?: string;
+  "block_reason"?: string;
+  "captcha_types"?: Array<string>;
   "coverage"?: string;
+  "custom_vm"?: boolean;
+  "detection_confidence_score"?: number;
   "difficulty_band"?: ModelAntibotBand;
   "difficulty_score"?: number;
   "easiest_working_transport"?: string;
+  "enforcement"?: string;
   "gated_layers"?: Array<string>;
   "notes"?: Array<string>;
   "protections"?: Array<ModelAntibotProtection>;
   "recommended_approach"?: string;
   "recommended_profile"?: string;
+  "retry_after"?: string;
   "scrapeable"?: boolean;
   "signals"?: ModelAntibotSignals;
   "summary"?: string;
   "url"?: string;
+  "vm_vendor"?: string;
 }
 
 export interface ModelApiComponentStatus {
