@@ -3,7 +3,18 @@
 export type CrawloraResponse<T = unknown> = T;
 export type CrawloraBody<T = Record<string, unknown>> = T;
 
+export interface ModelAirbnbCalendarDay {
+  "available"?: boolean;
+  "available_for_checkin"?: boolean;
+  "available_for_checkout"?: boolean;
+  "bookable"?: boolean;
+  "date"?: string;
+  "max_nights"?: number;
+  "min_nights"?: number;
+}
+
 export interface ModelAirbnbCalendarMonth {
+  "days"?: Array<ModelAirbnbCalendarDay>;
   "month"?: string;
   "year"?: number;
 }
@@ -15,12 +26,15 @@ export interface ModelAirbnbCalendarResponse {
 
 export interface ModelAirbnbListingItem {
   "host"?: string;
+  "host_id"?: string;
   "id"?: string;
   "image"?: string;
+  "is_superhost"?: boolean;
   "latitude"?: number;
   "location"?: string;
   "longitude"?: number;
   "price"?: number;
+  "price_per_night"?: number;
   "rating"?: number;
   "review_count"?: number;
   "title"?: string;
@@ -44,12 +58,15 @@ export interface ModelAirbnbRoomResponse {
   "amenities"?: Array<string>;
   "description"?: string;
   "host"?: string;
+  "host_id"?: string;
   "id"?: string;
   "image"?: string;
+  "is_superhost"?: boolean;
   "latitude"?: number;
   "location"?: string;
   "longitude"?: number;
   "price"?: number;
+  "price_per_night"?: number;
   "rating"?: number;
   "review_count"?: number;
   "title"?: string;
@@ -2548,6 +2565,34 @@ export interface ModelContactContactResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsAppsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsAppRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsChartsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsChartEntry>;
+  "page"?: number;
+  "page_size"?: number;
+  "snapshot_date"?: string;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsCreatorsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsCreatorRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsDatasetInfo {
   "capabilities"?: Array<string>;
   "description"?: string;
@@ -2557,6 +2602,21 @@ export interface ModelDatasetsDatasetInfo {
 
 export interface ModelDatasetsDatasetListResponse {
   "items"?: Array<ModelDatasetsDatasetInfo>;
+}
+
+export interface ModelDatasetsGithubUserFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsGithubUserDatasetFacetItem>;
+}
+
+export interface ModelDatasetsGithubUserSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsGithubUserDatasetItem>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
 }
 
 export interface ModelDatasetsGoogleBusinessFacetResponse {
@@ -2572,6 +2632,51 @@ export interface ModelDatasetsGoogleBusinessSearchResponse {
   "page_size"?: number;
   "sort"?: string;
   "total"?: number;
+}
+
+export interface ModelDatasetsReviewsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsAppReview>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsAppsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsAppsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsChartsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsChartsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsCreatorsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsCreatorsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGithubUserResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsGithubUserRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGithubUsersFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsGithubUserFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGithubUsersSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsGithubUserSearchResponse;
+  "msg"?: string;
 }
 
 export interface ModelDatasetsGoogleMapBusinessResponseDoc {
@@ -2595,6 +2700,12 @@ export interface ModelDatasetsGoogleMapBusinessesSearchResponseDoc {
 export interface ModelDatasetsListResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsDatasetListResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsReviewsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsReviewsSearchResponse;
   "msg"?: string;
 }
 
@@ -2786,9 +2897,214 @@ export interface ModelEbaySellerShopResponseDoc {
   "msg"?: unknown;
 }
 
+export interface ModelEsAppRecord {
+  "android_max_installs"?: number;
+  "android_package"?: string;
+  "app_uid"?: string;
+  "category"?: string;
+  "countries_available"?: Array<string>;
+  "country"?: string;
+  "currency"?: string;
+  "developer"?: string;
+  "developer_id"?: string;
+  "first_seen"?: string;
+  "free"?: boolean;
+  "icon_url"?: string;
+  "ios_app_id"?: string;
+  "ios_bundle_id"?: string;
+  "last_crawled"?: string;
+  "popularity"?: number;
+  "price_cents"?: number;
+  "ratings_count"?: number;
+  "released_at"?: string;
+  "score"?: number;
+  "store"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+  "version"?: string;
+}
+
+export interface ModelEsAppReview {
+  "app_id"?: string;
+  "app_uid"?: string;
+  "country"?: string;
+  "last_crawled"?: string;
+  "reply_text"?: string;
+  "review_id"?: string;
+  "review_uid"?: string;
+  "reviewed_at"?: string;
+  "score"?: number;
+  "store"?: string;
+  "text"?: string;
+  "thumbs_up"?: number;
+  "title"?: string;
+  "url"?: string;
+  "user_name"?: string;
+  "version"?: string;
+}
+
+export interface ModelEsChartEntry {
+  "app_id"?: string;
+  "category"?: string;
+  "chart_type"?: string;
+  "chart_uid"?: string;
+  "collection"?: string;
+  "country"?: string;
+  "crawled_at"?: string;
+  "developer"?: string;
+  "free"?: boolean;
+  "rank"?: number;
+  "score"?: number;
+  "snapshot_date"?: string;
+  "store"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelEsCreatorRecord {
+  "avatar_url"?: string;
+  "avg_views"?: number;
+  "bio"?: string;
+  "bio_link"?: string;
+  "brand_affiliations"?: Array<string>;
+  "country"?: string;
+  "creator_uid"?: string;
+  "email"?: string;
+  "email_status"?: string;
+  "engagement_rate"?: number;
+  "first_seen"?: string;
+  "follower_count"?: number;
+  "following_count"?: number;
+  "language"?: string;
+  "last_crawled"?: string;
+  "last_post_at"?: string;
+  "niche"?: string;
+  "nickname"?: string;
+  "platform"?: string;
+  "post_stats"?: ModelEsPostStatsAgg;
+  "sec_uid"?: string;
+  "source"?: string;
+  "status"?: string;
+  "total_likes"?: number;
+  "unique_id"?: string;
+  "verified"?: boolean;
+  "video_count"?: number;
+}
+
 export interface ModelEsGeoPoint {
   "lat"?: number;
   "lon"?: number;
+}
+
+export interface ModelEsGithubGeo {
+  "city"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "location"?: ModelEsGithubGeoPoint;
+  "state"?: string;
+}
+
+export interface ModelEsGithubGeoPoint {
+  "lat"?: number;
+  "lon"?: number;
+}
+
+export interface ModelEsGithubSocialLink {
+  "provider"?: string;
+  "url"?: string;
+}
+
+export interface ModelEsGithubUserDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsGithubUserDatasetItem {
+  "account_age_years"?: number;
+  "active_90d"?: boolean;
+  "avatar_url"?: string;
+  "bio"?: string;
+  "blog"?: string;
+  "company"?: string;
+  "company_normalized"?: string;
+  "crawled_at"?: string;
+  "created_at"?: string;
+  "distance_m"?: number;
+  "domains"?: Array<string>;
+  "email"?: string;
+  "follower_following_ratio"?: number;
+  "followers"?: number;
+  "following"?: number;
+  "geo"?: ModelEsGithubGeo;
+  "has_blog"?: boolean;
+  "has_email"?: boolean;
+  "has_twitter"?: boolean;
+  "hireable"?: boolean;
+  "html_url"?: string;
+  "id"?: number;
+  "influence_tier"?: string;
+  "is_bot"?: boolean;
+  "is_org"?: boolean;
+  "last_active_at"?: string;
+  "location_raw"?: string;
+  "login"?: string;
+  "name"?: string;
+  "prs_30d"?: number;
+  "public_gists"?: number;
+  "public_repos"?: number;
+  "pushes_30d"?: number;
+  "rank_score"?: number;
+  "reachable"?: boolean;
+  "reviews_30d"?: number;
+  "schema_version"?: number;
+  "social_accounts"?: Array<ModelEsGithubSocialLink>;
+  "social_count"?: number;
+  "twitter_username"?: string;
+  "type"?: string;
+}
+
+export interface ModelEsGithubUserRecord {
+  "account_age_years"?: number;
+  "active_90d"?: boolean;
+  "avatar_url"?: string;
+  "bio"?: string;
+  "blog"?: string;
+  "company"?: string;
+  "company_normalized"?: string;
+  "crawled_at"?: string;
+  "created_at"?: string;
+  "domains"?: Array<string>;
+  "email"?: string;
+  "follower_following_ratio"?: number;
+  "followers"?: number;
+  "following"?: number;
+  "geo"?: ModelEsGithubGeo;
+  "has_blog"?: boolean;
+  "has_email"?: boolean;
+  "has_twitter"?: boolean;
+  "hireable"?: boolean;
+  "html_url"?: string;
+  "id"?: number;
+  "influence_tier"?: string;
+  "is_bot"?: boolean;
+  "is_org"?: boolean;
+  "last_active_at"?: string;
+  "location_raw"?: string;
+  "login"?: string;
+  "name"?: string;
+  "prs_30d"?: number;
+  "public_gists"?: number;
+  "public_repos"?: number;
+  "pushes_30d"?: number;
+  "rank_score"?: number;
+  "reachable"?: boolean;
+  "reviews_30d"?: number;
+  "schema_version"?: number;
+  "social_accounts"?: Array<ModelEsGithubSocialLink>;
+  "social_count"?: number;
+  "twitter_username"?: string;
+  "type"?: string;
 }
 
 export interface ModelEsGoogleBusiness {
@@ -2855,6 +3171,37 @@ export interface ModelEsGoogleBusinessDatasetItem {
   "url"?: string;
   "website"?: string;
   "website_status"?: ModelEsWebsiteStatus;
+}
+
+export interface ModelEsPostSound {
+  "author"?: string;
+  "music_id"?: string;
+  "title"?: string;
+  "uses"?: number;
+}
+
+export interface ModelEsPostStatsAgg {
+  "analyzed_at"?: string;
+  "avg_comments"?: number;
+  "avg_likes"?: number;
+  "avg_saves"?: number;
+  "avg_shares"?: number;
+  "avg_video_duration_sec"?: number;
+  "avg_views"?: number;
+  "best_post_id"?: string;
+  "best_post_views"?: number;
+  "engagement_rate_by_follower"?: number;
+  "engagement_rate_by_view"?: number;
+  "first_post_at"?: string;
+  "last_post_at"?: string;
+  "median_likes"?: number;
+  "median_views"?: number;
+  "original_sound_ratio"?: number;
+  "posts_per_week"?: number;
+  "sampled_posts"?: number;
+  "top_hashtags"?: Array<string>;
+  "top_sounds"?: Array<ModelEsPostSound>;
+  "views_to_follower_ratio"?: number;
 }
 
 export interface ModelEsWebsiteStatus {
@@ -6084,13 +6431,6 @@ export interface ModelPopularTrendCountryIndustryMetaItem {
   "value"?: string;
 }
 
-export interface ModelPopularTrendCreatorTrendResp {
-  "code"?: number;
-  "data"?: { "creators"?: Array<{ "avatar_url"?: string; "country_code"?: string; "follower_cnt"?: number; "items"?: Array<{ "cover_url"?: string; "create_time"?: number; "item_id"?: string; "liked_cnt"?: number; "tt_link"?: string; "vv"?: number }>; "liked_cnt"?: number; "nick_name"?: string; "tcm_id"?: string; "tcm_link"?: string; "tt_link"?: string; "user_id"?: string }>; "pagination"?: { "has_more"?: boolean; "page"?: number; "size"?: number; "total"?: number } };
-  "msg"?: string;
-  "request_id"?: string;
-}
-
 export interface ModelPopularTrendTopAdsAnalysisPoint {
   "second"?: number;
   "value"?: number;
@@ -6221,12 +6561,6 @@ export interface ModelPopularTrendTopAdsVideoInfo {
 export interface ModelPopulartrendCountryIndustryMetaResponseDoc {
   "code"?: number;
   "data"?: ModelPopularTrendCountryIndustryMeta;
-  "msg"?: string;
-}
-
-export interface ModelPopulartrendCreatorTrendResponseDoc {
-  "code"?: number;
-  "data"?: ModelPopularTrendCreatorTrendResp;
   "msg"?: string;
 }
 
@@ -10938,6 +11272,91 @@ export interface ModelWebScrapeResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelXMetrics {
+  "bookmarks"?: number;
+  "likes"?: number;
+  "replies"?: number;
+  "reposts"?: number;
+  "views"?: number;
+}
+
+export interface ModelXPost {
+  "author"?: ModelXUser;
+  "created_at"?: string;
+  "id"?: string;
+  "metrics"?: ModelXMetrics;
+  "quoted"?: ModelXPostQuote;
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelXPostQuote {
+  "author"?: ModelXUser;
+  "created_at"?: string;
+  "id"?: string;
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelXProfile {
+  "avatar_url"?: string;
+  "banner_url"?: string;
+  "created_at"?: string;
+  "description"?: string;
+  "external_url"?: string;
+  "id"?: string;
+  "is_blue_verified"?: boolean;
+  "is_protected"?: boolean;
+  "is_unavailable"?: boolean;
+  "location"?: string;
+  "metrics"?: ModelXProfileMetrics;
+  "name"?: string;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelXProfileMetrics {
+  "followers"?: number;
+  "following"?: number;
+  "posts"?: number;
+}
+
+export interface ModelXProfilePosts {
+  "count"?: number;
+  "posts"?: Array<ModelXPost>;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelXUser {
+  "avatar_url"?: string;
+  "banner_url"?: string;
+  "id"?: string;
+  "is_blue_verified"?: boolean;
+  "is_protected"?: boolean;
+  "name"?: string;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelXPostResponseDoc {
+  "code"?: number;
+  "data"?: ModelXPost;
+  "msg"?: string;
+}
+
+export interface ModelXProfilePostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelXProfilePosts;
+  "msg"?: string;
+}
+
+export interface ModelXProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelXProfile;
+  "msg"?: string;
+}
+
 export interface ModelYahoofinanceActionEvents {
   "capital_gains"?: Array<Record<string, unknown>>;
   "dividends"?: Array<Record<string, unknown>>;
@@ -12450,6 +12869,145 @@ export type DatasetsListResponse = CrawloraResponse<ModelDatasetsListResponseDoc
 export interface DatasetsListParams {
 }
 
+export type DatasetsAppsChartsSearchResponse = CrawloraResponse<ModelDatasetsChartsSearchResponseDoc>;
+export interface DatasetsAppsChartsSearchParams {
+  "q"?: string;
+  "store"?: string;
+  "chart_type"?: string;
+  "collection"?: string;
+  "category"?: string;
+  "country"?: string;
+  "app_id"?: string;
+  "date"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsAppsReviewsSearchResponse = CrawloraResponse<ModelDatasetsReviewsSearchResponseDoc>;
+export interface DatasetsAppsReviewsSearchParams {
+  "q"?: string;
+  "store"?: string;
+  "app_id"?: string;
+  "country"?: string;
+  "min_score"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsAppsSearchResponse = CrawloraResponse<ModelDatasetsAppsSearchResponseDoc>;
+export interface DatasetsAppsSearchParams {
+  "q"?: string;
+  "store"?: string;
+  "category"?: string;
+  "country"?: string;
+  "developer"?: string;
+  "free"?: boolean;
+  "min_rating"?: number;
+  "min_reviews"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsCreatorsSearchResponse = CrawloraResponse<ModelDatasetsCreatorsSearchResponseDoc>;
+export interface DatasetsCreatorsSearchParams {
+  "q"?: string;
+  "handle"?: string;
+  "niche"?: string;
+  "country"?: string;
+  "verified"?: boolean;
+  "min_followers"?: number;
+  "has_email"?: boolean;
+  "include_inactive"?: boolean;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsGithubUsersFacetsResponse = CrawloraResponse<ModelDatasetsGithubUsersFacetResponseDoc>;
+export interface DatasetsGithubUsersFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "login"?: string;
+  "company"?: string;
+  "influence_tier"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "state"?: string;
+  "city"?: string;
+  "domain"?: string;
+  "has_email"?: boolean;
+  "has_twitter"?: boolean;
+  "has_blog"?: boolean;
+  "reachable"?: boolean;
+  "active_90d"?: boolean;
+  "hireable"?: boolean;
+  "is_org"?: boolean;
+  "is_bot"?: boolean;
+  "min_followers"?: number;
+  "max_followers"?: number;
+  "min_repos"?: number;
+  "min_rank_score"?: number;
+  "min_account_age_years"?: number;
+  "max_account_age_years"?: number;
+  "lat"?: number;
+  "lon"?: number;
+  "radius_m"?: number;
+  "sort"?: string;
+}
+
+export type DatasetsGithubUsersItemResponse = CrawloraResponse<ModelDatasetsGithubUserResponseDoc>;
+export interface DatasetsGithubUsersItemParams {
+  "login": string;
+}
+
+export type DatasetsGithubUsersNearbyResponse = CrawloraResponse<ModelDatasetsGithubUsersSearchResponseDoc>;
+export interface DatasetsGithubUsersNearbyParams {
+  "lat": number;
+  "lon": number;
+  "radius_m": number;
+  "influence_tier"?: string;
+  "reachable"?: boolean;
+  "min_followers"?: number;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsGithubUsersSearchResponse = CrawloraResponse<ModelDatasetsGithubUsersSearchResponseDoc>;
+export interface DatasetsGithubUsersSearchParams {
+  "q"?: string;
+  "login"?: string;
+  "company"?: string;
+  "influence_tier"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "state"?: string;
+  "city"?: string;
+  "domain"?: string;
+  "has_email"?: boolean;
+  "has_twitter"?: boolean;
+  "has_blog"?: boolean;
+  "reachable"?: boolean;
+  "active_90d"?: boolean;
+  "hireable"?: boolean;
+  "is_org"?: boolean;
+  "is_bot"?: boolean;
+  "min_followers"?: number;
+  "max_followers"?: number;
+  "min_repos"?: number;
+  "min_rank_score"?: number;
+  "min_account_age_years"?: number;
+  "max_account_age_years"?: number;
+  "lat"?: number;
+  "lon"?: number;
+  "radius_m"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsGoogleMapBusinessesFacetsResponse = CrawloraResponse<ModelDatasetsGoogleMapBusinessesFacetResponseDoc>;
 export interface DatasetsGoogleMapBusinessesFacetsParams {
   "facet": string;
@@ -12583,6 +13141,123 @@ export interface GeocodingSearchParams {
   "addressdetails"?: boolean;
   "extratags"?: boolean;
   "namedetails"?: boolean;
+}
+
+export type GitHubGithubOrgResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubOrgParams {
+  "org": string;
+}
+
+export type GitHubGithubOrgReposResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubOrgReposParams {
+  "org": string;
+  "sort"?: "created" | "updated" | "pushed" | "full_name";
+  "direction"?: "asc" | "desc";
+  "type"?: "all" | "public" | "forks" | "sources" | "member";
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubRepoResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubRepoParams {
+  "owner": string;
+  "repo": string;
+}
+
+export type GitHubGithubRepoContributorsResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubRepoContributorsParams {
+  "owner": string;
+  "repo": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubRepoForksResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubRepoForksParams {
+  "owner": string;
+  "repo": string;
+  "sort"?: "newest" | "oldest" | "stargazers" | "watchers";
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubRepoLanguagesResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubRepoLanguagesParams {
+  "owner": string;
+  "repo": string;
+}
+
+export type GitHubGithubRepoReleasesResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubRepoReleasesParams {
+  "owner": string;
+  "repo": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubRepoStargazersResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubRepoStargazersParams {
+  "owner": string;
+  "repo": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubSearchRepositoriesResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubSearchRepositoriesParams {
+  "q": string;
+  "sort"?: "stars" | "forks" | "help-wanted-issues" | "updated";
+  "order"?: "asc" | "desc";
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubSearchUsersResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubSearchUsersParams {
+  "q": string;
+  "sort"?: "followers" | "repositories" | "joined";
+  "order"?: "asc" | "desc";
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubTrendingResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubTrendingParams {
+  "language"?: string;
+  "since"?: "daily" | "weekly" | "monthly";
+}
+
+export type GitHubGithubTrendingDevelopersResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubTrendingDevelopersParams {
+  "language"?: string;
+  "since"?: "daily" | "weekly" | "monthly";
+}
+
+export type GitHubGithubUserResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubUserParams {
+  "username": string;
+}
+
+export type GitHubGithubUserEventsResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubUserEventsParams {
+  "username": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubUserPinnedResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubUserPinnedParams {
+  "username": string;
+}
+
+export type GitHubGithubUserReposResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubUserReposParams {
+  "username": string;
+  "sort"?: "created" | "updated" | "pushed" | "full_name";
+  "direction"?: "asc" | "desc";
+  "type"?: "all" | "owner" | "member";
+  "page"?: number;
+  "per_page"?: number;
 }
 
 export type GoogleFinanceAnalystArticlesResponse = CrawloraResponse<ModelFinanceArticlesResponseDoc>;
@@ -13944,6 +14619,7 @@ export interface RedditCommentsParams {
   "sort"?: "confidence" | "top" | "new" | "controversial" | "old" | "qa";
   "limit"?: number;
   "depth"?: number;
+  "with_scores"?: boolean;
 }
 
 export type RedditDomainPostsResponse = CrawloraResponse<ModelRedditDomainPostsResponseDoc>;
@@ -13953,11 +14629,13 @@ export interface RedditDomainPostsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
+  "with_scores"?: boolean;
 }
 
 export type RedditPostResponse = CrawloraResponse<ModelRedditPostResponseDoc>;
 export interface RedditPostParams {
   "id": string;
+  "with_scores"?: boolean;
 }
 
 export type RedditSearchResponse = CrawloraResponse<ModelRedditSearchResponseDoc>;
@@ -13968,12 +14646,14 @@ export interface RedditSearchParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
+  "with_scores"?: boolean;
 }
 
 export type RedditSubredditAboutResponse = CrawloraResponse<ModelRedditSubredditAboutResponseDoc>;
 export interface RedditSubredditAboutParams {
   "subreddit": string;
   "limit"?: number;
+  "with_scores"?: boolean;
 }
 
 export type RedditSubredditCommentsResponse = CrawloraResponse<ModelRedditSubredditCommentsResponseDoc>;
@@ -13981,6 +14661,7 @@ export interface RedditSubredditCommentsParams {
   "subreddit": string;
   "limit"?: number;
   "after"?: string;
+  "with_scores"?: boolean;
 }
 
 export type RedditSubredditPostsResponse = CrawloraResponse<ModelRedditSubredditPostsResponseDoc>;
@@ -13990,6 +14671,7 @@ export interface RedditSubredditPostsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
+  "with_scores"?: boolean;
 }
 
 export type RedditSubredditsPostsResponse = CrawloraResponse<ModelRedditMultiSubredditPostsResponseDoc>;
@@ -13999,6 +14681,7 @@ export interface RedditSubredditsPostsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
+  "with_scores"?: boolean;
 }
 
 export type RedditTrendsResponse = CrawloraResponse<ModelRedditTrendsResponseDoc>;
@@ -14007,6 +14690,7 @@ export interface RedditTrendsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
+  "with_scores"?: boolean;
 }
 
 export type RedditUserCommentsResponse = CrawloraResponse<ModelRedditUserCommentsResponseDoc>;
@@ -14014,6 +14698,7 @@ export interface RedditUserCommentsParams {
   "username": string;
   "limit"?: number;
   "after"?: string;
+  "with_scores"?: boolean;
 }
 
 export type RedditUserPostsResponse = CrawloraResponse<ModelRedditUserPostsResponseDoc>;
@@ -14021,6 +14706,7 @@ export interface RedditUserPostsParams {
   "username": string;
   "limit"?: number;
   "after"?: string;
+  "with_scores"?: boolean;
 }
 
 export type RedfinEstimateResponse = CrawloraResponse<ModelRedfinEstimateResponse>;
@@ -14680,15 +15366,6 @@ export type TiktokPopularTrendCountryIndustryMetaResponse = CrawloraResponse<Mod
 export interface TiktokPopularTrendCountryIndustryMetaParams {
 }
 
-export type TiktokPopularTrendCreatorResponse = CrawloraResponse<ModelPopulartrendCreatorTrendResponseDoc>;
-export interface TiktokPopularTrendCreatorParams {
-  "page"?: number;
-  "limit"?: number;
-  "sort_by"?: "follower" | "engagement" | "avg_views";
-  "creator_country"?: string;
-  "audience_count"?: "1" | "2" | "3" | "4";
-}
-
 export type TiktokPostResponse = CrawloraResponse<ModelTiktokPostResponseDoc>;
 export interface TiktokPostParams {
   "id": string;
@@ -14974,6 +15651,23 @@ export type WebScrapeBody = CrawloraBody<ModelWebScrapeOption>;
 export type WebScrapeResponse = CrawloraResponse<ModelWebScrapeResponseDoc>;
 export interface WebScrapeParams {
   "scrapeOption": WebScrapeBody;
+}
+
+export type XPostResponse = CrawloraResponse<ModelXPostResponseDoc>;
+export interface XPostParams {
+  "id": string;
+  "username"?: string;
+}
+
+export type XProfileResponse = CrawloraResponse<ModelXProfileResponseDoc>;
+export interface XProfileParams {
+  "username": string;
+}
+
+export type XProfilePostsResponse = CrawloraResponse<ModelXProfilePostsResponseDoc>;
+export interface XProfilePostsParams {
+  "username": string;
+  "limit"?: number;
 }
 
 export type YahooFinanceCalendarsResponse = CrawloraResponse<ModelYahoofinanceCalendarsResponseDoc>;
@@ -15439,6 +16133,14 @@ export interface WebService {
 
 export interface DatasetsService {
   list<T = DatasetsListResponse>(params?: DatasetsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  appsChartsSearch<T = DatasetsAppsChartsSearchResponse>(params?: DatasetsAppsChartsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  appsReviewsSearch<T = DatasetsAppsReviewsSearchResponse>(params?: DatasetsAppsReviewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  appsSearch<T = DatasetsAppsSearchResponse>(params?: DatasetsAppsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  creatorsSearch<T = DatasetsCreatorsSearchResponse>(params?: DatasetsCreatorsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUsersFacets<T = DatasetsGithubUsersFacetsResponse>(params: DatasetsGithubUsersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUsersItem<T = DatasetsGithubUsersItemResponse>(params: DatasetsGithubUsersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUsersNearby<T = DatasetsGithubUsersNearbyResponse>(params: DatasetsGithubUsersNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUsersSearch<T = DatasetsGithubUsersSearchResponse>(params?: DatasetsGithubUsersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesFacets<T = DatasetsGoogleMapBusinessesFacetsResponse>(params: DatasetsGoogleMapBusinessesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesItem<T = DatasetsGoogleMapBusinessesItemResponse>(params: DatasetsGoogleMapBusinessesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesNearby<T = DatasetsGoogleMapBusinessesNearbyResponse>(params: DatasetsGoogleMapBusinessesNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -15458,6 +16160,25 @@ export interface GeocodingService {
   lookup<T = GeocodingLookupResponse>(params: GeocodingLookupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reverse<T = GeocodingReverseResponse>(params: GeocodingReverseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = GeocodingSearchResponse>(params?: GeocodingSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface GitHubService {
+  githubOrg<T = GitHubGithubOrgResponse>(params: GitHubGithubOrgParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubOrgRepos<T = GitHubGithubOrgReposResponse>(params: GitHubGithubOrgReposParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubRepo<T = GitHubGithubRepoResponse>(params: GitHubGithubRepoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubRepoContributors<T = GitHubGithubRepoContributorsResponse>(params: GitHubGithubRepoContributorsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubRepoForks<T = GitHubGithubRepoForksResponse>(params: GitHubGithubRepoForksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubRepoLanguages<T = GitHubGithubRepoLanguagesResponse>(params: GitHubGithubRepoLanguagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubRepoReleases<T = GitHubGithubRepoReleasesResponse>(params: GitHubGithubRepoReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubRepoStargazers<T = GitHubGithubRepoStargazersResponse>(params: GitHubGithubRepoStargazersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubSearchRepositories<T = GitHubGithubSearchRepositoriesResponse>(params: GitHubGithubSearchRepositoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubSearchUsers<T = GitHubGithubSearchUsersResponse>(params: GitHubGithubSearchUsersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubTrending<T = GitHubGithubTrendingResponse>(params?: GitHubGithubTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubTrendingDevelopers<T = GitHubGithubTrendingDevelopersResponse>(params?: GitHubGithubTrendingDevelopersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUser<T = GitHubGithubUserResponse>(params: GitHubGithubUserParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUserEvents<T = GitHubGithubUserEventsResponse>(params: GitHubGithubUserEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUserPinned<T = GitHubGithubUserPinnedResponse>(params: GitHubGithubUserPinnedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUserRepos<T = GitHubGithubUserReposResponse>(params: GitHubGithubUserReposParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GoogleService {
@@ -15826,7 +16547,6 @@ export interface TiktokService {
   challenge<T = TiktokChallengeResponse>(params: TiktokChallengeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   challengeList<T = TiktokChallengeListResponse>(params: TiktokChallengeListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   popularTrendCountryIndustryMeta<T = TiktokPopularTrendCountryIndustryMetaResponse>(params?: TiktokPopularTrendCountryIndustryMetaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  popularTrendCreator<T = TiktokPopularTrendCreatorResponse>(params?: TiktokPopularTrendCreatorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   post<T = TiktokPostResponse>(params: TiktokPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profilePost<T = TiktokProfilePostResponse>(params: TiktokProfilePostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = TiktokProfileResponse>(params: TiktokProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -15877,6 +16597,12 @@ export interface UserService {
   meApiKeys<T = UserMeApiKeysResponse>(params?: UserMeApiKeysParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meApiKeysRotate<T = UserMeApiKeysRotateResponse>(params?: UserMeApiKeysRotateParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meApiKeysReveal<T = UserMeApiKeysRevealResponse>(params: UserMeApiKeysRevealParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface XService {
+  post<T = XPostResponse>(params: XPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  profile<T = XProfileResponse>(params: XProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  profilePosts<T = XProfilePostsResponse>(params: XProfilePostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface YahooFinanceService {
@@ -15958,6 +16684,7 @@ export interface CrawloraGeneratedGroups {
   datasets: DatasetsService;
   eBay: EBayService;
   geocoding: GeocodingService;
+  gitHub: GitHubService;
   google: GoogleService;
   googlePlay: GooglePlayService;
   imdb: ImdbService;
@@ -15983,6 +16710,7 @@ export interface CrawloraGeneratedGroups {
   trustpilot: TrustpilotService;
   usage: UsageService;
   user: UserService;
+  x: XService;
   yahooFinance: YahooFinanceService;
   youtube: YoutubeService;
   zillow: ZillowService;
@@ -16074,6 +16802,14 @@ export interface OperationParamsMap {
   "coingecko-trending": CoinGeckoTrendingParams;
   "contact": WebContactParams;
   "datasets-list": DatasetsListParams;
+  "datasets-apps-charts-search": DatasetsAppsChartsSearchParams;
+  "datasets-apps-reviews-search": DatasetsAppsReviewsSearchParams;
+  "datasets-apps-search": DatasetsAppsSearchParams;
+  "datasets-creators-search": DatasetsCreatorsSearchParams;
+  "datasets-github-users-facets": DatasetsGithubUsersFacetsParams;
+  "datasets-github-users-item": DatasetsGithubUsersItemParams;
+  "datasets-github-users-nearby": DatasetsGithubUsersNearbyParams;
+  "datasets-github-users-search": DatasetsGithubUsersSearchParams;
   "datasets-google-map-businesses-facets": DatasetsGoogleMapBusinessesFacetsParams;
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemParams;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyParams;
@@ -16088,6 +16824,22 @@ export interface OperationParamsMap {
   "geocoding-lookup": GeocodingLookupParams;
   "geocoding-reverse": GeocodingReverseParams;
   "geocoding-search": GeocodingSearchParams;
+  "github-org": GitHubGithubOrgParams;
+  "github-org-repos": GitHubGithubOrgReposParams;
+  "github-repo": GitHubGithubRepoParams;
+  "github-repo-contributors": GitHubGithubRepoContributorsParams;
+  "github-repo-forks": GitHubGithubRepoForksParams;
+  "github-repo-languages": GitHubGithubRepoLanguagesParams;
+  "github-repo-releases": GitHubGithubRepoReleasesParams;
+  "github-repo-stargazers": GitHubGithubRepoStargazersParams;
+  "github-search-repositories": GitHubGithubSearchRepositoriesParams;
+  "github-search-users": GitHubGithubSearchUsersParams;
+  "github-trending": GitHubGithubTrendingParams;
+  "github-trending-developers": GitHubGithubTrendingDevelopersParams;
+  "github-user": GitHubGithubUserParams;
+  "github-user-events": GitHubGithubUserEventsParams;
+  "github-user-pinned": GitHubGithubUserPinnedParams;
+  "github-user-repos": GitHubGithubUserReposParams;
   "google-finance-analyst-articles": GoogleFinanceAnalystArticlesParams;
   "google-finance-chart": GoogleFinanceChartParams;
   "google-finance-classification": GoogleFinanceClassificationParams;
@@ -16393,7 +17145,6 @@ export interface OperationParamsMap {
   "tiktok-challenge": TiktokChallengeParams;
   "tiktok-challenge-list": TiktokChallengeListParams;
   "tiktok-popular-trend-country-industry-meta": TiktokPopularTrendCountryIndustryMetaParams;
-  "tiktok-popular-trend-creator": TiktokPopularTrendCreatorParams;
   "tiktok-post": TiktokPostParams;
   "tiktok-profile-post": TiktokProfilePostParams;
   "tiktok-profile": TiktokProfileParams;
@@ -16433,6 +17184,9 @@ export interface OperationParamsMap {
   "user-me-api-keys-rotate": UserMeApiKeysRotateParams;
   "user-me-api-keys-reveal": UserMeApiKeysRevealParams;
   "web-scrape": WebScrapeParams;
+  "x-post": XPostParams;
+  "x-profile": XProfileParams;
+  "x-profile-posts": XProfilePostsParams;
   "yahoo-finance-calendars": YahooFinanceCalendarsParams;
   "yahoo-finance-calendar": YahooFinanceCalendarParams;
   "yahoo-finance-download": YahooFinanceDownloadParams;
@@ -16576,6 +17330,14 @@ export interface OperationResponseMap {
   "coingecko-trending": CoinGeckoTrendingResponse;
   "contact": WebContactResponse;
   "datasets-list": DatasetsListResponse;
+  "datasets-apps-charts-search": DatasetsAppsChartsSearchResponse;
+  "datasets-apps-reviews-search": DatasetsAppsReviewsSearchResponse;
+  "datasets-apps-search": DatasetsAppsSearchResponse;
+  "datasets-creators-search": DatasetsCreatorsSearchResponse;
+  "datasets-github-users-facets": DatasetsGithubUsersFacetsResponse;
+  "datasets-github-users-item": DatasetsGithubUsersItemResponse;
+  "datasets-github-users-nearby": DatasetsGithubUsersNearbyResponse;
+  "datasets-github-users-search": DatasetsGithubUsersSearchResponse;
   "datasets-google-map-businesses-facets": DatasetsGoogleMapBusinessesFacetsResponse;
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemResponse;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyResponse;
@@ -16590,6 +17352,22 @@ export interface OperationResponseMap {
   "geocoding-lookup": GeocodingLookupResponse;
   "geocoding-reverse": GeocodingReverseResponse;
   "geocoding-search": GeocodingSearchResponse;
+  "github-org": GitHubGithubOrgResponse;
+  "github-org-repos": GitHubGithubOrgReposResponse;
+  "github-repo": GitHubGithubRepoResponse;
+  "github-repo-contributors": GitHubGithubRepoContributorsResponse;
+  "github-repo-forks": GitHubGithubRepoForksResponse;
+  "github-repo-languages": GitHubGithubRepoLanguagesResponse;
+  "github-repo-releases": GitHubGithubRepoReleasesResponse;
+  "github-repo-stargazers": GitHubGithubRepoStargazersResponse;
+  "github-search-repositories": GitHubGithubSearchRepositoriesResponse;
+  "github-search-users": GitHubGithubSearchUsersResponse;
+  "github-trending": GitHubGithubTrendingResponse;
+  "github-trending-developers": GitHubGithubTrendingDevelopersResponse;
+  "github-user": GitHubGithubUserResponse;
+  "github-user-events": GitHubGithubUserEventsResponse;
+  "github-user-pinned": GitHubGithubUserPinnedResponse;
+  "github-user-repos": GitHubGithubUserReposResponse;
   "google-finance-analyst-articles": GoogleFinanceAnalystArticlesResponse;
   "google-finance-chart": GoogleFinanceChartResponse;
   "google-finance-classification": GoogleFinanceClassificationResponse;
@@ -16895,7 +17673,6 @@ export interface OperationResponseMap {
   "tiktok-challenge": TiktokChallengeResponse;
   "tiktok-challenge-list": TiktokChallengeListResponse;
   "tiktok-popular-trend-country-industry-meta": TiktokPopularTrendCountryIndustryMetaResponse;
-  "tiktok-popular-trend-creator": TiktokPopularTrendCreatorResponse;
   "tiktok-post": TiktokPostResponse;
   "tiktok-profile-post": TiktokProfilePostResponse;
   "tiktok-profile": TiktokProfileResponse;
@@ -16935,6 +17712,9 @@ export interface OperationResponseMap {
   "user-me-api-keys-rotate": UserMeApiKeysRotateResponse;
   "user-me-api-keys-reveal": UserMeApiKeysRevealResponse;
   "web-scrape": WebScrapeResponse;
+  "x-post": XPostResponse;
+  "x-profile": XProfileResponse;
+  "x-profile-posts": XProfilePostsResponse;
   "yahoo-finance-calendars": YahooFinanceCalendarsResponse;
   "yahoo-finance-calendar": YahooFinanceCalendarResponse;
   "yahoo-finance-download": YahooFinanceDownloadResponse;
@@ -17078,6 +17858,14 @@ export interface OperationRequiredParamsMap {
   "coingecko-trending": false;
   "contact": true;
   "datasets-list": false;
+  "datasets-apps-charts-search": false;
+  "datasets-apps-reviews-search": false;
+  "datasets-apps-search": false;
+  "datasets-creators-search": false;
+  "datasets-github-users-facets": true;
+  "datasets-github-users-item": true;
+  "datasets-github-users-nearby": true;
+  "datasets-github-users-search": false;
   "datasets-google-map-businesses-facets": true;
   "datasets-google-map-businesses-item": true;
   "datasets-google-map-businesses-nearby": true;
@@ -17092,6 +17880,22 @@ export interface OperationRequiredParamsMap {
   "geocoding-lookup": true;
   "geocoding-reverse": true;
   "geocoding-search": false;
+  "github-org": true;
+  "github-org-repos": true;
+  "github-repo": true;
+  "github-repo-contributors": true;
+  "github-repo-forks": true;
+  "github-repo-languages": true;
+  "github-repo-releases": true;
+  "github-repo-stargazers": true;
+  "github-search-repositories": true;
+  "github-search-users": true;
+  "github-trending": false;
+  "github-trending-developers": false;
+  "github-user": true;
+  "github-user-events": true;
+  "github-user-pinned": true;
+  "github-user-repos": true;
   "google-finance-analyst-articles": true;
   "google-finance-chart": true;
   "google-finance-classification": true;
@@ -17397,7 +18201,6 @@ export interface OperationRequiredParamsMap {
   "tiktok-challenge": true;
   "tiktok-challenge-list": true;
   "tiktok-popular-trend-country-industry-meta": false;
-  "tiktok-popular-trend-creator": false;
   "tiktok-post": true;
   "tiktok-profile-post": true;
   "tiktok-profile": true;
@@ -17437,6 +18240,9 @@ export interface OperationRequiredParamsMap {
   "user-me-api-keys-rotate": false;
   "user-me-api-keys-reveal": true;
   "web-scrape": true;
+  "x-post": true;
+  "x-profile": true;
+  "x-profile-posts": true;
   "yahoo-finance-calendars": false;
   "yahoo-finance-calendar": true;
   "yahoo-finance-download": true;
@@ -17587,6 +18393,14 @@ export type OperationIdLiteral =
   | "coingecko-trending"
   | "contact"
   | "datasets-list"
+  | "datasets-apps-charts-search"
+  | "datasets-apps-reviews-search"
+  | "datasets-apps-search"
+  | "datasets-creators-search"
+  | "datasets-github-users-facets"
+  | "datasets-github-users-item"
+  | "datasets-github-users-nearby"
+  | "datasets-github-users-search"
   | "datasets-google-map-businesses-facets"
   | "datasets-google-map-businesses-item"
   | "datasets-google-map-businesses-nearby"
@@ -17601,6 +18415,22 @@ export type OperationIdLiteral =
   | "geocoding-lookup"
   | "geocoding-reverse"
   | "geocoding-search"
+  | "github-org"
+  | "github-org-repos"
+  | "github-repo"
+  | "github-repo-contributors"
+  | "github-repo-forks"
+  | "github-repo-languages"
+  | "github-repo-releases"
+  | "github-repo-stargazers"
+  | "github-search-repositories"
+  | "github-search-users"
+  | "github-trending"
+  | "github-trending-developers"
+  | "github-user"
+  | "github-user-events"
+  | "github-user-pinned"
+  | "github-user-repos"
   | "google-finance-analyst-articles"
   | "google-finance-chart"
   | "google-finance-classification"
@@ -17906,7 +18736,6 @@ export type OperationIdLiteral =
   | "tiktok-challenge"
   | "tiktok-challenge-list"
   | "tiktok-popular-trend-country-industry-meta"
-  | "tiktok-popular-trend-creator"
   | "tiktok-post"
   | "tiktok-profile-post"
   | "tiktok-profile"
@@ -17946,6 +18775,9 @@ export type OperationIdLiteral =
   | "user-me-api-keys-rotate"
   | "user-me-api-keys-reveal"
   | "web-scrape"
+  | "x-post"
+  | "x-profile"
+  | "x-profile-posts"
   | "yahoo-finance-calendars"
   | "yahoo-finance-calendar"
   | "yahoo-finance-download"
@@ -18086,6 +18918,14 @@ export declare const OperationIds: Readonly<{
   CoinGeckoTokenUnlocks: "coingecko-token-unlocks";
   CoinGeckoTreasuries: "coingecko-treasuries";
   CoinGeckoTrending: "coingecko-trending";
+  DatasetsAppsChartsSearch: "datasets-apps-charts-search";
+  DatasetsAppsReviewsSearch: "datasets-apps-reviews-search";
+  DatasetsAppsSearch: "datasets-apps-search";
+  DatasetsCreatorsSearch: "datasets-creators-search";
+  DatasetsGithubUsersFacets: "datasets-github-users-facets";
+  DatasetsGithubUsersItem: "datasets-github-users-item";
+  DatasetsGithubUsersNearby: "datasets-github-users-nearby";
+  DatasetsGithubUsersSearch: "datasets-github-users-search";
   DatasetsGoogleMapBusinessesFacets: "datasets-google-map-businesses-facets";
   DatasetsGoogleMapBusinessesItem: "datasets-google-map-businesses-item";
   DatasetsGoogleMapBusinessesNearby: "datasets-google-map-businesses-nearby";
@@ -18100,6 +18940,22 @@ export declare const OperationIds: Readonly<{
   GeocodingLookup: "geocoding-lookup";
   GeocodingReverse: "geocoding-reverse";
   GeocodingSearch: "geocoding-search";
+  GitHubGithubOrg: "github-org";
+  GitHubGithubOrgRepos: "github-org-repos";
+  GitHubGithubRepo: "github-repo";
+  GitHubGithubRepoContributors: "github-repo-contributors";
+  GitHubGithubRepoForks: "github-repo-forks";
+  GitHubGithubRepoLanguages: "github-repo-languages";
+  GitHubGithubRepoReleases: "github-repo-releases";
+  GitHubGithubRepoStargazers: "github-repo-stargazers";
+  GitHubGithubSearchRepositories: "github-search-repositories";
+  GitHubGithubSearchUsers: "github-search-users";
+  GitHubGithubTrending: "github-trending";
+  GitHubGithubTrendingDevelopers: "github-trending-developers";
+  GitHubGithubUser: "github-user";
+  GitHubGithubUserEvents: "github-user-events";
+  GitHubGithubUserPinned: "github-user-pinned";
+  GitHubGithubUserRepos: "github-user-repos";
   GoogleFinanceAnalystArticles: "google-finance-analyst-articles";
   GoogleFinanceChart: "google-finance-chart";
   GoogleFinanceClassification: "google-finance-classification";
@@ -18404,7 +19260,6 @@ export declare const OperationIds: Readonly<{
   TiktokChallengeList: "tiktok-challenge-list";
   TiktokExplore: "tiktok-explore";
   TiktokPopularTrendCountryIndustryMeta: "tiktok-popular-trend-country-industry-meta";
-  TiktokPopularTrendCreator: "tiktok-popular-trend-creator";
   TiktokPost: "tiktok-post";
   TiktokProfile: "tiktok-profile";
   TiktokProfilePost: "tiktok-profile-post";
@@ -18447,6 +19302,9 @@ export declare const OperationIds: Readonly<{
   WebAntibotCheck: "antibot-check";
   WebContact: "contact";
   WebScrape: "web-scrape";
+  XPost: "x-post";
+  XProfile: "x-profile";
+  XProfilePosts: "x-profile-posts";
   YahooFinanceCalendar: "yahoo-finance-calendar";
   YahooFinanceCalendars: "yahoo-finance-calendars";
   YahooFinanceDownload: "yahoo-finance-download";

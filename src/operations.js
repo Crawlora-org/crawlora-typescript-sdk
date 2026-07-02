@@ -4270,6 +4270,707 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-apps-charts-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apps-charts-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/apps-charts/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "store",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "chart_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "collection",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "app_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-apps-reviews-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apps-reviews-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/apps-reviews/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "store",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "app_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_score",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-apps-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apps-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/apps/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "store",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "developer",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "free",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_reviews",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-creators-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-creators-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/creators/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "handle",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "niche",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "verified",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "has_email",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "include_inactive",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-github-users-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-github-users-facets",
+    "method": "GET",
+    "path": "/datasets/github-users/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "login",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "company",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "influence_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "has_email",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_twitter",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_blog",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "reachable",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "active_90d",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "hireable",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_org",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_bot",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_repos",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_rank_score",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_account_age_years",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_account_age_years",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lat",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-github-users-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-github-users-item",
+    "method": "GET",
+    "path": "/datasets/github-users/items/{login}",
+    "pathParams": [
+      "login"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-github-users-nearby": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-github-users-nearby",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/github-users/nearby",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "lat",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "influence_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "reachable",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-github-users-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-github-users-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/github-users/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "login",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "company",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "influence_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "has_email",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_twitter",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_blog",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "reachable",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "active_90d",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "hireable",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_org",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_bot",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_repos",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_rank_score",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_account_age_years",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_account_age_years",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lat",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-google-map-businesses-facets": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -4911,6 +5612,604 @@ export const operations = {
         "in": "query",
         "name": "namedetails",
         "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-org": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-org",
+    "method": "GET",
+    "path": "/github/org/{org}",
+    "pathParams": [
+      "org"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-org-repos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-org-repos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/org/{org}/repos",
+    "pathParams": [
+      "org"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "created",
+          "updated",
+          "pushed",
+          "full_name"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "direction",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "public",
+          "forks",
+          "sources",
+          "member"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-repo": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-repo",
+    "method": "GET",
+    "path": "/github/repo/{owner}/{repo}",
+    "pathParams": [
+      "owner",
+      "repo"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-repo-contributors": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-repo-contributors",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/repo/{owner}/{repo}/contributors",
+    "pathParams": [
+      "owner",
+      "repo"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-repo-forks": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-repo-forks",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/repo/{owner}/{repo}/forks",
+    "pathParams": [
+      "owner",
+      "repo"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "newest",
+          "oldest",
+          "stargazers",
+          "watchers"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-repo-languages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-repo-languages",
+    "method": "GET",
+    "path": "/github/repo/{owner}/{repo}/languages",
+    "pathParams": [
+      "owner",
+      "repo"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-repo-releases": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-repo-releases",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/repo/{owner}/{repo}/releases",
+    "pathParams": [
+      "owner",
+      "repo"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-repo-stargazers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-repo-stargazers",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/repo/{owner}/{repo}/stargazers",
+    "pathParams": [
+      "owner",
+      "repo"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-search-repositories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-search-repositories",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/search/repositories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "stars",
+          "forks",
+          "help-wanted-issues",
+          "updated"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-search-users": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-search-users",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/search/users",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "followers",
+          "repositories",
+          "joined"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-trending": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-trending",
+    "method": "GET",
+    "path": "/github/trending",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "daily",
+          "weekly",
+          "monthly"
+        ],
+        "in": "query",
+        "name": "since",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-trending-developers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-trending-developers",
+    "method": "GET",
+    "path": "/github/trending/developers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "daily",
+          "weekly",
+          "monthly"
+        ],
+        "in": "query",
+        "name": "since",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-user": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-user",
+    "method": "GET",
+    "path": "/github/user/{username}",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-user-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-user-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/user/{username}/events",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-user-pinned": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-user-pinned",
+    "method": "GET",
+    "path": "/github/user/{username}/pinned",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-user-repos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-user-repos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/user/{username}/repos",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "created",
+          "updated",
+          "pushed",
+          "full_name"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "direction",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "owner",
+          "member"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -11964,6 +13263,11 @@ export const operations = {
         "in": "query",
         "name": "depth",
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12020,6 +13324,11 @@ export const operations = {
         "in": "query",
         "name": "after",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12042,7 +13351,13 @@ export const operations = {
     "produces": [
       "application/json"
     ],
-    "queryParams": [],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -12107,6 +13422,11 @@ export const operations = {
         "in": "query",
         "name": "after",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12134,6 +13454,11 @@ export const operations = {
         "in": "query",
         "name": "limit",
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12166,6 +13491,11 @@ export const operations = {
         "in": "query",
         "name": "after",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12222,6 +13552,11 @@ export const operations = {
         "in": "query",
         "name": "after",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12282,6 +13617,11 @@ export const operations = {
         "in": "query",
         "name": "after",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12336,6 +13676,11 @@ export const operations = {
         "in": "query",
         "name": "after",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12368,6 +13713,11 @@ export const operations = {
         "in": "query",
         "name": "after",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12400,6 +13750,11 @@ export const operations = {
         "in": "query",
         "name": "after",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_scores",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -15686,63 +17041,6 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
-  "tiktok-popular-trend-creator": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tiktok-popular-trend-creator",
-    "method": "GET",
-    "paginatable": true,
-    "path": "/tiktok/popular-trend/creator",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "page",
-        "type": "integer"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      },
-      {
-        "enum": [
-          "follower",
-          "engagement",
-          "avg_views"
-        ],
-        "in": "query",
-        "name": "sort_by",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "creator_country",
-        "type": "string"
-      },
-      {
-        "enum": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "in": "query",
-        "name": "audience_count",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
   "tiktok-post": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -17286,6 +18584,81 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "x-post": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "x-post",
+    "method": "GET",
+    "path": "/x/post/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "username",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "x-profile": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "x-profile",
+    "method": "GET",
+    "path": "/x/profile/{username}",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "x-profile-posts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "x-profile-posts",
+    "method": "GET",
+    "path": "/x/profile/{username}/posts",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -18986,6 +20359,14 @@ export const groups = {
     "trending": "coingecko-trending"
   },
   "datasets": {
+    "appsChartsSearch": "datasets-apps-charts-search",
+    "appsReviewsSearch": "datasets-apps-reviews-search",
+    "appsSearch": "datasets-apps-search",
+    "creatorsSearch": "datasets-creators-search",
+    "githubUsersFacets": "datasets-github-users-facets",
+    "githubUsersItem": "datasets-github-users-item",
+    "githubUsersNearby": "datasets-github-users-nearby",
+    "githubUsersSearch": "datasets-github-users-search",
     "googleMapBusinessesFacets": "datasets-google-map-businesses-facets",
     "googleMapBusinessesItem": "datasets-google-map-businesses-item",
     "googleMapBusinessesNearby": "datasets-google-map-businesses-nearby",
@@ -19004,6 +20385,24 @@ export const groups = {
     "lookup": "geocoding-lookup",
     "reverse": "geocoding-reverse",
     "search": "geocoding-search"
+  },
+  "gitHub": {
+    "githubOrg": "github-org",
+    "githubOrgRepos": "github-org-repos",
+    "githubRepo": "github-repo",
+    "githubRepoContributors": "github-repo-contributors",
+    "githubRepoForks": "github-repo-forks",
+    "githubRepoLanguages": "github-repo-languages",
+    "githubRepoReleases": "github-repo-releases",
+    "githubRepoStargazers": "github-repo-stargazers",
+    "githubSearchRepositories": "github-search-repositories",
+    "githubSearchUsers": "github-search-users",
+    "githubTrending": "github-trending",
+    "githubTrendingDevelopers": "github-trending-developers",
+    "githubUser": "github-user",
+    "githubUserEvents": "github-user-events",
+    "githubUserPinned": "github-user-pinned",
+    "githubUserRepos": "github-user-repos"
   },
   "google": {
     "financeAnalystArticles": "google-finance-analyst-articles",
@@ -19350,7 +20749,6 @@ export const groups = {
     "challengeList": "tiktok-challenge-list",
     "explore": "tiktok-explore",
     "popularTrendCountryIndustryMeta": "tiktok-popular-trend-country-industry-meta",
-    "popularTrendCreator": "tiktok-popular-trend-creator",
     "post": "tiktok-post",
     "profile": "tiktok-profile",
     "profilePost": "tiktok-profile-post",
@@ -19403,6 +20801,11 @@ export const groups = {
     "antibotCheck": "antibot-check",
     "contact": "contact",
     "scrape": "web-scrape"
+  },
+  "x": {
+    "post": "x-post",
+    "profile": "x-profile",
+    "profilePosts": "x-profile-posts"
   },
   "yahooFinance": {
     "calendar": "yahoo-finance-calendar",
@@ -19467,7 +20870,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 499;
+export const operationCount = 525;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -19555,6 +20958,14 @@ export const OperationIds = Object.freeze({
   "CoinGeckoTokenUnlocks": "coingecko-token-unlocks",
   "CoinGeckoTreasuries": "coingecko-treasuries",
   "CoinGeckoTrending": "coingecko-trending",
+  "DatasetsAppsChartsSearch": "datasets-apps-charts-search",
+  "DatasetsAppsReviewsSearch": "datasets-apps-reviews-search",
+  "DatasetsAppsSearch": "datasets-apps-search",
+  "DatasetsCreatorsSearch": "datasets-creators-search",
+  "DatasetsGithubUsersFacets": "datasets-github-users-facets",
+  "DatasetsGithubUsersItem": "datasets-github-users-item",
+  "DatasetsGithubUsersNearby": "datasets-github-users-nearby",
+  "DatasetsGithubUsersSearch": "datasets-github-users-search",
   "DatasetsGoogleMapBusinessesFacets": "datasets-google-map-businesses-facets",
   "DatasetsGoogleMapBusinessesItem": "datasets-google-map-businesses-item",
   "DatasetsGoogleMapBusinessesNearby": "datasets-google-map-businesses-nearby",
@@ -19569,6 +20980,22 @@ export const OperationIds = Object.freeze({
   "GeocodingLookup": "geocoding-lookup",
   "GeocodingReverse": "geocoding-reverse",
   "GeocodingSearch": "geocoding-search",
+  "GitHubGithubOrg": "github-org",
+  "GitHubGithubOrgRepos": "github-org-repos",
+  "GitHubGithubRepo": "github-repo",
+  "GitHubGithubRepoContributors": "github-repo-contributors",
+  "GitHubGithubRepoForks": "github-repo-forks",
+  "GitHubGithubRepoLanguages": "github-repo-languages",
+  "GitHubGithubRepoReleases": "github-repo-releases",
+  "GitHubGithubRepoStargazers": "github-repo-stargazers",
+  "GitHubGithubSearchRepositories": "github-search-repositories",
+  "GitHubGithubSearchUsers": "github-search-users",
+  "GitHubGithubTrending": "github-trending",
+  "GitHubGithubTrendingDevelopers": "github-trending-developers",
+  "GitHubGithubUser": "github-user",
+  "GitHubGithubUserEvents": "github-user-events",
+  "GitHubGithubUserPinned": "github-user-pinned",
+  "GitHubGithubUserRepos": "github-user-repos",
   "GoogleFinanceAnalystArticles": "google-finance-analyst-articles",
   "GoogleFinanceChart": "google-finance-chart",
   "GoogleFinanceClassification": "google-finance-classification",
@@ -19873,7 +21300,6 @@ export const OperationIds = Object.freeze({
   "TiktokChallengeList": "tiktok-challenge-list",
   "TiktokExplore": "tiktok-explore",
   "TiktokPopularTrendCountryIndustryMeta": "tiktok-popular-trend-country-industry-meta",
-  "TiktokPopularTrendCreator": "tiktok-popular-trend-creator",
   "TiktokPost": "tiktok-post",
   "TiktokProfile": "tiktok-profile",
   "TiktokProfilePost": "tiktok-profile-post",
@@ -19916,6 +21342,9 @@ export const OperationIds = Object.freeze({
   "WebAntibotCheck": "antibot-check",
   "WebContact": "contact",
   "WebScrape": "web-scrape",
+  "XPost": "x-post",
+  "XProfile": "x-profile",
+  "XProfilePosts": "x-profile-posts",
   "YahooFinanceCalendar": "yahoo-finance-calendar",
   "YahooFinanceCalendars": "yahoo-finance-calendars",
   "YahooFinanceDownload": "yahoo-finance-download",
