@@ -4270,6 +4270,237 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-airbnb-markets-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-airbnb-markets-facets",
+    "method": "GET",
+    "path": "/datasets/airbnb-markets/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "group_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "market",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "superhost",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_review_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "active_since",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_listings",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-airbnb-markets-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-airbnb-markets-item",
+    "method": "GET",
+    "path": "/datasets/airbnb-markets/items/{country}",
+    "pathParams": [
+      "country"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-airbnb-markets-nearby": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-airbnb-markets-nearby",
+    "method": "GET",
+    "path": "/datasets/airbnb-markets/nearby",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "lat",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "precision",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_listings",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "superhost",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "active_since",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-airbnb-markets-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-airbnb-markets-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/airbnb-markets/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "group_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "market",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "superhost",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_review_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "active_since",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_listings",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-apps-charts-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -20359,6 +20590,10 @@ export const groups = {
     "trending": "coingecko-trending"
   },
   "datasets": {
+    "airbnbMarketsFacets": "datasets-airbnb-markets-facets",
+    "airbnbMarketsItem": "datasets-airbnb-markets-item",
+    "airbnbMarketsNearby": "datasets-airbnb-markets-nearby",
+    "airbnbMarketsSearch": "datasets-airbnb-markets-search",
     "appsChartsSearch": "datasets-apps-charts-search",
     "appsReviewsSearch": "datasets-apps-reviews-search",
     "appsSearch": "datasets-apps-search",
@@ -20870,7 +21105,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 525;
+export const operationCount = 529;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -20958,6 +21193,10 @@ export const OperationIds = Object.freeze({
   "CoinGeckoTokenUnlocks": "coingecko-token-unlocks",
   "CoinGeckoTreasuries": "coingecko-treasuries",
   "CoinGeckoTrending": "coingecko-trending",
+  "DatasetsAirbnbMarketsFacets": "datasets-airbnb-markets-facets",
+  "DatasetsAirbnbMarketsItem": "datasets-airbnb-markets-item",
+  "DatasetsAirbnbMarketsNearby": "datasets-airbnb-markets-nearby",
+  "DatasetsAirbnbMarketsSearch": "datasets-airbnb-markets-search",
   "DatasetsAppsChartsSearch": "datasets-apps-charts-search",
   "DatasetsAppsReviewsSearch": "datasets-apps-reviews-search",
   "DatasetsAppsSearch": "datasets-apps-search",

@@ -2565,6 +2565,33 @@ export interface ModelContactContactResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsAirbnbMarketFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsAirbnbMarketFacetItem>;
+}
+
+export interface ModelDatasetsAirbnbMarketNearbyResponse {
+  "cells"?: Array<ModelEsAirbnbDensityCell>;
+  "dataset"?: string;
+  "lat"?: number;
+  "lon"?: number;
+  "precision"?: number;
+  "radius_m"?: number;
+  "total"?: number;
+}
+
+export interface ModelDatasetsAirbnbMarketSearchResponse {
+  "dataset"?: string;
+  "group_by"?: string;
+  "items"?: Array<ModelEsAirbnbMarketCell>;
+  "min_listings"?: number;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsAppsSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsAppRecord>;
@@ -2641,6 +2668,30 @@ export interface ModelDatasetsReviewsSearchResponse {
   "page_size"?: number;
   "sort"?: string;
   "total"?: number;
+}
+
+export interface ModelDatasetsAirbnbMarketResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsAirbnbMarketDetail;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsAirbnbMarketsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsAirbnbMarketFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsAirbnbMarketsNearbyResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsAirbnbMarketNearbyResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsAirbnbMarketsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsAirbnbMarketSearchResponse;
+  "msg"?: string;
 }
 
 export interface ModelDatasetsAppsSearchResponseDoc {
@@ -2895,6 +2946,58 @@ export interface ModelEbaySellerShopResponseDoc {
   "code"?: number;
   "data"?: ModelEbaySearchResp;
   "msg"?: unknown;
+}
+
+export interface ModelEsAirbnbDensityCell {
+  "geohash"?: string;
+  "lat"?: number;
+  "listings"?: number;
+  "lon"?: number;
+  "superhost_listings"?: number;
+  "superhost_pct"?: number;
+}
+
+export interface ModelEsAirbnbGeoBounds {
+  "bottom_right"?: ModelEsGeoPoint;
+  "top_left"?: ModelEsGeoPoint;
+}
+
+export interface ModelEsAirbnbMarketCell {
+  "avg_rating"?: number;
+  "avg_review_count"?: number;
+  "key"?: string;
+  "last_seen"?: string;
+  "listings"?: number;
+  "rated_listings"?: number;
+  "superhost_listings"?: number;
+  "superhost_pct"?: number;
+}
+
+export interface ModelEsAirbnbMarketDetail {
+  "avg_rating"?: number;
+  "avg_review_count"?: number;
+  "bounds"?: ModelEsAirbnbGeoBounds;
+  "country"?: string;
+  "currencies"?: Array<ModelEsAirbnbPriceStats>;
+  "last_seen"?: string;
+  "listings"?: number;
+  "metros"?: Array<ModelEsAirbnbMarketCell>;
+  "rated_listings"?: number;
+  "superhost_listings"?: number;
+  "superhost_pct"?: number;
+}
+
+export interface ModelEsAirbnbMarketFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsAirbnbPriceStats {
+  "currency"?: string;
+  "listings"?: number;
+  "p25"?: number;
+  "p50"?: number;
+  "p75"?: number;
 }
 
 export interface ModelEsAppRecord {
@@ -12869,6 +12972,52 @@ export type DatasetsListResponse = CrawloraResponse<ModelDatasetsListResponseDoc
 export interface DatasetsListParams {
 }
 
+export type DatasetsAirbnbMarketsFacetsResponse = CrawloraResponse<ModelDatasetsAirbnbMarketsFacetResponseDoc>;
+export interface DatasetsAirbnbMarketsFacetsParams {
+  "facet": string;
+  "group_by"?: string;
+  "country"?: string;
+  "market"?: string;
+  "superhost"?: boolean;
+  "min_rating"?: number;
+  "min_review_count"?: number;
+  "active_since"?: string;
+  "min_listings"?: number;
+}
+
+export type DatasetsAirbnbMarketsItemResponse = CrawloraResponse<ModelDatasetsAirbnbMarketResponseDoc>;
+export interface DatasetsAirbnbMarketsItemParams {
+  "country": string;
+}
+
+export type DatasetsAirbnbMarketsNearbyResponse = CrawloraResponse<ModelDatasetsAirbnbMarketsNearbyResponseDoc>;
+export interface DatasetsAirbnbMarketsNearbyParams {
+  "lat": number;
+  "lon": number;
+  "radius_m": number;
+  "precision"?: number;
+  "min_listings"?: number;
+  "country"?: string;
+  "superhost"?: boolean;
+  "min_rating"?: number;
+  "active_since"?: string;
+}
+
+export type DatasetsAirbnbMarketsSearchResponse = CrawloraResponse<ModelDatasetsAirbnbMarketsSearchResponseDoc>;
+export interface DatasetsAirbnbMarketsSearchParams {
+  "group_by"?: string;
+  "country"?: string;
+  "market"?: string;
+  "superhost"?: boolean;
+  "min_rating"?: number;
+  "min_review_count"?: number;
+  "active_since"?: string;
+  "min_listings"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsAppsChartsSearchResponse = CrawloraResponse<ModelDatasetsChartsSearchResponseDoc>;
 export interface DatasetsAppsChartsSearchParams {
   "q"?: string;
@@ -16133,6 +16282,10 @@ export interface WebService {
 
 export interface DatasetsService {
   list<T = DatasetsListResponse>(params?: DatasetsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  airbnbMarketsFacets<T = DatasetsAirbnbMarketsFacetsResponse>(params: DatasetsAirbnbMarketsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  airbnbMarketsItem<T = DatasetsAirbnbMarketsItemResponse>(params: DatasetsAirbnbMarketsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  airbnbMarketsNearby<T = DatasetsAirbnbMarketsNearbyResponse>(params: DatasetsAirbnbMarketsNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  airbnbMarketsSearch<T = DatasetsAirbnbMarketsSearchResponse>(params?: DatasetsAirbnbMarketsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsChartsSearch<T = DatasetsAppsChartsSearchResponse>(params?: DatasetsAppsChartsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsReviewsSearch<T = DatasetsAppsReviewsSearchResponse>(params?: DatasetsAppsReviewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsSearch<T = DatasetsAppsSearchResponse>(params?: DatasetsAppsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -16802,6 +16955,10 @@ export interface OperationParamsMap {
   "coingecko-trending": CoinGeckoTrendingParams;
   "contact": WebContactParams;
   "datasets-list": DatasetsListParams;
+  "datasets-airbnb-markets-facets": DatasetsAirbnbMarketsFacetsParams;
+  "datasets-airbnb-markets-item": DatasetsAirbnbMarketsItemParams;
+  "datasets-airbnb-markets-nearby": DatasetsAirbnbMarketsNearbyParams;
+  "datasets-airbnb-markets-search": DatasetsAirbnbMarketsSearchParams;
   "datasets-apps-charts-search": DatasetsAppsChartsSearchParams;
   "datasets-apps-reviews-search": DatasetsAppsReviewsSearchParams;
   "datasets-apps-search": DatasetsAppsSearchParams;
@@ -17330,6 +17487,10 @@ export interface OperationResponseMap {
   "coingecko-trending": CoinGeckoTrendingResponse;
   "contact": WebContactResponse;
   "datasets-list": DatasetsListResponse;
+  "datasets-airbnb-markets-facets": DatasetsAirbnbMarketsFacetsResponse;
+  "datasets-airbnb-markets-item": DatasetsAirbnbMarketsItemResponse;
+  "datasets-airbnb-markets-nearby": DatasetsAirbnbMarketsNearbyResponse;
+  "datasets-airbnb-markets-search": DatasetsAirbnbMarketsSearchResponse;
   "datasets-apps-charts-search": DatasetsAppsChartsSearchResponse;
   "datasets-apps-reviews-search": DatasetsAppsReviewsSearchResponse;
   "datasets-apps-search": DatasetsAppsSearchResponse;
@@ -17858,6 +18019,10 @@ export interface OperationRequiredParamsMap {
   "coingecko-trending": false;
   "contact": true;
   "datasets-list": false;
+  "datasets-airbnb-markets-facets": true;
+  "datasets-airbnb-markets-item": true;
+  "datasets-airbnb-markets-nearby": true;
+  "datasets-airbnb-markets-search": false;
   "datasets-apps-charts-search": false;
   "datasets-apps-reviews-search": false;
   "datasets-apps-search": false;
@@ -18393,6 +18558,10 @@ export type OperationIdLiteral =
   | "coingecko-trending"
   | "contact"
   | "datasets-list"
+  | "datasets-airbnb-markets-facets"
+  | "datasets-airbnb-markets-item"
+  | "datasets-airbnb-markets-nearby"
+  | "datasets-airbnb-markets-search"
   | "datasets-apps-charts-search"
   | "datasets-apps-reviews-search"
   | "datasets-apps-search"
@@ -18918,6 +19087,10 @@ export declare const OperationIds: Readonly<{
   CoinGeckoTokenUnlocks: "coingecko-token-unlocks";
   CoinGeckoTreasuries: "coingecko-treasuries";
   CoinGeckoTrending: "coingecko-trending";
+  DatasetsAirbnbMarketsFacets: "datasets-airbnb-markets-facets";
+  DatasetsAirbnbMarketsItem: "datasets-airbnb-markets-item";
+  DatasetsAirbnbMarketsNearby: "datasets-airbnb-markets-nearby";
+  DatasetsAirbnbMarketsSearch: "datasets-airbnb-markets-search";
   DatasetsAppsChartsSearch: "datasets-apps-charts-search";
   DatasetsAppsReviewsSearch: "datasets-apps-reviews-search";
   DatasetsAppsSearch: "datasets-apps-search";
