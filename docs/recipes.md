@@ -39,6 +39,28 @@ const posts = await crawlora.reddit.search({ q: "typescript", subreddit: "progra
 const brand = await crawlora.brand.retrieve({ domain: "stripe.com" });
 ```
 
+
+
+## Airbnb Markets Dataset
+
+Aggregate Airbnb short-term-rental market data — listing supply, ratings and nightly-price bands rolled up by country, metro and geo cell. Aggregate-only.
+
+```ts
+const markets = await crawlora.datasets.airbnbMarketsSearch({ group_by: "country", sort: "listings_desc" });
+const fr = await crawlora.datasets.airbnbMarketsItem({ country: "FR" });
+const density = await crawlora.datasets.airbnbMarketsNearby({ lat: 48.86, lon: 2.35, radius_m: 5000 });
+```
+
+## Airbnb Markets Dataset
+
+Aggregate Airbnb short-term-rental market data — listing supply, ratings and nightly-price bands rolled up by country, metro and geo cell. Aggregate-only.
+
+```ts
+const markets = await client.datasets.airbnbMarketsSearch({ group_by: "country", sort: "listings_desc" });
+const fr = await client.datasets.airbnbMarketsItem({ country: "FR" });
+const density = await client.datasets.airbnbMarketsNearby({ lat: 48.86, lon: 2.35, radius_m: 5000 });
+```
+
 ## Retries, Timeouts, Headers, And Abort Signals
 
 ```js
