@@ -24,6 +24,65 @@ export interface ModelAirbnbCalendarResponse {
   "months"?: Array<ModelAirbnbCalendarMonth>;
 }
 
+export interface ModelAirbnbHostListing {
+  "bathrooms"?: number;
+  "bedrooms"?: number;
+  "beds"?: number;
+  "id"?: string;
+  "image"?: string;
+  "instant_book"?: boolean;
+  "is_luxury"?: boolean;
+  "is_new_listing"?: boolean;
+  "is_superhost"?: boolean;
+  "name"?: string;
+  "property_type"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "room_category"?: string;
+  "room_type"?: string;
+}
+
+export interface ModelAirbnbHostListingsResponse {
+  "has_more"?: boolean;
+  "id"?: string;
+  "listings"?: Array<ModelAirbnbHostListing>;
+  "page"?: number;
+}
+
+export interface ModelAirbnbHostResponse {
+  "about"?: string;
+  "hosting_years"?: number;
+  "id"?: string;
+  "identity_verified"?: boolean;
+  "image"?: string;
+  "interests"?: Array<string>;
+  "is_home_host"?: boolean;
+  "is_superhost"?: boolean;
+  "listing_count"?: number;
+  "location"?: string;
+  "member_years"?: number;
+  "name"?: string;
+  "review_count"?: number;
+  "url"?: string;
+  "verifications"?: Array<string>;
+}
+
+export interface ModelAirbnbHostReview {
+  "comments"?: string;
+  "created_at"?: string;
+  "id"?: string;
+  "rating"?: number;
+  "reviewer"?: string;
+  "reviewer_location"?: string;
+}
+
+export interface ModelAirbnbHostReviewsResponse {
+  "has_more"?: boolean;
+  "id"?: string;
+  "page"?: number;
+  "reviews"?: Array<ModelAirbnbHostReview>;
+}
+
 export interface ModelAirbnbListingItem {
   "host"?: string;
   "host_id"?: string;
@@ -2965,12 +3024,16 @@ export interface ModelEsAirbnbGeoBounds {
 export interface ModelEsAirbnbMarketCell {
   "avg_rating"?: number;
   "avg_review_count"?: number;
+  "distinct_hosts"?: number;
+  "enriched_listings"?: number;
   "key"?: string;
   "last_seen"?: string;
   "listings"?: number;
+  "listings_per_host"?: number;
   "rated_listings"?: number;
   "superhost_listings"?: number;
   "superhost_pct"?: number;
+  "superhost_pct_enriched"?: number;
 }
 
 export interface ModelEsAirbnbMarketDetail {
@@ -2979,12 +3042,16 @@ export interface ModelEsAirbnbMarketDetail {
   "bounds"?: ModelEsAirbnbGeoBounds;
   "country"?: string;
   "currencies"?: Array<ModelEsAirbnbPriceStats>;
+  "distinct_hosts"?: number;
+  "enriched_listings"?: number;
   "last_seen"?: string;
   "listings"?: number;
+  "listings_per_host"?: number;
   "metros"?: Array<ModelEsAirbnbMarketCell>;
   "rated_listings"?: number;
   "superhost_listings"?: number;
   "superhost_pct"?: number;
+  "superhost_pct_enriched"?: number;
 }
 
 export interface ModelEsAirbnbMarketFacetItem {
@@ -12377,6 +12444,23 @@ export interface ModelZillowSearchResponse {
   "results"?: Array<ModelZillowPropertyItem>;
 }
 
+export type AirbnbHostResponse = CrawloraResponse<ModelAirbnbHostResponse>;
+export interface AirbnbHostParams {
+  "id": string;
+}
+
+export type AirbnbHostListingsResponse = CrawloraResponse<ModelAirbnbHostListingsResponse>;
+export interface AirbnbHostListingsParams {
+  "id": string;
+  "page"?: number;
+}
+
+export type AirbnbHostReviewsResponse = CrawloraResponse<ModelAirbnbHostReviewsResponse>;
+export interface AirbnbHostReviewsParams {
+  "id": string;
+  "page"?: number;
+}
+
 export type AirbnbRoomResponse = CrawloraResponse<ModelAirbnbRoomResponse>;
 export interface AirbnbRoomParams {
   "id": string;
@@ -13171,6 +13255,7 @@ export interface DatasetsGoogleMapBusinessesFacetsParams {
   "min_review_count"?: number;
   "has_website"?: boolean;
   "has_phone"?: boolean;
+  "has_geo"?: boolean;
   "lat"?: number;
   "lon"?: number;
   "radius_m"?: number;
@@ -13207,6 +13292,7 @@ export interface DatasetsGoogleMapBusinessesSearchParams {
   "min_review_count"?: number;
   "has_website"?: boolean;
   "has_phone"?: boolean;
+  "has_geo"?: boolean;
   "lat"?: number;
   "lon"?: number;
   "radius_m"?: number;
@@ -16162,6 +16248,9 @@ export interface ZillowSearchParams {
 }
 
 export interface AirbnbService {
+  host<T = AirbnbHostResponse>(params: AirbnbHostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hostListings<T = AirbnbHostListingsResponse>(params: AirbnbHostListingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hostReviews<T = AirbnbHostReviewsResponse>(params: AirbnbHostReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   room<T = AirbnbRoomResponse>(params: AirbnbRoomParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   roomCalendar<T = AirbnbRoomCalendarResponse>(params: AirbnbRoomCalendarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   roomReviews<T = AirbnbRoomReviewsResponse>(params: AirbnbRoomReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -16870,6 +16959,9 @@ export interface CrawloraGeneratedGroups {
 }
 
 export interface OperationParamsMap {
+  "airbnb-host": AirbnbHostParams;
+  "airbnb-host-listings": AirbnbHostListingsParams;
+  "airbnb-host-reviews": AirbnbHostReviewsParams;
   "airbnb-room": AirbnbRoomParams;
   "airbnb-room-calendar": AirbnbRoomCalendarParams;
   "airbnb-room-reviews": AirbnbRoomReviewsParams;
@@ -17402,6 +17494,9 @@ export interface OperationParamsMap {
 }
 
 export interface OperationResponseMap {
+  "airbnb-host": AirbnbHostResponse;
+  "airbnb-host-listings": AirbnbHostListingsResponse;
+  "airbnb-host-reviews": AirbnbHostReviewsResponse;
   "airbnb-room": AirbnbRoomResponse;
   "airbnb-room-calendar": AirbnbRoomCalendarResponse;
   "airbnb-room-reviews": AirbnbRoomReviewsResponse;
@@ -17934,6 +18029,9 @@ export interface OperationResponseMap {
 }
 
 export interface OperationRequiredParamsMap {
+  "airbnb-host": true;
+  "airbnb-host-listings": true;
+  "airbnb-host-reviews": true;
   "airbnb-room": true;
   "airbnb-room-calendar": true;
   "airbnb-room-reviews": true;
@@ -18473,6 +18571,9 @@ export type OperationRequestArgs<I extends OperationId> =
     : [params?: OperationParamsMap[I], options?: import('./index.js').CrawloraRequestOptions];
 
 export type OperationIdLiteral =
+  | "airbnb-host"
+  | "airbnb-host-listings"
+  | "airbnb-host-reviews"
   | "airbnb-room"
   | "airbnb-room-calendar"
   | "airbnb-room-reviews"
@@ -19004,6 +19105,9 @@ export type OperationIdLiteral =
   | "zillow-search";
 
 export declare const OperationIds: Readonly<{
+  AirbnbHost: "airbnb-host";
+  AirbnbHostListings: "airbnb-host-listings";
+  AirbnbHostReviews: "airbnb-host-reviews";
   AirbnbRoom: "airbnb-room";
   AirbnbRoomCalendar: "airbnb-room-calendar";
   AirbnbRoomReviews: "airbnb-room-reviews";

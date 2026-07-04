@@ -39,6 +39,16 @@ const posts = await crawlora.reddit.search({ q: "typescript", subreddit: "progra
 const brand = await crawlora.brand.retrieve({ domain: "stripe.com" });
 ```
 
+## Airbnb Host Profiles
+
+Look up a public Airbnb host, then page through their listings and guest reviews.
+
+```ts
+const host = await crawlora.airbnb.host({ id: "65056940" });
+const listings = await crawlora.airbnb.hostListings({ id: "65056940", page: 1 });
+const reviews = await crawlora.airbnb.hostReviews({ id: "65056940", page: 1 });
+```
+
 
 
 ## Airbnb Markets Dataset
