@@ -88,6 +88,7 @@ export interface ModelAirbnbListingItem {
   "host_id"?: string;
   "id"?: string;
   "image"?: string;
+  "is_guest_favorite"?: boolean;
   "is_superhost"?: boolean;
   "latitude"?: number;
   "location"?: string;
@@ -120,12 +121,15 @@ export interface ModelAirbnbRoomResponse {
   "host_id"?: string;
   "id"?: string;
   "image"?: string;
+  "is_guest_favorite"?: boolean;
   "is_superhost"?: boolean;
   "latitude"?: number;
   "location"?: string;
   "longitude"?: number;
+  "person_capacity"?: number;
   "price"?: number;
   "price_per_night"?: number;
+  "property_type"?: string;
   "rating"?: number;
   "review_count"?: number;
   "title"?: string;
@@ -1922,6 +1926,144 @@ export interface ModelBuildinfoInfo {
   "version"?: string;
 }
 
+export interface ModelChromewebstoreCard {
+  "category"?: string;
+  "category_id"?: number;
+  "icon"?: string;
+  "id"?: string;
+  "name"?: string;
+  "publisher"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "summary"?: string;
+  "tile_image"?: string;
+  "url"?: string;
+  "users"?: number;
+}
+
+export interface ModelChromewebstoreCategoriesResult {
+  "categories"?: Array<ModelChromewebstoreCategoryGroup>;
+  "charts"?: Array<string>;
+  "collections"?: Array<string>;
+}
+
+export interface ModelChromewebstoreCategoryGroup {
+  "group"?: string;
+  "subcategories"?: Array<string>;
+}
+
+export interface ModelChromewebstoreItem {
+  "category"?: string;
+  "category_id"?: number;
+  "description"?: string;
+  "developer"?: string;
+  "developer_email"?: string;
+  "header_image"?: string;
+  "icon"?: string;
+  "id"?: string;
+  "language_codes"?: Array<string>;
+  "languages"?: Array<string>;
+  "min_browser_version"?: string;
+  "name"?: string;
+  "privacy_policy"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "screenshots"?: Array<string>;
+  "size"?: string;
+  "summary"?: string;
+  "support_url"?: string;
+  "tile_image"?: string;
+  "updated"?: string;
+  "updated_unix"?: number;
+  "url"?: string;
+  "users"?: number;
+  "version"?: string;
+}
+
+export interface ModelChromewebstoreListResult {
+  "count"?: number;
+  "kind"?: string;
+  "results"?: Array<ModelChromewebstoreCard>;
+  "value"?: string;
+}
+
+export interface ModelChromewebstoreReview {
+  "author"?: string;
+  "avatar"?: string;
+  "edited"?: string;
+  "id"?: string;
+  "language"?: string;
+  "posted"?: string;
+  "posted_unix"?: number;
+  "rating"?: number;
+  "text"?: string;
+  "version"?: string;
+}
+
+export interface ModelChromewebstoreReviewsResult {
+  "count"?: number;
+  "id"?: string;
+  "reviews"?: Array<ModelChromewebstoreReview>;
+}
+
+export interface ModelChromewebstoreSearchResult {
+  "count"?: number;
+  "query"?: string;
+  "results"?: Array<ModelChromewebstoreCard>;
+}
+
+export interface ModelChromewebstoreSimilarResult {
+  "count"?: number;
+  "id"?: string;
+  "results"?: Array<ModelChromewebstoreCard>;
+}
+
+export interface ModelChromewebstoreSuggestion {
+  "term"?: string;
+}
+
+export interface ModelChromewebstoreCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstoreCategoriesResult;
+  "msg"?: string;
+}
+
+export interface ModelChromewebstoreItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstoreItem;
+  "msg"?: string;
+}
+
+export interface ModelChromewebstoreListResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstoreListResult;
+  "msg"?: string;
+}
+
+export interface ModelChromewebstoreReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstoreReviewsResult;
+  "msg"?: string;
+}
+
+export interface ModelChromewebstoreSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstoreSearchResult;
+  "msg"?: string;
+}
+
+export interface ModelChromewebstoreSimilarResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstoreSimilarResult;
+  "msg"?: string;
+}
+
+export interface ModelChromewebstoreSuggestResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelChromewebstoreSuggestion>;
+  "msg"?: string;
+}
+
 export interface ModelCoingeckoAnalysisResponse {
   "absolute_change"?: number;
   "annotations"?: Array<Record<string, unknown>>;
@@ -2587,6 +2729,7 @@ export interface ModelContactContactRequest {
   "max_pages"?: number;
   "url": string;
   "verify"?: boolean;
+  "verify_limit"?: number;
 }
 
 export interface ModelContactContactResult {
@@ -2720,6 +2863,53 @@ export interface ModelDatasetsGoogleBusinessSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsProductHuntMakersFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsProductHuntMakersFacetItem>;
+}
+
+export interface ModelDatasetsProductHuntMakersSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsProductHuntMakerItem>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsProductHuntProductsFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsProductHuntProductsFacetItem>;
+}
+
+export interface ModelDatasetsProductHuntProductsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsProductHuntProductItem>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsProductHuntTrendsFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsProductHuntTrendsFacetItem>;
+}
+
+export interface ModelDatasetsProductHuntTrendsSearchResponse {
+  "dataset"?: string;
+  "group_by"?: string;
+  "items"?: Array<ModelEsProductHuntTrendCell>;
+  "min_launches"?: number;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsReviewsSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsAppReview>;
@@ -2810,6 +3000,54 @@ export interface ModelDatasetsGoogleMapBusinessesSearchResponseDoc {
 export interface ModelDatasetsListResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsDatasetListResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsProducthuntMakerResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsProductHuntMakerItem;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsProducthuntMakersFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsProductHuntMakersFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsProducthuntMakersSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsProductHuntMakersSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsProducthuntProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsProductHuntProductItem;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsProducthuntProductsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsProductHuntProductsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsProducthuntProductsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsProductHuntProductsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsProducthuntTrendsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsProductHuntTrendsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsProducthuntTrendsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsProductHuntTrendsSearchResponse;
   "msg"?: string;
 }
 
@@ -3022,14 +3260,19 @@ export interface ModelEsAirbnbGeoBounds {
 }
 
 export interface ModelEsAirbnbMarketCell {
+  "avg_person_capacity"?: number;
   "avg_rating"?: number;
   "avg_review_count"?: number;
   "distinct_hosts"?: number;
   "enriched_listings"?: number;
+  "guest_favorite_listings"?: number;
+  "guest_favorite_pct"?: number;
+  "guest_favorite_pct_enriched"?: number;
   "key"?: string;
   "last_seen"?: string;
   "listings"?: number;
   "listings_per_host"?: number;
+  "median_price_usd"?: number;
   "rated_listings"?: number;
   "superhost_listings"?: number;
   "superhost_pct"?: number;
@@ -3037,6 +3280,7 @@ export interface ModelEsAirbnbMarketCell {
 }
 
 export interface ModelEsAirbnbMarketDetail {
+  "avg_person_capacity"?: number;
   "avg_rating"?: number;
   "avg_review_count"?: number;
   "bounds"?: ModelEsAirbnbGeoBounds;
@@ -3044,10 +3288,14 @@ export interface ModelEsAirbnbMarketDetail {
   "currencies"?: Array<ModelEsAirbnbPriceStats>;
   "distinct_hosts"?: number;
   "enriched_listings"?: number;
+  "guest_favorite_listings"?: number;
+  "guest_favorite_pct"?: number;
+  "guest_favorite_pct_enriched"?: number;
   "last_seen"?: string;
   "listings"?: number;
   "listings_per_host"?: number;
   "metros"?: Array<ModelEsAirbnbMarketCell>;
+  "price_usd"?: ModelEsAirbnbPriceUsdstats;
   "rated_listings"?: number;
   "superhost_listings"?: number;
   "superhost_pct"?: number;
@@ -3061,6 +3309,13 @@ export interface ModelEsAirbnbMarketFacetItem {
 
 export interface ModelEsAirbnbPriceStats {
   "currency"?: string;
+  "listings"?: number;
+  "p25"?: number;
+  "p50"?: number;
+  "p75"?: number;
+}
+
+export interface ModelEsAirbnbPriceUsdstats {
   "listings"?: number;
   "p25"?: number;
   "p50"?: number;
@@ -3216,6 +3471,7 @@ export interface ModelEsGithubUserDatasetItem {
   "influence_tier"?: string;
   "is_bot"?: boolean;
   "is_org"?: boolean;
+  "is_suspected_automation"?: boolean;
   "last_active_at"?: string;
   "location_raw"?: string;
   "login"?: string;
@@ -3259,6 +3515,7 @@ export interface ModelEsGithubUserRecord {
   "influence_tier"?: string;
   "is_bot"?: boolean;
   "is_org"?: boolean;
+  "is_suspected_automation"?: boolean;
   "last_active_at"?: string;
   "location_raw"?: string;
   "login"?: string;
@@ -3374,6 +3631,119 @@ export interface ModelEsPostStatsAgg {
   "views_to_follower_ratio"?: number;
 }
 
+export interface ModelEsProductHuntLaunch {
+  "daily_rank"?: number;
+  "date"?: string;
+  "launch_day_score"?: number;
+  "launch_number"?: number;
+  "monthly_rank"?: number;
+  "post_id"?: string;
+  "post_slug"?: string;
+  "score"?: number;
+  "weekly_rank"?: number;
+}
+
+export interface ModelEsProductHuntMaker {
+  "avatar_url"?: string;
+  "headline"?: string;
+  "maker_id"?: string;
+  "name"?: string;
+  "username"?: string;
+}
+
+export interface ModelEsProductHuntMakerItem {
+  "avatar_url"?: string;
+  "best_product"?: ModelEsProductHuntMakerProduct;
+  "first_launch_date"?: string;
+  "followers_count"?: number;
+  "headline"?: string;
+  "latest_launch_date"?: string;
+  "made_products"?: Array<ModelEsProductHuntMakerProduct>;
+  "maker_id"?: string;
+  "name"?: string;
+  "product_count"?: number;
+  "topics"?: Array<string>;
+  "total_votes"?: number;
+  "username"?: string;
+}
+
+export interface ModelEsProductHuntMakerProduct {
+  "latest_score"?: number;
+  "name"?: string;
+  "product_id"?: string;
+  "slug"?: string;
+}
+
+export interface ModelEsProductHuntMakersFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsProductHuntProductItem {
+  "best_daily_rank"?: number;
+  "best_monthly_rank"?: number;
+  "best_weekly_rank"?: number;
+  "comments_count"?: number;
+  "description"?: string;
+  "first_launch_date"?: string;
+  "followers_count"?: number;
+  "is_no_longer_online"?: boolean;
+  "is_top_product"?: boolean;
+  "latest_launch_date"?: string;
+  "latest_score"?: number;
+  "launch_count"?: number;
+  "launch_year"?: number;
+  "launches"?: Array<ModelEsProductHuntLaunch>;
+  "logo_uuid"?: string;
+  "makers"?: Array<ModelEsProductHuntMaker>;
+  "name"?: string;
+  "pricing_type"?: string;
+  "primary_topic"?: string;
+  "product_id"?: string;
+  "product_state"?: string;
+  "reviews_count"?: number;
+  "reviews_rating"?: number;
+  "slug"?: string;
+  "tagline"?: string;
+  "topic_slugs"?: Array<string>;
+  "topics"?: Array<ModelEsProductHuntTopic>;
+  "url"?: string;
+  "website"?: string;
+  "won_daily"?: boolean;
+}
+
+export interface ModelEsProductHuntProductsFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsProductHuntTopic {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelEsProductHuntTrendCell {
+  "avg_rating"?: number;
+  "avg_votes"?: number;
+  "launches"?: number;
+  "period"?: string;
+  "top_product"?: ModelEsProductHuntTrendTopProduct;
+  "topic"?: string;
+  "total_votes"?: number;
+}
+
+export interface ModelEsProductHuntTrendTopProduct {
+  "name"?: string;
+  "slug"?: string;
+  "votes"?: number;
+}
+
+export interface ModelEsProductHuntTrendsFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
 export interface ModelEsWebsiteStatus {
   "checked_at"?: string;
   "dns_resolvable"?: boolean;
@@ -3381,6 +3751,282 @@ export interface ModelEsWebsiteStatus {
   "http_reachable"?: boolean;
   "status_code"?: number;
   "url"?: string;
+}
+
+export interface ModelEspnAthlete {
+  "age"?: number;
+  "display_height"?: string;
+  "display_name"?: string;
+  "display_weight"?: string;
+  "full_name"?: string;
+  "headshot"?: string;
+  "id"?: string;
+  "jersey"?: string;
+  "position"?: string;
+  "team"?: ModelEspnTeamRef;
+}
+
+export interface ModelEspnAthleteResponse {
+  "athlete"?: ModelEspnAthlete;
+  "fetched_at"?: string;
+  "league"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelEspnBoxscoreTeam {
+  "home_away"?: string;
+  "stats"?: Record<string, string>;
+  "team"?: ModelEspnTeamRef;
+}
+
+export interface ModelEspnCompetitor {
+  "home_away"?: string;
+  "record"?: string;
+  "score"?: string;
+  "team"?: ModelEspnTeamRef;
+  "winner"?: boolean;
+}
+
+export interface ModelEspnGame {
+  "competitors"?: Array<ModelEspnCompetitor>;
+  "date"?: string;
+  "id"?: string;
+  "name"?: string;
+  "odds"?: Array<ModelEspnGameOdds>;
+  "short_name"?: string;
+  "status"?: ModelEspnGameStatus;
+  "venue"?: string;
+}
+
+export interface ModelEspnGameOdds {
+  "details"?: string;
+  "over_under"?: number;
+  "provider"?: string;
+  "spread"?: number;
+}
+
+export interface ModelEspnGameStatus {
+  "clock"?: string;
+  "completed"?: boolean;
+  "detail"?: string;
+  "period"?: number;
+  "short_detail"?: string;
+  "state"?: string;
+}
+
+export interface ModelEspnGameSummaryResponse {
+  "boxscore_teams"?: Array<ModelEspnBoxscoreTeam>;
+  "event"?: string;
+  "fetched_at"?: string;
+  "game"?: ModelEspnGame;
+  "league"?: string;
+  "odds"?: Array<ModelEspnGameOdds>;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelEspnNewsArticle {
+  "byline"?: string;
+  "description"?: string;
+  "headline"?: string;
+  "link"?: string;
+  "published"?: string;
+  "type"?: string;
+}
+
+export interface ModelEspnNewsResponse {
+  "articles"?: Array<ModelEspnNewsArticle>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "league"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelEspnRankEntry {
+  "current"?: number;
+  "points"?: number;
+  "previous"?: number;
+  "record"?: string;
+  "team"?: ModelEspnTeamRef;
+  "trend"?: string;
+}
+
+export interface ModelEspnRankingPoll {
+  "name"?: string;
+  "ranks"?: Array<ModelEspnRankEntry>;
+  "short_name"?: string;
+}
+
+export interface ModelEspnRankingsResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "polls"?: Array<ModelEspnRankingPoll>;
+  "season"?: ModelEspnSeason;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelEspnRosterAthlete {
+  "age"?: number;
+  "display_height"?: string;
+  "display_weight"?: string;
+  "experience_years"?: number;
+  "full_name"?: string;
+  "id"?: string;
+  "jersey"?: string;
+  "position"?: string;
+}
+
+export interface ModelEspnRosterResponse {
+  "athletes"?: Array<ModelEspnRosterAthlete>;
+  "coach"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "league"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+  "team"?: ModelEspnTeamRef;
+}
+
+export interface ModelEspnScoreboardResponse {
+  "count"?: number;
+  "day"?: string;
+  "fetched_at"?: string;
+  "games"?: Array<ModelEspnGame>;
+  "league"?: string;
+  "league_name"?: string;
+  "season"?: ModelEspnSeason;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelEspnSeason {
+  "name"?: string;
+  "type"?: number;
+  "year"?: number;
+}
+
+export interface ModelEspnStandingsEntry {
+  "note"?: string;
+  "stats"?: Record<string, string>;
+  "team"?: ModelEspnTeamRef;
+}
+
+export interface ModelEspnStandingsGroup {
+  "abbreviation"?: string;
+  "entries"?: Array<ModelEspnStandingsEntry>;
+  "name"?: string;
+}
+
+export interface ModelEspnStandingsResponse {
+  "fetched_at"?: string;
+  "groups"?: Array<ModelEspnStandingsGroup>;
+  "league"?: string;
+  "league_name"?: string;
+  "season"?: ModelEspnSeason;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelEspnTeamDetail {
+  "abbreviation"?: string;
+  "alternate_color"?: string;
+  "color"?: string;
+  "display_name"?: string;
+  "id"?: string;
+  "location"?: string;
+  "logo"?: string;
+  "name"?: string;
+  "record"?: string;
+  "short_display_name"?: string;
+  "standing_summary"?: string;
+  "uid"?: string;
+}
+
+export interface ModelEspnTeamRef {
+  "abbreviation"?: string;
+  "alternate_color"?: string;
+  "color"?: string;
+  "display_name"?: string;
+  "id"?: string;
+  "location"?: string;
+  "logo"?: string;
+  "name"?: string;
+  "short_display_name"?: string;
+  "uid"?: string;
+}
+
+export interface ModelEspnTeamResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+  "team"?: ModelEspnTeamDetail;
+}
+
+export interface ModelEspnTeamsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "league"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+  "teams"?: Array<ModelEspnTeamRef>;
+}
+
+export interface ModelEspnAthleteResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnAthleteResponse;
+  "msg"?: string;
+}
+
+export interface ModelEspnGameSummaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnGameSummaryResponse;
+  "msg"?: string;
+}
+
+export interface ModelEspnNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelEspnRankingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnRankingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelEspnRosterResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnRosterResponse;
+  "msg"?: string;
+}
+
+export interface ModelEspnScoreboardResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnScoreboardResponse;
+  "msg"?: string;
+}
+
+export interface ModelEspnStandingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnStandingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelEspnTeamResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnTeamResponse;
+  "msg"?: string;
+}
+
+export interface ModelEspnTeamsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEspnTeamsResponse;
+  "msg"?: string;
 }
 
 export interface ModelFinanceAbout {
@@ -10094,6 +10740,23 @@ export interface ModelSpotifyUserProfileResponseDoc {
   "msg"?: unknown;
 }
 
+export interface ModelTechstackResult {
+  "categories"?: Array<string>;
+  "count"?: number;
+  "detector_version"?: string;
+  "final_url"?: string;
+  "technologies"?: Array<ModelTechstackTechnology>;
+  "url"?: string;
+}
+
+export interface ModelTechstackTechnology {
+  "categories"?: Array<string>;
+  "confidence"?: string;
+  "evidence"?: string;
+  "name"?: string;
+  "version"?: string;
+}
+
 export interface ModelTiktokCategory {
   "name"?: string;
   "type"?: string;
@@ -11436,9 +12099,20 @@ export interface ModelWebScrapeResult {
   "scrape"?: ModelWebScrapeInfo;
 }
 
+export interface ModelWebTechStackOption {
+  "render"?: "browser" | "auto" | "http";
+  "url": string;
+}
+
 export interface ModelWebScrapeResponseDoc {
   "code"?: number;
   "data"?: ModelWebScrapeResult;
+  "msg"?: string;
+}
+
+export interface ModelWebTechStackResponseDoc {
+  "code"?: number;
+  "data"?: ModelTechstackResult;
   "msg"?: string;
 }
 
@@ -12908,6 +13582,72 @@ export interface BraveVideosParams {
   "date_to"?: string;
 }
 
+export type ChromeWebStoreChromewebstoreCategoriesResponse = CrawloraResponse<ModelChromewebstoreCategoriesResponseDoc>;
+export interface ChromeWebStoreChromewebstoreCategoriesParams {
+}
+
+export type ChromeWebStoreChromewebstoreCategoryResponse = CrawloraResponse<ModelChromewebstoreListResponseDoc>;
+export interface ChromeWebStoreChromewebstoreCategoryParams {
+  "category": string;
+  "num"?: number;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstoreChartsResponse = CrawloraResponse<ModelChromewebstoreListResponseDoc>;
+export interface ChromeWebStoreChromewebstoreChartsParams {
+  "chart"?: "trending" | "popular" | "notable";
+  "num"?: number;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstoreCollectionResponse = CrawloraResponse<ModelChromewebstoreListResponseDoc>;
+export interface ChromeWebStoreChromewebstoreCollectionParams {
+  "collection": string;
+  "num"?: number;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstoreItemResponse = CrawloraResponse<ModelChromewebstoreItemResponseDoc>;
+export interface ChromeWebStoreChromewebstoreItemParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstoreReviewsResponse = CrawloraResponse<ModelChromewebstoreReviewsResponseDoc>;
+export interface ChromeWebStoreChromewebstoreReviewsParams {
+  "id": string;
+  "num"?: number;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstoreSearchResponse = CrawloraResponse<ModelChromewebstoreSearchResponseDoc>;
+export interface ChromeWebStoreChromewebstoreSearchParams {
+  "term": string;
+  "num"?: number;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstoreSimilarResponse = CrawloraResponse<ModelChromewebstoreSimilarResponseDoc>;
+export interface ChromeWebStoreChromewebstoreSimilarParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstoreSuggestResponse = CrawloraResponse<ModelChromewebstoreSuggestResponseDoc>;
+export interface ChromeWebStoreChromewebstoreSuggestParams {
+  "term": string;
+  "num"?: number;
+  "country"?: string;
+  "lang"?: string;
+}
+
 export type CoinGeckoCategoriesResponse = CrawloraResponse<ModelCoingeckoCategoriesResponseDoc>;
 export interface CoinGeckoCategoriesParams {
   "limit"?: number;
@@ -13063,6 +13803,7 @@ export interface DatasetsAirbnbMarketsFacetsParams {
   "country"?: string;
   "market"?: string;
   "superhost"?: boolean;
+  "guest_favorite"?: boolean;
   "min_rating"?: number;
   "min_review_count"?: number;
   "active_since"?: string;
@@ -13093,6 +13834,7 @@ export interface DatasetsAirbnbMarketsSearchParams {
   "country"?: string;
   "market"?: string;
   "superhost"?: boolean;
+  "guest_favorite"?: boolean;
   "min_rating"?: number;
   "min_review_count"?: number;
   "active_since"?: string;
@@ -13179,6 +13921,7 @@ export interface DatasetsGithubUsersFacetsParams {
   "hireable"?: boolean;
   "is_org"?: boolean;
   "is_bot"?: boolean;
+  "is_suspected_automation"?: boolean;
   "min_followers"?: number;
   "max_followers"?: number;
   "min_repos"?: number;
@@ -13227,6 +13970,7 @@ export interface DatasetsGithubUsersSearchParams {
   "hireable"?: boolean;
   "is_org"?: boolean;
   "is_bot"?: boolean;
+  "is_suspected_automation"?: boolean;
   "min_followers"?: number;
   "max_followers"?: number;
   "min_repos"?: number;
@@ -13301,6 +14045,92 @@ export interface DatasetsGoogleMapBusinessesSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsProducthuntMakersFacetsResponse = CrawloraResponse<ModelDatasetsProducthuntMakersFacetResponseDoc>;
+export interface DatasetsProducthuntMakersFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "topic"?: string;
+  "min_products"?: number;
+  "min_total_votes"?: number;
+}
+
+export type DatasetsProducthuntMakersItemResponse = CrawloraResponse<ModelDatasetsProducthuntMakerResponseDoc>;
+export interface DatasetsProducthuntMakersItemParams {
+  "username": string;
+}
+
+export type DatasetsProducthuntMakersSearchResponse = CrawloraResponse<ModelDatasetsProducthuntMakersSearchResponseDoc>;
+export interface DatasetsProducthuntMakersSearchParams {
+  "q"?: string;
+  "topic"?: string;
+  "min_products"?: number;
+  "min_total_votes"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsProducthuntProductsFacetsResponse = CrawloraResponse<ModelDatasetsProducthuntProductsFacetResponseDoc>;
+export interface DatasetsProducthuntProductsFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "topic"?: string;
+  "maker"?: string;
+  "launched_after"?: string;
+  "launched_before"?: string;
+  "min_votes"?: number;
+  "min_rating"?: number;
+  "pricing_type"?: string;
+  "has_website"?: boolean;
+  "is_online"?: boolean;
+}
+
+export type DatasetsProducthuntProductsItemResponse = CrawloraResponse<ModelDatasetsProducthuntProductResponseDoc>;
+export interface DatasetsProducthuntProductsItemParams {
+  "slug": string;
+}
+
+export type DatasetsProducthuntProductsSearchResponse = CrawloraResponse<ModelDatasetsProducthuntProductsSearchResponseDoc>;
+export interface DatasetsProducthuntProductsSearchParams {
+  "q"?: string;
+  "topic"?: string;
+  "maker"?: string;
+  "launched_after"?: string;
+  "launched_before"?: string;
+  "min_votes"?: number;
+  "min_rating"?: number;
+  "pricing_type"?: string;
+  "has_website"?: boolean;
+  "is_online"?: boolean;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsProducthuntTrendsFacetsResponse = CrawloraResponse<ModelDatasetsProducthuntTrendsFacetResponseDoc>;
+export interface DatasetsProducthuntTrendsFacetsParams {
+  "facet": string;
+  "group_by"?: string;
+  "topic"?: string;
+  "launched_after"?: string;
+  "launched_before"?: string;
+  "min_votes"?: number;
+  "min_launches"?: number;
+}
+
+export type DatasetsProducthuntTrendsSearchResponse = CrawloraResponse<ModelDatasetsProducthuntTrendsSearchResponseDoc>;
+export interface DatasetsProducthuntTrendsSearchParams {
+  "group_by"?: string;
+  "topic"?: string;
+  "launched_after"?: string;
+  "launched_before"?: string;
+  "min_votes"?: number;
+  "min_launches"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type WebAntibotCheckBody = CrawloraBody<ModelDiagnosticsAntibotCheckRequest>;
 export type WebAntibotCheckResponse = CrawloraResponse<ModelDiagnosticsAntibotCheckResponseDoc>;
 export interface WebAntibotCheckParams {
@@ -13339,6 +14169,69 @@ export type EBayEbaySellerShopResponse = CrawloraResponse<ModelEbaySellerShopRes
 export interface EBayEbaySellerShopParams {
   "seller": string;
   "page"?: number;
+}
+
+export type EspnAthleteResponse = CrawloraResponse<ModelEspnAthleteResponseDoc>;
+export interface EspnAthleteParams {
+  "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
+  "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
+  "athlete": string;
+}
+
+export type EspnGameSummaryResponse = CrawloraResponse<ModelEspnGameSummaryResponseDoc>;
+export interface EspnGameSummaryParams {
+  "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
+  "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
+  "event": string;
+}
+
+export type EspnNewsResponse = CrawloraResponse<ModelEspnNewsResponseDoc>;
+export interface EspnNewsParams {
+  "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
+  "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
+}
+
+export type EspnRankingsResponse = CrawloraResponse<ModelEspnRankingsResponseDoc>;
+export interface EspnRankingsParams {
+  "sport": "football" | "basketball";
+  "league": "college-football" | "mens-college-basketball" | "womens-college-basketball";
+}
+
+export type EspnScoreboardResponse = CrawloraResponse<ModelEspnScoreboardResponseDoc>;
+export interface EspnScoreboardParams {
+  "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
+  "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
+  "dates"?: string;
+  "week"?: number;
+  "seasontype"?: "1" | "2" | "3" | "4";
+}
+
+export type EspnStandingsResponse = CrawloraResponse<ModelEspnStandingsResponseDoc>;
+export interface EspnStandingsParams {
+  "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
+  "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
+  "season"?: number;
+  "seasontype"?: "1" | "2" | "3";
+}
+
+export type EspnTeamResponse = CrawloraResponse<ModelEspnTeamResponseDoc>;
+export interface EspnTeamParams {
+  "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
+  "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
+  "team": string;
+}
+
+export type EspnTeamRosterResponse = CrawloraResponse<ModelEspnRosterResponseDoc>;
+export interface EspnTeamRosterParams {
+  "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
+  "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
+  "team": string;
+}
+
+export type EspnTeamsResponse = CrawloraResponse<ModelEspnTeamsResponseDoc>;
+export interface EspnTeamsParams {
+  "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
+  "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
 }
 
 export type GeocodingLookupResponse = CrawloraResponse<ModelGeocodingLookupResponseDoc>;
@@ -14770,10 +15663,11 @@ export interface ProductHuntCategoryParams {
 export type ProductHuntCategoryProductsResponse = CrawloraResponse<ModelProducthuntCategoryProductsResponseDoc>;
 export interface ProductHuntCategoryProductsParams {
   "slug": string;
+  "cursor"?: string;
+  "page_size"?: number;
   "featured_only"?: boolean;
   "order"?: string;
   "page"?: number;
-  "page_size"?: number;
   "tags"?: string;
 }
 
@@ -14854,7 +15748,6 @@ export interface RedditCommentsParams {
   "sort"?: "confidence" | "top" | "new" | "controversial" | "old" | "qa";
   "limit"?: number;
   "depth"?: number;
-  "with_scores"?: boolean;
 }
 
 export type RedditDomainPostsResponse = CrawloraResponse<ModelRedditDomainPostsResponseDoc>;
@@ -14864,13 +15757,11 @@ export interface RedditDomainPostsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
-  "with_scores"?: boolean;
 }
 
 export type RedditPostResponse = CrawloraResponse<ModelRedditPostResponseDoc>;
 export interface RedditPostParams {
   "id": string;
-  "with_scores"?: boolean;
 }
 
 export type RedditSearchResponse = CrawloraResponse<ModelRedditSearchResponseDoc>;
@@ -14881,14 +15772,12 @@ export interface RedditSearchParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
-  "with_scores"?: boolean;
 }
 
 export type RedditSubredditAboutResponse = CrawloraResponse<ModelRedditSubredditAboutResponseDoc>;
 export interface RedditSubredditAboutParams {
   "subreddit": string;
   "limit"?: number;
-  "with_scores"?: boolean;
 }
 
 export type RedditSubredditCommentsResponse = CrawloraResponse<ModelRedditSubredditCommentsResponseDoc>;
@@ -14896,7 +15785,6 @@ export interface RedditSubredditCommentsParams {
   "subreddit": string;
   "limit"?: number;
   "after"?: string;
-  "with_scores"?: boolean;
 }
 
 export type RedditSubredditPostsResponse = CrawloraResponse<ModelRedditSubredditPostsResponseDoc>;
@@ -14906,7 +15794,6 @@ export interface RedditSubredditPostsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
-  "with_scores"?: boolean;
 }
 
 export type RedditSubredditsPostsResponse = CrawloraResponse<ModelRedditMultiSubredditPostsResponseDoc>;
@@ -14916,7 +15803,6 @@ export interface RedditSubredditsPostsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
-  "with_scores"?: boolean;
 }
 
 export type RedditTrendsResponse = CrawloraResponse<ModelRedditTrendsResponseDoc>;
@@ -14925,7 +15811,6 @@ export interface RedditTrendsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
-  "with_scores"?: boolean;
 }
 
 export type RedditUserCommentsResponse = CrawloraResponse<ModelRedditUserCommentsResponseDoc>;
@@ -14933,7 +15818,6 @@ export interface RedditUserCommentsParams {
   "username": string;
   "limit"?: number;
   "after"?: string;
-  "with_scores"?: boolean;
 }
 
 export type RedditUserPostsResponse = CrawloraResponse<ModelRedditUserPostsResponseDoc>;
@@ -14941,7 +15825,6 @@ export interface RedditUserPostsParams {
   "username": string;
   "limit"?: number;
   "after"?: string;
-  "with_scores"?: boolean;
 }
 
 export type RedfinEstimateResponse = CrawloraResponse<ModelRedfinEstimateResponse>;
@@ -15888,6 +16771,12 @@ export interface WebScrapeParams {
   "scrapeOption": WebScrapeBody;
 }
 
+export type WebTechstackBody = CrawloraBody<ModelWebTechStackOption>;
+export type WebTechstackResponse = CrawloraResponse<ModelWebTechStackResponseDoc>;
+export interface WebTechstackParams {
+  "request": WebTechstackBody;
+}
+
 export type XPostResponse = CrawloraResponse<ModelXPostResponseDoc>;
 export interface XPostParams {
   "id": string;
@@ -16339,6 +17228,18 @@ export interface BraveService {
   videos<T = BraveVideosResponse>(params: BraveVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface ChromeWebStoreService {
+  chromewebstoreCategories<T = ChromeWebStoreChromewebstoreCategoriesResponse>(params?: ChromeWebStoreChromewebstoreCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreCategory<T = ChromeWebStoreChromewebstoreCategoryResponse>(params: ChromeWebStoreChromewebstoreCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreCharts<T = ChromeWebStoreChromewebstoreChartsResponse>(params?: ChromeWebStoreChromewebstoreChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreCollection<T = ChromeWebStoreChromewebstoreCollectionResponse>(params: ChromeWebStoreChromewebstoreCollectionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreItem<T = ChromeWebStoreChromewebstoreItemResponse>(params: ChromeWebStoreChromewebstoreItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreReviews<T = ChromeWebStoreChromewebstoreReviewsResponse>(params: ChromeWebStoreChromewebstoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreSearch<T = ChromeWebStoreChromewebstoreSearchResponse>(params: ChromeWebStoreChromewebstoreSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreSimilar<T = ChromeWebStoreChromewebstoreSimilarResponse>(params: ChromeWebStoreChromewebstoreSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreSuggest<T = ChromeWebStoreChromewebstoreSuggestResponse>(params: ChromeWebStoreChromewebstoreSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface CoinGeckoService {
   categories<T = CoinGeckoCategoriesResponse>(params?: CoinGeckoCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categoryCoins<T = CoinGeckoCategoryCoinsResponse>(params: CoinGeckoCategoryCoinsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -16367,6 +17268,7 @@ export interface WebService {
   contact<T = WebContactResponse>(params: WebContactParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   antibotCheck<T = WebAntibotCheckResponse>(params: WebAntibotCheckParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   scrape<T = WebScrapeResponse>(params: WebScrapeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  techstack<T = WebTechstackResponse>(params: WebTechstackParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface DatasetsService {
@@ -16387,6 +17289,14 @@ export interface DatasetsService {
   googleMapBusinessesItem<T = DatasetsGoogleMapBusinessesItemResponse>(params: DatasetsGoogleMapBusinessesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesNearby<T = DatasetsGoogleMapBusinessesNearbyResponse>(params: DatasetsGoogleMapBusinessesNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesSearch<T = DatasetsGoogleMapBusinessesSearchResponse>(params?: DatasetsGoogleMapBusinessesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  producthuntMakersFacets<T = DatasetsProducthuntMakersFacetsResponse>(params: DatasetsProducthuntMakersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  producthuntMakersItem<T = DatasetsProducthuntMakersItemResponse>(params: DatasetsProducthuntMakersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  producthuntMakersSearch<T = DatasetsProducthuntMakersSearchResponse>(params?: DatasetsProducthuntMakersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  producthuntProductsFacets<T = DatasetsProducthuntProductsFacetsResponse>(params: DatasetsProducthuntProductsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  producthuntProductsItem<T = DatasetsProducthuntProductsItemResponse>(params: DatasetsProducthuntProductsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  producthuntProductsSearch<T = DatasetsProducthuntProductsSearchResponse>(params?: DatasetsProducthuntProductsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  producthuntTrendsFacets<T = DatasetsProducthuntTrendsFacetsResponse>(params: DatasetsProducthuntTrendsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  producthuntTrendsSearch<T = DatasetsProducthuntTrendsSearchResponse>(params?: DatasetsProducthuntTrendsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface EBayService {
@@ -16396,6 +17306,18 @@ export interface EBayService {
   ebaySellerAbout<T = EBayEbaySellerAboutResponse>(params: EBayEbaySellerAboutParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySellerFeedback<T = EBayEbaySellerFeedbackResponse>(params: EBayEbaySellerFeedbackParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySellerShop<T = EBayEbaySellerShopResponse>(params: EBayEbaySellerShopParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface EspnService {
+  athlete<T = EspnAthleteResponse>(params: EspnAthleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gameSummary<T = EspnGameSummaryResponse>(params: EspnGameSummaryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  news<T = EspnNewsResponse>(params: EspnNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rankings<T = EspnRankingsResponse>(params: EspnRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  scoreboard<T = EspnScoreboardResponse>(params: EspnScoreboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  standings<T = EspnStandingsResponse>(params: EspnStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  team<T = EspnTeamResponse>(params: EspnTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamRoster<T = EspnTeamRosterResponse>(params: EspnTeamRosterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teams<T = EspnTeamsResponse>(params: EspnTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GeocodingService {
@@ -16921,10 +17843,12 @@ export interface CrawloraGeneratedGroups {
   boxOfficeMojo: BoxOfficeMojoService;
   brand: BrandService;
   brave: BraveService;
+  chromeWebStore: ChromeWebStoreService;
   coinGecko: CoinGeckoService;
   web: WebService;
   datasets: DatasetsService;
   eBay: EBayService;
+  espn: EspnService;
   geocoding: GeocodingService;
   gitHub: GitHubService;
   google: GoogleService;
@@ -17024,6 +17948,15 @@ export interface OperationParamsMap {
   "brave-search": BraveSearchParams;
   "brave-suggest": BraveSuggestParams;
   "brave-videos": BraveVideosParams;
+  "chromewebstore-categories": ChromeWebStoreChromewebstoreCategoriesParams;
+  "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryParams;
+  "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsParams;
+  "chromewebstore-collection": ChromeWebStoreChromewebstoreCollectionParams;
+  "chromewebstore-item": ChromeWebStoreChromewebstoreItemParams;
+  "chromewebstore-reviews": ChromeWebStoreChromewebstoreReviewsParams;
+  "chromewebstore-search": ChromeWebStoreChromewebstoreSearchParams;
+  "chromewebstore-similar": ChromeWebStoreChromewebstoreSimilarParams;
+  "chromewebstore-suggest": ChromeWebStoreChromewebstoreSuggestParams;
   "coingecko-categories": CoinGeckoCategoriesParams;
   "coingecko-category-coins": CoinGeckoCategoryCoinsParams;
   "coingecko-chains": CoinGeckoChainsParams;
@@ -17063,6 +17996,14 @@ export interface OperationParamsMap {
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemParams;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyParams;
   "datasets-google-map-businesses-search": DatasetsGoogleMapBusinessesSearchParams;
+  "datasets-producthunt-makers-facets": DatasetsProducthuntMakersFacetsParams;
+  "datasets-producthunt-makers-item": DatasetsProducthuntMakersItemParams;
+  "datasets-producthunt-makers-search": DatasetsProducthuntMakersSearchParams;
+  "datasets-producthunt-products-facets": DatasetsProducthuntProductsFacetsParams;
+  "datasets-producthunt-products-item": DatasetsProducthuntProductsItemParams;
+  "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchParams;
+  "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsParams;
+  "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchParams;
   "antibot-check": WebAntibotCheckParams;
   "ebay-item": EBayEbayItemParams;
   "ebay-search": EBayEbaySearchParams;
@@ -17070,6 +18011,15 @@ export interface OperationParamsMap {
   "ebay-seller-about": EBayEbaySellerAboutParams;
   "ebay-seller-feedback": EBayEbaySellerFeedbackParams;
   "ebay-seller-shop": EBayEbaySellerShopParams;
+  "espn-athlete": EspnAthleteParams;
+  "espn-game-summary": EspnGameSummaryParams;
+  "espn-news": EspnNewsParams;
+  "espn-rankings": EspnRankingsParams;
+  "espn-scoreboard": EspnScoreboardParams;
+  "espn-standings": EspnStandingsParams;
+  "espn-team": EspnTeamParams;
+  "espn-team-roster": EspnTeamRosterParams;
+  "espn-teams": EspnTeamsParams;
   "geocoding-lookup": GeocodingLookupParams;
   "geocoding-reverse": GeocodingReverseParams;
   "geocoding-search": GeocodingSearchParams;
@@ -17433,6 +18383,7 @@ export interface OperationParamsMap {
   "user-me-api-keys-rotate": UserMeApiKeysRotateParams;
   "user-me-api-keys-reveal": UserMeApiKeysRevealParams;
   "web-scrape": WebScrapeParams;
+  "web-techstack": WebTechstackParams;
   "x-post": XPostParams;
   "x-profile": XProfileParams;
   "x-profile-posts": XProfilePostsParams;
@@ -17559,6 +18510,15 @@ export interface OperationResponseMap {
   "brave-search": BraveSearchResponse;
   "brave-suggest": BraveSuggestResponse;
   "brave-videos": BraveVideosResponse;
+  "chromewebstore-categories": ChromeWebStoreChromewebstoreCategoriesResponse;
+  "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryResponse;
+  "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsResponse;
+  "chromewebstore-collection": ChromeWebStoreChromewebstoreCollectionResponse;
+  "chromewebstore-item": ChromeWebStoreChromewebstoreItemResponse;
+  "chromewebstore-reviews": ChromeWebStoreChromewebstoreReviewsResponse;
+  "chromewebstore-search": ChromeWebStoreChromewebstoreSearchResponse;
+  "chromewebstore-similar": ChromeWebStoreChromewebstoreSimilarResponse;
+  "chromewebstore-suggest": ChromeWebStoreChromewebstoreSuggestResponse;
   "coingecko-categories": CoinGeckoCategoriesResponse;
   "coingecko-category-coins": CoinGeckoCategoryCoinsResponse;
   "coingecko-chains": CoinGeckoChainsResponse;
@@ -17598,6 +18558,14 @@ export interface OperationResponseMap {
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemResponse;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyResponse;
   "datasets-google-map-businesses-search": DatasetsGoogleMapBusinessesSearchResponse;
+  "datasets-producthunt-makers-facets": DatasetsProducthuntMakersFacetsResponse;
+  "datasets-producthunt-makers-item": DatasetsProducthuntMakersItemResponse;
+  "datasets-producthunt-makers-search": DatasetsProducthuntMakersSearchResponse;
+  "datasets-producthunt-products-facets": DatasetsProducthuntProductsFacetsResponse;
+  "datasets-producthunt-products-item": DatasetsProducthuntProductsItemResponse;
+  "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchResponse;
+  "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsResponse;
+  "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchResponse;
   "antibot-check": WebAntibotCheckResponse;
   "ebay-item": EBayEbayItemResponse;
   "ebay-search": EBayEbaySearchResponse;
@@ -17605,6 +18573,15 @@ export interface OperationResponseMap {
   "ebay-seller-about": EBayEbaySellerAboutResponse;
   "ebay-seller-feedback": EBayEbaySellerFeedbackResponse;
   "ebay-seller-shop": EBayEbaySellerShopResponse;
+  "espn-athlete": EspnAthleteResponse;
+  "espn-game-summary": EspnGameSummaryResponse;
+  "espn-news": EspnNewsResponse;
+  "espn-rankings": EspnRankingsResponse;
+  "espn-scoreboard": EspnScoreboardResponse;
+  "espn-standings": EspnStandingsResponse;
+  "espn-team": EspnTeamResponse;
+  "espn-team-roster": EspnTeamRosterResponse;
+  "espn-teams": EspnTeamsResponse;
   "geocoding-lookup": GeocodingLookupResponse;
   "geocoding-reverse": GeocodingReverseResponse;
   "geocoding-search": GeocodingSearchResponse;
@@ -17968,6 +18945,7 @@ export interface OperationResponseMap {
   "user-me-api-keys-rotate": UserMeApiKeysRotateResponse;
   "user-me-api-keys-reveal": UserMeApiKeysRevealResponse;
   "web-scrape": WebScrapeResponse;
+  "web-techstack": WebTechstackResponse;
   "x-post": XPostResponse;
   "x-profile": XProfileResponse;
   "x-profile-posts": XProfilePostsResponse;
@@ -18094,6 +19072,15 @@ export interface OperationRequiredParamsMap {
   "brave-search": true;
   "brave-suggest": true;
   "brave-videos": true;
+  "chromewebstore-categories": false;
+  "chromewebstore-category": true;
+  "chromewebstore-charts": false;
+  "chromewebstore-collection": true;
+  "chromewebstore-item": true;
+  "chromewebstore-reviews": true;
+  "chromewebstore-search": true;
+  "chromewebstore-similar": true;
+  "chromewebstore-suggest": true;
   "coingecko-categories": false;
   "coingecko-category-coins": true;
   "coingecko-chains": false;
@@ -18133,6 +19120,14 @@ export interface OperationRequiredParamsMap {
   "datasets-google-map-businesses-item": true;
   "datasets-google-map-businesses-nearby": true;
   "datasets-google-map-businesses-search": false;
+  "datasets-producthunt-makers-facets": true;
+  "datasets-producthunt-makers-item": true;
+  "datasets-producthunt-makers-search": false;
+  "datasets-producthunt-products-facets": true;
+  "datasets-producthunt-products-item": true;
+  "datasets-producthunt-products-search": false;
+  "datasets-producthunt-trends-facets": true;
+  "datasets-producthunt-trends-search": false;
   "antibot-check": true;
   "ebay-item": true;
   "ebay-search": true;
@@ -18140,6 +19135,15 @@ export interface OperationRequiredParamsMap {
   "ebay-seller-about": true;
   "ebay-seller-feedback": true;
   "ebay-seller-shop": true;
+  "espn-athlete": true;
+  "espn-game-summary": true;
+  "espn-news": true;
+  "espn-rankings": true;
+  "espn-scoreboard": true;
+  "espn-standings": true;
+  "espn-team": true;
+  "espn-team-roster": true;
+  "espn-teams": true;
   "geocoding-lookup": true;
   "geocoding-reverse": true;
   "geocoding-search": false;
@@ -18503,6 +19507,7 @@ export interface OperationRequiredParamsMap {
   "user-me-api-keys-rotate": false;
   "user-me-api-keys-reveal": true;
   "web-scrape": true;
+  "web-techstack": true;
   "x-post": true;
   "x-profile": true;
   "x-profile-posts": true;
@@ -18636,6 +19641,15 @@ export type OperationIdLiteral =
   | "brave-search"
   | "brave-suggest"
   | "brave-videos"
+  | "chromewebstore-categories"
+  | "chromewebstore-category"
+  | "chromewebstore-charts"
+  | "chromewebstore-collection"
+  | "chromewebstore-item"
+  | "chromewebstore-reviews"
+  | "chromewebstore-search"
+  | "chromewebstore-similar"
+  | "chromewebstore-suggest"
   | "coingecko-categories"
   | "coingecko-category-coins"
   | "coingecko-chains"
@@ -18675,6 +19689,14 @@ export type OperationIdLiteral =
   | "datasets-google-map-businesses-item"
   | "datasets-google-map-businesses-nearby"
   | "datasets-google-map-businesses-search"
+  | "datasets-producthunt-makers-facets"
+  | "datasets-producthunt-makers-item"
+  | "datasets-producthunt-makers-search"
+  | "datasets-producthunt-products-facets"
+  | "datasets-producthunt-products-item"
+  | "datasets-producthunt-products-search"
+  | "datasets-producthunt-trends-facets"
+  | "datasets-producthunt-trends-search"
   | "antibot-check"
   | "ebay-item"
   | "ebay-search"
@@ -18682,6 +19704,15 @@ export type OperationIdLiteral =
   | "ebay-seller-about"
   | "ebay-seller-feedback"
   | "ebay-seller-shop"
+  | "espn-athlete"
+  | "espn-game-summary"
+  | "espn-news"
+  | "espn-rankings"
+  | "espn-scoreboard"
+  | "espn-standings"
+  | "espn-team"
+  | "espn-team-roster"
+  | "espn-teams"
   | "geocoding-lookup"
   | "geocoding-reverse"
   | "geocoding-search"
@@ -19045,6 +20076,7 @@ export type OperationIdLiteral =
   | "user-me-api-keys-rotate"
   | "user-me-api-keys-reveal"
   | "web-scrape"
+  | "web-techstack"
   | "x-post"
   | "x-profile"
   | "x-profile-posts"
@@ -19170,6 +20202,15 @@ export declare const OperationIds: Readonly<{
   BraveSearch: "brave-search";
   BraveSuggest: "brave-suggest";
   BraveVideos: "brave-videos";
+  ChromeWebStoreChromewebstoreCategories: "chromewebstore-categories";
+  ChromeWebStoreChromewebstoreCategory: "chromewebstore-category";
+  ChromeWebStoreChromewebstoreCharts: "chromewebstore-charts";
+  ChromeWebStoreChromewebstoreCollection: "chromewebstore-collection";
+  ChromeWebStoreChromewebstoreItem: "chromewebstore-item";
+  ChromeWebStoreChromewebstoreReviews: "chromewebstore-reviews";
+  ChromeWebStoreChromewebstoreSearch: "chromewebstore-search";
+  ChromeWebStoreChromewebstoreSimilar: "chromewebstore-similar";
+  ChromeWebStoreChromewebstoreSuggest: "chromewebstore-suggest";
   CoinGeckoCategories: "coingecko-categories";
   CoinGeckoCategoryCoins: "coingecko-category-coins";
   CoinGeckoChain: "coingecko-chain";
@@ -19208,12 +20249,29 @@ export declare const OperationIds: Readonly<{
   DatasetsGoogleMapBusinessesNearby: "datasets-google-map-businesses-nearby";
   DatasetsGoogleMapBusinessesSearch: "datasets-google-map-businesses-search";
   DatasetsList: "datasets-list";
+  DatasetsProducthuntMakersFacets: "datasets-producthunt-makers-facets";
+  DatasetsProducthuntMakersItem: "datasets-producthunt-makers-item";
+  DatasetsProducthuntMakersSearch: "datasets-producthunt-makers-search";
+  DatasetsProducthuntProductsFacets: "datasets-producthunt-products-facets";
+  DatasetsProducthuntProductsItem: "datasets-producthunt-products-item";
+  DatasetsProducthuntProductsSearch: "datasets-producthunt-products-search";
+  DatasetsProducthuntTrendsFacets: "datasets-producthunt-trends-facets";
+  DatasetsProducthuntTrendsSearch: "datasets-producthunt-trends-search";
   EBayEbayItem: "ebay-item";
   EBayEbaySearch: "ebay-search";
   EBayEbaySeller: "ebay-seller";
   EBayEbaySellerAbout: "ebay-seller-about";
   EBayEbaySellerFeedback: "ebay-seller-feedback";
   EBayEbaySellerShop: "ebay-seller-shop";
+  EspnAthlete: "espn-athlete";
+  EspnGameSummary: "espn-game-summary";
+  EspnNews: "espn-news";
+  EspnRankings: "espn-rankings";
+  EspnScoreboard: "espn-scoreboard";
+  EspnStandings: "espn-standings";
+  EspnTeam: "espn-team";
+  EspnTeamRoster: "espn-team-roster";
+  EspnTeams: "espn-teams";
   GeocodingLookup: "geocoding-lookup";
   GeocodingReverse: "geocoding-reverse";
   GeocodingSearch: "geocoding-search";
@@ -19579,6 +20637,7 @@ export declare const OperationIds: Readonly<{
   WebAntibotCheck: "antibot-check";
   WebContact: "contact";
   WebScrape: "web-scrape";
+  WebTechstack: "web-techstack";
   XPost: "x-post";
   XProfile: "x-profile";
   XProfilePosts: "x-profile-posts";

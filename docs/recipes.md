@@ -71,6 +71,18 @@ const fr = await client.datasets.airbnbMarketsItem({ country: "FR" });
 const density = await client.datasets.airbnbMarketsNearby({ lat: 48.86, lon: 2.35, radius_m: 5000 });
 ```
 
+## TrustMRR Verified Startup Revenues
+
+Browse verified startup revenues and the acquisition marketplace on TrustMRR: the marketplace snapshot, the revenue leaderboard, startup detail, and categories.
+
+```ts
+const deals = await client.trustMrr.trustmrrMarketplace();
+const board = await client.trustMrr.trustmrrLeaderboard({ metric: "mrr" });
+const startup = await client.trustMrr.trustmrrStartup({ slug: "stan" });
+const cats = await client.trustMrr.trustmrrCategories();
+const saas = await client.trustMrr.trustmrrCategory({ slug: "saas" });
+```
+
 ## Retries, Timeouts, Headers, And Abort Signals
 
 ```js
