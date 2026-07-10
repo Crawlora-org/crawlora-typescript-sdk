@@ -1952,6 +1952,21 @@ export interface ModelChromewebstoreCategoryGroup {
   "subcategories"?: Array<string>;
 }
 
+export interface ModelChromewebstoreDeveloper {
+  "address"?: string;
+  "count"?: number;
+  "duns"?: string;
+  "email"?: string;
+  "id"?: string;
+  "is_trader"?: boolean;
+  "items"?: Array<ModelChromewebstoreCard>;
+  "legal_name"?: string;
+  "name"?: string;
+  "phone"?: string;
+  "url"?: string;
+  "website"?: string;
+}
+
 export interface ModelChromewebstoreItem {
   "category"?: string;
   "category_id"?: number;
@@ -1987,10 +2002,34 @@ export interface ModelChromewebstoreListResult {
   "value"?: string;
 }
 
+export interface ModelChromewebstorePermissions {
+  "host_permissions"?: Array<string>;
+  "id"?: string;
+  "manifest_version"?: number;
+  "min_browser_version"?: string;
+  "name"?: string;
+  "optional_host_permissions"?: Array<string>;
+  "optional_permissions"?: Array<string>;
+  "permissions"?: Array<string>;
+  "url"?: string;
+}
+
+export interface ModelChromewebstorePrivacy {
+  "collects_data"?: boolean;
+  "data_collected"?: Array<string>;
+  "declarations"?: Array<string>;
+  "disclosure"?: string;
+  "id"?: string;
+  "name"?: string;
+  "privacy_policy"?: string;
+  "url"?: string;
+}
+
 export interface ModelChromewebstoreReview {
   "author"?: string;
   "avatar"?: string;
   "edited"?: string;
+  "helpful"?: number;
   "id"?: string;
   "language"?: string;
   "posted"?: string;
@@ -2004,6 +2043,7 @@ export interface ModelChromewebstoreReviewsResult {
   "count"?: number;
   "id"?: string;
   "reviews"?: Array<ModelChromewebstoreReview>;
+  "total"?: number;
 }
 
 export interface ModelChromewebstoreSearchResult {
@@ -2028,6 +2068,12 @@ export interface ModelChromewebstoreCategoriesResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelChromewebstoreDeveloperResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstoreDeveloper;
+  "msg"?: string;
+}
+
 export interface ModelChromewebstoreItemResponseDoc {
   "code"?: number;
   "data"?: ModelChromewebstoreItem;
@@ -2037,6 +2083,18 @@ export interface ModelChromewebstoreItemResponseDoc {
 export interface ModelChromewebstoreListResponseDoc {
   "code"?: number;
   "data"?: ModelChromewebstoreListResult;
+  "msg"?: string;
+}
+
+export interface ModelChromewebstorePermissionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstorePermissions;
+  "msg"?: string;
+}
+
+export interface ModelChromewebstorePrivacyResponseDoc {
+  "code"?: number;
+  "data"?: ModelChromewebstorePrivacy;
   "msg"?: string;
 }
 
@@ -2919,6 +2977,36 @@ export interface ModelDatasetsReviewsSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsTechstackFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsTechstackDatasetFacetItem>;
+}
+
+export interface ModelDatasetsTechstackSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsTechstackRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsTrustmrrFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsTrustmrrDatasetFacetItem>;
+}
+
+export interface ModelDatasetsTrustmrrSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsTrustmrrStartupRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsAirbnbMarketResponseDoc {
   "code"?: number;
   "data"?: ModelEsAirbnbMarketDetail;
@@ -3054,6 +3142,42 @@ export interface ModelDatasetsProducthuntTrendsSearchResponseDoc {
 export interface ModelDatasetsReviewsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsReviewsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsTechstackFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsTechstackFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsTechstackItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsTechstackRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsTechstackSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsTechstackSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsTrustmrrFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsTrustmrrFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsTrustmrrItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsTrustmrrStartupRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsTrustmrrSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsTrustmrrSearchResponse;
   "msg"?: string;
 }
 
@@ -3742,6 +3866,126 @@ export interface ModelEsProductHuntTrendTopProduct {
 export interface ModelEsProductHuntTrendsFacetItem {
   "count"?: number;
   "value"?: string;
+}
+
+export interface ModelEsTechstackDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsTechstackRecord {
+  "analytics"?: Array<string>;
+  "categories"?: Array<string>;
+  "category"?: string;
+  "cdn"?: string;
+  "cms"?: string;
+  "detector_version"?: string;
+  "domain"?: string;
+  "ecommerce"?: string;
+  "final_url"?: string;
+  "has_captcha"?: boolean;
+  "method_version"?: string;
+  "probed_at"?: string;
+  "rank"?: number;
+  "reachable"?: boolean;
+  "render_tier"?: string;
+  "run_date"?: string;
+  "run_id"?: string;
+  "scan_method"?: string;
+  "schema_version"?: number;
+  "scheme"?: string;
+  "seed_source"?: string;
+  "server_language"?: string;
+  "source_url"?: string;
+  "status"?: number;
+  "tech_count"?: number;
+  "technologies"?: Array<ModelEsTechstackTechnology>;
+  "technology_names"?: Array<string>;
+  "tld"?: string;
+  "web_server"?: string;
+}
+
+export interface ModelEsTechstackTechnology {
+  "categories"?: Array<string>;
+  "confidence"?: string;
+  "evidence"?: string;
+  "name"?: string;
+  "version"?: string;
+}
+
+export interface ModelEsTrustmrrDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsTrustmrrStartupRecord {
+  "active_subscriptions"?: number;
+  "ahrefs_domain_rating"?: number;
+  "asking_price"?: number;
+  "business_type"?: string;
+  "category"?: string;
+  "category_slug"?: string;
+  "channels"?: Array<string>;
+  "country"?: string;
+  "customers"?: number;
+  "deal_score"?: number;
+  "description"?: string;
+  "estimated_user_count"?: number;
+  "first_listed_for_sale_at"?: string;
+  "first_seen"?: string;
+  "founded_date"?: string;
+  "funding_status"?: string;
+  "growth_30d"?: number;
+  "growth_mrr_30d"?: number;
+  "has_dofollow_backlink"?: boolean;
+  "has_google_analytics"?: boolean;
+  "has_insight_overrides"?: boolean;
+  "has_search_console"?: boolean;
+  "icon"?: string;
+  "is_merchant_of_record"?: boolean;
+  "is_sponsored"?: boolean;
+  "last_crawled_at"?: string;
+  "last_seen"?: string;
+  "listing_tier"?: string;
+  "looking_for_cofounder"?: boolean;
+  "merchant_category_code"?: string;
+  "mrr"?: number;
+  "mrr_last_synced_at"?: string;
+  "multiple"?: number;
+  "name"?: string;
+  "offer_count"?: number;
+  "on_sale"?: boolean;
+  "payment_provider"?: string;
+  "pricing_model"?: string;
+  "problem_solved"?: string;
+  "profit_margin_30d"?: number;
+  "revenue_30d"?: number;
+  "revenue_last_synced_at"?: string;
+  "revenue_per_visitor_30d"?: number;
+  "schema_version"?: number;
+  "secondary_payment_provider"?: string;
+  "seller_message"?: string;
+  "slug"?: string;
+  "status"?: string;
+  "stealth_mode"?: boolean;
+  "tags"?: Array<string>;
+  "target_audience"?: string;
+  "target_persona"?: string;
+  "tech"?: Array<string>;
+  "total_revenue"?: number;
+  "traffic_12mo"?: number;
+  "traffic_24h"?: number;
+  "traffic_30d"?: number;
+  "traffic_7d"?: number;
+  "url"?: string;
+  "user_category"?: string;
+  "user_category_slug"?: string;
+  "value_proposition"?: string;
+  "website"?: string;
+  "x_follower_count"?: number;
+  "x_founder_name"?: string;
+  "x_handle"?: string;
+  "x_profile_picture"?: string;
 }
 
 export interface ModelEsWebsiteStatus {
@@ -6553,6 +6797,49 @@ export interface ModelMetaculusQuestionsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelPitchbookDataTable {
+  "columns"?: Array<string>;
+  "name"?: string;
+  "rows"?: Array<Array<string>>;
+  "total"?: number;
+}
+
+export interface ModelPitchbookFaq {
+  "answer"?: string;
+  "question"?: string;
+}
+
+export interface ModelPitchbookProfileResponse {
+  "contact"?: Record<string, string>;
+  "description"?: string;
+  "faqs"?: Array<ModelPitchbookFaq>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "kind"?: string;
+  "name"?: string;
+  "overview"?: Record<string, string>;
+  "source_url"?: string;
+  "tables"?: Array<ModelPitchbookDataTable>;
+}
+
+export interface ModelPitchbookCompanyResponseDoc {
+  "code"?: number;
+  "data"?: ModelPitchbookProfileResponse;
+  "msg"?: string;
+}
+
+export interface ModelPitchbookFundResponseDoc {
+  "code"?: number;
+  "data"?: ModelPitchbookProfileResponse;
+  "msg"?: string;
+}
+
+export interface ModelPitchbookInvestorResponseDoc {
+  "code"?: number;
+  "data"?: ModelPitchbookProfileResponse;
+  "msg"?: string;
+}
+
 export interface ModelPolymarketActivityTradesResponse {
   "event_id"?: string;
   "fetched_at"?: string;
@@ -9211,6 +9498,288 @@ export interface ModelRottentomatoesSeriesResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelSecCompanyIntelligenceResponse {
+  "financial_snapshot"?: Record<string, number>;
+  "latest_8k"?: ModelSecFiling;
+  "latest_annual_10k"?: ModelSecFiling;
+  "latest_quarterly_10q"?: ModelSecFiling;
+  "profile"?: ModelSecCompanyProfile;
+  "recent_events"?: Array<ModelSecEventFiling>;
+  "snapshot_fiscal_year"?: number;
+  "snapshot_period_end"?: string;
+  "source_urls"?: Array<string>;
+}
+
+export interface ModelSecCompanyMatch {
+  "cik"?: number;
+  "cik_padded"?: string;
+  "name"?: string;
+  "ticker"?: string;
+}
+
+export interface ModelSecCompanyProfile {
+  "cik"?: number;
+  "name"?: string;
+  "sic"?: string;
+  "sic_description"?: string;
+  "ticker"?: string;
+  "tickers"?: Array<string>;
+}
+
+export interface ModelSecCompanySearchResponse {
+  "count"?: number;
+  "matches"?: Array<ModelSecCompanyMatch>;
+  "query"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelSecEventFiling {
+  "accession_number"?: string;
+  "filing_date"?: string;
+  "items"?: string;
+  "url"?: string;
+}
+
+export interface ModelSecFiling {
+  "accession_number"?: string;
+  "description"?: string;
+  "filing_date"?: string;
+  "filing_index_url"?: string;
+  "form"?: string;
+  "is_xbrl"?: boolean;
+  "items"?: string;
+  "primary_doc_url"?: string;
+  "primary_document"?: string;
+  "report_date"?: string;
+  "size"?: number;
+}
+
+export interface ModelSecFilingDocument {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelSecFilingResponse {
+  "accession_number"?: string;
+  "cik"?: number;
+  "cik_padded"?: string;
+  "description"?: string;
+  "documents"?: Array<ModelSecFilingDocument>;
+  "filing_date"?: string;
+  "filing_index_url"?: string;
+  "form"?: string;
+  "is_xbrl"?: boolean;
+  "items"?: string;
+  "name"?: string;
+  "primary_doc_url"?: string;
+  "primary_document"?: string;
+  "report_date"?: string;
+  "size"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelSecFilingSection {
+  "char_count"?: number;
+  "item"?: string;
+  "text"?: string;
+  "title"?: string;
+  "truncated"?: boolean;
+}
+
+export interface ModelSecFilingSectionsResponse {
+  "accession_number"?: string;
+  "cik"?: number;
+  "count"?: number;
+  "document_url"?: string;
+  "form"?: string;
+  "sections"?: Array<ModelSecFilingSection>;
+  "source_url"?: string;
+}
+
+export interface ModelSecFinancialPeriod {
+  "currency"?: string;
+  "end_date"?: string;
+  "fiscal_period"?: string;
+  "fiscal_year"?: number;
+  "form"?: string;
+  "lines"?: Record<string, number>;
+  "ratios"?: Record<string, number>;
+}
+
+export interface ModelSecFinancialsResponse {
+  "cik"?: number;
+  "line_order"?: Array<string>;
+  "name"?: string;
+  "period"?: string;
+  "periods"?: Array<ModelSecFinancialPeriod>;
+  "source_url"?: string;
+  "statement"?: string;
+  "ticker"?: string;
+}
+
+export interface ModelSecFrameFact {
+  "accession_number"?: string;
+  "cik"?: number;
+  "end"?: string;
+  "entity_name"?: string;
+  "form"?: string;
+  "start"?: string;
+  "value"?: number;
+}
+
+export interface ModelSecFramesResponse {
+  "concept"?: string;
+  "count"?: number;
+  "facts"?: Array<ModelSecFrameFact>;
+  "period"?: string;
+  "source_url"?: string;
+  "taxonomy"?: string;
+  "total"?: number;
+  "unit"?: string;
+}
+
+export interface ModelSecFullTextHit {
+  "accession_number"?: string;
+  "cik"?: number;
+  "company_names"?: Array<string>;
+  "document_url"?: string;
+  "filed_at"?: string;
+  "form"?: string;
+}
+
+export interface ModelSecFullTextSearchResponse {
+  "count"?: number;
+  "hits"?: Array<ModelSecFullTextHit>;
+  "page"?: number;
+  "query"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelSecHolding {
+  "cusip"?: string;
+  "investment_discretion"?: string;
+  "issuer"?: string;
+  "put_call"?: string;
+  "share_type"?: string;
+  "shares"?: number;
+  "title_of_class"?: string;
+  "value"?: number;
+}
+
+export interface ModelSecHoldingsResponse {
+  "accession_number"?: string;
+  "cik"?: number;
+  "count"?: number;
+  "filing_date"?: string;
+  "holdings"?: Array<ModelSecHolding>;
+  "manager_name"?: string;
+  "report_date"?: string;
+  "source_url"?: string;
+  "total_holdings"?: number;
+  "total_value"?: number;
+}
+
+export interface ModelSecInsiderResponse {
+  "cik"?: number;
+  "count"?: number;
+  "name"?: string;
+  "source_url"?: string;
+  "ticker"?: string;
+  "transactions"?: Array<ModelSecInsiderTransaction>;
+}
+
+export interface ModelSecInsiderTransaction {
+  "accession_number"?: string;
+  "acquired_or_disposed"?: string;
+  "code"?: string;
+  "filing_date"?: string;
+  "filing_url"?: string;
+  "form"?: string;
+  "is_director"?: boolean;
+  "is_officer"?: boolean;
+  "is_ten_percent_owner"?: boolean;
+  "owner_name"?: string;
+  "owner_title"?: string;
+  "price_per_share"?: number;
+  "security_title"?: string;
+  "shares"?: number;
+  "shares_owned_after"?: number;
+  "transaction_date"?: string;
+}
+
+export interface ModelSecSubmissionsResponse {
+  "cik"?: number;
+  "cik_padded"?: string;
+  "count"?: number;
+  "filings"?: Array<ModelSecFiling>;
+  "name"?: string;
+  "sic"?: string;
+  "sic_description"?: string;
+  "source_url"?: string;
+  "tickers"?: Array<string>;
+}
+
+export interface ModelSecCompanySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecCompanySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecFilingResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecFilingResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecFilingSectionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecFilingSectionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecFinancialsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecFinancialsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecFramesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecFramesResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecFullTextResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecFullTextSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecHoldingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecHoldingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecInsiderResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecInsiderResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecIntelligenceResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecCompanyIntelligenceResponse;
+  "msg"?: string;
+}
+
+export interface ModelSecSubmissionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSecSubmissionsResponse;
+  "msg"?: string;
+}
+
 export interface ModelShopappAnalysisResponse {
   "currencies"?: Array<string>;
   "discounts"?: ModelShopappDiscountSummary;
@@ -9904,6 +10473,448 @@ export interface ModelSimilarwebSearchResponseDoc {
 export interface ModelSimilarwebWebResponseDoc {
   "code"?: number;
   "data"?: ModelSimilarwebSimilarWebResp;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreEventDetail {
+  "attendance"?: number;
+  "away_score"?: ModelSofascoreScoreLine;
+  "away_team"?: ModelSofascoreTeamRef;
+  "home_score"?: ModelSofascoreScoreLine;
+  "home_team"?: ModelSofascoreTeamRef;
+  "id"?: number;
+  "referee"?: ModelSofascoreReferee;
+  "slug"?: string;
+  "start_time"?: string;
+  "start_timestamp"?: number;
+  "status"?: ModelSofascoreEventStatus;
+  "tournament"?: ModelSofascoreTournamentRef;
+  "venue"?: ModelSofascoreVenue;
+  "winner_code"?: number;
+}
+
+export interface ModelSofascoreEventH2Hresponse {
+  "event_id"?: number;
+  "fetched_at"?: string;
+  "manager_duel"?: ModelSofascoreTeamDuel;
+  "source_url"?: string;
+  "team_duel"?: ModelSofascoreTeamDuel;
+}
+
+export interface ModelSofascoreEventIncidentsResponse {
+  "count"?: number;
+  "event_id"?: number;
+  "fetched_at"?: string;
+  "incidents"?: Array<ModelSofascoreIncident>;
+  "source_url"?: string;
+}
+
+export interface ModelSofascoreEventLineupsResponse {
+  "away"?: ModelSofascoreTeamLineup;
+  "confirmed"?: boolean;
+  "event_id"?: number;
+  "fetched_at"?: string;
+  "home"?: ModelSofascoreTeamLineup;
+  "source_url"?: string;
+}
+
+export interface ModelSofascoreEventOddsResponse {
+  "count"?: number;
+  "event_id"?: number;
+  "fetched_at"?: string;
+  "markets"?: Array<ModelSofascoreOddsMarket>;
+  "source_url"?: string;
+}
+
+export interface ModelSofascoreEventResponse {
+  "event"?: ModelSofascoreEventDetail;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelSofascoreEventStatisticsResponse {
+  "event_id"?: number;
+  "fetched_at"?: string;
+  "periods"?: Array<ModelSofascoreStatPeriod>;
+  "source_url"?: string;
+}
+
+export interface ModelSofascoreEventStatus {
+  "code"?: number;
+  "description"?: string;
+  "type"?: string;
+}
+
+export interface ModelSofascoreEventSummary {
+  "away_score"?: ModelSofascoreScoreLine;
+  "away_team"?: ModelSofascoreTeamRef;
+  "home_score"?: ModelSofascoreScoreLine;
+  "home_team"?: ModelSofascoreTeamRef;
+  "id"?: number;
+  "slug"?: string;
+  "start_time"?: string;
+  "start_timestamp"?: number;
+  "status"?: ModelSofascoreEventStatus;
+  "tournament"?: ModelSofascoreTournamentRef;
+  "winner_code"?: number;
+}
+
+export interface ModelSofascoreIncident {
+  "added_time"?: number;
+  "away_score"?: number;
+  "card_color"?: string;
+  "home_score"?: number;
+  "is_home"?: boolean;
+  "player"?: string;
+  "player_in"?: string;
+  "player_out"?: string;
+  "reason"?: string;
+  "text"?: string;
+  "time"?: number;
+  "type"?: string;
+}
+
+export interface ModelSofascoreLineupPlayer {
+  "jersey_number"?: string;
+  "player"?: ModelSofascorePlayerRef;
+  "position"?: string;
+  "substitute"?: boolean;
+}
+
+export interface ModelSofascoreLiveEventsResponse {
+  "count"?: number;
+  "events"?: Array<ModelSofascoreEventSummary>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelSofascoreOddsChoice {
+  "name"?: string;
+  "value"?: string;
+  "winning"?: boolean;
+}
+
+export interface ModelSofascoreOddsMarket {
+  "choices"?: Array<ModelSofascoreOddsChoice>;
+  "group"?: string;
+  "name"?: string;
+  "period"?: string;
+  "suspended"?: boolean;
+}
+
+export interface ModelSofascorePlayerDetail {
+  "country"?: string;
+  "date_of_birth"?: string;
+  "deceased"?: boolean;
+  "height"?: number;
+  "id"?: number;
+  "jersey_number"?: string;
+  "market_value"?: number;
+  "market_value_currency"?: string;
+  "name"?: string;
+  "position"?: string;
+  "preferred_foot"?: string;
+  "short_name"?: string;
+  "slug"?: string;
+  "team"?: ModelSofascoreTeamRef;
+}
+
+export interface ModelSofascorePlayerRef {
+  "country"?: string;
+  "id"?: number;
+  "name"?: string;
+  "position"?: string;
+  "short_name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSofascorePlayerResponse {
+  "fetched_at"?: string;
+  "player"?: ModelSofascorePlayerDetail;
+  "source_url"?: string;
+}
+
+export interface ModelSofascoreReferee {
+  "country"?: string;
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelSofascoreRoundEventsResponse {
+  "count"?: number;
+  "events"?: Array<ModelSofascoreEventSummary>;
+  "fetched_at"?: string;
+  "has_next_page"?: boolean;
+  "round"?: number;
+  "season_id"?: number;
+  "source_url"?: string;
+  "tournament_id"?: number;
+}
+
+export interface ModelSofascoreScoreLine {
+  "current"?: number;
+  "period1"?: number;
+  "period2"?: number;
+}
+
+export interface ModelSofascoreSearchResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "results"?: Array<ModelSofascoreSearchResult>;
+  "source_url"?: string;
+}
+
+export interface ModelSofascoreSearchResult {
+  "country"?: string;
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+  "sport"?: string;
+  "team_id"?: number;
+  "team_name"?: string;
+  "type"?: string;
+}
+
+export interface ModelSofascoreSeason {
+  "id"?: number;
+  "name"?: string;
+  "year"?: string;
+}
+
+export interface ModelSofascoreSquadPlayer {
+  "country"?: string;
+  "date_of_birth"?: string;
+  "height"?: number;
+  "id"?: number;
+  "jersey_number"?: string;
+  "market_value"?: number;
+  "market_value_currency"?: string;
+  "name"?: string;
+  "position"?: string;
+  "preferred_foot"?: string;
+  "short_name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSofascoreStandingsGroup {
+  "name"?: string;
+  "rows"?: Array<ModelSofascoreStandingsRow>;
+}
+
+export interface ModelSofascoreStandingsResponse {
+  "fetched_at"?: string;
+  "groups"?: Array<ModelSofascoreStandingsGroup>;
+  "season_id"?: number;
+  "source_url"?: string;
+  "tournament_id"?: number;
+  "type"?: string;
+}
+
+export interface ModelSofascoreStandingsRow {
+  "draws"?: number;
+  "losses"?: number;
+  "matches"?: number;
+  "points"?: number;
+  "position"?: number;
+  "promotion"?: string;
+  "scores_against"?: number;
+  "scores_for"?: number;
+  "team"?: ModelSofascoreTeamRef;
+  "wins"?: number;
+}
+
+export interface ModelSofascoreStatGroup {
+  "items"?: Array<ModelSofascoreStatItem>;
+  "name"?: string;
+}
+
+export interface ModelSofascoreStatItem {
+  "away"?: string;
+  "home"?: string;
+  "key"?: string;
+  "name"?: string;
+}
+
+export interface ModelSofascoreStatPeriod {
+  "groups"?: Array<ModelSofascoreStatGroup>;
+  "period"?: string;
+}
+
+export interface ModelSofascoreTeamDetail {
+  "country"?: string;
+  "id"?: number;
+  "manager"?: string;
+  "name"?: string;
+  "national"?: boolean;
+  "primary_color"?: string;
+  "short_name"?: string;
+  "slug"?: string;
+  "sport"?: string;
+  "tournament_id"?: number;
+  "tournament_name"?: string;
+  "venue"?: string;
+  "venue_capacity"?: number;
+  "venue_city"?: string;
+}
+
+export interface ModelSofascoreTeamDuel {
+  "away_wins"?: number;
+  "draws"?: number;
+  "home_wins"?: number;
+}
+
+export interface ModelSofascoreTeamEventsResponse {
+  "count"?: number;
+  "direction"?: string;
+  "events"?: Array<ModelSofascoreEventSummary>;
+  "fetched_at"?: string;
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "source_url"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelSofascoreTeamLineup {
+  "formation"?: string;
+  "players"?: Array<ModelSofascoreLineupPlayer>;
+}
+
+export interface ModelSofascoreTeamPlayersResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "players"?: Array<ModelSofascoreSquadPlayer>;
+  "source_url"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelSofascoreTeamRef {
+  "country"?: string;
+  "id"?: number;
+  "name"?: string;
+  "national"?: boolean;
+  "short_name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSofascoreTeamResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "team"?: ModelSofascoreTeamDetail;
+}
+
+export interface ModelSofascoreTournamentRef {
+  "category"?: string;
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+  "unique_tournament_id"?: number;
+  "unique_tournament_name"?: string;
+}
+
+export interface ModelSofascoreTournamentSeasonsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "seasons"?: Array<ModelSofascoreSeason>;
+  "source_url"?: string;
+  "tournament_id"?: number;
+}
+
+export interface ModelSofascoreVenue {
+  "capacity"?: number;
+  "city"?: string;
+  "country"?: string;
+  "name"?: string;
+}
+
+export interface ModelSofascoreEventH2HresponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreEventH2Hresponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreEventIncidentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreEventIncidentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreEventLineupsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreEventLineupsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreEventOddsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreEventOddsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreEventResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreEventResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreEventStatisticsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreEventStatisticsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreLiveEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreLiveEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascorePlayerResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascorePlayerResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreRoundEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreRoundEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreStandingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreStandingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreTeamEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreTeamEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreTeamPlayersResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreTeamPlayersResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreTeamResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreTeamResponse;
+  "msg"?: string;
+}
+
+export interface ModelSofascoreTournamentSeasonsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSofascoreTournamentSeasonsResponse;
   "msg"?: string;
 }
 
@@ -11465,6 +12476,308 @@ export interface ModelTripadvisorTripadvisorReviewsResponseDoc {
 export interface ModelTripadvisorTripadvisorSearchResponseDoc {
   "code"?: number;
   "data"?: ModelTripadvisorSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustmrrAcquireListing {
+  "asking_price"?: number;
+  "category"?: string;
+  "description"?: string;
+  "first_listed_for_sale_at"?: string;
+  "founded_date"?: string;
+  "growth_30d"?: number;
+  "icon"?: string;
+  "listing_tier"?: string;
+  "multiple"?: number;
+  "name"?: string;
+  "offer_count"?: number;
+  "payment_provider"?: string;
+  "profit_margin_last_30_days"?: number;
+  "revenue_last_30_days"?: number;
+  "slug"?: string;
+  "stealth_mode"?: boolean;
+  "url"?: string;
+}
+
+export interface ModelTrustmrrAcquireResponse {
+  "count"?: number;
+  "startups"?: Array<ModelTrustmrrAcquireListing>;
+}
+
+export interface ModelTrustmrrAskingPricePoint {
+  "created_at"?: string;
+  "price"?: number;
+}
+
+export interface ModelTrustmrrCategoriesResponse {
+  "categories"?: Array<ModelTrustmrrCategory>;
+  "count"?: number;
+}
+
+export interface ModelTrustmrrCategory {
+  "description"?: string;
+  "icon"?: string;
+  "keywords"?: Array<string>;
+  "label"?: string;
+  "label_short"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelTrustmrrCategoryResponse {
+  "count"?: number;
+  "slug"?: string;
+  "startups"?: Array<ModelTrustmrrCategoryStartup>;
+  "url"?: string;
+}
+
+export interface ModelTrustmrrCategoryStartup {
+  "current_last_30_days_revenue"?: number;
+  "current_mrr"?: number;
+  "current_total_revenue"?: number;
+  "description"?: string;
+  "icon"?: string;
+  "is_merchant_of_record"?: boolean;
+  "name"?: string;
+  "on_sale"?: boolean;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelTrustmrrLeaderboardEntry {
+  "current_last_30_days_revenue"?: number;
+  "current_mrr"?: number;
+  "current_total_revenue"?: number;
+  "description"?: string;
+  "growth_30d"?: number;
+  "growth_mrr_30d"?: number;
+  "icon"?: string;
+  "is_merchant_of_record"?: boolean;
+  "name"?: string;
+  "on_sale"?: boolean;
+  "rank"?: number;
+  "revenue_per_visitor_last_30_days"?: number;
+  "slug"?: string;
+  "stealth_mode"?: boolean;
+  "traffic_last_30_days"?: number;
+  "url"?: string;
+  "x_founder_name"?: string;
+  "x_handle"?: string;
+  "x_profile_picture"?: string;
+}
+
+export type ModelTrustmrrLeaderboardMetric = "mrr" | "last_30_days_revenue" | "all_time_revenue" | "growth" | "traffic" | "revenue_per_visitor";
+
+export interface ModelTrustmrrLeaderboardResponse {
+  "count"?: number;
+  "entries"?: Array<ModelTrustmrrLeaderboardEntry>;
+  "metric"?: ModelTrustmrrLeaderboardMetric;
+}
+
+export interface ModelTrustmrrMarketplaceResponse {
+  "best_deals"?: Array<ModelTrustmrrMarketplaceStartup>;
+  "recently_listed"?: Array<ModelTrustmrrMarketplaceStartup>;
+}
+
+export interface ModelTrustmrrMarketplaceRevenue {
+  "last_30_days"?: number;
+  "mrr"?: number;
+  "total"?: number;
+}
+
+export interface ModelTrustmrrMarketplaceStartup {
+  "active_subscriptions"?: number;
+  "asking_price"?: number;
+  "category"?: string;
+  "country"?: string;
+  "customers"?: number;
+  "description"?: string;
+  "first_listed_for_sale_at"?: string;
+  "founded_date"?: string;
+  "google_search_impressions_last_30_days"?: number;
+  "growth_30d"?: number;
+  "growth_mrr_30d"?: number;
+  "icon"?: string;
+  "multiple"?: number;
+  "name"?: string;
+  "on_sale"?: boolean;
+  "payment_provider"?: string;
+  "profit_margin_last_30_days"?: number;
+  "rank"?: number;
+  "revenue"?: ModelTrustmrrMarketplaceRevenue;
+  "revenue_per_visitor"?: number;
+  "slug"?: string;
+  "target_audience"?: string;
+  "url"?: string;
+  "visitors_last_30_days"?: number;
+  "website"?: string;
+  "x_handle"?: string;
+  "x_profile_picture"?: string;
+}
+
+export interface ModelTrustmrrStartup {
+  "ahrefs_domain"?: string;
+  "ahrefs_domain_rating"?: number;
+  "asking_price"?: number;
+  "asking_price_history"?: Array<ModelTrustmrrAskingPricePoint>;
+  "branding_primary_color"?: string;
+  "branding_secondary_color"?: string;
+  "category"?: string;
+  "category_slug"?: string;
+  "country"?: string;
+  "created_at"?: string;
+  "deal_score"?: number;
+  "description"?: string;
+  "enrichment"?: ModelTrustmrrStartupEnrichment;
+  "first_listed_for_sale_at"?: string;
+  "founded_date"?: string;
+  "growth_30d"?: number;
+  "growth_mrr_30d"?: number;
+  "has_dofollow_backlink"?: boolean;
+  "has_google_analytics"?: boolean;
+  "has_search_console"?: boolean;
+  "icon"?: string;
+  "insight_overrides"?: ModelTrustmrrStartupInsight;
+  "is_merchant_of_record"?: boolean;
+  "is_sponsored"?: boolean;
+  "listing_tier"?: string;
+  "looking_for_cofounder"?: boolean;
+  "looking_for_cofounder_message"?: string;
+  "marketing_channels"?: Array<ModelTrustmrrStartupChannel>;
+  "merchant_category_code"?: string;
+  "mrr_last_synced_at"?: string;
+  "multiple"?: number;
+  "name"?: string;
+  "offer_count"?: number;
+  "on_sale"?: boolean;
+  "payment_provider"?: string;
+  "profit_margin_last_30_days"?: number;
+  "rank"?: number;
+  "revenue"?: ModelTrustmrrStartupRevenue;
+  "revenue_last_synced_at"?: string;
+  "revenue_per_visitor_last_30_days"?: number;
+  "secondary_payment_provider"?: string;
+  "seller_message"?: string;
+  "slug"?: string;
+  "status"?: string;
+  "stealth_mode"?: boolean;
+  "target_audience"?: string;
+  "tech_stack"?: Array<ModelTrustmrrStartupTech>;
+  "traffic_last_12_months"?: number;
+  "traffic_last_24_hours"?: number;
+  "traffic_last_30_days"?: number;
+  "traffic_last_7_days"?: number;
+  "updated_at"?: string;
+  "url"?: string;
+  "user_category"?: string;
+  "user_category_slug"?: string;
+  "website"?: string;
+  "x_follower_count"?: number;
+  "x_founder_name"?: string;
+  "x_handle"?: string;
+  "x_profile_picture"?: string;
+}
+
+export interface ModelTrustmrrStartupChannel {
+  "category"?: string;
+  "slug"?: string;
+}
+
+export interface ModelTrustmrrStartupEnrichment {
+  "business_type"?: string;
+  "estimated_user_count"?: number;
+  "funding_status"?: string;
+  "last_enriched_at"?: string;
+  "pricing_model"?: string;
+  "problem_solved"?: string;
+  "screenshots"?: Array<ModelTrustmrrStartupScreenshot>;
+  "tags"?: Array<string>;
+  "target_persona"?: string;
+  "value_proposition"?: string;
+}
+
+export interface ModelTrustmrrStartupInsight {
+  "business_type"?: string;
+  "estimated_user_count"?: number;
+  "pricing_model"?: string;
+  "problem_solved"?: string;
+  "target_persona"?: string;
+  "updated_at"?: string;
+  "value_proposition"?: string;
+}
+
+export interface ModelTrustmrrStartupRef {
+  "last_modified"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelTrustmrrStartupRevenue {
+  "active_subscriptions"?: number;
+  "customers"?: number;
+  "last_30_days"?: number;
+  "mrr"?: number;
+  "total"?: number;
+}
+
+export interface ModelTrustmrrStartupScreenshot {
+  "captured_at"?: string;
+  "label"?: string;
+  "url"?: string;
+}
+
+export interface ModelTrustmrrStartupTech {
+  "category"?: string;
+  "slug"?: string;
+}
+
+export interface ModelTrustmrrStartupsResponse {
+  "has_next"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
+  "startups"?: Array<ModelTrustmrrStartupRef>;
+  "total"?: number;
+}
+
+export interface ModelTrustmrrAcquireResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustmrrAcquireResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustmrrCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustmrrCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustmrrCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustmrrCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustmrrLeaderboardResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustmrrLeaderboardResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustmrrMarketplaceResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustmrrMarketplaceResponse;
+  "msg"?: string;
+}
+
+export interface ModelTrustmrrStartupResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustmrrStartup;
+  "msg"?: string;
+}
+
+export interface ModelTrustmrrStartupsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTrustmrrStartupsResponse;
   "msg"?: string;
 }
 
@@ -13610,8 +14923,30 @@ export interface ChromeWebStoreChromewebstoreCollectionParams {
   "lang"?: string;
 }
 
+export type ChromeWebStoreChromewebstoreDeveloperResponse = CrawloraResponse<ModelChromewebstoreDeveloperResponseDoc>;
+export interface ChromeWebStoreChromewebstoreDeveloperParams {
+  "id": string;
+  "num"?: number;
+  "country"?: string;
+  "lang"?: string;
+}
+
 export type ChromeWebStoreChromewebstoreItemResponse = CrawloraResponse<ModelChromewebstoreItemResponseDoc>;
 export interface ChromeWebStoreChromewebstoreItemParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstorePermissionsResponse = CrawloraResponse<ModelChromewebstorePermissionsResponseDoc>;
+export interface ChromeWebStoreChromewebstorePermissionsParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type ChromeWebStoreChromewebstorePrivacyResponse = CrawloraResponse<ModelChromewebstorePrivacyResponseDoc>;
+export interface ChromeWebStoreChromewebstorePrivacyParams {
   "id": string;
   "country"?: string;
   "lang"?: string;
@@ -13621,6 +14956,7 @@ export type ChromeWebStoreChromewebstoreReviewsResponse = CrawloraResponse<Model
 export interface ChromeWebStoreChromewebstoreReviewsParams {
   "id": string;
   "num"?: number;
+  "sort"?: "recent" | "helpful";
   "country"?: string;
   "lang"?: string;
 }
@@ -14126,6 +15462,103 @@ export interface DatasetsProducthuntTrendsSearchParams {
   "launched_before"?: string;
   "min_votes"?: number;
   "min_launches"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsTechstackFacetsResponse = CrawloraResponse<ModelDatasetsTechstackFacetResponseDoc>;
+export interface DatasetsTechstackFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "technology"?: Array<string>;
+  "any_of"?: Array<string>;
+  "not"?: Array<string>;
+  "category"?: string;
+  "cms"?: string;
+  "ecommerce"?: string;
+  "cdn"?: string;
+  "web_server"?: string;
+  "server_language"?: string;
+  "tld"?: string;
+  "render_tier"?: string;
+  "seed_source"?: string;
+  "has_captcha"?: boolean;
+  "reachable"?: boolean;
+  "min_tech_count"?: number;
+  "run_id"?: string;
+}
+
+export type DatasetsTechstackItemResponse = CrawloraResponse<ModelDatasetsTechstackItemResponseDoc>;
+export interface DatasetsTechstackItemParams {
+  "domain": string;
+}
+
+export type DatasetsTechstackSearchResponse = CrawloraResponse<ModelDatasetsTechstackSearchResponseDoc>;
+export interface DatasetsTechstackSearchParams {
+  "q"?: string;
+  "technology"?: Array<string>;
+  "any_of"?: Array<string>;
+  "not"?: Array<string>;
+  "category"?: string;
+  "cms"?: string;
+  "ecommerce"?: string;
+  "cdn"?: string;
+  "web_server"?: string;
+  "server_language"?: string;
+  "tld"?: string;
+  "render_tier"?: string;
+  "seed_source"?: string;
+  "has_captcha"?: boolean;
+  "reachable"?: boolean;
+  "min_tech_count"?: number;
+  "run_id"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsTrustmrrFacetsResponse = CrawloraResponse<ModelDatasetsTrustmrrFacetResponseDoc>;
+export interface DatasetsTrustmrrFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "category"?: string;
+  "country"?: string;
+  "payment_provider"?: string;
+  "on_sale"?: boolean;
+  "min_mrr"?: number;
+}
+
+export type DatasetsTrustmrrItemResponse = CrawloraResponse<ModelDatasetsTrustmrrItemResponseDoc>;
+export interface DatasetsTrustmrrItemParams {
+  "slug": string;
+}
+
+export type DatasetsTrustmrrSearchResponse = CrawloraResponse<ModelDatasetsTrustmrrSearchResponseDoc>;
+export interface DatasetsTrustmrrSearchParams {
+  "q"?: string;
+  "slug"?: string;
+  "category"?: string;
+  "country"?: string;
+  "payment_provider"?: string;
+  "target_audience"?: string;
+  "business_type"?: string;
+  "tech"?: string;
+  "channel"?: string;
+  "listing_tier"?: string;
+  "status"?: string;
+  "on_sale"?: boolean;
+  "is_sponsored"?: boolean;
+  "min_mrr"?: number;
+  "max_mrr"?: number;
+  "min_revenue"?: number;
+  "min_revenue_30d"?: number;
+  "min_traffic"?: number;
+  "min_growth"?: number;
+  "max_multiple"?: number;
+  "min_asking_price"?: number;
+  "max_asking_price"?: number;
+  "min_ahrefs_dr"?: number;
   "sort"?: string;
   "page"?: number;
   "page_size"?: number;
@@ -15211,6 +16644,24 @@ export type MetaPingResponse = CrawloraResponse<ModelApiPingResponseDoc>;
 export interface MetaPingParams {
 }
 
+export type PitchBookPitchbookCompanyResponse = CrawloraResponse<ModelPitchbookCompanyResponseDoc>;
+export interface PitchBookPitchbookCompanyParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type PitchBookPitchbookFundResponse = CrawloraResponse<ModelPitchbookFundResponseDoc>;
+export interface PitchBookPitchbookFundParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type PitchBookPitchbookInvestorResponse = CrawloraResponse<ModelPitchbookInvestorResponseDoc>;
+export interface PitchBookPitchbookInvestorParams {
+  "id"?: string;
+  "url"?: string;
+}
+
 export type PolymarketActivityTradesResponse = CrawloraResponse<ModelPolymarketActivityTradesResponseDoc>;
 export interface PolymarketActivityTradesParams {
   "limit"?: number;
@@ -15937,6 +17388,84 @@ export interface RottenTomatoesRottentomatoesSeriesParams {
   "url"?: string;
 }
 
+export type SecEdgarSecCompanyIntelligenceResponse = CrawloraResponse<ModelSecIntelligenceResponseDoc>;
+export interface SecEdgarSecCompanyIntelligenceParams {
+  "cik"?: string;
+  "ticker"?: string;
+}
+
+export type SecEdgarSecCompanySearchResponse = CrawloraResponse<ModelSecCompanySearchResponseDoc>;
+export interface SecEdgarSecCompanySearchParams {
+  "q": string;
+  "limit"?: number;
+}
+
+export type SecEdgarSecCompanySubmissionsResponse = CrawloraResponse<ModelSecSubmissionsResponseDoc>;
+export interface SecEdgarSecCompanySubmissionsParams {
+  "cik"?: string;
+  "ticker"?: string;
+  "form"?: string;
+  "from"?: string;
+  "to"?: string;
+  "limit"?: number;
+}
+
+export type SecEdgarSecFilingResponse = CrawloraResponse<ModelSecFilingResponseDoc>;
+export interface SecEdgarSecFilingParams {
+  "cik"?: string;
+  "ticker"?: string;
+  "accession": string;
+}
+
+export type SecEdgarSecFilingSectionsResponse = CrawloraResponse<ModelSecFilingSectionsResponseDoc>;
+export interface SecEdgarSecFilingSectionsParams {
+  "cik"?: string;
+  "ticker"?: string;
+  "accession": string;
+  "items"?: string;
+  "max_chars"?: number;
+}
+
+export type SecEdgarSecFinancialsResponse = CrawloraResponse<ModelSecFinancialsResponseDoc>;
+export interface SecEdgarSecFinancialsParams {
+  "cik"?: string;
+  "ticker"?: string;
+  "statement"?: "income" | "balance" | "cash_flow";
+  "period"?: "annual" | "quarterly";
+  "limit"?: number;
+}
+
+export type SecEdgarSecFramesResponse = CrawloraResponse<ModelSecFramesResponseDoc>;
+export interface SecEdgarSecFramesParams {
+  "concept": string;
+  "period": string;
+  "unit"?: string;
+  "taxonomy"?: "dei" | "ifrs-full" | "srt" | "us-gaap";
+  "limit"?: number;
+}
+
+export type SecEdgarSecFullTextSearchResponse = CrawloraResponse<ModelSecFullTextResponseDoc>;
+export interface SecEdgarSecFullTextSearchParams {
+  "q": string;
+  "forms"?: string;
+  "from"?: string;
+  "to"?: string;
+  "page"?: number;
+}
+
+export type SecEdgarSecInsiderResponse = CrawloraResponse<ModelSecInsiderResponseDoc>;
+export interface SecEdgarSecInsiderParams {
+  "cik"?: string;
+  "ticker"?: string;
+  "limit"?: number;
+}
+
+export type SecEdgarSecInstitutionalHoldingsResponse = CrawloraResponse<ModelSecHoldingsResponseDoc>;
+export interface SecEdgarSecInstitutionalHoldingsParams {
+  "cik": string;
+  "limit"?: number;
+}
+
 export type ShopAppAnalysisResponse = CrawloraResponse<ModelShopappAnalysisResponseDoc>;
 export interface ShopAppAnalysisParams {
   "query": string;
@@ -16124,6 +17653,87 @@ export interface SimilarWebSearchParams {
 export type SimilarWebWebResponse = CrawloraResponse<ModelSimilarwebWebResponseDoc>;
 export interface SimilarWebWebParams {
   "domain": string;
+}
+
+export type SofaScoreSofascoreEventResponse = CrawloraResponse<ModelSofascoreEventResponseDoc>;
+export interface SofaScoreSofascoreEventParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreEventH2hResponse = CrawloraResponse<ModelSofascoreEventH2HresponseDoc>;
+export interface SofaScoreSofascoreEventH2hParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreEventIncidentsResponse = CrawloraResponse<ModelSofascoreEventIncidentsResponseDoc>;
+export interface SofaScoreSofascoreEventIncidentsParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreEventLineupsResponse = CrawloraResponse<ModelSofascoreEventLineupsResponseDoc>;
+export interface SofaScoreSofascoreEventLineupsParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreEventOddsResponse = CrawloraResponse<ModelSofascoreEventOddsResponseDoc>;
+export interface SofaScoreSofascoreEventOddsParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreEventStatisticsResponse = CrawloraResponse<ModelSofascoreEventStatisticsResponseDoc>;
+export interface SofaScoreSofascoreEventStatisticsParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreLiveEventsResponse = CrawloraResponse<ModelSofascoreLiveEventsResponseDoc>;
+export interface SofaScoreSofascoreLiveEventsParams {
+  "sport": "football" | "basketball" | "tennis";
+}
+
+export type SofaScoreSofascorePlayerResponse = CrawloraResponse<ModelSofascorePlayerResponseDoc>;
+export interface SofaScoreSofascorePlayerParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreRoundEventsResponse = CrawloraResponse<ModelSofascoreRoundEventsResponseDoc>;
+export interface SofaScoreSofascoreRoundEventsParams {
+  "id": string;
+  "season": string;
+  "round": number;
+}
+
+export type SofaScoreSofascoreSearchResponse = CrawloraResponse<ModelSofascoreSearchResponseDoc>;
+export interface SofaScoreSofascoreSearchParams {
+  "q": string;
+}
+
+export type SofaScoreSofascoreStandingsResponse = CrawloraResponse<ModelSofascoreStandingsResponseDoc>;
+export interface SofaScoreSofascoreStandingsParams {
+  "id": string;
+  "season": string;
+  "type": "total" | "home" | "away";
+}
+
+export type SofaScoreSofascoreTeamResponse = CrawloraResponse<ModelSofascoreTeamResponseDoc>;
+export interface SofaScoreSofascoreTeamParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreTeamEventsResponse = CrawloraResponse<ModelSofascoreTeamEventsResponseDoc>;
+export interface SofaScoreSofascoreTeamEventsParams {
+  "id": string;
+  "direction": "next" | "last";
+  "page"?: number;
+}
+
+export type SofaScoreSofascoreTeamPlayersResponse = CrawloraResponse<ModelSofascoreTeamPlayersResponseDoc>;
+export interface SofaScoreSofascoreTeamPlayersParams {
+  "id": string;
+}
+
+export type SofaScoreSofascoreTournamentSeasonsResponse = CrawloraResponse<ModelSofascoreTournamentSeasonsResponseDoc>;
+export interface SofaScoreSofascoreTournamentSeasonsParams {
+  "id": string;
 }
 
 export type SpotifyPodcastsCategoriesResponse = CrawloraResponse<ModelSpotifyBrowsePageResponseDoc>;
@@ -16665,6 +18275,39 @@ export interface TripAdvisorTripadvisorSearchParams {
   "locale"?: string;
   "currency"?: string;
   "sort"?: string;
+}
+
+export type TrustMrrTrustmrrAcquireResponse = CrawloraResponse<ModelTrustmrrAcquireResponseDoc>;
+export interface TrustMrrTrustmrrAcquireParams {
+}
+
+export type TrustMrrTrustmrrCategoriesResponse = CrawloraResponse<ModelTrustmrrCategoriesResponseDoc>;
+export interface TrustMrrTrustmrrCategoriesParams {
+}
+
+export type TrustMrrTrustmrrCategoryResponse = CrawloraResponse<ModelTrustmrrCategoryResponseDoc>;
+export interface TrustMrrTrustmrrCategoryParams {
+  "slug": string;
+}
+
+export type TrustMrrTrustmrrLeaderboardResponse = CrawloraResponse<ModelTrustmrrLeaderboardResponseDoc>;
+export interface TrustMrrTrustmrrLeaderboardParams {
+  "metric"?: "mrr" | "last_30_days_revenue" | "all_time_revenue" | "growth" | "traffic" | "revenue_per_visitor";
+}
+
+export type TrustMrrTrustmrrMarketplaceResponse = CrawloraResponse<ModelTrustmrrMarketplaceResponseDoc>;
+export interface TrustMrrTrustmrrMarketplaceParams {
+}
+
+export type TrustMrrTrustmrrStartupResponse = CrawloraResponse<ModelTrustmrrStartupResponseDoc>;
+export interface TrustMrrTrustmrrStartupParams {
+  "slug": string;
+}
+
+export type TrustMrrTrustmrrStartupsResponse = CrawloraResponse<ModelTrustmrrStartupsResponseDoc>;
+export interface TrustMrrTrustmrrStartupsParams {
+  "page"?: number;
+  "page_size"?: number;
 }
 
 export type TrustpilotBusinessSearchResponse = CrawloraResponse<ModelTrustpilotBusinessSearchResponseDoc>;
@@ -17233,7 +18876,10 @@ export interface ChromeWebStoreService {
   chromewebstoreCategory<T = ChromeWebStoreChromewebstoreCategoryResponse>(params: ChromeWebStoreChromewebstoreCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromewebstoreCharts<T = ChromeWebStoreChromewebstoreChartsResponse>(params?: ChromeWebStoreChromewebstoreChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromewebstoreCollection<T = ChromeWebStoreChromewebstoreCollectionResponse>(params: ChromeWebStoreChromewebstoreCollectionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstoreDeveloper<T = ChromeWebStoreChromewebstoreDeveloperResponse>(params: ChromeWebStoreChromewebstoreDeveloperParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromewebstoreItem<T = ChromeWebStoreChromewebstoreItemResponse>(params: ChromeWebStoreChromewebstoreItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstorePermissions<T = ChromeWebStoreChromewebstorePermissionsResponse>(params: ChromeWebStoreChromewebstorePermissionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromewebstorePrivacy<T = ChromeWebStoreChromewebstorePrivacyResponse>(params: ChromeWebStoreChromewebstorePrivacyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromewebstoreReviews<T = ChromeWebStoreChromewebstoreReviewsResponse>(params: ChromeWebStoreChromewebstoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromewebstoreSearch<T = ChromeWebStoreChromewebstoreSearchResponse>(params: ChromeWebStoreChromewebstoreSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromewebstoreSimilar<T = ChromeWebStoreChromewebstoreSimilarResponse>(params: ChromeWebStoreChromewebstoreSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -17297,6 +18943,12 @@ export interface DatasetsService {
   producthuntProductsSearch<T = DatasetsProducthuntProductsSearchResponse>(params?: DatasetsProducthuntProductsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntTrendsFacets<T = DatasetsProducthuntTrendsFacetsResponse>(params: DatasetsProducthuntTrendsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntTrendsSearch<T = DatasetsProducthuntTrendsSearchResponse>(params?: DatasetsProducthuntTrendsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  techstackFacets<T = DatasetsTechstackFacetsResponse>(params: DatasetsTechstackFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  techstackItem<T = DatasetsTechstackItemResponse>(params: DatasetsTechstackItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  techstackSearch<T = DatasetsTechstackSearchResponse>(params?: DatasetsTechstackSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrFacets<T = DatasetsTrustmrrFacetsResponse>(params: DatasetsTrustmrrFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrItem<T = DatasetsTrustmrrItemResponse>(params: DatasetsTrustmrrItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrSearch<T = DatasetsTrustmrrSearchResponse>(params?: DatasetsTrustmrrSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface EBayService {
@@ -17500,6 +19152,12 @@ export interface MetaService {
   ready<T = MetaReadyResponse>(params?: MetaReadyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface PitchBookService {
+  pitchbookCompany<T = PitchBookPitchbookCompanyResponse>(params?: PitchBookPitchbookCompanyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookFund<T = PitchBookPitchbookFundResponse>(params?: PitchBookPitchbookFundParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookInvestor<T = PitchBookPitchbookInvestorResponse>(params?: PitchBookPitchbookInvestorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface PolymarketService {
   activityTrades<T = PolymarketActivityTradesResponse>(params?: PolymarketActivityTradesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   clobMarket<T = PolymarketClobMarketResponse>(params: PolymarketClobMarketParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -17622,6 +19280,19 @@ export interface RottenTomatoesService {
   rottentomatoesSeries<T = RottenTomatoesRottentomatoesSeriesResponse>(params?: RottenTomatoesRottentomatoesSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface SecEdgarService {
+  secCompanyIntelligence<T = SecEdgarSecCompanyIntelligenceResponse>(params?: SecEdgarSecCompanyIntelligenceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secCompanySearch<T = SecEdgarSecCompanySearchResponse>(params: SecEdgarSecCompanySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secCompanySubmissions<T = SecEdgarSecCompanySubmissionsResponse>(params?: SecEdgarSecCompanySubmissionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secFiling<T = SecEdgarSecFilingResponse>(params: SecEdgarSecFilingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secFilingSections<T = SecEdgarSecFilingSectionsResponse>(params: SecEdgarSecFilingSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secFinancials<T = SecEdgarSecFinancialsResponse>(params?: SecEdgarSecFinancialsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secFrames<T = SecEdgarSecFramesResponse>(params: SecEdgarSecFramesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secFullTextSearch<T = SecEdgarSecFullTextSearchResponse>(params: SecEdgarSecFullTextSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secInsider<T = SecEdgarSecInsiderResponse>(params?: SecEdgarSecInsiderParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secInstitutionalHoldings<T = SecEdgarSecInstitutionalHoldingsResponse>(params: SecEdgarSecInstitutionalHoldingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ShopAppService {
   analysis<T = ShopAppAnalysisResponse>(params: ShopAppAnalysisParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categories<T = ShopAppCategoriesResponse>(params?: ShopAppCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -17658,6 +19329,24 @@ export interface ShopifyService {
 export interface SimilarWebService {
   search<T = SimilarWebSearchResponse>(params: SimilarWebSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   web<T = SimilarWebWebResponse>(params: SimilarWebWebParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface SofaScoreService {
+  sofascoreEvent<T = SofaScoreSofascoreEventResponse>(params: SofaScoreSofascoreEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreEventH2h<T = SofaScoreSofascoreEventH2hResponse>(params: SofaScoreSofascoreEventH2hParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreEventIncidents<T = SofaScoreSofascoreEventIncidentsResponse>(params: SofaScoreSofascoreEventIncidentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreEventLineups<T = SofaScoreSofascoreEventLineupsResponse>(params: SofaScoreSofascoreEventLineupsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreEventOdds<T = SofaScoreSofascoreEventOddsResponse>(params: SofaScoreSofascoreEventOddsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreEventStatistics<T = SofaScoreSofascoreEventStatisticsResponse>(params: SofaScoreSofascoreEventStatisticsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreLiveEvents<T = SofaScoreSofascoreLiveEventsResponse>(params: SofaScoreSofascoreLiveEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascorePlayer<T = SofaScoreSofascorePlayerResponse>(params: SofaScoreSofascorePlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreRoundEvents<T = SofaScoreSofascoreRoundEventsResponse>(params: SofaScoreSofascoreRoundEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreSearch<T = SofaScoreSofascoreSearchResponse>(params: SofaScoreSofascoreSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreStandings<T = SofaScoreSofascoreStandingsResponse>(params: SofaScoreSofascoreStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreTeam<T = SofaScoreSofascoreTeamResponse>(params: SofaScoreSofascoreTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreTeamEvents<T = SofaScoreSofascoreTeamEventsResponse>(params: SofaScoreSofascoreTeamEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreTeamPlayers<T = SofaScoreSofascoreTeamPlayersResponse>(params: SofaScoreSofascoreTeamPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sofascoreTournamentSeasons<T = SofaScoreSofascoreTournamentSeasonsResponse>(params: SofaScoreSofascoreTournamentSeasonsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface SpotifyPodcastsService {
@@ -17737,6 +19426,16 @@ export interface TripAdvisorService {
   tripadvisorPlace<T = TripAdvisorTripadvisorPlaceResponse>(params?: TripAdvisorTripadvisorPlaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   tripadvisorReviews<T = TripAdvisorTripadvisorReviewsResponse>(params?: TripAdvisorTripadvisorReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   tripadvisorSearch<T = TripAdvisorTripadvisorSearchResponse>(params: TripAdvisorTripadvisorSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface TrustMrrService {
+  trustmrrAcquire<T = TrustMrrTrustmrrAcquireResponse>(params?: TrustMrrTrustmrrAcquireParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrCategories<T = TrustMrrTrustmrrCategoriesResponse>(params?: TrustMrrTrustmrrCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrCategory<T = TrustMrrTrustmrrCategoryResponse>(params: TrustMrrTrustmrrCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrLeaderboard<T = TrustMrrTrustmrrLeaderboardResponse>(params?: TrustMrrTrustmrrLeaderboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrMarketplace<T = TrustMrrTrustmrrMarketplaceResponse>(params?: TrustMrrTrustmrrMarketplaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrStartup<T = TrustMrrTrustmrrStartupResponse>(params: TrustMrrTrustmrrStartupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrStartups<T = TrustMrrTrustmrrStartupsResponse>(params?: TrustMrrTrustmrrStartupsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface TrustpilotService {
@@ -17860,19 +19559,23 @@ export interface CrawloraGeneratedGroups {
   linkedIn: LinkedInService;
   metaculus: MetaculusService;
   meta: MetaService;
+  pitchBook: PitchBookService;
   polymarket: PolymarketService;
   productHunt: ProductHuntService;
   reddit: RedditService;
   redfin: RedfinService;
   referrals: ReferralsService;
   rottenTomatoes: RottenTomatoesService;
+  secEdgar: SecEdgarService;
   shopApp: ShopAppService;
   shopify: ShopifyService;
   similarWeb: SimilarWebService;
+  sofaScore: SofaScoreService;
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
   tiktok: TiktokService;
   tripAdvisor: TripAdvisorService;
+  trustMrr: TrustMrrService;
   trustpilot: TrustpilotService;
   usage: UsageService;
   user: UserService;
@@ -17952,7 +19655,10 @@ export interface OperationParamsMap {
   "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryParams;
   "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsParams;
   "chromewebstore-collection": ChromeWebStoreChromewebstoreCollectionParams;
+  "chromewebstore-developer": ChromeWebStoreChromewebstoreDeveloperParams;
   "chromewebstore-item": ChromeWebStoreChromewebstoreItemParams;
+  "chromewebstore-permissions": ChromeWebStoreChromewebstorePermissionsParams;
+  "chromewebstore-privacy": ChromeWebStoreChromewebstorePrivacyParams;
   "chromewebstore-reviews": ChromeWebStoreChromewebstoreReviewsParams;
   "chromewebstore-search": ChromeWebStoreChromewebstoreSearchParams;
   "chromewebstore-similar": ChromeWebStoreChromewebstoreSimilarParams;
@@ -18004,6 +19710,12 @@ export interface OperationParamsMap {
   "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchParams;
   "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsParams;
   "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchParams;
+  "datasets-techstack-facets": DatasetsTechstackFacetsParams;
+  "datasets-techstack-item": DatasetsTechstackItemParams;
+  "datasets-techstack-search": DatasetsTechstackSearchParams;
+  "datasets-trustmrr-facets": DatasetsTrustmrrFacetsParams;
+  "datasets-trustmrr-item": DatasetsTrustmrrItemParams;
+  "datasets-trustmrr-search": DatasetsTrustmrrSearchParams;
   "antibot-check": WebAntibotCheckParams;
   "ebay-item": EBayEbayItemParams;
   "ebay-search": EBayEbaySearchParams;
@@ -18166,6 +19878,9 @@ export interface OperationParamsMap {
   "metaculus-top-comments": MetaculusTopCommentsParams;
   "metaculus-tournament-questions": MetaculusTournamentQuestionsParams;
   "ping": MetaPingParams;
+  "pitchbook-company": PitchBookPitchbookCompanyParams;
+  "pitchbook-fund": PitchBookPitchbookFundParams;
+  "pitchbook-investor": PitchBookPitchbookInvestorParams;
   "polymarket-activity-trades": PolymarketActivityTradesParams;
   "polymarket-clob-market": PolymarketClobMarketParams;
   "polymarket-dashboard-macro": PolymarketDashboardMacroParams;
@@ -18271,6 +19986,16 @@ export interface OperationParamsMap {
   "rottentomatoes-search": RottenTomatoesRottentomatoesSearchParams;
   "rottentomatoes-season": RottenTomatoesRottentomatoesSeasonParams;
   "rottentomatoes-series": RottenTomatoesRottentomatoesSeriesParams;
+  "sec-company-intelligence": SecEdgarSecCompanyIntelligenceParams;
+  "sec-company-search": SecEdgarSecCompanySearchParams;
+  "sec-company-submissions": SecEdgarSecCompanySubmissionsParams;
+  "sec-filing": SecEdgarSecFilingParams;
+  "sec-filing-sections": SecEdgarSecFilingSectionsParams;
+  "sec-financials": SecEdgarSecFinancialsParams;
+  "sec-frames": SecEdgarSecFramesParams;
+  "sec-full-text-search": SecEdgarSecFullTextSearchParams;
+  "sec-insider": SecEdgarSecInsiderParams;
+  "sec-institutional-holdings": SecEdgarSecInstitutionalHoldingsParams;
   "shop-app-analysis": ShopAppAnalysisParams;
   "shop-app-categories": ShopAppCategoriesParams;
   "shop-app-product": ShopAppProductParams;
@@ -18300,6 +20025,21 @@ export interface OperationParamsMap {
   "shopify-store": ShopifyStoreParams;
   "similarweb-search": SimilarWebSearchParams;
   "similarweb-web": SimilarWebWebParams;
+  "sofascore-event": SofaScoreSofascoreEventParams;
+  "sofascore-event-h2h": SofaScoreSofascoreEventH2hParams;
+  "sofascore-event-incidents": SofaScoreSofascoreEventIncidentsParams;
+  "sofascore-event-lineups": SofaScoreSofascoreEventLineupsParams;
+  "sofascore-event-odds": SofaScoreSofascoreEventOddsParams;
+  "sofascore-event-statistics": SofaScoreSofascoreEventStatisticsParams;
+  "sofascore-live-events": SofaScoreSofascoreLiveEventsParams;
+  "sofascore-player": SofaScoreSofascorePlayerParams;
+  "sofascore-round-events": SofaScoreSofascoreRoundEventsParams;
+  "sofascore-search": SofaScoreSofascoreSearchParams;
+  "sofascore-standings": SofaScoreSofascoreStandingsParams;
+  "sofascore-team": SofaScoreSofascoreTeamParams;
+  "sofascore-team-events": SofaScoreSofascoreTeamEventsParams;
+  "sofascore-team-players": SofaScoreSofascoreTeamPlayersParams;
+  "sofascore-tournament-seasons": SofaScoreSofascoreTournamentSeasonsParams;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesParams;
   "spotify-podcasts-charts": SpotifyPodcastsChartsParams;
   "spotify-podcasts-episode": SpotifyPodcastsEpisodeParams;
@@ -18367,6 +20107,13 @@ export interface OperationParamsMap {
   "tripadvisor-place": TripAdvisorTripadvisorPlaceParams;
   "tripadvisor-reviews": TripAdvisorTripadvisorReviewsParams;
   "tripadvisor-search": TripAdvisorTripadvisorSearchParams;
+  "trustmrr-acquire": TrustMrrTrustmrrAcquireParams;
+  "trustmrr-categories": TrustMrrTrustmrrCategoriesParams;
+  "trustmrr-category": TrustMrrTrustmrrCategoryParams;
+  "trustmrr-leaderboard": TrustMrrTrustmrrLeaderboardParams;
+  "trustmrr-marketplace": TrustMrrTrustmrrMarketplaceParams;
+  "trustmrr-startup": TrustMrrTrustmrrStartupParams;
+  "trustmrr-startups": TrustMrrTrustmrrStartupsParams;
   "trustpilot-business-search": TrustpilotBusinessSearchParams;
   "trustpilot-business": TrustpilotBusinessParams;
   "trustpilot-business-related": TrustpilotBusinessRelatedParams;
@@ -18514,7 +20261,10 @@ export interface OperationResponseMap {
   "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryResponse;
   "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsResponse;
   "chromewebstore-collection": ChromeWebStoreChromewebstoreCollectionResponse;
+  "chromewebstore-developer": ChromeWebStoreChromewebstoreDeveloperResponse;
   "chromewebstore-item": ChromeWebStoreChromewebstoreItemResponse;
+  "chromewebstore-permissions": ChromeWebStoreChromewebstorePermissionsResponse;
+  "chromewebstore-privacy": ChromeWebStoreChromewebstorePrivacyResponse;
   "chromewebstore-reviews": ChromeWebStoreChromewebstoreReviewsResponse;
   "chromewebstore-search": ChromeWebStoreChromewebstoreSearchResponse;
   "chromewebstore-similar": ChromeWebStoreChromewebstoreSimilarResponse;
@@ -18566,6 +20316,12 @@ export interface OperationResponseMap {
   "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchResponse;
   "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsResponse;
   "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchResponse;
+  "datasets-techstack-facets": DatasetsTechstackFacetsResponse;
+  "datasets-techstack-item": DatasetsTechstackItemResponse;
+  "datasets-techstack-search": DatasetsTechstackSearchResponse;
+  "datasets-trustmrr-facets": DatasetsTrustmrrFacetsResponse;
+  "datasets-trustmrr-item": DatasetsTrustmrrItemResponse;
+  "datasets-trustmrr-search": DatasetsTrustmrrSearchResponse;
   "antibot-check": WebAntibotCheckResponse;
   "ebay-item": EBayEbayItemResponse;
   "ebay-search": EBayEbaySearchResponse;
@@ -18728,6 +20484,9 @@ export interface OperationResponseMap {
   "metaculus-top-comments": MetaculusTopCommentsResponse;
   "metaculus-tournament-questions": MetaculusTournamentQuestionsResponse;
   "ping": MetaPingResponse;
+  "pitchbook-company": PitchBookPitchbookCompanyResponse;
+  "pitchbook-fund": PitchBookPitchbookFundResponse;
+  "pitchbook-investor": PitchBookPitchbookInvestorResponse;
   "polymarket-activity-trades": PolymarketActivityTradesResponse;
   "polymarket-clob-market": PolymarketClobMarketResponse;
   "polymarket-dashboard-macro": PolymarketDashboardMacroResponse;
@@ -18833,6 +20592,16 @@ export interface OperationResponseMap {
   "rottentomatoes-search": RottenTomatoesRottentomatoesSearchResponse;
   "rottentomatoes-season": RottenTomatoesRottentomatoesSeasonResponse;
   "rottentomatoes-series": RottenTomatoesRottentomatoesSeriesResponse;
+  "sec-company-intelligence": SecEdgarSecCompanyIntelligenceResponse;
+  "sec-company-search": SecEdgarSecCompanySearchResponse;
+  "sec-company-submissions": SecEdgarSecCompanySubmissionsResponse;
+  "sec-filing": SecEdgarSecFilingResponse;
+  "sec-filing-sections": SecEdgarSecFilingSectionsResponse;
+  "sec-financials": SecEdgarSecFinancialsResponse;
+  "sec-frames": SecEdgarSecFramesResponse;
+  "sec-full-text-search": SecEdgarSecFullTextSearchResponse;
+  "sec-insider": SecEdgarSecInsiderResponse;
+  "sec-institutional-holdings": SecEdgarSecInstitutionalHoldingsResponse;
   "shop-app-analysis": ShopAppAnalysisResponse;
   "shop-app-categories": ShopAppCategoriesResponse;
   "shop-app-product": ShopAppProductResponse;
@@ -18862,6 +20631,21 @@ export interface OperationResponseMap {
   "shopify-store": ShopifyStoreResponse;
   "similarweb-search": SimilarWebSearchResponse;
   "similarweb-web": SimilarWebWebResponse;
+  "sofascore-event": SofaScoreSofascoreEventResponse;
+  "sofascore-event-h2h": SofaScoreSofascoreEventH2hResponse;
+  "sofascore-event-incidents": SofaScoreSofascoreEventIncidentsResponse;
+  "sofascore-event-lineups": SofaScoreSofascoreEventLineupsResponse;
+  "sofascore-event-odds": SofaScoreSofascoreEventOddsResponse;
+  "sofascore-event-statistics": SofaScoreSofascoreEventStatisticsResponse;
+  "sofascore-live-events": SofaScoreSofascoreLiveEventsResponse;
+  "sofascore-player": SofaScoreSofascorePlayerResponse;
+  "sofascore-round-events": SofaScoreSofascoreRoundEventsResponse;
+  "sofascore-search": SofaScoreSofascoreSearchResponse;
+  "sofascore-standings": SofaScoreSofascoreStandingsResponse;
+  "sofascore-team": SofaScoreSofascoreTeamResponse;
+  "sofascore-team-events": SofaScoreSofascoreTeamEventsResponse;
+  "sofascore-team-players": SofaScoreSofascoreTeamPlayersResponse;
+  "sofascore-tournament-seasons": SofaScoreSofascoreTournamentSeasonsResponse;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesResponse;
   "spotify-podcasts-charts": SpotifyPodcastsChartsResponse;
   "spotify-podcasts-episode": SpotifyPodcastsEpisodeResponse;
@@ -18929,6 +20713,13 @@ export interface OperationResponseMap {
   "tripadvisor-place": TripAdvisorTripadvisorPlaceResponse;
   "tripadvisor-reviews": TripAdvisorTripadvisorReviewsResponse;
   "tripadvisor-search": TripAdvisorTripadvisorSearchResponse;
+  "trustmrr-acquire": TrustMrrTrustmrrAcquireResponse;
+  "trustmrr-categories": TrustMrrTrustmrrCategoriesResponse;
+  "trustmrr-category": TrustMrrTrustmrrCategoryResponse;
+  "trustmrr-leaderboard": TrustMrrTrustmrrLeaderboardResponse;
+  "trustmrr-marketplace": TrustMrrTrustmrrMarketplaceResponse;
+  "trustmrr-startup": TrustMrrTrustmrrStartupResponse;
+  "trustmrr-startups": TrustMrrTrustmrrStartupsResponse;
   "trustpilot-business-search": TrustpilotBusinessSearchResponse;
   "trustpilot-business": TrustpilotBusinessResponse;
   "trustpilot-business-related": TrustpilotBusinessRelatedResponse;
@@ -19076,7 +20867,10 @@ export interface OperationRequiredParamsMap {
   "chromewebstore-category": true;
   "chromewebstore-charts": false;
   "chromewebstore-collection": true;
+  "chromewebstore-developer": true;
   "chromewebstore-item": true;
+  "chromewebstore-permissions": true;
+  "chromewebstore-privacy": true;
   "chromewebstore-reviews": true;
   "chromewebstore-search": true;
   "chromewebstore-similar": true;
@@ -19128,6 +20922,12 @@ export interface OperationRequiredParamsMap {
   "datasets-producthunt-products-search": false;
   "datasets-producthunt-trends-facets": true;
   "datasets-producthunt-trends-search": false;
+  "datasets-techstack-facets": true;
+  "datasets-techstack-item": true;
+  "datasets-techstack-search": false;
+  "datasets-trustmrr-facets": true;
+  "datasets-trustmrr-item": true;
+  "datasets-trustmrr-search": false;
   "antibot-check": true;
   "ebay-item": true;
   "ebay-search": true;
@@ -19290,6 +21090,9 @@ export interface OperationRequiredParamsMap {
   "metaculus-top-comments": false;
   "metaculus-tournament-questions": true;
   "ping": false;
+  "pitchbook-company": false;
+  "pitchbook-fund": false;
+  "pitchbook-investor": false;
   "polymarket-activity-trades": false;
   "polymarket-clob-market": true;
   "polymarket-dashboard-macro": false;
@@ -19395,6 +21198,16 @@ export interface OperationRequiredParamsMap {
   "rottentomatoes-search": true;
   "rottentomatoes-season": false;
   "rottentomatoes-series": false;
+  "sec-company-intelligence": false;
+  "sec-company-search": true;
+  "sec-company-submissions": false;
+  "sec-filing": true;
+  "sec-filing-sections": true;
+  "sec-financials": false;
+  "sec-frames": true;
+  "sec-full-text-search": true;
+  "sec-insider": false;
+  "sec-institutional-holdings": true;
   "shop-app-analysis": true;
   "shop-app-categories": false;
   "shop-app-product": true;
@@ -19424,6 +21237,21 @@ export interface OperationRequiredParamsMap {
   "shopify-store": true;
   "similarweb-search": true;
   "similarweb-web": true;
+  "sofascore-event": true;
+  "sofascore-event-h2h": true;
+  "sofascore-event-incidents": true;
+  "sofascore-event-lineups": true;
+  "sofascore-event-odds": true;
+  "sofascore-event-statistics": true;
+  "sofascore-live-events": true;
+  "sofascore-player": true;
+  "sofascore-round-events": true;
+  "sofascore-search": true;
+  "sofascore-standings": true;
+  "sofascore-team": true;
+  "sofascore-team-events": true;
+  "sofascore-team-players": true;
+  "sofascore-tournament-seasons": true;
   "spotify-podcasts-categories": false;
   "spotify-podcasts-charts": false;
   "spotify-podcasts-episode": false;
@@ -19491,6 +21319,13 @@ export interface OperationRequiredParamsMap {
   "tripadvisor-place": false;
   "tripadvisor-reviews": false;
   "tripadvisor-search": true;
+  "trustmrr-acquire": false;
+  "trustmrr-categories": false;
+  "trustmrr-category": true;
+  "trustmrr-leaderboard": false;
+  "trustmrr-marketplace": false;
+  "trustmrr-startup": true;
+  "trustmrr-startups": false;
   "trustpilot-business-search": true;
   "trustpilot-business": true;
   "trustpilot-business-related": true;
@@ -19645,7 +21480,10 @@ export type OperationIdLiteral =
   | "chromewebstore-category"
   | "chromewebstore-charts"
   | "chromewebstore-collection"
+  | "chromewebstore-developer"
   | "chromewebstore-item"
+  | "chromewebstore-permissions"
+  | "chromewebstore-privacy"
   | "chromewebstore-reviews"
   | "chromewebstore-search"
   | "chromewebstore-similar"
@@ -19697,6 +21535,12 @@ export type OperationIdLiteral =
   | "datasets-producthunt-products-search"
   | "datasets-producthunt-trends-facets"
   | "datasets-producthunt-trends-search"
+  | "datasets-techstack-facets"
+  | "datasets-techstack-item"
+  | "datasets-techstack-search"
+  | "datasets-trustmrr-facets"
+  | "datasets-trustmrr-item"
+  | "datasets-trustmrr-search"
   | "antibot-check"
   | "ebay-item"
   | "ebay-search"
@@ -19859,6 +21703,9 @@ export type OperationIdLiteral =
   | "metaculus-top-comments"
   | "metaculus-tournament-questions"
   | "ping"
+  | "pitchbook-company"
+  | "pitchbook-fund"
+  | "pitchbook-investor"
   | "polymarket-activity-trades"
   | "polymarket-clob-market"
   | "polymarket-dashboard-macro"
@@ -19964,6 +21811,16 @@ export type OperationIdLiteral =
   | "rottentomatoes-search"
   | "rottentomatoes-season"
   | "rottentomatoes-series"
+  | "sec-company-intelligence"
+  | "sec-company-search"
+  | "sec-company-submissions"
+  | "sec-filing"
+  | "sec-filing-sections"
+  | "sec-financials"
+  | "sec-frames"
+  | "sec-full-text-search"
+  | "sec-insider"
+  | "sec-institutional-holdings"
   | "shop-app-analysis"
   | "shop-app-categories"
   | "shop-app-product"
@@ -19993,6 +21850,21 @@ export type OperationIdLiteral =
   | "shopify-store"
   | "similarweb-search"
   | "similarweb-web"
+  | "sofascore-event"
+  | "sofascore-event-h2h"
+  | "sofascore-event-incidents"
+  | "sofascore-event-lineups"
+  | "sofascore-event-odds"
+  | "sofascore-event-statistics"
+  | "sofascore-live-events"
+  | "sofascore-player"
+  | "sofascore-round-events"
+  | "sofascore-search"
+  | "sofascore-standings"
+  | "sofascore-team"
+  | "sofascore-team-events"
+  | "sofascore-team-players"
+  | "sofascore-tournament-seasons"
   | "spotify-podcasts-categories"
   | "spotify-podcasts-charts"
   | "spotify-podcasts-episode"
@@ -20060,6 +21932,13 @@ export type OperationIdLiteral =
   | "tripadvisor-place"
   | "tripadvisor-reviews"
   | "tripadvisor-search"
+  | "trustmrr-acquire"
+  | "trustmrr-categories"
+  | "trustmrr-category"
+  | "trustmrr-leaderboard"
+  | "trustmrr-marketplace"
+  | "trustmrr-startup"
+  | "trustmrr-startups"
   | "trustpilot-business-search"
   | "trustpilot-business"
   | "trustpilot-business-related"
@@ -20206,7 +22085,10 @@ export declare const OperationIds: Readonly<{
   ChromeWebStoreChromewebstoreCategory: "chromewebstore-category";
   ChromeWebStoreChromewebstoreCharts: "chromewebstore-charts";
   ChromeWebStoreChromewebstoreCollection: "chromewebstore-collection";
+  ChromeWebStoreChromewebstoreDeveloper: "chromewebstore-developer";
   ChromeWebStoreChromewebstoreItem: "chromewebstore-item";
+  ChromeWebStoreChromewebstorePermissions: "chromewebstore-permissions";
+  ChromeWebStoreChromewebstorePrivacy: "chromewebstore-privacy";
   ChromeWebStoreChromewebstoreReviews: "chromewebstore-reviews";
   ChromeWebStoreChromewebstoreSearch: "chromewebstore-search";
   ChromeWebStoreChromewebstoreSimilar: "chromewebstore-similar";
@@ -20257,6 +22139,12 @@ export declare const OperationIds: Readonly<{
   DatasetsProducthuntProductsSearch: "datasets-producthunt-products-search";
   DatasetsProducthuntTrendsFacets: "datasets-producthunt-trends-facets";
   DatasetsProducthuntTrendsSearch: "datasets-producthunt-trends-search";
+  DatasetsTechstackFacets: "datasets-techstack-facets";
+  DatasetsTechstackItem: "datasets-techstack-item";
+  DatasetsTechstackSearch: "datasets-techstack-search";
+  DatasetsTrustmrrFacets: "datasets-trustmrr-facets";
+  DatasetsTrustmrrItem: "datasets-trustmrr-item";
+  DatasetsTrustmrrSearch: "datasets-trustmrr-search";
   EBayEbayItem: "ebay-item";
   EBayEbaySearch: "ebay-search";
   EBayEbaySeller: "ebay-seller";
@@ -20419,6 +22307,9 @@ export declare const OperationIds: Readonly<{
   MetaculusQuestions: "metaculus-questions";
   MetaculusTopComments: "metaculus-top-comments";
   MetaculusTournamentQuestions: "metaculus-tournament-questions";
+  PitchBookPitchbookCompany: "pitchbook-company";
+  PitchBookPitchbookFund: "pitchbook-fund";
+  PitchBookPitchbookInvestor: "pitchbook-investor";
   PolymarketActivityTrades: "polymarket-activity-trades";
   PolymarketClobMarket: "polymarket-clob-market";
   PolymarketDashboardMacro: "polymarket-dashboard-macro";
@@ -20523,6 +22414,16 @@ export declare const OperationIds: Readonly<{
   RottenTomatoesRottentomatoesSearch: "rottentomatoes-search";
   RottenTomatoesRottentomatoesSeason: "rottentomatoes-season";
   RottenTomatoesRottentomatoesSeries: "rottentomatoes-series";
+  SecEdgarSecCompanyIntelligence: "sec-company-intelligence";
+  SecEdgarSecCompanySearch: "sec-company-search";
+  SecEdgarSecCompanySubmissions: "sec-company-submissions";
+  SecEdgarSecFiling: "sec-filing";
+  SecEdgarSecFilingSections: "sec-filing-sections";
+  SecEdgarSecFinancials: "sec-financials";
+  SecEdgarSecFrames: "sec-frames";
+  SecEdgarSecFullTextSearch: "sec-full-text-search";
+  SecEdgarSecInsider: "sec-insider";
+  SecEdgarSecInstitutionalHoldings: "sec-institutional-holdings";
   ShopAppAnalysis: "shop-app-analysis";
   ShopAppCategories: "shop-app-categories";
   ShopAppCollectionProducts: "shop-app-collection-products";
@@ -20552,6 +22453,21 @@ export declare const OperationIds: Readonly<{
   ShopifyStore: "shopify-store";
   SimilarWebSearch: "similarweb-search";
   SimilarWebWeb: "similarweb-web";
+  SofaScoreSofascoreEvent: "sofascore-event";
+  SofaScoreSofascoreEventH2h: "sofascore-event-h2h";
+  SofaScoreSofascoreEventIncidents: "sofascore-event-incidents";
+  SofaScoreSofascoreEventLineups: "sofascore-event-lineups";
+  SofaScoreSofascoreEventOdds: "sofascore-event-odds";
+  SofaScoreSofascoreEventStatistics: "sofascore-event-statistics";
+  SofaScoreSofascoreLiveEvents: "sofascore-live-events";
+  SofaScoreSofascorePlayer: "sofascore-player";
+  SofaScoreSofascoreRoundEvents: "sofascore-round-events";
+  SofaScoreSofascoreSearch: "sofascore-search";
+  SofaScoreSofascoreStandings: "sofascore-standings";
+  SofaScoreSofascoreTeam: "sofascore-team";
+  SofaScoreSofascoreTeamEvents: "sofascore-team-events";
+  SofaScoreSofascoreTeamPlayers: "sofascore-team-players";
+  SofaScoreSofascoreTournamentSeasons: "sofascore-tournament-seasons";
   SpotifyAlbum: "spotify-album";
   SpotifyAlbumTracks: "spotify-album-tracks";
   SpotifyAlbumsSearch: "spotify-albums-search";
@@ -20619,6 +22535,13 @@ export declare const OperationIds: Readonly<{
   TripAdvisorTripadvisorPlace: "tripadvisor-place";
   TripAdvisorTripadvisorReviews: "tripadvisor-reviews";
   TripAdvisorTripadvisorSearch: "tripadvisor-search";
+  TrustMrrTrustmrrAcquire: "trustmrr-acquire";
+  TrustMrrTrustmrrCategories: "trustmrr-categories";
+  TrustMrrTrustmrrCategory: "trustmrr-category";
+  TrustMrrTrustmrrLeaderboard: "trustmrr-leaderboard";
+  TrustMrrTrustmrrMarketplace: "trustmrr-marketplace";
+  TrustMrrTrustmrrStartup: "trustmrr-startup";
+  TrustMrrTrustmrrStartups: "trustmrr-startups";
   TrustpilotBusiness: "trustpilot-business";
   TrustpilotBusinessRelated: "trustpilot-business-related";
   TrustpilotBusinessReviews: "trustpilot-business-reviews";
