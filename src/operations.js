@@ -8126,40 +8126,6 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
-  "github-repo-stargazers": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "github-repo-stargazers",
-    "method": "GET",
-    "paginatable": true,
-    "path": "/github/repo/{owner}/{repo}/stargazers",
-    "pathParams": [
-      "owner",
-      "repo"
-    ],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "page",
-        "type": "integer"
-      },
-      {
-        "in": "query",
-        "name": "per_page",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
   "github-search-repositories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -10798,6 +10764,429 @@ export const operations = {
       {
         "in": "query",
         "name": "max_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-ashby-board": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-ashby-board",
+    "method": "GET",
+    "path": "/jobs/ashby/board",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "org",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "include_compensation",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-company-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-company-search",
+    "method": "GET",
+    "path": "/jobs/company-search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-greenhouse-board": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-greenhouse-board",
+    "method": "GET",
+    "path": "/jobs/greenhouse/board",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "token",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "content",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-greenhouse-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-greenhouse-job",
+    "method": "GET",
+    "path": "/jobs/greenhouse/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "token",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-hiring-signals": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-hiring-signals",
+    "method": "GET",
+    "path": "/jobs/hiring-signals",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "greenhouse",
+          "lever",
+          "ashby",
+          "workday",
+          "smartrecruiters"
+        ],
+        "in": "query",
+        "name": "provider",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "token",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "company",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "org",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tenant",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "datacenter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "site",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-lever-posting": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-lever-posting",
+    "method": "GET",
+    "path": "/jobs/lever/posting",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-lever-postings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-lever-postings",
+    "method": "GET",
+    "path": "/jobs/lever/postings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "remote",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-smartrecruiters-posting": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-smartrecruiters-posting",
+    "method": "GET",
+    "path": "/jobs/smartrecruiters/posting",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-smartrecruiters-postings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-smartrecruiters-postings",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jobs/smartrecruiters/postings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-workday-board": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-workday-board",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jobs/workday/board",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tenant",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "datacenter",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "site",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-workday-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-workday-job",
+    "method": "GET",
+    "path": "/jobs/workday/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tenant",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "datacenter",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "site",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "path",
+        "required": true,
         "type": "string"
       }
     ],
@@ -16656,6 +17045,48 @@ export const operations = {
         "in": "query",
         "name": "ticker",
         "type": "string"
+      },
+      {
+        "enum": [
+          "market",
+          "news",
+          "hiring"
+        ],
+        "in": "query",
+        "name": "enrich",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "greenhouse",
+          "lever",
+          "ashby",
+          "workday",
+          "smartrecruiters"
+        ],
+        "in": "query",
+        "name": "ats",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "careers_slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tenant",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "datacenter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "site",
+        "type": "string"
       }
     ],
     "security": [
@@ -20080,6 +20511,467 @@ export const operations = {
         "in": "query",
         "name": "include_episode_content_ratings_v2",
         "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-achievements": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-achievements",
+    "method": "GET",
+    "path": "/steam/achievements",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "appid",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-app": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-app",
+    "method": "GET",
+    "path": "/steam/app",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "appid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "filters",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-featured": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-featured",
+    "method": "GET",
+    "path": "/steam/featured",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-featured-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-featured-categories",
+    "method": "GET",
+    "path": "/steam/featured-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-news",
+    "method": "GET",
+    "path": "/steam/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "appid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "maxlength",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-package": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-package",
+    "method": "GET",
+    "path": "/steam/package",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "packageid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-players",
+    "method": "GET",
+    "path": "/steam/players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "appid",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "steam-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/steam/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "appid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "recent",
+          "updated",
+          "all"
+        ],
+        "in": "query",
+        "name": "filter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "positive",
+          "negative"
+        ],
+        "in": "query",
+        "name": "review_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "steam",
+          "non_steam_purchase"
+        ],
+        "in": "query",
+        "name": "purchase_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "day_range",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "num_per_page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-reviews-histogram": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-reviews-histogram",
+    "method": "GET",
+    "path": "/steam/reviews/histogram",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "appid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-search",
+    "method": "GET",
+    "path": "/steam/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-search-results": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "start"
+    ],
+    "formParams": [],
+    "id": "steam-search-results",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/steam/search/results",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "Relevance",
+          "Released_DESC",
+          "Name_ASC",
+          "Price_ASC",
+          "Price_DESC",
+          "Reviews_DESC"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-steamspy": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-steamspy",
+    "method": "GET",
+    "path": "/steam/steamspy",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "appid",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -23782,7 +24674,6 @@ export const groups = {
     "githubRepoForks": "github-repo-forks",
     "githubRepoLanguages": "github-repo-languages",
     "githubRepoReleases": "github-repo-releases",
-    "githubRepoStargazers": "github-repo-stargazers",
     "githubSearchRepositories": "github-search-repositories",
     "githubSearchUsers": "github-search-users",
     "githubTrending": "github-trending",
@@ -23869,6 +24760,19 @@ export const groups = {
     "post": "instagram-post",
     "profile": "instagram-profile",
     "reels": "instagram-reels"
+  },
+  "jobs": {
+    "ashbyBoard": "jobs-ashby-board",
+    "companySearch": "jobs-company-search",
+    "greenhouseBoard": "jobs-greenhouse-board",
+    "greenhouseJob": "jobs-greenhouse-job",
+    "hiringSignals": "jobs-hiring-signals",
+    "leverPosting": "jobs-lever-posting",
+    "leverPostings": "jobs-lever-postings",
+    "smartrecruitersPosting": "jobs-smartrecruiters-posting",
+    "smartrecruitersPostings": "jobs-smartrecruiters-postings",
+    "workdayBoard": "jobs-workday-board",
+    "workdayJob": "jobs-workday-job"
   },
   "justWatch": {
     "justwatchAgeCertifications": "justwatch-age-certifications",
@@ -24165,6 +25069,20 @@ export const groups = {
     "showEpisodes": "spotify-podcasts-show-episodes",
     "showRecommendations": "spotify-podcasts-show-recommendations"
   },
+  "steam": {
+    "achievements": "steam-achievements",
+    "app": "steam-app",
+    "featured": "steam-featured",
+    "featuredCategories": "steam-featured-categories",
+    "news": "steam-news",
+    "package": "steam-package",
+    "players": "steam-players",
+    "reviews": "steam-reviews",
+    "reviewsHistogram": "steam-reviews-histogram",
+    "search": "steam-search",
+    "searchResults": "steam-search-results",
+    "steamspy": "steam-steamspy"
+  },
   "tiktok": {
     "category": "tiktok-category",
     "challenge": "tiktok-challenge",
@@ -24302,7 +25220,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 603;
+export const operationCount = 625;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -24461,7 +25379,6 @@ export const OperationIds = Object.freeze({
   "GitHubGithubRepoForks": "github-repo-forks",
   "GitHubGithubRepoLanguages": "github-repo-languages",
   "GitHubGithubRepoReleases": "github-repo-releases",
-  "GitHubGithubRepoStargazers": "github-repo-stargazers",
   "GitHubGithubSearchRepositories": "github-search-repositories",
   "GitHubGithubSearchUsers": "github-search-users",
   "GitHubGithubTrending": "github-trending",
@@ -24540,6 +25457,17 @@ export const OperationIds = Object.freeze({
   "InstagramPost": "instagram-post",
   "InstagramProfile": "instagram-profile",
   "InstagramReels": "instagram-reels",
+  "JobsAshbyBoard": "jobs-ashby-board",
+  "JobsCompanySearch": "jobs-company-search",
+  "JobsGreenhouseBoard": "jobs-greenhouse-board",
+  "JobsGreenhouseJob": "jobs-greenhouse-job",
+  "JobsHiringSignals": "jobs-hiring-signals",
+  "JobsLeverPosting": "jobs-lever-posting",
+  "JobsLeverPostings": "jobs-lever-postings",
+  "JobsSmartrecruitersPosting": "jobs-smartrecruiters-posting",
+  "JobsSmartrecruitersPostings": "jobs-smartrecruiters-postings",
+  "JobsWorkdayBoard": "jobs-workday-board",
+  "JobsWorkdayJob": "jobs-workday-job",
   "JustWatchJustwatchAgeCertifications": "justwatch-age-certifications",
   "JustWatchJustwatchDiscover": "justwatch-discover",
   "JustWatchJustwatchEpisodeById": "justwatch-episode-by-id",
@@ -24797,6 +25725,18 @@ export const OperationIds = Object.freeze({
   "SpotifyTrackRecommended": "spotify-track-recommended",
   "SpotifyTrackSimilarAlbums": "spotify-track-similar-albums",
   "SpotifyTracksSearch": "spotify-tracks-search",
+  "SteamAchievements": "steam-achievements",
+  "SteamApp": "steam-app",
+  "SteamFeatured": "steam-featured",
+  "SteamFeaturedCategories": "steam-featured-categories",
+  "SteamNews": "steam-news",
+  "SteamPackage": "steam-package",
+  "SteamPlayers": "steam-players",
+  "SteamReviews": "steam-reviews",
+  "SteamReviewsHistogram": "steam-reviews-histogram",
+  "SteamSearch": "steam-search",
+  "SteamSearchResults": "steam-search-results",
+  "SteamSteamspy": "steam-steamspy",
   "TiktokCategory": "tiktok-category",
   "TiktokChallenge": "tiktok-challenge",
   "TiktokChallengeList": "tiktok-challenge-list",

@@ -5676,6 +5676,98 @@ export interface ModelInstagramReelsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelJobsBoardResponse {
+  "company"?: string;
+  "count"?: number;
+  "jobs"?: Array<ModelJobsJob>;
+  "provider"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelJobsCompanySearchResponse {
+  "count"?: number;
+  "found"?: Array<ModelJobsProviderHit>;
+  "slug"?: string;
+}
+
+export interface ModelJobsCount {
+  "count"?: number;
+  "name"?: string;
+}
+
+export interface ModelJobsHiringSignals {
+  "as_of"?: string;
+  "by_department"?: Array<ModelJobsCount>;
+  "by_location"?: Array<ModelJobsCount>;
+  "company"?: string;
+  "new_last_30d"?: number;
+  "new_last_7d"?: number;
+  "provider"?: string;
+  "remote_count"?: number;
+  "remote_pct"?: number;
+  "sampled_roles"?: number;
+  "source_url"?: string;
+  "top_titles"?: Array<ModelJobsCount>;
+  "total_open_roles"?: number;
+}
+
+export interface ModelJobsJob {
+  "apply_url"?: string;
+  "company"?: string;
+  "compensation"?: string;
+  "compensation_currency"?: string;
+  "compensation_max"?: number;
+  "compensation_min"?: number;
+  "department"?: string;
+  "description_html"?: string;
+  "description_text"?: string;
+  "employment_type"?: string;
+  "id"?: string;
+  "location"?: string;
+  "locations"?: Array<string>;
+  "posted_age_text"?: string;
+  "posted_at"?: string;
+  "provider"?: string;
+  "remote"?: boolean;
+  "req_id"?: string;
+  "team"?: string;
+  "title"?: string;
+  "url"?: string;
+  "workplace_type"?: string;
+}
+
+export interface ModelJobsProviderHit {
+  "board_url"?: string;
+  "company"?: string;
+  "provider"?: string;
+  "total_open_roles"?: number;
+}
+
+export interface ModelJobsBoardResponseDoc {
+  "code"?: number;
+  "data"?: ModelJobsBoardResponse;
+  "msg"?: string;
+}
+
+export interface ModelJobsJobResponseDoc {
+  "code"?: number;
+  "data"?: ModelJobsJob;
+  "msg"?: string;
+}
+
+export interface ModelJobsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelJobsCompanySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelJobsSignalsResponseDoc {
+  "code"?: number;
+  "data"?: ModelJobsHiringSignals;
+  "msg"?: string;
+}
+
 export interface ModelJustwatchAgeCertification {
   "technical_name"?: string;
 }
@@ -9499,10 +9591,14 @@ export interface ModelRottentomatoesSeriesResponseDoc {
 }
 
 export interface ModelSecCompanyIntelligenceResponse {
+  "degraded"?: Array<string>;
   "financial_snapshot"?: Record<string, number>;
+  "hiring"?: ModelSecHiringBlock;
   "latest_8k"?: ModelSecFiling;
   "latest_annual_10k"?: ModelSecFiling;
   "latest_quarterly_10q"?: ModelSecFiling;
+  "market"?: ModelSecMarketBlock;
+  "news"?: Array<ModelSecNewsItem>;
   "profile"?: ModelSecCompanyProfile;
   "recent_events"?: Array<ModelSecEventFiling>;
   "snapshot_fiscal_year"?: number;
@@ -9656,6 +9752,15 @@ export interface ModelSecFullTextSearchResponse {
   "total"?: number;
 }
 
+export interface ModelSecHiringBlock {
+  "new_last_30d"?: number;
+  "provider"?: string;
+  "remote_pct"?: number;
+  "source_url"?: string;
+  "top_departments"?: Array<ModelSecNameCount>;
+  "total_open_roles"?: number;
+}
+
 export interface ModelSecHolding {
   "cusip"?: string;
   "investment_discretion"?: string;
@@ -9706,6 +9811,29 @@ export interface ModelSecInsiderTransaction {
   "shares"?: number;
   "shares_owned_after"?: number;
   "transaction_date"?: string;
+}
+
+export interface ModelSecMarketBlock {
+  "change_percent"?: number;
+  "currency"?: string;
+  "day_high"?: number;
+  "day_low"?: number;
+  "market_cap"?: number;
+  "name"?: string;
+  "price"?: number;
+  "symbol"?: string;
+}
+
+export interface ModelSecNameCount {
+  "count"?: number;
+  "name"?: string;
+}
+
+export interface ModelSecNewsItem {
+  "published_at"?: string;
+  "publisher"?: string;
+  "title"?: string;
+  "url"?: string;
 }
 
 export interface ModelSecSubmissionsResponse {
@@ -11749,6 +11877,359 @@ export interface ModelSpotifyUserProfileResponseDoc {
   "code"?: number;
   "data"?: ModelSpotifyUserProfileResponse;
   "msg"?: unknown;
+}
+
+export interface ModelSteamAchievementsResponse {
+  "achievements"?: Array<ModelSteamGlobalAchievement>;
+  "appid"?: string;
+  "count"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelSteamAppDetails {
+  "achievements_total"?: number;
+  "appid"?: number;
+  "capsule_image"?: string;
+  "categories"?: Array<ModelSteamIdname>;
+  "controller_support"?: string;
+  "developers"?: Array<string>;
+  "dlc"?: Array<number>;
+  "genres"?: Array<ModelSteamIdname>;
+  "header_image"?: string;
+  "is_free"?: boolean;
+  "metacritic"?: ModelSteamMetacritic;
+  "movies"?: number;
+  "name"?: string;
+  "platforms"?: ModelSteamPlatforms;
+  "price_overview"?: ModelSteamPrice;
+  "publishers"?: Array<string>;
+  "recommendations"?: number;
+  "release_date"?: ModelSteamAppRelease;
+  "required_age"?: number;
+  "screenshots"?: number;
+  "short_description"?: string;
+  "source_url"?: string;
+  "supported_languages"?: string;
+  "type"?: string;
+  "website"?: string;
+}
+
+export interface ModelSteamAppRelease {
+  "coming_soon"?: boolean;
+  "date"?: string;
+}
+
+export interface ModelSteamFeaturedBucket {
+  "count"?: number;
+  "id"?: string;
+  "items"?: Array<ModelSteamFeaturedItem>;
+  "name"?: string;
+}
+
+export interface ModelSteamFeaturedCategoriesResponse {
+  "coming_soon"?: ModelSteamFeaturedBucket;
+  "new_releases"?: ModelSteamFeaturedBucket;
+  "source_url"?: string;
+  "specials"?: ModelSteamFeaturedBucket;
+  "top_sellers"?: ModelSteamFeaturedBucket;
+}
+
+export interface ModelSteamFeaturedItem {
+  "currency"?: string;
+  "discount_percent"?: number;
+  "discounted"?: boolean;
+  "final_price"?: number;
+  "header_image"?: string;
+  "id"?: number;
+  "linux_available"?: boolean;
+  "mac_available"?: boolean;
+  "name"?: string;
+  "original_price"?: number;
+  "type"?: number;
+  "windows_available"?: boolean;
+}
+
+export interface ModelSteamFeaturedResponse {
+  "featured_linux"?: Array<ModelSteamFeaturedItem>;
+  "featured_mac"?: Array<ModelSteamFeaturedItem>;
+  "featured_win"?: Array<ModelSteamFeaturedItem>;
+  "large_capsules"?: Array<ModelSteamFeaturedItem>;
+  "source_url"?: string;
+}
+
+export interface ModelSteamGlobalAchievement {
+  "name"?: string;
+  "percent"?: number;
+}
+
+export interface ModelSteamHistogramBucket {
+  "date"?: number;
+  "recommendations_down"?: number;
+  "recommendations_up"?: number;
+}
+
+export interface ModelSteamIdname {
+  "description"?: string;
+  "id"?: string;
+}
+
+export interface ModelSteamMetacritic {
+  "score"?: number;
+  "url"?: string;
+}
+
+export interface ModelSteamNewsItem {
+  "author"?: string;
+  "contents"?: string;
+  "date"?: number;
+  "feedlabel"?: string;
+  "feedname"?: string;
+  "gid"?: string;
+  "is_external_url"?: boolean;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelSteamNewsResponse {
+  "appid"?: string;
+  "count"?: number;
+  "items"?: Array<ModelSteamNewsItem>;
+  "source_url"?: string;
+}
+
+export interface ModelSteamPackageDetails {
+  "apps"?: Array<ModelSteamIdname>;
+  "header_image"?: string;
+  "name"?: string;
+  "packageid"?: number;
+  "platforms"?: ModelSteamPlatforms;
+  "price"?: ModelSteamPackagePrice;
+  "release_date"?: ModelSteamAppRelease;
+  "source_url"?: string;
+}
+
+export interface ModelSteamPackagePrice {
+  "currency"?: string;
+  "discount_percent"?: number;
+  "final"?: number;
+  "individual"?: number;
+  "initial"?: number;
+}
+
+export interface ModelSteamPlatforms {
+  "linux"?: boolean;
+  "mac"?: boolean;
+  "windows"?: boolean;
+}
+
+export interface ModelSteamPlayersResponse {
+  "appid"?: string;
+  "player_count"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelSteamPrice {
+  "currency"?: string;
+  "discount_percent"?: number;
+  "final"?: number;
+  "final_formatted"?: string;
+  "initial"?: number;
+  "initial_formatted"?: string;
+}
+
+export interface ModelSteamReview {
+  "author"?: ModelSteamReviewAuthor;
+  "comment_count"?: number;
+  "language"?: string;
+  "received_for_free"?: boolean;
+  "recommendation_id"?: string;
+  "review"?: string;
+  "steam_purchase"?: boolean;
+  "timestamp_created"?: number;
+  "timestamp_updated"?: number;
+  "voted_up"?: boolean;
+  "votes_funny"?: number;
+  "votes_up"?: number;
+  "weighted_vote_score"?: string;
+  "written_during_early_access"?: boolean;
+}
+
+export interface ModelSteamReviewAuthor {
+  "last_played"?: number;
+  "num_games_owned"?: number;
+  "num_reviews"?: number;
+  "playtime_at_review"?: number;
+  "playtime_forever"?: number;
+  "playtime_last_two_weeks"?: number;
+  "steamid"?: string;
+}
+
+export interface ModelSteamReviewSummary {
+  "num_reviews"?: number;
+  "review_score"?: number;
+  "review_score_desc"?: string;
+  "total_negative"?: number;
+  "total_positive"?: number;
+  "total_reviews"?: number;
+}
+
+export interface ModelSteamReviewsHistogramResponse {
+  "appid"?: string;
+  "count_all_reviews"?: number;
+  "end_date"?: number;
+  "recent"?: Array<ModelSteamHistogramBucket>;
+  "rollup_type"?: string;
+  "rollups"?: Array<ModelSteamHistogramBucket>;
+  "source_url"?: string;
+  "start_date"?: number;
+}
+
+export interface ModelSteamReviewsResponse {
+  "appid"?: string;
+  "count"?: number;
+  "cursor"?: string;
+  "query_summary"?: ModelSteamReviewSummary;
+  "reviews"?: Array<ModelSteamReview>;
+  "source_url"?: string;
+}
+
+export interface ModelSteamSearchItem {
+  "controller_support"?: string;
+  "id"?: number;
+  "metascore"?: string;
+  "name"?: string;
+  "platforms"?: ModelSteamPlatforms;
+  "price"?: ModelSteamPrice;
+  "streamingvideo"?: boolean;
+  "tiny_image"?: string;
+  "type"?: string;
+}
+
+export interface ModelSteamSearchResponse {
+  "count"?: number;
+  "items"?: Array<ModelSteamSearchItem>;
+  "source_url"?: string;
+  "term"?: string;
+  "total"?: number;
+}
+
+export interface ModelSteamSearchResultRow {
+  "appid"?: string;
+  "bundleid"?: string;
+  "discount_pct"?: string;
+  "name"?: string;
+  "packageid"?: string;
+  "platforms"?: ModelSteamPlatforms;
+  "price"?: string;
+  "release_date"?: string;
+  "review_summary"?: string;
+  "url"?: string;
+}
+
+export interface ModelSteamSearchResultsResponse {
+  "count"?: number;
+  "results"?: Array<ModelSteamSearchResultRow>;
+  "source_url"?: string;
+  "start"?: number;
+  "term"?: string;
+  "total"?: number;
+}
+
+export interface ModelSteamSteamSpyResponse {
+  "appid"?: number;
+  "average_2weeks"?: number;
+  "average_forever"?: number;
+  "ccu"?: number;
+  "developer"?: string;
+  "discount"?: string;
+  "genre"?: string;
+  "initialprice"?: string;
+  "languages"?: string;
+  "median_2weeks"?: number;
+  "median_forever"?: number;
+  "name"?: string;
+  "negative"?: number;
+  "owners"?: string;
+  "positive"?: number;
+  "price"?: string;
+  "publisher"?: string;
+  "source"?: string;
+  "source_url"?: string;
+  "tags"?: Record<string, number>;
+  "userscore"?: number;
+}
+
+export interface ModelSteamAchievementsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamAchievementsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamAppResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamAppDetails;
+  "msg"?: string;
+}
+
+export interface ModelSteamFeaturedCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamFeaturedCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamFeaturedResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamFeaturedResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamHistogramResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamReviewsHistogramResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamPackageResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamPackageDetails;
+  "msg"?: string;
+}
+
+export interface ModelSteamPlayersResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamPlayersResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamSearchResultsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamSearchResultsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamSteamspyResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamSteamSpyResponse;
+  "msg"?: string;
 }
 
 export interface ModelTechstackResult {
@@ -15756,14 +16237,6 @@ export interface GitHubGithubRepoReleasesParams {
   "per_page"?: number;
 }
 
-export type GitHubGithubRepoStargazersResponse = CrawloraResponse<ModelAppResponse>;
-export interface GitHubGithubRepoStargazersParams {
-  "owner": string;
-  "repo": string;
-  "page"?: number;
-  "per_page"?: number;
-}
-
 export type GitHubGithubSearchRepositoriesResponse = CrawloraResponse<ModelAppResponse>;
 export interface GitHubGithubSearchRepositoriesParams {
   "q": string;
@@ -16257,6 +16730,85 @@ export type InstagramReelsResponse = CrawloraResponse<ModelInstagramReelsRespons
 export interface InstagramReelsParams {
   "id": string;
   "max_id"?: string;
+}
+
+export type JobsAshbyBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsAshbyBoardParams {
+  "org": string;
+  "include_compensation"?: boolean;
+}
+
+export type JobsCompanySearchResponse = CrawloraResponse<ModelJobsSearchResponseDoc>;
+export interface JobsCompanySearchParams {
+  "slug": string;
+}
+
+export type JobsGreenhouseBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsGreenhouseBoardParams {
+  "token": string;
+  "content"?: boolean;
+}
+
+export type JobsGreenhouseJobResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsGreenhouseJobParams {
+  "token": string;
+  "id": string;
+}
+
+export type JobsHiringSignalsResponse = CrawloraResponse<ModelJobsSignalsResponseDoc>;
+export interface JobsHiringSignalsParams {
+  "provider": "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters";
+  "token"?: string;
+  "company"?: string;
+  "org"?: string;
+  "tenant"?: string;
+  "datacenter"?: string;
+  "site"?: string;
+}
+
+export type JobsLeverPostingResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsLeverPostingParams {
+  "company": string;
+  "id": string;
+}
+
+export type JobsLeverPostingsResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsLeverPostingsParams {
+  "company": string;
+  "department"?: string;
+  "location"?: string;
+  "remote"?: boolean;
+}
+
+export type JobsSmartrecruitersPostingResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsSmartrecruitersPostingParams {
+  "company": string;
+  "id": string;
+}
+
+export type JobsSmartrecruitersPostingsResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsSmartrecruitersPostingsParams {
+  "company": string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type JobsWorkdayBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsWorkdayBoardParams {
+  "tenant": string;
+  "datacenter": string;
+  "site": string;
+  "search"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type JobsWorkdayJobResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsWorkdayJobParams {
+  "tenant": string;
+  "datacenter": string;
+  "site": string;
+  "path": string;
 }
 
 export type JustWatchJustwatchAgeCertificationsResponse = CrawloraResponse<ModelJustwatchAgeCertificationsResponseDoc>;
@@ -17392,6 +17944,12 @@ export type SecEdgarSecCompanyIntelligenceResponse = CrawloraResponse<ModelSecIn
 export interface SecEdgarSecCompanyIntelligenceParams {
   "cik"?: string;
   "ticker"?: string;
+  "enrich"?: "market" | "news" | "hiring";
+  "ats"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters";
+  "careers_slug"?: string;
+  "tenant"?: string;
+  "datacenter"?: string;
+  "site"?: string;
 }
 
 export type SecEdgarSecCompanySearchResponse = CrawloraResponse<ModelSecCompanySearchResponseDoc>;
@@ -18062,6 +18620,90 @@ export interface SpotifyTracksSearchParams {
   "include_album_pre_releases"?: boolean;
   "include_authors"?: boolean;
   "include_episode_content_ratings_v2"?: boolean;
+}
+
+export type SteamAchievementsResponse = CrawloraResponse<ModelSteamAchievementsResponseDoc>;
+export interface SteamAchievementsParams {
+  "appid": string;
+}
+
+export type SteamAppResponse = CrawloraResponse<ModelSteamAppResponseDoc>;
+export interface SteamAppParams {
+  "appid": string;
+  "cc"?: string;
+  "l"?: string;
+  "filters"?: string;
+}
+
+export type SteamFeaturedResponse = CrawloraResponse<ModelSteamFeaturedResponseDoc>;
+export interface SteamFeaturedParams {
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamFeaturedCategoriesResponse = CrawloraResponse<ModelSteamFeaturedCategoriesResponseDoc>;
+export interface SteamFeaturedCategoriesParams {
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamNewsResponse = CrawloraResponse<ModelSteamNewsResponseDoc>;
+export interface SteamNewsParams {
+  "appid": string;
+  "count"?: number;
+  "maxlength"?: number;
+}
+
+export type SteamPackageResponse = CrawloraResponse<ModelSteamPackageResponseDoc>;
+export interface SteamPackageParams {
+  "packageid": string;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamPlayersResponse = CrawloraResponse<ModelSteamPlayersResponseDoc>;
+export interface SteamPlayersParams {
+  "appid": string;
+}
+
+export type SteamReviewsResponse = CrawloraResponse<ModelSteamReviewsResponseDoc>;
+export interface SteamReviewsParams {
+  "appid": string;
+  "filter"?: "recent" | "updated" | "all";
+  "language"?: string;
+  "review_type"?: "all" | "positive" | "negative";
+  "purchase_type"?: "all" | "steam" | "non_steam_purchase";
+  "day_range"?: number;
+  "num_per_page"?: number;
+  "cursor"?: string;
+}
+
+export type SteamReviewsHistogramResponse = CrawloraResponse<ModelSteamHistogramResponseDoc>;
+export interface SteamReviewsHistogramParams {
+  "appid": string;
+  "language"?: string;
+}
+
+export type SteamSearchResponse = CrawloraResponse<ModelSteamSearchResponseDoc>;
+export interface SteamSearchParams {
+  "term": string;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamSearchResultsResponse = CrawloraResponse<ModelSteamSearchResultsResponseDoc>;
+export interface SteamSearchResultsParams {
+  "term": string;
+  "start"?: number;
+  "count"?: number;
+  "sort_by"?: "Relevance" | "Released_DESC" | "Name_ASC" | "Price_ASC" | "Price_DESC" | "Reviews_DESC";
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamSteamspyResponse = CrawloraResponse<ModelSteamSteamspyResponseDoc>;
+export interface SteamSteamspyParams {
+  "appid": string;
 }
 
 export type TiktokCategoryResponse = CrawloraResponse<ModelTiktokCategoryResponseDoc>;
@@ -18986,7 +19628,6 @@ export interface GitHubService {
   githubRepoForks<T = GitHubGithubRepoForksResponse>(params: GitHubGithubRepoForksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubRepoLanguages<T = GitHubGithubRepoLanguagesResponse>(params: GitHubGithubRepoLanguagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubRepoReleases<T = GitHubGithubRepoReleasesResponse>(params: GitHubGithubRepoReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  githubRepoStargazers<T = GitHubGithubRepoStargazersResponse>(params: GitHubGithubRepoStargazersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubSearchRepositories<T = GitHubGithubSearchRepositoriesResponse>(params: GitHubGithubSearchRepositoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubSearchUsers<T = GitHubGithubSearchUsersResponse>(params: GitHubGithubSearchUsersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubTrending<T = GitHubGithubTrendingResponse>(params?: GitHubGithubTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -19077,6 +19718,20 @@ export interface InstagramService {
   post<T = InstagramPostResponse>(params: InstagramPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = InstagramProfileResponse>(params: InstagramProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reels<T = InstagramReelsResponse>(params: InstagramReelsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface JobsService {
+  ashbyBoard<T = JobsAshbyBoardResponse>(params: JobsAshbyBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  companySearch<T = JobsCompanySearchResponse>(params: JobsCompanySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  greenhouseBoard<T = JobsGreenhouseBoardResponse>(params: JobsGreenhouseBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  greenhouseJob<T = JobsGreenhouseJobResponse>(params: JobsGreenhouseJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hiringSignals<T = JobsHiringSignalsResponse>(params: JobsHiringSignalsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  leverPosting<T = JobsLeverPostingResponse>(params: JobsLeverPostingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  leverPostings<T = JobsLeverPostingsResponse>(params: JobsLeverPostingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  smartrecruitersPosting<T = JobsSmartrecruitersPostingResponse>(params: JobsSmartrecruitersPostingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  smartrecruitersPostings<T = JobsSmartrecruitersPostingsResponse>(params: JobsSmartrecruitersPostingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  workdayBoard<T = JobsWorkdayBoardResponse>(params: JobsWorkdayBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  workdayJob<T = JobsWorkdayJobResponse>(params: JobsWorkdayJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface JustWatchService {
@@ -19393,6 +20048,21 @@ export interface SpotifyService {
   tracksSearch<T = SpotifyTracksSearchResponse>(params: SpotifyTracksSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface SteamService {
+  achievements<T = SteamAchievementsResponse>(params: SteamAchievementsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  app<T = SteamAppResponse>(params: SteamAppParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  featured<T = SteamFeaturedResponse>(params?: SteamFeaturedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  featuredCategories<T = SteamFeaturedCategoriesResponse>(params?: SteamFeaturedCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  news<T = SteamNewsResponse>(params: SteamNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  package<T = SteamPackageResponse>(params: SteamPackageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  players<T = SteamPlayersResponse>(params: SteamPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reviews<T = SteamReviewsResponse>(params: SteamReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reviewsHistogram<T = SteamReviewsHistogramResponse>(params: SteamReviewsHistogramParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = SteamSearchResponse>(params: SteamSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchResults<T = SteamSearchResultsResponse>(params: SteamSearchResultsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamspy<T = SteamSteamspyResponse>(params: SteamSteamspyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TiktokService {
   category<T = TiktokCategoryResponse>(params?: TiktokCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   videoComments<T = TiktokVideoCommentsResponse>(params: TiktokVideoCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -19554,6 +20224,7 @@ export interface CrawloraGeneratedGroups {
   googlePlay: GooglePlayService;
   imdb: ImdbService;
   instagram: InstagramService;
+  jobs: JobsService;
   justWatch: JustWatchService;
   kalshi: KalshiService;
   linkedIn: LinkedInService;
@@ -19573,6 +20244,7 @@ export interface CrawloraGeneratedGroups {
   sofaScore: SofaScoreService;
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
+  steam: SteamService;
   tiktok: TiktokService;
   tripAdvisor: TripAdvisorService;
   trustMrr: TrustMrrService;
@@ -19742,7 +20414,6 @@ export interface OperationParamsMap {
   "github-repo-forks": GitHubGithubRepoForksParams;
   "github-repo-languages": GitHubGithubRepoLanguagesParams;
   "github-repo-releases": GitHubGithubRepoReleasesParams;
-  "github-repo-stargazers": GitHubGithubRepoStargazersParams;
   "github-search-repositories": GitHubGithubSearchRepositoriesParams;
   "github-search-users": GitHubGithubSearchUsersParams;
   "github-trending": GitHubGithubTrendingParams;
@@ -19821,6 +20492,17 @@ export interface OperationParamsMap {
   "instagram-post": InstagramPostParams;
   "instagram-profile": InstagramProfileParams;
   "instagram-reels": InstagramReelsParams;
+  "jobs-ashby-board": JobsAshbyBoardParams;
+  "jobs-company-search": JobsCompanySearchParams;
+  "jobs-greenhouse-board": JobsGreenhouseBoardParams;
+  "jobs-greenhouse-job": JobsGreenhouseJobParams;
+  "jobs-hiring-signals": JobsHiringSignalsParams;
+  "jobs-lever-posting": JobsLeverPostingParams;
+  "jobs-lever-postings": JobsLeverPostingsParams;
+  "jobs-smartrecruiters-posting": JobsSmartrecruitersPostingParams;
+  "jobs-smartrecruiters-postings": JobsSmartrecruitersPostingsParams;
+  "jobs-workday-board": JobsWorkdayBoardParams;
+  "jobs-workday-job": JobsWorkdayJobParams;
   "justwatch-age-certifications": JustWatchJustwatchAgeCertificationsParams;
   "justwatch-discover": JustWatchJustwatchDiscoverParams;
   "justwatch-episode-by-id": JustWatchJustwatchEpisodeByIdParams;
@@ -20078,6 +20760,18 @@ export interface OperationParamsMap {
   "spotify-track-recommended": SpotifyTrackRecommendedParams;
   "spotify-track-similar-albums": SpotifyTrackSimilarAlbumsParams;
   "spotify-tracks-search": SpotifyTracksSearchParams;
+  "steam-achievements": SteamAchievementsParams;
+  "steam-app": SteamAppParams;
+  "steam-featured": SteamFeaturedParams;
+  "steam-featured-categories": SteamFeaturedCategoriesParams;
+  "steam-news": SteamNewsParams;
+  "steam-package": SteamPackageParams;
+  "steam-players": SteamPlayersParams;
+  "steam-reviews": SteamReviewsParams;
+  "steam-reviews-histogram": SteamReviewsHistogramParams;
+  "steam-search": SteamSearchParams;
+  "steam-search-results": SteamSearchResultsParams;
+  "steam-steamspy": SteamSteamspyParams;
   "tiktok-category": TiktokCategoryParams;
   "tiktok-video-comments": TiktokVideoCommentsParams;
   "tiktok-explore": TiktokExploreParams;
@@ -20348,7 +21042,6 @@ export interface OperationResponseMap {
   "github-repo-forks": GitHubGithubRepoForksResponse;
   "github-repo-languages": GitHubGithubRepoLanguagesResponse;
   "github-repo-releases": GitHubGithubRepoReleasesResponse;
-  "github-repo-stargazers": GitHubGithubRepoStargazersResponse;
   "github-search-repositories": GitHubGithubSearchRepositoriesResponse;
   "github-search-users": GitHubGithubSearchUsersResponse;
   "github-trending": GitHubGithubTrendingResponse;
@@ -20427,6 +21120,17 @@ export interface OperationResponseMap {
   "instagram-post": InstagramPostResponse;
   "instagram-profile": InstagramProfileResponse;
   "instagram-reels": InstagramReelsResponse;
+  "jobs-ashby-board": JobsAshbyBoardResponse;
+  "jobs-company-search": JobsCompanySearchResponse;
+  "jobs-greenhouse-board": JobsGreenhouseBoardResponse;
+  "jobs-greenhouse-job": JobsGreenhouseJobResponse;
+  "jobs-hiring-signals": JobsHiringSignalsResponse;
+  "jobs-lever-posting": JobsLeverPostingResponse;
+  "jobs-lever-postings": JobsLeverPostingsResponse;
+  "jobs-smartrecruiters-posting": JobsSmartrecruitersPostingResponse;
+  "jobs-smartrecruiters-postings": JobsSmartrecruitersPostingsResponse;
+  "jobs-workday-board": JobsWorkdayBoardResponse;
+  "jobs-workday-job": JobsWorkdayJobResponse;
   "justwatch-age-certifications": JustWatchJustwatchAgeCertificationsResponse;
   "justwatch-discover": JustWatchJustwatchDiscoverResponse;
   "justwatch-episode-by-id": JustWatchJustwatchEpisodeByIdResponse;
@@ -20684,6 +21388,18 @@ export interface OperationResponseMap {
   "spotify-track-recommended": SpotifyTrackRecommendedResponse;
   "spotify-track-similar-albums": SpotifyTrackSimilarAlbumsResponse;
   "spotify-tracks-search": SpotifyTracksSearchResponse;
+  "steam-achievements": SteamAchievementsResponse;
+  "steam-app": SteamAppResponse;
+  "steam-featured": SteamFeaturedResponse;
+  "steam-featured-categories": SteamFeaturedCategoriesResponse;
+  "steam-news": SteamNewsResponse;
+  "steam-package": SteamPackageResponse;
+  "steam-players": SteamPlayersResponse;
+  "steam-reviews": SteamReviewsResponse;
+  "steam-reviews-histogram": SteamReviewsHistogramResponse;
+  "steam-search": SteamSearchResponse;
+  "steam-search-results": SteamSearchResultsResponse;
+  "steam-steamspy": SteamSteamspyResponse;
   "tiktok-category": TiktokCategoryResponse;
   "tiktok-video-comments": TiktokVideoCommentsResponse;
   "tiktok-explore": TiktokExploreResponse;
@@ -20954,7 +21670,6 @@ export interface OperationRequiredParamsMap {
   "github-repo-forks": true;
   "github-repo-languages": true;
   "github-repo-releases": true;
-  "github-repo-stargazers": true;
   "github-search-repositories": true;
   "github-search-users": true;
   "github-trending": false;
@@ -21033,6 +21748,17 @@ export interface OperationRequiredParamsMap {
   "instagram-post": true;
   "instagram-profile": true;
   "instagram-reels": true;
+  "jobs-ashby-board": true;
+  "jobs-company-search": true;
+  "jobs-greenhouse-board": true;
+  "jobs-greenhouse-job": true;
+  "jobs-hiring-signals": true;
+  "jobs-lever-posting": true;
+  "jobs-lever-postings": true;
+  "jobs-smartrecruiters-posting": true;
+  "jobs-smartrecruiters-postings": true;
+  "jobs-workday-board": true;
+  "jobs-workday-job": true;
   "justwatch-age-certifications": false;
   "justwatch-discover": false;
   "justwatch-episode-by-id": true;
@@ -21290,6 +22016,18 @@ export interface OperationRequiredParamsMap {
   "spotify-track-recommended": false;
   "spotify-track-similar-albums": false;
   "spotify-tracks-search": true;
+  "steam-achievements": true;
+  "steam-app": true;
+  "steam-featured": false;
+  "steam-featured-categories": false;
+  "steam-news": true;
+  "steam-package": true;
+  "steam-players": true;
+  "steam-reviews": true;
+  "steam-reviews-histogram": true;
+  "steam-search": true;
+  "steam-search-results": true;
+  "steam-steamspy": true;
   "tiktok-category": false;
   "tiktok-video-comments": true;
   "tiktok-explore": true;
@@ -21567,7 +22305,6 @@ export type OperationIdLiteral =
   | "github-repo-forks"
   | "github-repo-languages"
   | "github-repo-releases"
-  | "github-repo-stargazers"
   | "github-search-repositories"
   | "github-search-users"
   | "github-trending"
@@ -21646,6 +22383,17 @@ export type OperationIdLiteral =
   | "instagram-post"
   | "instagram-profile"
   | "instagram-reels"
+  | "jobs-ashby-board"
+  | "jobs-company-search"
+  | "jobs-greenhouse-board"
+  | "jobs-greenhouse-job"
+  | "jobs-hiring-signals"
+  | "jobs-lever-posting"
+  | "jobs-lever-postings"
+  | "jobs-smartrecruiters-posting"
+  | "jobs-smartrecruiters-postings"
+  | "jobs-workday-board"
+  | "jobs-workday-job"
   | "justwatch-age-certifications"
   | "justwatch-discover"
   | "justwatch-episode-by-id"
@@ -21903,6 +22651,18 @@ export type OperationIdLiteral =
   | "spotify-track-recommended"
   | "spotify-track-similar-albums"
   | "spotify-tracks-search"
+  | "steam-achievements"
+  | "steam-app"
+  | "steam-featured"
+  | "steam-featured-categories"
+  | "steam-news"
+  | "steam-package"
+  | "steam-players"
+  | "steam-reviews"
+  | "steam-reviews-histogram"
+  | "steam-search"
+  | "steam-search-results"
+  | "steam-steamspy"
   | "tiktok-category"
   | "tiktok-video-comments"
   | "tiktok-explore"
@@ -22170,7 +22930,6 @@ export declare const OperationIds: Readonly<{
   GitHubGithubRepoForks: "github-repo-forks";
   GitHubGithubRepoLanguages: "github-repo-languages";
   GitHubGithubRepoReleases: "github-repo-releases";
-  GitHubGithubRepoStargazers: "github-repo-stargazers";
   GitHubGithubSearchRepositories: "github-search-repositories";
   GitHubGithubSearchUsers: "github-search-users";
   GitHubGithubTrending: "github-trending";
@@ -22249,6 +23008,17 @@ export declare const OperationIds: Readonly<{
   InstagramPost: "instagram-post";
   InstagramProfile: "instagram-profile";
   InstagramReels: "instagram-reels";
+  JobsAshbyBoard: "jobs-ashby-board";
+  JobsCompanySearch: "jobs-company-search";
+  JobsGreenhouseBoard: "jobs-greenhouse-board";
+  JobsGreenhouseJob: "jobs-greenhouse-job";
+  JobsHiringSignals: "jobs-hiring-signals";
+  JobsLeverPosting: "jobs-lever-posting";
+  JobsLeverPostings: "jobs-lever-postings";
+  JobsSmartrecruitersPosting: "jobs-smartrecruiters-posting";
+  JobsSmartrecruitersPostings: "jobs-smartrecruiters-postings";
+  JobsWorkdayBoard: "jobs-workday-board";
+  JobsWorkdayJob: "jobs-workday-job";
   JustWatchJustwatchAgeCertifications: "justwatch-age-certifications";
   JustWatchJustwatchDiscover: "justwatch-discover";
   JustWatchJustwatchEpisodeById: "justwatch-episode-by-id";
@@ -22506,6 +23276,18 @@ export declare const OperationIds: Readonly<{
   SpotifyTrackRecommended: "spotify-track-recommended";
   SpotifyTrackSimilarAlbums: "spotify-track-similar-albums";
   SpotifyTracksSearch: "spotify-tracks-search";
+  SteamAchievements: "steam-achievements";
+  SteamApp: "steam-app";
+  SteamFeatured: "steam-featured";
+  SteamFeaturedCategories: "steam-featured-categories";
+  SteamNews: "steam-news";
+  SteamPackage: "steam-package";
+  SteamPlayers: "steam-players";
+  SteamReviews: "steam-reviews";
+  SteamReviewsHistogram: "steam-reviews-histogram";
+  SteamSearch: "steam-search";
+  SteamSearchResults: "steam-search-results";
+  SteamSteamspy: "steam-steamspy";
   TiktokCategory: "tiktok-category";
   TiktokChallenge: "tiktok-challenge";
   TiktokChallengeList: "tiktok-challenge-list";
