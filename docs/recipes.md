@@ -83,6 +83,32 @@ const cats = await client.trustMrr.trustmrrCategories();
 const saas = await client.trustMrr.trustmrrCategory({ slug: "saas" });
 ```
 
+## Film, TV, Music & Books (Discogs, Letterboxd, TMDB, Goodreads)
+
+Credential-free media reference across four public catalogs — the Discogs music
+database, Letterboxd film ratings, TMDB movies / TV / people, and Goodreads
+books.
+
+```ts
+// Discogs: search then load a release / master / artist / label
+const releases = await client.discogs.search({ q: "Daft Punk Discovery", type: "release" });
+const master = await client.discogs.master({ id: "26647" });
+
+// Letterboxd: film detail (with aggregate rating), rating histogram, reviews, similar
+const film = await client.letterboxd.film({ slug: "parasite-2019" });
+const histogram = await client.letterboxd.filmRatingHistogram({ slug: "parasite-2019" });
+const popular = await client.letterboxd.popular({ period: "week" });
+
+// TMDB: movie / TV / person detail, search, and charts
+const movie = await client.tmdb.movie({ id: "27205" });
+const topRated = await client.tmdb.movieList({ category: "top_rated" });
+
+// Goodreads: book detail (with the full 1-5 star distribution), reviews, author
+const book = await client.goodreads.book({ id: "2767052" });
+const reviews = await client.goodreads.bookReviews({ id: "2767052", limit: 10 });
+const author = await client.goodreads.author({ id: "153394" });
+```
+
 ## Retries, Timeouts, Headers, And Abort Signals
 
 ```js
