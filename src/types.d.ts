@@ -2921,6 +2921,36 @@ export interface ModelDatasetsGoogleBusinessSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsHousingFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsHousingMarketDatasetFacetItem>;
+}
+
+export interface ModelDatasetsHousingSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsHousingMarketRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsPlaystationFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsPlaystationGameDatasetFacetItem>;
+}
+
+export interface ModelDatasetsPlaystationSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsPlaystationGameRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsProductHuntMakersFacetResponse {
   "dataset"?: string;
   "facet"?: string;
@@ -2971,6 +3001,76 @@ export interface ModelDatasetsProductHuntTrendsSearchResponse {
 export interface ModelDatasetsReviewsSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsAppReview>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsSteamAchievementsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSteamAchievementRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsSteamChartsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSteamChartEntry>;
+  "page"?: number;
+  "page_size"?: number;
+  "snapshot_date"?: string;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsSteamFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsSteamGameDatasetFacetItem>;
+}
+
+export interface ModelDatasetsSteamNewsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSteamNewsRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsSteamPlayerCountsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSteamPlayerCountRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsSteamPricesSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSteamPriceRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsSteamReviewsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSteamReviewRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsSteamSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSteamGameRecord>;
   "page"?: number;
   "page_size"?: number;
   "sort"?: string;
@@ -3085,9 +3185,45 @@ export interface ModelDatasetsGoogleMapBusinessesSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsHousingMarketItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsHousingMarketRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsHousingMarketsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsHousingFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsHousingMarketsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsHousingSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsListResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsDatasetListResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPlaystationGameResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsPlaystationGameRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPlaystationGamesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPlaystationFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPlaystationGamesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPlaystationSearchResponse;
   "msg"?: string;
 }
 
@@ -3142,6 +3278,60 @@ export interface ModelDatasetsProducthuntTrendsSearchResponseDoc {
 export interface ModelDatasetsReviewsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsReviewsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamAchievementsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSteamAchievementsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamChartsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSteamChartsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamGameResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsSteamGameRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamGamesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSteamFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamGamesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSteamSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamNewsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSteamNewsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamPlayerCountsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSteamPlayerCountsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamPricesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSteamPricesSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSteamReviewsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSteamReviewsSearchResponse;
   "msg"?: string;
 }
 
@@ -3724,6 +3914,110 @@ export interface ModelEsGoogleBusinessDatasetItem {
   "website_status"?: ModelEsWebsiteStatus;
 }
 
+export interface ModelEsHousingMarketDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsHousingMarketRecord {
+  "affordability_gap"?: number;
+  "avg_sale_to_list"?: number;
+  "city"?: string;
+  "homes_sold"?: number;
+  "income_geo_id"?: string;
+  "income_vintage"?: string;
+  "inventory"?: number;
+  "is_latest"?: boolean;
+  "last_updated"?: string;
+  "list_price_to_income"?: number;
+  "loaded_at"?: string;
+  "median_dom"?: number;
+  "median_household_income"?: number;
+  "median_list_ppsf"?: number;
+  "median_list_ppsf_mom"?: number;
+  "median_list_ppsf_yoy"?: number;
+  "median_list_price"?: number;
+  "median_list_price_mom"?: number;
+  "median_list_price_yoy"?: number;
+  "median_ppsf"?: number;
+  "median_ppsf_mom"?: number;
+  "median_ppsf_yoy"?: number;
+  "median_sale_price"?: number;
+  "median_sale_price_mom"?: number;
+  "median_sale_price_yoy"?: number;
+  "months_of_supply"?: number;
+  "mortgage_rate_pct"?: number;
+  "new_listings"?: number;
+  "off_market_in_two_weeks"?: number;
+  "parent_metro"?: string;
+  "parent_metro_code"?: string;
+  "pending_sales"?: number;
+  "period_begin"?: string;
+  "period_end"?: string;
+  "price_drops"?: number;
+  "price_to_income"?: number;
+  "property_type"?: string;
+  "property_type_id"?: number;
+  "region"?: string;
+  "region_type"?: string;
+  "region_type_id"?: number;
+  "run_id"?: string;
+  "salary_to_buy"?: number;
+  "schema_version"?: number;
+  "sold_above_list"?: number;
+  "source"?: string;
+  "state"?: string;
+  "state_code"?: string;
+  "table_id"?: number;
+  "zip_code"?: string;
+}
+
+export interface ModelEsPlaystationGameDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsPlaystationGameRecord {
+  "addon_count"?: number;
+  "base_price_value"?: number;
+  "classification"?: string;
+  "coming_soon"?: boolean;
+  "concept_id"?: string;
+  "content_descriptors"?: Array<string>;
+  "content_rating_authority"?: string;
+  "content_rating_desc"?: string;
+  "content_rating_name"?: string;
+  "crawled_at"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "discount_end_time"?: string;
+  "discount_pct"?: number;
+  "discount_text"?: string;
+  "discounted_value"?: number;
+  "edition_count"?: number;
+  "genres"?: Array<string>;
+  "header_image"?: string;
+  "is_addon"?: boolean;
+  "is_free"?: boolean;
+  "is_tied_to_subscription"?: boolean;
+  "name"?: string;
+  "np_title_id"?: string;
+  "platforms"?: Array<string>;
+  "price_tier"?: string;
+  "product_id"?: string;
+  "publisher"?: string;
+  "region"?: string;
+  "release_date"?: string;
+  "release_year"?: number;
+  "run_id"?: string;
+  "schema_version"?: number;
+  "seed_rank"?: number;
+  "service_branding"?: Array<string>;
+  "source_url"?: string;
+  "star_rating_avg"?: number;
+  "star_rating_count"?: number;
+}
+
 export interface ModelEsPostSound {
   "author"?: string;
   "music_id"?: string;
@@ -3866,6 +4160,161 @@ export interface ModelEsProductHuntTrendTopProduct {
 export interface ModelEsProductHuntTrendsFacetItem {
   "count"?: number;
   "value"?: string;
+}
+
+export interface ModelEsSteamAchievementRecord {
+  "appid"?: number;
+  "crawled_at"?: string;
+  "name"?: string;
+  "percent"?: number;
+  "rank"?: number;
+  "schema_version"?: number;
+}
+
+export interface ModelEsSteamChartEntry {
+  "app_id"?: string;
+  "chart"?: string;
+  "chart_uid"?: string;
+  "concurrent_in_game"?: number;
+  "country"?: string;
+  "crawled_at"?: string;
+  "final_price_cents"?: number;
+  "last_week_rank"?: number;
+  "name"?: string;
+  "peak_in_game"?: number;
+  "rank"?: number;
+  "review_summary"?: string;
+  "snapshot_date"?: string;
+}
+
+export interface ModelEsSteamGameDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsSteamGameRecord {
+  "achievements_count"?: number;
+  "appid"?: number;
+  "available"?: boolean;
+  "average_2weeks_min"?: number;
+  "average_forever_min"?: number;
+  "background"?: string;
+  "categories"?: Array<string>;
+  "ccu"?: number;
+  "coming_soon"?: boolean;
+  "content_descriptor_ids"?: Array<number>;
+  "controller_support"?: string;
+  "crawled_at"?: string;
+  "developer"?: string;
+  "developers"?: Array<string>;
+  "discount_pct"?: number;
+  "dlc_count"?: number;
+  "genres"?: Array<string>;
+  "has_owner_estimate"?: boolean;
+  "header_image"?: string;
+  "initial_price_cents"?: number;
+  "is_free"?: boolean;
+  "language_count"?: number;
+  "languages"?: Array<string>;
+  "median_2weeks_min"?: number;
+  "median_forever_min"?: number;
+  "metacritic"?: number;
+  "movie_count"?: number;
+  "name"?: string;
+  "negative"?: number;
+  "owners_bucket"?: string;
+  "owners_max"?: number;
+  "owners_midpoint"?: number;
+  "owners_min"?: number;
+  "package_count"?: number;
+  "platform_linux"?: boolean;
+  "platform_mac"?: boolean;
+  "platform_windows"?: boolean;
+  "positive"?: number;
+  "price_cents"?: number;
+  "price_tier"?: string;
+  "primary_tag"?: string;
+  "publisher"?: string;
+  "publishers"?: Array<string>;
+  "recommendations"?: number;
+  "release_date"?: string;
+  "release_year"?: number;
+  "required_age"?: number;
+  "review_score"?: number;
+  "review_tier"?: string;
+  "run_id"?: string;
+  "schema_version"?: number;
+  "screenshot_count"?: number;
+  "seed_rank"?: number;
+  "short_description"?: string;
+  "tag_ids"?: Array<number>;
+  "tag_schema_version"?: number;
+  "tags"?: Array<string>;
+  "tags_enriched_at"?: string;
+  "total_reviews"?: number;
+  "type"?: string;
+  "website"?: string;
+}
+
+export interface ModelEsSteamNewsRecord {
+  "appid"?: number;
+  "author"?: string;
+  "contents"?: string;
+  "crawled_at"?: string;
+  "date"?: number;
+  "feed_label"?: string;
+  "feed_name"?: string;
+  "gid"?: string;
+  "is_external_url"?: boolean;
+  "published_at"?: string;
+  "schema_version"?: number;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelEsSteamPlayerCountRecord {
+  "appid"?: number;
+  "crawled_at"?: string;
+  "name"?: string;
+  "player_count"?: number;
+  "schema_version"?: number;
+  "snapshot_date"?: string;
+}
+
+export interface ModelEsSteamPriceRecord {
+  "appid"?: number;
+  "crawled_at"?: string;
+  "currency"?: string;
+  "discount_pct"?: number;
+  "initial_price_cents"?: number;
+  "is_free"?: boolean;
+  "name"?: string;
+  "price_cents"?: number;
+  "schema_version"?: number;
+  "snapshot_date"?: string;
+}
+
+export interface ModelEsSteamReviewRecord {
+  "appid"?: number;
+  "author_playtime_forever_min"?: number;
+  "comment_count"?: number;
+  "crawled_at"?: string;
+  "created_at"?: string;
+  "language"?: string;
+  "playtime_at_review_min"?: number;
+  "received_for_free"?: boolean;
+  "recommendation_id"?: string;
+  "review"?: string;
+  "schema_version"?: number;
+  "steam_purchase"?: boolean;
+  "timestamp_created"?: number;
+  "timestamp_updated"?: number;
+  "voted_up"?: boolean;
+  "votes_funny"?: number;
+  "votes_up"?: number;
+  "weighted_vote_score"?: number;
+  "written_during_early_access"?: boolean;
 }
 
 export interface ModelEsTechstackDatasetFacetItem {
@@ -4270,6 +4719,33 @@ export interface ModelEspnTeamResponseDoc {
 export interface ModelEspnTeamsResponseDoc {
   "code"?: number;
   "data"?: ModelEspnTeamsResponse;
+  "msg"?: string;
+}
+
+export interface ModelExtractOption {
+  "instructions"?: string;
+  "render"?: "auto" | "http" | "browser";
+  "schema": Record<string, unknown>;
+  "url": string;
+}
+
+export interface ModelExtractResult {
+  "data"?: unknown;
+  "final_url"?: string;
+  "model"?: string;
+  "url"?: string;
+  "usage"?: ModelExtractUsage;
+}
+
+export interface ModelExtractUsage {
+  "input_tokens"?: number;
+  "output_tokens"?: number;
+  "total_tokens"?: number;
+}
+
+export interface ModelExtractResponseDoc {
+  "code"?: number;
+  "data"?: ModelExtractResult;
   "msg"?: string;
 }
 
@@ -5817,6 +6293,7 @@ export interface ModelJustwatchDiscoverResponse {
   "genres"?: Array<string>;
   "language"?: string;
   "monetization_types"?: Array<string>;
+  "production_countries"?: Array<string>;
   "providers"?: Array<string>;
   "results"?: Array<ModelJustwatchSearchTitle>;
   "type"?: string;
@@ -5963,6 +6440,7 @@ export interface ModelJustwatchSearchTitle {
   "offers"?: Array<ModelJustwatchOffer>;
   "path"?: string;
   "poster_url"?: string;
+  "production_countries"?: Array<string>;
   "title"?: string;
   "url"?: string;
   "year"?: number;
@@ -6834,7 +7312,7 @@ export interface ModelMetaculusQuestionRow {
 }
 
 export interface ModelMetaculusQuestionScaling {
-  "continuous_range"?: Array<string>;
+  "continuous_range"?: Array<number>;
   "inbound_outcome_count"?: number;
   "nominal_max"?: number;
   "nominal_min"?: number;
@@ -6929,6 +7407,209 @@ export interface ModelPitchbookFundResponseDoc {
 export interface ModelPitchbookInvestorResponseDoc {
   "code"?: number;
   "data"?: ModelPitchbookProfileResponse;
+  "msg"?: string;
+}
+
+export interface ModelPlaystationAddOn {
+  "classification"?: string;
+  "name"?: string;
+  "price"?: ModelPlaystationDetailPrice;
+  "product_id"?: string;
+}
+
+export interface ModelPlaystationCollectionLink {
+  "category_id"?: string;
+  "link_type"?: string;
+  "name"?: string;
+}
+
+export interface ModelPlaystationConceptDetail {
+  "add_ons"?: Array<ModelPlaystationAddOn>;
+  "content_rating"?: ModelPlaystationContentRating;
+  "default_product_id"?: string;
+  "description"?: string;
+  "editions"?: Array<ModelPlaystationEdition>;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "invariant_name"?: string;
+  "media"?: Array<ModelPlaystationMedia>;
+  "name"?: string;
+  "platforms"?: Array<string>;
+  "price"?: ModelPlaystationDetailPrice;
+  "publisher"?: string;
+  "release_date"?: string;
+  "source_url"?: string;
+  "star_rating"?: ModelPlaystationStarRating;
+}
+
+export interface ModelPlaystationContentRating {
+  "authority"?: string;
+  "description"?: string;
+  "descriptors"?: Array<string>;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelPlaystationDetailPrice {
+  "applicability"?: string;
+  "base_price"?: string;
+  "base_price_value"?: number;
+  "currency_code"?: string;
+  "discount_text"?: string;
+  "discounted_price"?: string;
+  "discounted_value"?: number;
+  "end_time"?: string;
+  "is_exclusive"?: boolean;
+  "is_free"?: boolean;
+  "is_tied_to_subscription"?: boolean;
+  "service_branding"?: Array<string>;
+  "upsell_text"?: string;
+}
+
+export interface ModelPlaystationEdition {
+  "classification"?: string;
+  "name"?: string;
+  "platforms"?: Array<string>;
+  "price"?: ModelPlaystationDetailPrice;
+  "product_id"?: string;
+}
+
+export interface ModelPlaystationFacet {
+  "display_name"?: string;
+  "name"?: string;
+  "values"?: Array<ModelPlaystationFacetValue>;
+}
+
+export interface ModelPlaystationFacetValue {
+  "count"?: number;
+  "display_name"?: string;
+  "key"?: string;
+}
+
+export interface ModelPlaystationGridResponse {
+  "count"?: number;
+  "facets"?: Array<ModelPlaystationFacet>;
+  "id"?: string;
+  "items"?: Array<ModelPlaystationStoreItem>;
+  "name"?: string;
+  "next_page"?: number;
+  "page_info"?: ModelPlaystationPageInfo;
+  "source_url"?: string;
+}
+
+export interface ModelPlaystationListPrice {
+  "base_price"?: string;
+  "discount_text"?: string;
+  "discounted_price"?: string;
+  "is_exclusive"?: boolean;
+  "is_free"?: boolean;
+  "is_tied_to_subscription"?: boolean;
+  "service_branding"?: Array<string>;
+  "upsell_service_branding"?: Array<string>;
+  "upsell_text"?: string;
+}
+
+export interface ModelPlaystationMedia {
+  "role"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelPlaystationMerchResponse {
+  "collections"?: Array<ModelPlaystationCollectionLink>;
+  "count"?: number;
+  "items"?: Array<ModelPlaystationStoreItem>;
+  "sections"?: Array<ModelPlaystationSection>;
+  "source_url"?: string;
+}
+
+export interface ModelPlaystationPageInfo {
+  "is_last"?: boolean;
+  "offset"?: number;
+  "size"?: number;
+  "total_count"?: number;
+}
+
+export interface ModelPlaystationProductDetail {
+  "classification"?: string;
+  "concept_id"?: string;
+  "content_rating"?: ModelPlaystationContentRating;
+  "edition_name"?: string;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "media"?: Array<ModelPlaystationMedia>;
+  "name"?: string;
+  "np_title_id"?: string;
+  "platforms"?: Array<string>;
+  "price"?: ModelPlaystationDetailPrice;
+  "publisher"?: string;
+  "release_date"?: string;
+  "screen_languages"?: Array<string>;
+  "source_url"?: string;
+  "spoken_languages"?: Array<string>;
+  "star_rating"?: ModelPlaystationStarRating;
+  "type"?: string;
+}
+
+export interface ModelPlaystationSearchResponse {
+  "count"?: number;
+  "items"?: Array<ModelPlaystationStoreItem>;
+  "next_page"?: number;
+  "page_info"?: ModelPlaystationPageInfo;
+  "source_url"?: string;
+  "term"?: string;
+}
+
+export interface ModelPlaystationSection {
+  "count"?: number;
+  "id"?: string;
+  "items"?: Array<ModelPlaystationStoreItem>;
+  "name"?: string;
+}
+
+export interface ModelPlaystationStarRating {
+  "average"?: number;
+  "count"?: number;
+}
+
+export interface ModelPlaystationStoreItem {
+  "classification"?: string;
+  "id"?: string;
+  "kind"?: string;
+  "media"?: Array<ModelPlaystationMedia>;
+  "name"?: string;
+  "np_title_id"?: string;
+  "platforms"?: Array<string>;
+  "price"?: ModelPlaystationListPrice;
+}
+
+export interface ModelPlaystationConceptResponseDoc {
+  "code"?: number;
+  "data"?: ModelPlaystationConceptDetail;
+  "msg"?: string;
+}
+
+export interface ModelPlaystationGridResponseDoc {
+  "code"?: number;
+  "data"?: ModelPlaystationGridResponse;
+  "msg"?: string;
+}
+
+export interface ModelPlaystationMerchResponseDoc {
+  "code"?: number;
+  "data"?: ModelPlaystationMerchResponse;
+  "msg"?: string;
+}
+
+export interface ModelPlaystationProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelPlaystationProductDetail;
+  "msg"?: string;
+}
+
+export interface ModelPlaystationSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelPlaystationSearchResponse;
   "msg"?: string;
 }
 
@@ -11889,8 +12570,10 @@ export interface ModelSteamAchievementsResponse {
 export interface ModelSteamAppDetails {
   "achievements_total"?: number;
   "appid"?: number;
+  "background"?: string;
   "capsule_image"?: string;
   "categories"?: Array<ModelSteamIdname>;
+  "content_descriptor_ids"?: Array<number>;
   "controller_support"?: string;
   "developers"?: Array<string>;
   "dlc"?: Array<number>;
@@ -11900,6 +12583,7 @@ export interface ModelSteamAppDetails {
   "metacritic"?: ModelSteamMetacritic;
   "movies"?: number;
   "name"?: string;
+  "packages"?: Array<number>;
   "platforms"?: ModelSteamPlatforms;
   "price_overview"?: ModelSteamPrice;
   "publishers"?: Array<string>;
@@ -11917,6 +12601,71 @@ export interface ModelSteamAppDetails {
 export interface ModelSteamAppRelease {
   "coming_soon"?: boolean;
   "date"?: string;
+}
+
+export interface ModelSteamCategoryBrowseResponse {
+  "count"?: number;
+  "items"?: Array<ModelSteamCategoryItem>;
+  "slug"?: string;
+  "source_url"?: string;
+  "start"?: number;
+  "tag_id"?: number;
+  "tag_name"?: string;
+  "total"?: number;
+}
+
+export interface ModelSteamCategoryItem {
+  "appid"?: number;
+  "developers"?: Array<string>;
+  "name"?: string;
+  "platforms"?: ModelSteamPlatforms;
+  "price_overview"?: ModelSteamPrice;
+  "publishers"?: Array<string>;
+  "release_date_unix"?: number;
+  "review_count"?: number;
+  "review_percent_positive"?: number;
+  "review_summary"?: string;
+  "short_description"?: string;
+  "tags"?: Array<ModelSteamWeightedTag>;
+  "type"?: number;
+  "url"?: string;
+}
+
+export interface ModelSteamChartRank {
+  "appid"?: number;
+  "concurrent_in_game"?: number;
+  "last_week_rank"?: number;
+  "name"?: string;
+  "peak_in_game"?: number;
+  "rank"?: number;
+  "review_summary"?: string;
+}
+
+export interface ModelSteamChartResponse {
+  "chart"?: string;
+  "count"?: number;
+  "enriched"?: boolean;
+  "ranks"?: Array<ModelSteamChartRank>;
+  "source_url"?: string;
+  "updated_unix"?: number;
+}
+
+export interface ModelSteamCommunityRecommendationsResponse {
+  "count"?: number;
+  "review_filter"?: string;
+  "reviews"?: Array<ModelSteamCommunityReview>;
+  "source_url"?: string;
+}
+
+export interface ModelSteamCommunityReview {
+  "appid"?: string;
+  "author_name"?: string;
+  "author_profile_url"?: string;
+  "helpful"?: string;
+  "playtime"?: string;
+  "recommendation_id"?: string;
+  "review_excerpt"?: string;
+  "review_url"?: string;
 }
 
 export interface ModelSteamFeaturedBucket {
@@ -11971,6 +12720,12 @@ export interface ModelSteamHistogramBucket {
 export interface ModelSteamIdname {
   "description"?: string;
   "id"?: string;
+}
+
+export interface ModelSteamItemsResponse {
+  "count"?: number;
+  "items"?: Array<ModelSteamCategoryItem>;
+  "source_url"?: string;
 }
 
 export interface ModelSteamMetacritic {
@@ -12124,6 +12879,7 @@ export interface ModelSteamSearchResultRow {
   "price"?: string;
   "release_date"?: string;
   "review_summary"?: string;
+  "tag_ids"?: Array<number>;
   "url"?: string;
 }
 
@@ -12160,6 +12916,50 @@ export interface ModelSteamSteamSpyResponse {
   "userscore"?: number;
 }
 
+export interface ModelSteamTagEntry {
+  "name"?: string;
+  "tagid"?: number;
+}
+
+export interface ModelSteamTagsListResponse {
+  "count"?: number;
+  "language"?: string;
+  "source_url"?: string;
+  "tags"?: Array<ModelSteamTagEntry>;
+}
+
+export interface ModelSteamTopReleasePage {
+  "appids"?: Array<number>;
+  "name"?: string;
+  "start_of_month_unix"?: number;
+  "url_path"?: string;
+}
+
+export interface ModelSteamTopReleasesResponse {
+  "count"?: number;
+  "pages"?: Array<ModelSteamTopReleasePage>;
+  "source_url"?: string;
+}
+
+export interface ModelSteamTopSellerRank {
+  "appid"?: number;
+  "item"?: ModelSteamCategoryItem;
+  "rank"?: number;
+}
+
+export interface ModelSteamTopSellersResponse {
+  "count"?: number;
+  "country_code"?: string;
+  "ranks"?: Array<ModelSteamTopSellerRank>;
+  "source_url"?: string;
+  "start_date_unix"?: number;
+}
+
+export interface ModelSteamWeightedTag {
+  "tagid"?: number;
+  "weight"?: number;
+}
+
 export interface ModelSteamAchievementsResponseDoc {
   "code"?: number;
   "data"?: ModelSteamAchievementsResponse;
@@ -12169,6 +12969,24 @@ export interface ModelSteamAchievementsResponseDoc {
 export interface ModelSteamAppResponseDoc {
   "code"?: number;
   "data"?: ModelSteamAppDetails;
+  "msg"?: string;
+}
+
+export interface ModelSteamCategoryBrowseResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamCategoryBrowseResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamChartResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamChartResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamCommunityRecommendationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamCommunityRecommendationsResponse;
   "msg"?: string;
 }
 
@@ -12187,6 +13005,12 @@ export interface ModelSteamFeaturedResponseDoc {
 export interface ModelSteamHistogramResponseDoc {
   "code"?: number;
   "data"?: ModelSteamReviewsHistogramResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamItemsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamItemsResponse;
   "msg"?: string;
 }
 
@@ -12229,6 +13053,24 @@ export interface ModelSteamSearchResultsResponseDoc {
 export interface ModelSteamSteamspyResponseDoc {
   "code"?: number;
   "data"?: ModelSteamSteamSpyResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamTagsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamTagsListResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamTopReleasesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamTopReleasesResponse;
+  "msg"?: string;
+}
+
+export interface ModelSteamTopSellersResponseDoc {
+  "code"?: number;
+  "data"?: ModelSteamTopSellersResponse;
   "msg"?: string;
 }
 
@@ -15862,6 +16704,136 @@ export interface DatasetsGoogleMapBusinessesSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsHousingMarketsFacetsResponse = CrawloraResponse<ModelDatasetsHousingMarketsFacetResponseDoc>;
+export interface DatasetsHousingMarketsFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "region_type"?: string;
+  "state_code"?: string;
+  "property_type"?: string;
+  "parent_metro_code"?: string;
+  "zip_code"?: string;
+  "period"?: string;
+  "latest"?: boolean;
+  "min_median_sale_price"?: number;
+  "max_median_sale_price"?: number;
+  "min_median_list_price"?: number;
+  "max_median_list_price"?: number;
+  "min_price_to_income"?: number;
+  "max_price_to_income"?: number;
+  "min_salary_to_buy"?: number;
+  "max_salary_to_buy"?: number;
+  "min_median_dom"?: number;
+  "max_median_dom"?: number;
+  "min_inventory"?: number;
+  "max_inventory"?: number;
+  "min_homes_sold"?: number;
+}
+
+export type DatasetsHousingMarketsItemResponse = CrawloraResponse<ModelDatasetsHousingMarketItemResponseDoc>;
+export interface DatasetsHousingMarketsItemParams {
+  "region_type": string;
+  "table_id": number;
+  "period"?: string;
+  "property_type"?: string;
+  "history"?: boolean;
+}
+
+export type DatasetsHousingMarketsSearchResponse = CrawloraResponse<ModelDatasetsHousingMarketsSearchResponseDoc>;
+export interface DatasetsHousingMarketsSearchParams {
+  "q"?: string;
+  "region_type"?: string;
+  "state_code"?: string;
+  "property_type"?: string;
+  "parent_metro_code"?: string;
+  "zip_code"?: string;
+  "period"?: string;
+  "latest"?: boolean;
+  "min_median_sale_price"?: number;
+  "max_median_sale_price"?: number;
+  "min_median_list_price"?: number;
+  "max_median_list_price"?: number;
+  "min_price_to_income"?: number;
+  "max_price_to_income"?: number;
+  "min_salary_to_buy"?: number;
+  "max_salary_to_buy"?: number;
+  "min_median_dom"?: number;
+  "max_median_dom"?: number;
+  "min_inventory"?: number;
+  "max_inventory"?: number;
+  "min_homes_sold"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsPlaystationGamesFacetsResponse = CrawloraResponse<ModelDatasetsPlaystationGamesFacetResponseDoc>;
+export interface DatasetsPlaystationGamesFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "publisher"?: string;
+  "classification"?: string;
+  "genre"?: string;
+  "platform"?: string;
+  "content_rating"?: string;
+  "content_descriptor"?: string;
+  "price_tier"?: string;
+  "branding"?: string;
+  "region"?: string;
+  "concept_id"?: string;
+  "np_title_id"?: string;
+  "run_id"?: string;
+  "is_free"?: boolean;
+  "is_addon"?: boolean;
+  "is_tied_to_subscription"?: boolean;
+  "coming_soon"?: boolean;
+  "on_sale"?: boolean;
+  "min_price_value"?: number;
+  "max_price_value"?: number;
+  "min_star_rating"?: number;
+  "min_star_count"?: number;
+  "min_discount_pct"?: number;
+  "min_release_year"?: number;
+  "max_release_year"?: number;
+}
+
+export type DatasetsPlaystationGamesItemResponse = CrawloraResponse<ModelDatasetsPlaystationGameResponseDoc>;
+export interface DatasetsPlaystationGamesItemParams {
+  "product_id": string;
+}
+
+export type DatasetsPlaystationGamesSearchResponse = CrawloraResponse<ModelDatasetsPlaystationGamesSearchResponseDoc>;
+export interface DatasetsPlaystationGamesSearchParams {
+  "q"?: string;
+  "publisher"?: string;
+  "classification"?: string;
+  "genre"?: string;
+  "platform"?: string;
+  "content_rating"?: string;
+  "content_descriptor"?: string;
+  "price_tier"?: string;
+  "branding"?: string;
+  "region"?: string;
+  "concept_id"?: string;
+  "np_title_id"?: string;
+  "run_id"?: string;
+  "is_free"?: boolean;
+  "is_addon"?: boolean;
+  "is_tied_to_subscription"?: boolean;
+  "coming_soon"?: boolean;
+  "on_sale"?: boolean;
+  "min_price_value"?: number;
+  "max_price_value"?: number;
+  "min_star_rating"?: number;
+  "min_star_count"?: number;
+  "min_discount_pct"?: number;
+  "min_release_year"?: number;
+  "max_release_year"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsProducthuntMakersFacetsResponse = CrawloraResponse<ModelDatasetsProducthuntMakersFacetResponseDoc>;
 export interface DatasetsProducthuntMakersFacetsParams {
   "facet": string;
@@ -15943,6 +16915,133 @@ export interface DatasetsProducthuntTrendsSearchParams {
   "launched_before"?: string;
   "min_votes"?: number;
   "min_launches"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsSteamAchievementsSearchResponse = CrawloraResponse<ModelDatasetsSteamAchievementsSearchResponseDoc>;
+export interface DatasetsSteamAchievementsSearchParams {
+  "app_id"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsSteamChartsSearchResponse = CrawloraResponse<ModelDatasetsSteamChartsSearchResponseDoc>;
+export interface DatasetsSteamChartsSearchParams {
+  "q"?: string;
+  "chart"?: string;
+  "country"?: string;
+  "app_id"?: string;
+  "date"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsSteamGamesFacetsResponse = CrawloraResponse<ModelDatasetsSteamGamesFacetResponseDoc>;
+export interface DatasetsSteamGamesFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "type"?: string;
+  "developer"?: string;
+  "publisher"?: string;
+  "genre"?: string;
+  "category"?: string;
+  "tag"?: string;
+  "price_tier"?: string;
+  "review_tier"?: string;
+  "owners_bucket"?: string;
+  "run_id"?: string;
+  "is_free"?: boolean;
+  "windows"?: boolean;
+  "mac"?: boolean;
+  "linux"?: boolean;
+  "on_sale"?: boolean;
+  "min_price_cents"?: number;
+  "max_price_cents"?: number;
+  "min_owners"?: number;
+  "min_positive"?: number;
+  "min_total_reviews"?: number;
+  "min_review_score"?: number;
+  "min_metacritic"?: number;
+  "min_ccu"?: number;
+  "min_release_year"?: number;
+  "max_release_year"?: number;
+}
+
+export type DatasetsSteamGamesItemResponse = CrawloraResponse<ModelDatasetsSteamGameResponseDoc>;
+export interface DatasetsSteamGamesItemParams {
+  "appid": number;
+}
+
+export type DatasetsSteamGamesSearchResponse = CrawloraResponse<ModelDatasetsSteamGamesSearchResponseDoc>;
+export interface DatasetsSteamGamesSearchParams {
+  "q"?: string;
+  "type"?: string;
+  "developer"?: string;
+  "publisher"?: string;
+  "genre"?: string;
+  "category"?: string;
+  "tag"?: string;
+  "price_tier"?: string;
+  "review_tier"?: string;
+  "owners_bucket"?: string;
+  "run_id"?: string;
+  "is_free"?: boolean;
+  "windows"?: boolean;
+  "mac"?: boolean;
+  "linux"?: boolean;
+  "on_sale"?: boolean;
+  "min_price_cents"?: number;
+  "max_price_cents"?: number;
+  "min_owners"?: number;
+  "min_positive"?: number;
+  "min_total_reviews"?: number;
+  "min_review_score"?: number;
+  "min_metacritic"?: number;
+  "min_ccu"?: number;
+  "min_release_year"?: number;
+  "max_release_year"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsSteamNewsSearchResponse = CrawloraResponse<ModelDatasetsSteamNewsSearchResponseDoc>;
+export interface DatasetsSteamNewsSearchParams {
+  "q"?: string;
+  "app_id"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsSteamPlayercountsSearchResponse = CrawloraResponse<ModelDatasetsSteamPlayerCountsSearchResponseDoc>;
+export interface DatasetsSteamPlayercountsSearchParams {
+  "app_id"?: string;
+  "date"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsSteamPricesSearchResponse = CrawloraResponse<ModelDatasetsSteamPricesSearchResponseDoc>;
+export interface DatasetsSteamPricesSearchParams {
+  "app_id"?: string;
+  "date"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsSteamReviewsSearchResponse = CrawloraResponse<ModelDatasetsSteamReviewsSearchResponseDoc>;
+export interface DatasetsSteamReviewsSearchParams {
+  "q"?: string;
+  "app_id"?: string;
+  "language"?: string;
+  "voted_up"?: string;
   "sort"?: string;
   "page"?: number;
   "page_size"?: number;
@@ -16146,6 +17245,12 @@ export type EspnTeamsResponse = CrawloraResponse<ModelEspnTeamsResponseDoc>;
 export interface EspnTeamsParams {
   "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
   "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
+}
+
+export type WebExtractBody = CrawloraBody<ModelExtractOption>;
+export type WebExtractResponse = CrawloraResponse<ModelExtractResponseDoc>;
+export interface WebExtractParams {
+  "extractOption": WebExtractBody;
 }
 
 export type GeocodingLookupResponse = CrawloraResponse<ModelGeocodingLookupResponseDoc>;
@@ -16824,6 +17929,7 @@ export interface JustWatchJustwatchDiscoverParams {
   "type"?: "all" | "movie" | "show";
   "genres"?: string;
   "providers"?: string;
+  "production_countries"?: string;
   "monetization_types"?: "FLATRATE" | "FREE" | "ADS" | "RENT" | "BUY";
   "year_min"?: number;
   "year_max"?: number;
@@ -17212,6 +18318,62 @@ export type PitchBookPitchbookInvestorResponse = CrawloraResponse<ModelPitchbook
 export interface PitchBookPitchbookInvestorParams {
   "id"?: string;
   "url"?: string;
+}
+
+export type PlayStationPlaystationBrowseResponse = CrawloraResponse<ModelPlaystationGridResponseDoc>;
+export interface PlayStationPlaystationBrowseParams {
+  "page"?: number;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type PlayStationPlaystationCategoryResponse = CrawloraResponse<ModelPlaystationGridResponseDoc>;
+export interface PlayStationPlaystationCategoryParams {
+  "id": string;
+  "page"?: number;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type PlayStationPlaystationConceptResponse = CrawloraResponse<ModelPlaystationConceptResponseDoc>;
+export interface PlayStationPlaystationConceptParams {
+  "id": string;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type PlayStationPlaystationDealsResponse = CrawloraResponse<ModelPlaystationMerchResponseDoc>;
+export interface PlayStationPlaystationDealsParams {
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type PlayStationPlaystationLatestResponse = CrawloraResponse<ModelPlaystationMerchResponseDoc>;
+export interface PlayStationPlaystationLatestParams {
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type PlayStationPlaystationPageResponse = CrawloraResponse<ModelPlaystationMerchResponseDoc>;
+export interface PlayStationPlaystationPageParams {
+  "alias": string;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type PlayStationPlaystationProductResponse = CrawloraResponse<ModelPlaystationProductResponseDoc>;
+export interface PlayStationPlaystationProductParams {
+  "id": string;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type PlayStationPlaystationSearchResponse = CrawloraResponse<ModelPlaystationSearchResponseDoc>;
+export interface PlayStationPlaystationSearchParams {
+  "term": string;
+  "page"?: number;
+  "cc"?: string;
+  "l"?: string;
 }
 
 export type PolymarketActivityTradesResponse = CrawloraResponse<ModelPolymarketActivityTradesResponseDoc>;
@@ -18635,6 +19797,46 @@ export interface SteamAppParams {
   "filters"?: string;
 }
 
+export type SteamCategoryResponse = CrawloraResponse<ModelSteamCategoryBrowseResponseDoc>;
+export interface SteamCategoryParams {
+  "slug": string;
+  "free"?: boolean;
+  "released_only"?: boolean;
+  "coming_soon_only"?: boolean;
+  "start"?: number;
+  "count"?: number;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamChartsConcurrentResponse = CrawloraResponse<ModelSteamChartResponseDoc>;
+export interface SteamChartsConcurrentParams {
+  "enrich"?: boolean;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamChartsMostPlayedResponse = CrawloraResponse<ModelSteamChartResponseDoc>;
+export interface SteamChartsMostPlayedParams {
+  "enrich"?: boolean;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamChartsTopReleasesResponse = CrawloraResponse<ModelSteamTopReleasesResponseDoc>;
+export interface SteamChartsTopReleasesParams {
+}
+
+export type SteamCommunityRecommendationsResponse = CrawloraResponse<ModelSteamCommunityRecommendationsResponseDoc>;
+export interface SteamCommunityRecommendationsParams {
+  "review_filter"?: "helpful" | "recent" | "funny";
+  "playtime_min"?: number;
+  "playtime_max"?: number;
+  "review_language"?: string;
+  "cc"?: string;
+  "l"?: string;
+}
+
 export type SteamFeaturedResponse = CrawloraResponse<ModelSteamFeaturedResponseDoc>;
 export interface SteamFeaturedParams {
   "cc"?: string;
@@ -18643,6 +19845,13 @@ export interface SteamFeaturedParams {
 
 export type SteamFeaturedCategoriesResponse = CrawloraResponse<ModelSteamFeaturedCategoriesResponseDoc>;
 export interface SteamFeaturedCategoriesParams {
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamItemsResponse = CrawloraResponse<ModelSteamItemsResponseDoc>;
+export interface SteamItemsParams {
+  "appids": string;
   "cc"?: string;
   "l"?: string;
 }
@@ -18704,6 +19913,39 @@ export interface SteamSearchResultsParams {
 export type SteamSteamspyResponse = CrawloraResponse<ModelSteamSteamspyResponseDoc>;
 export interface SteamSteamspyParams {
   "appid": string;
+}
+
+export type SteamTagsResponse = CrawloraResponse<ModelSteamSearchResultsResponseDoc>;
+export interface SteamTagsParams {
+  "tags"?: string;
+  "untags"?: string;
+  "category1"?: string;
+  "category2"?: string;
+  "category3"?: string;
+  "os"?: string;
+  "maxprice"?: string;
+  "specials"?: boolean;
+  "hidef2p"?: boolean;
+  "deck_compatibility"?: "1" | "2" | "3";
+  "vrsupport"?: string;
+  "filter"?: "globaltopsellers" | "topsellers" | "popularnew" | "comingsoon";
+  "supportedlang"?: string;
+  "sort_by"?: "Relevance" | "Released_DESC" | "Name_ASC" | "Price_ASC" | "Price_DESC" | "Reviews_DESC";
+  "start"?: number;
+  "count"?: number;
+  "cc"?: string;
+  "l"?: string;
+}
+
+export type SteamTagsListResponse = CrawloraResponse<ModelSteamTagsListResponseDoc>;
+export interface SteamTagsListParams {
+  "l"?: string;
+}
+
+export type SteamTopSellersResponse = CrawloraResponse<ModelSteamTopSellersResponseDoc>;
+export interface SteamTopSellersParams {
+  "cc"?: string;
+  "l"?: string;
 }
 
 export type TiktokCategoryResponse = CrawloraResponse<ModelTiktokCategoryResponseDoc>;
@@ -19555,6 +20797,7 @@ export interface CoinGeckoService {
 export interface WebService {
   contact<T = WebContactResponse>(params: WebContactParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   antibotCheck<T = WebAntibotCheckResponse>(params: WebAntibotCheckParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  extract<T = WebExtractResponse>(params: WebExtractParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   scrape<T = WebScrapeResponse>(params: WebScrapeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techstack<T = WebTechstackResponse>(params: WebTechstackParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
@@ -19577,6 +20820,12 @@ export interface DatasetsService {
   googleMapBusinessesItem<T = DatasetsGoogleMapBusinessesItemResponse>(params: DatasetsGoogleMapBusinessesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesNearby<T = DatasetsGoogleMapBusinessesNearbyResponse>(params: DatasetsGoogleMapBusinessesNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesSearch<T = DatasetsGoogleMapBusinessesSearchResponse>(params?: DatasetsGoogleMapBusinessesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  housingMarketsFacets<T = DatasetsHousingMarketsFacetsResponse>(params: DatasetsHousingMarketsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  housingMarketsItem<T = DatasetsHousingMarketsItemResponse>(params: DatasetsHousingMarketsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  housingMarketsSearch<T = DatasetsHousingMarketsSearchResponse>(params?: DatasetsHousingMarketsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationGamesFacets<T = DatasetsPlaystationGamesFacetsResponse>(params: DatasetsPlaystationGamesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationGamesItem<T = DatasetsPlaystationGamesItemResponse>(params: DatasetsPlaystationGamesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationGamesSearch<T = DatasetsPlaystationGamesSearchResponse>(params?: DatasetsPlaystationGamesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntMakersFacets<T = DatasetsProducthuntMakersFacetsResponse>(params: DatasetsProducthuntMakersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntMakersItem<T = DatasetsProducthuntMakersItemResponse>(params: DatasetsProducthuntMakersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntMakersSearch<T = DatasetsProducthuntMakersSearchResponse>(params?: DatasetsProducthuntMakersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -19585,6 +20834,15 @@ export interface DatasetsService {
   producthuntProductsSearch<T = DatasetsProducthuntProductsSearchResponse>(params?: DatasetsProducthuntProductsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntTrendsFacets<T = DatasetsProducthuntTrendsFacetsResponse>(params: DatasetsProducthuntTrendsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntTrendsSearch<T = DatasetsProducthuntTrendsSearchResponse>(params?: DatasetsProducthuntTrendsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamAchievementsSearch<T = DatasetsSteamAchievementsSearchResponse>(params?: DatasetsSteamAchievementsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamChartsSearch<T = DatasetsSteamChartsSearchResponse>(params?: DatasetsSteamChartsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamGamesFacets<T = DatasetsSteamGamesFacetsResponse>(params: DatasetsSteamGamesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamGamesItem<T = DatasetsSteamGamesItemResponse>(params: DatasetsSteamGamesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamGamesSearch<T = DatasetsSteamGamesSearchResponse>(params?: DatasetsSteamGamesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamNewsSearch<T = DatasetsSteamNewsSearchResponse>(params?: DatasetsSteamNewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamPlayercountsSearch<T = DatasetsSteamPlayercountsSearchResponse>(params?: DatasetsSteamPlayercountsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamPricesSearch<T = DatasetsSteamPricesSearchResponse>(params?: DatasetsSteamPricesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  steamReviewsSearch<T = DatasetsSteamReviewsSearchResponse>(params?: DatasetsSteamReviewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techstackFacets<T = DatasetsTechstackFacetsResponse>(params: DatasetsTechstackFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techstackItem<T = DatasetsTechstackItemResponse>(params: DatasetsTechstackItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techstackSearch<T = DatasetsTechstackSearchResponse>(params?: DatasetsTechstackSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -19811,6 +21069,17 @@ export interface PitchBookService {
   pitchbookCompany<T = PitchBookPitchbookCompanyResponse>(params?: PitchBookPitchbookCompanyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   pitchbookFund<T = PitchBookPitchbookFundResponse>(params?: PitchBookPitchbookFundParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   pitchbookInvestor<T = PitchBookPitchbookInvestorResponse>(params?: PitchBookPitchbookInvestorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface PlayStationService {
+  playstationBrowse<T = PlayStationPlaystationBrowseResponse>(params?: PlayStationPlaystationBrowseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationCategory<T = PlayStationPlaystationCategoryResponse>(params: PlayStationPlaystationCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationConcept<T = PlayStationPlaystationConceptResponse>(params: PlayStationPlaystationConceptParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationDeals<T = PlayStationPlaystationDealsResponse>(params?: PlayStationPlaystationDealsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationLatest<T = PlayStationPlaystationLatestResponse>(params?: PlayStationPlaystationLatestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationPage<T = PlayStationPlaystationPageResponse>(params: PlayStationPlaystationPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationProduct<T = PlayStationPlaystationProductResponse>(params: PlayStationPlaystationProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playstationSearch<T = PlayStationPlaystationSearchResponse>(params: PlayStationPlaystationSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface PolymarketService {
@@ -20051,8 +21320,14 @@ export interface SpotifyService {
 export interface SteamService {
   achievements<T = SteamAchievementsResponse>(params: SteamAchievementsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   app<T = SteamAppResponse>(params: SteamAppParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = SteamCategoryResponse>(params: SteamCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chartsConcurrent<T = SteamChartsConcurrentResponse>(params?: SteamChartsConcurrentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chartsMostPlayed<T = SteamChartsMostPlayedResponse>(params?: SteamChartsMostPlayedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chartsTopReleases<T = SteamChartsTopReleasesResponse>(params?: SteamChartsTopReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  communityRecommendations<T = SteamCommunityRecommendationsResponse>(params?: SteamCommunityRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   featured<T = SteamFeaturedResponse>(params?: SteamFeaturedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   featuredCategories<T = SteamFeaturedCategoriesResponse>(params?: SteamFeaturedCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  items<T = SteamItemsResponse>(params: SteamItemsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = SteamNewsResponse>(params: SteamNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   package<T = SteamPackageResponse>(params: SteamPackageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   players<T = SteamPlayersResponse>(params: SteamPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -20061,6 +21336,9 @@ export interface SteamService {
   search<T = SteamSearchResponse>(params: SteamSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   searchResults<T = SteamSearchResultsResponse>(params: SteamSearchResultsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   steamspy<T = SteamSteamspyResponse>(params: SteamSteamspyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tags<T = SteamTagsResponse>(params?: SteamTagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tagsList<T = SteamTagsListResponse>(params?: SteamTagsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  topSellers<T = SteamTopSellersResponse>(params?: SteamTopSellersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface TiktokService {
@@ -20231,6 +21509,7 @@ export interface CrawloraGeneratedGroups {
   metaculus: MetaculusService;
   meta: MetaService;
   pitchBook: PitchBookService;
+  playStation: PlayStationService;
   polymarket: PolymarketService;
   productHunt: ProductHuntService;
   reddit: RedditService;
@@ -20374,6 +21653,12 @@ export interface OperationParamsMap {
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemParams;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyParams;
   "datasets-google-map-businesses-search": DatasetsGoogleMapBusinessesSearchParams;
+  "datasets-housing-markets-facets": DatasetsHousingMarketsFacetsParams;
+  "datasets-housing-markets-item": DatasetsHousingMarketsItemParams;
+  "datasets-housing-markets-search": DatasetsHousingMarketsSearchParams;
+  "datasets-playstation-games-facets": DatasetsPlaystationGamesFacetsParams;
+  "datasets-playstation-games-item": DatasetsPlaystationGamesItemParams;
+  "datasets-playstation-games-search": DatasetsPlaystationGamesSearchParams;
   "datasets-producthunt-makers-facets": DatasetsProducthuntMakersFacetsParams;
   "datasets-producthunt-makers-item": DatasetsProducthuntMakersItemParams;
   "datasets-producthunt-makers-search": DatasetsProducthuntMakersSearchParams;
@@ -20382,6 +21667,15 @@ export interface OperationParamsMap {
   "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchParams;
   "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsParams;
   "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchParams;
+  "datasets-steam-achievements-search": DatasetsSteamAchievementsSearchParams;
+  "datasets-steam-charts-search": DatasetsSteamChartsSearchParams;
+  "datasets-steam-games-facets": DatasetsSteamGamesFacetsParams;
+  "datasets-steam-games-item": DatasetsSteamGamesItemParams;
+  "datasets-steam-games-search": DatasetsSteamGamesSearchParams;
+  "datasets-steam-news-search": DatasetsSteamNewsSearchParams;
+  "datasets-steam-playercounts-search": DatasetsSteamPlayercountsSearchParams;
+  "datasets-steam-prices-search": DatasetsSteamPricesSearchParams;
+  "datasets-steam-reviews-search": DatasetsSteamReviewsSearchParams;
   "datasets-techstack-facets": DatasetsTechstackFacetsParams;
   "datasets-techstack-item": DatasetsTechstackItemParams;
   "datasets-techstack-search": DatasetsTechstackSearchParams;
@@ -20404,6 +21698,7 @@ export interface OperationParamsMap {
   "espn-team": EspnTeamParams;
   "espn-team-roster": EspnTeamRosterParams;
   "espn-teams": EspnTeamsParams;
+  "extract": WebExtractParams;
   "geocoding-lookup": GeocodingLookupParams;
   "geocoding-reverse": GeocodingReverseParams;
   "geocoding-search": GeocodingSearchParams;
@@ -20563,6 +21858,14 @@ export interface OperationParamsMap {
   "pitchbook-company": PitchBookPitchbookCompanyParams;
   "pitchbook-fund": PitchBookPitchbookFundParams;
   "pitchbook-investor": PitchBookPitchbookInvestorParams;
+  "playstation-browse": PlayStationPlaystationBrowseParams;
+  "playstation-category": PlayStationPlaystationCategoryParams;
+  "playstation-concept": PlayStationPlaystationConceptParams;
+  "playstation-deals": PlayStationPlaystationDealsParams;
+  "playstation-latest": PlayStationPlaystationLatestParams;
+  "playstation-page": PlayStationPlaystationPageParams;
+  "playstation-product": PlayStationPlaystationProductParams;
+  "playstation-search": PlayStationPlaystationSearchParams;
   "polymarket-activity-trades": PolymarketActivityTradesParams;
   "polymarket-clob-market": PolymarketClobMarketParams;
   "polymarket-dashboard-macro": PolymarketDashboardMacroParams;
@@ -20762,8 +22065,14 @@ export interface OperationParamsMap {
   "spotify-tracks-search": SpotifyTracksSearchParams;
   "steam-achievements": SteamAchievementsParams;
   "steam-app": SteamAppParams;
+  "steam-category": SteamCategoryParams;
+  "steam-charts-concurrent": SteamChartsConcurrentParams;
+  "steam-charts-most-played": SteamChartsMostPlayedParams;
+  "steam-charts-top-releases": SteamChartsTopReleasesParams;
+  "steam-community-recommendations": SteamCommunityRecommendationsParams;
   "steam-featured": SteamFeaturedParams;
   "steam-featured-categories": SteamFeaturedCategoriesParams;
+  "steam-items": SteamItemsParams;
   "steam-news": SteamNewsParams;
   "steam-package": SteamPackageParams;
   "steam-players": SteamPlayersParams;
@@ -20772,6 +22081,9 @@ export interface OperationParamsMap {
   "steam-search": SteamSearchParams;
   "steam-search-results": SteamSearchResultsParams;
   "steam-steamspy": SteamSteamspyParams;
+  "steam-tags": SteamTagsParams;
+  "steam-tags-list": SteamTagsListParams;
+  "steam-top-sellers": SteamTopSellersParams;
   "tiktok-category": TiktokCategoryParams;
   "tiktok-video-comments": TiktokVideoCommentsParams;
   "tiktok-explore": TiktokExploreParams;
@@ -21002,6 +22314,12 @@ export interface OperationResponseMap {
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemResponse;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyResponse;
   "datasets-google-map-businesses-search": DatasetsGoogleMapBusinessesSearchResponse;
+  "datasets-housing-markets-facets": DatasetsHousingMarketsFacetsResponse;
+  "datasets-housing-markets-item": DatasetsHousingMarketsItemResponse;
+  "datasets-housing-markets-search": DatasetsHousingMarketsSearchResponse;
+  "datasets-playstation-games-facets": DatasetsPlaystationGamesFacetsResponse;
+  "datasets-playstation-games-item": DatasetsPlaystationGamesItemResponse;
+  "datasets-playstation-games-search": DatasetsPlaystationGamesSearchResponse;
   "datasets-producthunt-makers-facets": DatasetsProducthuntMakersFacetsResponse;
   "datasets-producthunt-makers-item": DatasetsProducthuntMakersItemResponse;
   "datasets-producthunt-makers-search": DatasetsProducthuntMakersSearchResponse;
@@ -21010,6 +22328,15 @@ export interface OperationResponseMap {
   "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchResponse;
   "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsResponse;
   "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchResponse;
+  "datasets-steam-achievements-search": DatasetsSteamAchievementsSearchResponse;
+  "datasets-steam-charts-search": DatasetsSteamChartsSearchResponse;
+  "datasets-steam-games-facets": DatasetsSteamGamesFacetsResponse;
+  "datasets-steam-games-item": DatasetsSteamGamesItemResponse;
+  "datasets-steam-games-search": DatasetsSteamGamesSearchResponse;
+  "datasets-steam-news-search": DatasetsSteamNewsSearchResponse;
+  "datasets-steam-playercounts-search": DatasetsSteamPlayercountsSearchResponse;
+  "datasets-steam-prices-search": DatasetsSteamPricesSearchResponse;
+  "datasets-steam-reviews-search": DatasetsSteamReviewsSearchResponse;
   "datasets-techstack-facets": DatasetsTechstackFacetsResponse;
   "datasets-techstack-item": DatasetsTechstackItemResponse;
   "datasets-techstack-search": DatasetsTechstackSearchResponse;
@@ -21032,6 +22359,7 @@ export interface OperationResponseMap {
   "espn-team": EspnTeamResponse;
   "espn-team-roster": EspnTeamRosterResponse;
   "espn-teams": EspnTeamsResponse;
+  "extract": WebExtractResponse;
   "geocoding-lookup": GeocodingLookupResponse;
   "geocoding-reverse": GeocodingReverseResponse;
   "geocoding-search": GeocodingSearchResponse;
@@ -21191,6 +22519,14 @@ export interface OperationResponseMap {
   "pitchbook-company": PitchBookPitchbookCompanyResponse;
   "pitchbook-fund": PitchBookPitchbookFundResponse;
   "pitchbook-investor": PitchBookPitchbookInvestorResponse;
+  "playstation-browse": PlayStationPlaystationBrowseResponse;
+  "playstation-category": PlayStationPlaystationCategoryResponse;
+  "playstation-concept": PlayStationPlaystationConceptResponse;
+  "playstation-deals": PlayStationPlaystationDealsResponse;
+  "playstation-latest": PlayStationPlaystationLatestResponse;
+  "playstation-page": PlayStationPlaystationPageResponse;
+  "playstation-product": PlayStationPlaystationProductResponse;
+  "playstation-search": PlayStationPlaystationSearchResponse;
   "polymarket-activity-trades": PolymarketActivityTradesResponse;
   "polymarket-clob-market": PolymarketClobMarketResponse;
   "polymarket-dashboard-macro": PolymarketDashboardMacroResponse;
@@ -21390,8 +22726,14 @@ export interface OperationResponseMap {
   "spotify-tracks-search": SpotifyTracksSearchResponse;
   "steam-achievements": SteamAchievementsResponse;
   "steam-app": SteamAppResponse;
+  "steam-category": SteamCategoryResponse;
+  "steam-charts-concurrent": SteamChartsConcurrentResponse;
+  "steam-charts-most-played": SteamChartsMostPlayedResponse;
+  "steam-charts-top-releases": SteamChartsTopReleasesResponse;
+  "steam-community-recommendations": SteamCommunityRecommendationsResponse;
   "steam-featured": SteamFeaturedResponse;
   "steam-featured-categories": SteamFeaturedCategoriesResponse;
+  "steam-items": SteamItemsResponse;
   "steam-news": SteamNewsResponse;
   "steam-package": SteamPackageResponse;
   "steam-players": SteamPlayersResponse;
@@ -21400,6 +22742,9 @@ export interface OperationResponseMap {
   "steam-search": SteamSearchResponse;
   "steam-search-results": SteamSearchResultsResponse;
   "steam-steamspy": SteamSteamspyResponse;
+  "steam-tags": SteamTagsResponse;
+  "steam-tags-list": SteamTagsListResponse;
+  "steam-top-sellers": SteamTopSellersResponse;
   "tiktok-category": TiktokCategoryResponse;
   "tiktok-video-comments": TiktokVideoCommentsResponse;
   "tiktok-explore": TiktokExploreResponse;
@@ -21630,6 +22975,12 @@ export interface OperationRequiredParamsMap {
   "datasets-google-map-businesses-item": true;
   "datasets-google-map-businesses-nearby": true;
   "datasets-google-map-businesses-search": false;
+  "datasets-housing-markets-facets": true;
+  "datasets-housing-markets-item": true;
+  "datasets-housing-markets-search": false;
+  "datasets-playstation-games-facets": true;
+  "datasets-playstation-games-item": true;
+  "datasets-playstation-games-search": false;
   "datasets-producthunt-makers-facets": true;
   "datasets-producthunt-makers-item": true;
   "datasets-producthunt-makers-search": false;
@@ -21638,6 +22989,15 @@ export interface OperationRequiredParamsMap {
   "datasets-producthunt-products-search": false;
   "datasets-producthunt-trends-facets": true;
   "datasets-producthunt-trends-search": false;
+  "datasets-steam-achievements-search": false;
+  "datasets-steam-charts-search": false;
+  "datasets-steam-games-facets": true;
+  "datasets-steam-games-item": true;
+  "datasets-steam-games-search": false;
+  "datasets-steam-news-search": false;
+  "datasets-steam-playercounts-search": false;
+  "datasets-steam-prices-search": false;
+  "datasets-steam-reviews-search": false;
   "datasets-techstack-facets": true;
   "datasets-techstack-item": true;
   "datasets-techstack-search": false;
@@ -21660,6 +23020,7 @@ export interface OperationRequiredParamsMap {
   "espn-team": true;
   "espn-team-roster": true;
   "espn-teams": true;
+  "extract": true;
   "geocoding-lookup": true;
   "geocoding-reverse": true;
   "geocoding-search": false;
@@ -21819,6 +23180,14 @@ export interface OperationRequiredParamsMap {
   "pitchbook-company": false;
   "pitchbook-fund": false;
   "pitchbook-investor": false;
+  "playstation-browse": false;
+  "playstation-category": true;
+  "playstation-concept": true;
+  "playstation-deals": false;
+  "playstation-latest": false;
+  "playstation-page": true;
+  "playstation-product": true;
+  "playstation-search": true;
   "polymarket-activity-trades": false;
   "polymarket-clob-market": true;
   "polymarket-dashboard-macro": false;
@@ -22018,8 +23387,14 @@ export interface OperationRequiredParamsMap {
   "spotify-tracks-search": true;
   "steam-achievements": true;
   "steam-app": true;
+  "steam-category": true;
+  "steam-charts-concurrent": false;
+  "steam-charts-most-played": false;
+  "steam-charts-top-releases": false;
+  "steam-community-recommendations": false;
   "steam-featured": false;
   "steam-featured-categories": false;
+  "steam-items": true;
   "steam-news": true;
   "steam-package": true;
   "steam-players": true;
@@ -22028,6 +23403,9 @@ export interface OperationRequiredParamsMap {
   "steam-search": true;
   "steam-search-results": true;
   "steam-steamspy": true;
+  "steam-tags": false;
+  "steam-tags-list": false;
+  "steam-top-sellers": false;
   "tiktok-category": false;
   "tiktok-video-comments": true;
   "tiktok-explore": true;
@@ -22265,6 +23643,12 @@ export type OperationIdLiteral =
   | "datasets-google-map-businesses-item"
   | "datasets-google-map-businesses-nearby"
   | "datasets-google-map-businesses-search"
+  | "datasets-housing-markets-facets"
+  | "datasets-housing-markets-item"
+  | "datasets-housing-markets-search"
+  | "datasets-playstation-games-facets"
+  | "datasets-playstation-games-item"
+  | "datasets-playstation-games-search"
   | "datasets-producthunt-makers-facets"
   | "datasets-producthunt-makers-item"
   | "datasets-producthunt-makers-search"
@@ -22273,6 +23657,15 @@ export type OperationIdLiteral =
   | "datasets-producthunt-products-search"
   | "datasets-producthunt-trends-facets"
   | "datasets-producthunt-trends-search"
+  | "datasets-steam-achievements-search"
+  | "datasets-steam-charts-search"
+  | "datasets-steam-games-facets"
+  | "datasets-steam-games-item"
+  | "datasets-steam-games-search"
+  | "datasets-steam-news-search"
+  | "datasets-steam-playercounts-search"
+  | "datasets-steam-prices-search"
+  | "datasets-steam-reviews-search"
   | "datasets-techstack-facets"
   | "datasets-techstack-item"
   | "datasets-techstack-search"
@@ -22295,6 +23688,7 @@ export type OperationIdLiteral =
   | "espn-team"
   | "espn-team-roster"
   | "espn-teams"
+  | "extract"
   | "geocoding-lookup"
   | "geocoding-reverse"
   | "geocoding-search"
@@ -22454,6 +23848,14 @@ export type OperationIdLiteral =
   | "pitchbook-company"
   | "pitchbook-fund"
   | "pitchbook-investor"
+  | "playstation-browse"
+  | "playstation-category"
+  | "playstation-concept"
+  | "playstation-deals"
+  | "playstation-latest"
+  | "playstation-page"
+  | "playstation-product"
+  | "playstation-search"
   | "polymarket-activity-trades"
   | "polymarket-clob-market"
   | "polymarket-dashboard-macro"
@@ -22653,8 +24055,14 @@ export type OperationIdLiteral =
   | "spotify-tracks-search"
   | "steam-achievements"
   | "steam-app"
+  | "steam-category"
+  | "steam-charts-concurrent"
+  | "steam-charts-most-played"
+  | "steam-charts-top-releases"
+  | "steam-community-recommendations"
   | "steam-featured"
   | "steam-featured-categories"
+  | "steam-items"
   | "steam-news"
   | "steam-package"
   | "steam-players"
@@ -22663,6 +24071,9 @@ export type OperationIdLiteral =
   | "steam-search"
   | "steam-search-results"
   | "steam-steamspy"
+  | "steam-tags"
+  | "steam-tags-list"
+  | "steam-top-sellers"
   | "tiktok-category"
   | "tiktok-video-comments"
   | "tiktok-explore"
@@ -22890,7 +24301,13 @@ export declare const OperationIds: Readonly<{
   DatasetsGoogleMapBusinessesItem: "datasets-google-map-businesses-item";
   DatasetsGoogleMapBusinessesNearby: "datasets-google-map-businesses-nearby";
   DatasetsGoogleMapBusinessesSearch: "datasets-google-map-businesses-search";
+  DatasetsHousingMarketsFacets: "datasets-housing-markets-facets";
+  DatasetsHousingMarketsItem: "datasets-housing-markets-item";
+  DatasetsHousingMarketsSearch: "datasets-housing-markets-search";
   DatasetsList: "datasets-list";
+  DatasetsPlaystationGamesFacets: "datasets-playstation-games-facets";
+  DatasetsPlaystationGamesItem: "datasets-playstation-games-item";
+  DatasetsPlaystationGamesSearch: "datasets-playstation-games-search";
   DatasetsProducthuntMakersFacets: "datasets-producthunt-makers-facets";
   DatasetsProducthuntMakersItem: "datasets-producthunt-makers-item";
   DatasetsProducthuntMakersSearch: "datasets-producthunt-makers-search";
@@ -22899,6 +24316,15 @@ export declare const OperationIds: Readonly<{
   DatasetsProducthuntProductsSearch: "datasets-producthunt-products-search";
   DatasetsProducthuntTrendsFacets: "datasets-producthunt-trends-facets";
   DatasetsProducthuntTrendsSearch: "datasets-producthunt-trends-search";
+  DatasetsSteamAchievementsSearch: "datasets-steam-achievements-search";
+  DatasetsSteamChartsSearch: "datasets-steam-charts-search";
+  DatasetsSteamGamesFacets: "datasets-steam-games-facets";
+  DatasetsSteamGamesItem: "datasets-steam-games-item";
+  DatasetsSteamGamesSearch: "datasets-steam-games-search";
+  DatasetsSteamNewsSearch: "datasets-steam-news-search";
+  DatasetsSteamPlayercountsSearch: "datasets-steam-playercounts-search";
+  DatasetsSteamPricesSearch: "datasets-steam-prices-search";
+  DatasetsSteamReviewsSearch: "datasets-steam-reviews-search";
   DatasetsTechstackFacets: "datasets-techstack-facets";
   DatasetsTechstackItem: "datasets-techstack-item";
   DatasetsTechstackSearch: "datasets-techstack-search";
@@ -23080,6 +24506,14 @@ export declare const OperationIds: Readonly<{
   PitchBookPitchbookCompany: "pitchbook-company";
   PitchBookPitchbookFund: "pitchbook-fund";
   PitchBookPitchbookInvestor: "pitchbook-investor";
+  PlayStationPlaystationBrowse: "playstation-browse";
+  PlayStationPlaystationCategory: "playstation-category";
+  PlayStationPlaystationConcept: "playstation-concept";
+  PlayStationPlaystationDeals: "playstation-deals";
+  PlayStationPlaystationLatest: "playstation-latest";
+  PlayStationPlaystationPage: "playstation-page";
+  PlayStationPlaystationProduct: "playstation-product";
+  PlayStationPlaystationSearch: "playstation-search";
   PolymarketActivityTrades: "polymarket-activity-trades";
   PolymarketClobMarket: "polymarket-clob-market";
   PolymarketDashboardMacro: "polymarket-dashboard-macro";
@@ -23278,8 +24712,14 @@ export declare const OperationIds: Readonly<{
   SpotifyTracksSearch: "spotify-tracks-search";
   SteamAchievements: "steam-achievements";
   SteamApp: "steam-app";
+  SteamCategory: "steam-category";
+  SteamChartsConcurrent: "steam-charts-concurrent";
+  SteamChartsMostPlayed: "steam-charts-most-played";
+  SteamChartsTopReleases: "steam-charts-top-releases";
+  SteamCommunityRecommendations: "steam-community-recommendations";
   SteamFeatured: "steam-featured";
   SteamFeaturedCategories: "steam-featured-categories";
+  SteamItems: "steam-items";
   SteamNews: "steam-news";
   SteamPackage: "steam-package";
   SteamPlayers: "steam-players";
@@ -23288,6 +24728,9 @@ export declare const OperationIds: Readonly<{
   SteamSearch: "steam-search";
   SteamSearchResults: "steam-search-results";
   SteamSteamspy: "steam-steamspy";
+  SteamTags: "steam-tags";
+  SteamTagsList: "steam-tags-list";
+  SteamTopSellers: "steam-top-sellers";
   TiktokCategory: "tiktok-category";
   TiktokChallenge: "tiktok-challenge";
   TiktokChallengeList: "tiktok-challenge-list";
@@ -23341,6 +24784,7 @@ export declare const OperationIds: Readonly<{
   UserMeApiKeysRotate: "user-me-api-keys-rotate";
   WebAntibotCheck: "antibot-check";
   WebContact: "contact";
+  WebExtract: "extract";
   WebScrape: "web-scrape";
   WebTechstack: "web-techstack";
   XPost: "x-post";

@@ -6064,6 +6064,316 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-housing-markets-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-housing-markets-facets",
+    "method": "GET",
+    "path": "/datasets/housing-markets/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "region_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "property_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "parent_metro_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "zip_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "period",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "latest",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_median_sale_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_median_sale_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_median_list_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_median_list_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_price_to_income",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price_to_income",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_salary_to_buy",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_salary_to_buy",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_median_dom",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_median_dom",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_inventory",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_inventory",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_homes_sold",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-housing-markets-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-housing-markets-item",
+    "method": "GET",
+    "path": "/datasets/housing-markets/items/{region_type}/{table_id}",
+    "pathParams": [
+      "region_type",
+      "table_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "period",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "property_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "history",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-housing-markets-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-housing-markets-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/housing-markets/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "region_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "property_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "parent_metro_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "zip_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "period",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "latest",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_median_sale_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_median_sale_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_median_list_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_median_list_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_price_to_income",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price_to_income",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_salary_to_buy",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_salary_to_buy",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_median_dom",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_median_dom",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_inventory",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_inventory",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_homes_sold",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-list": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -6079,6 +6389,339 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-playstation-games-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-playstation-games-facets",
+    "method": "GET",
+    "path": "/datasets/playstation-games/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "publisher",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "classification",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "platform",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "content_rating",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "content_descriptor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "price_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "branding",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "concept_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "np_title_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_free",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_addon",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_tied_to_subscription",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "coming_soon",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "on_sale",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_price_value",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price_value",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_star_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_star_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_discount_pct",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_release_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_release_year",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-playstation-games-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-playstation-games-item",
+    "method": "GET",
+    "path": "/datasets/playstation-games/items/{product_id}",
+    "pathParams": [
+      "product_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-playstation-games-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-playstation-games-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/playstation-games/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "publisher",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "classification",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "platform",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "content_rating",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "content_descriptor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "price_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "branding",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "concept_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "np_title_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_free",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_addon",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_tied_to_subscription",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "coming_soon",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "on_sale",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_price_value",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price_value",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_star_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_star_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_discount_pct",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_release_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_release_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -6490,6 +7133,645 @@ export const operations = {
         "in": "query",
         "name": "min_launches",
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-achievements-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-achievements-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/steam-achievements/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "app_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-charts-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-charts-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/steam-charts/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "chart",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "app_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-games-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-games-facets",
+    "method": "GET",
+    "path": "/datasets/steam-games/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "developer",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "publisher",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tag",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "price_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "review_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "owners_bucket",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_free",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "windows",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "mac",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "linux",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "on_sale",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_price_cents",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price_cents",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_owners",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_positive",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_total_reviews",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_review_score",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_metacritic",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_ccu",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_release_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_release_year",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-games-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-games-item",
+    "method": "GET",
+    "path": "/datasets/steam-games/items/{appid}",
+    "pathParams": [
+      "appid"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-games-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-games-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/steam-games/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "developer",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "publisher",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tag",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "price_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "review_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "owners_bucket",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_free",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "windows",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "mac",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "linux",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "on_sale",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_price_cents",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price_cents",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_owners",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_positive",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_total_reviews",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_review_score",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_metacritic",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_ccu",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_release_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_release_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-news-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-news-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/steam-news/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "app_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-playercounts-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-playercounts-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/steam-playercounts/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "app_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-prices-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-prices-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/steam-prices/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "app_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-steam-reviews-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-steam-reviews-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/steam-reviews/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "app_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "voted_up",
+        "type": "string"
       },
       {
         "in": "query",
@@ -7691,6 +8973,25 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "extract": {
+    "bodyParam": "extractOption",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "extract",
+    "method": "POST",
+    "path": "/extract",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -11270,6 +12571,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "in": "query",
+        "name": "production_countries",
+        "type": "string"
+      },
+      {
         "enum": [
           "FLATRATE",
           "FREE",
@@ -13235,6 +14541,294 @@ export const operations = {
       {
         "in": "query",
         "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "playstation-browse": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "playstation-browse",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/playstation/browse",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "playstation-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "playstation-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/playstation/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "playstation-concept": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "playstation-concept",
+    "method": "GET",
+    "path": "/playstation/concept",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "playstation-deals": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "playstation-deals",
+    "method": "GET",
+    "path": "/playstation/deals",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "playstation-latest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "playstation-latest",
+    "method": "GET",
+    "path": "/playstation/latest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "playstation-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "playstation-page",
+    "method": "GET",
+    "path": "/playstation/page",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "alias",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "playstation-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "playstation-product",
+    "method": "GET",
+    "path": "/playstation/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "playstation-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "playstation-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/playstation/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
         "type": "string"
       }
     ],
@@ -20584,6 +22178,211 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "steam-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "start"
+    ],
+    "formParams": [],
+    "id": "steam-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/steam/category/{slug}",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "free",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "released_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "coming_soon_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "start",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-charts-concurrent": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-charts-concurrent",
+    "method": "GET",
+    "path": "/steam/charts/concurrent",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "enrich",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-charts-most-played": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-charts-most-played",
+    "method": "GET",
+    "path": "/steam/charts/most-played",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "enrich",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-charts-top-releases": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-charts-top-releases",
+    "method": "GET",
+    "path": "/steam/charts/top-releases",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-community-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-community-recommendations",
+    "method": "GET",
+    "path": "/steam/community-recommendations",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "helpful",
+          "recent",
+          "funny"
+        ],
+        "in": "query",
+        "name": "review_filter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "playtime_min",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "playtime_max",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "review_language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "steam-featured": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -20629,6 +22428,42 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-items": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-items",
+    "method": "GET",
+    "path": "/steam/items",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "appids",
+        "required": true,
+        "type": "string"
+      },
       {
         "in": "query",
         "name": "cc",
@@ -20971,6 +22806,194 @@ export const operations = {
         "in": "query",
         "name": "appid",
         "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-tags": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "start"
+    ],
+    "formParams": [],
+    "id": "steam-tags",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/steam/tags",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tags",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "untags",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category1",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category2",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category3",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "os",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "maxprice",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "specials",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "hidef2p",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "deck_compatibility",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "vrsupport",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "globaltopsellers",
+          "topsellers",
+          "popularnew",
+          "comingsoon"
+        ],
+        "in": "query",
+        "name": "filter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "supportedlang",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Relevance",
+          "Released_DESC",
+          "Name_ASC",
+          "Price_ASC",
+          "Price_DESC",
+          "Reviews_DESC"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-tags-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-tags-list",
+    "method": "GET",
+    "path": "/steam/tags/list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "steam-top-sellers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "steam-top-sellers",
+    "method": "GET",
+    "path": "/steam/top-sellers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cc",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
         "type": "string"
       }
     ],
@@ -24626,7 +26649,13 @@ export const groups = {
     "googleMapBusinessesItem": "datasets-google-map-businesses-item",
     "googleMapBusinessesNearby": "datasets-google-map-businesses-nearby",
     "googleMapBusinessesSearch": "datasets-google-map-businesses-search",
+    "housingMarketsFacets": "datasets-housing-markets-facets",
+    "housingMarketsItem": "datasets-housing-markets-item",
+    "housingMarketsSearch": "datasets-housing-markets-search",
     "list": "datasets-list",
+    "playstationGamesFacets": "datasets-playstation-games-facets",
+    "playstationGamesItem": "datasets-playstation-games-item",
+    "playstationGamesSearch": "datasets-playstation-games-search",
     "producthuntMakersFacets": "datasets-producthunt-makers-facets",
     "producthuntMakersItem": "datasets-producthunt-makers-item",
     "producthuntMakersSearch": "datasets-producthunt-makers-search",
@@ -24635,6 +26664,15 @@ export const groups = {
     "producthuntProductsSearch": "datasets-producthunt-products-search",
     "producthuntTrendsFacets": "datasets-producthunt-trends-facets",
     "producthuntTrendsSearch": "datasets-producthunt-trends-search",
+    "steamAchievementsSearch": "datasets-steam-achievements-search",
+    "steamChartsSearch": "datasets-steam-charts-search",
+    "steamGamesFacets": "datasets-steam-games-facets",
+    "steamGamesItem": "datasets-steam-games-item",
+    "steamGamesSearch": "datasets-steam-games-search",
+    "steamNewsSearch": "datasets-steam-news-search",
+    "steamPlayercountsSearch": "datasets-steam-playercounts-search",
+    "steamPricesSearch": "datasets-steam-prices-search",
+    "steamReviewsSearch": "datasets-steam-reviews-search",
     "techstackFacets": "datasets-techstack-facets",
     "techstackItem": "datasets-techstack-item",
     "techstackSearch": "datasets-techstack-search",
@@ -24846,6 +26884,16 @@ export const groups = {
     "pitchbookCompany": "pitchbook-company",
     "pitchbookFund": "pitchbook-fund",
     "pitchbookInvestor": "pitchbook-investor"
+  },
+  "playStation": {
+    "playstationBrowse": "playstation-browse",
+    "playstationCategory": "playstation-category",
+    "playstationConcept": "playstation-concept",
+    "playstationDeals": "playstation-deals",
+    "playstationLatest": "playstation-latest",
+    "playstationPage": "playstation-page",
+    "playstationProduct": "playstation-product",
+    "playstationSearch": "playstation-search"
   },
   "polymarket": {
     "activityTrades": "polymarket-activity-trades",
@@ -25072,8 +27120,14 @@ export const groups = {
   "steam": {
     "achievements": "steam-achievements",
     "app": "steam-app",
+    "category": "steam-category",
+    "chartsConcurrent": "steam-charts-concurrent",
+    "chartsMostPlayed": "steam-charts-most-played",
+    "chartsTopReleases": "steam-charts-top-releases",
+    "communityRecommendations": "steam-community-recommendations",
     "featured": "steam-featured",
     "featuredCategories": "steam-featured-categories",
+    "items": "steam-items",
     "news": "steam-news",
     "package": "steam-package",
     "players": "steam-players",
@@ -25081,7 +27135,10 @@ export const groups = {
     "reviewsHistogram": "steam-reviews-histogram",
     "search": "steam-search",
     "searchResults": "steam-search-results",
-    "steamspy": "steam-steamspy"
+    "steamspy": "steam-steamspy",
+    "tags": "steam-tags",
+    "tagsList": "steam-tags-list",
+    "topSellers": "steam-top-sellers"
   },
   "tiktok": {
     "category": "tiktok-category",
@@ -25149,6 +27206,7 @@ export const groups = {
   "web": {
     "antibotCheck": "antibot-check",
     "contact": "contact",
+    "extract": "extract",
     "scrape": "web-scrape",
     "techstack": "web-techstack"
   },
@@ -25220,7 +27278,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 625;
+export const operationCount = 658;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -25339,7 +27397,13 @@ export const OperationIds = Object.freeze({
   "DatasetsGoogleMapBusinessesItem": "datasets-google-map-businesses-item",
   "DatasetsGoogleMapBusinessesNearby": "datasets-google-map-businesses-nearby",
   "DatasetsGoogleMapBusinessesSearch": "datasets-google-map-businesses-search",
+  "DatasetsHousingMarketsFacets": "datasets-housing-markets-facets",
+  "DatasetsHousingMarketsItem": "datasets-housing-markets-item",
+  "DatasetsHousingMarketsSearch": "datasets-housing-markets-search",
   "DatasetsList": "datasets-list",
+  "DatasetsPlaystationGamesFacets": "datasets-playstation-games-facets",
+  "DatasetsPlaystationGamesItem": "datasets-playstation-games-item",
+  "DatasetsPlaystationGamesSearch": "datasets-playstation-games-search",
   "DatasetsProducthuntMakersFacets": "datasets-producthunt-makers-facets",
   "DatasetsProducthuntMakersItem": "datasets-producthunt-makers-item",
   "DatasetsProducthuntMakersSearch": "datasets-producthunt-makers-search",
@@ -25348,6 +27412,15 @@ export const OperationIds = Object.freeze({
   "DatasetsProducthuntProductsSearch": "datasets-producthunt-products-search",
   "DatasetsProducthuntTrendsFacets": "datasets-producthunt-trends-facets",
   "DatasetsProducthuntTrendsSearch": "datasets-producthunt-trends-search",
+  "DatasetsSteamAchievementsSearch": "datasets-steam-achievements-search",
+  "DatasetsSteamChartsSearch": "datasets-steam-charts-search",
+  "DatasetsSteamGamesFacets": "datasets-steam-games-facets",
+  "DatasetsSteamGamesItem": "datasets-steam-games-item",
+  "DatasetsSteamGamesSearch": "datasets-steam-games-search",
+  "DatasetsSteamNewsSearch": "datasets-steam-news-search",
+  "DatasetsSteamPlayercountsSearch": "datasets-steam-playercounts-search",
+  "DatasetsSteamPricesSearch": "datasets-steam-prices-search",
+  "DatasetsSteamReviewsSearch": "datasets-steam-reviews-search",
   "DatasetsTechstackFacets": "datasets-techstack-facets",
   "DatasetsTechstackItem": "datasets-techstack-item",
   "DatasetsTechstackSearch": "datasets-techstack-search",
@@ -25529,6 +27602,14 @@ export const OperationIds = Object.freeze({
   "PitchBookPitchbookCompany": "pitchbook-company",
   "PitchBookPitchbookFund": "pitchbook-fund",
   "PitchBookPitchbookInvestor": "pitchbook-investor",
+  "PlayStationPlaystationBrowse": "playstation-browse",
+  "PlayStationPlaystationCategory": "playstation-category",
+  "PlayStationPlaystationConcept": "playstation-concept",
+  "PlayStationPlaystationDeals": "playstation-deals",
+  "PlayStationPlaystationLatest": "playstation-latest",
+  "PlayStationPlaystationPage": "playstation-page",
+  "PlayStationPlaystationProduct": "playstation-product",
+  "PlayStationPlaystationSearch": "playstation-search",
   "PolymarketActivityTrades": "polymarket-activity-trades",
   "PolymarketClobMarket": "polymarket-clob-market",
   "PolymarketDashboardMacro": "polymarket-dashboard-macro",
@@ -25727,8 +27808,14 @@ export const OperationIds = Object.freeze({
   "SpotifyTracksSearch": "spotify-tracks-search",
   "SteamAchievements": "steam-achievements",
   "SteamApp": "steam-app",
+  "SteamCategory": "steam-category",
+  "SteamChartsConcurrent": "steam-charts-concurrent",
+  "SteamChartsMostPlayed": "steam-charts-most-played",
+  "SteamChartsTopReleases": "steam-charts-top-releases",
+  "SteamCommunityRecommendations": "steam-community-recommendations",
   "SteamFeatured": "steam-featured",
   "SteamFeaturedCategories": "steam-featured-categories",
+  "SteamItems": "steam-items",
   "SteamNews": "steam-news",
   "SteamPackage": "steam-package",
   "SteamPlayers": "steam-players",
@@ -25737,6 +27824,9 @@ export const OperationIds = Object.freeze({
   "SteamSearch": "steam-search",
   "SteamSearchResults": "steam-search-results",
   "SteamSteamspy": "steam-steamspy",
+  "SteamTags": "steam-tags",
+  "SteamTagsList": "steam-tags-list",
+  "SteamTopSellers": "steam-top-sellers",
   "TiktokCategory": "tiktok-category",
   "TiktokChallenge": "tiktok-challenge",
   "TiktokChallengeList": "tiktok-challenge-list",
@@ -25790,6 +27880,7 @@ export const OperationIds = Object.freeze({
   "UserMeApiKeysRotate": "user-me-api-keys-rotate",
   "WebAntibotCheck": "antibot-check",
   "WebContact": "contact",
+  "WebExtract": "extract",
   "WebScrape": "web-scrape",
   "WebTechstack": "web-techstack",
   "XPost": "x-post",
