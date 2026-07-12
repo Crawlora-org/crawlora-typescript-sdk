@@ -83,6 +83,34 @@ const cats = await client.trustMrr.trustmrrCategories();
 const saas = await client.trustMrr.trustmrrCategory({ slug: "saas" });
 ```
 
+## Film, TV, Music, And Books
+
+Query four credential-free media catalogs — Discogs (music releases, artists and
+labels), Letterboxd (films, ratings and members), TMDB (movies, TV and people),
+and Goodreads (books, authors and lists):
+
+```ts
+// Discogs — the music database
+const release = await client.discogs.release({ id: "249504" });
+const artist = await client.discogs.artist({ id: "1289" });
+const discogsHits = await client.discogs.search({ q: "daft punk", type: "artist" });
+
+// Letterboxd — films, ratings and members
+const film = await client.letterboxd.film({ slug: "parasite-2019" });
+const histogram = await client.letterboxd.filmRatingHistogram({ slug: "parasite-2019" });
+const popular = await client.letterboxd.popular({ period: "week" });
+
+// TMDB — The Movie Database
+const movie = await client.tmdb.movie({ id: "27205" });
+const topRated = await client.tmdb.movieList({ category: "top_rated" });
+const tmdbHits = await client.tmdb.search({ query: "inception", type: "movie" });
+
+// Goodreads — books, authors and lists
+const book = await client.goodreads.book({ id: "2767052" });
+const reviews = await client.goodreads.bookReviews({ id: "2767052" });
+const authorBooks = await client.goodreads.authorBooks({ id: "153394" });
+```
+
 ## Retries, Timeouts, Headers, And Abort Signals
 
 ```js

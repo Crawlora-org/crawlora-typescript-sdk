@@ -3382,6 +3382,278 @@ export interface ModelDiagnosticsAntibotCheckResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDiscogsArtistCredit {
+  "anv"?: string;
+  "id"?: number;
+  "join"?: string;
+  "name"?: string;
+  "role"?: string;
+  "tracks"?: string;
+}
+
+export interface ModelDiscogsArtistReleaseItem {
+  "artist"?: string;
+  "format"?: string;
+  "id"?: number;
+  "in_collection"?: number;
+  "in_wantlist"?: number;
+  "label"?: string;
+  "main_release_id"?: number;
+  "role"?: string;
+  "thumb"?: string;
+  "title"?: string;
+  "type"?: string;
+  "year"?: number;
+}
+
+export interface ModelDiscogsArtistReleasesResponse {
+  "artist_id"?: string;
+  "items"?: number;
+  "page"?: number;
+  "pages"?: number;
+  "per_page"?: number;
+  "releases"?: Array<ModelDiscogsArtistReleaseItem>;
+  "source_url"?: string;
+}
+
+export interface ModelDiscogsArtistResponse {
+  "aliases"?: Array<ModelDiscogsEntityRef>;
+  "data_quality"?: string;
+  "groups"?: Array<ModelDiscogsEntityRef>;
+  "id"?: number;
+  "images"?: Array<ModelDiscogsImage>;
+  "members"?: Array<ModelDiscogsEntityRef>;
+  "name"?: string;
+  "name_variations"?: Array<string>;
+  "profile"?: string;
+  "real_name"?: string;
+  "source_url"?: string;
+  "uri"?: string;
+  "urls"?: Array<string>;
+}
+
+export interface ModelDiscogsCommunity {
+  "have"?: number;
+  "rating"?: ModelDiscogsCommunityRating;
+  "want"?: number;
+}
+
+export interface ModelDiscogsCommunityRating {
+  "average"?: number;
+  "count"?: number;
+}
+
+export interface ModelDiscogsCompanyCredit {
+  "catno"?: string;
+  "entity_type"?: string;
+  "entity_type_name"?: string;
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelDiscogsEntityRef {
+  "active"?: boolean;
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelDiscogsFormat {
+  "descriptions"?: Array<string>;
+  "name"?: string;
+  "qty"?: string;
+  "text"?: string;
+}
+
+export interface ModelDiscogsIdentifier {
+  "description"?: string;
+  "type"?: string;
+  "value"?: string;
+}
+
+export interface ModelDiscogsImage {
+  "height"?: number;
+  "type"?: string;
+  "uri"?: string;
+  "uri150"?: string;
+  "width"?: number;
+}
+
+export interface ModelDiscogsLabelCredit {
+  "catno"?: string;
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelDiscogsLabelReleaseItem {
+  "artist"?: string;
+  "catno"?: string;
+  "format"?: string;
+  "id"?: number;
+  "status"?: string;
+  "thumb"?: string;
+  "title"?: string;
+  "year"?: number;
+}
+
+export interface ModelDiscogsLabelReleasesResponse {
+  "items"?: number;
+  "label_id"?: string;
+  "page"?: number;
+  "pages"?: number;
+  "per_page"?: number;
+  "releases"?: Array<ModelDiscogsLabelReleaseItem>;
+  "source_url"?: string;
+}
+
+export interface ModelDiscogsLabelResponse {
+  "contact_info"?: string;
+  "data_quality"?: string;
+  "id"?: number;
+  "images"?: Array<ModelDiscogsImage>;
+  "name"?: string;
+  "parent_label"?: ModelDiscogsEntityRef;
+  "profile"?: string;
+  "source_url"?: string;
+  "sub_labels"?: Array<ModelDiscogsEntityRef>;
+  "uri"?: string;
+  "urls"?: Array<string>;
+}
+
+export interface ModelDiscogsMasterResponse {
+  "artists"?: Array<ModelDiscogsArtistCredit>;
+  "data_quality"?: string;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "images"?: Array<ModelDiscogsImage>;
+  "lowest_price"?: number;
+  "main_release_id"?: number;
+  "most_recent_release_id"?: number;
+  "notes"?: string;
+  "num_for_sale"?: number;
+  "source_url"?: string;
+  "styles"?: Array<string>;
+  "title"?: string;
+  "tracklist"?: Array<ModelDiscogsTrack>;
+  "uri"?: string;
+  "videos"?: Array<ModelDiscogsVideo>;
+  "year"?: number;
+}
+
+export interface ModelDiscogsReleaseResponse {
+  "artists"?: Array<ModelDiscogsArtistCredit>;
+  "artists_sort"?: string;
+  "community"?: ModelDiscogsCommunity;
+  "companies"?: Array<ModelDiscogsCompanyCredit>;
+  "country"?: string;
+  "data_quality"?: string;
+  "extra_artists"?: Array<ModelDiscogsArtistCredit>;
+  "format_quantity"?: number;
+  "formats"?: Array<ModelDiscogsFormat>;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "identifiers"?: Array<ModelDiscogsIdentifier>;
+  "images"?: Array<ModelDiscogsImage>;
+  "labels"?: Array<ModelDiscogsLabelCredit>;
+  "master_id"?: number;
+  "notes"?: string;
+  "released"?: string;
+  "released_formatted"?: string;
+  "source_url"?: string;
+  "status"?: string;
+  "styles"?: Array<string>;
+  "title"?: string;
+  "tracklist"?: Array<ModelDiscogsTrack>;
+  "uri"?: string;
+  "videos"?: Array<ModelDiscogsVideo>;
+  "year"?: number;
+}
+
+export interface ModelDiscogsSearchResponse {
+  "items"?: number;
+  "page"?: number;
+  "pages"?: number;
+  "per_page"?: number;
+  "query"?: string;
+  "results"?: Array<ModelDiscogsSearchResult>;
+  "source_url"?: string;
+  "type"?: string;
+}
+
+export interface ModelDiscogsSearchResult {
+  "barcodes"?: Array<string>;
+  "catno"?: string;
+  "country"?: string;
+  "cover_image"?: string;
+  "formats"?: Array<string>;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "labels"?: Array<string>;
+  "master_id"?: number;
+  "styles"?: Array<string>;
+  "thumb"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+  "year"?: string;
+}
+
+export interface ModelDiscogsTrack {
+  "duration"?: string;
+  "extra_artists"?: Array<ModelDiscogsArtistCredit>;
+  "position"?: string;
+  "title"?: string;
+  "type"?: string;
+}
+
+export interface ModelDiscogsVideo {
+  "description"?: string;
+  "duration"?: number;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelDiscogsArtistReleasesResponseDoc {
+  "code"?: number;
+  "data"?: ModelDiscogsArtistReleasesResponse;
+  "msg"?: string;
+}
+
+export interface ModelDiscogsArtistResponseDoc {
+  "code"?: number;
+  "data"?: ModelDiscogsArtistResponse;
+  "msg"?: string;
+}
+
+export interface ModelDiscogsLabelReleasesResponseDoc {
+  "code"?: number;
+  "data"?: ModelDiscogsLabelReleasesResponse;
+  "msg"?: string;
+}
+
+export interface ModelDiscogsLabelResponseDoc {
+  "code"?: number;
+  "data"?: ModelDiscogsLabelResponse;
+  "msg"?: string;
+}
+
+export interface ModelDiscogsMasterResponseDoc {
+  "code"?: number;
+  "data"?: ModelDiscogsMasterResponse;
+  "msg"?: string;
+}
+
+export interface ModelDiscogsReleaseResponseDoc {
+  "code"?: number;
+  "data"?: ModelDiscogsReleaseResponse;
+  "msg"?: string;
+}
+
+export interface ModelDiscogsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDiscogsSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelEbayItem {
   "availability"?: string;
   "condition"?: string;
@@ -5175,6 +5447,159 @@ export interface ModelGeocodingReverseResponseDoc {
 export interface ModelGeocodingSearchResponseDoc {
   "code"?: number;
   "data"?: ModelGeocodingSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoodreadsAuthorBooksResponse {
+  "author_id"?: string;
+  "books"?: Array<ModelGoodreadsBookListItem>;
+  "page"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelGoodreadsAuthorResponse {
+  "about"?: string;
+  "average_rating"?: number;
+  "birth_date"?: string;
+  "death_date"?: string;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "ratings_count"?: number;
+  "reviews_count"?: number;
+  "source_url"?: string;
+  "uri"?: string;
+  "website"?: string;
+}
+
+export interface ModelGoodreadsBookContributor {
+  "name"?: string;
+  "role"?: string;
+  "url"?: string;
+}
+
+export interface ModelGoodreadsBookListItem {
+  "author"?: string;
+  "average_rating"?: number;
+  "id"?: string;
+  "ratings_count"?: number;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelGoodreadsBookRating {
+  "average"?: number;
+  "distribution"?: ModelGoodreadsBookRatingDistribution;
+  "ratings_count"?: number;
+  "reviews_count"?: number;
+}
+
+export interface ModelGoodreadsBookRatingDistribution {
+  "five_star"?: number;
+  "four_star"?: number;
+  "one_star"?: number;
+  "three_star"?: number;
+  "two_star"?: number;
+}
+
+export interface ModelGoodreadsBookResponse {
+  "authors"?: Array<ModelGoodreadsBookContributor>;
+  "description"?: string;
+  "format"?: string;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "image_url"?: string;
+  "isbn"?: string;
+  "isbn13"?: string;
+  "language"?: string;
+  "pages"?: number;
+  "publication_date"?: string;
+  "publisher"?: string;
+  "rating"?: ModelGoodreadsBookRating;
+  "series"?: string;
+  "source_url"?: string;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelGoodreadsListResponse {
+  "books"?: Array<ModelGoodreadsBookListItem>;
+  "id"?: string;
+  "page"?: number;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelGoodreadsReview {
+  "comment_count"?: number;
+  "contains_spoilers"?: boolean;
+  "date"?: string;
+  "like_count"?: number;
+  "rating"?: number;
+  "reviewer"?: string;
+  "reviewer_url"?: string;
+  "text"?: string;
+}
+
+export interface ModelGoodreadsReviewsResponse {
+  "id"?: string;
+  "reviews"?: Array<ModelGoodreadsReview>;
+  "source_url"?: string;
+}
+
+export interface ModelGoodreadsSearchResponse {
+  "query"?: string;
+  "results"?: Array<ModelGoodreadsSearchResult>;
+  "source_url"?: string;
+}
+
+export interface ModelGoodreadsSearchResult {
+  "author"?: string;
+  "author_id"?: string;
+  "average_rating"?: number;
+  "description"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "pages"?: number;
+  "ratings_count"?: number;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelGoodreadsAuthorBooksResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsAuthorBooksResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoodreadsAuthorResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsAuthorResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoodreadsBookResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsBookResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoodreadsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsListResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoodreadsReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoodreadsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsSearchResponse;
   "msg"?: string;
 }
 
@@ -7066,6 +7491,172 @@ export interface ModelKalshiSeriesResponseDoc {
 export interface ModelKalshiTradesResponseDoc {
   "code"?: number;
   "data"?: ModelKalshiTradesResponse;
+  "msg"?: string;
+}
+
+export interface ModelLetterboxdFilmRating {
+  "average"?: number;
+  "count"?: number;
+  "review_count"?: number;
+}
+
+export interface ModelLetterboxdFilmRef {
+  "slug"?: string;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelLetterboxdFilmResponse {
+  "cast"?: Array<ModelLetterboxdPersonCredit>;
+  "countries"?: Array<string>;
+  "directors"?: Array<ModelLetterboxdPersonCredit>;
+  "genres"?: Array<string>;
+  "languages"?: Array<string>;
+  "poster_url"?: string;
+  "production_companies"?: Array<string>;
+  "rating"?: ModelLetterboxdFilmRating;
+  "release_date"?: string;
+  "runtime_minutes"?: number;
+  "slug"?: string;
+  "source_url"?: string;
+  "synopsis"?: string;
+  "title"?: string;
+  "uri"?: string;
+  "year"?: number;
+}
+
+export interface ModelLetterboxdMemberResponse {
+  "display_name"?: string;
+  "films_this_year"?: number;
+  "films_watched"?: number;
+  "followers"?: number;
+  "following"?: number;
+  "lists"?: number;
+  "source_url"?: string;
+  "uri"?: string;
+  "username"?: string;
+}
+
+export interface ModelLetterboxdPersonCredit {
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelLetterboxdPersonResponse {
+  "films"?: Array<ModelLetterboxdFilmRef>;
+  "name"?: string;
+  "role"?: string;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelLetterboxdPopularResponse {
+  "decade"?: string;
+  "films"?: Array<ModelLetterboxdFilmRef>;
+  "genre"?: string;
+  "period"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelLetterboxdRatingBucket {
+  "count"?: number;
+  "percent"?: number;
+  "stars"?: number;
+}
+
+export interface ModelLetterboxdRatingHistogramResponse {
+  "buckets"?: Array<ModelLetterboxdRatingBucket>;
+  "slug"?: string;
+  "source_url"?: string;
+  "total_ratings"?: number;
+}
+
+export interface ModelLetterboxdReview {
+  "comment_count"?: number;
+  "contains_spoilers"?: boolean;
+  "date"?: string;
+  "display_name"?: string;
+  "like_count"?: number;
+  "liked"?: boolean;
+  "rating"?: number;
+  "text"?: string;
+  "username"?: string;
+}
+
+export interface ModelLetterboxdReviewsResponse {
+  "reviews"?: Array<ModelLetterboxdReview>;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelLetterboxdSearchResponse {
+  "query"?: string;
+  "results"?: Array<ModelLetterboxdSearchResult>;
+  "source_url"?: string;
+  "type"?: string;
+}
+
+export interface ModelLetterboxdSearchResult {
+  "owner"?: string;
+  "role"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+  "year"?: number;
+}
+
+export interface ModelLetterboxdSimilarResponse {
+  "films"?: Array<ModelLetterboxdFilmRef>;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelLetterboxdFilmResponseDoc {
+  "code"?: number;
+  "data"?: ModelLetterboxdFilmResponse;
+  "msg"?: string;
+}
+
+export interface ModelLetterboxdMemberResponseDoc {
+  "code"?: number;
+  "data"?: ModelLetterboxdMemberResponse;
+  "msg"?: string;
+}
+
+export interface ModelLetterboxdPersonResponseDoc {
+  "code"?: number;
+  "data"?: ModelLetterboxdPersonResponse;
+  "msg"?: string;
+}
+
+export interface ModelLetterboxdPopularResponseDoc {
+  "code"?: number;
+  "data"?: ModelLetterboxdPopularResponse;
+  "msg"?: string;
+}
+
+export interface ModelLetterboxdRatingHistogramResponseDoc {
+  "code"?: number;
+  "data"?: ModelLetterboxdRatingHistogramResponse;
+  "msg"?: string;
+}
+
+export interface ModelLetterboxdReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelLetterboxdReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelLetterboxdSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelLetterboxdSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelLetterboxdSimilarResponseDoc {
+  "code"?: number;
+  "data"?: ModelLetterboxdSimilarResponse;
   "msg"?: string;
 }
 
@@ -13331,6 +13922,159 @@ export interface ModelTiktokTrendingResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTmdbCastCredit {
+  "character"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelTmdbCrewCredit {
+  "jobs"?: Array<string>;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelTmdbFilmographyCredit {
+  "id"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelTmdbMediaRef {
+  "id"?: string;
+  "overview"?: string;
+  "poster_url"?: string;
+  "release_date"?: string;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelTmdbMovieListResponse {
+  "category"?: string;
+  "movies"?: Array<ModelTmdbMediaRef>;
+  "source_url"?: string;
+}
+
+export interface ModelTmdbMovieResponse {
+  "budget"?: number;
+  "cast"?: Array<ModelTmdbCastCredit>;
+  "countries"?: Array<string>;
+  "genres"?: Array<string>;
+  "homepage"?: string;
+  "id"?: string;
+  "original_language"?: string;
+  "overview"?: string;
+  "poster_url"?: string;
+  "rating"?: ModelTmdbRating;
+  "release_date"?: string;
+  "revenue"?: number;
+  "runtime_minutes"?: number;
+  "source_url"?: string;
+  "status"?: string;
+  "tagline"?: string;
+  "title"?: string;
+  "top_crew"?: Array<ModelTmdbCrewCredit>;
+  "uri"?: string;
+  "year"?: number;
+}
+
+export interface ModelTmdbPersonResponse {
+  "biography"?: string;
+  "birth_date"?: string;
+  "filmography"?: Array<ModelTmdbFilmographyCredit>;
+  "id"?: string;
+  "name"?: string;
+  "photo_url"?: string;
+  "source_url"?: string;
+  "uri"?: string;
+}
+
+export interface ModelTmdbRating {
+  "average"?: number;
+  "count"?: number;
+  "review_count"?: number;
+}
+
+export interface ModelTmdbSearchResponse {
+  "query"?: string;
+  "results"?: Array<ModelTmdbSearchResult>;
+  "source_url"?: string;
+  "type"?: string;
+}
+
+export interface ModelTmdbSearchResult {
+  "id"?: string;
+  "overview"?: string;
+  "release_date"?: string;
+  "title"?: string;
+  "type"?: string;
+  "uri"?: string;
+}
+
+export interface ModelTmdbTvlistResponse {
+  "category"?: string;
+  "shows"?: Array<ModelTmdbMediaRef>;
+  "source_url"?: string;
+}
+
+export interface ModelTmdbTvresponse {
+  "cast"?: Array<ModelTmdbCastCredit>;
+  "countries"?: Array<string>;
+  "first_air_year"?: number;
+  "genres"?: Array<string>;
+  "homepage"?: string;
+  "id"?: string;
+  "last_air_year"?: number;
+  "number_of_episodes"?: number;
+  "original_language"?: string;
+  "overview"?: string;
+  "poster_url"?: string;
+  "rating"?: ModelTmdbRating;
+  "source_url"?: string;
+  "status"?: string;
+  "tagline"?: string;
+  "title"?: string;
+  "top_crew"?: Array<ModelTmdbCrewCredit>;
+  "uri"?: string;
+}
+
+export interface ModelTmdbMovieListResponseDoc {
+  "code"?: number;
+  "data"?: ModelTmdbMovieListResponse;
+  "msg"?: string;
+}
+
+export interface ModelTmdbMovieResponseDoc {
+  "code"?: number;
+  "data"?: ModelTmdbMovieResponse;
+  "msg"?: string;
+}
+
+export interface ModelTmdbPersonResponseDoc {
+  "code"?: number;
+  "data"?: ModelTmdbPersonResponse;
+  "msg"?: string;
+}
+
+export interface ModelTmdbSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTmdbSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelTmdbTvListResponseDoc {
+  "code"?: number;
+  "data"?: ModelTmdbTvlistResponse;
+  "msg"?: string;
+}
+
+export interface ModelTmdbTvResponseDoc {
+  "code"?: number;
+  "data"?: ModelTmdbTvresponse;
+  "msg"?: string;
+}
+
 export interface ModelTrendsExploreQueriesResponse {
   "category"?: number;
   "geo"?: string;
@@ -17150,6 +17894,48 @@ export interface WebAntibotCheckParams {
   "request": WebAntibotCheckBody;
 }
 
+export type DiscogsArtistResponse = CrawloraResponse<ModelDiscogsArtistResponseDoc>;
+export interface DiscogsArtistParams {
+  "id": string;
+}
+
+export type DiscogsArtistReleasesResponse = CrawloraResponse<ModelDiscogsArtistReleasesResponseDoc>;
+export interface DiscogsArtistReleasesParams {
+  "id": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type DiscogsLabelResponse = CrawloraResponse<ModelDiscogsLabelResponseDoc>;
+export interface DiscogsLabelParams {
+  "id": string;
+}
+
+export type DiscogsLabelReleasesResponse = CrawloraResponse<ModelDiscogsLabelReleasesResponseDoc>;
+export interface DiscogsLabelReleasesParams {
+  "id": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type DiscogsMasterResponse = CrawloraResponse<ModelDiscogsMasterResponseDoc>;
+export interface DiscogsMasterParams {
+  "id": string;
+}
+
+export type DiscogsReleaseResponse = CrawloraResponse<ModelDiscogsReleaseResponseDoc>;
+export interface DiscogsReleaseParams {
+  "id": string;
+}
+
+export type DiscogsSearchResponse = CrawloraResponse<ModelDiscogsSearchResponseDoc>;
+export interface DiscogsSearchParams {
+  "q": string;
+  "type"?: "release" | "master" | "artist" | "label";
+  "page"?: number;
+  "per_page"?: number;
+}
+
 export type EBayEbayItemResponse = CrawloraResponse<ModelEbayItemResponseDoc>;
 export interface EBayEbayItemParams {
   "item_id": string;
@@ -17397,6 +18183,40 @@ export interface GitHubGithubUserReposParams {
   "type"?: "all" | "owner" | "member";
   "page"?: number;
   "per_page"?: number;
+}
+
+export type GoodreadsAuthorResponse = CrawloraResponse<ModelGoodreadsAuthorResponseDoc>;
+export interface GoodreadsAuthorParams {
+  "id": string;
+}
+
+export type GoodreadsAuthorBooksResponse = CrawloraResponse<ModelGoodreadsAuthorBooksResponseDoc>;
+export interface GoodreadsAuthorBooksParams {
+  "id": string;
+  "page"?: number;
+}
+
+export type GoodreadsBookResponse = CrawloraResponse<ModelGoodreadsBookResponseDoc>;
+export interface GoodreadsBookParams {
+  "id": string;
+}
+
+export type GoodreadsBookReviewsResponse = CrawloraResponse<ModelGoodreadsReviewsResponseDoc>;
+export interface GoodreadsBookReviewsParams {
+  "id": string;
+  "limit"?: number;
+}
+
+export type GoodreadsListResponse = CrawloraResponse<ModelGoodreadsListResponseDoc>;
+export interface GoodreadsListParams {
+  "id": string;
+  "page"?: number;
+}
+
+export type GoodreadsSearchResponse = CrawloraResponse<ModelGoodreadsSearchResponseDoc>;
+export interface GoodreadsSearchParams {
+  "q": string;
+  "limit"?: number;
 }
 
 export type GoogleFinanceAnalystArticlesResponse = CrawloraResponse<ModelFinanceArticlesResponseDoc>;
@@ -18217,6 +19037,55 @@ export interface KalshiTradesParams {
   "ticker"?: string;
   "min_ts"?: number;
   "max_ts"?: number;
+}
+
+export type LetterboxdFilmResponse = CrawloraResponse<ModelLetterboxdFilmResponseDoc>;
+export interface LetterboxdFilmParams {
+  "slug": string;
+}
+
+export type LetterboxdFilmRatingHistogramResponse = CrawloraResponse<ModelLetterboxdRatingHistogramResponseDoc>;
+export interface LetterboxdFilmRatingHistogramParams {
+  "slug": string;
+}
+
+export type LetterboxdFilmReviewsResponse = CrawloraResponse<ModelLetterboxdReviewsResponseDoc>;
+export interface LetterboxdFilmReviewsParams {
+  "slug": string;
+  "limit"?: number;
+}
+
+export type LetterboxdFilmSimilarResponse = CrawloraResponse<ModelLetterboxdSimilarResponseDoc>;
+export interface LetterboxdFilmSimilarParams {
+  "slug": string;
+  "limit"?: number;
+}
+
+export type LetterboxdMemberResponse = CrawloraResponse<ModelLetterboxdMemberResponseDoc>;
+export interface LetterboxdMemberParams {
+  "username": string;
+}
+
+export type LetterboxdPersonResponse = CrawloraResponse<ModelLetterboxdPersonResponseDoc>;
+export interface LetterboxdPersonParams {
+  "slug": string;
+  "role"?: "actor" | "director";
+  "limit"?: number;
+}
+
+export type LetterboxdPopularResponse = CrawloraResponse<ModelLetterboxdPopularResponseDoc>;
+export interface LetterboxdPopularParams {
+  "period"?: "day" | "week" | "month" | "year";
+  "genre"?: string;
+  "decade"?: string;
+  "limit"?: number;
+}
+
+export type LetterboxdSearchResponse = CrawloraResponse<ModelLetterboxdSearchResponseDoc>;
+export interface LetterboxdSearchParams {
+  "q": string;
+  "type"?: "film";
+  "limit"?: number;
 }
 
 export type LinkedInLinkedinCompanyResponse = CrawloraResponse<ModelLinkedinCompanyResponseDoc>;
@@ -20084,6 +20953,41 @@ export type TiktokTrendingResponse = CrawloraResponse<ModelTiktokTrendingRespons
 export interface TiktokTrendingParams {
 }
 
+export type TmdbMovieListResponse = CrawloraResponse<ModelTmdbMovieListResponseDoc>;
+export interface TmdbMovieListParams {
+  "category"?: "popular" | "top_rated" | "now_playing" | "upcoming";
+  "limit"?: number;
+}
+
+export type TmdbMovieResponse = CrawloraResponse<ModelTmdbMovieResponseDoc>;
+export interface TmdbMovieParams {
+  "id": string;
+}
+
+export type TmdbPersonResponse = CrawloraResponse<ModelTmdbPersonResponseDoc>;
+export interface TmdbPersonParams {
+  "id": string;
+  "limit"?: number;
+}
+
+export type TmdbSearchResponse = CrawloraResponse<ModelTmdbSearchResponseDoc>;
+export interface TmdbSearchParams {
+  "query": string;
+  "type"?: "movie" | "tv" | "person";
+  "limit"?: number;
+}
+
+export type TmdbTvListResponse = CrawloraResponse<ModelTmdbTvListResponseDoc>;
+export interface TmdbTvListParams {
+  "category"?: "popular" | "top_rated" | "airing_today" | "on_the_air";
+  "limit"?: number;
+}
+
+export type TmdbTvResponse = CrawloraResponse<ModelTmdbTvResponseDoc>;
+export interface TmdbTvParams {
+  "id": string;
+}
+
 export type TripAdvisorTripadvisorAutocompleteResponse = CrawloraResponse<ModelTripadvisorTripadvisorAutocompleteResponseDoc>;
 export interface TripAdvisorTripadvisorAutocompleteParams {
   "q": string;
@@ -20851,6 +21755,16 @@ export interface DatasetsService {
   trustmrrSearch<T = DatasetsTrustmrrSearchResponse>(params?: DatasetsTrustmrrSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface DiscogsService {
+  artist<T = DiscogsArtistResponse>(params: DiscogsArtistParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  artistReleases<T = DiscogsArtistReleasesResponse>(params: DiscogsArtistReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  label<T = DiscogsLabelResponse>(params: DiscogsLabelParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  labelReleases<T = DiscogsLabelReleasesResponse>(params: DiscogsLabelReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  master<T = DiscogsMasterResponse>(params: DiscogsMasterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  release<T = DiscogsReleaseResponse>(params: DiscogsReleaseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = DiscogsSearchResponse>(params: DiscogsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface EBayService {
   ebayItem<T = EBayEbayItemResponse>(params: EBayEbayItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySearch<T = EBayEbaySearchResponse>(params: EBayEbaySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -20894,6 +21808,15 @@ export interface GitHubService {
   githubUserEvents<T = GitHubGithubUserEventsResponse>(params: GitHubGithubUserEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUserPinned<T = GitHubGithubUserPinnedResponse>(params: GitHubGithubUserPinnedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUserRepos<T = GitHubGithubUserReposResponse>(params: GitHubGithubUserReposParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface GoodreadsService {
+  author<T = GoodreadsAuthorResponse>(params: GoodreadsAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  authorBooks<T = GoodreadsAuthorBooksResponse>(params: GoodreadsAuthorBooksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  book<T = GoodreadsBookResponse>(params: GoodreadsBookParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bookReviews<T = GoodreadsBookReviewsResponse>(params: GoodreadsBookReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  list<T = GoodreadsListResponse>(params: GoodreadsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = GoodreadsSearchResponse>(params: GoodreadsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GoogleService {
@@ -21038,6 +21961,17 @@ export interface KalshiService {
   series<T = KalshiSeriesResponse>(params?: KalshiSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   seriesDetail<T = KalshiSeriesDetailResponse>(params: KalshiSeriesDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trades<T = KalshiTradesResponse>(params?: KalshiTradesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface LetterboxdService {
+  film<T = LetterboxdFilmResponse>(params: LetterboxdFilmParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  filmRatingHistogram<T = LetterboxdFilmRatingHistogramResponse>(params: LetterboxdFilmRatingHistogramParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  filmReviews<T = LetterboxdFilmReviewsResponse>(params: LetterboxdFilmReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  filmSimilar<T = LetterboxdFilmSimilarResponse>(params: LetterboxdFilmSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  member<T = LetterboxdMemberResponse>(params: LetterboxdMemberParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  person<T = LetterboxdPersonResponse>(params: LetterboxdPersonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  popular<T = LetterboxdPopularResponse>(params?: LetterboxdPopularParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = LetterboxdSearchResponse>(params: LetterboxdSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface LinkedInService {
@@ -21367,6 +22301,15 @@ export interface TiktokService {
   trending<T = TiktokTrendingResponse>(params?: TiktokTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TmdbService {
+  movieList<T = TmdbMovieListResponse>(params?: TmdbMovieListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  movie<T = TmdbMovieResponse>(params: TmdbMovieParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  person<T = TmdbPersonResponse>(params: TmdbPersonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = TmdbSearchResponse>(params: TmdbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvList<T = TmdbTvListResponse>(params?: TmdbTvListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tv<T = TmdbTvResponse>(params: TmdbTvParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TripAdvisorService {
   tripadvisorAutocomplete<T = TripAdvisorTripadvisorAutocompleteResponse>(params: TripAdvisorTripadvisorAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   tripadvisorEnums<T = TripAdvisorTripadvisorEnumsResponse>(params?: TripAdvisorTripadvisorEnumsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -21494,10 +22437,12 @@ export interface CrawloraGeneratedGroups {
   coinGecko: CoinGeckoService;
   web: WebService;
   datasets: DatasetsService;
+  discogs: DiscogsService;
   eBay: EBayService;
   espn: EspnService;
   geocoding: GeocodingService;
   gitHub: GitHubService;
+  goodreads: GoodreadsService;
   google: GoogleService;
   googlePlay: GooglePlayService;
   imdb: ImdbService;
@@ -21505,6 +22450,7 @@ export interface CrawloraGeneratedGroups {
   jobs: JobsService;
   justWatch: JustWatchService;
   kalshi: KalshiService;
+  letterboxd: LetterboxdService;
   linkedIn: LinkedInService;
   metaculus: MetaculusService;
   meta: MetaService;
@@ -21525,6 +22471,7 @@ export interface CrawloraGeneratedGroups {
   spotify: SpotifyService;
   steam: SteamService;
   tiktok: TiktokService;
+  tmdb: TmdbService;
   tripAdvisor: TripAdvisorService;
   trustMrr: TrustMrrService;
   trustpilot: TrustpilotService;
@@ -21683,6 +22630,13 @@ export interface OperationParamsMap {
   "datasets-trustmrr-item": DatasetsTrustmrrItemParams;
   "datasets-trustmrr-search": DatasetsTrustmrrSearchParams;
   "antibot-check": WebAntibotCheckParams;
+  "discogs-artist": DiscogsArtistParams;
+  "discogs-artist-releases": DiscogsArtistReleasesParams;
+  "discogs-label": DiscogsLabelParams;
+  "discogs-label-releases": DiscogsLabelReleasesParams;
+  "discogs-master": DiscogsMasterParams;
+  "discogs-release": DiscogsReleaseParams;
+  "discogs-search": DiscogsSearchParams;
   "ebay-item": EBayEbayItemParams;
   "ebay-search": EBayEbaySearchParams;
   "ebay-seller": EBayEbaySellerParams;
@@ -21717,6 +22671,12 @@ export interface OperationParamsMap {
   "github-user-events": GitHubGithubUserEventsParams;
   "github-user-pinned": GitHubGithubUserPinnedParams;
   "github-user-repos": GitHubGithubUserReposParams;
+  "goodreads-author": GoodreadsAuthorParams;
+  "goodreads-author-books": GoodreadsAuthorBooksParams;
+  "goodreads-book": GoodreadsBookParams;
+  "goodreads-book-reviews": GoodreadsBookReviewsParams;
+  "goodreads-list": GoodreadsListParams;
+  "goodreads-search": GoodreadsSearchParams;
   "google-finance-analyst-articles": GoogleFinanceAnalystArticlesParams;
   "google-finance-chart": GoogleFinanceChartParams;
   "google-finance-classification": GoogleFinanceClassificationParams;
@@ -21840,6 +22800,14 @@ export interface OperationParamsMap {
   "kalshi-series": KalshiSeriesParams;
   "kalshi-series-detail": KalshiSeriesDetailParams;
   "kalshi-trades": KalshiTradesParams;
+  "letterboxd-film": LetterboxdFilmParams;
+  "letterboxd-film-rating-histogram": LetterboxdFilmRatingHistogramParams;
+  "letterboxd-film-reviews": LetterboxdFilmReviewsParams;
+  "letterboxd-film-similar": LetterboxdFilmSimilarParams;
+  "letterboxd-member": LetterboxdMemberParams;
+  "letterboxd-person": LetterboxdPersonParams;
+  "letterboxd-popular": LetterboxdPopularParams;
+  "letterboxd-search": LetterboxdSearchParams;
   "linkedin-company": LinkedInLinkedinCompanyParams;
   "linkedin-product": LinkedInLinkedinProductParams;
   "linkedin-showcase": LinkedInLinkedinShowcaseParams;
@@ -22107,6 +23075,12 @@ export interface OperationParamsMap {
   "tiktok-top-ads-spotlight": TiktokTopAdsSpotlightParams;
   "tiktok-top-ads-suggestions": TiktokTopAdsSuggestionsParams;
   "tiktok-trending": TiktokTrendingParams;
+  "tmdb-movie-list": TmdbMovieListParams;
+  "tmdb-movie": TmdbMovieParams;
+  "tmdb-person": TmdbPersonParams;
+  "tmdb-search": TmdbSearchParams;
+  "tmdb-tv-list": TmdbTvListParams;
+  "tmdb-tv": TmdbTvParams;
   "tripadvisor-autocomplete": TripAdvisorTripadvisorAutocompleteParams;
   "tripadvisor-enums": TripAdvisorTripadvisorEnumsParams;
   "tripadvisor-hotels": TripAdvisorTripadvisorHotelsParams;
@@ -22344,6 +23318,13 @@ export interface OperationResponseMap {
   "datasets-trustmrr-item": DatasetsTrustmrrItemResponse;
   "datasets-trustmrr-search": DatasetsTrustmrrSearchResponse;
   "antibot-check": WebAntibotCheckResponse;
+  "discogs-artist": DiscogsArtistResponse;
+  "discogs-artist-releases": DiscogsArtistReleasesResponse;
+  "discogs-label": DiscogsLabelResponse;
+  "discogs-label-releases": DiscogsLabelReleasesResponse;
+  "discogs-master": DiscogsMasterResponse;
+  "discogs-release": DiscogsReleaseResponse;
+  "discogs-search": DiscogsSearchResponse;
   "ebay-item": EBayEbayItemResponse;
   "ebay-search": EBayEbaySearchResponse;
   "ebay-seller": EBayEbaySellerResponse;
@@ -22378,6 +23359,12 @@ export interface OperationResponseMap {
   "github-user-events": GitHubGithubUserEventsResponse;
   "github-user-pinned": GitHubGithubUserPinnedResponse;
   "github-user-repos": GitHubGithubUserReposResponse;
+  "goodreads-author": GoodreadsAuthorResponse;
+  "goodreads-author-books": GoodreadsAuthorBooksResponse;
+  "goodreads-book": GoodreadsBookResponse;
+  "goodreads-book-reviews": GoodreadsBookReviewsResponse;
+  "goodreads-list": GoodreadsListResponse;
+  "goodreads-search": GoodreadsSearchResponse;
   "google-finance-analyst-articles": GoogleFinanceAnalystArticlesResponse;
   "google-finance-chart": GoogleFinanceChartResponse;
   "google-finance-classification": GoogleFinanceClassificationResponse;
@@ -22501,6 +23488,14 @@ export interface OperationResponseMap {
   "kalshi-series": KalshiSeriesResponse;
   "kalshi-series-detail": KalshiSeriesDetailResponse;
   "kalshi-trades": KalshiTradesResponse;
+  "letterboxd-film": LetterboxdFilmResponse;
+  "letterboxd-film-rating-histogram": LetterboxdFilmRatingHistogramResponse;
+  "letterboxd-film-reviews": LetterboxdFilmReviewsResponse;
+  "letterboxd-film-similar": LetterboxdFilmSimilarResponse;
+  "letterboxd-member": LetterboxdMemberResponse;
+  "letterboxd-person": LetterboxdPersonResponse;
+  "letterboxd-popular": LetterboxdPopularResponse;
+  "letterboxd-search": LetterboxdSearchResponse;
   "linkedin-company": LinkedInLinkedinCompanyResponse;
   "linkedin-product": LinkedInLinkedinProductResponse;
   "linkedin-showcase": LinkedInLinkedinShowcaseResponse;
@@ -22768,6 +23763,12 @@ export interface OperationResponseMap {
   "tiktok-top-ads-spotlight": TiktokTopAdsSpotlightResponse;
   "tiktok-top-ads-suggestions": TiktokTopAdsSuggestionsResponse;
   "tiktok-trending": TiktokTrendingResponse;
+  "tmdb-movie-list": TmdbMovieListResponse;
+  "tmdb-movie": TmdbMovieResponse;
+  "tmdb-person": TmdbPersonResponse;
+  "tmdb-search": TmdbSearchResponse;
+  "tmdb-tv-list": TmdbTvListResponse;
+  "tmdb-tv": TmdbTvResponse;
   "tripadvisor-autocomplete": TripAdvisorTripadvisorAutocompleteResponse;
   "tripadvisor-enums": TripAdvisorTripadvisorEnumsResponse;
   "tripadvisor-hotels": TripAdvisorTripadvisorHotelsResponse;
@@ -23005,6 +24006,13 @@ export interface OperationRequiredParamsMap {
   "datasets-trustmrr-item": true;
   "datasets-trustmrr-search": false;
   "antibot-check": true;
+  "discogs-artist": true;
+  "discogs-artist-releases": true;
+  "discogs-label": true;
+  "discogs-label-releases": true;
+  "discogs-master": true;
+  "discogs-release": true;
+  "discogs-search": true;
   "ebay-item": true;
   "ebay-search": true;
   "ebay-seller": true;
@@ -23039,6 +24047,12 @@ export interface OperationRequiredParamsMap {
   "github-user-events": true;
   "github-user-pinned": true;
   "github-user-repos": true;
+  "goodreads-author": true;
+  "goodreads-author-books": true;
+  "goodreads-book": true;
+  "goodreads-book-reviews": true;
+  "goodreads-list": true;
+  "goodreads-search": true;
   "google-finance-analyst-articles": true;
   "google-finance-chart": true;
   "google-finance-classification": true;
@@ -23162,6 +24176,14 @@ export interface OperationRequiredParamsMap {
   "kalshi-series": false;
   "kalshi-series-detail": true;
   "kalshi-trades": false;
+  "letterboxd-film": true;
+  "letterboxd-film-rating-histogram": true;
+  "letterboxd-film-reviews": true;
+  "letterboxd-film-similar": true;
+  "letterboxd-member": true;
+  "letterboxd-person": true;
+  "letterboxd-popular": false;
+  "letterboxd-search": true;
   "linkedin-company": true;
   "linkedin-product": true;
   "linkedin-showcase": true;
@@ -23429,6 +24451,12 @@ export interface OperationRequiredParamsMap {
   "tiktok-top-ads-spotlight": false;
   "tiktok-top-ads-suggestions": false;
   "tiktok-trending": false;
+  "tmdb-movie-list": false;
+  "tmdb-movie": true;
+  "tmdb-person": true;
+  "tmdb-search": true;
+  "tmdb-tv-list": false;
+  "tmdb-tv": true;
   "tripadvisor-autocomplete": true;
   "tripadvisor-enums": false;
   "tripadvisor-hotels": true;
@@ -23673,6 +24701,13 @@ export type OperationIdLiteral =
   | "datasets-trustmrr-item"
   | "datasets-trustmrr-search"
   | "antibot-check"
+  | "discogs-artist"
+  | "discogs-artist-releases"
+  | "discogs-label"
+  | "discogs-label-releases"
+  | "discogs-master"
+  | "discogs-release"
+  | "discogs-search"
   | "ebay-item"
   | "ebay-search"
   | "ebay-seller"
@@ -23707,6 +24742,12 @@ export type OperationIdLiteral =
   | "github-user-events"
   | "github-user-pinned"
   | "github-user-repos"
+  | "goodreads-author"
+  | "goodreads-author-books"
+  | "goodreads-book"
+  | "goodreads-book-reviews"
+  | "goodreads-list"
+  | "goodreads-search"
   | "google-finance-analyst-articles"
   | "google-finance-chart"
   | "google-finance-classification"
@@ -23830,6 +24871,14 @@ export type OperationIdLiteral =
   | "kalshi-series"
   | "kalshi-series-detail"
   | "kalshi-trades"
+  | "letterboxd-film"
+  | "letterboxd-film-rating-histogram"
+  | "letterboxd-film-reviews"
+  | "letterboxd-film-similar"
+  | "letterboxd-member"
+  | "letterboxd-person"
+  | "letterboxd-popular"
+  | "letterboxd-search"
   | "linkedin-company"
   | "linkedin-product"
   | "linkedin-showcase"
@@ -24097,6 +25146,12 @@ export type OperationIdLiteral =
   | "tiktok-top-ads-spotlight"
   | "tiktok-top-ads-suggestions"
   | "tiktok-trending"
+  | "tmdb-movie-list"
+  | "tmdb-movie"
+  | "tmdb-person"
+  | "tmdb-search"
+  | "tmdb-tv-list"
+  | "tmdb-tv"
   | "tripadvisor-autocomplete"
   | "tripadvisor-enums"
   | "tripadvisor-hotels"
@@ -24331,6 +25386,13 @@ export declare const OperationIds: Readonly<{
   DatasetsTrustmrrFacets: "datasets-trustmrr-facets";
   DatasetsTrustmrrItem: "datasets-trustmrr-item";
   DatasetsTrustmrrSearch: "datasets-trustmrr-search";
+  DiscogsArtist: "discogs-artist";
+  DiscogsArtistReleases: "discogs-artist-releases";
+  DiscogsLabel: "discogs-label";
+  DiscogsLabelReleases: "discogs-label-releases";
+  DiscogsMaster: "discogs-master";
+  DiscogsRelease: "discogs-release";
+  DiscogsSearch: "discogs-search";
   EBayEbayItem: "ebay-item";
   EBayEbaySearch: "ebay-search";
   EBayEbaySeller: "ebay-seller";
@@ -24364,6 +25426,12 @@ export declare const OperationIds: Readonly<{
   GitHubGithubUserEvents: "github-user-events";
   GitHubGithubUserPinned: "github-user-pinned";
   GitHubGithubUserRepos: "github-user-repos";
+  GoodreadsAuthor: "goodreads-author";
+  GoodreadsAuthorBooks: "goodreads-author-books";
+  GoodreadsBook: "goodreads-book";
+  GoodreadsBookReviews: "goodreads-book-reviews";
+  GoodreadsList: "goodreads-list";
+  GoodreadsSearch: "goodreads-search";
   GoogleFinanceAnalystArticles: "google-finance-analyst-articles";
   GoogleFinanceChart: "google-finance-chart";
   GoogleFinanceClassification: "google-finance-classification";
@@ -24487,6 +25555,14 @@ export declare const OperationIds: Readonly<{
   KalshiSeries: "kalshi-series";
   KalshiSeriesDetail: "kalshi-series-detail";
   KalshiTrades: "kalshi-trades";
+  LetterboxdFilm: "letterboxd-film";
+  LetterboxdFilmRatingHistogram: "letterboxd-film-rating-histogram";
+  LetterboxdFilmReviews: "letterboxd-film-reviews";
+  LetterboxdFilmSimilar: "letterboxd-film-similar";
+  LetterboxdMember: "letterboxd-member";
+  LetterboxdPerson: "letterboxd-person";
+  LetterboxdPopular: "letterboxd-popular";
+  LetterboxdSearch: "letterboxd-search";
   LinkedInLinkedinCompany: "linkedin-company";
   LinkedInLinkedinProduct: "linkedin-product";
   LinkedInLinkedinShowcase: "linkedin-showcase";
@@ -24754,6 +25830,12 @@ export declare const OperationIds: Readonly<{
   TiktokTopAdsSuggestions: "tiktok-top-ads-suggestions";
   TiktokTrending: "tiktok-trending";
   TiktokVideoComments: "tiktok-video-comments";
+  TmdbMovie: "tmdb-movie";
+  TmdbMovieList: "tmdb-movie-list";
+  TmdbPerson: "tmdb-person";
+  TmdbSearch: "tmdb-search";
+  TmdbTv: "tmdb-tv";
+  TmdbTvList: "tmdb-tv-list";
   TripAdvisorTripadvisorAutocomplete: "tripadvisor-autocomplete";
   TripAdvisorTripadvisorEnums: "tripadvisor-enums";
   TripAdvisorTripadvisorHotels: "tripadvisor-hotels";
