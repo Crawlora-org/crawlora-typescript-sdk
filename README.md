@@ -1,7 +1,7 @@
 # Crawlora JavaScript SDK
 
 Official JavaScript and TypeScript client for the public Crawlora API. Use it
-to call Crawlora scraping, search, social, developer, marketplace, media, maps, finance,
+to call Crawlora scraping, search, social, developer, marketplace, media, books, maps, finance,
 travel, prediction-market, brand, and usage endpoints with a small `fetch`-based client and generated
 TypeScript types.
 

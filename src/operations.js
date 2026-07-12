@@ -8280,6 +8280,204 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "discogs-artist": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "discogs-artist",
+    "method": "GET",
+    "path": "/discogs/artist/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "discogs-artist-releases": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "discogs-artist-releases",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/discogs/artist/{id}/releases",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "discogs-label": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "discogs-label",
+    "method": "GET",
+    "path": "/discogs/label/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "discogs-label-releases": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "discogs-label-releases",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/discogs/label/{id}/releases",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "discogs-master": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "discogs-master",
+    "method": "GET",
+    "path": "/discogs/master/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "discogs-release": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "discogs-release",
+    "method": "GET",
+    "path": "/discogs/release/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "discogs-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "discogs-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/discogs/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "release",
+          "master",
+          "artist",
+          "label"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "ebay-item": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -9741,6 +9939,162 @@ export const operations = {
       {
         "in": "query",
         "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodreads-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodreads-author",
+    "method": "GET",
+    "path": "/goodreads/author/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodreads-author-books": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodreads-author-books",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/goodreads/author/{id}/books",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodreads-book": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodreads-book",
+    "method": "GET",
+    "path": "/goodreads/book/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodreads-book-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodreads-book-reviews",
+    "method": "GET",
+    "path": "/goodreads/book/{id}/reviews",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodreads-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodreads-list",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/goodreads/list/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodreads-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodreads-search",
+    "method": "GET",
+    "path": "/goodreads/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
         "type": "integer"
       }
     ],
@@ -14068,6 +14422,244 @@ export const operations = {
       {
         "in": "query",
         "name": "max_ts",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "letterboxd-film": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "letterboxd-film",
+    "method": "GET",
+    "path": "/letterboxd/film/{slug}",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "letterboxd-film-rating-histogram": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "letterboxd-film-rating-histogram",
+    "method": "GET",
+    "path": "/letterboxd/film/{slug}/rating-histogram",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "letterboxd-film-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "letterboxd-film-reviews",
+    "method": "GET",
+    "path": "/letterboxd/film/{slug}/reviews",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "letterboxd-film-similar": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "letterboxd-film-similar",
+    "method": "GET",
+    "path": "/letterboxd/film/{slug}/similar",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "letterboxd-member": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "letterboxd-member",
+    "method": "GET",
+    "path": "/letterboxd/member/{username}",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "letterboxd-person": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "letterboxd-person",
+    "method": "GET",
+    "path": "/letterboxd/person/{slug}",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "actor",
+          "director"
+        ],
+        "in": "query",
+        "name": "role",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "letterboxd-popular": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "letterboxd-popular",
+    "method": "GET",
+    "path": "/letterboxd/popular",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "day",
+          "week",
+          "month",
+          "year"
+        ],
+        "in": "query",
+        "name": "period",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "decade",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "letterboxd-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "letterboxd-search",
+    "method": "GET",
+    "path": "/letterboxd/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "film"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
         "type": "integer"
       }
     ],
@@ -23745,6 +24337,188 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tmdb-movie": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tmdb-movie",
+    "method": "GET",
+    "path": "/tmdb/movie/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tmdb-movie-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tmdb-movie-list",
+    "method": "GET",
+    "path": "/tmdb/movie/list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "popular",
+          "top_rated",
+          "now_playing",
+          "upcoming"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tmdb-person": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tmdb-person",
+    "method": "GET",
+    "path": "/tmdb/person/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tmdb-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tmdb-search",
+    "method": "GET",
+    "path": "/tmdb/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "movie",
+          "tv",
+          "person"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tmdb-tv": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tmdb-tv",
+    "method": "GET",
+    "path": "/tmdb/tv/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tmdb-tv-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tmdb-tv-list",
+    "method": "GET",
+    "path": "/tmdb/tv/list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "popular",
+          "top_rated",
+          "airing_today",
+          "on_the_air"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tripadvisor-autocomplete": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -26680,6 +27454,15 @@ export const groups = {
     "trustmrrItem": "datasets-trustmrr-item",
     "trustmrrSearch": "datasets-trustmrr-search"
   },
+  "discogs": {
+    "artist": "discogs-artist",
+    "artistReleases": "discogs-artist-releases",
+    "label": "discogs-label",
+    "labelReleases": "discogs-label-releases",
+    "master": "discogs-master",
+    "release": "discogs-release",
+    "search": "discogs-search"
+  },
   "eBay": {
     "ebayItem": "ebay-item",
     "ebaySearch": "ebay-search",
@@ -26720,6 +27503,14 @@ export const groups = {
     "githubUserEvents": "github-user-events",
     "githubUserPinned": "github-user-pinned",
     "githubUserRepos": "github-user-repos"
+  },
+  "goodreads": {
+    "author": "goodreads-author",
+    "authorBooks": "goodreads-author-books",
+    "book": "goodreads-book",
+    "bookReviews": "goodreads-book-reviews",
+    "list": "goodreads-list",
+    "search": "goodreads-search"
   },
   "google": {
     "financeAnalystArticles": "google-finance-analyst-articles",
@@ -26857,6 +27648,16 @@ export const groups = {
     "series": "kalshi-series",
     "seriesDetail": "kalshi-series-detail",
     "trades": "kalshi-trades"
+  },
+  "letterboxd": {
+    "film": "letterboxd-film",
+    "filmRatingHistogram": "letterboxd-film-rating-histogram",
+    "filmReviews": "letterboxd-film-reviews",
+    "filmSimilar": "letterboxd-film-similar",
+    "member": "letterboxd-member",
+    "person": "letterboxd-person",
+    "popular": "letterboxd-popular",
+    "search": "letterboxd-search"
   },
   "linkedIn": {
     "linkedinCompany": "linkedin-company",
@@ -27165,6 +27966,14 @@ export const groups = {
     "trending": "tiktok-trending",
     "videoComments": "tiktok-video-comments"
   },
+  "tmdb": {
+    "movie": "tmdb-movie",
+    "movieList": "tmdb-movie-list",
+    "person": "tmdb-person",
+    "search": "tmdb-search",
+    "tv": "tmdb-tv",
+    "tvList": "tmdb-tv-list"
+  },
   "tripAdvisor": {
     "tripadvisorAutocomplete": "tripadvisor-autocomplete",
     "tripadvisorEnums": "tripadvisor-enums",
@@ -27278,7 +28087,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 658;
+export const operationCount = 685;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -27427,6 +28236,13 @@ export const OperationIds = Object.freeze({
   "DatasetsTrustmrrFacets": "datasets-trustmrr-facets",
   "DatasetsTrustmrrItem": "datasets-trustmrr-item",
   "DatasetsTrustmrrSearch": "datasets-trustmrr-search",
+  "DiscogsArtist": "discogs-artist",
+  "DiscogsArtistReleases": "discogs-artist-releases",
+  "DiscogsLabel": "discogs-label",
+  "DiscogsLabelReleases": "discogs-label-releases",
+  "DiscogsMaster": "discogs-master",
+  "DiscogsRelease": "discogs-release",
+  "DiscogsSearch": "discogs-search",
   "EBayEbayItem": "ebay-item",
   "EBayEbaySearch": "ebay-search",
   "EBayEbaySeller": "ebay-seller",
@@ -27460,6 +28276,12 @@ export const OperationIds = Object.freeze({
   "GitHubGithubUserEvents": "github-user-events",
   "GitHubGithubUserPinned": "github-user-pinned",
   "GitHubGithubUserRepos": "github-user-repos",
+  "GoodreadsAuthor": "goodreads-author",
+  "GoodreadsAuthorBooks": "goodreads-author-books",
+  "GoodreadsBook": "goodreads-book",
+  "GoodreadsBookReviews": "goodreads-book-reviews",
+  "GoodreadsList": "goodreads-list",
+  "GoodreadsSearch": "goodreads-search",
   "GoogleFinanceAnalystArticles": "google-finance-analyst-articles",
   "GoogleFinanceChart": "google-finance-chart",
   "GoogleFinanceClassification": "google-finance-classification",
@@ -27583,6 +28405,14 @@ export const OperationIds = Object.freeze({
   "KalshiSeries": "kalshi-series",
   "KalshiSeriesDetail": "kalshi-series-detail",
   "KalshiTrades": "kalshi-trades",
+  "LetterboxdFilm": "letterboxd-film",
+  "LetterboxdFilmRatingHistogram": "letterboxd-film-rating-histogram",
+  "LetterboxdFilmReviews": "letterboxd-film-reviews",
+  "LetterboxdFilmSimilar": "letterboxd-film-similar",
+  "LetterboxdMember": "letterboxd-member",
+  "LetterboxdPerson": "letterboxd-person",
+  "LetterboxdPopular": "letterboxd-popular",
+  "LetterboxdSearch": "letterboxd-search",
   "LinkedInLinkedinCompany": "linkedin-company",
   "LinkedInLinkedinProduct": "linkedin-product",
   "LinkedInLinkedinShowcase": "linkedin-showcase",
@@ -27850,6 +28680,12 @@ export const OperationIds = Object.freeze({
   "TiktokTopAdsSuggestions": "tiktok-top-ads-suggestions",
   "TiktokTrending": "tiktok-trending",
   "TiktokVideoComments": "tiktok-video-comments",
+  "TmdbMovie": "tmdb-movie",
+  "TmdbMovieList": "tmdb-movie-list",
+  "TmdbPerson": "tmdb-person",
+  "TmdbSearch": "tmdb-search",
+  "TmdbTv": "tmdb-tv",
+  "TmdbTvList": "tmdb-tv-list",
   "TripAdvisorTripadvisorAutocomplete": "tripadvisor-autocomplete",
   "TripAdvisorTripadvisorEnums": "tripadvisor-enums",
   "TripAdvisorTripadvisorHotels": "tripadvisor-hotels",
