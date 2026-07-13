@@ -320,6 +320,318 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "anime-airing-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-airing-schedule",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/anime/airing-schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "anime-character": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-character",
+    "method": "GET",
+    "path": "/anime/character/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "anime-character-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-character-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/anime/character/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "anime-rankings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-rankings",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/anime/rankings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "format",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "anime-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/anime/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "anime-title": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-title",
+    "method": "GET",
+    "path": "/anime/title/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "anime-title-characters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-title-characters",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/anime/title/{id}/characters",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "anime-title-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-title-recommendations",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/anime/title/{id}/recommendations",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "anime-title-staff": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "anime-title-staff",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/anime/title/{id}/staff",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "antibot-check": {
     "bodyParam": "request",
     "bodyRequired": true,
@@ -14730,6 +15042,120 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "manga-rankings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "manga-rankings",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/manga/rankings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "format",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "manga-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "manga-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/manga/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "manga-title": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "manga-title",
+    "method": "GET",
+    "path": "/manga/title/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "metaculus-category-questions": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -27300,6 +27726,17 @@ export const groups = {
     "search": "amazon-search",
     "suggest": "amazon-suggest"
   },
+  "anime": {
+    "airingSchedule": "anime-airing-schedule",
+    "character": "anime-character",
+    "characterSearch": "anime-character-search",
+    "rankings": "anime-rankings",
+    "search": "anime-search",
+    "title": "anime-title",
+    "titleCharacters": "anime-title-characters",
+    "titleRecommendations": "anime-title-recommendations",
+    "titleStaff": "anime-title-staff"
+  },
   "appStore": {
     "app": "appstore-app",
     "developer": "appstore-developer",
@@ -27663,6 +28100,11 @@ export const groups = {
     "linkedinCompany": "linkedin-company",
     "linkedinProduct": "linkedin-product",
     "linkedinShowcase": "linkedin-showcase"
+  },
+  "manga": {
+    "rankings": "manga-rankings",
+    "search": "manga-search",
+    "title": "manga-title"
   },
   "meta": {
     "ping": "ping",
@@ -28087,7 +28529,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 685;
+export const operationCount = 697;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -28102,6 +28544,15 @@ export const OperationIds = Object.freeze({
   "AmazonProduct": "amazon-product",
   "AmazonSearch": "amazon-search",
   "AmazonSuggest": "amazon-suggest",
+  "AnimeAiringSchedule": "anime-airing-schedule",
+  "AnimeCharacter": "anime-character",
+  "AnimeCharacterSearch": "anime-character-search",
+  "AnimeRankings": "anime-rankings",
+  "AnimeSearch": "anime-search",
+  "AnimeTitle": "anime-title",
+  "AnimeTitleCharacters": "anime-title-characters",
+  "AnimeTitleRecommendations": "anime-title-recommendations",
+  "AnimeTitleStaff": "anime-title-staff",
   "AppStoreApp": "appstore-app",
   "AppStoreDeveloper": "appstore-developer",
   "AppStoreList": "appstore-list",
@@ -28416,6 +28867,9 @@ export const OperationIds = Object.freeze({
   "LinkedInLinkedinCompany": "linkedin-company",
   "LinkedInLinkedinProduct": "linkedin-product",
   "LinkedInLinkedinShowcase": "linkedin-showcase",
+  "MangaRankings": "manga-rankings",
+  "MangaSearch": "manga-search",
+  "MangaTitle": "manga-title",
   "MetaPing": "ping",
   "MetaReady": "ready",
   "MetaculusCategoryQuestions": "metaculus-category-questions",

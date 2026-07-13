@@ -228,6 +228,259 @@ export interface ModelAmazonSuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelAnimeAiringEntry {
+  "airing_at"?: number;
+  "episode"?: number;
+  "media"?: ModelAnimeMedia;
+  "time_until_airing"?: number;
+}
+
+export interface ModelAnimeAiringScheduleResponse {
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "per_page"?: number;
+  "results"?: Array<ModelAnimeAiringEntry>;
+}
+
+export interface ModelAnimeCharacter {
+  "age"?: string;
+  "alternative_names"?: Array<string>;
+  "blood_type"?: string;
+  "date_of_birth"?: ModelAnimeFuzzyDate;
+  "description"?: string;
+  "favourites"?: number;
+  "gender"?: string;
+  "id"?: number;
+  "image"?: string;
+  "media"?: Array<ModelAnimeCharacterMediaRole>;
+  "name"?: string;
+  "native_name"?: string;
+  "site_url"?: string;
+}
+
+export interface ModelAnimeCharacterEntry {
+  "favourites"?: number;
+  "id"?: number;
+  "image"?: string;
+  "name"?: string;
+  "native_name"?: string;
+  "role"?: string;
+  "site_url"?: string;
+}
+
+export interface ModelAnimeCharacterMediaRole {
+  "cover_image"?: string;
+  "format"?: string;
+  "id"?: number;
+  "role"?: string;
+  "site_url"?: string;
+  "title"?: ModelAnimeMediaTitle;
+  "type"?: string;
+}
+
+export interface ModelAnimeCharacterSearchResponse {
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "per_page"?: number;
+  "query"?: string;
+  "results"?: Array<ModelAnimeCharacter>;
+  "total"?: number;
+}
+
+export interface ModelAnimeCharactersResponse {
+  "has_next_page"?: boolean;
+  "id"?: number;
+  "page"?: number;
+  "per_page"?: number;
+  "results"?: Array<ModelAnimeCharacterEntry>;
+  "total"?: number;
+}
+
+export interface ModelAnimeFuzzyDate {
+  "day"?: number;
+  "month"?: number;
+  "year"?: number;
+}
+
+export interface ModelAnimeMangaRankingsResponse {
+  "format"?: string;
+  "genre"?: string;
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "per_page"?: number;
+  "results"?: Array<ModelAnimeMedia>;
+  "sort"?: string;
+  "status"?: string;
+  "total"?: number;
+}
+
+export interface ModelAnimeMedia {
+  "average_score"?: number;
+  "banner_image"?: string;
+  "chapters"?: number;
+  "country_of_origin"?: string;
+  "cover_image"?: string;
+  "description"?: string;
+  "duration"?: number;
+  "end_date"?: ModelAnimeFuzzyDate;
+  "episodes"?: number;
+  "favourites"?: number;
+  "format"?: string;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "id_mal"?: number;
+  "is_adult"?: boolean;
+  "mean_score"?: number;
+  "next_airing_episode"?: ModelAnimeNextAiringEpisode;
+  "popularity"?: number;
+  "season"?: string;
+  "season_year"?: number;
+  "site_url"?: string;
+  "start_date"?: ModelAnimeFuzzyDate;
+  "status"?: string;
+  "studios"?: Array<string>;
+  "tags"?: Array<ModelAnimeMediaTag>;
+  "title"?: ModelAnimeMediaTitle;
+  "trending"?: number;
+  "type"?: string;
+  "volumes"?: number;
+}
+
+export interface ModelAnimeMediaTag {
+  "category"?: string;
+  "is_spoiler"?: boolean;
+  "name"?: string;
+  "rank"?: number;
+}
+
+export interface ModelAnimeMediaTitle {
+  "english"?: string;
+  "native"?: string;
+  "romaji"?: string;
+}
+
+export interface ModelAnimeNextAiringEpisode {
+  "airing_at"?: number;
+  "episode"?: number;
+  "time_until_airing"?: number;
+}
+
+export interface ModelAnimeRankingsResponse {
+  "format"?: string;
+  "genre"?: string;
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "per_page"?: number;
+  "results"?: Array<ModelAnimeMedia>;
+  "season"?: string;
+  "season_year"?: number;
+  "sort"?: string;
+  "status"?: string;
+  "total"?: number;
+}
+
+export interface ModelAnimeRecommendationEntry {
+  "media"?: ModelAnimeMedia;
+  "rating"?: number;
+}
+
+export interface ModelAnimeRecommendationsResponse {
+  "has_next_page"?: boolean;
+  "id"?: number;
+  "page"?: number;
+  "per_page"?: number;
+  "results"?: Array<ModelAnimeRecommendationEntry>;
+  "total"?: number;
+}
+
+export interface ModelAnimeSearchResponse {
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "per_page"?: number;
+  "query"?: string;
+  "results"?: Array<ModelAnimeMedia>;
+  "total"?: number;
+}
+
+export interface ModelAnimeStaffEntry {
+  "id"?: number;
+  "image"?: string;
+  "name"?: string;
+  "native_name"?: string;
+  "occupations"?: Array<string>;
+  "role"?: string;
+  "site_url"?: string;
+}
+
+export interface ModelAnimeStaffResponse {
+  "has_next_page"?: boolean;
+  "id"?: number;
+  "page"?: number;
+  "per_page"?: number;
+  "results"?: Array<ModelAnimeStaffEntry>;
+  "total"?: number;
+}
+
+export interface ModelAnimeAiringScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeAiringScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelAnimeCharacterResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeCharacter;
+  "msg"?: string;
+}
+
+export interface ModelAnimeCharacterSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeCharacterSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAnimeCharactersResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeCharactersResponse;
+  "msg"?: string;
+}
+
+export interface ModelAnimeMangaRankingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeMangaRankingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelAnimeMediaResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeMedia;
+  "msg"?: string;
+}
+
+export interface ModelAnimeRankingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeRankingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelAnimeRecommendationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeRecommendationsResponse;
+  "msg"?: string;
+}
+
+export interface ModelAnimeSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAnimeStaffResponseDoc {
+  "code"?: number;
+  "data"?: ModelAnimeStaffResponse;
+  "msg"?: string;
+}
+
 export type ModelAntibotBand = "easy" | "medium" | "hard" | "very_hard" | "blocked" | "unknown";
 
 export interface ModelAntibotProtection {
@@ -16565,6 +16818,70 @@ export interface AmazonSuggestParams {
   "keyword": string;
 }
 
+export type AnimeAiringScheduleResponse = CrawloraResponse<ModelAnimeAiringScheduleResponseDoc>;
+export interface AnimeAiringScheduleParams {
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type AnimeCharacterSearchResponse = CrawloraResponse<ModelAnimeCharacterSearchResponseDoc>;
+export interface AnimeCharacterSearchParams {
+  "query": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type AnimeCharacterResponse = CrawloraResponse<ModelAnimeCharacterResponseDoc>;
+export interface AnimeCharacterParams {
+  "id": string;
+}
+
+export type AnimeRankingsResponse = CrawloraResponse<ModelAnimeRankingsResponseDoc>;
+export interface AnimeRankingsParams {
+  "sort"?: string;
+  "season"?: string;
+  "season_year"?: number;
+  "format"?: string;
+  "genre"?: string;
+  "status"?: string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type AnimeSearchResponse = CrawloraResponse<ModelAnimeSearchResponseDoc>;
+export interface AnimeSearchParams {
+  "query": string;
+  "sort"?: string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type AnimeTitleResponse = CrawloraResponse<ModelAnimeMediaResponseDoc>;
+export interface AnimeTitleParams {
+  "id": string;
+}
+
+export type AnimeTitleCharactersResponse = CrawloraResponse<ModelAnimeCharactersResponseDoc>;
+export interface AnimeTitleCharactersParams {
+  "id": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type AnimeTitleRecommendationsResponse = CrawloraResponse<ModelAnimeRecommendationsResponseDoc>;
+export interface AnimeTitleRecommendationsParams {
+  "id": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type AnimeTitleStaffResponse = CrawloraResponse<ModelAnimeStaffResponseDoc>;
+export interface AnimeTitleStaffParams {
+  "id": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
 export type ApplePodcastsChartsResponse = CrawloraResponse<ModelApplepodcastsChartsResponseDoc>;
 export interface ApplePodcastsChartsParams {
   "collection"?: string;
@@ -19103,6 +19420,29 @@ export interface LinkedInLinkedinShowcaseParams {
   "id": string;
 }
 
+export type MangaRankingsResponse = CrawloraResponse<ModelAnimeMangaRankingsResponseDoc>;
+export interface MangaRankingsParams {
+  "sort"?: string;
+  "format"?: string;
+  "genre"?: string;
+  "status"?: string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type MangaSearchResponse = CrawloraResponse<ModelAnimeSearchResponseDoc>;
+export interface MangaSearchParams {
+  "query": string;
+  "sort"?: string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type MangaTitleResponse = CrawloraResponse<ModelAnimeMediaResponseDoc>;
+export interface MangaTitleParams {
+  "id": string;
+}
+
 export type MetaculusCategoryQuestionsResponse = CrawloraResponse<ModelMetaculusQuestionsResponseDoc>;
 export interface MetaculusCategoryQuestionsParams {
   "slug": "artificial-intelligence" | "computing-and-math" | "cryptocurrencies" | "economy-business" | "elections" | "environment-climate" | "geopolitics" | "health-pandemics" | "law" | "metaculus" | "natural-sciences" | "nuclear" | "politics" | "social-sciences" | "space" | "sports-entertainment" | "technology";
@@ -21583,6 +21923,18 @@ export interface AmazonService {
   suggest<T = AmazonSuggestResponse>(params: AmazonSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface AnimeService {
+  airingSchedule<T = AnimeAiringScheduleResponse>(params?: AnimeAiringScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  characterSearch<T = AnimeCharacterSearchResponse>(params: AnimeCharacterSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  character<T = AnimeCharacterResponse>(params: AnimeCharacterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rankings<T = AnimeRankingsResponse>(params?: AnimeRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = AnimeSearchResponse>(params: AnimeSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  title<T = AnimeTitleResponse>(params: AnimeTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleCharacters<T = AnimeTitleCharactersResponse>(params: AnimeTitleCharactersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleRecommendations<T = AnimeTitleRecommendationsResponse>(params: AnimeTitleRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleStaff<T = AnimeTitleStaffResponse>(params: AnimeTitleStaffParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ApplePodcastsService {
   charts<T = ApplePodcastsChartsResponse>(params?: ApplePodcastsChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   episodesSearch<T = ApplePodcastsEpisodesSearchResponse>(params: ApplePodcastsEpisodesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -21978,6 +22330,12 @@ export interface LinkedInService {
   linkedinCompany<T = LinkedInLinkedinCompanyResponse>(params: LinkedInLinkedinCompanyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   linkedinProduct<T = LinkedInLinkedinProductResponse>(params: LinkedInLinkedinProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   linkedinShowcase<T = LinkedInLinkedinShowcaseResponse>(params: LinkedInLinkedinShowcaseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface MangaService {
+  rankings<T = MangaRankingsResponse>(params?: MangaRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = MangaSearchResponse>(params: MangaSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  title<T = MangaTitleResponse>(params: MangaTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface MetaculusService {
@@ -22426,6 +22784,7 @@ export interface ZillowService {
 export interface CrawloraGeneratedGroups {
   airbnb: AirbnbService;
   amazon: AmazonService;
+  anime: AnimeService;
   applePodcasts: ApplePodcastsService;
   appStore: AppStoreService;
   billing: BillingService;
@@ -22452,6 +22811,7 @@ export interface CrawloraGeneratedGroups {
   kalshi: KalshiService;
   letterboxd: LetterboxdService;
   linkedIn: LinkedInService;
+  manga: MangaService;
   metaculus: MetaculusService;
   meta: MetaService;
   pitchBook: PitchBookService;
@@ -22494,6 +22854,15 @@ export interface OperationParamsMap {
   "amazon-product": AmazonProductParams;
   "amazon-search": AmazonSearchParams;
   "amazon-suggest": AmazonSuggestParams;
+  "anime-airing-schedule": AnimeAiringScheduleParams;
+  "anime-character-search": AnimeCharacterSearchParams;
+  "anime-character": AnimeCharacterParams;
+  "anime-rankings": AnimeRankingsParams;
+  "anime-search": AnimeSearchParams;
+  "anime-title": AnimeTitleParams;
+  "anime-title-characters": AnimeTitleCharactersParams;
+  "anime-title-recommendations": AnimeTitleRecommendationsParams;
+  "anime-title-staff": AnimeTitleStaffParams;
   "apple-podcasts-charts": ApplePodcastsChartsParams;
   "apple-podcasts-episodes-search": ApplePodcastsEpisodesSearchParams;
   "apple-podcasts-search": ApplePodcastsSearchParams;
@@ -22811,6 +23180,9 @@ export interface OperationParamsMap {
   "linkedin-company": LinkedInLinkedinCompanyParams;
   "linkedin-product": LinkedInLinkedinProductParams;
   "linkedin-showcase": LinkedInLinkedinShowcaseParams;
+  "manga-rankings": MangaRankingsParams;
+  "manga-search": MangaSearchParams;
+  "manga-title": MangaTitleParams;
   "metaculus-category-questions": MetaculusCategoryQuestionsParams;
   "metaculus-comments-feed": MetaculusCommentsFeedParams;
   "metaculus-project-questions": MetaculusProjectQuestionsParams;
@@ -23182,6 +23554,15 @@ export interface OperationResponseMap {
   "amazon-product": AmazonProductResponse;
   "amazon-search": AmazonSearchResponse;
   "amazon-suggest": AmazonSuggestResponse;
+  "anime-airing-schedule": AnimeAiringScheduleResponse;
+  "anime-character-search": AnimeCharacterSearchResponse;
+  "anime-character": AnimeCharacterResponse;
+  "anime-rankings": AnimeRankingsResponse;
+  "anime-search": AnimeSearchResponse;
+  "anime-title": AnimeTitleResponse;
+  "anime-title-characters": AnimeTitleCharactersResponse;
+  "anime-title-recommendations": AnimeTitleRecommendationsResponse;
+  "anime-title-staff": AnimeTitleStaffResponse;
   "apple-podcasts-charts": ApplePodcastsChartsResponse;
   "apple-podcasts-episodes-search": ApplePodcastsEpisodesSearchResponse;
   "apple-podcasts-search": ApplePodcastsSearchResponse;
@@ -23499,6 +23880,9 @@ export interface OperationResponseMap {
   "linkedin-company": LinkedInLinkedinCompanyResponse;
   "linkedin-product": LinkedInLinkedinProductResponse;
   "linkedin-showcase": LinkedInLinkedinShowcaseResponse;
+  "manga-rankings": MangaRankingsResponse;
+  "manga-search": MangaSearchResponse;
+  "manga-title": MangaTitleResponse;
   "metaculus-category-questions": MetaculusCategoryQuestionsResponse;
   "metaculus-comments-feed": MetaculusCommentsFeedResponse;
   "metaculus-project-questions": MetaculusProjectQuestionsResponse;
@@ -23870,6 +24254,15 @@ export interface OperationRequiredParamsMap {
   "amazon-product": true;
   "amazon-search": true;
   "amazon-suggest": true;
+  "anime-airing-schedule": false;
+  "anime-character-search": true;
+  "anime-character": true;
+  "anime-rankings": false;
+  "anime-search": true;
+  "anime-title": true;
+  "anime-title-characters": true;
+  "anime-title-recommendations": true;
+  "anime-title-staff": true;
   "apple-podcasts-charts": false;
   "apple-podcasts-episodes-search": true;
   "apple-podcasts-search": true;
@@ -24187,6 +24580,9 @@ export interface OperationRequiredParamsMap {
   "linkedin-company": true;
   "linkedin-product": true;
   "linkedin-showcase": true;
+  "manga-rankings": false;
+  "manga-search": true;
+  "manga-title": true;
   "metaculus-category-questions": true;
   "metaculus-comments-feed": false;
   "metaculus-project-questions": true;
@@ -24565,6 +24961,15 @@ export type OperationIdLiteral =
   | "amazon-product"
   | "amazon-search"
   | "amazon-suggest"
+  | "anime-airing-schedule"
+  | "anime-character-search"
+  | "anime-character"
+  | "anime-rankings"
+  | "anime-search"
+  | "anime-title"
+  | "anime-title-characters"
+  | "anime-title-recommendations"
+  | "anime-title-staff"
   | "apple-podcasts-charts"
   | "apple-podcasts-episodes-search"
   | "apple-podcasts-search"
@@ -24882,6 +25287,9 @@ export type OperationIdLiteral =
   | "linkedin-company"
   | "linkedin-product"
   | "linkedin-showcase"
+  | "manga-rankings"
+  | "manga-search"
+  | "manga-title"
   | "metaculus-category-questions"
   | "metaculus-comments-feed"
   | "metaculus-project-questions"
@@ -25252,6 +25660,15 @@ export declare const OperationIds: Readonly<{
   AmazonProduct: "amazon-product";
   AmazonSearch: "amazon-search";
   AmazonSuggest: "amazon-suggest";
+  AnimeAiringSchedule: "anime-airing-schedule";
+  AnimeCharacter: "anime-character";
+  AnimeCharacterSearch: "anime-character-search";
+  AnimeRankings: "anime-rankings";
+  AnimeSearch: "anime-search";
+  AnimeTitle: "anime-title";
+  AnimeTitleCharacters: "anime-title-characters";
+  AnimeTitleRecommendations: "anime-title-recommendations";
+  AnimeTitleStaff: "anime-title-staff";
   AppStoreApp: "appstore-app";
   AppStoreDeveloper: "appstore-developer";
   AppStoreList: "appstore-list";
@@ -25566,6 +25983,9 @@ export declare const OperationIds: Readonly<{
   LinkedInLinkedinCompany: "linkedin-company";
   LinkedInLinkedinProduct: "linkedin-product";
   LinkedInLinkedinShowcase: "linkedin-showcase";
+  MangaRankings: "manga-rankings";
+  MangaSearch: "manga-search";
+  MangaTitle: "manga-title";
   MetaPing: "ping";
   MetaReady: "ready";
   MetaculusCategoryQuestions: "metaculus-category-questions";
