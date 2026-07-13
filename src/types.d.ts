@@ -302,6 +302,13 @@ export interface ModelAnimeFuzzyDate {
   "year"?: number;
 }
 
+export interface ModelAnimeMalscore {
+  "max"?: number;
+  "score"?: number;
+  "scored_by"?: number;
+  "url"?: string;
+}
+
 export interface ModelAnimeMangaRankingsResponse {
   "format"?: string;
   "genre"?: string;
@@ -330,6 +337,7 @@ export interface ModelAnimeMedia {
   "id"?: number;
   "id_mal"?: number;
   "is_adult"?: boolean;
+  "mal"?: ModelAnimeMalscore;
   "mean_score"?: number;
   "next_airing_episode"?: ModelAnimeNextAiringEpisode;
   "popularity"?: number;
@@ -2179,6 +2187,65 @@ export interface ModelBuildinfoInfo {
   "version"?: string;
 }
 
+export interface ModelCapterraProduct {
+  "best_rating"?: number;
+  "category"?: string;
+  "description"?: string;
+  "name"?: string;
+  "product_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "url"?: string;
+}
+
+export interface ModelCapterraReview {
+  "author"?: string;
+  "best_rating"?: number;
+  "headline"?: string;
+  "rating"?: number;
+}
+
+export interface ModelCapterraReviewsResponse {
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "product_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "reviews"?: Array<ModelCapterraReview>;
+}
+
+export interface ModelCapterraSearchResponse {
+  "items"?: Array<ModelCapterraSearchResult>;
+  "query"?: string;
+}
+
+export interface ModelCapterraSearchResult {
+  "description"?: string;
+  "name"?: string;
+  "product_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "url"?: string;
+}
+
+export interface ModelCapterraProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelCapterraProduct;
+  "msg"?: string;
+}
+
+export interface ModelCapterraReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCapterraReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCapterraSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelCapterraSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelChromewebstoreCard {
   "category"?: string;
   "category_id"?: number;
@@ -2258,6 +2325,7 @@ export interface ModelChromewebstoreListResult {
 export interface ModelChromewebstorePermissions {
   "host_permissions"?: Array<string>;
   "id"?: string;
+  "item_type"?: string;
   "manifest_version"?: number;
   "min_browser_version"?: string;
   "name"?: string;
@@ -3124,6 +3192,51 @@ export interface ModelDatasetsChartsSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsChromeExtensionChangesResponse {
+  "count"?: number;
+  "dataset"?: string;
+  "items"?: Array<ModelEsChromeExtensionHistoryPoint>;
+}
+
+export interface ModelDatasetsChromeExtensionFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsChromeExtensionFacetItem>;
+}
+
+export interface ModelDatasetsChromeExtensionHistoryResponse {
+  "count"?: number;
+  "dataset"?: string;
+  "id"?: string;
+  "points"?: Array<ModelEsChromeExtensionHistoryPoint>;
+}
+
+export interface ModelDatasetsChromeExtensionMetricsResponse {
+  "changes"?: ModelEsChromeExtensionChangeMetrics;
+  "dataset"?: string;
+  "days"?: number;
+  "generated_at"?: string;
+  "item_types"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "manifest_versions"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "rating_bands"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "review_bands"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "risk_signals"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "statuses"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "summary"?: ModelEsChromeExtensionMetricSummary;
+  "top_categories"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "top_permissions"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "user_bands"?: Array<ModelEsChromeExtensionMetricBucket>;
+}
+
+export interface ModelDatasetsChromeExtensionSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsChromeExtensionRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsCreatorsSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsCreatorRecord>;
@@ -3183,6 +3296,45 @@ export interface ModelDatasetsHousingFacetResponse {
 export interface ModelDatasetsHousingSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsHousingMarketRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsJournalistsFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsJournalistsFacetItem>;
+}
+
+export interface ModelDatasetsJournalistsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsJournalistRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsNumbeoCityFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsNumbeoDatasetFacetItem>;
+}
+
+export interface ModelDatasetsNumbeoCitySearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsNumbeoCityRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsNumbeoCountrySearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsNumbeoCountryRecord>;
   "page"?: number;
   "page_size"?: number;
   "sort"?: string;
@@ -3351,6 +3503,13 @@ export interface ModelDatasetsTrustmrrFacetResponse {
   "items"?: Array<ModelEsTrustmrrDatasetFacetItem>;
 }
 
+export interface ModelDatasetsTrustmrrHistoryResponse {
+  "count"?: number;
+  "dataset"?: string;
+  "points"?: Array<ModelEsTrustmrrHistoryPoint>;
+  "slug"?: string;
+}
+
 export interface ModelDatasetsTrustmrrSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsTrustmrrStartupRecord>;
@@ -3393,6 +3552,42 @@ export interface ModelDatasetsAppsSearchResponseDoc {
 export interface ModelDatasetsChartsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsChartsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsChromeExtensionChangesResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsChromeExtensionChangesResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsChromeExtensionFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsChromeExtensionFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsChromeExtensionHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsChromeExtensionHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsChromeExtensionItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsChromeExtensionRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsChromeExtensionMetricsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsChromeExtensionMetricsResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsChromeExtensionsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsChromeExtensionSearchResponse;
   "msg"?: string;
 }
 
@@ -3456,9 +3651,57 @@ export interface ModelDatasetsHousingMarketsSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsJournalistsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsJournalistsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsJournalistsItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsJournalistRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsJournalistsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsJournalistsSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsListResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsDatasetListResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsNumbeoCitiesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsNumbeoCityFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsNumbeoCitiesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsNumbeoCitySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsNumbeoCityResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsNumbeoCityRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsNumbeoCountriesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsNumbeoCountrySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsNumbeoCountryResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsNumbeoCountryRecord;
   "msg"?: string;
 }
 
@@ -3609,6 +3852,12 @@ export interface ModelDatasetsTechstackSearchResponseDoc {
 export interface ModelDatasetsTrustmrrFacetResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsTrustmrrFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsTrustmrrHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsTrustmrrHistoryResponse;
   "msg"?: string;
 }
 
@@ -4226,6 +4475,100 @@ export interface ModelEsChartEntry {
   "url"?: string;
 }
 
+export interface ModelEsChromeExtensionChangeDay {
+  "count"?: number;
+  "date"?: string;
+  "rating_count_delta"?: number;
+  "users_delta"?: number;
+}
+
+export interface ModelEsChromeExtensionChangeMetrics {
+  "daily"?: Array<ModelEsChromeExtensionChangeDay>;
+  "total"?: number;
+  "types"?: Array<ModelEsChromeExtensionMetricBucket>;
+}
+
+export interface ModelEsChromeExtensionFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsChromeExtensionHistoryPoint {
+  "change_types"?: Array<string>;
+  "collects_data"?: boolean;
+  "data_collected"?: Array<string>;
+  "host_permissions"?: Array<string>;
+  "id"?: string;
+  "manifest_version"?: number;
+  "observed_at"?: string;
+  "optional_host_permissions"?: Array<string>;
+  "optional_permissions"?: Array<string>;
+  "permissions"?: Array<string>;
+  "privacy_declarations"?: Array<string>;
+  "privacy_policy"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "rating_count_delta"?: number;
+  "status"?: string;
+  "users"?: number;
+  "users_delta"?: number;
+  "version"?: string;
+}
+
+export interface ModelEsChromeExtensionMetricBucket {
+  "count"?: number;
+  "users"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsChromeExtensionMetricSummary {
+  "average_rating"?: number;
+  "last_crawled_at"?: string;
+  "privacy_policies"?: number;
+  "total"?: number;
+  "total_ratings"?: number;
+  "total_users"?: number;
+}
+
+export interface ModelEsChromeExtensionRecord {
+  "all_permissions"?: Array<string>;
+  "category"?: string;
+  "collects_data"?: boolean;
+  "data_collected"?: Array<string>;
+  "description"?: string;
+  "developer"?: string;
+  "first_seen"?: string;
+  "has_broad_host_access"?: boolean;
+  "host_permissions"?: Array<string>;
+  "icon"?: string;
+  "id"?: string;
+  "item_type"?: string;
+  "last_crawled_at"?: string;
+  "last_seen"?: string;
+  "manifest_version"?: number;
+  "min_browser_version"?: string;
+  "name"?: string;
+  "optional_host_permissions"?: Array<string>;
+  "optional_permissions"?: Array<string>;
+  "permissions"?: Array<string>;
+  "privacy_declarations"?: Array<string>;
+  "privacy_policy"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "rating_count_delta"?: number;
+  "schema_version"?: number;
+  "screenshots"?: Array<string>;
+  "size"?: string;
+  "status"?: string;
+  "summary"?: string;
+  "trend_score"?: number;
+  "updated"?: string;
+  "url"?: string;
+  "users"?: number;
+  "users_delta"?: number;
+  "version"?: string;
+}
+
 export interface ModelEsCreatorRecord {
   "avatar_url"?: string;
   "avg_views"?: number;
@@ -4495,6 +4838,108 @@ export interface ModelEsHousingMarketRecord {
   "state_code"?: string;
   "table_id"?: number;
   "zip_code"?: string;
+}
+
+export interface ModelEsJournalistRecord {
+  "bio"?: string;
+  "contact_email"?: string;
+  "contact_type"?: string;
+  "crawled_at"?: string;
+  "name"?: string;
+  "outlet"?: string;
+  "outlet_domain"?: string;
+  "outlet_id"?: string;
+  "profile_url"?: string;
+  "slug"?: string;
+  "social_links"?: Record<string, string>;
+  "title"?: string;
+  "topics"?: Array<string>;
+  "vertical"?: string;
+}
+
+export interface ModelEsJournalistsFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsNumbeoCityRecord {
+  "city"?: string;
+  "city_slug"?: string;
+  "climate_index"?: number;
+  "cost_of_living_index"?: number;
+  "cost_of_living_plus_rent_index"?: number;
+  "country"?: string;
+  "coverage"?: Array<string>;
+  "crime_index"?: number;
+  "extra_indices"?: Array<ModelEsNumbeoNamedValue>;
+  "groceries_index"?: number;
+  "health_care_exp_index"?: number;
+  "health_care_index"?: number;
+  "local_purchasing_power_index"?: number;
+  "pollution_exp_index"?: number;
+  "pollution_index"?: number;
+  "property_affordability_index"?: number;
+  "property_gross_rental_yield_city_centre"?: number;
+  "property_gross_rental_yield_outside_centre"?: number;
+  "property_mortgage_pct_of_income"?: number;
+  "property_price_to_income_ratio"?: number;
+  "property_price_to_rent_ratio_city_centre"?: number;
+  "property_price_to_rent_ratio_outside_centre"?: number;
+  "quality_of_life_index"?: number;
+  "rent_index"?: number;
+  "restaurant_price_index"?: number;
+  "safety_index"?: number;
+  "schema_version"?: number;
+  "synced_at"?: string;
+  "traffic_co2_emission_index"?: number;
+  "traffic_index"?: number;
+  "traffic_inefficiency_index"?: number;
+  "traffic_time_exp_index"?: number;
+  "traffic_time_index_minutes"?: number;
+}
+
+export interface ModelEsNumbeoCountryRecord {
+  "climate_index"?: number;
+  "cost_of_living_index"?: number;
+  "cost_of_living_plus_rent_index"?: number;
+  "country"?: string;
+  "coverage"?: Array<string>;
+  "crime_index"?: number;
+  "extra_indices"?: Array<ModelEsNumbeoNamedValue>;
+  "groceries_index"?: number;
+  "health_care_exp_index"?: number;
+  "health_care_index"?: number;
+  "local_purchasing_power_index"?: number;
+  "pollution_exp_index"?: number;
+  "pollution_index"?: number;
+  "property_affordability_index"?: number;
+  "property_gross_rental_yield_city_centre"?: number;
+  "property_gross_rental_yield_outside_centre"?: number;
+  "property_mortgage_pct_of_income"?: number;
+  "property_price_to_income_ratio"?: number;
+  "property_price_to_rent_ratio_city_centre"?: number;
+  "property_price_to_rent_ratio_outside_centre"?: number;
+  "quality_of_life_index"?: number;
+  "rent_index"?: number;
+  "restaurant_price_index"?: number;
+  "safety_index"?: number;
+  "schema_version"?: number;
+  "synced_at"?: string;
+  "traffic_co2_emission_index"?: number;
+  "traffic_index"?: number;
+  "traffic_inefficiency_index"?: number;
+  "traffic_time_exp_index"?: number;
+  "traffic_time_index_minutes"?: number;
+}
+
+export interface ModelEsNumbeoDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsNumbeoNamedValue {
+  "name"?: string;
+  "value"?: number;
 }
 
 export interface ModelEsPlaystationGameDatasetFacetItem {
@@ -4890,6 +5335,22 @@ export interface ModelEsTechstackTechnology {
 export interface ModelEsTrustmrrDatasetFacetItem {
   "count"?: number;
   "value"?: string;
+}
+
+export interface ModelEsTrustmrrHistoryPoint {
+  "asking_price"?: number;
+  "date"?: string;
+  "deal_score"?: number;
+  "growth_30d"?: number;
+  "mrr"?: number;
+  "multiple"?: number;
+  "offer_count"?: number;
+  "on_sale"?: boolean;
+  "revenue_30d"?: number;
+  "slug"?: string;
+  "total_revenue"?: number;
+  "traffic_12mo"?: number;
+  "traffic_30d"?: number;
 }
 
 export interface ModelEsTrustmrrStartupRecord {
@@ -8016,6 +8477,169 @@ export interface ModelLinkedinShowcaseResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelMetacriticBrowseItem {
+  "description"?: string;
+  "genres"?: Array<ModelMetacriticGenre>;
+  "id"?: number;
+  "image"?: string;
+  "metascore"?: ModelMetacriticScoreSummary;
+  "premiere_year"?: number;
+  "rating"?: string;
+  "release_date"?: string;
+  "season_count"?: number;
+  "slug"?: string;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+  "user_score"?: number;
+}
+
+export interface ModelMetacriticBrowseResponse {
+  "genre"?: string;
+  "items"?: Array<ModelMetacriticBrowseItem>;
+  "page"?: number;
+  "per_page"?: number;
+  "sort"?: string;
+  "total"?: number;
+  "type"?: string;
+}
+
+export interface ModelMetacriticCredit {
+  "name"?: string;
+  "role"?: string;
+}
+
+export interface ModelMetacriticCriticReview {
+  "author"?: string;
+  "date"?: string;
+  "platform"?: string;
+  "publication"?: string;
+  "publication_slug"?: string;
+  "quote"?: string;
+  "score"?: number;
+  "url"?: string;
+}
+
+export interface ModelMetacriticCriticReviewsResponse {
+  "page"?: number;
+  "per_page"?: number;
+  "reviews"?: Array<ModelMetacriticCriticReview>;
+  "slug"?: string;
+  "sort"?: string;
+  "total"?: number;
+  "type"?: string;
+}
+
+export interface ModelMetacriticGenre {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelMetacriticPlatform {
+  "id"?: number;
+  "is_lead"?: boolean;
+  "metascore"?: ModelMetacriticScoreSummary;
+  "name"?: string;
+  "release_date"?: string;
+}
+
+export interface ModelMetacriticProduct {
+  "countries"?: Array<string>;
+  "description"?: string;
+  "duration"?: number;
+  "genres"?: Array<ModelMetacriticGenre>;
+  "id"?: number;
+  "image"?: string;
+  "imdb_id"?: string;
+  "imdb_url"?: string;
+  "in_theaters"?: boolean;
+  "metascore"?: ModelMetacriticScoreSummary;
+  "networks"?: Array<string>;
+  "platforms"?: Array<ModelMetacriticPlatform>;
+  "premiere_year"?: number;
+  "production"?: ModelMetacriticProduction;
+  "rating"?: string;
+  "release_date"?: string;
+  "season_count"?: number;
+  "slug"?: string;
+  "tagline"?: string;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+  "user_score"?: ModelMetacriticScoreSummary;
+  "video"?: ModelMetacriticVideo;
+}
+
+export interface ModelMetacriticProduction {
+  "companies"?: Array<string>;
+  "crew"?: Array<ModelMetacriticCredit>;
+  "official_site"?: string;
+}
+
+export interface ModelMetacriticScoreSummary {
+  "max"?: number;
+  "negative_count"?: number;
+  "neutral_count"?: number;
+  "positive_count"?: number;
+  "review_count"?: number;
+  "score"?: number;
+  "sentiment"?: string;
+  "url"?: string;
+}
+
+export interface ModelMetacriticUserReview {
+  "author"?: string;
+  "date"?: string;
+  "id"?: string;
+  "platform"?: string;
+  "quote"?: string;
+  "score"?: number;
+  "spoiler"?: boolean;
+  "thumbs_down"?: number;
+  "thumbs_up"?: number;
+}
+
+export interface ModelMetacriticUserReviewsResponse {
+  "page"?: number;
+  "per_page"?: number;
+  "reviews"?: Array<ModelMetacriticUserReview>;
+  "slug"?: string;
+  "sort"?: string;
+  "total"?: number;
+  "type"?: string;
+}
+
+export interface ModelMetacriticVideo {
+  "duration"?: number;
+  "embed_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelMetacriticBrowseResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetacriticBrowseResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetacriticCriticReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetacriticCriticReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetacriticProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetacriticProduct;
+  "msg"?: string;
+}
+
+export interface ModelMetacriticUserReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetacriticUserReviewsResponse;
+  "msg"?: string;
+}
+
 export interface ModelMetaculusForecastHistoryPoint {
   "center"?: number;
   "centers"?: Array<number>;
@@ -8208,6 +8832,184 @@ export interface ModelMetaculusQuestionResponseDoc {
 export interface ModelMetaculusQuestionsResponseDoc {
   "code"?: number;
   "data"?: ModelMetaculusQuestionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelNumbeoCityIndexEntry {
+  "city"?: string;
+  "city_slug"?: string;
+  "cost_of_living_index"?: number;
+  "cost_of_living_plus_rent_index"?: number;
+  "groceries_index"?: number;
+  "local_purchasing_power_index"?: number;
+  "rank"?: number;
+  "rent_index"?: number;
+  "restaurant_price_index"?: number;
+}
+
+export interface ModelNumbeoCostOfLivingCityResponse {
+  "categories"?: Array<ModelNumbeoPriceCategory>;
+  "city"?: string;
+  "city_slug"?: string;
+  "contributors_12mo"?: number;
+  "country"?: string;
+  "last_update"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelNumbeoCostOfLivingCountryResponse {
+  "categories"?: Array<ModelNumbeoPriceCategory>;
+  "cities"?: Array<ModelNumbeoCityIndexEntry>;
+  "contributors_12mo"?: number;
+  "country"?: string;
+  "last_update"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelNumbeoCountryIndexEntry {
+  "cost_of_living_index"?: number;
+  "cost_of_living_plus_rent_index"?: number;
+  "country"?: string;
+  "groceries_index"?: number;
+  "local_purchasing_power_index"?: number;
+  "rank"?: number;
+  "rent_index"?: number;
+  "restaurant_price_index"?: number;
+}
+
+export interface ModelNumbeoIndexRankingEntry {
+  "city"?: string;
+  "city_slug"?: string;
+  "country"?: string;
+  "indices"?: Array<ModelNumbeoNamedValue>;
+  "rank"?: number;
+}
+
+export interface ModelNumbeoIndexRow {
+  "name"?: string;
+  "qualifier"?: string;
+  "value"?: number;
+}
+
+export interface ModelNumbeoIndexSection {
+  "rows"?: Array<ModelNumbeoIndexRow>;
+  "title"?: string;
+}
+
+export interface ModelNumbeoIndicesCityResponse {
+  "city"?: string;
+  "city_slug"?: string;
+  "contributors_note"?: string;
+  "country"?: string;
+  "headline_indices"?: Array<ModelNumbeoNamedValue>;
+  "index"?: string;
+  "last_update"?: string;
+  "price_categories"?: Array<ModelNumbeoPriceCategory>;
+  "sections"?: Array<ModelNumbeoIndexSection>;
+  "source_url"?: string;
+}
+
+export interface ModelNumbeoIndicesCountryResponse {
+  "cities"?: Array<ModelNumbeoIndexRankingEntry>;
+  "contributors_note"?: string;
+  "country"?: string;
+  "headline_indices"?: Array<ModelNumbeoNamedValue>;
+  "index"?: string;
+  "last_update"?: string;
+  "price_categories"?: Array<ModelNumbeoPriceCategory>;
+  "sections"?: Array<ModelNumbeoIndexSection>;
+  "source_url"?: string;
+}
+
+export interface ModelNumbeoIndicesRankingsByCountryResponse {
+  "countries"?: Array<ModelNumbeoIndexRankingEntry>;
+  "index"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelNumbeoIndicesRankingsResponse {
+  "cities"?: Array<ModelNumbeoIndexRankingEntry>;
+  "index"?: string;
+  "period"?: string;
+  "scope"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelNumbeoNamedValue {
+  "name"?: string;
+  "value"?: number;
+}
+
+export interface ModelNumbeoPriceCategory {
+  "category"?: string;
+  "items"?: Array<ModelNumbeoPriceItem>;
+}
+
+export interface ModelNumbeoPriceItem {
+  "currency_symbol"?: string;
+  "name"?: string;
+  "price"?: number;
+  "range_high"?: number;
+  "range_low"?: number;
+}
+
+export interface ModelNumbeoRankingsByCountryResponse {
+  "countries"?: Array<ModelNumbeoCountryIndexEntry>;
+  "source_url"?: string;
+}
+
+export interface ModelNumbeoRankingsResponse {
+  "cities"?: Array<ModelNumbeoCityIndexEntry>;
+  "period"?: string;
+  "scope"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelNumbeoCostOfLivingCityResponseDoc {
+  "code"?: number;
+  "data"?: ModelNumbeoCostOfLivingCityResponse;
+  "msg"?: string;
+}
+
+export interface ModelNumbeoCostOfLivingCountryResponseDoc {
+  "code"?: number;
+  "data"?: ModelNumbeoCostOfLivingCountryResponse;
+  "msg"?: string;
+}
+
+export interface ModelNumbeoIndicesCityResponseDoc {
+  "code"?: number;
+  "data"?: ModelNumbeoIndicesCityResponse;
+  "msg"?: string;
+}
+
+export interface ModelNumbeoIndicesCountryResponseDoc {
+  "code"?: number;
+  "data"?: ModelNumbeoIndicesCountryResponse;
+  "msg"?: string;
+}
+
+export interface ModelNumbeoIndicesRankingsByCountryResponseDoc {
+  "code"?: number;
+  "data"?: ModelNumbeoIndicesRankingsByCountryResponse;
+  "msg"?: string;
+}
+
+export interface ModelNumbeoIndicesRankingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelNumbeoIndicesRankingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelNumbeoRankingsByCountryResponseDoc {
+  "code"?: number;
+  "data"?: ModelNumbeoRankingsByCountryResponse;
+  "msg"?: string;
+}
+
+export interface ModelNumbeoRankingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelNumbeoRankingsResponse;
   "msg"?: string;
 }
 
@@ -15679,6 +16481,103 @@ export interface ModelUserUserRotateApikeyResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelWalmartProduct {
+  "attributes"?: Record<string, string>;
+  "availability"?: string;
+  "brand"?: string;
+  "canonical_url"?: string;
+  "category"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "highlights"?: Array<string>;
+  "image"?: string;
+  "images"?: Array<string>;
+  "is_sponsored"?: boolean;
+  "item_id"?: string;
+  "price"?: number;
+  "price_text"?: string;
+  "product_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "seller_name"?: string;
+  "title"?: string;
+  "variants"?: Array<ModelWalmartProductSummary>;
+}
+
+export interface ModelWalmartProductSummary {
+  "availability"?: string;
+  "brand"?: string;
+  "canonical_url"?: string;
+  "currency"?: string;
+  "image"?: string;
+  "images"?: Array<string>;
+  "is_sponsored"?: boolean;
+  "item_id"?: string;
+  "price"?: number;
+  "price_text"?: string;
+  "product_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "seller_name"?: string;
+  "title"?: string;
+}
+
+export interface ModelWalmartRatingBreakdown {
+  "five_star"?: number;
+  "four_star"?: number;
+  "one_star"?: number;
+  "three_star"?: number;
+  "two_star"?: number;
+}
+
+export interface ModelWalmartReview {
+  "author"?: string;
+  "negative_feedback"?: number;
+  "positive_feedback"?: number;
+  "rating"?: number;
+  "review_id"?: string;
+  "submission_date"?: string;
+  "text"?: string;
+  "title"?: string;
+}
+
+export interface ModelWalmartReviewsResponse {
+  "average_rating"?: number;
+  "item_id"?: string;
+  "rating_counts"?: ModelWalmartRatingBreakdown;
+  "recommended_percent"?: number;
+  "reviews"?: Array<ModelWalmartReview>;
+  "reviews_with_text_count"?: number;
+  "top_negative_review"?: ModelWalmartReview;
+  "top_positive_review"?: ModelWalmartReview;
+  "total_review_count"?: number;
+}
+
+export interface ModelWalmartSearchResponse {
+  "items"?: Array<ModelWalmartProductSummary>;
+  "page"?: number;
+  "query"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelWalmartProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelWalmartProduct;
+  "msg"?: string;
+}
+
+export interface ModelWalmartReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelWalmartReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelWalmartSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelWalmartSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelWebScrapeInfo {
   "backend"?: string;
   "cache_state"?: string;
@@ -16859,6 +17758,7 @@ export interface AnimeSearchParams {
 export type AnimeTitleResponse = CrawloraResponse<ModelAnimeMediaResponseDoc>;
 export interface AnimeTitleParams {
   "id": string;
+  "mal"?: boolean;
 }
 
 export type AnimeTitleCharactersResponse = CrawloraResponse<ModelAnimeCharactersResponseDoc>;
@@ -17279,6 +18179,22 @@ export interface BraveVideosParams {
   "date_to"?: string;
 }
 
+export type CapterraProductResponse = CrawloraResponse<ModelCapterraProductResponseDoc>;
+export interface CapterraProductParams {
+  "product_id": string;
+}
+
+export type CapterraReviewsResponse = CrawloraResponse<ModelCapterraReviewsResponseDoc>;
+export interface CapterraReviewsParams {
+  "product_id": string;
+  "page"?: number;
+}
+
+export type CapterraSearchResponse = CrawloraResponse<ModelCapterraSearchResponseDoc>;
+export interface CapterraSearchParams {
+  "q": string;
+}
+
 export type ChromeWebStoreChromewebstoreCategoriesResponse = CrawloraResponse<ModelChromewebstoreCategoriesResponseDoc>;
 export interface ChromeWebStoreChromewebstoreCategoriesParams {
 }
@@ -17606,6 +18522,86 @@ export interface DatasetsAppsSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsChromeExtensionsChangesResponse = CrawloraResponse<ModelDatasetsChromeExtensionChangesResponseDoc>;
+export interface DatasetsChromeExtensionsChangesParams {
+  "change_type"?: string;
+  "limit"?: number;
+}
+
+export type DatasetsChromeExtensionsFacetsResponse = CrawloraResponse<ModelDatasetsChromeExtensionFacetResponseDoc>;
+export interface DatasetsChromeExtensionsFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "item_type"?: string;
+  "category"?: string;
+  "developer"?: string;
+  "permission"?: string;
+  "status"?: string;
+  "manifest_version"?: number;
+  "collects_data"?: boolean;
+  "has_broad_host_access"?: boolean;
+  "min_users"?: number;
+  "min_rating"?: number;
+  "min_rating_count"?: number;
+  "sort"?: string;
+}
+
+export type DatasetsChromeExtensionsHistoryResponse = CrawloraResponse<ModelDatasetsChromeExtensionHistoryResponseDoc>;
+export interface DatasetsChromeExtensionsHistoryParams {
+  "id": string;
+  "from"?: string;
+  "to"?: string;
+  "limit"?: number;
+}
+
+export type DatasetsChromeExtensionsItemResponse = CrawloraResponse<ModelDatasetsChromeExtensionItemResponseDoc>;
+export interface DatasetsChromeExtensionsItemParams {
+  "id": string;
+}
+
+export type DatasetsChromeExtensionsMetricsResponse = CrawloraResponse<ModelDatasetsChromeExtensionMetricsResponseDoc>;
+export interface DatasetsChromeExtensionsMetricsParams {
+  "days"?: number;
+  "limit"?: number;
+}
+
+export type DatasetsChromeExtensionsSearchResponse = CrawloraResponse<ModelDatasetsChromeExtensionsSearchResponseDoc>;
+export interface DatasetsChromeExtensionsSearchParams {
+  "q"?: string;
+  "item_type"?: string;
+  "category"?: string;
+  "developer"?: string;
+  "permission"?: string;
+  "status"?: string;
+  "manifest_version"?: number;
+  "collects_data"?: boolean;
+  "has_broad_host_access"?: boolean;
+  "min_users"?: number;
+  "min_rating"?: number;
+  "min_rating_count"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsChromeExtensionsTrendingResponse = CrawloraResponse<ModelDatasetsChromeExtensionsSearchResponseDoc>;
+export interface DatasetsChromeExtensionsTrendingParams {
+  "q"?: string;
+  "item_type"?: string;
+  "category"?: string;
+  "developer"?: string;
+  "permission"?: string;
+  "status"?: string;
+  "manifest_version"?: number;
+  "collects_data"?: boolean;
+  "has_broad_host_access"?: boolean;
+  "min_users"?: number;
+  "min_rating"?: number;
+  "min_rating_count"?: number;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsCreatorsSearchResponse = CrawloraResponse<ModelDatasetsCreatorsSearchResponseDoc>;
 export interface DatasetsCreatorsSearchParams {
   "q"?: string;
@@ -17823,6 +18819,95 @@ export interface DatasetsHousingMarketsSearchParams {
   "min_inventory"?: number;
   "max_inventory"?: number;
   "min_homes_sold"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsJournalistsFacetsResponse = CrawloraResponse<ModelDatasetsJournalistsFacetResponseDoc>;
+export interface DatasetsJournalistsFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "outlet"?: string;
+  "vertical"?: string;
+  "topic"?: string;
+  "contact_type"?: string;
+}
+
+export type DatasetsJournalistsItemResponse = CrawloraResponse<ModelDatasetsJournalistsItemResponseDoc>;
+export interface DatasetsJournalistsItemParams {
+  "outlet": string;
+  "slug": string;
+}
+
+export type DatasetsJournalistsSearchResponse = CrawloraResponse<ModelDatasetsJournalistsSearchResponseDoc>;
+export interface DatasetsJournalistsSearchParams {
+  "q"?: string;
+  "outlet"?: string;
+  "vertical"?: string;
+  "topic"?: string;
+  "contact_type"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsNumbeoCitiesFacetsResponse = CrawloraResponse<ModelDatasetsNumbeoCitiesFacetResponseDoc>;
+export interface DatasetsNumbeoCitiesFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "country"?: string;
+  "min_cost_of_living_index"?: number;
+  "max_cost_of_living_index"?: number;
+  "min_quality_of_life_index"?: number;
+  "min_crime_index"?: number;
+  "max_crime_index"?: number;
+  "min_safety_index"?: number;
+  "min_health_care_index"?: number;
+  "max_pollution_index"?: number;
+  "max_traffic_index"?: number;
+}
+
+export type DatasetsNumbeoCitiesItemResponse = CrawloraResponse<ModelDatasetsNumbeoCityResponseDoc>;
+export interface DatasetsNumbeoCitiesItemParams {
+  "slug": string;
+}
+
+export type DatasetsNumbeoCitiesSearchResponse = CrawloraResponse<ModelDatasetsNumbeoCitiesSearchResponseDoc>;
+export interface DatasetsNumbeoCitiesSearchParams {
+  "q"?: string;
+  "country"?: string;
+  "min_cost_of_living_index"?: number;
+  "max_cost_of_living_index"?: number;
+  "min_quality_of_life_index"?: number;
+  "min_crime_index"?: number;
+  "max_crime_index"?: number;
+  "min_safety_index"?: number;
+  "min_health_care_index"?: number;
+  "max_pollution_index"?: number;
+  "max_traffic_index"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsNumbeoCountriesItemResponse = CrawloraResponse<ModelDatasetsNumbeoCountryResponseDoc>;
+export interface DatasetsNumbeoCountriesItemParams {
+  "country": string;
+}
+
+export type DatasetsNumbeoCountriesSearchResponse = CrawloraResponse<ModelDatasetsNumbeoCountriesSearchResponseDoc>;
+export interface DatasetsNumbeoCountriesSearchParams {
+  "q"?: string;
+  "min_cost_of_living_index"?: number;
+  "max_cost_of_living_index"?: number;
+  "min_quality_of_life_index"?: number;
+  "min_crime_index"?: number;
+  "max_crime_index"?: number;
+  "min_safety_index"?: number;
+  "min_health_care_index"?: number;
+  "max_pollution_index"?: number;
+  "max_traffic_index"?: number;
   "sort"?: string;
   "page"?: number;
   "page_size"?: number;
@@ -18168,6 +19253,14 @@ export interface DatasetsTrustmrrFacetsParams {
   "payment_provider"?: string;
   "on_sale"?: boolean;
   "min_mrr"?: number;
+}
+
+export type DatasetsTrustmrrHistoryResponse = CrawloraResponse<ModelDatasetsTrustmrrHistoryResponseDoc>;
+export interface DatasetsTrustmrrHistoryParams {
+  "slug": string;
+  "from"?: string;
+  "to"?: string;
+  "limit"?: number;
 }
 
 export type DatasetsTrustmrrItemResponse = CrawloraResponse<ModelDatasetsTrustmrrItemResponseDoc>;
@@ -19441,6 +20534,79 @@ export interface MangaSearchParams {
 export type MangaTitleResponse = CrawloraResponse<ModelAnimeMediaResponseDoc>;
 export interface MangaTitleParams {
   "id": string;
+  "mal"?: boolean;
+}
+
+export type MetacriticBrowseResponse = CrawloraResponse<ModelMetacriticBrowseResponseDoc>;
+export interface MetacriticBrowseParams {
+  "type": "game" | "movie" | "tv";
+  "genre"?: string;
+  "sort"?: "score" | "popularity" | "release_date" | "oldest";
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type MetacriticGameResponse = CrawloraResponse<ModelMetacriticProductResponseDoc>;
+export interface MetacriticGameParams {
+  "slug": string;
+}
+
+export type MetacriticGameCriticReviewsResponse = CrawloraResponse<ModelMetacriticCriticReviewsResponseDoc>;
+export interface MetacriticGameCriticReviewsParams {
+  "slug": string;
+  "page"?: number;
+  "per_page"?: number;
+  "sort"?: "date" | "score" | "publication";
+}
+
+export type MetacriticGameUserReviewsResponse = CrawloraResponse<ModelMetacriticUserReviewsResponseDoc>;
+export interface MetacriticGameUserReviewsParams {
+  "slug": string;
+  "page"?: number;
+  "per_page"?: number;
+  "sort"?: "date" | "score" | "helpful";
+}
+
+export type MetacriticMovieResponse = CrawloraResponse<ModelMetacriticProductResponseDoc>;
+export interface MetacriticMovieParams {
+  "slug": string;
+}
+
+export type MetacriticMovieCriticReviewsResponse = CrawloraResponse<ModelMetacriticCriticReviewsResponseDoc>;
+export interface MetacriticMovieCriticReviewsParams {
+  "slug": string;
+  "page"?: number;
+  "per_page"?: number;
+  "sort"?: "date" | "score" | "publication";
+}
+
+export type MetacriticMovieUserReviewsResponse = CrawloraResponse<ModelMetacriticUserReviewsResponseDoc>;
+export interface MetacriticMovieUserReviewsParams {
+  "slug": string;
+  "page"?: number;
+  "per_page"?: number;
+  "sort"?: "date" | "score" | "helpful";
+}
+
+export type MetacriticTvResponse = CrawloraResponse<ModelMetacriticProductResponseDoc>;
+export interface MetacriticTvParams {
+  "slug": string;
+}
+
+export type MetacriticTvCriticReviewsResponse = CrawloraResponse<ModelMetacriticCriticReviewsResponseDoc>;
+export interface MetacriticTvCriticReviewsParams {
+  "slug": string;
+  "page"?: number;
+  "per_page"?: number;
+  "sort"?: "date" | "score" | "publication";
+}
+
+export type MetacriticTvUserReviewsResponse = CrawloraResponse<ModelMetacriticUserReviewsResponseDoc>;
+export interface MetacriticTvUserReviewsParams {
+  "slug": string;
+  "page"?: number;
+  "per_page"?: number;
+  "sort"?: "date" | "score" | "helpful";
 }
 
 export type MetaculusCategoryQuestionsResponse = CrawloraResponse<ModelMetaculusQuestionsResponseDoc>;
@@ -19505,6 +20671,50 @@ export type MetaculusTournamentQuestionsResponse = CrawloraResponse<ModelMetacul
 export interface MetaculusTournamentQuestionsParams {
   "slug": string;
   "limit"?: number;
+}
+
+export type NumbeoCostOfLivingCityResponse = CrawloraResponse<ModelNumbeoCostOfLivingCityResponseDoc>;
+export interface NumbeoCostOfLivingCityParams {
+  "slug": string;
+}
+
+export type NumbeoCostOfLivingCountryResponse = CrawloraResponse<ModelNumbeoCostOfLivingCountryResponseDoc>;
+export interface NumbeoCostOfLivingCountryParams {
+  "country": string;
+}
+
+export type NumbeoCostOfLivingRankingsResponse = CrawloraResponse<ModelNumbeoRankingsResponseDoc>;
+export interface NumbeoCostOfLivingRankingsParams {
+  "scope"?: "current" | "historical";
+  "period"?: string;
+}
+
+export type NumbeoCostOfLivingRankingsByCountryResponse = CrawloraResponse<ModelNumbeoRankingsByCountryResponseDoc>;
+export interface NumbeoCostOfLivingRankingsByCountryParams {
+}
+
+export type NumbeoIndicesCityResponse = CrawloraResponse<ModelNumbeoIndicesCityResponseDoc>;
+export interface NumbeoIndicesCityParams {
+  "slug": string;
+  "index": "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment";
+}
+
+export type NumbeoIndicesCountryResponse = CrawloraResponse<ModelNumbeoIndicesCountryResponseDoc>;
+export interface NumbeoIndicesCountryParams {
+  "country": string;
+  "index": "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment";
+}
+
+export type NumbeoIndicesRankingsResponse = CrawloraResponse<ModelNumbeoIndicesRankingsResponseDoc>;
+export interface NumbeoIndicesRankingsParams {
+  "index": "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment";
+  "scope"?: "current" | "historical";
+  "period"?: string;
+}
+
+export type NumbeoIndicesRankingsByCountryResponse = CrawloraResponse<ModelNumbeoIndicesRankingsByCountryResponseDoc>;
+export interface NumbeoIndicesRankingsByCountryParams {
+  "index": "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment";
 }
 
 export type MetaPingResponse = CrawloraResponse<ModelApiPingResponseDoc>;
@@ -21536,6 +22746,23 @@ export interface UserMeApiKeysRevealParams {
   "id": string;
 }
 
+export type WalmartProductResponse = CrawloraResponse<ModelWalmartProductResponseDoc>;
+export interface WalmartProductParams {
+  "item_id": string;
+}
+
+export type WalmartProductReviewsResponse = CrawloraResponse<ModelWalmartReviewsResponseDoc>;
+export interface WalmartProductReviewsParams {
+  "item_id": string;
+}
+
+export type WalmartSearchResponse = CrawloraResponse<ModelWalmartSearchResponseDoc>;
+export interface WalmartSearchParams {
+  "q": string;
+  "page"?: number;
+  "sort"?: "best_match" | "price_low" | "price_high" | "best_seller" | "new_arrivals" | "rating_high";
+}
+
 export type WebScrapeBody = CrawloraBody<ModelWebScrapeOption>;
 export type WebScrapeResponse = CrawloraResponse<ModelWebScrapeResponseDoc>;
 export interface WebScrapeParams {
@@ -22011,6 +23238,12 @@ export interface BraveService {
   videos<T = BraveVideosResponse>(params: BraveVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface CapterraService {
+  product<T = CapterraProductResponse>(params: CapterraProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reviews<T = CapterraReviewsResponse>(params: CapterraReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = CapterraSearchResponse>(params: CapterraSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ChromeWebStoreService {
   chromewebstoreCategories<T = ChromeWebStoreChromewebstoreCategoriesResponse>(params?: ChromeWebStoreChromewebstoreCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromewebstoreCategory<T = ChromeWebStoreChromewebstoreCategoryResponse>(params: ChromeWebStoreChromewebstoreCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -22067,6 +23300,13 @@ export interface DatasetsService {
   appsChartsSearch<T = DatasetsAppsChartsSearchResponse>(params?: DatasetsAppsChartsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsReviewsSearch<T = DatasetsAppsReviewsSearchResponse>(params?: DatasetsAppsReviewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsSearch<T = DatasetsAppsSearchResponse>(params?: DatasetsAppsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromeExtensionsChanges<T = DatasetsChromeExtensionsChangesResponse>(params?: DatasetsChromeExtensionsChangesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromeExtensionsFacets<T = DatasetsChromeExtensionsFacetsResponse>(params: DatasetsChromeExtensionsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromeExtensionsHistory<T = DatasetsChromeExtensionsHistoryResponse>(params: DatasetsChromeExtensionsHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromeExtensionsItem<T = DatasetsChromeExtensionsItemResponse>(params: DatasetsChromeExtensionsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromeExtensionsMetrics<T = DatasetsChromeExtensionsMetricsResponse>(params?: DatasetsChromeExtensionsMetricsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromeExtensionsSearch<T = DatasetsChromeExtensionsSearchResponse>(params?: DatasetsChromeExtensionsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  chromeExtensionsTrending<T = DatasetsChromeExtensionsTrendingResponse>(params?: DatasetsChromeExtensionsTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   creatorsSearch<T = DatasetsCreatorsSearchResponse>(params?: DatasetsCreatorsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUsersFacets<T = DatasetsGithubUsersFacetsResponse>(params: DatasetsGithubUsersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUsersItem<T = DatasetsGithubUsersItemResponse>(params: DatasetsGithubUsersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -22079,6 +23319,14 @@ export interface DatasetsService {
   housingMarketsFacets<T = DatasetsHousingMarketsFacetsResponse>(params: DatasetsHousingMarketsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   housingMarketsItem<T = DatasetsHousingMarketsItemResponse>(params: DatasetsHousingMarketsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   housingMarketsSearch<T = DatasetsHousingMarketsSearchResponse>(params?: DatasetsHousingMarketsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  journalistsFacets<T = DatasetsJournalistsFacetsResponse>(params: DatasetsJournalistsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  journalistsItem<T = DatasetsJournalistsItemResponse>(params: DatasetsJournalistsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  journalistsSearch<T = DatasetsJournalistsSearchResponse>(params?: DatasetsJournalistsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  numbeoCitiesFacets<T = DatasetsNumbeoCitiesFacetsResponse>(params: DatasetsNumbeoCitiesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  numbeoCitiesItem<T = DatasetsNumbeoCitiesItemResponse>(params: DatasetsNumbeoCitiesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  numbeoCitiesSearch<T = DatasetsNumbeoCitiesSearchResponse>(params?: DatasetsNumbeoCitiesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  numbeoCountriesItem<T = DatasetsNumbeoCountriesItemResponse>(params: DatasetsNumbeoCountriesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  numbeoCountriesSearch<T = DatasetsNumbeoCountriesSearchResponse>(params?: DatasetsNumbeoCountriesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playstationGamesFacets<T = DatasetsPlaystationGamesFacetsResponse>(params: DatasetsPlaystationGamesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playstationGamesItem<T = DatasetsPlaystationGamesItemResponse>(params: DatasetsPlaystationGamesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playstationGamesSearch<T = DatasetsPlaystationGamesSearchResponse>(params?: DatasetsPlaystationGamesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -22103,6 +23351,7 @@ export interface DatasetsService {
   techstackItem<T = DatasetsTechstackItemResponse>(params: DatasetsTechstackItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techstackSearch<T = DatasetsTechstackSearchResponse>(params?: DatasetsTechstackSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trustmrrFacets<T = DatasetsTrustmrrFacetsResponse>(params: DatasetsTrustmrrFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trustmrrHistory<T = DatasetsTrustmrrHistoryResponse>(params: DatasetsTrustmrrHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trustmrrItem<T = DatasetsTrustmrrItemResponse>(params: DatasetsTrustmrrItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trustmrrSearch<T = DatasetsTrustmrrSearchResponse>(params?: DatasetsTrustmrrSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
@@ -22338,6 +23587,19 @@ export interface MangaService {
   title<T = MangaTitleResponse>(params: MangaTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface MetacriticService {
+  browse<T = MetacriticBrowseResponse>(params: MetacriticBrowseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  game<T = MetacriticGameResponse>(params: MetacriticGameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gameCriticReviews<T = MetacriticGameCriticReviewsResponse>(params: MetacriticGameCriticReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gameUserReviews<T = MetacriticGameUserReviewsResponse>(params: MetacriticGameUserReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  movie<T = MetacriticMovieResponse>(params: MetacriticMovieParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  movieCriticReviews<T = MetacriticMovieCriticReviewsResponse>(params: MetacriticMovieCriticReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  movieUserReviews<T = MetacriticMovieUserReviewsResponse>(params: MetacriticMovieUserReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tv<T = MetacriticTvResponse>(params: MetacriticTvParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvCriticReviews<T = MetacriticTvCriticReviewsResponse>(params: MetacriticTvCriticReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvUserReviews<T = MetacriticTvUserReviewsResponse>(params: MetacriticTvUserReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface MetaculusService {
   categoryQuestions<T = MetaculusCategoryQuestionsResponse>(params: MetaculusCategoryQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   commentsFeed<T = MetaculusCommentsFeedResponse>(params?: MetaculusCommentsFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -22350,6 +23612,17 @@ export interface MetaculusService {
   questions<T = MetaculusQuestionsResponse>(params?: MetaculusQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   topComments<T = MetaculusTopCommentsResponse>(params?: MetaculusTopCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   tournamentQuestions<T = MetaculusTournamentQuestionsResponse>(params: MetaculusTournamentQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface NumbeoService {
+  costOfLivingCity<T = NumbeoCostOfLivingCityResponse>(params: NumbeoCostOfLivingCityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  costOfLivingCountry<T = NumbeoCostOfLivingCountryResponse>(params: NumbeoCostOfLivingCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  costOfLivingRankings<T = NumbeoCostOfLivingRankingsResponse>(params?: NumbeoCostOfLivingRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  costOfLivingRankingsByCountry<T = NumbeoCostOfLivingRankingsByCountryResponse>(params?: NumbeoCostOfLivingRankingsByCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  indicesCity<T = NumbeoIndicesCityResponse>(params: NumbeoIndicesCityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  indicesCountry<T = NumbeoIndicesCountryResponse>(params: NumbeoIndicesCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  indicesRankings<T = NumbeoIndicesRankingsResponse>(params: NumbeoIndicesRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  indicesRankingsByCountry<T = NumbeoIndicesRankingsByCountryResponse>(params: NumbeoIndicesRankingsByCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface MetaService {
@@ -22711,6 +23984,12 @@ export interface UserService {
   meApiKeysReveal<T = UserMeApiKeysRevealResponse>(params: UserMeApiKeysRevealParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface WalmartService {
+  product<T = WalmartProductResponse>(params: WalmartProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productReviews<T = WalmartProductReviewsResponse>(params: WalmartProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = WalmartSearchResponse>(params: WalmartSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface XService {
   post<T = XPostResponse>(params: XPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = XProfileResponse>(params: XProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -22792,6 +24071,7 @@ export interface CrawloraGeneratedGroups {
   boxOfficeMojo: BoxOfficeMojoService;
   brand: BrandService;
   brave: BraveService;
+  capterra: CapterraService;
   chromeWebStore: ChromeWebStoreService;
   coinGecko: CoinGeckoService;
   web: WebService;
@@ -22812,7 +24092,9 @@ export interface CrawloraGeneratedGroups {
   letterboxd: LetterboxdService;
   linkedIn: LinkedInService;
   manga: MangaService;
+  metacritic: MetacriticService;
   metaculus: MetaculusService;
+  numbeo: NumbeoService;
   meta: MetaService;
   pitchBook: PitchBookService;
   playStation: PlayStationService;
@@ -22837,6 +24119,7 @@ export interface CrawloraGeneratedGroups {
   trustpilot: TrustpilotService;
   usage: UsageService;
   user: UserService;
+  walmart: WalmartService;
   x: XService;
   yahooFinance: YahooFinanceService;
   youtube: YoutubeService;
@@ -22918,6 +24201,9 @@ export interface OperationParamsMap {
   "brave-search": BraveSearchParams;
   "brave-suggest": BraveSuggestParams;
   "brave-videos": BraveVideosParams;
+  "capterra-product": CapterraProductParams;
+  "capterra-reviews": CapterraReviewsParams;
+  "capterra-search": CapterraSearchParams;
   "chromewebstore-categories": ChromeWebStoreChromewebstoreCategoriesParams;
   "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryParams;
   "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsParams;
@@ -22960,6 +24246,13 @@ export interface OperationParamsMap {
   "datasets-apps-charts-search": DatasetsAppsChartsSearchParams;
   "datasets-apps-reviews-search": DatasetsAppsReviewsSearchParams;
   "datasets-apps-search": DatasetsAppsSearchParams;
+  "datasets-chrome-extensions-changes": DatasetsChromeExtensionsChangesParams;
+  "datasets-chrome-extensions-facets": DatasetsChromeExtensionsFacetsParams;
+  "datasets-chrome-extensions-history": DatasetsChromeExtensionsHistoryParams;
+  "datasets-chrome-extensions-item": DatasetsChromeExtensionsItemParams;
+  "datasets-chrome-extensions-metrics": DatasetsChromeExtensionsMetricsParams;
+  "datasets-chrome-extensions-search": DatasetsChromeExtensionsSearchParams;
+  "datasets-chrome-extensions-trending": DatasetsChromeExtensionsTrendingParams;
   "datasets-creators-search": DatasetsCreatorsSearchParams;
   "datasets-github-users-facets": DatasetsGithubUsersFacetsParams;
   "datasets-github-users-item": DatasetsGithubUsersItemParams;
@@ -22972,6 +24265,14 @@ export interface OperationParamsMap {
   "datasets-housing-markets-facets": DatasetsHousingMarketsFacetsParams;
   "datasets-housing-markets-item": DatasetsHousingMarketsItemParams;
   "datasets-housing-markets-search": DatasetsHousingMarketsSearchParams;
+  "datasets-journalists-facets": DatasetsJournalistsFacetsParams;
+  "datasets-journalists-item": DatasetsJournalistsItemParams;
+  "datasets-journalists-search": DatasetsJournalistsSearchParams;
+  "datasets-numbeo-cities-facets": DatasetsNumbeoCitiesFacetsParams;
+  "datasets-numbeo-cities-item": DatasetsNumbeoCitiesItemParams;
+  "datasets-numbeo-cities-search": DatasetsNumbeoCitiesSearchParams;
+  "datasets-numbeo-countries-item": DatasetsNumbeoCountriesItemParams;
+  "datasets-numbeo-countries-search": DatasetsNumbeoCountriesSearchParams;
   "datasets-playstation-games-facets": DatasetsPlaystationGamesFacetsParams;
   "datasets-playstation-games-item": DatasetsPlaystationGamesItemParams;
   "datasets-playstation-games-search": DatasetsPlaystationGamesSearchParams;
@@ -22996,6 +24297,7 @@ export interface OperationParamsMap {
   "datasets-techstack-item": DatasetsTechstackItemParams;
   "datasets-techstack-search": DatasetsTechstackSearchParams;
   "datasets-trustmrr-facets": DatasetsTrustmrrFacetsParams;
+  "datasets-trustmrr-history": DatasetsTrustmrrHistoryParams;
   "datasets-trustmrr-item": DatasetsTrustmrrItemParams;
   "datasets-trustmrr-search": DatasetsTrustmrrSearchParams;
   "antibot-check": WebAntibotCheckParams;
@@ -23183,6 +24485,16 @@ export interface OperationParamsMap {
   "manga-rankings": MangaRankingsParams;
   "manga-search": MangaSearchParams;
   "manga-title": MangaTitleParams;
+  "metacritic-browse": MetacriticBrowseParams;
+  "metacritic-game": MetacriticGameParams;
+  "metacritic-game-critic-reviews": MetacriticGameCriticReviewsParams;
+  "metacritic-game-user-reviews": MetacriticGameUserReviewsParams;
+  "metacritic-movie": MetacriticMovieParams;
+  "metacritic-movie-critic-reviews": MetacriticMovieCriticReviewsParams;
+  "metacritic-movie-user-reviews": MetacriticMovieUserReviewsParams;
+  "metacritic-tv": MetacriticTvParams;
+  "metacritic-tv-critic-reviews": MetacriticTvCriticReviewsParams;
+  "metacritic-tv-user-reviews": MetacriticTvUserReviewsParams;
   "metaculus-category-questions": MetaculusCategoryQuestionsParams;
   "metaculus-comments-feed": MetaculusCommentsFeedParams;
   "metaculus-project-questions": MetaculusProjectQuestionsParams;
@@ -23194,6 +24506,14 @@ export interface OperationParamsMap {
   "metaculus-questions": MetaculusQuestionsParams;
   "metaculus-top-comments": MetaculusTopCommentsParams;
   "metaculus-tournament-questions": MetaculusTournamentQuestionsParams;
+  "numbeo-cost-of-living-city": NumbeoCostOfLivingCityParams;
+  "numbeo-cost-of-living-country": NumbeoCostOfLivingCountryParams;
+  "numbeo-cost-of-living-rankings": NumbeoCostOfLivingRankingsParams;
+  "numbeo-cost-of-living-rankings-by-country": NumbeoCostOfLivingRankingsByCountryParams;
+  "numbeo-indices-city": NumbeoIndicesCityParams;
+  "numbeo-indices-country": NumbeoIndicesCountryParams;
+  "numbeo-indices-rankings": NumbeoIndicesRankingsParams;
+  "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryParams;
   "ping": MetaPingParams;
   "pitchbook-company": PitchBookPitchbookCompanyParams;
   "pitchbook-fund": PitchBookPitchbookFundParams;
@@ -23481,6 +24801,9 @@ export interface OperationParamsMap {
   "user-me-api-keys": UserMeApiKeysParams;
   "user-me-api-keys-rotate": UserMeApiKeysRotateParams;
   "user-me-api-keys-reveal": UserMeApiKeysRevealParams;
+  "walmart-product": WalmartProductParams;
+  "walmart-product-reviews": WalmartProductReviewsParams;
+  "walmart-search": WalmartSearchParams;
   "web-scrape": WebScrapeParams;
   "web-techstack": WebTechstackParams;
   "x-post": XPostParams;
@@ -23618,6 +24941,9 @@ export interface OperationResponseMap {
   "brave-search": BraveSearchResponse;
   "brave-suggest": BraveSuggestResponse;
   "brave-videos": BraveVideosResponse;
+  "capterra-product": CapterraProductResponse;
+  "capterra-reviews": CapterraReviewsResponse;
+  "capterra-search": CapterraSearchResponse;
   "chromewebstore-categories": ChromeWebStoreChromewebstoreCategoriesResponse;
   "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryResponse;
   "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsResponse;
@@ -23660,6 +24986,13 @@ export interface OperationResponseMap {
   "datasets-apps-charts-search": DatasetsAppsChartsSearchResponse;
   "datasets-apps-reviews-search": DatasetsAppsReviewsSearchResponse;
   "datasets-apps-search": DatasetsAppsSearchResponse;
+  "datasets-chrome-extensions-changes": DatasetsChromeExtensionsChangesResponse;
+  "datasets-chrome-extensions-facets": DatasetsChromeExtensionsFacetsResponse;
+  "datasets-chrome-extensions-history": DatasetsChromeExtensionsHistoryResponse;
+  "datasets-chrome-extensions-item": DatasetsChromeExtensionsItemResponse;
+  "datasets-chrome-extensions-metrics": DatasetsChromeExtensionsMetricsResponse;
+  "datasets-chrome-extensions-search": DatasetsChromeExtensionsSearchResponse;
+  "datasets-chrome-extensions-trending": DatasetsChromeExtensionsTrendingResponse;
   "datasets-creators-search": DatasetsCreatorsSearchResponse;
   "datasets-github-users-facets": DatasetsGithubUsersFacetsResponse;
   "datasets-github-users-item": DatasetsGithubUsersItemResponse;
@@ -23672,6 +25005,14 @@ export interface OperationResponseMap {
   "datasets-housing-markets-facets": DatasetsHousingMarketsFacetsResponse;
   "datasets-housing-markets-item": DatasetsHousingMarketsItemResponse;
   "datasets-housing-markets-search": DatasetsHousingMarketsSearchResponse;
+  "datasets-journalists-facets": DatasetsJournalistsFacetsResponse;
+  "datasets-journalists-item": DatasetsJournalistsItemResponse;
+  "datasets-journalists-search": DatasetsJournalistsSearchResponse;
+  "datasets-numbeo-cities-facets": DatasetsNumbeoCitiesFacetsResponse;
+  "datasets-numbeo-cities-item": DatasetsNumbeoCitiesItemResponse;
+  "datasets-numbeo-cities-search": DatasetsNumbeoCitiesSearchResponse;
+  "datasets-numbeo-countries-item": DatasetsNumbeoCountriesItemResponse;
+  "datasets-numbeo-countries-search": DatasetsNumbeoCountriesSearchResponse;
   "datasets-playstation-games-facets": DatasetsPlaystationGamesFacetsResponse;
   "datasets-playstation-games-item": DatasetsPlaystationGamesItemResponse;
   "datasets-playstation-games-search": DatasetsPlaystationGamesSearchResponse;
@@ -23696,6 +25037,7 @@ export interface OperationResponseMap {
   "datasets-techstack-item": DatasetsTechstackItemResponse;
   "datasets-techstack-search": DatasetsTechstackSearchResponse;
   "datasets-trustmrr-facets": DatasetsTrustmrrFacetsResponse;
+  "datasets-trustmrr-history": DatasetsTrustmrrHistoryResponse;
   "datasets-trustmrr-item": DatasetsTrustmrrItemResponse;
   "datasets-trustmrr-search": DatasetsTrustmrrSearchResponse;
   "antibot-check": WebAntibotCheckResponse;
@@ -23883,6 +25225,16 @@ export interface OperationResponseMap {
   "manga-rankings": MangaRankingsResponse;
   "manga-search": MangaSearchResponse;
   "manga-title": MangaTitleResponse;
+  "metacritic-browse": MetacriticBrowseResponse;
+  "metacritic-game": MetacriticGameResponse;
+  "metacritic-game-critic-reviews": MetacriticGameCriticReviewsResponse;
+  "metacritic-game-user-reviews": MetacriticGameUserReviewsResponse;
+  "metacritic-movie": MetacriticMovieResponse;
+  "metacritic-movie-critic-reviews": MetacriticMovieCriticReviewsResponse;
+  "metacritic-movie-user-reviews": MetacriticMovieUserReviewsResponse;
+  "metacritic-tv": MetacriticTvResponse;
+  "metacritic-tv-critic-reviews": MetacriticTvCriticReviewsResponse;
+  "metacritic-tv-user-reviews": MetacriticTvUserReviewsResponse;
   "metaculus-category-questions": MetaculusCategoryQuestionsResponse;
   "metaculus-comments-feed": MetaculusCommentsFeedResponse;
   "metaculus-project-questions": MetaculusProjectQuestionsResponse;
@@ -23894,6 +25246,14 @@ export interface OperationResponseMap {
   "metaculus-questions": MetaculusQuestionsResponse;
   "metaculus-top-comments": MetaculusTopCommentsResponse;
   "metaculus-tournament-questions": MetaculusTournamentQuestionsResponse;
+  "numbeo-cost-of-living-city": NumbeoCostOfLivingCityResponse;
+  "numbeo-cost-of-living-country": NumbeoCostOfLivingCountryResponse;
+  "numbeo-cost-of-living-rankings": NumbeoCostOfLivingRankingsResponse;
+  "numbeo-cost-of-living-rankings-by-country": NumbeoCostOfLivingRankingsByCountryResponse;
+  "numbeo-indices-city": NumbeoIndicesCityResponse;
+  "numbeo-indices-country": NumbeoIndicesCountryResponse;
+  "numbeo-indices-rankings": NumbeoIndicesRankingsResponse;
+  "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryResponse;
   "ping": MetaPingResponse;
   "pitchbook-company": PitchBookPitchbookCompanyResponse;
   "pitchbook-fund": PitchBookPitchbookFundResponse;
@@ -24181,6 +25541,9 @@ export interface OperationResponseMap {
   "user-me-api-keys": UserMeApiKeysResponse;
   "user-me-api-keys-rotate": UserMeApiKeysRotateResponse;
   "user-me-api-keys-reveal": UserMeApiKeysRevealResponse;
+  "walmart-product": WalmartProductResponse;
+  "walmart-product-reviews": WalmartProductReviewsResponse;
+  "walmart-search": WalmartSearchResponse;
   "web-scrape": WebScrapeResponse;
   "web-techstack": WebTechstackResponse;
   "x-post": XPostResponse;
@@ -24318,6 +25681,9 @@ export interface OperationRequiredParamsMap {
   "brave-search": true;
   "brave-suggest": true;
   "brave-videos": true;
+  "capterra-product": true;
+  "capterra-reviews": true;
+  "capterra-search": true;
   "chromewebstore-categories": false;
   "chromewebstore-category": true;
   "chromewebstore-charts": false;
@@ -24360,6 +25726,13 @@ export interface OperationRequiredParamsMap {
   "datasets-apps-charts-search": false;
   "datasets-apps-reviews-search": false;
   "datasets-apps-search": false;
+  "datasets-chrome-extensions-changes": false;
+  "datasets-chrome-extensions-facets": true;
+  "datasets-chrome-extensions-history": true;
+  "datasets-chrome-extensions-item": true;
+  "datasets-chrome-extensions-metrics": false;
+  "datasets-chrome-extensions-search": false;
+  "datasets-chrome-extensions-trending": false;
   "datasets-creators-search": false;
   "datasets-github-users-facets": true;
   "datasets-github-users-item": true;
@@ -24372,6 +25745,14 @@ export interface OperationRequiredParamsMap {
   "datasets-housing-markets-facets": true;
   "datasets-housing-markets-item": true;
   "datasets-housing-markets-search": false;
+  "datasets-journalists-facets": true;
+  "datasets-journalists-item": true;
+  "datasets-journalists-search": false;
+  "datasets-numbeo-cities-facets": true;
+  "datasets-numbeo-cities-item": true;
+  "datasets-numbeo-cities-search": false;
+  "datasets-numbeo-countries-item": true;
+  "datasets-numbeo-countries-search": false;
   "datasets-playstation-games-facets": true;
   "datasets-playstation-games-item": true;
   "datasets-playstation-games-search": false;
@@ -24396,6 +25777,7 @@ export interface OperationRequiredParamsMap {
   "datasets-techstack-item": true;
   "datasets-techstack-search": false;
   "datasets-trustmrr-facets": true;
+  "datasets-trustmrr-history": true;
   "datasets-trustmrr-item": true;
   "datasets-trustmrr-search": false;
   "antibot-check": true;
@@ -24583,6 +25965,16 @@ export interface OperationRequiredParamsMap {
   "manga-rankings": false;
   "manga-search": true;
   "manga-title": true;
+  "metacritic-browse": true;
+  "metacritic-game": true;
+  "metacritic-game-critic-reviews": true;
+  "metacritic-game-user-reviews": true;
+  "metacritic-movie": true;
+  "metacritic-movie-critic-reviews": true;
+  "metacritic-movie-user-reviews": true;
+  "metacritic-tv": true;
+  "metacritic-tv-critic-reviews": true;
+  "metacritic-tv-user-reviews": true;
   "metaculus-category-questions": true;
   "metaculus-comments-feed": false;
   "metaculus-project-questions": true;
@@ -24594,6 +25986,14 @@ export interface OperationRequiredParamsMap {
   "metaculus-questions": false;
   "metaculus-top-comments": false;
   "metaculus-tournament-questions": true;
+  "numbeo-cost-of-living-city": true;
+  "numbeo-cost-of-living-country": true;
+  "numbeo-cost-of-living-rankings": false;
+  "numbeo-cost-of-living-rankings-by-country": false;
+  "numbeo-indices-city": true;
+  "numbeo-indices-country": true;
+  "numbeo-indices-rankings": true;
+  "numbeo-indices-rankings-by-country": true;
   "ping": false;
   "pitchbook-company": false;
   "pitchbook-fund": false;
@@ -24881,6 +26281,9 @@ export interface OperationRequiredParamsMap {
   "user-me-api-keys": false;
   "user-me-api-keys-rotate": false;
   "user-me-api-keys-reveal": true;
+  "walmart-product": true;
+  "walmart-product-reviews": true;
+  "walmart-search": true;
   "web-scrape": true;
   "web-techstack": true;
   "x-post": true;
@@ -25025,6 +26428,9 @@ export type OperationIdLiteral =
   | "brave-search"
   | "brave-suggest"
   | "brave-videos"
+  | "capterra-product"
+  | "capterra-reviews"
+  | "capterra-search"
   | "chromewebstore-categories"
   | "chromewebstore-category"
   | "chromewebstore-charts"
@@ -25067,6 +26473,13 @@ export type OperationIdLiteral =
   | "datasets-apps-charts-search"
   | "datasets-apps-reviews-search"
   | "datasets-apps-search"
+  | "datasets-chrome-extensions-changes"
+  | "datasets-chrome-extensions-facets"
+  | "datasets-chrome-extensions-history"
+  | "datasets-chrome-extensions-item"
+  | "datasets-chrome-extensions-metrics"
+  | "datasets-chrome-extensions-search"
+  | "datasets-chrome-extensions-trending"
   | "datasets-creators-search"
   | "datasets-github-users-facets"
   | "datasets-github-users-item"
@@ -25079,6 +26492,14 @@ export type OperationIdLiteral =
   | "datasets-housing-markets-facets"
   | "datasets-housing-markets-item"
   | "datasets-housing-markets-search"
+  | "datasets-journalists-facets"
+  | "datasets-journalists-item"
+  | "datasets-journalists-search"
+  | "datasets-numbeo-cities-facets"
+  | "datasets-numbeo-cities-item"
+  | "datasets-numbeo-cities-search"
+  | "datasets-numbeo-countries-item"
+  | "datasets-numbeo-countries-search"
   | "datasets-playstation-games-facets"
   | "datasets-playstation-games-item"
   | "datasets-playstation-games-search"
@@ -25103,6 +26524,7 @@ export type OperationIdLiteral =
   | "datasets-techstack-item"
   | "datasets-techstack-search"
   | "datasets-trustmrr-facets"
+  | "datasets-trustmrr-history"
   | "datasets-trustmrr-item"
   | "datasets-trustmrr-search"
   | "antibot-check"
@@ -25290,6 +26712,16 @@ export type OperationIdLiteral =
   | "manga-rankings"
   | "manga-search"
   | "manga-title"
+  | "metacritic-browse"
+  | "metacritic-game"
+  | "metacritic-game-critic-reviews"
+  | "metacritic-game-user-reviews"
+  | "metacritic-movie"
+  | "metacritic-movie-critic-reviews"
+  | "metacritic-movie-user-reviews"
+  | "metacritic-tv"
+  | "metacritic-tv-critic-reviews"
+  | "metacritic-tv-user-reviews"
   | "metaculus-category-questions"
   | "metaculus-comments-feed"
   | "metaculus-project-questions"
@@ -25301,6 +26733,14 @@ export type OperationIdLiteral =
   | "metaculus-questions"
   | "metaculus-top-comments"
   | "metaculus-tournament-questions"
+  | "numbeo-cost-of-living-city"
+  | "numbeo-cost-of-living-country"
+  | "numbeo-cost-of-living-rankings"
+  | "numbeo-cost-of-living-rankings-by-country"
+  | "numbeo-indices-city"
+  | "numbeo-indices-country"
+  | "numbeo-indices-rankings"
+  | "numbeo-indices-rankings-by-country"
   | "ping"
   | "pitchbook-company"
   | "pitchbook-fund"
@@ -25588,6 +27028,9 @@ export type OperationIdLiteral =
   | "user-me-api-keys"
   | "user-me-api-keys-rotate"
   | "user-me-api-keys-reveal"
+  | "walmart-product"
+  | "walmart-product-reviews"
+  | "walmart-search"
   | "web-scrape"
   | "web-techstack"
   | "x-post"
@@ -25724,6 +27167,9 @@ export declare const OperationIds: Readonly<{
   BraveSearch: "brave-search";
   BraveSuggest: "brave-suggest";
   BraveVideos: "brave-videos";
+  CapterraProduct: "capterra-product";
+  CapterraReviews: "capterra-reviews";
+  CapterraSearch: "capterra-search";
   ChromeWebStoreChromewebstoreCategories: "chromewebstore-categories";
   ChromeWebStoreChromewebstoreCategory: "chromewebstore-category";
   ChromeWebStoreChromewebstoreCharts: "chromewebstore-charts";
@@ -25764,6 +27210,13 @@ export declare const OperationIds: Readonly<{
   DatasetsAppsChartsSearch: "datasets-apps-charts-search";
   DatasetsAppsReviewsSearch: "datasets-apps-reviews-search";
   DatasetsAppsSearch: "datasets-apps-search";
+  DatasetsChromeExtensionsChanges: "datasets-chrome-extensions-changes";
+  DatasetsChromeExtensionsFacets: "datasets-chrome-extensions-facets";
+  DatasetsChromeExtensionsHistory: "datasets-chrome-extensions-history";
+  DatasetsChromeExtensionsItem: "datasets-chrome-extensions-item";
+  DatasetsChromeExtensionsMetrics: "datasets-chrome-extensions-metrics";
+  DatasetsChromeExtensionsSearch: "datasets-chrome-extensions-search";
+  DatasetsChromeExtensionsTrending: "datasets-chrome-extensions-trending";
   DatasetsCreatorsSearch: "datasets-creators-search";
   DatasetsGithubUsersFacets: "datasets-github-users-facets";
   DatasetsGithubUsersItem: "datasets-github-users-item";
@@ -25776,7 +27229,15 @@ export declare const OperationIds: Readonly<{
   DatasetsHousingMarketsFacets: "datasets-housing-markets-facets";
   DatasetsHousingMarketsItem: "datasets-housing-markets-item";
   DatasetsHousingMarketsSearch: "datasets-housing-markets-search";
+  DatasetsJournalistsFacets: "datasets-journalists-facets";
+  DatasetsJournalistsItem: "datasets-journalists-item";
+  DatasetsJournalistsSearch: "datasets-journalists-search";
   DatasetsList: "datasets-list";
+  DatasetsNumbeoCitiesFacets: "datasets-numbeo-cities-facets";
+  DatasetsNumbeoCitiesItem: "datasets-numbeo-cities-item";
+  DatasetsNumbeoCitiesSearch: "datasets-numbeo-cities-search";
+  DatasetsNumbeoCountriesItem: "datasets-numbeo-countries-item";
+  DatasetsNumbeoCountriesSearch: "datasets-numbeo-countries-search";
   DatasetsPlaystationGamesFacets: "datasets-playstation-games-facets";
   DatasetsPlaystationGamesItem: "datasets-playstation-games-item";
   DatasetsPlaystationGamesSearch: "datasets-playstation-games-search";
@@ -25801,6 +27262,7 @@ export declare const OperationIds: Readonly<{
   DatasetsTechstackItem: "datasets-techstack-item";
   DatasetsTechstackSearch: "datasets-techstack-search";
   DatasetsTrustmrrFacets: "datasets-trustmrr-facets";
+  DatasetsTrustmrrHistory: "datasets-trustmrr-history";
   DatasetsTrustmrrItem: "datasets-trustmrr-item";
   DatasetsTrustmrrSearch: "datasets-trustmrr-search";
   DiscogsArtist: "discogs-artist";
@@ -25988,6 +27450,16 @@ export declare const OperationIds: Readonly<{
   MangaTitle: "manga-title";
   MetaPing: "ping";
   MetaReady: "ready";
+  MetacriticBrowse: "metacritic-browse";
+  MetacriticGame: "metacritic-game";
+  MetacriticGameCriticReviews: "metacritic-game-critic-reviews";
+  MetacriticGameUserReviews: "metacritic-game-user-reviews";
+  MetacriticMovie: "metacritic-movie";
+  MetacriticMovieCriticReviews: "metacritic-movie-critic-reviews";
+  MetacriticMovieUserReviews: "metacritic-movie-user-reviews";
+  MetacriticTv: "metacritic-tv";
+  MetacriticTvCriticReviews: "metacritic-tv-critic-reviews";
+  MetacriticTvUserReviews: "metacritic-tv-user-reviews";
   MetaculusCategoryQuestions: "metaculus-category-questions";
   MetaculusCommentsFeed: "metaculus-comments-feed";
   MetaculusProjectQuestions: "metaculus-project-questions";
@@ -25999,6 +27471,14 @@ export declare const OperationIds: Readonly<{
   MetaculusQuestions: "metaculus-questions";
   MetaculusTopComments: "metaculus-top-comments";
   MetaculusTournamentQuestions: "metaculus-tournament-questions";
+  NumbeoCostOfLivingCity: "numbeo-cost-of-living-city";
+  NumbeoCostOfLivingCountry: "numbeo-cost-of-living-country";
+  NumbeoCostOfLivingRankings: "numbeo-cost-of-living-rankings";
+  NumbeoCostOfLivingRankingsByCountry: "numbeo-cost-of-living-rankings-by-country";
+  NumbeoIndicesCity: "numbeo-indices-city";
+  NumbeoIndicesCountry: "numbeo-indices-country";
+  NumbeoIndicesRankings: "numbeo-indices-rankings";
+  NumbeoIndicesRankingsByCountry: "numbeo-indices-rankings-by-country";
   PitchBookPitchbookCompany: "pitchbook-company";
   PitchBookPitchbookFund: "pitchbook-fund";
   PitchBookPitchbookInvestor: "pitchbook-investor";
@@ -26284,6 +27764,9 @@ export declare const OperationIds: Readonly<{
   UserMeApiKeys: "user-me-api-keys";
   UserMeApiKeysReveal: "user-me-api-keys-reveal";
   UserMeApiKeysRotate: "user-me-api-keys-rotate";
+  WalmartProduct: "walmart-product";
+  WalmartProductReviews: "walmart-product-reviews";
+  WalmartSearch: "walmart-search";
   WebAntibotCheck: "antibot-check";
   WebContact: "contact";
   WebExtract: "extract";

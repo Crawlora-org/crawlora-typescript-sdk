@@ -39,6 +39,15 @@ const posts = await crawlora.reddit.search({ q: "typescript", subreddit: "progra
 const brand = await crawlora.brand.retrieve({ domain: "stripe.com" });
 ```
 
+## Software, Reviews, And Market Datasets
+
+```ts
+const extensions = await crawlora.datasets.chromeExtensionsSearch({ q: "productivity", min_users: 10000 });
+const cities = await crawlora.datasets.numbeoCitiesSearch({ country: "Portugal", sort: "quality_of_life_desc" });
+const software = await crawlora.capterra.search({ q: "project management" });
+const games = await crawlora.metacritic.browse({ type: "game", sort: "score" });
+```
+
 ## Airbnb Host Profiles
 
 Look up a public Airbnb host, then page through their listings and guest reviews.
