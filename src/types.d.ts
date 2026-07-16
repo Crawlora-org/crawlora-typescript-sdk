@@ -3224,6 +3224,7 @@ export interface ModelDatasetsChromeExtensionMetricsResponse {
   "statuses"?: Array<ModelEsChromeExtensionMetricBucket>;
   "summary"?: ModelEsChromeExtensionMetricSummary;
   "top_categories"?: Array<ModelEsChromeExtensionMetricBucket>;
+  "top_developers"?: Array<ModelEsChromeExtensionMetricBucket>;
   "top_permissions"?: Array<ModelEsChromeExtensionMetricBucket>;
   "user_bands"?: Array<ModelEsChromeExtensionMetricBucket>;
 }
@@ -3299,6 +3300,24 @@ export interface ModelDatasetsHousingSearchResponse {
   "page"?: number;
   "page_size"?: number;
   "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsJobCompaniesResponse {
+  "companies"?: Array<Record<string, unknown>>;
+  "page"?: number;
+  "page_size"?: number;
+  "total"?: number;
+}
+
+export interface ModelDatasetsJobsFacetResponse {
+  "facets"?: ModelEsJobPostingFacets;
+}
+
+export interface ModelDatasetsJobsSearchResponse {
+  "jobs"?: Array<Record<string, unknown>>;
+  "page"?: number;
+  "page_size"?: number;
   "total"?: number;
 }
 
@@ -3412,6 +3431,50 @@ export interface ModelDatasetsReviewsSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsSecCompanyFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsSecCompanyFacetItem>;
+}
+
+export interface ModelDatasetsSecCompanyFinancialsResponse {
+  "cik"?: number;
+  "count"?: number;
+  "dataset"?: string;
+  "points"?: Array<ModelEsSecFinancialsHistoryPoint>;
+}
+
+export interface ModelDatasetsSecCompanyInsiderResponse {
+  "cik"?: number;
+  "count"?: number;
+  "dataset"?: string;
+  "items"?: Array<ModelEsSecInsiderTransactionRecord>;
+}
+
+export interface ModelDatasetsSecCompanySearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSecCompanyRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsSecInstitutionalPositionsFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsSecInstitutionalPositionsFacetItem>;
+}
+
+export interface ModelDatasetsSecInstitutionalPositionsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsSecInstitutionalPositionRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsSteamAchievementsSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsSteamAchievementRecord>;
@@ -3513,6 +3576,21 @@ export interface ModelDatasetsTrustmrrHistoryResponse {
 export interface ModelDatasetsTrustmrrSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsTrustmrrStartupRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsXuserFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsXuserDatasetFacetItem>;
+}
+
+export interface ModelDatasetsXuserSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsXuserDatasetItem>;
   "page"?: number;
   "page_size"?: number;
   "sort"?: string;
@@ -3651,6 +3729,30 @@ export interface ModelDatasetsHousingMarketsSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsJobsCompaniesResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsJobCompaniesResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsJobsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsJobsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsJobsItemResponseDoc {
+  "code"?: number;
+  "data"?: Record<string, unknown>;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsJobsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsJobsSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsJournalistsFacetResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsJournalistsFacetResponse;
@@ -3777,6 +3879,48 @@ export interface ModelDatasetsReviewsSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsSecCompaniesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSecCompanyFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSecCompaniesFinancialsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSecCompanyFinancialsResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSecCompaniesInsiderResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSecCompanyInsiderResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSecCompaniesItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsSecCompanyRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSecCompaniesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSecCompanySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSecInstitutionalPositionsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSecInstitutionalPositionsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsSecInstitutionalPositionsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsSecInstitutionalPositionsSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsSteamAchievementsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsSteamAchievementsSearchResponse;
@@ -3870,6 +4014,24 @@ export interface ModelDatasetsTrustmrrItemResponseDoc {
 export interface ModelDatasetsTrustmrrSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsTrustmrrSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsXUserResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsXuserRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsXUsersFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsXuserFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsXUsersSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsXuserSearchResponse;
   "msg"?: string;
 }
 
@@ -4494,12 +4656,17 @@ export interface ModelEsChromeExtensionFacetItem {
 }
 
 export interface ModelEsChromeExtensionHistoryPoint {
+  "category"?: string;
   "change_types"?: Array<string>;
   "collects_data"?: boolean;
   "data_collected"?: Array<string>;
+  "developer"?: string;
+  "developer_email"?: string;
   "host_permissions"?: Array<string>;
   "id"?: string;
+  "item_type"?: string;
   "manifest_version"?: number;
+  "name"?: string;
   "observed_at"?: string;
   "optional_host_permissions"?: Array<string>;
   "optional_permissions"?: Array<string>;
@@ -4523,7 +4690,9 @@ export interface ModelEsChromeExtensionMetricBucket {
 
 export interface ModelEsChromeExtensionMetricSummary {
   "average_rating"?: number;
+  "developer_emails"?: number;
   "last_crawled_at"?: string;
+  "named_developers"?: number;
   "privacy_policies"?: number;
   "total"?: number;
   "total_ratings"?: number;
@@ -4537,6 +4706,7 @@ export interface ModelEsChromeExtensionRecord {
   "data_collected"?: Array<string>;
   "description"?: string;
   "developer"?: string;
+  "developer_email"?: string;
   "first_seen"?: string;
   "has_broad_host_access"?: boolean;
   "host_permissions"?: Array<string>;
@@ -4597,6 +4767,11 @@ export interface ModelEsCreatorRecord {
   "unique_id"?: string;
   "verified"?: boolean;
   "video_count"?: number;
+}
+
+export interface ModelEsFacetItem {
+  "count"?: number;
+  "key"?: string;
 }
 
 export interface ModelEsGeoPoint {
@@ -4838,6 +5013,16 @@ export interface ModelEsHousingMarketRecord {
   "state_code"?: string;
   "table_id"?: number;
   "zip_code"?: string;
+}
+
+export interface ModelEsJobPostingFacets {
+  "by_department"?: Array<ModelEsFacetItem>;
+  "by_employment_type"?: Array<ModelEsFacetItem>;
+  "by_location"?: Array<ModelEsFacetItem>;
+  "by_provider"?: Array<ModelEsFacetItem>;
+  "remote_open"?: number;
+  "top_companies"?: Array<ModelEsFacetItem>;
+  "total_open"?: number;
 }
 
 export interface ModelEsJournalistRecord {
@@ -5128,6 +5313,109 @@ export interface ModelEsProductHuntTrendTopProduct {
 }
 
 export interface ModelEsProductHuntTrendsFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsSecCompanyFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsSecCompanyRecord {
+  "cik"?: number;
+  "cik_padded"?: string;
+  "crawled_at"?: string;
+  "entity_type"?: string;
+  "exchange"?: Array<string>;
+  "filing_count"?: number;
+  "financials_synced_at"?: string;
+  "fiscal_year_end"?: string;
+  "former_names"?: Array<string>;
+  "forms_filed"?: Array<string>;
+  "insider_last_transaction_at"?: string;
+  "insider_net_shares_90d"?: number;
+  "insider_txn_count_90d"?: number;
+  "latest_annual_fiscal_year"?: number;
+  "latest_annual_net_income"?: number;
+  "latest_annual_revenue"?: number;
+  "latest_annual_total_assets"?: number;
+  "latest_filing_date"?: string;
+  "latest_quarterly_fiscal_year"?: number;
+  "latest_quarterly_revenue"?: number;
+  "name"?: string;
+  "primary_ticker"?: string;
+  "recent_filings"?: Array<ModelEsSecFilingSummary>;
+  "revenue_band"?: string;
+  "schema_version"?: number;
+  "seed_source"?: string;
+  "sic"?: string;
+  "sic_description"?: string;
+  "state_of_incorporation"?: string;
+  "submissions_synced_at"?: string;
+  "tickers"?: Array<string>;
+}
+
+export interface ModelEsSecFilingSummary {
+  "accession_number"?: string;
+  "filing_date"?: string;
+  "form"?: string;
+  "primary_doc_url"?: string;
+}
+
+export interface ModelEsSecFinancialsHistoryPoint {
+  "cik"?: number;
+  "currency"?: string;
+  "end_date"?: string;
+  "fiscal_period"?: string;
+  "fiscal_year"?: number;
+  "form"?: string;
+  "lines"?: Record<string, number>;
+  "period"?: string;
+  "ratios"?: Record<string, number>;
+  "statement"?: string;
+  "synced_at"?: string;
+}
+
+export interface ModelEsSecInsiderTransactionRecord {
+  "accession_number"?: string;
+  "acquired_or_disposed"?: string;
+  "cik"?: number;
+  "code"?: string;
+  "filing_date"?: string;
+  "filing_url"?: string;
+  "form"?: string;
+  "is_director"?: boolean;
+  "is_officer"?: boolean;
+  "is_ten_percent_owner"?: boolean;
+  "owner_name"?: string;
+  "owner_title"?: string;
+  "price_per_share"?: number;
+  "security_title"?: string;
+  "shares"?: number;
+  "shares_owned_after"?: number;
+  "synced_at"?: string;
+  "transaction_date"?: string;
+}
+
+export interface ModelEsSecInstitutionalPositionRecord {
+  "accession_number"?: string;
+  "cusip"?: string;
+  "filing_date"?: string;
+  "investment_discretion"?: string;
+  "issuer_name"?: string;
+  "manager_cik"?: number;
+  "manager_name"?: string;
+  "put_call"?: string;
+  "report_date"?: string;
+  "share_type"?: string;
+  "shares"?: number;
+  "synced_at"?: string;
+  "title_of_class"?: string;
+  "value"?: number;
+}
+
+export interface ModelEsSecInstitutionalPositionsFacetItem {
   "count"?: number;
   "value"?: string;
 }
@@ -5430,6 +5718,55 @@ export interface ModelEsWebsiteStatus {
   "http_reachable"?: boolean;
   "status_code"?: number;
   "url"?: string;
+}
+
+export interface ModelEsXuserDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsXuserDatasetItem {
+  "avatar_url"?: string;
+  "banner_url"?: string;
+  "bio"?: string;
+  "crawled_at"?: string;
+  "created_at"?: string;
+  "external_url"?: string;
+  "follower_following_ratio"?: number;
+  "followers"?: number;
+  "following"?: number;
+  "has_bio"?: boolean;
+  "has_external_url"?: boolean;
+  "id"?: string;
+  "is_blue_verified"?: boolean;
+  "location_raw"?: string;
+  "name"?: string;
+  "posts"?: number;
+  "schema_version"?: number;
+  "source_tier"?: string;
+  "username"?: string;
+}
+
+export interface ModelEsXuserRecord {
+  "avatar_url"?: string;
+  "banner_url"?: string;
+  "bio"?: string;
+  "crawled_at"?: string;
+  "created_at"?: string;
+  "external_url"?: string;
+  "follower_following_ratio"?: number;
+  "followers"?: number;
+  "following"?: number;
+  "has_bio"?: boolean;
+  "has_external_url"?: boolean;
+  "id"?: string;
+  "is_blue_verified"?: boolean;
+  "location_raw"?: string;
+  "name"?: string;
+  "posts"?: number;
+  "schema_version"?: number;
+  "source_tier"?: string;
+  "username"?: string;
 }
 
 export interface ModelEspnAthlete {
@@ -12164,14 +12501,20 @@ export interface ModelSecNewsItem {
 }
 
 export interface ModelSecSubmissionsResponse {
+  "category"?: string;
   "cik"?: number;
   "cik_padded"?: string;
   "count"?: number;
+  "entity_type"?: string;
+  "exchanges"?: Array<string>;
   "filings"?: Array<ModelSecFiling>;
+  "fiscal_year_end"?: string;
+  "former_names"?: Array<string>;
   "name"?: string;
   "sic"?: string;
   "sic_description"?: string;
   "source_url"?: string;
+  "state_of_incorporation"?: string;
   "tickers"?: Array<string>;
 }
 
@@ -14720,6 +15063,296 @@ export interface ModelSteamTopSellersResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTcdbBirthdaysResponse {
+  "day"?: number;
+  "fetched_at"?: string;
+  "label"?: string;
+  "month"?: number;
+  "people"?: Array<ModelTcdbPersonRef>;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+}
+
+export interface ModelTcdbCardList {
+  "card_id"?: string;
+  "image_urls"?: Array<string>;
+  "name"?: string;
+  "number"?: string;
+  "path"?: string;
+  "person_urls"?: Array<string>;
+  "set_id"?: string;
+  "team"?: string;
+  "team_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelTcdbCardOfTheDayResponse {
+  "cards"?: Array<ModelTcdbDailyCard>;
+  "fetched_at"?: string;
+  "page"?: number;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+}
+
+export interface ModelTcdbCardResponse {
+  "back_image_url"?: string;
+  "card_id"?: string;
+  "category"?: string;
+  "fetched_at"?: string;
+  "front_image_url"?: string;
+  "image_urls"?: Array<string>;
+  "name"?: string;
+  "number"?: string;
+  "public_page_derived"?: boolean;
+  "set_id"?: string;
+  "set_path"?: string;
+  "set_title"?: string;
+  "set_url"?: string;
+  "source_url"?: string;
+  "tags"?: Array<string>;
+  "team"?: string;
+  "title"?: string;
+  "year"?: string;
+}
+
+export interface ModelTcdbCompaniesResponse {
+  "companies"?: Array<ModelTcdbCompany>;
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+}
+
+export interface ModelTcdbCompany {
+  "links"?: Array<ModelTcdbCompanyLink>;
+  "name"?: string;
+}
+
+export interface ModelTcdbCompanyLink {
+  "label"?: string;
+  "url"?: string;
+}
+
+export interface ModelTcdbDailyCard {
+  "card_id"?: string;
+  "comment"?: string;
+  "date"?: string;
+  "image_url"?: string;
+  "path"?: string;
+  "set_id"?: string;
+  "set_path"?: string;
+  "set_title"?: string;
+  "set_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTcdbEntityCard {
+  "card_id"?: string;
+  "image_urls"?: Array<string>;
+  "path"?: string;
+  "set_id"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTcdbPersonRef {
+  "id"?: string;
+  "name"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export interface ModelTcdbPersonResponse {
+  "cards"?: Array<ModelTcdbEntityCard>;
+  "category"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "name"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+}
+
+export interface ModelTcdbReleaseEntry {
+  "date"?: string;
+  "month"?: string;
+  "path"?: string;
+  "set_id"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTcdbReleasesResponse {
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "releases"?: Array<ModelTcdbReleaseEntry>;
+  "source_url"?: string;
+}
+
+export interface ModelTcdbSearchGroup {
+  "kind"?: string;
+  "label"?: string;
+  "results"?: Array<ModelTcdbSearchResult>;
+  "total_count"?: number;
+}
+
+export interface ModelTcdbSearchResponse {
+  "category"?: string;
+  "fetched_at"?: string;
+  "groups"?: Array<ModelTcdbSearchGroup>;
+  "limit"?: number;
+  "public_page_derived"?: boolean;
+  "query"?: string;
+  "source_url"?: string;
+  "top_match"?: ModelTcdbSearchResult;
+}
+
+export interface ModelTcdbSearchResult {
+  "id"?: string;
+  "kind"?: string;
+  "path"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTcdbSetResponse {
+  "cards"?: Array<ModelTcdbCardList>;
+  "category"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "public_page_derived"?: boolean;
+  "rating"?: string;
+  "source_url"?: string;
+  "title"?: string;
+  "total_cards"?: number;
+  "year"?: string;
+}
+
+export interface ModelTcdbSetsListing {
+  "id"?: string;
+  "path"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTcdbSetsResponse {
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "sets"?: Array<ModelTcdbSetsListing>;
+  "source_url"?: string;
+  "sport"?: string;
+  "year"?: string;
+}
+
+export interface ModelTcdbTaggedResponse {
+  "cards"?: Array<ModelTcdbEntityCard>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "page"?: number;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "sport"?: string;
+  "tag"?: string;
+}
+
+export interface ModelTcdbTeamResponse {
+  "cards"?: Array<ModelTcdbEntityCard>;
+  "category"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "name"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+}
+
+export interface ModelTcdbTopSetEntry {
+  "path"?: string;
+  "rank"?: number;
+  "rating"?: string;
+  "set_id"?: string;
+  "title"?: string;
+  "url"?: string;
+  "votes"?: number;
+}
+
+export interface ModelTcdbTopSetsResponse {
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "sets"?: Array<ModelTcdbTopSetEntry>;
+  "source_url"?: string;
+}
+
+export interface ModelTcdbBirthdaysResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbBirthdaysResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbCardOfTheDayResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbCardOfTheDayResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbCardResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbCardResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbCompaniesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbCompaniesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbPersonResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbPersonResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbReleasesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbReleasesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbSetResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbSetResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbSetsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbSetsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbTaggedResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbTaggedResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbTeamResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbTeamResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcdbTopSetsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcdbTopSetsResponse;
+  "msg"?: string;
+}
+
 export interface ModelTechstackResult {
   "categories"?: Array<string>;
   "count"?: number;
@@ -16636,6 +17269,31 @@ export interface ModelWebTechStackOption {
   "url": string;
 }
 
+export interface ModelWebBillingRejectionDoc {
+  "credit_cost"?: number;
+  "credits_included"?: number;
+  "credits_remaining"?: number;
+  "credits_used"?: number;
+  "daily_credit_limit"?: number;
+  "daily_credits_remaining"?: number;
+  "daily_credits_used"?: number;
+  "message"?: string;
+  "plan"?: string;
+  "rate_limit_per_minute"?: number;
+  "reason"?: "insufficient_credits" | "daily_credit_limit" | "rate_limited";
+  "reset_scope"?: "daily" | "monthly" | "minute";
+  "resets_at"?: string;
+  "retry_after_seconds"?: number;
+  "suggested_plan"?: string;
+  "upgrade_url"?: string;
+}
+
+export interface ModelWebBillingRejectionResponseDoc {
+  "code"?: number;
+  "data"?: ModelWebBillingRejectionDoc;
+  "msg"?: string;
+}
+
 export interface ModelWebScrapeResponseDoc {
   "code"?: number;
   "data"?: ModelWebScrapeResult;
@@ -18535,6 +19193,7 @@ export interface DatasetsChromeExtensionsFacetsParams {
   "item_type"?: string;
   "category"?: string;
   "developer"?: string;
+  "developer_email"?: string;
   "permission"?: string;
   "status"?: string;
   "manifest_version"?: number;
@@ -18571,6 +19230,7 @@ export interface DatasetsChromeExtensionsSearchParams {
   "item_type"?: string;
   "category"?: string;
   "developer"?: string;
+  "developer_email"?: string;
   "permission"?: string;
   "status"?: string;
   "manifest_version"?: number;
@@ -18590,6 +19250,7 @@ export interface DatasetsChromeExtensionsTrendingParams {
   "item_type"?: string;
   "category"?: string;
   "developer"?: string;
+  "developer_email"?: string;
   "permission"?: string;
   "status"?: string;
   "manifest_version"?: number;
@@ -18819,6 +19480,42 @@ export interface DatasetsHousingMarketsSearchParams {
   "min_inventory"?: number;
   "max_inventory"?: number;
   "min_homes_sold"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsJobsCompaniesResponse = CrawloraResponse<ModelDatasetsJobsCompaniesResponseDoc>;
+export interface DatasetsJobsCompaniesParams {
+  "q"?: string;
+  "provider"?: string;
+  "status"?: string;
+  "min_open_roles"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsJobsFacetsResponse = CrawloraResponse<ModelDatasetsJobsFacetResponseDoc>;
+export interface DatasetsJobsFacetsParams {
+  "size"?: number;
+}
+
+export type DatasetsJobsItemResponse = CrawloraResponse<ModelDatasetsJobsItemResponseDoc>;
+export interface DatasetsJobsItemParams {
+  "id": string;
+}
+
+export type DatasetsJobsSearchResponse = CrawloraResponse<ModelDatasetsJobsSearchResponseDoc>;
+export interface DatasetsJobsSearchParams {
+  "q"?: string;
+  "company"?: string;
+  "provider"?: string;
+  "department"?: string;
+  "location"?: string;
+  "employment_type"?: string;
+  "remote"?: boolean;
+  "include_closed"?: boolean;
   "sort"?: string;
   "page"?: number;
   "page_size"?: number;
@@ -19066,6 +19763,82 @@ export interface DatasetsProducthuntTrendsSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsSecCompaniesFacetsResponse = CrawloraResponse<ModelDatasetsSecCompaniesFacetResponseDoc>;
+export interface DatasetsSecCompaniesFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "ticker"?: string;
+  "sic"?: string;
+  "exchange"?: string;
+  "state_of_incorporation"?: string;
+  "entity_type"?: string;
+  "min_revenue"?: number;
+  "form_filed"?: string;
+}
+
+export type DatasetsSecCompaniesFinancialsResponse = CrawloraResponse<ModelDatasetsSecCompaniesFinancialsResponseDoc>;
+export interface DatasetsSecCompaniesFinancialsParams {
+  "cik": string;
+  "statement"?: string;
+  "period"?: string;
+  "from"?: number;
+  "to"?: number;
+  "limit"?: number;
+}
+
+export type DatasetsSecCompaniesInsiderResponse = CrawloraResponse<ModelDatasetsSecCompaniesInsiderResponseDoc>;
+export interface DatasetsSecCompaniesInsiderParams {
+  "cik": string;
+  "from"?: string;
+  "to"?: string;
+  "code"?: string;
+  "limit"?: number;
+}
+
+export type DatasetsSecCompaniesItemResponse = CrawloraResponse<ModelDatasetsSecCompaniesItemResponseDoc>;
+export interface DatasetsSecCompaniesItemParams {
+  "cik": string;
+}
+
+export type DatasetsSecCompaniesSearchResponse = CrawloraResponse<ModelDatasetsSecCompaniesSearchResponseDoc>;
+export interface DatasetsSecCompaniesSearchParams {
+  "q"?: string;
+  "ticker"?: string;
+  "cik"?: string;
+  "sic"?: string;
+  "sic_description"?: string;
+  "exchange"?: string;
+  "state_of_incorporation"?: string;
+  "entity_type"?: string;
+  "min_revenue"?: number;
+  "max_revenue"?: number;
+  "min_net_income"?: number;
+  "min_total_assets"?: number;
+  "form_filed"?: string;
+  "min_insider_txn_count_90d"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsSecInstitutionalPositionsFacetsResponse = CrawloraResponse<ModelDatasetsSecInstitutionalPositionsFacetResponseDoc>;
+export interface DatasetsSecInstitutionalPositionsFacetsParams {
+  "facet": string;
+  "manager_cik"?: string;
+  "issuer_name"?: string;
+  "cusip"?: string;
+}
+
+export type DatasetsSecInstitutionalPositionsSearchResponse = CrawloraResponse<ModelDatasetsSecInstitutionalPositionsSearchResponseDoc>;
+export interface DatasetsSecInstitutionalPositionsSearchParams {
+  "manager_cik"?: string;
+  "issuer_name"?: string;
+  "cusip"?: string;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsSteamAchievementsSearchResponse = CrawloraResponse<ModelDatasetsSteamAchievementsSearchResponseDoc>;
 export interface DatasetsSteamAchievementsSearchParams {
   "app_id"?: string;
@@ -19293,6 +20066,52 @@ export interface DatasetsTrustmrrSearchParams {
   "min_asking_price"?: number;
   "max_asking_price"?: number;
   "min_ahrefs_dr"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsXUsersFacetsResponse = CrawloraResponse<ModelDatasetsXUsersFacetResponseDoc>;
+export interface DatasetsXUsersFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "username"?: string;
+  "source_tier"?: string;
+  "is_blue_verified"?: boolean;
+  "has_bio"?: boolean;
+  "has_external_url"?: boolean;
+  "min_followers"?: number;
+  "max_followers"?: number;
+  "min_ratio"?: number;
+  "max_ratio"?: number;
+  "created_after"?: string;
+  "created_before"?: string;
+  "crawled_after"?: string;
+  "crawled_before"?: string;
+  "sort"?: string;
+}
+
+export type DatasetsXUsersItemResponse = CrawloraResponse<ModelDatasetsXUserResponseDoc>;
+export interface DatasetsXUsersItemParams {
+  "username": string;
+}
+
+export type DatasetsXUsersSearchResponse = CrawloraResponse<ModelDatasetsXUsersSearchResponseDoc>;
+export interface DatasetsXUsersSearchParams {
+  "q"?: string;
+  "username"?: string;
+  "source_tier"?: string;
+  "is_blue_verified"?: boolean;
+  "has_bio"?: boolean;
+  "has_external_url"?: boolean;
+  "min_followers"?: number;
+  "max_followers"?: number;
+  "min_ratio"?: number;
+  "max_ratio"?: number;
+  "created_after"?: string;
+  "created_before"?: string;
+  "crawled_after"?: string;
+  "crawled_before"?: string;
   "sort"?: string;
   "page"?: number;
   "page_size"?: number;
@@ -19575,6 +20394,20 @@ export interface GitHubGithubUserParams {
 
 export type GitHubGithubUserEventsResponse = CrawloraResponse<ModelAppResponse>;
 export interface GitHubGithubUserEventsParams {
+  "username": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubUserFollowersResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubUserFollowersParams {
+  "username": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GitHubGithubUserFollowingResponse = CrawloraResponse<ModelAppResponse>;
+export interface GitHubGithubUserFollowingParams {
   "username": string;
   "page"?: number;
   "per_page"?: number;
@@ -20092,13 +20925,15 @@ export interface JobsGreenhouseJobParams {
 
 export type JobsHiringSignalsResponse = CrawloraResponse<ModelJobsSignalsResponseDoc>;
 export interface JobsHiringSignalsParams {
-  "provider": "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters";
+  "provider": "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg";
   "token"?: string;
   "company"?: string;
   "org"?: string;
   "tenant"?: string;
   "datacenter"?: string;
   "site"?: string;
+  "host"?: string;
+  "board"?: string;
 }
 
 export type JobsLeverPostingResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
@@ -20115,6 +20950,58 @@ export interface JobsLeverPostingsParams {
   "remote"?: boolean;
 }
 
+export type JobsOracleBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsOracleBoardParams {
+  "host": string;
+  "site": string;
+  "search"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type JobsOracleJobResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsOracleJobParams {
+  "host": string;
+  "site": string;
+  "id": string;
+}
+
+export type JobsPersonioFeedResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsPersonioFeedParams {
+  "company": string;
+  "department"?: string;
+  "location"?: string;
+  "remote"?: boolean;
+}
+
+export type JobsRecruiteeOfferResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsRecruiteeOfferParams {
+  "company": string;
+  "id": string;
+}
+
+export type JobsRecruiteeOffersResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsRecruiteeOffersParams {
+  "company": string;
+  "department"?: string;
+  "location"?: string;
+  "remote"?: boolean;
+}
+
+export type JobsRipplingBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsRipplingBoardParams {
+  "company": string;
+  "department"?: string;
+  "location"?: string;
+  "remote"?: boolean;
+}
+
+export type JobsRipplingJobResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsRipplingJobParams {
+  "company": string;
+  "id": string;
+}
+
 export type JobsSmartrecruitersPostingResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
 export interface JobsSmartrecruitersPostingParams {
   "company": string;
@@ -20126,6 +21013,38 @@ export interface JobsSmartrecruitersPostingsParams {
   "company": string;
   "limit"?: number;
   "offset"?: number;
+}
+
+export type JobsTeamtailorJobsResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsTeamtailorJobsParams {
+  "company": string;
+  "department"?: string;
+  "location"?: string;
+  "remote"?: boolean;
+}
+
+export type JobsUkgBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsUkgBoardParams {
+  "tenant": string;
+  "board": string;
+  "search"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type JobsWorkablePostingResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsWorkablePostingParams {
+  "company": string;
+  "id": string;
+}
+
+export type JobsWorkablePostingsResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsWorkablePostingsParams {
+  "company": string;
+  "search"?: string;
+  "department"?: string;
+  "location"?: string;
+  "remote"?: boolean;
 }
 
 export type JobsWorkdayBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
@@ -22367,6 +23286,90 @@ export interface SteamTopSellersParams {
   "l"?: string;
 }
 
+export type TcdbBirthdaysResponse = CrawloraResponse<ModelTcdbBirthdaysResponseDoc>;
+export interface TcdbBirthdaysParams {
+  "month": number;
+  "day": number;
+  "limit"?: number;
+}
+
+export type TcdbCardResponse = CrawloraResponse<ModelTcdbCardResponseDoc>;
+export interface TcdbCardParams {
+  "set_id"?: string;
+  "card_id"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export type TcdbCardOfTheDayResponse = CrawloraResponse<ModelTcdbCardOfTheDayResponseDoc>;
+export interface TcdbCardOfTheDayParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type TcdbCompaniesResponse = CrawloraResponse<ModelTcdbCompaniesResponseDoc>;
+export interface TcdbCompaniesParams {
+  "limit"?: number;
+}
+
+export type TcdbPersonResponse = CrawloraResponse<ModelTcdbPersonResponseDoc>;
+export interface TcdbPersonParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+  "limit"?: number;
+}
+
+export type TcdbReleasesResponse = CrawloraResponse<ModelTcdbReleasesResponseDoc>;
+export interface TcdbReleasesParams {
+  "limit"?: number;
+}
+
+export type TcdbSearchResponse = CrawloraResponse<ModelTcdbSearchResponseDoc>;
+export interface TcdbSearchParams {
+  "q": string;
+  "category"?: "Baseball" | "Basketball" | "Boxing" | "Cricket" | "Football" | "Gaming" | "Golf" | "Hockey" | "Misc Sports" | "MMA" | "Multi-Sport" | "Non-Sport" | "Racing" | "Soccer" | "Tennis" | "Wrestling";
+  "limit"?: number;
+}
+
+export type TcdbSetResponse = CrawloraResponse<ModelTcdbSetResponseDoc>;
+export interface TcdbSetParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+  "limit"?: number;
+}
+
+export type TcdbSetsResponse = CrawloraResponse<ModelTcdbSetsResponseDoc>;
+export interface TcdbSetsParams {
+  "sport": "Baseball" | "Basketball" | "Boxing" | "Cricket" | "Football" | "Gaming" | "Golf" | "Hockey" | "Misc Sports" | "MMA" | "Multi-Sport" | "Non-Sport" | "Racing" | "Soccer" | "Tennis" | "Wrestling";
+  "year": string;
+  "limit"?: number;
+}
+
+export type TcdbTaggedResponse = CrawloraResponse<ModelTcdbTaggedResponseDoc>;
+export interface TcdbTaggedParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+  "sport"?: "Baseball" | "Basketball" | "Boxing" | "Cricket" | "Football" | "Gaming" | "Golf" | "Hockey" | "Misc Sports" | "MMA" | "Multi-Sport" | "Non-Sport" | "Racing" | "Soccer" | "Tennis" | "Wrestling";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type TcdbTeamResponse = CrawloraResponse<ModelTcdbTeamResponseDoc>;
+export interface TcdbTeamParams {
+  "id"?: string;
+  "path"?: string;
+  "url"?: string;
+  "limit"?: number;
+}
+
+export type TcdbTopSetsResponse = CrawloraResponse<ModelTcdbTopSetsResponseDoc>;
+export interface TcdbTopSetsParams {
+  "limit"?: number;
+}
+
 export type TiktokCategoryResponse = CrawloraResponse<ModelTiktokCategoryResponseDoc>;
 export interface TiktokCategoryParams {
 }
@@ -23319,6 +24322,10 @@ export interface DatasetsService {
   housingMarketsFacets<T = DatasetsHousingMarketsFacetsResponse>(params: DatasetsHousingMarketsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   housingMarketsItem<T = DatasetsHousingMarketsItemResponse>(params: DatasetsHousingMarketsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   housingMarketsSearch<T = DatasetsHousingMarketsSearchResponse>(params?: DatasetsHousingMarketsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jobsCompanies<T = DatasetsJobsCompaniesResponse>(params?: DatasetsJobsCompaniesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jobsFacets<T = DatasetsJobsFacetsResponse>(params?: DatasetsJobsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jobsItem<T = DatasetsJobsItemResponse>(params: DatasetsJobsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jobsSearch<T = DatasetsJobsSearchResponse>(params?: DatasetsJobsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   journalistsFacets<T = DatasetsJournalistsFacetsResponse>(params: DatasetsJournalistsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   journalistsItem<T = DatasetsJournalistsItemResponse>(params: DatasetsJournalistsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   journalistsSearch<T = DatasetsJournalistsSearchResponse>(params?: DatasetsJournalistsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -23338,6 +24345,13 @@ export interface DatasetsService {
   producthuntProductsSearch<T = DatasetsProducthuntProductsSearchResponse>(params?: DatasetsProducthuntProductsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntTrendsFacets<T = DatasetsProducthuntTrendsFacetsResponse>(params: DatasetsProducthuntTrendsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntTrendsSearch<T = DatasetsProducthuntTrendsSearchResponse>(params?: DatasetsProducthuntTrendsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secCompaniesFacets<T = DatasetsSecCompaniesFacetsResponse>(params: DatasetsSecCompaniesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secCompaniesFinancials<T = DatasetsSecCompaniesFinancialsResponse>(params: DatasetsSecCompaniesFinancialsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secCompaniesInsider<T = DatasetsSecCompaniesInsiderResponse>(params: DatasetsSecCompaniesInsiderParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secCompaniesItem<T = DatasetsSecCompaniesItemResponse>(params: DatasetsSecCompaniesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secCompaniesSearch<T = DatasetsSecCompaniesSearchResponse>(params?: DatasetsSecCompaniesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secInstitutionalPositionsFacets<T = DatasetsSecInstitutionalPositionsFacetsResponse>(params: DatasetsSecInstitutionalPositionsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  secInstitutionalPositionsSearch<T = DatasetsSecInstitutionalPositionsSearchResponse>(params?: DatasetsSecInstitutionalPositionsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   steamAchievementsSearch<T = DatasetsSteamAchievementsSearchResponse>(params?: DatasetsSteamAchievementsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   steamChartsSearch<T = DatasetsSteamChartsSearchResponse>(params?: DatasetsSteamChartsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   steamGamesFacets<T = DatasetsSteamGamesFacetsResponse>(params: DatasetsSteamGamesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -23354,6 +24368,9 @@ export interface DatasetsService {
   trustmrrHistory<T = DatasetsTrustmrrHistoryResponse>(params: DatasetsTrustmrrHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trustmrrItem<T = DatasetsTrustmrrItemResponse>(params: DatasetsTrustmrrItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trustmrrSearch<T = DatasetsTrustmrrSearchResponse>(params?: DatasetsTrustmrrSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  xUsersFacets<T = DatasetsXUsersFacetsResponse>(params: DatasetsXUsersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  xUsersItem<T = DatasetsXUsersItemResponse>(params: DatasetsXUsersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  xUsersSearch<T = DatasetsXUsersSearchResponse>(params?: DatasetsXUsersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface DiscogsService {
@@ -23407,6 +24424,8 @@ export interface GitHubService {
   githubTrendingDevelopers<T = GitHubGithubTrendingDevelopersResponse>(params?: GitHubGithubTrendingDevelopersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUser<T = GitHubGithubUserResponse>(params: GitHubGithubUserParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUserEvents<T = GitHubGithubUserEventsResponse>(params: GitHubGithubUserEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUserFollowers<T = GitHubGithubUserFollowersResponse>(params: GitHubGithubUserFollowersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  githubUserFollowing<T = GitHubGithubUserFollowingResponse>(params: GitHubGithubUserFollowingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUserPinned<T = GitHubGithubUserPinnedResponse>(params: GitHubGithubUserPinnedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUserRepos<T = GitHubGithubUserReposResponse>(params: GitHubGithubUserReposParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
@@ -23510,8 +24529,19 @@ export interface JobsService {
   hiringSignals<T = JobsHiringSignalsResponse>(params: JobsHiringSignalsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   leverPosting<T = JobsLeverPostingResponse>(params: JobsLeverPostingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   leverPostings<T = JobsLeverPostingsResponse>(params: JobsLeverPostingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oracleBoard<T = JobsOracleBoardResponse>(params: JobsOracleBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oracleJob<T = JobsOracleJobResponse>(params: JobsOracleJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  personioFeed<T = JobsPersonioFeedResponse>(params: JobsPersonioFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  recruiteeOffer<T = JobsRecruiteeOfferResponse>(params: JobsRecruiteeOfferParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  recruiteeOffers<T = JobsRecruiteeOffersResponse>(params: JobsRecruiteeOffersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ripplingBoard<T = JobsRipplingBoardResponse>(params: JobsRipplingBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ripplingJob<T = JobsRipplingJobResponse>(params: JobsRipplingJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   smartrecruitersPosting<T = JobsSmartrecruitersPostingResponse>(params: JobsSmartrecruitersPostingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   smartrecruitersPostings<T = JobsSmartrecruitersPostingsResponse>(params: JobsSmartrecruitersPostingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamtailorJobs<T = JobsTeamtailorJobsResponse>(params: JobsTeamtailorJobsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ukgBoard<T = JobsUkgBoardResponse>(params: JobsUkgBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  workablePosting<T = JobsWorkablePostingResponse>(params: JobsWorkablePostingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  workablePostings<T = JobsWorkablePostingsResponse>(params: JobsWorkablePostingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   workdayBoard<T = JobsWorkdayBoardResponse>(params: JobsWorkdayBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   workdayJob<T = JobsWorkdayJobResponse>(params: JobsWorkdayJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
@@ -23906,6 +24936,21 @@ export interface SteamService {
   topSellers<T = SteamTopSellersResponse>(params?: SteamTopSellersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TcdbService {
+  birthdays<T = TcdbBirthdaysResponse>(params: TcdbBirthdaysParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  card<T = TcdbCardResponse>(params?: TcdbCardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  cardOfTheDay<T = TcdbCardOfTheDayResponse>(params?: TcdbCardOfTheDayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  companies<T = TcdbCompaniesResponse>(params?: TcdbCompaniesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  person<T = TcdbPersonResponse>(params?: TcdbPersonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  releases<T = TcdbReleasesResponse>(params?: TcdbReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = TcdbSearchResponse>(params: TcdbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  set<T = TcdbSetResponse>(params?: TcdbSetParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sets<T = TcdbSetsResponse>(params: TcdbSetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tagged<T = TcdbTaggedResponse>(params?: TcdbTaggedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  team<T = TcdbTeamResponse>(params?: TcdbTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  topSets<T = TcdbTopSetsResponse>(params?: TcdbTopSetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TiktokService {
   category<T = TiktokCategoryResponse>(params?: TiktokCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   videoComments<T = TiktokVideoCommentsResponse>(params: TiktokVideoCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -24112,6 +25157,7 @@ export interface CrawloraGeneratedGroups {
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
   steam: SteamService;
+  tcdb: TcdbService;
   tiktok: TiktokService;
   tmdb: TmdbService;
   tripAdvisor: TripAdvisorService;
@@ -24265,6 +25311,10 @@ export interface OperationParamsMap {
   "datasets-housing-markets-facets": DatasetsHousingMarketsFacetsParams;
   "datasets-housing-markets-item": DatasetsHousingMarketsItemParams;
   "datasets-housing-markets-search": DatasetsHousingMarketsSearchParams;
+  "datasets-jobs-companies": DatasetsJobsCompaniesParams;
+  "datasets-jobs-facets": DatasetsJobsFacetsParams;
+  "datasets-jobs-item": DatasetsJobsItemParams;
+  "datasets-jobs-search": DatasetsJobsSearchParams;
   "datasets-journalists-facets": DatasetsJournalistsFacetsParams;
   "datasets-journalists-item": DatasetsJournalistsItemParams;
   "datasets-journalists-search": DatasetsJournalistsSearchParams;
@@ -24284,6 +25334,13 @@ export interface OperationParamsMap {
   "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchParams;
   "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsParams;
   "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchParams;
+  "datasets-sec-companies-facets": DatasetsSecCompaniesFacetsParams;
+  "datasets-sec-companies-financials": DatasetsSecCompaniesFinancialsParams;
+  "datasets-sec-companies-insider": DatasetsSecCompaniesInsiderParams;
+  "datasets-sec-companies-item": DatasetsSecCompaniesItemParams;
+  "datasets-sec-companies-search": DatasetsSecCompaniesSearchParams;
+  "datasets-sec-institutional-positions-facets": DatasetsSecInstitutionalPositionsFacetsParams;
+  "datasets-sec-institutional-positions-search": DatasetsSecInstitutionalPositionsSearchParams;
   "datasets-steam-achievements-search": DatasetsSteamAchievementsSearchParams;
   "datasets-steam-charts-search": DatasetsSteamChartsSearchParams;
   "datasets-steam-games-facets": DatasetsSteamGamesFacetsParams;
@@ -24300,6 +25357,9 @@ export interface OperationParamsMap {
   "datasets-trustmrr-history": DatasetsTrustmrrHistoryParams;
   "datasets-trustmrr-item": DatasetsTrustmrrItemParams;
   "datasets-trustmrr-search": DatasetsTrustmrrSearchParams;
+  "datasets-x-users-facets": DatasetsXUsersFacetsParams;
+  "datasets-x-users-item": DatasetsXUsersItemParams;
+  "datasets-x-users-search": DatasetsXUsersSearchParams;
   "antibot-check": WebAntibotCheckParams;
   "discogs-artist": DiscogsArtistParams;
   "discogs-artist-releases": DiscogsArtistReleasesParams;
@@ -24340,6 +25400,8 @@ export interface OperationParamsMap {
   "github-trending-developers": GitHubGithubTrendingDevelopersParams;
   "github-user": GitHubGithubUserParams;
   "github-user-events": GitHubGithubUserEventsParams;
+  "github-user-followers": GitHubGithubUserFollowersParams;
+  "github-user-following": GitHubGithubUserFollowingParams;
   "github-user-pinned": GitHubGithubUserPinnedParams;
   "github-user-repos": GitHubGithubUserReposParams;
   "goodreads-author": GoodreadsAuthorParams;
@@ -24425,8 +25487,19 @@ export interface OperationParamsMap {
   "jobs-hiring-signals": JobsHiringSignalsParams;
   "jobs-lever-posting": JobsLeverPostingParams;
   "jobs-lever-postings": JobsLeverPostingsParams;
+  "jobs-oracle-board": JobsOracleBoardParams;
+  "jobs-oracle-job": JobsOracleJobParams;
+  "jobs-personio-feed": JobsPersonioFeedParams;
+  "jobs-recruitee-offer": JobsRecruiteeOfferParams;
+  "jobs-recruitee-offers": JobsRecruiteeOffersParams;
+  "jobs-rippling-board": JobsRipplingBoardParams;
+  "jobs-rippling-job": JobsRipplingJobParams;
   "jobs-smartrecruiters-posting": JobsSmartrecruitersPostingParams;
   "jobs-smartrecruiters-postings": JobsSmartrecruitersPostingsParams;
+  "jobs-teamtailor-jobs": JobsTeamtailorJobsParams;
+  "jobs-ukg-board": JobsUkgBoardParams;
+  "jobs-workable-posting": JobsWorkablePostingParams;
+  "jobs-workable-postings": JobsWorkablePostingsParams;
   "jobs-workday-board": JobsWorkdayBoardParams;
   "jobs-workday-job": JobsWorkdayJobParams;
   "justwatch-age-certifications": JustWatchJustwatchAgeCertificationsParams;
@@ -24744,6 +25817,18 @@ export interface OperationParamsMap {
   "steam-tags": SteamTagsParams;
   "steam-tags-list": SteamTagsListParams;
   "steam-top-sellers": SteamTopSellersParams;
+  "tcdb-birthdays": TcdbBirthdaysParams;
+  "tcdb-card": TcdbCardParams;
+  "tcdb-card-of-the-day": TcdbCardOfTheDayParams;
+  "tcdb-companies": TcdbCompaniesParams;
+  "tcdb-person": TcdbPersonParams;
+  "tcdb-releases": TcdbReleasesParams;
+  "tcdb-search": TcdbSearchParams;
+  "tcdb-set": TcdbSetParams;
+  "tcdb-sets": TcdbSetsParams;
+  "tcdb-tagged": TcdbTaggedParams;
+  "tcdb-team": TcdbTeamParams;
+  "tcdb-top-sets": TcdbTopSetsParams;
   "tiktok-category": TiktokCategoryParams;
   "tiktok-video-comments": TiktokVideoCommentsParams;
   "tiktok-explore": TiktokExploreParams;
@@ -25005,6 +26090,10 @@ export interface OperationResponseMap {
   "datasets-housing-markets-facets": DatasetsHousingMarketsFacetsResponse;
   "datasets-housing-markets-item": DatasetsHousingMarketsItemResponse;
   "datasets-housing-markets-search": DatasetsHousingMarketsSearchResponse;
+  "datasets-jobs-companies": DatasetsJobsCompaniesResponse;
+  "datasets-jobs-facets": DatasetsJobsFacetsResponse;
+  "datasets-jobs-item": DatasetsJobsItemResponse;
+  "datasets-jobs-search": DatasetsJobsSearchResponse;
   "datasets-journalists-facets": DatasetsJournalistsFacetsResponse;
   "datasets-journalists-item": DatasetsJournalistsItemResponse;
   "datasets-journalists-search": DatasetsJournalistsSearchResponse;
@@ -25024,6 +26113,13 @@ export interface OperationResponseMap {
   "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchResponse;
   "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsResponse;
   "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchResponse;
+  "datasets-sec-companies-facets": DatasetsSecCompaniesFacetsResponse;
+  "datasets-sec-companies-financials": DatasetsSecCompaniesFinancialsResponse;
+  "datasets-sec-companies-insider": DatasetsSecCompaniesInsiderResponse;
+  "datasets-sec-companies-item": DatasetsSecCompaniesItemResponse;
+  "datasets-sec-companies-search": DatasetsSecCompaniesSearchResponse;
+  "datasets-sec-institutional-positions-facets": DatasetsSecInstitutionalPositionsFacetsResponse;
+  "datasets-sec-institutional-positions-search": DatasetsSecInstitutionalPositionsSearchResponse;
   "datasets-steam-achievements-search": DatasetsSteamAchievementsSearchResponse;
   "datasets-steam-charts-search": DatasetsSteamChartsSearchResponse;
   "datasets-steam-games-facets": DatasetsSteamGamesFacetsResponse;
@@ -25040,6 +26136,9 @@ export interface OperationResponseMap {
   "datasets-trustmrr-history": DatasetsTrustmrrHistoryResponse;
   "datasets-trustmrr-item": DatasetsTrustmrrItemResponse;
   "datasets-trustmrr-search": DatasetsTrustmrrSearchResponse;
+  "datasets-x-users-facets": DatasetsXUsersFacetsResponse;
+  "datasets-x-users-item": DatasetsXUsersItemResponse;
+  "datasets-x-users-search": DatasetsXUsersSearchResponse;
   "antibot-check": WebAntibotCheckResponse;
   "discogs-artist": DiscogsArtistResponse;
   "discogs-artist-releases": DiscogsArtistReleasesResponse;
@@ -25080,6 +26179,8 @@ export interface OperationResponseMap {
   "github-trending-developers": GitHubGithubTrendingDevelopersResponse;
   "github-user": GitHubGithubUserResponse;
   "github-user-events": GitHubGithubUserEventsResponse;
+  "github-user-followers": GitHubGithubUserFollowersResponse;
+  "github-user-following": GitHubGithubUserFollowingResponse;
   "github-user-pinned": GitHubGithubUserPinnedResponse;
   "github-user-repos": GitHubGithubUserReposResponse;
   "goodreads-author": GoodreadsAuthorResponse;
@@ -25165,8 +26266,19 @@ export interface OperationResponseMap {
   "jobs-hiring-signals": JobsHiringSignalsResponse;
   "jobs-lever-posting": JobsLeverPostingResponse;
   "jobs-lever-postings": JobsLeverPostingsResponse;
+  "jobs-oracle-board": JobsOracleBoardResponse;
+  "jobs-oracle-job": JobsOracleJobResponse;
+  "jobs-personio-feed": JobsPersonioFeedResponse;
+  "jobs-recruitee-offer": JobsRecruiteeOfferResponse;
+  "jobs-recruitee-offers": JobsRecruiteeOffersResponse;
+  "jobs-rippling-board": JobsRipplingBoardResponse;
+  "jobs-rippling-job": JobsRipplingJobResponse;
   "jobs-smartrecruiters-posting": JobsSmartrecruitersPostingResponse;
   "jobs-smartrecruiters-postings": JobsSmartrecruitersPostingsResponse;
+  "jobs-teamtailor-jobs": JobsTeamtailorJobsResponse;
+  "jobs-ukg-board": JobsUkgBoardResponse;
+  "jobs-workable-posting": JobsWorkablePostingResponse;
+  "jobs-workable-postings": JobsWorkablePostingsResponse;
   "jobs-workday-board": JobsWorkdayBoardResponse;
   "jobs-workday-job": JobsWorkdayJobResponse;
   "justwatch-age-certifications": JustWatchJustwatchAgeCertificationsResponse;
@@ -25484,6 +26596,18 @@ export interface OperationResponseMap {
   "steam-tags": SteamTagsResponse;
   "steam-tags-list": SteamTagsListResponse;
   "steam-top-sellers": SteamTopSellersResponse;
+  "tcdb-birthdays": TcdbBirthdaysResponse;
+  "tcdb-card": TcdbCardResponse;
+  "tcdb-card-of-the-day": TcdbCardOfTheDayResponse;
+  "tcdb-companies": TcdbCompaniesResponse;
+  "tcdb-person": TcdbPersonResponse;
+  "tcdb-releases": TcdbReleasesResponse;
+  "tcdb-search": TcdbSearchResponse;
+  "tcdb-set": TcdbSetResponse;
+  "tcdb-sets": TcdbSetsResponse;
+  "tcdb-tagged": TcdbTaggedResponse;
+  "tcdb-team": TcdbTeamResponse;
+  "tcdb-top-sets": TcdbTopSetsResponse;
   "tiktok-category": TiktokCategoryResponse;
   "tiktok-video-comments": TiktokVideoCommentsResponse;
   "tiktok-explore": TiktokExploreResponse;
@@ -25745,6 +26869,10 @@ export interface OperationRequiredParamsMap {
   "datasets-housing-markets-facets": true;
   "datasets-housing-markets-item": true;
   "datasets-housing-markets-search": false;
+  "datasets-jobs-companies": false;
+  "datasets-jobs-facets": false;
+  "datasets-jobs-item": true;
+  "datasets-jobs-search": false;
   "datasets-journalists-facets": true;
   "datasets-journalists-item": true;
   "datasets-journalists-search": false;
@@ -25764,6 +26892,13 @@ export interface OperationRequiredParamsMap {
   "datasets-producthunt-products-search": false;
   "datasets-producthunt-trends-facets": true;
   "datasets-producthunt-trends-search": false;
+  "datasets-sec-companies-facets": true;
+  "datasets-sec-companies-financials": true;
+  "datasets-sec-companies-insider": true;
+  "datasets-sec-companies-item": true;
+  "datasets-sec-companies-search": false;
+  "datasets-sec-institutional-positions-facets": true;
+  "datasets-sec-institutional-positions-search": false;
   "datasets-steam-achievements-search": false;
   "datasets-steam-charts-search": false;
   "datasets-steam-games-facets": true;
@@ -25780,6 +26915,9 @@ export interface OperationRequiredParamsMap {
   "datasets-trustmrr-history": true;
   "datasets-trustmrr-item": true;
   "datasets-trustmrr-search": false;
+  "datasets-x-users-facets": true;
+  "datasets-x-users-item": true;
+  "datasets-x-users-search": false;
   "antibot-check": true;
   "discogs-artist": true;
   "discogs-artist-releases": true;
@@ -25820,6 +26958,8 @@ export interface OperationRequiredParamsMap {
   "github-trending-developers": false;
   "github-user": true;
   "github-user-events": true;
+  "github-user-followers": true;
+  "github-user-following": true;
   "github-user-pinned": true;
   "github-user-repos": true;
   "goodreads-author": true;
@@ -25905,8 +27045,19 @@ export interface OperationRequiredParamsMap {
   "jobs-hiring-signals": true;
   "jobs-lever-posting": true;
   "jobs-lever-postings": true;
+  "jobs-oracle-board": true;
+  "jobs-oracle-job": true;
+  "jobs-personio-feed": true;
+  "jobs-recruitee-offer": true;
+  "jobs-recruitee-offers": true;
+  "jobs-rippling-board": true;
+  "jobs-rippling-job": true;
   "jobs-smartrecruiters-posting": true;
   "jobs-smartrecruiters-postings": true;
+  "jobs-teamtailor-jobs": true;
+  "jobs-ukg-board": true;
+  "jobs-workable-posting": true;
+  "jobs-workable-postings": true;
   "jobs-workday-board": true;
   "jobs-workday-job": true;
   "justwatch-age-certifications": false;
@@ -26224,6 +27375,18 @@ export interface OperationRequiredParamsMap {
   "steam-tags": false;
   "steam-tags-list": false;
   "steam-top-sellers": false;
+  "tcdb-birthdays": true;
+  "tcdb-card": false;
+  "tcdb-card-of-the-day": false;
+  "tcdb-companies": false;
+  "tcdb-person": false;
+  "tcdb-releases": false;
+  "tcdb-search": true;
+  "tcdb-set": false;
+  "tcdb-sets": true;
+  "tcdb-tagged": false;
+  "tcdb-team": false;
+  "tcdb-top-sets": false;
   "tiktok-category": false;
   "tiktok-video-comments": true;
   "tiktok-explore": true;
@@ -26492,6 +27655,10 @@ export type OperationIdLiteral =
   | "datasets-housing-markets-facets"
   | "datasets-housing-markets-item"
   | "datasets-housing-markets-search"
+  | "datasets-jobs-companies"
+  | "datasets-jobs-facets"
+  | "datasets-jobs-item"
+  | "datasets-jobs-search"
   | "datasets-journalists-facets"
   | "datasets-journalists-item"
   | "datasets-journalists-search"
@@ -26511,6 +27678,13 @@ export type OperationIdLiteral =
   | "datasets-producthunt-products-search"
   | "datasets-producthunt-trends-facets"
   | "datasets-producthunt-trends-search"
+  | "datasets-sec-companies-facets"
+  | "datasets-sec-companies-financials"
+  | "datasets-sec-companies-insider"
+  | "datasets-sec-companies-item"
+  | "datasets-sec-companies-search"
+  | "datasets-sec-institutional-positions-facets"
+  | "datasets-sec-institutional-positions-search"
   | "datasets-steam-achievements-search"
   | "datasets-steam-charts-search"
   | "datasets-steam-games-facets"
@@ -26527,6 +27701,9 @@ export type OperationIdLiteral =
   | "datasets-trustmrr-history"
   | "datasets-trustmrr-item"
   | "datasets-trustmrr-search"
+  | "datasets-x-users-facets"
+  | "datasets-x-users-item"
+  | "datasets-x-users-search"
   | "antibot-check"
   | "discogs-artist"
   | "discogs-artist-releases"
@@ -26567,6 +27744,8 @@ export type OperationIdLiteral =
   | "github-trending-developers"
   | "github-user"
   | "github-user-events"
+  | "github-user-followers"
+  | "github-user-following"
   | "github-user-pinned"
   | "github-user-repos"
   | "goodreads-author"
@@ -26652,8 +27831,19 @@ export type OperationIdLiteral =
   | "jobs-hiring-signals"
   | "jobs-lever-posting"
   | "jobs-lever-postings"
+  | "jobs-oracle-board"
+  | "jobs-oracle-job"
+  | "jobs-personio-feed"
+  | "jobs-recruitee-offer"
+  | "jobs-recruitee-offers"
+  | "jobs-rippling-board"
+  | "jobs-rippling-job"
   | "jobs-smartrecruiters-posting"
   | "jobs-smartrecruiters-postings"
+  | "jobs-teamtailor-jobs"
+  | "jobs-ukg-board"
+  | "jobs-workable-posting"
+  | "jobs-workable-postings"
   | "jobs-workday-board"
   | "jobs-workday-job"
   | "justwatch-age-certifications"
@@ -26971,6 +28161,18 @@ export type OperationIdLiteral =
   | "steam-tags"
   | "steam-tags-list"
   | "steam-top-sellers"
+  | "tcdb-birthdays"
+  | "tcdb-card"
+  | "tcdb-card-of-the-day"
+  | "tcdb-companies"
+  | "tcdb-person"
+  | "tcdb-releases"
+  | "tcdb-search"
+  | "tcdb-set"
+  | "tcdb-sets"
+  | "tcdb-tagged"
+  | "tcdb-team"
+  | "tcdb-top-sets"
   | "tiktok-category"
   | "tiktok-video-comments"
   | "tiktok-explore"
@@ -27229,6 +28431,10 @@ export declare const OperationIds: Readonly<{
   DatasetsHousingMarketsFacets: "datasets-housing-markets-facets";
   DatasetsHousingMarketsItem: "datasets-housing-markets-item";
   DatasetsHousingMarketsSearch: "datasets-housing-markets-search";
+  DatasetsJobsCompanies: "datasets-jobs-companies";
+  DatasetsJobsFacets: "datasets-jobs-facets";
+  DatasetsJobsItem: "datasets-jobs-item";
+  DatasetsJobsSearch: "datasets-jobs-search";
   DatasetsJournalistsFacets: "datasets-journalists-facets";
   DatasetsJournalistsItem: "datasets-journalists-item";
   DatasetsJournalistsSearch: "datasets-journalists-search";
@@ -27249,6 +28455,13 @@ export declare const OperationIds: Readonly<{
   DatasetsProducthuntProductsSearch: "datasets-producthunt-products-search";
   DatasetsProducthuntTrendsFacets: "datasets-producthunt-trends-facets";
   DatasetsProducthuntTrendsSearch: "datasets-producthunt-trends-search";
+  DatasetsSecCompaniesFacets: "datasets-sec-companies-facets";
+  DatasetsSecCompaniesFinancials: "datasets-sec-companies-financials";
+  DatasetsSecCompaniesInsider: "datasets-sec-companies-insider";
+  DatasetsSecCompaniesItem: "datasets-sec-companies-item";
+  DatasetsSecCompaniesSearch: "datasets-sec-companies-search";
+  DatasetsSecInstitutionalPositionsFacets: "datasets-sec-institutional-positions-facets";
+  DatasetsSecInstitutionalPositionsSearch: "datasets-sec-institutional-positions-search";
   DatasetsSteamAchievementsSearch: "datasets-steam-achievements-search";
   DatasetsSteamChartsSearch: "datasets-steam-charts-search";
   DatasetsSteamGamesFacets: "datasets-steam-games-facets";
@@ -27265,6 +28478,9 @@ export declare const OperationIds: Readonly<{
   DatasetsTrustmrrHistory: "datasets-trustmrr-history";
   DatasetsTrustmrrItem: "datasets-trustmrr-item";
   DatasetsTrustmrrSearch: "datasets-trustmrr-search";
+  DatasetsXUsersFacets: "datasets-x-users-facets";
+  DatasetsXUsersItem: "datasets-x-users-item";
+  DatasetsXUsersSearch: "datasets-x-users-search";
   DiscogsArtist: "discogs-artist";
   DiscogsArtistReleases: "discogs-artist-releases";
   DiscogsLabel: "discogs-label";
@@ -27303,6 +28519,8 @@ export declare const OperationIds: Readonly<{
   GitHubGithubTrendingDevelopers: "github-trending-developers";
   GitHubGithubUser: "github-user";
   GitHubGithubUserEvents: "github-user-events";
+  GitHubGithubUserFollowers: "github-user-followers";
+  GitHubGithubUserFollowing: "github-user-following";
   GitHubGithubUserPinned: "github-user-pinned";
   GitHubGithubUserRepos: "github-user-repos";
   GoodreadsAuthor: "goodreads-author";
@@ -27388,8 +28606,19 @@ export declare const OperationIds: Readonly<{
   JobsHiringSignals: "jobs-hiring-signals";
   JobsLeverPosting: "jobs-lever-posting";
   JobsLeverPostings: "jobs-lever-postings";
+  JobsOracleBoard: "jobs-oracle-board";
+  JobsOracleJob: "jobs-oracle-job";
+  JobsPersonioFeed: "jobs-personio-feed";
+  JobsRecruiteeOffer: "jobs-recruitee-offer";
+  JobsRecruiteeOffers: "jobs-recruitee-offers";
+  JobsRipplingBoard: "jobs-rippling-board";
+  JobsRipplingJob: "jobs-rippling-job";
   JobsSmartrecruitersPosting: "jobs-smartrecruiters-posting";
   JobsSmartrecruitersPostings: "jobs-smartrecruiters-postings";
+  JobsTeamtailorJobs: "jobs-teamtailor-jobs";
+  JobsUkgBoard: "jobs-ukg-board";
+  JobsWorkablePosting: "jobs-workable-posting";
+  JobsWorkablePostings: "jobs-workable-postings";
   JobsWorkdayBoard: "jobs-workday-board";
   JobsWorkdayJob: "jobs-workday-job";
   JustWatchJustwatchAgeCertifications: "justwatch-age-certifications";
@@ -27707,6 +28936,18 @@ export declare const OperationIds: Readonly<{
   SteamTags: "steam-tags";
   SteamTagsList: "steam-tags-list";
   SteamTopSellers: "steam-top-sellers";
+  TcdbBirthdays: "tcdb-birthdays";
+  TcdbCard: "tcdb-card";
+  TcdbCardOfTheDay: "tcdb-card-of-the-day";
+  TcdbCompanies: "tcdb-companies";
+  TcdbPerson: "tcdb-person";
+  TcdbReleases: "tcdb-releases";
+  TcdbSearch: "tcdb-search";
+  TcdbSet: "tcdb-set";
+  TcdbSets: "tcdb-sets";
+  TcdbTagged: "tcdb-tagged";
+  TcdbTeam: "tcdb-team";
+  TcdbTopSets: "tcdb-top-sets";
   TiktokCategory: "tiktok-category";
   TiktokChallenge: "tiktok-challenge";
   TiktokChallengeList: "tiktok-challenge-list";

@@ -5735,6 +5735,11 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "developer_email",
+        "type": "string"
+      },
+      {
+        "in": "query",
         "name": "permission",
         "type": "string"
       },
@@ -5901,6 +5906,11 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "developer_email",
+        "type": "string"
+      },
+      {
+        "in": "query",
         "name": "permission",
         "type": "string"
       },
@@ -5991,6 +6001,11 @@ export const operations = {
       {
         "in": "query",
         "name": "developer",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "developer_email",
         "type": "string"
       },
       {
@@ -7137,6 +7152,184 @@ export const operations = {
         "in": "query",
         "name": "min_homes_sold",
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-jobs-companies": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-jobs-companies",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/jobs/companies",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "provider",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_open_roles",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-jobs-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-jobs-facets",
+    "method": "GET",
+    "path": "/datasets/jobs/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-jobs-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-jobs-item",
+    "method": "GET",
+    "path": "/datasets/jobs/items/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-jobs-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-jobs-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/jobs/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "company",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "provider",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "employment_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "remote",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "include_closed",
+        "type": "boolean"
       },
       {
         "in": "query",
@@ -8372,6 +8565,380 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-sec-companies-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-sec-companies-facets",
+    "method": "GET",
+    "path": "/datasets/sec-companies/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sic",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exchange",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state_of_incorporation",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "entity_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_revenue",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "form_filed",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-sec-companies-financials": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-sec-companies-financials",
+    "method": "GET",
+    "path": "/datasets/sec-companies/financials/{cik}",
+    "pathParams": [
+      "cik"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "statement",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "period",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-sec-companies-insider": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-sec-companies-insider",
+    "method": "GET",
+    "path": "/datasets/sec-companies/insider/{cik}",
+    "pathParams": [
+      "cik"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-sec-companies-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-sec-companies-item",
+    "method": "GET",
+    "path": "/datasets/sec-companies/items/{cik}",
+    "pathParams": [
+      "cik"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-sec-companies-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-sec-companies-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/sec-companies/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "ticker",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cik",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sic",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sic_description",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exchange",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state_of_incorporation",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "entity_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_revenue",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_revenue",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_net_income",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_total_assets",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "form_filed",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_insider_txn_count_90d",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-sec-institutional-positions-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-sec-institutional-positions-facets",
+    "method": "GET",
+    "path": "/datasets/sec-institutional-positions/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "manager_cik",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "issuer_name",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cusip",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-sec-institutional-positions-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-sec-institutional-positions-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/sec-institutional-positions/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "manager_cik",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "issuer_name",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cusip",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-steam-achievements-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -9514,6 +10081,234 @@ export const operations = {
         "in": "query",
         "name": "min_ahrefs_dr",
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-x-users-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-x-users-facets",
+    "method": "GET",
+    "path": "/datasets/x-users/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "username",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "source_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_blue_verified",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_bio",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_external_url",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_ratio",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_ratio",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "created_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "crawled_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "crawled_before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-x-users-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-x-users-item",
+    "method": "GET",
+    "path": "/datasets/x-users/items/{username}",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-x-users-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-x-users-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/x-users/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "username",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "source_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_blue_verified",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_bio",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_external_url",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_ratio",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_ratio",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "created_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "crawled_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "crawled_before",
+        "type": "string"
       },
       {
         "in": "query",
@@ -11095,6 +11890,72 @@ export const operations = {
     "method": "GET",
     "paginatable": true,
     "path": "/github/user/{username}/events",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-user-followers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-user-followers",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/user/{username}/followers",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "github-user-following": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "github-user-following",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/github/user/{username}/following",
     "pathParams": [
       "username"
     ],
@@ -13822,7 +14683,14 @@ export const operations = {
           "lever",
           "ashby",
           "workday",
-          "smartrecruiters"
+          "smartrecruiters",
+          "workable",
+          "recruitee",
+          "rippling",
+          "personio",
+          "teamtailor",
+          "oracle",
+          "ukg"
         ],
         "in": "query",
         "name": "provider",
@@ -13857,6 +14725,16 @@ export const operations = {
       {
         "in": "query",
         "name": "site",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "host",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "board",
         "type": "string"
       }
     ],
@@ -13937,6 +14815,279 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "jobs-oracle-board": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-oracle-board",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jobs/oracle/board",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "host",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "site",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-oracle-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-oracle-job",
+    "method": "GET",
+    "path": "/jobs/oracle/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "host",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "site",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-personio-feed": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-personio-feed",
+    "method": "GET",
+    "path": "/jobs/personio/feed",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "remote",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-recruitee-offer": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-recruitee-offer",
+    "method": "GET",
+    "path": "/jobs/recruitee/offer",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-recruitee-offers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-recruitee-offers",
+    "method": "GET",
+    "path": "/jobs/recruitee/offers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "remote",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-rippling-board": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-rippling-board",
+    "method": "GET",
+    "path": "/jobs/rippling/board",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "remote",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-rippling-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-rippling-job",
+    "method": "GET",
+    "path": "/jobs/rippling/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "jobs-smartrecruiters-posting": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -14000,6 +15151,173 @@ export const operations = {
         "in": "query",
         "name": "offset",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-teamtailor-jobs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-teamtailor-jobs",
+    "method": "GET",
+    "path": "/jobs/teamtailor/jobs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "remote",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-ukg-board": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-ukg-board",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jobs/ukg/board",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tenant",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "board",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-workable-posting": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-workable-posting",
+    "method": "GET",
+    "path": "/jobs/workable/posting",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-workable-postings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-workable-postings",
+    "method": "GET",
+    "path": "/jobs/workable/postings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "company",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "remote",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -25605,6 +26923,463 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tcdb-birthdays": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-birthdays",
+    "method": "GET",
+    "path": "/tcdb/birthdays",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "month",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "day",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-card": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-card",
+    "method": "GET",
+    "path": "/tcdb/card",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "set_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "card_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-card-of-the-day": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-card-of-the-day",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tcdb/card-of-the-day",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-companies": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-companies",
+    "method": "GET",
+    "path": "/tcdb/companies",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-person": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-person",
+    "method": "GET",
+    "path": "/tcdb/person",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-releases": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-releases",
+    "method": "GET",
+    "path": "/tcdb/releases",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-search",
+    "method": "GET",
+    "path": "/tcdb/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Baseball",
+          "Basketball",
+          "Boxing",
+          "Cricket",
+          "Football",
+          "Gaming",
+          "Golf",
+          "Hockey",
+          "Misc Sports",
+          "MMA",
+          "Multi-Sport",
+          "Non-Sport",
+          "Racing",
+          "Soccer",
+          "Tennis",
+          "Wrestling"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-set": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-set",
+    "method": "GET",
+    "path": "/tcdb/set",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-sets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-sets",
+    "method": "GET",
+    "path": "/tcdb/sets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Baseball",
+          "Basketball",
+          "Boxing",
+          "Cricket",
+          "Football",
+          "Gaming",
+          "Golf",
+          "Hockey",
+          "Misc Sports",
+          "MMA",
+          "Multi-Sport",
+          "Non-Sport",
+          "Racing",
+          "Soccer",
+          "Tennis",
+          "Wrestling"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-tagged": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-tagged",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tcdb/tagged",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Baseball",
+          "Basketball",
+          "Boxing",
+          "Cricket",
+          "Football",
+          "Gaming",
+          "Golf",
+          "Hockey",
+          "Misc Sports",
+          "MMA",
+          "Multi-Sport",
+          "Non-Sport",
+          "Racing",
+          "Soccer",
+          "Tennis",
+          "Wrestling"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-team": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-team",
+    "method": "GET",
+    "path": "/tcdb/team",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
+  "tcdb-top-sets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcdb-top-sets",
+    "method": "GET",
+    "path": "/tcdb/top-sets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": []
+  },
   "tiktok-category": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -29548,6 +31323,10 @@ export const groups = {
     "housingMarketsFacets": "datasets-housing-markets-facets",
     "housingMarketsItem": "datasets-housing-markets-item",
     "housingMarketsSearch": "datasets-housing-markets-search",
+    "jobsCompanies": "datasets-jobs-companies",
+    "jobsFacets": "datasets-jobs-facets",
+    "jobsItem": "datasets-jobs-item",
+    "jobsSearch": "datasets-jobs-search",
     "journalistsFacets": "datasets-journalists-facets",
     "journalistsItem": "datasets-journalists-item",
     "journalistsSearch": "datasets-journalists-search",
@@ -29568,6 +31347,13 @@ export const groups = {
     "producthuntProductsSearch": "datasets-producthunt-products-search",
     "producthuntTrendsFacets": "datasets-producthunt-trends-facets",
     "producthuntTrendsSearch": "datasets-producthunt-trends-search",
+    "secCompaniesFacets": "datasets-sec-companies-facets",
+    "secCompaniesFinancials": "datasets-sec-companies-financials",
+    "secCompaniesInsider": "datasets-sec-companies-insider",
+    "secCompaniesItem": "datasets-sec-companies-item",
+    "secCompaniesSearch": "datasets-sec-companies-search",
+    "secInstitutionalPositionsFacets": "datasets-sec-institutional-positions-facets",
+    "secInstitutionalPositionsSearch": "datasets-sec-institutional-positions-search",
     "steamAchievementsSearch": "datasets-steam-achievements-search",
     "steamChartsSearch": "datasets-steam-charts-search",
     "steamGamesFacets": "datasets-steam-games-facets",
@@ -29583,7 +31369,10 @@ export const groups = {
     "trustmrrFacets": "datasets-trustmrr-facets",
     "trustmrrHistory": "datasets-trustmrr-history",
     "trustmrrItem": "datasets-trustmrr-item",
-    "trustmrrSearch": "datasets-trustmrr-search"
+    "trustmrrSearch": "datasets-trustmrr-search",
+    "xUsersFacets": "datasets-x-users-facets",
+    "xUsersItem": "datasets-x-users-item",
+    "xUsersSearch": "datasets-x-users-search"
   },
   "discogs": {
     "artist": "discogs-artist",
@@ -29632,6 +31421,8 @@ export const groups = {
     "githubTrendingDevelopers": "github-trending-developers",
     "githubUser": "github-user",
     "githubUserEvents": "github-user-events",
+    "githubUserFollowers": "github-user-followers",
+    "githubUserFollowing": "github-user-following",
     "githubUserPinned": "github-user-pinned",
     "githubUserRepos": "github-user-repos"
   },
@@ -29729,8 +31520,19 @@ export const groups = {
     "hiringSignals": "jobs-hiring-signals",
     "leverPosting": "jobs-lever-posting",
     "leverPostings": "jobs-lever-postings",
+    "oracleBoard": "jobs-oracle-board",
+    "oracleJob": "jobs-oracle-job",
+    "personioFeed": "jobs-personio-feed",
+    "recruiteeOffer": "jobs-recruitee-offer",
+    "recruiteeOffers": "jobs-recruitee-offers",
+    "ripplingBoard": "jobs-rippling-board",
+    "ripplingJob": "jobs-rippling-job",
     "smartrecruitersPosting": "jobs-smartrecruiters-posting",
     "smartrecruitersPostings": "jobs-smartrecruiters-postings",
+    "teamtailorJobs": "jobs-teamtailor-jobs",
+    "ukgBoard": "jobs-ukg-board",
+    "workablePosting": "jobs-workable-posting",
+    "workablePostings": "jobs-workable-postings",
     "workdayBoard": "jobs-workday-board",
     "workdayJob": "jobs-workday-job"
   },
@@ -30099,6 +31901,20 @@ export const groups = {
     "tagsList": "steam-tags-list",
     "topSellers": "steam-top-sellers"
   },
+  "tcdb": {
+    "birthdays": "tcdb-birthdays",
+    "card": "tcdb-card",
+    "cardOfTheDay": "tcdb-card-of-the-day",
+    "companies": "tcdb-companies",
+    "person": "tcdb-person",
+    "releases": "tcdb-releases",
+    "search": "tcdb-search",
+    "set": "tcdb-set",
+    "sets": "tcdb-sets",
+    "tagged": "tcdb-tagged",
+    "team": "tcdb-team",
+    "topSets": "tcdb-top-sets"
+  },
   "tiktok": {
     "category": "tiktok-category",
     "challenge": "tiktok-challenge",
@@ -30250,7 +32066,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 737;
+export const operationCount = 776;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -30391,6 +32207,10 @@ export const OperationIds = Object.freeze({
   "DatasetsHousingMarketsFacets": "datasets-housing-markets-facets",
   "DatasetsHousingMarketsItem": "datasets-housing-markets-item",
   "DatasetsHousingMarketsSearch": "datasets-housing-markets-search",
+  "DatasetsJobsCompanies": "datasets-jobs-companies",
+  "DatasetsJobsFacets": "datasets-jobs-facets",
+  "DatasetsJobsItem": "datasets-jobs-item",
+  "DatasetsJobsSearch": "datasets-jobs-search",
   "DatasetsJournalistsFacets": "datasets-journalists-facets",
   "DatasetsJournalistsItem": "datasets-journalists-item",
   "DatasetsJournalistsSearch": "datasets-journalists-search",
@@ -30411,6 +32231,13 @@ export const OperationIds = Object.freeze({
   "DatasetsProducthuntProductsSearch": "datasets-producthunt-products-search",
   "DatasetsProducthuntTrendsFacets": "datasets-producthunt-trends-facets",
   "DatasetsProducthuntTrendsSearch": "datasets-producthunt-trends-search",
+  "DatasetsSecCompaniesFacets": "datasets-sec-companies-facets",
+  "DatasetsSecCompaniesFinancials": "datasets-sec-companies-financials",
+  "DatasetsSecCompaniesInsider": "datasets-sec-companies-insider",
+  "DatasetsSecCompaniesItem": "datasets-sec-companies-item",
+  "DatasetsSecCompaniesSearch": "datasets-sec-companies-search",
+  "DatasetsSecInstitutionalPositionsFacets": "datasets-sec-institutional-positions-facets",
+  "DatasetsSecInstitutionalPositionsSearch": "datasets-sec-institutional-positions-search",
   "DatasetsSteamAchievementsSearch": "datasets-steam-achievements-search",
   "DatasetsSteamChartsSearch": "datasets-steam-charts-search",
   "DatasetsSteamGamesFacets": "datasets-steam-games-facets",
@@ -30427,6 +32254,9 @@ export const OperationIds = Object.freeze({
   "DatasetsTrustmrrHistory": "datasets-trustmrr-history",
   "DatasetsTrustmrrItem": "datasets-trustmrr-item",
   "DatasetsTrustmrrSearch": "datasets-trustmrr-search",
+  "DatasetsXUsersFacets": "datasets-x-users-facets",
+  "DatasetsXUsersItem": "datasets-x-users-item",
+  "DatasetsXUsersSearch": "datasets-x-users-search",
   "DiscogsArtist": "discogs-artist",
   "DiscogsArtistReleases": "discogs-artist-releases",
   "DiscogsLabel": "discogs-label",
@@ -30465,6 +32295,8 @@ export const OperationIds = Object.freeze({
   "GitHubGithubTrendingDevelopers": "github-trending-developers",
   "GitHubGithubUser": "github-user",
   "GitHubGithubUserEvents": "github-user-events",
+  "GitHubGithubUserFollowers": "github-user-followers",
+  "GitHubGithubUserFollowing": "github-user-following",
   "GitHubGithubUserPinned": "github-user-pinned",
   "GitHubGithubUserRepos": "github-user-repos",
   "GoodreadsAuthor": "goodreads-author",
@@ -30550,8 +32382,19 @@ export const OperationIds = Object.freeze({
   "JobsHiringSignals": "jobs-hiring-signals",
   "JobsLeverPosting": "jobs-lever-posting",
   "JobsLeverPostings": "jobs-lever-postings",
+  "JobsOracleBoard": "jobs-oracle-board",
+  "JobsOracleJob": "jobs-oracle-job",
+  "JobsPersonioFeed": "jobs-personio-feed",
+  "JobsRecruiteeOffer": "jobs-recruitee-offer",
+  "JobsRecruiteeOffers": "jobs-recruitee-offers",
+  "JobsRipplingBoard": "jobs-rippling-board",
+  "JobsRipplingJob": "jobs-rippling-job",
   "JobsSmartrecruitersPosting": "jobs-smartrecruiters-posting",
   "JobsSmartrecruitersPostings": "jobs-smartrecruiters-postings",
+  "JobsTeamtailorJobs": "jobs-teamtailor-jobs",
+  "JobsUkgBoard": "jobs-ukg-board",
+  "JobsWorkablePosting": "jobs-workable-posting",
+  "JobsWorkablePostings": "jobs-workable-postings",
   "JobsWorkdayBoard": "jobs-workday-board",
   "JobsWorkdayJob": "jobs-workday-job",
   "JustWatchJustwatchAgeCertifications": "justwatch-age-certifications",
@@ -30869,6 +32712,18 @@ export const OperationIds = Object.freeze({
   "SteamTags": "steam-tags",
   "SteamTagsList": "steam-tags-list",
   "SteamTopSellers": "steam-top-sellers",
+  "TcdbBirthdays": "tcdb-birthdays",
+  "TcdbCard": "tcdb-card",
+  "TcdbCardOfTheDay": "tcdb-card-of-the-day",
+  "TcdbCompanies": "tcdb-companies",
+  "TcdbPerson": "tcdb-person",
+  "TcdbReleases": "tcdb-releases",
+  "TcdbSearch": "tcdb-search",
+  "TcdbSet": "tcdb-set",
+  "TcdbSets": "tcdb-sets",
+  "TcdbTagged": "tcdb-tagged",
+  "TcdbTeam": "tcdb-team",
+  "TcdbTopSets": "tcdb-top-sets",
   "TiktokCategory": "tiktok-category",
   "TiktokChallenge": "tiktok-challenge",
   "TiktokChallengeList": "tiktok-challenge-list",
