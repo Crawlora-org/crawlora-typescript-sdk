@@ -27685,6 +27685,45 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "threads-post": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "threads-post",
+    "method": "GET",
+    "path": "/threads/post/{username}/{code}",
+    "pathParams": [
+      "username",
+      "code"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "threads-profile": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "threads-profile",
+    "method": "GET",
+    "path": "/threads/profile/{username}",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tiktok-category": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -32226,6 +32265,10 @@ export const groups = {
     "team": "tcdb-team",
     "topSets": "tcdb-top-sets"
   },
+  "threads": {
+    "post": "threads-post",
+    "profile": "threads-profile"
+  },
   "tiktok": {
     "category": "tiktok-category",
     "challenge": "tiktok-challenge",
@@ -32377,7 +32420,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 782;
+export const operationCount = 784;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -33041,6 +33084,8 @@ export const OperationIds = Object.freeze({
   "TcdbTagged": "tcdb-tagged",
   "TcdbTeam": "tcdb-team",
   "TcdbTopSets": "tcdb-top-sets",
+  "ThreadsPost": "threads-post",
+  "ThreadsProfile": "threads-profile",
   "TiktokCategory": "tiktok-category",
   "TiktokChallenge": "tiktok-challenge",
   "TiktokChallengeList": "tiktok-challenge-list",

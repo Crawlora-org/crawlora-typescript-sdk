@@ -39,6 +39,13 @@ const posts = await crawlora.reddit.search({ q: "typescript", subreddit: "progra
 const brand = await crawlora.brand.retrieve({ domain: "stripe.com" });
 ```
 
+## Threads Public Lookups
+
+```ts
+const profile = await crawlora.threads.profile({ username: "zuck" });
+const post = await crawlora.threads.post({ username: "zuck", code: "DakyAavlKLZ" });
+```
+
 ## Software, Reviews, And Market Datasets
 
 Build a Chrome extension competitive-intelligence view without downloading the

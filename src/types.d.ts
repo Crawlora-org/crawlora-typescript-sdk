@@ -15395,6 +15395,41 @@ export interface ModelTechstackTechnology {
   "version"?: string;
 }
 
+export interface ModelThreadsAuthor {
+  "name"?: string;
+  "username"?: string;
+}
+
+export interface ModelThreadsPost {
+  "author"?: ModelThreadsAuthor;
+  "code"?: string;
+  "image_url"?: string;
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelThreadsProfile {
+  "avatar_url"?: string;
+  "biography"?: string;
+  "followers_count"?: number;
+  "name"?: string;
+  "threads_count"?: number;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelThreadsPostResponseDoc {
+  "code"?: number;
+  "data"?: ModelThreadsPost;
+  "msg"?: string;
+}
+
+export interface ModelThreadsProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelThreadsProfile;
+  "msg"?: string;
+}
+
 export interface ModelTiktokCategory {
   "name"?: string;
   "type"?: string;
@@ -17358,6 +17393,7 @@ export interface ModelXPostQuote {
 }
 
 export interface ModelXProfile {
+  "affiliate_label"?: string;
   "avatar_url"?: string;
   "banner_url"?: string;
   "bio_urls"?: Array<string>;
@@ -23456,6 +23492,17 @@ export interface TcdbTopSetsParams {
   "limit"?: number;
 }
 
+export type ThreadsPostResponse = CrawloraResponse<ModelThreadsPostResponseDoc>;
+export interface ThreadsPostParams {
+  "username": string;
+  "code": string;
+}
+
+export type ThreadsProfileResponse = CrawloraResponse<ModelThreadsProfileResponseDoc>;
+export interface ThreadsProfileParams {
+  "username": string;
+}
+
 export type TiktokCategoryResponse = CrawloraResponse<ModelTiktokCategoryResponseDoc>;
 export interface TiktokCategoryParams {
 }
@@ -25043,6 +25090,11 @@ export interface TcdbService {
   topSets<T = TcdbTopSetsResponse>(params?: TcdbTopSetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface ThreadsService {
+  post<T = ThreadsPostResponse>(params: ThreadsPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  profile<T = ThreadsProfileResponse>(params: ThreadsProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TiktokService {
   category<T = TiktokCategoryResponse>(params?: TiktokCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   videoComments<T = TiktokVideoCommentsResponse>(params: TiktokVideoCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -25250,6 +25302,7 @@ export interface CrawloraGeneratedGroups {
   spotify: SpotifyService;
   steam: SteamService;
   tcdb: TcdbService;
+  threads: ThreadsService;
   tiktok: TiktokService;
   tmdb: TmdbService;
   tripAdvisor: TripAdvisorService;
@@ -25927,6 +25980,8 @@ export interface OperationParamsMap {
   "tcdb-tagged": TcdbTaggedParams;
   "tcdb-team": TcdbTeamParams;
   "tcdb-top-sets": TcdbTopSetsParams;
+  "threads-post": ThreadsPostParams;
+  "threads-profile": ThreadsProfileParams;
   "tiktok-category": TiktokCategoryParams;
   "tiktok-video-comments": TiktokVideoCommentsParams;
   "tiktok-explore": TiktokExploreParams;
@@ -26712,6 +26767,8 @@ export interface OperationResponseMap {
   "tcdb-tagged": TcdbTaggedResponse;
   "tcdb-team": TcdbTeamResponse;
   "tcdb-top-sets": TcdbTopSetsResponse;
+  "threads-post": ThreadsPostResponse;
+  "threads-profile": ThreadsProfileResponse;
   "tiktok-category": TiktokCategoryResponse;
   "tiktok-video-comments": TiktokVideoCommentsResponse;
   "tiktok-explore": TiktokExploreResponse;
@@ -27497,6 +27554,8 @@ export interface OperationRequiredParamsMap {
   "tcdb-tagged": false;
   "tcdb-team": false;
   "tcdb-top-sets": false;
+  "threads-post": true;
+  "threads-profile": true;
   "tiktok-category": false;
   "tiktok-video-comments": true;
   "tiktok-explore": true;
@@ -28289,6 +28348,8 @@ export type OperationIdLiteral =
   | "tcdb-tagged"
   | "tcdb-team"
   | "tcdb-top-sets"
+  | "threads-post"
+  | "threads-profile"
   | "tiktok-category"
   | "tiktok-video-comments"
   | "tiktok-explore"
@@ -29070,6 +29131,8 @@ export declare const OperationIds: Readonly<{
   TcdbTagged: "tcdb-tagged";
   TcdbTeam: "tcdb-team";
   TcdbTopSets: "tcdb-top-sets";
+  ThreadsPost: "threads-post";
+  ThreadsProfile: "threads-profile";
   TiktokCategory: "tiktok-category";
   TiktokChallenge: "tiktok-challenge";
   TiktokChallengeList: "tiktok-challenge-list";
