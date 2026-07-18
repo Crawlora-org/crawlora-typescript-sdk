@@ -7229,6 +7229,27 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-jobs-company-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-jobs-company-item",
+    "method": "GET",
+    "path": "/datasets/jobs/companies/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-jobs-facets": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -7271,6 +7292,64 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-jobs-nearby": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-jobs-nearby",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/jobs/nearby",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "lat",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_km",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "provider",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "include_closed",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -8618,6 +8697,16 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "reporting_currency",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "has_financials",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
         "name": "min_revenue",
         "type": "number"
       },
@@ -8796,6 +8885,16 @@ export const operations = {
         "in": "query",
         "name": "entity_type",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "reporting_currency",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "has_financials",
+        "type": "boolean"
       },
       {
         "in": "query",
@@ -14599,6 +14698,97 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "jobs-eightfold-board": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-eightfold-board",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jobs/eightfold/board",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tenant",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-eightfold-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-eightfold-job",
+    "method": "GET",
+    "path": "/jobs/eightfold/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tenant",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "jobs-greenhouse-board": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -14690,7 +14880,9 @@ export const operations = {
           "personio",
           "teamtailor",
           "oracle",
-          "ukg"
+          "ukg",
+          "icims",
+          "eightfold"
         ],
         "in": "query",
         "name": "provider",
@@ -14735,6 +14927,95 @@ export const operations = {
       {
         "in": "query",
         "name": "board",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-icims-board": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-icims-board",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jobs/icims/board",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "domain",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "keywords",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jobs-icims-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jobs-icims-job",
+    "method": "GET",
+    "path": "/jobs/icims/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "domain",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
         "type": "string"
       }
     ],
@@ -26956,7 +27237,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-card": {
     "bodyParam": null,
@@ -26994,7 +27277,9 @@ export const operations = {
         "type": "string"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-card-of-the-day": {
     "bodyParam": null,
@@ -27023,7 +27308,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-companies": {
     "bodyParam": null,
@@ -27046,7 +27333,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-person": {
     "bodyParam": null,
@@ -27084,7 +27373,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-releases": {
     "bodyParam": null,
@@ -27107,7 +27398,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-search": {
     "bodyParam": null,
@@ -27159,7 +27452,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-set": {
     "bodyParam": null,
@@ -27197,7 +27492,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-sets": {
     "bodyParam": null,
@@ -27250,7 +27547,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-tagged": {
     "bodyParam": null,
@@ -27317,7 +27616,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-team": {
     "bodyParam": null,
@@ -27355,7 +27656,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tcdb-top-sets": {
     "bodyParam": null,
@@ -27378,7 +27681,9 @@ export const operations = {
         "type": "integer"
       }
     ],
-    "security": []
+    "security": [
+      "ApiKeyAuth"
+    ]
   },
   "tiktok-category": {
     "bodyParam": null,
@@ -31324,8 +31629,10 @@ export const groups = {
     "housingMarketsItem": "datasets-housing-markets-item",
     "housingMarketsSearch": "datasets-housing-markets-search",
     "jobsCompanies": "datasets-jobs-companies",
+    "jobsCompanyItem": "datasets-jobs-company-item",
     "jobsFacets": "datasets-jobs-facets",
     "jobsItem": "datasets-jobs-item",
+    "jobsNearby": "datasets-jobs-nearby",
     "jobsSearch": "datasets-jobs-search",
     "journalistsFacets": "datasets-journalists-facets",
     "journalistsItem": "datasets-journalists-item",
@@ -31515,9 +31822,13 @@ export const groups = {
   "jobs": {
     "ashbyBoard": "jobs-ashby-board",
     "companySearch": "jobs-company-search",
+    "eightfoldBoard": "jobs-eightfold-board",
+    "eightfoldJob": "jobs-eightfold-job",
     "greenhouseBoard": "jobs-greenhouse-board",
     "greenhouseJob": "jobs-greenhouse-job",
     "hiringSignals": "jobs-hiring-signals",
+    "icimsBoard": "jobs-icims-board",
+    "icimsJob": "jobs-icims-job",
     "leverPosting": "jobs-lever-posting",
     "leverPostings": "jobs-lever-postings",
     "oracleBoard": "jobs-oracle-board",
@@ -32066,7 +32377,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 776;
+export const operationCount = 782;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -32208,8 +32519,10 @@ export const OperationIds = Object.freeze({
   "DatasetsHousingMarketsItem": "datasets-housing-markets-item",
   "DatasetsHousingMarketsSearch": "datasets-housing-markets-search",
   "DatasetsJobsCompanies": "datasets-jobs-companies",
+  "DatasetsJobsCompanyItem": "datasets-jobs-company-item",
   "DatasetsJobsFacets": "datasets-jobs-facets",
   "DatasetsJobsItem": "datasets-jobs-item",
+  "DatasetsJobsNearby": "datasets-jobs-nearby",
   "DatasetsJobsSearch": "datasets-jobs-search",
   "DatasetsJournalistsFacets": "datasets-journalists-facets",
   "DatasetsJournalistsItem": "datasets-journalists-item",
@@ -32377,9 +32690,13 @@ export const OperationIds = Object.freeze({
   "InstagramReels": "instagram-reels",
   "JobsAshbyBoard": "jobs-ashby-board",
   "JobsCompanySearch": "jobs-company-search",
+  "JobsEightfoldBoard": "jobs-eightfold-board",
+  "JobsEightfoldJob": "jobs-eightfold-job",
   "JobsGreenhouseBoard": "jobs-greenhouse-board",
   "JobsGreenhouseJob": "jobs-greenhouse-job",
   "JobsHiringSignals": "jobs-hiring-signals",
+  "JobsIcimsBoard": "jobs-icims-board",
+  "JobsIcimsJob": "jobs-icims-job",
   "JobsLeverPosting": "jobs-lever-posting",
   "JobsLeverPostings": "jobs-lever-postings",
   "JobsOracleBoard": "jobs-oracle-board",
