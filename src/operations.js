@@ -27705,6 +27705,26 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "threads-post-replies": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "threads-post-replies",
+    "method": "GET",
+    "path": "/threads/post/{username}/{code}/replies",
+    "pathParams": [
+      "username",
+      "code"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "threads-profile": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -27720,6 +27740,59 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "threads-profile-posts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "threads-profile-posts",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/threads/profile/{username}/posts",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "threads-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "threads-search",
+    "method": "GET",
+    "path": "/threads/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -32267,7 +32340,10 @@ export const groups = {
   },
   "threads": {
     "post": "threads-post",
-    "profile": "threads-profile"
+    "postReplies": "threads-post-replies",
+    "profile": "threads-profile",
+    "profilePosts": "threads-profile-posts",
+    "search": "threads-search"
   },
   "tiktok": {
     "category": "tiktok-category",
@@ -32420,7 +32496,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 784;
+export const operationCount = 787;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -33085,7 +33161,10 @@ export const OperationIds = Object.freeze({
   "TcdbTeam": "tcdb-team",
   "TcdbTopSets": "tcdb-top-sets",
   "ThreadsPost": "threads-post",
+  "ThreadsPostReplies": "threads-post-replies",
   "ThreadsProfile": "threads-profile",
+  "ThreadsProfilePosts": "threads-profile-posts",
+  "ThreadsSearch": "threads-search",
   "TiktokCategory": "tiktok-category",
   "TiktokChallenge": "tiktok-challenge",
   "TiktokChallengeList": "tiktok-challenge-list",

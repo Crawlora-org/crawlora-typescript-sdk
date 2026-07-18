@@ -15396,6 +15396,7 @@ export interface ModelTechstackTechnology {
 }
 
 export interface ModelThreadsAuthor {
+  "id"?: string;
   "name"?: string;
   "username"?: string;
 }
@@ -15418,15 +15419,73 @@ export interface ModelThreadsProfile {
   "username"?: string;
 }
 
+export interface ModelThreadsProfilePostsResult {
+  "has_more"?: boolean;
+  "items"?: Array<ModelThreadsThread>;
+  "next_cursor"?: string;
+  "username"?: string;
+}
+
+export interface ModelThreadsRepliesResult {
+  "code"?: string;
+  "has_more"?: boolean;
+  "items"?: Array<ModelThreadsThread>;
+  "next_cursor"?: string;
+  "pagination_limited"?: boolean;
+  "username"?: string;
+}
+
+export interface ModelThreadsSearchResult {
+  "has_more"?: boolean;
+  "items"?: Array<ModelThreadsThread>;
+  "next_cursor"?: string;
+  "query"?: string;
+}
+
+export interface ModelThreadsThread {
+  "author"?: ModelThreadsAuthor;
+  "code"?: string;
+  "created_at"?: string;
+  "id"?: string;
+  "image_urls"?: Array<string>;
+  "is_reply"?: boolean;
+  "like_count"?: number;
+  "quote_count"?: number;
+  "reply_count"?: number;
+  "reply_to"?: string;
+  "repost_count"?: number;
+  "text"?: string;
+  "url"?: string;
+  "video_urls"?: Array<string>;
+}
+
 export interface ModelThreadsPostResponseDoc {
   "code"?: number;
   "data"?: ModelThreadsPost;
   "msg"?: string;
 }
 
+export interface ModelThreadsProfilePostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelThreadsProfilePostsResult;
+  "msg"?: string;
+}
+
 export interface ModelThreadsProfileResponseDoc {
   "code"?: number;
   "data"?: ModelThreadsProfile;
+  "msg"?: string;
+}
+
+export interface ModelThreadsRepliesResponseDoc {
+  "code"?: number;
+  "data"?: ModelThreadsRepliesResult;
+  "msg"?: string;
+}
+
+export interface ModelThreadsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelThreadsSearchResult;
   "msg"?: string;
 }
 
@@ -23498,9 +23557,26 @@ export interface ThreadsPostParams {
   "code": string;
 }
 
+export type ThreadsPostRepliesResponse = CrawloraResponse<ModelThreadsRepliesResponseDoc>;
+export interface ThreadsPostRepliesParams {
+  "username": string;
+  "code": string;
+}
+
 export type ThreadsProfileResponse = CrawloraResponse<ModelThreadsProfileResponseDoc>;
 export interface ThreadsProfileParams {
   "username": string;
+}
+
+export type ThreadsProfilePostsResponse = CrawloraResponse<ModelThreadsProfilePostsResponseDoc>;
+export interface ThreadsProfilePostsParams {
+  "username": string;
+  "cursor"?: string;
+}
+
+export type ThreadsSearchResponse = CrawloraResponse<ModelThreadsSearchResponseDoc>;
+export interface ThreadsSearchParams {
+  "q": string;
 }
 
 export type TiktokCategoryResponse = CrawloraResponse<ModelTiktokCategoryResponseDoc>;
@@ -25092,7 +25168,10 @@ export interface TcdbService {
 
 export interface ThreadsService {
   post<T = ThreadsPostResponse>(params: ThreadsPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  postReplies<T = ThreadsPostRepliesResponse>(params: ThreadsPostRepliesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = ThreadsProfileResponse>(params: ThreadsProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  profilePosts<T = ThreadsProfilePostsResponse>(params: ThreadsProfilePostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = ThreadsSearchResponse>(params: ThreadsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface TiktokService {
@@ -25981,7 +26060,10 @@ export interface OperationParamsMap {
   "tcdb-team": TcdbTeamParams;
   "tcdb-top-sets": TcdbTopSetsParams;
   "threads-post": ThreadsPostParams;
+  "threads-post-replies": ThreadsPostRepliesParams;
   "threads-profile": ThreadsProfileParams;
+  "threads-profile-posts": ThreadsProfilePostsParams;
+  "threads-search": ThreadsSearchParams;
   "tiktok-category": TiktokCategoryParams;
   "tiktok-video-comments": TiktokVideoCommentsParams;
   "tiktok-explore": TiktokExploreParams;
@@ -26768,7 +26850,10 @@ export interface OperationResponseMap {
   "tcdb-team": TcdbTeamResponse;
   "tcdb-top-sets": TcdbTopSetsResponse;
   "threads-post": ThreadsPostResponse;
+  "threads-post-replies": ThreadsPostRepliesResponse;
   "threads-profile": ThreadsProfileResponse;
+  "threads-profile-posts": ThreadsProfilePostsResponse;
+  "threads-search": ThreadsSearchResponse;
   "tiktok-category": TiktokCategoryResponse;
   "tiktok-video-comments": TiktokVideoCommentsResponse;
   "tiktok-explore": TiktokExploreResponse;
@@ -27555,7 +27640,10 @@ export interface OperationRequiredParamsMap {
   "tcdb-team": false;
   "tcdb-top-sets": false;
   "threads-post": true;
+  "threads-post-replies": true;
   "threads-profile": true;
+  "threads-profile-posts": true;
+  "threads-search": true;
   "tiktok-category": false;
   "tiktok-video-comments": true;
   "tiktok-explore": true;
@@ -28349,7 +28437,10 @@ export type OperationIdLiteral =
   | "tcdb-team"
   | "tcdb-top-sets"
   | "threads-post"
+  | "threads-post-replies"
   | "threads-profile"
+  | "threads-profile-posts"
+  | "threads-search"
   | "tiktok-category"
   | "tiktok-video-comments"
   | "tiktok-explore"
@@ -29132,7 +29223,10 @@ export declare const OperationIds: Readonly<{
   TcdbTeam: "tcdb-team";
   TcdbTopSets: "tcdb-top-sets";
   ThreadsPost: "threads-post";
+  ThreadsPostReplies: "threads-post-replies";
   ThreadsProfile: "threads-profile";
+  ThreadsProfilePosts: "threads-profile-posts";
+  ThreadsSearch: "threads-search";
   TiktokCategory: "tiktok-category";
   TiktokChallenge: "tiktok-challenge";
   TiktokChallengeList: "tiktok-challenge-list";

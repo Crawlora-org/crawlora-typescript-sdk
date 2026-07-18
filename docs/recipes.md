@@ -44,6 +44,9 @@ const brand = await crawlora.brand.retrieve({ domain: "stripe.com" });
 ```ts
 const profile = await crawlora.threads.profile({ username: "zuck" });
 const post = await crawlora.threads.post({ username: "zuck", code: "DakyAavlKLZ" });
+const results = await crawlora.threads.search({ q: "openai" });
+const posts = await crawlora.threads.profilePosts({ username: "zuck" });
+const replies = await crawlora.threads.postReplies({ username: "zuck", code: "DakyAavlKLZ" });
 ```
 
 ## Software, Reviews, And Market Datasets
