@@ -7195,6 +7195,22 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "greenhouse",
+          "lever",
+          "ashby",
+          "workday",
+          "smartrecruiters",
+          "workable",
+          "recruitee",
+          "rippling",
+          "personio",
+          "teamtailor",
+          "oracle",
+          "ukg",
+          "icims",
+          "eightfold"
+        ],
         "in": "query",
         "name": "provider",
         "type": "string"
@@ -7330,6 +7346,22 @@ export const operations = {
         "type": "number"
       },
       {
+        "enum": [
+          "greenhouse",
+          "lever",
+          "ashby",
+          "workday",
+          "smartrecruiters",
+          "workable",
+          "recruitee",
+          "rippling",
+          "personio",
+          "teamtailor",
+          "oracle",
+          "ukg",
+          "icims",
+          "eightfold"
+        ],
         "in": "query",
         "name": "provider",
         "type": "string"
@@ -7381,6 +7413,22 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "greenhouse",
+          "lever",
+          "ashby",
+          "workday",
+          "smartrecruiters",
+          "workable",
+          "recruitee",
+          "rippling",
+          "personio",
+          "teamtailor",
+          "oracle",
+          "ukg",
+          "icims",
+          "eightfold"
+        ],
         "in": "query",
         "name": "provider",
         "type": "string"

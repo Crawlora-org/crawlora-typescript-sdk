@@ -17358,6 +17358,7 @@ export interface ModelXPostQuote {
 }
 
 export interface ModelXProfile {
+  "affiliate_label"?: string;
   "avatar_url"?: string;
   "banner_url"?: string;
   "bio_urls"?: Array<string>;
@@ -19520,7 +19521,7 @@ export interface DatasetsHousingMarketsSearchParams {
 export type DatasetsJobsCompaniesResponse = CrawloraResponse<ModelDatasetsJobsCompaniesResponseDoc>;
 export interface DatasetsJobsCompaniesParams {
   "q"?: string;
-  "provider"?: string;
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold";
   "status"?: string;
   "min_open_roles"?: number;
   "sort"?: string;
@@ -19548,7 +19549,7 @@ export interface DatasetsJobsNearbyParams {
   "lat": number;
   "lon": number;
   "radius_km"?: number;
-  "provider"?: string;
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold";
   "include_closed"?: boolean;
   "page"?: number;
   "page_size"?: number;
@@ -19558,7 +19559,7 @@ export type DatasetsJobsSearchResponse = CrawloraResponse<ModelDatasetsJobsSearc
 export interface DatasetsJobsSearchParams {
   "q"?: string;
   "company"?: string;
-  "provider"?: string;
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold";
   "department"?: string;
   "location"?: string;
   "employment_type"?: string;
