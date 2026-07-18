@@ -4718,6 +4718,7 @@ export interface ModelEsChromeExtensionRecord {
   "manifest_version"?: number;
   "min_browser_version"?: string;
   "name"?: string;
+  "not_found_streak"?: number;
   "optional_host_permissions"?: Array<string>;
   "optional_permissions"?: Array<string>;
   "permissions"?: Array<string>;
@@ -5338,14 +5339,18 @@ export interface ModelEsSecCompanyRecord {
   "insider_txn_count_90d"?: number;
   "latest_annual_fiscal_year"?: number;
   "latest_annual_net_income"?: number;
+  "latest_annual_net_income_usd"?: number;
   "latest_annual_revenue"?: number;
+  "latest_annual_revenue_usd"?: number;
   "latest_annual_total_assets"?: number;
+  "latest_annual_total_assets_usd"?: number;
   "latest_filing_date"?: string;
   "latest_quarterly_fiscal_year"?: number;
   "latest_quarterly_revenue"?: number;
   "name"?: string;
   "primary_ticker"?: string;
   "recent_filings"?: Array<ModelEsSecFilingSummary>;
+  "reporting_currency"?: string;
   "revenue_band"?: string;
   "schema_version"?: number;
   "seed_source"?: string;
@@ -5729,44 +5734,64 @@ export interface ModelEsXuserDatasetItem {
   "avatar_url"?: string;
   "banner_url"?: string;
   "bio"?: string;
+  "bio_url_host"?: Array<string>;
+  "bio_urls"?: Array<string>;
   "crawled_at"?: string;
   "created_at"?: string;
+  "email"?: string;
   "external_url"?: string;
   "follower_following_ratio"?: number;
   "followers"?: number;
   "following"?: number;
   "has_bio"?: boolean;
+  "has_bio_url"?: boolean;
+  "has_email"?: boolean;
   "has_external_url"?: boolean;
   "id"?: string;
   "is_blue_verified"?: boolean;
+  "is_default_profile_image"?: boolean;
+  "likes"?: number;
+  "listed"?: number;
   "location_raw"?: string;
+  "media"?: number;
   "name"?: string;
   "posts"?: number;
   "schema_version"?: number;
   "source_tier"?: string;
   "username"?: string;
+  "verified_type"?: string;
 }
 
 export interface ModelEsXuserRecord {
   "avatar_url"?: string;
   "banner_url"?: string;
   "bio"?: string;
+  "bio_url_host"?: Array<string>;
+  "bio_urls"?: Array<string>;
   "crawled_at"?: string;
   "created_at"?: string;
+  "email"?: string;
   "external_url"?: string;
   "follower_following_ratio"?: number;
   "followers"?: number;
   "following"?: number;
   "has_bio"?: boolean;
+  "has_bio_url"?: boolean;
+  "has_email"?: boolean;
   "has_external_url"?: boolean;
   "id"?: string;
   "is_blue_verified"?: boolean;
+  "is_default_profile_image"?: boolean;
+  "likes"?: number;
+  "listed"?: number;
   "location_raw"?: string;
+  "media"?: number;
   "name"?: string;
   "posts"?: number;
   "schema_version"?: number;
   "source_tier"?: string;
   "username"?: string;
+  "verified_type"?: string;
 }
 
 export interface ModelEspnAthlete {
@@ -17335,11 +17360,14 @@ export interface ModelXPostQuote {
 export interface ModelXProfile {
   "avatar_url"?: string;
   "banner_url"?: string;
+  "bio_urls"?: Array<string>;
   "created_at"?: string;
   "description"?: string;
+  "email"?: string;
   "external_url"?: string;
   "id"?: string;
   "is_blue_verified"?: boolean;
+  "is_default_profile_image"?: boolean;
   "is_protected"?: boolean;
   "is_unavailable"?: boolean;
   "location"?: string;
@@ -17347,11 +17375,15 @@ export interface ModelXProfile {
   "name"?: string;
   "url"?: string;
   "username"?: string;
+  "verified_type"?: string;
 }
 
 export interface ModelXProfileMetrics {
   "followers"?: number;
   "following"?: number;
+  "likes"?: number;
+  "listed"?: number;
+  "media"?: number;
   "posts"?: number;
 }
 
@@ -19496,6 +19528,11 @@ export interface DatasetsJobsCompaniesParams {
   "page_size"?: number;
 }
 
+export type DatasetsJobsCompanyItemResponse = CrawloraResponse<ModelDatasetsJobsItemResponseDoc>;
+export interface DatasetsJobsCompanyItemParams {
+  "id": string;
+}
+
 export type DatasetsJobsFacetsResponse = CrawloraResponse<ModelDatasetsJobsFacetResponseDoc>;
 export interface DatasetsJobsFacetsParams {
   "size"?: number;
@@ -19504,6 +19541,17 @@ export interface DatasetsJobsFacetsParams {
 export type DatasetsJobsItemResponse = CrawloraResponse<ModelDatasetsJobsItemResponseDoc>;
 export interface DatasetsJobsItemParams {
   "id": string;
+}
+
+export type DatasetsJobsNearbyResponse = CrawloraResponse<ModelDatasetsJobsSearchResponseDoc>;
+export interface DatasetsJobsNearbyParams {
+  "lat": number;
+  "lon": number;
+  "radius_km"?: number;
+  "provider"?: string;
+  "include_closed"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
 }
 
 export type DatasetsJobsSearchResponse = CrawloraResponse<ModelDatasetsJobsSearchResponseDoc>;
@@ -19772,6 +19820,8 @@ export interface DatasetsSecCompaniesFacetsParams {
   "exchange"?: string;
   "state_of_incorporation"?: string;
   "entity_type"?: string;
+  "reporting_currency"?: string;
+  "has_financials"?: boolean;
   "min_revenue"?: number;
   "form_filed"?: string;
 }
@@ -19810,6 +19860,8 @@ export interface DatasetsSecCompaniesSearchParams {
   "exchange"?: string;
   "state_of_incorporation"?: string;
   "entity_type"?: string;
+  "reporting_currency"?: string;
+  "has_financials"?: boolean;
   "min_revenue"?: number;
   "max_revenue"?: number;
   "min_net_income"?: number;
@@ -20911,6 +20963,23 @@ export interface JobsCompanySearchParams {
   "slug": string;
 }
 
+export type JobsEightfoldBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsEightfoldBoardParams {
+  "tenant": string;
+  "domain": string;
+  "query"?: string;
+  "location"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type JobsEightfoldJobResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsEightfoldJobParams {
+  "tenant": string;
+  "domain": string;
+  "id": string;
+}
+
 export type JobsGreenhouseBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
 export interface JobsGreenhouseBoardParams {
   "token": string;
@@ -20925,7 +20994,7 @@ export interface JobsGreenhouseJobParams {
 
 export type JobsHiringSignalsResponse = CrawloraResponse<ModelJobsSignalsResponseDoc>;
 export interface JobsHiringSignalsParams {
-  "provider": "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg";
+  "provider": "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold";
   "token"?: string;
   "company"?: string;
   "org"?: string;
@@ -20934,6 +21003,23 @@ export interface JobsHiringSignalsParams {
   "site"?: string;
   "host"?: string;
   "board"?: string;
+  "domain"?: string;
+}
+
+export type JobsIcimsBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsIcimsBoardParams {
+  "domain": string;
+  "keywords"?: string;
+  "location"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type JobsIcimsJobResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
+export interface JobsIcimsJobParams {
+  "domain": string;
+  "id": string;
+  "lang"?: string;
 }
 
 export type JobsLeverPostingResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
@@ -24323,8 +24409,10 @@ export interface DatasetsService {
   housingMarketsItem<T = DatasetsHousingMarketsItemResponse>(params: DatasetsHousingMarketsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   housingMarketsSearch<T = DatasetsHousingMarketsSearchResponse>(params?: DatasetsHousingMarketsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobsCompanies<T = DatasetsJobsCompaniesResponse>(params?: DatasetsJobsCompaniesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jobsCompanyItem<T = DatasetsJobsCompanyItemResponse>(params: DatasetsJobsCompanyItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobsFacets<T = DatasetsJobsFacetsResponse>(params?: DatasetsJobsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobsItem<T = DatasetsJobsItemResponse>(params: DatasetsJobsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jobsNearby<T = DatasetsJobsNearbyResponse>(params: DatasetsJobsNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobsSearch<T = DatasetsJobsSearchResponse>(params?: DatasetsJobsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   journalistsFacets<T = DatasetsJournalistsFacetsResponse>(params: DatasetsJournalistsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   journalistsItem<T = DatasetsJournalistsItemResponse>(params: DatasetsJournalistsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -24524,9 +24612,13 @@ export interface InstagramService {
 export interface JobsService {
   ashbyBoard<T = JobsAshbyBoardResponse>(params: JobsAshbyBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   companySearch<T = JobsCompanySearchResponse>(params: JobsCompanySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eightfoldBoard<T = JobsEightfoldBoardResponse>(params: JobsEightfoldBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eightfoldJob<T = JobsEightfoldJobResponse>(params: JobsEightfoldJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   greenhouseBoard<T = JobsGreenhouseBoardResponse>(params: JobsGreenhouseBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   greenhouseJob<T = JobsGreenhouseJobResponse>(params: JobsGreenhouseJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hiringSignals<T = JobsHiringSignalsResponse>(params: JobsHiringSignalsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  icimsBoard<T = JobsIcimsBoardResponse>(params: JobsIcimsBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  icimsJob<T = JobsIcimsJobResponse>(params: JobsIcimsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   leverPosting<T = JobsLeverPostingResponse>(params: JobsLeverPostingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   leverPostings<T = JobsLeverPostingsResponse>(params: JobsLeverPostingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   oracleBoard<T = JobsOracleBoardResponse>(params: JobsOracleBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -25312,8 +25404,10 @@ export interface OperationParamsMap {
   "datasets-housing-markets-item": DatasetsHousingMarketsItemParams;
   "datasets-housing-markets-search": DatasetsHousingMarketsSearchParams;
   "datasets-jobs-companies": DatasetsJobsCompaniesParams;
+  "datasets-jobs-company-item": DatasetsJobsCompanyItemParams;
   "datasets-jobs-facets": DatasetsJobsFacetsParams;
   "datasets-jobs-item": DatasetsJobsItemParams;
+  "datasets-jobs-nearby": DatasetsJobsNearbyParams;
   "datasets-jobs-search": DatasetsJobsSearchParams;
   "datasets-journalists-facets": DatasetsJournalistsFacetsParams;
   "datasets-journalists-item": DatasetsJournalistsItemParams;
@@ -25482,9 +25576,13 @@ export interface OperationParamsMap {
   "instagram-reels": InstagramReelsParams;
   "jobs-ashby-board": JobsAshbyBoardParams;
   "jobs-company-search": JobsCompanySearchParams;
+  "jobs-eightfold-board": JobsEightfoldBoardParams;
+  "jobs-eightfold-job": JobsEightfoldJobParams;
   "jobs-greenhouse-board": JobsGreenhouseBoardParams;
   "jobs-greenhouse-job": JobsGreenhouseJobParams;
   "jobs-hiring-signals": JobsHiringSignalsParams;
+  "jobs-icims-board": JobsIcimsBoardParams;
+  "jobs-icims-job": JobsIcimsJobParams;
   "jobs-lever-posting": JobsLeverPostingParams;
   "jobs-lever-postings": JobsLeverPostingsParams;
   "jobs-oracle-board": JobsOracleBoardParams;
@@ -26091,8 +26189,10 @@ export interface OperationResponseMap {
   "datasets-housing-markets-item": DatasetsHousingMarketsItemResponse;
   "datasets-housing-markets-search": DatasetsHousingMarketsSearchResponse;
   "datasets-jobs-companies": DatasetsJobsCompaniesResponse;
+  "datasets-jobs-company-item": DatasetsJobsCompanyItemResponse;
   "datasets-jobs-facets": DatasetsJobsFacetsResponse;
   "datasets-jobs-item": DatasetsJobsItemResponse;
+  "datasets-jobs-nearby": DatasetsJobsNearbyResponse;
   "datasets-jobs-search": DatasetsJobsSearchResponse;
   "datasets-journalists-facets": DatasetsJournalistsFacetsResponse;
   "datasets-journalists-item": DatasetsJournalistsItemResponse;
@@ -26261,9 +26361,13 @@ export interface OperationResponseMap {
   "instagram-reels": InstagramReelsResponse;
   "jobs-ashby-board": JobsAshbyBoardResponse;
   "jobs-company-search": JobsCompanySearchResponse;
+  "jobs-eightfold-board": JobsEightfoldBoardResponse;
+  "jobs-eightfold-job": JobsEightfoldJobResponse;
   "jobs-greenhouse-board": JobsGreenhouseBoardResponse;
   "jobs-greenhouse-job": JobsGreenhouseJobResponse;
   "jobs-hiring-signals": JobsHiringSignalsResponse;
+  "jobs-icims-board": JobsIcimsBoardResponse;
+  "jobs-icims-job": JobsIcimsJobResponse;
   "jobs-lever-posting": JobsLeverPostingResponse;
   "jobs-lever-postings": JobsLeverPostingsResponse;
   "jobs-oracle-board": JobsOracleBoardResponse;
@@ -26870,8 +26974,10 @@ export interface OperationRequiredParamsMap {
   "datasets-housing-markets-item": true;
   "datasets-housing-markets-search": false;
   "datasets-jobs-companies": false;
+  "datasets-jobs-company-item": true;
   "datasets-jobs-facets": false;
   "datasets-jobs-item": true;
+  "datasets-jobs-nearby": true;
   "datasets-jobs-search": false;
   "datasets-journalists-facets": true;
   "datasets-journalists-item": true;
@@ -27040,9 +27146,13 @@ export interface OperationRequiredParamsMap {
   "instagram-reels": true;
   "jobs-ashby-board": true;
   "jobs-company-search": true;
+  "jobs-eightfold-board": true;
+  "jobs-eightfold-job": true;
   "jobs-greenhouse-board": true;
   "jobs-greenhouse-job": true;
   "jobs-hiring-signals": true;
+  "jobs-icims-board": true;
+  "jobs-icims-job": true;
   "jobs-lever-posting": true;
   "jobs-lever-postings": true;
   "jobs-oracle-board": true;
@@ -27656,8 +27766,10 @@ export type OperationIdLiteral =
   | "datasets-housing-markets-item"
   | "datasets-housing-markets-search"
   | "datasets-jobs-companies"
+  | "datasets-jobs-company-item"
   | "datasets-jobs-facets"
   | "datasets-jobs-item"
+  | "datasets-jobs-nearby"
   | "datasets-jobs-search"
   | "datasets-journalists-facets"
   | "datasets-journalists-item"
@@ -27826,9 +27938,13 @@ export type OperationIdLiteral =
   | "instagram-reels"
   | "jobs-ashby-board"
   | "jobs-company-search"
+  | "jobs-eightfold-board"
+  | "jobs-eightfold-job"
   | "jobs-greenhouse-board"
   | "jobs-greenhouse-job"
   | "jobs-hiring-signals"
+  | "jobs-icims-board"
+  | "jobs-icims-job"
   | "jobs-lever-posting"
   | "jobs-lever-postings"
   | "jobs-oracle-board"
@@ -28432,8 +28548,10 @@ export declare const OperationIds: Readonly<{
   DatasetsHousingMarketsItem: "datasets-housing-markets-item";
   DatasetsHousingMarketsSearch: "datasets-housing-markets-search";
   DatasetsJobsCompanies: "datasets-jobs-companies";
+  DatasetsJobsCompanyItem: "datasets-jobs-company-item";
   DatasetsJobsFacets: "datasets-jobs-facets";
   DatasetsJobsItem: "datasets-jobs-item";
+  DatasetsJobsNearby: "datasets-jobs-nearby";
   DatasetsJobsSearch: "datasets-jobs-search";
   DatasetsJournalistsFacets: "datasets-journalists-facets";
   DatasetsJournalistsItem: "datasets-journalists-item";
@@ -28601,9 +28719,13 @@ export declare const OperationIds: Readonly<{
   InstagramReels: "instagram-reels";
   JobsAshbyBoard: "jobs-ashby-board";
   JobsCompanySearch: "jobs-company-search";
+  JobsEightfoldBoard: "jobs-eightfold-board";
+  JobsEightfoldJob: "jobs-eightfold-job";
   JobsGreenhouseBoard: "jobs-greenhouse-board";
   JobsGreenhouseJob: "jobs-greenhouse-job";
   JobsHiringSignals: "jobs-hiring-signals";
+  JobsIcimsBoard: "jobs-icims-board";
+  JobsIcimsJob: "jobs-icims-job";
   JobsLeverPosting: "jobs-lever-posting";
   JobsLeverPostings: "jobs-lever-postings";
   JobsOracleBoard: "jobs-oracle-board";
