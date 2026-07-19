@@ -49,6 +49,16 @@ const posts = await crawlora.threads.profilePosts({ username: "zuck" });
 const replies = await crawlora.threads.postReplies({ username: "zuck", code: "DakyAavlKLZ" });
 ```
 
+## Box Office Mojo Dataset
+
+Search theatrical box-office records, fetch one title, and facet the same filter set.
+
+```ts
+const titles = await crawlora.datasets.boxofficemojoSearch({ q: "avatar", sort: "worldwide_desc" });
+const avatar = await crawlora.datasets.boxofficemojoItem({ title_id: "tt0499549" });
+const years = await crawlora.datasets.boxofficemojoFacets({ facet: "years_active", gross_band: "over_1b" });
+```
+
 ## Software, Reviews, And Market Datasets
 
 Build a Chrome extension competitive-intelligence view without downloading the
