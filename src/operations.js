@@ -5666,6 +5666,194 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-boxofficemojo-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-boxofficemojo-facets",
+    "method": "GET",
+    "path": "/datasets/boxofficemojo/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "gross_band",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_worldwide",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "hydrated",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-boxofficemojo-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-boxofficemojo-item",
+    "method": "GET",
+    "path": "/datasets/boxofficemojo/items/{title_id}",
+    "pathParams": [
+      "title_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-boxofficemojo-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-boxofficemojo-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/boxofficemojo/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "title_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "lifetime_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "gross_band",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "franchise",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "brand",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "in_lifetime_top_1000",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "hydrated",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_billion_dollar",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_worldwide",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_worldwide",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_domestic",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_foreign_share",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_domestic_share",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-chrome-extensions-changes": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -31769,6 +31957,9 @@ export const groups = {
     "appsChartsSearch": "datasets-apps-charts-search",
     "appsReviewsSearch": "datasets-apps-reviews-search",
     "appsSearch": "datasets-apps-search",
+    "boxofficemojoFacets": "datasets-boxofficemojo-facets",
+    "boxofficemojoItem": "datasets-boxofficemojo-item",
+    "boxofficemojoSearch": "datasets-boxofficemojo-search",
     "chromeExtensionsChanges": "datasets-chrome-extensions-changes",
     "chromeExtensionsFacets": "datasets-chrome-extensions-facets",
     "chromeExtensionsHistory": "datasets-chrome-extensions-history",
@@ -32544,7 +32735,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 787;
+export const operationCount = 790;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -32666,6 +32857,9 @@ export const OperationIds = Object.freeze({
   "DatasetsAppsChartsSearch": "datasets-apps-charts-search",
   "DatasetsAppsReviewsSearch": "datasets-apps-reviews-search",
   "DatasetsAppsSearch": "datasets-apps-search",
+  "DatasetsBoxofficemojoFacets": "datasets-boxofficemojo-facets",
+  "DatasetsBoxofficemojoItem": "datasets-boxofficemojo-item",
+  "DatasetsBoxofficemojoSearch": "datasets-boxofficemojo-search",
   "DatasetsChromeExtensionsChanges": "datasets-chrome-extensions-changes",
   "DatasetsChromeExtensionsFacets": "datasets-chrome-extensions-facets",
   "DatasetsChromeExtensionsHistory": "datasets-chrome-extensions-history",

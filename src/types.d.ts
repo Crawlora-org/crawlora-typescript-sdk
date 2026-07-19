@@ -1568,6 +1568,9 @@ export interface ModelBoxofficemojoReleaseGroupResponse {
   "release_group_id"?: string;
   "source_url"?: string;
   "title"?: string;
+  "title_id"?: string;
+  "title_path"?: string;
+  "title_url"?: string;
   "url"?: string;
 }
 
@@ -1820,6 +1823,9 @@ export interface ModelBoxofficemojoWorldwideYearRow {
   "foreign_share"?: number;
   "rank"?: number;
   "release_group"?: string;
+  "release_group_id"?: string;
+  "release_group_path"?: string;
+  "release_group_url"?: string;
   "title_id"?: string;
   "title_path"?: string;
   "title_url"?: string;
@@ -3182,6 +3188,21 @@ export interface ModelDatasetsAppsSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsBoxOfficeMojoFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsBoxOfficeMojoDatasetFacetItem>;
+}
+
+export interface ModelDatasetsBoxOfficeMojoSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsBoxOfficeMojoTitleRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsChartsSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsChartEntry>;
@@ -3624,6 +3645,24 @@ export interface ModelDatasetsAirbnbMarketsSearchResponseDoc {
 export interface ModelDatasetsAppsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsAppsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsBoxOfficeMojoFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsBoxOfficeMojoFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsBoxOfficeMojoItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsBoxOfficeMojoTitleRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsBoxOfficeMojoSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsBoxOfficeMojoSearchResponse;
   "msg"?: string;
 }
 
@@ -4617,6 +4656,77 @@ export interface ModelEsAppReview {
   "url"?: string;
   "user_name"?: string;
   "version"?: string;
+}
+
+export interface ModelEsBoxOfficeMojoDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsBoxOfficeMojoReleaseGroup {
+  "domestic"?: number;
+  "international"?: number;
+  "markets"?: string;
+  "name"?: string;
+  "path"?: string;
+  "rollout"?: string;
+  "url"?: string;
+  "worldwide"?: number;
+}
+
+export interface ModelEsBoxOfficeMojoTitleRecord {
+  "brand_ids"?: Array<string>;
+  "brand_names"?: Array<string>;
+  "domestic_share"?: number;
+  "first_seen_at"?: string;
+  "foreign_share"?: number;
+  "franchise_ids"?: Array<string>;
+  "franchise_names"?: Array<string>;
+  "genre_ids"?: Array<string>;
+  "genre_names"?: Array<string>;
+  "gross_band"?: string;
+  "hydrate_attempts"?: number;
+  "hydrate_failed"?: boolean;
+  "hydrated"?: boolean;
+  "in_lifetime_top_1000_dom"?: boolean;
+  "in_lifetime_top_1000_ww"?: boolean;
+  "is_billion_dollar"?: boolean;
+  "last_crawled_at"?: string;
+  "last_hydrated_at"?: string;
+  "lifetime_gross_domestic"?: number;
+  "lifetime_gross_worldwide"?: number;
+  "lifetime_rank_domestic"?: number;
+  "lifetime_rank_worldwide"?: number;
+  "lifetime_year"?: number;
+  "market_count"?: number;
+  "market_grosses"?: Array<Record<string, unknown>>;
+  "peak_worldwide_gross"?: number;
+  "peak_worldwide_year"?: number;
+  "primary_release_group_id"?: string;
+  "primary_release_group_name"?: string;
+  "release_group_count"?: number;
+  "release_group_ids"?: Array<string>;
+  "release_groups"?: Array<ModelEsBoxOfficeMojoReleaseGroup>;
+  "schema_version"?: number;
+  "sources"?: Array<string>;
+  "title"?: string;
+  "title_id"?: string;
+  "title_path"?: string;
+  "title_url"?: string;
+  "year_grosses"?: Array<ModelEsBoxOfficeMojoYearGross>;
+  "years_active"?: Array<number>;
+}
+
+export interface ModelEsBoxOfficeMojoYearGross {
+  "domestic"?: number;
+  "domestic_share"?: number;
+  "foreign"?: number;
+  "foreign_share"?: number;
+  "rank_worldwide"?: number;
+  "release_group_id"?: string;
+  "release_group_name"?: string;
+  "worldwide"?: number;
+  "year"?: number;
 }
 
 export interface ModelEsChartEntry {
@@ -9098,7 +9208,7 @@ export interface ModelMetaculusQuestionMetadataResponse {
   "options"?: Array<string>;
   "options_history"?: Array<ModelMetaculusOptionsChange>;
   "options_order"?: string;
-  "possibilities"?: string;
+  "possibilities"?: unknown;
   "public_page_derived"?: boolean;
   "question"?: ModelMetaculusQuestionRow;
   "resolution"?: string;
@@ -9142,7 +9252,7 @@ export interface ModelMetaculusQuestionRow {
 }
 
 export interface ModelMetaculusQuestionScaling {
-  "continuous_range"?: Array<number>;
+  "continuous_range"?: Array<unknown>;
   "inbound_outcome_count"?: number;
   "nominal_max"?: number;
   "nominal_min"?: number;
@@ -19307,6 +19417,44 @@ export interface DatasetsAppsSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsBoxofficemojoFacetsResponse = CrawloraResponse<ModelDatasetsBoxOfficeMojoFacetResponseDoc>;
+export interface DatasetsBoxofficemojoFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "year"?: number;
+  "gross_band"?: string;
+  "min_worldwide"?: number;
+  "hydrated"?: boolean;
+}
+
+export type DatasetsBoxofficemojoItemResponse = CrawloraResponse<ModelDatasetsBoxOfficeMojoItemResponseDoc>;
+export interface DatasetsBoxofficemojoItemParams {
+  "title_id": string;
+}
+
+export type DatasetsBoxofficemojoSearchResponse = CrawloraResponse<ModelDatasetsBoxOfficeMojoSearchResponseDoc>;
+export interface DatasetsBoxofficemojoSearchParams {
+  "q"?: string;
+  "title_id"?: string;
+  "year"?: number;
+  "lifetime_year"?: number;
+  "gross_band"?: string;
+  "franchise"?: string;
+  "brand"?: string;
+  "genre"?: string;
+  "in_lifetime_top_1000"?: boolean;
+  "hydrated"?: boolean;
+  "is_billion_dollar"?: boolean;
+  "min_worldwide"?: number;
+  "max_worldwide"?: number;
+  "min_domestic"?: number;
+  "min_foreign_share"?: number;
+  "max_domestic_share"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsChromeExtensionsChangesResponse = CrawloraResponse<ModelDatasetsChromeExtensionChangesResponseDoc>;
 export interface DatasetsChromeExtensionsChangesParams {
   "change_type"?: string;
@@ -24512,6 +24660,9 @@ export interface DatasetsService {
   appsChartsSearch<T = DatasetsAppsChartsSearchResponse>(params?: DatasetsAppsChartsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsReviewsSearch<T = DatasetsAppsReviewsSearchResponse>(params?: DatasetsAppsReviewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsSearch<T = DatasetsAppsSearchResponse>(params?: DatasetsAppsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoFacets<T = DatasetsBoxofficemojoFacetsResponse>(params: DatasetsBoxofficemojoFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoItem<T = DatasetsBoxofficemojoItemResponse>(params: DatasetsBoxofficemojoItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  boxofficemojoSearch<T = DatasetsBoxofficemojoSearchResponse>(params?: DatasetsBoxofficemojoSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromeExtensionsChanges<T = DatasetsChromeExtensionsChangesResponse>(params?: DatasetsChromeExtensionsChangesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromeExtensionsFacets<T = DatasetsChromeExtensionsFacetsResponse>(params: DatasetsChromeExtensionsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromeExtensionsHistory<T = DatasetsChromeExtensionsHistoryResponse>(params: DatasetsChromeExtensionsHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -25516,6 +25667,9 @@ export interface OperationParamsMap {
   "datasets-apps-charts-search": DatasetsAppsChartsSearchParams;
   "datasets-apps-reviews-search": DatasetsAppsReviewsSearchParams;
   "datasets-apps-search": DatasetsAppsSearchParams;
+  "datasets-boxofficemojo-facets": DatasetsBoxofficemojoFacetsParams;
+  "datasets-boxofficemojo-item": DatasetsBoxofficemojoItemParams;
+  "datasets-boxofficemojo-search": DatasetsBoxofficemojoSearchParams;
   "datasets-chrome-extensions-changes": DatasetsChromeExtensionsChangesParams;
   "datasets-chrome-extensions-facets": DatasetsChromeExtensionsFacetsParams;
   "datasets-chrome-extensions-history": DatasetsChromeExtensionsHistoryParams;
@@ -26306,6 +26460,9 @@ export interface OperationResponseMap {
   "datasets-apps-charts-search": DatasetsAppsChartsSearchResponse;
   "datasets-apps-reviews-search": DatasetsAppsReviewsSearchResponse;
   "datasets-apps-search": DatasetsAppsSearchResponse;
+  "datasets-boxofficemojo-facets": DatasetsBoxofficemojoFacetsResponse;
+  "datasets-boxofficemojo-item": DatasetsBoxofficemojoItemResponse;
+  "datasets-boxofficemojo-search": DatasetsBoxofficemojoSearchResponse;
   "datasets-chrome-extensions-changes": DatasetsChromeExtensionsChangesResponse;
   "datasets-chrome-extensions-facets": DatasetsChromeExtensionsFacetsResponse;
   "datasets-chrome-extensions-history": DatasetsChromeExtensionsHistoryResponse;
@@ -27096,6 +27253,9 @@ export interface OperationRequiredParamsMap {
   "datasets-apps-charts-search": false;
   "datasets-apps-reviews-search": false;
   "datasets-apps-search": false;
+  "datasets-boxofficemojo-facets": true;
+  "datasets-boxofficemojo-item": true;
+  "datasets-boxofficemojo-search": false;
   "datasets-chrome-extensions-changes": false;
   "datasets-chrome-extensions-facets": true;
   "datasets-chrome-extensions-history": true;
@@ -27893,6 +28053,9 @@ export type OperationIdLiteral =
   | "datasets-apps-charts-search"
   | "datasets-apps-reviews-search"
   | "datasets-apps-search"
+  | "datasets-boxofficemojo-facets"
+  | "datasets-boxofficemojo-item"
+  | "datasets-boxofficemojo-search"
   | "datasets-chrome-extensions-changes"
   | "datasets-chrome-extensions-facets"
   | "datasets-chrome-extensions-history"
@@ -28680,6 +28843,9 @@ export declare const OperationIds: Readonly<{
   DatasetsAppsChartsSearch: "datasets-apps-charts-search";
   DatasetsAppsReviewsSearch: "datasets-apps-reviews-search";
   DatasetsAppsSearch: "datasets-apps-search";
+  DatasetsBoxofficemojoFacets: "datasets-boxofficemojo-facets";
+  DatasetsBoxofficemojoItem: "datasets-boxofficemojo-item";
+  DatasetsBoxofficemojoSearch: "datasets-boxofficemojo-search";
   DatasetsChromeExtensionsChanges: "datasets-chrome-extensions-changes";
   DatasetsChromeExtensionsFacets: "datasets-chrome-extensions-facets";
   DatasetsChromeExtensionsHistory: "datasets-chrome-extensions-history";
