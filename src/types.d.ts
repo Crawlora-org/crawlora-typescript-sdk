@@ -569,6 +569,175 @@ export interface ModelAppResponse {
   "msg"?: unknown;
 }
 
+export interface ModelApplebooksAudiobook {
+  "artist_id"?: number;
+  "artist_name"?: string;
+  "artist_url"?: string;
+  "artwork_url"?: string;
+  "book_id"?: number;
+  "currency"?: string;
+  "description"?: string;
+  "duration_seconds"?: number;
+  "free"?: boolean;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "name"?: string;
+  "narrator"?: string;
+  "preview_url"?: string;
+  "price"?: number;
+  "provider"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "rating_histogram"?: Record<string, number>;
+  "release_date"?: string;
+  "series_id"?: number;
+  "series_name"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplebooksAudiobookSeries {
+  "audiobooks"?: Array<ModelApplebooksAudiobook>;
+  "id"?: number;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplebooksAuthor {
+  "audio_books"?: Array<ModelApplebooksAudiobook>;
+  "books"?: Array<ModelApplebooksBook>;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplebooksBook {
+  "artist_id"?: number;
+  "artist_name"?: string;
+  "artist_url"?: string;
+  "artwork_url"?: string;
+  "audience"?: string;
+  "audiobook_id"?: number;
+  "currency"?: string;
+  "description"?: string;
+  "free"?: boolean;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "isbn"?: string;
+  "name"?: string;
+  "page_count"?: number;
+  "price"?: number;
+  "publisher"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "rating_histogram"?: Record<string, number>;
+  "release_date"?: string;
+  "series_id"?: number;
+  "series_name"?: string;
+  "series_sequence"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplebooksChartItem {
+  "artist_id"?: number;
+  "artist_name"?: string;
+  "artist_url"?: string;
+  "artwork_url"?: string;
+  "genres"?: Array<string>;
+  "id"?: number;
+  "name"?: string;
+  "release_date"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplebooksReview {
+  "date"?: string;
+  "id"?: string;
+  "rating"?: number;
+  "text"?: string;
+  "title"?: string;
+  "user_name"?: string;
+}
+
+export interface ModelApplebooksSeries {
+  "books"?: Array<ModelApplebooksBook>;
+  "id"?: number;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplebooksAudiobookResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplebooksAudiobook;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksAudiobookReviewsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplebooksReview>;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksAudiobookSearchResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplebooksAudiobook>;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksAudiobookSeriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplebooksAudiobookSeries;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksAudiobookSimilarResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplebooksAudiobook>;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksAuthorResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplebooksAuthor;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksBookResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplebooksBook;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksChartsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplebooksChartItem>;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksReviewsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplebooksReview>;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksSearchResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplebooksBook>;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksSeriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplebooksSeries;
+  "msg"?: string;
+}
+
+export interface ModelApplebooksSimilarResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelApplebooksBook>;
+  "msg"?: string;
+}
+
 export interface ModelApplepodcastsGenre {
   "id"?: string;
   "name"?: string;
@@ -1689,12 +1858,16 @@ export interface ModelBoxofficemojoShowdownsResponse {
 
 export interface ModelBoxofficemojoTaxonomyDetailResponse {
   "fetched_at"?: string;
+  "has_more"?: boolean;
   "id"?: string;
   "kind"?: string;
   "name"?: string;
+  "offset"?: number;
   "path"?: string;
   "public_page_derived"?: boolean;
   "results"?: Array<ModelBoxofficemojoTaxonomyMovieRow>;
+  "sort"?: string;
+  "sort_dir"?: string;
   "source_url"?: string;
   "summary"?: ModelBoxofficemojoTaxonomySummary;
   "url"?: string;
@@ -1705,6 +1878,8 @@ export interface ModelBoxofficemojoTaxonomyListResponse {
   "kind"?: string;
   "public_page_derived"?: boolean;
   "results"?: Array<ModelBoxofficemojoTaxonomyListRow>;
+  "sort"?: string;
+  "sort_dir"?: string;
   "source_url"?: string;
 }
 
@@ -3307,6 +3482,36 @@ export interface ModelDatasetsGithubUserSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsGoodreadsAuthorFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsGoodreadsAuthorDatasetFacetItem>;
+}
+
+export interface ModelDatasetsGoodreadsAuthorSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsGoodreadsAuthorRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsGoodreadsFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsGoodreadsBookDatasetFacetItem>;
+}
+
+export interface ModelDatasetsGoodreadsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsGoodreadsBookRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsGoogleBusinessFacetResponse {
   "dataset"?: string;
   "facet"?: string;
@@ -3388,6 +3593,81 @@ export interface ModelDatasetsNumbeoCitySearchResponse {
 export interface ModelDatasetsNumbeoCountrySearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsNumbeoCountryRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsPitchbookAdvisorsFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsPitchbookFacetItem>;
+}
+
+export interface ModelDatasetsPitchbookAdvisorsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsPitchbookRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsPitchbookCompaniesFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsPitchbookFacetItem>;
+}
+
+export interface ModelDatasetsPitchbookCompaniesSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsPitchbookRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsPitchbookFundsFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsPitchbookFacetItem>;
+}
+
+export interface ModelDatasetsPitchbookFundsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsPitchbookRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsPitchbookInvestorsFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsPitchbookFacetItem>;
+}
+
+export interface ModelDatasetsPitchbookInvestorsSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsPitchbookRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsPitchbookLimitedPartnersFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsPitchbookFacetItem>;
+}
+
+export interface ModelDatasetsPitchbookLimitedPartnersSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsPitchbookRecord>;
   "page"?: number;
   "page_size"?: number;
   "sort"?: string;
@@ -3745,6 +4025,42 @@ export interface ModelDatasetsGithubUsersSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsGoodreadsAuthorResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsGoodreadsAuthorRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGoodreadsAuthorsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsGoodreadsAuthorFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGoodreadsAuthorsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsGoodreadsAuthorSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGoodreadsBookResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsGoodreadsBookRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGoodreadsBooksFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsGoodreadsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsGoodreadsBooksSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsGoodreadsSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsGoogleMapBusinessResponseDoc {
   "code"?: number;
   "data"?: ModelEsGoogleBusiness;
@@ -3856,6 +4172,96 @@ export interface ModelDatasetsNumbeoCountriesSearchResponseDoc {
 export interface ModelDatasetsNumbeoCountryResponseDoc {
   "code"?: number;
   "data"?: ModelEsNumbeoCountryRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookAdvisorResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsPitchbookRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookAdvisorsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookAdvisorsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookAdvisorsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookAdvisorsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookCompaniesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookCompaniesFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookCompaniesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookCompaniesSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookCompanyResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsPitchbookRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookFundResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsPitchbookRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookFundsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookFundsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookFundsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookFundsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookInvestorResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsPitchbookRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookInvestorsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookInvestorsFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookInvestorsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookInvestorsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookLimitedPartnerResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsPitchbookRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookLimitedPartnersFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookLimitedPartnersFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsPitchbookLimitedPartnersSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsPitchbookLimitedPartnersSearchResponse;
   "msg"?: string;
 }
 
@@ -5015,6 +5421,74 @@ export interface ModelEsGithubUserRecord {
   "type"?: string;
 }
 
+export interface ModelEsGoodreadsAuthorDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsGoodreadsAuthorRecord {
+  "about"?: string;
+  "average_rating"?: number;
+  "birth_date"?: string;
+  "crawled_at"?: string;
+  "death_date"?: string;
+  "discovery_source"?: string;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "ratings_count"?: number;
+  "reviews_count"?: number;
+  "run_id"?: string;
+  "schema_version"?: number;
+  "seed_rank"?: number;
+  "source_url"?: string;
+  "uri"?: string;
+  "website"?: string;
+}
+
+export interface ModelEsGoodreadsBookDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsGoodreadsBookRecord {
+  "author_ids"?: Array<string>;
+  "authors"?: Array<string>;
+  "crawled_at"?: string;
+  "description"?: string;
+  "discovery_source"?: string;
+  "format"?: string;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "image_url"?: string;
+  "isbn"?: string;
+  "isbn13"?: string;
+  "language"?: string;
+  "pages"?: number;
+  "primary_author"?: string;
+  "primary_author_id"?: string;
+  "publication_date"?: string;
+  "publication_year"?: number;
+  "publisher"?: string;
+  "rating_average"?: number;
+  "rating_five_star"?: number;
+  "rating_four_star"?: number;
+  "rating_one_star"?: number;
+  "rating_three_star"?: number;
+  "rating_two_star"?: number;
+  "ratings_count"?: number;
+  "reviews_count"?: number;
+  "run_id"?: string;
+  "schema_version"?: number;
+  "seed_rank"?: number;
+  "series"?: string;
+  "series_name"?: string;
+  "source_url"?: string;
+  "title"?: string;
+  "uri"?: string;
+}
+
 export interface ModelEsGoogleBusiness {
   "address"?: string;
   "amenities"?: Array<string>;
@@ -5251,6 +5725,73 @@ export interface ModelEsNumbeoNamedValue {
   "value"?: number;
 }
 
+export interface ModelEsPitchbookFaqrecord {
+  "answer"?: string;
+  "question"?: string;
+}
+
+export interface ModelEsPitchbookFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsPitchbookRecord {
+  "commitments_count"?: number;
+  "contact"?: Record<string, string>;
+  "contact_title"?: string;
+  "crawled_at"?: string;
+  "crawled_at_ms"?: number;
+  "description"?: string;
+  "discovery_source"?: string;
+  "employees"?: number;
+  "exits_count"?: number;
+  "faqs"?: Array<ModelEsPitchbookFaqrecord>;
+  "financing_status"?: string;
+  "formerly_known_as"?: Array<string>;
+  "fund_size"?: string;
+  "fund_status"?: string;
+  "fund_strategy"?: string;
+  "hq_city"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "id"?: string;
+  "institution_type"?: string;
+  "investments_count"?: number;
+  "investor_count"?: number;
+  "investor_type"?: string;
+  "kind"?: string;
+  "latest_deal_type"?: string;
+  "managing_firm_name"?: string;
+  "name"?: string;
+  "other_industries"?: Array<string>;
+  "overview"?: Record<string, string>;
+  "ownership_status"?: string;
+  "portfolio_count"?: number;
+  "primary_industry"?: string;
+  "run_id"?: string;
+  "schema_version"?: number;
+  "seed_rank"?: number;
+  "service_type"?: string;
+  "serviced_companies"?: number;
+  "serviced_deals"?: number;
+  "sitemap_lastmod"?: string;
+  "source_url"?: string;
+  "status"?: string;
+  "tables"?: Array<ModelEsPitchbookTableRecord>;
+  "verticals"?: Array<string>;
+  "vintage_year"?: number;
+  "website"?: string;
+  "year_founded"?: number;
+}
+
+export interface ModelEsPitchbookTableRecord {
+  "columns"?: Array<string>;
+  "name"?: string;
+  "row_ids"?: Array<Array<string>>;
+  "rows"?: Array<Array<string>>;
+  "total"?: number;
+}
+
 export interface ModelEsPlaystationGameDatasetFacetItem {
   "count"?: number;
   "value"?: string;
@@ -5404,6 +5945,7 @@ export interface ModelEsProductHuntProductItem {
   "tagline"?: string;
   "topic_slugs"?: Array<string>;
   "topics"?: Array<ModelEsProductHuntTopic>;
+  "twitter_url"?: string;
   "url"?: string;
   "website"?: string;
   "won_daily"?: boolean;
@@ -6656,6 +7198,13 @@ export interface ModelGoodreadsAuthorBooksResponse {
   "source_url"?: string;
 }
 
+export interface ModelGoodreadsAuthorQuotesResponse {
+  "author_id"?: string;
+  "page"?: number;
+  "quotes"?: Array<ModelGoodreadsQuote>;
+  "source_url"?: string;
+}
+
 export interface ModelGoodreadsAuthorResponse {
   "about"?: string;
   "average_rating"?: number;
@@ -6722,12 +7271,78 @@ export interface ModelGoodreadsBookResponse {
   "uri"?: string;
 }
 
+export interface ModelGoodreadsEdition {
+  "asin"?: string;
+  "authors"?: Array<string>;
+  "average_rating"?: number;
+  "book_id"?: string;
+  "format"?: string;
+  "isbn"?: string;
+  "isbn13"?: string;
+  "language"?: string;
+  "pages"?: number;
+  "publication_date"?: string;
+  "publisher"?: string;
+  "ratings_count"?: number;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelGoodreadsEditionsResponse {
+  "book_id"?: string;
+  "editions"?: Array<ModelGoodreadsEdition>;
+  "page"?: number;
+  "source_url"?: string;
+  "title"?: string;
+  "work_id"?: string;
+}
+
+export interface ModelGoodreadsGenreBookItem {
+  "author"?: string;
+  "author_id"?: string;
+  "average_rating"?: number;
+  "id"?: string;
+  "publication_year"?: number;
+  "ratings_count"?: number;
+  "shelved_count"?: number;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelGoodreadsGenreResponse {
+  "books"?: Array<ModelGoodreadsGenreBookItem>;
+  "name"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelGoodreadsListDirectoryItem {
+  "category"?: string;
+  "id"?: string;
+  "name"?: string;
+}
+
 export interface ModelGoodreadsListResponse {
   "books"?: Array<ModelGoodreadsBookListItem>;
   "id"?: string;
   "page"?: number;
   "source_url"?: string;
   "title"?: string;
+}
+
+export interface ModelGoodreadsListsResponse {
+  "lists"?: Array<ModelGoodreadsListDirectoryItem>;
+}
+
+export interface ModelGoodreadsQuote {
+  "author"?: string;
+  "book_id"?: string;
+  "book_title"?: string;
+  "id"?: string;
+  "likes"?: number;
+  "tags"?: Array<string>;
+  "text"?: string;
+  "uri"?: string;
+  "work_id"?: string;
 }
 
 export interface ModelGoodreadsReview {
@@ -6772,6 +7387,12 @@ export interface ModelGoodreadsAuthorBooksResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelGoodreadsAuthorQuotesResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsAuthorQuotesResponse;
+  "msg"?: string;
+}
+
 export interface ModelGoodreadsAuthorResponseDoc {
   "code"?: number;
   "data"?: ModelGoodreadsAuthorResponse;
@@ -6784,9 +7405,27 @@ export interface ModelGoodreadsBookResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelGoodreadsEditionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsEditionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoodreadsGenreResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsGenreResponse;
+  "msg"?: string;
+}
+
 export interface ModelGoodreadsListResponseDoc {
   "code"?: number;
   "data"?: ModelGoodreadsListResponse;
+  "msg"?: string;
+}
+
+export interface ModelGoodreadsListsResponseDoc {
+  "code"?: number;
+  "data"?: ModelGoodreadsListsResponse;
   "msg"?: string;
 }
 
@@ -6887,6 +7526,27 @@ export interface ModelGooglePlace {
   "website"?: string;
 }
 
+export interface ModelGooglePlacePhoto {
+  "height"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelGooglePlaceReview {
+  "author_id"?: string;
+  "author_name"?: string;
+  "author_photo"?: string;
+  "author_review_count"?: number;
+  "author_url"?: string;
+  "id"?: string;
+  "photos"?: Array<ModelGooglePlacePhoto>;
+  "published_at"?: string;
+  "rating"?: number;
+  "relative_time"?: string;
+  "source"?: string;
+  "text"?: string;
+}
+
 export interface ModelGoogleSearchItem {
   "Snippet"?: string;
   "icon"?: string;
@@ -6945,9 +7605,21 @@ export interface ModelGoogleVideosResponse {
   "results"?: Array<ModelGoogleVideoResult>;
 }
 
+export interface ModelGoogleMapPlacePhotosResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelGooglePlacePhoto>;
+  "msg"?: string;
+}
+
 export interface ModelGoogleMapPlaceResponseDoc {
   "code"?: number;
   "data"?: ModelGooglePlace;
+  "msg"?: string;
+}
+
+export interface ModelGoogleMapPlaceReviewsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelGooglePlaceReview>;
   "msg"?: string;
 }
 
@@ -7819,6 +8491,7 @@ export interface ModelJobsJob {
   "compensation_currency"?: string;
   "compensation_max"?: number;
   "compensation_min"?: number;
+  "compensation_period"?: string;
   "department"?: string;
   "description_html"?: string;
   "description_text"?: string;
@@ -9501,6 +10174,7 @@ export interface ModelNumbeoRankingsResponseDoc {
 export interface ModelPitchbookDataTable {
   "columns"?: Array<string>;
   "name"?: string;
+  "row_ids"?: Array<Array<string>>;
   "rows"?: Array<Array<string>>;
   "total"?: number;
 }
@@ -9523,6 +10197,12 @@ export interface ModelPitchbookProfileResponse {
   "tables"?: Array<ModelPitchbookDataTable>;
 }
 
+export interface ModelPitchbookAdvisorResponseDoc {
+  "code"?: number;
+  "data"?: ModelPitchbookProfileResponse;
+  "msg"?: string;
+}
+
 export interface ModelPitchbookCompanyResponseDoc {
   "code"?: number;
   "data"?: ModelPitchbookProfileResponse;
@@ -9536,6 +10216,12 @@ export interface ModelPitchbookFundResponseDoc {
 }
 
 export interface ModelPitchbookInvestorResponseDoc {
+  "code"?: number;
+  "data"?: ModelPitchbookProfileResponse;
+  "msg"?: string;
+}
+
+export interface ModelPitchbookLimitedPartnerResponseDoc {
   "code"?: number;
   "data"?: ModelPitchbookProfileResponse;
   "msg"?: string;
@@ -10914,6 +11600,7 @@ export interface ModelProducthuntProductAboutLaunchProduct {
   "reviews_rating"?: number;
   "slug"?: string;
   "tagline"?: string;
+  "twitter_url"?: string;
   "viewer_pending_team_request"?: Record<string, unknown>;
   "website_domain"?: string;
   "website_url"?: string;
@@ -17166,6 +17853,106 @@ export interface ModelTrustpilotCategorySearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelUbereatsAddress {
+  "city"?: string;
+  "country"?: string;
+  "postalCode"?: string;
+  "region"?: string;
+  "street"?: string;
+}
+
+export interface ModelUbereatsMenuItem {
+  "description"?: string;
+  "imageUrl"?: string;
+  "isSoldOut"?: boolean;
+  "price"?: number;
+  "title"?: string;
+  "uuid"?: string;
+}
+
+export interface ModelUbereatsMenuSection {
+  "items"?: Array<ModelUbereatsMenuItem>;
+  "title"?: string;
+}
+
+export interface ModelUbereatsRestaurant {
+  "cuisineTags"?: Array<string>;
+  "currencyCode"?: string;
+  "deliveryEtaText"?: string;
+  "imageUrl"?: string;
+  "isSponsored"?: boolean;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "rating"?: number;
+  "reviewCount"?: number;
+  "slug"?: string;
+  "storeUuid"?: string;
+  "url"?: string;
+}
+
+export interface ModelUbereatsReview {
+  "createdAt"?: string;
+  "eaterName"?: string;
+  "formattedDate"?: string;
+  "text"?: string;
+  "timeSinceReview"?: string;
+}
+
+export interface ModelUbereatsSearchResponse {
+  "cityName"?: string;
+  "cursor"?: string;
+  "hasMore"?: boolean;
+  "offset"?: number;
+  "restaurants"?: Array<ModelUbereatsRestaurant>;
+}
+
+export interface ModelUbereatsStoreDetail {
+  "address"?: ModelUbereatsAddress;
+  "cuisineTags"?: Array<string>;
+  "currencyCode"?: string;
+  "heroImageUrl"?: string;
+  "isOpen"?: boolean;
+  "isOrderable"?: boolean;
+  "latitude"?: number;
+  "longitude"?: number;
+  "menu"?: Array<ModelUbereatsMenuSection>;
+  "phoneNumber"?: string;
+  "priceBucket"?: string;
+  "rating"?: number;
+  "reviewCount"?: number;
+  "slug"?: string;
+  "storeUuid"?: string;
+  "title"?: string;
+  "url"?: string;
+  "workingHoursTagline"?: string;
+}
+
+export interface ModelUbereatsStoreReviewsResponse {
+  "rating"?: number;
+  "reviewCount"?: number;
+  "reviews"?: Array<ModelUbereatsReview>;
+  "storeUuid"?: string;
+}
+
+export interface ModelUbereatsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelUbereatsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelUbereatsStoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelUbereatsStoreDetail;
+  "msg"?: string;
+}
+
+export interface ModelUbereatsStoreReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelUbereatsStoreReviewsResponse;
+  "msg"?: string;
+}
+
 export interface ModelUsageUsageBillingStateDoc {
   "allow_overage"?: boolean;
   "created_at"?: string;
@@ -18690,6 +19477,95 @@ export interface AnimeTitleStaffParams {
   "per_page"?: number;
 }
 
+export type AppleBooksAudiobookSeriesResponse = CrawloraResponse<ModelApplebooksAudiobookSeriesResponseDoc>;
+export interface AppleBooksAudiobookSeriesParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type AppleBooksAudiobookSearchResponse = CrawloraResponse<ModelApplebooksAudiobookSearchResponseDoc>;
+export interface AppleBooksAudiobookSearchParams {
+  "term": string;
+  "country"?: string;
+  "lang"?: string;
+  "limit"?: number;
+  "page"?: number;
+}
+
+export type AppleBooksAudiobookResponse = CrawloraResponse<ModelApplebooksAudiobookResponseDoc>;
+export interface AppleBooksAudiobookParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type AppleBooksAudiobookReviewsResponse = CrawloraResponse<ModelApplebooksAudiobookReviewsResponseDoc>;
+export interface AppleBooksAudiobookReviewsParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type AppleBooksAudiobookSimilarResponse = CrawloraResponse<ModelApplebooksAudiobookSimilarResponseDoc>;
+export interface AppleBooksAudiobookSimilarParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type AppleBooksAuthorResponse = CrawloraResponse<ModelApplebooksAuthorResponseDoc>;
+export interface AppleBooksAuthorParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type AppleBooksBookResponse = CrawloraResponse<ModelApplebooksBookResponseDoc>;
+export interface AppleBooksBookParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type AppleBooksBookReviewsResponse = CrawloraResponse<ModelApplebooksReviewsResponseDoc>;
+export interface AppleBooksBookReviewsParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type AppleBooksBookSimilarResponse = CrawloraResponse<ModelApplebooksSimilarResponseDoc>;
+export interface AppleBooksBookSimilarParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
+export type AppleBooksChartsResponse = CrawloraResponse<ModelApplebooksChartsResponseDoc>;
+export interface AppleBooksChartsParams {
+  "collection"?: string;
+  "genre"?: number;
+  "country"?: string;
+  "limit"?: number;
+}
+
+export type AppleBooksSearchResponse = CrawloraResponse<ModelApplebooksSearchResponseDoc>;
+export interface AppleBooksSearchParams {
+  "term": string;
+  "country"?: string;
+  "lang"?: string;
+  "limit"?: number;
+  "page"?: number;
+}
+
+export type AppleBooksSeriesResponse = CrawloraResponse<ModelApplebooksSeriesResponseDoc>;
+export interface AppleBooksSeriesParams {
+  "id": string;
+  "country"?: string;
+  "lang"?: string;
+}
+
 export type ApplePodcastsChartsResponse = CrawloraResponse<ModelApplepodcastsChartsResponseDoc>;
 export interface ApplePodcastsChartsParams {
   "collection"?: string;
@@ -18911,10 +19787,15 @@ export interface BoxOfficeMojoBoxofficemojoBrandParams {
   "id"?: string;
   "path"?: string;
   "url"?: string;
+  "sort"?: "grossToDate" | "maxNumTheaters" | "openingWeekendGross" | "openingNumTheaters" | "releaseDate";
+  "sortDir"?: "asc" | "desc";
+  "offset"?: number;
 }
 
 export type BoxOfficeMojoBoxofficemojoBrandsResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyListResponseDoc>;
 export interface BoxOfficeMojoBoxofficemojoBrandsParams {
+  "sort"?: "totalGross" | "numReleases" | "grossToDate";
+  "sortDir"?: "asc" | "desc";
 }
 
 export type BoxOfficeMojoBoxofficemojoCalendarResponse = CrawloraResponse<ModelBoxofficemojoCalendarResponseDoc>;
@@ -18943,10 +19824,15 @@ export interface BoxOfficeMojoBoxofficemojoFranchiseParams {
   "id"?: string;
   "path"?: string;
   "url"?: string;
+  "sort"?: "grossToDate" | "maxNumTheaters" | "openingWeekendGross" | "openingNumTheaters" | "releaseDate";
+  "sortDir"?: "asc" | "desc";
+  "offset"?: number;
 }
 
 export type BoxOfficeMojoBoxofficemojoFranchisesResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyListResponseDoc>;
 export interface BoxOfficeMojoBoxofficemojoFranchisesParams {
+  "sort"?: "totalGross" | "numReleases" | "grossToDate";
+  "sortDir"?: "asc" | "desc";
 }
 
 export type BoxOfficeMojoBoxofficemojoGenreResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyDetailResponseDoc>;
@@ -18954,10 +19840,15 @@ export interface BoxOfficeMojoBoxofficemojoGenreParams {
   "id"?: string;
   "path"?: string;
   "url"?: string;
+  "sort"?: "grossToDate" | "maxNumTheaters" | "openingWeekendGross" | "openingNumTheaters" | "releaseDate";
+  "sortDir"?: "asc" | "desc";
+  "offset"?: number;
 }
 
 export type BoxOfficeMojoBoxofficemojoGenresResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyListResponseDoc>;
 export interface BoxOfficeMojoBoxofficemojoGenresParams {
+  "sort"?: "totalGross" | "numTitles" | "grossToDate";
+  "sortDir"?: "asc" | "desc";
 }
 
 export type BoxOfficeMojoBoxofficemojoLifetimeGrossesResponse = CrawloraResponse<ModelBoxofficemojoLifetimeGrossesResponseDoc>;
@@ -19661,6 +20552,86 @@ export interface DatasetsGithubUsersSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsGoodreadsAuthorsFacetsResponse = CrawloraResponse<ModelDatasetsGoodreadsAuthorsFacetResponseDoc>;
+export interface DatasetsGoodreadsAuthorsFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "name"?: string;
+  "genre"?: string;
+  "run_id"?: string;
+  "min_rating"?: number;
+  "min_ratings_count"?: number;
+}
+
+export type DatasetsGoodreadsAuthorsItemResponse = CrawloraResponse<ModelDatasetsGoodreadsAuthorResponseDoc>;
+export interface DatasetsGoodreadsAuthorsItemParams {
+  "id": string;
+}
+
+export type DatasetsGoodreadsAuthorsSearchResponse = CrawloraResponse<ModelDatasetsGoodreadsAuthorsSearchResponseDoc>;
+export interface DatasetsGoodreadsAuthorsSearchParams {
+  "q"?: string;
+  "name"?: string;
+  "genre"?: string;
+  "run_id"?: string;
+  "min_rating"?: number;
+  "min_ratings_count"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsGoodreadsBooksFacetsResponse = CrawloraResponse<ModelDatasetsGoodreadsBooksFacetResponseDoc>;
+export interface DatasetsGoodreadsBooksFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "genre"?: string;
+  "format"?: string;
+  "language"?: string;
+  "publisher"?: string;
+  "author"?: string;
+  "author_id"?: string;
+  "series"?: string;
+  "isbn"?: string;
+  "isbn13"?: string;
+  "run_id"?: string;
+  "min_rating"?: number;
+  "min_ratings_count"?: number;
+  "min_pages"?: number;
+  "max_pages"?: number;
+  "min_publication_year"?: number;
+  "max_publication_year"?: number;
+}
+
+export type DatasetsGoodreadsBooksItemResponse = CrawloraResponse<ModelDatasetsGoodreadsBookResponseDoc>;
+export interface DatasetsGoodreadsBooksItemParams {
+  "id": string;
+}
+
+export type DatasetsGoodreadsBooksSearchResponse = CrawloraResponse<ModelDatasetsGoodreadsBooksSearchResponseDoc>;
+export interface DatasetsGoodreadsBooksSearchParams {
+  "q"?: string;
+  "genre"?: string;
+  "format"?: string;
+  "language"?: string;
+  "publisher"?: string;
+  "author"?: string;
+  "author_id"?: string;
+  "series"?: string;
+  "isbn"?: string;
+  "isbn13"?: string;
+  "run_id"?: string;
+  "min_rating"?: number;
+  "min_ratings_count"?: number;
+  "min_pages"?: number;
+  "max_pages"?: number;
+  "min_publication_year"?: number;
+  "max_publication_year"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsGoogleMapBusinessesFacetsResponse = CrawloraResponse<ModelDatasetsGoogleMapBusinessesFacetResponseDoc>;
 export interface DatasetsGoogleMapBusinessesFacetsParams {
   "facet": string;
@@ -19787,7 +20758,7 @@ export interface DatasetsHousingMarketsSearchParams {
 export type DatasetsJobsCompaniesResponse = CrawloraResponse<ModelDatasetsJobsCompaniesResponseDoc>;
 export interface DatasetsJobsCompaniesParams {
   "q"?: string;
-  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold";
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint";
   "status"?: string;
   "min_open_roles"?: number;
   "sort"?: string;
@@ -19815,7 +20786,7 @@ export interface DatasetsJobsNearbyParams {
   "lat": number;
   "lon": number;
   "radius_km"?: number;
-  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold";
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint";
   "include_closed"?: boolean;
   "page"?: number;
   "page_size"?: number;
@@ -19825,12 +20796,15 @@ export type DatasetsJobsSearchResponse = CrawloraResponse<ModelDatasetsJobsSearc
 export interface DatasetsJobsSearchParams {
   "q"?: string;
   "company"?: string;
-  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold";
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint";
   "department"?: string;
   "location"?: string;
   "employment_type"?: string;
   "remote"?: boolean;
   "include_closed"?: boolean;
+  "min_salary"?: number;
+  "max_salary"?: number;
+  "salary_currency"?: string;
   "sort"?: string;
   "page"?: number;
   "page_size"?: number;
@@ -19920,6 +20894,169 @@ export interface DatasetsNumbeoCountriesSearchParams {
   "min_health_care_index"?: number;
   "max_pollution_index"?: number;
   "max_traffic_index"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsPitchbookAdvisorsFacetsResponse = CrawloraResponse<ModelDatasetsPitchbookAdvisorsFacetResponseDoc>;
+export interface DatasetsPitchbookAdvisorsFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "service_type"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "run_id"?: string;
+  "min_year_founded"?: number;
+  "max_year_founded"?: number;
+}
+
+export type DatasetsPitchbookAdvisorsItemResponse = CrawloraResponse<ModelDatasetsPitchbookAdvisorResponseDoc>;
+export interface DatasetsPitchbookAdvisorsItemParams {
+  "id": string;
+}
+
+export type DatasetsPitchbookAdvisorsSearchResponse = CrawloraResponse<ModelDatasetsPitchbookAdvisorsSearchResponseDoc>;
+export interface DatasetsPitchbookAdvisorsSearchParams {
+  "q"?: string;
+  "service_type"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "run_id"?: string;
+  "min_year_founded"?: number;
+  "max_year_founded"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsPitchbookCompaniesFacetsResponse = CrawloraResponse<ModelDatasetsPitchbookCompaniesFacetResponseDoc>;
+export interface DatasetsPitchbookCompaniesFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "status"?: string;
+  "primary_industry"?: string;
+  "financing_status"?: string;
+  "ownership_status"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "run_id"?: string;
+  "min_year_founded"?: number;
+  "max_year_founded"?: number;
+  "min_investor_count"?: number;
+}
+
+export type DatasetsPitchbookCompaniesItemResponse = CrawloraResponse<ModelDatasetsPitchbookCompanyResponseDoc>;
+export interface DatasetsPitchbookCompaniesItemParams {
+  "id": string;
+}
+
+export type DatasetsPitchbookCompaniesSearchResponse = CrawloraResponse<ModelDatasetsPitchbookCompaniesSearchResponseDoc>;
+export interface DatasetsPitchbookCompaniesSearchParams {
+  "q"?: string;
+  "status"?: string;
+  "primary_industry"?: string;
+  "financing_status"?: string;
+  "ownership_status"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "run_id"?: string;
+  "min_year_founded"?: number;
+  "max_year_founded"?: number;
+  "min_investor_count"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsPitchbookFundsFacetsResponse = CrawloraResponse<ModelDatasetsPitchbookFundsFacetResponseDoc>;
+export interface DatasetsPitchbookFundsFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "fund_strategy"?: string;
+  "fund_status"?: string;
+  "run_id"?: string;
+  "min_vintage_year"?: number;
+  "max_vintage_year"?: number;
+}
+
+export type DatasetsPitchbookFundsItemResponse = CrawloraResponse<ModelDatasetsPitchbookFundResponseDoc>;
+export interface DatasetsPitchbookFundsItemParams {
+  "id": string;
+}
+
+export type DatasetsPitchbookFundsSearchResponse = CrawloraResponse<ModelDatasetsPitchbookFundsSearchResponseDoc>;
+export interface DatasetsPitchbookFundsSearchParams {
+  "q"?: string;
+  "fund_strategy"?: string;
+  "fund_status"?: string;
+  "run_id"?: string;
+  "min_vintage_year"?: number;
+  "max_vintage_year"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsPitchbookInvestorsFacetsResponse = CrawloraResponse<ModelDatasetsPitchbookInvestorsFacetResponseDoc>;
+export interface DatasetsPitchbookInvestorsFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "status"?: string;
+  "investor_type"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "run_id"?: string;
+  "min_portfolio_count"?: number;
+  "min_exits_count"?: number;
+}
+
+export type DatasetsPitchbookInvestorsItemResponse = CrawloraResponse<ModelDatasetsPitchbookInvestorResponseDoc>;
+export interface DatasetsPitchbookInvestorsItemParams {
+  "id": string;
+}
+
+export type DatasetsPitchbookInvestorsSearchResponse = CrawloraResponse<ModelDatasetsPitchbookInvestorsSearchResponseDoc>;
+export interface DatasetsPitchbookInvestorsSearchParams {
+  "q"?: string;
+  "status"?: string;
+  "investor_type"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "run_id"?: string;
+  "min_portfolio_count"?: number;
+  "min_exits_count"?: number;
+  "sort"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsPitchbookLimitedPartnersFacetsResponse = CrawloraResponse<ModelDatasetsPitchbookLimitedPartnersFacetResponseDoc>;
+export interface DatasetsPitchbookLimitedPartnersFacetsParams {
+  "facet": string;
+  "q"?: string;
+  "institution_type"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "run_id"?: string;
+  "min_year_founded"?: number;
+  "max_year_founded"?: number;
+}
+
+export type DatasetsPitchbookLimitedPartnersItemResponse = CrawloraResponse<ModelDatasetsPitchbookLimitedPartnerResponseDoc>;
+export interface DatasetsPitchbookLimitedPartnersItemParams {
+  "id": string;
+}
+
+export type DatasetsPitchbookLimitedPartnersSearchResponse = CrawloraResponse<ModelDatasetsPitchbookLimitedPartnersSearchResponseDoc>;
+export interface DatasetsPitchbookLimitedPartnersSearchParams {
+  "q"?: string;
+  "institution_type"?: string;
+  "hq_country"?: string;
+  "hq_state"?: string;
+  "run_id"?: string;
+  "min_year_founded"?: number;
+  "max_year_founded"?: number;
   "sort"?: string;
   "page"?: number;
   "page_size"?: number;
@@ -20758,9 +21895,21 @@ export interface GoodreadsAuthorBooksParams {
   "page"?: number;
 }
 
+export type GoodreadsAuthorQuotesResponse = CrawloraResponse<ModelGoodreadsAuthorQuotesResponseDoc>;
+export interface GoodreadsAuthorQuotesParams {
+  "id": string;
+  "page"?: number;
+}
+
 export type GoodreadsBookResponse = CrawloraResponse<ModelGoodreadsBookResponseDoc>;
 export interface GoodreadsBookParams {
   "id": string;
+}
+
+export type GoodreadsBookEditionsResponse = CrawloraResponse<ModelGoodreadsEditionsResponseDoc>;
+export interface GoodreadsBookEditionsParams {
+  "id": string;
+  "page"?: number;
 }
 
 export type GoodreadsBookReviewsResponse = CrawloraResponse<ModelGoodreadsReviewsResponseDoc>;
@@ -20769,10 +21918,19 @@ export interface GoodreadsBookReviewsParams {
   "limit"?: number;
 }
 
+export type GoodreadsGenreResponse = CrawloraResponse<ModelGoodreadsGenreResponseDoc>;
+export interface GoodreadsGenreParams {
+  "name": string;
+}
+
 export type GoodreadsListResponse = CrawloraResponse<ModelGoodreadsListResponseDoc>;
 export interface GoodreadsListParams {
   "id": string;
   "page"?: number;
+}
+
+export type GoodreadsListsResponse = CrawloraResponse<ModelGoodreadsListsResponseDoc>;
+export interface GoodreadsListsParams {
 }
 
 export type GoodreadsSearchResponse = CrawloraResponse<ModelGoodreadsSearchResponseDoc>;
@@ -20894,6 +22052,18 @@ export interface GoogleJobsParams {
 export type GoogleMapPlaceResponse = CrawloraResponse<ModelGoogleMapPlaceResponseDoc>;
 export interface GoogleMapPlaceParams {
   "place_id": string;
+}
+
+export type GoogleMapPlacePhotosResponse = CrawloraResponse<ModelGoogleMapPlacePhotosResponseDoc>;
+export interface GoogleMapPlacePhotosParams {
+  "place_id": string;
+  "limit"?: number;
+}
+
+export type GoogleMapPlaceReviewsResponse = CrawloraResponse<ModelGoogleMapPlaceReviewsResponseDoc>;
+export interface GoogleMapPlaceReviewsParams {
+  "place_id": string;
+  "limit"?: number;
 }
 
 export type GoogleMapSearchBody = CrawloraBody<ModelGoogleMapSearchOption>;
@@ -21247,6 +22417,11 @@ export interface JobsEightfoldJobParams {
   "id": string;
 }
 
+export type JobsGemBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsGemBoardParams {
+  "company": string;
+}
+
 export type JobsGreenhouseBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
 export interface JobsGreenhouseBoardParams {
   "token": string;
@@ -21261,7 +22436,7 @@ export interface JobsGreenhouseJobParams {
 
 export type JobsHiringSignalsResponse = CrawloraResponse<ModelJobsSignalsResponseDoc>;
 export interface JobsHiringSignalsParams {
-  "provider": "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold";
+  "provider": "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint";
   "token"?: string;
   "company"?: string;
   "org"?: string;
@@ -21325,6 +22500,11 @@ export interface JobsPersonioFeedParams {
   "department"?: string;
   "location"?: string;
   "remote"?: boolean;
+}
+
+export type JobsPinpointBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
+export interface JobsPinpointBoardParams {
+  "company": string;
 }
 
 export type JobsRecruiteeOfferResponse = CrawloraResponse<ModelJobsJobResponseDoc>;
@@ -21993,6 +23173,12 @@ export type MetaPingResponse = CrawloraResponse<ModelApiPingResponseDoc>;
 export interface MetaPingParams {
 }
 
+export type PitchBookPitchbookAdvisorResponse = CrawloraResponse<ModelPitchbookAdvisorResponseDoc>;
+export interface PitchBookPitchbookAdvisorParams {
+  "id"?: string;
+  "url"?: string;
+}
+
 export type PitchBookPitchbookCompanyResponse = CrawloraResponse<ModelPitchbookCompanyResponseDoc>;
 export interface PitchBookPitchbookCompanyParams {
   "id"?: string;
@@ -22007,6 +23193,12 @@ export interface PitchBookPitchbookFundParams {
 
 export type PitchBookPitchbookInvestorResponse = CrawloraResponse<ModelPitchbookInvestorResponseDoc>;
 export interface PitchBookPitchbookInvestorParams {
+  "id"?: string;
+  "url"?: string;
+}
+
+export type PitchBookPitchbookLimitedPartnerResponse = CrawloraResponse<ModelPitchbookLimitedPartnerResponseDoc>;
+export interface PitchBookPitchbookLimitedPartnerParams {
   "id"?: string;
   "url"?: string;
 }
@@ -24081,6 +25273,26 @@ export interface TrustpilotCategoryParams {
   "page"?: number;
 }
 
+export type UberEatsUbereatsSearchResponse = CrawloraResponse<ModelUbereatsSearchResponseDoc>;
+export interface UberEatsUbereatsSearchParams {
+  "latitude": number;
+  "longitude": number;
+  "query"?: string;
+  "offset"?: number;
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type UberEatsUbereatsStoreResponse = CrawloraResponse<ModelUbereatsStoreResponseDoc>;
+export interface UberEatsUbereatsStoreParams {
+  "store_id": string;
+}
+
+export type UberEatsUbereatsStoreReviewsResponse = CrawloraResponse<ModelUbereatsStoreReviewsResponseDoc>;
+export interface UberEatsUbereatsStoreReviewsParams {
+  "store_id": string;
+}
+
 export type UsageMeEndpointsResponse = CrawloraResponse<ModelUsageUsageEndpointsResponseDoc>;
 export interface UsageMeEndpointsParams {
   "range"?: "period" | "day" | "week" | "month" | "custom";
@@ -24546,6 +25758,21 @@ export interface AnimeService {
   titleStaff<T = AnimeTitleStaffResponse>(params: AnimeTitleStaffParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface AppleBooksService {
+  audiobookSeries<T = AppleBooksAudiobookSeriesResponse>(params: AppleBooksAudiobookSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  audiobookSearch<T = AppleBooksAudiobookSearchResponse>(params: AppleBooksAudiobookSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  audiobook<T = AppleBooksAudiobookResponse>(params: AppleBooksAudiobookParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  audiobookReviews<T = AppleBooksAudiobookReviewsResponse>(params: AppleBooksAudiobookReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  audiobookSimilar<T = AppleBooksAudiobookSimilarResponse>(params: AppleBooksAudiobookSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  author<T = AppleBooksAuthorResponse>(params: AppleBooksAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  book<T = AppleBooksBookResponse>(params: AppleBooksBookParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bookReviews<T = AppleBooksBookReviewsResponse>(params: AppleBooksBookReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bookSimilar<T = AppleBooksBookSimilarResponse>(params: AppleBooksBookSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  charts<T = AppleBooksChartsResponse>(params?: AppleBooksChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = AppleBooksSearchResponse>(params: AppleBooksSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  series<T = AppleBooksSeriesResponse>(params: AppleBooksSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ApplePodcastsService {
   charts<T = ApplePodcastsChartsResponse>(params?: ApplePodcastsChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   episodesSearch<T = ApplePodcastsEpisodesSearchResponse>(params: ApplePodcastsEpisodesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -24699,6 +25926,12 @@ export interface DatasetsService {
   githubUsersItem<T = DatasetsGithubUsersItemResponse>(params: DatasetsGithubUsersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUsersNearby<T = DatasetsGithubUsersNearbyResponse>(params: DatasetsGithubUsersNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUsersSearch<T = DatasetsGithubUsersSearchResponse>(params?: DatasetsGithubUsersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  goodreadsAuthorsFacets<T = DatasetsGoodreadsAuthorsFacetsResponse>(params: DatasetsGoodreadsAuthorsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  goodreadsAuthorsItem<T = DatasetsGoodreadsAuthorsItemResponse>(params: DatasetsGoodreadsAuthorsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  goodreadsAuthorsSearch<T = DatasetsGoodreadsAuthorsSearchResponse>(params?: DatasetsGoodreadsAuthorsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  goodreadsBooksFacets<T = DatasetsGoodreadsBooksFacetsResponse>(params: DatasetsGoodreadsBooksFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  goodreadsBooksItem<T = DatasetsGoodreadsBooksItemResponse>(params: DatasetsGoodreadsBooksItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  goodreadsBooksSearch<T = DatasetsGoodreadsBooksSearchResponse>(params?: DatasetsGoodreadsBooksSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesFacets<T = DatasetsGoogleMapBusinessesFacetsResponse>(params: DatasetsGoogleMapBusinessesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesItem<T = DatasetsGoogleMapBusinessesItemResponse>(params: DatasetsGoogleMapBusinessesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   googleMapBusinessesNearby<T = DatasetsGoogleMapBusinessesNearbyResponse>(params: DatasetsGoogleMapBusinessesNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -24720,6 +25953,21 @@ export interface DatasetsService {
   numbeoCitiesSearch<T = DatasetsNumbeoCitiesSearchResponse>(params?: DatasetsNumbeoCitiesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   numbeoCountriesItem<T = DatasetsNumbeoCountriesItemResponse>(params: DatasetsNumbeoCountriesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   numbeoCountriesSearch<T = DatasetsNumbeoCountriesSearchResponse>(params?: DatasetsNumbeoCountriesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookAdvisorsFacets<T = DatasetsPitchbookAdvisorsFacetsResponse>(params: DatasetsPitchbookAdvisorsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookAdvisorsItem<T = DatasetsPitchbookAdvisorsItemResponse>(params: DatasetsPitchbookAdvisorsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookAdvisorsSearch<T = DatasetsPitchbookAdvisorsSearchResponse>(params?: DatasetsPitchbookAdvisorsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookCompaniesFacets<T = DatasetsPitchbookCompaniesFacetsResponse>(params: DatasetsPitchbookCompaniesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookCompaniesItem<T = DatasetsPitchbookCompaniesItemResponse>(params: DatasetsPitchbookCompaniesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookCompaniesSearch<T = DatasetsPitchbookCompaniesSearchResponse>(params?: DatasetsPitchbookCompaniesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookFundsFacets<T = DatasetsPitchbookFundsFacetsResponse>(params: DatasetsPitchbookFundsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookFundsItem<T = DatasetsPitchbookFundsItemResponse>(params: DatasetsPitchbookFundsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookFundsSearch<T = DatasetsPitchbookFundsSearchResponse>(params?: DatasetsPitchbookFundsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookInvestorsFacets<T = DatasetsPitchbookInvestorsFacetsResponse>(params: DatasetsPitchbookInvestorsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookInvestorsItem<T = DatasetsPitchbookInvestorsItemResponse>(params: DatasetsPitchbookInvestorsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookInvestorsSearch<T = DatasetsPitchbookInvestorsSearchResponse>(params?: DatasetsPitchbookInvestorsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookLimitedPartnersFacets<T = DatasetsPitchbookLimitedPartnersFacetsResponse>(params: DatasetsPitchbookLimitedPartnersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookLimitedPartnersItem<T = DatasetsPitchbookLimitedPartnersItemResponse>(params: DatasetsPitchbookLimitedPartnersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookLimitedPartnersSearch<T = DatasetsPitchbookLimitedPartnersSearchResponse>(params?: DatasetsPitchbookLimitedPartnersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playstationGamesFacets<T = DatasetsPlaystationGamesFacetsResponse>(params: DatasetsPlaystationGamesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playstationGamesItem<T = DatasetsPlaystationGamesItemResponse>(params: DatasetsPlaystationGamesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playstationGamesSearch<T = DatasetsPlaystationGamesSearchResponse>(params?: DatasetsPlaystationGamesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -24819,9 +26067,13 @@ export interface GitHubService {
 export interface GoodreadsService {
   author<T = GoodreadsAuthorResponse>(params: GoodreadsAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   authorBooks<T = GoodreadsAuthorBooksResponse>(params: GoodreadsAuthorBooksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  authorQuotes<T = GoodreadsAuthorQuotesResponse>(params: GoodreadsAuthorQuotesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   book<T = GoodreadsBookResponse>(params: GoodreadsBookParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bookEditions<T = GoodreadsBookEditionsResponse>(params: GoodreadsBookEditionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   bookReviews<T = GoodreadsBookReviewsResponse>(params: GoodreadsBookReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  genre<T = GoodreadsGenreResponse>(params: GoodreadsGenreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   list<T = GoodreadsListResponse>(params: GoodreadsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lists<T = GoodreadsListsResponse>(params?: GoodreadsListsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = GoodreadsSearchResponse>(params: GoodreadsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
@@ -24848,6 +26100,8 @@ export interface GoogleService {
   financeTicker<T = GoogleFinanceTickerResponse>(params: GoogleFinanceTickerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobs<T = GoogleJobsResponse>(params: GoogleJobsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mapPlace<T = GoogleMapPlaceResponse>(params: GoogleMapPlaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mapPlacePhotos<T = GoogleMapPlacePhotosResponse>(params: GoogleMapPlacePhotosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mapPlaceReviews<T = GoogleMapPlaceReviewsResponse>(params: GoogleMapPlaceReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mapSearch<T = GoogleMapSearchResponse>(params: GoogleMapSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = GoogleNewsResponse>(params: GoogleNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = GoogleSearchResponse>(params: GoogleSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -24912,6 +26166,7 @@ export interface JobsService {
   companySearch<T = JobsCompanySearchResponse>(params: JobsCompanySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   eightfoldBoard<T = JobsEightfoldBoardResponse>(params: JobsEightfoldBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   eightfoldJob<T = JobsEightfoldJobResponse>(params: JobsEightfoldJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gemBoard<T = JobsGemBoardResponse>(params: JobsGemBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   greenhouseBoard<T = JobsGreenhouseBoardResponse>(params: JobsGreenhouseBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   greenhouseJob<T = JobsGreenhouseJobResponse>(params: JobsGreenhouseJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hiringSignals<T = JobsHiringSignalsResponse>(params: JobsHiringSignalsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -24922,6 +26177,7 @@ export interface JobsService {
   oracleBoard<T = JobsOracleBoardResponse>(params: JobsOracleBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   oracleJob<T = JobsOracleJobResponse>(params: JobsOracleJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   personioFeed<T = JobsPersonioFeedResponse>(params: JobsPersonioFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pinpointBoard<T = JobsPinpointBoardResponse>(params: JobsPinpointBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   recruiteeOffer<T = JobsRecruiteeOfferResponse>(params: JobsRecruiteeOfferParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   recruiteeOffers<T = JobsRecruiteeOffersResponse>(params: JobsRecruiteeOffersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ripplingBoard<T = JobsRipplingBoardResponse>(params: JobsRipplingBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -25051,9 +26307,11 @@ export interface MetaService {
 }
 
 export interface PitchBookService {
+  pitchbookAdvisor<T = PitchBookPitchbookAdvisorResponse>(params?: PitchBookPitchbookAdvisorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   pitchbookCompany<T = PitchBookPitchbookCompanyResponse>(params?: PitchBookPitchbookCompanyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   pitchbookFund<T = PitchBookPitchbookFundResponse>(params?: PitchBookPitchbookFundParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   pitchbookInvestor<T = PitchBookPitchbookInvestorResponse>(params?: PitchBookPitchbookInvestorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pitchbookLimitedPartner<T = PitchBookPitchbookLimitedPartnerResponse>(params?: PitchBookPitchbookLimitedPartnerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface PlayStationService {
@@ -25413,6 +26671,12 @@ export interface TrustpilotService {
   category<T = TrustpilotCategoryResponse>(params: TrustpilotCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface UberEatsService {
+  ubereatsSearch<T = UberEatsUbereatsSearchResponse>(params: UberEatsUbereatsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ubereatsStore<T = UberEatsUbereatsStoreResponse>(params: UberEatsUbereatsStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ubereatsStoreReviews<T = UberEatsUbereatsStoreReviewsResponse>(params: UberEatsUbereatsStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface UsageService {
   meEndpoints<T = UsageMeEndpointsResponse>(params?: UsageMeEndpointsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meOverview<T = UsageMeOverviewResponse>(params?: UsageMeOverviewParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -25507,6 +26771,7 @@ export interface CrawloraGeneratedGroups {
   airbnb: AirbnbService;
   amazon: AmazonService;
   anime: AnimeService;
+  appleBooks: AppleBooksService;
   applePodcasts: ApplePodcastsService;
   appStore: AppStoreService;
   billing: BillingService;
@@ -25562,6 +26827,7 @@ export interface CrawloraGeneratedGroups {
   tripAdvisor: TripAdvisorService;
   trustMrr: TrustMrrService;
   trustpilot: TrustpilotService;
+  uberEats: UberEatsService;
   usage: UsageService;
   user: UserService;
   walmart: WalmartService;
@@ -25591,6 +26857,18 @@ export interface OperationParamsMap {
   "anime-title-characters": AnimeTitleCharactersParams;
   "anime-title-recommendations": AnimeTitleRecommendationsParams;
   "anime-title-staff": AnimeTitleStaffParams;
+  "apple-books-audiobook-series": AppleBooksAudiobookSeriesParams;
+  "apple-books-audiobook-search": AppleBooksAudiobookSearchParams;
+  "apple-books-audiobook": AppleBooksAudiobookParams;
+  "apple-books-audiobook-reviews": AppleBooksAudiobookReviewsParams;
+  "apple-books-audiobook-similar": AppleBooksAudiobookSimilarParams;
+  "apple-books-author": AppleBooksAuthorParams;
+  "apple-books-book": AppleBooksBookParams;
+  "apple-books-book-reviews": AppleBooksBookReviewsParams;
+  "apple-books-book-similar": AppleBooksBookSimilarParams;
+  "apple-books-charts": AppleBooksChartsParams;
+  "apple-books-search": AppleBooksSearchParams;
+  "apple-books-series": AppleBooksSeriesParams;
   "apple-podcasts-charts": ApplePodcastsChartsParams;
   "apple-podcasts-episodes-search": ApplePodcastsEpisodesSearchParams;
   "apple-podcasts-search": ApplePodcastsSearchParams;
@@ -25706,6 +26984,12 @@ export interface OperationParamsMap {
   "datasets-github-users-item": DatasetsGithubUsersItemParams;
   "datasets-github-users-nearby": DatasetsGithubUsersNearbyParams;
   "datasets-github-users-search": DatasetsGithubUsersSearchParams;
+  "datasets-goodreads-authors-facets": DatasetsGoodreadsAuthorsFacetsParams;
+  "datasets-goodreads-authors-item": DatasetsGoodreadsAuthorsItemParams;
+  "datasets-goodreads-authors-search": DatasetsGoodreadsAuthorsSearchParams;
+  "datasets-goodreads-books-facets": DatasetsGoodreadsBooksFacetsParams;
+  "datasets-goodreads-books-item": DatasetsGoodreadsBooksItemParams;
+  "datasets-goodreads-books-search": DatasetsGoodreadsBooksSearchParams;
   "datasets-google-map-businesses-facets": DatasetsGoogleMapBusinessesFacetsParams;
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemParams;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyParams;
@@ -25727,6 +27011,21 @@ export interface OperationParamsMap {
   "datasets-numbeo-cities-search": DatasetsNumbeoCitiesSearchParams;
   "datasets-numbeo-countries-item": DatasetsNumbeoCountriesItemParams;
   "datasets-numbeo-countries-search": DatasetsNumbeoCountriesSearchParams;
+  "datasets-pitchbook-advisors-facets": DatasetsPitchbookAdvisorsFacetsParams;
+  "datasets-pitchbook-advisors-item": DatasetsPitchbookAdvisorsItemParams;
+  "datasets-pitchbook-advisors-search": DatasetsPitchbookAdvisorsSearchParams;
+  "datasets-pitchbook-companies-facets": DatasetsPitchbookCompaniesFacetsParams;
+  "datasets-pitchbook-companies-item": DatasetsPitchbookCompaniesItemParams;
+  "datasets-pitchbook-companies-search": DatasetsPitchbookCompaniesSearchParams;
+  "datasets-pitchbook-funds-facets": DatasetsPitchbookFundsFacetsParams;
+  "datasets-pitchbook-funds-item": DatasetsPitchbookFundsItemParams;
+  "datasets-pitchbook-funds-search": DatasetsPitchbookFundsSearchParams;
+  "datasets-pitchbook-investors-facets": DatasetsPitchbookInvestorsFacetsParams;
+  "datasets-pitchbook-investors-item": DatasetsPitchbookInvestorsItemParams;
+  "datasets-pitchbook-investors-search": DatasetsPitchbookInvestorsSearchParams;
+  "datasets-pitchbook-limited-partners-facets": DatasetsPitchbookLimitedPartnersFacetsParams;
+  "datasets-pitchbook-limited-partners-item": DatasetsPitchbookLimitedPartnersItemParams;
+  "datasets-pitchbook-limited-partners-search": DatasetsPitchbookLimitedPartnersSearchParams;
   "datasets-playstation-games-facets": DatasetsPlaystationGamesFacetsParams;
   "datasets-playstation-games-item": DatasetsPlaystationGamesItemParams;
   "datasets-playstation-games-search": DatasetsPlaystationGamesSearchParams;
@@ -25810,9 +27109,13 @@ export interface OperationParamsMap {
   "github-user-repos": GitHubGithubUserReposParams;
   "goodreads-author": GoodreadsAuthorParams;
   "goodreads-author-books": GoodreadsAuthorBooksParams;
+  "goodreads-author-quotes": GoodreadsAuthorQuotesParams;
   "goodreads-book": GoodreadsBookParams;
+  "goodreads-book-editions": GoodreadsBookEditionsParams;
   "goodreads-book-reviews": GoodreadsBookReviewsParams;
+  "goodreads-genre": GoodreadsGenreParams;
   "goodreads-list": GoodreadsListParams;
+  "goodreads-lists": GoodreadsListsParams;
   "goodreads-search": GoodreadsSearchParams;
   "google-finance-analyst-articles": GoogleFinanceAnalystArticlesParams;
   "google-finance-chart": GoogleFinanceChartParams;
@@ -25836,6 +27139,8 @@ export interface OperationParamsMap {
   "google-finance-ticker": GoogleFinanceTickerParams;
   "google-jobs": GoogleJobsParams;
   "google-map-place": GoogleMapPlaceParams;
+  "google-map-place-photos": GoogleMapPlacePhotosParams;
+  "google-map-place-reviews": GoogleMapPlaceReviewsParams;
   "google-map-search": GoogleMapSearchParams;
   "google-news": GoogleNewsParams;
   "google-search": GoogleSearchParams;
@@ -25888,6 +27193,7 @@ export interface OperationParamsMap {
   "jobs-company-search": JobsCompanySearchParams;
   "jobs-eightfold-board": JobsEightfoldBoardParams;
   "jobs-eightfold-job": JobsEightfoldJobParams;
+  "jobs-gem-board": JobsGemBoardParams;
   "jobs-greenhouse-board": JobsGreenhouseBoardParams;
   "jobs-greenhouse-job": JobsGreenhouseJobParams;
   "jobs-hiring-signals": JobsHiringSignalsParams;
@@ -25898,6 +27204,7 @@ export interface OperationParamsMap {
   "jobs-oracle-board": JobsOracleBoardParams;
   "jobs-oracle-job": JobsOracleJobParams;
   "jobs-personio-feed": JobsPersonioFeedParams;
+  "jobs-pinpoint-board": JobsPinpointBoardParams;
   "jobs-recruitee-offer": JobsRecruiteeOfferParams;
   "jobs-recruitee-offers": JobsRecruiteeOffersParams;
   "jobs-rippling-board": JobsRipplingBoardParams;
@@ -25996,9 +27303,11 @@ export interface OperationParamsMap {
   "numbeo-indices-rankings": NumbeoIndicesRankingsParams;
   "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryParams;
   "ping": MetaPingParams;
+  "pitchbook-advisor": PitchBookPitchbookAdvisorParams;
   "pitchbook-company": PitchBookPitchbookCompanyParams;
   "pitchbook-fund": PitchBookPitchbookFundParams;
   "pitchbook-investor": PitchBookPitchbookInvestorParams;
+  "pitchbook-limited-partner": PitchBookPitchbookLimitedPartnerParams;
   "playstation-browse": PlayStationPlaystationBrowseParams;
   "playstation-category": PlayStationPlaystationCategoryParams;
   "playstation-concept": PlayStationPlaystationConceptParams;
@@ -26291,6 +27600,9 @@ export interface OperationParamsMap {
   "trustpilot-categories": TrustpilotCategoriesParams;
   "trustpilot-category-search": TrustpilotCategorySearchParams;
   "trustpilot-category": TrustpilotCategoryParams;
+  "ubereats-search": UberEatsUbereatsSearchParams;
+  "ubereats-store": UberEatsUbereatsStoreParams;
+  "ubereats-store-reviews": UberEatsUbereatsStoreReviewsParams;
   "usage-me-endpoints": UsageMeEndpointsParams;
   "usage-me-overview": UsageMeOverviewParams;
   "usage-me-recent-ips": UsageMeRecentIpsParams;
@@ -26384,6 +27696,18 @@ export interface OperationResponseMap {
   "anime-title-characters": AnimeTitleCharactersResponse;
   "anime-title-recommendations": AnimeTitleRecommendationsResponse;
   "anime-title-staff": AnimeTitleStaffResponse;
+  "apple-books-audiobook-series": AppleBooksAudiobookSeriesResponse;
+  "apple-books-audiobook-search": AppleBooksAudiobookSearchResponse;
+  "apple-books-audiobook": AppleBooksAudiobookResponse;
+  "apple-books-audiobook-reviews": AppleBooksAudiobookReviewsResponse;
+  "apple-books-audiobook-similar": AppleBooksAudiobookSimilarResponse;
+  "apple-books-author": AppleBooksAuthorResponse;
+  "apple-books-book": AppleBooksBookResponse;
+  "apple-books-book-reviews": AppleBooksBookReviewsResponse;
+  "apple-books-book-similar": AppleBooksBookSimilarResponse;
+  "apple-books-charts": AppleBooksChartsResponse;
+  "apple-books-search": AppleBooksSearchResponse;
+  "apple-books-series": AppleBooksSeriesResponse;
   "apple-podcasts-charts": ApplePodcastsChartsResponse;
   "apple-podcasts-episodes-search": ApplePodcastsEpisodesSearchResponse;
   "apple-podcasts-search": ApplePodcastsSearchResponse;
@@ -26499,6 +27823,12 @@ export interface OperationResponseMap {
   "datasets-github-users-item": DatasetsGithubUsersItemResponse;
   "datasets-github-users-nearby": DatasetsGithubUsersNearbyResponse;
   "datasets-github-users-search": DatasetsGithubUsersSearchResponse;
+  "datasets-goodreads-authors-facets": DatasetsGoodreadsAuthorsFacetsResponse;
+  "datasets-goodreads-authors-item": DatasetsGoodreadsAuthorsItemResponse;
+  "datasets-goodreads-authors-search": DatasetsGoodreadsAuthorsSearchResponse;
+  "datasets-goodreads-books-facets": DatasetsGoodreadsBooksFacetsResponse;
+  "datasets-goodreads-books-item": DatasetsGoodreadsBooksItemResponse;
+  "datasets-goodreads-books-search": DatasetsGoodreadsBooksSearchResponse;
   "datasets-google-map-businesses-facets": DatasetsGoogleMapBusinessesFacetsResponse;
   "datasets-google-map-businesses-item": DatasetsGoogleMapBusinessesItemResponse;
   "datasets-google-map-businesses-nearby": DatasetsGoogleMapBusinessesNearbyResponse;
@@ -26520,6 +27850,21 @@ export interface OperationResponseMap {
   "datasets-numbeo-cities-search": DatasetsNumbeoCitiesSearchResponse;
   "datasets-numbeo-countries-item": DatasetsNumbeoCountriesItemResponse;
   "datasets-numbeo-countries-search": DatasetsNumbeoCountriesSearchResponse;
+  "datasets-pitchbook-advisors-facets": DatasetsPitchbookAdvisorsFacetsResponse;
+  "datasets-pitchbook-advisors-item": DatasetsPitchbookAdvisorsItemResponse;
+  "datasets-pitchbook-advisors-search": DatasetsPitchbookAdvisorsSearchResponse;
+  "datasets-pitchbook-companies-facets": DatasetsPitchbookCompaniesFacetsResponse;
+  "datasets-pitchbook-companies-item": DatasetsPitchbookCompaniesItemResponse;
+  "datasets-pitchbook-companies-search": DatasetsPitchbookCompaniesSearchResponse;
+  "datasets-pitchbook-funds-facets": DatasetsPitchbookFundsFacetsResponse;
+  "datasets-pitchbook-funds-item": DatasetsPitchbookFundsItemResponse;
+  "datasets-pitchbook-funds-search": DatasetsPitchbookFundsSearchResponse;
+  "datasets-pitchbook-investors-facets": DatasetsPitchbookInvestorsFacetsResponse;
+  "datasets-pitchbook-investors-item": DatasetsPitchbookInvestorsItemResponse;
+  "datasets-pitchbook-investors-search": DatasetsPitchbookInvestorsSearchResponse;
+  "datasets-pitchbook-limited-partners-facets": DatasetsPitchbookLimitedPartnersFacetsResponse;
+  "datasets-pitchbook-limited-partners-item": DatasetsPitchbookLimitedPartnersItemResponse;
+  "datasets-pitchbook-limited-partners-search": DatasetsPitchbookLimitedPartnersSearchResponse;
   "datasets-playstation-games-facets": DatasetsPlaystationGamesFacetsResponse;
   "datasets-playstation-games-item": DatasetsPlaystationGamesItemResponse;
   "datasets-playstation-games-search": DatasetsPlaystationGamesSearchResponse;
@@ -26603,9 +27948,13 @@ export interface OperationResponseMap {
   "github-user-repos": GitHubGithubUserReposResponse;
   "goodreads-author": GoodreadsAuthorResponse;
   "goodreads-author-books": GoodreadsAuthorBooksResponse;
+  "goodreads-author-quotes": GoodreadsAuthorQuotesResponse;
   "goodreads-book": GoodreadsBookResponse;
+  "goodreads-book-editions": GoodreadsBookEditionsResponse;
   "goodreads-book-reviews": GoodreadsBookReviewsResponse;
+  "goodreads-genre": GoodreadsGenreResponse;
   "goodreads-list": GoodreadsListResponse;
+  "goodreads-lists": GoodreadsListsResponse;
   "goodreads-search": GoodreadsSearchResponse;
   "google-finance-analyst-articles": GoogleFinanceAnalystArticlesResponse;
   "google-finance-chart": GoogleFinanceChartResponse;
@@ -26629,6 +27978,8 @@ export interface OperationResponseMap {
   "google-finance-ticker": GoogleFinanceTickerResponse;
   "google-jobs": GoogleJobsResponse;
   "google-map-place": GoogleMapPlaceResponse;
+  "google-map-place-photos": GoogleMapPlacePhotosResponse;
+  "google-map-place-reviews": GoogleMapPlaceReviewsResponse;
   "google-map-search": GoogleMapSearchResponse;
   "google-news": GoogleNewsResponse;
   "google-search": GoogleSearchResponse;
@@ -26681,6 +28032,7 @@ export interface OperationResponseMap {
   "jobs-company-search": JobsCompanySearchResponse;
   "jobs-eightfold-board": JobsEightfoldBoardResponse;
   "jobs-eightfold-job": JobsEightfoldJobResponse;
+  "jobs-gem-board": JobsGemBoardResponse;
   "jobs-greenhouse-board": JobsGreenhouseBoardResponse;
   "jobs-greenhouse-job": JobsGreenhouseJobResponse;
   "jobs-hiring-signals": JobsHiringSignalsResponse;
@@ -26691,6 +28043,7 @@ export interface OperationResponseMap {
   "jobs-oracle-board": JobsOracleBoardResponse;
   "jobs-oracle-job": JobsOracleJobResponse;
   "jobs-personio-feed": JobsPersonioFeedResponse;
+  "jobs-pinpoint-board": JobsPinpointBoardResponse;
   "jobs-recruitee-offer": JobsRecruiteeOfferResponse;
   "jobs-recruitee-offers": JobsRecruiteeOffersResponse;
   "jobs-rippling-board": JobsRipplingBoardResponse;
@@ -26789,9 +28142,11 @@ export interface OperationResponseMap {
   "numbeo-indices-rankings": NumbeoIndicesRankingsResponse;
   "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryResponse;
   "ping": MetaPingResponse;
+  "pitchbook-advisor": PitchBookPitchbookAdvisorResponse;
   "pitchbook-company": PitchBookPitchbookCompanyResponse;
   "pitchbook-fund": PitchBookPitchbookFundResponse;
   "pitchbook-investor": PitchBookPitchbookInvestorResponse;
+  "pitchbook-limited-partner": PitchBookPitchbookLimitedPartnerResponse;
   "playstation-browse": PlayStationPlaystationBrowseResponse;
   "playstation-category": PlayStationPlaystationCategoryResponse;
   "playstation-concept": PlayStationPlaystationConceptResponse;
@@ -27084,6 +28439,9 @@ export interface OperationResponseMap {
   "trustpilot-categories": TrustpilotCategoriesResponse;
   "trustpilot-category-search": TrustpilotCategorySearchResponse;
   "trustpilot-category": TrustpilotCategoryResponse;
+  "ubereats-search": UberEatsUbereatsSearchResponse;
+  "ubereats-store": UberEatsUbereatsStoreResponse;
+  "ubereats-store-reviews": UberEatsUbereatsStoreReviewsResponse;
   "usage-me-endpoints": UsageMeEndpointsResponse;
   "usage-me-overview": UsageMeOverviewResponse;
   "usage-me-recent-ips": UsageMeRecentIpsResponse;
@@ -27177,6 +28535,18 @@ export interface OperationRequiredParamsMap {
   "anime-title-characters": true;
   "anime-title-recommendations": true;
   "anime-title-staff": true;
+  "apple-books-audiobook-series": true;
+  "apple-books-audiobook-search": true;
+  "apple-books-audiobook": true;
+  "apple-books-audiobook-reviews": true;
+  "apple-books-audiobook-similar": true;
+  "apple-books-author": true;
+  "apple-books-book": true;
+  "apple-books-book-reviews": true;
+  "apple-books-book-similar": true;
+  "apple-books-charts": false;
+  "apple-books-search": true;
+  "apple-books-series": true;
   "apple-podcasts-charts": false;
   "apple-podcasts-episodes-search": true;
   "apple-podcasts-search": true;
@@ -27292,6 +28662,12 @@ export interface OperationRequiredParamsMap {
   "datasets-github-users-item": true;
   "datasets-github-users-nearby": true;
   "datasets-github-users-search": false;
+  "datasets-goodreads-authors-facets": true;
+  "datasets-goodreads-authors-item": true;
+  "datasets-goodreads-authors-search": false;
+  "datasets-goodreads-books-facets": true;
+  "datasets-goodreads-books-item": true;
+  "datasets-goodreads-books-search": false;
   "datasets-google-map-businesses-facets": true;
   "datasets-google-map-businesses-item": true;
   "datasets-google-map-businesses-nearby": true;
@@ -27313,6 +28689,21 @@ export interface OperationRequiredParamsMap {
   "datasets-numbeo-cities-search": false;
   "datasets-numbeo-countries-item": true;
   "datasets-numbeo-countries-search": false;
+  "datasets-pitchbook-advisors-facets": true;
+  "datasets-pitchbook-advisors-item": true;
+  "datasets-pitchbook-advisors-search": false;
+  "datasets-pitchbook-companies-facets": true;
+  "datasets-pitchbook-companies-item": true;
+  "datasets-pitchbook-companies-search": false;
+  "datasets-pitchbook-funds-facets": true;
+  "datasets-pitchbook-funds-item": true;
+  "datasets-pitchbook-funds-search": false;
+  "datasets-pitchbook-investors-facets": true;
+  "datasets-pitchbook-investors-item": true;
+  "datasets-pitchbook-investors-search": false;
+  "datasets-pitchbook-limited-partners-facets": true;
+  "datasets-pitchbook-limited-partners-item": true;
+  "datasets-pitchbook-limited-partners-search": false;
   "datasets-playstation-games-facets": true;
   "datasets-playstation-games-item": true;
   "datasets-playstation-games-search": false;
@@ -27396,9 +28787,13 @@ export interface OperationRequiredParamsMap {
   "github-user-repos": true;
   "goodreads-author": true;
   "goodreads-author-books": true;
+  "goodreads-author-quotes": true;
   "goodreads-book": true;
+  "goodreads-book-editions": true;
   "goodreads-book-reviews": true;
+  "goodreads-genre": true;
   "goodreads-list": true;
+  "goodreads-lists": false;
   "goodreads-search": true;
   "google-finance-analyst-articles": true;
   "google-finance-chart": true;
@@ -27422,6 +28817,8 @@ export interface OperationRequiredParamsMap {
   "google-finance-ticker": true;
   "google-jobs": true;
   "google-map-place": true;
+  "google-map-place-photos": true;
+  "google-map-place-reviews": true;
   "google-map-search": true;
   "google-news": true;
   "google-search": true;
@@ -27474,6 +28871,7 @@ export interface OperationRequiredParamsMap {
   "jobs-company-search": true;
   "jobs-eightfold-board": true;
   "jobs-eightfold-job": true;
+  "jobs-gem-board": true;
   "jobs-greenhouse-board": true;
   "jobs-greenhouse-job": true;
   "jobs-hiring-signals": true;
@@ -27484,6 +28882,7 @@ export interface OperationRequiredParamsMap {
   "jobs-oracle-board": true;
   "jobs-oracle-job": true;
   "jobs-personio-feed": true;
+  "jobs-pinpoint-board": true;
   "jobs-recruitee-offer": true;
   "jobs-recruitee-offers": true;
   "jobs-rippling-board": true;
@@ -27582,9 +28981,11 @@ export interface OperationRequiredParamsMap {
   "numbeo-indices-rankings": true;
   "numbeo-indices-rankings-by-country": true;
   "ping": false;
+  "pitchbook-advisor": false;
   "pitchbook-company": false;
   "pitchbook-fund": false;
   "pitchbook-investor": false;
+  "pitchbook-limited-partner": false;
   "playstation-browse": false;
   "playstation-category": true;
   "playstation-concept": true;
@@ -27877,6 +29278,9 @@ export interface OperationRequiredParamsMap {
   "trustpilot-categories": false;
   "trustpilot-category-search": true;
   "trustpilot-category": true;
+  "ubereats-search": true;
+  "ubereats-store": true;
+  "ubereats-store-reviews": true;
   "usage-me-endpoints": false;
   "usage-me-overview": false;
   "usage-me-recent-ips": false;
@@ -27977,6 +29381,18 @@ export type OperationIdLiteral =
   | "anime-title-characters"
   | "anime-title-recommendations"
   | "anime-title-staff"
+  | "apple-books-audiobook-series"
+  | "apple-books-audiobook-search"
+  | "apple-books-audiobook"
+  | "apple-books-audiobook-reviews"
+  | "apple-books-audiobook-similar"
+  | "apple-books-author"
+  | "apple-books-book"
+  | "apple-books-book-reviews"
+  | "apple-books-book-similar"
+  | "apple-books-charts"
+  | "apple-books-search"
+  | "apple-books-series"
   | "apple-podcasts-charts"
   | "apple-podcasts-episodes-search"
   | "apple-podcasts-search"
@@ -28092,6 +29508,12 @@ export type OperationIdLiteral =
   | "datasets-github-users-item"
   | "datasets-github-users-nearby"
   | "datasets-github-users-search"
+  | "datasets-goodreads-authors-facets"
+  | "datasets-goodreads-authors-item"
+  | "datasets-goodreads-authors-search"
+  | "datasets-goodreads-books-facets"
+  | "datasets-goodreads-books-item"
+  | "datasets-goodreads-books-search"
   | "datasets-google-map-businesses-facets"
   | "datasets-google-map-businesses-item"
   | "datasets-google-map-businesses-nearby"
@@ -28113,6 +29535,21 @@ export type OperationIdLiteral =
   | "datasets-numbeo-cities-search"
   | "datasets-numbeo-countries-item"
   | "datasets-numbeo-countries-search"
+  | "datasets-pitchbook-advisors-facets"
+  | "datasets-pitchbook-advisors-item"
+  | "datasets-pitchbook-advisors-search"
+  | "datasets-pitchbook-companies-facets"
+  | "datasets-pitchbook-companies-item"
+  | "datasets-pitchbook-companies-search"
+  | "datasets-pitchbook-funds-facets"
+  | "datasets-pitchbook-funds-item"
+  | "datasets-pitchbook-funds-search"
+  | "datasets-pitchbook-investors-facets"
+  | "datasets-pitchbook-investors-item"
+  | "datasets-pitchbook-investors-search"
+  | "datasets-pitchbook-limited-partners-facets"
+  | "datasets-pitchbook-limited-partners-item"
+  | "datasets-pitchbook-limited-partners-search"
   | "datasets-playstation-games-facets"
   | "datasets-playstation-games-item"
   | "datasets-playstation-games-search"
@@ -28196,9 +29633,13 @@ export type OperationIdLiteral =
   | "github-user-repos"
   | "goodreads-author"
   | "goodreads-author-books"
+  | "goodreads-author-quotes"
   | "goodreads-book"
+  | "goodreads-book-editions"
   | "goodreads-book-reviews"
+  | "goodreads-genre"
   | "goodreads-list"
+  | "goodreads-lists"
   | "goodreads-search"
   | "google-finance-analyst-articles"
   | "google-finance-chart"
@@ -28222,6 +29663,8 @@ export type OperationIdLiteral =
   | "google-finance-ticker"
   | "google-jobs"
   | "google-map-place"
+  | "google-map-place-photos"
+  | "google-map-place-reviews"
   | "google-map-search"
   | "google-news"
   | "google-search"
@@ -28274,6 +29717,7 @@ export type OperationIdLiteral =
   | "jobs-company-search"
   | "jobs-eightfold-board"
   | "jobs-eightfold-job"
+  | "jobs-gem-board"
   | "jobs-greenhouse-board"
   | "jobs-greenhouse-job"
   | "jobs-hiring-signals"
@@ -28284,6 +29728,7 @@ export type OperationIdLiteral =
   | "jobs-oracle-board"
   | "jobs-oracle-job"
   | "jobs-personio-feed"
+  | "jobs-pinpoint-board"
   | "jobs-recruitee-offer"
   | "jobs-recruitee-offers"
   | "jobs-rippling-board"
@@ -28382,9 +29827,11 @@ export type OperationIdLiteral =
   | "numbeo-indices-rankings"
   | "numbeo-indices-rankings-by-country"
   | "ping"
+  | "pitchbook-advisor"
   | "pitchbook-company"
   | "pitchbook-fund"
   | "pitchbook-investor"
+  | "pitchbook-limited-partner"
   | "playstation-browse"
   | "playstation-category"
   | "playstation-concept"
@@ -28677,6 +30124,9 @@ export type OperationIdLiteral =
   | "trustpilot-categories"
   | "trustpilot-category-search"
   | "trustpilot-category"
+  | "ubereats-search"
+  | "ubereats-store"
+  | "ubereats-store-reviews"
   | "usage-me-endpoints"
   | "usage-me-overview"
   | "usage-me-recent-ips"
@@ -28779,6 +30229,18 @@ export declare const OperationIds: Readonly<{
   AppStoreSimilar: "appstore-similar";
   AppStoreSuggest: "appstore-suggest";
   AppStoreVersionHistory: "appstore-version-history";
+  AppleBooksAudiobook: "apple-books-audiobook";
+  AppleBooksAudiobookReviews: "apple-books-audiobook-reviews";
+  AppleBooksAudiobookSearch: "apple-books-audiobook-search";
+  AppleBooksAudiobookSeries: "apple-books-audiobook-series";
+  AppleBooksAudiobookSimilar: "apple-books-audiobook-similar";
+  AppleBooksAuthor: "apple-books-author";
+  AppleBooksBook: "apple-books-book";
+  AppleBooksBookReviews: "apple-books-book-reviews";
+  AppleBooksBookSimilar: "apple-books-book-similar";
+  AppleBooksCharts: "apple-books-charts";
+  AppleBooksSearch: "apple-books-search";
+  AppleBooksSeries: "apple-books-series";
   ApplePodcastsCharts: "apple-podcasts-charts";
   ApplePodcastsEpisodesSearch: "apple-podcasts-episodes-search";
   ApplePodcastsSearch: "apple-podcasts-search";
@@ -28882,6 +30344,12 @@ export declare const OperationIds: Readonly<{
   DatasetsGithubUsersItem: "datasets-github-users-item";
   DatasetsGithubUsersNearby: "datasets-github-users-nearby";
   DatasetsGithubUsersSearch: "datasets-github-users-search";
+  DatasetsGoodreadsAuthorsFacets: "datasets-goodreads-authors-facets";
+  DatasetsGoodreadsAuthorsItem: "datasets-goodreads-authors-item";
+  DatasetsGoodreadsAuthorsSearch: "datasets-goodreads-authors-search";
+  DatasetsGoodreadsBooksFacets: "datasets-goodreads-books-facets";
+  DatasetsGoodreadsBooksItem: "datasets-goodreads-books-item";
+  DatasetsGoodreadsBooksSearch: "datasets-goodreads-books-search";
   DatasetsGoogleMapBusinessesFacets: "datasets-google-map-businesses-facets";
   DatasetsGoogleMapBusinessesItem: "datasets-google-map-businesses-item";
   DatasetsGoogleMapBusinessesNearby: "datasets-google-map-businesses-nearby";
@@ -28904,6 +30372,21 @@ export declare const OperationIds: Readonly<{
   DatasetsNumbeoCitiesSearch: "datasets-numbeo-cities-search";
   DatasetsNumbeoCountriesItem: "datasets-numbeo-countries-item";
   DatasetsNumbeoCountriesSearch: "datasets-numbeo-countries-search";
+  DatasetsPitchbookAdvisorsFacets: "datasets-pitchbook-advisors-facets";
+  DatasetsPitchbookAdvisorsItem: "datasets-pitchbook-advisors-item";
+  DatasetsPitchbookAdvisorsSearch: "datasets-pitchbook-advisors-search";
+  DatasetsPitchbookCompaniesFacets: "datasets-pitchbook-companies-facets";
+  DatasetsPitchbookCompaniesItem: "datasets-pitchbook-companies-item";
+  DatasetsPitchbookCompaniesSearch: "datasets-pitchbook-companies-search";
+  DatasetsPitchbookFundsFacets: "datasets-pitchbook-funds-facets";
+  DatasetsPitchbookFundsItem: "datasets-pitchbook-funds-item";
+  DatasetsPitchbookFundsSearch: "datasets-pitchbook-funds-search";
+  DatasetsPitchbookInvestorsFacets: "datasets-pitchbook-investors-facets";
+  DatasetsPitchbookInvestorsItem: "datasets-pitchbook-investors-item";
+  DatasetsPitchbookInvestorsSearch: "datasets-pitchbook-investors-search";
+  DatasetsPitchbookLimitedPartnersFacets: "datasets-pitchbook-limited-partners-facets";
+  DatasetsPitchbookLimitedPartnersItem: "datasets-pitchbook-limited-partners-item";
+  DatasetsPitchbookLimitedPartnersSearch: "datasets-pitchbook-limited-partners-search";
   DatasetsPlaystationGamesFacets: "datasets-playstation-games-facets";
   DatasetsPlaystationGamesItem: "datasets-playstation-games-item";
   DatasetsPlaystationGamesSearch: "datasets-playstation-games-search";
@@ -28985,9 +30468,13 @@ export declare const OperationIds: Readonly<{
   GitHubGithubUserRepos: "github-user-repos";
   GoodreadsAuthor: "goodreads-author";
   GoodreadsAuthorBooks: "goodreads-author-books";
+  GoodreadsAuthorQuotes: "goodreads-author-quotes";
   GoodreadsBook: "goodreads-book";
+  GoodreadsBookEditions: "goodreads-book-editions";
   GoodreadsBookReviews: "goodreads-book-reviews";
+  GoodreadsGenre: "goodreads-genre";
   GoodreadsList: "goodreads-list";
+  GoodreadsLists: "goodreads-lists";
   GoodreadsSearch: "goodreads-search";
   GoogleFinanceAnalystArticles: "google-finance-analyst-articles";
   GoogleFinanceChart: "google-finance-chart";
@@ -29011,6 +30498,8 @@ export declare const OperationIds: Readonly<{
   GoogleFinanceTicker: "google-finance-ticker";
   GoogleJobs: "google-jobs";
   GoogleMapPlace: "google-map-place";
+  GoogleMapPlacePhotos: "google-map-place-photos";
+  GoogleMapPlaceReviews: "google-map-place-reviews";
   GoogleMapSearch: "google-map-search";
   GoogleNews: "google-news";
   GooglePlayApp: "googleplay-app";
@@ -29063,6 +30552,7 @@ export declare const OperationIds: Readonly<{
   JobsCompanySearch: "jobs-company-search";
   JobsEightfoldBoard: "jobs-eightfold-board";
   JobsEightfoldJob: "jobs-eightfold-job";
+  JobsGemBoard: "jobs-gem-board";
   JobsGreenhouseBoard: "jobs-greenhouse-board";
   JobsGreenhouseJob: "jobs-greenhouse-job";
   JobsHiringSignals: "jobs-hiring-signals";
@@ -29073,6 +30563,7 @@ export declare const OperationIds: Readonly<{
   JobsOracleBoard: "jobs-oracle-board";
   JobsOracleJob: "jobs-oracle-job";
   JobsPersonioFeed: "jobs-personio-feed";
+  JobsPinpointBoard: "jobs-pinpoint-board";
   JobsRecruiteeOffer: "jobs-recruitee-offer";
   JobsRecruiteeOffers: "jobs-recruitee-offers";
   JobsRipplingBoard: "jobs-rippling-board";
@@ -29172,9 +30663,11 @@ export declare const OperationIds: Readonly<{
   NumbeoIndicesCountry: "numbeo-indices-country";
   NumbeoIndicesRankings: "numbeo-indices-rankings";
   NumbeoIndicesRankingsByCountry: "numbeo-indices-rankings-by-country";
+  PitchBookPitchbookAdvisor: "pitchbook-advisor";
   PitchBookPitchbookCompany: "pitchbook-company";
   PitchBookPitchbookFund: "pitchbook-fund";
   PitchBookPitchbookInvestor: "pitchbook-investor";
+  PitchBookPitchbookLimitedPartner: "pitchbook-limited-partner";
   PlayStationPlaystationBrowse: "playstation-browse";
   PlayStationPlaystationCategory: "playstation-category";
   PlayStationPlaystationConcept: "playstation-concept";
@@ -29466,6 +30959,9 @@ export declare const OperationIds: Readonly<{
   TrustpilotCategories: "trustpilot-categories";
   TrustpilotCategory: "trustpilot-category";
   TrustpilotCategorySearch: "trustpilot-category-search";
+  UberEatsUbereatsSearch: "ubereats-search";
+  UberEatsUbereatsStore: "ubereats-store";
+  UberEatsUbereatsStoreReviews: "ubereats-store-reviews";
   UsageMeEndpoints: "usage-me-endpoints";
   UsageMeOverview: "usage-me-overview";
   UsageMeRecentIps: "usage-me-recent-ips";
