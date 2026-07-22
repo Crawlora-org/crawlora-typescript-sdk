@@ -426,11 +426,25 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "TRENDING_DESC",
+          "POPULARITY_DESC",
+          "SCORE_DESC",
+          "FAVOURITES_DESC",
+          "START_DATE_DESC",
+          "UPDATED_AT_DESC"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
       },
       {
+        "enum": [
+          "WINTER",
+          "SPRING",
+          "SUMMER",
+          "FALL"
+        ],
         "in": "query",
         "name": "season",
         "type": "string"
@@ -441,6 +455,15 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "TV",
+          "TV_SHORT",
+          "MOVIE",
+          "SPECIAL",
+          "OVA",
+          "ONA",
+          "MUSIC"
+        ],
         "in": "query",
         "name": "format",
         "type": "string"
@@ -451,6 +474,13 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "FINISHED",
+          "RELEASING",
+          "NOT_YET_RELEASED",
+          "CANCELLED",
+          "HIATUS"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
@@ -493,6 +523,14 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "SEARCH_MATCH",
+          "POPULARITY_DESC",
+          "SCORE_DESC",
+          "TRENDING_DESC",
+          "FAVOURITES_DESC",
+          "START_DATE_DESC"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -698,6 +736,7 @@ export const operations = {
     "formParams": [],
     "id": "apple-books-audiobook-reviews",
     "method": "GET",
+    "paginatable": true,
     "path": "/apple-books/audiobook/{id}/reviews",
     "pathParams": [
       "id"
@@ -715,6 +754,16 @@ export const operations = {
         "in": "query",
         "name": "lang",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -905,6 +954,7 @@ export const operations = {
     "formParams": [],
     "id": "apple-books-book-reviews",
     "method": "GET",
+    "paginatable": true,
     "path": "/apple-books/book/{id}/reviews",
     "pathParams": [
       "id"
@@ -922,6 +972,16 @@ export const operations = {
         "in": "query",
         "name": "lang",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -976,6 +1036,10 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "top-free",
+          "top-paid"
+        ],
         "in": "query",
         "name": "collection",
         "type": "string"
@@ -1119,6 +1183,51 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "apple-podcasts-charts-rankings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "apple-podcasts-charts-rankings",
+    "method": "GET",
+    "path": "/apple-podcasts/charts/rankings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "chart",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "apple-podcasts-episodes-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -1160,6 +1269,31 @@ export const operations = {
         "in": "query",
         "name": "page",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "apple-podcasts-new": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "apple-podcasts-new",
+    "method": "GET",
+    "path": "/apple-podcasts/new",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
       }
     ],
     "security": [
@@ -1282,6 +1416,38 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "apple-podcasts-show-related": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "apple-podcasts-show-related",
+    "method": "GET",
+    "path": "/apple-podcasts/show/{id}/related",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "appstore-app": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -1321,6 +1487,11 @@ export const operations = {
         "in": "query",
         "name": "ratings",
         "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "platforms",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -1344,6 +1515,109 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "appstore-editorial": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "appstore-editorial",
+    "method": "GET",
+    "path": "/appstore/editorial",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "iphone",
+          "ipad",
+          "mac",
+          "vision",
+          "watch",
+          "tv"
+        ],
+        "in": "query",
+        "name": "device",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "main",
+          "arcade"
+        ],
+        "in": "query",
+        "name": "section",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "appstore-editorial-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "appstore-editorial-category",
+    "method": "GET",
+    "path": "/appstore/editorial/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "iphone",
+          "ipad",
+          "mac",
+          "vision",
+          "watch",
+          "tv"
+        ],
+        "in": "query",
+        "name": "device",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "string"
+      },
       {
         "in": "query",
         "name": "country",
@@ -1582,6 +1856,16 @@ export const operations = {
         "in": "query",
         "name": "ids_only",
         "type": "boolean"
+      },
+      {
+        "enum": [
+          "phone",
+          "pad",
+          "mac"
+        ],
+        "in": "query",
+        "name": "platform",
+        "type": "string"
       }
     ],
     "security": [
@@ -5791,12 +6075,34 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "country",
+          "market",
+          "currency",
+          "superhost",
+          "guest_favorite",
+          "rating_band",
+          "review_band",
+          "admin1",
+          "locality",
+          "room_type",
+          "property_type",
+          "amenities"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
         "type": "string"
       },
       {
+        "enum": [
+          "country",
+          "market",
+          "admin1",
+          "locality",
+          "room_type",
+          "property_type"
+        ],
         "in": "query",
         "name": "group_by",
         "type": "string"
@@ -5952,6 +6258,14 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "country",
+          "market",
+          "admin1",
+          "locality",
+          "room_type",
+          "property_type"
+        ],
         "in": "query",
         "name": "group_by",
         "type": "string"
@@ -5997,6 +6311,179 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "listings_desc",
+          "superhost_pct_desc",
+          "rating_desc",
+          "key_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-apple-podcasts-shows-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apple-podcasts-shows-facets",
+    "method": "GET",
+    "path": "/datasets/apple-podcasts-shows/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "genre",
+          "genre_id",
+          "country",
+          "content_advisory_rating",
+          "run_id"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "explicitness",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_track_count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-apple-podcasts-shows-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apple-podcasts-shows-item",
+    "method": "GET",
+    "path": "/datasets/apple-podcasts-shows/items/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-apple-podcasts-shows-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apple-podcasts-shows-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/apple-podcasts-shows/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "explicitness",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_track_count",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "popularity",
+          "track_count_desc",
+          "release_desc",
+          "title_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -6038,13 +6525,28 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "ios",
+          "android"
+        ],
         "in": "query",
         "name": "store",
         "type": "string"
       },
       {
+        "enum": [
+          "top_free",
+          "top_paid",
+          "top_grossing",
+          "new"
+        ],
         "in": "query",
         "name": "chart_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "platform",
         "type": "string"
       },
       {
@@ -6073,6 +6575,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "rank",
+          "rank_desc",
+          "date_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -6114,6 +6621,10 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "ios",
+          "android"
+        ],
         "in": "query",
         "name": "store",
         "type": "string"
@@ -6134,6 +6645,12 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "recent",
+          "score_desc",
+          "score_asc",
+          "helpful_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -6175,9 +6692,20 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "ios",
+          "android",
+          "both"
+        ],
         "in": "query",
         "name": "store",
         "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "platforms",
+        "type": "array"
       },
       {
         "in": "query",
@@ -6210,6 +6738,14 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "rating_desc",
+          "reviews_desc",
+          "installs_desc",
+          "updated_at_desc",
+          "popularity_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -6245,6 +6781,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "gross_band",
+          "years_active",
+          "lifetime_year",
+          "franchise_names",
+          "brand_names",
+          "genre_names",
+          "hydrated",
+          "is_billion_dollar",
+          "in_lifetime_top_1000_ww"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -6393,6 +6940,14 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "under_50m",
+          "50_100m",
+          "100_250m",
+          "250_500m",
+          "500m_1b",
+          "over_1b"
+        ],
         "in": "query",
         "name": "gross_band",
         "type": "string"
@@ -6453,6 +7008,15 @@ export const operations = {
         "type": "number"
       },
       {
+        "enum": [
+          "relevance",
+          "worldwide_desc",
+          "domestic_desc",
+          "peak_worldwide_desc",
+          "lifetime_rank_asc",
+          "year_desc",
+          "year_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -6486,6 +7050,16 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "users",
+          "rating",
+          "rating_count",
+          "version",
+          "developer",
+          "permissions",
+          "privacy",
+          "status"
+        ],
         "in": "query",
         "name": "change_type",
         "type": "string"
@@ -6514,6 +7088,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "item_type",
+          "category",
+          "developer",
+          "developer_email",
+          "manifest_version",
+          "permission",
+          "status",
+          "collects_data",
+          "has_broad_host_access"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -6525,6 +7110,12 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "extension",
+          "theme",
+          "app",
+          "unknown"
+        ],
         "in": "query",
         "name": "item_type",
         "type": "string"
@@ -6550,11 +7141,19 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "active",
+          "removed"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
       },
       {
+        "enum": [
+          "2",
+          "3"
+        ],
         "in": "query",
         "name": "manifest_version",
         "type": "integer"
@@ -6585,6 +7184,14 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "users_desc",
+          "rating_desc",
+          "reviews_desc",
+          "updated_desc",
+          "trending_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -6662,6 +7269,11 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "7",
+          "30",
+          "90"
+        ],
         "in": "query",
         "name": "days",
         "type": "integer"
@@ -6696,6 +7308,12 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "extension",
+          "theme",
+          "app",
+          "unknown"
+        ],
         "in": "query",
         "name": "item_type",
         "type": "string"
@@ -6721,11 +7339,19 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "active",
+          "removed"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
       },
       {
+        "enum": [
+          "2",
+          "3"
+        ],
         "in": "query",
         "name": "manifest_version",
         "type": "integer"
@@ -6756,6 +7382,14 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "users_desc",
+          "rating_desc",
+          "reviews_desc",
+          "updated_desc",
+          "trending_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -6795,6 +7429,12 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "extension",
+          "theme",
+          "app",
+          "unknown"
+        ],
         "in": "query",
         "name": "item_type",
         "type": "string"
@@ -6820,11 +7460,19 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "active",
+          "removed"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
       },
       {
+        "enum": [
+          "2",
+          "3"
+        ],
         "in": "query",
         "name": "manifest_version",
         "type": "integer"
@@ -6926,6 +7574,12 @@ export const operations = {
         "type": "boolean"
       },
       {
+        "enum": [
+          "followers_desc",
+          "engagement_desc",
+          "likes_desc",
+          "relevance"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -6961,6 +7615,25 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "influence_tier",
+          "type",
+          "country",
+          "country_code",
+          "state",
+          "city",
+          "domains",
+          "company",
+          "reachable",
+          "has_email",
+          "has_twitter",
+          "has_blog",
+          "active_90d",
+          "hireable",
+          "is_org",
+          "is_bot",
+          "is_suspected_automation"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -6982,6 +7655,13 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "nano",
+          "micro",
+          "mid",
+          "macro",
+          "mega"
+        ],
         "in": "query",
         "name": "influence_tier",
         "type": "string"
@@ -7102,6 +7782,14 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "rank_score_desc",
+          "followers_desc",
+          "account_age_desc",
+          "account_age_asc",
+          "distance_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -7167,6 +7855,13 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "nano",
+          "micro",
+          "mid",
+          "macro",
+          "mega"
+        ],
         "in": "query",
         "name": "influence_tier",
         "type": "string"
@@ -7228,6 +7923,13 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "nano",
+          "micro",
+          "mid",
+          "macro",
+          "mega"
+        ],
         "in": "query",
         "name": "influence_tier",
         "type": "string"
@@ -7348,6 +8050,14 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "rank_score_desc",
+          "followers_desc",
+          "account_age_desc",
+          "account_age_asc",
+          "distance_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -7383,6 +8093,10 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "genres",
+          "run_id"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -7491,6 +8205,12 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "rating_desc",
+          "reviews_desc",
+          "name_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -7526,6 +8246,17 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "genres",
+          "format",
+          "language",
+          "publisher",
+          "primary_author",
+          "primary_author_id",
+          "series_name",
+          "publication_year",
+          "run_id"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -7744,6 +8475,16 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "rating_desc",
+          "reviews_desc",
+          "publication_desc",
+          "publication_asc",
+          "pages_desc",
+          "pages_asc",
+          "title_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -7779,6 +8520,15 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "category",
+          "country",
+          "state",
+          "county",
+          "city",
+          "town",
+          "website_status"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -7860,6 +8610,13 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "updated_at_desc",
+          "rating_desc",
+          "review_count_desc",
+          "distance_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -8046,6 +8803,13 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "updated_at_desc",
+          "rating_desc",
+          "review_count_desc",
+          "distance_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -8081,6 +8845,16 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "region_type",
+          "state_code",
+          "property_type",
+          "parent_metro",
+          "parent_metro_code",
+          "income_vintage",
+          "is_latest",
+          "period_begin"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -8092,6 +8866,13 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "national",
+          "metro",
+          "county",
+          "city",
+          "zip"
+        ],
         "in": "query",
         "name": "region_type",
         "type": "string"
@@ -8256,6 +9037,13 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "national",
+          "metro",
+          "county",
+          "city",
+          "zip"
+        ],
         "in": "query",
         "name": "region_type",
         "type": "string"
@@ -8356,6 +9144,22 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "price_desc",
+          "price_asc",
+          "list_price_desc",
+          "list_price_asc",
+          "price_to_income_desc",
+          "price_to_income_asc",
+          "salary_to_buy_desc",
+          "salary_to_buy_asc",
+          "dom_asc",
+          "dom_desc",
+          "inventory_desc",
+          "homes_sold_desc",
+          "period_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -8420,6 +9224,14 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "active",
+          "empty",
+          "gone",
+          "blocked",
+          "pending",
+          "invalid"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
@@ -8430,6 +9242,11 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "open_desc",
+          "company_asc",
+          "crawled_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -8653,6 +9470,21 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
         "name": "employment_type",
         "type": "string"
       },
@@ -8660,6 +9492,16 @@ export const operations = {
         "in": "query",
         "name": "remote",
         "type": "boolean"
+      },
+      {
+        "enum": [
+          "onsite",
+          "hybrid",
+          "remote"
+        ],
+        "in": "query",
+        "name": "workplace_type",
+        "type": "string"
       },
       {
         "in": "query",
@@ -8682,6 +9524,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "relevance",
+          "posted_desc",
+          "company_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -8717,6 +9564,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "outlet",
+          "vertical",
+          "topic",
+          "contact_type"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -8733,6 +9586,43 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "tech",
+          "crypto",
+          "marketing",
+          "consumer_tech",
+          "consumer_policy",
+          "cybersecurity",
+          "health",
+          "gaming",
+          "climate",
+          "business",
+          "entertainment",
+          "sports",
+          "legal",
+          "science",
+          "politics",
+          "real_estate",
+          "automotive",
+          "travel",
+          "food",
+          "education",
+          "design",
+          "film_tv",
+          "fashion",
+          "music",
+          "personal_finance",
+          "tech_independent",
+          "culture_independent",
+          "local_news",
+          "construction",
+          "banking",
+          "retail",
+          "aerospace_defense",
+          "energy",
+          "agriculture",
+          "local_business"
+        ],
         "in": "query",
         "name": "vertical",
         "type": "string"
@@ -8743,6 +9633,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "email",
+          "social",
+          "none"
+        ],
         "in": "query",
         "name": "contact_type",
         "type": "string"
@@ -8801,6 +9696,43 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "tech",
+          "crypto",
+          "marketing",
+          "consumer_tech",
+          "consumer_policy",
+          "cybersecurity",
+          "health",
+          "gaming",
+          "climate",
+          "business",
+          "entertainment",
+          "sports",
+          "legal",
+          "science",
+          "politics",
+          "real_estate",
+          "automotive",
+          "travel",
+          "food",
+          "education",
+          "design",
+          "film_tv",
+          "fashion",
+          "music",
+          "personal_finance",
+          "tech_independent",
+          "culture_independent",
+          "local_news",
+          "construction",
+          "banking",
+          "retail",
+          "aerospace_defense",
+          "energy",
+          "agriculture",
+          "local_business"
+        ],
         "in": "query",
         "name": "vertical",
         "type": "string"
@@ -8811,11 +9743,22 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "email",
+          "social",
+          "none"
+        ],
         "in": "query",
         "name": "contact_type",
         "type": "string"
       },
       {
+        "enum": [
+          "relevance",
+          "name_asc",
+          "outlet_asc",
+          "crawled_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -8870,6 +9813,9 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "country"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -9028,6 +9974,17 @@ export const operations = {
         "type": "number"
       },
       {
+        "enum": [
+          "name_asc",
+          "cost_of_living_asc",
+          "cost_of_living_desc",
+          "quality_of_life_desc",
+          "safety_desc",
+          "crime_asc",
+          "health_care_desc",
+          "pollution_asc",
+          "traffic_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -9135,6 +10092,17 @@ export const operations = {
         "type": "number"
       },
       {
+        "enum": [
+          "name_asc",
+          "cost_of_living_asc",
+          "cost_of_living_desc",
+          "quality_of_life_desc",
+          "safety_desc",
+          "crime_asc",
+          "health_care_desc",
+          "pollution_asc",
+          "traffic_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -9170,6 +10138,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "service_type",
+          "hq_country",
+          "hq_state",
+          "run_id"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -9288,6 +10262,12 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "name_asc",
+          "year_founded_desc",
+          "recently_crawled_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -9323,6 +10303,15 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "status",
+          "primary_industry",
+          "financing_status",
+          "ownership_status",
+          "hq_country",
+          "hq_state",
+          "run_id"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -9481,6 +10470,13 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "name_asc",
+          "year_founded_desc",
+          "investor_count_desc",
+          "recently_crawled_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -9516,6 +10512,11 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "fund_strategy",
+          "fund_status",
+          "run_id"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -9624,6 +10625,12 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "name_asc",
+          "vintage_desc",
+          "recently_crawled_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -9659,6 +10666,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "status",
+          "investor_type",
+          "hq_country",
+          "hq_state",
+          "run_id"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -9787,6 +10801,12 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "name_asc",
+          "portfolio_count_desc",
+          "recently_crawled_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -9822,6 +10842,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "institution_type",
+          "hq_country",
+          "hq_state",
+          "run_id"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -9940,6 +10966,12 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "name_asc",
+          "year_founded_desc",
+          "recently_crawled_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -9975,6 +11007,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "publisher",
+          "classification",
+          "genres",
+          "platforms",
+          "content_rating_authority",
+          "content_descriptors",
+          "price_tier",
+          "service_branding",
+          "region",
+          "release_year",
+          "run_id",
+          "is_free",
+          "is_addon",
+          "is_tied_to_subscription",
+          "coming_soon"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -10016,6 +11065,15 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "free",
+          "under_5",
+          "5_to_10",
+          "10_to_20",
+          "20_to_40",
+          "40_to_60",
+          "60_plus"
+        ],
         "in": "query",
         "name": "price_tier",
         "type": "string"
@@ -10183,6 +11241,15 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "free",
+          "under_5",
+          "5_to_10",
+          "10_to_20",
+          "20_to_40",
+          "40_to_60",
+          "60_plus"
+        ],
         "in": "query",
         "name": "price_tier",
         "type": "string"
@@ -10273,6 +11340,16 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "rating_desc",
+          "reviews_desc",
+          "price_asc",
+          "price_desc",
+          "discount_desc",
+          "release_desc",
+          "release_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -10308,6 +11385,10 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "topic",
+          "product_count_band"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -10396,6 +11477,12 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "total_votes_desc",
+          "product_count_desc",
+          "followers_desc",
+          "relevance"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -10431,6 +11518,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "topic",
+          "launch_year",
+          "pricing_type",
+          "product_state"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -10579,6 +11672,14 @@ export const operations = {
         "type": "boolean"
       },
       {
+        "enum": [
+          "relevance",
+          "votes_desc",
+          "launched_desc",
+          "launched_asc",
+          "rating_desc",
+          "best_rank_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -10614,12 +11715,21 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "topic",
+          "launch_year"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
         "type": "string"
       },
       {
+        "enum": [
+          "topic_month",
+          "topic_year",
+          "topic"
+        ],
         "in": "query",
         "name": "group_by",
         "type": "string"
@@ -10671,6 +11781,11 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "topic_month",
+          "topic_year",
+          "topic"
+        ],
         "in": "query",
         "name": "group_by",
         "type": "string"
@@ -10701,6 +11816,12 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "period_desc",
+          "period_asc",
+          "launch_count_desc",
+          "sum_votes_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -10736,6 +11857,16 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "sic",
+          "sic_description",
+          "exchange",
+          "state_of_incorporation",
+          "entity_type",
+          "reporting_currency",
+          "revenue_band",
+          "forms_filed"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -10814,11 +11945,20 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "income",
+          "balance",
+          "cash_flow"
+        ],
         "in": "query",
         "name": "statement",
         "type": "string"
       },
       {
+        "enum": [
+          "annual",
+          "quarterly"
+        ],
         "in": "query",
         "name": "period",
         "type": "string"
@@ -11003,6 +12143,14 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "name_asc",
+          "revenue_desc",
+          "net_income_desc",
+          "filing_recent_desc",
+          "insider_activity_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11038,6 +12186,10 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "manager",
+          "issuer"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -11095,6 +12247,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "value_desc",
+          "value_asc",
+          "shares_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11136,6 +12293,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "percent_desc",
+          "percent_asc",
+          "rank_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11177,6 +12339,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "most_played",
+          "concurrent",
+          "top_sellers"
+        ],
         "in": "query",
         "name": "chart",
         "type": "string"
@@ -11197,6 +12364,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "rank",
+          "rank_desc",
+          "date_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11232,6 +12404,25 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "type",
+          "developer",
+          "publisher",
+          "genres",
+          "categories",
+          "tags",
+          "primary_tag",
+          "price_tier",
+          "review_tier",
+          "owners_bucket",
+          "release_year",
+          "run_id",
+          "is_free",
+          "coming_soon",
+          "platform_windows",
+          "platform_mac",
+          "platform_linux"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -11273,11 +12464,31 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "free",
+          "under5",
+          "5to15",
+          "15to30",
+          "30to60",
+          "over60"
+        ],
         "in": "query",
         "name": "price_tier",
         "type": "string"
       },
       {
+        "enum": [
+          "overwhelmingly_positive",
+          "very_positive",
+          "positive",
+          "mostly_positive",
+          "mixed",
+          "mostly_negative",
+          "negative",
+          "very_negative",
+          "overwhelmingly_negative",
+          "insufficient"
+        ],
         "in": "query",
         "name": "review_tier",
         "type": "string"
@@ -11445,11 +12656,31 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "free",
+          "under5",
+          "5to15",
+          "15to30",
+          "30to60",
+          "over60"
+        ],
         "in": "query",
         "name": "price_tier",
         "type": "string"
       },
       {
+        "enum": [
+          "overwhelmingly_positive",
+          "very_positive",
+          "positive",
+          "mostly_positive",
+          "mixed",
+          "mostly_negative",
+          "negative",
+          "very_negative",
+          "overwhelmingly_negative",
+          "insufficient"
+        ],
         "in": "query",
         "name": "review_tier",
         "type": "string"
@@ -11540,6 +12771,18 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "owners_desc",
+          "reviews_desc",
+          "review_score_desc",
+          "ccu_desc",
+          "metacritic_desc",
+          "price_asc",
+          "price_desc",
+          "release_desc",
+          "release_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11586,6 +12829,10 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "date_desc",
+          "date_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11632,6 +12879,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "date_desc",
+          "date_asc",
+          "players_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11678,6 +12930,13 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "date_desc",
+          "date_asc",
+          "price_asc",
+          "price_desc",
+          "discount_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11734,6 +12993,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "votes_desc",
+          "weighted_desc",
+          "date_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -11769,6 +13033,19 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "technology",
+          "category",
+          "cms",
+          "ecommerce",
+          "cdn",
+          "web_server",
+          "server_language",
+          "analytics",
+          "tld",
+          "render_tier",
+          "seed_source"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -11833,6 +13110,10 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "http",
+          "browser"
+        ],
         "in": "query",
         "name": "render_tier",
         "type": "string"
@@ -11963,6 +13244,10 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "http",
+          "browser"
+        ],
         "in": "query",
         "name": "render_tier",
         "type": "string"
@@ -11993,6 +13278,13 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "relevance",
+          "rank_asc",
+          "tech_count_desc",
+          "domain_asc",
+          "crawled_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -12028,6 +13320,20 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "category",
+          "country",
+          "payment_provider",
+          "target_audience",
+          "business_type",
+          "tech",
+          "channels",
+          "listing_tier",
+          "status",
+          "on_sale",
+          "is_sponsored",
+          "tags"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -12193,6 +13499,10 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "active",
+          "removed"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
@@ -12258,6 +13568,19 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "relevance",
+          "mrr_desc",
+          "revenue_desc",
+          "revenue_30d_desc",
+          "traffic_desc",
+          "growth_desc",
+          "deal_score_desc",
+          "price_asc",
+          "price_desc",
+          "multiple_asc",
+          "founded_desc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -12293,6 +13616,12 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "is_blue_verified",
+          "has_bio",
+          "has_external_url",
+          "source_tier"
+        ],
         "in": "query",
         "name": "facet",
         "required": true,
@@ -12369,6 +13698,15 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "relevance",
+          "followers_desc",
+          "followers_asc",
+          "crawled_at_desc",
+          "crawled_at_asc",
+          "created_at_desc",
+          "created_at_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -12486,6 +13824,15 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "relevance",
+          "followers_desc",
+          "followers_asc",
+          "crawled_at_desc",
+          "crawled_at_asc",
+          "created_at_desc",
+          "created_at_asc"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -15946,6 +17293,13 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "TOP_FREE",
+          "TOP_PAID",
+          "GROSSING",
+          "NEW_FREE",
+          "NEW_PAID"
+        ],
         "in": "query",
         "name": "collection",
         "type": "string"
@@ -16048,6 +17402,11 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "helpfulness",
+          "newest",
+          "rating"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -16124,6 +17483,11 @@ export const operations = {
         "type": "boolean"
       },
       {
+        "enum": [
+          "all",
+          "free",
+          "paid"
+        ],
         "in": "query",
         "name": "price",
         "type": "string"
@@ -19881,11 +21245,24 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "TRENDING_DESC",
+          "POPULARITY_DESC",
+          "SCORE_DESC",
+          "FAVOURITES_DESC",
+          "START_DATE_DESC",
+          "UPDATED_AT_DESC"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
       },
       {
+        "enum": [
+          "MANGA",
+          "NOVEL",
+          "ONE_SHOT"
+        ],
         "in": "query",
         "name": "format",
         "type": "string"
@@ -19896,6 +21273,13 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "FINISHED",
+          "RELEASING",
+          "NOT_YET_RELEASED",
+          "CANCELLED",
+          "HIATUS"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
@@ -19938,6 +21322,14 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "SEARCH_MATCH",
+          "POPULARITY_DESC",
+          "SCORE_DESC",
+          "TRENDING_DESC",
+          "FAVOURITES_DESC",
+          "START_DATE_DESC"
+        ],
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -24723,6 +26115,10 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "for_sale",
+          "sold"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
@@ -27191,11 +28587,24 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "album",
+          "single",
+          "compilation",
+          "appears_on",
+          "all"
+        ],
         "in": "query",
         "name": "type",
         "type": "string"
       },
       {
+        "enum": [
+          "date_desc",
+          "date_asc",
+          "name_asc",
+          "name_desc"
+        ],
         "in": "query",
         "name": "order",
         "type": "string"
@@ -27538,6 +28947,12 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "CHARTS",
+          "POPULAR_ALBUMS",
+          "POPULAR_ARTISTS",
+          "TRENDING_SONGS"
+        ],
         "in": "query",
         "name": "content_id",
         "type": "string"
@@ -27826,11 +29241,61 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "top-podcasts",
+          "top-episodes",
+          "trending",
+          "arts",
+          "business",
+          "comedy",
+          "education",
+          "fiction",
+          "health-fitness",
+          "history",
+          "leisure",
+          "music",
+          "news",
+          "religion-spirituality",
+          "science",
+          "society-culture",
+          "sports",
+          "technology",
+          "true-crime",
+          "tv-film"
+        ],
         "in": "query",
         "name": "chart",
         "type": "string"
       },
       {
+        "enum": [
+          "ar",
+          "au",
+          "at",
+          "br",
+          "ca",
+          "cl",
+          "co",
+          "dk",
+          "fi",
+          "fr",
+          "de",
+          "in",
+          "id",
+          "ie",
+          "it",
+          "jp",
+          "mx",
+          "nz",
+          "no",
+          "ph",
+          "pl",
+          "es",
+          "se",
+          "nl",
+          "gb",
+          "us"
+        ],
         "in": "query",
         "name": "region",
         "type": "string"
@@ -29538,487 +31003,6 @@ export const operations = {
         "in": "query",
         "name": "l",
         "type": "string"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-birthdays": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-birthdays",
-    "method": "GET",
-    "path": "/tcdb/birthdays",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "month",
-        "required": true,
-        "type": "integer"
-      },
-      {
-        "in": "query",
-        "name": "day",
-        "required": true,
-        "type": "integer"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-card": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-card",
-    "method": "GET",
-    "path": "/tcdb/card",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "set_id",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "card_id",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "path",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "url",
-        "type": "string"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-card-of-the-day": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-card-of-the-day",
-    "method": "GET",
-    "paginatable": true,
-    "path": "/tcdb/card-of-the-day",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "page",
-        "type": "integer"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-companies": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-companies",
-    "method": "GET",
-    "path": "/tcdb/companies",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-person": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-person",
-    "method": "GET",
-    "path": "/tcdb/person",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "id",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "path",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "url",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-releases": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-releases",
-    "method": "GET",
-    "path": "/tcdb/releases",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-search": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-search",
-    "method": "GET",
-    "path": "/tcdb/search",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "q",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "enum": [
-          "Baseball",
-          "Basketball",
-          "Boxing",
-          "Cricket",
-          "Football",
-          "Gaming",
-          "Golf",
-          "Hockey",
-          "Misc Sports",
-          "MMA",
-          "Multi-Sport",
-          "Non-Sport",
-          "Racing",
-          "Soccer",
-          "Tennis",
-          "Wrestling"
-        ],
-        "in": "query",
-        "name": "category",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-set": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-set",
-    "method": "GET",
-    "path": "/tcdb/set",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "id",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "path",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "url",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-sets": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-sets",
-    "method": "GET",
-    "path": "/tcdb/sets",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "enum": [
-          "Baseball",
-          "Basketball",
-          "Boxing",
-          "Cricket",
-          "Football",
-          "Gaming",
-          "Golf",
-          "Hockey",
-          "Misc Sports",
-          "MMA",
-          "Multi-Sport",
-          "Non-Sport",
-          "Racing",
-          "Soccer",
-          "Tennis",
-          "Wrestling"
-        ],
-        "in": "query",
-        "name": "sport",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "year",
-        "required": true,
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-tagged": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-tagged",
-    "method": "GET",
-    "paginatable": true,
-    "path": "/tcdb/tagged",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "id",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "path",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "url",
-        "type": "string"
-      },
-      {
-        "enum": [
-          "Baseball",
-          "Basketball",
-          "Boxing",
-          "Cricket",
-          "Football",
-          "Gaming",
-          "Golf",
-          "Hockey",
-          "Misc Sports",
-          "MMA",
-          "Multi-Sport",
-          "Non-Sport",
-          "Racing",
-          "Soccer",
-          "Tennis",
-          "Wrestling"
-        ],
-        "in": "query",
-        "name": "sport",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "page",
-        "type": "integer"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-team": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-team",
-    "method": "GET",
-    "path": "/tcdb/team",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "id",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "path",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "url",
-        "type": "string"
-      },
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
-      }
-    ],
-    "security": [
-      "ApiKeyAuth"
-    ]
-  },
-  "tcdb-top-sets": {
-    "bodyParam": null,
-    "bodyRequired": false,
-    "consumes": [
-      "application/json"
-    ],
-    "formParams": [],
-    "id": "tcdb-top-sets",
-    "method": "GET",
-    "path": "/tcdb/top-sets",
-    "pathParams": [],
-    "produces": [
-      "application/json"
-    ],
-    "queryParams": [
-      {
-        "in": "query",
-        "name": "limit",
-        "type": "integer"
       }
     ],
     "security": [
@@ -33003,11 +33987,24 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "income",
+          "income-statement",
+          "balance-sheet",
+          "balance",
+          "cash-flow",
+          "cashflow"
+        ],
         "in": "query",
         "name": "statement",
         "type": "string"
       },
       {
+        "enum": [
+          "annual",
+          "quarterly",
+          "trailing"
+        ],
         "in": "query",
         "name": "period",
         "type": "string"
@@ -33915,6 +34912,15 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "for_sale",
+          "sale",
+          "for-sale",
+          "for_rent",
+          "rent",
+          "for-rent",
+          "sold"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
@@ -33973,6 +34979,15 @@ export const operations = {
         "type": "integer"
       },
       {
+        "enum": [
+          "for_sale",
+          "sale",
+          "for-sale",
+          "for_rent",
+          "rent",
+          "for-rent",
+          "sold"
+        ],
         "in": "query",
         "name": "status",
         "type": "string"
@@ -34043,6 +35058,8 @@ export const groups = {
   "appStore": {
     "app": "appstore-app",
     "developer": "appstore-developer",
+    "editorial": "appstore-editorial",
+    "editorialCategory": "appstore-editorial-category",
     "list": "appstore-list",
     "privacy": "appstore-privacy",
     "ratings": "appstore-ratings",
@@ -34068,10 +35085,13 @@ export const groups = {
   },
   "applePodcasts": {
     "charts": "apple-podcasts-charts",
+    "chartsRankings": "apple-podcasts-charts-rankings",
     "episodesSearch": "apple-podcasts-episodes-search",
+    "new": "apple-podcasts-new",
     "search": "apple-podcasts-search",
     "show": "apple-podcasts-show",
-    "showEpisodes": "apple-podcasts-show-episodes"
+    "showEpisodes": "apple-podcasts-show-episodes",
+    "showRelated": "apple-podcasts-show-related"
   },
   "billing": {
     "me": "billing-me",
@@ -34170,6 +35190,9 @@ export const groups = {
     "airbnbMarketsItem": "datasets-airbnb-markets-item",
     "airbnbMarketsNearby": "datasets-airbnb-markets-nearby",
     "airbnbMarketsSearch": "datasets-airbnb-markets-search",
+    "applePodcastsShowsFacets": "datasets-apple-podcasts-shows-facets",
+    "applePodcastsShowsItem": "datasets-apple-podcasts-shows-item",
+    "applePodcastsShowsSearch": "datasets-apple-podcasts-shows-search",
     "appsChartsSearch": "datasets-apps-charts-search",
     "appsReviewsSearch": "datasets-apps-reviews-search",
     "appsSearch": "datasets-apps-search",
@@ -34810,20 +35833,6 @@ export const groups = {
     "tagsList": "steam-tags-list",
     "topSellers": "steam-top-sellers"
   },
-  "tcdb": {
-    "birthdays": "tcdb-birthdays",
-    "card": "tcdb-card",
-    "cardOfTheDay": "tcdb-card-of-the-day",
-    "companies": "tcdb-companies",
-    "person": "tcdb-person",
-    "releases": "tcdb-releases",
-    "search": "tcdb-search",
-    "set": "tcdb-set",
-    "sets": "tcdb-sets",
-    "tagged": "tcdb-tagged",
-    "team": "tcdb-team",
-    "topSets": "tcdb-top-sets"
-  },
   "threads": {
     "post": "threads-post",
     "postReplies": "threads-post-replies",
@@ -34987,7 +35996,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 836;
+export const operationCount = 832;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -35013,6 +36022,8 @@ export const OperationIds = Object.freeze({
   "AnimeTitleStaff": "anime-title-staff",
   "AppStoreApp": "appstore-app",
   "AppStoreDeveloper": "appstore-developer",
+  "AppStoreEditorial": "appstore-editorial",
+  "AppStoreEditorialCategory": "appstore-editorial-category",
   "AppStoreList": "appstore-list",
   "AppStorePrivacy": "appstore-privacy",
   "AppStoreRatings": "appstore-ratings",
@@ -35034,10 +36045,13 @@ export const OperationIds = Object.freeze({
   "AppleBooksSearch": "apple-books-search",
   "AppleBooksSeries": "apple-books-series",
   "ApplePodcastsCharts": "apple-podcasts-charts",
+  "ApplePodcastsChartsRankings": "apple-podcasts-charts-rankings",
   "ApplePodcastsEpisodesSearch": "apple-podcasts-episodes-search",
+  "ApplePodcastsNew": "apple-podcasts-new",
   "ApplePodcastsSearch": "apple-podcasts-search",
   "ApplePodcastsShow": "apple-podcasts-show",
   "ApplePodcastsShowEpisodes": "apple-podcasts-show-episodes",
+  "ApplePodcastsShowRelated": "apple-podcasts-show-related",
   "BillingMe": "billing-me",
   "BillingMeCheckout": "billing-me-checkout",
   "BillingMeEvents": "billing-me-events",
@@ -35118,6 +36132,9 @@ export const OperationIds = Object.freeze({
   "DatasetsAirbnbMarketsItem": "datasets-airbnb-markets-item",
   "DatasetsAirbnbMarketsNearby": "datasets-airbnb-markets-nearby",
   "DatasetsAirbnbMarketsSearch": "datasets-airbnb-markets-search",
+  "DatasetsApplePodcastsShowsFacets": "datasets-apple-podcasts-shows-facets",
+  "DatasetsApplePodcastsShowsItem": "datasets-apple-podcasts-shows-item",
+  "DatasetsApplePodcastsShowsSearch": "datasets-apple-podcasts-shows-search",
   "DatasetsAppsChartsSearch": "datasets-apps-charts-search",
   "DatasetsAppsReviewsSearch": "datasets-apps-reviews-search",
   "DatasetsAppsSearch": "datasets-apps-search",
@@ -35685,18 +36702,6 @@ export const OperationIds = Object.freeze({
   "SteamTags": "steam-tags",
   "SteamTagsList": "steam-tags-list",
   "SteamTopSellers": "steam-top-sellers",
-  "TcdbBirthdays": "tcdb-birthdays",
-  "TcdbCard": "tcdb-card",
-  "TcdbCardOfTheDay": "tcdb-card-of-the-day",
-  "TcdbCompanies": "tcdb-companies",
-  "TcdbPerson": "tcdb-person",
-  "TcdbReleases": "tcdb-releases",
-  "TcdbSearch": "tcdb-search",
-  "TcdbSet": "tcdb-set",
-  "TcdbSets": "tcdb-sets",
-  "TcdbTagged": "tcdb-tagged",
-  "TcdbTeam": "tcdb-team",
-  "TcdbTopSets": "tcdb-top-sets",
   "ThreadsPost": "threads-post",
   "ThreadsPostReplies": "threads-post-replies",
   "ThreadsProfile": "threads-profile",
