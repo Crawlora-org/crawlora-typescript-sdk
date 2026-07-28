@@ -28,7 +28,7 @@
     "maps-data",
     "finance-data"
   ],
-  "homepage": "https://crawlora.net",
+  "homepage": "https://crawlora.net?utm_source=npm&utm_medium=referral&utm_campaign=crawlora-typescript-sdk",
   "bugs": {
     "url": "https://github.com/Crawlora-org/crawlora-typescript-sdk/issues"
   },
