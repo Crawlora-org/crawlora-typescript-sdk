@@ -3671,6 +3671,21 @@ export interface ModelDatasetsHousingSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsInstagramUserFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsInstagramUserDatasetFacetItem>;
+}
+
+export interface ModelDatasetsInstagramUserSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsInstagramUserDatasetItem>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsJobCompaniesResponse {
   "companies"?: Array<Record<string, unknown>>;
   "page"?: number;
@@ -3861,6 +3876,16 @@ export interface ModelDatasetsProductHuntTrendsSearchResponse {
   "min_launches"?: number;
   "page"?: number;
   "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsRedditTrendingSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsRedditTrendingEntry>;
+  "page"?: number;
+  "page_size"?: number;
+  "snapshot_date"?: string;
   "sort"?: string;
   "total"?: number;
 }
@@ -4244,6 +4269,24 @@ export interface ModelDatasetsHousingMarketsSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsInstagramUserResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsInstagramUserRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsInstagramUsersFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsInstagramUserFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsInstagramUsersSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsInstagramUserSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsJobsCompaniesResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsJobCompaniesResponse;
@@ -4475,6 +4518,12 @@ export interface ModelDatasetsProducthuntTrendsFacetResponseDoc {
 export interface ModelDatasetsProducthuntTrendsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsProductHuntTrendsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsRedditTrendingSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsRedditTrendingSearchResponse;
   "msg"?: string;
 }
 
@@ -5187,6 +5236,7 @@ export interface ModelEsAppRecord {
   "currency"?: string;
   "developer"?: string;
   "developer_id"?: string;
+  "discovery_sources"?: Array<string>;
   "first_seen"?: string;
   "free"?: boolean;
   "icon_url"?: string;
@@ -5418,6 +5468,7 @@ export interface ModelEsChromeExtensionRecord {
   "description"?: string;
   "developer"?: string;
   "developer_email"?: string;
+  "discovery_sources"?: Array<string>;
   "first_seen"?: string;
   "has_broad_host_access"?: boolean;
   "host_permissions"?: Array<string>;
@@ -5795,6 +5846,55 @@ export interface ModelEsHousingMarketRecord {
   "zip_code"?: string;
 }
 
+export interface ModelEsInstagramUserDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsInstagramUserDatasetItem {
+  "avatar_url"?: string;
+  "biography"?: string;
+  "category_name"?: string;
+  "crawled_at"?: string;
+  "created_at"?: string;
+  "external_url"?: string;
+  "follower_following_ratio"?: number;
+  "followers"?: number;
+  "following"?: number;
+  "full_name"?: string;
+  "has_bio"?: boolean;
+  "has_external_url"?: boolean;
+  "id"?: string;
+  "is_business_account"?: boolean;
+  "is_verified"?: boolean;
+  "posts"?: number;
+  "schema_version"?: number;
+  "source_tier"?: string;
+  "username"?: string;
+}
+
+export interface ModelEsInstagramUserRecord {
+  "avatar_url"?: string;
+  "biography"?: string;
+  "category_name"?: string;
+  "crawled_at"?: string;
+  "created_at"?: string;
+  "external_url"?: string;
+  "follower_following_ratio"?: number;
+  "followers"?: number;
+  "following"?: number;
+  "full_name"?: string;
+  "has_bio"?: boolean;
+  "has_external_url"?: boolean;
+  "id"?: string;
+  "is_business_account"?: boolean;
+  "is_verified"?: boolean;
+  "posts"?: number;
+  "schema_version"?: number;
+  "source_tier"?: string;
+  "username"?: string;
+}
+
 export interface ModelEsJobPostingFacets {
   "by_department"?: Array<ModelEsFacetItem>;
   "by_employment_type"?: Array<ModelEsFacetItem>;
@@ -6163,6 +6263,21 @@ export interface ModelEsProductHuntTrendTopProduct {
 export interface ModelEsProductHuntTrendsFacetItem {
   "count"?: number;
   "value"?: string;
+}
+
+export interface ModelEsRedditTrendingEntry {
+  "author"?: string;
+  "crawled_at"?: string;
+  "created_utc"?: number;
+  "domain"?: string;
+  "permalink"?: string;
+  "post_id"?: string;
+  "post_uid"?: string;
+  "rank"?: number;
+  "snapshot_date"?: string;
+  "subreddit"?: string;
+  "title"?: string;
+  "url"?: string;
 }
 
 export interface ModelEsSecCompanyFacetItem {
@@ -7873,6 +7988,7 @@ export interface ModelGoogleplayApp {
   "is_available_in_play_pass"?: boolean;
   "max_installs"?: number;
   "min_installs"?: number;
+  "more_by_developer"?: Array<ModelGoogleplayListApp>;
   "offers_iap"?: boolean;
   "original_price"?: number;
   "preregister"?: boolean;
@@ -7887,6 +8003,7 @@ export interface ModelGoogleplayApp {
   "score"?: number;
   "score_text"?: string;
   "screenshots"?: Array<string>;
+  "similar_apps"?: Array<ModelGoogleplayListApp>;
   "summary"?: string;
   "title"?: string;
   "updated"?: number;
@@ -7921,9 +8038,34 @@ export interface ModelGoogleplayDataSafetyResult {
   "shared_data"?: Array<ModelGoogleplayDataSafetyEntry>;
 }
 
+export interface ModelGoogleplayDeviceRating {
+  "device"?: string;
+  "histogram"?: Record<string, unknown>;
+  "ratings"?: number;
+  "reviews"?: number;
+  "score"?: number;
+  "score_text"?: string;
+}
+
 export interface ModelGoogleplayFeature {
   "description"?: string;
   "title"?: string;
+}
+
+export interface ModelGoogleplayListApp {
+  "app_id"?: string;
+  "currency"?: string;
+  "developer"?: string;
+  "developer_id"?: string;
+  "free"?: boolean;
+  "icon"?: string;
+  "price"?: number;
+  "price_text"?: string;
+  "score"?: number;
+  "score_text"?: string;
+  "summary"?: string;
+  "title"?: string;
+  "url"?: string;
 }
 
 export interface ModelGoogleplayReview {
@@ -7989,6 +8131,12 @@ export interface ModelGoogleplayListResultsResponseDoc {
 export interface ModelGoogleplayPermissionsResultsResponseDoc {
   "code"?: number;
   "data"?: Array<unknown>;
+  "msg"?: string;
+}
+
+export interface ModelGoogleplayRatingsResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelGoogleplayDeviceRating>;
   "msg"?: string;
 }
 
@@ -12586,6 +12734,7 @@ export interface ModelRedditAuthor {
 
 export interface ModelRedditComment {
   "author"?: ModelRedditAuthor;
+  "award_count"?: number;
   "body"?: string;
   "created"?: string;
   "created_utc"?: number;
@@ -12600,6 +12749,7 @@ export interface ModelRedditComment {
 
 export interface ModelRedditCommentsResponse {
   "comments"?: Array<ModelRedditComment>;
+  "metrics_source"?: ModelRedditSourceDetail;
   "post"?: ModelRedditPost;
   "source"?: ModelRedditSourceDetail;
 }
@@ -12629,10 +12779,13 @@ export interface ModelRedditPagination {
 
 export interface ModelRedditPost {
   "author"?: ModelRedditAuthor;
+  "award_count"?: number;
   "comment_count"?: number;
   "created"?: string;
   "created_utc"?: number;
   "domain"?: string;
+  "estimated_downvotes"?: number;
+  "estimated_upvotes"?: number;
   "flair"?: string;
   "id"?: string;
   "is_self"?: boolean;
@@ -12650,9 +12803,11 @@ export interface ModelRedditPost {
   "title"?: string;
   "upvote_ratio"?: number;
   "url"?: string;
+  "vote_counts_estimated"?: boolean;
 }
 
 export interface ModelRedditPostResponse {
+  "metrics_source"?: ModelRedditSourceDetail;
   "post"?: ModelRedditPost;
   "source"?: ModelRedditSourceDetail;
 }
@@ -20747,6 +20902,58 @@ export interface DatasetsHousingMarketsSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsInstagramUsersFacetsResponse = CrawloraResponse<ModelDatasetsInstagramUsersFacetResponseDoc>;
+export interface DatasetsInstagramUsersFacetsParams {
+  "facet": "is_verified" | "is_business_account" | "has_bio" | "has_external_url" | "category_name" | "source_tier";
+  "q"?: string;
+  "username"?: string;
+  "category_name"?: string;
+  "source_tier"?: string;
+  "is_verified"?: boolean;
+  "is_business_account"?: boolean;
+  "has_bio"?: boolean;
+  "has_external_url"?: boolean;
+  "min_followers"?: number;
+  "max_followers"?: number;
+  "min_ratio"?: number;
+  "max_ratio"?: number;
+  "created_after"?: string;
+  "created_before"?: string;
+  "crawled_after"?: string;
+  "crawled_before"?: string;
+  "sort"?: "relevance" | "followers_desc" | "followers_asc" | "crawled_at_desc" | "crawled_at_asc" | "created_at_desc" | "created_at_asc";
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsInstagramUsersItemResponse = CrawloraResponse<ModelDatasetsInstagramUserResponseDoc>;
+export interface DatasetsInstagramUsersItemParams {
+  "username": string;
+}
+
+export type DatasetsInstagramUsersSearchResponse = CrawloraResponse<ModelDatasetsInstagramUsersSearchResponseDoc>;
+export interface DatasetsInstagramUsersSearchParams {
+  "q"?: string;
+  "username"?: string;
+  "category_name"?: string;
+  "source_tier"?: string;
+  "is_verified"?: boolean;
+  "is_business_account"?: boolean;
+  "has_bio"?: boolean;
+  "has_external_url"?: boolean;
+  "min_followers"?: number;
+  "max_followers"?: number;
+  "min_ratio"?: number;
+  "max_ratio"?: number;
+  "created_after"?: string;
+  "created_before"?: string;
+  "crawled_after"?: string;
+  "crawled_before"?: string;
+  "sort"?: "relevance" | "followers_desc" | "followers_asc" | "crawled_at_desc" | "crawled_at_asc" | "created_at_desc" | "created_at_asc";
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsJobsCompaniesResponse = CrawloraResponse<ModelDatasetsJobsCompaniesResponseDoc>;
 export interface DatasetsJobsCompaniesParams {
   "q"?: string;
@@ -21207,6 +21414,16 @@ export interface DatasetsProducthuntTrendsSearchParams {
   "min_votes"?: number;
   "min_launches"?: number;
   "sort"?: "period_desc" | "period_asc" | "launch_count_desc" | "sum_votes_desc";
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsRedditTrendingSearchResponse = CrawloraResponse<ModelDatasetsRedditTrendingSearchResponseDoc>;
+export interface DatasetsRedditTrendingSearchParams {
+  "q"?: string;
+  "subreddit"?: string;
+  "date"?: string;
+  "sort"?: "rank" | "date_desc";
   "page"?: number;
   "page_size"?: number;
 }
@@ -22199,6 +22416,7 @@ export type GooglePlayListResponse = CrawloraResponse<ModelGoogleplayListResults
 export interface GooglePlayListParams {
   "collection"?: "TOP_FREE" | "TOP_PAID" | "GROSSING" | "NEW_FREE" | "NEW_PAID";
   "category"?: string;
+  "device"?: "phone" | "tablet" | "tv" | "chromebook" | "watch" | "xr" | "car";
   "age"?: string;
   "num"?: number;
   "country"?: string;
@@ -22212,6 +22430,13 @@ export interface GooglePlayPermissionsParams {
   "country"?: string;
   "lang"?: string;
   "short"?: boolean;
+}
+
+export type GooglePlayRatingsResponse = CrawloraResponse<ModelGoogleplayRatingsResponseDoc>;
+export interface GooglePlayRatingsParams {
+  "app_id": string;
+  "country"?: string;
+  "lang"?: string;
 }
 
 export type GooglePlayReviewsResponse = CrawloraResponse<ModelGoogleplayReviewsResponseDoc>;
@@ -23792,6 +24017,7 @@ export interface RedditCommentsParams {
   "sort"?: "confidence" | "top" | "new" | "controversial" | "old" | "qa";
   "limit"?: number;
   "depth"?: number;
+  "include_metrics"?: boolean;
 }
 
 export type RedditDomainPostsResponse = CrawloraResponse<ModelRedditDomainPostsResponseDoc>;
@@ -23806,6 +24032,7 @@ export interface RedditDomainPostsParams {
 export type RedditPostResponse = CrawloraResponse<ModelRedditPostResponseDoc>;
 export interface RedditPostParams {
   "id": string;
+  "include_metrics"?: boolean;
 }
 
 export type RedditSearchResponse = CrawloraResponse<ModelRedditSearchResponseDoc>;
@@ -25859,6 +26086,9 @@ export interface DatasetsService {
   housingMarketsFacets<T = DatasetsHousingMarketsFacetsResponse>(params: DatasetsHousingMarketsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   housingMarketsItem<T = DatasetsHousingMarketsItemResponse>(params: DatasetsHousingMarketsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   housingMarketsSearch<T = DatasetsHousingMarketsSearchResponse>(params?: DatasetsHousingMarketsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  instagramUsersFacets<T = DatasetsInstagramUsersFacetsResponse>(params: DatasetsInstagramUsersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  instagramUsersItem<T = DatasetsInstagramUsersItemResponse>(params: DatasetsInstagramUsersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  instagramUsersSearch<T = DatasetsInstagramUsersSearchResponse>(params?: DatasetsInstagramUsersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobsCompanies<T = DatasetsJobsCompaniesResponse>(params?: DatasetsJobsCompaniesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobsCompanyItem<T = DatasetsJobsCompanyItemResponse>(params: DatasetsJobsCompanyItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jobsFacets<T = DatasetsJobsFacetsResponse>(params?: DatasetsJobsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -25899,6 +26129,7 @@ export interface DatasetsService {
   producthuntProductsSearch<T = DatasetsProducthuntProductsSearchResponse>(params?: DatasetsProducthuntProductsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntTrendsFacets<T = DatasetsProducthuntTrendsFacetsResponse>(params: DatasetsProducthuntTrendsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   producthuntTrendsSearch<T = DatasetsProducthuntTrendsSearchResponse>(params?: DatasetsProducthuntTrendsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  redditTrendingSearch<T = DatasetsRedditTrendingSearchResponse>(params?: DatasetsRedditTrendingSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   secCompaniesFacets<T = DatasetsSecCompaniesFacetsResponse>(params: DatasetsSecCompaniesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   secCompaniesFinancials<T = DatasetsSecCompaniesFinancialsResponse>(params: DatasetsSecCompaniesFinancialsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   secCompaniesInsider<T = DatasetsSecCompaniesInsiderResponse>(params: DatasetsSecCompaniesInsiderParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -26047,6 +26278,7 @@ export interface GooglePlayService {
   developer<T = GooglePlayDeveloperResponse>(params: GooglePlayDeveloperParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   list<T = GooglePlayListResponse>(params?: GooglePlayListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   permissions<T = GooglePlayPermissionsResponse>(params: GooglePlayPermissionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ratings<T = GooglePlayRatingsResponse>(params: GooglePlayRatingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reviews<T = GooglePlayReviewsResponse>(params: GooglePlayReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = GooglePlaySearchResponse>(params: GooglePlaySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   similar<T = GooglePlaySimilarResponse>(params: GooglePlaySimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -26909,6 +27141,9 @@ export interface OperationParamsMap {
   "datasets-housing-markets-facets": DatasetsHousingMarketsFacetsParams;
   "datasets-housing-markets-item": DatasetsHousingMarketsItemParams;
   "datasets-housing-markets-search": DatasetsHousingMarketsSearchParams;
+  "datasets-instagram-users-facets": DatasetsInstagramUsersFacetsParams;
+  "datasets-instagram-users-item": DatasetsInstagramUsersItemParams;
+  "datasets-instagram-users-search": DatasetsInstagramUsersSearchParams;
   "datasets-jobs-companies": DatasetsJobsCompaniesParams;
   "datasets-jobs-company-item": DatasetsJobsCompanyItemParams;
   "datasets-jobs-facets": DatasetsJobsFacetsParams;
@@ -26949,6 +27184,7 @@ export interface OperationParamsMap {
   "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchParams;
   "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsParams;
   "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchParams;
+  "datasets-reddit-trending-search": DatasetsRedditTrendingSearchParams;
   "datasets-sec-companies-facets": DatasetsSecCompaniesFacetsParams;
   "datasets-sec-companies-financials": DatasetsSecCompaniesFinancialsParams;
   "datasets-sec-companies-insider": DatasetsSecCompaniesInsiderParams;
@@ -27075,6 +27311,7 @@ export interface OperationParamsMap {
   "googleplay-developer": GooglePlayDeveloperParams;
   "googleplay-list": GooglePlayListParams;
   "googleplay-permissions": GooglePlayPermissionsParams;
+  "googleplay-ratings": GooglePlayRatingsParams;
   "googleplay-reviews": GooglePlayReviewsParams;
   "googleplay-search": GooglePlaySearchParams;
   "googleplay-similar": GooglePlaySimilarParams;
@@ -27744,6 +27981,9 @@ export interface OperationResponseMap {
   "datasets-housing-markets-facets": DatasetsHousingMarketsFacetsResponse;
   "datasets-housing-markets-item": DatasetsHousingMarketsItemResponse;
   "datasets-housing-markets-search": DatasetsHousingMarketsSearchResponse;
+  "datasets-instagram-users-facets": DatasetsInstagramUsersFacetsResponse;
+  "datasets-instagram-users-item": DatasetsInstagramUsersItemResponse;
+  "datasets-instagram-users-search": DatasetsInstagramUsersSearchResponse;
   "datasets-jobs-companies": DatasetsJobsCompaniesResponse;
   "datasets-jobs-company-item": DatasetsJobsCompanyItemResponse;
   "datasets-jobs-facets": DatasetsJobsFacetsResponse;
@@ -27784,6 +28024,7 @@ export interface OperationResponseMap {
   "datasets-producthunt-products-search": DatasetsProducthuntProductsSearchResponse;
   "datasets-producthunt-trends-facets": DatasetsProducthuntTrendsFacetsResponse;
   "datasets-producthunt-trends-search": DatasetsProducthuntTrendsSearchResponse;
+  "datasets-reddit-trending-search": DatasetsRedditTrendingSearchResponse;
   "datasets-sec-companies-facets": DatasetsSecCompaniesFacetsResponse;
   "datasets-sec-companies-financials": DatasetsSecCompaniesFinancialsResponse;
   "datasets-sec-companies-insider": DatasetsSecCompaniesInsiderResponse;
@@ -27910,6 +28151,7 @@ export interface OperationResponseMap {
   "googleplay-developer": GooglePlayDeveloperResponse;
   "googleplay-list": GooglePlayListResponse;
   "googleplay-permissions": GooglePlayPermissionsResponse;
+  "googleplay-ratings": GooglePlayRatingsResponse;
   "googleplay-reviews": GooglePlayReviewsResponse;
   "googleplay-search": GooglePlaySearchResponse;
   "googleplay-similar": GooglePlaySimilarResponse;
@@ -28579,6 +28821,9 @@ export interface OperationRequiredParamsMap {
   "datasets-housing-markets-facets": true;
   "datasets-housing-markets-item": true;
   "datasets-housing-markets-search": false;
+  "datasets-instagram-users-facets": true;
+  "datasets-instagram-users-item": true;
+  "datasets-instagram-users-search": false;
   "datasets-jobs-companies": false;
   "datasets-jobs-company-item": true;
   "datasets-jobs-facets": false;
@@ -28619,6 +28864,7 @@ export interface OperationRequiredParamsMap {
   "datasets-producthunt-products-search": false;
   "datasets-producthunt-trends-facets": true;
   "datasets-producthunt-trends-search": false;
+  "datasets-reddit-trending-search": false;
   "datasets-sec-companies-facets": true;
   "datasets-sec-companies-financials": true;
   "datasets-sec-companies-insider": true;
@@ -28745,6 +28991,7 @@ export interface OperationRequiredParamsMap {
   "googleplay-developer": true;
   "googleplay-list": false;
   "googleplay-permissions": true;
+  "googleplay-ratings": true;
   "googleplay-reviews": true;
   "googleplay-search": true;
   "googleplay-similar": true;
@@ -29421,6 +29668,9 @@ export type OperationIdLiteral =
   | "datasets-housing-markets-facets"
   | "datasets-housing-markets-item"
   | "datasets-housing-markets-search"
+  | "datasets-instagram-users-facets"
+  | "datasets-instagram-users-item"
+  | "datasets-instagram-users-search"
   | "datasets-jobs-companies"
   | "datasets-jobs-company-item"
   | "datasets-jobs-facets"
@@ -29461,6 +29711,7 @@ export type OperationIdLiteral =
   | "datasets-producthunt-products-search"
   | "datasets-producthunt-trends-facets"
   | "datasets-producthunt-trends-search"
+  | "datasets-reddit-trending-search"
   | "datasets-sec-companies-facets"
   | "datasets-sec-companies-financials"
   | "datasets-sec-companies-insider"
@@ -29587,6 +29838,7 @@ export type OperationIdLiteral =
   | "googleplay-developer"
   | "googleplay-list"
   | "googleplay-permissions"
+  | "googleplay-ratings"
   | "googleplay-reviews"
   | "googleplay-search"
   | "googleplay-similar"
@@ -30253,6 +30505,9 @@ export declare const OperationIds: Readonly<{
   DatasetsHousingMarketsFacets: "datasets-housing-markets-facets";
   DatasetsHousingMarketsItem: "datasets-housing-markets-item";
   DatasetsHousingMarketsSearch: "datasets-housing-markets-search";
+  DatasetsInstagramUsersFacets: "datasets-instagram-users-facets";
+  DatasetsInstagramUsersItem: "datasets-instagram-users-item";
+  DatasetsInstagramUsersSearch: "datasets-instagram-users-search";
   DatasetsJobsCompanies: "datasets-jobs-companies";
   DatasetsJobsCompanyItem: "datasets-jobs-company-item";
   DatasetsJobsFacets: "datasets-jobs-facets";
@@ -30294,6 +30549,7 @@ export declare const OperationIds: Readonly<{
   DatasetsProducthuntProductsSearch: "datasets-producthunt-products-search";
   DatasetsProducthuntTrendsFacets: "datasets-producthunt-trends-facets";
   DatasetsProducthuntTrendsSearch: "datasets-producthunt-trends-search";
+  DatasetsRedditTrendingSearch: "datasets-reddit-trending-search";
   DatasetsSecCompaniesFacets: "datasets-sec-companies-facets";
   DatasetsSecCompaniesFinancials: "datasets-sec-companies-financials";
   DatasetsSecCompaniesInsider: "datasets-sec-companies-insider";
@@ -30404,6 +30660,7 @@ export declare const OperationIds: Readonly<{
   GooglePlayDeveloper: "googleplay-developer";
   GooglePlayList: "googleplay-list";
   GooglePlayPermissions: "googleplay-permissions";
+  GooglePlayRatings: "googleplay-ratings";
   GooglePlayReviews: "googleplay-reviews";
   GooglePlaySearch: "googleplay-search";
   GooglePlaySimilar: "googleplay-similar";

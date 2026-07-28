@@ -9179,6 +9179,291 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-instagram-users-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-instagram-users-facets",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/instagram-users/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "is_verified",
+          "is_business_account",
+          "has_bio",
+          "has_external_url",
+          "category_name",
+          "source_tier"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "username",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_name",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "source_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_verified",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_business_account",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_bio",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_external_url",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_ratio",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_ratio",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "created_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "crawled_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "crawled_before",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "followers_desc",
+          "followers_asc",
+          "crawled_at_desc",
+          "crawled_at_asc",
+          "created_at_desc",
+          "created_at_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-instagram-users-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-instagram-users-item",
+    "method": "GET",
+    "path": "/datasets/instagram-users/items/{username}",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-instagram-users-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-instagram-users-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/instagram-users/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "username",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_name",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "source_tier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_verified",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_business_account",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_bio",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_external_url",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_ratio",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_ratio",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "created_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "crawled_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "crawled_before",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "followers_desc",
+          "followers_asc",
+          "crawled_at_desc",
+          "crawled_at_asc",
+          "created_at_desc",
+          "created_at_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-jobs-companies": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -11821,6 +12106,61 @@ export const operations = {
           "period_asc",
           "launch_count_desc",
           "sum_votes_desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-reddit-trending-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-reddit-trending-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/reddit-trending/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subreddit",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "rank",
+          "date_desc"
         ],
         "in": "query",
         "name": "sort",
@@ -17310,6 +17650,20 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "phone",
+          "tablet",
+          "tv",
+          "chromebook",
+          "watch",
+          "xr",
+          "car"
+        ],
+        "in": "query",
+        "name": "device",
+        "type": "string"
+      },
+      {
         "in": "query",
         "name": "age",
         "type": "string"
@@ -17374,6 +17728,42 @@ export const operations = {
         "in": "query",
         "name": "short",
         "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "googleplay-ratings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "googleplay-ratings",
+    "method": "GET",
+    "path": "/googleplay/ratings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "app_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
       }
     ],
     "security": [
@@ -25544,6 +25934,11 @@ export const operations = {
         "in": "query",
         "name": "depth",
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "include_metrics",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -25622,7 +26017,13 @@ export const operations = {
     "produces": [
       "application/json"
     ],
-    "queryParams": [],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "include_metrics",
+        "type": "boolean"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -35224,6 +35625,9 @@ export const groups = {
     "housingMarketsFacets": "datasets-housing-markets-facets",
     "housingMarketsItem": "datasets-housing-markets-item",
     "housingMarketsSearch": "datasets-housing-markets-search",
+    "instagramUsersFacets": "datasets-instagram-users-facets",
+    "instagramUsersItem": "datasets-instagram-users-item",
+    "instagramUsersSearch": "datasets-instagram-users-search",
     "jobsCompanies": "datasets-jobs-companies",
     "jobsCompanyItem": "datasets-jobs-company-item",
     "jobsFacets": "datasets-jobs-facets",
@@ -35265,6 +35669,7 @@ export const groups = {
     "producthuntProductsSearch": "datasets-producthunt-products-search",
     "producthuntTrendsFacets": "datasets-producthunt-trends-facets",
     "producthuntTrendsSearch": "datasets-producthunt-trends-search",
+    "redditTrendingSearch": "datasets-reddit-trending-search",
     "secCompaniesFacets": "datasets-sec-companies-facets",
     "secCompaniesFinancials": "datasets-sec-companies-financials",
     "secCompaniesInsider": "datasets-sec-companies-insider",
@@ -35405,6 +35810,7 @@ export const groups = {
     "developer": "googleplay-developer",
     "list": "googleplay-list",
     "permissions": "googleplay-permissions",
+    "ratings": "googleplay-ratings",
     "reviews": "googleplay-reviews",
     "search": "googleplay-search",
     "similar": "googleplay-similar",
@@ -35996,7 +36402,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 832;
+export const operationCount = 837;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -36166,6 +36572,9 @@ export const OperationIds = Object.freeze({
   "DatasetsHousingMarketsFacets": "datasets-housing-markets-facets",
   "DatasetsHousingMarketsItem": "datasets-housing-markets-item",
   "DatasetsHousingMarketsSearch": "datasets-housing-markets-search",
+  "DatasetsInstagramUsersFacets": "datasets-instagram-users-facets",
+  "DatasetsInstagramUsersItem": "datasets-instagram-users-item",
+  "DatasetsInstagramUsersSearch": "datasets-instagram-users-search",
   "DatasetsJobsCompanies": "datasets-jobs-companies",
   "DatasetsJobsCompanyItem": "datasets-jobs-company-item",
   "DatasetsJobsFacets": "datasets-jobs-facets",
@@ -36207,6 +36616,7 @@ export const OperationIds = Object.freeze({
   "DatasetsProducthuntProductsSearch": "datasets-producthunt-products-search",
   "DatasetsProducthuntTrendsFacets": "datasets-producthunt-trends-facets",
   "DatasetsProducthuntTrendsSearch": "datasets-producthunt-trends-search",
+  "DatasetsRedditTrendingSearch": "datasets-reddit-trending-search",
   "DatasetsSecCompaniesFacets": "datasets-sec-companies-facets",
   "DatasetsSecCompaniesFinancials": "datasets-sec-companies-financials",
   "DatasetsSecCompaniesInsider": "datasets-sec-companies-insider",
@@ -36317,6 +36727,7 @@ export const OperationIds = Object.freeze({
   "GooglePlayDeveloper": "googleplay-developer",
   "GooglePlayList": "googleplay-list",
   "GooglePlayPermissions": "googleplay-permissions",
+  "GooglePlayRatings": "googleplay-ratings",
   "GooglePlayReviews": "googleplay-reviews",
   "GooglePlaySearch": "googleplay-search",
   "GooglePlaySimilar": "googleplay-similar",
