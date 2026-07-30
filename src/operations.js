@@ -9682,7 +9682,12 @@ export const operations = {
           "icims",
           "eightfold",
           "gem",
-          "pinpoint"
+          "pinpoint",
+          "amazon-jobs",
+          "apple-jobs",
+          "google-jobs",
+          "meta-jobs",
+          "tesla-jobs"
         ],
         "in": "query",
         "name": "provider",
@@ -9705,6 +9710,11 @@ export const operations = {
         "in": "query",
         "name": "min_open_roles",
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sponsors_visa",
+        "type": "boolean"
       },
       {
         "enum": [
@@ -9848,7 +9858,12 @@ export const operations = {
           "icims",
           "eightfold",
           "gem",
-          "pinpoint"
+          "pinpoint",
+          "amazon-jobs",
+          "apple-jobs",
+          "google-jobs",
+          "meta-jobs",
+          "tesla-jobs"
         ],
         "in": "query",
         "name": "provider",
@@ -9917,7 +9932,12 @@ export const operations = {
           "icims",
           "eightfold",
           "gem",
-          "pinpoint"
+          "pinpoint",
+          "amazon-jobs",
+          "apple-jobs",
+          "google-jobs",
+          "meta-jobs",
+          "tesla-jobs"
         ],
         "in": "query",
         "name": "provider",
@@ -15278,6 +15298,27 @@ export const operations = {
     "method": "POST",
     "path": "/extract",
     "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "facebook-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "facebook-page",
+    "method": "GET",
+    "path": "/facebook/{page}",
+    "pathParams": [
+      "page"
+    ],
     "produces": [
       "application/json"
     ],
@@ -36163,6 +36204,9 @@ export const groups = {
     "teamRoster": "espn-team-roster",
     "teams": "espn-teams"
   },
+  "facebook": {
+    "page": "facebook-page"
+  },
   "geocoding": {
     "lookup": "geocoding-lookup",
     "reverse": "geocoding-reverse",
@@ -36853,7 +36897,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 848;
+export const operationCount = 849;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -37120,6 +37164,7 @@ export const OperationIds = Object.freeze({
   "EspnTeam": "espn-team",
   "EspnTeamRoster": "espn-team-roster",
   "EspnTeams": "espn-teams",
+  "FacebookPage": "facebook-page",
   "GeocodingLookup": "geocoding-lookup",
   "GeocodingReverse": "geocoding-reverse",
   "GeocodingSearch": "geocoding-search",
