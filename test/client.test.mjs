@@ -372,7 +372,7 @@ test("wraps transport errors", async () => {
 });
 
 test("operation metadata count is stable", () => {
-  assert.equal(operationCount, 837);
+  assert.equal(operationCount, 848);
 });
 
 test("deprecated endpoints are not generated", () => {
@@ -392,6 +392,8 @@ test("generated declarations include typed endpoint groups", () => {
   assert.match(types, /export interface GoogleSearchParams/);
   assert.match(types, /export type GoogleSearchBody = CrawloraBody<ModelGoogleSearchOption>;/);
   assert.match(types, /"searchOption": GoogleSearchBody;/);
+  assert.match(types, /export interface ModelEsGoogleBusiness \{[\s\S]*"review_count"\?: number \| null;/);
+  assert.match(types, /export interface ModelEsGoogleBusinessDatasetItem \{[\s\S]*"review_count"\?: number \| null;/);
   assert.match(types, /export interface CrawloraGeneratedGroups/);
   assert.match(types, /export interface OperationParamsMap/);
   assert.match(types, /"bing-search": BingSearchParams;/);
@@ -404,7 +406,7 @@ test("docs cover operations and recipes", () => {
   const operationsDoc = readFileSync(new URL("../docs/operations.md", import.meta.url), "utf8");
   const recipesDoc = readFileSync(new URL("../docs/recipes.md", import.meta.url), "utf8");
 
-  assert.match(operationsDoc, /Total operations: `837`/);
+  assert.match(operationsDoc, /Total operations: `848`/);
   assert.match(operationsDoc, /`bing-search`/);
   assert.match(operationsDoc, /`GET \/bing\/search`/);
   assert.match(operationsDoc, /`bing\.search`/);

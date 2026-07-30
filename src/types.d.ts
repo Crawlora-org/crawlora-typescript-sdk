@@ -228,6 +228,47 @@ export interface ModelAmazonSuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelAmazonjobsAmazonJob {
+  "apply_url"?: string;
+  "basic_qualifications"?: string;
+  "category"?: string;
+  "city"?: string;
+  "company"?: string;
+  "country"?: string;
+  "description"?: string;
+  "id"?: string;
+  "location"?: string;
+  "posted_at"?: string;
+  "preferred_qualifications"?: string;
+  "schedule_type"?: string;
+  "state"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelAmazonjobsSearchResponse {
+  "category"?: string;
+  "country"?: string;
+  "jobs"?: Array<ModelAmazonjobsAmazonJob>;
+  "limit"?: number;
+  "page"?: number;
+  "query"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelAmazonjobsJobResponseDoc {
+  "code"?: number;
+  "data"?: ModelAmazonjobsAmazonJob;
+  "msg"?: string;
+}
+
+export interface ModelAmazonjobsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAmazonjobsSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelAnimeAiringEntry {
   "airing_at"?: number;
   "episode"?: number;
@@ -735,6 +776,44 @@ export interface ModelApplebooksSeriesResponseDoc {
 export interface ModelApplebooksSimilarResponseDoc {
   "code"?: number;
   "data"?: Array<ModelApplebooksBook>;
+  "msg"?: string;
+}
+
+export interface ModelApplejobsAppleJob {
+  "country"?: string;
+  "description"?: string;
+  "employment_type"?: string;
+  "id"?: string;
+  "location"?: string;
+  "locations"?: Array<string>;
+  "minimum_qualifications"?: string;
+  "position_id"?: string;
+  "posted_at"?: string;
+  "preferred_qualifications"?: string;
+  "responsibilities"?: string;
+  "team"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelApplejobsSearchResponse {
+  "jobs"?: Array<ModelApplejobsAppleJob>;
+  "location"?: string;
+  "page"?: number;
+  "query"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelApplejobsJobResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplejobsAppleJob;
+  "msg"?: string;
+}
+
+export interface ModelApplejobsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelApplejobsSearchResponse;
   "msg"?: string;
 }
 
@@ -5741,8 +5820,8 @@ export interface ModelEsGoogleBusiness {
   "name"?: string;
   "phone"?: string;
   "place_id"?: string;
-  "rating"?: number;
-  "review_count"?: number;
+  "rating"?: number | null;
+  "review_count"?: number | null;
   "similarweb"?: ModelSimilarwebSimilarWebResp;
   "state"?: string;
   "town"?: string;
@@ -5777,8 +5856,8 @@ export interface ModelEsGoogleBusinessDatasetItem {
   "name"?: string;
   "phone"?: string;
   "place_id"?: string;
-  "rating"?: number;
-  "review_count"?: number;
+  "rating"?: number | null;
+  "review_count"?: number | null;
   "similarweb"?: ModelSimilarwebSimilarWebResp;
   "state"?: string;
   "town"?: string;
@@ -7817,7 +7896,7 @@ export interface ModelGooglePlace {
   "name"?: string;
   "phone"?: string;
   "place_id"?: string;
-  "rating"?: number;
+  "rating"?: number | null;
   "review_count"?: number;
   "url"?: string;
   "website"?: string;
@@ -7947,6 +8026,43 @@ export interface ModelGoogleSuggestResponseDoc {
 export interface ModelGoogleVideosResponseDoc {
   "code"?: number;
   "data"?: ModelGoogleVideosResponse;
+  "msg"?: string;
+}
+
+export interface ModelGooglejobsGoogleJob {
+  "apply_url"?: string;
+  "company"?: string;
+  "country"?: string;
+  "description"?: string;
+  "id"?: string;
+  "location"?: string;
+  "locations"?: Array<string>;
+  "minimum_qualifications"?: string;
+  "posted_at"?: string;
+  "preferred_qualifications"?: string;
+  "responsibilities"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelGooglejobsSearchResponse {
+  "jobs"?: Array<ModelGooglejobsGoogleJob>;
+  "location"?: string;
+  "page"?: number;
+  "query"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelGooglejobsJobResponseDoc {
+  "code"?: number;
+  "data"?: ModelGooglejobsGoogleJob;
+  "msg"?: string;
+}
+
+export interface ModelGooglejobsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelGooglejobsSearchResponse;
   "msg"?: string;
 }
 
@@ -10344,6 +10460,68 @@ export interface ModelMetaculusQuestionResponseDoc {
 export interface ModelMetaculusQuestionsResponseDoc {
   "code"?: number;
   "data"?: ModelMetaculusQuestionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetajobsListResponse {
+  "listings"?: Array<ModelMetajobsMetaJobListing>;
+  "page"?: number;
+  "page_size"?: number;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelMetajobsMetaJob {
+  "compensation_country"?: string;
+  "compensation_max"?: string;
+  "compensation_min"?: string;
+  "departments"?: Array<string>;
+  "description"?: string;
+  "id"?: string;
+  "locations"?: Array<string>;
+  "minimum_qualifications"?: Array<string>;
+  "preferred_qualifications"?: Array<string>;
+  "responsibilities"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelMetajobsMetaJobListing {
+  "id"?: string;
+  "last_modified"?: string;
+  "url"?: string;
+}
+
+export interface ModelMetajobsMetaJobSearchResult {
+  "id"?: string;
+  "locations"?: Array<string>;
+  "sub_teams"?: Array<string>;
+  "teams"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelMetajobsSearchResponse {
+  "jobs"?: Array<ModelMetajobsMetaJobSearchResult>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelMetajobsJobResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetajobsMetaJob;
+  "msg"?: string;
+}
+
+export interface ModelMetajobsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetajobsListResponse;
+  "msg"?: string;
+}
+
+export interface ModelMetajobsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelMetajobsSearchResponse;
   "msg"?: string;
 }
 
@@ -16276,6 +16454,51 @@ export interface ModelTechstackTechnology {
   "version"?: string;
 }
 
+export interface ModelTeslajobsListResponse {
+  "jobs"?: Array<ModelTeslajobsTeslaJobListing>;
+  "location"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "query"?: string;
+  "total"?: number;
+}
+
+export interface ModelTeslajobsTeslaJob {
+  "apply_url"?: string;
+  "compensation_text"?: string;
+  "country"?: string;
+  "department"?: string;
+  "description"?: string;
+  "employment_type"?: string;
+  "id"?: string;
+  "job_family"?: string;
+  "location"?: string;
+  "requirements"?: string;
+  "responsibilities"?: string;
+  "state"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTeslajobsTeslaJobListing {
+  "department"?: string;
+  "id"?: string;
+  "location"?: string;
+  "title"?: string;
+}
+
+export interface ModelTeslajobsJobResponseDoc {
+  "code"?: number;
+  "data"?: ModelTeslajobsTeslaJob;
+  "msg"?: string;
+}
+
+export interface ModelTeslajobsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelTeslajobsListResponse;
+  "msg"?: string;
+}
+
 export interface ModelThreadsAuthor {
   "id"?: string;
   "name"?: string;
@@ -19464,6 +19687,21 @@ export interface AirbnbSearchParams {
   "zoom"?: number;
 }
 
+export type AmazonJobsJobResponse = CrawloraResponse<ModelAmazonjobsJobResponseDoc>;
+export interface AmazonJobsJobParams {
+  "id": string;
+}
+
+export type AmazonJobsSearchResponse = CrawloraResponse<ModelAmazonjobsSearchResponseDoc>;
+export interface AmazonJobsSearchParams {
+  "q"?: string;
+  "category"?: "administrative-support" | "applied-science" | "audio-video-photography-production" | "business-intelligence-data-engineering" | "business-merchant-development" | "buying-planning-instock-management" | "customer-service" | "data-science" | "database-administration" | "design" | "economics" | "editorial-writing-content-management" | "facilities-maintenance-real-estate" | "fgbs" | "fulfillment-center-warehouse-associate" | "fulfillment-operations-management" | "hardware-development" | "human-resources" | "investigation-loss-prevention" | "leadership-development-training" | "legal" | "marketing" | "medical-health-safety" | "operations-it-support-engineering" | "project-program-product-management-non-tech" | "project-program-product-management-technical" | "public-policy" | "public-relations-communications" | "research-science" | "sales-advertising-account-management" | "software-development" | "solutions-architecture" | "supply-chain-transportation-management" | "systems-quality-security-engineering";
+  "country"?: string;
+  "page"?: number;
+  "limit"?: number;
+  "sort"?: "relevant" | "recent";
+}
+
 export type AmazonProductResponse = CrawloraResponse<ModelAmazonProductResponseDoc>;
 export interface AmazonProductParams {
   "asin": string;
@@ -19639,6 +19877,18 @@ export interface AppleBooksSeriesParams {
   "id": string;
   "country"?: string;
   "lang"?: string;
+}
+
+export type AppleJobsJobResponse = CrawloraResponse<ModelApplejobsJobResponseDoc>;
+export interface AppleJobsJobParams {
+  "id": string;
+}
+
+export type AppleJobsSearchResponse = CrawloraResponse<ModelApplejobsSearchResponseDoc>;
+export interface AppleJobsSearchParams {
+  "q": string;
+  "location"?: string;
+  "page"?: number;
 }
 
 export type ApplePodcastsChartsResponse = CrawloraResponse<ModelApplepodcastsChartsResponseDoc>;
@@ -22152,6 +22402,18 @@ export interface GoodreadsSearchParams {
   "limit"?: number;
 }
 
+export type GoogleJobsJobResponse = CrawloraResponse<ModelGooglejobsJobResponseDoc>;
+export interface GoogleJobsJobParams {
+  "id": string;
+}
+
+export type GoogleJobsSearchResponse = CrawloraResponse<ModelGooglejobsSearchResponseDoc>;
+export interface GoogleJobsSearchParams {
+  "q": string;
+  "location"?: string;
+  "page"?: number;
+}
+
 export type GoogleFinanceAnalystArticlesResponse = CrawloraResponse<ModelFinanceArticlesResponseDoc>;
 export interface GoogleFinanceAnalystArticlesParams {
   "quote": string;
@@ -23208,6 +23470,28 @@ export type MangaTitleResponse = CrawloraResponse<ModelAnimeMediaResponseDoc>;
 export interface MangaTitleParams {
   "id": string;
   "mal"?: boolean;
+}
+
+export type MetaJobsJobResponse = CrawloraResponse<ModelMetajobsJobResponseDoc>;
+export interface MetaJobsJobParams {
+  "id": string;
+}
+
+export type MetaJobsListResponse = CrawloraResponse<ModelMetajobsListResponseDoc>;
+export interface MetaJobsListParams {
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type MetaJobsSearchResponse = CrawloraResponse<ModelMetajobsSearchResponseDoc>;
+export interface MetaJobsSearchParams {
+  "q"?: string;
+  "teams"?: Array<string>;
+  "roles"?: Array<string>;
+  "offices"?: Array<string>;
+  "is_remote_only"?: boolean;
+  "sort_by_new"?: boolean;
+  "results_per_page"?: "all" | "five" | "ten";
 }
 
 export type MetacriticBrowseResponse = CrawloraResponse<ModelMetacriticBrowseResponseDoc>;
@@ -25054,6 +25338,19 @@ export interface SteamTopSellersParams {
   "l"?: string;
 }
 
+export type TeslaJobsJobResponse = CrawloraResponse<ModelTeslajobsJobResponseDoc>;
+export interface TeslaJobsJobParams {
+  "id": string;
+}
+
+export type TeslaJobsListResponse = CrawloraResponse<ModelTeslajobsListResponseDoc>;
+export interface TeslaJobsListParams {
+  "query"?: string;
+  "location"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type ThreadsPostResponse = CrawloraResponse<ModelThreadsPostResponseDoc>;
 export interface ThreadsPostParams {
   "username": string;
@@ -25879,6 +26176,11 @@ export interface AirbnbService {
   search<T = AirbnbSearchResponse>(params: AirbnbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface AmazonJobsService {
+  job<T = AmazonJobsJobResponse>(params: AmazonJobsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = AmazonJobsSearchResponse>(params?: AmazonJobsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface AmazonService {
   product<T = AmazonProductResponse>(params: AmazonProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = AmazonSearchResponse>(params: AmazonSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -25910,6 +26212,11 @@ export interface AppleBooksService {
   charts<T = AppleBooksChartsResponse>(params?: AppleBooksChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = AppleBooksSearchResponse>(params: AppleBooksSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   series<T = AppleBooksSeriesResponse>(params: AppleBooksSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface AppleJobsService {
+  job<T = AppleJobsJobResponse>(params: AppleJobsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = AppleJobsSearchResponse>(params: AppleJobsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ApplePodcastsService {
@@ -26228,6 +26535,11 @@ export interface GoodreadsService {
   search<T = GoodreadsSearchResponse>(params: GoodreadsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface GoogleJobsService {
+  job<T = GoogleJobsJobResponse>(params: GoogleJobsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = GoogleJobsSearchResponse>(params: GoogleJobsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface GoogleService {
   financeAnalystArticles<T = GoogleFinanceAnalystArticlesResponse>(params: GoogleFinanceAnalystArticlesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   financeChart<T = GoogleFinanceChartResponse>(params: GoogleFinanceChartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -26413,6 +26725,12 @@ export interface MangaService {
   rankings<T = MangaRankingsResponse>(params?: MangaRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = MangaSearchResponse>(params: MangaSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   title<T = MangaTitleResponse>(params: MangaTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface MetaJobsService {
+  job<T = MetaJobsJobResponse>(params: MetaJobsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  list<T = MetaJobsListResponse>(params?: MetaJobsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = MetaJobsSearchResponse>(params?: MetaJobsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface MetacriticService {
@@ -26736,6 +27054,11 @@ export interface SteamService {
   topSellers<T = SteamTopSellersResponse>(params?: SteamTopSellersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TeslaJobsService {
+  job<T = TeslaJobsJobResponse>(params: TeslaJobsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  list<T = TeslaJobsListResponse>(params?: TeslaJobsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ThreadsService {
   post<T = ThreadsPostResponse>(params: ThreadsPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   postReplies<T = ThreadsPostRepliesResponse>(params: ThreadsPostRepliesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -26906,9 +27229,11 @@ export interface ZillowService {
 
 export interface CrawloraGeneratedGroups {
   airbnb: AirbnbService;
+  amazonJobs: AmazonJobsService;
   amazon: AmazonService;
   anime: AnimeService;
   appleBooks: AppleBooksService;
+  appleJobs: AppleJobsService;
   applePodcasts: ApplePodcastsService;
   appStore: AppStoreService;
   billing: BillingService;
@@ -26927,6 +27252,7 @@ export interface CrawloraGeneratedGroups {
   geocoding: GeocodingService;
   gitHub: GitHubService;
   goodreads: GoodreadsService;
+  googleJobs: GoogleJobsService;
   google: GoogleService;
   googlePlay: GooglePlayService;
   imdb: ImdbService;
@@ -26937,6 +27263,7 @@ export interface CrawloraGeneratedGroups {
   letterboxd: LetterboxdService;
   linkedIn: LinkedInService;
   manga: MangaService;
+  metaJobs: MetaJobsService;
   metacritic: MetacriticService;
   metaculus: MetaculusService;
   numbeo: NumbeoService;
@@ -26957,6 +27284,7 @@ export interface CrawloraGeneratedGroups {
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
   steam: SteamService;
+  teslaJobs: TeslaJobsService;
   threads: ThreadsService;
   tiktok: TiktokService;
   tmdb: TmdbService;
@@ -26981,6 +27309,8 @@ export interface OperationParamsMap {
   "airbnb-room-calendar": AirbnbRoomCalendarParams;
   "airbnb-room-reviews": AirbnbRoomReviewsParams;
   "airbnb-search": AirbnbSearchParams;
+  "amazon-jobs-job": AmazonJobsJobParams;
+  "amazon-jobs-search": AmazonJobsSearchParams;
   "amazon-product": AmazonProductParams;
   "amazon-search": AmazonSearchParams;
   "amazon-suggest": AmazonSuggestParams;
@@ -27005,6 +27335,8 @@ export interface OperationParamsMap {
   "apple-books-charts": AppleBooksChartsParams;
   "apple-books-search": AppleBooksSearchParams;
   "apple-books-series": AppleBooksSeriesParams;
+  "apple-jobs-job": AppleJobsJobParams;
+  "apple-jobs-search": AppleJobsSearchParams;
   "apple-podcasts-charts": ApplePodcastsChartsParams;
   "apple-podcasts-charts-rankings": ApplePodcastsChartsRankingsParams;
   "apple-podcasts-episodes-search": ApplePodcastsEpisodesSearchParams;
@@ -27265,6 +27597,8 @@ export interface OperationParamsMap {
   "goodreads-list": GoodreadsListParams;
   "goodreads-lists": GoodreadsListsParams;
   "goodreads-search": GoodreadsSearchParams;
+  "google-jobs-job": GoogleJobsJobParams;
+  "google-jobs-search": GoogleJobsSearchParams;
   "google-finance-analyst-articles": GoogleFinanceAnalystArticlesParams;
   "google-finance-chart": GoogleFinanceChartParams;
   "google-finance-classification": GoogleFinanceClassificationParams;
@@ -27422,6 +27756,9 @@ export interface OperationParamsMap {
   "manga-rankings": MangaRankingsParams;
   "manga-search": MangaSearchParams;
   "manga-title": MangaTitleParams;
+  "meta-jobs-job": MetaJobsJobParams;
+  "meta-jobs-list": MetaJobsListParams;
+  "meta-jobs-search": MetaJobsSearchParams;
   "metacritic-browse": MetacriticBrowseParams;
   "metacritic-game": MetacriticGameParams;
   "metacritic-game-critic-reviews": MetacriticGameCriticReviewsParams;
@@ -27683,6 +28020,8 @@ export interface OperationParamsMap {
   "steam-tags": SteamTagsParams;
   "steam-tags-list": SteamTagsListParams;
   "steam-top-sellers": SteamTopSellersParams;
+  "tesla-jobs-job": TeslaJobsJobParams;
+  "tesla-jobs-list": TeslaJobsListParams;
   "threads-post": ThreadsPostParams;
   "threads-post-replies": ThreadsPostRepliesParams;
   "threads-profile": ThreadsProfileParams;
@@ -27821,6 +28160,8 @@ export interface OperationResponseMap {
   "airbnb-room-calendar": AirbnbRoomCalendarResponse;
   "airbnb-room-reviews": AirbnbRoomReviewsResponse;
   "airbnb-search": AirbnbSearchResponse;
+  "amazon-jobs-job": AmazonJobsJobResponse;
+  "amazon-jobs-search": AmazonJobsSearchResponse;
   "amazon-product": AmazonProductResponse;
   "amazon-search": AmazonSearchResponse;
   "amazon-suggest": AmazonSuggestResponse;
@@ -27845,6 +28186,8 @@ export interface OperationResponseMap {
   "apple-books-charts": AppleBooksChartsResponse;
   "apple-books-search": AppleBooksSearchResponse;
   "apple-books-series": AppleBooksSeriesResponse;
+  "apple-jobs-job": AppleJobsJobResponse;
+  "apple-jobs-search": AppleJobsSearchResponse;
   "apple-podcasts-charts": ApplePodcastsChartsResponse;
   "apple-podcasts-charts-rankings": ApplePodcastsChartsRankingsResponse;
   "apple-podcasts-episodes-search": ApplePodcastsEpisodesSearchResponse;
@@ -28105,6 +28448,8 @@ export interface OperationResponseMap {
   "goodreads-list": GoodreadsListResponse;
   "goodreads-lists": GoodreadsListsResponse;
   "goodreads-search": GoodreadsSearchResponse;
+  "google-jobs-job": GoogleJobsJobResponse;
+  "google-jobs-search": GoogleJobsSearchResponse;
   "google-finance-analyst-articles": GoogleFinanceAnalystArticlesResponse;
   "google-finance-chart": GoogleFinanceChartResponse;
   "google-finance-classification": GoogleFinanceClassificationResponse;
@@ -28262,6 +28607,9 @@ export interface OperationResponseMap {
   "manga-rankings": MangaRankingsResponse;
   "manga-search": MangaSearchResponse;
   "manga-title": MangaTitleResponse;
+  "meta-jobs-job": MetaJobsJobResponse;
+  "meta-jobs-list": MetaJobsListResponse;
+  "meta-jobs-search": MetaJobsSearchResponse;
   "metacritic-browse": MetacriticBrowseResponse;
   "metacritic-game": MetacriticGameResponse;
   "metacritic-game-critic-reviews": MetacriticGameCriticReviewsResponse;
@@ -28523,6 +28871,8 @@ export interface OperationResponseMap {
   "steam-tags": SteamTagsResponse;
   "steam-tags-list": SteamTagsListResponse;
   "steam-top-sellers": SteamTopSellersResponse;
+  "tesla-jobs-job": TeslaJobsJobResponse;
+  "tesla-jobs-list": TeslaJobsListResponse;
   "threads-post": ThreadsPostResponse;
   "threads-post-replies": ThreadsPostRepliesResponse;
   "threads-profile": ThreadsProfileResponse;
@@ -28661,6 +29011,8 @@ export interface OperationRequiredParamsMap {
   "airbnb-room-calendar": true;
   "airbnb-room-reviews": true;
   "airbnb-search": true;
+  "amazon-jobs-job": true;
+  "amazon-jobs-search": false;
   "amazon-product": true;
   "amazon-search": true;
   "amazon-suggest": true;
@@ -28685,6 +29037,8 @@ export interface OperationRequiredParamsMap {
   "apple-books-charts": false;
   "apple-books-search": true;
   "apple-books-series": true;
+  "apple-jobs-job": true;
+  "apple-jobs-search": true;
   "apple-podcasts-charts": false;
   "apple-podcasts-charts-rankings": false;
   "apple-podcasts-episodes-search": true;
@@ -28945,6 +29299,8 @@ export interface OperationRequiredParamsMap {
   "goodreads-list": true;
   "goodreads-lists": false;
   "goodreads-search": true;
+  "google-jobs-job": true;
+  "google-jobs-search": true;
   "google-finance-analyst-articles": true;
   "google-finance-chart": true;
   "google-finance-classification": true;
@@ -29102,6 +29458,9 @@ export interface OperationRequiredParamsMap {
   "manga-rankings": false;
   "manga-search": true;
   "manga-title": true;
+  "meta-jobs-job": true;
+  "meta-jobs-list": false;
+  "meta-jobs-search": false;
   "metacritic-browse": true;
   "metacritic-game": true;
   "metacritic-game-critic-reviews": true;
@@ -29363,6 +29722,8 @@ export interface OperationRequiredParamsMap {
   "steam-tags": false;
   "steam-tags-list": false;
   "steam-top-sellers": false;
+  "tesla-jobs-job": true;
+  "tesla-jobs-list": false;
   "threads-post": true;
   "threads-post-replies": true;
   "threads-profile": true;
@@ -29508,6 +29869,8 @@ export type OperationIdLiteral =
   | "airbnb-room-calendar"
   | "airbnb-room-reviews"
   | "airbnb-search"
+  | "amazon-jobs-job"
+  | "amazon-jobs-search"
   | "amazon-product"
   | "amazon-search"
   | "amazon-suggest"
@@ -29532,6 +29895,8 @@ export type OperationIdLiteral =
   | "apple-books-charts"
   | "apple-books-search"
   | "apple-books-series"
+  | "apple-jobs-job"
+  | "apple-jobs-search"
   | "apple-podcasts-charts"
   | "apple-podcasts-charts-rankings"
   | "apple-podcasts-episodes-search"
@@ -29792,6 +30157,8 @@ export type OperationIdLiteral =
   | "goodreads-list"
   | "goodreads-lists"
   | "goodreads-search"
+  | "google-jobs-job"
+  | "google-jobs-search"
   | "google-finance-analyst-articles"
   | "google-finance-chart"
   | "google-finance-classification"
@@ -29949,6 +30316,9 @@ export type OperationIdLiteral =
   | "manga-rankings"
   | "manga-search"
   | "manga-title"
+  | "meta-jobs-job"
+  | "meta-jobs-list"
+  | "meta-jobs-search"
   | "metacritic-browse"
   | "metacritic-game"
   | "metacritic-game-critic-reviews"
@@ -30210,6 +30580,8 @@ export type OperationIdLiteral =
   | "steam-tags"
   | "steam-tags-list"
   | "steam-top-sellers"
+  | "tesla-jobs-job"
+  | "tesla-jobs-list"
   | "threads-post"
   | "threads-post-replies"
   | "threads-profile"
@@ -30347,6 +30719,8 @@ export declare const OperationIds: Readonly<{
   AirbnbRoomCalendar: "airbnb-room-calendar";
   AirbnbRoomReviews: "airbnb-room-reviews";
   AirbnbSearch: "airbnb-search";
+  AmazonJobsJob: "amazon-jobs-job";
+  AmazonJobsSearch: "amazon-jobs-search";
   AmazonProduct: "amazon-product";
   AmazonSearch: "amazon-search";
   AmazonSuggest: "amazon-suggest";
@@ -30383,6 +30757,8 @@ export declare const OperationIds: Readonly<{
   AppleBooksCharts: "apple-books-charts";
   AppleBooksSearch: "apple-books-search";
   AppleBooksSeries: "apple-books-series";
+  AppleJobsJob: "apple-jobs-job";
+  AppleJobsSearch: "apple-jobs-search";
   ApplePodcastsCharts: "apple-podcasts-charts";
   ApplePodcastsChartsRankings: "apple-podcasts-charts-rankings";
   ApplePodcastsEpisodesSearch: "apple-podcasts-episodes-search";
@@ -30649,6 +31025,8 @@ export declare const OperationIds: Readonly<{
   GoogleFinanceSearch: "google-finance-search";
   GoogleFinanceTicker: "google-finance-ticker";
   GoogleJobs: "google-jobs";
+  GoogleJobsJob: "google-jobs-job";
+  GoogleJobsSearch: "google-jobs-search";
   GoogleMapPlace: "google-map-place";
   GoogleMapPlacePhotos: "google-map-place-photos";
   GoogleMapPlaceReviews: "google-map-place-reviews";
@@ -30785,6 +31163,9 @@ export declare const OperationIds: Readonly<{
   MangaRankings: "manga-rankings";
   MangaSearch: "manga-search";
   MangaTitle: "manga-title";
+  MetaJobsJob: "meta-jobs-job";
+  MetaJobsList: "meta-jobs-list";
+  MetaJobsSearch: "meta-jobs-search";
   MetaPing: "ping";
   MetaReady: "ready";
   MetacriticBrowse: "metacritic-browse";
@@ -31046,6 +31427,8 @@ export declare const OperationIds: Readonly<{
   SteamTags: "steam-tags";
   SteamTagsList: "steam-tags-list";
   SteamTopSellers: "steam-top-sellers";
+  TeslaJobsJob: "tesla-jobs-job";
+  TeslaJobsList: "tesla-jobs-list";
   ThreadsPost: "threads-post";
   ThreadsPostReplies: "threads-post-replies";
   ThreadsProfile: "threads-profile";

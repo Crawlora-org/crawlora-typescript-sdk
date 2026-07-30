@@ -224,6 +224,123 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "amazon-jobs-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "amazon-jobs-job",
+    "method": "GET",
+    "path": "/amazon-jobs/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "amazon-jobs-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "amazon-jobs-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/amazon-jobs/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "administrative-support",
+          "applied-science",
+          "audio-video-photography-production",
+          "business-intelligence-data-engineering",
+          "business-merchant-development",
+          "buying-planning-instock-management",
+          "customer-service",
+          "data-science",
+          "database-administration",
+          "design",
+          "economics",
+          "editorial-writing-content-management",
+          "facilities-maintenance-real-estate",
+          "fgbs",
+          "fulfillment-center-warehouse-associate",
+          "fulfillment-operations-management",
+          "hardware-development",
+          "human-resources",
+          "investigation-loss-prevention",
+          "leadership-development-training",
+          "legal",
+          "marketing",
+          "medical-health-safety",
+          "operations-it-support-engineering",
+          "project-program-product-management-non-tech",
+          "project-program-product-management-technical",
+          "public-policy",
+          "public-relations-communications",
+          "research-science",
+          "sales-advertising-account-management",
+          "software-development",
+          "solutions-architecture",
+          "supply-chain-transportation-management",
+          "systems-quality-security-engineering"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevant",
+          "recent"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "amazon-product": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -1137,6 +1254,69 @@ export const operations = {
         "in": "query",
         "name": "lang",
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "apple-jobs-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "apple-jobs-job",
+    "method": "GET",
+    "path": "/apple-jobs/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "apple-jobs-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "apple-jobs-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/apple-jobs/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -16678,6 +16858,69 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "google-jobs-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "google-jobs-job",
+    "method": "GET",
+    "path": "/google-jobs/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "google-jobs-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "google-jobs-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/google-jobs/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "google-map-place": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -21760,6 +22003,126 @@ export const operations = {
         "in": "query",
         "name": "mal",
         "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "meta-jobs-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "meta-jobs-job",
+    "method": "GET",
+    "path": "/meta-jobs/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "meta-jobs-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "meta-jobs-list",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/meta-jobs/list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "meta-jobs-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "meta-jobs-search",
+    "method": "GET",
+    "path": "/meta-jobs/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "teams",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "roles",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "offices",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "is_remote_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "sort_by_new",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "all",
+          "five",
+          "ten"
+        ],
+        "in": "query",
+        "name": "results_per_page",
+        "type": "string"
       }
     ],
     "security": [
@@ -31410,6 +31773,73 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tesla-jobs-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tesla-jobs-job",
+    "method": "GET",
+    "path": "/tesla-jobs/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tesla-jobs-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tesla-jobs-list",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tesla-jobs/list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "threads-post": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -35445,6 +35875,10 @@ export const groups = {
     "search": "amazon-search",
     "suggest": "amazon-suggest"
   },
+  "amazonJobs": {
+    "job": "amazon-jobs-job",
+    "search": "amazon-jobs-search"
+  },
   "anime": {
     "airingSchedule": "anime-airing-schedule",
     "character": "anime-character",
@@ -35483,6 +35917,10 @@ export const groups = {
     "charts": "apple-books-charts",
     "search": "apple-books-search",
     "series": "apple-books-series"
+  },
+  "appleJobs": {
+    "job": "apple-jobs-job",
+    "search": "apple-jobs-search"
   },
   "applePodcasts": {
     "charts": "apple-podcasts-charts",
@@ -35803,6 +36241,10 @@ export const groups = {
     "trendsTrendingDetail": "google-trends-trending-detail",
     "videos": "google-videos"
   },
+  "googleJobs": {
+    "job": "google-jobs-job",
+    "search": "google-jobs-search"
+  },
   "googlePlay": {
     "app": "googleplay-app",
     "categories": "googleplay-categories",
@@ -35941,6 +36383,11 @@ export const groups = {
   "meta": {
     "ping": "ping",
     "ready": "ready"
+  },
+  "metaJobs": {
+    "job": "meta-jobs-job",
+    "list": "meta-jobs-list",
+    "search": "meta-jobs-search"
   },
   "metacritic": {
     "browse": "metacritic-browse",
@@ -36239,6 +36686,10 @@ export const groups = {
     "tagsList": "steam-tags-list",
     "topSellers": "steam-top-sellers"
   },
+  "teslaJobs": {
+    "job": "tesla-jobs-job",
+    "list": "tesla-jobs-list"
+  },
   "threads": {
     "post": "threads-post",
     "postReplies": "threads-post-replies",
@@ -36402,7 +36853,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 837;
+export const operationCount = 848;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -36414,6 +36865,8 @@ export const OperationIds = Object.freeze({
   "AirbnbRoomCalendar": "airbnb-room-calendar",
   "AirbnbRoomReviews": "airbnb-room-reviews",
   "AirbnbSearch": "airbnb-search",
+  "AmazonJobsJob": "amazon-jobs-job",
+  "AmazonJobsSearch": "amazon-jobs-search",
   "AmazonProduct": "amazon-product",
   "AmazonSearch": "amazon-search",
   "AmazonSuggest": "amazon-suggest",
@@ -36450,6 +36903,8 @@ export const OperationIds = Object.freeze({
   "AppleBooksCharts": "apple-books-charts",
   "AppleBooksSearch": "apple-books-search",
   "AppleBooksSeries": "apple-books-series",
+  "AppleJobsJob": "apple-jobs-job",
+  "AppleJobsSearch": "apple-jobs-search",
   "ApplePodcastsCharts": "apple-podcasts-charts",
   "ApplePodcastsChartsRankings": "apple-podcasts-charts-rankings",
   "ApplePodcastsEpisodesSearch": "apple-podcasts-episodes-search",
@@ -36716,6 +37171,8 @@ export const OperationIds = Object.freeze({
   "GoogleFinanceSearch": "google-finance-search",
   "GoogleFinanceTicker": "google-finance-ticker",
   "GoogleJobs": "google-jobs",
+  "GoogleJobsJob": "google-jobs-job",
+  "GoogleJobsSearch": "google-jobs-search",
   "GoogleMapPlace": "google-map-place",
   "GoogleMapPlacePhotos": "google-map-place-photos",
   "GoogleMapPlaceReviews": "google-map-place-reviews",
@@ -36852,6 +37309,9 @@ export const OperationIds = Object.freeze({
   "MangaRankings": "manga-rankings",
   "MangaSearch": "manga-search",
   "MangaTitle": "manga-title",
+  "MetaJobsJob": "meta-jobs-job",
+  "MetaJobsList": "meta-jobs-list",
+  "MetaJobsSearch": "meta-jobs-search",
   "MetaPing": "ping",
   "MetaReady": "ready",
   "MetacriticBrowse": "metacritic-browse",
@@ -37113,6 +37573,8 @@ export const OperationIds = Object.freeze({
   "SteamTags": "steam-tags",
   "SteamTagsList": "steam-tags-list",
   "SteamTopSellers": "steam-top-sellers",
+  "TeslaJobsJob": "tesla-jobs-job",
+  "TeslaJobsList": "tesla-jobs-list",
   "ThreadsPost": "threads-post",
   "ThreadsPostReplies": "threads-post-replies",
   "ThreadsProfile": "threads-profile",
