@@ -5975,10 +5975,15 @@ export interface ModelEsInstagramUserRecord {
 }
 
 export interface ModelEsJobPostingFacets {
+  "by_ai_tool"?: Array<ModelEsFacetItem>;
+  "by_benefit"?: Array<ModelEsFacetItem>;
   "by_department"?: Array<ModelEsFacetItem>;
+  "by_education_level"?: Array<ModelEsFacetItem>;
   "by_employment_type"?: Array<ModelEsFacetItem>;
   "by_location"?: Array<ModelEsFacetItem>;
   "by_provider"?: Array<ModelEsFacetItem>;
+  "by_security_clearance"?: Array<ModelEsFacetItem>;
+  "by_skill"?: Array<ModelEsFacetItem>;
   "remote_open"?: number;
   "top_companies"?: Array<ModelEsFacetItem>;
   "total_open"?: number;
@@ -7135,6 +7140,35 @@ export interface ModelExtractUsage {
 export interface ModelExtractResponseDoc {
   "code"?: number;
   "data"?: ModelExtractResult;
+  "msg"?: string;
+}
+
+export interface ModelFacebookPage {
+  "address"?: string;
+  "category"?: string;
+  "company"?: string;
+  "email"?: string;
+  "emails"?: Array<string>;
+  "hours"?: string;
+  "intro"?: string;
+  "latestPostAt"?: string;
+  "og"?: { "description"?: string; "image"?: string; "title"?: string };
+  "pageId"?: string;
+  "phones"?: Array<string>;
+  "priceRange"?: string;
+  "reviewCount"?: number;
+  "sourceUrl"?: string;
+  "stats"?: { "followers"?: number; "likes"?: number };
+  "talking"?: number;
+  "title"?: string;
+  "website"?: string;
+  "wereHere"?: number;
+  "whatsapp"?: string;
+}
+
+export interface ModelFacebookPageResponseDoc {
+  "code"?: number;
+  "data"?: ModelFacebookPage;
   "msg"?: string;
 }
 
@@ -8951,7 +8985,9 @@ export interface ModelJobsHiringSignals {
 }
 
 export interface ModelJobsJob {
+  "ai_tools_mentioned"?: Array<string>;
   "apply_url"?: string;
+  "benefits_mentioned"?: Array<string>;
   "company"?: string;
   "company_logo_url"?: string;
   "compensation"?: string;
@@ -8962,6 +8998,7 @@ export interface ModelJobsJob {
   "department"?: string;
   "description_html"?: string;
   "description_text"?: string;
+  "education_level_required"?: Array<string>;
   "employment_type"?: string;
   "id"?: string;
   "location"?: string;
@@ -8974,6 +9011,8 @@ export interface ModelJobsJob {
   "provider"?: string;
   "remote"?: boolean;
   "req_id"?: string;
+  "security_clearance_required"?: Array<string>;
+  "skills_mentioned"?: Array<string>;
   "team"?: string;
   "title"?: string;
   "url"?: string;
@@ -21207,9 +21246,10 @@ export interface DatasetsInstagramUsersSearchParams {
 export type DatasetsJobsCompaniesResponse = CrawloraResponse<ModelDatasetsJobsCompaniesResponseDoc>;
 export interface DatasetsJobsCompaniesParams {
   "q"?: string;
-  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint";
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint" | "amazon-jobs" | "apple-jobs" | "google-jobs" | "meta-jobs" | "tesla-jobs";
   "status"?: "active" | "empty" | "gone" | "blocked" | "pending" | "invalid";
   "min_open_roles"?: number;
+  "sponsors_visa"?: boolean;
   "sort"?: "open_desc" | "company_asc" | "crawled_desc";
   "page"?: number;
   "page_size"?: number;
@@ -21235,7 +21275,7 @@ export interface DatasetsJobsNearbyParams {
   "lat": number;
   "lon": number;
   "radius_km"?: number;
-  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint";
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint" | "amazon-jobs" | "apple-jobs" | "google-jobs" | "meta-jobs" | "tesla-jobs";
   "include_closed"?: boolean;
   "page"?: number;
   "page_size"?: number;
@@ -21245,7 +21285,7 @@ export type DatasetsJobsSearchResponse = CrawloraResponse<ModelDatasetsJobsSearc
 export interface DatasetsJobsSearchParams {
   "q"?: string;
   "company"?: string;
-  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint";
+  "provider"?: "greenhouse" | "lever" | "ashby" | "workday" | "smartrecruiters" | "workable" | "recruitee" | "rippling" | "personio" | "teamtailor" | "oracle" | "ukg" | "icims" | "eightfold" | "gem" | "pinpoint" | "amazon-jobs" | "apple-jobs" | "google-jobs" | "meta-jobs" | "tesla-jobs";
   "department"?: string;
   "location"?: string;
   "city"?: string;
@@ -22185,6 +22225,11 @@ export type WebExtractBody = CrawloraBody<ModelExtractOption>;
 export type WebExtractResponse = CrawloraResponse<ModelExtractResponseDoc>;
 export interface WebExtractParams {
   "extractOption": WebExtractBody;
+}
+
+export type FacebookPageResponse = CrawloraResponse<ModelFacebookPageResponseDoc>;
+export interface FacebookPageParams {
+  "page": string;
 }
 
 export type GeocodingLookupResponse = CrawloraResponse<ModelGeocodingLookupResponseDoc>;
@@ -26496,6 +26541,10 @@ export interface EspnService {
   teams<T = EspnTeamsResponse>(params: EspnTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface FacebookService {
+  page<T = FacebookPageResponse>(params: FacebookPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface GeocodingService {
   lookup<T = GeocodingLookupResponse>(params: GeocodingLookupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reverse<T = GeocodingReverseResponse>(params: GeocodingReverseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -27249,6 +27298,7 @@ export interface CrawloraGeneratedGroups {
   discogs: DiscogsService;
   eBay: EBayService;
   espn: EspnService;
+  facebook: FacebookService;
   geocoding: GeocodingService;
   gitHub: GitHubService;
   goodreads: GoodreadsService;
@@ -27567,6 +27617,7 @@ export interface OperationParamsMap {
   "espn-team-roster": EspnTeamRosterParams;
   "espn-teams": EspnTeamsParams;
   "extract": WebExtractParams;
+  "facebook-page": FacebookPageParams;
   "geocoding-lookup": GeocodingLookupParams;
   "geocoding-reverse": GeocodingReverseParams;
   "geocoding-search": GeocodingSearchParams;
@@ -28418,6 +28469,7 @@ export interface OperationResponseMap {
   "espn-team-roster": EspnTeamRosterResponse;
   "espn-teams": EspnTeamsResponse;
   "extract": WebExtractResponse;
+  "facebook-page": FacebookPageResponse;
   "geocoding-lookup": GeocodingLookupResponse;
   "geocoding-reverse": GeocodingReverseResponse;
   "geocoding-search": GeocodingSearchResponse;
@@ -29269,6 +29321,7 @@ export interface OperationRequiredParamsMap {
   "espn-team-roster": true;
   "espn-teams": true;
   "extract": true;
+  "facebook-page": true;
   "geocoding-lookup": true;
   "geocoding-reverse": true;
   "geocoding-search": false;
@@ -30127,6 +30180,7 @@ export type OperationIdLiteral =
   | "espn-team-roster"
   | "espn-teams"
   | "extract"
+  | "facebook-page"
   | "geocoding-lookup"
   | "geocoding-reverse"
   | "geocoding-search"
@@ -30974,6 +31028,7 @@ export declare const OperationIds: Readonly<{
   EspnTeam: "espn-team";
   EspnTeamRoster: "espn-team-roster";
   EspnTeams: "espn-teams";
+  FacebookPage: "facebook-page";
   GeocodingLookup: "geocoding-lookup";
   GeocodingReverse: "geocoding-reverse";
   GeocodingSearch: "geocoding-search";
