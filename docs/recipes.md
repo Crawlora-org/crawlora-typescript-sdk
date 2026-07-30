@@ -44,6 +44,18 @@ const brand = await crawlora.brand.retrieve({ domain: "stripe.com" });
 Omit `include_metrics` for the 1-credit feed mode. Set it to `true` for the
 3-credit anonymous HTML mode with public post and comment engagement metrics.
 
+## Company Job Searches
+
+Search public job listings directly from employer career sites:
+
+```ts
+const amazon = await crawlora.amazonJobs.search({ q: "software engineer", country: "US" });
+const apple = await crawlora.appleJobs.search({ q: "machine learning", location: "United States" });
+const google = await crawlora.googleJobs.search({ q: "data scientist", location: "Singapore" });
+const meta = await crawlora.metaJobs.search({ q: "product manager", is_remote_only: true });
+const tesla = await crawlora.teslaJobs.list({ query: "manufacturing", location: "Texas" });
+```
+
 ## Threads Public Lookups
 
 ```ts

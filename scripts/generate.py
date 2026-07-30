@@ -48,7 +48,7 @@ def schema_ref_type(schema):
     return schema_type_name(ref_name) if ref_name else ""
 
 
-def ts_schema_type(schema):
+def _ts_schema_type(schema):
     if not schema:
         return "unknown"
     if "$ref" in schema:
@@ -83,6 +83,13 @@ def ts_schema_type(schema):
             return f"Record<string, {value_type}>"
         return "Record<string, unknown>"
     return "unknown"
+
+
+def ts_schema_type(schema):
+    rendered = _ts_schema_type(schema)
+    if schema and schema.get("x-nullable") and rendered != "unknown":
+        return f"{rendered} | null"
+    return rendered
 
 
 def ts_type(param):
