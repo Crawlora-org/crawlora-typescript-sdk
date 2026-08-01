@@ -9975,6 +9975,11 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "job_family",
+        "type": "string"
+      },
+      {
+        "in": "query",
         "name": "remote",
         "type": "boolean"
       },
@@ -22852,6 +22857,410 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "mlb-game": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "mlb-game",
+    "method": "GET",
+    "path": "/mlb/game",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-game-boxscore": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-game-boxscore",
+    "method": "GET",
+    "path": "/mlb/game-boxscore",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-game-play-by-play": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-game-play-by-play",
+    "method": "GET",
+    "path": "/mlb/game-play-by-play",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-league-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "mlb-league-stats",
+    "method": "GET",
+    "path": "/mlb/league-stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "hitting",
+          "pitching",
+          "fielding"
+        ],
+        "in": "query",
+        "name": "group",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-player": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "mlb-player",
+    "method": "GET",
+    "path": "/mlb/player",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-player-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "mlb-player-stats",
+    "method": "GET",
+    "path": "/mlb/player-stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "hitting",
+          "pitching",
+          "fielding"
+        ],
+        "in": "query",
+        "name": "group",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "mlb-schedule",
+    "method": "GET",
+    "path": "/mlb/schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-standings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "mlb-standings",
+    "method": "GET",
+    "path": "/mlb/standings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "regularSeason",
+          "wildCard",
+          "springTraining"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-team-roster": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "mlb-team-roster",
+    "method": "GET",
+    "path": "/mlb/team-roster",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "active",
+          "40Man",
+          "fullSeason"
+        ],
+        "in": "query",
+        "name": "roster_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-team-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-team-stats",
+    "method": "GET",
+    "path": "/mlb/team-stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "hitting",
+          "pitching",
+          "fielding"
+        ],
+        "in": "query",
+        "name": "group",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-teams": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "mlb-teams",
+    "method": "GET",
+    "path": "/mlb/teams",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-transactions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-transactions",
+    "method": "GET",
+    "path": "/mlb/transactions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "start_date",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_date",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "player_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "numbeo-cost-of-living-city": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -31814,6 +32223,272 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "target-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "target-categories",
+    "method": "GET",
+    "path": "/target/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "target-category-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "target-category-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/target/category-products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "featured",
+          "price-low",
+          "price-high",
+          "rating",
+          "bestselling",
+          "newest"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "store_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "filter_ids",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "target-filter-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "target-filter-options",
+    "method": "GET",
+    "path": "/target/filter-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "store_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "filter_ids",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "target-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "target-product",
+    "method": "GET",
+    "path": "/target/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tcin",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "store_id",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "target-questions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "target-questions",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/target/questions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tcin",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "target-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "target-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/target/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tcin",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "target-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "target-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/target/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "featured",
+          "price-low",
+          "price-high",
+          "rating",
+          "bestselling",
+          "newest"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "store_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "filter_ids",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tesla-jobs-job": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -31993,6 +32668,371 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "ticketmaster-attraction": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-attraction",
+    "method": "GET",
+    "path": "/ticketmaster/attraction",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-attraction-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-attraction-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketmaster/attraction-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "date"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-discover-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ticketmaster-discover-categories",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketmaster/discover-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "concerts",
+          "sports",
+          "arts-theater",
+          "family"
+        ],
+        "in": "query",
+        "name": "section",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-discover-category-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ticketmaster-discover-category-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketmaster/discover-category-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-discover-cities": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ticketmaster-discover-cities",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketmaster/discover-cities",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-discover-city-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ticketmaster-discover-city-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketmaster/discover-city-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "city",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-event": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-event",
+    "method": "GET",
+    "path": "/ticketmaster/event",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-search-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-search-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketmaster/search-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "date"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ticketmaster-suggest",
+    "method": "GET",
+    "path": "/ticketmaster/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-venue": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-venue",
+    "method": "GET",
+    "path": "/ticketmaster/venue",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-venue-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-venue-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketmaster/venue-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "date"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tiktok-category": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -32062,6 +33102,96 @@ export const operations = {
         "in": "query",
         "name": "cursor",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-creative-center-hashtags": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-creative-center-hashtags",
+    "method": "GET",
+    "path": "/tiktok/creative-center/hashtags",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "country_code",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "7",
+          "30"
+        ],
+        "in": "query",
+        "name": "period",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-creative-center-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-creative-center-videos",
+    "method": "GET",
+    "path": "/tiktok/creative-center/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "country_code",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "7",
+          "30"
+        ],
+        "in": "query",
+        "name": "period",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "views",
+          "engagement",
+          "six_second_views"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "content_label_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "organic_only",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -36458,6 +37588,20 @@ export const groups = {
     "topComments": "metaculus-top-comments",
     "tournamentQuestions": "metaculus-tournament-questions"
   },
+  "mlb": {
+    "game": "mlb-game",
+    "gameBoxscore": "mlb-game-boxscore",
+    "gamePlayByPlay": "mlb-game-play-by-play",
+    "leagueStats": "mlb-league-stats",
+    "player": "mlb-player",
+    "playerStats": "mlb-player-stats",
+    "schedule": "mlb-schedule",
+    "standings": "mlb-standings",
+    "teamRoster": "mlb-team-roster",
+    "teamStats": "mlb-team-stats",
+    "teams": "mlb-teams",
+    "transactions": "mlb-transactions"
+  },
   "numbeo": {
     "costOfLivingCity": "numbeo-cost-of-living-city",
     "costOfLivingCountry": "numbeo-cost-of-living-country",
@@ -36730,6 +37874,15 @@ export const groups = {
     "tagsList": "steam-tags-list",
     "topSellers": "steam-top-sellers"
   },
+  "target": {
+    "categories": "target-categories",
+    "categoryProducts": "target-category-products",
+    "filterOptions": "target-filter-options",
+    "product": "target-product",
+    "questions": "target-questions",
+    "reviews": "target-reviews",
+    "search": "target-search"
+  },
   "teslaJobs": {
     "job": "tesla-jobs-job",
     "list": "tesla-jobs-list"
@@ -36741,10 +37894,25 @@ export const groups = {
     "profilePosts": "threads-profile-posts",
     "search": "threads-search"
   },
+  "ticketmaster": {
+    "attraction": "ticketmaster-attraction",
+    "attractionEvents": "ticketmaster-attraction-events",
+    "discoverCategories": "ticketmaster-discover-categories",
+    "discoverCategoryEvents": "ticketmaster-discover-category-events",
+    "discoverCities": "ticketmaster-discover-cities",
+    "discoverCityEvents": "ticketmaster-discover-city-events",
+    "event": "ticketmaster-event",
+    "searchEvents": "ticketmaster-search-events",
+    "suggest": "ticketmaster-suggest",
+    "venue": "ticketmaster-venue",
+    "venueEvents": "ticketmaster-venue-events"
+  },
   "tiktok": {
     "category": "tiktok-category",
     "challenge": "tiktok-challenge",
     "challengeList": "tiktok-challenge-list",
+    "creativeCenterHashtags": "tiktok-creative-center-hashtags",
+    "creativeCenterVideos": "tiktok-creative-center-videos",
     "explore": "tiktok-explore",
     "popularTrendCountryIndustryMeta": "tiktok-popular-trend-country-industry-meta",
     "post": "tiktok-post",
@@ -36897,7 +38065,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 849;
+export const operationCount = 881;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -37380,6 +38548,18 @@ export const OperationIds = Object.freeze({
   "MetaculusQuestions": "metaculus-questions",
   "MetaculusTopComments": "metaculus-top-comments",
   "MetaculusTournamentQuestions": "metaculus-tournament-questions",
+  "MlbGame": "mlb-game",
+  "MlbGameBoxscore": "mlb-game-boxscore",
+  "MlbGamePlayByPlay": "mlb-game-play-by-play",
+  "MlbLeagueStats": "mlb-league-stats",
+  "MlbPlayer": "mlb-player",
+  "MlbPlayerStats": "mlb-player-stats",
+  "MlbSchedule": "mlb-schedule",
+  "MlbStandings": "mlb-standings",
+  "MlbTeamRoster": "mlb-team-roster",
+  "MlbTeamStats": "mlb-team-stats",
+  "MlbTeams": "mlb-teams",
+  "MlbTransactions": "mlb-transactions",
   "NumbeoCostOfLivingCity": "numbeo-cost-of-living-city",
   "NumbeoCostOfLivingCountry": "numbeo-cost-of-living-country",
   "NumbeoCostOfLivingRankings": "numbeo-cost-of-living-rankings",
@@ -37618,6 +38798,13 @@ export const OperationIds = Object.freeze({
   "SteamTags": "steam-tags",
   "SteamTagsList": "steam-tags-list",
   "SteamTopSellers": "steam-top-sellers",
+  "TargetCategories": "target-categories",
+  "TargetCategoryProducts": "target-category-products",
+  "TargetFilterOptions": "target-filter-options",
+  "TargetProduct": "target-product",
+  "TargetQuestions": "target-questions",
+  "TargetReviews": "target-reviews",
+  "TargetSearch": "target-search",
   "TeslaJobsJob": "tesla-jobs-job",
   "TeslaJobsList": "tesla-jobs-list",
   "ThreadsPost": "threads-post",
@@ -37625,9 +38812,22 @@ export const OperationIds = Object.freeze({
   "ThreadsProfile": "threads-profile",
   "ThreadsProfilePosts": "threads-profile-posts",
   "ThreadsSearch": "threads-search",
+  "TicketmasterAttraction": "ticketmaster-attraction",
+  "TicketmasterAttractionEvents": "ticketmaster-attraction-events",
+  "TicketmasterDiscoverCategories": "ticketmaster-discover-categories",
+  "TicketmasterDiscoverCategoryEvents": "ticketmaster-discover-category-events",
+  "TicketmasterDiscoverCities": "ticketmaster-discover-cities",
+  "TicketmasterDiscoverCityEvents": "ticketmaster-discover-city-events",
+  "TicketmasterEvent": "ticketmaster-event",
+  "TicketmasterSearchEvents": "ticketmaster-search-events",
+  "TicketmasterSuggest": "ticketmaster-suggest",
+  "TicketmasterVenue": "ticketmaster-venue",
+  "TicketmasterVenueEvents": "ticketmaster-venue-events",
   "TiktokCategory": "tiktok-category",
   "TiktokChallenge": "tiktok-challenge",
   "TiktokChallengeList": "tiktok-challenge-list",
+  "TiktokCreativeCenterHashtags": "tiktok-creative-center-hashtags",
+  "TiktokCreativeCenterVideos": "tiktok-creative-center-videos",
   "TiktokExplore": "tiktok-explore",
   "TiktokPopularTrendCountryIndustryMeta": "tiktok-popular-trend-country-industry-meta",
   "TiktokPost": "tiktok-post",

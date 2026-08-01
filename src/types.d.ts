@@ -3533,6 +3533,85 @@ export interface ModelContactContactResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelCreativecenterHashtagTopCreator {
+  "avatar_url"?: string;
+  "country_code"?: string;
+  "creator_id"?: string;
+  "follower_count"?: number;
+  "handle"?: string;
+  "nickname"?: string;
+  "rank"?: number;
+  "tiktok_uid"?: string;
+}
+
+export interface ModelCreativecenterHashtagTrendPoint {
+  "timestamp"?: number;
+  "value"?: number;
+}
+
+export interface ModelCreativecenterTrendingHashtag {
+  "hashtag_id"?: string;
+  "hashtag_name"?: string;
+  "industry_ids"?: Array<number>;
+  "popularity_curve"?: Array<ModelCreativecenterHashtagTrendPoint>;
+  "publish_count"?: number;
+  "rank"?: number;
+  "top_creators"?: Array<ModelCreativecenterHashtagTopCreator>;
+  "video_views"?: number;
+}
+
+export interface ModelCreativecenterTrendingHashtagsResp {
+  "hashtags"?: Array<ModelCreativecenterTrendingHashtag>;
+  "total_count"?: number;
+}
+
+export interface ModelCreativecenterTrendingVideo {
+  "author_avatar_url"?: string;
+  "author_bio"?: string;
+  "author_follower_count"?: number;
+  "author_handle"?: string;
+  "author_id"?: string;
+  "author_nickname"?: string;
+  "content_tags"?: Array<ModelCreativecenterTrendingVideoContentTag>;
+  "content_type"?: number;
+  "cover_url"?: string;
+  "create_time"?: number;
+  "engagement_rate"?: number;
+  "engagement_rate_lifetime"?: number;
+  "item_id"?: string;
+  "organic_video_views"?: number;
+  "organic_video_views_lifetime"?: number;
+  "six_seconds_vtr"?: number;
+  "six_seconds_vtr_lifetime"?: number;
+  "title"?: string;
+  "video_url"?: string;
+  "video_views"?: number;
+  "video_views_lifetime"?: number;
+}
+
+export interface ModelCreativecenterTrendingVideoContentTag {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelCreativecenterTrendingVideosResp {
+  "page_count"?: number;
+  "total_count"?: number;
+  "videos"?: Array<ModelCreativecenterTrendingVideo>;
+}
+
+export interface ModelCreativecenterTrendingHashtagsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCreativecenterTrendingHashtagsResp;
+  "msg"?: string;
+}
+
+export interface ModelCreativecenterTrendingVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelCreativecenterTrendingVideosResp;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsAirbnbMarketFacetResponse {
   "dataset"?: string;
   "facet"?: string;
@@ -5980,9 +6059,11 @@ export interface ModelEsJobPostingFacets {
   "by_department"?: Array<ModelEsFacetItem>;
   "by_education_level"?: Array<ModelEsFacetItem>;
   "by_employment_type"?: Array<ModelEsFacetItem>;
+  "by_job_family"?: Array<ModelEsFacetItem>;
   "by_location"?: Array<ModelEsFacetItem>;
   "by_provider"?: Array<ModelEsFacetItem>;
   "by_security_clearance"?: Array<ModelEsFacetItem>;
+  "by_seniority"?: Array<ModelEsFacetItem>;
   "by_skill"?: Array<ModelEsFacetItem>;
   "remote_open"?: number;
   "top_companies"?: Array<ModelEsFacetItem>;
@@ -10561,6 +10642,365 @@ export interface ModelMetajobsListResponseDoc {
 export interface ModelMetajobsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelMetajobsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbBoxscorePlayer {
+  "batting_order"?: string;
+  "person"?: ModelMlbNamedRef;
+  "position"?: string;
+  "stats"?: Record<string, Record<string, unknown>>;
+}
+
+export interface ModelMlbBoxscoreResponse {
+  "away"?: ModelMlbBoxscoreTeam;
+  "fetched_at"?: string;
+  "game_id"?: number;
+  "home"?: ModelMlbBoxscoreTeam;
+  "source_url"?: string;
+}
+
+export interface ModelMlbBoxscoreTeam {
+  "players"?: Array<ModelMlbBoxscorePlayer>;
+  "team"?: ModelMlbTeamRef;
+  "team_stats"?: Record<string, Record<string, unknown>>;
+}
+
+export interface ModelMlbDecision {
+  "loser"?: ModelMlbNamedRef;
+  "save"?: ModelMlbNamedRef;
+  "winner"?: ModelMlbNamedRef;
+}
+
+export interface ModelMlbGameResponse {
+  "away_boxscore"?: ModelMlbTeamBoxscore;
+  "decisions"?: ModelMlbDecision;
+  "fetched_at"?: string;
+  "game"?: ModelMlbGameSummary;
+  "home_boxscore"?: ModelMlbTeamBoxscore;
+  "linescore"?: ModelMlbLinescore;
+  "source_url"?: string;
+}
+
+export interface ModelMlbGameSide {
+  "losses"?: number;
+  "probable_pitcher"?: ModelMlbNamedRef;
+  "score"?: number;
+  "team"?: ModelMlbTeamRef;
+  "wins"?: number;
+}
+
+export interface ModelMlbGameStatus {
+  "abstract"?: string;
+  "code"?: string;
+  "detailed"?: string;
+  "reason"?: string;
+}
+
+export interface ModelMlbGameSummary {
+  "away"?: ModelMlbGameSide;
+  "day_night"?: string;
+  "double_header"?: string;
+  "game_date"?: string;
+  "game_number"?: number;
+  "game_type"?: string;
+  "home"?: ModelMlbGameSide;
+  "id"?: number;
+  "official_date"?: string;
+  "scheduled_innings"?: number;
+  "season"?: string;
+  "series_description"?: string;
+  "status"?: ModelMlbGameStatus;
+  "venue"?: ModelMlbVenueRef;
+}
+
+export interface ModelMlbInning {
+  "away_errors"?: number;
+  "away_hits"?: number;
+  "away_runs"?: number;
+  "home_errors"?: number;
+  "home_hits"?: number;
+  "home_runs"?: number;
+  "number"?: number;
+}
+
+export interface ModelMlbLinescore {
+  "away_errors"?: number;
+  "away_hits"?: number;
+  "away_runs"?: number;
+  "current_inning"?: number;
+  "home_errors"?: number;
+  "home_hits"?: number;
+  "home_runs"?: number;
+  "inning_state"?: string;
+  "innings"?: Array<ModelMlbInning>;
+  "scheduled_innings"?: number;
+}
+
+export interface ModelMlbNamedRef {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelMlbPlay {
+  "at_bat_index"?: number;
+  "batter"?: ModelMlbNamedRef;
+  "description"?: string;
+  "event"?: string;
+  "event_type"?: string;
+  "events"?: Array<ModelMlbPlayEvent>;
+  "half_inning"?: string;
+  "inning"?: number;
+  "is_complete"?: boolean;
+  "pitcher"?: ModelMlbNamedRef;
+}
+
+export interface ModelMlbPlayByPlayResponse {
+  "fetched_at"?: string;
+  "game_id"?: number;
+  "plays"?: Array<ModelMlbPlay>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelMlbPlayEvent {
+  "description"?: string;
+  "details"?: Record<string, unknown>;
+  "end_time"?: string;
+  "index"?: number;
+  "is_pitch"?: boolean;
+  "pitch_data"?: Record<string, unknown>;
+  "pitch_number"?: number;
+  "start_time"?: string;
+  "type"?: string;
+}
+
+export interface ModelMlbPlayer {
+  "active"?: boolean;
+  "bat_side"?: string;
+  "birth_city"?: string;
+  "birth_country"?: string;
+  "birth_date"?: string;
+  "current_age"?: number;
+  "current_team"?: ModelMlbTeamRef;
+  "full_name"?: string;
+  "height"?: string;
+  "id"?: number;
+  "mlb_debut_date"?: string;
+  "pitch_hand"?: string;
+  "position"?: string;
+  "position_code"?: string;
+  "primary_number"?: string;
+  "weight"?: number;
+}
+
+export interface ModelMlbPlayerResponse {
+  "fetched_at"?: string;
+  "player"?: ModelMlbPlayer;
+  "source_url"?: string;
+}
+
+export interface ModelMlbRosterPlayer {
+  "jersey_number"?: string;
+  "person"?: ModelMlbNamedRef;
+  "position"?: string;
+  "position_code"?: string;
+  "status"?: string;
+}
+
+export interface ModelMlbRosterResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "players"?: Array<ModelMlbRosterPlayer>;
+  "roster_type"?: string;
+  "season"?: number;
+  "source_url"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelMlbScheduleResponse {
+  "date"?: string;
+  "end_date"?: string;
+  "fetched_at"?: string;
+  "games"?: Array<ModelMlbGameSummary>;
+  "source_url"?: string;
+  "start_date"?: string;
+  "team_id"?: number;
+  "total_games"?: number;
+}
+
+export interface ModelMlbStandingsGroup {
+  "division"?: ModelMlbNamedRef;
+  "league"?: ModelMlbNamedRef;
+  "teams"?: Array<ModelMlbStandingsTeam>;
+  "type"?: string;
+}
+
+export interface ModelMlbStandingsResponse {
+  "fetched_at"?: string;
+  "groups"?: Array<ModelMlbStandingsGroup>;
+  "season"?: number;
+  "source_url"?: string;
+  "type"?: string;
+}
+
+export interface ModelMlbStandingsTeam {
+  "clinched"?: boolean;
+  "division_leader"?: boolean;
+  "division_rank"?: string;
+  "games_back"?: string;
+  "league_rank"?: string;
+  "losses"?: number;
+  "run_differential"?: number;
+  "runs_allowed"?: number;
+  "runs_scored"?: number;
+  "streak"?: string;
+  "team"?: ModelMlbTeamRef;
+  "wild_card_games_back"?: string;
+  "winning_percentage"?: string;
+  "wins"?: number;
+}
+
+export interface ModelMlbStatSplit {
+  "league"?: ModelMlbNamedRef;
+  "player"?: ModelMlbNamedRef;
+  "position"?: string;
+  "rank"?: number;
+  "season"?: string;
+  "stats"?: Record<string, unknown>;
+  "team"?: ModelMlbTeamRef;
+}
+
+export interface ModelMlbStatsResponse {
+  "fetched_at"?: string;
+  "group"?: string;
+  "player_id"?: number;
+  "season"?: number;
+  "source_url"?: string;
+  "splits"?: Array<ModelMlbStatSplit>;
+  "team_id"?: number;
+  "total"?: number;
+  "type"?: string;
+}
+
+export interface ModelMlbTeam {
+  "abbreviation"?: string;
+  "active"?: boolean;
+  "club_name"?: string;
+  "division"?: ModelMlbNamedRef;
+  "first_year_of_play"?: string;
+  "id"?: number;
+  "league"?: ModelMlbNamedRef;
+  "location_name"?: string;
+  "name"?: string;
+  "season"?: number;
+  "venue"?: ModelMlbVenueRef;
+}
+
+export interface ModelMlbTeamBoxscore {
+  "batters"?: Array<number>;
+  "pitchers"?: Array<number>;
+  "players_used"?: number;
+  "team"?: ModelMlbTeamRef;
+  "team_stats"?: Record<string, Record<string, unknown>>;
+}
+
+export interface ModelMlbTeamRef {
+  "abbreviation"?: string;
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelMlbTeamsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "season"?: number;
+  "source_url"?: string;
+  "teams"?: Array<ModelMlbTeam>;
+}
+
+export interface ModelMlbTransaction {
+  "date"?: string;
+  "description"?: string;
+  "effective_date"?: string;
+  "from_team"?: ModelMlbTeamRef;
+  "id"?: number;
+  "player"?: ModelMlbNamedRef;
+  "to_team"?: ModelMlbTeamRef;
+  "type"?: string;
+}
+
+export interface ModelMlbTransactionsResponse {
+  "count"?: number;
+  "end_date"?: string;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "start_date"?: string;
+  "transactions"?: Array<ModelMlbTransaction>;
+}
+
+export interface ModelMlbVenueRef {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelMlbBoxscoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbBoxscoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbGameResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbGameResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbPlayByPlayResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbPlayByPlayResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbPlayerResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbPlayerResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbRosterResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbRosterResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbStandingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbStandingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbStatsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbStatsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbTeamsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbTeamsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbTransactionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbTransactionsResponse;
   "msg"?: string;
 }
 
@@ -16476,6 +16916,251 @@ export interface ModelSteamTopSellersResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTargetAnswer {
+  "author"?: string;
+  "helpful"?: number;
+  "id"?: string;
+  "submitted_at"?: string;
+  "text"?: string;
+}
+
+export interface ModelTargetAvailability {
+  "backup_store"?: boolean;
+  "primary_store"?: boolean;
+  "scheduled_delivery"?: boolean;
+  "shipping"?: boolean;
+  "sold_out"?: boolean;
+}
+
+export interface ModelTargetBreadcrumb {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelTargetCategoriesResponse {
+  "categories"?: Array<ModelTargetCategory>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "group_count"?: number;
+  "groups"?: Array<ModelTargetCategoryGroup>;
+  "source_url"?: string;
+}
+
+export interface ModelTargetCategory {
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelTargetCategoryGroup {
+  "categories"?: Array<ModelTargetCategory>;
+  "name"?: string;
+}
+
+export interface ModelTargetCategoryProductsResponse {
+  "applied_filter_ids"?: Array<string>;
+  "category_id"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "filter_groups"?: Array<ModelTargetFilterGroup>;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelTargetProductSummary>;
+  "sort"?: string;
+  "source_url"?: string;
+  "store_id"?: number;
+  "total"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelTargetFilterGroup {
+  "display_name"?: string;
+  "expanded"?: boolean;
+  "id"?: string;
+  "options"?: Array<ModelTargetFilterOption>;
+  "type"?: string;
+}
+
+export interface ModelTargetFilterOption {
+  "display_name"?: string;
+  "id"?: string;
+  "selected"?: boolean;
+  "url"?: string;
+  "value"?: string;
+}
+
+export interface ModelTargetFilterOptionsResponse {
+  "applied_filter_ids"?: Array<string>;
+  "category_id"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "filter_groups"?: Array<ModelTargetFilterGroup>;
+  "query"?: string;
+  "source_url"?: string;
+  "store_id"?: number;
+  "total"?: number;
+}
+
+export interface ModelTargetPrice {
+  "current"?: number;
+  "formatted"?: string;
+  "regular"?: number;
+  "store_id"?: number;
+  "unit_formatted"?: string;
+}
+
+export interface ModelTargetProduct {
+  "availability"?: ModelTargetAvailability;
+  "brand"?: string;
+  "breadcrumbs"?: Array<ModelTargetBreadcrumb>;
+  "bullets"?: Array<string>;
+  "category"?: string;
+  "category_id"?: string;
+  "description"?: string;
+  "dpci"?: string;
+  "images"?: Array<string>;
+  "item_type"?: string;
+  "parent_category_id"?: string;
+  "parent_tcin"?: string;
+  "price"?: ModelTargetPrice;
+  "primary_image_url"?: string;
+  "rating"?: ModelTargetRating;
+  "specifications"?: Array<string>;
+  "tcin"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTargetProductResponse {
+  "fetched_at"?: string;
+  "product"?: ModelTargetProduct;
+  "source_url"?: string;
+  "store_id"?: number;
+}
+
+export interface ModelTargetProductSummary {
+  "brand"?: string;
+  "category_id"?: string;
+  "parent_category_id"?: string;
+  "parent_tcin"?: string;
+  "price"?: ModelTargetPrice;
+  "primary_image_url"?: string;
+  "rating"?: ModelTargetRating;
+  "tcin"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTargetQuestion {
+  "answers"?: Array<ModelTargetAnswer>;
+  "author"?: string;
+  "helpful"?: number;
+  "id"?: string;
+  "submitted_at"?: string;
+  "text"?: string;
+}
+
+export interface ModelTargetQuestionsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "per_page"?: number;
+  "questions"?: Array<ModelTargetQuestion>;
+  "source_url"?: string;
+  "tcin"?: string;
+  "total_pages"?: number;
+}
+
+export interface ModelTargetRating {
+  "average"?: number;
+  "rating_count"?: number;
+  "review_count"?: number;
+}
+
+export interface ModelTargetReview {
+  "author"?: string;
+  "helpful"?: number;
+  "id"?: string;
+  "rating"?: number;
+  "submitted_at"?: string;
+  "syndicated"?: boolean;
+  "text"?: string;
+  "title"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelTargetReviewsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "per_page"?: number;
+  "reviews"?: Array<ModelTargetReview>;
+  "source_url"?: string;
+  "tcin"?: string;
+  "total"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelTargetSearchResponse {
+  "applied_filter_ids"?: Array<string>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "filter_groups"?: Array<ModelTargetFilterGroup>;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelTargetProductSummary>;
+  "query"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+  "store_id"?: number;
+  "total"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelTargetCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTargetCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTargetCategoryProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTargetCategoryProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTargetFilterOptionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTargetFilterOptionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTargetProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelTargetProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelTargetQuestionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTargetQuestionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTargetReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTargetReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTargetSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTargetSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelTechstackResult {
   "categories"?: Array<string>;
   "count"?: number;
@@ -16629,6 +17314,256 @@ export interface ModelThreadsRepliesResponseDoc {
 export interface ModelThreadsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelThreadsSearchResult;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterAttraction {
+  "classification"?: ModelTicketmasterClassification;
+  "discovery_id"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "synopsis"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterAttractionRef {
+  "discovery_id"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterAttractionResponse {
+  "attraction"?: ModelTicketmasterAttraction;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelTicketmasterClassification {
+  "genre"?: string;
+  "segment"?: string;
+  "sub_genre"?: string;
+  "sub_type"?: string;
+  "type"?: string;
+}
+
+export interface ModelTicketmasterDiscoverCategoriesResponse {
+  "categories"?: Array<ModelTicketmasterDiscoverCategory>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "per_page"?: number;
+  "section"?: string;
+  "source_urls"?: Array<string>;
+  "total"?: number;
+}
+
+export interface ModelTicketmasterDiscoverCategory {
+  "id"?: string;
+  "major"?: boolean;
+  "name"?: string;
+  "section"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterDiscoverCitiesResponse {
+  "cities"?: Array<ModelTicketmasterDiscoverCity>;
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "page"?: number;
+  "per_page"?: number;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelTicketmasterDiscoverCity {
+  "country"?: string;
+  "image_url"?: string;
+  "locale"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterEventDetail {
+  "attractions"?: Array<ModelTicketmasterAttractionRef>;
+  "cancelled"?: boolean;
+  "classification"?: ModelTicketmasterClassification;
+  "currency"?: string;
+  "description"?: string;
+  "discovery_id"?: string;
+  "event_change_status"?: string;
+  "event_type"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "limited_availability"?: boolean;
+  "onsale_time"?: string;
+  "postponed"?: boolean;
+  "presales"?: Array<ModelTicketmasterPresale>;
+  "product_type"?: string;
+  "rescheduled"?: boolean;
+  "seatmap_url"?: string;
+  "sold_out"?: boolean;
+  "start_time"?: string;
+  "tba"?: boolean;
+  "ticketing_status"?: string;
+  "time_zone"?: string;
+  "title"?: string;
+  "url"?: string;
+  "venue"?: ModelTicketmasterVenueRef;
+  "virtual"?: boolean;
+}
+
+export interface ModelTicketmasterEventResponse {
+  "event"?: ModelTicketmasterEventDetail;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelTicketmasterEventSummary {
+  "attractions"?: Array<ModelTicketmasterAttractionRef>;
+  "cancelled"?: boolean;
+  "discovery_id"?: string;
+  "event_change_status"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "limited_availability"?: boolean;
+  "onsale_time"?: string;
+  "postponed"?: boolean;
+  "presales"?: Array<ModelTicketmasterPresale>;
+  "rescheduled"?: boolean;
+  "seatmap_url"?: string;
+  "sold_out"?: boolean;
+  "start_time"?: string;
+  "tba"?: boolean;
+  "ticketing_status"?: string;
+  "time_zone"?: string;
+  "title"?: string;
+  "url"?: string;
+  "venue"?: ModelTicketmasterVenueRef;
+  "virtual"?: boolean;
+}
+
+export interface ModelTicketmasterEventsResponse {
+  "count"?: number;
+  "entity_id"?: string;
+  "events"?: Array<ModelTicketmasterEventSummary>;
+  "fetched_at"?: string;
+  "page"?: number;
+  "query"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelTicketmasterPresale {
+  "end_time"?: string;
+  "name"?: string;
+  "start_time"?: string;
+}
+
+export interface ModelTicketmasterSuggestion {
+  "category"?: string;
+  "event_count"?: number;
+  "image_url"?: string;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterSuggestionsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelTicketmasterSuggestion>;
+}
+
+export interface ModelTicketmasterVenue {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "discovery_id"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "info"?: Array<ModelTicketmasterVenueInfoBlock>;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "postal_code"?: string;
+  "state"?: string;
+  "time_zone"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterVenueInfoBlock {
+  "name"?: string;
+  "text"?: string;
+}
+
+export interface ModelTicketmasterVenueRef {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "discovery_id"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "postal_code"?: string;
+  "state"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterVenueResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "venue"?: ModelTicketmasterVenue;
+}
+
+export interface ModelTicketmasterAttractionResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterAttractionResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterDiscoverCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterCitiesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterDiscoverCitiesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterEventResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterEventResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterSuggestionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterSuggestionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterVenueResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterVenueResponse;
   "msg"?: string;
 }
 
@@ -21292,6 +22227,7 @@ export interface DatasetsJobsSearchParams {
   "state"?: string;
   "country"?: string;
   "employment_type"?: string;
+  "job_family"?: string;
   "remote"?: boolean;
   "workplace_type"?: "onsite" | "hybrid" | "remote";
   "include_closed"?: boolean;
@@ -23675,6 +24611,81 @@ export interface MetaculusTournamentQuestionsParams {
   "limit"?: number;
 }
 
+export type MlbGameResponse = CrawloraResponse<ModelMlbGameResponseDoc>;
+export interface MlbGameParams {
+  "id": string;
+}
+
+export type MlbGameBoxscoreResponse = CrawloraResponse<ModelMlbBoxscoreResponseDoc>;
+export interface MlbGameBoxscoreParams {
+  "id": string;
+}
+
+export type MlbGamePlayByPlayResponse = CrawloraResponse<ModelMlbPlayByPlayResponseDoc>;
+export interface MlbGamePlayByPlayParams {
+  "id": string;
+}
+
+export type MlbLeagueStatsResponse = CrawloraResponse<ModelMlbStatsResponseDoc>;
+export interface MlbLeagueStatsParams {
+  "season"?: number;
+  "group": "hitting" | "pitching" | "fielding";
+  "limit"?: number;
+}
+
+export type MlbPlayerResponse = CrawloraResponse<ModelMlbPlayerResponseDoc>;
+export interface MlbPlayerParams {
+  "id": string;
+}
+
+export type MlbPlayerStatsResponse = CrawloraResponse<ModelMlbStatsResponseDoc>;
+export interface MlbPlayerStatsParams {
+  "id": string;
+  "season"?: number;
+  "group": "hitting" | "pitching" | "fielding";
+}
+
+export type MlbScheduleResponse = CrawloraResponse<ModelMlbScheduleResponseDoc>;
+export interface MlbScheduleParams {
+  "date"?: string;
+  "start_date"?: string;
+  "end_date"?: string;
+  "team_id"?: string;
+}
+
+export type MlbStandingsResponse = CrawloraResponse<ModelMlbStandingsResponseDoc>;
+export interface MlbStandingsParams {
+  "season"?: number;
+  "type"?: "regularSeason" | "wildCard" | "springTraining";
+}
+
+export type MlbTeamRosterResponse = CrawloraResponse<ModelMlbRosterResponseDoc>;
+export interface MlbTeamRosterParams {
+  "team_id": string;
+  "season"?: number;
+  "roster_type"?: "active" | "40Man" | "fullSeason";
+}
+
+export type MlbTeamStatsResponse = CrawloraResponse<ModelMlbStatsResponseDoc>;
+export interface MlbTeamStatsParams {
+  "team_id": string;
+  "season"?: number;
+  "group": "hitting" | "pitching" | "fielding";
+}
+
+export type MlbTeamsResponse = CrawloraResponse<ModelMlbTeamsResponseDoc>;
+export interface MlbTeamsParams {
+  "season"?: number;
+}
+
+export type MlbTransactionsResponse = CrawloraResponse<ModelMlbTransactionsResponseDoc>;
+export interface MlbTransactionsParams {
+  "start_date": string;
+  "end_date": string;
+  "team_id"?: string;
+  "player_id"?: string;
+}
+
 export type NumbeoCostOfLivingCityResponse = CrawloraResponse<ModelNumbeoCostOfLivingCityResponseDoc>;
 export interface NumbeoCostOfLivingCityParams {
   "slug": string;
@@ -25383,6 +26394,56 @@ export interface SteamTopSellersParams {
   "l"?: string;
 }
 
+export type TargetCategoriesResponse = CrawloraResponse<ModelTargetCategoriesResponseDoc>;
+export interface TargetCategoriesParams {
+}
+
+export type TargetCategoryProductsResponse = CrawloraResponse<ModelTargetCategoryProductsResponseDoc>;
+export interface TargetCategoryProductsParams {
+  "category_id": string;
+  "page"?: number;
+  "sort"?: "relevance" | "featured" | "price-low" | "price-high" | "rating" | "bestselling" | "newest";
+  "store_id"?: number;
+  "filter_ids"?: string;
+}
+
+export type TargetFilterOptionsResponse = CrawloraResponse<ModelTargetFilterOptionsResponseDoc>;
+export interface TargetFilterOptionsParams {
+  "q"?: string;
+  "category_id"?: string;
+  "store_id"?: number;
+  "filter_ids"?: string;
+}
+
+export type TargetProductResponse = CrawloraResponse<ModelTargetProductResponseDoc>;
+export interface TargetProductParams {
+  "tcin": string;
+  "store_id"?: number;
+}
+
+export type TargetQuestionsResponse = CrawloraResponse<ModelTargetQuestionsResponseDoc>;
+export interface TargetQuestionsParams {
+  "tcin": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type TargetReviewsResponse = CrawloraResponse<ModelTargetReviewsResponseDoc>;
+export interface TargetReviewsParams {
+  "tcin": string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type TargetSearchResponse = CrawloraResponse<ModelTargetSearchResponseDoc>;
+export interface TargetSearchParams {
+  "q": string;
+  "page"?: number;
+  "sort"?: "relevance" | "featured" | "price-low" | "price-high" | "rating" | "bestselling" | "newest";
+  "store_id"?: number;
+  "filter_ids"?: string;
+}
+
 export type TeslaJobsJobResponse = CrawloraResponse<ModelTeslajobsJobResponseDoc>;
 export interface TeslaJobsJobParams {
   "id": string;
@@ -25424,6 +26485,74 @@ export interface ThreadsSearchParams {
   "q": string;
 }
 
+export type TicketmasterAttractionResponse = CrawloraResponse<ModelTicketmasterAttractionResponseDoc>;
+export interface TicketmasterAttractionParams {
+  "id": string;
+}
+
+export type TicketmasterAttractionEventsResponse = CrawloraResponse<ModelTicketmasterEventsResponseDoc>;
+export interface TicketmasterAttractionEventsParams {
+  "id": string;
+  "page"?: number;
+  "sort"?: "relevance" | "date";
+}
+
+export type TicketmasterDiscoverCategoriesResponse = CrawloraResponse<ModelTicketmasterCategoriesResponseDoc>;
+export interface TicketmasterDiscoverCategoriesParams {
+  "section"?: "all" | "concerts" | "sports" | "arts-theater" | "family";
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type TicketmasterDiscoverCategoryEventsResponse = CrawloraResponse<ModelTicketmasterEventsResponseDoc>;
+export interface TicketmasterDiscoverCategoryEventsParams {
+  "category_id": string;
+  "page"?: number;
+}
+
+export type TicketmasterDiscoverCitiesResponse = CrawloraResponse<ModelTicketmasterCitiesResponseDoc>;
+export interface TicketmasterDiscoverCitiesParams {
+  "country"?: string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type TicketmasterDiscoverCityEventsResponse = CrawloraResponse<ModelTicketmasterEventsResponseDoc>;
+export interface TicketmasterDiscoverCityEventsParams {
+  "city": string;
+  "country"?: string;
+  "page"?: number;
+}
+
+export type TicketmasterEventResponse = CrawloraResponse<ModelTicketmasterEventResponseDoc>;
+export interface TicketmasterEventParams {
+  "id": string;
+}
+
+export type TicketmasterSearchEventsResponse = CrawloraResponse<ModelTicketmasterEventsResponseDoc>;
+export interface TicketmasterSearchEventsParams {
+  "q": string;
+  "page"?: number;
+  "sort"?: "relevance" | "date";
+}
+
+export type TicketmasterSuggestResponse = CrawloraResponse<ModelTicketmasterSuggestionsResponseDoc>;
+export interface TicketmasterSuggestParams {
+  "q": string;
+}
+
+export type TicketmasterVenueResponse = CrawloraResponse<ModelTicketmasterVenueResponseDoc>;
+export interface TicketmasterVenueParams {
+  "id": string;
+}
+
+export type TicketmasterVenueEventsResponse = CrawloraResponse<ModelTicketmasterEventsResponseDoc>;
+export interface TicketmasterVenueEventsParams {
+  "id": string;
+  "page"?: number;
+  "sort"?: "relevance" | "date";
+}
+
 export type TiktokCategoryResponse = CrawloraResponse<ModelTiktokCategoryResponseDoc>;
 export interface TiktokCategoryParams {
 }
@@ -25432,6 +26561,21 @@ export type TiktokVideoCommentsResponse = CrawloraResponse<ModelTiktokCommentsRe
 export interface TiktokVideoCommentsParams {
   "aweme_id": string;
   "cursor"?: number;
+}
+
+export type TiktokCreativeCenterHashtagsResponse = CrawloraResponse<ModelCreativecenterTrendingHashtagsResponseDoc>;
+export interface TiktokCreativeCenterHashtagsParams {
+  "country_code": string;
+  "period"?: "7" | "30";
+}
+
+export type TiktokCreativeCenterVideosResponse = CrawloraResponse<ModelCreativecenterTrendingVideosResponseDoc>;
+export interface TiktokCreativeCenterVideosParams {
+  "country_code": string;
+  "period"?: "7" | "30";
+  "sort_by"?: "views" | "engagement" | "six_second_views";
+  "content_label_id"?: string;
+  "organic_only"?: boolean;
 }
 
 export type TiktokExploreResponse = CrawloraResponse<ModelTiktokExploreResponseDoc>;
@@ -26809,6 +27953,21 @@ export interface MetaculusService {
   tournamentQuestions<T = MetaculusTournamentQuestionsResponse>(params: MetaculusTournamentQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface MlbService {
+  game<T = MlbGameResponse>(params: MlbGameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gameBoxscore<T = MlbGameBoxscoreResponse>(params: MlbGameBoxscoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gamePlayByPlay<T = MlbGamePlayByPlayResponse>(params: MlbGamePlayByPlayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  leagueStats<T = MlbLeagueStatsResponse>(params: MlbLeagueStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  player<T = MlbPlayerResponse>(params: MlbPlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerStats<T = MlbPlayerStatsResponse>(params: MlbPlayerStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  schedule<T = MlbScheduleResponse>(params?: MlbScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  standings<T = MlbStandingsResponse>(params?: MlbStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamRoster<T = MlbTeamRosterResponse>(params: MlbTeamRosterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamStats<T = MlbTeamStatsResponse>(params: MlbTeamStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teams<T = MlbTeamsResponse>(params?: MlbTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  transactions<T = MlbTransactionsResponse>(params: MlbTransactionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface NumbeoService {
   costOfLivingCity<T = NumbeoCostOfLivingCityResponse>(params: NumbeoCostOfLivingCityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   costOfLivingCountry<T = NumbeoCostOfLivingCountryResponse>(params: NumbeoCostOfLivingCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -27103,6 +28262,16 @@ export interface SteamService {
   topSellers<T = SteamTopSellersResponse>(params?: SteamTopSellersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TargetService {
+  categories<T = TargetCategoriesResponse>(params?: TargetCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categoryProducts<T = TargetCategoryProductsResponse>(params: TargetCategoryProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  filterOptions<T = TargetFilterOptionsResponse>(params?: TargetFilterOptionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = TargetProductResponse>(params: TargetProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  questions<T = TargetQuestionsResponse>(params: TargetQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reviews<T = TargetReviewsResponse>(params: TargetReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = TargetSearchResponse>(params: TargetSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TeslaJobsService {
   job<T = TeslaJobsJobResponse>(params: TeslaJobsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   list<T = TeslaJobsListResponse>(params?: TeslaJobsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -27116,9 +28285,25 @@ export interface ThreadsService {
   search<T = ThreadsSearchResponse>(params: ThreadsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TicketmasterService {
+  attraction<T = TicketmasterAttractionResponse>(params: TicketmasterAttractionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  attractionEvents<T = TicketmasterAttractionEventsResponse>(params: TicketmasterAttractionEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  discoverCategories<T = TicketmasterDiscoverCategoriesResponse>(params?: TicketmasterDiscoverCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  discoverCategoryEvents<T = TicketmasterDiscoverCategoryEventsResponse>(params: TicketmasterDiscoverCategoryEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  discoverCities<T = TicketmasterDiscoverCitiesResponse>(params?: TicketmasterDiscoverCitiesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  discoverCityEvents<T = TicketmasterDiscoverCityEventsResponse>(params: TicketmasterDiscoverCityEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  event<T = TicketmasterEventResponse>(params: TicketmasterEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchEvents<T = TicketmasterSearchEventsResponse>(params: TicketmasterSearchEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = TicketmasterSuggestResponse>(params: TicketmasterSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  venue<T = TicketmasterVenueResponse>(params: TicketmasterVenueParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  venueEvents<T = TicketmasterVenueEventsResponse>(params: TicketmasterVenueEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TiktokService {
   category<T = TiktokCategoryResponse>(params?: TiktokCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   videoComments<T = TiktokVideoCommentsResponse>(params: TiktokVideoCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  creativeCenterHashtags<T = TiktokCreativeCenterHashtagsResponse>(params: TiktokCreativeCenterHashtagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  creativeCenterVideos<T = TiktokCreativeCenterVideosResponse>(params: TiktokCreativeCenterVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   explore<T = TiktokExploreResponse>(params: TiktokExploreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   challenge<T = TiktokChallengeResponse>(params: TiktokChallengeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   challengeList<T = TiktokChallengeListResponse>(params: TiktokChallengeListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -27316,6 +28501,7 @@ export interface CrawloraGeneratedGroups {
   metaJobs: MetaJobsService;
   metacritic: MetacriticService;
   metaculus: MetaculusService;
+  mlb: MlbService;
   numbeo: NumbeoService;
   meta: MetaService;
   pitchBook: PitchBookService;
@@ -27334,8 +28520,10 @@ export interface CrawloraGeneratedGroups {
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
   steam: SteamService;
+  target: TargetService;
   teslaJobs: TeslaJobsService;
   threads: ThreadsService;
+  ticketmaster: TicketmasterService;
   tiktok: TiktokService;
   tmdb: TmdbService;
   tripAdvisor: TripAdvisorService;
@@ -27831,6 +29019,18 @@ export interface OperationParamsMap {
   "metaculus-questions": MetaculusQuestionsParams;
   "metaculus-top-comments": MetaculusTopCommentsParams;
   "metaculus-tournament-questions": MetaculusTournamentQuestionsParams;
+  "mlb-game": MlbGameParams;
+  "mlb-game-boxscore": MlbGameBoxscoreParams;
+  "mlb-game-play-by-play": MlbGamePlayByPlayParams;
+  "mlb-league-stats": MlbLeagueStatsParams;
+  "mlb-player": MlbPlayerParams;
+  "mlb-player-stats": MlbPlayerStatsParams;
+  "mlb-schedule": MlbScheduleParams;
+  "mlb-standings": MlbStandingsParams;
+  "mlb-team-roster": MlbTeamRosterParams;
+  "mlb-team-stats": MlbTeamStatsParams;
+  "mlb-teams": MlbTeamsParams;
+  "mlb-transactions": MlbTransactionsParams;
   "numbeo-cost-of-living-city": NumbeoCostOfLivingCityParams;
   "numbeo-cost-of-living-country": NumbeoCostOfLivingCountryParams;
   "numbeo-cost-of-living-rankings": NumbeoCostOfLivingRankingsParams;
@@ -28071,6 +29271,13 @@ export interface OperationParamsMap {
   "steam-tags": SteamTagsParams;
   "steam-tags-list": SteamTagsListParams;
   "steam-top-sellers": SteamTopSellersParams;
+  "target-categories": TargetCategoriesParams;
+  "target-category-products": TargetCategoryProductsParams;
+  "target-filter-options": TargetFilterOptionsParams;
+  "target-product": TargetProductParams;
+  "target-questions": TargetQuestionsParams;
+  "target-reviews": TargetReviewsParams;
+  "target-search": TargetSearchParams;
   "tesla-jobs-job": TeslaJobsJobParams;
   "tesla-jobs-list": TeslaJobsListParams;
   "threads-post": ThreadsPostParams;
@@ -28078,8 +29285,21 @@ export interface OperationParamsMap {
   "threads-profile": ThreadsProfileParams;
   "threads-profile-posts": ThreadsProfilePostsParams;
   "threads-search": ThreadsSearchParams;
+  "ticketmaster-attraction": TicketmasterAttractionParams;
+  "ticketmaster-attraction-events": TicketmasterAttractionEventsParams;
+  "ticketmaster-discover-categories": TicketmasterDiscoverCategoriesParams;
+  "ticketmaster-discover-category-events": TicketmasterDiscoverCategoryEventsParams;
+  "ticketmaster-discover-cities": TicketmasterDiscoverCitiesParams;
+  "ticketmaster-discover-city-events": TicketmasterDiscoverCityEventsParams;
+  "ticketmaster-event": TicketmasterEventParams;
+  "ticketmaster-search-events": TicketmasterSearchEventsParams;
+  "ticketmaster-suggest": TicketmasterSuggestParams;
+  "ticketmaster-venue": TicketmasterVenueParams;
+  "ticketmaster-venue-events": TicketmasterVenueEventsParams;
   "tiktok-category": TiktokCategoryParams;
   "tiktok-video-comments": TiktokVideoCommentsParams;
+  "tiktok-creative-center-hashtags": TiktokCreativeCenterHashtagsParams;
+  "tiktok-creative-center-videos": TiktokCreativeCenterVideosParams;
   "tiktok-explore": TiktokExploreParams;
   "tiktok-challenge": TiktokChallengeParams;
   "tiktok-challenge-list": TiktokChallengeListParams;
@@ -28683,6 +29903,18 @@ export interface OperationResponseMap {
   "metaculus-questions": MetaculusQuestionsResponse;
   "metaculus-top-comments": MetaculusTopCommentsResponse;
   "metaculus-tournament-questions": MetaculusTournamentQuestionsResponse;
+  "mlb-game": MlbGameResponse;
+  "mlb-game-boxscore": MlbGameBoxscoreResponse;
+  "mlb-game-play-by-play": MlbGamePlayByPlayResponse;
+  "mlb-league-stats": MlbLeagueStatsResponse;
+  "mlb-player": MlbPlayerResponse;
+  "mlb-player-stats": MlbPlayerStatsResponse;
+  "mlb-schedule": MlbScheduleResponse;
+  "mlb-standings": MlbStandingsResponse;
+  "mlb-team-roster": MlbTeamRosterResponse;
+  "mlb-team-stats": MlbTeamStatsResponse;
+  "mlb-teams": MlbTeamsResponse;
+  "mlb-transactions": MlbTransactionsResponse;
   "numbeo-cost-of-living-city": NumbeoCostOfLivingCityResponse;
   "numbeo-cost-of-living-country": NumbeoCostOfLivingCountryResponse;
   "numbeo-cost-of-living-rankings": NumbeoCostOfLivingRankingsResponse;
@@ -28923,6 +30155,13 @@ export interface OperationResponseMap {
   "steam-tags": SteamTagsResponse;
   "steam-tags-list": SteamTagsListResponse;
   "steam-top-sellers": SteamTopSellersResponse;
+  "target-categories": TargetCategoriesResponse;
+  "target-category-products": TargetCategoryProductsResponse;
+  "target-filter-options": TargetFilterOptionsResponse;
+  "target-product": TargetProductResponse;
+  "target-questions": TargetQuestionsResponse;
+  "target-reviews": TargetReviewsResponse;
+  "target-search": TargetSearchResponse;
   "tesla-jobs-job": TeslaJobsJobResponse;
   "tesla-jobs-list": TeslaJobsListResponse;
   "threads-post": ThreadsPostResponse;
@@ -28930,8 +30169,21 @@ export interface OperationResponseMap {
   "threads-profile": ThreadsProfileResponse;
   "threads-profile-posts": ThreadsProfilePostsResponse;
   "threads-search": ThreadsSearchResponse;
+  "ticketmaster-attraction": TicketmasterAttractionResponse;
+  "ticketmaster-attraction-events": TicketmasterAttractionEventsResponse;
+  "ticketmaster-discover-categories": TicketmasterDiscoverCategoriesResponse;
+  "ticketmaster-discover-category-events": TicketmasterDiscoverCategoryEventsResponse;
+  "ticketmaster-discover-cities": TicketmasterDiscoverCitiesResponse;
+  "ticketmaster-discover-city-events": TicketmasterDiscoverCityEventsResponse;
+  "ticketmaster-event": TicketmasterEventResponse;
+  "ticketmaster-search-events": TicketmasterSearchEventsResponse;
+  "ticketmaster-suggest": TicketmasterSuggestResponse;
+  "ticketmaster-venue": TicketmasterVenueResponse;
+  "ticketmaster-venue-events": TicketmasterVenueEventsResponse;
   "tiktok-category": TiktokCategoryResponse;
   "tiktok-video-comments": TiktokVideoCommentsResponse;
+  "tiktok-creative-center-hashtags": TiktokCreativeCenterHashtagsResponse;
+  "tiktok-creative-center-videos": TiktokCreativeCenterVideosResponse;
   "tiktok-explore": TiktokExploreResponse;
   "tiktok-challenge": TiktokChallengeResponse;
   "tiktok-challenge-list": TiktokChallengeListResponse;
@@ -29535,6 +30787,18 @@ export interface OperationRequiredParamsMap {
   "metaculus-questions": false;
   "metaculus-top-comments": false;
   "metaculus-tournament-questions": true;
+  "mlb-game": true;
+  "mlb-game-boxscore": true;
+  "mlb-game-play-by-play": true;
+  "mlb-league-stats": true;
+  "mlb-player": true;
+  "mlb-player-stats": true;
+  "mlb-schedule": false;
+  "mlb-standings": false;
+  "mlb-team-roster": true;
+  "mlb-team-stats": true;
+  "mlb-teams": false;
+  "mlb-transactions": true;
   "numbeo-cost-of-living-city": true;
   "numbeo-cost-of-living-country": true;
   "numbeo-cost-of-living-rankings": false;
@@ -29775,6 +31039,13 @@ export interface OperationRequiredParamsMap {
   "steam-tags": false;
   "steam-tags-list": false;
   "steam-top-sellers": false;
+  "target-categories": false;
+  "target-category-products": true;
+  "target-filter-options": false;
+  "target-product": true;
+  "target-questions": true;
+  "target-reviews": true;
+  "target-search": true;
   "tesla-jobs-job": true;
   "tesla-jobs-list": false;
   "threads-post": true;
@@ -29782,8 +31053,21 @@ export interface OperationRequiredParamsMap {
   "threads-profile": true;
   "threads-profile-posts": true;
   "threads-search": true;
+  "ticketmaster-attraction": true;
+  "ticketmaster-attraction-events": true;
+  "ticketmaster-discover-categories": false;
+  "ticketmaster-discover-category-events": true;
+  "ticketmaster-discover-cities": false;
+  "ticketmaster-discover-city-events": true;
+  "ticketmaster-event": true;
+  "ticketmaster-search-events": true;
+  "ticketmaster-suggest": true;
+  "ticketmaster-venue": true;
+  "ticketmaster-venue-events": true;
   "tiktok-category": false;
   "tiktok-video-comments": true;
+  "tiktok-creative-center-hashtags": true;
+  "tiktok-creative-center-videos": true;
   "tiktok-explore": true;
   "tiktok-challenge": true;
   "tiktok-challenge-list": true;
@@ -30394,6 +31678,18 @@ export type OperationIdLiteral =
   | "metaculus-questions"
   | "metaculus-top-comments"
   | "metaculus-tournament-questions"
+  | "mlb-game"
+  | "mlb-game-boxscore"
+  | "mlb-game-play-by-play"
+  | "mlb-league-stats"
+  | "mlb-player"
+  | "mlb-player-stats"
+  | "mlb-schedule"
+  | "mlb-standings"
+  | "mlb-team-roster"
+  | "mlb-team-stats"
+  | "mlb-teams"
+  | "mlb-transactions"
   | "numbeo-cost-of-living-city"
   | "numbeo-cost-of-living-country"
   | "numbeo-cost-of-living-rankings"
@@ -30634,6 +31930,13 @@ export type OperationIdLiteral =
   | "steam-tags"
   | "steam-tags-list"
   | "steam-top-sellers"
+  | "target-categories"
+  | "target-category-products"
+  | "target-filter-options"
+  | "target-product"
+  | "target-questions"
+  | "target-reviews"
+  | "target-search"
   | "tesla-jobs-job"
   | "tesla-jobs-list"
   | "threads-post"
@@ -30641,8 +31944,21 @@ export type OperationIdLiteral =
   | "threads-profile"
   | "threads-profile-posts"
   | "threads-search"
+  | "ticketmaster-attraction"
+  | "ticketmaster-attraction-events"
+  | "ticketmaster-discover-categories"
+  | "ticketmaster-discover-category-events"
+  | "ticketmaster-discover-cities"
+  | "ticketmaster-discover-city-events"
+  | "ticketmaster-event"
+  | "ticketmaster-search-events"
+  | "ticketmaster-suggest"
+  | "ticketmaster-venue"
+  | "ticketmaster-venue-events"
   | "tiktok-category"
   | "tiktok-video-comments"
+  | "tiktok-creative-center-hashtags"
+  | "tiktok-creative-center-videos"
   | "tiktok-explore"
   | "tiktok-challenge"
   | "tiktok-challenge-list"
@@ -31244,6 +32560,18 @@ export declare const OperationIds: Readonly<{
   MetaculusQuestions: "metaculus-questions";
   MetaculusTopComments: "metaculus-top-comments";
   MetaculusTournamentQuestions: "metaculus-tournament-questions";
+  MlbGame: "mlb-game";
+  MlbGameBoxscore: "mlb-game-boxscore";
+  MlbGamePlayByPlay: "mlb-game-play-by-play";
+  MlbLeagueStats: "mlb-league-stats";
+  MlbPlayer: "mlb-player";
+  MlbPlayerStats: "mlb-player-stats";
+  MlbSchedule: "mlb-schedule";
+  MlbStandings: "mlb-standings";
+  MlbTeamRoster: "mlb-team-roster";
+  MlbTeamStats: "mlb-team-stats";
+  MlbTeams: "mlb-teams";
+  MlbTransactions: "mlb-transactions";
   NumbeoCostOfLivingCity: "numbeo-cost-of-living-city";
   NumbeoCostOfLivingCountry: "numbeo-cost-of-living-country";
   NumbeoCostOfLivingRankings: "numbeo-cost-of-living-rankings";
@@ -31482,6 +32810,13 @@ export declare const OperationIds: Readonly<{
   SteamTags: "steam-tags";
   SteamTagsList: "steam-tags-list";
   SteamTopSellers: "steam-top-sellers";
+  TargetCategories: "target-categories";
+  TargetCategoryProducts: "target-category-products";
+  TargetFilterOptions: "target-filter-options";
+  TargetProduct: "target-product";
+  TargetQuestions: "target-questions";
+  TargetReviews: "target-reviews";
+  TargetSearch: "target-search";
   TeslaJobsJob: "tesla-jobs-job";
   TeslaJobsList: "tesla-jobs-list";
   ThreadsPost: "threads-post";
@@ -31489,9 +32824,22 @@ export declare const OperationIds: Readonly<{
   ThreadsProfile: "threads-profile";
   ThreadsProfilePosts: "threads-profile-posts";
   ThreadsSearch: "threads-search";
+  TicketmasterAttraction: "ticketmaster-attraction";
+  TicketmasterAttractionEvents: "ticketmaster-attraction-events";
+  TicketmasterDiscoverCategories: "ticketmaster-discover-categories";
+  TicketmasterDiscoverCategoryEvents: "ticketmaster-discover-category-events";
+  TicketmasterDiscoverCities: "ticketmaster-discover-cities";
+  TicketmasterDiscoverCityEvents: "ticketmaster-discover-city-events";
+  TicketmasterEvent: "ticketmaster-event";
+  TicketmasterSearchEvents: "ticketmaster-search-events";
+  TicketmasterSuggest: "ticketmaster-suggest";
+  TicketmasterVenue: "ticketmaster-venue";
+  TicketmasterVenueEvents: "ticketmaster-venue-events";
   TiktokCategory: "tiktok-category";
   TiktokChallenge: "tiktok-challenge";
   TiktokChallengeList: "tiktok-challenge-list";
+  TiktokCreativeCenterHashtags: "tiktok-creative-center-hashtags";
+  TiktokCreativeCenterVideos: "tiktok-creative-center-videos";
   TiktokExplore: "tiktok-explore";
   TiktokPopularTrendCountryIndustryMeta: "tiktok-popular-trend-country-industry-meta";
   TiktokPost: "tiktok-post";

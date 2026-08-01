@@ -281,6 +281,14 @@ await crawlora.request("bing-search", { q: "coffee" }, {
 const crawlora = new CrawloraClient({ rateLimit: 10, maxConcurrency: 4 });
 ```
 
+## Ticketmaster, MLB, And Target
+
+```js
+const events = await crawlora.request("ticketmaster-search-events", { keyword: "jazz", page: 1 });
+const schedule = await crawlora.request("mlb-schedule", { date: "2026-08-01" });
+const filters = await crawlora.request("target-filter-options", { category_id: "5xt1a" });
+```
+
 ## Optional Live Smoke Tests
 
 ```sh

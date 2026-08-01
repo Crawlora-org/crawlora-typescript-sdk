@@ -2,7 +2,7 @@
 
 Official JavaScript and TypeScript client for the public Crawlora API. Use it
 to call Crawlora scraping, search, social, developer, marketplace, datasets,
-reviews, media, books, maps, jobs, finance, travel, prediction-market, brand, and usage endpoints with a small `fetch`-based client and generated
+reviews, media, books, maps, retail, ticketing, baseball, jobs, finance, travel, prediction-market, brand, and usage endpoints with a small `fetch`-based client and generated
 TypeScript types.
 
 - Runtime: Node.js 18+ or any modern runtime with `fetch`
