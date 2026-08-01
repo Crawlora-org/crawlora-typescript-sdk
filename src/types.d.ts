@@ -17837,7 +17837,9 @@ export interface ModelTmdbMediaRef {
 
 export interface ModelTmdbMovieListResponse {
   "category"?: string;
+  "has_next_page"?: boolean;
   "movies"?: Array<ModelTmdbMediaRef>;
+  "page"?: number;
   "source_url"?: string;
 }
 
@@ -17882,6 +17884,8 @@ export interface ModelTmdbRating {
 }
 
 export interface ModelTmdbSearchResponse {
+  "has_next_page"?: boolean;
+  "page"?: number;
   "query"?: string;
   "results"?: Array<ModelTmdbSearchResult>;
   "source_url"?: string;
@@ -17899,6 +17903,8 @@ export interface ModelTmdbSearchResult {
 
 export interface ModelTmdbTvlistResponse {
   "category"?: string;
+  "has_next_page"?: boolean;
+  "page"?: number;
   "shows"?: Array<ModelTmdbMediaRef>;
   "source_url"?: string;
 }
@@ -20611,6 +20617,27 @@ export interface ModelZillowSearchResponse {
   "location"?: string;
   "page"?: number;
   "results"?: Array<ModelZillowPropertyItem>;
+}
+
+export interface ModelTmdbPersonListResponse {
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "people"?: Array<ModelTmdbPersonRef>;
+  "source_url"?: string;
+}
+
+export interface ModelTmdbPersonRef {
+  "id"?: string;
+  "known_for"?: string;
+  "name"?: string;
+  "profile_url"?: string;
+  "uri"?: string;
+}
+
+export interface ModelTmdbPersonListResponseDoc {
+  "code"?: number;
+  "data"?: ModelTmdbPersonListResponse;
+  "msg"?: string;
 }
 
 export type AirbnbHostResponse = CrawloraResponse<ModelAirbnbHostResponse>;
@@ -26707,12 +26734,30 @@ export interface TiktokTrendingParams {
 export type TmdbMovieListResponse = CrawloraResponse<ModelTmdbMovieListResponseDoc>;
 export interface TmdbMovieListParams {
   "category"?: "popular" | "top_rated" | "now_playing" | "upcoming";
+  "page"?: number;
+  "sort_by"?: "popularity.desc" | "popularity.asc" | "vote_average.desc" | "vote_average.asc" | "primary_release_date.desc" | "primary_release_date.asc" | "title.asc" | "title.desc";
+  "with_genres"?: string;
+  "original_language"?: string;
+  "date_from"?: string;
+  "date_to"?: string;
+  "min_rating"?: number;
+  "max_rating"?: number;
+  "min_votes"?: number;
+  "min_runtime"?: number;
+  "max_runtime"?: number;
+  "include_adult"?: boolean;
   "limit"?: number;
 }
 
 export type TmdbMovieResponse = CrawloraResponse<ModelTmdbMovieResponseDoc>;
 export interface TmdbMovieParams {
   "id": string;
+}
+
+export type TmdbPersonListResponse = CrawloraResponse<ModelTmdbPersonListResponseDoc>;
+export interface TmdbPersonListParams {
+  "page"?: number;
+  "limit"?: number;
 }
 
 export type TmdbPersonResponse = CrawloraResponse<ModelTmdbPersonResponseDoc>;
@@ -26725,12 +26770,25 @@ export type TmdbSearchResponse = CrawloraResponse<ModelTmdbSearchResponseDoc>;
 export interface TmdbSearchParams {
   "query": string;
   "type"?: "movie" | "tv" | "person";
+  "page"?: number;
   "limit"?: number;
 }
 
 export type TmdbTvListResponse = CrawloraResponse<ModelTmdbTvListResponseDoc>;
 export interface TmdbTvListParams {
   "category"?: "popular" | "top_rated" | "airing_today" | "on_the_air";
+  "page"?: number;
+  "sort_by"?: "popularity.desc" | "popularity.asc" | "vote_average.desc" | "vote_average.asc" | "first_air_date.desc" | "first_air_date.asc" | "name.asc" | "name.desc";
+  "with_genres"?: string;
+  "original_language"?: string;
+  "date_from"?: string;
+  "date_to"?: string;
+  "min_rating"?: number;
+  "max_rating"?: number;
+  "min_votes"?: number;
+  "min_runtime"?: number;
+  "max_runtime"?: number;
+  "include_adult"?: boolean;
   "limit"?: number;
 }
 
@@ -28330,6 +28388,7 @@ export interface TiktokService {
 export interface TmdbService {
   movieList<T = TmdbMovieListResponse>(params?: TmdbMovieListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   movie<T = TmdbMovieResponse>(params: TmdbMovieParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  personList<T = TmdbPersonListResponse>(params?: TmdbPersonListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   person<T = TmdbPersonResponse>(params: TmdbPersonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = TmdbSearchResponse>(params: TmdbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   tvList<T = TmdbTvListResponse>(params?: TmdbTvListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -29323,6 +29382,7 @@ export interface OperationParamsMap {
   "tiktok-trending": TiktokTrendingParams;
   "tmdb-movie-list": TmdbMovieListParams;
   "tmdb-movie": TmdbMovieParams;
+  "tmdb-person-list": TmdbPersonListParams;
   "tmdb-person": TmdbPersonParams;
   "tmdb-search": TmdbSearchParams;
   "tmdb-tv-list": TmdbTvListParams;
@@ -30207,6 +30267,7 @@ export interface OperationResponseMap {
   "tiktok-trending": TiktokTrendingResponse;
   "tmdb-movie-list": TmdbMovieListResponse;
   "tmdb-movie": TmdbMovieResponse;
+  "tmdb-person-list": TmdbPersonListResponse;
   "tmdb-person": TmdbPersonResponse;
   "tmdb-search": TmdbSearchResponse;
   "tmdb-tv-list": TmdbTvListResponse;
@@ -31091,6 +31152,7 @@ export interface OperationRequiredParamsMap {
   "tiktok-trending": false;
   "tmdb-movie-list": false;
   "tmdb-movie": true;
+  "tmdb-person-list": false;
   "tmdb-person": true;
   "tmdb-search": true;
   "tmdb-tv-list": false;
@@ -31982,6 +32044,7 @@ export type OperationIdLiteral =
   | "tiktok-trending"
   | "tmdb-movie-list"
   | "tmdb-movie"
+  | "tmdb-person-list"
   | "tmdb-person"
   | "tmdb-search"
   | "tmdb-tv-list"
@@ -32863,6 +32926,7 @@ export declare const OperationIds: Readonly<{
   TmdbMovie: "tmdb-movie";
   TmdbMovieList: "tmdb-movie-list";
   TmdbPerson: "tmdb-person";
+  TmdbPersonList: "tmdb-person-list";
   TmdbSearch: "tmdb-search";
   TmdbTv: "tmdb-tv";
   TmdbTvList: "tmdb-tv-list";

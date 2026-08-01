@@ -33897,6 +33897,7 @@ export const operations = {
     "formParams": [],
     "id": "tmdb-movie-list",
     "method": "GET",
+    "paginatable": true,
     "path": "/tmdb/movie/list",
     "pathParams": [],
     "produces": [
@@ -33913,6 +33914,76 @@ export const operations = {
         "in": "query",
         "name": "category",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "popularity.desc",
+          "popularity.asc",
+          "vote_average.desc",
+          "vote_average.asc",
+          "primary_release_date.desc",
+          "primary_release_date.asc",
+          "title.asc",
+          "title.desc"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_genres",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "original_language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_votes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_runtime",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_runtime",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "include_adult",
+        "type": "boolean"
       },
       {
         "in": "query",
@@ -33951,6 +34022,37 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tmdb-person-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tmdb-person-list",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tmdb/person/list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tmdb-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -33960,6 +34062,7 @@ export const operations = {
     "formParams": [],
     "id": "tmdb-search",
     "method": "GET",
+    "paginatable": true,
     "path": "/tmdb/search",
     "pathParams": [],
     "produces": [
@@ -33981,6 +34084,11 @@ export const operations = {
         "in": "query",
         "name": "type",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       },
       {
         "in": "query",
@@ -34022,6 +34130,7 @@ export const operations = {
     "formParams": [],
     "id": "tmdb-tv-list",
     "method": "GET",
+    "paginatable": true,
     "path": "/tmdb/tv/list",
     "pathParams": [],
     "produces": [
@@ -34038,6 +34147,76 @@ export const operations = {
         "in": "query",
         "name": "category",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "popularity.desc",
+          "popularity.asc",
+          "vote_average.desc",
+          "vote_average.asc",
+          "first_air_date.desc",
+          "first_air_date.asc",
+          "name.asc",
+          "name.desc"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_genres",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "original_language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_votes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_runtime",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_runtime",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "include_adult",
+        "type": "boolean"
       },
       {
         "in": "query",
@@ -37938,6 +38117,7 @@ export const groups = {
     "movie": "tmdb-movie",
     "movieList": "tmdb-movie-list",
     "person": "tmdb-person",
+    "personList": "tmdb-person-list",
     "search": "tmdb-search",
     "tv": "tmdb-tv",
     "tvList": "tmdb-tv-list"
@@ -38065,7 +38245,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 881;
+export const operationCount = 882;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -38851,6 +39031,7 @@ export const OperationIds = Object.freeze({
   "TmdbMovie": "tmdb-movie",
   "TmdbMovieList": "tmdb-movie-list",
   "TmdbPerson": "tmdb-person",
+  "TmdbPersonList": "tmdb-person-list",
   "TmdbSearch": "tmdb-search",
   "TmdbTv": "tmdb-tv",
   "TmdbTvList": "tmdb-tv-list",
