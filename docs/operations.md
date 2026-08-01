@@ -2,7 +2,7 @@
 
 Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.
 
-Total operations: `881`
+Total operations: `882`
 
 | Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -789,11 +789,12 @@ Total operations: `881`
 | tiktok | `tiktok.topAdsSpotlight` | `tiktok-top-ads-spotlight` | `GET /tiktok/top-ads/spotlight` | `page` (query number)<br>`limit` (query number) | `ApiKeyAuth` | `TiktokTopAdsSpotlightResponse` |  |
 | tiktok | `tiktok.topAdsSuggestions` | `tiktok-top-ads-suggestions` | `GET /tiktok/top-ads/suggestions` | `count` (query number)<br>`scenario` (query number) | `ApiKeyAuth` | `TiktokTopAdsSuggestionsResponse` |  |
 | tiktok | `tiktok.trending` | `tiktok-trending` | `GET /tiktok/trending` | none | `ApiKeyAuth` | `TiktokTrendingResponse` |  |
-| tmdb | `tmdb.movieList` | `tmdb-movie-list` | `GET /tmdb/movie/list` | `category` (query "popular" \| "top_rated" \| "now_playing" \| "upcoming")<br>`limit` (query number) | `ApiKeyAuth` | `TmdbMovieListResponse` |  |
+| tmdb | `tmdb.movieList` | `tmdb-movie-list` | `GET /tmdb/movie/list` | `category` (query "popular" \| "top_rated" \| "now_playing" \| "upcoming")<br>`page` (query number)<br>`sort_by` (query "popularity.desc" \| "popularity.asc" \| "vote_average.desc" \| "vote_average.asc" \| "primary_release_date.desc" \| "primary_release_date.asc" \| "title.asc" \| "title.desc")<br>`with_genres` (query string)<br>`original_language` (query string)<br>`date_from` (query string)<br>`date_to` (query string)<br>`min_rating` (query number)<br>`max_rating` (query number)<br>`min_votes` (query number)<br>`min_runtime` (query number)<br>`max_runtime` (query number)<br>`include_adult` (query boolean)<br>`limit` (query number) | `ApiKeyAuth` | `TmdbMovieListResponse` |  |
 | tmdb | `tmdb.movie` | `tmdb-movie` | `GET /tmdb/movie/{id}` | `id` (path string required) | `ApiKeyAuth` | `TmdbMovieResponse` |  |
+| tmdb | `tmdb.personList` | `tmdb-person-list` | `GET /tmdb/person/list` | `page` (query number)<br>`limit` (query number) | `ApiKeyAuth` | `TmdbPersonListResponse` |  |
 | tmdb | `tmdb.person` | `tmdb-person` | `GET /tmdb/person/{id}` | `id` (path string required)<br>`limit` (query number) | `ApiKeyAuth` | `TmdbPersonResponse` |  |
-| tmdb | `tmdb.search` | `tmdb-search` | `GET /tmdb/search` | `query` (query string required)<br>`type` (query "movie" \| "tv" \| "person")<br>`limit` (query number) | `ApiKeyAuth` | `TmdbSearchResponse` |  |
-| tmdb | `tmdb.tvList` | `tmdb-tv-list` | `GET /tmdb/tv/list` | `category` (query "popular" \| "top_rated" \| "airing_today" \| "on_the_air")<br>`limit` (query number) | `ApiKeyAuth` | `TmdbTvListResponse` |  |
+| tmdb | `tmdb.search` | `tmdb-search` | `GET /tmdb/search` | `query` (query string required)<br>`type` (query "movie" \| "tv" \| "person")<br>`page` (query number)<br>`limit` (query number) | `ApiKeyAuth` | `TmdbSearchResponse` |  |
+| tmdb | `tmdb.tvList` | `tmdb-tv-list` | `GET /tmdb/tv/list` | `category` (query "popular" \| "top_rated" \| "airing_today" \| "on_the_air")<br>`page` (query number)<br>`sort_by` (query "popularity.desc" \| "popularity.asc" \| "vote_average.desc" \| "vote_average.asc" \| "first_air_date.desc" \| "first_air_date.asc" \| "name.asc" \| "name.desc")<br>`with_genres` (query string)<br>`original_language` (query string)<br>`date_from` (query string)<br>`date_to` (query string)<br>`min_rating` (query number)<br>`max_rating` (query number)<br>`min_votes` (query number)<br>`min_runtime` (query number)<br>`max_runtime` (query number)<br>`include_adult` (query boolean)<br>`limit` (query number) | `ApiKeyAuth` | `TmdbTvListResponse` |  |
 | tmdb | `tmdb.tv` | `tmdb-tv` | `GET /tmdb/tv/{id}` | `id` (path string required) | `ApiKeyAuth` | `TmdbTvResponse` |  |
 | tripAdvisor | `tripAdvisor.tripadvisorAutocomplete` | `tripadvisor-autocomplete` | `GET /tripadvisor/autocomplete` | `q` (query string required)<br>`limit` (query number)<br>`locale` (query string)<br>`scope_geo_id` (query number)<br>`type` (query string)<br>`search_session_id` (query string)<br>`typeahead_id` (query string)<br>`route_uid` (query string) | `ApiKeyAuth` | `TripAdvisorTripadvisorAutocompleteResponse` |  |
 | tripAdvisor | `tripAdvisor.tripadvisorEnums` | `tripadvisor-enums` | `GET /tripadvisor/enums` | none | `ApiKeyAuth` | `TripAdvisorTripadvisorEnumsResponse` |  |
