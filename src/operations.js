@@ -14595,6 +14595,207 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "doordash-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-search",
+    "method": "GET",
+    "path": "/doordash/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "tag",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "dashPassOnly",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "asapOnly",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "pickupOnly",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "maxDistanceMiles",
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "doordash-search-autocomplete": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-search-autocomplete",
+    "method": "GET",
+    "path": "/doordash/search/autocomplete",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "doordash-search-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-search-filters",
+    "method": "GET",
+    "path": "/doordash/search/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "doordash-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-store",
+    "method": "GET",
+    "path": "/doordash/store/{store_id}",
+    "pathParams": [
+      "store_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "doordash-store-menu": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-store-menu",
+    "method": "GET",
+    "path": "/doordash/store/{store_id}/menu",
+    "pathParams": [
+      "store_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "ebay-item": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -18363,6 +18564,166 @@ export const operations = {
         "in": "query",
         "name": "query",
         "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "imdb-search-title": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "imdb-search-title",
+    "method": "GET",
+    "path": "/imdb/search/title",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "title_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genres",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "release_date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "release_date_to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_user_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_user_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_votes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_votes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_popularity",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_popularity",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_runtime",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_runtime",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "groups",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "keywords",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "companies",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "certificates",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "colors",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "countries",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "languages",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sound_mixes",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "role",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "characters",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "plot",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "include_adult",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort_order",
         "type": "string"
       },
       {
@@ -35020,6 +35381,49 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "ubereats-feed": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ubereats-feed",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ubereats/feed",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "ubereats-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -35086,6 +35490,27 @@ export const operations = {
     "id": "ubereats-store",
     "method": "GET",
     "path": "/ubereats/store/{store_id}",
+    "pathParams": [
+      "store_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ubereats-store-menu": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ubereats-store-menu",
+    "method": "GET",
+    "path": "/ubereats/store/{store_id}/menu",
     "pathParams": [
       "store_id"
     ],
@@ -37494,6 +37919,13 @@ export const groups = {
     "release": "discogs-release",
     "search": "discogs-search"
   },
+  "doorDash": {
+    "doordashSearch": "doordash-search",
+    "doordashSearchAutocomplete": "doordash-search-autocomplete",
+    "doordashSearchFilters": "doordash-search-filters",
+    "doordashStore": "doordash-store",
+    "doordashStoreMenu": "doordash-store-menu"
+  },
   "eBay": {
     "ebayItem": "ebay-item",
     "ebaySearch": "ebay-search",
@@ -37616,6 +38048,7 @@ export const groups = {
     "nameAwards": "imdb-name-awards",
     "nameCredits": "imdb-name-credits",
     "search": "imdb-search",
+    "searchTitle": "imdb-search-title",
     "title": "imdb-title",
     "titleAwards": "imdb-title-awards",
     "titleCompanyCredits": "imdb-title-company-credits",
@@ -38149,8 +38582,10 @@ export const groups = {
     "categorySearch": "trustpilot-category-search"
   },
   "uberEats": {
+    "ubereatsFeed": "ubereats-feed",
     "ubereatsSearch": "ubereats-search",
     "ubereatsStore": "ubereats-store",
+    "ubereatsStoreMenu": "ubereats-store-menu",
     "ubereatsStoreReviews": "ubereats-store-reviews"
   },
   "usage": {
@@ -38245,7 +38680,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 882;
+export const operationCount = 890;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -38497,6 +38932,11 @@ export const OperationIds = Object.freeze({
   "DiscogsMaster": "discogs-master",
   "DiscogsRelease": "discogs-release",
   "DiscogsSearch": "discogs-search",
+  "DoorDashDoordashSearch": "doordash-search",
+  "DoorDashDoordashSearchAutocomplete": "doordash-search-autocomplete",
+  "DoorDashDoordashSearchFilters": "doordash-search-filters",
+  "DoorDashDoordashStore": "doordash-store",
+  "DoorDashDoordashStoreMenu": "doordash-store-menu",
   "EBayEbayItem": "ebay-item",
   "EBayEbaySearch": "ebay-search",
   "EBayEbaySeller": "ebay-seller",
@@ -38600,6 +39040,7 @@ export const OperationIds = Object.freeze({
   "ImdbNameAwards": "imdb-name-awards",
   "ImdbNameCredits": "imdb-name-credits",
   "ImdbSearch": "imdb-search",
+  "ImdbSearchTitle": "imdb-search-title",
   "ImdbTitle": "imdb-title",
   "ImdbTitleAwards": "imdb-title-awards",
   "ImdbTitleCompanyCredits": "imdb-title-company-credits",
@@ -39055,8 +39496,10 @@ export const OperationIds = Object.freeze({
   "TrustpilotCategories": "trustpilot-categories",
   "TrustpilotCategory": "trustpilot-category",
   "TrustpilotCategorySearch": "trustpilot-category-search",
+  "UberEatsUbereatsFeed": "ubereats-feed",
   "UberEatsUbereatsSearch": "ubereats-search",
   "UberEatsUbereatsStore": "ubereats-store",
+  "UberEatsUbereatsStoreMenu": "ubereats-store-menu",
   "UberEatsUbereatsStoreReviews": "ubereats-store-reviews",
   "UsageMeEndpoints": "usage-me-endpoints",
   "UsageMeOverview": "usage-me-overview",

@@ -5130,6 +5130,126 @@ export interface ModelDiscogsSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDoordashAddress {
+  "city"?: string;
+  "country"?: string;
+  "postalCode"?: string;
+  "region"?: string;
+  "street"?: string;
+}
+
+export interface ModelDoordashCuisine {
+  "animatedCoverImageUrl"?: string;
+  "coverImageUrl"?: string;
+  "friendlyName"?: string;
+  "id"?: string;
+  "localizedFriendlyName"?: string;
+  "name"?: string;
+}
+
+export interface ModelDoordashFilterValue {
+  "displayName"?: string;
+  "type"?: string;
+}
+
+export interface ModelDoordashMenuItem {
+  "description"?: string;
+  "name"?: string;
+  "price"?: string;
+}
+
+export interface ModelDoordashMenuResponse {
+  "sections"?: Array<ModelDoordashMenuSection>;
+  "storeId"?: string;
+  "storeName"?: string;
+  "url"?: string;
+}
+
+export interface ModelDoordashMenuSection {
+  "items"?: Array<ModelDoordashMenuItem>;
+  "name"?: string;
+}
+
+export interface ModelDoordashSearchAddress {
+  "city"?: string;
+  "displayAddress"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "region"?: string;
+  "street"?: string;
+}
+
+export interface ModelDoordashSearchFilter {
+  "allowedValues"?: Array<ModelDoordashFilterValue>;
+  "defaultValues"?: Array<ModelDoordashFilterValue>;
+  "displayName"?: string;
+  "id"?: string;
+  "rangeDirection"?: string;
+  "type"?: string;
+}
+
+export interface ModelDoordashSearchFiltersResponse {
+  "cuisines"?: Array<ModelDoordashCuisine>;
+  "filters"?: Array<ModelDoordashSearchFilter>;
+}
+
+export interface ModelDoordashSearchResponse {
+  "query"?: string;
+  "results"?: Array<ModelDoordashSearchResult>;
+}
+
+export interface ModelDoordashSearchResult {
+  "address"?: ModelDoordashSearchAddress;
+  "asapAvailable"?: boolean;
+  "coverImageUrl"?: string;
+  "dashPassEligible"?: boolean;
+  "distance"?: string;
+  "name"?: string;
+  "pickupAvailable"?: boolean;
+  "squareImageUrl"?: string;
+  "storeId"?: string;
+  "tags"?: Array<string>;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelDoordashStoreDetail {
+  "address"?: ModelDoordashAddress;
+  "images"?: Array<string>;
+  "latitude"?: number;
+  "longitude"?: number;
+  "menuItemCount"?: number;
+  "menuSectionCount"?: number;
+  "name"?: string;
+  "priceRange"?: string;
+  "storeId"?: string;
+  "url"?: string;
+}
+
+export interface ModelDoordashMenuResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashMenuResponse;
+  "msg"?: string;
+}
+
+export interface ModelDoordashSearchFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashSearchFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelDoordashSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDoordashStoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashStoreDetail;
+  "msg"?: string;
+}
+
 export interface ModelEbayItem {
   "availability"?: string;
   "condition"?: string;
@@ -8670,6 +8790,32 @@ export interface ModelImdbSearchResponse {
   "source_url"?: string;
 }
 
+export interface ModelImdbSearchTitleItem {
+  "certificate"?: string;
+  "genres"?: Array<string>;
+  "id"?: string;
+  "image_url"?: string;
+  "metascore"?: number;
+  "plot"?: string;
+  "rating_count"?: number;
+  "rating_value"?: number;
+  "release_date"?: string;
+  "runtime_minutes"?: number;
+  "title"?: string;
+  "title_type"?: string;
+  "url"?: string;
+  "year"?: number;
+}
+
+export interface ModelImdbSearchTitleResponse {
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "results"?: Array<ModelImdbSearchTitleItem>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
 export interface ModelImdbTechnicalSpecItem {
   "name"?: string;
   "slug"?: string;
@@ -8798,6 +8944,12 @@ export interface ModelImdbReviewsResponseDoc {
 export interface ModelImdbSearchResponseDoc {
   "code"?: number;
   "data"?: ModelImdbSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbSearchTitleResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbSearchTitleResponse;
   "msg"?: string;
 }
 
@@ -17866,6 +18018,21 @@ export interface ModelTmdbMovieResponse {
   "year"?: number;
 }
 
+export interface ModelTmdbPersonListResponse {
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "people"?: Array<ModelTmdbPersonRef>;
+  "source_url"?: string;
+}
+
+export interface ModelTmdbPersonRef {
+  "id"?: string;
+  "known_for"?: string;
+  "name"?: string;
+  "profile_url"?: string;
+  "uri"?: string;
+}
+
 export interface ModelTmdbPersonResponse {
   "biography"?: string;
   "birth_date"?: string;
@@ -17939,6 +18106,12 @@ export interface ModelTmdbMovieListResponseDoc {
 export interface ModelTmdbMovieResponseDoc {
   "code"?: number;
   "data"?: ModelTmdbMovieResponse;
+  "msg"?: string;
+}
+
+export interface ModelTmdbPersonListResponseDoc {
+  "code"?: number;
+  "data"?: ModelTmdbPersonListResponse;
   "msg"?: string;
 }
 
@@ -19144,6 +19317,14 @@ export interface ModelUbereatsMenuItem {
   "uuid"?: string;
 }
 
+export interface ModelUbereatsMenuResponse {
+  "currencyCode"?: string;
+  "sections"?: Array<ModelUbereatsMenuSection>;
+  "storeTitle"?: string;
+  "storeUuid"?: string;
+  "url"?: string;
+}
+
 export interface ModelUbereatsMenuSection {
   "items"?: Array<ModelUbereatsMenuItem>;
   "title"?: string;
@@ -19207,6 +19388,18 @@ export interface ModelUbereatsStoreReviewsResponse {
   "reviewCount"?: number;
   "reviews"?: Array<ModelUbereatsReview>;
   "storeUuid"?: string;
+}
+
+export interface ModelUbereatsFeedResponseDoc {
+  "code"?: number;
+  "data"?: ModelUbereatsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelUbereatsMenuResponseDoc {
+  "code"?: number;
+  "data"?: ModelUbereatsMenuResponse;
+  "msg"?: string;
 }
 
 export interface ModelUbereatsSearchResponseDoc {
@@ -20617,27 +20810,6 @@ export interface ModelZillowSearchResponse {
   "location"?: string;
   "page"?: number;
   "results"?: Array<ModelZillowPropertyItem>;
-}
-
-export interface ModelTmdbPersonListResponse {
-  "has_next_page"?: boolean;
-  "page"?: number;
-  "people"?: Array<ModelTmdbPersonRef>;
-  "source_url"?: string;
-}
-
-export interface ModelTmdbPersonRef {
-  "id"?: string;
-  "known_for"?: string;
-  "name"?: string;
-  "profile_url"?: string;
-  "uri"?: string;
-}
-
-export interface ModelTmdbPersonListResponseDoc {
-  "code"?: number;
-  "data"?: ModelTmdbPersonListResponse;
-  "msg"?: string;
 }
 
 export type AirbnbHostResponse = CrawloraResponse<ModelAirbnbHostResponse>;
@@ -23087,6 +23259,45 @@ export interface DiscogsSearchParams {
   "per_page"?: number;
 }
 
+export type DoorDashDoordashSearchResponse = CrawloraResponse<ModelDoordashSearchResponseDoc>;
+export interface DoorDashDoordashSearchParams {
+  "query": string;
+  "latitude": number;
+  "longitude": number;
+  "tag"?: string;
+  "dashPassOnly"?: boolean;
+  "asapOnly"?: boolean;
+  "pickupOnly"?: boolean;
+  "maxDistanceMiles"?: number;
+}
+
+export type DoorDashDoordashSearchAutocompleteResponse = CrawloraResponse<ModelDoordashSearchResponseDoc>;
+export interface DoorDashDoordashSearchAutocompleteParams {
+  "query": string;
+  "latitude": number;
+  "longitude": number;
+}
+
+export type DoorDashDoordashSearchFiltersResponse = CrawloraResponse<ModelDoordashSearchFiltersResponseDoc>;
+export interface DoorDashDoordashSearchFiltersParams {
+  "latitude": number;
+  "longitude": number;
+}
+
+export type DoorDashDoordashStoreResponse = CrawloraResponse<ModelDoordashStoreResponseDoc>;
+export interface DoorDashDoordashStoreParams {
+  "store_id": string;
+  "latitude": number;
+  "longitude": number;
+}
+
+export type DoorDashDoordashStoreMenuResponse = CrawloraResponse<ModelDoordashMenuResponseDoc>;
+export interface DoorDashDoordashStoreMenuParams {
+  "store_id": string;
+  "latitude": number;
+  "longitude": number;
+}
+
 export type EBayEbayItemResponse = CrawloraResponse<ModelEbayItemResponseDoc>;
 export interface EBayEbayItemParams {
   "item_id": string;
@@ -23767,6 +23978,38 @@ export interface ImdbNameCreditsParams {
 export type ImdbSearchResponse = CrawloraResponse<ModelImdbSearchResponseDoc>;
 export interface ImdbSearchParams {
   "query": string;
+  "limit"?: number;
+}
+
+export type ImdbSearchTitleResponse = CrawloraResponse<ModelImdbSearchTitleResponseDoc>;
+export interface ImdbSearchTitleParams {
+  "title"?: string;
+  "title_type"?: string;
+  "genres"?: string;
+  "release_date_from"?: string;
+  "release_date_to"?: string;
+  "min_user_rating"?: number;
+  "max_user_rating"?: number;
+  "min_votes"?: number;
+  "max_votes"?: number;
+  "min_popularity"?: number;
+  "max_popularity"?: number;
+  "min_runtime"?: number;
+  "max_runtime"?: number;
+  "groups"?: string;
+  "keywords"?: string;
+  "companies"?: string;
+  "certificates"?: string;
+  "colors"?: string;
+  "countries"?: string;
+  "languages"?: string;
+  "sound_mixes"?: string;
+  "role"?: string;
+  "characters"?: string;
+  "plot"?: string;
+  "include_adult"?: boolean;
+  "sort"?: string;
+  "sort_order"?: string;
   "limit"?: number;
 }
 
@@ -26956,6 +27199,14 @@ export interface TrustpilotCategoryParams {
   "page"?: number;
 }
 
+export type UberEatsUbereatsFeedResponse = CrawloraResponse<ModelUbereatsFeedResponseDoc>;
+export interface UberEatsUbereatsFeedParams {
+  "latitude": number;
+  "longitude": number;
+  "offset"?: number;
+  "limit"?: number;
+}
+
 export type UberEatsUbereatsSearchResponse = CrawloraResponse<ModelUbereatsSearchResponseDoc>;
 export interface UberEatsUbereatsSearchParams {
   "latitude": number;
@@ -26968,6 +27219,11 @@ export interface UberEatsUbereatsSearchParams {
 
 export type UberEatsUbereatsStoreResponse = CrawloraResponse<ModelUbereatsStoreResponseDoc>;
 export interface UberEatsUbereatsStoreParams {
+  "store_id": string;
+}
+
+export type UberEatsUbereatsStoreMenuResponse = CrawloraResponse<ModelUbereatsMenuResponseDoc>;
+export interface UberEatsUbereatsStoreMenuParams {
   "store_id": string;
 }
 
@@ -27722,6 +27978,14 @@ export interface DiscogsService {
   search<T = DiscogsSearchResponse>(params: DiscogsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface DoorDashService {
+  doordashSearch<T = DoorDashDoordashSearchResponse>(params: DoorDashDoordashSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashSearchAutocomplete<T = DoorDashDoordashSearchAutocompleteResponse>(params: DoorDashDoordashSearchAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashSearchFilters<T = DoorDashDoordashSearchFiltersResponse>(params: DoorDashDoordashSearchFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashStore<T = DoorDashDoordashStoreResponse>(params: DoorDashDoordashStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashStoreMenu<T = DoorDashDoordashStoreMenuResponse>(params: DoorDashDoordashStoreMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface EBayService {
   ebayItem<T = EBayEbayItemResponse>(params: EBayEbayItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySearch<T = EBayEbaySearchResponse>(params: EBayEbaySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -27853,6 +28117,7 @@ export interface ImdbService {
   nameAwards<T = ImdbNameAwardsResponse>(params?: ImdbNameAwardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   nameCredits<T = ImdbNameCreditsResponse>(params?: ImdbNameCreditsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = ImdbSearchResponse>(params: ImdbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchTitle<T = ImdbSearchTitleResponse>(params?: ImdbSearchTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   title<T = ImdbTitleResponse>(params?: ImdbTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleAwards<T = ImdbTitleAwardsResponse>(params?: ImdbTitleAwardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleCompanyCredits<T = ImdbTitleCompanyCreditsResponse>(params?: ImdbTitleCompanyCreditsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -28425,8 +28690,10 @@ export interface TrustpilotService {
 }
 
 export interface UberEatsService {
+  ubereatsFeed<T = UberEatsUbereatsFeedResponse>(params: UberEatsUbereatsFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ubereatsSearch<T = UberEatsUbereatsSearchResponse>(params: UberEatsUbereatsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ubereatsStore<T = UberEatsUbereatsStoreResponse>(params: UberEatsUbereatsStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ubereatsStoreMenu<T = UberEatsUbereatsStoreMenuResponse>(params: UberEatsUbereatsStoreMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ubereatsStoreReviews<T = UberEatsUbereatsStoreReviewsResponse>(params: UberEatsUbereatsStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
@@ -28540,6 +28807,7 @@ export interface CrawloraGeneratedGroups {
   web: WebService;
   datasets: DatasetsService;
   discogs: DiscogsService;
+  doorDash: DoorDashService;
   eBay: EBayService;
   espn: EspnService;
   facebook: FacebookService;
@@ -28848,6 +29116,11 @@ export interface OperationParamsMap {
   "discogs-master": DiscogsMasterParams;
   "discogs-release": DiscogsReleaseParams;
   "discogs-search": DiscogsSearchParams;
+  "doordash-search": DoorDashDoordashSearchParams;
+  "doordash-search-autocomplete": DoorDashDoordashSearchAutocompleteParams;
+  "doordash-search-filters": DoorDashDoordashSearchFiltersParams;
+  "doordash-store": DoorDashDoordashStoreParams;
+  "doordash-store-menu": DoorDashDoordashStoreMenuParams;
   "ebay-item": EBayEbayItemParams;
   "ebay-search": EBayEbaySearchParams;
   "ebay-seller": EBayEbaySellerParams;
@@ -28952,6 +29225,7 @@ export interface OperationParamsMap {
   "imdb-name-awards": ImdbNameAwardsParams;
   "imdb-name-credits": ImdbNameCreditsParams;
   "imdb-search": ImdbSearchParams;
+  "imdb-search-title": ImdbSearchTitleParams;
   "imdb-title": ImdbTitleParams;
   "imdb-title-awards": ImdbTitleAwardsParams;
   "imdb-title-company-credits": ImdbTitleCompanyCreditsParams;
@@ -29407,8 +29681,10 @@ export interface OperationParamsMap {
   "trustpilot-categories": TrustpilotCategoriesParams;
   "trustpilot-category-search": TrustpilotCategorySearchParams;
   "trustpilot-category": TrustpilotCategoryParams;
+  "ubereats-feed": UberEatsUbereatsFeedParams;
   "ubereats-search": UberEatsUbereatsSearchParams;
   "ubereats-store": UberEatsUbereatsStoreParams;
+  "ubereats-store-menu": UberEatsUbereatsStoreMenuParams;
   "ubereats-store-reviews": UberEatsUbereatsStoreReviewsParams;
   "usage-me-endpoints": UsageMeEndpointsParams;
   "usage-me-overview": UsageMeOverviewParams;
@@ -29733,6 +30009,11 @@ export interface OperationResponseMap {
   "discogs-master": DiscogsMasterResponse;
   "discogs-release": DiscogsReleaseResponse;
   "discogs-search": DiscogsSearchResponse;
+  "doordash-search": DoorDashDoordashSearchResponse;
+  "doordash-search-autocomplete": DoorDashDoordashSearchAutocompleteResponse;
+  "doordash-search-filters": DoorDashDoordashSearchFiltersResponse;
+  "doordash-store": DoorDashDoordashStoreResponse;
+  "doordash-store-menu": DoorDashDoordashStoreMenuResponse;
   "ebay-item": EBayEbayItemResponse;
   "ebay-search": EBayEbaySearchResponse;
   "ebay-seller": EBayEbaySellerResponse;
@@ -29837,6 +30118,7 @@ export interface OperationResponseMap {
   "imdb-name-awards": ImdbNameAwardsResponse;
   "imdb-name-credits": ImdbNameCreditsResponse;
   "imdb-search": ImdbSearchResponse;
+  "imdb-search-title": ImdbSearchTitleResponse;
   "imdb-title": ImdbTitleResponse;
   "imdb-title-awards": ImdbTitleAwardsResponse;
   "imdb-title-company-credits": ImdbTitleCompanyCreditsResponse;
@@ -30292,8 +30574,10 @@ export interface OperationResponseMap {
   "trustpilot-categories": TrustpilotCategoriesResponse;
   "trustpilot-category-search": TrustpilotCategorySearchResponse;
   "trustpilot-category": TrustpilotCategoryResponse;
+  "ubereats-feed": UberEatsUbereatsFeedResponse;
   "ubereats-search": UberEatsUbereatsSearchResponse;
   "ubereats-store": UberEatsUbereatsStoreResponse;
+  "ubereats-store-menu": UberEatsUbereatsStoreMenuResponse;
   "ubereats-store-reviews": UberEatsUbereatsStoreReviewsResponse;
   "usage-me-endpoints": UsageMeEndpointsResponse;
   "usage-me-overview": UsageMeOverviewResponse;
@@ -30618,6 +30902,11 @@ export interface OperationRequiredParamsMap {
   "discogs-master": true;
   "discogs-release": true;
   "discogs-search": true;
+  "doordash-search": true;
+  "doordash-search-autocomplete": true;
+  "doordash-search-filters": true;
+  "doordash-store": true;
+  "doordash-store-menu": true;
   "ebay-item": true;
   "ebay-search": true;
   "ebay-seller": true;
@@ -30722,6 +31011,7 @@ export interface OperationRequiredParamsMap {
   "imdb-name-awards": false;
   "imdb-name-credits": false;
   "imdb-search": true;
+  "imdb-search-title": false;
   "imdb-title": false;
   "imdb-title-awards": false;
   "imdb-title-company-credits": false;
@@ -31177,8 +31467,10 @@ export interface OperationRequiredParamsMap {
   "trustpilot-categories": false;
   "trustpilot-category-search": true;
   "trustpilot-category": true;
+  "ubereats-feed": true;
   "ubereats-search": true;
   "ubereats-store": true;
+  "ubereats-store-menu": true;
   "ubereats-store-reviews": true;
   "usage-me-endpoints": false;
   "usage-me-overview": false;
@@ -31510,6 +31802,11 @@ export type OperationIdLiteral =
   | "discogs-master"
   | "discogs-release"
   | "discogs-search"
+  | "doordash-search"
+  | "doordash-search-autocomplete"
+  | "doordash-search-filters"
+  | "doordash-store"
+  | "doordash-store-menu"
   | "ebay-item"
   | "ebay-search"
   | "ebay-seller"
@@ -31614,6 +31911,7 @@ export type OperationIdLiteral =
   | "imdb-name-awards"
   | "imdb-name-credits"
   | "imdb-search"
+  | "imdb-search-title"
   | "imdb-title"
   | "imdb-title-awards"
   | "imdb-title-company-credits"
@@ -32069,8 +32367,10 @@ export type OperationIdLiteral =
   | "trustpilot-categories"
   | "trustpilot-category-search"
   | "trustpilot-category"
+  | "ubereats-feed"
   | "ubereats-search"
   | "ubereats-store"
+  | "ubereats-store-menu"
   | "ubereats-store-reviews"
   | "usage-me-endpoints"
   | "usage-me-overview"
@@ -32392,6 +32692,11 @@ export declare const OperationIds: Readonly<{
   DiscogsMaster: "discogs-master";
   DiscogsRelease: "discogs-release";
   DiscogsSearch: "discogs-search";
+  DoorDashDoordashSearch: "doordash-search";
+  DoorDashDoordashSearchAutocomplete: "doordash-search-autocomplete";
+  DoorDashDoordashSearchFilters: "doordash-search-filters";
+  DoorDashDoordashStore: "doordash-store";
+  DoorDashDoordashStoreMenu: "doordash-store-menu";
   EBayEbayItem: "ebay-item";
   EBayEbaySearch: "ebay-search";
   EBayEbaySeller: "ebay-seller";
@@ -32495,6 +32800,7 @@ export declare const OperationIds: Readonly<{
   ImdbNameAwards: "imdb-name-awards";
   ImdbNameCredits: "imdb-name-credits";
   ImdbSearch: "imdb-search";
+  ImdbSearchTitle: "imdb-search-title";
   ImdbTitle: "imdb-title";
   ImdbTitleAwards: "imdb-title-awards";
   ImdbTitleCompanyCredits: "imdb-title-company-credits";
@@ -32950,8 +33256,10 @@ export declare const OperationIds: Readonly<{
   TrustpilotCategories: "trustpilot-categories";
   TrustpilotCategory: "trustpilot-category";
   TrustpilotCategorySearch: "trustpilot-category-search";
+  UberEatsUbereatsFeed: "ubereats-feed";
   UberEatsUbereatsSearch: "ubereats-search";
   UberEatsUbereatsStore: "ubereats-store";
+  UberEatsUbereatsStoreMenu: "ubereats-store-menu";
   UberEatsUbereatsStoreReviews: "ubereats-store-reviews";
   UsageMeEndpoints: "usage-me-endpoints";
   UsageMeOverview: "usage-me-overview";
