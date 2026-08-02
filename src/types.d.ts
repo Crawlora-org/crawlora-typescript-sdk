@@ -5147,6 +5147,22 @@ export interface ModelDoordashCuisine {
   "name"?: string;
 }
 
+export interface ModelDoordashFeedResponse {
+  "stores"?: Array<ModelDoordashFeedStore>;
+}
+
+export interface ModelDoordashFeedStore {
+  "averageRating"?: number;
+  "coverImageUrl"?: string;
+  "deliveryFee"?: string;
+  "eta"?: string;
+  "name"?: string;
+  "priceRange"?: string;
+  "ratingCount"?: string;
+  "storeId"?: string;
+  "tags"?: Array<string>;
+}
+
 export interface ModelDoordashFilterValue {
   "displayName"?: string;
   "type"?: string;
@@ -5168,6 +5184,15 @@ export interface ModelDoordashMenuResponse {
 export interface ModelDoordashMenuSection {
   "items"?: Array<ModelDoordashMenuItem>;
   "name"?: string;
+}
+
+export interface ModelDoordashReviewItem {
+  "avatarInitial"?: string;
+  "avatarUrl"?: string;
+  "rating"?: number;
+  "reviewerName"?: string;
+  "reviewerReviewsCount"?: string;
+  "text"?: string;
 }
 
 export interface ModelDoordashSearchAddress {
@@ -5193,6 +5218,21 @@ export interface ModelDoordashSearchFiltersResponse {
   "filters"?: Array<ModelDoordashSearchFilter>;
 }
 
+export interface ModelDoordashSearchItemResult {
+  "description"?: string;
+  "distance"?: string;
+  "itemId"?: string;
+  "name"?: string;
+  "price"?: string;
+  "storeId"?: string;
+  "storeName"?: string;
+}
+
+export interface ModelDoordashSearchItemsResponse {
+  "query"?: string;
+  "results"?: Array<ModelDoordashSearchItemResult>;
+}
+
 export interface ModelDoordashSearchResponse {
   "query"?: string;
   "results"?: Array<ModelDoordashSearchResult>;
@@ -5215,6 +5255,7 @@ export interface ModelDoordashSearchResult {
 
 export interface ModelDoordashStoreDetail {
   "address"?: ModelDoordashAddress;
+  "averageRating"?: number;
   "images"?: Array<string>;
   "latitude"?: number;
   "longitude"?: number;
@@ -5222,8 +5263,45 @@ export interface ModelDoordashStoreDetail {
   "menuSectionCount"?: number;
   "name"?: string;
   "priceRange"?: string;
+  "ratingCount"?: string;
   "storeId"?: string;
   "url"?: string;
+}
+
+export interface ModelDoordashStoreFulfillmentResponse {
+  "deliverySubtitle"?: string;
+  "deliveryTitle"?: string;
+  "fulfillmentMethod"?: string;
+  "isFreeDelivery"?: boolean;
+  "offeredFulfillmentMethods"?: Array<string>;
+  "scheduleDescription"?: string;
+  "storeId"?: string;
+  "storeName"?: string;
+  "url"?: string;
+}
+
+export interface ModelDoordashStoreItemResponse {
+  "description"?: string;
+  "itemId"?: string;
+  "name"?: string;
+  "price"?: string;
+  "storeId"?: string;
+  "url"?: string;
+}
+
+export interface ModelDoordashStoreReviewsResponse {
+  "averageRating"?: number;
+  "ratingCount"?: string;
+  "reviews"?: Array<ModelDoordashReviewItem>;
+  "storeId"?: string;
+  "storeName"?: string;
+  "url"?: string;
+}
+
+export interface ModelDoordashFeedResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashFeedResponse;
+  "msg"?: string;
 }
 
 export interface ModelDoordashMenuResponseDoc {
@@ -5238,15 +5316,39 @@ export interface ModelDoordashSearchFiltersResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDoordashSearchItemsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashSearchItemsResponse;
+  "msg"?: string;
+}
+
 export interface ModelDoordashSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDoordashSearchResponse;
   "msg"?: string;
 }
 
+export interface ModelDoordashStoreFulfillmentResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashStoreFulfillmentResponse;
+  "msg"?: string;
+}
+
+export interface ModelDoordashStoreItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashStoreItemResponse;
+  "msg"?: string;
+}
+
 export interface ModelDoordashStoreResponseDoc {
   "code"?: number;
   "data"?: ModelDoordashStoreDetail;
+  "msg"?: string;
+}
+
+export interface ModelDoordashStoreReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashStoreReviewsResponse;
   "msg"?: string;
 }
 
@@ -23259,6 +23361,14 @@ export interface DiscogsSearchParams {
   "per_page"?: number;
 }
 
+export type DoorDashDoordashFeedResponse = CrawloraResponse<ModelDoordashFeedResponseDoc>;
+export interface DoorDashDoordashFeedParams {
+  "latitude": number;
+  "longitude": number;
+  "offset"?: number;
+  "limit"?: number;
+}
+
 export type DoorDashDoordashSearchResponse = CrawloraResponse<ModelDoordashSearchResponseDoc>;
 export interface DoorDashDoordashSearchParams {
   "query": string;
@@ -23284,6 +23394,13 @@ export interface DoorDashDoordashSearchFiltersParams {
   "longitude": number;
 }
 
+export type DoorDashDoordashSearchItemsResponse = CrawloraResponse<ModelDoordashSearchItemsResponseDoc>;
+export interface DoorDashDoordashSearchItemsParams {
+  "query": string;
+  "latitude": number;
+  "longitude": number;
+}
+
 export type DoorDashDoordashStoreResponse = CrawloraResponse<ModelDoordashStoreResponseDoc>;
 export interface DoorDashDoordashStoreParams {
   "store_id": string;
@@ -23291,8 +23408,30 @@ export interface DoorDashDoordashStoreParams {
   "longitude": number;
 }
 
+export type DoorDashDoordashStoreFulfillmentResponse = CrawloraResponse<ModelDoordashStoreFulfillmentResponseDoc>;
+export interface DoorDashDoordashStoreFulfillmentParams {
+  "store_id": string;
+  "latitude": number;
+  "longitude": number;
+}
+
+export type DoorDashDoordashStoreItemResponse = CrawloraResponse<ModelDoordashStoreItemResponseDoc>;
+export interface DoorDashDoordashStoreItemParams {
+  "store_id": string;
+  "item_id": string;
+  "latitude": number;
+  "longitude": number;
+}
+
 export type DoorDashDoordashStoreMenuResponse = CrawloraResponse<ModelDoordashMenuResponseDoc>;
 export interface DoorDashDoordashStoreMenuParams {
+  "store_id": string;
+  "latitude": number;
+  "longitude": number;
+}
+
+export type DoorDashDoordashStoreReviewsResponse = CrawloraResponse<ModelDoordashStoreReviewsResponseDoc>;
+export interface DoorDashDoordashStoreReviewsParams {
   "store_id": string;
   "latitude": number;
   "longitude": number;
@@ -27979,11 +28118,16 @@ export interface DiscogsService {
 }
 
 export interface DoorDashService {
+  doordashFeed<T = DoorDashDoordashFeedResponse>(params: DoorDashDoordashFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashSearch<T = DoorDashDoordashSearchResponse>(params: DoorDashDoordashSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashSearchAutocomplete<T = DoorDashDoordashSearchAutocompleteResponse>(params: DoorDashDoordashSearchAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashSearchFilters<T = DoorDashDoordashSearchFiltersResponse>(params: DoorDashDoordashSearchFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashSearchItems<T = DoorDashDoordashSearchItemsResponse>(params: DoorDashDoordashSearchItemsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStore<T = DoorDashDoordashStoreResponse>(params: DoorDashDoordashStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashStoreFulfillment<T = DoorDashDoordashStoreFulfillmentResponse>(params: DoorDashDoordashStoreFulfillmentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashStoreItem<T = DoorDashDoordashStoreItemResponse>(params: DoorDashDoordashStoreItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreMenu<T = DoorDashDoordashStoreMenuResponse>(params: DoorDashDoordashStoreMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashStoreReviews<T = DoorDashDoordashStoreReviewsResponse>(params: DoorDashDoordashStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface EBayService {
@@ -29116,11 +29260,16 @@ export interface OperationParamsMap {
   "discogs-master": DiscogsMasterParams;
   "discogs-release": DiscogsReleaseParams;
   "discogs-search": DiscogsSearchParams;
+  "doordash-feed": DoorDashDoordashFeedParams;
   "doordash-search": DoorDashDoordashSearchParams;
   "doordash-search-autocomplete": DoorDashDoordashSearchAutocompleteParams;
   "doordash-search-filters": DoorDashDoordashSearchFiltersParams;
+  "doordash-search-items": DoorDashDoordashSearchItemsParams;
   "doordash-store": DoorDashDoordashStoreParams;
+  "doordash-store-fulfillment": DoorDashDoordashStoreFulfillmentParams;
+  "doordash-store-item": DoorDashDoordashStoreItemParams;
   "doordash-store-menu": DoorDashDoordashStoreMenuParams;
+  "doordash-store-reviews": DoorDashDoordashStoreReviewsParams;
   "ebay-item": EBayEbayItemParams;
   "ebay-search": EBayEbaySearchParams;
   "ebay-seller": EBayEbaySellerParams;
@@ -30009,11 +30158,16 @@ export interface OperationResponseMap {
   "discogs-master": DiscogsMasterResponse;
   "discogs-release": DiscogsReleaseResponse;
   "discogs-search": DiscogsSearchResponse;
+  "doordash-feed": DoorDashDoordashFeedResponse;
   "doordash-search": DoorDashDoordashSearchResponse;
   "doordash-search-autocomplete": DoorDashDoordashSearchAutocompleteResponse;
   "doordash-search-filters": DoorDashDoordashSearchFiltersResponse;
+  "doordash-search-items": DoorDashDoordashSearchItemsResponse;
   "doordash-store": DoorDashDoordashStoreResponse;
+  "doordash-store-fulfillment": DoorDashDoordashStoreFulfillmentResponse;
+  "doordash-store-item": DoorDashDoordashStoreItemResponse;
   "doordash-store-menu": DoorDashDoordashStoreMenuResponse;
+  "doordash-store-reviews": DoorDashDoordashStoreReviewsResponse;
   "ebay-item": EBayEbayItemResponse;
   "ebay-search": EBayEbaySearchResponse;
   "ebay-seller": EBayEbaySellerResponse;
@@ -30902,11 +31056,16 @@ export interface OperationRequiredParamsMap {
   "discogs-master": true;
   "discogs-release": true;
   "discogs-search": true;
+  "doordash-feed": true;
   "doordash-search": true;
   "doordash-search-autocomplete": true;
   "doordash-search-filters": true;
+  "doordash-search-items": true;
   "doordash-store": true;
+  "doordash-store-fulfillment": true;
+  "doordash-store-item": true;
   "doordash-store-menu": true;
+  "doordash-store-reviews": true;
   "ebay-item": true;
   "ebay-search": true;
   "ebay-seller": true;
@@ -31802,11 +31961,16 @@ export type OperationIdLiteral =
   | "discogs-master"
   | "discogs-release"
   | "discogs-search"
+  | "doordash-feed"
   | "doordash-search"
   | "doordash-search-autocomplete"
   | "doordash-search-filters"
+  | "doordash-search-items"
   | "doordash-store"
+  | "doordash-store-fulfillment"
+  | "doordash-store-item"
   | "doordash-store-menu"
+  | "doordash-store-reviews"
   | "ebay-item"
   | "ebay-search"
   | "ebay-seller"
@@ -32692,11 +32856,16 @@ export declare const OperationIds: Readonly<{
   DiscogsMaster: "discogs-master";
   DiscogsRelease: "discogs-release";
   DiscogsSearch: "discogs-search";
+  DoorDashDoordashFeed: "doordash-feed";
   DoorDashDoordashSearch: "doordash-search";
   DoorDashDoordashSearchAutocomplete: "doordash-search-autocomplete";
   DoorDashDoordashSearchFilters: "doordash-search-filters";
+  DoorDashDoordashSearchItems: "doordash-search-items";
   DoorDashDoordashStore: "doordash-store";
+  DoorDashDoordashStoreFulfillment: "doordash-store-fulfillment";
+  DoorDashDoordashStoreItem: "doordash-store-item";
   DoorDashDoordashStoreMenu: "doordash-store-menu";
+  DoorDashDoordashStoreReviews: "doordash-store-reviews";
   EBayEbayItem: "ebay-item";
   EBayEbaySearch: "ebay-search";
   EBayEbaySeller: "ebay-seller";

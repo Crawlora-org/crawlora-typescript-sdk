@@ -14595,6 +14595,49 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "doordash-feed": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-feed",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/doordash/feed",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "doordash-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -14728,6 +14771,44 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "doordash-search-items": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-search-items",
+    "method": "GET",
+    "path": "/doordash/search/items",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "doordash-store": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -14762,6 +14843,75 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "doordash-store-fulfillment": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-store-fulfillment",
+    "method": "GET",
+    "path": "/doordash/store/{store_id}/fulfillment",
+    "pathParams": [
+      "store_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "doordash-store-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-store-item",
+    "method": "GET",
+    "path": "/doordash/store/{store_id}/item/{item_id}",
+    "pathParams": [
+      "store_id",
+      "item_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "doordash-store-menu": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -14772,6 +14922,40 @@ export const operations = {
     "id": "doordash-store-menu",
     "method": "GET",
     "path": "/doordash/store/{store_id}/menu",
+    "pathParams": [
+      "store_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "doordash-store-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-store-reviews",
+    "method": "GET",
+    "path": "/doordash/store/{store_id}/reviews",
     "pathParams": [
       "store_id"
     ],
@@ -37920,11 +38104,16 @@ export const groups = {
     "search": "discogs-search"
   },
   "doorDash": {
+    "doordashFeed": "doordash-feed",
     "doordashSearch": "doordash-search",
     "doordashSearchAutocomplete": "doordash-search-autocomplete",
     "doordashSearchFilters": "doordash-search-filters",
+    "doordashSearchItems": "doordash-search-items",
     "doordashStore": "doordash-store",
-    "doordashStoreMenu": "doordash-store-menu"
+    "doordashStoreFulfillment": "doordash-store-fulfillment",
+    "doordashStoreItem": "doordash-store-item",
+    "doordashStoreMenu": "doordash-store-menu",
+    "doordashStoreReviews": "doordash-store-reviews"
   },
   "eBay": {
     "ebayItem": "ebay-item",
@@ -38680,7 +38869,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 890;
+export const operationCount = 895;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -38932,11 +39121,16 @@ export const OperationIds = Object.freeze({
   "DiscogsMaster": "discogs-master",
   "DiscogsRelease": "discogs-release",
   "DiscogsSearch": "discogs-search",
+  "DoorDashDoordashFeed": "doordash-feed",
   "DoorDashDoordashSearch": "doordash-search",
   "DoorDashDoordashSearchAutocomplete": "doordash-search-autocomplete",
   "DoorDashDoordashSearchFilters": "doordash-search-filters",
+  "DoorDashDoordashSearchItems": "doordash-search-items",
   "DoorDashDoordashStore": "doordash-store",
+  "DoorDashDoordashStoreFulfillment": "doordash-store-fulfillment",
+  "DoorDashDoordashStoreItem": "doordash-store-item",
   "DoorDashDoordashStoreMenu": "doordash-store-menu",
+  "DoorDashDoordashStoreReviews": "doordash-store-reviews",
   "EBayEbayItem": "ebay-item",
   "EBayEbaySearch": "ebay-search",
   "EBayEbaySeller": "ebay-seller",
