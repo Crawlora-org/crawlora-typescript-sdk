@@ -295,3 +295,11 @@ const filters = await crawlora.request("target-filter-options", { category_id: "
 CRAWLORA_API_KEY=... npm run example:bing-search
 CRAWLORA_API_KEY=... CRAWLORA_YOUTUBE_VIDEO_ID=... npm run example:youtube-transcript
 ```
+
+## Etsy
+
+```js
+const results = await crawlora.request("etsy-search", { q: "handmade mug" });
+const listing = await crawlora.request("etsy-listing", { id: "4474501681" });
+const shop = await crawlora.request("etsy-shop", { id: "gaguatelier" });
+```

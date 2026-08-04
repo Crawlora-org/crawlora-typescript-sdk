@@ -1189,6 +1189,213 @@ export interface ModelAppstoreVersionHistoryResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelAutotraderBodyStyle {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelAutotraderColor {
+  "exterior_color"?: string;
+  "exterior_color_simple"?: string;
+  "interior_color"?: string;
+  "interior_color_simple"?: string;
+}
+
+export interface ModelAutotraderDealer {
+  "address1"?: string;
+  "city"?: string;
+  "id"?: number;
+  "is_private_seller"?: boolean;
+  "is_virtual"?: boolean;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "state"?: string;
+  "url"?: string;
+  "website"?: string;
+  "zip"?: string;
+}
+
+export interface ModelAutotraderDealerResponse {
+  "address1"?: string;
+  "city"?: string;
+  "id"?: number;
+  "inventory"?: Array<ModelAutotraderVehicle>;
+  "is_private_seller"?: boolean;
+  "is_virtual"?: boolean;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "source_url"?: string;
+  "state"?: string;
+  "total_count"?: number;
+  "url"?: string;
+  "website"?: string;
+  "zip"?: string;
+}
+
+export interface ModelAutotraderDriveType {
+  "description"?: string;
+  "name"?: string;
+}
+
+export interface ModelAutotraderEngine {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelAutotraderFuelType {
+  "code"?: string;
+  "group"?: string;
+  "name"?: string;
+}
+
+export interface ModelAutotraderImage {
+  "alt"?: string;
+  "height"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelAutotraderMake {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelAutotraderMileage {
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelAutotraderModel {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelAutotraderPricing {
+  "dealer_discounted_price"?: number;
+  "display_price"?: number;
+  "msrp"?: number;
+  "no_price_label"?: string;
+  "sale_price"?: number;
+}
+
+export interface ModelAutotraderSearchResponse {
+  "page"?: number;
+  "page_size"?: number;
+  "source_url"?: string;
+  "stats"?: ModelAutotraderSearchStats;
+  "total_count"?: number;
+  "vehicles"?: Array<ModelAutotraderVehicle>;
+}
+
+export interface ModelAutotraderSearchStats {
+  "derived_price"?: ModelAutotraderStatRange;
+  "end_year"?: number;
+  "max_price"?: number;
+  "min_price"?: number;
+  "start_year"?: number;
+  "year"?: ModelAutotraderStatRange;
+}
+
+export interface ModelAutotraderStatRange {
+  "average"?: number;
+  "max"?: number;
+  "min"?: number;
+}
+
+export interface ModelAutotraderTransmission {
+  "code"?: string;
+  "description"?: string;
+  "group"?: string;
+  "name"?: string;
+}
+
+export interface ModelAutotraderTrim {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelAutotraderVehicle {
+  "body_styles"?: Array<ModelAutotraderBodyStyle>;
+  "color"?: ModelAutotraderColor;
+  "days_on_site"?: number;
+  "drive_type"?: ModelAutotraderDriveType;
+  "engine"?: ModelAutotraderEngine;
+  "fuel_type"?: ModelAutotraderFuelType;
+  "id"?: number;
+  "images"?: Array<ModelAutotraderImage>;
+  "is_hot"?: boolean;
+  "is_newly_listed"?: boolean;
+  "is_reduced_price"?: boolean;
+  "listing_type"?: string;
+  "make"?: ModelAutotraderMake;
+  "mileage"?: ModelAutotraderMileage;
+  "model"?: ModelAutotraderModel;
+  "mpg_city"?: number;
+  "mpg_highway"?: number;
+  "owner_id"?: number;
+  "packages"?: Array<string>;
+  "pricing"?: ModelAutotraderPricing;
+  "stock_id"?: string;
+  "title"?: string;
+  "title_long"?: string;
+  "transmission"?: ModelAutotraderTransmission;
+  "trim"?: ModelAutotraderTrim;
+  "url"?: string;
+  "vehicle_history_flags"?: Array<string>;
+  "vin"?: string;
+  "year"?: number;
+}
+
+export interface ModelAutotraderVehicleResponse {
+  "body_styles"?: Array<ModelAutotraderBodyStyle>;
+  "color"?: ModelAutotraderColor;
+  "days_on_site"?: number;
+  "dealer"?: ModelAutotraderDealer;
+  "description"?: string;
+  "drive_type"?: ModelAutotraderDriveType;
+  "engine"?: ModelAutotraderEngine;
+  "fuel_type"?: ModelAutotraderFuelType;
+  "id"?: number;
+  "images"?: Array<ModelAutotraderImage>;
+  "is_hot"?: boolean;
+  "is_newly_listed"?: boolean;
+  "is_reduced_price"?: boolean;
+  "listing_type"?: string;
+  "make"?: ModelAutotraderMake;
+  "mileage"?: ModelAutotraderMileage;
+  "model"?: ModelAutotraderModel;
+  "mpg_city"?: number;
+  "mpg_highway"?: number;
+  "owner_id"?: number;
+  "packages"?: Array<string>;
+  "pricing"?: ModelAutotraderPricing;
+  "similar_listings"?: Array<ModelAutotraderVehicle>;
+  "source_url"?: string;
+  "stock_id"?: string;
+  "title"?: string;
+  "title_long"?: string;
+  "transmission"?: ModelAutotraderTransmission;
+  "trim"?: ModelAutotraderTrim;
+  "url"?: string;
+  "vehicle_history_flags"?: Array<string>;
+  "vin"?: string;
+  "year"?: number;
+}
+
+export interface ModelAutotraderSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAutotraderSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelBillingBillingEndpointLedgerDoc {
   "charged_requests"?: number;
   "credits"?: number;
@@ -1693,6 +1900,265 @@ export interface ModelBingSuggestResponseDoc {
 export interface ModelBingVideosResponseDoc {
   "code"?: number;
   "data"?: ModelBingVideosResponse;
+  "msg"?: string;
+}
+
+export interface ModelBookingAttractionCategoryFilter {
+  "name"?: string;
+  "product_count"?: number;
+  "subcategories"?: Array<ModelBookingAttractionCategoryFilter>;
+  "tagname"?: string;
+}
+
+export interface ModelBookingAttractionDetailResponse {
+  "city"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "duration"?: string;
+  "id"?: string;
+  "name"?: string;
+  "price"?: number;
+  "review_count"?: number;
+  "review_score"?: number;
+  "short_description"?: string;
+}
+
+export interface ModelBookingAttractionProduct {
+  "currency"?: string;
+  "description"?: string;
+  "duration"?: string;
+  "id"?: string;
+  "name"?: string;
+  "price"?: number;
+  "review_count"?: number;
+  "review_score"?: number;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelBookingAttractionReview {
+  "content"?: string;
+  "id"?: string;
+  "language"?: string;
+  "reviewed_date"?: string;
+  "reviewer_country"?: string;
+  "reviewer_name"?: string;
+  "score"?: number;
+}
+
+export interface ModelBookingAttractionReviewsResponse {
+  "page"?: number;
+  "product_id"?: string;
+  "reviews"?: Array<ModelBookingAttractionReview>;
+  "total"?: number;
+}
+
+export interface ModelBookingAttractionSearchResponse {
+  "categories"?: Array<ModelBookingAttractionCategoryFilter>;
+  "country"?: string;
+  "destination"?: string;
+  "filtered_count"?: number;
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "products"?: Array<ModelBookingAttractionProduct>;
+  "query"?: string;
+  "unfiltered_count"?: number;
+}
+
+export interface ModelBookingFacility {
+  "icon"?: string;
+  "title"?: string;
+}
+
+export interface ModelBookingFlightAutocompleteResponse {
+  "query"?: string;
+  "results"?: Array<ModelBookingFlightAutocompleteResult>;
+}
+
+export interface ModelBookingFlightAutocompleteResult {
+  "code"?: string;
+  "country"?: string;
+  "country_name"?: string;
+  "name"?: string;
+  "photo_url"?: string;
+  "region_name"?: string;
+  "type"?: string;
+}
+
+export interface ModelBookingFlightLeg {
+  "arrival_airport"?: string;
+  "arrival_time"?: string;
+  "cabin_class"?: string;
+  "carrier"?: string;
+  "carrier_code"?: string;
+  "departure_airport"?: string;
+  "departure_time"?: string;
+  "duration_seconds"?: number;
+  "flight_number"?: number;
+  "stops"?: number;
+}
+
+export interface ModelBookingFlightOffer {
+  "currency"?: string;
+  "price"?: number;
+  "segments"?: Array<ModelBookingFlightSegment>;
+  "token"?: string;
+}
+
+export interface ModelBookingFlightSearchResponse {
+  "currency"?: string;
+  "depart"?: string;
+  "from"?: string;
+  "min_price"?: number;
+  "offers"?: Array<ModelBookingFlightOffer>;
+  "return"?: string;
+  "to"?: string;
+  "total_count"?: number;
+  "type"?: string;
+}
+
+export interface ModelBookingFlightSegment {
+  "arrival_airport"?: string;
+  "arrival_city"?: string;
+  "arrival_time"?: string;
+  "departure_airport"?: string;
+  "departure_city"?: string;
+  "departure_time"?: string;
+  "legs"?: Array<ModelBookingFlightLeg>;
+}
+
+export interface ModelBookingHotelDetailResponse {
+  "address"?: string;
+  "facilities"?: Array<ModelBookingFacility>;
+  "facilities_count"?: number;
+  "highlights"?: Array<ModelBookingFacility>;
+  "house_rules"?: ModelBookingHouseRules;
+  "id"?: number;
+  "name"?: string;
+  "photos"?: Array<string>;
+  "rating_scores"?: Record<string, number>;
+  "review_count"?: number;
+  "rooms"?: Array<ModelBookingRoom>;
+  "star_rating"?: number;
+}
+
+export interface ModelBookingHouseRules {
+  "allow_children"?: boolean;
+  "checkin_age_restriction_phrase"?: string;
+  "curfew_phrase"?: string;
+  "group_limit_phrase"?: string;
+  "payment_exclusive"?: boolean;
+  "pets_allowed"?: string;
+}
+
+export interface ModelBookingProperty {
+  "currency"?: string;
+  "distance"?: string;
+  "id"?: number;
+  "location"?: string;
+  "name"?: string;
+  "photo_url"?: string;
+  "price"?: number;
+  "review_count"?: number;
+  "review_score"?: number;
+  "slug"?: string;
+  "star_rating"?: number;
+  "url"?: string;
+}
+
+export interface ModelBookingReview {
+  "checkin_date"?: string;
+  "checkout_date"?: string;
+  "customer_type"?: string;
+  "helpful_votes_count"?: number;
+  "language"?: string;
+  "negative_text"?: string;
+  "num_nights"?: number;
+  "positive_text"?: string;
+  "review_url"?: string;
+  "reviewed_date"?: string;
+  "reviewer_country"?: string;
+  "reviewer_name"?: string;
+  "reviewer_review_count"?: number;
+  "room_type"?: string;
+  "score"?: number;
+  "stay_status"?: string;
+  "title"?: string;
+}
+
+export interface ModelBookingReviewsResponse {
+  "hotel_id"?: number;
+  "page"?: number;
+  "rating_scores"?: Record<string, number>;
+  "reviews"?: Array<ModelBookingReview>;
+  "reviews_count"?: number;
+  "search_text"?: string;
+}
+
+export interface ModelBookingRoom {
+  "id"?: number;
+  "name"?: string;
+  "photo_count"?: number;
+  "photos"?: Array<string>;
+}
+
+export interface ModelBookingSearchResponse {
+  "checkin"?: string;
+  "checkout"?: string;
+  "country"?: string;
+  "destination"?: string;
+  "destination_id"?: number;
+  "page"?: number;
+  "properties"?: Array<ModelBookingProperty>;
+  "query"?: string;
+  "results_count"?: number;
+}
+
+export interface ModelBookingBookingAttractionDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelBookingAttractionDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelBookingBookingAttractionReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBookingAttractionReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBookingBookingAttractionSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelBookingAttractionSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelBookingBookingFlightAutocompleteResponseDoc {
+  "code"?: number;
+  "data"?: ModelBookingFlightAutocompleteResponse;
+  "msg"?: string;
+}
+
+export interface ModelBookingBookingFlightSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelBookingFlightSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelBookingBookingHotelDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelBookingHotelDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelBookingBookingReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBookingReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBookingBookingSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelBookingSearchResponse;
   "msg"?: string;
 }
 
@@ -5147,6 +5613,33 @@ export interface ModelDoordashCuisine {
   "name"?: string;
 }
 
+export interface ModelDoordashExploreItem {
+  "imageUrl"?: string;
+  "itemId"?: string;
+  "name"?: string;
+  "price"?: string;
+}
+
+export interface ModelDoordashExploreResponse {
+  "stores"?: Array<ModelDoordashExploreStore>;
+}
+
+export interface ModelDoordashExploreStore {
+  "asapAvailable"?: boolean;
+  "averageRating"?: number;
+  "coverImageUrl"?: string;
+  "dashPassEligible"?: boolean;
+  "displayAsapTime"?: string;
+  "displayStatus"?: string;
+  "name"?: string;
+  "numberOfRatings"?: number;
+  "pickupAvailable"?: boolean;
+  "priceRange"?: number;
+  "storeId"?: string;
+  "tags"?: Array<string>;
+  "topItems"?: Array<ModelDoordashExploreItem>;
+}
+
 export interface ModelDoordashFeedResponse {
   "stores"?: Array<ModelDoordashFeedStore>;
 }
@@ -5280,6 +5773,20 @@ export interface ModelDoordashStoreFulfillmentResponse {
   "url"?: string;
 }
 
+export interface ModelDoordashStoreInfoResponse {
+  "address"?: string;
+  "businessName"?: string;
+  "cityRegion"?: string;
+  "hasPhone"?: boolean;
+  "hasWebsite"?: boolean;
+  "latitude"?: number;
+  "longitude"?: number;
+  "phone"?: string;
+  "storeId"?: string;
+  "street"?: string;
+  "url"?: string;
+}
+
 export interface ModelDoordashStoreItemResponse {
   "description"?: string;
   "itemId"?: string;
@@ -5296,6 +5803,12 @@ export interface ModelDoordashStoreReviewsResponse {
   "storeId"?: string;
   "storeName"?: string;
   "url"?: string;
+}
+
+export interface ModelDoordashExploreResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashExploreResponse;
+  "msg"?: string;
 }
 
 export interface ModelDoordashFeedResponseDoc {
@@ -5331,6 +5844,12 @@ export interface ModelDoordashSearchResponseDoc {
 export interface ModelDoordashStoreFulfillmentResponseDoc {
   "code"?: number;
   "data"?: ModelDoordashStoreFulfillmentResponse;
+  "msg"?: string;
+}
+
+export interface ModelDoordashStoreInfoResponseDoc {
+  "code"?: number;
+  "data"?: ModelDoordashStoreInfoResponse;
   "msg"?: string;
 }
 
@@ -7419,6 +7938,417 @@ export interface ModelEspnTeamsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelEtsyMobileListing {
+  "category_name"?: string;
+  "create_date"?: number;
+  "currency"?: string;
+  "description"?: string;
+  "favorites"?: number;
+  "images"?: Array<string>;
+  "is_customizable"?: boolean;
+  "is_digital"?: boolean;
+  "is_sold_out"?: boolean;
+  "listing_id"?: string;
+  "materials"?: Array<string>;
+  "price"?: string;
+  "price_int"?: number;
+  "quantity"?: number;
+  "ships_from_country"?: string;
+  "shop_id"?: string;
+  "shop_name"?: string;
+  "state"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "update_date"?: number;
+  "url"?: string;
+  "views"?: number;
+  "when_made"?: string;
+}
+
+export interface ModelEtsyMobileListingCard {
+  "currency"?: string;
+  "image"?: string;
+  "is_sold_out"?: boolean;
+  "listing_id"?: string;
+  "price"?: string;
+  "price_int"?: number;
+  "quantity"?: number;
+  "shop_id"?: string;
+  "shop_name"?: string;
+  "shop_rating"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelEtsyMobileListingReviews {
+  "avg_rating"?: number;
+  "count"?: number;
+  "listing_id"?: string;
+  "offset"?: number;
+  "reviews"?: Array<ModelEtsyMobileReview>;
+  "total_rating_count"?: number;
+}
+
+export interface ModelEtsyMobileReview {
+  "buyer_avatar"?: string;
+  "buyer_login"?: string;
+  "buyer_name"?: string;
+  "buyer_user_id"?: string;
+  "date"?: number;
+  "language"?: string;
+  "listing_id"?: string;
+  "listing_image"?: string;
+  "listing_title"?: string;
+  "rating"?: number;
+  "receipt_id"?: string;
+  "seller_replied"?: boolean;
+  "text"?: string;
+}
+
+export interface ModelEtsyMobileSearchResponse {
+  "count"?: number;
+  "offset"?: number;
+  "query"?: string;
+  "results"?: Array<ModelEtsyMobileListingCard>;
+}
+
+export interface ModelEtsyMobileShop {
+  "average_rating"?: number;
+  "headline"?: string;
+  "icon"?: string;
+  "is_star_seller"?: boolean;
+  "open_date"?: number;
+  "reviews_count"?: number;
+  "seller_avatar"?: string;
+  "seller_login"?: string;
+  "seller_name"?: string;
+  "shop_id"?: string;
+  "shop_name"?: string;
+  "sold_count"?: number;
+}
+
+export interface ModelEtsyMobileShopCard {
+  "active_listing_count"?: number;
+  "is_vacation"?: boolean;
+  "location"?: string;
+  "open_date"?: number;
+  "seller_avatar"?: string;
+  "shop_id"?: string;
+  "shop_name"?: string;
+}
+
+export interface ModelEtsyMobileShopListings {
+  "listings"?: Array<ModelEtsyMobileListingCard>;
+  "offset"?: number;
+  "query"?: string;
+  "shop_id"?: string;
+  "shop_name"?: string;
+}
+
+export interface ModelEtsyMobileShopReviews {
+  "avg_rating"?: number;
+  "count"?: number;
+  "offset"?: number;
+  "reviews"?: Array<ModelEtsyMobileReview>;
+  "shop_id"?: string;
+  "shop_name"?: string;
+  "total_rating_count"?: number;
+}
+
+export interface ModelEtsyMobileShopSearchResponse {
+  "query"?: string;
+  "shops"?: Array<ModelEtsyMobileShopCard>;
+}
+
+export interface ModelEtsyListingResponseDoc {
+  "code"?: number;
+  "data"?: ModelEtsyMobileListing;
+  "msg"?: string;
+}
+
+export interface ModelEtsyListingReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEtsyMobileListingReviews;
+  "msg"?: string;
+}
+
+export interface ModelEtsySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelEtsyMobileSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelEtsyShopListingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEtsyMobileShopListings;
+  "msg"?: string;
+}
+
+export interface ModelEtsyShopResponseDoc {
+  "code"?: number;
+  "data"?: ModelEtsyMobileShop;
+  "msg"?: string;
+}
+
+export interface ModelEtsyShopReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEtsyMobileShopReviews;
+  "msg"?: string;
+}
+
+export interface ModelEtsyShopSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelEtsyMobileShopSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelExpediaActivityListing {
+  "duration"?: string;
+  "free_cancellation"?: boolean;
+  "id"?: string;
+  "name"?: string;
+  "price"?: string;
+  "review_count"?: number;
+  "review_label"?: string;
+  "review_score"?: string;
+  "thumbnail_url"?: string;
+}
+
+export interface ModelExpediaActivitySearchOption {
+  "currency"?: string;
+  "destination": string;
+  "end_date": string;
+  "locale"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "start_date": string;
+}
+
+export interface ModelExpediaActivitySearchResponse {
+  "activities"?: Array<ModelExpediaActivityListing>;
+  "destination"?: string;
+  "page"?: number;
+  "region_id"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelExpediaFlightOffer {
+  "airline"?: string;
+  "arrival_time"?: string;
+  "departure_time"?: string;
+  "duration_summary"?: string;
+  "price"?: string;
+  "price_note"?: string;
+  "route"?: string;
+  "stops"?: number;
+}
+
+export interface ModelExpediaFlightsSearchOption {
+  "adults"?: number;
+  "cabin_class"?: string;
+  "currency"?: string;
+  "departure_date": string;
+  "destination": string;
+  "locale"?: string;
+  "origin": string;
+  "return_date"?: string;
+  "trip_type"?: string;
+}
+
+export interface ModelExpediaFlightsSearchResponse {
+  "departure_date"?: string;
+  "destination"?: string;
+  "offers"?: Array<ModelExpediaFlightOffer>;
+  "origin"?: string;
+  "return_date"?: string;
+}
+
+export interface ModelExpediaLocationSearchOption {
+  "currency"?: string;
+  "locale"?: string;
+  "term": string;
+}
+
+export interface ModelExpediaLocationSearchResponse {
+  "items"?: Array<ModelExpediaLocationSuggestion>;
+  "term"?: string;
+}
+
+export interface ModelExpediaLocationSuggestion {
+  "airport_code"?: string;
+  "geo_type"?: string;
+  "latitude"?: number;
+  "location_full_name"?: string;
+  "longitude"?: number;
+  "primary_text"?: string;
+  "property_id"?: string;
+  "region_id"?: string;
+  "secondary_text"?: string;
+  "type"?: string;
+}
+
+export interface ModelExpediaPropertyDetailOption {
+  "adults"?: number;
+  "check_in": string;
+  "check_out": string;
+  "currency"?: string;
+  "locale"?: string;
+  "property_id": string;
+}
+
+export interface ModelExpediaPropertyDetailResponse {
+  "address"?: string;
+  "amenities"?: Array<string>;
+  "city"?: string;
+  "country_code"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "property_id"?: string;
+  "province"?: string;
+  "star_rating"?: number;
+  "vip_message"?: string;
+}
+
+export interface ModelExpediaPropertyFilterField {
+  "label"?: string;
+  "options"?: Array<ModelExpediaPropertyFilterOption>;
+  "range_max"?: number;
+  "range_min"?: number;
+  "type"?: string;
+}
+
+export interface ModelExpediaPropertyFilterOption {
+  "filter_id"?: string;
+  "label"?: string;
+  "selected"?: boolean;
+  "value"?: string;
+}
+
+export interface ModelExpediaPropertyFilterSection {
+  "fields"?: Array<ModelExpediaPropertyFilterField>;
+  "title"?: string;
+}
+
+export interface ModelExpediaPropertyFiltersOption {
+  "adults"?: number;
+  "check_in": string;
+  "check_out": string;
+  "currency"?: string;
+  "destination": string;
+  "locale"?: string;
+  "rooms"?: number;
+}
+
+export interface ModelExpediaPropertyFiltersResponse {
+  "destination"?: string;
+  "region_id"?: string;
+  "sections"?: Array<ModelExpediaPropertyFilterSection>;
+  "sort_options"?: Array<ModelExpediaPropertyFilterOption>;
+}
+
+export interface ModelExpediaPropertyListing {
+  "amenities"?: Array<string>;
+  "badges"?: Array<string>;
+  "id"?: string;
+  "name"?: string;
+  "nightly_price"?: string;
+  "price"?: string;
+  "review_count"?: number;
+  "review_score"?: number;
+  "review_title"?: string;
+  "strikeout_price"?: string;
+  "thumbnail_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelExpediaPropertyReview {
+  "date"?: string;
+  "message"?: string;
+  "rating_label"?: string;
+  "reviewer_name"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelExpediaPropertyReviewsOption {
+  "adults"?: number;
+  "check_in": string;
+  "check_out": string;
+  "currency"?: string;
+  "locale"?: string;
+  "property_id": string;
+}
+
+export interface ModelExpediaPropertyReviewsResponse {
+  "overall_rating"?: string;
+  "property_id"?: string;
+  "reviews"?: Array<ModelExpediaPropertyReview>;
+}
+
+export interface ModelExpediaPropertySearchOption {
+  "adults"?: number;
+  "check_in": string;
+  "check_out": string;
+  "currency"?: string;
+  "destination": string;
+  "locale"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "rooms"?: number;
+}
+
+export interface ModelExpediaPropertySearchResponse {
+  "check_in"?: string;
+  "check_out"?: string;
+  "destination"?: string;
+  "page"?: number;
+  "properties"?: Array<ModelExpediaPropertyListing>;
+  "region_id"?: string;
+  "results_label"?: string;
+}
+
+export interface ModelExpediaExpediaActivitySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelExpediaActivitySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelExpediaExpediaFlightsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelExpediaFlightsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelExpediaExpediaLocationSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelExpediaLocationSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelExpediaExpediaPropertyDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelExpediaPropertyDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelExpediaExpediaPropertyFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelExpediaPropertyFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelExpediaExpediaPropertyReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelExpediaPropertyReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelExpediaExpediaPropertySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelExpediaPropertySearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelExtractOption {
   "instructions"?: string;
   "render"?: "auto" | "http" | "browser";
@@ -7446,6 +8376,60 @@ export interface ModelExtractResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelFacebookGroup {
+  "coverImage"?: string;
+  "groupId"?: string;
+  "membersCount"?: number;
+  "membersText"?: string;
+  "name"?: string;
+  "privacy"?: string;
+  "sourceUrl"?: string;
+}
+
+export interface ModelFacebookMarketplaceItem {
+  "categoryId"?: string;
+  "condition"?: string;
+  "createdAt"?: string;
+  "description"?: string;
+  "id"?: string;
+  "image"?: string;
+  "isLive"?: boolean;
+  "isPending"?: boolean;
+  "isSold"?: boolean;
+  "locationText"?: string;
+  "price"?: ModelFacebookMarketplacePrice;
+  "productType"?: string;
+  "sourceUrl"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFacebookMarketplaceListing {
+  "city"?: string;
+  "id"?: string;
+  "image"?: string;
+  "price"?: ModelFacebookMarketplacePrice;
+  "state"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFacebookMarketplacePrice {
+  "amount"?: string;
+  "currency"?: string;
+  "formatted"?: string;
+  "isFree"?: boolean;
+}
+
+export interface ModelFacebookMarketplaceSearchResult {
+  "category"?: string;
+  "hasMore"?: boolean;
+  "listings"?: Array<ModelFacebookMarketplaceListing>;
+  "location"?: string;
+  "query"?: string;
+  "sourceUrl"?: string;
+}
+
 export interface ModelFacebookPage {
   "address"?: string;
   "category"?: string;
@@ -7467,6 +8451,24 @@ export interface ModelFacebookPage {
   "website"?: string;
   "wereHere"?: number;
   "whatsapp"?: string;
+}
+
+export interface ModelFacebookGroupResponseDoc {
+  "code"?: number;
+  "data"?: ModelFacebookGroup;
+  "msg"?: string;
+}
+
+export interface ModelFacebookMarketplaceItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelFacebookMarketplaceItem;
+  "msg"?: string;
+}
+
+export interface ModelFacebookMarketplaceSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFacebookMarketplaceSearchResult;
+  "msg"?: string;
 }
 
 export interface ModelFacebookPageResponseDoc {
@@ -9082,6 +10084,194 @@ export interface ModelImdbTitlePublicFactsResponseDoc {
 export interface ModelImdbTitleResponseDoc {
   "code"?: number;
   "data"?: ModelImdbTitleResponse;
+  "msg"?: string;
+}
+
+export interface ModelImportyetiCompany {
+  "address"?: string;
+  "also_known_as_addresses"?: number;
+  "also_known_as_names"?: number;
+  "avg_teu_per_month"?: number;
+  "avg_teu_per_shipment"?: number;
+  "est_shipping_spend"?: string;
+  "hs_codes"?: Array<ModelImportyetiHscode>;
+  "last_shipment_date"?: string;
+  "name"?: string;
+  "phone"?: string;
+  "recent_shipments"?: Array<ModelImportyetiShipment>;
+  "region_breakdown"?: Array<ModelImportyetiRegionBreakdown>;
+  "slug"?: string;
+  "source_url"?: string;
+  "suppliers"?: Array<ModelImportyetiSupplier>;
+  "total_shipments"?: number;
+  "url"?: string;
+  "website"?: string;
+}
+
+export interface ModelImportyetiCountryShipments {
+  "country"?: string;
+  "shipments"?: number;
+}
+
+export interface ModelImportyetiHscode {
+  "code"?: string;
+  "description"?: string;
+  "product_description"?: string;
+  "sample_bill_of_lading"?: string;
+}
+
+export interface ModelImportyetiRegionBreakdown {
+  "countries"?: Array<ModelImportyetiCountryShipments>;
+  "percent"?: number;
+  "region"?: string;
+}
+
+export interface ModelImportyetiSearchResponse {
+  "page"?: number;
+  "query"?: string;
+  "results"?: Array<ModelImportyetiSearchResult>;
+  "source_url"?: string;
+  "total_hits"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelImportyetiSearchResult {
+  "address"?: string;
+  "country_code"?: string;
+  "kind"?: string;
+  "most_recent_shipment"?: string;
+  "other_addresses_count"?: number;
+  "other_names_count"?: number;
+  "slug"?: string;
+  "title"?: string;
+  "total_shipments"?: number;
+}
+
+export interface ModelImportyetiShipment {
+  "bill_of_lading"?: string;
+  "containers"?: string;
+  "date"?: string;
+  "description"?: string;
+  "estimated_freight_cost"?: string;
+  "quantity"?: string;
+  "route"?: string;
+  "supplier_location"?: string;
+  "supplier_name"?: string;
+  "supplier_slug"?: string;
+  "weight"?: string;
+}
+
+export interface ModelImportyetiSupplier {
+  "city"?: string;
+  "country"?: string;
+  "description"?: string;
+  "hs_codes"?: Array<string>;
+  "name"?: string;
+  "product_categories"?: Array<string>;
+  "slug"?: string;
+  "total_shipments"?: number;
+}
+
+export interface ModelImportyetiCompanyResponseDoc {
+  "code"?: number;
+  "data"?: ModelImportyetiCompany;
+  "msg"?: string;
+}
+
+export interface ModelImportyetiSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelImportyetiSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelIndeedJob {
+  "benefits"?: Array<string>;
+  "city"?: string;
+  "company"?: string;
+  "company_rating"?: number;
+  "company_review_count"?: number;
+  "company_url"?: string;
+  "country"?: string;
+  "description_html"?: string;
+  "description_text"?: string;
+  "direct_apply"?: boolean;
+  "employment_type"?: Array<string>;
+  "job_key"?: string;
+  "location"?: string;
+  "postal_code"?: string;
+  "posted_at"?: string;
+  "remote"?: boolean;
+  "salary_currency"?: string;
+  "salary_max"?: number;
+  "salary_min"?: number;
+  "salary_period"?: string;
+  "salary_text"?: string;
+  "state"?: string;
+  "title"?: string;
+  "url"?: string;
+  "valid_through"?: string;
+}
+
+export interface ModelIndeedJobCard {
+  "city"?: string;
+  "company"?: string;
+  "company_rating"?: number;
+  "company_review_count"?: number;
+  "indeed_applyable"?: boolean;
+  "job_key"?: string;
+  "job_types"?: Array<string>;
+  "location"?: string;
+  "new_job"?: boolean;
+  "postal_code"?: string;
+  "posted_at"?: string;
+  "posted_relative"?: string;
+  "remote"?: boolean;
+  "salary_currency"?: string;
+  "salary_max"?: number;
+  "salary_min"?: number;
+  "salary_period"?: string;
+  "salary_text"?: string;
+  "snippet"?: string;
+  "sponsored"?: boolean;
+  "state"?: string;
+  "title"?: string;
+  "urgently_hiring"?: boolean;
+  "url"?: string;
+}
+
+export interface ModelIndeedLocationSuggestResponse {
+  "query"?: string;
+  "suggestions"?: Array<ModelIndeedLocationSuggestion>;
+}
+
+export interface ModelIndeedLocationSuggestion {
+  "name"?: string;
+  "source"?: string;
+}
+
+export interface ModelIndeedSearchResponse {
+  "jobs"?: Array<ModelIndeedJobCard>;
+  "location"?: string;
+  "page"?: number;
+  "query"?: string;
+  "total"?: number;
+}
+
+export interface ModelIndeedJobResponseDoc {
+  "code"?: number;
+  "data"?: ModelIndeedJob;
+  "msg"?: string;
+}
+
+export interface ModelIndeedLocationSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelIndeedLocationSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelIndeedSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelIndeedSearchResponse;
   "msg"?: string;
 }
 
@@ -11433,6 +12623,162 @@ export interface ModelNumbeoRankingsByCountryResponseDoc {
 export interface ModelNumbeoRankingsResponseDoc {
   "code"?: number;
   "data"?: ModelNumbeoRankingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelOpentableCuisine {
+  "id"?: string;
+  "name"?: string;
+  "primary"?: boolean;
+}
+
+export interface ModelOpentableMenu {
+  "currency"?: string;
+  "sections"?: Array<ModelOpentableMenuSection>;
+  "title"?: string;
+}
+
+export interface ModelOpentableMenuItem {
+  "description"?: string;
+  "price"?: string;
+  "title"?: string;
+}
+
+export interface ModelOpentableMenuSection {
+  "items"?: Array<ModelOpentableMenuItem>;
+  "title"?: string;
+}
+
+export interface ModelOpentableMenusResponse {
+  "menus"?: Array<ModelOpentableMenu>;
+  "restaurant_id"?: string;
+}
+
+export interface ModelOpentablePriceBand {
+  "band"?: string;
+  "label"?: string;
+}
+
+export interface ModelOpentableRestaurantResponse {
+  "availability_date_time"?: string;
+  "city"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "cuisines"?: Array<ModelOpentableCuisine>;
+  "currency_code"?: string;
+  "description"?: string;
+  "dining_style"?: string;
+  "dress_code"?: string;
+  "email"?: string;
+  "features"?: Array<string>;
+  "hours"?: string;
+  "id"?: string;
+  "latitude"?: number;
+  "line1"?: string;
+  "line2"?: string;
+  "longitude"?: number;
+  "max_advance_days"?: number;
+  "max_party_size"?: number;
+  "name"?: string;
+  "phone_number"?: string;
+  "photos_count"?: number;
+  "postal_code"?: string;
+  "price_band"?: ModelOpentablePriceBand;
+  "reviews"?: ModelOpentableReviewSummary;
+  "state"?: string;
+  "timeslots"?: Array<ModelOpentableTimeslot>;
+  "website"?: string;
+}
+
+export interface ModelOpentableReview {
+  "author"?: string;
+  "author_metro"?: string;
+  "id"?: string;
+  "posted_date"?: string;
+  "recommended"?: boolean;
+  "reservation_date"?: string;
+  "statistics"?: ModelOpentableReviewStatistics;
+  "text"?: string;
+}
+
+export interface ModelOpentableReviewStatistics {
+  "ambience"?: number;
+  "food"?: number;
+  "noise"?: number;
+  "overall_rating"?: number;
+  "service"?: number;
+  "value"?: number;
+}
+
+export interface ModelOpentableReviewSummary {
+  "ambience"?: number;
+  "count"?: number;
+  "food"?: number;
+  "noise"?: number;
+  "overall_rating"?: number;
+  "review_count"?: number;
+  "service"?: number;
+  "value"?: number;
+}
+
+export interface ModelOpentableReviewsResponse {
+  "page"?: number;
+  "restaurant_id"?: string;
+  "reviews"?: Array<ModelOpentableReview>;
+}
+
+export interface ModelOpentableSearchResponse {
+  "results"?: Array<ModelOpentableSearchResult>;
+  "term"?: string;
+}
+
+export interface ModelOpentableSearchResult {
+  "availability_date_time"?: string;
+  "city"?: string;
+  "country"?: string;
+  "description"?: string;
+  "id"?: string;
+  "latitude"?: number;
+  "line1"?: string;
+  "line2"?: string;
+  "longitude"?: number;
+  "name"?: string;
+  "postal_code"?: string;
+  "state"?: string;
+  "timeslots"?: Array<ModelOpentableTimeslot>;
+}
+
+export interface ModelOpentableTimeslot {
+  "available"?: boolean;
+  "date_time"?: string;
+  "points"?: number;
+  "price_amount"?: number;
+  "redemption_tier"?: string;
+  "token"?: string;
+  "type"?: string;
+}
+
+export interface ModelOpentableMenusResponseDoc {
+  "code"?: number;
+  "data"?: ModelOpentableMenusResponse;
+  "msg"?: string;
+}
+
+export interface ModelOpentableRestaurantResponseDoc {
+  "code"?: number;
+  "data"?: ModelOpentableRestaurantResponse;
+  "msg"?: string;
+}
+
+export interface ModelOpentableReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelOpentableReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelOpentableSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelOpentableSearchResponse;
   "msg"?: string;
 }
 
@@ -20375,6 +21721,236 @@ export interface ModelYahoofinanceValuationResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelYelpAddressDetails {
+  "address_line_1"?: string;
+  "address_line_2"?: string;
+  "address_line_3"?: string;
+  "city"?: string;
+  "country"?: string;
+  "formatted_address"?: Array<string>;
+  "postal_code"?: string;
+  "state"?: string;
+}
+
+export interface ModelYelpBusinessAttribute {
+  "alias"?: string;
+  "title"?: string;
+  "value"?: string;
+  "values"?: Array<string>;
+}
+
+export interface ModelYelpBusinessItem {
+  "address"?: string;
+  "address_details"?: ModelYelpAddressDetails;
+  "alias"?: string;
+  "categories"?: Array<string>;
+  "claimed"?: boolean;
+  "closed"?: boolean;
+  "coordinates"?: ModelYelpCoordinates;
+  "encoded_id"?: string;
+  "id"?: string;
+  "image"?: string;
+  "name"?: string;
+  "neighborhoods"?: Array<string>;
+  "phone"?: string;
+  "phone_number"?: string;
+  "photos"?: Array<string>;
+  "price"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "url"?: string;
+  "website"?: string;
+}
+
+export interface ModelYelpCoordinates {
+  "latitude"?: number;
+  "longitude"?: number;
+}
+
+export interface ModelYelpMobileBusinessMenuResponse {
+  "id"?: string;
+  "items"?: Array<ModelYelpMobileMenuItem>;
+}
+
+export interface ModelYelpMobileBusinessPhotosResponse {
+  "id"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "photos"?: Array<ModelYelpMobilePhotoItem>;
+  "total"?: number;
+}
+
+export interface ModelYelpMobileBusinessResponse {
+  "address"?: string;
+  "address_details"?: ModelYelpAddressDetails;
+  "alias"?: string;
+  "attributes"?: Array<ModelYelpBusinessAttribute>;
+  "categories"?: Array<string>;
+  "claimed"?: boolean;
+  "closed"?: boolean;
+  "coordinates"?: ModelYelpCoordinates;
+  "description"?: string;
+  "encoded_id"?: string;
+  "health_score"?: string;
+  "hours"?: Array<string>;
+  "id"?: string;
+  "image"?: string;
+  "name"?: string;
+  "neighborhoods"?: Array<string>;
+  "phone"?: string;
+  "phone_number"?: string;
+  "photo_count"?: number;
+  "photos"?: Array<string>;
+  "price"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "url"?: string;
+  "website"?: string;
+  "year_established"?: number;
+}
+
+export interface ModelYelpMobileBusinessReviewHighlightsResponse {
+  "highlights"?: Array<ModelYelpMobileReviewHighlight>;
+  "id"?: string;
+  "total"?: number;
+}
+
+export interface ModelYelpMobileBusinessReviewsResponse {
+  "id"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "reviews"?: Array<ModelYelpMobileReviewItem>;
+}
+
+export interface ModelYelpMobileBusinessReviewsSearchResponse {
+  "id"?: string;
+  "reviews"?: Array<ModelYelpMobileReviewSearchItem>;
+  "term"?: string;
+  "total"?: number;
+}
+
+export interface ModelYelpMobileGeocodeResponse {
+  "address"?: string;
+  "address_line_1"?: string;
+  "city"?: string;
+  "coordinates"?: ModelYelpCoordinates;
+  "country"?: string;
+  "county"?: string;
+  "display_name"?: string;
+  "postal_code"?: string;
+  "state"?: string;
+  "yelp_available"?: boolean;
+}
+
+export interface ModelYelpMobileMenuItem {
+  "alias"?: string;
+  "description"?: string;
+  "name"?: string;
+  "photo"?: string;
+  "photo_count"?: number;
+  "price"?: string;
+  "review_count"?: number;
+}
+
+export interface ModelYelpMobilePhotoItem {
+  "caption"?: string;
+  "height"?: number;
+  "id"?: string;
+  "share_url"?: string;
+  "time_created"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelYelpMobileReviewHighlight {
+  "identifier"?: string;
+  "photo_url"?: string;
+  "review_count"?: number;
+  "review_id"?: string;
+  "sentence_html"?: string;
+}
+
+export interface ModelYelpMobileReviewItem {
+  "author"?: string;
+  "author_location"?: string;
+  "author_review_count"?: number;
+  "id"?: string;
+  "language"?: string;
+  "rating"?: number;
+  "share_url"?: string;
+  "text"?: string;
+  "time_modified"?: number;
+}
+
+export interface ModelYelpMobileReviewSearchItem {
+  "author"?: string;
+  "author_location"?: string;
+  "author_review_count"?: number;
+  "excerpt_html"?: string;
+  "id"?: string;
+  "language"?: string;
+  "rating"?: number;
+  "share_url"?: string;
+  "time_modified"?: number;
+}
+
+export interface ModelYelpMobileSearchResponse {
+  "limit"?: number;
+  "location"?: string;
+  "offset"?: number;
+  "results"?: Array<ModelYelpBusinessItem>;
+  "term"?: string;
+  "total"?: number;
+}
+
+export interface ModelYelpMobileBusinessMenuResponseDoc {
+  "code"?: number;
+  "data"?: ModelYelpMobileBusinessMenuResponse;
+  "msg"?: string;
+}
+
+export interface ModelYelpMobileBusinessPhotosResponseDoc {
+  "code"?: number;
+  "data"?: ModelYelpMobileBusinessPhotosResponse;
+  "msg"?: string;
+}
+
+export interface ModelYelpMobileBusinessResponseDoc {
+  "code"?: number;
+  "data"?: ModelYelpMobileBusinessResponse;
+  "msg"?: string;
+}
+
+export interface ModelYelpMobileBusinessReviewHighlightsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYelpMobileBusinessReviewHighlightsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYelpMobileBusinessReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYelpMobileBusinessReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYelpMobileBusinessReviewsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelYelpMobileBusinessReviewsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelYelpMobileGeocodeResponseDoc {
+  "code"?: number;
+  "data"?: ModelYelpMobileGeocodeResponse;
+  "msg"?: string;
+}
+
+export interface ModelYelpMobileSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelYelpMobileSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelYoutubeCaption {
   "duration"?: number;
   "start"?: number;
@@ -20620,6 +22196,118 @@ export interface ModelYoutubeTranscriptResponseDoc {
 export interface ModelYoutubeVideoResponseDoc {
   "code"?: number;
   "data"?: ModelYoutubeVideoDetail;
+  "msg"?: string;
+}
+
+export interface ModelZalandoCategoryResponse {
+  "category"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "market"?: string;
+  "products"?: Array<ModelZalandoProductSummary>;
+  "source_url"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelZalandoMarket {
+  "code"?: string;
+  "domain"?: string;
+}
+
+export interface ModelZalandoMarketsResponse {
+  "count"?: number;
+  "markets"?: Array<ModelZalandoMarket>;
+}
+
+export interface ModelZalandoProduct {
+  "brand"?: string;
+  "color"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "images"?: Array<string>;
+  "name"?: string;
+  "price"?: number;
+  "sku"?: string;
+  "url"?: string;
+  "variants"?: Array<ModelZalandoProductVariant>;
+}
+
+export interface ModelZalandoProductResponse {
+  "fetched_at"?: string;
+  "market"?: string;
+  "product"?: ModelZalandoProduct;
+  "source_url"?: string;
+}
+
+export interface ModelZalandoProductSummary {
+  "brand"?: string;
+  "condition"?: string;
+  "currency"?: string;
+  "discount_percent"?: number;
+  "image"?: string;
+  "name"?: string;
+  "original_price"?: number;
+  "price"?: number;
+  "silhouette"?: string;
+  "sku"?: string;
+  "url"?: string;
+}
+
+export interface ModelZalandoProductVariant {
+  "availability"?: string;
+  "currency"?: string;
+  "gtin"?: string;
+  "price"?: number;
+  "size"?: string;
+  "sku"?: string;
+  "url"?: string;
+}
+
+export interface ModelZalandoSearchResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "market"?: string;
+  "products"?: Array<ModelZalandoProductSummary>;
+  "query"?: string;
+  "source_url"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelZalandoSuggestResponse {
+  "fetched_at"?: string;
+  "market"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelZalandoCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelZalandoCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelZalandoMarketsResponseDoc {
+  "code"?: number;
+  "data"?: ModelZalandoMarketsResponse;
+  "msg"?: string;
+}
+
+export interface ModelZalandoProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelZalandoProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelZalandoSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelZalandoSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelZalandoSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelZalandoSuggestResponse;
   "msg"?: string;
 }
 
@@ -21328,6 +23016,35 @@ export interface AppStoreVersionHistoryParams {
   "lang"?: string;
 }
 
+export type AutotraderDealerResponse = CrawloraResponse<ModelAutotraderDealerResponse>;
+export interface AutotraderDealerParams {
+  "id": string;
+}
+
+export type AutotraderSearchResponse = CrawloraResponse<ModelAutotraderSearchResponseDoc>;
+export interface AutotraderSearchParams {
+  "query"?: string;
+  "zip"?: string;
+  "radius"?: number;
+  "make"?: string;
+  "model"?: string;
+  "trim"?: string;
+  "condition"?: "new" | "used" | "certified" | "3p_cert";
+  "body_style"?: "convertible" | "coupe" | "hatchback" | "sedan" | "suv" | "truck" | "van" | "wagon";
+  "seller_type"?: "dealer" | "private";
+  "min_year"?: number;
+  "max_year"?: number;
+  "min_price"?: number;
+  "max_price"?: number;
+  "max_mileage"?: number;
+  "page"?: number;
+}
+
+export type AutotraderVehicleResponse = CrawloraResponse<ModelAutotraderVehicleResponse>;
+export interface AutotraderVehicleParams {
+  "id": string;
+}
+
 export type BillingMeResponse = CrawloraResponse<ModelBillingBillingStateResponseDoc>;
 export interface BillingMeParams {
 }
@@ -21419,6 +23136,79 @@ export interface BingVideosParams {
   "count"?: number;
   "country"?: string;
   "lang"?: string;
+}
+
+export type BookingAttractionsDetailResponse = CrawloraResponse<ModelBookingBookingAttractionDetailResponseDoc>;
+export interface BookingAttractionsDetailParams {
+  "slug": string;
+}
+
+export type BookingAttractionsReviewsResponse = CrawloraResponse<ModelBookingBookingAttractionReviewsResponseDoc>;
+export interface BookingAttractionsReviewsParams {
+  "product_id": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type BookingAttractionsSearchResponse = CrawloraResponse<ModelBookingBookingAttractionSearchResponseDoc>;
+export interface BookingAttractionsSearchParams {
+  "query": string;
+  "start_date": string;
+  "end_date"?: string;
+  "page"?: number;
+  "limit"?: number;
+  "category"?: string;
+  "subcategory"?: string;
+}
+
+export type BookingFlightsAutocompleteResponse = CrawloraResponse<ModelBookingBookingFlightAutocompleteResponseDoc>;
+export interface BookingFlightsAutocompleteParams {
+  "query": string;
+  "type"?: "to" | "from";
+  "origin"?: string;
+  "origin_type"?: string;
+}
+
+export type BookingFlightsSearchResponse = CrawloraResponse<ModelBookingBookingFlightSearchResponseDoc>;
+export interface BookingFlightsSearchParams {
+  "type"?: "ROUNDTRIP" | "ONEWAY";
+  "from": string;
+  "to": string;
+  "from_country"?: string;
+  "to_country"?: string;
+  "depart": string;
+  "return"?: string;
+  "adults"?: number;
+  "children"?: number;
+  "cabin_class"?: string;
+  "sort"?: string;
+}
+
+export type BookingHotelDetailResponse = CrawloraResponse<ModelBookingBookingHotelDetailResponseDoc>;
+export interface BookingHotelDetailParams {
+  "hotel_id": number;
+}
+
+export type BookingReviewsResponse = CrawloraResponse<ModelBookingBookingReviewsResponseDoc>;
+export interface BookingReviewsParams {
+  "hotel_id": number;
+  "destination_id"?: number;
+  "hotel_country_code": string;
+  "hotel_score"?: number;
+  "search_text"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type BookingSearchResponse = CrawloraResponse<ModelBookingBookingSearchResponseDoc>;
+export interface BookingSearchParams {
+  "query": string;
+  "checkin": string;
+  "checkout": string;
+  "adults"?: number;
+  "rooms"?: number;
+  "children"?: number;
+  "page"?: number;
 }
 
 export type BoxOfficeMojoBoxofficemojoBrandResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyDetailResponseDoc>;
@@ -23361,6 +25151,12 @@ export interface DiscogsSearchParams {
   "per_page"?: number;
 }
 
+export type DoorDashDoordashExploreResponse = CrawloraResponse<ModelDoordashExploreResponseDoc>;
+export interface DoorDashDoordashExploreParams {
+  "latitude": number;
+  "longitude": number;
+}
+
 export type DoorDashDoordashFeedResponse = CrawloraResponse<ModelDoordashFeedResponseDoc>;
 export interface DoorDashDoordashFeedParams {
   "latitude": number;
@@ -23410,6 +25206,13 @@ export interface DoorDashDoordashStoreParams {
 
 export type DoorDashDoordashStoreFulfillmentResponse = CrawloraResponse<ModelDoordashStoreFulfillmentResponseDoc>;
 export interface DoorDashDoordashStoreFulfillmentParams {
+  "store_id": string;
+  "latitude": number;
+  "longitude": number;
+}
+
+export type DoorDashDoordashStoreInfoResponse = CrawloraResponse<ModelDoordashStoreInfoResponseDoc>;
+export interface DoorDashDoordashStoreInfoParams {
   "store_id": string;
   "latitude": number;
   "longitude": number;
@@ -23534,10 +25337,119 @@ export interface EspnTeamsParams {
   "league": "nfl" | "college-football" | "nba" | "wnba" | "mens-college-basketball" | "womens-college-basketball" | "mlb" | "nhl" | "eng.1" | "esp.1" | "ita.1" | "ger.1" | "fra.1" | "usa.1" | "uefa.champions";
 }
 
+export type EtsyListingResponse = CrawloraResponse<ModelEtsyListingResponseDoc>;
+export interface EtsyListingParams {
+  "id": string;
+}
+
+export type EtsyListingReviewsResponse = CrawloraResponse<ModelEtsyListingReviewsResponseDoc>;
+export interface EtsyListingReviewsParams {
+  "id": string;
+  "offset"?: number;
+  "sort"?: "newest" | "oldest" | "highest_rating" | "lowest_rating" | "most_relevant";
+}
+
+export type EtsySearchResponse = CrawloraResponse<ModelEtsySearchResponseDoc>;
+export interface EtsySearchParams {
+  "q": string;
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type EtsyShopSearchResponse = CrawloraResponse<ModelEtsyShopSearchResponseDoc>;
+export interface EtsyShopSearchParams {
+  "q": string;
+  "limit"?: number;
+}
+
+export type EtsyShopResponse = CrawloraResponse<ModelEtsyShopResponseDoc>;
+export interface EtsyShopParams {
+  "id": string;
+}
+
+export type EtsyShopListingsResponse = CrawloraResponse<ModelEtsyShopListingsResponseDoc>;
+export interface EtsyShopListingsParams {
+  "id": string;
+  "q"?: string;
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type EtsyShopReviewsResponse = CrawloraResponse<ModelEtsyShopReviewsResponseDoc>;
+export interface EtsyShopReviewsParams {
+  "id": string;
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type ExpediaActivitiesSearchBody = CrawloraBody<ModelExpediaActivitySearchOption>;
+export type ExpediaActivitiesSearchResponse = CrawloraResponse<ModelExpediaExpediaActivitySearchResponseDoc>;
+export interface ExpediaActivitiesSearchParams {
+  "option": ExpediaActivitiesSearchBody;
+}
+
+export type ExpediaFlightsSearchBody = CrawloraBody<ModelExpediaFlightsSearchOption>;
+export type ExpediaFlightsSearchResponse = CrawloraResponse<ModelExpediaExpediaFlightsSearchResponseDoc>;
+export interface ExpediaFlightsSearchParams {
+  "option": ExpediaFlightsSearchBody;
+}
+
+export type ExpediaLocationsSearchBody = CrawloraBody<ModelExpediaLocationSearchOption>;
+export type ExpediaLocationsSearchResponse = CrawloraResponse<ModelExpediaExpediaLocationSearchResponseDoc>;
+export interface ExpediaLocationsSearchParams {
+  "option": ExpediaLocationsSearchBody;
+}
+
+export type ExpediaPropertiesDetailBody = CrawloraBody<ModelExpediaPropertyDetailOption>;
+export type ExpediaPropertiesDetailResponse = CrawloraResponse<ModelExpediaExpediaPropertyDetailResponseDoc>;
+export interface ExpediaPropertiesDetailParams {
+  "option": ExpediaPropertiesDetailBody;
+}
+
+export type ExpediaPropertiesFiltersBody = CrawloraBody<ModelExpediaPropertyFiltersOption>;
+export type ExpediaPropertiesFiltersResponse = CrawloraResponse<ModelExpediaExpediaPropertyFiltersResponseDoc>;
+export interface ExpediaPropertiesFiltersParams {
+  "option": ExpediaPropertiesFiltersBody;
+}
+
+export type ExpediaPropertiesReviewsBody = CrawloraBody<ModelExpediaPropertyReviewsOption>;
+export type ExpediaPropertiesReviewsResponse = CrawloraResponse<ModelExpediaExpediaPropertyReviewsResponseDoc>;
+export interface ExpediaPropertiesReviewsParams {
+  "option": ExpediaPropertiesReviewsBody;
+}
+
+export type ExpediaPropertiesSearchBody = CrawloraBody<ModelExpediaPropertySearchOption>;
+export type ExpediaPropertiesSearchResponse = CrawloraResponse<ModelExpediaExpediaPropertySearchResponseDoc>;
+export interface ExpediaPropertiesSearchParams {
+  "option": ExpediaPropertiesSearchBody;
+}
+
 export type WebExtractBody = CrawloraBody<ModelExtractOption>;
 export type WebExtractResponse = CrawloraResponse<ModelExtractResponseDoc>;
 export interface WebExtractParams {
   "extractOption": WebExtractBody;
+}
+
+export type FacebookGroupResponse = CrawloraResponse<ModelFacebookGroupResponseDoc>;
+export interface FacebookGroupParams {
+  "group": string;
+}
+
+export type FacebookMarketplaceItemResponse = CrawloraResponse<ModelFacebookMarketplaceItemResponseDoc>;
+export interface FacebookMarketplaceItemParams {
+  "id": string;
+}
+
+export type FacebookMarketplaceSearchResponse = CrawloraResponse<ModelFacebookMarketplaceSearchResponseDoc>;
+export interface FacebookMarketplaceSearchParams {
+  "location": string;
+  "query"?: string;
+  "category"?: "vehicles" | "property_rentals" | "classifieds" | "apparel" | "electronics" | "entertainment" | "family" | "free" | "garden_outdoors" | "hobbies" | "home_goods" | "home_improvement" | "musical_instruments" | "office_supplies" | "pet_supplies" | "property_sale" | "sporting_goods" | "toys_games";
+  "min_price"?: number;
+  "max_price"?: number;
+  "sort_by"?: "best_match" | "distance_ascend" | "creation_time_descend" | "price_ascend" | "price_descend";
+  "days_since_listed"?: "1" | "7" | "30";
+  "condition"?: "new" | "used_like_new" | "used_good" | "used_fair";
 }
 
 export type FacebookPageResponse = CrawloraResponse<ModelFacebookPageResponseDoc>;
@@ -24243,6 +26155,38 @@ export type ImdbTitleTriviaResponse = CrawloraResponse<ModelImdbTitlePublicFacts
 export interface ImdbTitleTriviaParams {
   "id"?: string;
   "url"?: string;
+}
+
+export type ImportYetiImportyetiCompanyResponse = CrawloraResponse<ModelImportyetiCompanyResponseDoc>;
+export interface ImportYetiImportyetiCompanyParams {
+  "slug": string;
+}
+
+export type ImportYetiImportyetiSearchResponse = CrawloraResponse<ModelImportyetiSearchResponseDoc>;
+export interface ImportYetiImportyetiSearchParams {
+  "q": string;
+  "page"?: number;
+}
+
+export type IndeedJobResponse = CrawloraResponse<ModelIndeedJobResponseDoc>;
+export interface IndeedJobParams {
+  "jk": string;
+}
+
+export type IndeedLocationsSuggestResponse = CrawloraResponse<ModelIndeedLocationSuggestResponseDoc>;
+export interface IndeedLocationsSuggestParams {
+  "q": string;
+  "limit"?: number;
+}
+
+export type IndeedSearchResponse = CrawloraResponse<ModelIndeedSearchResponseDoc>;
+export interface IndeedSearchParams {
+  "q": string;
+  "l"?: string;
+  "page"?: number;
+  "sort"?: "relevance" | "date";
+  "radius"?: number;
+  "fromage"?: number;
 }
 
 export type InstagramPostResponse = CrawloraResponse<ModelInstagramPostResponseDoc>;
@@ -25137,6 +27081,35 @@ export interface NumbeoIndicesRankingsParams {
 export type NumbeoIndicesRankingsByCountryResponse = CrawloraResponse<ModelNumbeoIndicesRankingsByCountryResponseDoc>;
 export interface NumbeoIndicesRankingsByCountryParams {
   "index": "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment";
+}
+
+export type OpenTableOpentableRestaurantResponse = CrawloraResponse<ModelOpentableRestaurantResponseDoc>;
+export interface OpenTableOpentableRestaurantParams {
+  "restaurant_id": string;
+  "date_time"?: string;
+  "party_size"?: number;
+}
+
+export type OpenTableOpentableRestaurantMenusResponse = CrawloraResponse<ModelOpentableMenusResponseDoc>;
+export interface OpenTableOpentableRestaurantMenusParams {
+  "restaurant_id": string;
+}
+
+export type OpenTableOpentableRestaurantReviewsResponse = CrawloraResponse<ModelOpentableReviewsResponseDoc>;
+export interface OpenTableOpentableRestaurantReviewsParams {
+  "restaurant_id": string;
+  "page"?: number;
+  "size"?: number;
+}
+
+export type OpenTableOpentableSearchResponse = CrawloraResponse<ModelOpentableSearchResponseDoc>;
+export interface OpenTableOpentableSearchParams {
+  "term": string;
+  "latitude": number;
+  "longitude": number;
+  "date_time"?: string;
+  "party_size"?: number;
+  "size"?: number;
 }
 
 export type MetaPingResponse = CrawloraResponse<ModelApiPingResponseDoc>;
@@ -27697,6 +29670,54 @@ export interface YahooFinanceTrendingParams {
   "count"?: number;
 }
 
+export type YelpBusinessResponse = CrawloraResponse<ModelYelpMobileBusinessResponseDoc>;
+export interface YelpBusinessParams {
+  "id": string;
+}
+
+export type YelpBusinessMenuResponse = CrawloraResponse<ModelYelpMobileBusinessMenuResponseDoc>;
+export interface YelpBusinessMenuParams {
+  "id": string;
+}
+
+export type YelpBusinessPhotosResponse = CrawloraResponse<ModelYelpMobileBusinessPhotosResponseDoc>;
+export interface YelpBusinessPhotosParams {
+  "id": string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type YelpBusinessReviewsResponse = CrawloraResponse<ModelYelpMobileBusinessReviewsResponseDoc>;
+export interface YelpBusinessReviewsParams {
+  "id": string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type YelpBusinessReviewHighlightsResponse = CrawloraResponse<ModelYelpMobileBusinessReviewHighlightsResponseDoc>;
+export interface YelpBusinessReviewHighlightsParams {
+  "id": string;
+}
+
+export type YelpBusinessReviewsSearchResponse = CrawloraResponse<ModelYelpMobileBusinessReviewsSearchResponseDoc>;
+export interface YelpBusinessReviewsSearchParams {
+  "id": string;
+  "term": string;
+}
+
+export type YelpGeocodeResponse = CrawloraResponse<ModelYelpMobileGeocodeResponseDoc>;
+export interface YelpGeocodeParams {
+  "address": string;
+}
+
+export type YelpSearchResponse = CrawloraResponse<ModelYelpMobileSearchResponseDoc>;
+export interface YelpSearchParams {
+  "term": string;
+  "location": string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
 export type YoutubeCaptionsResponse = CrawloraResponse<ModelYoutubeCaptionsResponseDoc>;
 export interface YoutubeCaptionsParams {
   "id": string;
@@ -27781,6 +29802,34 @@ export interface YoutubeTranscriptLanguagesParams {
 export type YoutubeVideoResponse = CrawloraResponse<ModelYoutubeVideoResponseDoc>;
 export interface YoutubeVideoParams {
   "id": string;
+}
+
+export type ZalandoCategoryResponse = CrawloraResponse<ModelZalandoCategoryResponseDoc>;
+export interface ZalandoCategoryParams {
+  "category": string;
+  "market": "at" | "be" | "ch" | "cz" | "de" | "dk" | "ee" | "es" | "fi" | "fr" | "gb" | "hr" | "hu" | "ie" | "it" | "lt" | "lu" | "lv" | "nl" | "no" | "pl" | "ro" | "se" | "si" | "sk";
+}
+
+export type ZalandoMarketsResponse = CrawloraResponse<ModelZalandoMarketsResponseDoc>;
+export interface ZalandoMarketsParams {
+}
+
+export type ZalandoProductResponse = CrawloraResponse<ModelZalandoProductResponseDoc>;
+export interface ZalandoProductParams {
+  "sku": string;
+  "market": "at" | "be" | "ch" | "cz" | "de" | "dk" | "ee" | "es" | "fi" | "fr" | "gb" | "hr" | "hu" | "ie" | "it" | "lt" | "lu" | "lv" | "nl" | "no" | "pl" | "ro" | "se" | "si" | "sk";
+}
+
+export type ZalandoSearchResponse = CrawloraResponse<ModelZalandoSearchResponseDoc>;
+export interface ZalandoSearchParams {
+  "q": string;
+  "market": "at" | "be" | "ch" | "cz" | "de" | "dk" | "ee" | "es" | "fi" | "fr" | "gb" | "hr" | "hu" | "ie" | "it" | "lt" | "lu" | "lv" | "nl" | "no" | "pl" | "ro" | "se" | "si" | "sk";
+}
+
+export type ZalandoSuggestResponse = CrawloraResponse<ModelZalandoSuggestResponseDoc>;
+export interface ZalandoSuggestParams {
+  "q": string;
+  "market": "at" | "be" | "ch" | "cz" | "de" | "dk" | "ee" | "es" | "fi" | "fr" | "gb" | "hr" | "hu" | "ie" | "it" | "lt" | "lu" | "lv" | "nl" | "no" | "pl" | "ro" | "se" | "si" | "sk";
 }
 
 export type ZillowAutocompleteResponse = CrawloraResponse<ModelZillowAutocompleteResponse>;
@@ -27887,6 +29936,12 @@ export interface AppStoreService {
   versionHistory<T = AppStoreVersionHistoryResponse>(params: AppStoreVersionHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface AutotraderService {
+  dealer<T = AutotraderDealerResponse>(params: AutotraderDealerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = AutotraderSearchResponse>(params?: AutotraderSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  vehicle<T = AutotraderVehicleResponse>(params: AutotraderVehicleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface BillingService {
   me<T = BillingMeResponse>(params?: BillingMeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meCheckout<T = BillingMeCheckoutResponse>(params: BillingMeCheckoutParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -27904,6 +29959,17 @@ export interface BingService {
   search<T = BingSearchResponse>(params: BingSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   suggest<T = BingSuggestResponse>(params: BingSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   videos<T = BingVideosResponse>(params: BingVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface BookingService {
+  attractionsDetail<T = BookingAttractionsDetailResponse>(params: BookingAttractionsDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  attractionsReviews<T = BookingAttractionsReviewsResponse>(params: BookingAttractionsReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  attractionsSearch<T = BookingAttractionsSearchResponse>(params: BookingAttractionsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  flightsAutocomplete<T = BookingFlightsAutocompleteResponse>(params: BookingFlightsAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  flightsSearch<T = BookingFlightsSearchResponse>(params: BookingFlightsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hotelDetail<T = BookingHotelDetailResponse>(params: BookingHotelDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reviews<T = BookingReviewsResponse>(params: BookingReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = BookingSearchResponse>(params: BookingSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface BoxOfficeMojoService {
@@ -28118,6 +30184,7 @@ export interface DiscogsService {
 }
 
 export interface DoorDashService {
+  doordashExplore<T = DoorDashDoordashExploreResponse>(params: DoorDashDoordashExploreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashFeed<T = DoorDashDoordashFeedResponse>(params: DoorDashDoordashFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashSearch<T = DoorDashDoordashSearchResponse>(params: DoorDashDoordashSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashSearchAutocomplete<T = DoorDashDoordashSearchAutocompleteResponse>(params: DoorDashDoordashSearchAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -28125,6 +30192,7 @@ export interface DoorDashService {
   doordashSearchItems<T = DoorDashDoordashSearchItemsResponse>(params: DoorDashDoordashSearchItemsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStore<T = DoorDashDoordashStoreResponse>(params: DoorDashDoordashStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreFulfillment<T = DoorDashDoordashStoreFulfillmentResponse>(params: DoorDashDoordashStoreFulfillmentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  doordashStoreInfo<T = DoorDashDoordashStoreInfoResponse>(params: DoorDashDoordashStoreInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreItem<T = DoorDashDoordashStoreItemResponse>(params: DoorDashDoordashStoreItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreMenu<T = DoorDashDoordashStoreMenuResponse>(params: DoorDashDoordashStoreMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreReviews<T = DoorDashDoordashStoreReviewsResponse>(params: DoorDashDoordashStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -28151,7 +30219,30 @@ export interface EspnService {
   teams<T = EspnTeamsResponse>(params: EspnTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface EtsyService {
+  listing<T = EtsyListingResponse>(params: EtsyListingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  listingReviews<T = EtsyListingReviewsResponse>(params: EtsyListingReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = EtsySearchResponse>(params: EtsySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shopSearch<T = EtsyShopSearchResponse>(params: EtsyShopSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shop<T = EtsyShopResponse>(params: EtsyShopParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shopListings<T = EtsyShopListingsResponse>(params: EtsyShopListingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shopReviews<T = EtsyShopReviewsResponse>(params: EtsyShopReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ExpediaService {
+  activitiesSearch<T = ExpediaActivitiesSearchResponse>(params: ExpediaActivitiesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  flightsSearch<T = ExpediaFlightsSearchResponse>(params: ExpediaFlightsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  locationsSearch<T = ExpediaLocationsSearchResponse>(params: ExpediaLocationsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  propertiesDetail<T = ExpediaPropertiesDetailResponse>(params: ExpediaPropertiesDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  propertiesFilters<T = ExpediaPropertiesFiltersResponse>(params: ExpediaPropertiesFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  propertiesReviews<T = ExpediaPropertiesReviewsResponse>(params: ExpediaPropertiesReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  propertiesSearch<T = ExpediaPropertiesSearchResponse>(params: ExpediaPropertiesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface FacebookService {
+  group<T = FacebookGroupResponse>(params: FacebookGroupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketplaceItem<T = FacebookMarketplaceItemResponse>(params: FacebookMarketplaceItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  marketplaceSearch<T = FacebookMarketplaceSearchResponse>(params: FacebookMarketplaceSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   page<T = FacebookPageResponse>(params: FacebookPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
@@ -28277,6 +30368,17 @@ export interface ImdbService {
   titleReviews<T = ImdbTitleReviewsResponse>(params?: ImdbTitleReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleTechnicalSpecs<T = ImdbTitleTechnicalSpecsResponse>(params?: ImdbTitleTechnicalSpecsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleTrivia<T = ImdbTitleTriviaResponse>(params?: ImdbTitleTriviaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ImportYetiService {
+  importyetiCompany<T = ImportYetiImportyetiCompanyResponse>(params: ImportYetiImportyetiCompanyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  importyetiSearch<T = ImportYetiImportyetiSearchResponse>(params: ImportYetiImportyetiSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface IndeedService {
+  job<T = IndeedJobResponse>(params: IndeedJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  locationsSuggest<T = IndeedLocationsSuggestResponse>(params: IndeedLocationsSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = IndeedSearchResponse>(params: IndeedSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface InstagramService {
@@ -28444,6 +30546,13 @@ export interface NumbeoService {
   indicesCountry<T = NumbeoIndicesCountryResponse>(params: NumbeoIndicesCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   indicesRankings<T = NumbeoIndicesRankingsResponse>(params: NumbeoIndicesRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   indicesRankingsByCountry<T = NumbeoIndicesRankingsByCountryResponse>(params: NumbeoIndicesRankingsByCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface OpenTableService {
+  opentableRestaurant<T = OpenTableOpentableRestaurantResponse>(params: OpenTableOpentableRestaurantParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opentableRestaurantMenus<T = OpenTableOpentableRestaurantMenusResponse>(params: OpenTableOpentableRestaurantMenusParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opentableRestaurantReviews<T = OpenTableOpentableRestaurantReviewsResponse>(params: OpenTableOpentableRestaurantReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opentableSearch<T = OpenTableOpentableSearchResponse>(params: OpenTableOpentableSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface MetaService {
@@ -28909,6 +31018,17 @@ export interface YahooFinanceService {
   trending<T = YahooFinanceTrendingResponse>(params: YahooFinanceTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface YelpService {
+  business<T = YelpBusinessResponse>(params: YelpBusinessParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  businessMenu<T = YelpBusinessMenuResponse>(params: YelpBusinessMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  businessPhotos<T = YelpBusinessPhotosResponse>(params: YelpBusinessPhotosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  businessReviews<T = YelpBusinessReviewsResponse>(params: YelpBusinessReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  businessReviewHighlights<T = YelpBusinessReviewHighlightsResponse>(params: YelpBusinessReviewHighlightsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  businessReviewsSearch<T = YelpBusinessReviewsSearchResponse>(params: YelpBusinessReviewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  geocode<T = YelpGeocodeResponse>(params: YelpGeocodeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = YelpSearchResponse>(params: YelpSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface YoutubeService {
   captions<T = YoutubeCaptionsResponse>(params: YoutubeCaptionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   channelPlaylists<T = YoutubeChannelPlaylistsResponse>(params: YoutubeChannelPlaylistsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -28923,6 +31043,14 @@ export interface YoutubeService {
   transcript<T = YoutubeTranscriptResponse>(params: YoutubeTranscriptParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   transcriptLanguages<T = YoutubeTranscriptLanguagesResponse>(params: YoutubeTranscriptLanguagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   video<T = YoutubeVideoResponse>(params: YoutubeVideoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ZalandoService {
+  category<T = ZalandoCategoryResponse>(params: ZalandoCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  markets<T = ZalandoMarketsResponse>(params?: ZalandoMarketsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = ZalandoProductResponse>(params: ZalandoProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = ZalandoSearchResponse>(params: ZalandoSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = ZalandoSuggestResponse>(params: ZalandoSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ZillowService {
@@ -28940,8 +31068,10 @@ export interface CrawloraGeneratedGroups {
   appleJobs: AppleJobsService;
   applePodcasts: ApplePodcastsService;
   appStore: AppStoreService;
+  autotrader: AutotraderService;
   billing: BillingService;
   bing: BingService;
+  booking: BookingService;
   boxOfficeMojo: BoxOfficeMojoService;
   brand: BrandService;
   brave: BraveService;
@@ -28954,6 +31084,8 @@ export interface CrawloraGeneratedGroups {
   doorDash: DoorDashService;
   eBay: EBayService;
   espn: EspnService;
+  etsy: EtsyService;
+  expedia: ExpediaService;
   facebook: FacebookService;
   geocoding: GeocodingService;
   gitHub: GitHubService;
@@ -28962,6 +31094,8 @@ export interface CrawloraGeneratedGroups {
   google: GoogleService;
   googlePlay: GooglePlayService;
   imdb: ImdbService;
+  importYeti: ImportYetiService;
+  indeed: IndeedService;
   instagram: InstagramService;
   jobs: JobsService;
   justWatch: JustWatchService;
@@ -28974,6 +31108,7 @@ export interface CrawloraGeneratedGroups {
   metaculus: MetaculusService;
   mlb: MlbService;
   numbeo: NumbeoService;
+  openTable: OpenTableService;
   meta: MetaService;
   pitchBook: PitchBookService;
   playStation: PlayStationService;
@@ -29006,7 +31141,9 @@ export interface CrawloraGeneratedGroups {
   walmart: WalmartService;
   x: XService;
   yahooFinance: YahooFinanceService;
+  yelp: YelpService;
   youtube: YoutubeService;
+  zalando: ZalandoService;
   zillow: ZillowService;
 }
 
@@ -29066,6 +31203,9 @@ export interface OperationParamsMap {
   "appstore-similar": AppStoreSimilarParams;
   "appstore-suggest": AppStoreSuggestParams;
   "appstore-version-history": AppStoreVersionHistoryParams;
+  "autotrader-dealer": AutotraderDealerParams;
+  "autotrader-search": AutotraderSearchParams;
+  "autotrader-vehicle": AutotraderVehicleParams;
   "billing-me": BillingMeParams;
   "billing-me-checkout": BillingMeCheckoutParams;
   "billing-me-events": BillingMeEventsParams;
@@ -29079,6 +31219,14 @@ export interface OperationParamsMap {
   "bing-search": BingSearchParams;
   "bing-suggest": BingSuggestParams;
   "bing-videos": BingVideosParams;
+  "booking-attractions-detail": BookingAttractionsDetailParams;
+  "booking-attractions-reviews": BookingAttractionsReviewsParams;
+  "booking-attractions-search": BookingAttractionsSearchParams;
+  "booking-flights-autocomplete": BookingFlightsAutocompleteParams;
+  "booking-flights-search": BookingFlightsSearchParams;
+  "booking-hotel-detail": BookingHotelDetailParams;
+  "booking-reviews": BookingReviewsParams;
+  "booking-search": BookingSearchParams;
   "boxofficemojo-brand": BoxOfficeMojoBoxofficemojoBrandParams;
   "boxofficemojo-brands": BoxOfficeMojoBoxofficemojoBrandsParams;
   "boxofficemojo-calendar": BoxOfficeMojoBoxofficemojoCalendarParams;
@@ -29260,6 +31408,7 @@ export interface OperationParamsMap {
   "discogs-master": DiscogsMasterParams;
   "discogs-release": DiscogsReleaseParams;
   "discogs-search": DiscogsSearchParams;
+  "doordash-explore": DoorDashDoordashExploreParams;
   "doordash-feed": DoorDashDoordashFeedParams;
   "doordash-search": DoorDashDoordashSearchParams;
   "doordash-search-autocomplete": DoorDashDoordashSearchAutocompleteParams;
@@ -29267,6 +31416,7 @@ export interface OperationParamsMap {
   "doordash-search-items": DoorDashDoordashSearchItemsParams;
   "doordash-store": DoorDashDoordashStoreParams;
   "doordash-store-fulfillment": DoorDashDoordashStoreFulfillmentParams;
+  "doordash-store-info": DoorDashDoordashStoreInfoParams;
   "doordash-store-item": DoorDashDoordashStoreItemParams;
   "doordash-store-menu": DoorDashDoordashStoreMenuParams;
   "doordash-store-reviews": DoorDashDoordashStoreReviewsParams;
@@ -29285,7 +31435,24 @@ export interface OperationParamsMap {
   "espn-team": EspnTeamParams;
   "espn-team-roster": EspnTeamRosterParams;
   "espn-teams": EspnTeamsParams;
+  "etsy-listing": EtsyListingParams;
+  "etsy-listing-reviews": EtsyListingReviewsParams;
+  "etsy-search": EtsySearchParams;
+  "etsy-shop-search": EtsyShopSearchParams;
+  "etsy-shop": EtsyShopParams;
+  "etsy-shop-listings": EtsyShopListingsParams;
+  "etsy-shop-reviews": EtsyShopReviewsParams;
+  "expedia-activities-search": ExpediaActivitiesSearchParams;
+  "expedia-flights-search": ExpediaFlightsSearchParams;
+  "expedia-locations-search": ExpediaLocationsSearchParams;
+  "expedia-properties-detail": ExpediaPropertiesDetailParams;
+  "expedia-properties-filters": ExpediaPropertiesFiltersParams;
+  "expedia-properties-reviews": ExpediaPropertiesReviewsParams;
+  "expedia-properties-search": ExpediaPropertiesSearchParams;
   "extract": WebExtractParams;
+  "facebook-group": FacebookGroupParams;
+  "facebook-marketplace-item": FacebookMarketplaceItemParams;
+  "facebook-marketplace-search": FacebookMarketplaceSearchParams;
   "facebook-page": FacebookPageParams;
   "geocoding-lookup": GeocodingLookupParams;
   "geocoding-reverse": GeocodingReverseParams;
@@ -29390,6 +31557,11 @@ export interface OperationParamsMap {
   "imdb-title-reviews": ImdbTitleReviewsParams;
   "imdb-title-technical-specs": ImdbTitleTechnicalSpecsParams;
   "imdb-title-trivia": ImdbTitleTriviaParams;
+  "importyeti-company": ImportYetiImportyetiCompanyParams;
+  "importyeti-search": ImportYetiImportyetiSearchParams;
+  "indeed-job": IndeedJobParams;
+  "indeed-locations-suggest": IndeedLocationsSuggestParams;
+  "indeed-search": IndeedSearchParams;
   "instagram-post": InstagramPostParams;
   "instagram-profile": InstagramProfileParams;
   "instagram-reels": InstagramReelsParams;
@@ -29521,6 +31693,10 @@ export interface OperationParamsMap {
   "numbeo-indices-country": NumbeoIndicesCountryParams;
   "numbeo-indices-rankings": NumbeoIndicesRankingsParams;
   "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryParams;
+  "opentable-restaurant": OpenTableOpentableRestaurantParams;
+  "opentable-restaurant-menus": OpenTableOpentableRestaurantMenusParams;
+  "opentable-restaurant-reviews": OpenTableOpentableRestaurantReviewsParams;
+  "opentable-search": OpenTableOpentableSearchParams;
   "ping": MetaPingParams;
   "pitchbook-advisor": PitchBookPitchbookAdvisorParams;
   "pitchbook-company": PitchBookPitchbookCompanyParams;
@@ -29890,6 +32066,14 @@ export interface OperationParamsMap {
   "yahoo-finance-ticker-sustainability": YahooFinanceTickerSustainabilityParams;
   "yahoo-finance-ticker-valuation": YahooFinanceTickerValuationParams;
   "yahoo-finance-trending": YahooFinanceTrendingParams;
+  "yelp-business": YelpBusinessParams;
+  "yelp-business-menu": YelpBusinessMenuParams;
+  "yelp-business-photos": YelpBusinessPhotosParams;
+  "yelp-business-reviews": YelpBusinessReviewsParams;
+  "yelp-business-review-highlights": YelpBusinessReviewHighlightsParams;
+  "yelp-business-reviews-search": YelpBusinessReviewsSearchParams;
+  "yelp-geocode": YelpGeocodeParams;
+  "yelp-search": YelpSearchParams;
   "youtube-captions": YoutubeCaptionsParams;
   "youtube-channel-playlists": YoutubeChannelPlaylistsParams;
   "youtube-channel-search": YoutubeChannelSearchParams;
@@ -29903,6 +32087,11 @@ export interface OperationParamsMap {
   "youtube-transcript": YoutubeTranscriptParams;
   "youtube-transcript-languages": YoutubeTranscriptLanguagesParams;
   "youtube-video": YoutubeVideoParams;
+  "zalando-category": ZalandoCategoryParams;
+  "zalando-markets": ZalandoMarketsParams;
+  "zalando-product": ZalandoProductParams;
+  "zalando-search": ZalandoSearchParams;
+  "zalando-suggest": ZalandoSuggestParams;
   "zillow-autocomplete": ZillowAutocompleteParams;
   "zillow-property": ZillowPropertyParams;
   "zillow-search": ZillowSearchParams;
@@ -29964,6 +32153,9 @@ export interface OperationResponseMap {
   "appstore-similar": AppStoreSimilarResponse;
   "appstore-suggest": AppStoreSuggestResponse;
   "appstore-version-history": AppStoreVersionHistoryResponse;
+  "autotrader-dealer": AutotraderDealerResponse;
+  "autotrader-search": AutotraderSearchResponse;
+  "autotrader-vehicle": AutotraderVehicleResponse;
   "billing-me": BillingMeResponse;
   "billing-me-checkout": BillingMeCheckoutResponse;
   "billing-me-events": BillingMeEventsResponse;
@@ -29977,6 +32169,14 @@ export interface OperationResponseMap {
   "bing-search": BingSearchResponse;
   "bing-suggest": BingSuggestResponse;
   "bing-videos": BingVideosResponse;
+  "booking-attractions-detail": BookingAttractionsDetailResponse;
+  "booking-attractions-reviews": BookingAttractionsReviewsResponse;
+  "booking-attractions-search": BookingAttractionsSearchResponse;
+  "booking-flights-autocomplete": BookingFlightsAutocompleteResponse;
+  "booking-flights-search": BookingFlightsSearchResponse;
+  "booking-hotel-detail": BookingHotelDetailResponse;
+  "booking-reviews": BookingReviewsResponse;
+  "booking-search": BookingSearchResponse;
   "boxofficemojo-brand": BoxOfficeMojoBoxofficemojoBrandResponse;
   "boxofficemojo-brands": BoxOfficeMojoBoxofficemojoBrandsResponse;
   "boxofficemojo-calendar": BoxOfficeMojoBoxofficemojoCalendarResponse;
@@ -30158,6 +32358,7 @@ export interface OperationResponseMap {
   "discogs-master": DiscogsMasterResponse;
   "discogs-release": DiscogsReleaseResponse;
   "discogs-search": DiscogsSearchResponse;
+  "doordash-explore": DoorDashDoordashExploreResponse;
   "doordash-feed": DoorDashDoordashFeedResponse;
   "doordash-search": DoorDashDoordashSearchResponse;
   "doordash-search-autocomplete": DoorDashDoordashSearchAutocompleteResponse;
@@ -30165,6 +32366,7 @@ export interface OperationResponseMap {
   "doordash-search-items": DoorDashDoordashSearchItemsResponse;
   "doordash-store": DoorDashDoordashStoreResponse;
   "doordash-store-fulfillment": DoorDashDoordashStoreFulfillmentResponse;
+  "doordash-store-info": DoorDashDoordashStoreInfoResponse;
   "doordash-store-item": DoorDashDoordashStoreItemResponse;
   "doordash-store-menu": DoorDashDoordashStoreMenuResponse;
   "doordash-store-reviews": DoorDashDoordashStoreReviewsResponse;
@@ -30183,7 +32385,24 @@ export interface OperationResponseMap {
   "espn-team": EspnTeamResponse;
   "espn-team-roster": EspnTeamRosterResponse;
   "espn-teams": EspnTeamsResponse;
+  "etsy-listing": EtsyListingResponse;
+  "etsy-listing-reviews": EtsyListingReviewsResponse;
+  "etsy-search": EtsySearchResponse;
+  "etsy-shop-search": EtsyShopSearchResponse;
+  "etsy-shop": EtsyShopResponse;
+  "etsy-shop-listings": EtsyShopListingsResponse;
+  "etsy-shop-reviews": EtsyShopReviewsResponse;
+  "expedia-activities-search": ExpediaActivitiesSearchResponse;
+  "expedia-flights-search": ExpediaFlightsSearchResponse;
+  "expedia-locations-search": ExpediaLocationsSearchResponse;
+  "expedia-properties-detail": ExpediaPropertiesDetailResponse;
+  "expedia-properties-filters": ExpediaPropertiesFiltersResponse;
+  "expedia-properties-reviews": ExpediaPropertiesReviewsResponse;
+  "expedia-properties-search": ExpediaPropertiesSearchResponse;
   "extract": WebExtractResponse;
+  "facebook-group": FacebookGroupResponse;
+  "facebook-marketplace-item": FacebookMarketplaceItemResponse;
+  "facebook-marketplace-search": FacebookMarketplaceSearchResponse;
   "facebook-page": FacebookPageResponse;
   "geocoding-lookup": GeocodingLookupResponse;
   "geocoding-reverse": GeocodingReverseResponse;
@@ -30288,6 +32507,11 @@ export interface OperationResponseMap {
   "imdb-title-reviews": ImdbTitleReviewsResponse;
   "imdb-title-technical-specs": ImdbTitleTechnicalSpecsResponse;
   "imdb-title-trivia": ImdbTitleTriviaResponse;
+  "importyeti-company": ImportYetiImportyetiCompanyResponse;
+  "importyeti-search": ImportYetiImportyetiSearchResponse;
+  "indeed-job": IndeedJobResponse;
+  "indeed-locations-suggest": IndeedLocationsSuggestResponse;
+  "indeed-search": IndeedSearchResponse;
   "instagram-post": InstagramPostResponse;
   "instagram-profile": InstagramProfileResponse;
   "instagram-reels": InstagramReelsResponse;
@@ -30419,6 +32643,10 @@ export interface OperationResponseMap {
   "numbeo-indices-country": NumbeoIndicesCountryResponse;
   "numbeo-indices-rankings": NumbeoIndicesRankingsResponse;
   "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryResponse;
+  "opentable-restaurant": OpenTableOpentableRestaurantResponse;
+  "opentable-restaurant-menus": OpenTableOpentableRestaurantMenusResponse;
+  "opentable-restaurant-reviews": OpenTableOpentableRestaurantReviewsResponse;
+  "opentable-search": OpenTableOpentableSearchResponse;
   "ping": MetaPingResponse;
   "pitchbook-advisor": PitchBookPitchbookAdvisorResponse;
   "pitchbook-company": PitchBookPitchbookCompanyResponse;
@@ -30788,6 +33016,14 @@ export interface OperationResponseMap {
   "yahoo-finance-ticker-sustainability": YahooFinanceTickerSustainabilityResponse;
   "yahoo-finance-ticker-valuation": YahooFinanceTickerValuationResponse;
   "yahoo-finance-trending": YahooFinanceTrendingResponse;
+  "yelp-business": YelpBusinessResponse;
+  "yelp-business-menu": YelpBusinessMenuResponse;
+  "yelp-business-photos": YelpBusinessPhotosResponse;
+  "yelp-business-reviews": YelpBusinessReviewsResponse;
+  "yelp-business-review-highlights": YelpBusinessReviewHighlightsResponse;
+  "yelp-business-reviews-search": YelpBusinessReviewsSearchResponse;
+  "yelp-geocode": YelpGeocodeResponse;
+  "yelp-search": YelpSearchResponse;
   "youtube-captions": YoutubeCaptionsResponse;
   "youtube-channel-playlists": YoutubeChannelPlaylistsResponse;
   "youtube-channel-search": YoutubeChannelSearchResponse;
@@ -30801,6 +33037,11 @@ export interface OperationResponseMap {
   "youtube-transcript": YoutubeTranscriptResponse;
   "youtube-transcript-languages": YoutubeTranscriptLanguagesResponse;
   "youtube-video": YoutubeVideoResponse;
+  "zalando-category": ZalandoCategoryResponse;
+  "zalando-markets": ZalandoMarketsResponse;
+  "zalando-product": ZalandoProductResponse;
+  "zalando-search": ZalandoSearchResponse;
+  "zalando-suggest": ZalandoSuggestResponse;
   "zillow-autocomplete": ZillowAutocompleteResponse;
   "zillow-property": ZillowPropertyResponse;
   "zillow-search": ZillowSearchResponse;
@@ -30862,6 +33103,9 @@ export interface OperationRequiredParamsMap {
   "appstore-similar": false;
   "appstore-suggest": true;
   "appstore-version-history": true;
+  "autotrader-dealer": true;
+  "autotrader-search": false;
+  "autotrader-vehicle": true;
   "billing-me": false;
   "billing-me-checkout": true;
   "billing-me-events": false;
@@ -30875,6 +33119,14 @@ export interface OperationRequiredParamsMap {
   "bing-search": true;
   "bing-suggest": true;
   "bing-videos": true;
+  "booking-attractions-detail": true;
+  "booking-attractions-reviews": true;
+  "booking-attractions-search": true;
+  "booking-flights-autocomplete": true;
+  "booking-flights-search": true;
+  "booking-hotel-detail": true;
+  "booking-reviews": true;
+  "booking-search": true;
   "boxofficemojo-brand": false;
   "boxofficemojo-brands": false;
   "boxofficemojo-calendar": true;
@@ -31056,6 +33308,7 @@ export interface OperationRequiredParamsMap {
   "discogs-master": true;
   "discogs-release": true;
   "discogs-search": true;
+  "doordash-explore": true;
   "doordash-feed": true;
   "doordash-search": true;
   "doordash-search-autocomplete": true;
@@ -31063,6 +33316,7 @@ export interface OperationRequiredParamsMap {
   "doordash-search-items": true;
   "doordash-store": true;
   "doordash-store-fulfillment": true;
+  "doordash-store-info": true;
   "doordash-store-item": true;
   "doordash-store-menu": true;
   "doordash-store-reviews": true;
@@ -31081,7 +33335,24 @@ export interface OperationRequiredParamsMap {
   "espn-team": true;
   "espn-team-roster": true;
   "espn-teams": true;
+  "etsy-listing": true;
+  "etsy-listing-reviews": true;
+  "etsy-search": true;
+  "etsy-shop-search": true;
+  "etsy-shop": true;
+  "etsy-shop-listings": true;
+  "etsy-shop-reviews": true;
+  "expedia-activities-search": true;
+  "expedia-flights-search": true;
+  "expedia-locations-search": true;
+  "expedia-properties-detail": true;
+  "expedia-properties-filters": true;
+  "expedia-properties-reviews": true;
+  "expedia-properties-search": true;
   "extract": true;
+  "facebook-group": true;
+  "facebook-marketplace-item": true;
+  "facebook-marketplace-search": true;
   "facebook-page": true;
   "geocoding-lookup": true;
   "geocoding-reverse": true;
@@ -31186,6 +33457,11 @@ export interface OperationRequiredParamsMap {
   "imdb-title-reviews": false;
   "imdb-title-technical-specs": false;
   "imdb-title-trivia": false;
+  "importyeti-company": true;
+  "importyeti-search": true;
+  "indeed-job": true;
+  "indeed-locations-suggest": true;
+  "indeed-search": true;
   "instagram-post": true;
   "instagram-profile": true;
   "instagram-reels": true;
@@ -31317,6 +33593,10 @@ export interface OperationRequiredParamsMap {
   "numbeo-indices-country": true;
   "numbeo-indices-rankings": true;
   "numbeo-indices-rankings-by-country": true;
+  "opentable-restaurant": true;
+  "opentable-restaurant-menus": true;
+  "opentable-restaurant-reviews": true;
+  "opentable-search": true;
   "ping": false;
   "pitchbook-advisor": false;
   "pitchbook-company": false;
@@ -31686,6 +33966,14 @@ export interface OperationRequiredParamsMap {
   "yahoo-finance-ticker-sustainability": true;
   "yahoo-finance-ticker-valuation": true;
   "yahoo-finance-trending": true;
+  "yelp-business": true;
+  "yelp-business-menu": true;
+  "yelp-business-photos": true;
+  "yelp-business-reviews": true;
+  "yelp-business-review-highlights": true;
+  "yelp-business-reviews-search": true;
+  "yelp-geocode": true;
+  "yelp-search": true;
   "youtube-captions": true;
   "youtube-channel-playlists": true;
   "youtube-channel-search": true;
@@ -31699,6 +33987,11 @@ export interface OperationRequiredParamsMap {
   "youtube-transcript": true;
   "youtube-transcript-languages": true;
   "youtube-video": true;
+  "zalando-category": true;
+  "zalando-markets": false;
+  "zalando-product": true;
+  "zalando-search": true;
+  "zalando-suggest": true;
   "zillow-autocomplete": true;
   "zillow-property": true;
   "zillow-search": true;
@@ -31767,6 +34060,9 @@ export type OperationIdLiteral =
   | "appstore-similar"
   | "appstore-suggest"
   | "appstore-version-history"
+  | "autotrader-dealer"
+  | "autotrader-search"
+  | "autotrader-vehicle"
   | "billing-me"
   | "billing-me-checkout"
   | "billing-me-events"
@@ -31780,6 +34076,14 @@ export type OperationIdLiteral =
   | "bing-search"
   | "bing-suggest"
   | "bing-videos"
+  | "booking-attractions-detail"
+  | "booking-attractions-reviews"
+  | "booking-attractions-search"
+  | "booking-flights-autocomplete"
+  | "booking-flights-search"
+  | "booking-hotel-detail"
+  | "booking-reviews"
+  | "booking-search"
   | "boxofficemojo-brand"
   | "boxofficemojo-brands"
   | "boxofficemojo-calendar"
@@ -31961,6 +34265,7 @@ export type OperationIdLiteral =
   | "discogs-master"
   | "discogs-release"
   | "discogs-search"
+  | "doordash-explore"
   | "doordash-feed"
   | "doordash-search"
   | "doordash-search-autocomplete"
@@ -31968,6 +34273,7 @@ export type OperationIdLiteral =
   | "doordash-search-items"
   | "doordash-store"
   | "doordash-store-fulfillment"
+  | "doordash-store-info"
   | "doordash-store-item"
   | "doordash-store-menu"
   | "doordash-store-reviews"
@@ -31986,7 +34292,24 @@ export type OperationIdLiteral =
   | "espn-team"
   | "espn-team-roster"
   | "espn-teams"
+  | "etsy-listing"
+  | "etsy-listing-reviews"
+  | "etsy-search"
+  | "etsy-shop-search"
+  | "etsy-shop"
+  | "etsy-shop-listings"
+  | "etsy-shop-reviews"
+  | "expedia-activities-search"
+  | "expedia-flights-search"
+  | "expedia-locations-search"
+  | "expedia-properties-detail"
+  | "expedia-properties-filters"
+  | "expedia-properties-reviews"
+  | "expedia-properties-search"
   | "extract"
+  | "facebook-group"
+  | "facebook-marketplace-item"
+  | "facebook-marketplace-search"
   | "facebook-page"
   | "geocoding-lookup"
   | "geocoding-reverse"
@@ -32091,6 +34414,11 @@ export type OperationIdLiteral =
   | "imdb-title-reviews"
   | "imdb-title-technical-specs"
   | "imdb-title-trivia"
+  | "importyeti-company"
+  | "importyeti-search"
+  | "indeed-job"
+  | "indeed-locations-suggest"
+  | "indeed-search"
   | "instagram-post"
   | "instagram-profile"
   | "instagram-reels"
@@ -32222,6 +34550,10 @@ export type OperationIdLiteral =
   | "numbeo-indices-country"
   | "numbeo-indices-rankings"
   | "numbeo-indices-rankings-by-country"
+  | "opentable-restaurant"
+  | "opentable-restaurant-menus"
+  | "opentable-restaurant-reviews"
+  | "opentable-search"
   | "ping"
   | "pitchbook-advisor"
   | "pitchbook-company"
@@ -32591,6 +34923,14 @@ export type OperationIdLiteral =
   | "yahoo-finance-ticker-sustainability"
   | "yahoo-finance-ticker-valuation"
   | "yahoo-finance-trending"
+  | "yelp-business"
+  | "yelp-business-menu"
+  | "yelp-business-photos"
+  | "yelp-business-reviews"
+  | "yelp-business-review-highlights"
+  | "yelp-business-reviews-search"
+  | "yelp-geocode"
+  | "yelp-search"
   | "youtube-captions"
   | "youtube-channel-playlists"
   | "youtube-channel-search"
@@ -32604,6 +34944,11 @@ export type OperationIdLiteral =
   | "youtube-transcript"
   | "youtube-transcript-languages"
   | "youtube-video"
+  | "zalando-category"
+  | "zalando-markets"
+  | "zalando-product"
+  | "zalando-search"
+  | "zalando-suggest"
   | "zillow-autocomplete"
   | "zillow-property"
   | "zillow-search";
@@ -32664,6 +35009,9 @@ export declare const OperationIds: Readonly<{
   ApplePodcastsShow: "apple-podcasts-show";
   ApplePodcastsShowEpisodes: "apple-podcasts-show-episodes";
   ApplePodcastsShowRelated: "apple-podcasts-show-related";
+  AutotraderDealer: "autotrader-dealer";
+  AutotraderSearch: "autotrader-search";
+  AutotraderVehicle: "autotrader-vehicle";
   BillingMe: "billing-me";
   BillingMeCheckout: "billing-me-checkout";
   BillingMeEvents: "billing-me-events";
@@ -32677,6 +35025,14 @@ export declare const OperationIds: Readonly<{
   BingSearch: "bing-search";
   BingSuggest: "bing-suggest";
   BingVideos: "bing-videos";
+  BookingAttractionsDetail: "booking-attractions-detail";
+  BookingAttractionsReviews: "booking-attractions-reviews";
+  BookingAttractionsSearch: "booking-attractions-search";
+  BookingFlightsAutocomplete: "booking-flights-autocomplete";
+  BookingFlightsSearch: "booking-flights-search";
+  BookingHotelDetail: "booking-hotel-detail";
+  BookingReviews: "booking-reviews";
+  BookingSearch: "booking-search";
   BoxOfficeMojoBoxofficemojoBrand: "boxofficemojo-brand";
   BoxOfficeMojoBoxofficemojoBrands: "boxofficemojo-brands";
   BoxOfficeMojoBoxofficemojoCalendar: "boxofficemojo-calendar";
@@ -32856,6 +35212,7 @@ export declare const OperationIds: Readonly<{
   DiscogsMaster: "discogs-master";
   DiscogsRelease: "discogs-release";
   DiscogsSearch: "discogs-search";
+  DoorDashDoordashExplore: "doordash-explore";
   DoorDashDoordashFeed: "doordash-feed";
   DoorDashDoordashSearch: "doordash-search";
   DoorDashDoordashSearchAutocomplete: "doordash-search-autocomplete";
@@ -32863,6 +35220,7 @@ export declare const OperationIds: Readonly<{
   DoorDashDoordashSearchItems: "doordash-search-items";
   DoorDashDoordashStore: "doordash-store";
   DoorDashDoordashStoreFulfillment: "doordash-store-fulfillment";
+  DoorDashDoordashStoreInfo: "doordash-store-info";
   DoorDashDoordashStoreItem: "doordash-store-item";
   DoorDashDoordashStoreMenu: "doordash-store-menu";
   DoorDashDoordashStoreReviews: "doordash-store-reviews";
@@ -32881,6 +35239,23 @@ export declare const OperationIds: Readonly<{
   EspnTeam: "espn-team";
   EspnTeamRoster: "espn-team-roster";
   EspnTeams: "espn-teams";
+  EtsyListing: "etsy-listing";
+  EtsyListingReviews: "etsy-listing-reviews";
+  EtsySearch: "etsy-search";
+  EtsyShop: "etsy-shop";
+  EtsyShopListings: "etsy-shop-listings";
+  EtsyShopReviews: "etsy-shop-reviews";
+  EtsyShopSearch: "etsy-shop-search";
+  ExpediaActivitiesSearch: "expedia-activities-search";
+  ExpediaFlightsSearch: "expedia-flights-search";
+  ExpediaLocationsSearch: "expedia-locations-search";
+  ExpediaPropertiesDetail: "expedia-properties-detail";
+  ExpediaPropertiesFilters: "expedia-properties-filters";
+  ExpediaPropertiesReviews: "expedia-properties-reviews";
+  ExpediaPropertiesSearch: "expedia-properties-search";
+  FacebookGroup: "facebook-group";
+  FacebookMarketplaceItem: "facebook-marketplace-item";
+  FacebookMarketplaceSearch: "facebook-marketplace-search";
   FacebookPage: "facebook-page";
   GeocodingLookup: "geocoding-lookup";
   GeocodingReverse: "geocoding-reverse";
@@ -32985,6 +35360,11 @@ export declare const OperationIds: Readonly<{
   ImdbTitleReviews: "imdb-title-reviews";
   ImdbTitleTechnicalSpecs: "imdb-title-technical-specs";
   ImdbTitleTrivia: "imdb-title-trivia";
+  ImportYetiImportyetiCompany: "importyeti-company";
+  ImportYetiImportyetiSearch: "importyeti-search";
+  IndeedJob: "indeed-job";
+  IndeedLocationsSuggest: "indeed-locations-suggest";
+  IndeedSearch: "indeed-search";
   InstagramPost: "instagram-post";
   InstagramProfile: "instagram-profile";
   InstagramReels: "instagram-reels";
@@ -33118,6 +35498,10 @@ export declare const OperationIds: Readonly<{
   NumbeoIndicesCountry: "numbeo-indices-country";
   NumbeoIndicesRankings: "numbeo-indices-rankings";
   NumbeoIndicesRankingsByCountry: "numbeo-indices-rankings-by-country";
+  OpenTableOpentableRestaurant: "opentable-restaurant";
+  OpenTableOpentableRestaurantMenus: "opentable-restaurant-menus";
+  OpenTableOpentableRestaurantReviews: "opentable-restaurant-reviews";
+  OpenTableOpentableSearch: "opentable-search";
   PitchBookPitchbookAdvisor: "pitchbook-advisor";
   PitchBookPitchbookCompany: "pitchbook-company";
   PitchBookPitchbookFund: "pitchbook-fund";
@@ -33488,6 +35872,14 @@ export declare const OperationIds: Readonly<{
   YahooFinanceTickerSustainability: "yahoo-finance-ticker-sustainability";
   YahooFinanceTickerValuation: "yahoo-finance-ticker-valuation";
   YahooFinanceTrending: "yahoo-finance-trending";
+  YelpBusiness: "yelp-business";
+  YelpBusinessMenu: "yelp-business-menu";
+  YelpBusinessPhotos: "yelp-business-photos";
+  YelpBusinessReviewHighlights: "yelp-business-review-highlights";
+  YelpBusinessReviews: "yelp-business-reviews";
+  YelpBusinessReviewsSearch: "yelp-business-reviews-search";
+  YelpGeocode: "yelp-geocode";
+  YelpSearch: "yelp-search";
   YoutubeCaptions: "youtube-captions";
   YoutubeChannelPlaylists: "youtube-channel-playlists";
   YoutubeChannelSearch: "youtube-channel-search";
@@ -33501,6 +35893,11 @@ export declare const OperationIds: Readonly<{
   YoutubeTranscript: "youtube-transcript";
   YoutubeTranscriptLanguages: "youtube-transcript-languages";
   YoutubeVideo: "youtube-video";
+  ZalandoCategory: "zalando-category";
+  ZalandoMarkets: "zalando-markets";
+  ZalandoProduct: "zalando-product";
+  ZalandoSearch: "zalando-search";
+  ZalandoSuggest: "zalando-suggest";
   ZillowAutocomplete: "zillow-autocomplete";
   ZillowProperty: "zillow-property";
   ZillowSearch: "zillow-search";

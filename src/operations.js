@@ -2151,6 +2151,164 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "autotrader-dealer": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "autotrader-dealer",
+    "method": "GET",
+    "path": "/autotrader/dealer/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "autotrader-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "autotrader-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/autotrader/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "zip",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "radius",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "make",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "model",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "trim",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "new",
+          "used",
+          "certified",
+          "3p_cert"
+        ],
+        "in": "query",
+        "name": "condition",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "convertible",
+          "coupe",
+          "hatchback",
+          "sedan",
+          "suv",
+          "truck",
+          "van",
+          "wagon"
+        ],
+        "in": "query",
+        "name": "body_style",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "dealer",
+          "private"
+        ],
+        "in": "query",
+        "name": "seller_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_mileage",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "autotrader-vehicle": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "autotrader-vehicle",
+    "method": "GET",
+    "path": "/autotrader/vehicle/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "billing-me": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -2591,6 +2749,397 @@ export const operations = {
         "in": "query",
         "name": "lang",
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "booking-attractions-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "booking-attractions-detail",
+    "method": "GET",
+    "path": "/booking-attractions/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "booking-attractions-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "booking-attractions-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/booking-attractions/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "product_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "booking-attractions-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "booking-attractions-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/booking-attractions/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_date",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subcategory",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "booking-flights-autocomplete": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "booking-flights-autocomplete",
+    "method": "GET",
+    "path": "/booking-flights/autocomplete",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "to",
+          "from"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "origin",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "origin_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "booking-flights-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "booking-flights-search",
+    "method": "GET",
+    "path": "/booking-flights/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ROUNDTRIP",
+          "ONEWAY"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from_country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to_country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "depart",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "return",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "adults",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "children",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cabin_class",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "booking-hotel-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "booking-hotel-detail",
+    "method": "GET",
+    "path": "/booking/hotel-detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "hotel_id",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "booking-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "booking-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/booking/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "hotel_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "destination_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "hotel_country_code",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "hotel_score",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "search_text",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "booking-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "booking-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/booking/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "checkin",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "checkout",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "adults",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "rooms",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "children",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -14595,6 +15144,38 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "doordash-explore": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-explore",
+    "method": "GET",
+    "path": "/doordash/explore",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "doordash-feed": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -14853,6 +15434,40 @@ export const operations = {
     "id": "doordash-store-fulfillment",
     "method": "GET",
     "path": "/doordash/store/{store_id}/fulfillment",
+    "pathParams": [
+      "store_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "doordash-store-info": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "doordash-store-info",
+    "method": "GET",
+    "path": "/doordash/store/{store_id}/info",
     "pathParams": [
       "store_id"
     ],
@@ -15677,6 +16292,360 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "etsy-listing": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "etsy-listing",
+    "method": "GET",
+    "path": "/etsy/listing/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "etsy-listing-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "etsy-listing-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/etsy/listing/{id}/reviews",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "newest",
+          "oldest",
+          "highest_rating",
+          "lowest_rating",
+          "most_relevant"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "etsy-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "etsy-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/etsy/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "etsy-shop": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "etsy-shop",
+    "method": "GET",
+    "path": "/etsy/shop/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "etsy-shop-listings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "etsy-shop-listings",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/etsy/shop/{id}/listings",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "etsy-shop-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "etsy-shop-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/etsy/shop/{id}/reviews",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "etsy-shop-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "etsy-shop-search",
+    "method": "GET",
+    "path": "/etsy/shop/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expedia-activities-search": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "expedia-activities-search",
+    "method": "POST",
+    "path": "/expedia/activities/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expedia-flights-search": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "expedia-flights-search",
+    "method": "POST",
+    "path": "/expedia/flights/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expedia-locations-search": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "expedia-locations-search",
+    "method": "POST",
+    "path": "/expedia/locations/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expedia-properties-detail": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "expedia-properties-detail",
+    "method": "POST",
+    "path": "/expedia/properties/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expedia-properties-filters": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "expedia-properties-filters",
+    "method": "POST",
+    "path": "/expedia/properties/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expedia-properties-reviews": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "expedia-properties-reviews",
+    "method": "POST",
+    "path": "/expedia/properties/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expedia-properties-search": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "expedia-properties-search",
+    "method": "POST",
+    "path": "/expedia/properties/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "extract": {
     "bodyParam": "extractOption",
     "bodyRequired": true,
@@ -15692,6 +16661,147 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "facebook-group": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "facebook-group",
+    "method": "GET",
+    "path": "/facebook/groups/{group}",
+    "pathParams": [
+      "group"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "facebook-marketplace-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "facebook-marketplace-item",
+    "method": "GET",
+    "path": "/facebook/marketplace/item/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "facebook-marketplace-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "facebook-marketplace-search",
+    "method": "GET",
+    "path": "/facebook/marketplace/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "location",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "vehicles",
+          "property_rentals",
+          "classifieds",
+          "apparel",
+          "electronics",
+          "entertainment",
+          "family",
+          "free",
+          "garden_outdoors",
+          "hobbies",
+          "home_goods",
+          "home_improvement",
+          "musical_instruments",
+          "office_supplies",
+          "pet_supplies",
+          "property_sale",
+          "sporting_goods",
+          "toys_games"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "best_match",
+          "distance_ascend",
+          "creation_time_descend",
+          "price_ascend",
+          "price_descend"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "7",
+          "30"
+        ],
+        "in": "query",
+        "name": "days_since_listed",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "new",
+          "used_like_new",
+          "used_good",
+          "used_fair"
+        ],
+        "in": "query",
+        "name": "condition",
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -19379,6 +20489,177 @@ export const operations = {
         "in": "query",
         "name": "url",
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "importyeti-company": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "importyeti-company",
+    "method": "GET",
+    "path": "/importyeti/company",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "importyeti-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "importyeti-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/importyeti/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "indeed-job": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "indeed-job",
+    "method": "GET",
+    "path": "/indeed/job",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "jk",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "indeed-locations-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "indeed-locations-suggest",
+    "method": "GET",
+    "path": "/indeed/locations/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "indeed-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "indeed-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/indeed/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "l",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "date"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "radius",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "fromage",
+        "type": "integer"
       }
     ],
     "security": [
@@ -24058,6 +25339,158 @@ export const operations = {
         "name": "index",
         "required": true,
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "opentable-restaurant": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "opentable-restaurant",
+    "method": "GET",
+    "path": "/opentable/restaurant",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "restaurant_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_time",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "party_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "opentable-restaurant-menus": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "opentable-restaurant-menus",
+    "method": "GET",
+    "path": "/opentable/restaurant/menus",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "restaurant_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "opentable-restaurant-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "opentable-restaurant-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/opentable/restaurant/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "restaurant_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "opentable-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "opentable-search",
+    "method": "GET",
+    "path": "/opentable/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "date_time",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "party_size",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "size",
+        "type": "integer"
       }
     ],
     "security": [
@@ -37249,6 +38682,232 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "yelp-business": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yelp-business",
+    "method": "GET",
+    "path": "/yelp/business/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yelp-business-menu": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yelp-business-menu",
+    "method": "GET",
+    "path": "/yelp/business/{id}/menu",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yelp-business-photos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yelp-business-photos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/yelp/business/{id}/photos",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yelp-business-review-highlights": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yelp-business-review-highlights",
+    "method": "GET",
+    "path": "/yelp/business/{id}/reviews/highlights",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yelp-business-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yelp-business-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/yelp/business/{id}/reviews",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yelp-business-reviews-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yelp-business-reviews-search",
+    "method": "GET",
+    "path": "/yelp/business/{id}/reviews/search",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yelp-geocode": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yelp-geocode",
+    "method": "GET",
+    "path": "/yelp/geocode",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "address",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yelp-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yelp-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/yelp/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "youtube-captions": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -37675,6 +39334,251 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "zalando-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "zalando-category",
+    "method": "GET",
+    "path": "/zalando/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "at",
+          "be",
+          "ch",
+          "cz",
+          "de",
+          "dk",
+          "ee",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "hr",
+          "hu",
+          "ie",
+          "it",
+          "lt",
+          "lu",
+          "lv",
+          "nl",
+          "no",
+          "pl",
+          "ro",
+          "se",
+          "si",
+          "sk"
+        ],
+        "in": "query",
+        "name": "market",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "zalando-markets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "zalando-markets",
+    "method": "GET",
+    "path": "/zalando/markets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "zalando-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "zalando-product",
+    "method": "GET",
+    "path": "/zalando/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "sku",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "at",
+          "be",
+          "ch",
+          "cz",
+          "de",
+          "dk",
+          "ee",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "hr",
+          "hu",
+          "ie",
+          "it",
+          "lt",
+          "lu",
+          "lv",
+          "nl",
+          "no",
+          "pl",
+          "ro",
+          "se",
+          "si",
+          "sk"
+        ],
+        "in": "query",
+        "name": "market",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "zalando-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "zalando-search",
+    "method": "GET",
+    "path": "/zalando/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "at",
+          "be",
+          "ch",
+          "cz",
+          "de",
+          "dk",
+          "ee",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "hr",
+          "hu",
+          "ie",
+          "it",
+          "lt",
+          "lu",
+          "lv",
+          "nl",
+          "no",
+          "pl",
+          "ro",
+          "se",
+          "si",
+          "sk"
+        ],
+        "in": "query",
+        "name": "market",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "zalando-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "zalando-suggest",
+    "method": "GET",
+    "path": "/zalando/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "at",
+          "be",
+          "ch",
+          "cz",
+          "de",
+          "dk",
+          "ee",
+          "es",
+          "fi",
+          "fr",
+          "gb",
+          "hr",
+          "hu",
+          "ie",
+          "it",
+          "lt",
+          "lu",
+          "lv",
+          "nl",
+          "no",
+          "pl",
+          "ro",
+          "se",
+          "si",
+          "sk"
+        ],
+        "in": "query",
+        "name": "market",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "zillow-autocomplete": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -37891,6 +39795,11 @@ export const groups = {
     "showEpisodes": "apple-podcasts-show-episodes",
     "showRelated": "apple-podcasts-show-related"
   },
+  "autotrader": {
+    "dealer": "autotrader-dealer",
+    "search": "autotrader-search",
+    "vehicle": "autotrader-vehicle"
+  },
   "billing": {
     "me": "billing-me",
     "meCheckout": "billing-me-checkout",
@@ -37907,6 +39816,16 @@ export const groups = {
     "search": "bing-search",
     "suggest": "bing-suggest",
     "videos": "bing-videos"
+  },
+  "booking": {
+    "attractionsDetail": "booking-attractions-detail",
+    "attractionsReviews": "booking-attractions-reviews",
+    "attractionsSearch": "booking-attractions-search",
+    "flightsAutocomplete": "booking-flights-autocomplete",
+    "flightsSearch": "booking-flights-search",
+    "hotelDetail": "booking-hotel-detail",
+    "reviews": "booking-reviews",
+    "search": "booking-search"
   },
   "boxOfficeMojo": {
     "boxofficemojoBrand": "boxofficemojo-brand",
@@ -38104,6 +40023,7 @@ export const groups = {
     "search": "discogs-search"
   },
   "doorDash": {
+    "doordashExplore": "doordash-explore",
     "doordashFeed": "doordash-feed",
     "doordashSearch": "doordash-search",
     "doordashSearchAutocomplete": "doordash-search-autocomplete",
@@ -38111,6 +40031,7 @@ export const groups = {
     "doordashSearchItems": "doordash-search-items",
     "doordashStore": "doordash-store",
     "doordashStoreFulfillment": "doordash-store-fulfillment",
+    "doordashStoreInfo": "doordash-store-info",
     "doordashStoreItem": "doordash-store-item",
     "doordashStoreMenu": "doordash-store-menu",
     "doordashStoreReviews": "doordash-store-reviews"
@@ -38134,7 +40055,28 @@ export const groups = {
     "teamRoster": "espn-team-roster",
     "teams": "espn-teams"
   },
+  "etsy": {
+    "listing": "etsy-listing",
+    "listingReviews": "etsy-listing-reviews",
+    "search": "etsy-search",
+    "shop": "etsy-shop",
+    "shopListings": "etsy-shop-listings",
+    "shopReviews": "etsy-shop-reviews",
+    "shopSearch": "etsy-shop-search"
+  },
+  "expedia": {
+    "activitiesSearch": "expedia-activities-search",
+    "flightsSearch": "expedia-flights-search",
+    "locationsSearch": "expedia-locations-search",
+    "propertiesDetail": "expedia-properties-detail",
+    "propertiesFilters": "expedia-properties-filters",
+    "propertiesReviews": "expedia-properties-reviews",
+    "propertiesSearch": "expedia-properties-search"
+  },
   "facebook": {
+    "group": "facebook-group",
+    "marketplaceItem": "facebook-marketplace-item",
+    "marketplaceSearch": "facebook-marketplace-search",
     "page": "facebook-page"
   },
   "geocoding": {
@@ -38253,6 +40195,15 @@ export const groups = {
     "titleReviews": "imdb-title-reviews",
     "titleTechnicalSpecs": "imdb-title-technical-specs",
     "titleTrivia": "imdb-title-trivia"
+  },
+  "importYeti": {
+    "importyetiCompany": "importyeti-company",
+    "importyetiSearch": "importyeti-search"
+  },
+  "indeed": {
+    "job": "indeed-job",
+    "locationsSuggest": "indeed-locations-suggest",
+    "search": "indeed-search"
   },
   "instagram": {
     "post": "instagram-post",
@@ -38412,6 +40363,12 @@ export const groups = {
     "indicesCountry": "numbeo-indices-country",
     "indicesRankings": "numbeo-indices-rankings",
     "indicesRankingsByCountry": "numbeo-indices-rankings-by-country"
+  },
+  "openTable": {
+    "opentableRestaurant": "opentable-restaurant",
+    "opentableRestaurantMenus": "opentable-restaurant-menus",
+    "opentableRestaurantReviews": "opentable-restaurant-reviews",
+    "opentableSearch": "opentable-search"
   },
   "pitchBook": {
     "pitchbookAdvisor": "pitchbook-advisor",
@@ -38847,6 +40804,16 @@ export const groups = {
     "tickerValuation": "yahoo-finance-ticker-valuation",
     "trending": "yahoo-finance-trending"
   },
+  "yelp": {
+    "business": "yelp-business",
+    "businessMenu": "yelp-business-menu",
+    "businessPhotos": "yelp-business-photos",
+    "businessReviewHighlights": "yelp-business-review-highlights",
+    "businessReviews": "yelp-business-reviews",
+    "businessReviewsSearch": "yelp-business-reviews-search",
+    "geocode": "yelp-geocode",
+    "search": "yelp-search"
+  },
   "youtube": {
     "captions": "youtube-captions",
     "channelPlaylists": "youtube-channel-playlists",
@@ -38862,6 +40829,13 @@ export const groups = {
     "transcriptLanguages": "youtube-transcript-languages",
     "video": "youtube-video"
   },
+  "zalando": {
+    "category": "zalando-category",
+    "markets": "zalando-markets",
+    "product": "zalando-product",
+    "search": "zalando-search",
+    "suggest": "zalando-suggest"
+  },
   "zillow": {
     "autocomplete": "zillow-autocomplete",
     "property": "zillow-property",
@@ -38869,7 +40843,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 895;
+export const operationCount = 947;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -38929,6 +40903,9 @@ export const OperationIds = Object.freeze({
   "ApplePodcastsShow": "apple-podcasts-show",
   "ApplePodcastsShowEpisodes": "apple-podcasts-show-episodes",
   "ApplePodcastsShowRelated": "apple-podcasts-show-related",
+  "AutotraderDealer": "autotrader-dealer",
+  "AutotraderSearch": "autotrader-search",
+  "AutotraderVehicle": "autotrader-vehicle",
   "BillingMe": "billing-me",
   "BillingMeCheckout": "billing-me-checkout",
   "BillingMeEvents": "billing-me-events",
@@ -38942,6 +40919,14 @@ export const OperationIds = Object.freeze({
   "BingSearch": "bing-search",
   "BingSuggest": "bing-suggest",
   "BingVideos": "bing-videos",
+  "BookingAttractionsDetail": "booking-attractions-detail",
+  "BookingAttractionsReviews": "booking-attractions-reviews",
+  "BookingAttractionsSearch": "booking-attractions-search",
+  "BookingFlightsAutocomplete": "booking-flights-autocomplete",
+  "BookingFlightsSearch": "booking-flights-search",
+  "BookingHotelDetail": "booking-hotel-detail",
+  "BookingReviews": "booking-reviews",
+  "BookingSearch": "booking-search",
   "BoxOfficeMojoBoxofficemojoBrand": "boxofficemojo-brand",
   "BoxOfficeMojoBoxofficemojoBrands": "boxofficemojo-brands",
   "BoxOfficeMojoBoxofficemojoCalendar": "boxofficemojo-calendar",
@@ -39121,6 +41106,7 @@ export const OperationIds = Object.freeze({
   "DiscogsMaster": "discogs-master",
   "DiscogsRelease": "discogs-release",
   "DiscogsSearch": "discogs-search",
+  "DoorDashDoordashExplore": "doordash-explore",
   "DoorDashDoordashFeed": "doordash-feed",
   "DoorDashDoordashSearch": "doordash-search",
   "DoorDashDoordashSearchAutocomplete": "doordash-search-autocomplete",
@@ -39128,6 +41114,7 @@ export const OperationIds = Object.freeze({
   "DoorDashDoordashSearchItems": "doordash-search-items",
   "DoorDashDoordashStore": "doordash-store",
   "DoorDashDoordashStoreFulfillment": "doordash-store-fulfillment",
+  "DoorDashDoordashStoreInfo": "doordash-store-info",
   "DoorDashDoordashStoreItem": "doordash-store-item",
   "DoorDashDoordashStoreMenu": "doordash-store-menu",
   "DoorDashDoordashStoreReviews": "doordash-store-reviews",
@@ -39146,6 +41133,23 @@ export const OperationIds = Object.freeze({
   "EspnTeam": "espn-team",
   "EspnTeamRoster": "espn-team-roster",
   "EspnTeams": "espn-teams",
+  "EtsyListing": "etsy-listing",
+  "EtsyListingReviews": "etsy-listing-reviews",
+  "EtsySearch": "etsy-search",
+  "EtsyShop": "etsy-shop",
+  "EtsyShopListings": "etsy-shop-listings",
+  "EtsyShopReviews": "etsy-shop-reviews",
+  "EtsyShopSearch": "etsy-shop-search",
+  "ExpediaActivitiesSearch": "expedia-activities-search",
+  "ExpediaFlightsSearch": "expedia-flights-search",
+  "ExpediaLocationsSearch": "expedia-locations-search",
+  "ExpediaPropertiesDetail": "expedia-properties-detail",
+  "ExpediaPropertiesFilters": "expedia-properties-filters",
+  "ExpediaPropertiesReviews": "expedia-properties-reviews",
+  "ExpediaPropertiesSearch": "expedia-properties-search",
+  "FacebookGroup": "facebook-group",
+  "FacebookMarketplaceItem": "facebook-marketplace-item",
+  "FacebookMarketplaceSearch": "facebook-marketplace-search",
   "FacebookPage": "facebook-page",
   "GeocodingLookup": "geocoding-lookup",
   "GeocodingReverse": "geocoding-reverse",
@@ -39250,6 +41254,11 @@ export const OperationIds = Object.freeze({
   "ImdbTitleReviews": "imdb-title-reviews",
   "ImdbTitleTechnicalSpecs": "imdb-title-technical-specs",
   "ImdbTitleTrivia": "imdb-title-trivia",
+  "ImportYetiImportyetiCompany": "importyeti-company",
+  "ImportYetiImportyetiSearch": "importyeti-search",
+  "IndeedJob": "indeed-job",
+  "IndeedLocationsSuggest": "indeed-locations-suggest",
+  "IndeedSearch": "indeed-search",
   "InstagramPost": "instagram-post",
   "InstagramProfile": "instagram-profile",
   "InstagramReels": "instagram-reels",
@@ -39383,6 +41392,10 @@ export const OperationIds = Object.freeze({
   "NumbeoIndicesCountry": "numbeo-indices-country",
   "NumbeoIndicesRankings": "numbeo-indices-rankings",
   "NumbeoIndicesRankingsByCountry": "numbeo-indices-rankings-by-country",
+  "OpenTableOpentableRestaurant": "opentable-restaurant",
+  "OpenTableOpentableRestaurantMenus": "opentable-restaurant-menus",
+  "OpenTableOpentableRestaurantReviews": "opentable-restaurant-reviews",
+  "OpenTableOpentableSearch": "opentable-search",
   "PitchBookPitchbookAdvisor": "pitchbook-advisor",
   "PitchBookPitchbookCompany": "pitchbook-company",
   "PitchBookPitchbookFund": "pitchbook-fund",
@@ -39753,6 +41766,14 @@ export const OperationIds = Object.freeze({
   "YahooFinanceTickerSustainability": "yahoo-finance-ticker-sustainability",
   "YahooFinanceTickerValuation": "yahoo-finance-ticker-valuation",
   "YahooFinanceTrending": "yahoo-finance-trending",
+  "YelpBusiness": "yelp-business",
+  "YelpBusinessMenu": "yelp-business-menu",
+  "YelpBusinessPhotos": "yelp-business-photos",
+  "YelpBusinessReviewHighlights": "yelp-business-review-highlights",
+  "YelpBusinessReviews": "yelp-business-reviews",
+  "YelpBusinessReviewsSearch": "yelp-business-reviews-search",
+  "YelpGeocode": "yelp-geocode",
+  "YelpSearch": "yelp-search",
   "YoutubeCaptions": "youtube-captions",
   "YoutubeChannelPlaylists": "youtube-channel-playlists",
   "YoutubeChannelSearch": "youtube-channel-search",
@@ -39766,6 +41787,11 @@ export const OperationIds = Object.freeze({
   "YoutubeTranscript": "youtube-transcript",
   "YoutubeTranscriptLanguages": "youtube-transcript-languages",
   "YoutubeVideo": "youtube-video",
+  "ZalandoCategory": "zalando-category",
+  "ZalandoMarkets": "zalando-markets",
+  "ZalandoProduct": "zalando-product",
+  "ZalandoSearch": "zalando-search",
+  "ZalandoSuggest": "zalando-suggest",
   "ZillowAutocomplete": "zillow-autocomplete",
   "ZillowProperty": "zillow-property",
   "ZillowSearch": "zillow-search"
