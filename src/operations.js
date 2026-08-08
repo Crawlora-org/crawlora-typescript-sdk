@@ -7614,6 +7614,7 @@ export const operations = {
     "formParams": [],
     "id": "congress-stock-disclosures",
     "method": "GET",
+    "paginatable": true,
     "path": "/congress/stock-disclosures",
     "pathParams": [],
     "produces": [
@@ -7686,6 +7687,11 @@ export const operations = {
         "in": "query",
         "name": "sort",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       },
       {
         "in": "query",

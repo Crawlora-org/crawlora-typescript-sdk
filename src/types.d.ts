@@ -4862,6 +4862,8 @@ export interface ModelCongressStockDisclosureResponse {
   "count"?: number;
   "fetched_at"?: string;
   "from"?: string;
+  "limit"?: number;
+  "page"?: number;
   "query"?: string;
   "results"?: Array<ModelCongressHouseDisclosure>;
   "sort"?: string;
@@ -26409,6 +26411,7 @@ export interface CongressStockDisclosuresParams {
   "from"?: string;
   "to"?: string;
   "sort"?: "name_asc" | "name_desc" | "office_asc" | "office_desc" | "filing_year_asc" | "filing_year_desc";
+  "page"?: number;
   "limit"?: number;
 }
 
