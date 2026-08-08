@@ -26402,8 +26402,12 @@ export type CongressStockDisclosuresResponse = CrawloraResponse<ModelCongressSto
 export interface CongressStockDisclosuresParams {
   "chamber"?: "house" | "senate";
   "member"?: string;
+  "first_name"?: string;
+  "last_name"?: string;
   "ticker"?: string;
   "state"?: string;
+  "senator_state"?: string;
+  "candidate_state"?: string;
   "district"?: string;
   "filer_type"?: string;
   "election_year"?: string;

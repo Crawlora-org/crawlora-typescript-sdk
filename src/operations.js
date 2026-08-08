@@ -7637,12 +7637,32 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "first_name",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "last_name",
+        "type": "string"
+      },
+      {
+        "in": "query",
         "name": "ticker",
         "type": "string"
       },
       {
         "in": "query",
         "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "senator_state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "candidate_state",
         "type": "string"
       },
       {
