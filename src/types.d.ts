@@ -3,6 +3,258 @@
 export type CrawloraResponse<T = unknown> = T;
 export type CrawloraBody<T = Record<string, unknown>> = T;
 
+export interface ModelAgodaActivitiesSearchResponse {
+  "activities"?: Array<ModelAgodaActivitySummary>;
+  "city_id"?: number;
+  "count"?: number;
+  "keyword"?: string;
+}
+
+export interface ModelAgodaActivityCategory {
+  "code"?: string;
+  "id"?: number;
+  "is_primary"?: boolean;
+}
+
+export interface ModelAgodaActivityDetailResponse {
+  "activity_id"?: number;
+  "categories"?: Array<string>;
+  "description"?: string;
+  "duration"?: ModelAgodaActivityDuration;
+  "images"?: Array<ModelAgodaActivityImage>;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelAgodaActivityDuration {
+  "minutes"?: number;
+  "type"?: string;
+}
+
+export interface ModelAgodaActivityImage {
+  "description"?: string;
+  "image_type"?: string;
+  "url"?: string;
+}
+
+export interface ModelAgodaActivitySummary {
+  "activity_id"?: number;
+  "categories"?: Array<ModelAgodaActivityCategory>;
+  "city_id"?: number;
+  "city_name"?: string;
+  "name"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelAgodaAddress {
+  "address1"?: string;
+  "city"?: ModelAgodaCity;
+  "country"?: ModelAgodaCountry;
+  "postal_code"?: string;
+}
+
+export interface ModelAgodaCity {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelAgodaCountry {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelAgodaDetailResponse {
+  "accommodation_type"?: number;
+  "address"?: ModelAgodaAddress;
+  "chain_id"?: number;
+  "children_stay_free_type_id"?: number;
+  "description_long"?: string;
+  "description_short"?: string;
+  "display_name"?: string;
+  "formerly_name"?: string;
+  "main_image_url"?: string;
+  "number_of_rooms"?: string;
+  "policy"?: ModelAgodaPolicy;
+  "property_id"?: number;
+  "rating"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelAgodaFlightAirlineRef {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelAgodaFlightAirportRef {
+  "city"?: string;
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelAgodaFlightAirportSuggestion {
+  "code"?: string;
+  "distance_km"?: number;
+  "lat"?: number;
+  "lng"?: number;
+  "name"?: string;
+}
+
+export interface ModelAgodaFlightAmenitySegmentInput {
+  "cabin_class": string;
+  "carrier_code": string;
+  "departure_date_time": string;
+  "destination_airport": string;
+  "fare_basis_code"?: string;
+  "flight_number": string;
+  "origin_airport": string;
+}
+
+export interface ModelAgodaFlightAmenitySegmentResult {
+  "amenities"?: Array<string>;
+  "flight_number"?: string;
+}
+
+export interface ModelAgodaFlightItinerary {
+  "airline"?: ModelAgodaFlightAirlineRef;
+  "bundle_ref_id"?: string;
+  "duration"?: string;
+  "price"?: ModelAgodaFlightPrice;
+  "segments"?: Array<ModelAgodaFlightSegment>;
+  "source_url"?: string;
+  "stops_count"?: number;
+}
+
+export interface ModelAgodaFlightItineraryAmenitiesOption {
+  "segments": Array<ModelAgodaFlightAmenitySegmentInput>;
+}
+
+export interface ModelAgodaFlightItineraryAmenitiesResponse {
+  "count"?: number;
+  "segments"?: Array<ModelAgodaFlightAmenitySegmentResult>;
+}
+
+export interface ModelAgodaFlightLayover {
+  "airport"?: string;
+  "duration"?: string;
+}
+
+export interface ModelAgodaFlightLocationSearchResponse {
+  "count"?: number;
+  "keyword"?: string;
+  "suggestions"?: Array<ModelAgodaFlightLocationSuggestion>;
+}
+
+export interface ModelAgodaFlightLocationSuggestion {
+  "airports"?: Array<ModelAgodaFlightAirportSuggestion>;
+  "city_code"?: string;
+  "country_code"?: string;
+  "country_name"?: string;
+  "name"?: string;
+  "nearby_airports"?: Array<ModelAgodaFlightAirportSuggestion>;
+  "state_name"?: string;
+}
+
+export interface ModelAgodaFlightPoint {
+  "airport"?: ModelAgodaFlightAirportRef;
+  "date_time"?: string;
+}
+
+export interface ModelAgodaFlightPrice {
+  "amount"?: string;
+  "currency"?: string;
+}
+
+export interface ModelAgodaFlightSearchResponse {
+  "adults"?: number;
+  "cabin_class"?: string;
+  "children"?: number;
+  "count"?: number;
+  "departure_date"?: string;
+  "destination"?: string;
+  "infants"?: number;
+  "itineraries"?: Array<ModelAgodaFlightItinerary>;
+  "last_page"?: boolean;
+  "origin"?: string;
+  "page"?: number;
+}
+
+export interface ModelAgodaFlightSegment {
+  "aircraft"?: string;
+  "airline"?: ModelAgodaFlightAirlineRef;
+  "arrival"?: ModelAgodaFlightPoint;
+  "cabin_class"?: string;
+  "cabin_code"?: string;
+  "departure"?: ModelAgodaFlightPoint;
+  "duration"?: string;
+  "fare_basis_code"?: string;
+  "flight_number"?: string;
+  "layover"?: ModelAgodaFlightLayover;
+}
+
+export interface ModelAgodaHomesSearchResponse {
+  "city_id"?: number;
+  "count"?: number;
+  "homes"?: Array<ModelAgodaDetailResponse>;
+  "limit"?: number;
+  "page"?: number;
+}
+
+export interface ModelAgodaPolicy {
+  "additional"?: Array<string>;
+  "adult"?: Array<string>;
+  "extra_bed"?: Array<string>;
+  "min_age"?: Array<string>;
+}
+
+export interface ModelAgodaPropertySummary {
+  "property_id"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelAgodaSearchResponse {
+  "city_id"?: number;
+  "count"?: number;
+  "limit"?: number;
+  "page"?: number;
+  "properties"?: Array<ModelAgodaPropertySummary>;
+}
+
+export interface ModelAgodaActivitiesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAgodaActivitiesSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAgodaFlightItineraryAmenitiesResponseDoc {
+  "code"?: number;
+  "data"?: ModelAgodaFlightItineraryAmenitiesResponse;
+  "msg"?: string;
+}
+
+export interface ModelAgodaFlightLocationSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAgodaFlightLocationSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAgodaFlightSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAgodaFlightSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAgodaHomesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAgodaHomesSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAgodaSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAgodaSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelAirbnbCalendarDay {
   "available"?: boolean;
   "available_for_checkin"?: boolean;
@@ -1903,6 +2155,143 @@ export interface ModelBingVideosResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelBlueskyActor {
+  "avatar_url"?: string;
+  "created_at"?: string;
+  "description"?: string;
+  "did"?: string;
+  "display_name"?: string;
+  "handle"?: string;
+}
+
+export interface ModelBlueskyAuthorFeedResponse {
+  "cursor"?: string;
+  "posts"?: Array<ModelBlueskyPost>;
+}
+
+export interface ModelBlueskyFollowersResponse {
+  "cursor"?: string;
+  "followers"?: Array<ModelBlueskyActor>;
+  "subject"?: ModelBlueskyActor;
+}
+
+export interface ModelBlueskyFollowsResponse {
+  "cursor"?: string;
+  "follows"?: Array<ModelBlueskyActor>;
+  "subject"?: ModelBlueskyActor;
+}
+
+export interface ModelBlueskyPost {
+  "author"?: ModelBlueskyActor;
+  "cid"?: string;
+  "created_at"?: string;
+  "external"?: ModelBlueskyPostEmbedExternal;
+  "images"?: Array<ModelBlueskyPostEmbedImage>;
+  "indexed_at"?: string;
+  "langs"?: Array<string>;
+  "like_count"?: number;
+  "quote_count"?: number;
+  "quoted_post_uri"?: string;
+  "reply_count"?: number;
+  "repost_count"?: number;
+  "text"?: string;
+  "uri"?: string;
+  "url"?: string;
+}
+
+export interface ModelBlueskyPostEmbedExternal {
+  "description"?: string;
+  "thumb_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBlueskyPostEmbedImage {
+  "alt"?: string;
+  "fullsize_url"?: string;
+  "thumb_url"?: string;
+}
+
+export interface ModelBlueskyPostThreadResponse {
+  "thread"?: ModelBlueskyThreadPost;
+}
+
+export interface ModelBlueskyProfile {
+  "avatar_url"?: string;
+  "banner_url"?: string;
+  "created_at"?: string;
+  "description"?: string;
+  "did"?: string;
+  "display_name"?: string;
+  "followers_count"?: number;
+  "follows_count"?: number;
+  "handle"?: string;
+  "indexed_at"?: string;
+  "posts_count"?: number;
+}
+
+export interface ModelBlueskySearchActorsResponse {
+  "actors"?: Array<ModelBlueskyActor>;
+  "cursor"?: string;
+}
+
+export interface ModelBlueskyThreadPost {
+  "post"?: ModelBlueskyPost;
+  "replies"?: Array<ModelBlueskyThreadPost>;
+}
+
+export interface ModelBlueskyTrendingTopic {
+  "link"?: string;
+  "topic"?: string;
+}
+
+export interface ModelBlueskyTrendingTopicsResponse {
+  "suggested"?: Array<ModelBlueskyTrendingTopic>;
+  "topics"?: Array<ModelBlueskyTrendingTopic>;
+}
+
+export interface ModelBlueskyAuthorFeedResponseDoc {
+  "code"?: number;
+  "data"?: ModelBlueskyAuthorFeedResponse;
+  "msg"?: string;
+}
+
+export interface ModelBlueskyFollowersResponseDoc {
+  "code"?: number;
+  "data"?: ModelBlueskyFollowersResponse;
+  "msg"?: string;
+}
+
+export interface ModelBlueskyFollowsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBlueskyFollowsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBlueskyPostThreadResponseDoc {
+  "code"?: number;
+  "data"?: ModelBlueskyPostThreadResponse;
+  "msg"?: string;
+}
+
+export interface ModelBlueskyProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelBlueskyProfile;
+  "msg"?: string;
+}
+
+export interface ModelBlueskySearchActorsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBlueskySearchActorsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBlueskyTrendingTopicsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBlueskyTrendingTopicsResponse;
+  "msg"?: string;
+}
+
 export interface ModelBookingAttractionCategoryFilter {
   "name"?: string;
   "product_count"?: number;
@@ -3099,6 +3488,495 @@ export interface ModelCapterraSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelCarmaxEfficiency {
+  "battery_range_miles"?: number;
+  "is_mpg_equivalent"?: boolean;
+  "mpg_city"?: number;
+  "mpg_combined"?: number;
+  "mpg_highway"?: number;
+}
+
+export interface ModelCarmaxFeature {
+  "category"?: string;
+  "description"?: string;
+  "name"?: string;
+}
+
+export interface ModelCarmaxFilterCategory {
+  "display_name"?: string;
+  "name"?: string;
+  "range"?: ModelCarmaxFilterRange;
+  "type"?: string;
+  "values"?: Array<ModelCarmaxFilterValue>;
+}
+
+export interface ModelCarmaxFilterRange {
+  "histogram"?: Array<ModelCarmaxFilterRangeBucket>;
+  "increment"?: number;
+  "maximum"?: number;
+  "minimum"?: number;
+}
+
+export interface ModelCarmaxFilterRangeBucket {
+  "count"?: number;
+  "maximum"?: number;
+  "minimum"?: number;
+}
+
+export interface ModelCarmaxFilterValue {
+  "count"?: number;
+  "selected"?: boolean;
+  "url_segment"?: string;
+  "value"?: string;
+}
+
+export interface ModelCarmaxFuel {
+  "capacity_gallons"?: number;
+  "type"?: string;
+}
+
+export interface ModelCarmaxHistory {
+  "accident_count"?: number;
+  "owner_count"?: number;
+  "prior_uses"?: Array<string>;
+}
+
+export interface ModelCarmaxPriceInfo {
+  "fees"?: number;
+  "fees_included_in_price"?: boolean;
+  "is_price_reduced"?: boolean;
+  "previous_price"?: number;
+  "price"?: number;
+}
+
+export interface ModelCarmaxSearchResponse {
+  "filters"?: Array<ModelCarmaxFilterCategory>;
+  "page"?: number;
+  "page_size"?: number;
+  "source_url"?: string;
+  "total_count"?: number;
+  "vehicles"?: Array<ModelCarmaxVehicle>;
+}
+
+export interface ModelCarmaxSearchSuggestion {
+  "category"?: string;
+  "term"?: string;
+}
+
+export interface ModelCarmaxSearchSuggestionsResponse {
+  "source_url"?: string;
+  "suggestions"?: Array<ModelCarmaxSearchSuggestion>;
+}
+
+export interface ModelCarmaxShopByBrand {
+  "display_order"?: number;
+  "image_url"?: string;
+  "make"?: string;
+}
+
+export interface ModelCarmaxShopByBrandResponse {
+  "brands"?: Array<ModelCarmaxShopByBrand>;
+  "source_url"?: string;
+}
+
+export interface ModelCarmaxSpec {
+  "category"?: string;
+  "display_value"?: string;
+  "name"?: string;
+}
+
+export interface ModelCarmaxStore {
+  "city"?: string;
+  "distance_miles"?: number;
+  "id"?: number;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "state"?: string;
+}
+
+export interface ModelCarmaxStoreHours {
+  "close_time"?: string;
+  "days_of_week_display"?: string;
+  "end_day_of_week"?: number;
+  "hours_display"?: string;
+  "open_time"?: string;
+  "start_day_of_week"?: number;
+}
+
+export interface ModelCarmaxStoreLocation {
+  "active_status"?: string;
+  "address"?: string;
+  "address_line1"?: string;
+  "address_line2"?: string;
+  "city"?: string;
+  "distance_miles"?: number;
+  "hours"?: Array<ModelCarmaxStoreHours>;
+  "iana_time_zone"?: string;
+  "id"?: number;
+  "is_perfect_transfer_store"?: boolean;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone_numbers"?: Array<ModelCarmaxStorePhoneNumber>;
+  "primary_phone_number"?: string;
+  "state"?: string;
+  "state_abbreviation"?: string;
+  "store_availability"?: string;
+  "time_zone"?: string;
+  "url"?: string;
+  "zip_code"?: string;
+}
+
+export interface ModelCarmaxStorePhoneNumber {
+  "number"?: string;
+  "type"?: string;
+}
+
+export interface ModelCarmaxStoreResponse {
+  "active_status"?: string;
+  "address_line1"?: string;
+  "address_line2"?: string;
+  "city"?: string;
+  "hours"?: Array<ModelCarmaxStoreHours>;
+  "id"?: number;
+  "is_car_buying_center"?: boolean;
+  "is_microstore"?: boolean;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "source_url"?: string;
+  "state"?: string;
+  "state_abbreviation"?: string;
+  "toll_free_phone"?: string;
+  "url"?: string;
+  "zip_code"?: string;
+}
+
+export interface ModelCarmaxStoreSearchResponse {
+  "source_url"?: string;
+  "stores"?: Array<ModelCarmaxStoreLocation>;
+}
+
+export interface ModelCarmaxTransmission {
+  "display"?: string;
+  "type"?: string;
+}
+
+export interface ModelCarmaxVehicle {
+  "body"?: string;
+  "cylinders"?: number;
+  "description"?: string;
+  "drive_train_type"?: string;
+  "efficiency"?: ModelCarmaxEfficiency;
+  "engine"?: string;
+  "engine_torque_lb_ft"?: number;
+  "engine_torque_rpm"?: number;
+  "exterior_color"?: string;
+  "features"?: Array<string>;
+  "fuel"?: ModelCarmaxFuel;
+  "hero_image_url"?: string;
+  "highlighted_features"?: Array<string>;
+  "horsepower"?: number;
+  "horsepower_rpm"?: number;
+  "image_count"?: number;
+  "interior_color"?: string;
+  "is_new_arrival"?: boolean;
+  "is_transferable"?: boolean;
+  "make"?: string;
+  "mileage"?: number;
+  "model"?: string;
+  "passenger_count"?: number;
+  "price_info"?: ModelCarmaxPriceInfo;
+  "prior_uses"?: Array<string>;
+  "stock_number"?: number;
+  "store"?: ModelCarmaxStore;
+  "towing_capacity_lbs"?: number;
+  "transmission"?: ModelCarmaxTransmission;
+  "trim"?: string;
+  "url"?: string;
+  "vin"?: string;
+  "year"?: number;
+}
+
+export interface ModelCarmaxVehicleGuarantee {
+  "description"?: string;
+  "disclaimer"?: string;
+  "title"?: string;
+}
+
+export interface ModelCarmaxVehicleRecommendation {
+  "description"?: string;
+  "hero_image_url"?: string;
+  "location"?: string;
+  "mileage_display"?: string;
+  "price_display"?: string;
+  "stock_number"?: number;
+  "url"?: string;
+  "vehicle_caption"?: string;
+}
+
+export interface ModelCarmaxVehicleRecommendationsResponse {
+  "recommendations"?: Array<ModelCarmaxVehicleRecommendation>;
+  "source_url"?: string;
+  "stock_number"?: number;
+}
+
+export interface ModelCarmaxVehicleResponse {
+  "body"?: string;
+  "cylinders"?: number;
+  "description"?: string;
+  "drive_train_type"?: string;
+  "efficiency"?: ModelCarmaxEfficiency;
+  "engine"?: string;
+  "engine_torque_lb_ft"?: number;
+  "engine_torque_rpm"?: number;
+  "exterior_color"?: string;
+  "features"?: Array<ModelCarmaxFeature>;
+  "fuel"?: ModelCarmaxFuel;
+  "hero_image_url"?: string;
+  "highlighted_features"?: Array<string>;
+  "history"?: ModelCarmaxHistory;
+  "horsepower"?: number;
+  "horsepower_rpm"?: number;
+  "image_count"?: number;
+  "interior_color"?: string;
+  "is_new_arrival"?: boolean;
+  "is_transferable"?: boolean;
+  "make"?: string;
+  "mileage"?: number;
+  "model"?: string;
+  "passenger_count"?: number;
+  "price_info"?: ModelCarmaxPriceInfo;
+  "prior_uses"?: Array<string>;
+  "source_url"?: string;
+  "specs"?: Array<ModelCarmaxSpec>;
+  "stock_number"?: number;
+  "store"?: ModelCarmaxStore;
+  "towing_capacity_lbs"?: number;
+  "transmission"?: ModelCarmaxTransmission;
+  "trim"?: string;
+  "url"?: string;
+  "vehicle_guarantee"?: ModelCarmaxVehicleGuarantee;
+  "vin"?: string;
+  "warranties"?: Array<ModelCarmaxWarranty>;
+  "year"?: number;
+}
+
+export interface ModelCarmaxWarranty {
+  "miles"?: number;
+  "type"?: string;
+  "years"?: number;
+}
+
+export interface ModelCarmaxSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelCarmaxSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelCarmaxSearchSuggestionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCarmaxSearchSuggestionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCarmaxShopByBrandResponseDoc {
+  "code"?: number;
+  "data"?: ModelCarmaxShopByBrandResponse;
+  "msg"?: string;
+}
+
+export interface ModelCarmaxStoreSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelCarmaxStoreSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelCarmaxVehicleRecommendationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCarmaxVehicleRecommendationsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCarsdotcomCertifiedPreOwnedProgram {
+  "brand_name"?: string;
+  "certification_text"?: string;
+  "included_makes"?: string;
+  "logo_url"?: string;
+  "maximum_age_mileage"?: string;
+  "powertrain_warranty"?: string;
+  "program_url"?: string;
+  "roadside_assistance"?: boolean;
+  "slogan"?: string;
+  "warranty_terms"?: string;
+}
+
+export interface ModelCarsdotcomDealRating {
+  "good_price_max"?: number;
+  "good_price_min"?: number;
+  "predicted_price"?: number;
+  "predicted_price_difference"?: number;
+  "rating"?: string;
+}
+
+export interface ModelCarsdotcomDealer {
+  "address"?: string;
+  "hours"?: Array<ModelCarsdotcomDealerHour>;
+  "name"?: string;
+  "phones"?: Array<ModelCarsdotcomDealerPhone>;
+  "rating"?: number;
+  "review_count"?: number;
+  "website"?: string;
+}
+
+export interface ModelCarsdotcomDealerHour {
+  "day"?: string;
+  "department"?: string;
+  "end_at"?: string;
+  "start_at"?: string;
+}
+
+export interface ModelCarsdotcomDealerPhone {
+  "area_code"?: string;
+  "local_number"?: string;
+  "phone_type"?: string;
+}
+
+export interface ModelCarsdotcomFeatureGroup {
+  "category"?: string;
+  "items"?: Array<string>;
+}
+
+export interface ModelCarsdotcomHistory {
+  "accidents"?: string;
+  "clean_title"?: boolean;
+  "free_report"?: boolean;
+  "no_accidents"?: boolean;
+  "one_owner"?: boolean;
+  "owner"?: string;
+  "personal_use"?: boolean;
+  "report_source"?: string;
+  "report_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelCarsdotcomKeySpec {
+  "label"?: string;
+  "secondary_unit"?: string;
+  "secondary_value"?: string;
+  "unit"?: string;
+  "value"?: string;
+}
+
+export interface ModelCarsdotcomNewVehicleProgram {
+  "logo_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelCarsdotcomPriceHistoryEntry {
+  "description"?: string;
+  "inserted_at"?: string;
+  "list_price"?: number;
+  "list_price_display"?: string;
+}
+
+export interface ModelCarsdotcomPrivateSeller {
+  "city"?: string;
+  "first_name"?: string;
+  "last_name_initial"?: string;
+  "state"?: string;
+  "zip"?: string;
+}
+
+export interface ModelCarsdotcomSearchResponse {
+  "page"?: number;
+  "page_size"?: number;
+  "source_url"?: string;
+  "total_count"?: number;
+  "vehicles"?: Array<ModelCarsdotcomVehicle>;
+}
+
+export interface ModelCarsdotcomSeller {
+  "dealer_name"?: string;
+  "zip"?: string;
+}
+
+export interface ModelCarsdotcomVehicle {
+  "body_style"?: string;
+  "drivetrain"?: string;
+  "exterior_color"?: string;
+  "fuel_type"?: string;
+  "images"?: Array<string>;
+  "is_cpo"?: boolean;
+  "listing_id"?: string;
+  "make"?: string;
+  "mileage"?: number;
+  "model"?: string;
+  "msrp"?: number;
+  "price"?: number;
+  "seller"?: ModelCarsdotcomSeller;
+  "stock_type"?: string;
+  "trim"?: string;
+  "url"?: string;
+  "vin"?: string;
+  "year"?: number;
+}
+
+export interface ModelCarsdotcomVehicleResponse {
+  "body_style"?: string;
+  "certified_pre_owned_program"?: ModelCarsdotcomCertifiedPreOwnedProgram;
+  "cylinder_count"?: number;
+  "deal_rating"?: ModelCarsdotcomDealRating;
+  "dealer"?: ModelCarsdotcomDealer;
+  "door_count"?: number;
+  "drivetrain"?: string;
+  "engine"?: string;
+  "exterior_color"?: string;
+  "features"?: Array<ModelCarsdotcomFeatureGroup>;
+  "fuel_type"?: string;
+  "history"?: ModelCarsdotcomHistory;
+  "images"?: Array<string>;
+  "interior_color"?: string;
+  "is_cpo"?: boolean;
+  "key_specs"?: Array<ModelCarsdotcomKeySpec>;
+  "listed_days"?: number;
+  "listing_id"?: string;
+  "make"?: string;
+  "mileage"?: number;
+  "model"?: string;
+  "mpg_city"?: number;
+  "mpg_combined"?: number;
+  "mpg_highway"?: number;
+  "msrp"?: number;
+  "new_vehicle_program"?: ModelCarsdotcomNewVehicleProgram;
+  "price"?: number;
+  "price_direction"?: string;
+  "price_history"?: Array<ModelCarsdotcomPriceHistoryEntry>;
+  "private_seller"?: ModelCarsdotcomPrivateSeller;
+  "seat_count"?: number;
+  "seller"?: ModelCarsdotcomSeller;
+  "sellers_notes"?: string;
+  "source_url"?: string;
+  "stock_number"?: string;
+  "stock_type"?: string;
+  "title"?: string;
+  "total_price_change_display"?: string;
+  "transmission"?: string;
+  "trim"?: string;
+  "url"?: string;
+  "video_urls"?: Array<string>;
+  "vin"?: string;
+  "year"?: number;
+}
+
+export interface ModelCarsdotcomSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelCarsdotcomSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelChromewebstoreCard {
   "category"?: string;
   "category_id"?: number;
@@ -3950,6 +4828,60 @@ export interface ModelCoingeckoTrendingResponseDoc {
   "msg"?: string;
 }
 
+export type ModelCongressChamber = "house" | "senate";
+
+export interface ModelCongressHouseDisclosure {
+  "filing_type"?: string;
+  "filing_url"?: string;
+  "filing_year"?: number;
+  "member"?: string;
+  "office"?: string;
+}
+
+export interface ModelCongressReportDetail {
+  "body"?: string;
+  "chamber"?: ModelCongressChamber;
+  "fetched_at"?: string;
+  "filed_at"?: string;
+  "filer"?: string;
+  "parts"?: Array<ModelCongressReportPart>;
+  "report_id"?: string;
+  "report_type"?: string;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelCongressReportPart {
+  "answer"?: string;
+  "rows"?: Array<Record<string, string>>;
+  "title"?: string;
+}
+
+export interface ModelCongressStockDisclosureResponse {
+  "chamber"?: ModelCongressChamber;
+  "count"?: number;
+  "fetched_at"?: string;
+  "from"?: string;
+  "query"?: string;
+  "results"?: Array<ModelCongressHouseDisclosure>;
+  "sort"?: string;
+  "source_url"?: string;
+  "to"?: string;
+  "total"?: number;
+}
+
+export interface ModelCongressReportResponseDoc {
+  "code"?: number;
+  "data"?: ModelCongressReportDetail;
+  "msg"?: string;
+}
+
+export interface ModelCongressStockDisclosuresResponseDoc {
+  "code"?: number;
+  "data"?: ModelCongressStockDisclosureResponse;
+  "msg"?: string;
+}
+
 export interface ModelContactContact {
   "emails"?: Array<string>;
   "socials"?: { "facebook"?: string; "instagram"?: string; "linkedin"?: string; "tiktok"?: string; "twitter"?: string; "youtube"?: string };
@@ -3996,6 +4928,129 @@ export interface ModelContactSocialProfile {
 export interface ModelContactContactResponseDoc {
   "code"?: number;
   "data"?: ModelContactContactResult;
+  "msg"?: string;
+}
+
+export interface ModelCostcoCategoriesResponse {
+  "categories"?: Array<ModelCostcoCategory>;
+  "query"?: string;
+}
+
+export interface ModelCostcoCategory {
+  "count"?: number;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelCostcoProduct {
+  "buyable"?: boolean;
+  "description"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "list_price"?: number;
+  "manufacturer"?: string;
+  "membership_required"?: boolean;
+  "price"?: number;
+  "rating"?: number;
+  "rating_count"?: number;
+  "title"?: string;
+}
+
+export interface ModelCostcoProductAvailability {
+  "availability"?: string;
+  "available_for_sale"?: boolean;
+  "estimated_delivery_date"?: string;
+  "fulfilled_by"?: string;
+  "product_id"?: string;
+  "supplier_available_date"?: string;
+}
+
+export interface ModelCostcoProductReviewsResponse {
+  "average_rating"?: number;
+  "product_id"?: string;
+  "reviews"?: Array<ModelCostcoReview>;
+  "total_count"?: number;
+}
+
+export interface ModelCostcoProductSummary {
+  "brand"?: string;
+  "categories"?: Array<string>;
+  "id"?: string;
+  "image_url"?: string;
+  "model"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelCostcoReview {
+  "author"?: string;
+  "id"?: string;
+  "rating"?: number;
+  "recommended"?: boolean;
+  "submitted_at"?: string;
+  "text"?: string;
+  "title"?: string;
+}
+
+export interface ModelCostcoSearchResponse {
+  "category"?: string;
+  "products"?: Array<ModelCostcoProductSummary>;
+  "query"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelCostcoWarehouse {
+  "address_line1"?: string;
+  "city"?: string;
+  "distance_miles"?: number;
+  "id"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "postal_code"?: string;
+  "state"?: string;
+  "type"?: string;
+}
+
+export interface ModelCostcoWarehousesResponse {
+  "warehouses"?: Array<ModelCostcoWarehouse>;
+}
+
+export interface ModelCostcoCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelCostcoCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelCostcoProductAvailabilityResponseDoc {
+  "code"?: number;
+  "data"?: ModelCostcoProductAvailability;
+  "msg"?: string;
+}
+
+export interface ModelCostcoProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelCostcoProduct;
+  "msg"?: string;
+}
+
+export interface ModelCostcoProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelCostcoProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelCostcoSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelCostcoSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelCostcoWarehousesResponseDoc {
+  "code"?: number;
+  "data"?: ModelCostcoWarehousesResponse;
   "msg"?: string;
 }
 
@@ -5313,6 +6368,123 @@ export interface ModelDatasetsXUsersSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDepopCategoriesResponse {
+  "departments"?: Array<ModelDepopDepartment>;
+}
+
+export interface ModelDepopCategory {
+  "name"?: string;
+  "slug"?: string;
+  "subcategories"?: Array<ModelDepopSubcategory>;
+}
+
+export interface ModelDepopDepartment {
+  "categories"?: Array<ModelDepopCategory>;
+  "gender"?: string;
+  "id"?: string;
+  "is_kids"?: boolean;
+  "name"?: string;
+}
+
+export interface ModelDepopItemDetailResponse {
+  "brand_name"?: string;
+  "colours"?: Array<string>;
+  "condition"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "id"?: string;
+  "location"?: string;
+  "original_price_cents"?: number;
+  "photos"?: Array<string>;
+  "price_cents"?: number;
+  "seller"?: ModelDepopSeller;
+  "shipping_cents"?: number;
+  "similar_items"?: Array<ModelDepopItemSummary>;
+  "sizes"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelDepopItemSummary {
+  "brand_name"?: string;
+  "colours"?: Array<string>;
+  "condition"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "id"?: string;
+  "location"?: string;
+  "photos"?: Array<string>;
+  "price_cents"?: number;
+  "shipping_cents"?: number;
+  "sizes"?: Array<string>;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelDepopSearchResponse {
+  "has_more"?: boolean;
+  "items"?: Array<ModelDepopItemSummary>;
+  "next_cursor"?: string;
+  "query"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelDepopSeller {
+  "first_name"?: string;
+  "id"?: number;
+  "picture_url"?: string;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelDepopShopItem {
+  "currency"?: string;
+  "id"?: string;
+  "original_price_cents"?: number;
+  "price_cents"?: number;
+  "thumbnail_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelDepopShopResponse {
+  "activity_status"?: string;
+  "avatar_url"?: string;
+  "bio"?: string;
+  "display_name"?: string;
+  "followers_count"?: number;
+  "following_count"?: number;
+  "items"?: Array<ModelDepopShopItem>;
+  "rating"?: number;
+  "rating_count"?: number;
+  "sold_count"?: number;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelDepopSubcategory {
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelDepopCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelDepopCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelDepopSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDepopSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDepopShopResponseDoc {
+  "code"?: number;
+  "data"?: ModelDepopShopResponse;
+  "msg"?: string;
+}
+
 export interface ModelDiagnosticsAntibotCheckRequest {
   "fast"?: boolean;
   "url": string;
@@ -5868,6 +7040,132 @@ export interface ModelDoordashStoreResponseDoc {
 export interface ModelDoordashStoreReviewsResponseDoc {
   "code"?: number;
   "data"?: ModelDoordashStoreReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelDuckduckgoImageResponse {
+  "pagination"?: ModelDuckduckgoSearchPagination;
+  "query"?: string;
+  "results"?: Array<ModelDuckduckgoImageResult>;
+}
+
+export interface ModelDuckduckgoImageResult {
+  "height"?: number;
+  "hostname"?: string;
+  "image_url"?: string;
+  "position"?: number;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelDuckduckgoNewsResponse {
+  "pagination"?: ModelDuckduckgoSearchPagination;
+  "query"?: string;
+  "results"?: Array<ModelDuckduckgoNewsResult>;
+}
+
+export interface ModelDuckduckgoNewsResult {
+  "excerpt"?: string;
+  "position"?: number;
+  "published_at"?: number;
+  "relative_time"?: string;
+  "source"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelDuckduckgoSearchPagination {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelDuckduckgoSearchResponse {
+  "pagination"?: ModelDuckduckgoSearchPagination;
+  "query"?: string;
+  "results"?: Array<ModelDuckduckgoSearchResult>;
+}
+
+export interface ModelDuckduckgoSearchResult {
+  "description"?: string;
+  "hostname"?: string;
+  "position"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelDuckduckgoShoppingPageInfo {
+  "page"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelDuckduckgoShoppingResponse {
+  "page_info"?: ModelDuckduckgoShoppingPageInfo;
+  "query"?: string;
+  "results"?: Array<ModelDuckduckgoShoppingResult>;
+}
+
+export interface ModelDuckduckgoShoppingResult {
+  "brand"?: string;
+  "description"?: string;
+  "image"?: string;
+  "low_price"?: string;
+  "merchant"?: string;
+  "position"?: number;
+  "price"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "title"?: string;
+}
+
+export interface ModelDuckduckgoVideoResponse {
+  "pagination"?: ModelDuckduckgoSearchPagination;
+  "query"?: string;
+  "results"?: Array<ModelDuckduckgoVideoResult>;
+}
+
+export interface ModelDuckduckgoVideoResult {
+  "description"?: string;
+  "duration"?: string;
+  "position"?: number;
+  "published_at"?: string;
+  "publisher"?: string;
+  "thumbnail"?: string;
+  "title"?: string;
+  "uploader"?: string;
+  "url"?: string;
+  "view_count"?: number;
+}
+
+export interface ModelDuckduckgoImageResponseDoc {
+  "code"?: number;
+  "data"?: ModelDuckduckgoImageResponse;
+  "msg"?: string;
+}
+
+export interface ModelDuckduckgoNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDuckduckgoNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelDuckduckgoSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDuckduckgoSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDuckduckgoShoppingResponseDoc {
+  "code"?: number;
+  "data"?: ModelDuckduckgoShoppingResponse;
+  "msg"?: string;
+}
+
+export interface ModelDuckduckgoVideoResponseDoc {
+  "code"?: number;
+  "data"?: ModelDuckduckgoVideoResponse;
   "msg"?: string;
 }
 
@@ -8376,34 +9674,6 @@ export interface ModelExtractResponseDoc {
   "msg"?: string;
 }
 
-export interface ModelFacebookGroup {
-  "coverImage"?: string;
-  "groupId"?: string;
-  "membersCount"?: number;
-  "membersText"?: string;
-  "name"?: string;
-  "privacy"?: string;
-  "sourceUrl"?: string;
-}
-
-export interface ModelFacebookMarketplaceItem {
-  "categoryId"?: string;
-  "condition"?: string;
-  "createdAt"?: string;
-  "description"?: string;
-  "id"?: string;
-  "image"?: string;
-  "isLive"?: boolean;
-  "isPending"?: boolean;
-  "isSold"?: boolean;
-  "locationText"?: string;
-  "price"?: ModelFacebookMarketplacePrice;
-  "productType"?: string;
-  "sourceUrl"?: string;
-  "title"?: string;
-  "url"?: string;
-}
-
 export interface ModelFacebookMarketplaceListing {
   "city"?: string;
   "id"?: string;
@@ -8451,18 +9721,6 @@ export interface ModelFacebookPage {
   "website"?: string;
   "wereHere"?: number;
   "whatsapp"?: string;
-}
-
-export interface ModelFacebookGroupResponseDoc {
-  "code"?: number;
-  "data"?: ModelFacebookGroup;
-  "msg"?: string;
-}
-
-export interface ModelFacebookMarketplaceItemResponseDoc {
-  "code"?: number;
-  "data"?: ModelFacebookMarketplaceItem;
-  "msg"?: string;
 }
 
 export interface ModelFacebookMarketplaceSearchResponseDoc {
@@ -8836,6 +10094,104 @@ export interface ModelFinanceTickerResponseDoc {
 export interface ModelFinanceTopStocksResponseDoc {
   "code"?: number;
   "data"?: ModelFinanceTopStocksResponse;
+  "msg"?: string;
+}
+
+export interface ModelFiverrGigPackage {
+  "delivery_days"?: number;
+  "description"?: string;
+  "price"?: number;
+  "tier"?: string;
+  "title"?: string;
+}
+
+export interface ModelFiverrGigResponse {
+  "category_name"?: string;
+  "description"?: string;
+  "id"?: string;
+  "images"?: Array<string>;
+  "is_pro"?: boolean;
+  "orders_in_queue"?: number;
+  "packages"?: Array<ModelFiverrGigPackage>;
+  "rating"?: number;
+  "review_count"?: number;
+  "seller"?: ModelFiverrGigSeller;
+  "sub_category_name"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFiverrGigSeller {
+  "country"?: string;
+  "description"?: string;
+  "display_name"?: string;
+  "languages"?: Array<string>;
+  "level"?: string;
+  "profile_image"?: string;
+  "rating"?: number;
+  "response_time_hours"?: number;
+  "review_count"?: number;
+  "username"?: string;
+}
+
+export interface ModelFiverrGigSummary {
+  "category_id"?: number;
+  "id"?: string;
+  "image"?: string;
+  "is_pro"?: boolean;
+  "rating"?: number;
+  "review_count"?: number;
+  "seller_country"?: string;
+  "seller_image"?: string;
+  "seller_level"?: string;
+  "seller_name"?: string;
+  "seller_username"?: string;
+  "starting_price"?: number;
+  "sub_category_id"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFiverrSearchResponse {
+  "gigs"?: Array<ModelFiverrGigSummary>;
+  "page"?: number;
+  "query"?: string;
+}
+
+export interface ModelFiverrSellerResponse {
+  "approved_gigs_count"?: number;
+  "country"?: string;
+  "description"?: string;
+  "display_name"?: string;
+  "gig_ids"?: Array<string>;
+  "hourly_rate"?: number;
+  "is_pro"?: boolean;
+  "is_verified"?: boolean;
+  "joined_at"?: string;
+  "languages"?: Array<string>;
+  "level"?: string;
+  "one_liner_title"?: string;
+  "profile_image"?: string;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelFiverrGigResponseDoc {
+  "code"?: number;
+  "data"?: ModelFiverrGigResponse;
+  "msg"?: string;
+}
+
+export interface ModelFiverrSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFiverrSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelFiverrSellerResponseDoc {
+  "code"?: number;
+  "data"?: ModelFiverrSellerResponse;
   "msg"?: string;
 }
 
@@ -10275,6 +11631,131 @@ export interface ModelIndeedSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelInstacartDepartment {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "subcategories"?: Array<ModelInstacartSubcategory>;
+}
+
+export interface ModelInstacartDepartmentsResponse {
+  "departments"?: Array<ModelInstacartDepartment>;
+  "shop_id"?: string;
+}
+
+export interface ModelInstacartItemNutrition {
+  "label"?: string;
+  "unit"?: string;
+  "value"?: string;
+}
+
+export interface ModelInstacartItemPrice {
+  "current_price"?: number;
+  "offer_label"?: string;
+  "on_sale"?: boolean;
+  "pricing_unit"?: string;
+  "regular_price"?: number;
+}
+
+export interface ModelInstacartItemResponse {
+  "available"?: boolean;
+  "brand_name"?: string;
+  "dietary_labels"?: Array<string>;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "nutrition"?: Array<ModelInstacartItemNutrition>;
+  "price"?: ModelInstacartItemPrice;
+  "product_id"?: string;
+  "size"?: string;
+  "stock_level"?: string;
+  "variant_options_summary"?: string;
+}
+
+export interface ModelInstacartSearchNearbyResponse {
+  "postal_code"?: string;
+  "query"?: string;
+  "suggestions"?: Array<ModelInstacartSearchSuggestion>;
+}
+
+export interface ModelInstacartSearchResponse {
+  "query"?: string;
+  "shop_id"?: string;
+  "suggestions"?: Array<ModelInstacartSearchSuggestion>;
+}
+
+export interface ModelInstacartSearchSuggestion {
+  "relative_url"?: string;
+  "term"?: string;
+  "thumbnail_url"?: string;
+}
+
+export interface ModelInstacartStore {
+  "accepts_ebt"?: boolean;
+  "delivery_eta"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "retailer_id"?: string;
+  "retailer_location_id"?: string;
+  "retailer_type"?: string;
+  "saver_store"?: boolean;
+  "service_type"?: string;
+  "shop_id"?: string;
+  "slug"?: string;
+}
+
+export interface ModelInstacartStoreSearchResponse {
+  "postal_code"?: string;
+  "stores"?: Array<ModelInstacartStore>;
+}
+
+export interface ModelInstacartSubcategory {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelInstacartTrendingResponse {
+  "postal_code"?: string;
+  "terms"?: Array<ModelInstacartSearchSuggestion>;
+}
+
+export interface ModelInstacartDepartmentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstacartDepartmentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelInstacartItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstacartItemResponse;
+  "msg"?: string;
+}
+
+export interface ModelInstacartSearchNearbyResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstacartSearchNearbyResponse;
+  "msg"?: string;
+}
+
+export interface ModelInstacartSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstacartSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelInstacartStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstacartStoreSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelInstacartTrendingResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstacartTrendingResponse;
+  "msg"?: string;
+}
+
 export interface ModelInstagramBusinessAddress {
   "city_name"?: string;
   "latitude"?: number;
@@ -11669,6 +13150,98 @@ export interface ModelLinkedinShowcaseResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelMercariAutocompleteResponse {
+  "query"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelMercariBrand {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelMercariCategory {
+  "icon_url"?: string;
+  "id"?: number;
+  "name"?: string;
+  "parent_id"?: number;
+}
+
+export interface ModelMercariHomeResponse {
+  "items"?: Array<ModelMercariItemSummary>;
+}
+
+export interface ModelMercariItemDetailResponse {
+  "category_code"?: number;
+  "condition_code"?: number;
+  "description"?: string;
+  "hashtags"?: Array<string>;
+  "id"?: string;
+  "photos"?: Array<string>;
+  "price_cents"?: number;
+  "shipping_from_state"?: string;
+  "similar_items"?: Array<ModelMercariItemSummary>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelMercariItemSummary {
+  "condition_code"?: number;
+  "created_at_unix"?: number;
+  "id"?: string;
+  "num_likes"?: number;
+  "original_price_cents"?: number;
+  "price_cents"?: number;
+  "seller_id"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "updated_at_unix"?: number;
+  "url"?: string;
+}
+
+export interface ModelMercariMasterResponse {
+  "brands"?: Array<ModelMercariBrand>;
+  "categories"?: Array<ModelMercariCategory>;
+  "sizes"?: Array<ModelMercariSize>;
+}
+
+export interface ModelMercariSearchResponse {
+  "items"?: Array<ModelMercariItemSummary>;
+  "query"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelMercariSize {
+  "code"?: string;
+  "id"?: number;
+  "name"?: string;
+  "short_name"?: string;
+}
+
+export interface ModelMercariAutocompleteResponseDoc {
+  "code"?: number;
+  "data"?: ModelMercariAutocompleteResponse;
+  "msg"?: string;
+}
+
+export interface ModelMercariHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelMercariHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelMercariMasterResponseDoc {
+  "code"?: number;
+  "data"?: ModelMercariMasterResponse;
+  "msg"?: string;
+}
+
+export interface ModelMercariSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelMercariSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelMetacriticBrowseItem {
   "description"?: string;
   "genres"?: Array<ModelMetacriticGenre>;
@@ -12779,6 +14352,154 @@ export interface ModelOpentableReviewsResponseDoc {
 export interface ModelOpentableSearchResponseDoc {
   "code"?: number;
   "data"?: ModelOpentableSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelPinterestBoard {
+  "cover_image_url"?: string;
+  "description"?: string;
+  "follower_count"?: number;
+  "id"?: string;
+  "name"?: string;
+  "owner_username"?: string;
+  "pin_count"?: number;
+  "privacy"?: string;
+  "url"?: string;
+}
+
+export interface ModelPinterestBoardResponse {
+  "cover_image_url"?: string;
+  "description"?: string;
+  "follower_count"?: number;
+  "id"?: string;
+  "name"?: string;
+  "owner_username"?: string;
+  "pin_count"?: number;
+  "pins"?: Array<ModelPinterestPinSummary>;
+  "privacy"?: string;
+  "url"?: string;
+}
+
+export interface ModelPinterestCategoriesResponse {
+  "categories"?: Array<ModelPinterestCategory>;
+}
+
+export interface ModelPinterestCategory {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelPinterestIdeaResponse {
+  "description"?: string;
+  "follower_count"?: number;
+  "id"?: string;
+  "name"?: string;
+  "pins"?: Array<ModelPinterestPinSummary>;
+}
+
+export interface ModelPinterestPinDetail {
+  "board_name"?: string;
+  "comment_count"?: number;
+  "created_at"?: string;
+  "description"?: string;
+  "domain"?: string;
+  "dominant_color"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "link"?: string;
+  "pinner_username"?: string;
+  "repin_count"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelPinterestPinSummary {
+  "board_name"?: string;
+  "description"?: string;
+  "domain"?: string;
+  "dominant_color"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "link"?: string;
+  "pinner_username"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelPinterestSearchResponse {
+  "pins"?: Array<ModelPinterestPinSummary>;
+  "query"?: string;
+}
+
+export interface ModelPinterestUser {
+  "about"?: string;
+  "avatar_url"?: string;
+  "board_count"?: number;
+  "follower_count"?: number;
+  "following_count"?: number;
+  "full_name"?: string;
+  "is_verified_merchant"?: boolean;
+  "pin_count"?: number;
+  "username"?: string;
+  "website_url"?: string;
+}
+
+export interface ModelPinterestUserBoardsResponse {
+  "boards"?: Array<ModelPinterestBoard>;
+  "username"?: string;
+}
+
+export interface ModelPinterestUserPinsResponse {
+  "pins"?: Array<ModelPinterestPinSummary>;
+  "username"?: string;
+}
+
+export interface ModelPinterestBoardResponseDoc {
+  "code"?: number;
+  "data"?: ModelPinterestBoardResponse;
+  "msg"?: string;
+}
+
+export interface ModelPinterestCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelPinterestCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelPinterestIdeaResponseDoc {
+  "code"?: number;
+  "data"?: ModelPinterestIdeaResponse;
+  "msg"?: string;
+}
+
+export interface ModelPinterestPinResponseDoc {
+  "code"?: number;
+  "data"?: ModelPinterestPinDetail;
+  "msg"?: string;
+}
+
+export interface ModelPinterestSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelPinterestSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelPinterestUserBoardsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPinterestUserBoardsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPinterestUserPinsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPinterestUserPinsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPinterestUserResponseDoc {
+  "code"?: number;
+  "data"?: ModelPinterestUser;
   "msg"?: string;
 }
 
@@ -13925,6 +15646,198 @@ export interface ModelPopulartrendTopAdsSpotlightResponseDoc {
 export interface ModelPopulartrendTopAdsSuggestionsResponseDoc {
   "code"?: number;
   "data"?: ModelPopularTrendTopAdsSuggestionsResp;
+  "msg"?: string;
+}
+
+export interface ModelPoshmarkBrandDirectoryEntry {
+  "aliases"?: Array<string>;
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelPoshmarkBrandResponse {
+  "has_more"?: boolean;
+  "listings"?: Array<ModelPoshmarkListing>;
+  "next_max_id"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelPoshmarkBrandsResponse {
+  "brands"?: Array<ModelPoshmarkBrandDirectoryEntry>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelPoshmarkCategoriesResponse {
+  "departments"?: Array<ModelPoshmarkDepartmentTaxonomy>;
+}
+
+export interface ModelPoshmarkCategoryResponse {
+  "has_more"?: boolean;
+  "listings"?: Array<ModelPoshmarkListing>;
+  "next_max_id"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelPoshmarkCategoryTaxonomyEntry {
+  "id"?: string;
+  "name"?: string;
+  "path"?: string;
+}
+
+export interface ModelPoshmarkClosetResponse {
+  "has_more"?: boolean;
+  "listings"?: Array<ModelPoshmarkListing>;
+  "next_max_id"?: string;
+  "seller"?: ModelPoshmarkSeller;
+  "source_url"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelPoshmarkComment {
+  "comment"?: string;
+  "created_at"?: string;
+  "creator_full_name"?: string;
+  "creator_picture_url"?: string;
+  "creator_username"?: string;
+  "id"?: string;
+}
+
+export interface ModelPoshmarkDepartmentTaxonomy {
+  "categories"?: Array<ModelPoshmarkCategoryTaxonomyEntry>;
+  "id"?: string;
+  "name"?: string;
+  "path"?: string;
+}
+
+export interface ModelPoshmarkListing {
+  "brand"?: string;
+  "category"?: string;
+  "colors"?: Array<string>;
+  "comment_count"?: number;
+  "condition"?: string;
+  "cover_shot"?: string;
+  "created_at"?: string;
+  "department"?: string;
+  "description"?: string;
+  "first_available_at"?: string;
+  "id"?: string;
+  "inventory_status"?: string;
+  "like_count"?: number;
+  "original_price"?: number;
+  "pictures"?: Array<string>;
+  "price"?: number;
+  "quantity_available"?: number;
+  "seller_display_handle"?: string;
+  "seller_full_name"?: string;
+  "seller_picture_url"?: string;
+  "seller_username"?: string;
+  "share_count"?: number;
+  "size"?: string;
+  "status"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelPoshmarkListingResponse {
+  "brand"?: string;
+  "category"?: string;
+  "colors"?: Array<string>;
+  "comment_count"?: number;
+  "comments"?: Array<ModelPoshmarkComment>;
+  "condition"?: string;
+  "cover_shot"?: string;
+  "created_at"?: string;
+  "department"?: string;
+  "description"?: string;
+  "first_available_at"?: string;
+  "id"?: string;
+  "inventory_status"?: string;
+  "like_count"?: number;
+  "original_price"?: number;
+  "pictures"?: Array<string>;
+  "price"?: number;
+  "quantity_available"?: number;
+  "seller"?: ModelPoshmarkSeller;
+  "seller_display_handle"?: string;
+  "seller_full_name"?: string;
+  "seller_picture_url"?: string;
+  "seller_username"?: string;
+  "share_count"?: number;
+  "similar_listings"?: Array<ModelPoshmarkListing>;
+  "size"?: string;
+  "source_url"?: string;
+  "status"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelPoshmarkRatingBreakdown {
+  "five_star"?: number;
+  "four_star"?: number;
+  "one_star"?: number;
+  "three_star"?: number;
+  "two_star"?: number;
+}
+
+export interface ModelPoshmarkSearchResponse {
+  "has_more"?: boolean;
+  "listings"?: Array<ModelPoshmarkListing>;
+  "next_max_id"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelPoshmarkSeller {
+  "cover_shot_url"?: string;
+  "display_handle"?: string;
+  "followers"?: number;
+  "following"?: number;
+  "full_name"?: string;
+  "id"?: string;
+  "items_sold_display"?: string;
+  "last_active_at"?: string;
+  "member_since"?: string;
+  "orders_shipped"?: number;
+  "picture_url"?: string;
+  "posts_count"?: number;
+  "rating_average"?: number;
+  "rating_breakdown"?: ModelPoshmarkRatingBreakdown;
+  "rating_count"?: number;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelPoshmarkTrendResponse {
+  "cover_shot"?: string;
+  "description"?: string;
+  "has_more"?: boolean;
+  "listings"?: Array<ModelPoshmarkListing>;
+  "name"?: string;
+  "next_max_id"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelPoshmarkBrandsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPoshmarkBrandsResponse;
+  "msg"?: string;
+}
+
+export interface ModelPoshmarkCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelPoshmarkCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelPoshmarkSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelPoshmarkSearchResponse;
   "msg"?: string;
 }
 
@@ -18516,6 +20429,268 @@ export interface ModelSteamTopSellersResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelStockxAskServiceLevel {
+  "count"?: number;
+  "inventory_type"?: string;
+  "lowest_ask"?: number;
+}
+
+export interface ModelStockxBadge {
+  "id"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+}
+
+export interface ModelStockxBrand {
+  "group"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelStockxBrandsResponse {
+  "brands"?: Array<ModelStockxBrand>;
+  "total_count"?: number;
+}
+
+export interface ModelStockxCategoriesResponse {
+  "categories"?: Array<ModelStockxCategory>;
+}
+
+export interface ModelStockxCategory {
+  "name"?: string;
+  "slug"?: string;
+  "subcategories"?: Array<ModelStockxSubcategory>;
+}
+
+export interface ModelStockxListing {
+  "condition"?: string;
+  "condition_alias"?: string;
+  "condition_description"?: string;
+  "image_url"?: string;
+  "price"?: number;
+  "size"?: string;
+  "size_descriptor"?: string;
+}
+
+export interface ModelStockxMarketData {
+  "annual_average_price"?: number;
+  "annual_sales_count"?: number;
+  "ask_service_levels"?: Record<string, ModelStockxAskServiceLevel>;
+  "highest_bid"?: number;
+  "last_90_days_average_price"?: number;
+  "last_90_days_sales_count"?: number;
+  "last_sale"?: number;
+  "lowest_ask"?: number;
+  "number_of_asks"?: number;
+  "number_of_bids"?: number;
+  "sales_last_72_hours"?: number;
+}
+
+export interface ModelStockxProductDetail {
+  "badges"?: Array<ModelStockxBadge>;
+  "brand"?: string;
+  "colorway"?: string;
+  "description"?: string;
+  "gender"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "listings"?: Array<ModelStockxListing>;
+  "market"?: ModelStockxMarketData;
+  "model"?: string;
+  "primary_category"?: string;
+  "primary_title"?: string;
+  "product_category"?: string;
+  "related_products"?: Array<ModelStockxProductSummary>;
+  "release_date"?: string;
+  "retail_price"?: string;
+  "secondary_title"?: string;
+  "source_url"?: string;
+  "style_id"?: string;
+  "title"?: string;
+  "traits"?: Array<ModelStockxProductTrait>;
+  "url_key"?: string;
+}
+
+export interface ModelStockxProductSummary {
+  "brand"?: string;
+  "gender"?: string;
+  "highest_bid"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "last_sale"?: number;
+  "lowest_ask"?: number;
+  "model"?: string;
+  "product_category"?: string;
+  "release_date"?: string;
+  "title"?: string;
+  "url_key"?: string;
+}
+
+export interface ModelStockxProductTrait {
+  "format"?: string;
+  "name"?: string;
+  "value"?: string;
+}
+
+export interface ModelStockxReleaseCalendarResponse {
+  "from"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "releases"?: Array<ModelStockxProductSummary>;
+  "total_count"?: number;
+}
+
+export interface ModelStockxSearchResponse {
+  "category"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "products"?: Array<ModelStockxProductSummary>;
+  "query"?: string;
+  "sort"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelStockxSubcategory {
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelStockxBrandsResponseDoc {
+  "code"?: number;
+  "data"?: ModelStockxBrandsResponse;
+  "msg"?: string;
+}
+
+export interface ModelStockxCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelStockxCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelStockxProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelStockxProductDetail;
+  "msg"?: string;
+}
+
+export interface ModelStockxReleasesResponseDoc {
+  "code"?: number;
+  "data"?: ModelStockxReleaseCalendarResponse;
+  "msg"?: string;
+}
+
+export interface ModelStockxSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelStockxSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelStravaChallenge {
+  "cover_image_url"?: string;
+  "dimension"?: string;
+  "duration"?: string;
+  "goal"?: number;
+  "goal_description"?: string;
+  "icon"?: string;
+  "id"?: number;
+  "logo_image_url"?: string;
+  "name"?: string;
+  "sponsored"?: boolean;
+  "url"?: string;
+}
+
+export interface ModelStravaChallengeSection {
+  "category"?: string;
+  "challenges"?: Array<ModelStravaChallenge>;
+  "title"?: string;
+}
+
+export interface ModelStravaChallengesResponse {
+  "fetched_at"?: string;
+  "promoted_challenge"?: ModelStravaChallenge;
+  "sections"?: Array<ModelStravaChallengeSection>;
+  "source_url"?: string;
+}
+
+export interface ModelStravaClubResponse {
+  "avatar_image_url"?: string;
+  "country_code"?: string;
+  "cover_image_url"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "location"?: string;
+  "member_count"?: number;
+  "name"?: string;
+  "private"?: boolean;
+  "source_url"?: string;
+  "url"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelStravaRouteCard {
+  "description"?: string;
+  "difficulty"?: string;
+  "distance_raw"?: string;
+  "elevation_gain_raw"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "path"?: string;
+  "rank"?: number;
+  "url"?: string;
+}
+
+export interface ModelStravaRouteDetailResponse {
+  "difficulty"?: string;
+  "distance_raw"?: string;
+  "elevation_gain_raw"?: string;
+  "estimated_time_raw"?: string;
+  "fetched_at"?: string;
+  "name"?: string;
+  "path"?: string;
+  "route_type"?: string;
+  "source_url"?: string;
+  "summary"?: string;
+  "url"?: string;
+}
+
+export interface ModelStravaRoutesResponse {
+  "country"?: string;
+  "fetched_at"?: string;
+  "page"?: number;
+  "region"?: string;
+  "routes"?: Array<ModelStravaRouteCard>;
+  "source_url"?: string;
+  "sport"?: string;
+  "title"?: string;
+  "total_pages"?: number;
+  "total_results"?: number;
+}
+
+export interface ModelStravaChallengesResponseDoc {
+  "code"?: number;
+  "data"?: ModelStravaChallengesResponse;
+  "msg"?: string;
+}
+
+export interface ModelStravaClubResponseDoc {
+  "code"?: number;
+  "data"?: ModelStravaClubResponse;
+  "msg"?: string;
+}
+
+export interface ModelStravaRouteDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelStravaRouteDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelStravaRoutesResponseDoc {
+  "code"?: number;
+  "data"?: ModelStravaRoutesResponse;
+  "msg"?: string;
+}
+
 export interface ModelTargetAnswer {
   "author"?: string;
   "helpful"?: number;
@@ -20058,6 +22233,85 @@ export interface ModelTripadvisorTripadvisorSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTripcomDetailResponse {
+  "city_name"?: string;
+  "country_name"?: string;
+  "description"?: string;
+  "highlights"?: Array<string>;
+  "hotel_id"?: number;
+  "image_count"?: number;
+  "images"?: Array<string>;
+  "local_name"?: string;
+  "location"?: ModelTripcomLocation;
+  "name"?: string;
+  "open_year"?: string;
+  "policy"?: ModelTripcomPolicy;
+  "popular_facilities"?: Array<string>;
+  "province_name"?: string;
+  "rating"?: ModelTripcomRating;
+  "source_url"?: string;
+  "star_rating"?: number;
+}
+
+export interface ModelTripcomHotelSummary {
+  "description"?: string;
+  "hotel_id"?: number;
+  "image_url"?: string;
+  "location"?: string;
+  "name"?: string;
+  "price"?: ModelTripcomPrice;
+  "rating_score"?: number;
+  "review_count"?: number;
+  "star_rating"?: number;
+  "url"?: string;
+}
+
+export interface ModelTripcomLocation {
+  "address"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "traffic_description"?: string;
+  "zone_name"?: string;
+}
+
+export interface ModelTripcomPolicy {
+  "check_in_out"?: Array<string>;
+  "child"?: Array<string>;
+}
+
+export interface ModelTripcomPrice {
+  "amount"?: number;
+  "currency"?: string;
+  "raw"?: string;
+  "unit"?: string;
+}
+
+export interface ModelTripcomRating {
+  "amenities_score"?: number;
+  "cleanliness_score"?: number;
+  "location_score"?: number;
+  "recommend"?: string;
+  "score"?: number;
+  "score_description"?: string;
+  "score_max"?: number;
+  "service_score"?: number;
+  "total_comment"?: number;
+}
+
+export interface ModelTripcomSearchResponse {
+  "city_id"?: string;
+  "city_slug"?: string;
+  "count"?: number;
+  "hotels"?: Array<ModelTripcomHotelSummary>;
+  "source_url"?: string;
+}
+
+export interface ModelTripcomSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTripcomSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelTrustmrrAcquireListing {
   "asking_price"?: number;
   "category"?: string;
@@ -20868,6 +23122,102 @@ export interface ModelUbereatsStoreReviewsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelUpworkFreelancerFeedback {
+  "client_name"?: string;
+  "comment"?: string;
+  "date"?: string;
+  "rating"?: number;
+  "title"?: string;
+}
+
+export interface ModelUpworkFreelancerResponse {
+  "feedback"?: Array<ModelUpworkFreelancerFeedback>;
+  "hourly_rate"?: string;
+  "id"?: string;
+  "job_success_score"?: number;
+  "local_time"?: string;
+  "location"?: string;
+  "name"?: string;
+  "overview"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "title"?: string;
+  "total_hours"?: number;
+  "total_jobs"?: number;
+  "url"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelUpworkJobClient {
+  "company_size"?: string;
+  "country"?: string;
+  "hires"?: string;
+  "industry"?: string;
+  "location"?: string;
+  "member_since"?: string;
+  "total_hours"?: string;
+  "total_spent"?: string;
+}
+
+export interface ModelUpworkJobResponse {
+  "applicant_countries"?: Array<string>;
+  "budget_type"?: string;
+  "client"?: ModelUpworkJobClient;
+  "country"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "duration"?: string;
+  "employment_type"?: Array<string>;
+  "experience_level"?: string;
+  "fixed_budget"?: number;
+  "hourly_max"?: number;
+  "hourly_min"?: number;
+  "id"?: string;
+  "location_type"?: string;
+  "posted_at"?: string;
+  "project_type"?: string;
+  "proposals"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelUpworkJobSummary {
+  "budget_text"?: string;
+  "budget_type"?: string;
+  "description"?: string;
+  "duration"?: string;
+  "experience_level"?: string;
+  "id"?: string;
+  "posted_at"?: string;
+  "skills"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelUpworkSearchResponse {
+  "jobs"?: Array<ModelUpworkJobSummary>;
+  "page"?: number;
+  "query"?: string;
+}
+
+export interface ModelUpworkFreelancerResponseDoc {
+  "code"?: number;
+  "data"?: ModelUpworkFreelancerResponse;
+  "msg"?: string;
+}
+
+export interface ModelUpworkJobResponseDoc {
+  "code"?: number;
+  "data"?: ModelUpworkJobResponse;
+  "msg"?: string;
+}
+
+export interface ModelUpworkSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelUpworkSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelUsageUsageBillingStateDoc {
   "allow_overage"?: boolean;
   "created_at"?: string;
@@ -21055,6 +23405,142 @@ export interface ModelUserUserRotateApikeyDoc {
 export interface ModelUserUserRotateApikeyResponseDoc {
   "code"?: number;
   "data"?: ModelUserUserRotateApikeyDoc;
+  "msg"?: string;
+}
+
+export interface ModelVintedBrandEntry {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelVintedBrandResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "items"?: Array<ModelVintedItemCard>;
+  "name"?: string;
+  "page"?: number;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelVintedBrandsResponse {
+  "brands"?: Array<ModelVintedBrandEntry>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelVintedCatalogResponse {
+  "fetched_at"?: string;
+  "items"?: Array<ModelVintedItemCard>;
+  "page"?: number;
+  "search_text"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelVintedCategoriesResponse {
+  "categories"?: Array<ModelVintedCategoryEntry>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelVintedCategoryEntry {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelVintedCategoryResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "items"?: Array<ModelVintedItemCard>;
+  "name"?: string;
+  "page"?: number;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelVintedItemCard {
+  "brand"?: string;
+  "condition"?: string;
+  "favourite_count"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "price_raw"?: string;
+  "size"?: string;
+  "title"?: string;
+  "total_price_raw"?: string;
+  "url"?: string;
+}
+
+export interface ModelVintedItemResponse {
+  "brand"?: string;
+  "categories"?: Array<string>;
+  "color"?: string;
+  "condition"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "material"?: string;
+  "photos"?: Array<string>;
+  "price_raw"?: string;
+  "size"?: string;
+  "source_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelVintedMemberResponse {
+  "fetched_at"?: string;
+  "followers_count"?: number;
+  "following_count"?: number;
+  "id"?: string;
+  "location"?: string;
+  "rating"?: number;
+  "source_url"?: string;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelVintedBrandResponseDoc {
+  "code"?: number;
+  "data"?: ModelVintedBrandResponse;
+  "msg"?: string;
+}
+
+export interface ModelVintedBrandsResponseDoc {
+  "code"?: number;
+  "data"?: ModelVintedBrandsResponse;
+  "msg"?: string;
+}
+
+export interface ModelVintedCatalogResponseDoc {
+  "code"?: number;
+  "data"?: ModelVintedCatalogResponse;
+  "msg"?: string;
+}
+
+export interface ModelVintedCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelVintedCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelVintedCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelVintedCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelVintedItemResponseDoc {
+  "code"?: number;
+  "data"?: ModelVintedItemResponse;
+  "msg"?: string;
+}
+
+export interface ModelVintedMemberResponseDoc {
+  "code"?: number;
+  "data"?: ModelVintedMemberResponse;
   "msg"?: string;
 }
 
@@ -21247,6 +23733,76 @@ export interface ModelWebScrapeResponseDoc {
 export interface ModelWebTechStackResponseDoc {
   "code"?: number;
   "data"?: ModelTechstackResult;
+  "msg"?: string;
+}
+
+export interface ModelWhatnotBrowseResponse {
+  "category"?: string;
+  "shows"?: Array<ModelWhatnotLiveShow>;
+}
+
+export interface ModelWhatnotCategoriesResponse {
+  "categories"?: Array<ModelWhatnotCategory>;
+}
+
+export interface ModelWhatnotCategory {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelWhatnotLiveProduct {
+  "currency"?: string;
+  "current_bid_cents"?: number;
+  "current_bid_count"?: number;
+  "description"?: string;
+  "id"?: string;
+  "price_cents"?: number;
+  "quantity"?: number;
+  "seller"?: ModelWhatnotLiveSeller;
+  "status"?: string;
+  "title"?: string;
+  "transaction_type"?: string;
+}
+
+export interface ModelWhatnotLiveResponse {
+  "id"?: string;
+  "products"?: Array<ModelWhatnotLiveProduct>;
+  "url"?: string;
+}
+
+export interface ModelWhatnotLiveSeller {
+  "rating"?: number;
+  "review_count"?: number;
+  "username"?: string;
+}
+
+export interface ModelWhatnotLiveShow {
+  "id"?: string;
+  "seller_username"?: string;
+  "start_time_ms"?: number;
+  "status"?: string;
+  "tags"?: Array<string>;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelWhatnotBrowseResponseDoc {
+  "code"?: number;
+  "data"?: ModelWhatnotBrowseResponse;
+  "msg"?: string;
+}
+
+export interface ModelWhatnotCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelWhatnotCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelWhatnotLiveResponseDoc {
+  "code"?: number;
+  "data"?: ModelWhatnotLiveResponse;
   "msg"?: string;
 }
 
@@ -21718,6 +24274,31 @@ export interface ModelYahoofinanceTrendingResponseDoc {
 export interface ModelYahoofinanceValuationResponseDoc {
   "code"?: number;
   "data"?: ModelYahoofinanceValuationResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosearchSearchPagination {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelYahoosearchSearchResponse {
+  "pagination"?: ModelYahoosearchSearchPagination;
+  "query"?: string;
+  "results"?: Array<ModelYahoosearchSearchResult>;
+}
+
+export interface ModelYahoosearchSearchResult {
+  "description"?: string;
+  "hostname"?: string;
+  "position"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoosearchSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosearchSearchResponse;
   "msg"?: string;
 }
 
@@ -22602,6 +25183,62 @@ export interface ModelZillowSearchResponse {
   "results"?: Array<ModelZillowPropertyItem>;
 }
 
+export type AgodaActivitiesSearchResponse = CrawloraResponse<ModelAgodaActivitiesSearchResponseDoc>;
+export interface AgodaActivitiesSearchParams {
+  "keyword"?: string;
+  "city_id"?: number;
+  "city"?: string;
+}
+
+export type AgodaActivityDetailResponse = CrawloraResponse<ModelAgodaActivityDetailResponse>;
+export interface AgodaActivityDetailParams {
+  "activity_id": string;
+}
+
+export type AgodaFlightsItineraryAmenitiesBody = CrawloraBody<ModelAgodaFlightItineraryAmenitiesOption>;
+export type AgodaFlightsItineraryAmenitiesResponse = CrawloraResponse<ModelAgodaFlightItineraryAmenitiesResponseDoc>;
+export interface AgodaFlightsItineraryAmenitiesParams {
+  "body": AgodaFlightsItineraryAmenitiesBody;
+}
+
+export type AgodaFlightsSearchResponse = CrawloraResponse<ModelAgodaFlightSearchResponseDoc>;
+export interface AgodaFlightsSearchParams {
+  "origin": string;
+  "destination": string;
+  "departure_date": string;
+  "adults"?: number;
+  "children"?: number;
+  "infants"?: number;
+  "cabin_class"?: "Economy" | "PremiumEconomy" | "Business" | "First";
+  "page"?: number;
+}
+
+export type AgodaFlightsSearchLocationsResponse = CrawloraResponse<ModelAgodaFlightLocationSearchResponseDoc>;
+export interface AgodaFlightsSearchLocationsParams {
+  "keyword": string;
+}
+
+export type AgodaHomesSearchResponse = CrawloraResponse<ModelAgodaHomesSearchResponseDoc>;
+export interface AgodaHomesSearchParams {
+  "city_id"?: number;
+  "city"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type AgodaHotelsSearchResponse = CrawloraResponse<ModelAgodaSearchResponseDoc>;
+export interface AgodaHotelsSearchParams {
+  "city_id"?: number;
+  "city"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type AgodaHotelDetailResponse = CrawloraResponse<ModelAgodaDetailResponse>;
+export interface AgodaHotelDetailParams {
+  "property_id": string;
+}
+
 export type AirbnbHostResponse = CrawloraResponse<ModelAirbnbHostResponse>;
 export interface AirbnbHostParams {
   "id": string;
@@ -23138,6 +25775,49 @@ export interface BingVideosParams {
   "lang"?: string;
 }
 
+export type BlueskyAuthorFeedResponse = CrawloraResponse<ModelBlueskyAuthorFeedResponseDoc>;
+export interface BlueskyAuthorFeedParams {
+  "actor": string;
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type BlueskyFollowersResponse = CrawloraResponse<ModelBlueskyFollowersResponseDoc>;
+export interface BlueskyFollowersParams {
+  "actor": string;
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type BlueskyFollowsResponse = CrawloraResponse<ModelBlueskyFollowsResponseDoc>;
+export interface BlueskyFollowsParams {
+  "actor": string;
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type BlueskyPostThreadResponse = CrawloraResponse<ModelBlueskyPostThreadResponseDoc>;
+export interface BlueskyPostThreadParams {
+  "uri": string;
+  "depth"?: number;
+}
+
+export type BlueskyProfileResponse = CrawloraResponse<ModelBlueskyProfileResponseDoc>;
+export interface BlueskyProfileParams {
+  "actor": string;
+}
+
+export type BlueskySearchActorsResponse = CrawloraResponse<ModelBlueskySearchActorsResponseDoc>;
+export interface BlueskySearchActorsParams {
+  "q": string;
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type BlueskyTrendingTopicsResponse = CrawloraResponse<ModelBlueskyTrendingTopicsResponseDoc>;
+export interface BlueskyTrendingTopicsParams {
+}
+
 export type BookingAttractionsDetailResponse = CrawloraResponse<ModelBookingBookingAttractionDetailResponseDoc>;
 export interface BookingAttractionsDetailParams {
   "slug": string;
@@ -23423,6 +26103,67 @@ export interface CapterraSearchParams {
   "q": string;
 }
 
+export type CarMaxCarmaxSearchResponse = CrawloraResponse<ModelCarmaxSearchResponseDoc>;
+export interface CarMaxCarmaxSearchParams {
+  "make"?: string;
+  "model"?: string;
+  "zip"?: string;
+  "sort"?: string;
+  "min_year"?: number;
+  "max_year"?: number;
+  "min_price"?: number;
+  "max_price"?: number;
+  "max_mileage"?: number;
+  "page"?: number;
+}
+
+export type CarMaxCarmaxSearchSuggestionsResponse = CrawloraResponse<ModelCarmaxSearchSuggestionsResponseDoc>;
+export interface CarMaxCarmaxSearchSuggestionsParams {
+  "search": string;
+  "exact_match"?: boolean;
+}
+
+export type CarMaxCarmaxShopByBrandResponse = CrawloraResponse<ModelCarmaxShopByBrandResponseDoc>;
+export interface CarMaxCarmaxShopByBrandParams {
+}
+
+export type CarMaxCarmaxStoreResponse = CrawloraResponse<ModelCarmaxStoreResponse>;
+export interface CarMaxCarmaxStoreParams {
+  "id": string;
+}
+
+export type CarMaxCarmaxStoresResponse = CrawloraResponse<ModelCarmaxStoreSearchResponseDoc>;
+export interface CarMaxCarmaxStoresParams {
+  "zip"?: string;
+  "keyword"?: string;
+  "take"?: number;
+}
+
+export type CarMaxCarmaxVehicleResponse = CrawloraResponse<ModelCarmaxVehicleResponse>;
+export interface CarMaxCarmaxVehicleParams {
+  "stock_number": string;
+  "store_id"?: string;
+}
+
+export type CarMaxCarmaxVehicleRecommendationsResponse = CrawloraResponse<ModelCarmaxVehicleRecommendationsResponseDoc>;
+export interface CarMaxCarmaxVehicleRecommendationsParams {
+  "stock_number": string;
+  "store_id": string;
+}
+
+export type CarsComCarsdotcomSearchResponse = CrawloraResponse<ModelCarsdotcomSearchResponseDoc>;
+export interface CarsComCarsdotcomSearchParams {
+  "zip"?: string;
+  "radius"?: number;
+  "stock_type"?: "new" | "used" | "cpo" | "all";
+  "page"?: number;
+}
+
+export type CarsComCarsdotcomVehicleResponse = CrawloraResponse<ModelCarsdotcomVehicleResponse>;
+export interface CarsComCarsdotcomVehicleParams {
+  "listing_id": string;
+}
+
 export type ChromeWebStoreChromewebstoreCategoriesResponse = CrawloraResponse<ModelChromewebstoreCategoriesResponseDoc>;
 export interface ChromeWebStoreChromewebstoreCategoriesParams {
 }
@@ -23650,10 +26391,65 @@ export interface CoinGeckoTrendingParams {
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
+export type CongressReportResponse = CrawloraResponse<ModelCongressReportResponseDoc>;
+export interface CongressReportParams {
+  "url": string;
+}
+
+export type CongressStockDisclosuresResponse = CrawloraResponse<ModelCongressStockDisclosuresResponseDoc>;
+export interface CongressStockDisclosuresParams {
+  "chamber"?: "house" | "senate";
+  "member"?: string;
+  "ticker"?: string;
+  "state"?: string;
+  "district"?: string;
+  "filer_type"?: string;
+  "election_year"?: string;
+  "report_type"?: string;
+  "from"?: string;
+  "to"?: string;
+  "sort"?: "name_asc" | "name_desc" | "office_asc" | "office_desc" | "filing_year_asc" | "filing_year_desc";
+  "limit"?: number;
+}
+
 export type WebContactBody = CrawloraBody<ModelContactContactRequest>;
 export type WebContactResponse = CrawloraResponse<ModelContactContactResponseDoc>;
 export interface WebContactParams {
   "option": WebContactBody;
+}
+
+export type CostcoCategoriesResponse = CrawloraResponse<ModelCostcoCategoriesResponseDoc>;
+export interface CostcoCategoriesParams {
+  "query"?: string;
+}
+
+export type CostcoProductResponse = CrawloraResponse<ModelCostcoProductResponseDoc>;
+export interface CostcoProductParams {
+  "id": string;
+}
+
+export type CostcoProductAvailabilityResponse = CrawloraResponse<ModelCostcoProductAvailabilityResponseDoc>;
+export interface CostcoProductAvailabilityParams {
+  "id": string;
+  "postal_code": string;
+  "state": string;
+}
+
+export type CostcoProductReviewsResponse = CrawloraResponse<ModelCostcoProductReviewsResponseDoc>;
+export interface CostcoProductReviewsParams {
+  "id": string;
+}
+
+export type CostcoSearchResponse = CrawloraResponse<ModelCostcoSearchResponseDoc>;
+export interface CostcoSearchParams {
+  "query"?: string;
+  "category"?: string;
+}
+
+export type CostcoWarehousesResponse = CrawloraResponse<ModelCostcoWarehousesResponseDoc>;
+export interface CostcoWarehousesParams {
+  "latitude": number;
+  "longitude": number;
 }
 
 export type DatasetsListResponse = CrawloraResponse<ModelDatasetsListResponseDoc>;
@@ -25103,6 +27899,45 @@ export interface DatasetsXUsersSearchParams {
   "page_size"?: number;
 }
 
+export type DepopCategoriesResponse = CrawloraResponse<ModelDepopCategoriesResponseDoc>;
+export interface DepopCategoriesParams {
+}
+
+export type DepopItemResponse = CrawloraResponse<ModelDepopItemDetailResponse>;
+export interface DepopItemParams {
+  "slug": string;
+}
+
+export type DepopSearchResponse = CrawloraResponse<ModelDepopSearchResponseDoc>;
+export interface DepopSearchParams {
+  "query": string;
+  "price_min"?: number;
+  "price_max"?: number;
+  "condition"?: string;
+  "colours"?: string;
+  "on_sale"?: boolean;
+  "sort"?: string;
+  "category"?: string;
+  "subcategory"?: string;
+  "gender"?: string;
+  "brand_ids"?: string;
+  "after"?: string;
+}
+
+export type DepopShopResponse = CrawloraResponse<ModelDepopShopResponseDoc>;
+export interface DepopShopParams {
+  "username": string;
+  "price_min"?: number;
+  "price_max"?: number;
+  "condition"?: string;
+  "colours"?: string;
+  "on_sale"?: boolean;
+  "sort"?: string;
+  "category"?: string;
+  "subcategory"?: string;
+  "gender"?: string;
+}
+
 export type WebAntibotCheckBody = CrawloraBody<ModelDiagnosticsAntibotCheckRequest>;
 export type WebAntibotCheckResponse = CrawloraResponse<ModelDiagnosticsAntibotCheckResponseDoc>;
 export interface WebAntibotCheckParams {
@@ -25238,6 +28073,42 @@ export interface DoorDashDoordashStoreReviewsParams {
   "store_id": string;
   "latitude": number;
   "longitude": number;
+}
+
+export type DuckDuckGoSearchDuckduckgoImageResponse = CrawloraResponse<ModelDuckduckgoImageResponseDoc>;
+export interface DuckDuckGoSearchDuckduckgoImageParams {
+  "q": string;
+  "page"?: number;
+  "region"?: string;
+}
+
+export type DuckDuckGoSearchDuckduckgoNewsResponse = CrawloraResponse<ModelDuckduckgoNewsResponseDoc>;
+export interface DuckDuckGoSearchDuckduckgoNewsParams {
+  "q": string;
+  "page"?: number;
+  "region"?: string;
+}
+
+export type DuckDuckGoSearchDuckduckgoSearchResponse = CrawloraResponse<ModelDuckduckgoSearchResponseDoc>;
+export interface DuckDuckGoSearchDuckduckgoSearchParams {
+  "q": string;
+  "page"?: number;
+  "region"?: string;
+  "time_range"?: "d" | "w" | "m" | "y";
+  "safe_search"?: "strict" | "moderate" | "off";
+}
+
+export type DuckDuckGoSearchDuckduckgoShoppingResponse = CrawloraResponse<ModelDuckduckgoShoppingResponseDoc>;
+export interface DuckDuckGoSearchDuckduckgoShoppingParams {
+  "q": string;
+  "region"?: string;
+}
+
+export type DuckDuckGoSearchDuckduckgoVideoResponse = CrawloraResponse<ModelDuckduckgoVideoResponseDoc>;
+export interface DuckDuckGoSearchDuckduckgoVideoParams {
+  "q": string;
+  "page"?: number;
+  "region"?: string;
 }
 
 export type EBayEbayItemResponse = CrawloraResponse<ModelEbayItemResponseDoc>;
@@ -25430,16 +28301,6 @@ export interface WebExtractParams {
   "extractOption": WebExtractBody;
 }
 
-export type FacebookGroupResponse = CrawloraResponse<ModelFacebookGroupResponseDoc>;
-export interface FacebookGroupParams {
-  "group": string;
-}
-
-export type FacebookMarketplaceItemResponse = CrawloraResponse<ModelFacebookMarketplaceItemResponseDoc>;
-export interface FacebookMarketplaceItemParams {
-  "id": string;
-}
-
 export type FacebookMarketplaceSearchResponse = CrawloraResponse<ModelFacebookMarketplaceSearchResponseDoc>;
 export interface FacebookMarketplaceSearchParams {
   "location": string;
@@ -25455,6 +28316,23 @@ export interface FacebookMarketplaceSearchParams {
 export type FacebookPageResponse = CrawloraResponse<ModelFacebookPageResponseDoc>;
 export interface FacebookPageParams {
   "page": string;
+}
+
+export type FiverrGigResponse = CrawloraResponse<ModelFiverrGigResponseDoc>;
+export interface FiverrGigParams {
+  "username": string;
+  "slug": string;
+}
+
+export type FiverrSearchResponse = CrawloraResponse<ModelFiverrSearchResponseDoc>;
+export interface FiverrSearchParams {
+  "q": string;
+  "page"?: number;
+}
+
+export type FiverrSellerResponse = CrawloraResponse<ModelFiverrSellerResponseDoc>;
+export interface FiverrSellerParams {
+  "username": string;
 }
 
 export type GeocodingLookupResponse = CrawloraResponse<ModelGeocodingLookupResponseDoc>;
@@ -26189,6 +29067,45 @@ export interface IndeedSearchParams {
   "fromage"?: number;
 }
 
+export type InstacartDepartmentsResponse = CrawloraResponse<ModelInstacartDepartmentsResponseDoc>;
+export interface InstacartDepartmentsParams {
+  "shop_id": string;
+  "store_slug": string;
+  "postal_code": string;
+}
+
+export type InstacartItemResponse = CrawloraResponse<ModelInstacartItemResponseDoc>;
+export interface InstacartItemParams {
+  "shop_id": string;
+  "store_slug": string;
+  "retailer_location_id": string;
+  "product_id": string;
+  "postal_code": string;
+}
+
+export type InstacartSearchResponse = CrawloraResponse<ModelInstacartSearchResponseDoc>;
+export interface InstacartSearchParams {
+  "shop_id": string;
+  "store_slug": string;
+  "q": string;
+}
+
+export type InstacartSearchNearbyResponse = CrawloraResponse<ModelInstacartSearchNearbyResponseDoc>;
+export interface InstacartSearchNearbyParams {
+  "postal_code": string;
+  "q": string;
+}
+
+export type InstacartStoresResponse = CrawloraResponse<ModelInstacartStoresResponseDoc>;
+export interface InstacartStoresParams {
+  "postal_code": string;
+}
+
+export type InstacartTrendingResponse = CrawloraResponse<ModelInstacartTrendingResponseDoc>;
+export interface InstacartTrendingParams {
+  "postal_code": string;
+}
+
 export type InstagramPostResponse = CrawloraResponse<ModelInstagramPostResponseDoc>;
 export interface InstagramPostParams {
   "id": string;
@@ -26806,6 +29723,29 @@ export interface MangaTitleParams {
   "mal"?: boolean;
 }
 
+export type MercariAutocompleteResponse = CrawloraResponse<ModelMercariAutocompleteResponseDoc>;
+export interface MercariAutocompleteParams {
+  "query": string;
+}
+
+export type MercariHomeResponse = CrawloraResponse<ModelMercariHomeResponseDoc>;
+export interface MercariHomeParams {
+}
+
+export type MercariItemResponse = CrawloraResponse<ModelMercariItemDetailResponse>;
+export interface MercariItemParams {
+  "id": string;
+}
+
+export type MercariMasterResponse = CrawloraResponse<ModelMercariMasterResponseDoc>;
+export interface MercariMasterParams {
+}
+
+export type MercariSearchResponse = CrawloraResponse<ModelMercariSearchResponseDoc>;
+export interface MercariSearchParams {
+  "query": string;
+}
+
 export type MetaJobsJobResponse = CrawloraResponse<ModelMetajobsJobResponseDoc>;
 export interface MetaJobsJobParams {
   "id": string;
@@ -27114,6 +30054,46 @@ export interface OpenTableOpentableSearchParams {
 
 export type MetaPingResponse = CrawloraResponse<ModelApiPingResponseDoc>;
 export interface MetaPingParams {
+}
+
+export type PinterestBoardResponse = CrawloraResponse<ModelPinterestBoardResponseDoc>;
+export interface PinterestBoardParams {
+  "username": string;
+  "slug": string;
+}
+
+export type PinterestCategoriesResponse = CrawloraResponse<ModelPinterestCategoriesResponseDoc>;
+export interface PinterestCategoriesParams {
+}
+
+export type PinterestIdeaResponse = CrawloraResponse<ModelPinterestIdeaResponseDoc>;
+export interface PinterestIdeaParams {
+  "id": string;
+}
+
+export type PinterestPinResponse = CrawloraResponse<ModelPinterestPinResponseDoc>;
+export interface PinterestPinParams {
+  "id": string;
+}
+
+export type PinterestSearchResponse = CrawloraResponse<ModelPinterestSearchResponseDoc>;
+export interface PinterestSearchParams {
+  "query": string;
+}
+
+export type PinterestUserResponse = CrawloraResponse<ModelPinterestUserResponseDoc>;
+export interface PinterestUserParams {
+  "username": string;
+}
+
+export type PinterestUserBoardsResponse = CrawloraResponse<ModelPinterestUserBoardsResponseDoc>;
+export interface PinterestUserBoardsParams {
+  "username": string;
+}
+
+export type PinterestUserPinsResponse = CrawloraResponse<ModelPinterestUserPinsResponseDoc>;
+export interface PinterestUserPinsParams {
+  "username": string;
 }
 
 export type PitchBookPitchbookAdvisorResponse = CrawloraResponse<ModelPitchbookAdvisorResponseDoc>;
@@ -27644,6 +30624,50 @@ export interface PolymarketTournamentsParams {
 export type PolymarketTournamentResponse = CrawloraResponse<ModelPolymarketPublicDataResponseDoc>;
 export interface PolymarketTournamentParams {
   "id": number;
+}
+
+export type PoshmarkBrandResponse = CrawloraResponse<ModelPoshmarkBrandResponse>;
+export interface PoshmarkBrandParams {
+  "name": string;
+  "max_id"?: string;
+}
+
+export type PoshmarkBrandsResponse = CrawloraResponse<ModelPoshmarkBrandsResponseDoc>;
+export interface PoshmarkBrandsParams {
+}
+
+export type PoshmarkCategoriesResponse = CrawloraResponse<ModelPoshmarkCategoriesResponseDoc>;
+export interface PoshmarkCategoriesParams {
+}
+
+export type PoshmarkCategoryResponse = CrawloraResponse<ModelPoshmarkCategoryResponse>;
+export interface PoshmarkCategoryParams {
+  "path": string;
+  "max_id"?: string;
+}
+
+export type PoshmarkClosetResponse = CrawloraResponse<ModelPoshmarkClosetResponse>;
+export interface PoshmarkClosetParams {
+  "username": string;
+  "max_id"?: string;
+}
+
+export type PoshmarkListingResponse = CrawloraResponse<ModelPoshmarkListingResponse>;
+export interface PoshmarkListingParams {
+  "id": string;
+}
+
+export type PoshmarkSearchResponse = CrawloraResponse<ModelPoshmarkSearchResponseDoc>;
+export interface PoshmarkSearchParams {
+  "query": string;
+  "department"?: string;
+  "max_id"?: string;
+}
+
+export type PoshmarkTrendResponse = CrawloraResponse<ModelPoshmarkTrendResponse>;
+export interface PoshmarkTrendParams {
+  "id": string;
+  "max_id"?: string;
 }
 
 export type ProductHuntCategoryResponse = CrawloraResponse<ModelProducthuntCategoryResponseDoc>;
@@ -28776,6 +31800,66 @@ export interface SteamTopSellersParams {
   "l"?: string;
 }
 
+export type StockXStockxBrandsResponse = CrawloraResponse<ModelStockxBrandsResponseDoc>;
+export interface StockXStockxBrandsParams {
+}
+
+export type StockXStockxCategoriesResponse = CrawloraResponse<ModelStockxCategoriesResponseDoc>;
+export interface StockXStockxCategoriesParams {
+}
+
+export type StockXStockxProductResponse = CrawloraResponse<ModelStockxProductResponseDoc>;
+export interface StockXStockxProductParams {
+  "slug": string;
+}
+
+export type StockXStockxReleasesResponse = CrawloraResponse<ModelStockxReleasesResponseDoc>;
+export interface StockXStockxReleasesParams {
+  "from"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type StockXStockxSearchResponse = CrawloraResponse<ModelStockxSearchResponseDoc>;
+export interface StockXStockxSearchParams {
+  "category": "sneakers" | "shoes" | "apparel" | "accessories" | "collectibles" | "trading-cards" | "electronics";
+  "query"?: string;
+  "gender"?: "men" | "women" | "kids" | "unisex";
+  "brand"?: string;
+  "model"?: string;
+  "color"?: "white" | "black" | "multi" | "blue" | "grey" | "pink" | "red" | "brown" | "yellow" | "green" | "purple" | "orange";
+  "shoe_height"?: "low" | "mid" | "high";
+  "activity"?: "basketball" | "football" | "golf" | "hiking" | "running" | "skateboarding" | "soccer";
+  "available_now"?: boolean;
+  "xpress_ship"?: boolean;
+  "below_retail"?: boolean;
+  "sort"?: "featured" | "most-active";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type StravaChallengesResponse = CrawloraResponse<ModelStravaChallengesResponseDoc>;
+export interface StravaChallengesParams {
+}
+
+export type StravaClubResponse = CrawloraResponse<ModelStravaClubResponseDoc>;
+export interface StravaClubParams {
+  "id": string;
+}
+
+export type StravaRoutesResponse = CrawloraResponse<ModelStravaRoutesResponseDoc>;
+export interface StravaRoutesParams {
+  "sport": "hiking" | "road-biking" | "mountain-biking" | "trail-running" | "gravel-biking";
+  "country": string;
+  "region": string;
+  "page"?: number;
+}
+
+export type StravaRouteDetailResponse = CrawloraResponse<ModelStravaRouteDetailResponseDoc>;
+export interface StravaRouteDetailParams {
+  "path": string;
+}
+
 export type TargetCategoriesResponse = CrawloraResponse<ModelTargetCategoriesResponseDoc>;
 export interface TargetCategoriesParams {
 }
@@ -29229,6 +32313,18 @@ export interface TripAdvisorTripadvisorSearchParams {
   "sort"?: string;
 }
 
+export type TripComTripcomHotelsSearchResponse = CrawloraResponse<ModelTripcomSearchResponseDoc>;
+export interface TripComTripcomHotelsSearchParams {
+  "city_slug": string;
+  "city_id": string;
+}
+
+export type TripComTripcomHotelDetailResponse = CrawloraResponse<ModelTripcomDetailResponse>;
+export interface TripComTripcomHotelDetailParams {
+  "id": string;
+  "slug"?: string;
+}
+
 export type TrustMrrTrustmrrAcquireResponse = CrawloraResponse<ModelTrustmrrAcquireResponseDoc>;
 export interface TrustMrrTrustmrrAcquireParams {
 }
@@ -29344,6 +32440,22 @@ export interface UberEatsUbereatsStoreReviewsParams {
   "store_id": string;
 }
 
+export type UpworkFreelancerResponse = CrawloraResponse<ModelUpworkFreelancerResponseDoc>;
+export interface UpworkFreelancerParams {
+  "id": string;
+}
+
+export type UpworkJobResponse = CrawloraResponse<ModelUpworkJobResponseDoc>;
+export interface UpworkJobParams {
+  "id": string;
+}
+
+export type UpworkSearchResponse = CrawloraResponse<ModelUpworkSearchResponseDoc>;
+export interface UpworkSearchParams {
+  "q": string;
+  "page"?: number;
+}
+
 export type UsageMeEndpointsResponse = CrawloraResponse<ModelUsageUsageEndpointsResponseDoc>;
 export interface UsageMeEndpointsParams {
   "range"?: "period" | "day" | "week" | "month" | "custom";
@@ -29393,6 +32505,51 @@ export interface UserMeApiKeysRevealParams {
   "id": string;
 }
 
+export type VintedBrandResponse = CrawloraResponse<ModelVintedBrandResponseDoc>;
+export interface VintedBrandParams {
+  "id": string;
+  "price_from"?: number;
+  "price_to"?: number;
+  "order"?: "relevance" | "newest_first" | "price_high_to_low" | "price_low_to_high";
+  "page"?: number;
+}
+
+export type VintedBrandsResponse = CrawloraResponse<ModelVintedBrandsResponseDoc>;
+export interface VintedBrandsParams {
+}
+
+export type VintedCatalogResponse = CrawloraResponse<ModelVintedCatalogResponseDoc>;
+export interface VintedCatalogParams {
+  "search_text": string;
+  "price_from"?: number;
+  "price_to"?: number;
+  "order"?: "relevance" | "newest_first" | "price_high_to_low" | "price_low_to_high";
+  "page"?: number;
+}
+
+export type VintedCategoriesResponse = CrawloraResponse<ModelVintedCategoriesResponseDoc>;
+export interface VintedCategoriesParams {
+}
+
+export type VintedCategoryResponse = CrawloraResponse<ModelVintedCategoryResponseDoc>;
+export interface VintedCategoryParams {
+  "id": string;
+  "price_from"?: number;
+  "price_to"?: number;
+  "order"?: "relevance" | "newest_first" | "price_high_to_low" | "price_low_to_high";
+  "page"?: number;
+}
+
+export type VintedItemResponse = CrawloraResponse<ModelVintedItemResponseDoc>;
+export interface VintedItemParams {
+  "id": string;
+}
+
+export type VintedMemberResponse = CrawloraResponse<ModelVintedMemberResponseDoc>;
+export interface VintedMemberParams {
+  "id": string;
+}
+
 export type WalmartProductResponse = CrawloraResponse<ModelWalmartProductResponseDoc>;
 export interface WalmartProductParams {
   "item_id": string;
@@ -29420,6 +32577,20 @@ export type WebTechstackBody = CrawloraBody<ModelWebTechStackOption>;
 export type WebTechstackResponse = CrawloraResponse<ModelWebTechStackResponseDoc>;
 export interface WebTechstackParams {
   "request": WebTechstackBody;
+}
+
+export type WhatnotBrowseResponse = CrawloraResponse<ModelWhatnotBrowseResponseDoc>;
+export interface WhatnotBrowseParams {
+  "category": string;
+}
+
+export type WhatnotCategoriesResponse = CrawloraResponse<ModelWhatnotCategoriesResponseDoc>;
+export interface WhatnotCategoriesParams {
+}
+
+export type WhatnotLiveResponse = CrawloraResponse<ModelWhatnotLiveResponseDoc>;
+export interface WhatnotLiveParams {
+  "id": string;
 }
 
 export type XPostResponse = CrawloraResponse<ModelXPostResponseDoc>;
@@ -29670,6 +32841,12 @@ export interface YahooFinanceTrendingParams {
   "count"?: number;
 }
 
+export type YahooSearchCallResponse = CrawloraResponse<ModelYahoosearchSearchResponseDoc>;
+export interface YahooSearchCallParams {
+  "q": string;
+  "page"?: number;
+}
+
 export type YelpBusinessResponse = CrawloraResponse<ModelYelpMobileBusinessResponseDoc>;
 export interface YelpBusinessParams {
   "id": string;
@@ -29857,6 +33034,17 @@ export interface ZillowSearchParams {
   "north"?: number;
 }
 
+export interface AgodaService {
+  activitiesSearch<T = AgodaActivitiesSearchResponse>(params?: AgodaActivitiesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  activityDetail<T = AgodaActivityDetailResponse>(params: AgodaActivityDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  flightsItineraryAmenities<T = AgodaFlightsItineraryAmenitiesResponse>(params: AgodaFlightsItineraryAmenitiesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  flightsSearch<T = AgodaFlightsSearchResponse>(params: AgodaFlightsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  flightsSearchLocations<T = AgodaFlightsSearchLocationsResponse>(params: AgodaFlightsSearchLocationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  homesSearch<T = AgodaHomesSearchResponse>(params?: AgodaHomesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hotelsSearch<T = AgodaHotelsSearchResponse>(params?: AgodaHotelsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hotelDetail<T = AgodaHotelDetailResponse>(params: AgodaHotelDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface AirbnbService {
   host<T = AirbnbHostResponse>(params: AirbnbHostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hostListings<T = AirbnbHostListingsResponse>(params: AirbnbHostListingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -29961,6 +33149,16 @@ export interface BingService {
   videos<T = BingVideosResponse>(params: BingVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface BlueskyService {
+  authorFeed<T = BlueskyAuthorFeedResponse>(params: BlueskyAuthorFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  followers<T = BlueskyFollowersResponse>(params: BlueskyFollowersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  follows<T = BlueskyFollowsResponse>(params: BlueskyFollowsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  postThread<T = BlueskyPostThreadResponse>(params: BlueskyPostThreadParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  profile<T = BlueskyProfileResponse>(params: BlueskyProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchActors<T = BlueskySearchActorsResponse>(params: BlueskySearchActorsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trendingTopics<T = BlueskyTrendingTopicsResponse>(params?: BlueskyTrendingTopicsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface BookingService {
   attractionsDetail<T = BookingAttractionsDetailResponse>(params: BookingAttractionsDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   attractionsReviews<T = BookingAttractionsReviewsResponse>(params: BookingAttractionsReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -30014,6 +33212,21 @@ export interface CapterraService {
   search<T = CapterraSearchResponse>(params: CapterraSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface CarMaxService {
+  carmaxSearch<T = CarMaxCarmaxSearchResponse>(params?: CarMaxCarmaxSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  carmaxSearchSuggestions<T = CarMaxCarmaxSearchSuggestionsResponse>(params: CarMaxCarmaxSearchSuggestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  carmaxShopByBrand<T = CarMaxCarmaxShopByBrandResponse>(params?: CarMaxCarmaxShopByBrandParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  carmaxStore<T = CarMaxCarmaxStoreResponse>(params: CarMaxCarmaxStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  carmaxStores<T = CarMaxCarmaxStoresResponse>(params?: CarMaxCarmaxStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  carmaxVehicle<T = CarMaxCarmaxVehicleResponse>(params: CarMaxCarmaxVehicleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  carmaxVehicleRecommendations<T = CarMaxCarmaxVehicleRecommendationsResponse>(params: CarMaxCarmaxVehicleRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface CarsComService {
+  carsdotcomSearch<T = CarsComCarsdotcomSearchResponse>(params?: CarsComCarsdotcomSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  carsdotcomVehicle<T = CarsComCarsdotcomVehicleResponse>(params: CarsComCarsdotcomVehicleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ChromeWebStoreService {
   chromewebstoreCategories<T = ChromeWebStoreChromewebstoreCategoriesResponse>(params?: ChromeWebStoreChromewebstoreCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromewebstoreCategory<T = ChromeWebStoreChromewebstoreCategoryResponse>(params: ChromeWebStoreChromewebstoreCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -30053,12 +33266,26 @@ export interface CoinGeckoService {
   trending<T = CoinGeckoTrendingResponse>(params?: CoinGeckoTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface CongressService {
+  report<T = CongressReportResponse>(params: CongressReportParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stockDisclosures<T = CongressStockDisclosuresResponse>(params?: CongressStockDisclosuresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface WebService {
   contact<T = WebContactResponse>(params: WebContactParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   antibotCheck<T = WebAntibotCheckResponse>(params: WebAntibotCheckParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   extract<T = WebExtractResponse>(params: WebExtractParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   scrape<T = WebScrapeResponse>(params: WebScrapeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techstack<T = WebTechstackResponse>(params: WebTechstackParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface CostcoService {
+  categories<T = CostcoCategoriesResponse>(params?: CostcoCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = CostcoProductResponse>(params: CostcoProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productAvailability<T = CostcoProductAvailabilityResponse>(params: CostcoProductAvailabilityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productReviews<T = CostcoProductReviewsResponse>(params: CostcoProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = CostcoSearchResponse>(params?: CostcoSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  warehouses<T = CostcoWarehousesResponse>(params: CostcoWarehousesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface DatasetsService {
@@ -30173,6 +33400,13 @@ export interface DatasetsService {
   xUsersSearch<T = DatasetsXUsersSearchResponse>(params?: DatasetsXUsersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface DepopService {
+  categories<T = DepopCategoriesResponse>(params?: DepopCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  item<T = DepopItemResponse>(params: DepopItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = DepopSearchResponse>(params: DepopSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shop<T = DepopShopResponse>(params: DepopShopParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface DiscogsService {
   artist<T = DiscogsArtistResponse>(params: DiscogsArtistParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   artistReleases<T = DiscogsArtistReleasesResponse>(params: DiscogsArtistReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -30196,6 +33430,14 @@ export interface DoorDashService {
   doordashStoreItem<T = DoorDashDoordashStoreItemResponse>(params: DoorDashDoordashStoreItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreMenu<T = DoorDashDoordashStoreMenuResponse>(params: DoorDashDoordashStoreMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreReviews<T = DoorDashDoordashStoreReviewsResponse>(params: DoorDashDoordashStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface DuckDuckGoSearchService {
+  duckduckgoImage<T = DuckDuckGoSearchDuckduckgoImageResponse>(params: DuckDuckGoSearchDuckduckgoImageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  duckduckgoNews<T = DuckDuckGoSearchDuckduckgoNewsResponse>(params: DuckDuckGoSearchDuckduckgoNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  duckduckgoSearch<T = DuckDuckGoSearchDuckduckgoSearchResponse>(params: DuckDuckGoSearchDuckduckgoSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  duckduckgoShopping<T = DuckDuckGoSearchDuckduckgoShoppingResponse>(params: DuckDuckGoSearchDuckduckgoShoppingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  duckduckgoVideo<T = DuckDuckGoSearchDuckduckgoVideoResponse>(params: DuckDuckGoSearchDuckduckgoVideoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface EBayService {
@@ -30240,10 +33482,14 @@ export interface ExpediaService {
 }
 
 export interface FacebookService {
-  group<T = FacebookGroupResponse>(params: FacebookGroupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
-  marketplaceItem<T = FacebookMarketplaceItemResponse>(params: FacebookMarketplaceItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   marketplaceSearch<T = FacebookMarketplaceSearchResponse>(params: FacebookMarketplaceSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   page<T = FacebookPageResponse>(params: FacebookPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface FiverrService {
+  gig<T = FiverrGigResponse>(params: FiverrGigParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = FiverrSearchResponse>(params: FiverrSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  seller<T = FiverrSellerResponse>(params: FiverrSellerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GeocodingService {
@@ -30381,6 +33627,15 @@ export interface IndeedService {
   search<T = IndeedSearchResponse>(params: IndeedSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface InstacartService {
+  departments<T = InstacartDepartmentsResponse>(params: InstacartDepartmentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  item<T = InstacartItemResponse>(params: InstacartItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = InstacartSearchResponse>(params: InstacartSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchNearby<T = InstacartSearchNearbyResponse>(params: InstacartSearchNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stores<T = InstacartStoresResponse>(params: InstacartStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trending<T = InstacartTrendingResponse>(params: InstacartTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface InstagramService {
   post<T = InstagramPostResponse>(params: InstagramPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = InstagramProfileResponse>(params: InstagramProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -30489,6 +33744,14 @@ export interface MangaService {
   title<T = MangaTitleResponse>(params: MangaTitleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface MercariService {
+  autocomplete<T = MercariAutocompleteResponse>(params: MercariAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = MercariHomeResponse>(params?: MercariHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  item<T = MercariItemResponse>(params: MercariItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  master<T = MercariMasterResponse>(params?: MercariMasterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = MercariSearchResponse>(params: MercariSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface MetaJobsService {
   job<T = MetaJobsJobResponse>(params: MetaJobsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   list<T = MetaJobsListResponse>(params?: MetaJobsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -30558,6 +33821,17 @@ export interface OpenTableService {
 export interface MetaService {
   ping<T = MetaPingResponse>(params?: MetaPingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ready<T = MetaReadyResponse>(params?: MetaReadyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface PinterestService {
+  board<T = PinterestBoardResponse>(params: PinterestBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categories<T = PinterestCategoriesResponse>(params?: PinterestCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  idea<T = PinterestIdeaResponse>(params: PinterestIdeaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pin<T = PinterestPinResponse>(params: PinterestPinParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = PinterestSearchResponse>(params: PinterestSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  user<T = PinterestUserResponse>(params: PinterestUserParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  userBoards<T = PinterestUserBoardsResponse>(params: PinterestUserBoardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  userPins<T = PinterestUserPinsResponse>(params: PinterestUserPinsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface PitchBookService {
@@ -30645,6 +33919,17 @@ export interface PolymarketService {
   tokensSpreads<T = PolymarketTokensSpreadsResponse>(params: PolymarketTokensSpreadsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   tournaments<T = PolymarketTournamentsResponse>(params?: PolymarketTournamentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   tournament<T = PolymarketTournamentResponse>(params: PolymarketTournamentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface PoshmarkService {
+  brand<T = PoshmarkBrandResponse>(params: PoshmarkBrandParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  brands<T = PoshmarkBrandsResponse>(params?: PoshmarkBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categories<T = PoshmarkCategoriesResponse>(params?: PoshmarkCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = PoshmarkCategoryResponse>(params: PoshmarkCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  closet<T = PoshmarkClosetResponse>(params: PoshmarkClosetParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  listing<T = PoshmarkListingResponse>(params: PoshmarkListingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = PoshmarkSearchResponse>(params: PoshmarkSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trend<T = PoshmarkTrendResponse>(params: PoshmarkTrendParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ProductHuntService {
@@ -30838,6 +34123,21 @@ export interface SteamService {
   topSellers<T = SteamTopSellersResponse>(params?: SteamTopSellersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface StockXService {
+  stockxBrands<T = StockXStockxBrandsResponse>(params?: StockXStockxBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stockxCategories<T = StockXStockxCategoriesResponse>(params?: StockXStockxCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stockxProduct<T = StockXStockxProductResponse>(params: StockXStockxProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stockxReleases<T = StockXStockxReleasesResponse>(params?: StockXStockxReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stockxSearch<T = StockXStockxSearchResponse>(params: StockXStockxSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface StravaService {
+  challenges<T = StravaChallengesResponse>(params?: StravaChallengesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  club<T = StravaClubResponse>(params: StravaClubParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  routes<T = StravaRoutesResponse>(params: StravaRoutesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  routeDetail<T = StravaRouteDetailResponse>(params: StravaRouteDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TargetService {
   categories<T = TargetCategoriesResponse>(params?: TargetCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categoryProducts<T = TargetCategoryProductsResponse>(params: TargetCategoryProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -30922,6 +34222,11 @@ export interface TripAdvisorService {
   tripadvisorSearch<T = TripAdvisorTripadvisorSearchResponse>(params: TripAdvisorTripadvisorSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TripComService {
+  tripcomHotelsSearch<T = TripComTripcomHotelsSearchResponse>(params: TripComTripcomHotelsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tripcomHotelDetail<T = TripComTripcomHotelDetailResponse>(params: TripComTripcomHotelDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TrustMrrService {
   trustmrrAcquire<T = TrustMrrTrustmrrAcquireResponse>(params?: TrustMrrTrustmrrAcquireParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trustmrrCategories<T = TrustMrrTrustmrrCategoriesResponse>(params?: TrustMrrTrustmrrCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -30950,6 +34255,12 @@ export interface UberEatsService {
   ubereatsStoreReviews<T = UberEatsUbereatsStoreReviewsResponse>(params: UberEatsUbereatsStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface UpworkService {
+  freelancer<T = UpworkFreelancerResponse>(params: UpworkFreelancerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  job<T = UpworkJobResponse>(params: UpworkJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = UpworkSearchResponse>(params: UpworkSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface UsageService {
   meEndpoints<T = UsageMeEndpointsResponse>(params?: UsageMeEndpointsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meOverview<T = UsageMeOverviewResponse>(params?: UsageMeOverviewParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -30964,10 +34275,26 @@ export interface UserService {
   meApiKeysReveal<T = UserMeApiKeysRevealResponse>(params: UserMeApiKeysRevealParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface VintedService {
+  brand<T = VintedBrandResponse>(params: VintedBrandParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  brands<T = VintedBrandsResponse>(params?: VintedBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  catalog<T = VintedCatalogResponse>(params: VintedCatalogParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categories<T = VintedCategoriesResponse>(params?: VintedCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = VintedCategoryResponse>(params: VintedCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  item<T = VintedItemResponse>(params: VintedItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  member<T = VintedMemberResponse>(params: VintedMemberParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface WalmartService {
   product<T = WalmartProductResponse>(params: WalmartProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   productReviews<T = WalmartProductReviewsResponse>(params: WalmartProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = WalmartSearchResponse>(params: WalmartSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface WhatnotService {
+  browse<T = WhatnotBrowseResponse>(params: WhatnotBrowseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categories<T = WhatnotCategoriesResponse>(params?: WhatnotCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  live<T = WhatnotLiveResponse>(params: WhatnotLiveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface XService {
@@ -31018,6 +34345,10 @@ export interface YahooFinanceService {
   trending<T = YahooFinanceTrendingResponse>(params: YahooFinanceTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface YahooSearchService {
+  call<T = YahooSearchCallResponse>(params: YahooSearchCallParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface YelpService {
   business<T = YelpBusinessResponse>(params: YelpBusinessParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   businessMenu<T = YelpBusinessMenuResponse>(params: YelpBusinessMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -31060,6 +34391,7 @@ export interface ZillowService {
 }
 
 export interface CrawloraGeneratedGroups {
+  agoda: AgodaService;
   airbnb: AirbnbService;
   amazonJobs: AmazonJobsService;
   amazon: AmazonService;
@@ -31071,22 +34403,30 @@ export interface CrawloraGeneratedGroups {
   autotrader: AutotraderService;
   billing: BillingService;
   bing: BingService;
+  bluesky: BlueskyService;
   booking: BookingService;
   boxOfficeMojo: BoxOfficeMojoService;
   brand: BrandService;
   brave: BraveService;
   capterra: CapterraService;
+  carMax: CarMaxService;
+  carsCom: CarsComService;
   chromeWebStore: ChromeWebStoreService;
   coinGecko: CoinGeckoService;
+  congress: CongressService;
   web: WebService;
+  costco: CostcoService;
   datasets: DatasetsService;
+  depop: DepopService;
   discogs: DiscogsService;
   doorDash: DoorDashService;
+  duckDuckGoSearch: DuckDuckGoSearchService;
   eBay: EBayService;
   espn: EspnService;
   etsy: EtsyService;
   expedia: ExpediaService;
   facebook: FacebookService;
+  fiverr: FiverrService;
   geocoding: GeocodingService;
   gitHub: GitHubService;
   goodreads: GoodreadsService;
@@ -31096,6 +34436,7 @@ export interface CrawloraGeneratedGroups {
   imdb: ImdbService;
   importYeti: ImportYetiService;
   indeed: IndeedService;
+  instacart: InstacartService;
   instagram: InstagramService;
   jobs: JobsService;
   justWatch: JustWatchService;
@@ -31103,6 +34444,7 @@ export interface CrawloraGeneratedGroups {
   letterboxd: LetterboxdService;
   linkedIn: LinkedInService;
   manga: MangaService;
+  mercari: MercariService;
   metaJobs: MetaJobsService;
   metacritic: MetacriticService;
   metaculus: MetaculusService;
@@ -31110,9 +34452,11 @@ export interface CrawloraGeneratedGroups {
   numbeo: NumbeoService;
   openTable: OpenTableService;
   meta: MetaService;
+  pinterest: PinterestService;
   pitchBook: PitchBookService;
   playStation: PlayStationService;
   polymarket: PolymarketService;
+  poshmark: PoshmarkService;
   productHunt: ProductHuntService;
   reddit: RedditService;
   redfin: RedfinService;
@@ -31126,6 +34470,8 @@ export interface CrawloraGeneratedGroups {
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
   steam: SteamService;
+  stockX: StockXService;
+  strava: StravaService;
   target: TargetService;
   teslaJobs: TeslaJobsService;
   threads: ThreadsService;
@@ -31133,14 +34479,19 @@ export interface CrawloraGeneratedGroups {
   tiktok: TiktokService;
   tmdb: TmdbService;
   tripAdvisor: TripAdvisorService;
+  tripCom: TripComService;
   trustMrr: TrustMrrService;
   trustpilot: TrustpilotService;
   uberEats: UberEatsService;
+  upwork: UpworkService;
   usage: UsageService;
   user: UserService;
+  vinted: VintedService;
   walmart: WalmartService;
+  whatnot: WhatnotService;
   x: XService;
   yahooFinance: YahooFinanceService;
+  yahooSearch: YahooSearchService;
   yelp: YelpService;
   youtube: YoutubeService;
   zalando: ZalandoService;
@@ -31148,6 +34499,14 @@ export interface CrawloraGeneratedGroups {
 }
 
 export interface OperationParamsMap {
+  "agoda-activities-search": AgodaActivitiesSearchParams;
+  "agoda-activity-detail": AgodaActivityDetailParams;
+  "agoda-flights-itinerary-amenities": AgodaFlightsItineraryAmenitiesParams;
+  "agoda-flights-search": AgodaFlightsSearchParams;
+  "agoda-flights-search-locations": AgodaFlightsSearchLocationsParams;
+  "agoda-homes-search": AgodaHomesSearchParams;
+  "agoda-hotels-search": AgodaHotelsSearchParams;
+  "agoda-hotel-detail": AgodaHotelDetailParams;
   "airbnb-host": AirbnbHostParams;
   "airbnb-host-listings": AirbnbHostListingsParams;
   "airbnb-host-reviews": AirbnbHostReviewsParams;
@@ -31219,6 +34578,13 @@ export interface OperationParamsMap {
   "bing-search": BingSearchParams;
   "bing-suggest": BingSuggestParams;
   "bing-videos": BingVideosParams;
+  "bluesky-author-feed": BlueskyAuthorFeedParams;
+  "bluesky-followers": BlueskyFollowersParams;
+  "bluesky-follows": BlueskyFollowsParams;
+  "bluesky-post-thread": BlueskyPostThreadParams;
+  "bluesky-profile": BlueskyProfileParams;
+  "bluesky-search-actors": BlueskySearchActorsParams;
+  "bluesky-trending-topics": BlueskyTrendingTopicsParams;
   "booking-attractions-detail": BookingAttractionsDetailParams;
   "booking-attractions-reviews": BookingAttractionsReviewsParams;
   "booking-attractions-search": BookingAttractionsSearchParams;
@@ -31257,6 +34623,15 @@ export interface OperationParamsMap {
   "capterra-product": CapterraProductParams;
   "capterra-reviews": CapterraReviewsParams;
   "capterra-search": CapterraSearchParams;
+  "carmax-search": CarMaxCarmaxSearchParams;
+  "carmax-search-suggestions": CarMaxCarmaxSearchSuggestionsParams;
+  "carmax-shop-by-brand": CarMaxCarmaxShopByBrandParams;
+  "carmax-store": CarMaxCarmaxStoreParams;
+  "carmax-stores": CarMaxCarmaxStoresParams;
+  "carmax-vehicle": CarMaxCarmaxVehicleParams;
+  "carmax-vehicle-recommendations": CarMaxCarmaxVehicleRecommendationsParams;
+  "carsdotcom-search": CarsComCarsdotcomSearchParams;
+  "carsdotcom-vehicle": CarsComCarsdotcomVehicleParams;
   "chromewebstore-categories": ChromeWebStoreChromewebstoreCategoriesParams;
   "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryParams;
   "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsParams;
@@ -31290,7 +34665,15 @@ export interface OperationParamsMap {
   "coingecko-token-unlocks": CoinGeckoTokenUnlocksParams;
   "coingecko-treasuries": CoinGeckoTreasuriesParams;
   "coingecko-trending": CoinGeckoTrendingParams;
+  "congress-report": CongressReportParams;
+  "congress-stock-disclosures": CongressStockDisclosuresParams;
   "contact": WebContactParams;
+  "costco-categories": CostcoCategoriesParams;
+  "costco-product": CostcoProductParams;
+  "costco-product-availability": CostcoProductAvailabilityParams;
+  "costco-product-reviews": CostcoProductReviewsParams;
+  "costco-search": CostcoSearchParams;
+  "costco-warehouses": CostcoWarehousesParams;
   "datasets-list": DatasetsListParams;
   "datasets-airbnb-markets-facets": DatasetsAirbnbMarketsFacetsParams;
   "datasets-airbnb-markets-item": DatasetsAirbnbMarketsItemParams;
@@ -31400,6 +34783,10 @@ export interface OperationParamsMap {
   "datasets-x-users-facets": DatasetsXUsersFacetsParams;
   "datasets-x-users-item": DatasetsXUsersItemParams;
   "datasets-x-users-search": DatasetsXUsersSearchParams;
+  "depop-categories": DepopCategoriesParams;
+  "depop-item": DepopItemParams;
+  "depop-search": DepopSearchParams;
+  "depop-shop": DepopShopParams;
   "antibot-check": WebAntibotCheckParams;
   "discogs-artist": DiscogsArtistParams;
   "discogs-artist-releases": DiscogsArtistReleasesParams;
@@ -31420,6 +34807,11 @@ export interface OperationParamsMap {
   "doordash-store-item": DoorDashDoordashStoreItemParams;
   "doordash-store-menu": DoorDashDoordashStoreMenuParams;
   "doordash-store-reviews": DoorDashDoordashStoreReviewsParams;
+  "duckduckgo-image": DuckDuckGoSearchDuckduckgoImageParams;
+  "duckduckgo-news": DuckDuckGoSearchDuckduckgoNewsParams;
+  "duckduckgo-search": DuckDuckGoSearchDuckduckgoSearchParams;
+  "duckduckgo-shopping": DuckDuckGoSearchDuckduckgoShoppingParams;
+  "duckduckgo-video": DuckDuckGoSearchDuckduckgoVideoParams;
   "ebay-item": EBayEbayItemParams;
   "ebay-search": EBayEbaySearchParams;
   "ebay-seller": EBayEbaySellerParams;
@@ -31450,10 +34842,11 @@ export interface OperationParamsMap {
   "expedia-properties-reviews": ExpediaPropertiesReviewsParams;
   "expedia-properties-search": ExpediaPropertiesSearchParams;
   "extract": WebExtractParams;
-  "facebook-group": FacebookGroupParams;
-  "facebook-marketplace-item": FacebookMarketplaceItemParams;
   "facebook-marketplace-search": FacebookMarketplaceSearchParams;
   "facebook-page": FacebookPageParams;
+  "fiverr-gig": FiverrGigParams;
+  "fiverr-search": FiverrSearchParams;
+  "fiverr-seller": FiverrSellerParams;
   "geocoding-lookup": GeocodingLookupParams;
   "geocoding-reverse": GeocodingReverseParams;
   "geocoding-search": GeocodingSearchParams;
@@ -31562,6 +34955,12 @@ export interface OperationParamsMap {
   "indeed-job": IndeedJobParams;
   "indeed-locations-suggest": IndeedLocationsSuggestParams;
   "indeed-search": IndeedSearchParams;
+  "instacart-departments": InstacartDepartmentsParams;
+  "instacart-item": InstacartItemParams;
+  "instacart-search": InstacartSearchParams;
+  "instacart-search-nearby": InstacartSearchNearbyParams;
+  "instacart-stores": InstacartStoresParams;
+  "instacart-trending": InstacartTrendingParams;
   "instagram-post": InstagramPostParams;
   "instagram-profile": InstagramProfileParams;
   "instagram-reels": InstagramReelsParams;
@@ -31649,6 +35048,11 @@ export interface OperationParamsMap {
   "manga-rankings": MangaRankingsParams;
   "manga-search": MangaSearchParams;
   "manga-title": MangaTitleParams;
+  "mercari-autocomplete": MercariAutocompleteParams;
+  "mercari-home": MercariHomeParams;
+  "mercari-item": MercariItemParams;
+  "mercari-master": MercariMasterParams;
+  "mercari-search": MercariSearchParams;
   "meta-jobs-job": MetaJobsJobParams;
   "meta-jobs-list": MetaJobsListParams;
   "meta-jobs-search": MetaJobsSearchParams;
@@ -31698,6 +35102,14 @@ export interface OperationParamsMap {
   "opentable-restaurant-reviews": OpenTableOpentableRestaurantReviewsParams;
   "opentable-search": OpenTableOpentableSearchParams;
   "ping": MetaPingParams;
+  "pinterest-board": PinterestBoardParams;
+  "pinterest-categories": PinterestCategoriesParams;
+  "pinterest-idea": PinterestIdeaParams;
+  "pinterest-pin": PinterestPinParams;
+  "pinterest-search": PinterestSearchParams;
+  "pinterest-user": PinterestUserParams;
+  "pinterest-user-boards": PinterestUserBoardsParams;
+  "pinterest-user-pins": PinterestUserPinsParams;
   "pitchbook-advisor": PitchBookPitchbookAdvisorParams;
   "pitchbook-company": PitchBookPitchbookCompanyParams;
   "pitchbook-fund": PitchBookPitchbookFundParams;
@@ -31776,6 +35188,14 @@ export interface OperationParamsMap {
   "polymarket-tokens-spreads": PolymarketTokensSpreadsParams;
   "polymarket-tournaments": PolymarketTournamentsParams;
   "polymarket-tournament": PolymarketTournamentParams;
+  "poshmark-brand": PoshmarkBrandParams;
+  "poshmark-brands": PoshmarkBrandsParams;
+  "poshmark-categories": PoshmarkCategoriesParams;
+  "poshmark-category": PoshmarkCategoryParams;
+  "poshmark-closet": PoshmarkClosetParams;
+  "poshmark-listing": PoshmarkListingParams;
+  "poshmark-search": PoshmarkSearchParams;
+  "poshmark-trend": PoshmarkTrendParams;
   "producthunt-category": ProductHuntCategoryParams;
   "producthunt-category-products": ProductHuntCategoryProductsParams;
   "producthunt-leaderboard": ProductHuntLeaderboardParams;
@@ -31929,6 +35349,15 @@ export interface OperationParamsMap {
   "steam-tags": SteamTagsParams;
   "steam-tags-list": SteamTagsListParams;
   "steam-top-sellers": SteamTopSellersParams;
+  "stockx-brands": StockXStockxBrandsParams;
+  "stockx-categories": StockXStockxCategoriesParams;
+  "stockx-product": StockXStockxProductParams;
+  "stockx-releases": StockXStockxReleasesParams;
+  "stockx-search": StockXStockxSearchParams;
+  "strava-challenges": StravaChallengesParams;
+  "strava-club": StravaClubParams;
+  "strava-routes": StravaRoutesParams;
+  "strava-route-detail": StravaRouteDetailParams;
   "target-categories": TargetCategoriesParams;
   "target-category-products": TargetCategoryProductsParams;
   "target-filter-options": TargetFilterOptionsParams;
@@ -31992,6 +35421,8 @@ export interface OperationParamsMap {
   "tripadvisor-place": TripAdvisorTripadvisorPlaceParams;
   "tripadvisor-reviews": TripAdvisorTripadvisorReviewsParams;
   "tripadvisor-search": TripAdvisorTripadvisorSearchParams;
+  "tripcom-hotels-search": TripComTripcomHotelsSearchParams;
+  "tripcom-hotel-detail": TripComTripcomHotelDetailParams;
   "trustmrr-acquire": TrustMrrTrustmrrAcquireParams;
   "trustmrr-categories": TrustMrrTrustmrrCategoriesParams;
   "trustmrr-category": TrustMrrTrustmrrCategoryParams;
@@ -32011,6 +35442,9 @@ export interface OperationParamsMap {
   "ubereats-store": UberEatsUbereatsStoreParams;
   "ubereats-store-menu": UberEatsUbereatsStoreMenuParams;
   "ubereats-store-reviews": UberEatsUbereatsStoreReviewsParams;
+  "upwork-freelancer": UpworkFreelancerParams;
+  "upwork-job": UpworkJobParams;
+  "upwork-search": UpworkSearchParams;
   "usage-me-endpoints": UsageMeEndpointsParams;
   "usage-me-overview": UsageMeOverviewParams;
   "usage-me-recent-ips": UsageMeRecentIpsParams;
@@ -32019,11 +35453,21 @@ export interface OperationParamsMap {
   "user-me-api-keys": UserMeApiKeysParams;
   "user-me-api-keys-rotate": UserMeApiKeysRotateParams;
   "user-me-api-keys-reveal": UserMeApiKeysRevealParams;
+  "vinted-brand": VintedBrandParams;
+  "vinted-brands": VintedBrandsParams;
+  "vinted-catalog": VintedCatalogParams;
+  "vinted-categories": VintedCategoriesParams;
+  "vinted-category": VintedCategoryParams;
+  "vinted-item": VintedItemParams;
+  "vinted-member": VintedMemberParams;
   "walmart-product": WalmartProductParams;
   "walmart-product-reviews": WalmartProductReviewsParams;
   "walmart-search": WalmartSearchParams;
   "web-scrape": WebScrapeParams;
   "web-techstack": WebTechstackParams;
+  "whatnot-browse": WhatnotBrowseParams;
+  "whatnot-categories": WhatnotCategoriesParams;
+  "whatnot-live": WhatnotLiveParams;
   "x-post": XPostParams;
   "x-profile": XProfileParams;
   "x-profile-posts": XProfilePostsParams;
@@ -32066,6 +35510,7 @@ export interface OperationParamsMap {
   "yahoo-finance-ticker-sustainability": YahooFinanceTickerSustainabilityParams;
   "yahoo-finance-ticker-valuation": YahooFinanceTickerValuationParams;
   "yahoo-finance-trending": YahooFinanceTrendingParams;
+  "yahoo-search": YahooSearchCallParams;
   "yelp-business": YelpBusinessParams;
   "yelp-business-menu": YelpBusinessMenuParams;
   "yelp-business-photos": YelpBusinessPhotosParams;
@@ -32098,6 +35543,14 @@ export interface OperationParamsMap {
 }
 
 export interface OperationResponseMap {
+  "agoda-activities-search": AgodaActivitiesSearchResponse;
+  "agoda-activity-detail": AgodaActivityDetailResponse;
+  "agoda-flights-itinerary-amenities": AgodaFlightsItineraryAmenitiesResponse;
+  "agoda-flights-search": AgodaFlightsSearchResponse;
+  "agoda-flights-search-locations": AgodaFlightsSearchLocationsResponse;
+  "agoda-homes-search": AgodaHomesSearchResponse;
+  "agoda-hotels-search": AgodaHotelsSearchResponse;
+  "agoda-hotel-detail": AgodaHotelDetailResponse;
   "airbnb-host": AirbnbHostResponse;
   "airbnb-host-listings": AirbnbHostListingsResponse;
   "airbnb-host-reviews": AirbnbHostReviewsResponse;
@@ -32169,6 +35622,13 @@ export interface OperationResponseMap {
   "bing-search": BingSearchResponse;
   "bing-suggest": BingSuggestResponse;
   "bing-videos": BingVideosResponse;
+  "bluesky-author-feed": BlueskyAuthorFeedResponse;
+  "bluesky-followers": BlueskyFollowersResponse;
+  "bluesky-follows": BlueskyFollowsResponse;
+  "bluesky-post-thread": BlueskyPostThreadResponse;
+  "bluesky-profile": BlueskyProfileResponse;
+  "bluesky-search-actors": BlueskySearchActorsResponse;
+  "bluesky-trending-topics": BlueskyTrendingTopicsResponse;
   "booking-attractions-detail": BookingAttractionsDetailResponse;
   "booking-attractions-reviews": BookingAttractionsReviewsResponse;
   "booking-attractions-search": BookingAttractionsSearchResponse;
@@ -32207,6 +35667,15 @@ export interface OperationResponseMap {
   "capterra-product": CapterraProductResponse;
   "capterra-reviews": CapterraReviewsResponse;
   "capterra-search": CapterraSearchResponse;
+  "carmax-search": CarMaxCarmaxSearchResponse;
+  "carmax-search-suggestions": CarMaxCarmaxSearchSuggestionsResponse;
+  "carmax-shop-by-brand": CarMaxCarmaxShopByBrandResponse;
+  "carmax-store": CarMaxCarmaxStoreResponse;
+  "carmax-stores": CarMaxCarmaxStoresResponse;
+  "carmax-vehicle": CarMaxCarmaxVehicleResponse;
+  "carmax-vehicle-recommendations": CarMaxCarmaxVehicleRecommendationsResponse;
+  "carsdotcom-search": CarsComCarsdotcomSearchResponse;
+  "carsdotcom-vehicle": CarsComCarsdotcomVehicleResponse;
   "chromewebstore-categories": ChromeWebStoreChromewebstoreCategoriesResponse;
   "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryResponse;
   "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsResponse;
@@ -32240,7 +35709,15 @@ export interface OperationResponseMap {
   "coingecko-token-unlocks": CoinGeckoTokenUnlocksResponse;
   "coingecko-treasuries": CoinGeckoTreasuriesResponse;
   "coingecko-trending": CoinGeckoTrendingResponse;
+  "congress-report": CongressReportResponse;
+  "congress-stock-disclosures": CongressStockDisclosuresResponse;
   "contact": WebContactResponse;
+  "costco-categories": CostcoCategoriesResponse;
+  "costco-product": CostcoProductResponse;
+  "costco-product-availability": CostcoProductAvailabilityResponse;
+  "costco-product-reviews": CostcoProductReviewsResponse;
+  "costco-search": CostcoSearchResponse;
+  "costco-warehouses": CostcoWarehousesResponse;
   "datasets-list": DatasetsListResponse;
   "datasets-airbnb-markets-facets": DatasetsAirbnbMarketsFacetsResponse;
   "datasets-airbnb-markets-item": DatasetsAirbnbMarketsItemResponse;
@@ -32350,6 +35827,10 @@ export interface OperationResponseMap {
   "datasets-x-users-facets": DatasetsXUsersFacetsResponse;
   "datasets-x-users-item": DatasetsXUsersItemResponse;
   "datasets-x-users-search": DatasetsXUsersSearchResponse;
+  "depop-categories": DepopCategoriesResponse;
+  "depop-item": DepopItemResponse;
+  "depop-search": DepopSearchResponse;
+  "depop-shop": DepopShopResponse;
   "antibot-check": WebAntibotCheckResponse;
   "discogs-artist": DiscogsArtistResponse;
   "discogs-artist-releases": DiscogsArtistReleasesResponse;
@@ -32370,6 +35851,11 @@ export interface OperationResponseMap {
   "doordash-store-item": DoorDashDoordashStoreItemResponse;
   "doordash-store-menu": DoorDashDoordashStoreMenuResponse;
   "doordash-store-reviews": DoorDashDoordashStoreReviewsResponse;
+  "duckduckgo-image": DuckDuckGoSearchDuckduckgoImageResponse;
+  "duckduckgo-news": DuckDuckGoSearchDuckduckgoNewsResponse;
+  "duckduckgo-search": DuckDuckGoSearchDuckduckgoSearchResponse;
+  "duckduckgo-shopping": DuckDuckGoSearchDuckduckgoShoppingResponse;
+  "duckduckgo-video": DuckDuckGoSearchDuckduckgoVideoResponse;
   "ebay-item": EBayEbayItemResponse;
   "ebay-search": EBayEbaySearchResponse;
   "ebay-seller": EBayEbaySellerResponse;
@@ -32400,10 +35886,11 @@ export interface OperationResponseMap {
   "expedia-properties-reviews": ExpediaPropertiesReviewsResponse;
   "expedia-properties-search": ExpediaPropertiesSearchResponse;
   "extract": WebExtractResponse;
-  "facebook-group": FacebookGroupResponse;
-  "facebook-marketplace-item": FacebookMarketplaceItemResponse;
   "facebook-marketplace-search": FacebookMarketplaceSearchResponse;
   "facebook-page": FacebookPageResponse;
+  "fiverr-gig": FiverrGigResponse;
+  "fiverr-search": FiverrSearchResponse;
+  "fiverr-seller": FiverrSellerResponse;
   "geocoding-lookup": GeocodingLookupResponse;
   "geocoding-reverse": GeocodingReverseResponse;
   "geocoding-search": GeocodingSearchResponse;
@@ -32512,6 +35999,12 @@ export interface OperationResponseMap {
   "indeed-job": IndeedJobResponse;
   "indeed-locations-suggest": IndeedLocationsSuggestResponse;
   "indeed-search": IndeedSearchResponse;
+  "instacart-departments": InstacartDepartmentsResponse;
+  "instacart-item": InstacartItemResponse;
+  "instacart-search": InstacartSearchResponse;
+  "instacart-search-nearby": InstacartSearchNearbyResponse;
+  "instacart-stores": InstacartStoresResponse;
+  "instacart-trending": InstacartTrendingResponse;
   "instagram-post": InstagramPostResponse;
   "instagram-profile": InstagramProfileResponse;
   "instagram-reels": InstagramReelsResponse;
@@ -32599,6 +36092,11 @@ export interface OperationResponseMap {
   "manga-rankings": MangaRankingsResponse;
   "manga-search": MangaSearchResponse;
   "manga-title": MangaTitleResponse;
+  "mercari-autocomplete": MercariAutocompleteResponse;
+  "mercari-home": MercariHomeResponse;
+  "mercari-item": MercariItemResponse;
+  "mercari-master": MercariMasterResponse;
+  "mercari-search": MercariSearchResponse;
   "meta-jobs-job": MetaJobsJobResponse;
   "meta-jobs-list": MetaJobsListResponse;
   "meta-jobs-search": MetaJobsSearchResponse;
@@ -32648,6 +36146,14 @@ export interface OperationResponseMap {
   "opentable-restaurant-reviews": OpenTableOpentableRestaurantReviewsResponse;
   "opentable-search": OpenTableOpentableSearchResponse;
   "ping": MetaPingResponse;
+  "pinterest-board": PinterestBoardResponse;
+  "pinterest-categories": PinterestCategoriesResponse;
+  "pinterest-idea": PinterestIdeaResponse;
+  "pinterest-pin": PinterestPinResponse;
+  "pinterest-search": PinterestSearchResponse;
+  "pinterest-user": PinterestUserResponse;
+  "pinterest-user-boards": PinterestUserBoardsResponse;
+  "pinterest-user-pins": PinterestUserPinsResponse;
   "pitchbook-advisor": PitchBookPitchbookAdvisorResponse;
   "pitchbook-company": PitchBookPitchbookCompanyResponse;
   "pitchbook-fund": PitchBookPitchbookFundResponse;
@@ -32726,6 +36232,14 @@ export interface OperationResponseMap {
   "polymarket-tokens-spreads": PolymarketTokensSpreadsResponse;
   "polymarket-tournaments": PolymarketTournamentsResponse;
   "polymarket-tournament": PolymarketTournamentResponse;
+  "poshmark-brand": PoshmarkBrandResponse;
+  "poshmark-brands": PoshmarkBrandsResponse;
+  "poshmark-categories": PoshmarkCategoriesResponse;
+  "poshmark-category": PoshmarkCategoryResponse;
+  "poshmark-closet": PoshmarkClosetResponse;
+  "poshmark-listing": PoshmarkListingResponse;
+  "poshmark-search": PoshmarkSearchResponse;
+  "poshmark-trend": PoshmarkTrendResponse;
   "producthunt-category": ProductHuntCategoryResponse;
   "producthunt-category-products": ProductHuntCategoryProductsResponse;
   "producthunt-leaderboard": ProductHuntLeaderboardResponse;
@@ -32879,6 +36393,15 @@ export interface OperationResponseMap {
   "steam-tags": SteamTagsResponse;
   "steam-tags-list": SteamTagsListResponse;
   "steam-top-sellers": SteamTopSellersResponse;
+  "stockx-brands": StockXStockxBrandsResponse;
+  "stockx-categories": StockXStockxCategoriesResponse;
+  "stockx-product": StockXStockxProductResponse;
+  "stockx-releases": StockXStockxReleasesResponse;
+  "stockx-search": StockXStockxSearchResponse;
+  "strava-challenges": StravaChallengesResponse;
+  "strava-club": StravaClubResponse;
+  "strava-routes": StravaRoutesResponse;
+  "strava-route-detail": StravaRouteDetailResponse;
   "target-categories": TargetCategoriesResponse;
   "target-category-products": TargetCategoryProductsResponse;
   "target-filter-options": TargetFilterOptionsResponse;
@@ -32942,6 +36465,8 @@ export interface OperationResponseMap {
   "tripadvisor-place": TripAdvisorTripadvisorPlaceResponse;
   "tripadvisor-reviews": TripAdvisorTripadvisorReviewsResponse;
   "tripadvisor-search": TripAdvisorTripadvisorSearchResponse;
+  "tripcom-hotels-search": TripComTripcomHotelsSearchResponse;
+  "tripcom-hotel-detail": TripComTripcomHotelDetailResponse;
   "trustmrr-acquire": TrustMrrTrustmrrAcquireResponse;
   "trustmrr-categories": TrustMrrTrustmrrCategoriesResponse;
   "trustmrr-category": TrustMrrTrustmrrCategoryResponse;
@@ -32961,6 +36486,9 @@ export interface OperationResponseMap {
   "ubereats-store": UberEatsUbereatsStoreResponse;
   "ubereats-store-menu": UberEatsUbereatsStoreMenuResponse;
   "ubereats-store-reviews": UberEatsUbereatsStoreReviewsResponse;
+  "upwork-freelancer": UpworkFreelancerResponse;
+  "upwork-job": UpworkJobResponse;
+  "upwork-search": UpworkSearchResponse;
   "usage-me-endpoints": UsageMeEndpointsResponse;
   "usage-me-overview": UsageMeOverviewResponse;
   "usage-me-recent-ips": UsageMeRecentIpsResponse;
@@ -32969,11 +36497,21 @@ export interface OperationResponseMap {
   "user-me-api-keys": UserMeApiKeysResponse;
   "user-me-api-keys-rotate": UserMeApiKeysRotateResponse;
   "user-me-api-keys-reveal": UserMeApiKeysRevealResponse;
+  "vinted-brand": VintedBrandResponse;
+  "vinted-brands": VintedBrandsResponse;
+  "vinted-catalog": VintedCatalogResponse;
+  "vinted-categories": VintedCategoriesResponse;
+  "vinted-category": VintedCategoryResponse;
+  "vinted-item": VintedItemResponse;
+  "vinted-member": VintedMemberResponse;
   "walmart-product": WalmartProductResponse;
   "walmart-product-reviews": WalmartProductReviewsResponse;
   "walmart-search": WalmartSearchResponse;
   "web-scrape": WebScrapeResponse;
   "web-techstack": WebTechstackResponse;
+  "whatnot-browse": WhatnotBrowseResponse;
+  "whatnot-categories": WhatnotCategoriesResponse;
+  "whatnot-live": WhatnotLiveResponse;
   "x-post": XPostResponse;
   "x-profile": XProfileResponse;
   "x-profile-posts": XProfilePostsResponse;
@@ -33016,6 +36554,7 @@ export interface OperationResponseMap {
   "yahoo-finance-ticker-sustainability": YahooFinanceTickerSustainabilityResponse;
   "yahoo-finance-ticker-valuation": YahooFinanceTickerValuationResponse;
   "yahoo-finance-trending": YahooFinanceTrendingResponse;
+  "yahoo-search": YahooSearchCallResponse;
   "yelp-business": YelpBusinessResponse;
   "yelp-business-menu": YelpBusinessMenuResponse;
   "yelp-business-photos": YelpBusinessPhotosResponse;
@@ -33048,6 +36587,14 @@ export interface OperationResponseMap {
 }
 
 export interface OperationRequiredParamsMap {
+  "agoda-activities-search": false;
+  "agoda-activity-detail": true;
+  "agoda-flights-itinerary-amenities": true;
+  "agoda-flights-search": true;
+  "agoda-flights-search-locations": true;
+  "agoda-homes-search": false;
+  "agoda-hotels-search": false;
+  "agoda-hotel-detail": true;
   "airbnb-host": true;
   "airbnb-host-listings": true;
   "airbnb-host-reviews": true;
@@ -33119,6 +36666,13 @@ export interface OperationRequiredParamsMap {
   "bing-search": true;
   "bing-suggest": true;
   "bing-videos": true;
+  "bluesky-author-feed": true;
+  "bluesky-followers": true;
+  "bluesky-follows": true;
+  "bluesky-post-thread": true;
+  "bluesky-profile": true;
+  "bluesky-search-actors": true;
+  "bluesky-trending-topics": false;
   "booking-attractions-detail": true;
   "booking-attractions-reviews": true;
   "booking-attractions-search": true;
@@ -33157,6 +36711,15 @@ export interface OperationRequiredParamsMap {
   "capterra-product": true;
   "capterra-reviews": true;
   "capterra-search": true;
+  "carmax-search": false;
+  "carmax-search-suggestions": true;
+  "carmax-shop-by-brand": false;
+  "carmax-store": true;
+  "carmax-stores": false;
+  "carmax-vehicle": true;
+  "carmax-vehicle-recommendations": true;
+  "carsdotcom-search": false;
+  "carsdotcom-vehicle": true;
   "chromewebstore-categories": false;
   "chromewebstore-category": true;
   "chromewebstore-charts": false;
@@ -33190,7 +36753,15 @@ export interface OperationRequiredParamsMap {
   "coingecko-token-unlocks": false;
   "coingecko-treasuries": false;
   "coingecko-trending": false;
+  "congress-report": true;
+  "congress-stock-disclosures": false;
   "contact": true;
+  "costco-categories": false;
+  "costco-product": true;
+  "costco-product-availability": true;
+  "costco-product-reviews": true;
+  "costco-search": false;
+  "costco-warehouses": true;
   "datasets-list": false;
   "datasets-airbnb-markets-facets": true;
   "datasets-airbnb-markets-item": true;
@@ -33300,6 +36871,10 @@ export interface OperationRequiredParamsMap {
   "datasets-x-users-facets": true;
   "datasets-x-users-item": true;
   "datasets-x-users-search": false;
+  "depop-categories": false;
+  "depop-item": true;
+  "depop-search": true;
+  "depop-shop": true;
   "antibot-check": true;
   "discogs-artist": true;
   "discogs-artist-releases": true;
@@ -33320,6 +36895,11 @@ export interface OperationRequiredParamsMap {
   "doordash-store-item": true;
   "doordash-store-menu": true;
   "doordash-store-reviews": true;
+  "duckduckgo-image": true;
+  "duckduckgo-news": true;
+  "duckduckgo-search": true;
+  "duckduckgo-shopping": true;
+  "duckduckgo-video": true;
   "ebay-item": true;
   "ebay-search": true;
   "ebay-seller": true;
@@ -33350,10 +36930,11 @@ export interface OperationRequiredParamsMap {
   "expedia-properties-reviews": true;
   "expedia-properties-search": true;
   "extract": true;
-  "facebook-group": true;
-  "facebook-marketplace-item": true;
   "facebook-marketplace-search": true;
   "facebook-page": true;
+  "fiverr-gig": true;
+  "fiverr-search": true;
+  "fiverr-seller": true;
   "geocoding-lookup": true;
   "geocoding-reverse": true;
   "geocoding-search": false;
@@ -33462,6 +37043,12 @@ export interface OperationRequiredParamsMap {
   "indeed-job": true;
   "indeed-locations-suggest": true;
   "indeed-search": true;
+  "instacart-departments": true;
+  "instacart-item": true;
+  "instacart-search": true;
+  "instacart-search-nearby": true;
+  "instacart-stores": true;
+  "instacart-trending": true;
   "instagram-post": true;
   "instagram-profile": true;
   "instagram-reels": true;
@@ -33549,6 +37136,11 @@ export interface OperationRequiredParamsMap {
   "manga-rankings": false;
   "manga-search": true;
   "manga-title": true;
+  "mercari-autocomplete": true;
+  "mercari-home": false;
+  "mercari-item": true;
+  "mercari-master": false;
+  "mercari-search": true;
   "meta-jobs-job": true;
   "meta-jobs-list": false;
   "meta-jobs-search": false;
@@ -33598,6 +37190,14 @@ export interface OperationRequiredParamsMap {
   "opentable-restaurant-reviews": true;
   "opentable-search": true;
   "ping": false;
+  "pinterest-board": true;
+  "pinterest-categories": false;
+  "pinterest-idea": true;
+  "pinterest-pin": true;
+  "pinterest-search": true;
+  "pinterest-user": true;
+  "pinterest-user-boards": true;
+  "pinterest-user-pins": true;
   "pitchbook-advisor": false;
   "pitchbook-company": false;
   "pitchbook-fund": false;
@@ -33676,6 +37276,14 @@ export interface OperationRequiredParamsMap {
   "polymarket-tokens-spreads": true;
   "polymarket-tournaments": false;
   "polymarket-tournament": true;
+  "poshmark-brand": true;
+  "poshmark-brands": false;
+  "poshmark-categories": false;
+  "poshmark-category": true;
+  "poshmark-closet": true;
+  "poshmark-listing": true;
+  "poshmark-search": true;
+  "poshmark-trend": true;
   "producthunt-category": true;
   "producthunt-category-products": true;
   "producthunt-leaderboard": false;
@@ -33829,6 +37437,15 @@ export interface OperationRequiredParamsMap {
   "steam-tags": false;
   "steam-tags-list": false;
   "steam-top-sellers": false;
+  "stockx-brands": false;
+  "stockx-categories": false;
+  "stockx-product": true;
+  "stockx-releases": false;
+  "stockx-search": true;
+  "strava-challenges": false;
+  "strava-club": true;
+  "strava-routes": true;
+  "strava-route-detail": true;
   "target-categories": false;
   "target-category-products": true;
   "target-filter-options": false;
@@ -33892,6 +37509,8 @@ export interface OperationRequiredParamsMap {
   "tripadvisor-place": false;
   "tripadvisor-reviews": false;
   "tripadvisor-search": true;
+  "tripcom-hotels-search": true;
+  "tripcom-hotel-detail": true;
   "trustmrr-acquire": false;
   "trustmrr-categories": false;
   "trustmrr-category": true;
@@ -33911,6 +37530,9 @@ export interface OperationRequiredParamsMap {
   "ubereats-store": true;
   "ubereats-store-menu": true;
   "ubereats-store-reviews": true;
+  "upwork-freelancer": true;
+  "upwork-job": true;
+  "upwork-search": true;
   "usage-me-endpoints": false;
   "usage-me-overview": false;
   "usage-me-recent-ips": false;
@@ -33919,11 +37541,21 @@ export interface OperationRequiredParamsMap {
   "user-me-api-keys": false;
   "user-me-api-keys-rotate": false;
   "user-me-api-keys-reveal": true;
+  "vinted-brand": true;
+  "vinted-brands": false;
+  "vinted-catalog": true;
+  "vinted-categories": false;
+  "vinted-category": true;
+  "vinted-item": true;
+  "vinted-member": true;
   "walmart-product": true;
   "walmart-product-reviews": true;
   "walmart-search": true;
   "web-scrape": true;
   "web-techstack": true;
+  "whatnot-browse": true;
+  "whatnot-categories": false;
+  "whatnot-live": true;
   "x-post": true;
   "x-profile": true;
   "x-profile-posts": true;
@@ -33966,6 +37598,7 @@ export interface OperationRequiredParamsMap {
   "yahoo-finance-ticker-sustainability": true;
   "yahoo-finance-ticker-valuation": true;
   "yahoo-finance-trending": true;
+  "yahoo-search": true;
   "yelp-business": true;
   "yelp-business-menu": true;
   "yelp-business-photos": true;
@@ -34005,6 +37638,14 @@ export type OperationRequestArgs<I extends OperationId> =
     : [params?: OperationParamsMap[I], options?: import('./index.js').CrawloraRequestOptions];
 
 export type OperationIdLiteral =
+  | "agoda-activities-search"
+  | "agoda-activity-detail"
+  | "agoda-flights-itinerary-amenities"
+  | "agoda-flights-search"
+  | "agoda-flights-search-locations"
+  | "agoda-homes-search"
+  | "agoda-hotels-search"
+  | "agoda-hotel-detail"
   | "airbnb-host"
   | "airbnb-host-listings"
   | "airbnb-host-reviews"
@@ -34076,6 +37717,13 @@ export type OperationIdLiteral =
   | "bing-search"
   | "bing-suggest"
   | "bing-videos"
+  | "bluesky-author-feed"
+  | "bluesky-followers"
+  | "bluesky-follows"
+  | "bluesky-post-thread"
+  | "bluesky-profile"
+  | "bluesky-search-actors"
+  | "bluesky-trending-topics"
   | "booking-attractions-detail"
   | "booking-attractions-reviews"
   | "booking-attractions-search"
@@ -34114,6 +37762,15 @@ export type OperationIdLiteral =
   | "capterra-product"
   | "capterra-reviews"
   | "capterra-search"
+  | "carmax-search"
+  | "carmax-search-suggestions"
+  | "carmax-shop-by-brand"
+  | "carmax-store"
+  | "carmax-stores"
+  | "carmax-vehicle"
+  | "carmax-vehicle-recommendations"
+  | "carsdotcom-search"
+  | "carsdotcom-vehicle"
   | "chromewebstore-categories"
   | "chromewebstore-category"
   | "chromewebstore-charts"
@@ -34147,7 +37804,15 @@ export type OperationIdLiteral =
   | "coingecko-token-unlocks"
   | "coingecko-treasuries"
   | "coingecko-trending"
+  | "congress-report"
+  | "congress-stock-disclosures"
   | "contact"
+  | "costco-categories"
+  | "costco-product"
+  | "costco-product-availability"
+  | "costco-product-reviews"
+  | "costco-search"
+  | "costco-warehouses"
   | "datasets-list"
   | "datasets-airbnb-markets-facets"
   | "datasets-airbnb-markets-item"
@@ -34257,6 +37922,10 @@ export type OperationIdLiteral =
   | "datasets-x-users-facets"
   | "datasets-x-users-item"
   | "datasets-x-users-search"
+  | "depop-categories"
+  | "depop-item"
+  | "depop-search"
+  | "depop-shop"
   | "antibot-check"
   | "discogs-artist"
   | "discogs-artist-releases"
@@ -34277,6 +37946,11 @@ export type OperationIdLiteral =
   | "doordash-store-item"
   | "doordash-store-menu"
   | "doordash-store-reviews"
+  | "duckduckgo-image"
+  | "duckduckgo-news"
+  | "duckduckgo-search"
+  | "duckduckgo-shopping"
+  | "duckduckgo-video"
   | "ebay-item"
   | "ebay-search"
   | "ebay-seller"
@@ -34307,10 +37981,11 @@ export type OperationIdLiteral =
   | "expedia-properties-reviews"
   | "expedia-properties-search"
   | "extract"
-  | "facebook-group"
-  | "facebook-marketplace-item"
   | "facebook-marketplace-search"
   | "facebook-page"
+  | "fiverr-gig"
+  | "fiverr-search"
+  | "fiverr-seller"
   | "geocoding-lookup"
   | "geocoding-reverse"
   | "geocoding-search"
@@ -34419,6 +38094,12 @@ export type OperationIdLiteral =
   | "indeed-job"
   | "indeed-locations-suggest"
   | "indeed-search"
+  | "instacart-departments"
+  | "instacart-item"
+  | "instacart-search"
+  | "instacart-search-nearby"
+  | "instacart-stores"
+  | "instacart-trending"
   | "instagram-post"
   | "instagram-profile"
   | "instagram-reels"
@@ -34506,6 +38187,11 @@ export type OperationIdLiteral =
   | "manga-rankings"
   | "manga-search"
   | "manga-title"
+  | "mercari-autocomplete"
+  | "mercari-home"
+  | "mercari-item"
+  | "mercari-master"
+  | "mercari-search"
   | "meta-jobs-job"
   | "meta-jobs-list"
   | "meta-jobs-search"
@@ -34555,6 +38241,14 @@ export type OperationIdLiteral =
   | "opentable-restaurant-reviews"
   | "opentable-search"
   | "ping"
+  | "pinterest-board"
+  | "pinterest-categories"
+  | "pinterest-idea"
+  | "pinterest-pin"
+  | "pinterest-search"
+  | "pinterest-user"
+  | "pinterest-user-boards"
+  | "pinterest-user-pins"
   | "pitchbook-advisor"
   | "pitchbook-company"
   | "pitchbook-fund"
@@ -34633,6 +38327,14 @@ export type OperationIdLiteral =
   | "polymarket-tokens-spreads"
   | "polymarket-tournaments"
   | "polymarket-tournament"
+  | "poshmark-brand"
+  | "poshmark-brands"
+  | "poshmark-categories"
+  | "poshmark-category"
+  | "poshmark-closet"
+  | "poshmark-listing"
+  | "poshmark-search"
+  | "poshmark-trend"
   | "producthunt-category"
   | "producthunt-category-products"
   | "producthunt-leaderboard"
@@ -34786,6 +38488,15 @@ export type OperationIdLiteral =
   | "steam-tags"
   | "steam-tags-list"
   | "steam-top-sellers"
+  | "stockx-brands"
+  | "stockx-categories"
+  | "stockx-product"
+  | "stockx-releases"
+  | "stockx-search"
+  | "strava-challenges"
+  | "strava-club"
+  | "strava-routes"
+  | "strava-route-detail"
   | "target-categories"
   | "target-category-products"
   | "target-filter-options"
@@ -34849,6 +38560,8 @@ export type OperationIdLiteral =
   | "tripadvisor-place"
   | "tripadvisor-reviews"
   | "tripadvisor-search"
+  | "tripcom-hotels-search"
+  | "tripcom-hotel-detail"
   | "trustmrr-acquire"
   | "trustmrr-categories"
   | "trustmrr-category"
@@ -34868,6 +38581,9 @@ export type OperationIdLiteral =
   | "ubereats-store"
   | "ubereats-store-menu"
   | "ubereats-store-reviews"
+  | "upwork-freelancer"
+  | "upwork-job"
+  | "upwork-search"
   | "usage-me-endpoints"
   | "usage-me-overview"
   | "usage-me-recent-ips"
@@ -34876,11 +38592,21 @@ export type OperationIdLiteral =
   | "user-me-api-keys"
   | "user-me-api-keys-rotate"
   | "user-me-api-keys-reveal"
+  | "vinted-brand"
+  | "vinted-brands"
+  | "vinted-catalog"
+  | "vinted-categories"
+  | "vinted-category"
+  | "vinted-item"
+  | "vinted-member"
   | "walmart-product"
   | "walmart-product-reviews"
   | "walmart-search"
   | "web-scrape"
   | "web-techstack"
+  | "whatnot-browse"
+  | "whatnot-categories"
+  | "whatnot-live"
   | "x-post"
   | "x-profile"
   | "x-profile-posts"
@@ -34923,6 +38649,7 @@ export type OperationIdLiteral =
   | "yahoo-finance-ticker-sustainability"
   | "yahoo-finance-ticker-valuation"
   | "yahoo-finance-trending"
+  | "yahoo-search"
   | "yelp-business"
   | "yelp-business-menu"
   | "yelp-business-photos"
@@ -34954,6 +38681,14 @@ export type OperationIdLiteral =
   | "zillow-search";
 
 export declare const OperationIds: Readonly<{
+  AgodaActivitiesSearch: "agoda-activities-search";
+  AgodaActivityDetail: "agoda-activity-detail";
+  AgodaFlightsItineraryAmenities: "agoda-flights-itinerary-amenities";
+  AgodaFlightsSearch: "agoda-flights-search";
+  AgodaFlightsSearchLocations: "agoda-flights-search-locations";
+  AgodaHomesSearch: "agoda-homes-search";
+  AgodaHotelDetail: "agoda-hotel-detail";
+  AgodaHotelsSearch: "agoda-hotels-search";
   AirbnbHost: "airbnb-host";
   AirbnbHostListings: "airbnb-host-listings";
   AirbnbHostReviews: "airbnb-host-reviews";
@@ -35025,6 +38760,13 @@ export declare const OperationIds: Readonly<{
   BingSearch: "bing-search";
   BingSuggest: "bing-suggest";
   BingVideos: "bing-videos";
+  BlueskyAuthorFeed: "bluesky-author-feed";
+  BlueskyFollowers: "bluesky-followers";
+  BlueskyFollows: "bluesky-follows";
+  BlueskyPostThread: "bluesky-post-thread";
+  BlueskyProfile: "bluesky-profile";
+  BlueskySearchActors: "bluesky-search-actors";
+  BlueskyTrendingTopics: "bluesky-trending-topics";
   BookingAttractionsDetail: "booking-attractions-detail";
   BookingAttractionsReviews: "booking-attractions-reviews";
   BookingAttractionsSearch: "booking-attractions-search";
@@ -35063,6 +38805,15 @@ export declare const OperationIds: Readonly<{
   CapterraProduct: "capterra-product";
   CapterraReviews: "capterra-reviews";
   CapterraSearch: "capterra-search";
+  CarMaxCarmaxSearch: "carmax-search";
+  CarMaxCarmaxSearchSuggestions: "carmax-search-suggestions";
+  CarMaxCarmaxShopByBrand: "carmax-shop-by-brand";
+  CarMaxCarmaxStore: "carmax-store";
+  CarMaxCarmaxStores: "carmax-stores";
+  CarMaxCarmaxVehicle: "carmax-vehicle";
+  CarMaxCarmaxVehicleRecommendations: "carmax-vehicle-recommendations";
+  CarsComCarsdotcomSearch: "carsdotcom-search";
+  CarsComCarsdotcomVehicle: "carsdotcom-vehicle";
   ChromeWebStoreChromewebstoreCategories: "chromewebstore-categories";
   ChromeWebStoreChromewebstoreCategory: "chromewebstore-category";
   ChromeWebStoreChromewebstoreCharts: "chromewebstore-charts";
@@ -35096,6 +38847,14 @@ export declare const OperationIds: Readonly<{
   CoinGeckoTokenUnlocks: "coingecko-token-unlocks";
   CoinGeckoTreasuries: "coingecko-treasuries";
   CoinGeckoTrending: "coingecko-trending";
+  CongressReport: "congress-report";
+  CongressStockDisclosures: "congress-stock-disclosures";
+  CostcoCategories: "costco-categories";
+  CostcoProduct: "costco-product";
+  CostcoProductAvailability: "costco-product-availability";
+  CostcoProductReviews: "costco-product-reviews";
+  CostcoSearch: "costco-search";
+  CostcoWarehouses: "costco-warehouses";
   DatasetsAirbnbMarketsFacets: "datasets-airbnb-markets-facets";
   DatasetsAirbnbMarketsItem: "datasets-airbnb-markets-item";
   DatasetsAirbnbMarketsNearby: "datasets-airbnb-markets-nearby";
@@ -35205,6 +38964,10 @@ export declare const OperationIds: Readonly<{
   DatasetsXUsersFacets: "datasets-x-users-facets";
   DatasetsXUsersItem: "datasets-x-users-item";
   DatasetsXUsersSearch: "datasets-x-users-search";
+  DepopCategories: "depop-categories";
+  DepopItem: "depop-item";
+  DepopSearch: "depop-search";
+  DepopShop: "depop-shop";
   DiscogsArtist: "discogs-artist";
   DiscogsArtistReleases: "discogs-artist-releases";
   DiscogsLabel: "discogs-label";
@@ -35224,6 +38987,11 @@ export declare const OperationIds: Readonly<{
   DoorDashDoordashStoreItem: "doordash-store-item";
   DoorDashDoordashStoreMenu: "doordash-store-menu";
   DoorDashDoordashStoreReviews: "doordash-store-reviews";
+  DuckDuckGoSearchDuckduckgoImage: "duckduckgo-image";
+  DuckDuckGoSearchDuckduckgoNews: "duckduckgo-news";
+  DuckDuckGoSearchDuckduckgoSearch: "duckduckgo-search";
+  DuckDuckGoSearchDuckduckgoShopping: "duckduckgo-shopping";
+  DuckDuckGoSearchDuckduckgoVideo: "duckduckgo-video";
   EBayEbayItem: "ebay-item";
   EBayEbaySearch: "ebay-search";
   EBayEbaySeller: "ebay-seller";
@@ -35253,10 +39021,11 @@ export declare const OperationIds: Readonly<{
   ExpediaPropertiesFilters: "expedia-properties-filters";
   ExpediaPropertiesReviews: "expedia-properties-reviews";
   ExpediaPropertiesSearch: "expedia-properties-search";
-  FacebookGroup: "facebook-group";
-  FacebookMarketplaceItem: "facebook-marketplace-item";
   FacebookMarketplaceSearch: "facebook-marketplace-search";
   FacebookPage: "facebook-page";
+  FiverrGig: "fiverr-gig";
+  FiverrSearch: "fiverr-search";
+  FiverrSeller: "fiverr-seller";
   GeocodingLookup: "geocoding-lookup";
   GeocodingReverse: "geocoding-reverse";
   GeocodingSearch: "geocoding-search";
@@ -35365,6 +39134,12 @@ export declare const OperationIds: Readonly<{
   IndeedJob: "indeed-job";
   IndeedLocationsSuggest: "indeed-locations-suggest";
   IndeedSearch: "indeed-search";
+  InstacartDepartments: "instacart-departments";
+  InstacartItem: "instacart-item";
+  InstacartSearch: "instacart-search";
+  InstacartSearchNearby: "instacart-search-nearby";
+  InstacartStores: "instacart-stores";
+  InstacartTrending: "instacart-trending";
   InstagramPost: "instagram-post";
   InstagramProfile: "instagram-profile";
   InstagramReels: "instagram-reels";
@@ -35452,6 +39227,11 @@ export declare const OperationIds: Readonly<{
   MangaRankings: "manga-rankings";
   MangaSearch: "manga-search";
   MangaTitle: "manga-title";
+  MercariAutocomplete: "mercari-autocomplete";
+  MercariHome: "mercari-home";
+  MercariItem: "mercari-item";
+  MercariMaster: "mercari-master";
+  MercariSearch: "mercari-search";
   MetaJobsJob: "meta-jobs-job";
   MetaJobsList: "meta-jobs-list";
   MetaJobsSearch: "meta-jobs-search";
@@ -35502,6 +39282,14 @@ export declare const OperationIds: Readonly<{
   OpenTableOpentableRestaurantMenus: "opentable-restaurant-menus";
   OpenTableOpentableRestaurantReviews: "opentable-restaurant-reviews";
   OpenTableOpentableSearch: "opentable-search";
+  PinterestBoard: "pinterest-board";
+  PinterestCategories: "pinterest-categories";
+  PinterestIdea: "pinterest-idea";
+  PinterestPin: "pinterest-pin";
+  PinterestSearch: "pinterest-search";
+  PinterestUser: "pinterest-user";
+  PinterestUserBoards: "pinterest-user-boards";
+  PinterestUserPins: "pinterest-user-pins";
   PitchBookPitchbookAdvisor: "pitchbook-advisor";
   PitchBookPitchbookCompany: "pitchbook-company";
   PitchBookPitchbookFund: "pitchbook-fund";
@@ -35580,6 +39368,14 @@ export declare const OperationIds: Readonly<{
   PolymarketTokensSpreads: "polymarket-tokens-spreads";
   PolymarketTournament: "polymarket-tournament";
   PolymarketTournaments: "polymarket-tournaments";
+  PoshmarkBrand: "poshmark-brand";
+  PoshmarkBrands: "poshmark-brands";
+  PoshmarkCategories: "poshmark-categories";
+  PoshmarkCategory: "poshmark-category";
+  PoshmarkCloset: "poshmark-closet";
+  PoshmarkListing: "poshmark-listing";
+  PoshmarkSearch: "poshmark-search";
+  PoshmarkTrend: "poshmark-trend";
   ProductHuntAbout: "producthunt-about";
   ProductHuntAlternatives: "producthunt-alternatives";
   ProductHuntCategory: "producthunt-category";
@@ -35732,6 +39528,15 @@ export declare const OperationIds: Readonly<{
   SteamTags: "steam-tags";
   SteamTagsList: "steam-tags-list";
   SteamTopSellers: "steam-top-sellers";
+  StockXStockxBrands: "stockx-brands";
+  StockXStockxCategories: "stockx-categories";
+  StockXStockxProduct: "stockx-product";
+  StockXStockxReleases: "stockx-releases";
+  StockXStockxSearch: "stockx-search";
+  StravaChallenges: "strava-challenges";
+  StravaClub: "strava-club";
+  StravaRouteDetail: "strava-route-detail";
+  StravaRoutes: "strava-routes";
   TargetCategories: "target-categories";
   TargetCategoryProducts: "target-category-products";
   TargetFilterOptions: "target-filter-options";
@@ -35795,6 +39600,8 @@ export declare const OperationIds: Readonly<{
   TripAdvisorTripadvisorPlace: "tripadvisor-place";
   TripAdvisorTripadvisorReviews: "tripadvisor-reviews";
   TripAdvisorTripadvisorSearch: "tripadvisor-search";
+  TripComTripcomHotelDetail: "tripcom-hotel-detail";
+  TripComTripcomHotelsSearch: "tripcom-hotels-search";
   TrustMrrTrustmrrAcquire: "trustmrr-acquire";
   TrustMrrTrustmrrCategories: "trustmrr-categories";
   TrustMrrTrustmrrCategory: "trustmrr-category";
@@ -35814,6 +39621,9 @@ export declare const OperationIds: Readonly<{
   UberEatsUbereatsStore: "ubereats-store";
   UberEatsUbereatsStoreMenu: "ubereats-store-menu";
   UberEatsUbereatsStoreReviews: "ubereats-store-reviews";
+  UpworkFreelancer: "upwork-freelancer";
+  UpworkJob: "upwork-job";
+  UpworkSearch: "upwork-search";
   UsageMeEndpoints: "usage-me-endpoints";
   UsageMeOverview: "usage-me-overview";
   UsageMeRecentIps: "usage-me-recent-ips";
@@ -35822,6 +39632,13 @@ export declare const OperationIds: Readonly<{
   UserMeApiKeys: "user-me-api-keys";
   UserMeApiKeysReveal: "user-me-api-keys-reveal";
   UserMeApiKeysRotate: "user-me-api-keys-rotate";
+  VintedBrand: "vinted-brand";
+  VintedBrands: "vinted-brands";
+  VintedCatalog: "vinted-catalog";
+  VintedCategories: "vinted-categories";
+  VintedCategory: "vinted-category";
+  VintedItem: "vinted-item";
+  VintedMember: "vinted-member";
   WalmartProduct: "walmart-product";
   WalmartProductReviews: "walmart-product-reviews";
   WalmartSearch: "walmart-search";
@@ -35830,6 +39647,9 @@ export declare const OperationIds: Readonly<{
   WebExtract: "extract";
   WebScrape: "web-scrape";
   WebTechstack: "web-techstack";
+  WhatnotBrowse: "whatnot-browse";
+  WhatnotCategories: "whatnot-categories";
+  WhatnotLive: "whatnot-live";
   XPost: "x-post";
   XProfile: "x-profile";
   XProfilePosts: "x-profile-posts";
@@ -35872,6 +39692,7 @@ export declare const OperationIds: Readonly<{
   YahooFinanceTickerSustainability: "yahoo-finance-ticker-sustainability";
   YahooFinanceTickerValuation: "yahoo-finance-ticker-valuation";
   YahooFinanceTrending: "yahoo-finance-trending";
+  YahooSearchCall: "yahoo-search";
   YelpBusiness: "yelp-business";
   YelpBusinessMenu: "yelp-business-menu";
   YelpBusinessPhotos: "yelp-business-photos";
