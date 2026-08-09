@@ -4831,11 +4831,13 @@ export interface ModelCoingeckoTrendingResponseDoc {
 export type ModelCongressChamber = "house" | "senate";
 
 export interface ModelCongressHouseDisclosure {
+  "filed_at"?: string;
   "filing_type"?: string;
   "filing_url"?: string;
   "filing_year"?: number;
   "member"?: string;
   "office"?: string;
+  "year_kind"?: "filing" | "election";
 }
 
 export interface ModelCongressReportDetail {
@@ -26405,13 +26407,13 @@ export interface CongressStockDisclosuresParams {
   "first_name"?: string;
   "last_name"?: string;
   "ticker"?: string;
-  "state"?: string;
-  "senator_state"?: string;
-  "candidate_state"?: string;
+  "state"?: "AK" | "AL" | "AR" | "AS" | "AZ" | "CA" | "CO" | "CT" | "DC" | "DE" | "FL" | "FM" | "GA" | "GU" | "HI" | "IA" | "ID" | "IL" | "IN" | "KS" | "KY" | "LA" | "MA" | "MD" | "ME" | "MH" | "MI" | "MN" | "MO" | "MP" | "MS" | "MT" | "NC" | "ND" | "NE" | "NH" | "NJ" | "NM" | "NV" | "NY" | "OH" | "OK" | "OR" | "PA" | "PR" | "PW" | "RI" | "SC" | "SD" | "TN" | "TX" | "UT" | "VA" | "VI" | "VT" | "WA" | "WI" | "WV" | "WY";
+  "senator_state"?: "AK" | "AL" | "AR" | "AS" | "AZ" | "CA" | "CO" | "CT" | "DC" | "DE" | "FL" | "FM" | "GA" | "GU" | "HI" | "IA" | "ID" | "IL" | "IN" | "KS" | "KY" | "LA" | "MA" | "MD" | "ME" | "MH" | "MI" | "MN" | "MO" | "MP" | "MS" | "MT" | "NC" | "ND" | "NE" | "NH" | "NJ" | "NM" | "NV" | "NY" | "OH" | "OK" | "OR" | "PA" | "PR" | "PW" | "RI" | "SC" | "SD" | "TN" | "TX" | "UT" | "VA" | "VI" | "VT" | "WA" | "WI" | "WV" | "WY";
+  "candidate_state"?: "AK" | "AL" | "AR" | "AS" | "AZ" | "CA" | "CO" | "CT" | "DC" | "DE" | "FL" | "FM" | "GA" | "GU" | "HI" | "IA" | "ID" | "IL" | "IN" | "KS" | "KY" | "LA" | "MA" | "MD" | "ME" | "MH" | "MI" | "MN" | "MO" | "MP" | "MS" | "MT" | "NC" | "ND" | "NE" | "NH" | "NJ" | "NM" | "NV" | "NY" | "OH" | "OK" | "OR" | "PA" | "PR" | "PW" | "RI" | "SC" | "SD" | "TN" | "TX" | "UT" | "VA" | "VI" | "VT" | "WA" | "WI" | "WV" | "WY";
   "district"?: string;
-  "filer_type"?: string;
+  "filer_type"?: "member" | "candidate" | "all" | "senator" | "former_senator";
   "election_year"?: string;
-  "report_type"?: string;
+  "report_type"?: "annual" | "periodic_transaction" | "due_date_extension" | "blind_trust" | "other";
   "from"?: string;
   "to"?: string;
   "sort"?: "name_asc" | "name_desc" | "office_asc" | "office_desc" | "filing_year_asc" | "filing_year_desc";
