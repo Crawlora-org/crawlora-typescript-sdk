@@ -4851,12 +4851,26 @@ export interface ModelCongressReportDetail {
   "report_type"?: string;
   "source_url"?: string;
   "title"?: string;
+  "transactions"?: Array<ModelCongressReportTransaction>;
 }
 
 export interface ModelCongressReportPart {
   "answer"?: string;
   "rows"?: Array<Record<string, string>>;
   "title"?: string;
+}
+
+export interface ModelCongressReportTransaction {
+  "amount"?: string;
+  "asset_name"?: string;
+  "asset_type"?: string;
+  "comment"?: string;
+  "owner"?: string;
+  "source_part"?: string;
+  "source_row_number"?: string;
+  "ticker"?: string;
+  "transaction_date"?: string;
+  "transaction_type"?: string;
 }
 
 export interface ModelCongressStockDisclosureResponse {
