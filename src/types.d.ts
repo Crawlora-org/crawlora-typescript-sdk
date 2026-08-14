@@ -3,6 +3,33 @@
 export type CrawloraResponse<T = unknown> = T;
 export type CrawloraBody<T = Record<string, unknown>> = T;
 
+export interface ModelAccountdeletionAccountDeletionRequestBodyDoc {
+  "reason"?: string;
+}
+
+export interface ModelAccountdeletionAccountDeletionRequestDoc {
+  "archive_id"?: string;
+  "completed_at"?: string;
+  "email"?: string;
+  "id"?: string;
+  "initiated_by"?: string;
+  "reason"?: string;
+  "requested_at"?: string;
+  "review_reason"?: string;
+  "reviewed_at"?: string;
+  "reviewed_by"?: string;
+  "scheduled_purge_at"?: string;
+  "status"?: "pending" | "approved" | "rejected" | "cancelled" | "completed";
+  "stripe_subscription_cancelled"?: boolean;
+  "updated_at"?: string;
+  "user_id"?: string;
+  "username"?: string;
+}
+
+export interface ModelAccountdeletionAccountDeletionResponseDoc {
+  "request"?: ModelAccountdeletionAccountDeletionRequestDoc;
+}
+
 export interface ModelAgodaActivitiesSearchResponse {
   "activities"?: Array<ModelAgodaActivitySummary>;
   "city_id"?: number;
@@ -1984,6 +2011,19 @@ export interface ModelBillingBillingStatementUserDoc {
   "stripe_customer_id"?: string;
   "user_id"?: string;
   "username"?: string;
+}
+
+export interface ModelBillingMyRejectionsDataDoc {
+  "by_reason"?: Record<string, number>;
+  "from"?: string;
+  "to"?: string;
+  "total_rejections"?: number;
+}
+
+export interface ModelBillingMyRejectionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingMyRejectionsDataDoc;
+  "msg"?: string;
 }
 
 export interface ModelBillingStripeCheckoutRequestDoc {
@@ -7219,6 +7259,102 @@ export interface ModelEbayItem {
   "title"?: string;
 }
 
+export interface ModelEbayLiveStream {
+  "channels"?: Array<string>;
+  "description"?: string;
+  "end_time"?: string;
+  "hosts"?: Array<ModelEbayLiveStreamHost>;
+  "id"?: string;
+  "is_case_break"?: boolean;
+  "is_user_registered"?: boolean;
+  "like_count"?: number;
+  "live_stream_url"?: string;
+  "preview_image_url"?: string;
+  "preview_stream_url"?: string;
+  "start_time"?: string;
+  "state"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "watched_count"?: number;
+}
+
+export interface ModelEbayLiveStreamDetail {
+  "channels"?: Array<string>;
+  "concurrent_viewer_count"?: number;
+  "description"?: string;
+  "end_time"?: string;
+  "hosts"?: Array<ModelEbayLiveStreamHost>;
+  "id"?: string;
+  "is_case_break"?: boolean;
+  "is_user_registered"?: boolean;
+  "like_count"?: number;
+  "live_stream_url"?: string;
+  "preview_image_url"?: string;
+  "preview_stream_url"?: string;
+  "replay_url"?: string;
+  "site_id"?: string;
+  "start_time"?: string;
+  "state"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "vendor_event_id"?: string;
+  "watched_count"?: number;
+}
+
+export interface ModelEbayLiveStreamHost {
+  "communication_rating"?: number;
+  "feedback_negative_count"?: number;
+  "feedback_neutral_count"?: number;
+  "feedback_positive_count"?: number;
+  "feedback_positive_percent"?: number;
+  "id"?: string;
+  "item_as_described_rating"?: number;
+  "profile_picture_url"?: string;
+  "shipping_cost_rating"?: number;
+  "shipping_time_rating"?: number;
+  "store_name"?: string;
+  "username"?: string;
+}
+
+export interface ModelEbayLiveStreamItem {
+  "auction_currency"?: string;
+  "auction_ending_at"?: string;
+  "auction_price"?: number;
+  "auction_status"?: string;
+  "bid_count"?: number;
+  "currency"?: string;
+  "end_date"?: string;
+  "image_url"?: string;
+  "is_exclusive"?: boolean;
+  "is_visible"?: boolean;
+  "leader_username"?: string;
+  "listing_id"?: string;
+  "pin"?: boolean;
+  "price"?: number;
+  "purchasable"?: boolean;
+  "sale_type"?: string;
+  "status"?: string;
+  "title"?: string;
+  "winner_username"?: string;
+}
+
+export interface ModelEbayLiveStreamItemsResp {
+  "event_id"?: string;
+  "items"?: Array<ModelEbayLiveStreamItem>;
+  "next_cursor"?: string;
+}
+
+export interface ModelEbayLiveStreamsBatchResp {
+  "streams"?: Array<ModelEbayLiveStream>;
+}
+
+export interface ModelEbayLiveStreamsResp {
+  "category"?: string;
+  "next_request_number"?: number;
+  "session_id"?: string;
+  "streams"?: Array<ModelEbayLiveStream>;
+}
+
 export interface ModelEbaySearchItem {
   "bid_count"?: number;
   "caption"?: string;
@@ -7331,6 +7467,30 @@ export interface ModelEbaySellerReview {
 export interface ModelEbayItemResponseDoc {
   "code"?: number;
   "data"?: ModelEbayItem;
+  "msg"?: unknown;
+}
+
+export interface ModelEbayLiveStreamItemsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbayLiveStreamItemsResp;
+  "msg"?: unknown;
+}
+
+export interface ModelEbayLiveStreamResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbayLiveStreamDetail;
+  "msg"?: unknown;
+}
+
+export interface ModelEbayLiveStreamsBatchResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbayLiveStreamsBatchResp;
+  "msg"?: unknown;
+}
+
+export interface ModelEbayLiveStreamsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEbayLiveStreamsResp;
   "msg"?: unknown;
 }
 
@@ -10993,6 +11153,190 @@ export interface ModelGoogleplaySuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelHmCategoriesResponse {
+  "categories"?: Array<ModelHmCategoryEntry>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelHmCategoryEntry {
+  "category_id"?: string;
+  "department"?: string;
+  "name"?: string;
+  "section"?: string;
+  "url"?: string;
+}
+
+export interface ModelHmColorSwatch {
+  "article_id"?: string;
+  "color_code"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelHmListingResponse {
+  "category_id"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "is_new"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelHmProductSummary>;
+  "sort"?: string;
+  "source_url"?: string;
+  "total_hits"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelHmProductDetailColor {
+  "image_url"?: string;
+  "name"?: string;
+  "sizes"?: Array<ModelHmProductDetailSize>;
+}
+
+export interface ModelHmProductDetailRating {
+  "count"?: number;
+  "value"?: number;
+}
+
+export interface ModelHmProductDetailResponse {
+  "brand"?: string;
+  "colors"?: Array<ModelHmProductDetailColor>;
+  "description"?: string;
+  "fetched_at"?: string;
+  "gender"?: string;
+  "material"?: string;
+  "name"?: string;
+  "pattern"?: string;
+  "product_id"?: string;
+  "rating"?: ModelHmProductDetailRating;
+  "reviews"?: Array<ModelHmProductDetailReview>;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelHmProductDetailReview {
+  "author"?: string;
+  "body"?: string;
+  "date"?: string;
+  "dimensions"?: Array<ModelHmProductDetailReviewDimension>;
+  "rating"?: number;
+}
+
+export interface ModelHmProductDetailReviewDimension {
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelHmProductDetailSize {
+  "availability"?: string;
+  "currency"?: string;
+  "price"?: number;
+  "size"?: string;
+  "sku"?: string;
+  "url"?: string;
+}
+
+export interface ModelHmProductSummary {
+  "availability"?: string;
+  "brand"?: string;
+  "category_code"?: string;
+  "colors"?: Array<ModelHmColorSwatch>;
+  "coming_soon"?: boolean;
+  "currency"?: string;
+  "formatted_price"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "model_image_url"?: string;
+  "name"?: string;
+  "new_arrival"?: boolean;
+  "price"?: number;
+  "sizes"?: Array<ModelHmSizeStock>;
+  "url"?: string;
+}
+
+export interface ModelHmSearchMeta {
+  "blocked"?: boolean;
+  "did_you_mean"?: Array<string>;
+  "query"?: string;
+  "related_searches"?: Array<string>;
+}
+
+export interface ModelHmSearchResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelHmProductSummary>;
+  "query"?: string;
+  "search_meta"?: ModelHmSearchMeta;
+  "source_url"?: string;
+  "total_hits"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelHmSizeStock {
+  "id"?: string;
+  "label"?: string;
+  "stock"?: number;
+}
+
+export interface ModelHmStore {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "postal_code"?: string;
+  "state"?: string;
+  "store_class"?: string;
+  "store_code"?: string;
+}
+
+export interface ModelHmStoreResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "radius_meters"?: number;
+  "search"?: string;
+  "source_url"?: string;
+  "stores"?: Array<ModelHmStore>;
+}
+
+export interface ModelHmCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelHmCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelHmListingResponseDoc {
+  "code"?: number;
+  "data"?: ModelHmListingResponse;
+  "msg"?: string;
+}
+
+export interface ModelHmProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelHmProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelHmSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelHmSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelHmStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelHmStoreResponse;
+  "msg"?: string;
+}
+
 export interface ModelImdbAlternateTitle {
   "country"?: string;
   "title"?: string;
@@ -12899,6 +13243,146 @@ export interface ModelKalshiTradesResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelKohlsCategoryFacet {
+  "label"?: string;
+  "name"?: string;
+  "options"?: Array<ModelKohlsCategoryFacetOption>;
+}
+
+export interface ModelKohlsCategoryFacetOption {
+  "active"?: boolean;
+  "category"?: string;
+  "name"?: string;
+  "product_count"?: number;
+}
+
+export interface ModelKohlsCategoryPriceRange {
+  "max_price"?: number;
+  "min_price"?: number;
+}
+
+export interface ModelKohlsCategoryProduct {
+  "available_for_pickup"?: boolean;
+  "available_for_ship"?: boolean;
+  "colors"?: Array<string>;
+  "currency_code"?: string;
+  "image_url"?: string;
+  "on_sale"?: boolean;
+  "rating"?: number;
+  "regular_price"?: ModelKohlsCategoryPriceRange;
+  "review_count"?: number;
+  "sale_price"?: ModelKohlsCategoryPriceRange;
+  "title"?: string;
+  "url"?: string;
+  "web_id"?: string;
+}
+
+export interface ModelKohlsCategoryResponse {
+  "category"?: string;
+  "count"?: number;
+  "facets"?: Array<ModelKohlsCategoryFacet>;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "product_count"?: number;
+  "products"?: Array<ModelKohlsCategoryProduct>;
+  "source_url"?: string;
+  "title"?: string;
+  "total_pages"?: number;
+}
+
+export interface ModelKohlsProductReviewsResponse {
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "reviews"?: Array<ModelKohlsReview>;
+  "source_url"?: string;
+  "total_count"?: number;
+  "web_id"?: string;
+}
+
+export interface ModelKohlsReview {
+  "author"?: string;
+  "id"?: string;
+  "location"?: string;
+  "photo_urls"?: Array<string>;
+  "rating"?: number;
+  "recommended"?: boolean;
+  "secondary_ratings"?: Array<ModelKohlsReviewSecondaryRating>;
+  "submitted_at"?: string;
+  "text"?: string;
+  "title"?: string;
+}
+
+export interface ModelKohlsReviewSecondaryRating {
+  "max_value"?: number;
+  "name"?: string;
+  "value"?: number;
+}
+
+export interface ModelKohlsStore {
+  "address"?: string;
+  "badges"?: Array<string>;
+  "city"?: string;
+  "country"?: string;
+  "distance_miles"?: number;
+  "hours"?: Array<ModelKohlsStoreHours>;
+  "id"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "postal_code"?: string;
+  "services"?: Array<string>;
+  "state"?: string;
+  "url"?: string;
+}
+
+export interface ModelKohlsStoreHours {
+  "close"?: string;
+  "day"?: string;
+  "open"?: string;
+}
+
+export interface ModelKohlsStoresResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "search"?: string;
+  "source_url"?: string;
+  "stores"?: Array<ModelKohlsStore>;
+}
+
+export interface ModelKohlsSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelKohlsCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelKohlsCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelKohlsProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKohlsProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKohlsStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelKohlsStoresResponse;
+  "msg"?: string;
+}
+
+export interface ModelKohlsSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelKohlsSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelLetterboxdFilmRating {
   "average"?: number;
   "count"?: number;
@@ -13165,6 +13649,300 @@ export interface ModelLinkedinProductResponseDoc {
 export interface ModelLinkedinShowcaseResponseDoc {
   "code"?: number;
   "data"?: ModelLinkedinLinkedinCompanyResponse;
+  "msg"?: string;
+}
+
+export interface ModelLululemonCategoriesResponse {
+  "categories"?: Array<ModelLululemonCategoryEntry>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelLululemonCategoryEntry {
+  "category"?: string;
+  "cdp_hash"?: string;
+  "name"?: string;
+  "path"?: Array<string>;
+  "section"?: string;
+  "url"?: string;
+}
+
+export interface ModelLululemonCategoryResponse {
+  "category"?: string;
+  "cdp_hash"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelLululemonProductSummary>;
+  "source_url"?: string;
+  "total_products"?: number;
+}
+
+export interface ModelLululemonOutfitItem {
+  "category"?: string;
+  "currency"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "list_price"?: number;
+  "on_sale"?: boolean;
+  "sale_price"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelLululemonOutfitLook {
+  "id"?: string;
+  "items"?: Array<ModelLululemonOutfitItem>;
+}
+
+export interface ModelLululemonOutfitResponse {
+  "color_code"?: string;
+  "fetched_at"?: string;
+  "item"?: ModelLululemonOutfitItem;
+  "looks"?: Array<ModelLululemonOutfitLook>;
+  "source_url"?: string;
+  "unified_id"?: string;
+}
+
+export interface ModelLululemonProductDetailColor {
+  "code"?: string;
+  "name"?: string;
+  "swatch_url"?: string;
+}
+
+export interface ModelLululemonProductDetailRating {
+  "count"?: number;
+  "value"?: number;
+}
+
+export interface ModelLululemonProductDetailResponse {
+  "activities"?: Array<string>;
+  "category"?: string;
+  "category_id"?: string;
+  "colors"?: Array<ModelLululemonProductDetailColor>;
+  "currency"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "gender"?: Array<string>;
+  "highlights"?: Array<string>;
+  "name"?: string;
+  "on_sale"?: boolean;
+  "price"?: number;
+  "product_id"?: string;
+  "rating"?: ModelLululemonProductDetailRating;
+  "reviews"?: Array<ModelLululemonProductDetailReview>;
+  "sizes"?: Array<string>;
+  "skus"?: Array<ModelLululemonProductDetailSku>;
+  "source_url"?: string;
+  "unified_id"?: string;
+  "url"?: string;
+}
+
+export interface ModelLululemonProductDetailReview {
+  "badge"?: string;
+  "body"?: string;
+  "fit"?: string;
+  "id"?: string;
+  "rating"?: number;
+  "size_purchased"?: string;
+  "submitted_at"?: string;
+  "title"?: string;
+  "verified_buyer"?: boolean;
+}
+
+export interface ModelLululemonProductDetailSku {
+  "available"?: boolean;
+  "color_code"?: string;
+  "color_name"?: string;
+  "id"?: string;
+  "on_sale"?: boolean;
+  "price"?: number;
+  "sale_price"?: number;
+  "size"?: string;
+  "style_id"?: string;
+  "style_number"?: string;
+  "url"?: string;
+}
+
+export interface ModelLululemonProductSummary {
+  "activities"?: Array<string>;
+  "category"?: string;
+  "category_id"?: string;
+  "colors"?: Array<string>;
+  "currency"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "list_price"?: number;
+  "name"?: string;
+  "new_arrival"?: boolean;
+  "on_sale"?: boolean;
+  "price"?: number;
+  "sale_price"?: number;
+  "sizes"?: Array<string>;
+  "style_numbers"?: Array<string>;
+  "unified_id"?: string;
+  "url"?: string;
+}
+
+export interface ModelLululemonStore {
+  "address"?: string;
+  "amenities"?: ModelLululemonStoreAmenities;
+  "city"?: string;
+  "country"?: string;
+  "distance_miles"?: number;
+  "hours"?: Array<ModelLululemonStoreHours>;
+  "id"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "message"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "state"?: string;
+  "state_name"?: string;
+  "status"?: string;
+  "store_type"?: string;
+  "url"?: string;
+}
+
+export interface ModelLululemonStoreAmenities {
+  "buy_online_pickup_store"?: boolean;
+  "complementary_hemming"?: boolean;
+  "curbside_pickup"?: boolean;
+  "footwear"?: boolean;
+  "has_mirror"?: boolean;
+  "like_new"?: boolean;
+  "personal_shopping"?: boolean;
+  "returns_exchanges"?: boolean;
+}
+
+export interface ModelLululemonStoreHours {
+  "close"?: string;
+  "day"?: string;
+  "open"?: string;
+}
+
+export interface ModelLululemonStoresResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "stores"?: Array<ModelLululemonStore>;
+}
+
+export interface ModelLululemonCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelLululemonCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelLululemonCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelLululemonCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelLululemonOutfitResponseDoc {
+  "code"?: number;
+  "data"?: ModelLululemonOutfitResponse;
+  "msg"?: string;
+}
+
+export interface ModelLululemonProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelLululemonProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelLululemonStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelLululemonStoresResponse;
+  "msg"?: string;
+}
+
+export interface ModelMacysProductColor {
+  "current_price"?: number;
+  "id"?: string;
+  "name"?: string;
+  "on_sale"?: boolean;
+  "regular_price"?: number;
+}
+
+export interface ModelMacysProductDetailResponse {
+  "available"?: boolean;
+  "brand"?: string;
+  "bullet_points"?: Array<string>;
+  "categories"?: Array<string>;
+  "colors"?: Array<ModelMacysProductColor>;
+  "currency_code"?: string;
+  "current_price"?: number;
+  "department_name"?: string;
+  "description"?: string;
+  "division_name"?: string;
+  "fetched_at"?: string;
+  "images"?: Array<string>;
+  "low_availability"?: boolean;
+  "name"?: string;
+  "on_sale"?: boolean;
+  "product_id"?: string;
+  "rating"?: number;
+  "regular_price"?: number;
+  "review_count"?: number;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelMacysProductReviewsResponse {
+  "average_rating"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "product_id"?: string;
+  "rating_count"?: number;
+  "rating_histogram"?: Array<number>;
+  "recommended_ratio"?: number;
+  "reviews"?: Array<ModelMacysReview>;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_reviews"?: number;
+}
+
+export interface ModelMacysReview {
+  "author"?: string;
+  "body"?: string;
+  "id"?: string;
+  "location"?: string;
+  "rating"?: number;
+  "ratings_only"?: boolean;
+  "recommended"?: boolean;
+  "submitted_at"?: string;
+  "title"?: string;
+}
+
+export interface ModelMacysSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelMacysProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelMacysProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelMacysProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMacysProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMacysSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelMacysSuggestResponse;
   "msg"?: string;
 }
 
@@ -14039,6 +14817,229 @@ export interface ModelMlbTransactionsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelNikeBreadcrumb {
+  "name"?: string;
+  "path"?: string;
+}
+
+export interface ModelNikeCategoriesResponse {
+  "categories"?: Array<ModelNikeTopLevelCategory>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelNikeCategoryGroup {
+  "name"?: string;
+  "path"?: string;
+  "slug"?: string;
+  "subcategories"?: Array<ModelNikeCategorySubcategory>;
+}
+
+export interface ModelNikeCategorySubcategory {
+  "name"?: string;
+  "path"?: string;
+  "slug"?: string;
+}
+
+export interface ModelNikeColorVariant {
+  "color_description"?: string;
+  "color_label"?: string;
+  "currency"?: string;
+  "discount_percentage"?: number;
+  "image_url"?: string;
+  "initial_price"?: number;
+  "price"?: number;
+  "slug"?: string;
+  "style_color"?: string;
+  "url"?: string;
+}
+
+export interface ModelNikeFacetNav {
+  "breadcrumbs"?: Array<ModelNikeBreadcrumb>;
+  "categories"?: Array<ModelNikeFacetOption>;
+  "filters"?: Array<ModelNikeFilter>;
+}
+
+export interface ModelNikeFacetOption {
+  "label"?: string;
+  "path"?: string;
+  "result_count"?: number;
+  "selected"?: boolean;
+}
+
+export interface ModelNikeFilter {
+  "name"?: string;
+  "options"?: Array<ModelNikeFacetOption>;
+}
+
+export interface ModelNikeProductDetailResponse {
+  "color_code"?: string;
+  "color_description"?: string;
+  "colors"?: Array<ModelNikeColorVariant>;
+  "currency"?: string;
+  "description"?: string;
+  "discount_percentage"?: number;
+  "fetched_at"?: string;
+  "genders"?: Array<string>;
+  "images"?: Array<string>;
+  "initial_price"?: number;
+  "is_buyable"?: boolean;
+  "price"?: number;
+  "product_details"?: Array<string>;
+  "product_type"?: string;
+  "reason_to_buy"?: string;
+  "sizes"?: Array<ModelNikeProductSize>;
+  "slug"?: string;
+  "source_url"?: string;
+  "sport_tags"?: Array<string>;
+  "style_code"?: string;
+  "style_color"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelNikeProductGroup {
+  "badge_label"?: string;
+  "colors"?: Array<ModelNikeColorVariant>;
+  "group_key"?: string;
+  "product_type"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+}
+
+export interface ModelNikeProductReview {
+  "author"?: string;
+  "body"?: string;
+  "created_at"?: string;
+  "headline"?: string;
+  "helpful_votes"?: number;
+  "id"?: string;
+  "location"?: string;
+  "not_helpful_votes"?: number;
+  "rating"?: number;
+  "recommended"?: boolean;
+}
+
+export interface ModelNikeProductReviewsResponse {
+  "average_rating"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "rating_histogram"?: Array<number>;
+  "reviews"?: Array<ModelNikeProductReview>;
+  "slug"?: string;
+  "source_url"?: string;
+  "style_color"?: string;
+  "total_pages"?: number;
+  "total_reviews"?: number;
+}
+
+export interface ModelNikeProductSize {
+  "label"?: string;
+  "localized_label"?: string;
+  "sku_id"?: string;
+  "status"?: string;
+}
+
+export interface ModelNikeSearchResponse {
+  "category"?: string;
+  "count"?: number;
+  "facet_nav"?: ModelNikeFacetNav;
+  "fetched_at"?: string;
+  "keyword"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelNikeProductGroup>;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_products"?: number;
+}
+
+export interface ModelNikeStore {
+  "address"?: string;
+  "business_concept"?: string;
+  "city"?: string;
+  "country"?: string;
+  "distance_miles"?: number;
+  "facility_type"?: string;
+  "image_url"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "postal_code"?: string;
+  "region"?: string;
+  "slug"?: string;
+  "store_concept"?: string;
+  "store_number"?: string;
+  "url"?: string;
+}
+
+export interface ModelNikeStoreResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "page"?: number;
+  "page_size"?: number;
+  "radius_miles"?: number;
+  "source_url"?: string;
+  "stores"?: Array<ModelNikeStore>;
+  "total_stores"?: number;
+}
+
+export interface ModelNikeSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelNikeTopLevelCategory {
+  "groups"?: Array<ModelNikeCategoryGroup>;
+  "name"?: string;
+  "path"?: string;
+}
+
+export interface ModelNikeCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelNikeProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelNikeProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelNikeSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelNikeStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelNikeSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelNumbeoCityIndexEntry {
   "city"?: string;
   "city_slug"?: string;
@@ -14214,6 +15215,284 @@ export interface ModelNumbeoRankingsByCountryResponseDoc {
 export interface ModelNumbeoRankingsResponseDoc {
   "code"?: number;
   "data"?: ModelNumbeoRankingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelOldnavyAvailabilityResponse {
+  "brand"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "pid"?: string;
+  "source_url"?: string;
+  "stores"?: Array<ModelOldnavyStoreStockSummary>;
+  "style_id"?: string;
+}
+
+export interface ModelOldnavyCategoriesResponse {
+  "brand"?: string;
+  "categories"?: Array<ModelOldnavyCategoryNavEntry>;
+  "cid"?: string;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelOldnavyCategoryColorSummary {
+  "back_order_inventory_count"?: number;
+  "back_order_inventory_status"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "inventory_count"?: number;
+  "inventory_status"?: string;
+  "name"?: string;
+  "percentage_off"?: number;
+  "price"?: number;
+  "regular_price"?: number;
+  "short_description"?: string;
+}
+
+export interface ModelOldnavyCategoryGroup {
+  "category_id"?: string;
+  "category_name"?: string;
+  "items"?: Array<ModelOldnavyCategoryGroupItem>;
+  "sub_category_id"?: string;
+  "sub_category_name"?: string;
+}
+
+export interface ModelOldnavyCategoryGroupItem {
+  "cc_id"?: string;
+  "style_id"?: string;
+}
+
+export interface ModelOldnavyCategoryNavEntry {
+  "cid"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelOldnavyCategoryProductSummary {
+  "colors"?: Array<ModelOldnavyCategoryColorSummary>;
+  "id"?: string;
+  "name"?: string;
+  "review_count"?: number;
+  "review_score"?: number;
+  "url"?: string;
+  "web_product_type"?: string;
+}
+
+export interface ModelOldnavyCategoryResponse {
+  "brand"?: string;
+  "categories"?: Array<ModelOldnavyCategoryGroup>;
+  "category_id"?: string;
+  "count"?: number;
+  "facets"?: Array<ModelOldnavyFacet>;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelOldnavyCategoryProductSummary>;
+  "source_url"?: string;
+  "total_colors"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelOldnavyColorSummary {
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "percentage_off"?: number;
+  "price"?: number;
+  "regular_price"?: number;
+  "short_description"?: string;
+}
+
+export interface ModelOldnavyFacet {
+  "is_range"?: boolean;
+  "label"?: string;
+  "name"?: string;
+  "options"?: Array<ModelOldnavyFacetOption>;
+  "range_max"?: number;
+  "range_min"?: number;
+  "type"?: string;
+}
+
+export interface ModelOldnavyFacetOption {
+  "count"?: number;
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelOldnavyProductDetailResponse {
+  "brand"?: string;
+  "color"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "images"?: Array<string>;
+  "name"?: string;
+  "offers"?: Array<ModelOldnavyProductOffer>;
+  "pid"?: string;
+  "rating_count"?: number;
+  "rating_value"?: number;
+  "related_items"?: Array<ModelOldnavyRelatedItem>;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelOldnavyProductOffer {
+  "availability"?: string;
+  "currency"?: string;
+  "price"?: number;
+  "sku"?: string;
+  "url"?: string;
+}
+
+export interface ModelOldnavyProductReviewsResponse {
+  "average_rating"?: number;
+  "brand"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "pid"?: string;
+  "rating_count"?: number;
+  "rating_histogram"?: Array<number>;
+  "recommended_ratio"?: number;
+  "reviews"?: Array<ModelOldnavyReview>;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_reviews"?: number;
+}
+
+export interface ModelOldnavyProductSummary {
+  "colors"?: Array<ModelOldnavyColorSummary>;
+  "id"?: string;
+  "name"?: string;
+  "price_max"?: number;
+  "price_min"?: number;
+  "review_count"?: number;
+  "review_score"?: number;
+  "sale_price_max"?: number;
+  "sale_price_min"?: number;
+  "thumbnail_url"?: string;
+  "url"?: string;
+  "web_product_type"?: string;
+}
+
+export interface ModelOldnavyRelatedItem {
+  "name"?: string;
+  "pid"?: string;
+  "url"?: string;
+}
+
+export interface ModelOldnavyReview {
+  "author"?: string;
+  "body"?: string;
+  "created_at"?: string;
+  "headline"?: string;
+  "helpful_votes"?: number;
+  "id"?: string;
+  "location"?: string;
+  "not_helpful_votes"?: number;
+  "rating"?: number;
+  "updated_at"?: string;
+  "verified_purchase"?: boolean;
+}
+
+export interface ModelOldnavySearchResponse {
+  "brand"?: string;
+  "count"?: number;
+  "facets"?: Array<ModelOldnavyFacet>;
+  "fetched_at"?: string;
+  "keyword"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelOldnavyProductSummary>;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_products"?: number;
+}
+
+export interface ModelOldnavySizeStock {
+  "fit"?: string;
+  "sku"?: string;
+  "status"?: string;
+}
+
+export interface ModelOldnavyStore {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "distance_miles"?: number;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "postal_code"?: string;
+  "region"?: string;
+  "specialties"?: Array<string>;
+  "url"?: string;
+}
+
+export interface ModelOldnavyStoreResponse {
+  "brand"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "search"?: string;
+  "source_url"?: string;
+  "stores"?: Array<ModelOldnavyStore>;
+}
+
+export interface ModelOldnavyStoreStockSummary {
+  "address"?: string;
+  "city"?: string;
+  "distance_miles"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "postal_code"?: string;
+  "region"?: string;
+  "sizes"?: Array<ModelOldnavySizeStock>;
+  "store_id"?: string;
+}
+
+export interface ModelOldnavyAvailabilityResponseDoc {
+  "code"?: number;
+  "data"?: ModelOldnavyAvailabilityResponse;
+  "msg"?: string;
+}
+
+export interface ModelOldnavyCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelOldnavyCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelOldnavyCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelOldnavyCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelOldnavyProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelOldnavyProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelOldnavyProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelOldnavyProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelOldnavySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelOldnavySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelOldnavyStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelOldnavyStoreResponse;
   "msg"?: string;
 }
 
@@ -17638,6 +18917,153 @@ export interface ModelRottentomatoesSeriesResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelSamsclubCategoryBreadcrumbEntry {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelSamsclubCategoryProduct {
+  "availability"?: string;
+  "brand"?: string;
+  "currency_code"?: string;
+  "current_price"?: number;
+  "image_url"?: string;
+  "item_id"?: string;
+  "name"?: string;
+  "on_sale"?: boolean;
+  "rating"?: number;
+  "regular_price"?: number;
+  "review_count"?: number;
+  "savings_amount"?: number;
+  "type"?: string;
+  "unit_price_text"?: string;
+  "url"?: string;
+}
+
+export interface ModelSamsclubCategoryResponse {
+  "breadcrumb"?: Array<ModelSamsclubCategoryBreadcrumbEntry>;
+  "category_id"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "max_page"?: number;
+  "page"?: number;
+  "products"?: Array<ModelSamsclubCategoryProduct>;
+  "source_url"?: string;
+  "title"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelSamsclubContentResponse {
+  "breadcrumb"?: Array<ModelSamsclubCategoryBreadcrumbEntry>;
+  "category_links"?: Array<ModelSamsclubDepartmentLink>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "shelves"?: Array<ModelSamsclubRelatedShelf>;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelSamsclubDepartment {
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "subcategories"?: Array<ModelSamsclubDepartmentLink>;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelSamsclubDepartmentLink {
+  "id"?: string;
+  "name"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelSamsclubDepartmentsResponse {
+  "departments"?: Array<ModelSamsclubDepartment>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelSamsclubProduct {
+  "availability"?: string;
+  "brand"?: string;
+  "category"?: Array<string>;
+  "currency_code"?: string;
+  "current_price"?: number;
+  "description"?: string;
+  "highlights"?: Array<string>;
+  "images"?: Array<string>;
+  "item_id"?: string;
+  "item_number"?: string;
+  "name"?: string;
+  "on_sale"?: boolean;
+  "rating"?: number;
+  "regular_price"?: number;
+  "review_count"?: number;
+  "savings_amount"?: number;
+  "unit_price"?: number;
+  "unit_price_text"?: string;
+  "upc"?: string;
+  "url"?: string;
+}
+
+export interface ModelSamsclubRelatedItem {
+  "availability"?: string;
+  "currency_code"?: string;
+  "image_url"?: string;
+  "item_id"?: string;
+  "name"?: string;
+  "price"?: number;
+  "rating"?: number;
+  "review_count"?: number;
+  "url"?: string;
+}
+
+export interface ModelSamsclubRelatedItemsResponse {
+  "fetched_at"?: string;
+  "item_id"?: string;
+  "shelves"?: Array<ModelSamsclubRelatedShelf>;
+  "source_url"?: string;
+}
+
+export interface ModelSamsclubRelatedShelf {
+  "items"?: Array<ModelSamsclubRelatedItem>;
+  "title"?: string;
+}
+
+export interface ModelSamsclubCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelSamsclubCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelSamsclubContentResponseDoc {
+  "code"?: number;
+  "data"?: ModelSamsclubContentResponse;
+  "msg"?: string;
+}
+
+export interface ModelSamsclubDepartmentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSamsclubDepartmentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSamsclubProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelSamsclubProduct;
+  "msg"?: string;
+}
+
+export interface ModelSamsclubRelatedItemsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSamsclubRelatedItemsResponse;
+  "msg"?: string;
+}
+
 export interface ModelSecCompanyIntelligenceResponse {
   "degraded"?: Array<string>;
   "financial_snapshot"?: Record<string, number>;
@@ -19097,6 +20523,115 @@ export interface ModelSofascoreTeamResponseDoc {
 export interface ModelSofascoreTournamentSeasonsResponseDoc {
   "code"?: number;
   "data"?: ModelSofascoreTournamentSeasonsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSoundcloudPlaylist {
+  "artwork_url"?: string;
+  "created_at"?: string;
+  "description"?: string;
+  "genre"?: string;
+  "id"?: number;
+  "is_album"?: boolean;
+  "likes_count"?: number;
+  "owner"?: ModelSoundcloudUploader;
+  "permalink_url"?: string;
+  "public"?: boolean;
+  "reposts_count"?: number;
+  "tag_list"?: string;
+  "title"?: string;
+  "track_count"?: number;
+  "tracks"?: Array<ModelSoundcloudTrack>;
+}
+
+export interface ModelSoundcloudProfile {
+  "avatar_url"?: string;
+  "city"?: string;
+  "country_code"?: string;
+  "description"?: string;
+  "followers_count"?: number;
+  "followings_count"?: number;
+  "full_name"?: string;
+  "id"?: number;
+  "likes_count"?: number;
+  "permalink"?: string;
+  "permalink_url"?: string;
+  "playlist_count"?: number;
+  "track_count"?: number;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelSoundcloudSearchResponse {
+  "count"?: number;
+  "query"?: string;
+  "tracks"?: Array<ModelSoundcloudTrack>;
+}
+
+export interface ModelSoundcloudTrack {
+  "artwork_url"?: string;
+  "comment_count"?: number;
+  "created_at"?: string;
+  "description"?: string;
+  "duration_ms"?: number;
+  "genre"?: string;
+  "id"?: number;
+  "likes_count"?: number;
+  "permalink_url"?: string;
+  "playback_count"?: number;
+  "public"?: boolean;
+  "reposts_count"?: number;
+  "streamable"?: boolean;
+  "tag_list"?: string;
+  "title"?: string;
+  "uploader"?: ModelSoundcloudUploader;
+}
+
+export interface ModelSoundcloudUploader {
+  "avatar_url"?: string;
+  "city"?: string;
+  "followers_count"?: number;
+  "id"?: number;
+  "permalink"?: string;
+  "permalink_url"?: string;
+  "track_count"?: number;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelSoundcloudUserTracksResponse {
+  "count"?: number;
+  "profile_url"?: string;
+  "tracks"?: Array<ModelSoundcloudTrack>;
+}
+
+export interface ModelSoundcloudPlaylistResponseDoc {
+  "code"?: number;
+  "data"?: ModelSoundcloudPlaylist;
+  "msg"?: string;
+}
+
+export interface ModelSoundcloudProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelSoundcloudProfile;
+  "msg"?: string;
+}
+
+export interface ModelSoundcloudSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelSoundcloudSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelSoundcloudTrackResponseDoc {
+  "code"?: number;
+  "data"?: ModelSoundcloudTrack;
+  "msg"?: string;
+}
+
+export interface ModelSoundcloudUserTracksResponseDoc {
+  "code"?: number;
+  "data"?: ModelSoundcloudUserTracksResponse;
   "msg"?: string;
 }
 
@@ -23020,6 +24555,286 @@ export interface ModelTrustpilotCategorySearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTwitchChannelGame {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelTwitchChannelResponse {
+  "id"?: string;
+  "is_live"?: boolean;
+  "is_partner"?: boolean;
+  "last_broadcast_title"?: string;
+  "login"?: string;
+  "primary_color_hex"?: string;
+  "primary_team"?: ModelTwitchChannelTeam;
+  "profile_image_url"?: string;
+  "stream"?: ModelTwitchChannelStream;
+}
+
+export interface ModelTwitchChannelStream {
+  "game"?: ModelTwitchChannelGame;
+  "id"?: string;
+  "started_at"?: string;
+}
+
+export interface ModelTwitchChannelTeam {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelTwitchClip {
+  "created_at"?: string;
+  "curator"?: ModelTwitchClipCurator;
+  "duration_seconds"?: number;
+  "game"?: ModelTwitchClipGame;
+  "id"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "view_count"?: number;
+}
+
+export interface ModelTwitchClipCurator {
+  "display_name"?: string;
+  "id"?: string;
+  "login"?: string;
+}
+
+export interface ModelTwitchClipGame {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelTwitchClipsResponse {
+  "clips"?: Array<ModelTwitchClip>;
+  "count"?: number;
+  "login"?: string;
+}
+
+export interface ModelTwitchScheduleCategory {
+  "box_art_url"?: string;
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelTwitchScheduleResponse {
+  "channel"?: string;
+  "count"?: number;
+  "next_segment_at"?: string;
+  "next_segment_id"?: string;
+  "segments"?: Array<ModelTwitchScheduleSegment>;
+}
+
+export interface ModelTwitchScheduleSegment {
+  "cancelled_until"?: string;
+  "categories"?: Array<ModelTwitchScheduleCategory>;
+  "end_at"?: string;
+  "id"?: string;
+  "is_cancelled"?: boolean;
+  "start_at"?: string;
+  "title"?: string;
+}
+
+export interface ModelTwitchSearchCategory {
+  "box_art_url"?: string;
+  "id"?: string;
+  "slug"?: string;
+}
+
+export interface ModelTwitchSearchChannel {
+  "game_name"?: string;
+  "id"?: string;
+  "is_live"?: boolean;
+  "is_verified"?: boolean;
+  "login"?: string;
+  "profile_image_url"?: string;
+  "stream_title"?: string;
+  "viewers_count"?: number;
+}
+
+export interface ModelTwitchSearchResponse {
+  "count"?: number;
+  "query"?: string;
+  "results"?: Array<ModelTwitchSearchResult>;
+}
+
+export interface ModelTwitchSearchResult {
+  "category"?: ModelTwitchSearchCategory;
+  "channel"?: ModelTwitchSearchChannel;
+  "text"?: string;
+  "type"?: string;
+}
+
+export interface ModelTwitchStream {
+  "broadcaster"?: ModelTwitchStreamBroadcaster;
+  "id"?: string;
+  "preview_image_url"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "viewers_count"?: number;
+}
+
+export interface ModelTwitchStreamBroadcaster {
+  "display_name"?: string;
+  "id"?: string;
+  "is_partner"?: boolean;
+  "login"?: string;
+}
+
+export interface ModelTwitchStreamsResponse {
+  "count"?: number;
+  "game"?: string;
+  "streams"?: Array<ModelTwitchStream>;
+}
+
+export interface ModelTwitchTeamMember {
+  "display_name"?: string;
+  "id"?: string;
+  "is_live"?: boolean;
+  "login"?: string;
+  "profile_image_url"?: string;
+  "viewers_count"?: number;
+}
+
+export interface ModelTwitchTeamResponse {
+  "banner_url"?: string;
+  "description"?: string;
+  "display_name"?: string;
+  "id"?: string;
+  "logo_url"?: string;
+  "member_count"?: number;
+  "members"?: Array<ModelTwitchTeamMember>;
+  "name"?: string;
+  "owner_login"?: string;
+}
+
+export interface ModelTwitchTopGame {
+  "box_art_url"?: string;
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "tags"?: Array<string>;
+  "viewers_count"?: number;
+}
+
+export interface ModelTwitchTopGamesResponse {
+  "count"?: number;
+  "games"?: Array<ModelTwitchTopGame>;
+}
+
+export interface ModelTwitchVideo {
+  "game"?: ModelTwitchClipGame;
+  "id"?: string;
+  "length_seconds"?: number;
+  "owner"?: ModelTwitchVideoOwner;
+  "published_at"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "view_count"?: number;
+}
+
+export interface ModelTwitchVideoOwner {
+  "display_name"?: string;
+  "id"?: string;
+  "is_partner"?: boolean;
+  "login"?: string;
+}
+
+export interface ModelTwitchVideosResponse {
+  "count"?: number;
+  "login"?: string;
+  "videos"?: Array<ModelTwitchVideo>;
+}
+
+export interface ModelTwitchVodComment {
+  "badges"?: Array<string>;
+  "commenter"?: ModelTwitchVodCommentCommenter;
+  "created_at"?: string;
+  "fragments"?: Array<ModelTwitchVodCommentFragment>;
+  "id"?: string;
+  "message"?: string;
+  "offset_seconds"?: number;
+  "user_color"?: string;
+}
+
+export interface ModelTwitchVodCommentCommenter {
+  "display_name"?: string;
+  "id"?: string;
+  "login"?: string;
+}
+
+export interface ModelTwitchVodCommentFragment {
+  "emote_id"?: string;
+  "text"?: string;
+}
+
+export interface ModelTwitchVodCommentsResponse {
+  "comments"?: Array<ModelTwitchVodComment>;
+  "count"?: number;
+  "has_more"?: boolean;
+  "next_offset_seconds"?: number;
+  "offset_seconds"?: number;
+  "video_id"?: string;
+}
+
+export interface ModelTwitchChannelResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchChannelResponse;
+  "msg"?: string;
+}
+
+export interface ModelTwitchClipsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchClipsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTwitchScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelTwitchSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelTwitchStreamsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchStreamsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTwitchTeamResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchTeamResponse;
+  "msg"?: string;
+}
+
+export interface ModelTwitchTopGamesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchTopGamesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTwitchVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchVideosResponse;
+  "msg"?: string;
+}
+
+export interface ModelTwitchVodCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTwitchVodCommentsResponse;
+  "msg"?: string;
+}
+
 export interface ModelUbereatsAddress {
   "city"?: string;
   "country"?: string;
@@ -23137,6 +24952,256 @@ export interface ModelUbereatsStoreResponseDoc {
 export interface ModelUbereatsStoreReviewsResponseDoc {
   "code"?: number;
   "data"?: ModelUbereatsStoreReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelUltaAnswer {
+  "author"?: string;
+  "created_at"?: string;
+  "helpful_votes"?: number;
+  "id"?: string;
+  "is_expert"?: boolean;
+  "not_helpful_votes"?: number;
+  "text"?: string;
+}
+
+export interface ModelUltaCategoriesResponse {
+  "categories"?: Array<ModelUltaCategoryEntry>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelUltaCategoryEntry {
+  "department"?: string;
+  "group"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelUltaCategoryFacet {
+  "label"?: string;
+  "selected"?: boolean;
+  "value"?: string;
+}
+
+export interface ModelUltaCategoryResponse {
+  "category"?: string;
+  "count"?: number;
+  "facets"?: Array<ModelUltaCategoryFacet>;
+  "fetched_at"?: string;
+  "filter"?: string;
+  "has_more"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelUltaProductSummary>;
+  "result_count"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelUltaProductDetailResponse {
+  "brand_name"?: string;
+  "category"?: Array<string>;
+  "currency_code"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "images"?: Array<string>;
+  "list_price"?: string;
+  "product_id"?: string;
+  "product_name"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "sale_price"?: string;
+  "sku_id"?: string;
+  "source_url"?: string;
+  "unavailable"?: boolean;
+  "url"?: string;
+  "variants"?: Array<ModelUltaProductVariant>;
+}
+
+export interface ModelUltaProductQuestionsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "product_id"?: string;
+  "questions"?: Array<ModelUltaQuestion>;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_questions"?: number;
+}
+
+export interface ModelUltaProductReviewsResponse {
+  "average_rating"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "product_id"?: string;
+  "rating_count"?: number;
+  "rating_histogram"?: Array<number>;
+  "recommended_ratio"?: number;
+  "reviews"?: Array<ModelUltaReview>;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_reviews"?: number;
+}
+
+export interface ModelUltaProductSummary {
+  "brand_name"?: string;
+  "discount"?: string;
+  "image_url"?: string;
+  "is_limited_stock"?: boolean;
+  "list_price"?: string;
+  "product_id"?: string;
+  "product_name"?: string;
+  "promo_text"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "sale_price"?: string;
+  "sku_id"?: string;
+  "sponsored"?: boolean;
+  "url"?: string;
+  "variant_label"?: string;
+}
+
+export interface ModelUltaProductVariant {
+  "name"?: string;
+  "product_id"?: string;
+  "sku_id"?: string;
+}
+
+export interface ModelUltaQuestion {
+  "answer_count"?: number;
+  "answers"?: Array<ModelUltaAnswer>;
+  "author"?: string;
+  "created_at"?: string;
+  "id"?: string;
+  "location"?: string;
+  "text"?: string;
+}
+
+export interface ModelUltaReview {
+  "author"?: string;
+  "body"?: string;
+  "created_at"?: string;
+  "headline"?: string;
+  "helpful_votes"?: number;
+  "id"?: string;
+  "location"?: string;
+  "not_helpful_votes"?: number;
+  "rating"?: number;
+  "updated_at"?: string;
+  "verified_purchase"?: boolean;
+}
+
+export interface ModelUltaSearchResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelUltaProductSummary>;
+  "query"?: string;
+  "result_count"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelUltaStore {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "hours"?: Record<string, string>;
+  "id"?: number;
+  "is_permanently_closed"?: boolean;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "postal_code"?: string;
+  "services"?: Array<string>;
+  "slug"?: string;
+  "state"?: string;
+  "url"?: string;
+}
+
+export interface ModelUltaStoreResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "radius_meters"?: number;
+  "search"?: string;
+  "source_url"?: string;
+  "stores"?: Array<ModelUltaStore>;
+}
+
+export interface ModelUltaSuggestProduct {
+  "brand_name"?: string;
+  "image_url"?: string;
+  "product_name"?: string;
+  "url"?: string;
+}
+
+export interface ModelUltaSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "first_top_result"?: Array<ModelUltaSuggestProduct>;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelUltaSuggestion>;
+}
+
+export interface ModelUltaSuggestion {
+  "label"?: string;
+  "top_results"?: Array<ModelUltaSuggestProduct>;
+  "url"?: string;
+}
+
+export interface ModelUltaCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelUltaCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelUltaCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelUltaCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelUltaProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelUltaProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelUltaProductQuestionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelUltaProductQuestionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelUltaProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelUltaProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelUltaSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelUltaSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelUltaStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelUltaStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelUltaSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelUltaSuggestResponse;
   "msg"?: string;
 }
 
@@ -23659,6 +25724,95 @@ export interface ModelWalmartSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelWayfairCategoriesResponse {
+  "categories"?: Array<ModelWayfairCategoryRef>;
+  "has_next"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
+  "total"?: number;
+}
+
+export interface ModelWayfairCategoryRef {
+  "department"?: string;
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelWayfairCategoryResponse {
+  "category"?: string;
+  "category_id"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "page"?: number;
+  "products"?: Array<ModelWayfairProductSummary>;
+  "source_url"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelWayfairProductDetailResponse {
+  "brand_name"?: string;
+  "currency_code"?: string;
+  "fetched_at"?: string;
+  "highlights"?: Array<string>;
+  "images"?: Array<string>;
+  "in_stock"?: boolean;
+  "original_price"?: string;
+  "price"?: string;
+  "product_id"?: string;
+  "product_name"?: string;
+  "rating"?: number;
+  "rating_breakdown"?: Record<string, number>;
+  "rating_count"?: number;
+  "selected_color"?: string;
+  "source_url"?: string;
+  "stock_message"?: string;
+  "url"?: string;
+  "variant_categories"?: Array<ModelWayfairVariantCategory>;
+}
+
+export interface ModelWayfairProductSummary {
+  "brand_name"?: string;
+  "currency_code"?: string;
+  "image_url"?: string;
+  "original_price"?: string;
+  "price"?: string;
+  "product_id"?: string;
+  "product_name"?: string;
+  "url"?: string;
+}
+
+export interface ModelWayfairVariantCategory {
+  "name"?: string;
+  "options"?: Array<ModelWayfairVariantOption>;
+}
+
+export interface ModelWayfairVariantOption {
+  "available"?: boolean;
+  "image_url"?: string;
+  "name"?: string;
+  "selected"?: boolean;
+}
+
+export interface ModelWayfairCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelWayfairCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelWayfairCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelWayfairCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelWayfairProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelWayfairProductDetailResponse;
+  "msg"?: string;
+}
+
 export interface ModelWebScrapeInfo {
   "backend"?: string;
   "cache_state"?: string;
@@ -23824,6 +25978,180 @@ export interface ModelWhatnotLiveResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelWishCategoriesResponse {
+  "categories"?: Array<ModelWishCategory>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelWishCategory {
+  "filter_groups"?: Array<ModelWishFilterGroup>;
+  "filter_id"?: string;
+  "is_main_tab"?: boolean;
+  "name"?: string;
+}
+
+export interface ModelWishFilter {
+  "default_selected"?: boolean;
+  "filter_id"?: string;
+  "is_quick_filter"?: boolean;
+  "is_toggle"?: boolean;
+  "name"?: string;
+}
+
+export interface ModelWishFilterGroup {
+  "filters"?: Array<ModelWishFilter>;
+  "icon_url"?: string;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelWishProductDetailResponse {
+  "description"?: string;
+  "fetched_at"?: string;
+  "images"?: Array<string>;
+  "is_sold_out"?: boolean;
+  "name"?: string;
+  "product_id"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "source_url"?: string;
+  "url"?: string;
+  "variations"?: Array<ModelWishProductVariation>;
+}
+
+export interface ModelWishProductReviewsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "product_id"?: string;
+  "result_count"?: number;
+  "reviews"?: Array<ModelWishReview>;
+  "source_url"?: string;
+}
+
+export interface ModelWishProductSummary {
+  "currency_code"?: string;
+  "image_url"?: string;
+  "merchant_id"?: string;
+  "name"?: string;
+  "price"?: number;
+  "product_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "url"?: string;
+}
+
+export interface ModelWishProductVariation {
+  "color"?: string;
+  "currency_code"?: string;
+  "inventory"?: number;
+  "merchant_id"?: string;
+  "merchant_name"?: string;
+  "merchant_rating"?: number;
+  "price"?: number;
+  "size"?: string;
+  "variation_id"?: string;
+}
+
+export interface ModelWishRelatedItem {
+  "currency_code"?: string;
+  "image_url"?: string;
+  "merchant_id"?: string;
+  "name"?: string;
+  "price"?: number;
+  "product_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "url"?: string;
+}
+
+export interface ModelWishRelatedItemsResponse {
+  "fetched_at"?: string;
+  "product_id"?: string;
+  "shelves"?: Array<ModelWishRelatedShelf>;
+  "source_url"?: string;
+}
+
+export interface ModelWishRelatedShelf {
+  "feed_mode"?: string;
+  "has_more"?: boolean;
+  "items"?: Array<ModelWishRelatedItem>;
+  "subtitle"?: string;
+  "title"?: string;
+}
+
+export interface ModelWishReview {
+  "color"?: string;
+  "comment"?: string;
+  "created_at"?: string;
+  "downvote_count"?: number;
+  "id"?: string;
+  "image_ids"?: Array<string>;
+  "is_wish_star"?: boolean;
+  "rating"?: number;
+  "title"?: string;
+  "upvote_count"?: number;
+  "user_country_code"?: string;
+  "user_name"?: string;
+}
+
+export interface ModelWishSearchResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "next_offset"?: number;
+  "offset"?: number;
+  "products"?: Array<ModelWishProductSummary>;
+  "query"?: string;
+  "result_count"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelWishSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelWishCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelWishCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelWishProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelWishProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelWishProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelWishProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelWishRelatedItemsResponseDoc {
+  "code"?: number;
+  "data"?: ModelWishRelatedItemsResponse;
+  "msg"?: string;
+}
+
+export interface ModelWishSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelWishSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelWishSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelWishSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelXMetrics {
   "bookmarks"?: number;
   "likes"?: number;
@@ -23914,6 +26242,116 @@ export interface ModelXProfilePostsResponseDoc {
 export interface ModelXProfileResponseDoc {
   "code"?: number;
   "data"?: ModelXProfile;
+  "msg"?: string;
+}
+
+export interface ModelYahooautosArticleResponse {
+  "author"?: string;
+  "description"?: string;
+  "image_url"?: string;
+  "keywords"?: Array<string>;
+  "paragraphs"?: Array<string>;
+  "provider"?: string;
+  "published_at"?: string;
+  "section"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahooautosCategoryPaginate {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelYahooautosCategoryResponse {
+  "category"?: string;
+  "items"?: Array<ModelYahooautosStreamItem>;
+  "pagination"?: ModelYahooautosCategoryPaginate;
+}
+
+export interface ModelYahooautosHomeResponse {
+  "items"?: Array<ModelYahooautosStreamItem>;
+}
+
+export interface ModelYahooautosStreamItem {
+  "category"?: string;
+  "id"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahooautosArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooautosArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooautosCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooautosCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooautosHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooautosHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooentertainmentArticleResponse {
+  "author"?: string;
+  "description"?: string;
+  "image_url"?: string;
+  "keywords"?: Array<string>;
+  "paragraphs"?: Array<string>;
+  "provider"?: string;
+  "published_at"?: string;
+  "section"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahooentertainmentCategoryPaginate {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelYahooentertainmentCategoryResponse {
+  "category"?: string;
+  "items"?: Array<ModelYahooentertainmentStreamItem>;
+  "pagination"?: ModelYahooentertainmentCategoryPaginate;
+}
+
+export interface ModelYahooentertainmentHomeResponse {
+  "items"?: Array<ModelYahooentertainmentStreamItem>;
+}
+
+export interface ModelYahooentertainmentStreamItem {
+  "category"?: string;
+  "id"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahooentertainmentArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooentertainmentArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooentertainmentCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooentertainmentCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooentertainmentHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooentertainmentHomeResponse;
   "msg"?: string;
 }
 
@@ -24295,6 +26733,286 @@ export interface ModelYahoofinanceValuationResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelYahoohealthArticleResponse {
+  "author"?: string;
+  "description"?: string;
+  "image_url"?: string;
+  "keywords"?: Array<string>;
+  "paragraphs"?: Array<string>;
+  "provider"?: string;
+  "published_at"?: string;
+  "section"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoohealthCategoryPaginate {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelYahoohealthCategoryResponse {
+  "category"?: string;
+  "items"?: Array<ModelYahoohealthStreamItem>;
+  "pagination"?: ModelYahoohealthCategoryPaginate;
+}
+
+export interface ModelYahoohealthHomeResponse {
+  "items"?: Array<ModelYahoohealthStreamItem>;
+}
+
+export interface ModelYahoohealthStreamItem {
+  "category"?: string;
+  "id"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoohealthArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoohealthArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoohealthCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoohealthCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoohealthHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoohealthHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoolifeArticleResponse {
+  "author"?: string;
+  "description"?: string;
+  "image_url"?: string;
+  "keywords"?: Array<string>;
+  "paragraphs"?: Array<string>;
+  "provider"?: string;
+  "published_at"?: string;
+  "section"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoolifeHomeResponse {
+  "items"?: Array<ModelYahoolifeStreamItem>;
+}
+
+export interface ModelYahoolifeStreamItem {
+  "id"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoolifeArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoolifeArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoolifeHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoolifeHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoonewsArticleResponse {
+  "author"?: string;
+  "category"?: string;
+  "description"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "keywords"?: Array<string>;
+  "paragraphs"?: Array<string>;
+  "provider"?: string;
+  "provider_url"?: string;
+  "published_at"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoonewsCategoryResponse {
+  "category"?: string;
+  "items"?: Array<ModelYahoonewsStreamItem>;
+}
+
+export interface ModelYahoonewsComment {
+  "author"?: ModelYahoonewsCommentAuthor;
+  "body"?: string;
+  "created_at"?: string;
+  "id"?: string;
+  "pinned"?: boolean;
+  "reactions"?: ModelYahoonewsCommentReactions;
+  "reply_count"?: number;
+  "updated_at"?: string;
+}
+
+export interface ModelYahoonewsCommentAuthor {
+  "avatar_url"?: string;
+  "handle"?: string;
+  "has_default_avatar"?: boolean;
+  "nickname"?: string;
+  "total_comment_count"?: number;
+  "total_reaction_count"?: number;
+}
+
+export interface ModelYahoonewsCommentReactions {
+  "clap"?: number;
+  "heart"?: number;
+  "laugh"?: number;
+  "sad"?: number;
+  "thumbs_down"?: number;
+  "thumbs_up"?: number;
+  "total"?: number;
+}
+
+export interface ModelYahoonewsCommentsResponse {
+  "comments_count"?: number;
+  "content_id"?: string;
+  "has_next_page"?: boolean;
+  "items"?: Array<ModelYahoonewsComment>;
+  "next_cursor"?: string;
+  "sort"?: string;
+}
+
+export interface ModelYahoonewsHomeResponse {
+  "items"?: Array<ModelYahoonewsStreamItem>;
+}
+
+export interface ModelYahoonewsImage {
+  "height"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelYahoonewsRepliesResponse {
+  "comment_id"?: string;
+  "content_id"?: string;
+  "has_next_page"?: boolean;
+  "items"?: Array<ModelYahoonewsComment>;
+  "next_cursor"?: string;
+  "sort"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelYahoonewsStreamItem {
+  "authors"?: Array<string>;
+  "category"?: string;
+  "comment_count"?: number;
+  "id"?: string;
+  "images"?: Array<ModelYahoonewsImage>;
+  "published_at"?: string;
+  "source"?: string;
+  "source_url"?: string;
+  "summary"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoonewsSuggestResponse {
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelYahoonewsArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoonewsArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoonewsCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoonewsCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoonewsCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoonewsCommentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoonewsHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoonewsHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoonewsRepliesResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoonewsRepliesResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoonewsSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoonewsSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosearchImageResult {
+  "domain"?: string;
+  "height"?: number;
+  "image_url"?: string;
+  "page_url"?: string;
+  "position"?: number;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "width"?: number;
+}
+
+export interface ModelYahoosearchImagesResponse {
+  "query"?: string;
+  "results"?: Array<ModelYahoosearchImageResult>;
+}
+
+export interface ModelYahoosearchLocalResponse {
+  "query"?: string;
+  "results"?: Array<ModelYahoosearchLocalResult>;
+}
+
+export interface ModelYahoosearchLocalResult {
+  "address"?: string;
+  "category"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "open_status"?: string;
+  "phone"?: string;
+  "position"?: number;
+  "price_range"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+}
+
+export interface ModelYahoosearchNewsResponse {
+  "query"?: string;
+  "results"?: Array<ModelYahoosearchNewsResult>;
+}
+
+export interface ModelYahoosearchNewsResult {
+  "age"?: string;
+  "description"?: string;
+  "position"?: number;
+  "source"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
 export interface ModelYahoosearchSearchPagination {
   "next_page"?: number;
   "page"?: number;
@@ -24314,9 +27032,896 @@ export interface ModelYahoosearchSearchResult {
   "url"?: string;
 }
 
+export interface ModelYahoosearchSuggestResponse {
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelYahoosearchSuggestion>;
+}
+
+export interface ModelYahoosearchSuggestion {
+  "entity"?: ModelYahoosearchSuggestionEntity;
+  "text"?: string;
+}
+
+export interface ModelYahoosearchSuggestionEntity {
+  "description"?: string;
+  "image_url"?: string;
+  "subtitle"?: string;
+  "type"?: string;
+}
+
+export interface ModelYahoosearchVideoResult {
+  "description"?: string;
+  "domain"?: string;
+  "duration"?: string;
+  "position"?: number;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoosearchVideosResponse {
+  "query"?: string;
+  "results"?: Array<ModelYahoosearchVideoResult>;
+}
+
+export interface ModelYahoosearchImagesResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosearchImagesResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosearchLocalResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosearchLocalResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosearchNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosearchNewsResponse;
+  "msg"?: string;
+}
+
 export interface ModelYahoosearchSearchResponseDoc {
   "code"?: number;
   "data"?: ModelYahoosearchSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosearchSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosearchSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosearchVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosearchVideosResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooshoppingArticleResponse {
+  "author"?: string;
+  "description"?: string;
+  "image_url"?: string;
+  "keywords"?: Array<string>;
+  "paragraphs"?: Array<string>;
+  "provider"?: string;
+  "published_at"?: string;
+  "section"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahooshoppingCategoryPaginate {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelYahooshoppingCategoryResponse {
+  "category"?: string;
+  "items"?: Array<ModelYahooshoppingStreamItem>;
+  "pagination"?: ModelYahooshoppingCategoryPaginate;
+}
+
+export interface ModelYahooshoppingHomeResponse {
+  "items"?: Array<ModelYahooshoppingStreamItem>;
+}
+
+export interface ModelYahooshoppingShoppingListItem {
+  "currency"?: string;
+  "image_url"?: string;
+  "price"?: number;
+  "sale_price"?: number;
+  "seller"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahooshoppingShoppingListListing {
+  "image_url"?: string;
+  "list"?: string;
+  "title"?: string;
+}
+
+export interface ModelYahooshoppingShoppingListResponse {
+  "items"?: Array<ModelYahooshoppingShoppingListItem>;
+  "list"?: string;
+  "title"?: string;
+}
+
+export interface ModelYahooshoppingShoppingListsResponse {
+  "lists"?: Array<ModelYahooshoppingShoppingListListing>;
+}
+
+export interface ModelYahooshoppingStoreListing {
+  "logo_url"?: string;
+  "name"?: string;
+  "store"?: string;
+}
+
+export interface ModelYahooshoppingStoreOffer {
+  "brand"?: string;
+  "currency"?: string;
+  "image_url"?: string;
+  "price"?: number;
+  "sale_price"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahooshoppingStoreResponse {
+  "name"?: string;
+  "offers"?: Array<ModelYahooshoppingStoreOffer>;
+  "store"?: string;
+}
+
+export interface ModelYahooshoppingStoresResponse {
+  "stores"?: Array<ModelYahooshoppingStoreListing>;
+}
+
+export interface ModelYahooshoppingStreamItem {
+  "category"?: string;
+  "id"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahooshoppingArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooshoppingArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooshoppingCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooshoppingCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooshoppingHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooshoppingHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooshoppingShoppingListResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooshoppingShoppingListResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooshoppingShoppingListsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooshoppingShoppingListsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooshoppingStoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooshoppingStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahooshoppingStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahooshoppingStoresResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsBroadcast {
+  "abbr"?: string;
+  "name"?: string;
+}
+
+export interface ModelYahoosportsGame {
+  "away_score"?: number;
+  "away_team"?: ModelYahoosportsTeamRef;
+  "broadcasts"?: Array<ModelYahoosportsBroadcast>;
+  "display_name"?: string;
+  "home_score"?: number;
+  "home_team"?: ModelYahoosportsTeamRef;
+  "id"?: string;
+  "slug"?: string;
+  "start_time"?: string;
+  "status"?: string;
+  "status_display"?: string;
+  "url"?: string;
+  "venue"?: ModelYahoosportsVenue;
+  "week"?: number;
+}
+
+export interface ModelYahoosportsGameResponse {
+  "away_score"?: number;
+  "away_team"?: ModelYahoosportsTeamRef;
+  "broadcasts"?: Array<ModelYahoosportsBroadcast>;
+  "display_name"?: string;
+  "fetched_at"?: string;
+  "game"?: string;
+  "home_score"?: number;
+  "home_team"?: ModelYahoosportsTeamRef;
+  "id"?: string;
+  "league"?: string;
+  "line_score"?: Array<ModelYahoosportsLinePeriod>;
+  "source_url"?: string;
+  "start_time"?: string;
+  "status"?: string;
+  "status_display"?: string;
+  "team_stats"?: Array<ModelYahoosportsTeamStatLine>;
+  "venue"?: ModelYahoosportsVenue;
+  "week"?: number;
+  "winning_team_id"?: string;
+}
+
+export interface ModelYahoosportsGolfLeaderboardEntry {
+  "player"?: ModelYahoosportsGolfPlayerRef;
+  "rank"?: string;
+  "rounds"?: Array<ModelYahoosportsGolfRoundResult>;
+  "score"?: number;
+  "score_display"?: string;
+  "stats"?: ModelYahoosportsGolfPlayerStats;
+  "status"?: string;
+  "thru"?: number;
+}
+
+export interface ModelYahoosportsGolfLeaderboardResponse {
+  "count"?: number;
+  "entries"?: Array<ModelYahoosportsGolfLeaderboardEntry>;
+  "fetched_at"?: string;
+  "season"?: number;
+  "source_url"?: string;
+  "tour"?: string;
+  "tournament"?: ModelYahoosportsGolfTournamentRef;
+}
+
+export interface ModelYahoosportsGolfPlayerRef {
+  "country"?: string;
+  "id"?: string;
+  "name"?: string;
+  "short_name"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoosportsGolfPlayerStats {
+  "birdies"?: number;
+  "bogeys"?: number;
+  "double_bogeys"?: number;
+  "eagles"?: number;
+  "earnings"?: string;
+  "pars"?: number;
+}
+
+export interface ModelYahoosportsGolfRoundResult {
+  "round"?: number;
+  "score"?: number;
+  "score_display"?: string;
+  "strokes"?: number;
+}
+
+export interface ModelYahoosportsGolfScheduleResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "season"?: number;
+  "source_url"?: string;
+  "tour"?: string;
+  "tournaments"?: Array<ModelYahoosportsGolfTournament>;
+}
+
+export interface ModelYahoosportsGolfTournament {
+  "end_date"?: string;
+  "id"?: string;
+  "name"?: string;
+  "purse"?: string;
+  "season"?: number;
+  "start_date"?: string;
+  "status"?: string;
+  "url"?: string;
+  "venue"?: ModelYahoosportsVenue;
+}
+
+export interface ModelYahoosportsGolfTournamentRef {
+  "current_round"?: number;
+  "end_date"?: string;
+  "id"?: string;
+  "name"?: string;
+  "purse"?: string;
+  "rounds"?: number;
+  "start_date"?: string;
+  "status"?: string;
+  "url"?: string;
+  "venue"?: ModelYahoosportsVenue;
+}
+
+export interface ModelYahoosportsLinePeriod {
+  "away"?: number;
+  "home"?: number;
+  "label"?: string;
+}
+
+export interface ModelYahoosportsMmaevent {
+  "id"?: string;
+  "name"?: string;
+  "start_time"?: string;
+  "status"?: string;
+}
+
+export interface ModelYahoosportsMmafight {
+  "card_position"?: string;
+  "current_round"?: number;
+  "fighter_one"?: ModelYahoosportsMmafighterRef;
+  "fighter_two"?: ModelYahoosportsMmafighterRef;
+  "id"?: string;
+  "start_time"?: string;
+  "status"?: string;
+  "weight_class"?: string;
+  "winner_id"?: string;
+}
+
+export interface ModelYahoosportsMmafightCardResponse {
+  "count"?: number;
+  "event"?: ModelYahoosportsMmaevent;
+  "fetched_at"?: string;
+  "fights"?: Array<ModelYahoosportsMmafight>;
+  "promotion"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsMmafighterRef {
+  "country"?: string;
+  "fighting_out_of"?: string;
+  "headshot_url"?: string;
+  "id"?: string;
+  "name"?: string;
+  "rank"?: number;
+  "record"?: string;
+}
+
+export interface ModelYahoosportsMmascheduleResponse {
+  "count"?: number;
+  "events"?: Array<ModelYahoosportsMmaevent>;
+  "fetched_at"?: string;
+  "promotion"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsMotorsportsCar {
+  "engine"?: string;
+  "model"?: string;
+  "number"?: number;
+  "owner"?: string;
+}
+
+export interface ModelYahoosportsMotorsportsDriverRef {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoosportsMotorsportsRace {
+  "distance_mi"?: string;
+  "id"?: string;
+  "laps"?: number;
+  "laps_completed"?: number;
+  "name"?: string;
+  "pole_winner"?: ModelYahoosportsMotorsportsDriverRef;
+  "race_winner"?: ModelYahoosportsMotorsportsDriverRef;
+  "start_time"?: string;
+  "status"?: string;
+  "url"?: string;
+  "venue"?: ModelYahoosportsVenue;
+}
+
+export interface ModelYahoosportsMotorsportsRaceResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "race"?: ModelYahoosportsMotorsportsRace;
+  "results"?: Array<ModelYahoosportsMotorsportsResult>;
+  "season"?: number;
+  "series"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsMotorsportsResult {
+  "bonus_points"?: number;
+  "car"?: ModelYahoosportsMotorsportsCar;
+  "driver"?: ModelYahoosportsMotorsportsDriverRef;
+  "fastest_lap_time"?: string;
+  "laps"?: number;
+  "laps_led"?: number;
+  "place"?: number;
+  "points"?: number;
+  "starting_pos"?: number;
+  "status"?: string;
+  "time"?: string;
+}
+
+export interface ModelYahoosportsMotorsportsScheduleResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "races"?: Array<ModelYahoosportsMotorsportsRace>;
+  "season"?: number;
+  "series"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsNewsArticle {
+  "author"?: string;
+  "category"?: string;
+  "published"?: string;
+  "summary"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoosportsNewsResponse {
+  "articles"?: Array<ModelYahoosportsNewsArticle>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "league"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsOlympicsCountryMedals {
+  "bronze"?: number;
+  "country"?: string;
+  "gold"?: number;
+  "ioc_code"?: string;
+  "iso_code"?: string;
+  "rank"?: number;
+  "silver"?: number;
+  "total"?: number;
+}
+
+export interface ModelYahoosportsOlympicsGames {
+  "end_date"?: string;
+  "name"?: string;
+  "season"?: number;
+  "short_name"?: string;
+  "start_date"?: string;
+}
+
+export interface ModelYahoosportsOlympicsMedalsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "games"?: ModelYahoosportsOlympicsGames;
+  "medals"?: Array<ModelYahoosportsOlympicsCountryMedals>;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsPlayerDetail {
+  "age"?: number;
+  "college"?: string;
+  "draft_pick"?: number;
+  "draft_round"?: number;
+  "draft_year"?: number;
+  "experience_years"?: number;
+  "height"?: string;
+  "id"?: string;
+  "injury"?: string;
+  "name"?: string;
+  "number"?: string;
+  "position"?: string;
+  "season_stats"?: Array<ModelYahoosportsSeasonStatCategory>;
+  "status"?: string;
+  "team"?: ModelYahoosportsTeamRef;
+  "url"?: string;
+  "weight"?: number;
+}
+
+export interface ModelYahoosportsPlayerResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "player"?: ModelYahoosportsPlayerDetail;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsRosterPlayer {
+  "age"?: number;
+  "college"?: string;
+  "experience_years"?: number;
+  "height"?: string;
+  "id"?: string;
+  "injury"?: string;
+  "name"?: string;
+  "number"?: string;
+  "position"?: string;
+  "status"?: string;
+  "url"?: string;
+  "weight"?: number;
+}
+
+export interface ModelYahoosportsRosterResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "league"?: string;
+  "players"?: Array<ModelYahoosportsRosterPlayer>;
+  "source_url"?: string;
+  "team"?: ModelYahoosportsTeamRef;
+}
+
+export interface ModelYahoosportsScoreboardResponse {
+  "count"?: number;
+  "date"?: string;
+  "fetched_at"?: string;
+  "games"?: Array<ModelYahoosportsGame>;
+  "league"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsSeasonStatCategory {
+  "category"?: string;
+  "stats"?: Record<string, string>;
+}
+
+export interface ModelYahoosportsStandingsEntry {
+  "away_record"?: string;
+  "clinched_division"?: boolean;
+  "clinched_playoff"?: boolean;
+  "games_back"?: number;
+  "home_record"?: string;
+  "last10"?: string;
+  "position"?: number;
+  "record"?: ModelYahoosportsTeamRecord;
+  "streak"?: string;
+  "team"?: ModelYahoosportsTeamRef;
+}
+
+export interface ModelYahoosportsStandingsGroup {
+  "conference"?: string;
+  "division"?: string;
+  "entries"?: Array<ModelYahoosportsStandingsEntry>;
+}
+
+export interface ModelYahoosportsStandingsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "groups"?: Array<ModelYahoosportsStandingsGroup>;
+  "league"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsStat {
+  "id"?: string;
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelYahoosportsTeamDetail {
+  "abbreviation"?: string;
+  "conference"?: string;
+  "division"?: string;
+  "id"?: string;
+  "location"?: string;
+  "logo"?: string;
+  "name"?: string;
+  "nickname"?: string;
+  "primary_color"?: string;
+  "record"?: ModelYahoosportsTeamRecord;
+  "secondary_color"?: string;
+  "short_name"?: string;
+  "standing_summary"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoosportsTeamRecord {
+  "display"?: string;
+  "losses"?: number;
+  "points"?: number;
+  "ties"?: number;
+  "win_pct"?: string;
+  "wins"?: number;
+}
+
+export interface ModelYahoosportsTeamRef {
+  "abbreviation"?: string;
+  "id"?: string;
+  "location"?: string;
+  "logo"?: string;
+  "name"?: string;
+  "nickname"?: string;
+  "primary_color"?: string;
+  "secondary_color"?: string;
+  "short_name"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahoosportsTeamResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "source_url"?: string;
+  "team"?: ModelYahoosportsTeamDetail;
+}
+
+export interface ModelYahoosportsTeamScheduleResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "games"?: Array<ModelYahoosportsGame>;
+  "league"?: string;
+  "source_url"?: string;
+  "team"?: ModelYahoosportsTeamRef;
+}
+
+export interface ModelYahoosportsTeamStatLine {
+  "stats"?: Array<ModelYahoosportsStat>;
+  "team"?: ModelYahoosportsTeamRef;
+}
+
+export interface ModelYahoosportsTennisChampion {
+  "name"?: string;
+  "player_id"?: string;
+}
+
+export interface ModelYahoosportsTennisMatch {
+  "event"?: string;
+  "id"?: string;
+  "league"?: string;
+  "round"?: string;
+  "sets"?: Array<ModelYahoosportsTennisSetScore>;
+  "side1"?: Array<ModelYahoosportsTennisPlayerRef>;
+  "side1_seed"?: number;
+  "side2"?: Array<ModelYahoosportsTennisPlayerRef>;
+  "side2_seed"?: number;
+  "start_time"?: string;
+  "status"?: string;
+  "status_display"?: string;
+  "surface"?: string;
+  "tournament"?: string;
+  "url"?: string;
+  "venue"?: ModelYahoosportsVenue;
+  "winner_ids"?: Array<string>;
+}
+
+export interface ModelYahoosportsTennisPlayerRef {
+  "country"?: string;
+  "id"?: string;
+  "name"?: string;
+  "rank"?: number;
+  "short_name"?: string;
+}
+
+export interface ModelYahoosportsTennisRankingEntry {
+  "age"?: number;
+  "country"?: string;
+  "name"?: string;
+  "points"?: number;
+  "rank"?: number;
+}
+
+export interface ModelYahoosportsTennisRankingsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "rankings"?: Array<ModelYahoosportsTennisRankingEntry>;
+  "source_url"?: string;
+  "type"?: string;
+}
+
+export interface ModelYahoosportsTennisScheduleResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "tournaments"?: Array<ModelYahoosportsTennisTournament>;
+}
+
+export interface ModelYahoosportsTennisScoreboardResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "matches"?: Array<ModelYahoosportsTennisMatch>;
+  "source_url"?: string;
+}
+
+export interface ModelYahoosportsTennisSetScore {
+  "set"?: number;
+  "side1_score"?: number;
+  "side1_tiebreak"?: number;
+  "side2_score"?: number;
+  "side2_tiebreak"?: number;
+}
+
+export interface ModelYahoosportsTennisTournament {
+  "champion"?: ModelYahoosportsTennisChampion;
+  "end_time"?: string;
+  "gender"?: string;
+  "id"?: string;
+  "match_type"?: string;
+  "name"?: string;
+  "start_time"?: string;
+  "status"?: string;
+  "surface"?: string;
+  "url"?: string;
+  "venue"?: ModelYahoosportsVenue;
+}
+
+export interface ModelYahoosportsVenue {
+  "city"?: string;
+  "country"?: string;
+  "name"?: string;
+  "state"?: string;
+}
+
+export interface ModelYahoosportsGameResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsGameResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsGolfLeaderboardResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsGolfLeaderboardResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsGolfScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsGolfScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsMmaFightCardResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsMmafightCardResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsMmaScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsMmascheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsMotorsportsRaceResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsMotorsportsRaceResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsMotorsportsScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsMotorsportsScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsOlympicsMedalsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsOlympicsMedalsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsPlayerResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsPlayerResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsRosterResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsRosterResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsScoreboardResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsScoreboardResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsStandingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsStandingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsTeamResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsTeamResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsTeamScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsTeamScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsTennisRankingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsTennisRankingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsTennisScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsTennisScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahoosportsTennisScoreboardResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahoosportsTennisScoreboardResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahootechArticleResponse {
+  "author"?: string;
+  "description"?: string;
+  "image_url"?: string;
+  "keywords"?: Array<string>;
+  "paragraphs"?: Array<string>;
+  "provider"?: string;
+  "published_at"?: string;
+  "section"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahootechCategoryPaginate {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelYahootechCategoryResponse {
+  "category"?: string;
+  "items"?: Array<ModelYahootechStreamItem>;
+  "pagination"?: ModelYahootechCategoryPaginate;
+}
+
+export interface ModelYahootechHomeResponse {
+  "items"?: Array<ModelYahootechStreamItem>;
+}
+
+export interface ModelYahootechStreamItem {
+  "category"?: string;
+  "id"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYahootechArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahootechArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahootechCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahootechCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelYahootechHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelYahootechHomeResponse;
   "msg"?: string;
 }
 
@@ -24907,6 +28512,364 @@ export interface ModelZalandoSearchResponseDoc {
 export interface ModelZalandoSuggestResponseDoc {
   "code"?: number;
   "data"?: ModelZalandoSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelZapposBrandRef {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelZapposBrandResponse {
+  "brand"?: string;
+  "brand_id"?: string;
+  "count"?: number;
+  "facets"?: Array<ModelZapposFacet>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "page"?: number;
+  "page_count"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelZapposProductSummary>;
+  "source_url"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelZapposBrandsResponse {
+  "brands"?: Array<ModelZapposBrandRef>;
+  "has_next"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
+  "total"?: number;
+}
+
+export interface ModelZapposColorVariant {
+  "color_id"?: string;
+  "color_name"?: string;
+  "original_price"?: string;
+  "percent_off"?: string;
+  "price"?: string;
+  "url"?: string;
+}
+
+export interface ModelZapposFacet {
+  "field"?: string;
+  "multi_select"?: boolean;
+  "name"?: string;
+  "values"?: Array<ModelZapposFacetValue>;
+}
+
+export interface ModelZapposFacetValue {
+  "count"?: number;
+  "selected"?: boolean;
+  "url"?: string;
+  "value"?: string;
+}
+
+export interface ModelZapposFeaturedReview {
+  "author"?: string;
+  "body"?: string;
+  "comfort_rating"?: number;
+  "date"?: string;
+  "id"?: string;
+  "look_rating"?: number;
+  "overall_rating"?: number;
+  "up_votes"?: number;
+  "verified_purchase"?: boolean;
+}
+
+export interface ModelZapposFitFeedback {
+  "most_common_answer"?: string;
+  "most_common_percentage"?: number;
+  "percentages"?: Record<string, number>;
+}
+
+export interface ModelZapposProductDetailResponse {
+  "arch_fit"?: ModelZapposFitFeedback;
+  "brand_name"?: string;
+  "breadcrumbs"?: Array<string>;
+  "category"?: string;
+  "color"?: string;
+  "color_id"?: string;
+  "color_variants"?: Array<ModelZapposColorVariant>;
+  "currency_code"?: string;
+  "description"?: string;
+  "featured_reviews"?: Array<ModelZapposFeaturedReview>;
+  "fetched_at"?: string;
+  "images"?: Array<string>;
+  "in_stock"?: boolean;
+  "original_price"?: string;
+  "price"?: string;
+  "product_id"?: string;
+  "product_name"?: string;
+  "rating"?: number;
+  "rating_breakdown"?: Record<string, number>;
+  "rating_count"?: number;
+  "size_fit"?: ModelZapposFitFeedback;
+  "source_url"?: string;
+  "url"?: string;
+  "width_fit"?: ModelZapposFitFeedback;
+}
+
+export interface ModelZapposProductSummary {
+  "brand_name"?: string;
+  "color"?: string;
+  "color_id"?: string;
+  "gender"?: Array<string>;
+  "image_url"?: string;
+  "is_new"?: boolean;
+  "on_hand"?: number;
+  "on_sale"?: boolean;
+  "original_price"?: string;
+  "percent_off"?: string;
+  "price"?: string;
+  "product_id"?: string;
+  "product_name"?: string;
+  "product_type"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "style_color"?: string;
+  "style_id"?: string;
+  "url"?: string;
+}
+
+export interface ModelZapposSearchResponse {
+  "count"?: number;
+  "facets"?: Array<ModelZapposFacet>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "page"?: number;
+  "page_count"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelZapposProductSummary>;
+  "source_url"?: string;
+  "term"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelZapposSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelZapposBrandResponseDoc {
+  "code"?: number;
+  "data"?: ModelZapposBrandResponse;
+  "msg"?: string;
+}
+
+export interface ModelZapposBrandsResponseDoc {
+  "code"?: number;
+  "data"?: ModelZapposBrandsResponse;
+  "msg"?: string;
+}
+
+export interface ModelZapposProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelZapposProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelZapposSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelZapposSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelZapposSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelZapposSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelZaraCategoriesResponse {
+  "categories"?: Array<ModelZaraCategoryNode>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelZaraCategoryNode {
+  "has_subcategories"?: boolean;
+  "id"?: number;
+  "name"?: string;
+  "section_name"?: string;
+  "subcategories"?: Array<ModelZaraCategoryNode>;
+}
+
+export interface ModelZaraCategoryProductsResponse {
+  "category_id"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "products"?: Array<ModelZaraProductSummary>;
+  "source_url"?: string;
+}
+
+export interface ModelZaraColorSummary {
+  "availability"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "price"?: number;
+  "product_id"?: number;
+}
+
+export interface ModelZaraCompositionComponent {
+  "material"?: string;
+  "percentage"?: string;
+}
+
+export interface ModelZaraCompositionPart {
+  "components"?: Array<ModelZaraCompositionComponent>;
+  "description"?: string;
+}
+
+export interface ModelZaraFacet {
+  "key"?: string;
+  "values"?: Array<ModelZaraFacetValue>;
+}
+
+export interface ModelZaraFacetValue {
+  "count"?: number;
+  "id"?: string;
+  "label"?: string;
+}
+
+export interface ModelZaraProductDetailColor {
+  "availability"?: string;
+  "description"?: string;
+  "id"?: string;
+  "images"?: Array<string>;
+  "name"?: string;
+  "price"?: number;
+  "sizes"?: Array<ModelZaraProductDetailSize>;
+}
+
+export interface ModelZaraProductDetailResponse {
+  "colors"?: Array<ModelZaraProductDetailColor>;
+  "composition"?: Array<ModelZaraCompositionPart>;
+  "family_name"?: string;
+  "fetched_at"?: string;
+  "name"?: string;
+  "product_id"?: string;
+  "reference"?: string;
+  "section_name"?: string;
+  "source_url"?: string;
+  "subfamily_name"?: string;
+  "url"?: string;
+}
+
+export interface ModelZaraProductDetailSize {
+  "availability"?: string;
+  "id"?: number;
+  "name"?: string;
+  "price"?: number;
+  "sku"?: number;
+}
+
+export interface ModelZaraProductSummary {
+  "availability"?: string;
+  "colors"?: Array<ModelZaraColorSummary>;
+  "family_name"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "name"?: string;
+  "price"?: number;
+  "reference"?: string;
+  "section_name"?: string;
+  "subfamily_name"?: string;
+  "url"?: string;
+}
+
+export interface ModelZaraSearchResponse {
+  "count"?: number;
+  "facets"?: Array<ModelZaraFacet>;
+  "fetched_at"?: string;
+  "is_last_page"?: boolean;
+  "limit"?: number;
+  "offset"?: number;
+  "products"?: Array<ModelZaraProductSummary>;
+  "query"?: string;
+  "section"?: string;
+  "source_url"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelZaraStore {
+  "address"?: string;
+  "city"?: string;
+  "commercial_name"?: string;
+  "country"?: string;
+  "donation_allowed"?: boolean;
+  "id"?: number;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "pickup_allowed"?: boolean;
+  "postal_code"?: string;
+  "sections"?: Array<string>;
+  "state"?: string;
+  "status"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelZaraStoreResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "radius"?: number;
+  "source_url"?: string;
+  "stores"?: Array<ModelZaraStore>;
+}
+
+export interface ModelZaraSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelZaraCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelZaraCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelZaraCategoryProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelZaraCategoryProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelZaraProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelZaraProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelZaraSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelZaraSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelZaraStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelZaraStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelZaraSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelZaraSuggestResponse;
   "msg"?: string;
 }
 
@@ -25747,6 +29710,10 @@ export type BillingMePortalBody = CrawloraBody<ModelBillingStripePortalRequestDo
 export type BillingMePortalResponse = CrawloraResponse<ModelBillingStripeSessionResponseDoc>;
 export interface BillingMePortalParams {
   "request": BillingMePortalBody;
+}
+
+export type BillingMeRejectionsResponse = CrawloraResponse<ModelBillingMyRejectionsResponseDoc>;
+export interface BillingMeRejectionsParams {
 }
 
 export type BingImagesResponse = CrawloraResponse<ModelBingImagesResponseDoc>;
@@ -28139,6 +32106,28 @@ export interface EBayEbayItemParams {
   "item_id": string;
 }
 
+export type EBayEbayLiveStreamsResponse = CrawloraResponse<ModelEbayLiveStreamsResponseDoc>;
+export interface EBayEbayLiveStreamsParams {
+  "category"?: "explore" | "IPqZx79LNuwFcSVt" | "oHjQFTlZ5cYgWkjB" | "l68DJtBAVZge4x4n" | "2Nk3OYiOJHfXqpWG" | "5quuEnjO3axyz46U" | "nGpMTpm13Q86Eaoo" | "sYRxeaskGmNC6xaB" | "iYaYo88zN2vtQorh" | "GYAbsFw6onSNloAb" | "WJ9zLwYjK8njaBtN" | "rALkRyk8gXHzIBR6" | "DNta0sJ8Y6NXZsC9" | "GU4UfBzZSF4jiteS" | "IO7Oih07PtNJSWhU" | "cF4xtF8z9riubmLh" | "bywKDIdtxhi4hUSO";
+  "request_number"?: number;
+  "session_id"?: string;
+}
+
+export type EBayEbayLiveStreamsBatchResponse = CrawloraResponse<ModelEbayLiveStreamsBatchResponseDoc>;
+export interface EBayEbayLiveStreamsBatchParams {
+  "ids": string;
+}
+
+export type EBayEbayLiveStreamResponse = CrawloraResponse<ModelEbayLiveStreamResponseDoc>;
+export interface EBayEbayLiveStreamParams {
+  "id": string;
+}
+
+export type EBayEbayLiveStreamItemsResponse = CrawloraResponse<ModelEbayLiveStreamItemsResponseDoc>;
+export interface EBayEbayLiveStreamItemsParams {
+  "id": string;
+}
+
 export type EBayEbaySearchBody = CrawloraBody<ModelEbaySearchOption>;
 export type EBayEbaySearchResponse = CrawloraResponse<ModelEbaySearchResponseDoc>;
 export interface EBayEbaySearchParams {
@@ -28909,6 +32898,40 @@ export interface GooglePlaySuggestParams {
   "lang"?: string;
 }
 
+export type HMHmCategoriesResponse = CrawloraResponse<ModelHmCategoriesResponseDoc>;
+export interface HMHmCategoriesParams {
+  "department"?: "women" | "men" | "kids" | "home" | "beauty";
+}
+
+export type HMHmListingResponse = CrawloraResponse<ModelHmListingResponseDoc>;
+export interface HMHmListingParams {
+  "category_id": string;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: "RELEVANCE" | "NEWEST_FIRST" | "PRICE_ASCENDING" | "PRICE_DESCENDING";
+  "is_new"?: boolean;
+}
+
+export type HMHmProductResponse = CrawloraResponse<ModelHmProductDetailResponseDoc>;
+export interface HMHmProductParams {
+  "product_id": string;
+}
+
+export type HMHmSearchResponse = CrawloraResponse<ModelHmSearchResponseDoc>;
+export interface HMHmSearchParams {
+  "query": string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type HMHmStoresResponse = CrawloraResponse<ModelHmStoresResponseDoc>;
+export interface HMHmStoresParams {
+  "search"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "radius_meters"?: number;
+}
+
 export type ImdbNameResponse = CrawloraResponse<ModelImdbNameResponseDoc>;
 export interface ImdbNameParams {
   "id"?: string;
@@ -29658,6 +33681,27 @@ export interface KalshiTradesParams {
   "max_ts"?: number;
 }
 
+export type KohlSKohlsCategoryResponse = CrawloraResponse<ModelKohlsCategoryResponseDoc>;
+export interface KohlSKohlsCategoryParams {
+  "category": string;
+}
+
+export type KohlSKohlsProductReviewsResponse = CrawloraResponse<ModelKohlsProductReviewsResponseDoc>;
+export interface KohlSKohlsProductReviewsParams {
+  "web_id": string;
+  "page"?: number;
+}
+
+export type KohlSKohlsStoresResponse = CrawloraResponse<ModelKohlsStoresResponseDoc>;
+export interface KohlSKohlsStoresParams {
+  "search": string;
+}
+
+export type KohlSKohlsSuggestResponse = CrawloraResponse<ModelKohlsSuggestResponseDoc>;
+export interface KohlSKohlsSuggestParams {
+  "query": string;
+}
+
 export type LetterboxdFilmResponse = CrawloraResponse<ModelLetterboxdFilmResponseDoc>;
 export interface LetterboxdFilmParams {
   "slug": string;
@@ -29720,6 +33764,55 @@ export interface LinkedInLinkedinProductParams {
 export type LinkedInLinkedinShowcaseResponse = CrawloraResponse<ModelLinkedinShowcaseResponseDoc>;
 export interface LinkedInLinkedinShowcaseParams {
   "id": string;
+}
+
+export type LululemonCategoriesResponse = CrawloraResponse<ModelLululemonCategoriesResponseDoc>;
+export interface LululemonCategoriesParams {
+  "section"?: "new-featured" | "women" | "men" | "accessories" | "bags" | "activity" | "we-made-too-much";
+}
+
+export type LululemonCategoryResponse = CrawloraResponse<ModelLululemonCategoryResponseDoc>;
+export interface LululemonCategoryParams {
+  "category": string;
+  "cdp_hash": string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type LululemonOutfitResponse = CrawloraResponse<ModelLululemonOutfitResponseDoc>;
+export interface LululemonOutfitParams {
+  "unified_id": string;
+  "color_code": string;
+}
+
+export type LululemonProductResponse = CrawloraResponse<ModelLululemonProductDetailResponseDoc>;
+export interface LululemonProductParams {
+  "product_id": string;
+}
+
+export type LululemonStoresResponse = CrawloraResponse<ModelLululemonStoresResponseDoc>;
+export interface LululemonStoresParams {
+  "country"?: string;
+  "state"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "radius_miles"?: number;
+}
+
+export type MacySMacysProductReviewsResponse = CrawloraResponse<ModelMacysProductReviewsResponseDoc>;
+export interface MacySMacysProductReviewsParams {
+  "product_id": string;
+  "page"?: number;
+}
+
+export type MacySMacysProductResponse = CrawloraResponse<ModelMacysProductDetailResponseDoc>;
+export interface MacySMacysProductParams {
+  "productId": string;
+}
+
+export type MacySMacysSuggestResponse = CrawloraResponse<ModelMacysSuggestResponseDoc>;
+export interface MacySMacysSuggestParams {
+  "query": string;
 }
 
 export type MangaRankingsResponse = CrawloraResponse<ModelAnimeMangaRankingsResponseDoc>;
@@ -30002,6 +34095,43 @@ export interface MlbTransactionsParams {
   "player_id"?: string;
 }
 
+export type NikeCategoriesResponse = CrawloraResponse<ModelNikeCategoriesResponseDoc>;
+export interface NikeCategoriesParams {
+}
+
+export type NikeProductResponse = CrawloraResponse<ModelNikeProductResponseDoc>;
+export interface NikeProductParams {
+  "slug": string;
+  "style_color": string;
+}
+
+export type NikeProductReviewsResponse = CrawloraResponse<ModelNikeProductReviewsResponseDoc>;
+export interface NikeProductReviewsParams {
+  "slug": string;
+  "style_color": string;
+  "page"?: number;
+}
+
+export type NikeSearchResponse = CrawloraResponse<ModelNikeSearchResponseDoc>;
+export interface NikeSearchParams {
+  "keyword"?: string;
+  "category"?: string;
+  "page"?: number;
+}
+
+export type NikeStoresResponse = CrawloraResponse<ModelNikeStoresResponseDoc>;
+export interface NikeStoresParams {
+  "lat": number;
+  "lng": number;
+  "radius_miles"?: number;
+  "page"?: number;
+}
+
+export type NikeSuggestResponse = CrawloraResponse<ModelNikeSuggestResponseDoc>;
+export interface NikeSuggestParams {
+  "query": string;
+}
+
 export type NumbeoCostOfLivingCityResponse = CrawloraResponse<ModelNumbeoCostOfLivingCityResponseDoc>;
 export interface NumbeoCostOfLivingCityParams {
   "slug": string;
@@ -30044,6 +34174,57 @@ export interface NumbeoIndicesRankingsParams {
 export type NumbeoIndicesRankingsByCountryResponse = CrawloraResponse<ModelNumbeoIndicesRankingsByCountryResponseDoc>;
 export interface NumbeoIndicesRankingsByCountryParams {
   "index": "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment";
+}
+
+export type OldNavyOldnavyCategoriesResponse = CrawloraResponse<ModelOldnavyCategoriesResponseDoc>;
+export interface OldNavyOldnavyCategoriesParams {
+  "brand"?: "on";
+  "cid"?: string;
+}
+
+export type OldNavyOldnavyCategoryResponse = CrawloraResponse<ModelOldnavyCategoryResponseDoc>;
+export interface OldNavyOldnavyCategoryParams {
+  "cid": string;
+  "brand"?: "on" | "gap" | "br" | "at";
+  "page"?: number;
+}
+
+export type OldNavyOldnavyProductResponse = CrawloraResponse<ModelOldnavyProductResponseDoc>;
+export interface OldNavyOldnavyProductParams {
+  "pid": string;
+  "brand"?: "on" | "gap" | "br" | "at";
+}
+
+export type OldNavyOldnavyProductAvailabilityResponse = CrawloraResponse<ModelOldnavyAvailabilityResponseDoc>;
+export interface OldNavyOldnavyProductAvailabilityParams {
+  "pid": string;
+  "brand"?: "on" | "gap" | "br" | "at";
+  "store_id"?: string;
+  "zip"?: string;
+  "lat"?: number;
+  "lng"?: number;
+}
+
+export type OldNavyOldnavyProductReviewsResponse = CrawloraResponse<ModelOldnavyProductReviewsResponseDoc>;
+export interface OldNavyOldnavyProductReviewsParams {
+  "pid": string;
+  "brand"?: "on" | "gap" | "br" | "at";
+  "page"?: number;
+}
+
+export type OldNavyOldnavySearchResponse = CrawloraResponse<ModelOldnavySearchResponseDoc>;
+export interface OldNavyOldnavySearchParams {
+  "keyword": string;
+  "brand"?: "on" | "gap" | "br" | "at";
+  "page"?: number;
+}
+
+export type OldNavyOldnavyStoresResponse = CrawloraResponse<ModelOldnavyStoresResponseDoc>;
+export interface OldNavyOldnavyStoresParams {
+  "search"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "brand"?: "on" | "gap" | "br" | "at";
 }
 
 export type OpenTableOpentableRestaurantResponse = CrawloraResponse<ModelOpentableRestaurantResponseDoc>;
@@ -30201,6 +34382,7 @@ export type PlayStationPlaystationSearchResponse = CrawloraResponse<ModelPlaysta
 export interface PlayStationPlaystationSearchParams {
   "term": string;
   "page"?: number;
+  "page_size"?: number;
   "cc"?: string;
   "l"?: string;
 }
@@ -30977,6 +35159,31 @@ export interface RottenTomatoesRottentomatoesSeriesParams {
   "url"?: string;
 }
 
+export type SamSclubSamsclubCategoryResponse = CrawloraResponse<ModelSamsclubCategoryResponseDoc>;
+export interface SamSclubSamsclubCategoryParams {
+  "id": string;
+  "page"?: number;
+}
+
+export type SamSclubSamsclubContentResponse = CrawloraResponse<ModelSamsclubContentResponseDoc>;
+export interface SamSclubSamsclubContentParams {
+  "id": string;
+}
+
+export type SamSclubSamsclubDepartmentsResponse = CrawloraResponse<ModelSamsclubDepartmentsResponseDoc>;
+export interface SamSclubSamsclubDepartmentsParams {
+}
+
+export type SamSclubSamsclubProductResponse = CrawloraResponse<ModelSamsclubProductResponseDoc>;
+export interface SamSclubSamsclubProductParams {
+  "id": string;
+}
+
+export type SamSclubSamsclubProductRelatedResponse = CrawloraResponse<ModelSamsclubRelatedItemsResponseDoc>;
+export interface SamSclubSamsclubProductRelatedParams {
+  "id": string;
+}
+
 export type SecEdgarSecCompanyIntelligenceResponse = CrawloraResponse<ModelSecIntelligenceResponseDoc>;
 export interface SecEdgarSecCompanyIntelligenceParams {
   "cik"?: string;
@@ -31329,6 +35536,33 @@ export interface SofaScoreSofascoreTeamPlayersParams {
 export type SofaScoreSofascoreTournamentSeasonsResponse = CrawloraResponse<ModelSofascoreTournamentSeasonsResponseDoc>;
 export interface SofaScoreSofascoreTournamentSeasonsParams {
   "id": string;
+}
+
+export type SoundCloudSoundcloudPlaylistResponse = CrawloraResponse<ModelSoundcloudPlaylistResponseDoc>;
+export interface SoundCloudSoundcloudPlaylistParams {
+  "url": string;
+}
+
+export type SoundCloudSoundcloudProfileResponse = CrawloraResponse<ModelSoundcloudProfileResponseDoc>;
+export interface SoundCloudSoundcloudProfileParams {
+  "url": string;
+}
+
+export type SoundCloudSoundcloudSearchResponse = CrawloraResponse<ModelSoundcloudSearchResponseDoc>;
+export interface SoundCloudSoundcloudSearchParams {
+  "query": string;
+  "limit"?: number;
+}
+
+export type SoundCloudSoundcloudTrackResponse = CrawloraResponse<ModelSoundcloudTrackResponseDoc>;
+export interface SoundCloudSoundcloudTrackParams {
+  "url": string;
+}
+
+export type SoundCloudSoundcloudUserTracksResponse = CrawloraResponse<ModelSoundcloudUserTracksResponseDoc>;
+export interface SoundCloudSoundcloudUserTracksParams {
+  "url": string;
+  "limit"?: number;
 }
 
 export type SpotifyPodcastsCategoriesResponse = CrawloraResponse<ModelSpotifyBrowsePageResponseDoc>;
@@ -32430,6 +36664,57 @@ export interface TrustpilotCategoryParams {
   "page"?: number;
 }
 
+export type TwitchChannelResponse = CrawloraResponse<ModelTwitchChannelResponseDoc>;
+export interface TwitchChannelParams {
+  "login": string;
+}
+
+export type TwitchClipsResponse = CrawloraResponse<ModelTwitchClipsResponseDoc>;
+export interface TwitchClipsParams {
+  "login": string;
+  "limit"?: number;
+}
+
+export type TwitchScheduleResponse = CrawloraResponse<ModelTwitchScheduleResponseDoc>;
+export interface TwitchScheduleParams {
+  "channel": string;
+  "weeks"?: number;
+}
+
+export type TwitchSearchResponse = CrawloraResponse<ModelTwitchSearchResponseDoc>;
+export interface TwitchSearchParams {
+  "query": string;
+  "limit"?: number;
+}
+
+export type TwitchStreamsResponse = CrawloraResponse<ModelTwitchStreamsResponseDoc>;
+export interface TwitchStreamsParams {
+  "game": string;
+  "limit"?: number;
+}
+
+export type TwitchTeamResponse = CrawloraResponse<ModelTwitchTeamResponseDoc>;
+export interface TwitchTeamParams {
+  "team": string;
+}
+
+export type TwitchTopGamesResponse = CrawloraResponse<ModelTwitchTopGamesResponseDoc>;
+export interface TwitchTopGamesParams {
+  "limit"?: number;
+}
+
+export type TwitchVideosResponse = CrawloraResponse<ModelTwitchVideosResponseDoc>;
+export interface TwitchVideosParams {
+  "login": string;
+  "limit"?: number;
+}
+
+export type TwitchVodCommentsResponse = CrawloraResponse<ModelTwitchVodCommentsResponseDoc>;
+export interface TwitchVodCommentsParams {
+  "video": string;
+  "offset"?: number;
+}
+
 export type UberEatsUbereatsFeedResponse = CrawloraResponse<ModelUbereatsFeedResponseDoc>;
 export interface UberEatsUbereatsFeedParams {
   "latitude": number;
@@ -32461,6 +36746,55 @@ export interface UberEatsUbereatsStoreMenuParams {
 export type UberEatsUbereatsStoreReviewsResponse = CrawloraResponse<ModelUbereatsStoreReviewsResponseDoc>;
 export interface UberEatsUbereatsStoreReviewsParams {
   "store_id": string;
+}
+
+export type UltaBeautyUltaCategoriesResponse = CrawloraResponse<ModelUltaCategoriesResponseDoc>;
+export interface UltaBeautyUltaCategoriesParams {
+  "department"?: "makeup-nails" | "skin-care" | "hair-care" | "fragrance" | "body-care" | "wellness" | "mens-care" | "tools-brushes";
+}
+
+export type UltaBeautyUltaCategoryResponse = CrawloraResponse<ModelUltaCategoryResponseDoc>;
+export interface UltaBeautyUltaCategoryParams {
+  "category": string;
+  "filter"?: string;
+  "page"?: number;
+}
+
+export type UltaBeautyUltaProductQuestionsResponse = CrawloraResponse<ModelUltaProductQuestionsResponseDoc>;
+export interface UltaBeautyUltaProductQuestionsParams {
+  "product_id": string;
+  "page"?: number;
+}
+
+export type UltaBeautyUltaProductReviewsResponse = CrawloraResponse<ModelUltaProductReviewsResponseDoc>;
+export interface UltaBeautyUltaProductReviewsParams {
+  "product_id": string;
+  "page"?: number;
+}
+
+export type UltaBeautyUltaProductResponse = CrawloraResponse<ModelUltaProductDetailResponseDoc>;
+export interface UltaBeautyUltaProductParams {
+  "productId": string;
+  "sku"?: string;
+}
+
+export type UltaBeautyUltaSearchResponse = CrawloraResponse<ModelUltaSearchResponseDoc>;
+export interface UltaBeautyUltaSearchParams {
+  "query": string;
+  "page"?: number;
+}
+
+export type UltaBeautyUltaStoresResponse = CrawloraResponse<ModelUltaStoresResponseDoc>;
+export interface UltaBeautyUltaStoresParams {
+  "search"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "radius_meters"?: number;
+}
+
+export type UltaBeautyUltaSuggestResponse = CrawloraResponse<ModelUltaSuggestResponseDoc>;
+export interface UltaBeautyUltaSuggestParams {
+  "query": string;
 }
 
 export type UpworkFreelancerResponse = CrawloraResponse<ModelUpworkFreelancerResponseDoc>;
@@ -32528,6 +36862,20 @@ export interface UserMeApiKeysRevealParams {
   "id": string;
 }
 
+export type AccountDeletionCancelResponse = CrawloraResponse<ModelAccountdeletionAccountDeletionResponseDoc>;
+export interface AccountDeletionCancelParams {
+}
+
+export type AccountDeletionMyRequestResponse = CrawloraResponse<ModelAccountdeletionAccountDeletionResponseDoc>;
+export interface AccountDeletionMyRequestParams {
+}
+
+export type AccountDeletionRequestBody = CrawloraBody<ModelAccountdeletionAccountDeletionRequestBodyDoc>;
+export type AccountDeletionRequestResponse = CrawloraResponse<ModelAccountdeletionAccountDeletionResponseDoc>;
+export interface AccountDeletionRequestParams {
+  "request"?: AccountDeletionRequestBody;
+}
+
 export type VintedBrandResponse = CrawloraResponse<ModelVintedBrandResponseDoc>;
 export interface VintedBrandParams {
   "id": string;
@@ -32590,6 +36938,24 @@ export interface WalmartSearchParams {
   "sort"?: "best_match" | "price_low" | "price_high" | "best_seller" | "new_arrivals" | "rating_high";
 }
 
+export type WayfairCategoriesResponse = CrawloraResponse<ModelWayfairCategoriesResponseDoc>;
+export interface WayfairCategoriesParams {
+  "q"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type WayfairCategoryResponse = CrawloraResponse<ModelWayfairCategoryResponseDoc>;
+export interface WayfairCategoryParams {
+  "category": string;
+  "page"?: number;
+}
+
+export type WayfairProductResponse = CrawloraResponse<ModelWayfairProductDetailResponseDoc>;
+export interface WayfairProductParams {
+  "id": string;
+}
+
 export type WebScrapeBody = CrawloraBody<ModelWebScrapeOption>;
 export type WebScrapeResponse = CrawloraResponse<ModelWebScrapeResponseDoc>;
 export interface WebScrapeParams {
@@ -32616,6 +36982,39 @@ export interface WhatnotLiveParams {
   "id": string;
 }
 
+export type WishCategoriesResponse = CrawloraResponse<ModelWishCategoriesResponseDoc>;
+export interface WishCategoriesParams {
+}
+
+export type WishProductResponse = CrawloraResponse<ModelWishProductDetailResponseDoc>;
+export interface WishProductParams {
+  "id": string;
+}
+
+export type WishProductRelatedResponse = CrawloraResponse<ModelWishRelatedItemsResponseDoc>;
+export interface WishProductRelatedParams {
+  "id": string;
+  "count"?: number;
+}
+
+export type WishProductReviewsResponse = CrawloraResponse<ModelWishProductReviewsResponseDoc>;
+export interface WishProductReviewsParams {
+  "id": string;
+  "count"?: number;
+}
+
+export type WishSearchResponse = CrawloraResponse<ModelWishSearchResponseDoc>;
+export interface WishSearchParams {
+  "query": string;
+  "count"?: number;
+  "offset"?: number;
+}
+
+export type WishSuggestResponse = CrawloraResponse<ModelWishSuggestResponseDoc>;
+export interface WishSuggestParams {
+  "query": string;
+}
+
 export type XPostResponse = CrawloraResponse<ModelXPostResponseDoc>;
 export interface XPostParams {
   "id": string;
@@ -32631,6 +37030,36 @@ export type XProfilePostsResponse = CrawloraResponse<ModelXProfilePostsResponseD
 export interface XProfilePostsParams {
   "username": string;
   "limit"?: number;
+}
+
+export type YahooAutosArticleResponse = CrawloraResponse<ModelYahooautosArticleResponseDoc>;
+export interface YahooAutosArticleParams {
+  "url": string;
+}
+
+export type YahooAutosCategoryResponse = CrawloraResponse<ModelYahooautosCategoryResponseDoc>;
+export interface YahooAutosCategoryParams {
+  "category": "auto-shows" | "classic-and-collector" | "deals-and-buying-guides" | "ev-and-future-tech" | "general" | "new-vehicles-and-reviews" | "ownership" | "people-and-culture" | "policy-and-environment" | "safety-and-recalls";
+  "page"?: number;
+}
+
+export type YahooAutosHomeResponse = CrawloraResponse<ModelYahooautosHomeResponseDoc>;
+export interface YahooAutosHomeParams {
+}
+
+export type YahooEntertainmentArticleResponse = CrawloraResponse<ModelYahooentertainmentArticleResponseDoc>;
+export interface YahooEntertainmentArticleParams {
+  "url": string;
+}
+
+export type YahooEntertainmentCategoryResponse = CrawloraResponse<ModelYahooentertainmentCategoryResponseDoc>;
+export interface YahooEntertainmentCategoryParams {
+  "category": "celebrity" | "movies" | "music" | "tv";
+  "page"?: number;
+}
+
+export type YahooEntertainmentHomeResponse = CrawloraResponse<ModelYahooentertainmentHomeResponseDoc>;
+export interface YahooEntertainmentHomeParams {
 }
 
 export type YahooFinanceCalendarsResponse = CrawloraResponse<ModelYahoofinanceCalendarsResponseDoc>;
@@ -32864,10 +37293,241 @@ export interface YahooFinanceTrendingParams {
   "count"?: number;
 }
 
+export type YahooHealthArticleResponse = CrawloraResponse<ModelYahoohealthArticleResponseDoc>;
+export interface YahooHealthArticleParams {
+  "url": string;
+}
+
+export type YahooHealthCategoryResponse = CrawloraResponse<ModelYahoohealthCategoryResponseDoc>;
+export interface YahooHealthCategoryParams {
+  "category": "conditions" | "general" | "healthcare" | "treatments" | "wellness" | "your-body";
+  "page"?: number;
+}
+
+export type YahooHealthHomeResponse = CrawloraResponse<ModelYahoohealthHomeResponseDoc>;
+export interface YahooHealthHomeParams {
+}
+
+export type YahooLifeArticleResponse = CrawloraResponse<ModelYahoolifeArticleResponseDoc>;
+export interface YahooLifeArticleParams {
+  "url": string;
+}
+
+export type YahooLifeHomeResponse = CrawloraResponse<ModelYahoolifeHomeResponseDoc>;
+export interface YahooLifeHomeParams {
+}
+
+export type YahooNewsArticleResponse = CrawloraResponse<ModelYahoonewsArticleResponseDoc>;
+export interface YahooNewsArticleParams {
+  "url": string;
+}
+
+export type YahooNewsCategoryResponse = CrawloraResponse<ModelYahoonewsCategoryResponseDoc>;
+export interface YahooNewsCategoryParams {
+  "category": "us" | "world" | "politics" | "science" | "weather-news" | "originals";
+}
+
+export type YahooNewsCommentsResponse = CrawloraResponse<ModelYahoonewsCommentsResponseDoc>;
+export interface YahooNewsCommentsParams {
+  "content_id": string;
+  "sort"?: "top" | "popular" | "newest" | "oldest";
+  "cursor"?: string;
+  "count"?: number;
+}
+
+export type YahooNewsCommentRepliesResponse = CrawloraResponse<ModelYahoonewsRepliesResponseDoc>;
+export interface YahooNewsCommentRepliesParams {
+  "content_id": string;
+  "comment_id": string;
+  "sort"?: "newest" | "oldest";
+  "cursor"?: string;
+  "count"?: number;
+}
+
+export type YahooNewsHomeResponse = CrawloraResponse<ModelYahoonewsHomeResponseDoc>;
+export interface YahooNewsHomeParams {
+}
+
+export type YahooNewsSuggestResponse = CrawloraResponse<ModelYahoonewsSuggestResponseDoc>;
+export interface YahooNewsSuggestParams {
+  "q": string;
+  "count"?: number;
+}
+
+export type YahooSearchImagesResponse = CrawloraResponse<ModelYahoosearchImagesResponseDoc>;
+export interface YahooSearchImagesParams {
+  "q": string;
+}
+
+export type YahooSearchLocalResponse = CrawloraResponse<ModelYahoosearchLocalResponseDoc>;
+export interface YahooSearchLocalParams {
+  "q": string;
+}
+
+export type YahooSearchNewsResponse = CrawloraResponse<ModelYahoosearchNewsResponseDoc>;
+export interface YahooSearchNewsParams {
+  "q": string;
+}
+
 export type YahooSearchCallResponse = CrawloraResponse<ModelYahoosearchSearchResponseDoc>;
 export interface YahooSearchCallParams {
   "q": string;
   "page"?: number;
+  "time_range"?: "day" | "week" | "month";
+}
+
+export type YahooSearchSuggestResponse = CrawloraResponse<ModelYahoosearchSuggestResponseDoc>;
+export interface YahooSearchSuggestParams {
+  "q": string;
+  "count"?: number;
+}
+
+export type YahooSearchVideosResponse = CrawloraResponse<ModelYahoosearchVideosResponseDoc>;
+export interface YahooSearchVideosParams {
+  "q": string;
+}
+
+export type YahooShoppingArticleResponse = CrawloraResponse<ModelYahooshoppingArticleResponseDoc>;
+export interface YahooShoppingArticleParams {
+  "url": string;
+}
+
+export type YahooShoppingCategoryResponse = CrawloraResponse<ModelYahooshoppingCategoryResponseDoc>;
+export interface YahooShoppingCategoryParams {
+  "category": "beauty" | "deals" | "general" | "gift-ideas" | "home-garden" | "style";
+  "page"?: number;
+}
+
+export type YahooShoppingHomeResponse = CrawloraResponse<ModelYahooshoppingHomeResponseDoc>;
+export interface YahooShoppingHomeParams {
+}
+
+export type YahooShoppingShoppingListResponse = CrawloraResponse<ModelYahooshoppingShoppingListResponseDoc>;
+export interface YahooShoppingShoppingListParams {
+  "list": string;
+}
+
+export type YahooShoppingShoppingListsResponse = CrawloraResponse<ModelYahooshoppingShoppingListsResponseDoc>;
+export interface YahooShoppingShoppingListsParams {
+}
+
+export type YahooShoppingStoreResponse = CrawloraResponse<ModelYahooshoppingStoreResponseDoc>;
+export interface YahooShoppingStoreParams {
+  "store": string;
+}
+
+export type YahooShoppingStoresResponse = CrawloraResponse<ModelYahooshoppingStoresResponseDoc>;
+export interface YahooShoppingStoresParams {
+}
+
+export type YahooSportsGameResponse = CrawloraResponse<ModelYahoosportsGameResponseDoc>;
+export interface YahooSportsGameParams {
+  "league": "nfl" | "nba" | "wnba" | "mlb" | "nhl" | "college-football" | "college-basketball" | "college-womens-basketball" | "mls" | "premier-league" | "la-liga" | "serie-a" | "bundesliga" | "ligue-1" | "champions-league" | "nwsl" | "ligamx-apertura" | "ligamx-clausura" | "copa-america" | "club-world-cup" | "world-cup" | "concacaf-champions-cup" | "concacaf-gold-cup" | "concacaf-league";
+  "game": string;
+}
+
+export type YahooSportsGolfLeaderboardResponse = CrawloraResponse<ModelYahoosportsGolfLeaderboardResponseDoc>;
+export interface YahooSportsGolfLeaderboardParams {
+  "tournament": string;
+  "season"?: number;
+}
+
+export type YahooSportsGolfScheduleResponse = CrawloraResponse<ModelYahoosportsGolfScheduleResponseDoc>;
+export interface YahooSportsGolfScheduleParams {
+  "tour": "pga-tour" | "pga-european-tours" | "lpga-tour" | "champions-tour" | "european-tour";
+  "season"?: number;
+}
+
+export type YahooSportsMmaFightCardResponse = CrawloraResponse<ModelYahoosportsMmaFightCardResponseDoc>;
+export interface YahooSportsMmaFightCardParams {
+}
+
+export type YahooSportsMmaScheduleResponse = CrawloraResponse<ModelYahoosportsMmaScheduleResponseDoc>;
+export interface YahooSportsMmaScheduleParams {
+}
+
+export type YahooSportsMotorsportsRaceResponse = CrawloraResponse<ModelYahoosportsMotorsportsRaceResponseDoc>;
+export interface YahooSportsMotorsportsRaceParams {
+  "series": "f1" | "nascar";
+  "race": string;
+}
+
+export type YahooSportsMotorsportsScheduleResponse = CrawloraResponse<ModelYahoosportsMotorsportsScheduleResponseDoc>;
+export interface YahooSportsMotorsportsScheduleParams {
+  "series": "f1" | "nascar";
+  "season"?: number;
+}
+
+export type YahooSportsNewsResponse = CrawloraResponse<ModelYahoosportsNewsResponseDoc>;
+export interface YahooSportsNewsParams {
+  "league": "nfl" | "nba" | "wnba" | "mlb" | "nhl" | "college-football" | "college-basketball" | "college-womens-basketball" | "mls" | "premier-league" | "la-liga" | "serie-a" | "bundesliga" | "ligue-1" | "champions-league" | "nwsl" | "ligamx-apertura" | "ligamx-clausura" | "copa-america" | "club-world-cup" | "world-cup" | "concacaf-champions-cup" | "concacaf-gold-cup" | "concacaf-league";
+}
+
+export type YahooSportsOlympicsMedalsResponse = CrawloraResponse<ModelYahoosportsOlympicsMedalsResponseDoc>;
+export interface YahooSportsOlympicsMedalsParams {
+}
+
+export type YahooSportsPlayerResponse = CrawloraResponse<ModelYahoosportsPlayerResponseDoc>;
+export interface YahooSportsPlayerParams {
+  "league": "nfl" | "nba" | "wnba" | "mlb" | "nhl" | "college-football" | "college-basketball" | "college-womens-basketball" | "mls" | "premier-league" | "la-liga" | "serie-a" | "bundesliga" | "ligue-1" | "champions-league" | "nwsl" | "ligamx-apertura" | "ligamx-clausura" | "copa-america" | "club-world-cup" | "world-cup" | "concacaf-champions-cup" | "concacaf-gold-cup" | "concacaf-league";
+  "player": string;
+}
+
+export type YahooSportsScoreboardResponse = CrawloraResponse<ModelYahoosportsScoreboardResponseDoc>;
+export interface YahooSportsScoreboardParams {
+  "league": "nfl" | "nba" | "wnba" | "mlb" | "nhl" | "college-football" | "college-basketball" | "college-womens-basketball" | "mls" | "premier-league" | "la-liga" | "serie-a" | "bundesliga" | "ligue-1" | "champions-league" | "nwsl" | "ligamx-apertura" | "ligamx-clausura" | "copa-america" | "club-world-cup" | "world-cup" | "concacaf-champions-cup" | "concacaf-gold-cup" | "concacaf-league";
+  "date"?: string;
+}
+
+export type YahooSportsStandingsResponse = CrawloraResponse<ModelYahoosportsStandingsResponseDoc>;
+export interface YahooSportsStandingsParams {
+  "league": "nfl" | "nba" | "wnba" | "mlb" | "nhl" | "college-football" | "college-basketball" | "mls" | "premier-league" | "la-liga" | "serie-a" | "bundesliga" | "ligue-1" | "champions-league" | "nwsl" | "ligamx-apertura" | "ligamx-clausura" | "world-cup";
+}
+
+export type YahooSportsTeamResponse = CrawloraResponse<ModelYahoosportsTeamResponseDoc>;
+export interface YahooSportsTeamParams {
+  "league": "nfl" | "nba" | "wnba" | "mlb" | "nhl" | "college-football" | "college-basketball" | "college-womens-basketball" | "mls" | "premier-league" | "la-liga" | "serie-a" | "bundesliga" | "ligue-1" | "champions-league" | "nwsl" | "ligamx-apertura" | "ligamx-clausura" | "copa-america" | "club-world-cup" | "world-cup" | "concacaf-champions-cup" | "concacaf-gold-cup" | "concacaf-league";
+  "team": string;
+}
+
+export type YahooSportsTeamRosterResponse = CrawloraResponse<ModelYahoosportsRosterResponseDoc>;
+export interface YahooSportsTeamRosterParams {
+  "league": "nfl" | "nba" | "wnba" | "mlb" | "nhl" | "college-football" | "college-basketball" | "college-womens-basketball" | "mls" | "premier-league" | "la-liga" | "serie-a" | "bundesliga" | "ligue-1" | "champions-league" | "nwsl" | "ligamx-apertura" | "ligamx-clausura" | "copa-america" | "club-world-cup" | "world-cup" | "concacaf-champions-cup" | "concacaf-gold-cup" | "concacaf-league";
+  "team": string;
+}
+
+export type YahooSportsTeamScheduleResponse = CrawloraResponse<ModelYahoosportsTeamScheduleResponseDoc>;
+export interface YahooSportsTeamScheduleParams {
+  "league": "nfl" | "nba" | "wnba" | "mlb" | "nhl" | "college-football" | "college-basketball" | "college-womens-basketball" | "mls" | "premier-league" | "la-liga" | "serie-a" | "bundesliga" | "ligue-1" | "champions-league" | "nwsl" | "ligamx-apertura" | "ligamx-clausura" | "copa-america" | "club-world-cup" | "world-cup" | "concacaf-champions-cup" | "concacaf-gold-cup" | "concacaf-league";
+  "team": string;
+}
+
+export type YahooSportsTennisRankingsResponse = CrawloraResponse<ModelYahoosportsTennisRankingsResponseDoc>;
+export interface YahooSportsTennisRankingsParams {
+  "type": "mens-singles" | "womens-singles" | "mens-doubles" | "womens-doubles";
+}
+
+export type YahooSportsTennisScheduleResponse = CrawloraResponse<ModelYahoosportsTennisScheduleResponseDoc>;
+export interface YahooSportsTennisScheduleParams {
+}
+
+export type YahooSportsTennisScoreboardResponse = CrawloraResponse<ModelYahoosportsTennisScoreboardResponseDoc>;
+export interface YahooSportsTennisScoreboardParams {
+}
+
+export type YahooTechArticleResponse = CrawloraResponse<ModelYahootechArticleResponseDoc>;
+export interface YahooTechArticleParams {
+  "url": string;
+}
+
+export type YahooTechCategoryResponse = CrawloraResponse<ModelYahootechCategoryResponseDoc>;
+export interface YahooTechCategoryParams {
+  "category": "ai" | "apps" | "audio" | "computing" | "deals" | "gaming" | "home" | "home-entertainment" | "phones" | "puzzles" | "science" | "streaming" | "vpn" | "wearables";
+  "page"?: number;
+}
+
+export type YahooTechHomeResponse = CrawloraResponse<ModelYahootechHomeResponseDoc>;
+export interface YahooTechHomeParams {
 }
 
 export type YelpBusinessResponse = CrawloraResponse<ModelYelpMobileBusinessResponseDoc>;
@@ -33032,6 +37692,72 @@ export interface ZalandoSuggestParams {
   "market": "at" | "be" | "ch" | "cz" | "de" | "dk" | "ee" | "es" | "fi" | "fr" | "gb" | "hr" | "hu" | "ie" | "it" | "lt" | "lu" | "lv" | "nl" | "no" | "pl" | "ro" | "se" | "si" | "sk";
 }
 
+export type ZapposBrandResponse = CrawloraResponse<ModelZapposBrandResponseDoc>;
+export interface ZapposBrandParams {
+  "brand": string;
+  "page"?: number;
+}
+
+export type ZapposBrandsResponse = CrawloraResponse<ModelZapposBrandsResponseDoc>;
+export interface ZapposBrandsParams {
+  "q"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type ZapposProductResponse = CrawloraResponse<ModelZapposProductDetailResponseDoc>;
+export interface ZapposProductParams {
+  "productId": string;
+  "colorId"?: string;
+}
+
+export type ZapposSearchResponse = CrawloraResponse<ModelZapposSearchResponseDoc>;
+export interface ZapposSearchParams {
+  "term": string;
+  "page"?: number;
+}
+
+export type ZapposSuggestResponse = CrawloraResponse<ModelZapposSuggestResponseDoc>;
+export interface ZapposSuggestParams {
+  "query": string;
+}
+
+export type ZaraCategoriesResponse = CrawloraResponse<ModelZaraCategoriesResponseDoc>;
+export interface ZaraCategoriesParams {
+}
+
+export type ZaraCategoryProductsResponse = CrawloraResponse<ModelZaraCategoryProductsResponseDoc>;
+export interface ZaraCategoryProductsParams {
+  "categoryId": string;
+}
+
+export type ZaraProductResponse = CrawloraResponse<ModelZaraProductDetailResponseDoc>;
+export interface ZaraProductParams {
+  "productId": string;
+}
+
+export type ZaraSearchResponse = CrawloraResponse<ModelZaraSearchResponseDoc>;
+export interface ZaraSearchParams {
+  "query": string;
+  "section": "WOMAN" | "MAN" | "KID" | "HOME" | "BEAUTY";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type ZaraStoresResponse = CrawloraResponse<ModelZaraStoresResponseDoc>;
+export interface ZaraStoresParams {
+  "lat": number;
+  "lng": number;
+  "radius"?: number;
+  "pickup_only"?: boolean;
+  "donation_only"?: boolean;
+}
+
+export type ZaraSuggestResponse = CrawloraResponse<ModelZaraSuggestResponseDoc>;
+export interface ZaraSuggestParams {
+  "query": string;
+}
+
 export type ZillowAutocompleteResponse = CrawloraResponse<ModelZillowAutocompleteResponse>;
 export interface ZillowAutocompleteParams {
   "query": string;
@@ -33162,6 +37888,7 @@ export interface BillingService {
   mePeriodStatement<T = BillingMePeriodStatementResponse>(params: BillingMePeriodStatementParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mePeriodStatementDownload<T = BillingMePeriodStatementDownloadResponse>(params: BillingMePeriodStatementDownloadParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mePortal<T = BillingMePortalResponse>(params: BillingMePortalParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  meRejections<T = BillingMeRejectionsResponse>(params?: BillingMeRejectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface BingService {
@@ -33465,6 +38192,10 @@ export interface DuckDuckGoSearchService {
 
 export interface EBayService {
   ebayItem<T = EBayEbayItemResponse>(params: EBayEbayItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ebayLiveStreams<T = EBayEbayLiveStreamsResponse>(params?: EBayEbayLiveStreamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ebayLiveStreamsBatch<T = EBayEbayLiveStreamsBatchResponse>(params: EBayEbayLiveStreamsBatchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ebayLiveStream<T = EBayEbayLiveStreamResponse>(params: EBayEbayLiveStreamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ebayLiveStreamItems<T = EBayEbayLiveStreamItemsResponse>(params: EBayEbayLiveStreamItemsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySearch<T = EBayEbaySearchResponse>(params: EBayEbaySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySeller<T = EBayEbaySellerResponse>(params: EBayEbaySellerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ebaySellerAbout<T = EBayEbaySellerAboutResponse>(params: EBayEbaySellerAboutParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -33616,6 +38347,14 @@ export interface GooglePlayService {
   suggest<T = GooglePlaySuggestResponse>(params: GooglePlaySuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface HMService {
+  hmCategories<T = HMHmCategoriesResponse>(params?: HMHmCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hmListing<T = HMHmListingResponse>(params: HMHmListingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hmProduct<T = HMHmProductResponse>(params: HMHmProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hmSearch<T = HMHmSearchResponse>(params: HMHmSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hmStores<T = HMHmStoresResponse>(params?: HMHmStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ImdbService {
   name<T = ImdbNameResponse>(params?: ImdbNameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   nameAwards<T = ImdbNameAwardsResponse>(params?: ImdbNameAwardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -33744,6 +38483,13 @@ export interface KalshiService {
   trades<T = KalshiTradesResponse>(params?: KalshiTradesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface KohlSService {
+  kohlsCategory<T = KohlSKohlsCategoryResponse>(params: KohlSKohlsCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kohlsProductReviews<T = KohlSKohlsProductReviewsResponse>(params: KohlSKohlsProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kohlsStores<T = KohlSKohlsStoresResponse>(params: KohlSKohlsStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kohlsSuggest<T = KohlSKohlsSuggestResponse>(params: KohlSKohlsSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface LetterboxdService {
   film<T = LetterboxdFilmResponse>(params: LetterboxdFilmParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   filmRatingHistogram<T = LetterboxdFilmRatingHistogramResponse>(params: LetterboxdFilmRatingHistogramParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -33759,6 +38505,20 @@ export interface LinkedInService {
   linkedinCompany<T = LinkedInLinkedinCompanyResponse>(params: LinkedInLinkedinCompanyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   linkedinProduct<T = LinkedInLinkedinProductResponse>(params: LinkedInLinkedinProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   linkedinShowcase<T = LinkedInLinkedinShowcaseResponse>(params: LinkedInLinkedinShowcaseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface LululemonService {
+  categories<T = LululemonCategoriesResponse>(params?: LululemonCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = LululemonCategoryResponse>(params: LululemonCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  outfit<T = LululemonOutfitResponse>(params: LululemonOutfitParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = LululemonProductResponse>(params: LululemonProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stores<T = LululemonStoresResponse>(params?: LululemonStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface MacySService {
+  macysProductReviews<T = MacySMacysProductReviewsResponse>(params: MacySMacysProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  macysProduct<T = MacySMacysProductResponse>(params: MacySMacysProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  macysSuggest<T = MacySMacysSuggestResponse>(params: MacySMacysSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface MangaService {
@@ -33823,6 +38583,15 @@ export interface MlbService {
   transactions<T = MlbTransactionsResponse>(params: MlbTransactionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface NikeService {
+  categories<T = NikeCategoriesResponse>(params?: NikeCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = NikeProductResponse>(params: NikeProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productReviews<T = NikeProductReviewsResponse>(params: NikeProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = NikeSearchResponse>(params?: NikeSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stores<T = NikeStoresResponse>(params: NikeStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = NikeSuggestResponse>(params: NikeSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface NumbeoService {
   costOfLivingCity<T = NumbeoCostOfLivingCityResponse>(params: NumbeoCostOfLivingCityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   costOfLivingCountry<T = NumbeoCostOfLivingCountryResponse>(params: NumbeoCostOfLivingCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -33832,6 +38601,16 @@ export interface NumbeoService {
   indicesCountry<T = NumbeoIndicesCountryResponse>(params: NumbeoIndicesCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   indicesRankings<T = NumbeoIndicesRankingsResponse>(params: NumbeoIndicesRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   indicesRankingsByCountry<T = NumbeoIndicesRankingsByCountryResponse>(params: NumbeoIndicesRankingsByCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface OldNavyService {
+  oldnavyCategories<T = OldNavyOldnavyCategoriesResponse>(params?: OldNavyOldnavyCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oldnavyCategory<T = OldNavyOldnavyCategoryResponse>(params: OldNavyOldnavyCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oldnavyProduct<T = OldNavyOldnavyProductResponse>(params: OldNavyOldnavyProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oldnavyProductAvailability<T = OldNavyOldnavyProductAvailabilityResponse>(params: OldNavyOldnavyProductAvailabilityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oldnavyProductReviews<T = OldNavyOldnavyProductReviewsResponse>(params: OldNavyOldnavyProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oldnavySearch<T = OldNavyOldnavySearchResponse>(params: OldNavyOldnavySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oldnavyStores<T = OldNavyOldnavyStoresResponse>(params?: OldNavyOldnavyStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface OpenTableService {
@@ -34009,6 +38788,14 @@ export interface RottenTomatoesService {
   rottentomatoesSeries<T = RottenTomatoesRottentomatoesSeriesResponse>(params?: RottenTomatoesRottentomatoesSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface SamSclubService {
+  samsclubCategory<T = SamSclubSamsclubCategoryResponse>(params: SamSclubSamsclubCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  samsclubContent<T = SamSclubSamsclubContentResponse>(params: SamSclubSamsclubContentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  samsclubDepartments<T = SamSclubSamsclubDepartmentsResponse>(params?: SamSclubSamsclubDepartmentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  samsclubProduct<T = SamSclubSamsclubProductResponse>(params: SamSclubSamsclubProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  samsclubProductRelated<T = SamSclubSamsclubProductRelatedResponse>(params: SamSclubSamsclubProductRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface SecEdgarService {
   secCompanyIntelligence<T = SecEdgarSecCompanyIntelligenceResponse>(params?: SecEdgarSecCompanyIntelligenceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   secCompanySearch<T = SecEdgarSecCompanySearchResponse>(params: SecEdgarSecCompanySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -34076,6 +38863,14 @@ export interface SofaScoreService {
   sofascoreTeamEvents<T = SofaScoreSofascoreTeamEventsResponse>(params: SofaScoreSofascoreTeamEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   sofascoreTeamPlayers<T = SofaScoreSofascoreTeamPlayersResponse>(params: SofaScoreSofascoreTeamPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   sofascoreTournamentSeasons<T = SofaScoreSofascoreTournamentSeasonsResponse>(params: SofaScoreSofascoreTournamentSeasonsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface SoundCloudService {
+  soundcloudPlaylist<T = SoundCloudSoundcloudPlaylistResponse>(params: SoundCloudSoundcloudPlaylistParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  soundcloudProfile<T = SoundCloudSoundcloudProfileResponse>(params: SoundCloudSoundcloudProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  soundcloudSearch<T = SoundCloudSoundcloudSearchResponse>(params: SoundCloudSoundcloudSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  soundcloudTrack<T = SoundCloudSoundcloudTrackResponse>(params: SoundCloudSoundcloudTrackParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  soundcloudUserTracks<T = SoundCloudSoundcloudUserTracksResponse>(params: SoundCloudSoundcloudUserTracksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface SpotifyPodcastsService {
@@ -34270,12 +39065,35 @@ export interface TrustpilotService {
   category<T = TrustpilotCategoryResponse>(params: TrustpilotCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TwitchService {
+  channel<T = TwitchChannelResponse>(params: TwitchChannelParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  clips<T = TwitchClipsResponse>(params: TwitchClipsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  schedule<T = TwitchScheduleResponse>(params: TwitchScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = TwitchSearchResponse>(params: TwitchSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  streams<T = TwitchStreamsResponse>(params: TwitchStreamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  team<T = TwitchTeamResponse>(params: TwitchTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  topGames<T = TwitchTopGamesResponse>(params?: TwitchTopGamesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  videos<T = TwitchVideosResponse>(params: TwitchVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  vodComments<T = TwitchVodCommentsResponse>(params: TwitchVodCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface UberEatsService {
   ubereatsFeed<T = UberEatsUbereatsFeedResponse>(params: UberEatsUbereatsFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ubereatsSearch<T = UberEatsUbereatsSearchResponse>(params: UberEatsUbereatsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ubereatsStore<T = UberEatsUbereatsStoreResponse>(params: UberEatsUbereatsStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ubereatsStoreMenu<T = UberEatsUbereatsStoreMenuResponse>(params: UberEatsUbereatsStoreMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ubereatsStoreReviews<T = UberEatsUbereatsStoreReviewsResponse>(params: UberEatsUbereatsStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface UltaBeautyService {
+  ultaCategories<T = UltaBeautyUltaCategoriesResponse>(params?: UltaBeautyUltaCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ultaCategory<T = UltaBeautyUltaCategoryResponse>(params: UltaBeautyUltaCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ultaProductQuestions<T = UltaBeautyUltaProductQuestionsResponse>(params: UltaBeautyUltaProductQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ultaProductReviews<T = UltaBeautyUltaProductReviewsResponse>(params: UltaBeautyUltaProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ultaProduct<T = UltaBeautyUltaProductResponse>(params: UltaBeautyUltaProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ultaSearch<T = UltaBeautyUltaSearchResponse>(params: UltaBeautyUltaSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ultaStores<T = UltaBeautyUltaStoresResponse>(params?: UltaBeautyUltaStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ultaSuggest<T = UltaBeautyUltaSuggestResponse>(params: UltaBeautyUltaSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface UpworkService {
@@ -34298,6 +39116,12 @@ export interface UserService {
   meApiKeysReveal<T = UserMeApiKeysRevealResponse>(params: UserMeApiKeysRevealParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface AccountDeletionService {
+  cancel<T = AccountDeletionCancelResponse>(params?: AccountDeletionCancelParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  myRequest<T = AccountDeletionMyRequestResponse>(params?: AccountDeletionMyRequestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  request<T = AccountDeletionRequestResponse>(params?: AccountDeletionRequestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface VintedService {
   brand<T = VintedBrandResponse>(params: VintedBrandParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   brands<T = VintedBrandsResponse>(params?: VintedBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -34314,16 +39138,43 @@ export interface WalmartService {
   search<T = WalmartSearchResponse>(params: WalmartSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface WayfairService {
+  categories<T = WayfairCategoriesResponse>(params?: WayfairCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = WayfairCategoryResponse>(params: WayfairCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = WayfairProductResponse>(params: WayfairProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface WhatnotService {
   browse<T = WhatnotBrowseResponse>(params: WhatnotBrowseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categories<T = WhatnotCategoriesResponse>(params?: WhatnotCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   live<T = WhatnotLiveResponse>(params: WhatnotLiveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface WishService {
+  categories<T = WishCategoriesResponse>(params?: WishCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = WishProductResponse>(params: WishProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRelated<T = WishProductRelatedResponse>(params: WishProductRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productReviews<T = WishProductReviewsResponse>(params: WishProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = WishSearchResponse>(params: WishSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = WishSuggestResponse>(params: WishSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface XService {
   post<T = XPostResponse>(params: XPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = XProfileResponse>(params: XProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profilePosts<T = XProfilePostsResponse>(params: XProfilePostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface YahooAutosService {
+  article<T = YahooAutosArticleResponse>(params: YahooAutosArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = YahooAutosCategoryResponse>(params: YahooAutosCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = YahooAutosHomeResponse>(params?: YahooAutosHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface YahooEntertainmentService {
+  article<T = YahooEntertainmentArticleResponse>(params: YahooEntertainmentArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = YahooEntertainmentCategoryResponse>(params: YahooEntertainmentCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = YahooEntertainmentHomeResponse>(params?: YahooEntertainmentHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface YahooFinanceService {
@@ -34368,8 +39219,70 @@ export interface YahooFinanceService {
   trending<T = YahooFinanceTrendingResponse>(params: YahooFinanceTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface YahooHealthService {
+  article<T = YahooHealthArticleResponse>(params: YahooHealthArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = YahooHealthCategoryResponse>(params: YahooHealthCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = YahooHealthHomeResponse>(params?: YahooHealthHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface YahooLifeService {
+  article<T = YahooLifeArticleResponse>(params: YahooLifeArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = YahooLifeHomeResponse>(params?: YahooLifeHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface YahooNewsService {
+  article<T = YahooNewsArticleResponse>(params: YahooNewsArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = YahooNewsCategoryResponse>(params: YahooNewsCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  comments<T = YahooNewsCommentsResponse>(params: YahooNewsCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  commentReplies<T = YahooNewsCommentRepliesResponse>(params: YahooNewsCommentRepliesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = YahooNewsHomeResponse>(params?: YahooNewsHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = YahooNewsSuggestResponse>(params: YahooNewsSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface YahooSearchService {
+  images<T = YahooSearchImagesResponse>(params: YahooSearchImagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  local<T = YahooSearchLocalResponse>(params: YahooSearchLocalParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  news<T = YahooSearchNewsResponse>(params: YahooSearchNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   call<T = YahooSearchCallResponse>(params: YahooSearchCallParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = YahooSearchSuggestResponse>(params: YahooSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  videos<T = YahooSearchVideosResponse>(params: YahooSearchVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface YahooShoppingService {
+  article<T = YahooShoppingArticleResponse>(params: YahooShoppingArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = YahooShoppingCategoryResponse>(params: YahooShoppingCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = YahooShoppingHomeResponse>(params?: YahooShoppingHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shoppingList<T = YahooShoppingShoppingListResponse>(params: YahooShoppingShoppingListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shoppingLists<T = YahooShoppingShoppingListsResponse>(params?: YahooShoppingShoppingListsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = YahooShoppingStoreResponse>(params: YahooShoppingStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stores<T = YahooShoppingStoresResponse>(params?: YahooShoppingStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface YahooSportsService {
+  game<T = YahooSportsGameResponse>(params: YahooSportsGameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  golfLeaderboard<T = YahooSportsGolfLeaderboardResponse>(params: YahooSportsGolfLeaderboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  golfSchedule<T = YahooSportsGolfScheduleResponse>(params: YahooSportsGolfScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mmaFightCard<T = YahooSportsMmaFightCardResponse>(params?: YahooSportsMmaFightCardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mmaSchedule<T = YahooSportsMmaScheduleResponse>(params?: YahooSportsMmaScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  motorsportsRace<T = YahooSportsMotorsportsRaceResponse>(params: YahooSportsMotorsportsRaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  motorsportsSchedule<T = YahooSportsMotorsportsScheduleResponse>(params: YahooSportsMotorsportsScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  news<T = YahooSportsNewsResponse>(params: YahooSportsNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  olympicsMedals<T = YahooSportsOlympicsMedalsResponse>(params?: YahooSportsOlympicsMedalsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  player<T = YahooSportsPlayerResponse>(params: YahooSportsPlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  scoreboard<T = YahooSportsScoreboardResponse>(params: YahooSportsScoreboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  standings<T = YahooSportsStandingsResponse>(params: YahooSportsStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  team<T = YahooSportsTeamResponse>(params: YahooSportsTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamRoster<T = YahooSportsTeamRosterResponse>(params: YahooSportsTeamRosterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamSchedule<T = YahooSportsTeamScheduleResponse>(params: YahooSportsTeamScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tennisRankings<T = YahooSportsTennisRankingsResponse>(params: YahooSportsTennisRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tennisSchedule<T = YahooSportsTennisScheduleResponse>(params?: YahooSportsTennisScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tennisScoreboard<T = YahooSportsTennisScoreboardResponse>(params?: YahooSportsTennisScoreboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface YahooTechService {
+  article<T = YahooTechArticleResponse>(params: YahooTechArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = YahooTechCategoryResponse>(params: YahooTechCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = YahooTechHomeResponse>(params?: YahooTechHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface YelpService {
@@ -34405,6 +39318,23 @@ export interface ZalandoService {
   product<T = ZalandoProductResponse>(params: ZalandoProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = ZalandoSearchResponse>(params: ZalandoSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   suggest<T = ZalandoSuggestResponse>(params: ZalandoSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ZapposService {
+  brand<T = ZapposBrandResponse>(params: ZapposBrandParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  brands<T = ZapposBrandsResponse>(params?: ZapposBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = ZapposProductResponse>(params: ZapposProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = ZapposSearchResponse>(params: ZapposSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = ZapposSuggestResponse>(params: ZapposSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ZaraService {
+  categories<T = ZaraCategoriesResponse>(params?: ZaraCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categoryProducts<T = ZaraCategoryProductsResponse>(params: ZaraCategoryProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = ZaraProductResponse>(params: ZaraProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = ZaraSearchResponse>(params: ZaraSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stores<T = ZaraStoresResponse>(params: ZaraStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = ZaraSuggestResponse>(params: ZaraSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ZillowService {
@@ -34456,6 +39386,7 @@ export interface CrawloraGeneratedGroups {
   googleJobs: GoogleJobsService;
   google: GoogleService;
   googlePlay: GooglePlayService;
+  hM: HMService;
   imdb: ImdbService;
   importYeti: ImportYetiService;
   indeed: IndeedService;
@@ -34464,15 +39395,20 @@ export interface CrawloraGeneratedGroups {
   jobs: JobsService;
   justWatch: JustWatchService;
   kalshi: KalshiService;
+  kohlS: KohlSService;
   letterboxd: LetterboxdService;
   linkedIn: LinkedInService;
+  lululemon: LululemonService;
+  macyS: MacySService;
   manga: MangaService;
   mercari: MercariService;
   metaJobs: MetaJobsService;
   metacritic: MetacriticService;
   metaculus: MetaculusService;
   mlb: MlbService;
+  nike: NikeService;
   numbeo: NumbeoService;
+  oldNavy: OldNavyService;
   openTable: OpenTableService;
   meta: MetaService;
   pinterest: PinterestService;
@@ -34485,11 +39421,13 @@ export interface CrawloraGeneratedGroups {
   redfin: RedfinService;
   referrals: ReferralsService;
   rottenTomatoes: RottenTomatoesService;
+  samSClub: SamSclubService;
   secEdgar: SecEdgarService;
   shopApp: ShopAppService;
   shopify: ShopifyService;
   similarWeb: SimilarWebService;
   sofaScore: SofaScoreService;
+  soundCloud: SoundCloudService;
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
   steam: SteamService;
@@ -34505,19 +39443,34 @@ export interface CrawloraGeneratedGroups {
   tripCom: TripComService;
   trustMrr: TrustMrrService;
   trustpilot: TrustpilotService;
+  twitch: TwitchService;
   uberEats: UberEatsService;
+  ultaBeauty: UltaBeautyService;
   upwork: UpworkService;
   usage: UsageService;
   user: UserService;
+  accountDeletion: AccountDeletionService;
   vinted: VintedService;
   walmart: WalmartService;
+  wayfair: WayfairService;
   whatnot: WhatnotService;
+  wish: WishService;
   x: XService;
+  yahooAutos: YahooAutosService;
+  yahooEntertainment: YahooEntertainmentService;
   yahooFinance: YahooFinanceService;
+  yahooHealth: YahooHealthService;
+  yahooLife: YahooLifeService;
+  yahooNews: YahooNewsService;
   yahooSearch: YahooSearchService;
+  yahooShopping: YahooShoppingService;
+  yahooSports: YahooSportsService;
+  yahooTech: YahooTechService;
   yelp: YelpService;
   youtube: YoutubeService;
   zalando: ZalandoService;
+  zappos: ZapposService;
+  zara: ZaraService;
   zillow: ZillowService;
 }
 
@@ -34596,6 +39549,7 @@ export interface OperationParamsMap {
   "billing-me-period-statement": BillingMePeriodStatementParams;
   "billing-me-period-statement-download": BillingMePeriodStatementDownloadParams;
   "billing-me-portal": BillingMePortalParams;
+  "billing-me-rejections": BillingMeRejectionsParams;
   "bing-images": BingImagesParams;
   "bing-news": BingNewsParams;
   "bing-search": BingSearchParams;
@@ -34836,6 +39790,10 @@ export interface OperationParamsMap {
   "duckduckgo-shopping": DuckDuckGoSearchDuckduckgoShoppingParams;
   "duckduckgo-video": DuckDuckGoSearchDuckduckgoVideoParams;
   "ebay-item": EBayEbayItemParams;
+  "ebay-live-streams": EBayEbayLiveStreamsParams;
+  "ebay-live-streams-batch": EBayEbayLiveStreamsBatchParams;
+  "ebay-live-stream": EBayEbayLiveStreamParams;
+  "ebay-live-stream-items": EBayEbayLiveStreamItemsParams;
   "ebay-search": EBayEbaySearchParams;
   "ebay-seller": EBayEbaySellerParams;
   "ebay-seller-about": EBayEbaySellerAboutParams;
@@ -34953,6 +39911,11 @@ export interface OperationParamsMap {
   "googleplay-search": GooglePlaySearchParams;
   "googleplay-similar": GooglePlaySimilarParams;
   "googleplay-suggest": GooglePlaySuggestParams;
+  "hm-categories": HMHmCategoriesParams;
+  "hm-listing": HMHmListingParams;
+  "hm-product": HMHmProductParams;
+  "hm-search": HMHmSearchParams;
+  "hm-stores": HMHmStoresParams;
   "imdb-name": ImdbNameParams;
   "imdb-name-awards": ImdbNameAwardsParams;
   "imdb-name-credits": ImdbNameCreditsParams;
@@ -35057,6 +40020,10 @@ export interface OperationParamsMap {
   "kalshi-series": KalshiSeriesParams;
   "kalshi-series-detail": KalshiSeriesDetailParams;
   "kalshi-trades": KalshiTradesParams;
+  "kohls-category": KohlSKohlsCategoryParams;
+  "kohls-product-reviews": KohlSKohlsProductReviewsParams;
+  "kohls-stores": KohlSKohlsStoresParams;
+  "kohls-suggest": KohlSKohlsSuggestParams;
   "letterboxd-film": LetterboxdFilmParams;
   "letterboxd-film-rating-histogram": LetterboxdFilmRatingHistogramParams;
   "letterboxd-film-reviews": LetterboxdFilmReviewsParams;
@@ -35068,6 +40035,14 @@ export interface OperationParamsMap {
   "linkedin-company": LinkedInLinkedinCompanyParams;
   "linkedin-product": LinkedInLinkedinProductParams;
   "linkedin-showcase": LinkedInLinkedinShowcaseParams;
+  "lululemon-categories": LululemonCategoriesParams;
+  "lululemon-category": LululemonCategoryParams;
+  "lululemon-outfit": LululemonOutfitParams;
+  "lululemon-product": LululemonProductParams;
+  "lululemon-stores": LululemonStoresParams;
+  "macys-product-reviews": MacySMacysProductReviewsParams;
+  "macys-product": MacySMacysProductParams;
+  "macys-suggest": MacySMacysSuggestParams;
   "manga-rankings": MangaRankingsParams;
   "manga-search": MangaSearchParams;
   "manga-title": MangaTitleParams;
@@ -35112,6 +40087,12 @@ export interface OperationParamsMap {
   "mlb-team-stats": MlbTeamStatsParams;
   "mlb-teams": MlbTeamsParams;
   "mlb-transactions": MlbTransactionsParams;
+  "nike-categories": NikeCategoriesParams;
+  "nike-product": NikeProductParams;
+  "nike-product-reviews": NikeProductReviewsParams;
+  "nike-search": NikeSearchParams;
+  "nike-stores": NikeStoresParams;
+  "nike-suggest": NikeSuggestParams;
   "numbeo-cost-of-living-city": NumbeoCostOfLivingCityParams;
   "numbeo-cost-of-living-country": NumbeoCostOfLivingCountryParams;
   "numbeo-cost-of-living-rankings": NumbeoCostOfLivingRankingsParams;
@@ -35120,6 +40101,13 @@ export interface OperationParamsMap {
   "numbeo-indices-country": NumbeoIndicesCountryParams;
   "numbeo-indices-rankings": NumbeoIndicesRankingsParams;
   "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryParams;
+  "oldnavy-categories": OldNavyOldnavyCategoriesParams;
+  "oldnavy-category": OldNavyOldnavyCategoryParams;
+  "oldnavy-product": OldNavyOldnavyProductParams;
+  "oldnavy-product-availability": OldNavyOldnavyProductAvailabilityParams;
+  "oldnavy-product-reviews": OldNavyOldnavyProductReviewsParams;
+  "oldnavy-search": OldNavyOldnavySearchParams;
+  "oldnavy-stores": OldNavyOldnavyStoresParams;
   "opentable-restaurant": OpenTableOpentableRestaurantParams;
   "opentable-restaurant-menus": OpenTableOpentableRestaurantMenusParams;
   "opentable-restaurant-reviews": OpenTableOpentableRestaurantReviewsParams;
@@ -35259,6 +40247,11 @@ export interface OperationParamsMap {
   "rottentomatoes-search": RottenTomatoesRottentomatoesSearchParams;
   "rottentomatoes-season": RottenTomatoesRottentomatoesSeasonParams;
   "rottentomatoes-series": RottenTomatoesRottentomatoesSeriesParams;
+  "samsclub-category": SamSclubSamsclubCategoryParams;
+  "samsclub-content": SamSclubSamsclubContentParams;
+  "samsclub-departments": SamSclubSamsclubDepartmentsParams;
+  "samsclub-product": SamSclubSamsclubProductParams;
+  "samsclub-product-related": SamSclubSamsclubProductRelatedParams;
   "sec-company-intelligence": SecEdgarSecCompanyIntelligenceParams;
   "sec-company-search": SecEdgarSecCompanySearchParams;
   "sec-company-submissions": SecEdgarSecCompanySubmissionsParams;
@@ -35313,6 +40306,11 @@ export interface OperationParamsMap {
   "sofascore-team-events": SofaScoreSofascoreTeamEventsParams;
   "sofascore-team-players": SofaScoreSofascoreTeamPlayersParams;
   "sofascore-tournament-seasons": SofaScoreSofascoreTournamentSeasonsParams;
+  "soundcloud-playlist": SoundCloudSoundcloudPlaylistParams;
+  "soundcloud-profile": SoundCloudSoundcloudProfileParams;
+  "soundcloud-search": SoundCloudSoundcloudSearchParams;
+  "soundcloud-track": SoundCloudSoundcloudTrackParams;
+  "soundcloud-user-tracks": SoundCloudSoundcloudUserTracksParams;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesParams;
   "spotify-podcasts-charts": SpotifyPodcastsChartsParams;
   "spotify-podcasts-episode": SpotifyPodcastsEpisodeParams;
@@ -35460,11 +40458,28 @@ export interface OperationParamsMap {
   "trustpilot-categories": TrustpilotCategoriesParams;
   "trustpilot-category-search": TrustpilotCategorySearchParams;
   "trustpilot-category": TrustpilotCategoryParams;
+  "twitch-channel": TwitchChannelParams;
+  "twitch-clips": TwitchClipsParams;
+  "twitch-schedule": TwitchScheduleParams;
+  "twitch-search": TwitchSearchParams;
+  "twitch-streams": TwitchStreamsParams;
+  "twitch-team": TwitchTeamParams;
+  "twitch-top-games": TwitchTopGamesParams;
+  "twitch-videos": TwitchVideosParams;
+  "twitch-vod-comments": TwitchVodCommentsParams;
   "ubereats-feed": UberEatsUbereatsFeedParams;
   "ubereats-search": UberEatsUbereatsSearchParams;
   "ubereats-store": UberEatsUbereatsStoreParams;
   "ubereats-store-menu": UberEatsUbereatsStoreMenuParams;
   "ubereats-store-reviews": UberEatsUbereatsStoreReviewsParams;
+  "ulta-categories": UltaBeautyUltaCategoriesParams;
+  "ulta-category": UltaBeautyUltaCategoryParams;
+  "ulta-product-questions": UltaBeautyUltaProductQuestionsParams;
+  "ulta-product-reviews": UltaBeautyUltaProductReviewsParams;
+  "ulta-product": UltaBeautyUltaProductParams;
+  "ulta-search": UltaBeautyUltaSearchParams;
+  "ulta-stores": UltaBeautyUltaStoresParams;
+  "ulta-suggest": UltaBeautyUltaSuggestParams;
   "upwork-freelancer": UpworkFreelancerParams;
   "upwork-job": UpworkJobParams;
   "upwork-search": UpworkSearchParams;
@@ -35476,6 +40491,9 @@ export interface OperationParamsMap {
   "user-me-api-keys": UserMeApiKeysParams;
   "user-me-api-keys-rotate": UserMeApiKeysRotateParams;
   "user-me-api-keys-reveal": UserMeApiKeysRevealParams;
+  "account-deletion-cancel": AccountDeletionCancelParams;
+  "account-deletion-my-request": AccountDeletionMyRequestParams;
+  "account-deletion-request": AccountDeletionRequestParams;
   "vinted-brand": VintedBrandParams;
   "vinted-brands": VintedBrandsParams;
   "vinted-catalog": VintedCatalogParams;
@@ -35486,14 +40504,29 @@ export interface OperationParamsMap {
   "walmart-product": WalmartProductParams;
   "walmart-product-reviews": WalmartProductReviewsParams;
   "walmart-search": WalmartSearchParams;
+  "wayfair-categories": WayfairCategoriesParams;
+  "wayfair-category": WayfairCategoryParams;
+  "wayfair-product": WayfairProductParams;
   "web-scrape": WebScrapeParams;
   "web-techstack": WebTechstackParams;
   "whatnot-browse": WhatnotBrowseParams;
   "whatnot-categories": WhatnotCategoriesParams;
   "whatnot-live": WhatnotLiveParams;
+  "wish-categories": WishCategoriesParams;
+  "wish-product": WishProductParams;
+  "wish-product-related": WishProductRelatedParams;
+  "wish-product-reviews": WishProductReviewsParams;
+  "wish-search": WishSearchParams;
+  "wish-suggest": WishSuggestParams;
   "x-post": XPostParams;
   "x-profile": XProfileParams;
   "x-profile-posts": XProfilePostsParams;
+  "yahoo-autos-article": YahooAutosArticleParams;
+  "yahoo-autos-category": YahooAutosCategoryParams;
+  "yahoo-autos-home": YahooAutosHomeParams;
+  "yahoo-entertainment-article": YahooEntertainmentArticleParams;
+  "yahoo-entertainment-category": YahooEntertainmentCategoryParams;
+  "yahoo-entertainment-home": YahooEntertainmentHomeParams;
   "yahoo-finance-calendars": YahooFinanceCalendarsParams;
   "yahoo-finance-calendar": YahooFinanceCalendarParams;
   "yahoo-finance-download": YahooFinanceDownloadParams;
@@ -35533,7 +40566,51 @@ export interface OperationParamsMap {
   "yahoo-finance-ticker-sustainability": YahooFinanceTickerSustainabilityParams;
   "yahoo-finance-ticker-valuation": YahooFinanceTickerValuationParams;
   "yahoo-finance-trending": YahooFinanceTrendingParams;
+  "yahoo-health-article": YahooHealthArticleParams;
+  "yahoo-health-category": YahooHealthCategoryParams;
+  "yahoo-health-home": YahooHealthHomeParams;
+  "yahoo-life-article": YahooLifeArticleParams;
+  "yahoo-life-home": YahooLifeHomeParams;
+  "yahoo-news-article": YahooNewsArticleParams;
+  "yahoo-news-category": YahooNewsCategoryParams;
+  "yahoo-news-comments": YahooNewsCommentsParams;
+  "yahoo-news-comment-replies": YahooNewsCommentRepliesParams;
+  "yahoo-news-home": YahooNewsHomeParams;
+  "yahoo-news-suggest": YahooNewsSuggestParams;
+  "yahoo-search-images": YahooSearchImagesParams;
+  "yahoo-search-local": YahooSearchLocalParams;
+  "yahoo-search-news": YahooSearchNewsParams;
   "yahoo-search": YahooSearchCallParams;
+  "yahoo-search-suggest": YahooSearchSuggestParams;
+  "yahoo-search-videos": YahooSearchVideosParams;
+  "yahoo-shopping-article": YahooShoppingArticleParams;
+  "yahoo-shopping-category": YahooShoppingCategoryParams;
+  "yahoo-shopping-home": YahooShoppingHomeParams;
+  "yahoo-shopping-shopping-list": YahooShoppingShoppingListParams;
+  "yahoo-shopping-shopping-lists": YahooShoppingShoppingListsParams;
+  "yahoo-shopping-store": YahooShoppingStoreParams;
+  "yahoo-shopping-stores": YahooShoppingStoresParams;
+  "yahoo-sports-game": YahooSportsGameParams;
+  "yahoo-sports-golf-leaderboard": YahooSportsGolfLeaderboardParams;
+  "yahoo-sports-golf-schedule": YahooSportsGolfScheduleParams;
+  "yahoo-sports-mma-fight-card": YahooSportsMmaFightCardParams;
+  "yahoo-sports-mma-schedule": YahooSportsMmaScheduleParams;
+  "yahoo-sports-motorsports-race": YahooSportsMotorsportsRaceParams;
+  "yahoo-sports-motorsports-schedule": YahooSportsMotorsportsScheduleParams;
+  "yahoo-sports-news": YahooSportsNewsParams;
+  "yahoo-sports-olympics-medals": YahooSportsOlympicsMedalsParams;
+  "yahoo-sports-player": YahooSportsPlayerParams;
+  "yahoo-sports-scoreboard": YahooSportsScoreboardParams;
+  "yahoo-sports-standings": YahooSportsStandingsParams;
+  "yahoo-sports-team": YahooSportsTeamParams;
+  "yahoo-sports-team-roster": YahooSportsTeamRosterParams;
+  "yahoo-sports-team-schedule": YahooSportsTeamScheduleParams;
+  "yahoo-sports-tennis-rankings": YahooSportsTennisRankingsParams;
+  "yahoo-sports-tennis-schedule": YahooSportsTennisScheduleParams;
+  "yahoo-sports-tennis-scoreboard": YahooSportsTennisScoreboardParams;
+  "yahoo-tech-article": YahooTechArticleParams;
+  "yahoo-tech-category": YahooTechCategoryParams;
+  "yahoo-tech-home": YahooTechHomeParams;
   "yelp-business": YelpBusinessParams;
   "yelp-business-menu": YelpBusinessMenuParams;
   "yelp-business-photos": YelpBusinessPhotosParams;
@@ -35560,6 +40637,17 @@ export interface OperationParamsMap {
   "zalando-product": ZalandoProductParams;
   "zalando-search": ZalandoSearchParams;
   "zalando-suggest": ZalandoSuggestParams;
+  "zappos-brand": ZapposBrandParams;
+  "zappos-brands": ZapposBrandsParams;
+  "zappos-product": ZapposProductParams;
+  "zappos-search": ZapposSearchParams;
+  "zappos-suggest": ZapposSuggestParams;
+  "zara-categories": ZaraCategoriesParams;
+  "zara-category-products": ZaraCategoryProductsParams;
+  "zara-product": ZaraProductParams;
+  "zara-search": ZaraSearchParams;
+  "zara-stores": ZaraStoresParams;
+  "zara-suggest": ZaraSuggestParams;
   "zillow-autocomplete": ZillowAutocompleteParams;
   "zillow-property": ZillowPropertyParams;
   "zillow-search": ZillowSearchParams;
@@ -35640,6 +40728,7 @@ export interface OperationResponseMap {
   "billing-me-period-statement": BillingMePeriodStatementResponse;
   "billing-me-period-statement-download": BillingMePeriodStatementDownloadResponse;
   "billing-me-portal": BillingMePortalResponse;
+  "billing-me-rejections": BillingMeRejectionsResponse;
   "bing-images": BingImagesResponse;
   "bing-news": BingNewsResponse;
   "bing-search": BingSearchResponse;
@@ -35880,6 +40969,10 @@ export interface OperationResponseMap {
   "duckduckgo-shopping": DuckDuckGoSearchDuckduckgoShoppingResponse;
   "duckduckgo-video": DuckDuckGoSearchDuckduckgoVideoResponse;
   "ebay-item": EBayEbayItemResponse;
+  "ebay-live-streams": EBayEbayLiveStreamsResponse;
+  "ebay-live-streams-batch": EBayEbayLiveStreamsBatchResponse;
+  "ebay-live-stream": EBayEbayLiveStreamResponse;
+  "ebay-live-stream-items": EBayEbayLiveStreamItemsResponse;
   "ebay-search": EBayEbaySearchResponse;
   "ebay-seller": EBayEbaySellerResponse;
   "ebay-seller-about": EBayEbaySellerAboutResponse;
@@ -35997,6 +41090,11 @@ export interface OperationResponseMap {
   "googleplay-search": GooglePlaySearchResponse;
   "googleplay-similar": GooglePlaySimilarResponse;
   "googleplay-suggest": GooglePlaySuggestResponse;
+  "hm-categories": HMHmCategoriesResponse;
+  "hm-listing": HMHmListingResponse;
+  "hm-product": HMHmProductResponse;
+  "hm-search": HMHmSearchResponse;
+  "hm-stores": HMHmStoresResponse;
   "imdb-name": ImdbNameResponse;
   "imdb-name-awards": ImdbNameAwardsResponse;
   "imdb-name-credits": ImdbNameCreditsResponse;
@@ -36101,6 +41199,10 @@ export interface OperationResponseMap {
   "kalshi-series": KalshiSeriesResponse;
   "kalshi-series-detail": KalshiSeriesDetailResponse;
   "kalshi-trades": KalshiTradesResponse;
+  "kohls-category": KohlSKohlsCategoryResponse;
+  "kohls-product-reviews": KohlSKohlsProductReviewsResponse;
+  "kohls-stores": KohlSKohlsStoresResponse;
+  "kohls-suggest": KohlSKohlsSuggestResponse;
   "letterboxd-film": LetterboxdFilmResponse;
   "letterboxd-film-rating-histogram": LetterboxdFilmRatingHistogramResponse;
   "letterboxd-film-reviews": LetterboxdFilmReviewsResponse;
@@ -36112,6 +41214,14 @@ export interface OperationResponseMap {
   "linkedin-company": LinkedInLinkedinCompanyResponse;
   "linkedin-product": LinkedInLinkedinProductResponse;
   "linkedin-showcase": LinkedInLinkedinShowcaseResponse;
+  "lululemon-categories": LululemonCategoriesResponse;
+  "lululemon-category": LululemonCategoryResponse;
+  "lululemon-outfit": LululemonOutfitResponse;
+  "lululemon-product": LululemonProductResponse;
+  "lululemon-stores": LululemonStoresResponse;
+  "macys-product-reviews": MacySMacysProductReviewsResponse;
+  "macys-product": MacySMacysProductResponse;
+  "macys-suggest": MacySMacysSuggestResponse;
   "manga-rankings": MangaRankingsResponse;
   "manga-search": MangaSearchResponse;
   "manga-title": MangaTitleResponse;
@@ -36156,6 +41266,12 @@ export interface OperationResponseMap {
   "mlb-team-stats": MlbTeamStatsResponse;
   "mlb-teams": MlbTeamsResponse;
   "mlb-transactions": MlbTransactionsResponse;
+  "nike-categories": NikeCategoriesResponse;
+  "nike-product": NikeProductResponse;
+  "nike-product-reviews": NikeProductReviewsResponse;
+  "nike-search": NikeSearchResponse;
+  "nike-stores": NikeStoresResponse;
+  "nike-suggest": NikeSuggestResponse;
   "numbeo-cost-of-living-city": NumbeoCostOfLivingCityResponse;
   "numbeo-cost-of-living-country": NumbeoCostOfLivingCountryResponse;
   "numbeo-cost-of-living-rankings": NumbeoCostOfLivingRankingsResponse;
@@ -36164,6 +41280,13 @@ export interface OperationResponseMap {
   "numbeo-indices-country": NumbeoIndicesCountryResponse;
   "numbeo-indices-rankings": NumbeoIndicesRankingsResponse;
   "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryResponse;
+  "oldnavy-categories": OldNavyOldnavyCategoriesResponse;
+  "oldnavy-category": OldNavyOldnavyCategoryResponse;
+  "oldnavy-product": OldNavyOldnavyProductResponse;
+  "oldnavy-product-availability": OldNavyOldnavyProductAvailabilityResponse;
+  "oldnavy-product-reviews": OldNavyOldnavyProductReviewsResponse;
+  "oldnavy-search": OldNavyOldnavySearchResponse;
+  "oldnavy-stores": OldNavyOldnavyStoresResponse;
   "opentable-restaurant": OpenTableOpentableRestaurantResponse;
   "opentable-restaurant-menus": OpenTableOpentableRestaurantMenusResponse;
   "opentable-restaurant-reviews": OpenTableOpentableRestaurantReviewsResponse;
@@ -36303,6 +41426,11 @@ export interface OperationResponseMap {
   "rottentomatoes-search": RottenTomatoesRottentomatoesSearchResponse;
   "rottentomatoes-season": RottenTomatoesRottentomatoesSeasonResponse;
   "rottentomatoes-series": RottenTomatoesRottentomatoesSeriesResponse;
+  "samsclub-category": SamSclubSamsclubCategoryResponse;
+  "samsclub-content": SamSclubSamsclubContentResponse;
+  "samsclub-departments": SamSclubSamsclubDepartmentsResponse;
+  "samsclub-product": SamSclubSamsclubProductResponse;
+  "samsclub-product-related": SamSclubSamsclubProductRelatedResponse;
   "sec-company-intelligence": SecEdgarSecCompanyIntelligenceResponse;
   "sec-company-search": SecEdgarSecCompanySearchResponse;
   "sec-company-submissions": SecEdgarSecCompanySubmissionsResponse;
@@ -36357,6 +41485,11 @@ export interface OperationResponseMap {
   "sofascore-team-events": SofaScoreSofascoreTeamEventsResponse;
   "sofascore-team-players": SofaScoreSofascoreTeamPlayersResponse;
   "sofascore-tournament-seasons": SofaScoreSofascoreTournamentSeasonsResponse;
+  "soundcloud-playlist": SoundCloudSoundcloudPlaylistResponse;
+  "soundcloud-profile": SoundCloudSoundcloudProfileResponse;
+  "soundcloud-search": SoundCloudSoundcloudSearchResponse;
+  "soundcloud-track": SoundCloudSoundcloudTrackResponse;
+  "soundcloud-user-tracks": SoundCloudSoundcloudUserTracksResponse;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesResponse;
   "spotify-podcasts-charts": SpotifyPodcastsChartsResponse;
   "spotify-podcasts-episode": SpotifyPodcastsEpisodeResponse;
@@ -36504,11 +41637,28 @@ export interface OperationResponseMap {
   "trustpilot-categories": TrustpilotCategoriesResponse;
   "trustpilot-category-search": TrustpilotCategorySearchResponse;
   "trustpilot-category": TrustpilotCategoryResponse;
+  "twitch-channel": TwitchChannelResponse;
+  "twitch-clips": TwitchClipsResponse;
+  "twitch-schedule": TwitchScheduleResponse;
+  "twitch-search": TwitchSearchResponse;
+  "twitch-streams": TwitchStreamsResponse;
+  "twitch-team": TwitchTeamResponse;
+  "twitch-top-games": TwitchTopGamesResponse;
+  "twitch-videos": TwitchVideosResponse;
+  "twitch-vod-comments": TwitchVodCommentsResponse;
   "ubereats-feed": UberEatsUbereatsFeedResponse;
   "ubereats-search": UberEatsUbereatsSearchResponse;
   "ubereats-store": UberEatsUbereatsStoreResponse;
   "ubereats-store-menu": UberEatsUbereatsStoreMenuResponse;
   "ubereats-store-reviews": UberEatsUbereatsStoreReviewsResponse;
+  "ulta-categories": UltaBeautyUltaCategoriesResponse;
+  "ulta-category": UltaBeautyUltaCategoryResponse;
+  "ulta-product-questions": UltaBeautyUltaProductQuestionsResponse;
+  "ulta-product-reviews": UltaBeautyUltaProductReviewsResponse;
+  "ulta-product": UltaBeautyUltaProductResponse;
+  "ulta-search": UltaBeautyUltaSearchResponse;
+  "ulta-stores": UltaBeautyUltaStoresResponse;
+  "ulta-suggest": UltaBeautyUltaSuggestResponse;
   "upwork-freelancer": UpworkFreelancerResponse;
   "upwork-job": UpworkJobResponse;
   "upwork-search": UpworkSearchResponse;
@@ -36520,6 +41670,9 @@ export interface OperationResponseMap {
   "user-me-api-keys": UserMeApiKeysResponse;
   "user-me-api-keys-rotate": UserMeApiKeysRotateResponse;
   "user-me-api-keys-reveal": UserMeApiKeysRevealResponse;
+  "account-deletion-cancel": AccountDeletionCancelResponse;
+  "account-deletion-my-request": AccountDeletionMyRequestResponse;
+  "account-deletion-request": AccountDeletionRequestResponse;
   "vinted-brand": VintedBrandResponse;
   "vinted-brands": VintedBrandsResponse;
   "vinted-catalog": VintedCatalogResponse;
@@ -36530,14 +41683,29 @@ export interface OperationResponseMap {
   "walmart-product": WalmartProductResponse;
   "walmart-product-reviews": WalmartProductReviewsResponse;
   "walmart-search": WalmartSearchResponse;
+  "wayfair-categories": WayfairCategoriesResponse;
+  "wayfair-category": WayfairCategoryResponse;
+  "wayfair-product": WayfairProductResponse;
   "web-scrape": WebScrapeResponse;
   "web-techstack": WebTechstackResponse;
   "whatnot-browse": WhatnotBrowseResponse;
   "whatnot-categories": WhatnotCategoriesResponse;
   "whatnot-live": WhatnotLiveResponse;
+  "wish-categories": WishCategoriesResponse;
+  "wish-product": WishProductResponse;
+  "wish-product-related": WishProductRelatedResponse;
+  "wish-product-reviews": WishProductReviewsResponse;
+  "wish-search": WishSearchResponse;
+  "wish-suggest": WishSuggestResponse;
   "x-post": XPostResponse;
   "x-profile": XProfileResponse;
   "x-profile-posts": XProfilePostsResponse;
+  "yahoo-autos-article": YahooAutosArticleResponse;
+  "yahoo-autos-category": YahooAutosCategoryResponse;
+  "yahoo-autos-home": YahooAutosHomeResponse;
+  "yahoo-entertainment-article": YahooEntertainmentArticleResponse;
+  "yahoo-entertainment-category": YahooEntertainmentCategoryResponse;
+  "yahoo-entertainment-home": YahooEntertainmentHomeResponse;
   "yahoo-finance-calendars": YahooFinanceCalendarsResponse;
   "yahoo-finance-calendar": YahooFinanceCalendarResponse;
   "yahoo-finance-download": YahooFinanceDownloadResponse;
@@ -36577,7 +41745,51 @@ export interface OperationResponseMap {
   "yahoo-finance-ticker-sustainability": YahooFinanceTickerSustainabilityResponse;
   "yahoo-finance-ticker-valuation": YahooFinanceTickerValuationResponse;
   "yahoo-finance-trending": YahooFinanceTrendingResponse;
+  "yahoo-health-article": YahooHealthArticleResponse;
+  "yahoo-health-category": YahooHealthCategoryResponse;
+  "yahoo-health-home": YahooHealthHomeResponse;
+  "yahoo-life-article": YahooLifeArticleResponse;
+  "yahoo-life-home": YahooLifeHomeResponse;
+  "yahoo-news-article": YahooNewsArticleResponse;
+  "yahoo-news-category": YahooNewsCategoryResponse;
+  "yahoo-news-comments": YahooNewsCommentsResponse;
+  "yahoo-news-comment-replies": YahooNewsCommentRepliesResponse;
+  "yahoo-news-home": YahooNewsHomeResponse;
+  "yahoo-news-suggest": YahooNewsSuggestResponse;
+  "yahoo-search-images": YahooSearchImagesResponse;
+  "yahoo-search-local": YahooSearchLocalResponse;
+  "yahoo-search-news": YahooSearchNewsResponse;
   "yahoo-search": YahooSearchCallResponse;
+  "yahoo-search-suggest": YahooSearchSuggestResponse;
+  "yahoo-search-videos": YahooSearchVideosResponse;
+  "yahoo-shopping-article": YahooShoppingArticleResponse;
+  "yahoo-shopping-category": YahooShoppingCategoryResponse;
+  "yahoo-shopping-home": YahooShoppingHomeResponse;
+  "yahoo-shopping-shopping-list": YahooShoppingShoppingListResponse;
+  "yahoo-shopping-shopping-lists": YahooShoppingShoppingListsResponse;
+  "yahoo-shopping-store": YahooShoppingStoreResponse;
+  "yahoo-shopping-stores": YahooShoppingStoresResponse;
+  "yahoo-sports-game": YahooSportsGameResponse;
+  "yahoo-sports-golf-leaderboard": YahooSportsGolfLeaderboardResponse;
+  "yahoo-sports-golf-schedule": YahooSportsGolfScheduleResponse;
+  "yahoo-sports-mma-fight-card": YahooSportsMmaFightCardResponse;
+  "yahoo-sports-mma-schedule": YahooSportsMmaScheduleResponse;
+  "yahoo-sports-motorsports-race": YahooSportsMotorsportsRaceResponse;
+  "yahoo-sports-motorsports-schedule": YahooSportsMotorsportsScheduleResponse;
+  "yahoo-sports-news": YahooSportsNewsResponse;
+  "yahoo-sports-olympics-medals": YahooSportsOlympicsMedalsResponse;
+  "yahoo-sports-player": YahooSportsPlayerResponse;
+  "yahoo-sports-scoreboard": YahooSportsScoreboardResponse;
+  "yahoo-sports-standings": YahooSportsStandingsResponse;
+  "yahoo-sports-team": YahooSportsTeamResponse;
+  "yahoo-sports-team-roster": YahooSportsTeamRosterResponse;
+  "yahoo-sports-team-schedule": YahooSportsTeamScheduleResponse;
+  "yahoo-sports-tennis-rankings": YahooSportsTennisRankingsResponse;
+  "yahoo-sports-tennis-schedule": YahooSportsTennisScheduleResponse;
+  "yahoo-sports-tennis-scoreboard": YahooSportsTennisScoreboardResponse;
+  "yahoo-tech-article": YahooTechArticleResponse;
+  "yahoo-tech-category": YahooTechCategoryResponse;
+  "yahoo-tech-home": YahooTechHomeResponse;
   "yelp-business": YelpBusinessResponse;
   "yelp-business-menu": YelpBusinessMenuResponse;
   "yelp-business-photos": YelpBusinessPhotosResponse;
@@ -36604,6 +41816,17 @@ export interface OperationResponseMap {
   "zalando-product": ZalandoProductResponse;
   "zalando-search": ZalandoSearchResponse;
   "zalando-suggest": ZalandoSuggestResponse;
+  "zappos-brand": ZapposBrandResponse;
+  "zappos-brands": ZapposBrandsResponse;
+  "zappos-product": ZapposProductResponse;
+  "zappos-search": ZapposSearchResponse;
+  "zappos-suggest": ZapposSuggestResponse;
+  "zara-categories": ZaraCategoriesResponse;
+  "zara-category-products": ZaraCategoryProductsResponse;
+  "zara-product": ZaraProductResponse;
+  "zara-search": ZaraSearchResponse;
+  "zara-stores": ZaraStoresResponse;
+  "zara-suggest": ZaraSuggestResponse;
   "zillow-autocomplete": ZillowAutocompleteResponse;
   "zillow-property": ZillowPropertyResponse;
   "zillow-search": ZillowSearchResponse;
@@ -36684,6 +41907,7 @@ export interface OperationRequiredParamsMap {
   "billing-me-period-statement": true;
   "billing-me-period-statement-download": true;
   "billing-me-portal": true;
+  "billing-me-rejections": false;
   "bing-images": true;
   "bing-news": true;
   "bing-search": true;
@@ -36924,6 +42148,10 @@ export interface OperationRequiredParamsMap {
   "duckduckgo-shopping": true;
   "duckduckgo-video": true;
   "ebay-item": true;
+  "ebay-live-streams": false;
+  "ebay-live-streams-batch": true;
+  "ebay-live-stream": true;
+  "ebay-live-stream-items": true;
   "ebay-search": true;
   "ebay-seller": true;
   "ebay-seller-about": true;
@@ -37041,6 +42269,11 @@ export interface OperationRequiredParamsMap {
   "googleplay-search": true;
   "googleplay-similar": true;
   "googleplay-suggest": true;
+  "hm-categories": false;
+  "hm-listing": true;
+  "hm-product": true;
+  "hm-search": true;
+  "hm-stores": false;
   "imdb-name": false;
   "imdb-name-awards": false;
   "imdb-name-credits": false;
@@ -37145,6 +42378,10 @@ export interface OperationRequiredParamsMap {
   "kalshi-series": false;
   "kalshi-series-detail": true;
   "kalshi-trades": false;
+  "kohls-category": true;
+  "kohls-product-reviews": true;
+  "kohls-stores": true;
+  "kohls-suggest": true;
   "letterboxd-film": true;
   "letterboxd-film-rating-histogram": true;
   "letterboxd-film-reviews": true;
@@ -37156,6 +42393,14 @@ export interface OperationRequiredParamsMap {
   "linkedin-company": true;
   "linkedin-product": true;
   "linkedin-showcase": true;
+  "lululemon-categories": false;
+  "lululemon-category": true;
+  "lululemon-outfit": true;
+  "lululemon-product": true;
+  "lululemon-stores": false;
+  "macys-product-reviews": true;
+  "macys-product": true;
+  "macys-suggest": true;
   "manga-rankings": false;
   "manga-search": true;
   "manga-title": true;
@@ -37200,6 +42445,12 @@ export interface OperationRequiredParamsMap {
   "mlb-team-stats": true;
   "mlb-teams": false;
   "mlb-transactions": true;
+  "nike-categories": false;
+  "nike-product": true;
+  "nike-product-reviews": true;
+  "nike-search": false;
+  "nike-stores": true;
+  "nike-suggest": true;
   "numbeo-cost-of-living-city": true;
   "numbeo-cost-of-living-country": true;
   "numbeo-cost-of-living-rankings": false;
@@ -37208,6 +42459,13 @@ export interface OperationRequiredParamsMap {
   "numbeo-indices-country": true;
   "numbeo-indices-rankings": true;
   "numbeo-indices-rankings-by-country": true;
+  "oldnavy-categories": false;
+  "oldnavy-category": true;
+  "oldnavy-product": true;
+  "oldnavy-product-availability": true;
+  "oldnavy-product-reviews": true;
+  "oldnavy-search": true;
+  "oldnavy-stores": false;
   "opentable-restaurant": true;
   "opentable-restaurant-menus": true;
   "opentable-restaurant-reviews": true;
@@ -37347,6 +42605,11 @@ export interface OperationRequiredParamsMap {
   "rottentomatoes-search": true;
   "rottentomatoes-season": false;
   "rottentomatoes-series": false;
+  "samsclub-category": true;
+  "samsclub-content": true;
+  "samsclub-departments": false;
+  "samsclub-product": true;
+  "samsclub-product-related": true;
   "sec-company-intelligence": false;
   "sec-company-search": true;
   "sec-company-submissions": false;
@@ -37401,6 +42664,11 @@ export interface OperationRequiredParamsMap {
   "sofascore-team-events": true;
   "sofascore-team-players": true;
   "sofascore-tournament-seasons": true;
+  "soundcloud-playlist": true;
+  "soundcloud-profile": true;
+  "soundcloud-search": true;
+  "soundcloud-track": true;
+  "soundcloud-user-tracks": true;
   "spotify-podcasts-categories": false;
   "spotify-podcasts-charts": false;
   "spotify-podcasts-episode": false;
@@ -37548,11 +42816,28 @@ export interface OperationRequiredParamsMap {
   "trustpilot-categories": false;
   "trustpilot-category-search": true;
   "trustpilot-category": true;
+  "twitch-channel": true;
+  "twitch-clips": true;
+  "twitch-schedule": true;
+  "twitch-search": true;
+  "twitch-streams": true;
+  "twitch-team": true;
+  "twitch-top-games": false;
+  "twitch-videos": true;
+  "twitch-vod-comments": true;
   "ubereats-feed": true;
   "ubereats-search": true;
   "ubereats-store": true;
   "ubereats-store-menu": true;
   "ubereats-store-reviews": true;
+  "ulta-categories": false;
+  "ulta-category": true;
+  "ulta-product-questions": true;
+  "ulta-product-reviews": true;
+  "ulta-product": true;
+  "ulta-search": true;
+  "ulta-stores": false;
+  "ulta-suggest": true;
   "upwork-freelancer": true;
   "upwork-job": true;
   "upwork-search": true;
@@ -37564,6 +42849,9 @@ export interface OperationRequiredParamsMap {
   "user-me-api-keys": false;
   "user-me-api-keys-rotate": false;
   "user-me-api-keys-reveal": true;
+  "account-deletion-cancel": false;
+  "account-deletion-my-request": false;
+  "account-deletion-request": false;
   "vinted-brand": true;
   "vinted-brands": false;
   "vinted-catalog": true;
@@ -37574,14 +42862,29 @@ export interface OperationRequiredParamsMap {
   "walmart-product": true;
   "walmart-product-reviews": true;
   "walmart-search": true;
+  "wayfair-categories": false;
+  "wayfair-category": true;
+  "wayfair-product": true;
   "web-scrape": true;
   "web-techstack": true;
   "whatnot-browse": true;
   "whatnot-categories": false;
   "whatnot-live": true;
+  "wish-categories": false;
+  "wish-product": true;
+  "wish-product-related": true;
+  "wish-product-reviews": true;
+  "wish-search": true;
+  "wish-suggest": true;
   "x-post": true;
   "x-profile": true;
   "x-profile-posts": true;
+  "yahoo-autos-article": true;
+  "yahoo-autos-category": true;
+  "yahoo-autos-home": false;
+  "yahoo-entertainment-article": true;
+  "yahoo-entertainment-category": true;
+  "yahoo-entertainment-home": false;
   "yahoo-finance-calendars": false;
   "yahoo-finance-calendar": true;
   "yahoo-finance-download": true;
@@ -37621,7 +42924,51 @@ export interface OperationRequiredParamsMap {
   "yahoo-finance-ticker-sustainability": true;
   "yahoo-finance-ticker-valuation": true;
   "yahoo-finance-trending": true;
+  "yahoo-health-article": true;
+  "yahoo-health-category": true;
+  "yahoo-health-home": false;
+  "yahoo-life-article": true;
+  "yahoo-life-home": false;
+  "yahoo-news-article": true;
+  "yahoo-news-category": true;
+  "yahoo-news-comments": true;
+  "yahoo-news-comment-replies": true;
+  "yahoo-news-home": false;
+  "yahoo-news-suggest": true;
+  "yahoo-search-images": true;
+  "yahoo-search-local": true;
+  "yahoo-search-news": true;
   "yahoo-search": true;
+  "yahoo-search-suggest": true;
+  "yahoo-search-videos": true;
+  "yahoo-shopping-article": true;
+  "yahoo-shopping-category": true;
+  "yahoo-shopping-home": false;
+  "yahoo-shopping-shopping-list": true;
+  "yahoo-shopping-shopping-lists": false;
+  "yahoo-shopping-store": true;
+  "yahoo-shopping-stores": false;
+  "yahoo-sports-game": true;
+  "yahoo-sports-golf-leaderboard": true;
+  "yahoo-sports-golf-schedule": true;
+  "yahoo-sports-mma-fight-card": false;
+  "yahoo-sports-mma-schedule": false;
+  "yahoo-sports-motorsports-race": true;
+  "yahoo-sports-motorsports-schedule": true;
+  "yahoo-sports-news": true;
+  "yahoo-sports-olympics-medals": false;
+  "yahoo-sports-player": true;
+  "yahoo-sports-scoreboard": true;
+  "yahoo-sports-standings": true;
+  "yahoo-sports-team": true;
+  "yahoo-sports-team-roster": true;
+  "yahoo-sports-team-schedule": true;
+  "yahoo-sports-tennis-rankings": true;
+  "yahoo-sports-tennis-schedule": false;
+  "yahoo-sports-tennis-scoreboard": false;
+  "yahoo-tech-article": true;
+  "yahoo-tech-category": true;
+  "yahoo-tech-home": false;
   "yelp-business": true;
   "yelp-business-menu": true;
   "yelp-business-photos": true;
@@ -37648,6 +42995,17 @@ export interface OperationRequiredParamsMap {
   "zalando-product": true;
   "zalando-search": true;
   "zalando-suggest": true;
+  "zappos-brand": true;
+  "zappos-brands": false;
+  "zappos-product": true;
+  "zappos-search": true;
+  "zappos-suggest": true;
+  "zara-categories": false;
+  "zara-category-products": true;
+  "zara-product": true;
+  "zara-search": true;
+  "zara-stores": true;
+  "zara-suggest": true;
   "zillow-autocomplete": true;
   "zillow-property": true;
   "zillow-search": true;
@@ -37735,6 +43093,7 @@ export type OperationIdLiteral =
   | "billing-me-period-statement"
   | "billing-me-period-statement-download"
   | "billing-me-portal"
+  | "billing-me-rejections"
   | "bing-images"
   | "bing-news"
   | "bing-search"
@@ -37975,6 +43334,10 @@ export type OperationIdLiteral =
   | "duckduckgo-shopping"
   | "duckduckgo-video"
   | "ebay-item"
+  | "ebay-live-streams"
+  | "ebay-live-streams-batch"
+  | "ebay-live-stream"
+  | "ebay-live-stream-items"
   | "ebay-search"
   | "ebay-seller"
   | "ebay-seller-about"
@@ -38092,6 +43455,11 @@ export type OperationIdLiteral =
   | "googleplay-search"
   | "googleplay-similar"
   | "googleplay-suggest"
+  | "hm-categories"
+  | "hm-listing"
+  | "hm-product"
+  | "hm-search"
+  | "hm-stores"
   | "imdb-name"
   | "imdb-name-awards"
   | "imdb-name-credits"
@@ -38196,6 +43564,10 @@ export type OperationIdLiteral =
   | "kalshi-series"
   | "kalshi-series-detail"
   | "kalshi-trades"
+  | "kohls-category"
+  | "kohls-product-reviews"
+  | "kohls-stores"
+  | "kohls-suggest"
   | "letterboxd-film"
   | "letterboxd-film-rating-histogram"
   | "letterboxd-film-reviews"
@@ -38207,6 +43579,14 @@ export type OperationIdLiteral =
   | "linkedin-company"
   | "linkedin-product"
   | "linkedin-showcase"
+  | "lululemon-categories"
+  | "lululemon-category"
+  | "lululemon-outfit"
+  | "lululemon-product"
+  | "lululemon-stores"
+  | "macys-product-reviews"
+  | "macys-product"
+  | "macys-suggest"
   | "manga-rankings"
   | "manga-search"
   | "manga-title"
@@ -38251,6 +43631,12 @@ export type OperationIdLiteral =
   | "mlb-team-stats"
   | "mlb-teams"
   | "mlb-transactions"
+  | "nike-categories"
+  | "nike-product"
+  | "nike-product-reviews"
+  | "nike-search"
+  | "nike-stores"
+  | "nike-suggest"
   | "numbeo-cost-of-living-city"
   | "numbeo-cost-of-living-country"
   | "numbeo-cost-of-living-rankings"
@@ -38259,6 +43645,13 @@ export type OperationIdLiteral =
   | "numbeo-indices-country"
   | "numbeo-indices-rankings"
   | "numbeo-indices-rankings-by-country"
+  | "oldnavy-categories"
+  | "oldnavy-category"
+  | "oldnavy-product"
+  | "oldnavy-product-availability"
+  | "oldnavy-product-reviews"
+  | "oldnavy-search"
+  | "oldnavy-stores"
   | "opentable-restaurant"
   | "opentable-restaurant-menus"
   | "opentable-restaurant-reviews"
@@ -38398,6 +43791,11 @@ export type OperationIdLiteral =
   | "rottentomatoes-search"
   | "rottentomatoes-season"
   | "rottentomatoes-series"
+  | "samsclub-category"
+  | "samsclub-content"
+  | "samsclub-departments"
+  | "samsclub-product"
+  | "samsclub-product-related"
   | "sec-company-intelligence"
   | "sec-company-search"
   | "sec-company-submissions"
@@ -38452,6 +43850,11 @@ export type OperationIdLiteral =
   | "sofascore-team-events"
   | "sofascore-team-players"
   | "sofascore-tournament-seasons"
+  | "soundcloud-playlist"
+  | "soundcloud-profile"
+  | "soundcloud-search"
+  | "soundcloud-track"
+  | "soundcloud-user-tracks"
   | "spotify-podcasts-categories"
   | "spotify-podcasts-charts"
   | "spotify-podcasts-episode"
@@ -38599,11 +44002,28 @@ export type OperationIdLiteral =
   | "trustpilot-categories"
   | "trustpilot-category-search"
   | "trustpilot-category"
+  | "twitch-channel"
+  | "twitch-clips"
+  | "twitch-schedule"
+  | "twitch-search"
+  | "twitch-streams"
+  | "twitch-team"
+  | "twitch-top-games"
+  | "twitch-videos"
+  | "twitch-vod-comments"
   | "ubereats-feed"
   | "ubereats-search"
   | "ubereats-store"
   | "ubereats-store-menu"
   | "ubereats-store-reviews"
+  | "ulta-categories"
+  | "ulta-category"
+  | "ulta-product-questions"
+  | "ulta-product-reviews"
+  | "ulta-product"
+  | "ulta-search"
+  | "ulta-stores"
+  | "ulta-suggest"
   | "upwork-freelancer"
   | "upwork-job"
   | "upwork-search"
@@ -38615,6 +44035,9 @@ export type OperationIdLiteral =
   | "user-me-api-keys"
   | "user-me-api-keys-rotate"
   | "user-me-api-keys-reveal"
+  | "account-deletion-cancel"
+  | "account-deletion-my-request"
+  | "account-deletion-request"
   | "vinted-brand"
   | "vinted-brands"
   | "vinted-catalog"
@@ -38625,14 +44048,29 @@ export type OperationIdLiteral =
   | "walmart-product"
   | "walmart-product-reviews"
   | "walmart-search"
+  | "wayfair-categories"
+  | "wayfair-category"
+  | "wayfair-product"
   | "web-scrape"
   | "web-techstack"
   | "whatnot-browse"
   | "whatnot-categories"
   | "whatnot-live"
+  | "wish-categories"
+  | "wish-product"
+  | "wish-product-related"
+  | "wish-product-reviews"
+  | "wish-search"
+  | "wish-suggest"
   | "x-post"
   | "x-profile"
   | "x-profile-posts"
+  | "yahoo-autos-article"
+  | "yahoo-autos-category"
+  | "yahoo-autos-home"
+  | "yahoo-entertainment-article"
+  | "yahoo-entertainment-category"
+  | "yahoo-entertainment-home"
   | "yahoo-finance-calendars"
   | "yahoo-finance-calendar"
   | "yahoo-finance-download"
@@ -38672,7 +44110,51 @@ export type OperationIdLiteral =
   | "yahoo-finance-ticker-sustainability"
   | "yahoo-finance-ticker-valuation"
   | "yahoo-finance-trending"
+  | "yahoo-health-article"
+  | "yahoo-health-category"
+  | "yahoo-health-home"
+  | "yahoo-life-article"
+  | "yahoo-life-home"
+  | "yahoo-news-article"
+  | "yahoo-news-category"
+  | "yahoo-news-comments"
+  | "yahoo-news-comment-replies"
+  | "yahoo-news-home"
+  | "yahoo-news-suggest"
+  | "yahoo-search-images"
+  | "yahoo-search-local"
+  | "yahoo-search-news"
   | "yahoo-search"
+  | "yahoo-search-suggest"
+  | "yahoo-search-videos"
+  | "yahoo-shopping-article"
+  | "yahoo-shopping-category"
+  | "yahoo-shopping-home"
+  | "yahoo-shopping-shopping-list"
+  | "yahoo-shopping-shopping-lists"
+  | "yahoo-shopping-store"
+  | "yahoo-shopping-stores"
+  | "yahoo-sports-game"
+  | "yahoo-sports-golf-leaderboard"
+  | "yahoo-sports-golf-schedule"
+  | "yahoo-sports-mma-fight-card"
+  | "yahoo-sports-mma-schedule"
+  | "yahoo-sports-motorsports-race"
+  | "yahoo-sports-motorsports-schedule"
+  | "yahoo-sports-news"
+  | "yahoo-sports-olympics-medals"
+  | "yahoo-sports-player"
+  | "yahoo-sports-scoreboard"
+  | "yahoo-sports-standings"
+  | "yahoo-sports-team"
+  | "yahoo-sports-team-roster"
+  | "yahoo-sports-team-schedule"
+  | "yahoo-sports-tennis-rankings"
+  | "yahoo-sports-tennis-schedule"
+  | "yahoo-sports-tennis-scoreboard"
+  | "yahoo-tech-article"
+  | "yahoo-tech-category"
+  | "yahoo-tech-home"
   | "yelp-business"
   | "yelp-business-menu"
   | "yelp-business-photos"
@@ -38699,11 +44181,25 @@ export type OperationIdLiteral =
   | "zalando-product"
   | "zalando-search"
   | "zalando-suggest"
+  | "zappos-brand"
+  | "zappos-brands"
+  | "zappos-product"
+  | "zappos-search"
+  | "zappos-suggest"
+  | "zara-categories"
+  | "zara-category-products"
+  | "zara-product"
+  | "zara-search"
+  | "zara-stores"
+  | "zara-suggest"
   | "zillow-autocomplete"
   | "zillow-property"
   | "zillow-search";
 
 export declare const OperationIds: Readonly<{
+  AccountDeletionCancel: "account-deletion-cancel";
+  AccountDeletionMyRequest: "account-deletion-my-request";
+  AccountDeletionRequest: "account-deletion-request";
   AgodaActivitiesSearch: "agoda-activities-search";
   AgodaActivityDetail: "agoda-activity-detail";
   AgodaFlightsItineraryAmenities: "agoda-flights-itinerary-amenities";
@@ -38778,6 +44274,7 @@ export declare const OperationIds: Readonly<{
   BillingMePeriodStatementDownload: "billing-me-period-statement-download";
   BillingMePeriods: "billing-me-periods";
   BillingMePortal: "billing-me-portal";
+  BillingMeRejections: "billing-me-rejections";
   BingImages: "bing-images";
   BingNews: "bing-news";
   BingSearch: "bing-search";
@@ -39016,6 +44513,10 @@ export declare const OperationIds: Readonly<{
   DuckDuckGoSearchDuckduckgoShopping: "duckduckgo-shopping";
   DuckDuckGoSearchDuckduckgoVideo: "duckduckgo-video";
   EBayEbayItem: "ebay-item";
+  EBayEbayLiveStream: "ebay-live-stream";
+  EBayEbayLiveStreamItems: "ebay-live-stream-items";
+  EBayEbayLiveStreams: "ebay-live-streams";
+  EBayEbayLiveStreamsBatch: "ebay-live-streams-batch";
   EBayEbaySearch: "ebay-search";
   EBayEbaySeller: "ebay-seller";
   EBayEbaySellerAbout: "ebay-seller-about";
@@ -39132,6 +44633,11 @@ export declare const OperationIds: Readonly<{
   GoogleTrendsTrending: "google-trends-trending";
   GoogleTrendsTrendingDetail: "google-trends-trending-detail";
   GoogleVideos: "google-videos";
+  HMHmCategories: "hm-categories";
+  HMHmListing: "hm-listing";
+  HMHmProduct: "hm-product";
+  HMHmSearch: "hm-search";
+  HMHmStores: "hm-stores";
   ImdbName: "imdb-name";
   ImdbNameAwards: "imdb-name-awards";
   ImdbNameCredits: "imdb-name-credits";
@@ -39236,6 +44742,10 @@ export declare const OperationIds: Readonly<{
   KalshiSeries: "kalshi-series";
   KalshiSeriesDetail: "kalshi-series-detail";
   KalshiTrades: "kalshi-trades";
+  KohlSKohlsCategory: "kohls-category";
+  KohlSKohlsProductReviews: "kohls-product-reviews";
+  KohlSKohlsStores: "kohls-stores";
+  KohlSKohlsSuggest: "kohls-suggest";
   LetterboxdFilm: "letterboxd-film";
   LetterboxdFilmRatingHistogram: "letterboxd-film-rating-histogram";
   LetterboxdFilmReviews: "letterboxd-film-reviews";
@@ -39247,6 +44757,14 @@ export declare const OperationIds: Readonly<{
   LinkedInLinkedinCompany: "linkedin-company";
   LinkedInLinkedinProduct: "linkedin-product";
   LinkedInLinkedinShowcase: "linkedin-showcase";
+  LululemonCategories: "lululemon-categories";
+  LululemonCategory: "lululemon-category";
+  LululemonOutfit: "lululemon-outfit";
+  LululemonProduct: "lululemon-product";
+  LululemonStores: "lululemon-stores";
+  MacySMacysProduct: "macys-product";
+  MacySMacysProductReviews: "macys-product-reviews";
+  MacySMacysSuggest: "macys-suggest";
   MangaRankings: "manga-rankings";
   MangaSearch: "manga-search";
   MangaTitle: "manga-title";
@@ -39293,6 +44811,12 @@ export declare const OperationIds: Readonly<{
   MlbTeamStats: "mlb-team-stats";
   MlbTeams: "mlb-teams";
   MlbTransactions: "mlb-transactions";
+  NikeCategories: "nike-categories";
+  NikeProduct: "nike-product";
+  NikeProductReviews: "nike-product-reviews";
+  NikeSearch: "nike-search";
+  NikeStores: "nike-stores";
+  NikeSuggest: "nike-suggest";
   NumbeoCostOfLivingCity: "numbeo-cost-of-living-city";
   NumbeoCostOfLivingCountry: "numbeo-cost-of-living-country";
   NumbeoCostOfLivingRankings: "numbeo-cost-of-living-rankings";
@@ -39301,6 +44825,13 @@ export declare const OperationIds: Readonly<{
   NumbeoIndicesCountry: "numbeo-indices-country";
   NumbeoIndicesRankings: "numbeo-indices-rankings";
   NumbeoIndicesRankingsByCountry: "numbeo-indices-rankings-by-country";
+  OldNavyOldnavyCategories: "oldnavy-categories";
+  OldNavyOldnavyCategory: "oldnavy-category";
+  OldNavyOldnavyProduct: "oldnavy-product";
+  OldNavyOldnavyProductAvailability: "oldnavy-product-availability";
+  OldNavyOldnavyProductReviews: "oldnavy-product-reviews";
+  OldNavyOldnavySearch: "oldnavy-search";
+  OldNavyOldnavyStores: "oldnavy-stores";
   OpenTableOpentableRestaurant: "opentable-restaurant";
   OpenTableOpentableRestaurantMenus: "opentable-restaurant-menus";
   OpenTableOpentableRestaurantReviews: "opentable-restaurant-reviews";
@@ -39438,6 +44969,11 @@ export declare const OperationIds: Readonly<{
   RottenTomatoesRottentomatoesSearch: "rottentomatoes-search";
   RottenTomatoesRottentomatoesSeason: "rottentomatoes-season";
   RottenTomatoesRottentomatoesSeries: "rottentomatoes-series";
+  SamSclubSamsclubCategory: "samsclub-category";
+  SamSclubSamsclubContent: "samsclub-content";
+  SamSclubSamsclubDepartments: "samsclub-departments";
+  SamSclubSamsclubProduct: "samsclub-product";
+  SamSclubSamsclubProductRelated: "samsclub-product-related";
   SecEdgarSecCompanyIntelligence: "sec-company-intelligence";
   SecEdgarSecCompanySearch: "sec-company-search";
   SecEdgarSecCompanySubmissions: "sec-company-submissions";
@@ -39492,6 +45028,11 @@ export declare const OperationIds: Readonly<{
   SofaScoreSofascoreTeamEvents: "sofascore-team-events";
   SofaScoreSofascoreTeamPlayers: "sofascore-team-players";
   SofaScoreSofascoreTournamentSeasons: "sofascore-tournament-seasons";
+  SoundCloudSoundcloudPlaylist: "soundcloud-playlist";
+  SoundCloudSoundcloudProfile: "soundcloud-profile";
+  SoundCloudSoundcloudSearch: "soundcloud-search";
+  SoundCloudSoundcloudTrack: "soundcloud-track";
+  SoundCloudSoundcloudUserTracks: "soundcloud-user-tracks";
   SpotifyAlbum: "spotify-album";
   SpotifyAlbumTracks: "spotify-album-tracks";
   SpotifyAlbumsSearch: "spotify-albums-search";
@@ -39639,11 +45180,28 @@ export declare const OperationIds: Readonly<{
   TrustpilotCategories: "trustpilot-categories";
   TrustpilotCategory: "trustpilot-category";
   TrustpilotCategorySearch: "trustpilot-category-search";
+  TwitchChannel: "twitch-channel";
+  TwitchClips: "twitch-clips";
+  TwitchSchedule: "twitch-schedule";
+  TwitchSearch: "twitch-search";
+  TwitchStreams: "twitch-streams";
+  TwitchTeam: "twitch-team";
+  TwitchTopGames: "twitch-top-games";
+  TwitchVideos: "twitch-videos";
+  TwitchVodComments: "twitch-vod-comments";
   UberEatsUbereatsFeed: "ubereats-feed";
   UberEatsUbereatsSearch: "ubereats-search";
   UberEatsUbereatsStore: "ubereats-store";
   UberEatsUbereatsStoreMenu: "ubereats-store-menu";
   UberEatsUbereatsStoreReviews: "ubereats-store-reviews";
+  UltaBeautyUltaCategories: "ulta-categories";
+  UltaBeautyUltaCategory: "ulta-category";
+  UltaBeautyUltaProduct: "ulta-product";
+  UltaBeautyUltaProductQuestions: "ulta-product-questions";
+  UltaBeautyUltaProductReviews: "ulta-product-reviews";
+  UltaBeautyUltaSearch: "ulta-search";
+  UltaBeautyUltaStores: "ulta-stores";
+  UltaBeautyUltaSuggest: "ulta-suggest";
   UpworkFreelancer: "upwork-freelancer";
   UpworkJob: "upwork-job";
   UpworkSearch: "upwork-search";
@@ -39665,6 +45223,9 @@ export declare const OperationIds: Readonly<{
   WalmartProduct: "walmart-product";
   WalmartProductReviews: "walmart-product-reviews";
   WalmartSearch: "walmart-search";
+  WayfairCategories: "wayfair-categories";
+  WayfairCategory: "wayfair-category";
+  WayfairProduct: "wayfair-product";
   WebAntibotCheck: "antibot-check";
   WebContact: "contact";
   WebExtract: "extract";
@@ -39673,9 +45234,21 @@ export declare const OperationIds: Readonly<{
   WhatnotBrowse: "whatnot-browse";
   WhatnotCategories: "whatnot-categories";
   WhatnotLive: "whatnot-live";
+  WishCategories: "wish-categories";
+  WishProduct: "wish-product";
+  WishProductRelated: "wish-product-related";
+  WishProductReviews: "wish-product-reviews";
+  WishSearch: "wish-search";
+  WishSuggest: "wish-suggest";
   XPost: "x-post";
   XProfile: "x-profile";
   XProfilePosts: "x-profile-posts";
+  YahooAutosArticle: "yahoo-autos-article";
+  YahooAutosCategory: "yahoo-autos-category";
+  YahooAutosHome: "yahoo-autos-home";
+  YahooEntertainmentArticle: "yahoo-entertainment-article";
+  YahooEntertainmentCategory: "yahoo-entertainment-category";
+  YahooEntertainmentHome: "yahoo-entertainment-home";
   YahooFinanceCalendar: "yahoo-finance-calendar";
   YahooFinanceCalendars: "yahoo-finance-calendars";
   YahooFinanceDownload: "yahoo-finance-download";
@@ -39715,7 +45288,51 @@ export declare const OperationIds: Readonly<{
   YahooFinanceTickerSustainability: "yahoo-finance-ticker-sustainability";
   YahooFinanceTickerValuation: "yahoo-finance-ticker-valuation";
   YahooFinanceTrending: "yahoo-finance-trending";
+  YahooHealthArticle: "yahoo-health-article";
+  YahooHealthCategory: "yahoo-health-category";
+  YahooHealthHome: "yahoo-health-home";
+  YahooLifeArticle: "yahoo-life-article";
+  YahooLifeHome: "yahoo-life-home";
+  YahooNewsArticle: "yahoo-news-article";
+  YahooNewsCategory: "yahoo-news-category";
+  YahooNewsCommentReplies: "yahoo-news-comment-replies";
+  YahooNewsComments: "yahoo-news-comments";
+  YahooNewsHome: "yahoo-news-home";
+  YahooNewsSuggest: "yahoo-news-suggest";
   YahooSearchCall: "yahoo-search";
+  YahooSearchImages: "yahoo-search-images";
+  YahooSearchLocal: "yahoo-search-local";
+  YahooSearchNews: "yahoo-search-news";
+  YahooSearchSuggest: "yahoo-search-suggest";
+  YahooSearchVideos: "yahoo-search-videos";
+  YahooShoppingArticle: "yahoo-shopping-article";
+  YahooShoppingCategory: "yahoo-shopping-category";
+  YahooShoppingHome: "yahoo-shopping-home";
+  YahooShoppingShoppingList: "yahoo-shopping-shopping-list";
+  YahooShoppingShoppingLists: "yahoo-shopping-shopping-lists";
+  YahooShoppingStore: "yahoo-shopping-store";
+  YahooShoppingStores: "yahoo-shopping-stores";
+  YahooSportsGame: "yahoo-sports-game";
+  YahooSportsGolfLeaderboard: "yahoo-sports-golf-leaderboard";
+  YahooSportsGolfSchedule: "yahoo-sports-golf-schedule";
+  YahooSportsMmaFightCard: "yahoo-sports-mma-fight-card";
+  YahooSportsMmaSchedule: "yahoo-sports-mma-schedule";
+  YahooSportsMotorsportsRace: "yahoo-sports-motorsports-race";
+  YahooSportsMotorsportsSchedule: "yahoo-sports-motorsports-schedule";
+  YahooSportsNews: "yahoo-sports-news";
+  YahooSportsOlympicsMedals: "yahoo-sports-olympics-medals";
+  YahooSportsPlayer: "yahoo-sports-player";
+  YahooSportsScoreboard: "yahoo-sports-scoreboard";
+  YahooSportsStandings: "yahoo-sports-standings";
+  YahooSportsTeam: "yahoo-sports-team";
+  YahooSportsTeamRoster: "yahoo-sports-team-roster";
+  YahooSportsTeamSchedule: "yahoo-sports-team-schedule";
+  YahooSportsTennisRankings: "yahoo-sports-tennis-rankings";
+  YahooSportsTennisSchedule: "yahoo-sports-tennis-schedule";
+  YahooSportsTennisScoreboard: "yahoo-sports-tennis-scoreboard";
+  YahooTechArticle: "yahoo-tech-article";
+  YahooTechCategory: "yahoo-tech-category";
+  YahooTechHome: "yahoo-tech-home";
   YelpBusiness: "yelp-business";
   YelpBusinessMenu: "yelp-business-menu";
   YelpBusinessPhotos: "yelp-business-photos";
@@ -39742,6 +45359,17 @@ export declare const OperationIds: Readonly<{
   ZalandoProduct: "zalando-product";
   ZalandoSearch: "zalando-search";
   ZalandoSuggest: "zalando-suggest";
+  ZapposBrand: "zappos-brand";
+  ZapposBrands: "zappos-brands";
+  ZapposProduct: "zappos-product";
+  ZapposSearch: "zappos-search";
+  ZapposSuggest: "zappos-suggest";
+  ZaraCategories: "zara-categories";
+  ZaraCategoryProducts: "zara-category-products";
+  ZaraProduct: "zara-product";
+  ZaraSearch: "zara-search";
+  ZaraStores: "zara-stores";
+  ZaraSuggest: "zara-suggest";
   ZillowAutocomplete: "zillow-autocomplete";
   ZillowProperty: "zillow-property";
   ZillowSearch: "zillow-search";

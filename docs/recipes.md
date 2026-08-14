@@ -303,3 +303,11 @@ const results = await crawlora.request("etsy-search", { q: "handmade mug" });
 const listing = await crawlora.request("etsy-listing", { id: "4474501681" });
 const shop = await crawlora.request("etsy-shop", { id: "gaguatelier" });
 ```
+
+## Twitch And SoundCloud
+
+```js
+const channel = await crawlora.request("twitch-channel", { login: "caedrel" });
+const streams = await crawlora.request("twitch-streams", { game: "league-of-legends", limit: 20 });
+const track = await crawlora.request("soundcloud-track", { url: "https://soundcloud.com/artist/track-name" });
+```
