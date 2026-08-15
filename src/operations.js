@@ -2640,6 +2640,84 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "bestbuy-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-category",
+    "method": "GET",
+    "path": "/bestbuy/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bestbuy-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-product",
+    "method": "GET",
+    "path": "/bestbuy/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "sku",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bestbuy-product-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-product-reviews",
+    "method": "GET",
+    "path": "/bestbuy/product/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "sku",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "billing-me": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -16376,6 +16454,38 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "depop-item-similar": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "depop-item-similar",
+    "method": "GET",
+    "path": "/depop/item/{slug}/similar",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "after",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "depop-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -16441,6 +16551,11 @@ export const operations = {
         "in": "query",
         "name": "gender",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_kids",
+        "type": "boolean"
       },
       {
         "in": "query",
@@ -17167,6 +17282,122 @@ export const operations = {
         "name": "longitude",
         "required": true,
         "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-event": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-event",
+    "method": "GET",
+    "path": "/draftkings/event",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-event-markets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-event-markets",
+    "method": "GET",
+    "path": "/draftkings/event-markets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subcategory_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-futures": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-futures",
+    "method": "GET",
+    "path": "/draftkings/futures",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "league_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subcategory_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-odds": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-odds",
+    "method": "GET",
+    "path": "/draftkings/odds",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "league_id",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -21195,6 +21426,215 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "googlepatents-coverage": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "googlepatents-coverage",
+    "method": "GET",
+    "path": "/googlepatents/coverage",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "googlepatents-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "googlepatents-detail",
+    "method": "GET",
+    "path": "/googlepatents/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "number",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "googlepatents-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "googlepatents-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/googlepatents/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "inventor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "assignee",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "GRANT",
+          "APPLICATION"
+        ],
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "PATENT",
+          "DESIGN"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ENGLISH",
+          "GERMAN",
+          "CHINESE",
+          "FRENCH",
+          "SPANISH",
+          "ARABIC",
+          "JAPANESE",
+          "KOREAN",
+          "PORTUGUESE",
+          "RUSSIAN",
+          "ITALIAN",
+          "DUTCH",
+          "SWEDISH",
+          "FINNISH",
+          "NORWEGIAN",
+          "DANISH"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "priority",
+          "filing",
+          "publication"
+        ],
+        "in": "query",
+        "name": "date_field",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "after",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "new",
+          "old"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "num",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "googlepatents-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "googlepatents-suggest",
+    "method": "GET",
+    "path": "/googlepatents/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "inventor",
+          "assignee"
+        ],
+        "in": "query",
+        "name": "field",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "value",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "googleplay-app": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -21788,6 +22228,27 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "hm-product-related": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "hm-product-related",
+    "method": "GET",
+    "path": "/hm/product/{product_id}/related",
+    "pathParams": [
+      "product_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "hm-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -21819,6 +22280,31 @@ export const operations = {
         "in": "query",
         "name": "page_size",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "hm-search-suggestions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "hm-search-suggestions",
+    "method": "GET",
+    "path": "/hm/search/suggestions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
       }
     ],
     "security": [
@@ -47328,6 +47814,11 @@ export const groups = {
     "search": "autotrader-search",
     "vehicle": "autotrader-vehicle"
   },
+  "bestBuy": {
+    "bestbuyCategory": "bestbuy-category",
+    "bestbuyProduct": "bestbuy-product",
+    "bestbuyProductReviews": "bestbuy-product-reviews"
+  },
   "billing": {
     "me": "billing-me",
     "meCheckout": "billing-me-checkout",
@@ -47579,6 +48070,7 @@ export const groups = {
   "depop": {
     "categories": "depop-categories",
     "item": "depop-item",
+    "itemSimilar": "depop-item-similar",
     "search": "depop-search",
     "shop": "depop-shop"
   },
@@ -47604,6 +48096,12 @@ export const groups = {
     "doordashStoreItem": "doordash-store-item",
     "doordashStoreMenu": "doordash-store-menu",
     "doordashStoreReviews": "doordash-store-reviews"
+  },
+  "draftKings": {
+    "draftkingsEvent": "draftkings-event",
+    "draftkingsEventMarkets": "draftkings-event-markets",
+    "draftkingsFutures": "draftkings-futures",
+    "draftkingsOdds": "draftkings-odds"
   },
   "duckDuckGoSearch": {
     "duckduckgoImage": "duckduckgo-image",
@@ -47744,6 +48242,12 @@ export const groups = {
     "job": "google-jobs-job",
     "search": "google-jobs-search"
   },
+  "googlePatents": {
+    "googlepatentsCoverage": "googlepatents-coverage",
+    "googlepatentsDetail": "googlepatents-detail",
+    "googlepatentsSearch": "googlepatents-search",
+    "googlepatentsSuggest": "googlepatents-suggest"
+  },
   "googlePlay": {
     "app": "googleplay-app",
     "categories": "googleplay-categories",
@@ -47761,7 +48265,9 @@ export const groups = {
     "hmCategories": "hm-categories",
     "hmListing": "hm-listing",
     "hmProduct": "hm-product",
+    "hmProductRelated": "hm-product-related",
     "hmSearch": "hm-search",
+    "hmSearchSuggestions": "hm-search-suggestions",
     "hmStores": "hm-stores"
   },
   "imdb": {
@@ -48671,7 +49177,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 1176;
+export const operationCount = 1190;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -48745,6 +49251,9 @@ export const OperationIds = Object.freeze({
   "AutotraderDealer": "autotrader-dealer",
   "AutotraderSearch": "autotrader-search",
   "AutotraderVehicle": "autotrader-vehicle",
+  "BestBuyBestbuyCategory": "bestbuy-category",
+  "BestBuyBestbuyProduct": "bestbuy-product",
+  "BestBuyBestbuyProductReviews": "bestbuy-product-reviews",
   "BillingMe": "billing-me",
   "BillingMeCheckout": "billing-me-checkout",
   "BillingMeEvents": "billing-me-events",
@@ -48965,6 +49474,7 @@ export const OperationIds = Object.freeze({
   "DatasetsXUsersSearch": "datasets-x-users-search",
   "DepopCategories": "depop-categories",
   "DepopItem": "depop-item",
+  "DepopItemSimilar": "depop-item-similar",
   "DepopSearch": "depop-search",
   "DepopShop": "depop-shop",
   "DiscogsArtist": "discogs-artist",
@@ -48986,6 +49496,10 @@ export const OperationIds = Object.freeze({
   "DoorDashDoordashStoreItem": "doordash-store-item",
   "DoorDashDoordashStoreMenu": "doordash-store-menu",
   "DoorDashDoordashStoreReviews": "doordash-store-reviews",
+  "DraftKingsDraftkingsEvent": "draftkings-event",
+  "DraftKingsDraftkingsEventMarkets": "draftkings-event-markets",
+  "DraftKingsDraftkingsFutures": "draftkings-futures",
+  "DraftKingsDraftkingsOdds": "draftkings-odds",
   "DuckDuckGoSearchDuckduckgoImage": "duckduckgo-image",
   "DuckDuckGoSearchDuckduckgoNews": "duckduckgo-news",
   "DuckDuckGoSearchDuckduckgoSearch": "duckduckgo-search",
@@ -49087,6 +49601,10 @@ export const OperationIds = Object.freeze({
   "GoogleMapPlaceReviews": "google-map-place-reviews",
   "GoogleMapSearch": "google-map-search",
   "GoogleNews": "google-news",
+  "GooglePatentsGooglepatentsCoverage": "googlepatents-coverage",
+  "GooglePatentsGooglepatentsDetail": "googlepatents-detail",
+  "GooglePatentsGooglepatentsSearch": "googlepatents-search",
+  "GooglePatentsGooglepatentsSuggest": "googlepatents-suggest",
   "GooglePlayApp": "googleplay-app",
   "GooglePlayCategories": "googleplay-categories",
   "GooglePlayDatasafety": "googleplay-datasafety",
@@ -49115,7 +49633,9 @@ export const OperationIds = Object.freeze({
   "HMHmCategories": "hm-categories",
   "HMHmListing": "hm-listing",
   "HMHmProduct": "hm-product",
+  "HMHmProductRelated": "hm-product-related",
   "HMHmSearch": "hm-search",
+  "HMHmSearchSuggestions": "hm-search-suggestions",
   "HMHmStores": "hm-stores",
   "ImdbName": "imdb-name",
   "ImdbNameAwards": "imdb-name-awards",

@@ -1675,6 +1675,95 @@ export interface ModelAutotraderSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelBestbuyBreadcrumb {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelBestbuyCategoryProduct {
+  "image_url"?: string;
+  "price"?: number;
+  "rating"?: number;
+  "review_count"?: number;
+  "sku"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBestbuyCategoryResponse {
+  "category_id"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "products"?: Array<ModelBestbuyCategoryProduct>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelBestbuyProduct {
+  "availability"?: string;
+  "brand"?: string;
+  "breadcrumbs"?: Array<ModelBestbuyBreadcrumb>;
+  "color"?: string;
+  "condition"?: string;
+  "currency_code"?: string;
+  "description"?: string;
+  "images"?: Array<string>;
+  "model"?: string;
+  "name"?: string;
+  "price"?: number;
+  "product_id"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "sku"?: string;
+  "url"?: string;
+}
+
+export interface ModelBestbuyProductResponse {
+  "fetched_at"?: string;
+  "product"?: ModelBestbuyProduct;
+  "source_url"?: string;
+}
+
+export interface ModelBestbuyProductReviewsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "rating"?: number;
+  "review_count"?: number;
+  "reviews"?: Array<ModelBestbuyReview>;
+  "sku"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelBestbuyReview {
+  "author"?: string;
+  "helpful"?: number;
+  "posted"?: string;
+  "rating"?: number;
+  "recommended"?: boolean;
+  "tags"?: Array<string>;
+  "text"?: string;
+  "title"?: string;
+  "unhelpful"?: number;
+}
+
+export interface ModelBestbuyCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBestbuyCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelBestbuyProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelBestbuyProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelBestbuyProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBestbuyProductReviewsResponse;
+  "msg"?: string;
+}
+
 export interface ModelBillingBillingEndpointLedgerDoc {
   "charged_requests"?: number;
   "credits"?: number;
@@ -6470,6 +6559,7 @@ export interface ModelDepopItemSummary {
   "currency"?: string;
   "description"?: string;
   "id"?: string;
+  "like_count"?: number;
   "location"?: string;
   "photos"?: Array<string>;
   "price_cents"?: number;
@@ -6520,6 +6610,12 @@ export interface ModelDepopShopResponse {
   "verified"?: boolean;
 }
 
+export interface ModelDepopSimilarItemsResponse {
+  "has_more"?: boolean;
+  "items"?: Array<ModelDepopItemSummary>;
+  "next_cursor"?: string;
+}
+
 export interface ModelDepopSubcategory {
   "name"?: string;
   "slug"?: string;
@@ -6540,6 +6636,12 @@ export interface ModelDepopSearchResponseDoc {
 export interface ModelDepopShopResponseDoc {
   "code"?: number;
   "data"?: ModelDepopShopResponse;
+  "msg"?: string;
+}
+
+export interface ModelDepopSimilarItemsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDepopSimilarItemsResponse;
   "msg"?: string;
 }
 
@@ -7098,6 +7200,105 @@ export interface ModelDoordashStoreResponseDoc {
 export interface ModelDoordashStoreReviewsResponseDoc {
   "code"?: number;
   "data"?: ModelDoordashStoreReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelDraftkingsEvent {
+  "id"?: string;
+  "markets"?: Array<ModelDraftkingsMarket>;
+  "name"?: string;
+  "participants"?: Array<ModelDraftkingsParticipant>;
+  "start_time"?: string;
+  "status"?: string;
+}
+
+export interface ModelDraftkingsEventMarketsResponse {
+  "count"?: number;
+  "event_id"?: string;
+  "fetched_at"?: string;
+  "markets"?: Array<ModelDraftkingsMarket>;
+  "source_url"?: string;
+  "subcategory_id"?: string;
+}
+
+export interface ModelDraftkingsEventResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "name"?: string;
+  "participants"?: Array<ModelDraftkingsParticipant>;
+  "source_url"?: string;
+  "start_time"?: string;
+  "status"?: string;
+}
+
+export interface ModelDraftkingsFuturesResponse {
+  "count"?: number;
+  "events"?: Array<ModelDraftkingsEvent>;
+  "fetched_at"?: string;
+  "league"?: string;
+  "league_id"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+  "subcategory_id"?: string;
+}
+
+export interface ModelDraftkingsMarket {
+  "id"?: string;
+  "selections"?: Array<ModelDraftkingsSelection>;
+  "subcategory_id"?: string;
+  "type"?: string;
+}
+
+export interface ModelDraftkingsOdds {
+  "american"?: string;
+  "decimal"?: string;
+  "fractional"?: string;
+}
+
+export interface ModelDraftkingsOddsResponse {
+  "count"?: number;
+  "events"?: Array<ModelDraftkingsEvent>;
+  "fetched_at"?: string;
+  "league"?: string;
+  "league_id"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelDraftkingsParticipant {
+  "id"?: string;
+  "name"?: string;
+  "role"?: string;
+}
+
+export interface ModelDraftkingsSelection {
+  "label"?: string;
+  "odds"?: ModelDraftkingsOdds;
+  "outcome_type"?: string;
+  "points"?: number;
+}
+
+export interface ModelDraftkingsEventMarketsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDraftkingsEventMarketsResponse;
+  "msg"?: string;
+}
+
+export interface ModelDraftkingsEventResponseDoc {
+  "code"?: number;
+  "data"?: ModelDraftkingsEventResponse;
+  "msg"?: string;
+}
+
+export interface ModelDraftkingsFuturesResponseDoc {
+  "code"?: number;
+  "data"?: ModelDraftkingsFuturesResponse;
+  "msg"?: string;
+}
+
+export interface ModelDraftkingsOddsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDraftkingsOddsResponse;
   "msg"?: string;
 }
 
@@ -10939,6 +11140,157 @@ export interface ModelGooglejobsSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelGooglepatentsCitedPatent {
+  "assignee"?: string;
+  "priority_date"?: string;
+  "publication_date"?: string;
+  "publication_number"?: string;
+  "title"?: string;
+}
+
+export interface ModelGooglepatentsClassification {
+  "code"?: string;
+  "description"?: string;
+  "is_cpc"?: boolean;
+}
+
+export interface ModelGooglepatentsCountryStatus {
+  "country_code"?: string;
+  "state"?: string;
+}
+
+export interface ModelGooglepatentsCoverageCountry {
+  "country_code"?: string;
+  "years"?: Array<ModelGooglepatentsCoverageYear>;
+}
+
+export interface ModelGooglepatentsCoverageResponse {
+  "countries"?: Array<ModelGooglepatentsCoverageCountry>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelGooglepatentsCoverageYear {
+  "applications"?: string;
+  "grants"?: string;
+  "year"?: number;
+}
+
+export interface ModelGooglepatentsDetailResponse {
+  "abstract"?: string;
+  "application_number"?: string;
+  "citations"?: Array<ModelGooglepatentsCitedPatent>;
+  "cited_by"?: Array<ModelGooglepatentsCitedPatent>;
+  "claims"?: Array<string>;
+  "claims_count"?: number;
+  "classifications"?: Array<ModelGooglepatentsClassification>;
+  "country_code"?: string;
+  "country_name"?: string;
+  "current_assignees"?: Array<string>;
+  "description"?: Array<string>;
+  "expiration_date"?: string;
+  "family_members"?: Array<ModelGooglepatentsFamilyMember>;
+  "fetched_at"?: string;
+  "filing_date"?: string;
+  "inventors"?: Array<string>;
+  "kind_code"?: string;
+  "legal_status"?: string;
+  "original_assignees"?: Array<string>;
+  "pdf_url"?: string;
+  "prior_art_keywords"?: Array<string>;
+  "priority_date"?: string;
+  "publication_date"?: string;
+  "publication_number"?: string;
+  "similar_documents"?: Array<ModelGooglepatentsSimilarDocument>;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelGooglepatentsFacetEntry {
+  "key"?: string;
+  "value"?: number;
+}
+
+export interface ModelGooglepatentsFamilyMember {
+  "publication_date"?: string;
+  "publication_number"?: string;
+}
+
+export interface ModelGooglepatentsSearchResponse {
+  "fetched_at"?: string;
+  "many_results"?: boolean;
+  "page"?: number;
+  "query"?: string;
+  "results"?: Array<ModelGooglepatentsSearchResult>;
+  "source_url"?: string;
+  "top_assignees"?: Array<ModelGooglepatentsFacetEntry>;
+  "top_classifications"?: Array<ModelGooglepatentsFacetEntry>;
+  "top_inventors"?: Array<ModelGooglepatentsFacetEntry>;
+  "total_pages"?: number;
+  "total_results"?: number;
+}
+
+export interface ModelGooglepatentsSearchResult {
+  "assignee"?: string;
+  "country_status"?: Array<ModelGooglepatentsCountryStatus>;
+  "detail_url"?: string;
+  "filing_date"?: string;
+  "grant_date"?: string;
+  "inventor"?: string;
+  "is_similar_document"?: boolean;
+  "language"?: string;
+  "pdf_url"?: string;
+  "priority_date"?: string;
+  "publication_date"?: string;
+  "publication_number"?: string;
+  "snippet"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelGooglepatentsSimilarDocument {
+  "publication_date"?: string;
+  "publication_number"?: string;
+  "title"?: string;
+}
+
+export interface ModelGooglepatentsSuggestEntry {
+  "description"?: string;
+  "value"?: string;
+}
+
+export interface ModelGooglepatentsSuggestResponse {
+  "fetched_at"?: string;
+  "field"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelGooglepatentsSuggestEntry>;
+  "value"?: string;
+}
+
+export interface ModelGooglepatentsCoverageResponseDoc {
+  "code"?: number;
+  "data"?: ModelGooglepatentsCoverageResponse;
+  "msg"?: string;
+}
+
+export interface ModelGooglepatentsDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelGooglepatentsDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelGooglepatentsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelGooglepatentsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelGooglepatentsSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelGooglepatentsSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelGoogleplayApp {
   "ad_supported"?: boolean;
   "android_max_version"?: string;
@@ -11256,6 +11608,18 @@ export interface ModelHmProductSummary {
   "url"?: string;
 }
 
+export interface ModelHmRelatedList {
+  "label"?: string;
+  "products"?: Array<ModelHmProductSummary>;
+}
+
+export interface ModelHmRelatedResponse {
+  "fetched_at"?: string;
+  "lists"?: Array<ModelHmRelatedList>;
+  "product_id"?: string;
+  "source_url"?: string;
+}
+
 export interface ModelHmSearchMeta {
   "blocked"?: boolean;
   "did_you_mean"?: Array<string>;
@@ -11307,6 +11671,26 @@ export interface ModelHmStoreResponse {
   "stores"?: Array<ModelHmStore>;
 }
 
+export interface ModelHmSuggestResponse {
+  "blocked"?: boolean;
+  "content_suggestions"?: Array<ModelHmSuggestionLink>;
+  "fetched_at"?: string;
+  "phrase_suggestions"?: Array<string>;
+  "popular_searches"?: Array<ModelHmSuggestionLink>;
+  "query"?: string;
+  "search_history"?: Array<string>;
+  "source_url"?: string;
+  "trending_searches"?: Array<string>;
+}
+
+export interface ModelHmSuggestionLink {
+  "content_type"?: string;
+  "deep_link"?: string;
+  "image_url"?: string;
+  "link"?: string;
+  "title"?: string;
+}
+
 export interface ModelHmCategoriesResponseDoc {
   "code"?: number;
   "data"?: ModelHmCategoriesResponse;
@@ -11325,6 +11709,12 @@ export interface ModelHmProductDetailResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelHmRelatedResponseDoc {
+  "code"?: number;
+  "data"?: ModelHmRelatedResponse;
+  "msg"?: string;
+}
+
 export interface ModelHmSearchResponseDoc {
   "code"?: number;
   "data"?: ModelHmSearchResponse;
@@ -11334,6 +11724,12 @@ export interface ModelHmSearchResponseDoc {
 export interface ModelHmStoresResponseDoc {
   "code"?: number;
   "data"?: ModelHmStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelHmSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelHmSuggestResponse;
   "msg"?: string;
 }
 
@@ -29663,6 +30059,21 @@ export interface AutotraderVehicleParams {
   "id": string;
 }
 
+export type BestBuyBestbuyCategoryResponse = CrawloraResponse<ModelBestbuyCategoryResponseDoc>;
+export interface BestBuyBestbuyCategoryParams {
+  "category_id": string;
+}
+
+export type BestBuyBestbuyProductResponse = CrawloraResponse<ModelBestbuyProductResponseDoc>;
+export interface BestBuyBestbuyProductParams {
+  "sku": string;
+}
+
+export type BestBuyBestbuyProductReviewsResponse = CrawloraResponse<ModelBestbuyProductReviewsResponseDoc>;
+export interface BestBuyBestbuyProductReviewsParams {
+  "sku": string;
+}
+
 export type BillingMeResponse = CrawloraResponse<ModelBillingBillingStateResponseDoc>;
 export interface BillingMeParams {
 }
@@ -31898,6 +32309,13 @@ export interface DepopItemParams {
   "slug": string;
 }
 
+export type DepopItemSimilarResponse = CrawloraResponse<ModelDepopSimilarItemsResponseDoc>;
+export interface DepopItemSimilarParams {
+  "slug": string;
+  "limit"?: number;
+  "after"?: string;
+}
+
 export type DepopSearchResponse = CrawloraResponse<ModelDepopSearchResponseDoc>;
 export interface DepopSearchParams {
   "query": string;
@@ -31910,6 +32328,7 @@ export interface DepopSearchParams {
   "category"?: string;
   "subcategory"?: string;
   "gender"?: string;
+  "is_kids"?: boolean;
   "brand_ids"?: string;
   "after"?: string;
 }
@@ -32063,6 +32482,28 @@ export interface DoorDashDoordashStoreReviewsParams {
   "store_id": string;
   "latitude": number;
   "longitude": number;
+}
+
+export type DraftKingsDraftkingsEventResponse = CrawloraResponse<ModelDraftkingsEventResponseDoc>;
+export interface DraftKingsDraftkingsEventParams {
+  "event_id": string;
+}
+
+export type DraftKingsDraftkingsEventMarketsResponse = CrawloraResponse<ModelDraftkingsEventMarketsResponseDoc>;
+export interface DraftKingsDraftkingsEventMarketsParams {
+  "event_id": string;
+  "subcategory_id": string;
+}
+
+export type DraftKingsDraftkingsFuturesResponse = CrawloraResponse<ModelDraftkingsFuturesResponseDoc>;
+export interface DraftKingsDraftkingsFuturesParams {
+  "league_id": string;
+  "subcategory_id": string;
+}
+
+export type DraftKingsDraftkingsOddsResponse = CrawloraResponse<ModelDraftkingsOddsResponseDoc>;
+export interface DraftKingsDraftkingsOddsParams {
+  "league_id": string;
 }
 
 export type DuckDuckGoSearchDuckduckgoImageResponse = CrawloraResponse<ModelDuckduckgoImageResponseDoc>;
@@ -32806,6 +33247,39 @@ export interface GoogleVideosParams {
   "lang"?: string;
 }
 
+export type GooglePatentsGooglepatentsCoverageResponse = CrawloraResponse<ModelGooglepatentsCoverageResponseDoc>;
+export interface GooglePatentsGooglepatentsCoverageParams {
+}
+
+export type GooglePatentsGooglepatentsDetailResponse = CrawloraResponse<ModelGooglepatentsDetailResponseDoc>;
+export interface GooglePatentsGooglepatentsDetailParams {
+  "number": string;
+  "lang"?: string;
+}
+
+export type GooglePatentsGooglepatentsSearchResponse = CrawloraResponse<ModelGooglepatentsSearchResponseDoc>;
+export interface GooglePatentsGooglepatentsSearchParams {
+  "q": string;
+  "inventor"?: string;
+  "assignee"?: string;
+  "country"?: string;
+  "status"?: "GRANT" | "APPLICATION";
+  "type"?: "PATENT" | "DESIGN";
+  "language"?: "ENGLISH" | "GERMAN" | "CHINESE" | "FRENCH" | "SPANISH" | "ARABIC" | "JAPANESE" | "KOREAN" | "PORTUGUESE" | "RUSSIAN" | "ITALIAN" | "DUTCH" | "SWEDISH" | "FINNISH" | "NORWEGIAN" | "DANISH";
+  "date_field"?: "priority" | "filing" | "publication";
+  "before"?: string;
+  "after"?: string;
+  "sort"?: "relevance" | "new" | "old";
+  "num"?: number;
+  "page"?: number;
+}
+
+export type GooglePatentsGooglepatentsSuggestResponse = CrawloraResponse<ModelGooglepatentsSuggestResponseDoc>;
+export interface GooglePatentsGooglepatentsSuggestParams {
+  "field": "inventor" | "assignee";
+  "value": string;
+}
+
 export type GooglePlayAppResponse = CrawloraResponse<ModelGoogleplayAppDetailsResponse>;
 export interface GooglePlayAppParams {
   "app_id": string;
@@ -32917,11 +33391,21 @@ export interface HMHmProductParams {
   "product_id": string;
 }
 
+export type HMHmProductRelatedResponse = CrawloraResponse<ModelHmRelatedResponseDoc>;
+export interface HMHmProductRelatedParams {
+  "product_id": string;
+}
+
 export type HMHmSearchResponse = CrawloraResponse<ModelHmSearchResponseDoc>;
 export interface HMHmSearchParams {
   "query": string;
   "page"?: number;
   "page_size"?: number;
+}
+
+export type HMHmSearchSuggestionsResponse = CrawloraResponse<ModelHmSuggestResponseDoc>;
+export interface HMHmSearchSuggestionsParams {
+  "query"?: string;
 }
 
 export type HMHmStoresResponse = CrawloraResponse<ModelHmStoresResponseDoc>;
@@ -37879,6 +38363,12 @@ export interface AutotraderService {
   vehicle<T = AutotraderVehicleResponse>(params: AutotraderVehicleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface BestBuyService {
+  bestbuyCategory<T = BestBuyBestbuyCategoryResponse>(params: BestBuyBestbuyCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bestbuyProduct<T = BestBuyBestbuyProductResponse>(params: BestBuyBestbuyProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bestbuyProductReviews<T = BestBuyBestbuyProductReviewsResponse>(params: BestBuyBestbuyProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface BillingService {
   me<T = BillingMeResponse>(params?: BillingMeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meCheckout<T = BillingMeCheckoutResponse>(params: BillingMeCheckoutParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -38153,6 +38643,7 @@ export interface DatasetsService {
 export interface DepopService {
   categories<T = DepopCategoriesResponse>(params?: DepopCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   item<T = DepopItemResponse>(params: DepopItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  itemSimilar<T = DepopItemSimilarResponse>(params: DepopItemSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = DepopSearchResponse>(params: DepopSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   shop<T = DepopShopResponse>(params: DepopShopParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
@@ -38180,6 +38671,13 @@ export interface DoorDashService {
   doordashStoreItem<T = DoorDashDoordashStoreItemResponse>(params: DoorDashDoordashStoreItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreMenu<T = DoorDashDoordashStoreMenuResponse>(params: DoorDashDoordashStoreMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   doordashStoreReviews<T = DoorDashDoordashStoreReviewsResponse>(params: DoorDashDoordashStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface DraftKingsService {
+  draftkingsEvent<T = DraftKingsDraftkingsEventResponse>(params: DraftKingsDraftkingsEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsEventMarkets<T = DraftKingsDraftkingsEventMarketsResponse>(params: DraftKingsDraftkingsEventMarketsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsFutures<T = DraftKingsDraftkingsFuturesResponse>(params: DraftKingsDraftkingsFuturesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsOdds<T = DraftKingsDraftkingsOddsResponse>(params: DraftKingsDraftkingsOddsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface DuckDuckGoSearchService {
@@ -38333,6 +38831,13 @@ export interface GoogleService {
   videos<T = GoogleVideosResponse>(params: GoogleVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface GooglePatentsService {
+  googlepatentsCoverage<T = GooglePatentsGooglepatentsCoverageResponse>(params?: GooglePatentsGooglepatentsCoverageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  googlepatentsDetail<T = GooglePatentsGooglepatentsDetailResponse>(params: GooglePatentsGooglepatentsDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  googlepatentsSearch<T = GooglePatentsGooglepatentsSearchResponse>(params: GooglePatentsGooglepatentsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  googlepatentsSuggest<T = GooglePatentsGooglepatentsSuggestResponse>(params: GooglePatentsGooglepatentsSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface GooglePlayService {
   app<T = GooglePlayAppResponse>(params: GooglePlayAppParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categories<T = GooglePlayCategoriesResponse>(params?: GooglePlayCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -38351,7 +38856,9 @@ export interface HMService {
   hmCategories<T = HMHmCategoriesResponse>(params?: HMHmCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hmListing<T = HMHmListingResponse>(params: HMHmListingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hmProduct<T = HMHmProductResponse>(params: HMHmProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hmProductRelated<T = HMHmProductRelatedResponse>(params: HMHmProductRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hmSearch<T = HMHmSearchResponse>(params: HMHmSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hmSearchSuggestions<T = HMHmSearchSuggestionsResponse>(params?: HMHmSearchSuggestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hmStores<T = HMHmStoresResponse>(params?: HMHmStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
@@ -39354,6 +39861,7 @@ export interface CrawloraGeneratedGroups {
   applePodcasts: ApplePodcastsService;
   appStore: AppStoreService;
   autotrader: AutotraderService;
+  bestBuy: BestBuyService;
   billing: BillingService;
   bing: BingService;
   bluesky: BlueskyService;
@@ -39373,6 +39881,7 @@ export interface CrawloraGeneratedGroups {
   depop: DepopService;
   discogs: DiscogsService;
   doorDash: DoorDashService;
+  draftKings: DraftKingsService;
   duckDuckGoSearch: DuckDuckGoSearchService;
   eBay: EBayService;
   espn: EspnService;
@@ -39385,6 +39894,7 @@ export interface CrawloraGeneratedGroups {
   goodreads: GoodreadsService;
   googleJobs: GoogleJobsService;
   google: GoogleService;
+  googlePatents: GooglePatentsService;
   googlePlay: GooglePlayService;
   hM: HMService;
   imdb: ImdbService;
@@ -39541,6 +40051,9 @@ export interface OperationParamsMap {
   "autotrader-dealer": AutotraderDealerParams;
   "autotrader-search": AutotraderSearchParams;
   "autotrader-vehicle": AutotraderVehicleParams;
+  "bestbuy-category": BestBuyBestbuyCategoryParams;
+  "bestbuy-product": BestBuyBestbuyProductParams;
+  "bestbuy-product-reviews": BestBuyBestbuyProductReviewsParams;
   "billing-me": BillingMeParams;
   "billing-me-checkout": BillingMeCheckoutParams;
   "billing-me-events": BillingMeEventsParams;
@@ -39762,6 +40275,7 @@ export interface OperationParamsMap {
   "datasets-x-users-search": DatasetsXUsersSearchParams;
   "depop-categories": DepopCategoriesParams;
   "depop-item": DepopItemParams;
+  "depop-item-similar": DepopItemSimilarParams;
   "depop-search": DepopSearchParams;
   "depop-shop": DepopShopParams;
   "antibot-check": WebAntibotCheckParams;
@@ -39784,6 +40298,10 @@ export interface OperationParamsMap {
   "doordash-store-item": DoorDashDoordashStoreItemParams;
   "doordash-store-menu": DoorDashDoordashStoreMenuParams;
   "doordash-store-reviews": DoorDashDoordashStoreReviewsParams;
+  "draftkings-event": DraftKingsDraftkingsEventParams;
+  "draftkings-event-markets": DraftKingsDraftkingsEventMarketsParams;
+  "draftkings-futures": DraftKingsDraftkingsFuturesParams;
+  "draftkings-odds": DraftKingsDraftkingsOddsParams;
   "duckduckgo-image": DuckDuckGoSearchDuckduckgoImageParams;
   "duckduckgo-news": DuckDuckGoSearchDuckduckgoNewsParams;
   "duckduckgo-search": DuckDuckGoSearchDuckduckgoSearchParams;
@@ -39900,6 +40418,10 @@ export interface OperationParamsMap {
   "google-trends-trending": GoogleTrendsTrendingParams;
   "google-trends-trending-detail": GoogleTrendsTrendingDetailParams;
   "google-videos": GoogleVideosParams;
+  "googlepatents-coverage": GooglePatentsGooglepatentsCoverageParams;
+  "googlepatents-detail": GooglePatentsGooglepatentsDetailParams;
+  "googlepatents-search": GooglePatentsGooglepatentsSearchParams;
+  "googlepatents-suggest": GooglePatentsGooglepatentsSuggestParams;
   "googleplay-app": GooglePlayAppParams;
   "googleplay-categories": GooglePlayCategoriesParams;
   "googleplay-datasafety": GooglePlayDatasafetyParams;
@@ -39914,7 +40436,9 @@ export interface OperationParamsMap {
   "hm-categories": HMHmCategoriesParams;
   "hm-listing": HMHmListingParams;
   "hm-product": HMHmProductParams;
+  "hm-product-related": HMHmProductRelatedParams;
   "hm-search": HMHmSearchParams;
+  "hm-search-suggestions": HMHmSearchSuggestionsParams;
   "hm-stores": HMHmStoresParams;
   "imdb-name": ImdbNameParams;
   "imdb-name-awards": ImdbNameAwardsParams;
@@ -40720,6 +41244,9 @@ export interface OperationResponseMap {
   "autotrader-dealer": AutotraderDealerResponse;
   "autotrader-search": AutotraderSearchResponse;
   "autotrader-vehicle": AutotraderVehicleResponse;
+  "bestbuy-category": BestBuyBestbuyCategoryResponse;
+  "bestbuy-product": BestBuyBestbuyProductResponse;
+  "bestbuy-product-reviews": BestBuyBestbuyProductReviewsResponse;
   "billing-me": BillingMeResponse;
   "billing-me-checkout": BillingMeCheckoutResponse;
   "billing-me-events": BillingMeEventsResponse;
@@ -40941,6 +41468,7 @@ export interface OperationResponseMap {
   "datasets-x-users-search": DatasetsXUsersSearchResponse;
   "depop-categories": DepopCategoriesResponse;
   "depop-item": DepopItemResponse;
+  "depop-item-similar": DepopItemSimilarResponse;
   "depop-search": DepopSearchResponse;
   "depop-shop": DepopShopResponse;
   "antibot-check": WebAntibotCheckResponse;
@@ -40963,6 +41491,10 @@ export interface OperationResponseMap {
   "doordash-store-item": DoorDashDoordashStoreItemResponse;
   "doordash-store-menu": DoorDashDoordashStoreMenuResponse;
   "doordash-store-reviews": DoorDashDoordashStoreReviewsResponse;
+  "draftkings-event": DraftKingsDraftkingsEventResponse;
+  "draftkings-event-markets": DraftKingsDraftkingsEventMarketsResponse;
+  "draftkings-futures": DraftKingsDraftkingsFuturesResponse;
+  "draftkings-odds": DraftKingsDraftkingsOddsResponse;
   "duckduckgo-image": DuckDuckGoSearchDuckduckgoImageResponse;
   "duckduckgo-news": DuckDuckGoSearchDuckduckgoNewsResponse;
   "duckduckgo-search": DuckDuckGoSearchDuckduckgoSearchResponse;
@@ -41079,6 +41611,10 @@ export interface OperationResponseMap {
   "google-trends-trending": GoogleTrendsTrendingResponse;
   "google-trends-trending-detail": GoogleTrendsTrendingDetailResponse;
   "google-videos": GoogleVideosResponse;
+  "googlepatents-coverage": GooglePatentsGooglepatentsCoverageResponse;
+  "googlepatents-detail": GooglePatentsGooglepatentsDetailResponse;
+  "googlepatents-search": GooglePatentsGooglepatentsSearchResponse;
+  "googlepatents-suggest": GooglePatentsGooglepatentsSuggestResponse;
   "googleplay-app": GooglePlayAppResponse;
   "googleplay-categories": GooglePlayCategoriesResponse;
   "googleplay-datasafety": GooglePlayDatasafetyResponse;
@@ -41093,7 +41629,9 @@ export interface OperationResponseMap {
   "hm-categories": HMHmCategoriesResponse;
   "hm-listing": HMHmListingResponse;
   "hm-product": HMHmProductResponse;
+  "hm-product-related": HMHmProductRelatedResponse;
   "hm-search": HMHmSearchResponse;
+  "hm-search-suggestions": HMHmSearchSuggestionsResponse;
   "hm-stores": HMHmStoresResponse;
   "imdb-name": ImdbNameResponse;
   "imdb-name-awards": ImdbNameAwardsResponse;
@@ -41899,6 +42437,9 @@ export interface OperationRequiredParamsMap {
   "autotrader-dealer": true;
   "autotrader-search": false;
   "autotrader-vehicle": true;
+  "bestbuy-category": true;
+  "bestbuy-product": true;
+  "bestbuy-product-reviews": true;
   "billing-me": false;
   "billing-me-checkout": true;
   "billing-me-events": false;
@@ -42120,6 +42661,7 @@ export interface OperationRequiredParamsMap {
   "datasets-x-users-search": false;
   "depop-categories": false;
   "depop-item": true;
+  "depop-item-similar": true;
   "depop-search": true;
   "depop-shop": true;
   "antibot-check": true;
@@ -42142,6 +42684,10 @@ export interface OperationRequiredParamsMap {
   "doordash-store-item": true;
   "doordash-store-menu": true;
   "doordash-store-reviews": true;
+  "draftkings-event": true;
+  "draftkings-event-markets": true;
+  "draftkings-futures": true;
+  "draftkings-odds": true;
   "duckduckgo-image": true;
   "duckduckgo-news": true;
   "duckduckgo-search": true;
@@ -42258,6 +42804,10 @@ export interface OperationRequiredParamsMap {
   "google-trends-trending": false;
   "google-trends-trending-detail": true;
   "google-videos": true;
+  "googlepatents-coverage": false;
+  "googlepatents-detail": true;
+  "googlepatents-search": true;
+  "googlepatents-suggest": true;
   "googleplay-app": true;
   "googleplay-categories": false;
   "googleplay-datasafety": true;
@@ -42272,7 +42822,9 @@ export interface OperationRequiredParamsMap {
   "hm-categories": false;
   "hm-listing": true;
   "hm-product": true;
+  "hm-product-related": true;
   "hm-search": true;
+  "hm-search-suggestions": false;
   "hm-stores": false;
   "imdb-name": false;
   "imdb-name-awards": false;
@@ -43085,6 +43637,9 @@ export type OperationIdLiteral =
   | "autotrader-dealer"
   | "autotrader-search"
   | "autotrader-vehicle"
+  | "bestbuy-category"
+  | "bestbuy-product"
+  | "bestbuy-product-reviews"
   | "billing-me"
   | "billing-me-checkout"
   | "billing-me-events"
@@ -43306,6 +43861,7 @@ export type OperationIdLiteral =
   | "datasets-x-users-search"
   | "depop-categories"
   | "depop-item"
+  | "depop-item-similar"
   | "depop-search"
   | "depop-shop"
   | "antibot-check"
@@ -43328,6 +43884,10 @@ export type OperationIdLiteral =
   | "doordash-store-item"
   | "doordash-store-menu"
   | "doordash-store-reviews"
+  | "draftkings-event"
+  | "draftkings-event-markets"
+  | "draftkings-futures"
+  | "draftkings-odds"
   | "duckduckgo-image"
   | "duckduckgo-news"
   | "duckduckgo-search"
@@ -43444,6 +44004,10 @@ export type OperationIdLiteral =
   | "google-trends-trending"
   | "google-trends-trending-detail"
   | "google-videos"
+  | "googlepatents-coverage"
+  | "googlepatents-detail"
+  | "googlepatents-search"
+  | "googlepatents-suggest"
   | "googleplay-app"
   | "googleplay-categories"
   | "googleplay-datasafety"
@@ -43458,7 +44022,9 @@ export type OperationIdLiteral =
   | "hm-categories"
   | "hm-listing"
   | "hm-product"
+  | "hm-product-related"
   | "hm-search"
+  | "hm-search-suggestions"
   | "hm-stores"
   | "imdb-name"
   | "imdb-name-awards"
@@ -44266,6 +44832,9 @@ export declare const OperationIds: Readonly<{
   AutotraderDealer: "autotrader-dealer";
   AutotraderSearch: "autotrader-search";
   AutotraderVehicle: "autotrader-vehicle";
+  BestBuyBestbuyCategory: "bestbuy-category";
+  BestBuyBestbuyProduct: "bestbuy-product";
+  BestBuyBestbuyProductReviews: "bestbuy-product-reviews";
   BillingMe: "billing-me";
   BillingMeCheckout: "billing-me-checkout";
   BillingMeEvents: "billing-me-events";
@@ -44486,6 +45055,7 @@ export declare const OperationIds: Readonly<{
   DatasetsXUsersSearch: "datasets-x-users-search";
   DepopCategories: "depop-categories";
   DepopItem: "depop-item";
+  DepopItemSimilar: "depop-item-similar";
   DepopSearch: "depop-search";
   DepopShop: "depop-shop";
   DiscogsArtist: "discogs-artist";
@@ -44507,6 +45077,10 @@ export declare const OperationIds: Readonly<{
   DoorDashDoordashStoreItem: "doordash-store-item";
   DoorDashDoordashStoreMenu: "doordash-store-menu";
   DoorDashDoordashStoreReviews: "doordash-store-reviews";
+  DraftKingsDraftkingsEvent: "draftkings-event";
+  DraftKingsDraftkingsEventMarkets: "draftkings-event-markets";
+  DraftKingsDraftkingsFutures: "draftkings-futures";
+  DraftKingsDraftkingsOdds: "draftkings-odds";
   DuckDuckGoSearchDuckduckgoImage: "duckduckgo-image";
   DuckDuckGoSearchDuckduckgoNews: "duckduckgo-news";
   DuckDuckGoSearchDuckduckgoSearch: "duckduckgo-search";
@@ -44608,6 +45182,10 @@ export declare const OperationIds: Readonly<{
   GoogleMapPlaceReviews: "google-map-place-reviews";
   GoogleMapSearch: "google-map-search";
   GoogleNews: "google-news";
+  GooglePatentsGooglepatentsCoverage: "googlepatents-coverage";
+  GooglePatentsGooglepatentsDetail: "googlepatents-detail";
+  GooglePatentsGooglepatentsSearch: "googlepatents-search";
+  GooglePatentsGooglepatentsSuggest: "googlepatents-suggest";
   GooglePlayApp: "googleplay-app";
   GooglePlayCategories: "googleplay-categories";
   GooglePlayDatasafety: "googleplay-datasafety";
@@ -44636,7 +45214,9 @@ export declare const OperationIds: Readonly<{
   HMHmCategories: "hm-categories";
   HMHmListing: "hm-listing";
   HMHmProduct: "hm-product";
+  HMHmProductRelated: "hm-product-related";
   HMHmSearch: "hm-search";
+  HMHmSearchSuggestions: "hm-search-suggestions";
   HMHmStores: "hm-stores";
   ImdbName: "imdb-name";
   ImdbNameAwards: "imdb-name-awards";
