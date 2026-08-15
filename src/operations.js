@@ -2640,6 +2640,63 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "bestbuy-brands": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-brands",
+    "method": "GET",
+    "path": "/bestbuy/brands",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bestbuy-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-categories",
+    "method": "GET",
+    "path": "/bestbuy/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bestbuy-categories-trending": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-categories-trending",
+    "method": "GET",
+    "path": "/bestbuy/categories/trending",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "bestbuy-category": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -2649,7 +2706,39 @@ export const operations = {
     "formParams": [],
     "id": "bestbuy-category",
     "method": "GET",
+    "paginatable": true,
     "path": "/bestbuy/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bestbuy-category-subcategories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-category-subcategories",
+    "method": "GET",
+    "path": "/bestbuy/category/subcategories",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -2692,6 +2781,58 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "bestbuy-product-questions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-product-questions",
+    "method": "GET",
+    "path": "/bestbuy/product/questions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "sku",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bestbuy-product-related": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-product-related",
+    "method": "GET",
+    "path": "/bestbuy/product/related",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "sku",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "bestbuy-product-reviews": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -2710,6 +2851,70 @@ export const operations = {
       {
         "in": "query",
         "name": "sku",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bestbuy-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/bestbuy/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bestbuy-stores": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bestbuy-stores",
+    "method": "GET",
+    "path": "/bestbuy/stores",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "state",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
         "required": true,
         "type": "string"
       }
@@ -16414,6 +16619,25 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "depop-brands": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "depop-brands",
+    "method": "GET",
+    "path": "/depop/brands",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "depop-categories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -16564,7 +16788,64 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "sizes",
+        "type": "string"
+      },
+      {
+        "in": "query",
         "name": "after",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "depop-search-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "depop-search-facets",
+    "method": "GET",
+    "path": "/depop/search/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "depop-search-sellers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "depop-search-sellers",
+    "method": "GET",
+    "path": "/depop/search-sellers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
         "type": "string"
       }
     ],
@@ -16632,6 +16913,56 @@ export const operations = {
       {
         "in": "query",
         "name": "gender",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sizes",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "depop-sizes": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "depop-sizes",
+    "method": "GET",
+    "path": "/depop/sizes",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "depop-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "depop-suggest",
+    "method": "GET",
+    "path": "/depop/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
         "type": "string"
       }
     ],
@@ -17297,7 +17628,31 @@ export const operations = {
     "formParams": [],
     "id": "draftkings-event",
     "method": "GET",
-    "path": "/draftkings/event",
+    "path": "/draftkings/sportsbook/event",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-event-context": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "draftkings-event-context",
+    "method": "GET",
+    "path": "/draftkings/sportsbook/event-context",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -17323,7 +17678,7 @@ export const operations = {
     "formParams": [],
     "id": "draftkings-event-markets",
     "method": "GET",
-    "path": "/draftkings/event-markets",
+    "path": "/draftkings/sportsbook/event-markets",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -17346,6 +17701,25 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "draftkings-featured-leagues": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-featured-leagues",
+    "method": "GET",
+    "path": "/draftkings/sportsbook/featured-leagues",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "draftkings-futures": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -17355,7 +17729,7 @@ export const operations = {
     "formParams": [],
     "id": "draftkings-futures",
     "method": "GET",
-    "path": "/draftkings/futures",
+    "path": "/draftkings/sportsbook/futures",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -17378,6 +17752,70 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "draftkings-league-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-league-events",
+    "method": "GET",
+    "path": "/draftkings/sportsbook/league-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "league_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-leagues": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-leagues",
+    "method": "GET",
+    "path": "/draftkings/sportsbook/leagues",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-live": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-live",
+    "method": "GET",
+    "path": "/draftkings/sportsbook/live",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "draftkings-odds": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -17387,7 +17825,7 @@ export const operations = {
     "formParams": [],
     "id": "draftkings-odds",
     "method": "GET",
-    "path": "/draftkings/odds",
+    "path": "/draftkings/sportsbook/odds",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -17396,6 +17834,103 @@ export const operations = {
       {
         "in": "query",
         "name": "league_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-quick-links": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-quick-links",
+    "method": "GET",
+    "path": "/draftkings/sportsbook/quick-links",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-team": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-team",
+    "method": "GET",
+    "path": "/draftkings/sportsbook/team",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "football",
+          "hockey",
+          "basketball",
+          "baseball"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-teams": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-teams",
+    "method": "GET",
+    "path": "/draftkings/sportsbook/teams",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nhl",
+          "nba",
+          "cbb",
+          "mlb",
+          "cfb"
+        ],
+        "in": "query",
+        "name": "league",
         "required": true,
         "type": "string"
       }
@@ -21426,6 +21961,32 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "googlepatents-classification": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "googlepatents-classification",
+    "method": "GET",
+    "path": "/googlepatents/classification",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "code",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "googlepatents-coverage": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -21469,6 +22030,32 @@ export const operations = {
       {
         "in": "query",
         "name": "lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "googlepatents-recent": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "googlepatents-recent",
+    "method": "GET",
+    "path": "/googlepatents/recent",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "week",
+        "required": true,
         "type": "string"
       }
     ],
@@ -34478,6 +35065,323 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sephora-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sephora-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sephora/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "featured",
+          "top_rated",
+          "new",
+          "best_selling",
+          "price_low_to_high",
+          "price_high_to_low"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "price_min",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "price_max",
+        "type": "integer"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "brand",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "rating_min",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "is_new",
+        "type": "boolean"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "filter",
+        "type": "array"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sephora-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sephora-product",
+    "method": "GET",
+    "path": "/sephora/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "product_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sephora-product-questions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sephora-product-questions",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sephora/product/questions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "product_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sephora-product-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sephora-product-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sephora/product/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "product_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sephora-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sephora-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sephora/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "featured",
+          "top_rated",
+          "new",
+          "best_selling",
+          "price_low_to_high",
+          "price_high_to_low"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "price_min",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "price_max",
+        "type": "integer"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "brand",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "rating_min",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "is_new",
+        "type": "boolean"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "filter",
+        "type": "array"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sephora-stores": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sephora-stores",
+    "method": "GET",
+    "path": "/sephora/stores",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sephora-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sephora-suggest",
+    "method": "GET",
+    "path": "/sephora/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "shop-app-analysis": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -42856,6 +43760,80 @@ export const operations = {
       "JWTAuth"
     ]
   },
+  "usptoppubs-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "usptoppubs-detail",
+    "method": "GET",
+    "path": "/usptoppubs/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "guid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "source",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "usptoppubs-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "usptoppubs-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/usptoppubs/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "databases",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "num",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "vinted-brand": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -47815,9 +48793,17 @@ export const groups = {
     "vehicle": "autotrader-vehicle"
   },
   "bestBuy": {
+    "bestbuyBrands": "bestbuy-brands",
+    "bestbuyCategories": "bestbuy-categories",
+    "bestbuyCategoriesTrending": "bestbuy-categories-trending",
     "bestbuyCategory": "bestbuy-category",
+    "bestbuyCategorySubcategories": "bestbuy-category-subcategories",
     "bestbuyProduct": "bestbuy-product",
-    "bestbuyProductReviews": "bestbuy-product-reviews"
+    "bestbuyProductQuestions": "bestbuy-product-questions",
+    "bestbuyProductRelated": "bestbuy-product-related",
+    "bestbuyProductReviews": "bestbuy-product-reviews",
+    "bestbuySearch": "bestbuy-search",
+    "bestbuyStores": "bestbuy-stores"
   },
   "billing": {
     "me": "billing-me",
@@ -48068,11 +49054,16 @@ export const groups = {
     "xUsersSearch": "datasets-x-users-search"
   },
   "depop": {
+    "brands": "depop-brands",
     "categories": "depop-categories",
     "item": "depop-item",
     "itemSimilar": "depop-item-similar",
     "search": "depop-search",
-    "shop": "depop-shop"
+    "searchFacets": "depop-search-facets",
+    "searchSellers": "depop-search-sellers",
+    "shop": "depop-shop",
+    "sizes": "depop-sizes",
+    "suggest": "depop-suggest"
   },
   "discogs": {
     "artist": "discogs-artist",
@@ -48097,11 +49088,19 @@ export const groups = {
     "doordashStoreMenu": "doordash-store-menu",
     "doordashStoreReviews": "doordash-store-reviews"
   },
-  "draftKings": {
+  "draftKingsSportsbook": {
     "draftkingsEvent": "draftkings-event",
+    "draftkingsEventContext": "draftkings-event-context",
     "draftkingsEventMarkets": "draftkings-event-markets",
+    "draftkingsFeaturedLeagues": "draftkings-featured-leagues",
     "draftkingsFutures": "draftkings-futures",
-    "draftkingsOdds": "draftkings-odds"
+    "draftkingsLeagueEvents": "draftkings-league-events",
+    "draftkingsLeagues": "draftkings-leagues",
+    "draftkingsLive": "draftkings-live",
+    "draftkingsOdds": "draftkings-odds",
+    "draftkingsQuickLinks": "draftkings-quick-links",
+    "draftkingsTeam": "draftkings-team",
+    "draftkingsTeams": "draftkings-teams"
   },
   "duckDuckGoSearch": {
     "duckduckgoImage": "duckduckgo-image",
@@ -48243,8 +49242,10 @@ export const groups = {
     "search": "google-jobs-search"
   },
   "googlePatents": {
+    "googlepatentsClassification": "googlepatents-classification",
     "googlepatentsCoverage": "googlepatents-coverage",
     "googlepatentsDetail": "googlepatents-detail",
+    "googlepatentsRecent": "googlepatents-recent",
     "googlepatentsSearch": "googlepatents-search",
     "googlepatentsSuggest": "googlepatents-suggest"
   },
@@ -48688,6 +49689,15 @@ export const groups = {
     "secInsider": "sec-insider",
     "secInstitutionalHoldings": "sec-institutional-holdings"
   },
+  "sephora": {
+    "category": "sephora-category",
+    "product": "sephora-product",
+    "productQuestions": "sephora-product-questions",
+    "productReviews": "sephora-product-reviews",
+    "search": "sephora-search",
+    "stores": "sephora-stores",
+    "suggest": "sephora-suggest"
+  },
   "shopApp": {
     "analysis": "shop-app-analysis",
     "categories": "shop-app-categories",
@@ -48969,6 +49979,10 @@ export const groups = {
     "meApiKeysReveal": "user-me-api-keys-reveal",
     "meApiKeysRotate": "user-me-api-keys-rotate"
   },
+  "usptoPatentPublicSearch": {
+    "usptoppubsDetail": "usptoppubs-detail",
+    "usptoppubsSearch": "usptoppubs-search"
+  },
   "vinted": {
     "brand": "vinted-brand",
     "brands": "vinted-brands",
@@ -49177,7 +50191,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 1190;
+export const operationCount = 1222;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -49251,9 +50265,17 @@ export const OperationIds = Object.freeze({
   "AutotraderDealer": "autotrader-dealer",
   "AutotraderSearch": "autotrader-search",
   "AutotraderVehicle": "autotrader-vehicle",
+  "BestBuyBestbuyBrands": "bestbuy-brands",
+  "BestBuyBestbuyCategories": "bestbuy-categories",
+  "BestBuyBestbuyCategoriesTrending": "bestbuy-categories-trending",
   "BestBuyBestbuyCategory": "bestbuy-category",
+  "BestBuyBestbuyCategorySubcategories": "bestbuy-category-subcategories",
   "BestBuyBestbuyProduct": "bestbuy-product",
+  "BestBuyBestbuyProductQuestions": "bestbuy-product-questions",
+  "BestBuyBestbuyProductRelated": "bestbuy-product-related",
   "BestBuyBestbuyProductReviews": "bestbuy-product-reviews",
+  "BestBuyBestbuySearch": "bestbuy-search",
+  "BestBuyBestbuyStores": "bestbuy-stores",
   "BillingMe": "billing-me",
   "BillingMeCheckout": "billing-me-checkout",
   "BillingMeEvents": "billing-me-events",
@@ -49472,11 +50494,16 @@ export const OperationIds = Object.freeze({
   "DatasetsXUsersFacets": "datasets-x-users-facets",
   "DatasetsXUsersItem": "datasets-x-users-item",
   "DatasetsXUsersSearch": "datasets-x-users-search",
+  "DepopBrands": "depop-brands",
   "DepopCategories": "depop-categories",
   "DepopItem": "depop-item",
   "DepopItemSimilar": "depop-item-similar",
   "DepopSearch": "depop-search",
+  "DepopSearchFacets": "depop-search-facets",
+  "DepopSearchSellers": "depop-search-sellers",
   "DepopShop": "depop-shop",
+  "DepopSizes": "depop-sizes",
+  "DepopSuggest": "depop-suggest",
   "DiscogsArtist": "discogs-artist",
   "DiscogsArtistReleases": "discogs-artist-releases",
   "DiscogsLabel": "discogs-label",
@@ -49496,10 +50523,18 @@ export const OperationIds = Object.freeze({
   "DoorDashDoordashStoreItem": "doordash-store-item",
   "DoorDashDoordashStoreMenu": "doordash-store-menu",
   "DoorDashDoordashStoreReviews": "doordash-store-reviews",
-  "DraftKingsDraftkingsEvent": "draftkings-event",
-  "DraftKingsDraftkingsEventMarkets": "draftkings-event-markets",
-  "DraftKingsDraftkingsFutures": "draftkings-futures",
-  "DraftKingsDraftkingsOdds": "draftkings-odds",
+  "DraftKingsSportsbookDraftkingsEvent": "draftkings-event",
+  "DraftKingsSportsbookDraftkingsEventContext": "draftkings-event-context",
+  "DraftKingsSportsbookDraftkingsEventMarkets": "draftkings-event-markets",
+  "DraftKingsSportsbookDraftkingsFeaturedLeagues": "draftkings-featured-leagues",
+  "DraftKingsSportsbookDraftkingsFutures": "draftkings-futures",
+  "DraftKingsSportsbookDraftkingsLeagueEvents": "draftkings-league-events",
+  "DraftKingsSportsbookDraftkingsLeagues": "draftkings-leagues",
+  "DraftKingsSportsbookDraftkingsLive": "draftkings-live",
+  "DraftKingsSportsbookDraftkingsOdds": "draftkings-odds",
+  "DraftKingsSportsbookDraftkingsQuickLinks": "draftkings-quick-links",
+  "DraftKingsSportsbookDraftkingsTeam": "draftkings-team",
+  "DraftKingsSportsbookDraftkingsTeams": "draftkings-teams",
   "DuckDuckGoSearchDuckduckgoImage": "duckduckgo-image",
   "DuckDuckGoSearchDuckduckgoNews": "duckduckgo-news",
   "DuckDuckGoSearchDuckduckgoSearch": "duckduckgo-search",
@@ -49601,8 +50636,10 @@ export const OperationIds = Object.freeze({
   "GoogleMapPlaceReviews": "google-map-place-reviews",
   "GoogleMapSearch": "google-map-search",
   "GoogleNews": "google-news",
+  "GooglePatentsGooglepatentsClassification": "googlepatents-classification",
   "GooglePatentsGooglepatentsCoverage": "googlepatents-coverage",
   "GooglePatentsGooglepatentsDetail": "googlepatents-detail",
+  "GooglePatentsGooglepatentsRecent": "googlepatents-recent",
   "GooglePatentsGooglepatentsSearch": "googlepatents-search",
   "GooglePatentsGooglepatentsSuggest": "googlepatents-suggest",
   "GooglePlayApp": "googleplay-app",
@@ -49983,6 +51020,13 @@ export const OperationIds = Object.freeze({
   "SecEdgarSecFullTextSearch": "sec-full-text-search",
   "SecEdgarSecInsider": "sec-insider",
   "SecEdgarSecInstitutionalHoldings": "sec-institutional-holdings",
+  "SephoraCategory": "sephora-category",
+  "SephoraProduct": "sephora-product",
+  "SephoraProductQuestions": "sephora-product-questions",
+  "SephoraProductReviews": "sephora-product-reviews",
+  "SephoraSearch": "sephora-search",
+  "SephoraStores": "sephora-stores",
+  "SephoraSuggest": "sephora-suggest",
   "ShopAppAnalysis": "shop-app-analysis",
   "ShopAppCategories": "shop-app-categories",
   "ShopAppCollectionProducts": "shop-app-collection-products",
@@ -50212,6 +51256,8 @@ export const OperationIds = Object.freeze({
   "UserMeApiKeys": "user-me-api-keys",
   "UserMeApiKeysReveal": "user-me-api-keys-reveal",
   "UserMeApiKeysRotate": "user-me-api-keys-rotate",
+  "UsptoPatentPublicSearchUsptoppubsDetail": "usptoppubs-detail",
+  "UsptoPatentPublicSearchUsptoppubsSearch": "usptoppubs-search",
   "VintedBrand": "vinted-brand",
   "VintedBrands": "vinted-brands",
   "VintedCatalog": "vinted-catalog",
