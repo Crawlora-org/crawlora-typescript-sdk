@@ -57,6 +57,163 @@ export const operations = {
       "JWTAuth"
     ]
   },
+  "adidas-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "adidas-product",
+    "method": "GET",
+    "path": "/adidas/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "product_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "adidas-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "adidas-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/adidas/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "adidas-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "adidas-store",
+    "method": "GET",
+    "path": "/adidas/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "store_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "adidas-stores": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "adidas-stores",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/adidas/stores",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "lat",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lng",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "adidas-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "adidas-suggest",
+    "method": "GET",
+    "path": "/adidas/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "agoda-activities-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -551,6 +708,323 @@ export const operations = {
         "type": "integer"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/allbirds/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/allbirds/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-page",
+    "method": "GET",
+    "path": "/allbirds/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/allbirds/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-product",
+    "method": "GET",
+    "path": "/allbirds/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-product-recommendations",
+    "method": "GET",
+    "path": "/allbirds/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/allbirds/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-search-suggest",
+    "method": "GET",
+    "path": "/allbirds/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-sitemap-urls",
+    "method": "GET",
+    "path": "/allbirds/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-sitemaps",
+    "method": "GET",
+    "path": "/allbirds/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "allbirds-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "allbirds-store",
+    "method": "GET",
+    "path": "/allbirds/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -2482,6 +2956,362 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "audible-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-categories",
+    "method": "GET",
+    "path": "/audible/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-category",
+    "method": "GET",
+    "path": "/audible/category/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-charts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-charts",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/audible/charts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "most_listened",
+          "bestselling"
+        ],
+        "in": "query",
+        "name": "chart",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "audiobooks",
+          "podcasts"
+        ],
+        "in": "query",
+        "name": "content_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "free",
+          "plus",
+          "premium"
+        ],
+        "in": "query",
+        "name": "access_level",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "danish",
+          "english",
+          "french",
+          "german",
+          "italian",
+          "japanese",
+          "polish",
+          "portuguese",
+          "russian",
+          "spanish",
+          "swedish"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "oneHourLess",
+          "oneToThreeHour",
+          "threeToSixHour",
+          "sixToTenHour",
+          "tenToTwentyHour",
+          "twentyHourMore"
+        ],
+        "in": "query",
+        "name": "duration",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "originals_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-editorial-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-editorial-list",
+    "method": "GET",
+    "path": "/audible/list/{list}",
+    "pathParams": [
+      "list"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-product",
+    "method": "GET",
+    "path": "/audible/product/{asin}",
+    "pathParams": [
+      "asin"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-product-related": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-product-related",
+    "method": "GET",
+    "path": "/audible/product/{asin}/related",
+    "pathParams": [
+      "asin"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "InTheSameSeries",
+          "ByTheSameNarrator",
+          "RawSimilarities",
+          "ByTheSameAuthor",
+          "NextInSameSeries"
+        ],
+        "in": "query",
+        "name": "similarity_type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-product-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-product-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/audible/product/{asin}/reviews",
+    "pathParams": [
+      "asin"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-products",
+    "method": "GET",
+    "path": "/audible/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "asins",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/audible/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "narrator",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "audible-series": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "audible-series",
+    "method": "GET",
+    "path": "/audible/series/{asin}",
+    "pathParams": [
+      "asin"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "autotrader-dealer": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -2636,6 +3466,343 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-business": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-business",
+    "method": "GET",
+    "path": "/bbb/business",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-business-complaints": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-business-complaints",
+    "method": "GET",
+    "path": "/bbb/business/complaints",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-business-more-info": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-business-more-info",
+    "method": "GET",
+    "path": "/bbb/business/more-info",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-business-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-business-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/bbb/business/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/bbb/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-scamtracker-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-scamtracker-detail",
+    "method": "GET",
+    "path": "/bbb/scamtracker/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-scamtracker-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-scamtracker-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/bbb/scamtracker/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Advance Fee Loan",
+          "Bank/Credit Card Company Imposter",
+          "Business Email Compromise",
+          "Charity",
+          "Counterfeit Product",
+          "COVID-19",
+          "Credit Cards",
+          "Credit Repair/Debt Relief",
+          "CryptoCurrency",
+          "Debt Collections",
+          "Employment",
+          "Fake Check/Money Order",
+          "Fake Invoice/Supplier Bill",
+          "Family/Friend Emergency",
+          "Foreign Money Exchange",
+          "Government Agency Imposter",
+          "Government Grant",
+          "Healthcare/Medicaid/Medicare",
+          "Home Improvement",
+          "Identity Theft",
+          "Investment",
+          "Moving",
+          "Online Purchase",
+          "Other",
+          "Phishing",
+          "Rental",
+          "Retail Business",
+          "Romance",
+          "Scholarship",
+          "Sweepstakes/Lottery/Prizes",
+          "Tax Collection",
+          "Tech Support",
+          "Travel/Vacation/Timeshare",
+          "Utility",
+          "Vanity Award",
+          "Worthless Problem-solving Service",
+          "Yellow Pages/Directories"
+        ],
+        "in": "query",
+        "name": "scam_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "scammer_state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_dollars_lost",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_dollars_lost",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-scamtracker-state-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-scamtracker-state-stats",
+    "method": "GET",
+    "path": "/bbb/scamtracker/state-stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "30",
+          "90",
+          "365",
+          "all"
+        ],
+        "in": "query",
+        "name": "period",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/bbb/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -3150,6 +4317,63 @@ export const operations = {
     "id": "billing-me-rejections",
     "method": "GET",
     "path": "/billing/me/rejections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "billing-me-subscription-change": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "billing-me-subscription-change",
+    "method": "POST",
+    "path": "/billing/me/subscription/change",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "billing-me-subscription-change-cancel": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "billing-me-subscription-change-cancel",
+    "method": "POST",
+    "path": "/billing/me/subscription/change/cancel",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "billing-me-subscription-preview": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "billing-me-subscription-preview",
+    "method": "POST",
+    "path": "/billing/me/subscription/preview",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -5389,6 +6613,323 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "brooklinen-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/brooklinen/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/brooklinen/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-page",
+    "method": "GET",
+    "path": "/brooklinen/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/brooklinen/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-product",
+    "method": "GET",
+    "path": "/brooklinen/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-product-recommendations",
+    "method": "GET",
+    "path": "/brooklinen/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/brooklinen/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-search-suggest",
+    "method": "GET",
+    "path": "/brooklinen/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-sitemap-urls",
+    "method": "GET",
+    "path": "/brooklinen/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-sitemaps",
+    "method": "GET",
+    "path": "/brooklinen/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brooklinen-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "brooklinen-store",
+    "method": "GET",
+    "path": "/brooklinen/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "capterra-product": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -5769,6 +7310,244 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "chewy-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "chewy-categories",
+    "method": "GET",
+    "path": "/chewy/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "group_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "depth",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "chewy-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "chewy-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/chewy/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "group_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "byRelevance",
+          "byNewest",
+          "byPopularity",
+          "byLowestPrice",
+          "byHighestPrice",
+          "byRating",
+          "byRatingCount"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "filter",
+        "type": "array"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "chewy-gtin-lookup": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "chewy-gtin-lookup",
+    "method": "GET",
+    "path": "/chewy/gtin-lookup",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "gtins",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "chewy-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "chewy-product",
+    "method": "GET",
+    "path": "/chewy/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "chewy-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "chewy-products",
+    "method": "GET",
+    "path": "/chewy/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "part_numbers",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "chewy-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "chewy-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/chewy/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "byRelevance",
+          "byNewest",
+          "byPopularity",
+          "byLowestPrice",
+          "byHighestPrice",
+          "byRating",
+          "byRatingCount"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "filter",
+        "type": "array"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "chewy-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "chewy-suggest",
+    "method": "GET",
+    "path": "/chewy/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -7938,6 +9717,323 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "colehaan-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/colehaan/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/colehaan/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-page",
+    "method": "GET",
+    "path": "/colehaan/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/colehaan/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-product",
+    "method": "GET",
+    "path": "/colehaan/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-product-recommendations",
+    "method": "GET",
+    "path": "/colehaan/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/colehaan/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-search-suggest",
+    "method": "GET",
+    "path": "/colehaan/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-sitemap-urls",
+    "method": "GET",
+    "path": "/colehaan/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-sitemaps",
+    "method": "GET",
+    "path": "/colehaan/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "colehaan-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "colehaan-store",
+    "method": "GET",
+    "path": "/colehaan/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "congress-report": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -9167,6 +11263,221 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-bbb-businesses-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-bbb-businesses-facets",
+    "method": "GET",
+    "path": "/datasets/bbb-businesses/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "category",
+          "state",
+          "city",
+          "rating",
+          "accredited",
+          "entity_type",
+          "run_id"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "A+",
+          "A",
+          "A-",
+          "B+",
+          "B",
+          "B-",
+          "C+",
+          "C",
+          "C-",
+          "D+",
+          "D",
+          "D-",
+          "F"
+        ],
+        "in": "query",
+        "name": "rating",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "accredited",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "entity_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-bbb-businesses-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-bbb-businesses-item",
+    "method": "GET",
+    "path": "/datasets/bbb-businesses/items/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-bbb-businesses-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-bbb-businesses-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/bbb-businesses/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "A+",
+          "A",
+          "A-",
+          "B+",
+          "B",
+          "B-",
+          "C+",
+          "C",
+          "C-",
+          "D+",
+          "D",
+          "D-",
+          "F"
+        ],
+        "in": "query",
+        "name": "rating",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_rating_rank",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "accredited",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "entity_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "rating_desc",
+          "rating_asc",
+          "accredited_first",
+          "name_asc",
+          "years_in_business_desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-boxofficemojo-facets": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -9981,6 +12292,242 @@ export const operations = {
           "engagement_desc",
           "likes_desc",
           "relevance"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-facebook-pages-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-facebook-pages-facets",
+    "method": "GET",
+    "path": "/datasets/facebook-pages/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "category",
+          "discovery_source"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "identifier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "discovery_source",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "has_website",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_email",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_phone",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_whatsapp",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_likes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_likes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "hydrated_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "hydrated_before",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "likes_desc",
+          "likes_asc",
+          "hydrated_at_desc",
+          "hydrated_at_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-facebook-pages-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-facebook-pages-item",
+    "method": "GET",
+    "path": "/datasets/facebook-pages/items/{page_id}",
+    "pathParams": [
+      "page_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-facebook-pages-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-facebook-pages-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/facebook-pages/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "identifier",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "discovery_source",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "has_website",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_email",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_phone",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_whatsapp",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_likes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_likes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "hydrated_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "hydrated_before",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "likes_desc",
+          "likes_asc",
+          "hydrated_at_desc",
+          "hydrated_at_asc"
         ],
         "in": "query",
         "name": "sort",
@@ -16367,6 +18914,344 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-vehicle-listings-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-vehicle-listings-facets",
+    "method": "GET",
+    "path": "/datasets/vehicle-listings/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "source",
+          "make",
+          "model",
+          "trim",
+          "body_style",
+          "transmission",
+          "drive_type",
+          "fuel_type",
+          "seller_type",
+          "state",
+          "run_id"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "carmax",
+          "autotrader",
+          "carsdotcom"
+        ],
+        "in": "query",
+        "name": "source",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "make",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "model",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "trim",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "body_style",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "transmission",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "drive_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "fuel_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "retailer",
+          "dealer",
+          "private"
+        ],
+        "in": "query",
+        "name": "seller_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "vin",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_price_reduced",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_mileage",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-vehicle-listings-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-vehicle-listings-item",
+    "method": "GET",
+    "path": "/datasets/vehicle-listings/items/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-vehicle-listings-price-history": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-vehicle-listings-price-history",
+    "method": "GET",
+    "path": "/datasets/vehicle-listings/price-history/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-vehicle-listings-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-vehicle-listings-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/vehicle-listings/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "carmax",
+          "autotrader",
+          "carsdotcom"
+        ],
+        "in": "query",
+        "name": "source",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "make",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "model",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "trim",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "body_style",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "transmission",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "drive_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "fuel_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "retailer",
+          "dealer",
+          "private"
+        ],
+        "in": "query",
+        "name": "seller_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "vin",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_price_reduced",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_mileage",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "recently_updated",
+          "newly_listed",
+          "price_asc",
+          "price_desc",
+          "mileage_asc",
+          "mileage_desc",
+          "year_desc",
+          "year_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-x-users-facets": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -16599,6 +19484,306 @@ export const operations = {
           "crawled_at_asc",
           "created_at_desc",
           "created_at_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-youtube-creators-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-youtube-creators-facets",
+    "method": "GET",
+    "path": "/datasets/youtube-creators/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "region",
+          "discovery_source"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "channel_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "discovery_source",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "has_bio",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_links",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "followers_count_available",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "videos_count_available",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "views_count_available",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_videos",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_videos",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_views",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_views",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "joined_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "joined_before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "hydrated_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "hydrated_before",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "followers_desc",
+          "followers_asc",
+          "views_desc",
+          "videos_desc",
+          "hydrated_at_desc",
+          "hydrated_at_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-youtube-creators-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-youtube-creators-item",
+    "method": "GET",
+    "path": "/datasets/youtube-creators/items/{channel_id}",
+    "pathParams": [
+      "channel_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-youtube-creators-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-youtube-creators-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/youtube-creators/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "channel_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "discovery_source",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "has_bio",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_links",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "followers_count_available",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "videos_count_available",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "views_count_available",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_followers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_videos",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_videos",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_views",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_views",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "joined_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "joined_before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "hydrated_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "hydrated_before",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "followers_desc",
+          "followers_asc",
+          "views_desc",
+          "videos_desc",
+          "hydrated_at_desc",
+          "hydrated_at_asc"
         ],
         "in": "query",
         "name": "sort",
@@ -19179,6 +22364,323 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "everlane-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/everlane/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/everlane/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-page",
+    "method": "GET",
+    "path": "/everlane/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/everlane/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-product",
+    "method": "GET",
+    "path": "/everlane/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-product-recommendations",
+    "method": "GET",
+    "path": "/everlane/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/everlane/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-search-suggest",
+    "method": "GET",
+    "path": "/everlane/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-sitemap-urls",
+    "method": "GET",
+    "path": "/everlane/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-sitemaps",
+    "method": "GET",
+    "path": "/everlane/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "everlane-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "everlane-store",
+    "method": "GET",
+    "path": "/everlane/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "expedia-activities-search": {
     "bodyParam": "option",
     "bodyRequired": true,
@@ -19451,6 +22953,323 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "fashionnova-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fashionnova/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fashionnova/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-page",
+    "method": "GET",
+    "path": "/fashionnova/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fashionnova/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-product",
+    "method": "GET",
+    "path": "/fashionnova/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-product-recommendations",
+    "method": "GET",
+    "path": "/fashionnova/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fashionnova/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-search-suggest",
+    "method": "GET",
+    "path": "/fashionnova/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-sitemap-urls",
+    "method": "GET",
+    "path": "/fashionnova/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-sitemaps",
+    "method": "GET",
+    "path": "/fashionnova/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fashionnova-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fashionnova-store",
+    "method": "GET",
+    "path": "/fashionnova/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "fiverr-gig": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -19522,6 +23341,963 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-context": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-context",
+    "method": "GET",
+    "path": "/gdelt/context",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "is_quote",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "datedesc",
+          "dateasc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "maxrecords",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-search",
+    "method": "GET",
+    "path": "/gdelt/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "datedesc",
+          "dateasc",
+          "tonedesc",
+          "toneasc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "maxrecords",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-timeline": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-timeline",
+    "method": "GET",
+    "path": "/gdelt/timeline",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "volume",
+          "volume_raw",
+          "tone",
+          "lang",
+          "country"
+        ],
+        "in": "query",
+        "name": "metric",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "smooth",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tonechart": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tonechart",
+    "method": "GET",
+    "path": "/gdelt/tonechart",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "domain",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tv-concept-entities": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tv-concept-entities",
+    "method": "GET",
+    "path": "/gdelt/tv-concept-entities",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tv-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tv-search",
+    "method": "GET",
+    "path": "/gdelt/tv-search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "visual",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_visual",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "CNN",
+          "MSNBC",
+          "FOXNEWS",
+          "BBCNEWS",
+          "KGO",
+          "KPIX",
+          "KNTV"
+        ],
+        "in": "query",
+        "name": "station",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "show",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "day_of_week",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "datedesc",
+          "dateasc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "maxrecords",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tv-showchart": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tv-showchart",
+    "method": "GET",
+    "path": "/gdelt/tv-showchart",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "visual",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_visual",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "CNN",
+          "MSNBC",
+          "FOXNEWS",
+          "BBCNEWS",
+          "KGO",
+          "KPIX",
+          "KNTV"
+        ],
+        "in": "query",
+        "name": "station",
+        "required": true,
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "show",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tv-stationchart": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tv-stationchart",
+    "method": "GET",
+    "path": "/gdelt/tv-stationchart",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "visual",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_visual",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "CNN",
+          "MSNBC",
+          "FOXNEWS",
+          "BBCNEWS",
+          "KGO",
+          "KPIX",
+          "KNTV"
+        ],
+        "in": "query",
+        "name": "station",
+        "required": true,
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "show",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tv-stationdetails": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tv-stationdetails",
+    "method": "GET",
+    "path": "/gdelt/tv-stationdetails",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tv-timeline": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tv-timeline",
+    "method": "GET",
+    "path": "/gdelt/tv-timeline",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "visual",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_visual",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "CNN",
+          "MSNBC",
+          "FOXNEWS",
+          "BBCNEWS",
+          "KGO",
+          "KPIX",
+          "KNTV"
+        ],
+        "in": "query",
+        "name": "station",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "show",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tv-visual-entities": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tv-visual-entities",
+    "method": "GET",
+    "path": "/gdelt/tv-visual-entities",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gdelt-tv-wordcloud": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gdelt-tv-wordcloud",
+    "method": "GET",
+    "path": "/gdelt/tv-wordcloud",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "transcript",
+          "caption",
+          "concept",
+          "onscreen_text",
+          "visual"
+        ],
+        "in": "query",
+        "name": "channel",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "visual",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_transcript",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_caption",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_concept",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_onscreen_text",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "exclude_visual",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "CNN",
+          "MSNBC",
+          "FOXNEWS",
+          "BBCNEWS",
+          "KGO",
+          "KPIX",
+          "KNTV"
+        ],
+        "in": "query",
+        "name": "station",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "show",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "day_of_week",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "timespan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "to",
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -22709,6 +27485,287 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "gymshark-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/gymshark/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/gymshark/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-page",
+    "method": "GET",
+    "path": "/gymshark/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/gymshark/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-product",
+    "method": "GET",
+    "path": "/gymshark/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-product-recommendations",
+    "method": "GET",
+    "path": "/gymshark/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/gymshark/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-sitemap-urls",
+    "method": "GET",
+    "path": "/gymshark/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-sitemaps",
+    "method": "GET",
+    "path": "/gymshark/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "gymshark-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "gymshark-store",
+    "method": "GET",
+    "path": "/gymshark/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "hm-categories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -22931,6 +27988,463 @@ export const operations = {
       {
         "in": "query",
         "name": "radius_meters",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "homedepot-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "homedepot-categories",
+    "method": "GET",
+    "path": "/homedepot/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "homedepot-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "homedepot-category",
+    "method": "GET",
+    "path": "/homedepot/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "path",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "homedepot-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "homedepot-product",
+    "method": "GET",
+    "path": "/homedepot/product/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "homedepot-product-questions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "homedepot-product-questions",
+    "method": "GET",
+    "path": "/homedepot/product/{id}/questions",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "homedepot-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "homedepot-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/homedepot/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ikea-availability": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ikea-availability",
+    "method": "GET",
+    "path": "/ikea/availability",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "item_no",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ikea-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ikea-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ikea/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "size",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "price-low",
+          "price-high",
+          "newest",
+          "rating",
+          "name",
+          "popular",
+          "width",
+          "height",
+          "depth",
+          "length"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ikea-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ikea-product",
+    "method": "GET",
+    "path": "/ikea/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "item_no",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ikea-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ikea-reviews",
+    "method": "GET",
+    "path": "/ikea/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "item_no",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ikea-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ikea-search",
+    "method": "GET",
+    "path": "/ikea/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ikea-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ikea-store",
+    "method": "GET",
+    "path": "/ikea/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ikea-stores": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ikea-stores",
+    "method": "GET",
+    "path": "/ikea/stores",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ikea-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ikea-suggest",
+    "method": "GET",
+    "path": "/ikea/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "imdb-charts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "imdb-charts",
+    "method": "GET",
+    "path": "/imdb/charts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "top_rated_movies",
+          "top_rated_tv_shows",
+          "most_popular_movies",
+          "most_popular_tv_shows",
+          "top_rated_english_movies",
+          "lowest_rated_movies"
+        ],
+        "in": "query",
+        "name": "chart",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
         "type": "integer"
       }
     ],
@@ -23559,6 +29073,36 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "imdb-title-ratings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "imdb-title-ratings",
+    "method": "GET",
+    "path": "/imdb/title/ratings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "imdb-title-release-info": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -23618,6 +29162,36 @@ export const operations = {
         "in": "query",
         "name": "limit",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "imdb-title-similar": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "imdb-title-similar",
+    "method": "GET",
+    "path": "/imdb/title/similar",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
       }
     ],
     "security": [
@@ -24128,6 +29702,327 @@ export const operations = {
       {
         "in": "query",
         "name": "max_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jcrew-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jcrew-categories",
+    "method": "GET",
+    "path": "/jcrew/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "jcrew",
+          "factory"
+        ],
+        "in": "query",
+        "name": "site",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jcrew-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jcrew-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jcrew/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "jcrew",
+          "factory"
+        ],
+        "in": "query",
+        "name": "site",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jcrew-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jcrew-product",
+    "method": "GET",
+    "path": "/jcrew/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "pid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "jcrew",
+          "factory"
+        ],
+        "in": "query",
+        "name": "site",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jcrew-product-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jcrew-product-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jcrew/product/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "pid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "jcrew",
+          "factory"
+        ],
+        "in": "query",
+        "name": "site",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jcrew-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jcrew-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jcrew/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "jcrew",
+          "factory"
+        ],
+        "in": "query",
+        "name": "site",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "price_asc",
+          "price_desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "filter",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jcrew-size-chart": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jcrew-size-chart",
+    "method": "GET",
+    "path": "/jcrew/size-chart",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "pid",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "jcrew",
+          "factory"
+        ],
+        "in": "query",
+        "name": "site",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jcrew-stores": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jcrew-stores",
+    "method": "GET",
+    "path": "/jcrew/stores",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "jcrew",
+          "factory"
+        ],
+        "in": "query",
+        "name": "site",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lat",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lng",
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jcrew-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "jcrew-suggest",
+    "method": "GET",
+    "path": "/jcrew/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "jcrew",
+          "factory"
+        ],
+        "in": "query",
+        "name": "site",
         "type": "string"
       }
     ],
@@ -26831,6 +32726,169 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "kickstarter-comments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kickstarter-comments",
+    "method": "GET",
+    "path": "/kickstarter/comments",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "creator",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kickstarter-discover": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kickstarter-discover",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kickstarter/discover",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "term",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "magic",
+          "popularity",
+          "newest",
+          "end_date",
+          "most_funded"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "upcoming",
+          "live",
+          "late_pledge",
+          "canceled",
+          "failed",
+          "successful"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "staff_pick_only",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kickstarter-project": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kickstarter-project",
+    "method": "GET",
+    "path": "/kickstarter/project",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "creator",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kickstarter-updates": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kickstarter-updates",
+    "method": "GET",
+    "path": "/kickstarter/updates",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "creator",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "kohls-category": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -26937,6 +32995,323 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kyliecosmetics/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kyliecosmetics/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-page",
+    "method": "GET",
+    "path": "/kyliecosmetics/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kyliecosmetics/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-product",
+    "method": "GET",
+    "path": "/kyliecosmetics/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-product-recommendations",
+    "method": "GET",
+    "path": "/kyliecosmetics/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kyliecosmetics/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-search-suggest",
+    "method": "GET",
+    "path": "/kyliecosmetics/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-sitemap-urls",
+    "method": "GET",
+    "path": "/kyliecosmetics/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-sitemaps",
+    "method": "GET",
+    "path": "/kyliecosmetics/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kyliecosmetics-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kyliecosmetics-store",
+    "method": "GET",
+    "path": "/kyliecosmetics/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -28961,6 +35336,128 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "monitors-checks": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "monitors-checks",
+    "method": "GET",
+    "path": "/monitors/{id}/checks",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "monitors-create": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "monitors-create",
+    "method": "POST",
+    "path": "/monitors",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "monitors-delete": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "monitors-delete",
+    "method": "DELETE",
+    "path": "/monitors/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "monitors-get": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "monitors-get",
+    "method": "GET",
+    "path": "/monitors/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "monitors-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "monitors-list",
+    "method": "GET",
+    "path": "/monitors",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "monitors-update": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "monitors-update",
+    "method": "PATCH",
+    "path": "/monitors/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "nike-categories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -29001,6 +35498,84 @@ export const operations = {
         "required": true,
         "type": "string"
       },
+      {
+        "in": "query",
+        "name": "style_color",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "nike-product-availability": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "nike-product-availability",
+    "method": "GET",
+    "path": "/nike/product/availability",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "group_key",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "nike-product-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "nike-product-details",
+    "method": "GET",
+    "path": "/nike/product/details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "group_key",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "nike-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "nike-product-recommendations",
+    "method": "GET",
+    "path": "/nike/product/recommendations",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
       {
         "in": "query",
         "name": "style_color",
@@ -29409,6 +35984,323 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ohpolly/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ohpolly/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-page",
+    "method": "GET",
+    "path": "/ohpolly/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ohpolly/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-product",
+    "method": "GET",
+    "path": "/ohpolly/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-product-recommendations",
+    "method": "GET",
+    "path": "/ohpolly/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ohpolly/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-search-suggest",
+    "method": "GET",
+    "path": "/ohpolly/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-sitemap-urls",
+    "method": "GET",
+    "path": "/ohpolly/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-sitemaps",
+    "method": "GET",
+    "path": "/ohpolly/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ohpolly-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ohpolly-store",
+    "method": "GET",
+    "path": "/ohpolly/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -33419,6 +40311,275 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "quince-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-categories",
+    "method": "GET",
+    "path": "/quince/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "quince-navigation": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-navigation",
+    "method": "GET",
+    "path": "/quince/navigation",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "quince-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-product",
+    "method": "GET",
+    "path": "/quince/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "handle",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "quince-product-faq": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-product-faq",
+    "method": "GET",
+    "path": "/quince/product/faq",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "handle",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "quince-product-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-product-reviews",
+    "method": "GET",
+    "path": "/quince/product/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "handle",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "quince-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/quince/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "material",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "color",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "size",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "quince-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-sitemap-urls",
+    "method": "GET",
+    "path": "/quince/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "subcollections",
+          "pages"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "quince-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-sitemaps",
+    "method": "GET",
+    "path": "/quince/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "quince-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "quince-suggest",
+    "method": "GET",
+    "path": "/quince/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "ready": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -33535,6 +40696,82 @@ export const operations = {
       {
         "in": "query",
         "name": "after",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-leads": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-leads",
+    "method": "GET",
+    "path": "/reddit/leads",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subreddit",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "hot",
+          "new",
+          "top",
+          "comments"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "hour",
+          "day",
+          "week",
+          "month",
+          "year",
+          "all"
+        ],
+        "in": "query",
+        "name": "time",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_score",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "auto",
+          "heuristic",
+          "llm"
+        ],
+        "in": "query",
+        "name": "classifier",
         "type": "string"
       }
     ],
@@ -34175,6 +41412,323 @@ export const operations = {
     ],
     "security": [
       "JWTAuth"
+    ]
+  },
+  "rothys-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rothys/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rothys/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-page",
+    "method": "GET",
+    "path": "/rothys/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rothys/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-product",
+    "method": "GET",
+    "path": "/rothys/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-product-recommendations",
+    "method": "GET",
+    "path": "/rothys/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rothys/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-search-suggest",
+    "method": "GET",
+    "path": "/rothys/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-sitemap-urls",
+    "method": "GET",
+    "path": "/rothys/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-sitemaps",
+    "method": "GET",
+    "path": "/rothys/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rothys-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rothys-store",
+    "method": "GET",
+    "path": "/rothys/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
     ]
   },
   "rottentomatoes-browse-movies": {
@@ -35382,6 +42936,260 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "shein-category-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-category-filters",
+    "method": "GET",
+    "path": "/shein/category/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cat_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-category-goods": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-category-goods",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/shein/category/goods",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cat_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-category-nav": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-category-nav",
+    "method": "GET",
+    "path": "/shein/category/nav",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cat_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-products-aggregation-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-products-aggregation-filters",
+    "method": "POST",
+    "path": "/shein/products/aggregation-filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cat_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-products-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-products-detail",
+    "method": "GET",
+    "path": "/shein/products/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "goods_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "goods_sn",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-products-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-products-search",
+    "method": "POST",
+    "paginatable": true,
+    "path": "/shein/products/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-search-autocomplete": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-search-autocomplete",
+    "method": "POST",
+    "path": "/shein/search/autocomplete",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "word",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-search-keywords": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-search-keywords",
+    "method": "POST",
+    "path": "/shein/search/keywords",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "scene",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "word_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "shop-app-analysis": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -35913,6 +43721,16 @@ export const operations = {
         "in": "query",
         "name": "limit",
         "type": "integer"
+      },
+      {
+        "enum": [
+          "sortLTH",
+          "sortHTL",
+          "newest"
+        ],
+        "in": "query",
+        "name": "sortBy",
+        "type": "string"
       }
     ],
     "security": [
@@ -36122,6 +43940,16 @@ export const operations = {
         "in": "query",
         "name": "limit",
         "type": "integer"
+      },
+      {
+        "enum": [
+          "sortLTH",
+          "sortHTL",
+          "newest"
+        ],
+        "in": "query",
+        "name": "sortBy",
+        "type": "string"
       }
     ],
     "security": [
@@ -36306,6 +44134,323 @@ export const operations = {
     "pathParams": [
       "domain"
     ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/skims/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/skims/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-page",
+    "method": "GET",
+    "path": "/skims/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/skims/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-product",
+    "method": "GET",
+    "path": "/skims/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-product-recommendations",
+    "method": "GET",
+    "path": "/skims/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/skims/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-search-suggest",
+    "method": "GET",
+    "path": "/skims/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-sitemap-urls",
+    "method": "GET",
+    "path": "/skims/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-sitemaps",
+    "method": "GET",
+    "path": "/skims/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skims-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "skims-store",
+    "method": "GET",
+    "path": "/skims/store",
+    "pathParams": [],
     "produces": [
       "application/json"
     ],
@@ -39522,6 +47667,323 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "stevemadden-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/stevemadden/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/stevemadden/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-page",
+    "method": "GET",
+    "path": "/stevemadden/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/stevemadden/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-product",
+    "method": "GET",
+    "path": "/stevemadden/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-product-recommendations",
+    "method": "GET",
+    "path": "/stevemadden/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/stevemadden/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-search-suggest",
+    "method": "GET",
+    "path": "/stevemadden/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-sitemap-urls",
+    "method": "GET",
+    "path": "/stevemadden/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-sitemaps",
+    "method": "GET",
+    "path": "/stevemadden/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "stevemadden-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "stevemadden-store",
+    "method": "GET",
+    "path": "/stevemadden/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "stockx-brands": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -40202,6 +48664,323 @@ export const operations = {
         "type": "integer"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-collection-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-collection-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/thebodyshop/collections/{handle}/products",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-collections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/thebodyshop/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-page",
+    "method": "GET",
+    "path": "/thebodyshop/pages/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/thebodyshop/pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-product",
+    "method": "GET",
+    "path": "/thebodyshop/products/{handle}",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-product-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-product-recommendations",
+    "method": "GET",
+    "path": "/thebodyshop/products/{handle}/recommendations",
+    "pathParams": [
+      "handle"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "related",
+          "complementary"
+        ],
+        "in": "query",
+        "name": "intent",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/thebodyshop/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-search-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-search-suggest",
+    "method": "GET",
+    "path": "/thebodyshop/search/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "types",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-sitemap-urls",
+    "method": "GET",
+    "path": "/thebodyshop/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "products",
+          "collections",
+          "pages",
+          "blogs",
+          "agentic_discovery",
+          "other"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-sitemaps",
+    "method": "GET",
+    "path": "/thebodyshop/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thebodyshop-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "thebodyshop-store",
+    "method": "GET",
+    "path": "/thebodyshop/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -44076,6 +52855,41 @@ export const operations = {
         "in": "query",
         "name": "id",
         "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "walgreens-stores": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "walgreens-stores",
+    "method": "GET",
+    "path": "/walgreens/stores",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "latitude",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "zip",
         "type": "string"
       }
     ],
@@ -48706,6 +57520,13 @@ export const groups = {
     "myRequest": "account-deletion-my-request",
     "request": "account-deletion-request"
   },
+  "adidas": {
+    "product": "adidas-product",
+    "search": "adidas-search",
+    "store": "adidas-store",
+    "stores": "adidas-stores",
+    "suggest": "adidas-suggest"
+  },
   "agoda": {
     "activitiesSearch": "agoda-activities-search",
     "activityDetail": "agoda-activity-detail",
@@ -48724,6 +57545,19 @@ export const groups = {
     "roomCalendar": "airbnb-room-calendar",
     "roomReviews": "airbnb-room-reviews",
     "search": "airbnb-search"
+  },
+  "allbirds": {
+    "collectionProducts": "allbirds-collection-products",
+    "collections": "allbirds-collections",
+    "page": "allbirds-page",
+    "pages": "allbirds-pages",
+    "product": "allbirds-product",
+    "productRecommendations": "allbirds-product-recommendations",
+    "products": "allbirds-products",
+    "searchSuggest": "allbirds-search-suggest",
+    "sitemapUrls": "allbirds-sitemap-urls",
+    "sitemaps": "allbirds-sitemaps",
+    "store": "allbirds-store"
   },
   "amazon": {
     "product": "amazon-product",
@@ -48787,10 +57621,33 @@ export const groups = {
     "showEpisodes": "apple-podcasts-show-episodes",
     "showRelated": "apple-podcasts-show-related"
   },
+  "audible": {
+    "categories": "audible-categories",
+    "category": "audible-category",
+    "charts": "audible-charts",
+    "editorialList": "audible-editorial-list",
+    "product": "audible-product",
+    "productRelated": "audible-product-related",
+    "productReviews": "audible-product-reviews",
+    "products": "audible-products",
+    "search": "audible-search",
+    "series": "audible-series"
+  },
   "autotrader": {
     "dealer": "autotrader-dealer",
     "search": "autotrader-search",
     "vehicle": "autotrader-vehicle"
+  },
+  "bbb": {
+    "business": "bbb-business",
+    "businessComplaints": "bbb-business-complaints",
+    "businessMoreInfo": "bbb-business-more-info",
+    "businessReviews": "bbb-business-reviews",
+    "category": "bbb-category",
+    "scamtrackerDetail": "bbb-scamtracker-detail",
+    "scamtrackerSearch": "bbb-scamtracker-search",
+    "scamtrackerStateStats": "bbb-scamtracker-state-stats",
+    "search": "bbb-search"
   },
   "bestBuy": {
     "bestbuyBrands": "bestbuy-brands",
@@ -48814,7 +57671,10 @@ export const groups = {
     "mePeriodStatementDownload": "billing-me-period-statement-download",
     "mePeriods": "billing-me-periods",
     "mePortal": "billing-me-portal",
-    "meRejections": "billing-me-rejections"
+    "meRejections": "billing-me-rejections",
+    "meSubscriptionChange": "billing-me-subscription-change",
+    "meSubscriptionChangeCancel": "billing-me-subscription-change-cancel",
+    "meSubscriptionPreview": "billing-me-subscription-preview"
   },
   "bing": {
     "images": "bing-images",
@@ -48875,6 +57735,19 @@ export const groups = {
     "suggest": "brave-suggest",
     "videos": "brave-videos"
   },
+  "brooklinen": {
+    "collectionProducts": "brooklinen-collection-products",
+    "collections": "brooklinen-collections",
+    "page": "brooklinen-page",
+    "pages": "brooklinen-pages",
+    "product": "brooklinen-product",
+    "productRecommendations": "brooklinen-product-recommendations",
+    "products": "brooklinen-products",
+    "searchSuggest": "brooklinen-search-suggest",
+    "sitemapUrls": "brooklinen-sitemap-urls",
+    "sitemaps": "brooklinen-sitemaps",
+    "store": "brooklinen-store"
+  },
   "capterra": {
     "product": "capterra-product",
     "reviews": "capterra-reviews",
@@ -48892,6 +57765,15 @@ export const groups = {
   "carsCom": {
     "carsdotcomSearch": "carsdotcom-search",
     "carsdotcomVehicle": "carsdotcom-vehicle"
+  },
+  "chewy": {
+    "categories": "chewy-categories",
+    "category": "chewy-category",
+    "gtinLookup": "chewy-gtin-lookup",
+    "product": "chewy-product",
+    "products": "chewy-products",
+    "search": "chewy-search",
+    "suggest": "chewy-suggest"
   },
   "chromeWebStore": {
     "chromewebstoreCategories": "chromewebstore-categories",
@@ -48930,6 +57812,19 @@ export const groups = {
     "treasuries": "coingecko-treasuries",
     "trending": "coingecko-trending"
   },
+  "coleHaan": {
+    "colehaanCollectionProducts": "colehaan-collection-products",
+    "colehaanCollections": "colehaan-collections",
+    "colehaanPage": "colehaan-page",
+    "colehaanPages": "colehaan-pages",
+    "colehaanProduct": "colehaan-product",
+    "colehaanProductRecommendations": "colehaan-product-recommendations",
+    "colehaanProducts": "colehaan-products",
+    "colehaanSearchSuggest": "colehaan-search-suggest",
+    "colehaanSitemapUrls": "colehaan-sitemap-urls",
+    "colehaanSitemaps": "colehaan-sitemaps",
+    "colehaanStore": "colehaan-store"
+  },
   "congress": {
     "report": "congress-report",
     "stockDisclosures": "congress-stock-disclosures"
@@ -48953,6 +57848,9 @@ export const groups = {
     "appsChartsSearch": "datasets-apps-charts-search",
     "appsReviewsSearch": "datasets-apps-reviews-search",
     "appsSearch": "datasets-apps-search",
+    "bbbBusinessesFacets": "datasets-bbb-businesses-facets",
+    "bbbBusinessesItem": "datasets-bbb-businesses-item",
+    "bbbBusinessesSearch": "datasets-bbb-businesses-search",
     "boxofficemojoFacets": "datasets-boxofficemojo-facets",
     "boxofficemojoItem": "datasets-boxofficemojo-item",
     "boxofficemojoSearch": "datasets-boxofficemojo-search",
@@ -48964,6 +57862,9 @@ export const groups = {
     "chromeExtensionsSearch": "datasets-chrome-extensions-search",
     "chromeExtensionsTrending": "datasets-chrome-extensions-trending",
     "creatorsSearch": "datasets-creators-search",
+    "facebookPagesFacets": "datasets-facebook-pages-facets",
+    "facebookPagesItem": "datasets-facebook-pages-item",
+    "facebookPagesSearch": "datasets-facebook-pages-search",
     "githubUsersFacets": "datasets-github-users-facets",
     "githubUsersItem": "datasets-github-users-item",
     "githubUsersNearby": "datasets-github-users-nearby",
@@ -49049,9 +57950,16 @@ export const groups = {
     "trustmrrHistory": "datasets-trustmrr-history",
     "trustmrrItem": "datasets-trustmrr-item",
     "trustmrrSearch": "datasets-trustmrr-search",
+    "vehicleListingsFacets": "datasets-vehicle-listings-facets",
+    "vehicleListingsItem": "datasets-vehicle-listings-item",
+    "vehicleListingsPriceHistory": "datasets-vehicle-listings-price-history",
+    "vehicleListingsSearch": "datasets-vehicle-listings-search",
     "xUsersFacets": "datasets-x-users-facets",
     "xUsersItem": "datasets-x-users-item",
-    "xUsersSearch": "datasets-x-users-search"
+    "xUsersSearch": "datasets-x-users-search",
+    "youtubeCreatorsFacets": "datasets-youtube-creators-facets",
+    "youtubeCreatorsItem": "datasets-youtube-creators-item",
+    "youtubeCreatorsSearch": "datasets-youtube-creators-search"
   },
   "depop": {
     "brands": "depop-brands",
@@ -49141,6 +58049,19 @@ export const groups = {
     "shopReviews": "etsy-shop-reviews",
     "shopSearch": "etsy-shop-search"
   },
+  "everlane": {
+    "collectionProducts": "everlane-collection-products",
+    "collections": "everlane-collections",
+    "page": "everlane-page",
+    "pages": "everlane-pages",
+    "product": "everlane-product",
+    "productRecommendations": "everlane-product-recommendations",
+    "products": "everlane-products",
+    "searchSuggest": "everlane-search-suggest",
+    "sitemapUrls": "everlane-sitemap-urls",
+    "sitemaps": "everlane-sitemaps",
+    "store": "everlane-store"
+  },
   "expedia": {
     "activitiesSearch": "expedia-activities-search",
     "flightsSearch": "expedia-flights-search",
@@ -49154,10 +58075,37 @@ export const groups = {
     "marketplaceSearch": "facebook-marketplace-search",
     "page": "facebook-page"
   },
+  "fashionNova": {
+    "fashionnovaCollectionProducts": "fashionnova-collection-products",
+    "fashionnovaCollections": "fashionnova-collections",
+    "fashionnovaPage": "fashionnova-page",
+    "fashionnovaPages": "fashionnova-pages",
+    "fashionnovaProduct": "fashionnova-product",
+    "fashionnovaProductRecommendations": "fashionnova-product-recommendations",
+    "fashionnovaProducts": "fashionnova-products",
+    "fashionnovaSearchSuggest": "fashionnova-search-suggest",
+    "fashionnovaSitemapUrls": "fashionnova-sitemap-urls",
+    "fashionnovaSitemaps": "fashionnova-sitemaps",
+    "fashionnovaStore": "fashionnova-store"
+  },
   "fiverr": {
     "gig": "fiverr-gig",
     "search": "fiverr-search",
     "seller": "fiverr-seller"
+  },
+  "gdelt": {
+    "context": "gdelt-context",
+    "search": "gdelt-search",
+    "timeline": "gdelt-timeline",
+    "tonechart": "gdelt-tonechart",
+    "tvConceptEntities": "gdelt-tv-concept-entities",
+    "tvSearch": "gdelt-tv-search",
+    "tvShowchart": "gdelt-tv-showchart",
+    "tvStationchart": "gdelt-tv-stationchart",
+    "tvStationdetails": "gdelt-tv-stationdetails",
+    "tvTimeline": "gdelt-tv-timeline",
+    "tvVisualEntities": "gdelt-tv-visual-entities",
+    "tvWordcloud": "gdelt-tv-wordcloud"
   },
   "geocoding": {
     "lookup": "geocoding-lookup",
@@ -49262,6 +58210,18 @@ export const groups = {
     "similar": "googleplay-similar",
     "suggest": "googleplay-suggest"
   },
+  "gymshark": {
+    "collectionProducts": "gymshark-collection-products",
+    "collections": "gymshark-collections",
+    "page": "gymshark-page",
+    "pages": "gymshark-pages",
+    "product": "gymshark-product",
+    "productRecommendations": "gymshark-product-recommendations",
+    "products": "gymshark-products",
+    "sitemapUrls": "gymshark-sitemap-urls",
+    "sitemaps": "gymshark-sitemaps",
+    "store": "gymshark-store"
+  },
   "hM": {
     "hmCategories": "hm-categories",
     "hmListing": "hm-listing",
@@ -49271,7 +58231,25 @@ export const groups = {
     "hmSearchSuggestions": "hm-search-suggestions",
     "hmStores": "hm-stores"
   },
+  "homeDepot": {
+    "homedepotCategories": "homedepot-categories",
+    "homedepotCategory": "homedepot-category",
+    "homedepotProduct": "homedepot-product",
+    "homedepotProductQuestions": "homedepot-product-questions",
+    "homedepotSearch": "homedepot-search"
+  },
+  "ikea": {
+    "availability": "ikea-availability",
+    "category": "ikea-category",
+    "product": "ikea-product",
+    "reviews": "ikea-reviews",
+    "search": "ikea-search",
+    "store": "ikea-store",
+    "stores": "ikea-stores",
+    "suggest": "ikea-suggest"
+  },
   "imdb": {
+    "charts": "imdb-charts",
     "name": "imdb-name",
     "nameAwards": "imdb-name-awards",
     "nameCredits": "imdb-name-credits",
@@ -49288,8 +58266,10 @@ export const groups = {
     "titleParentalGuide": "imdb-title-parental-guide",
     "titlePublicFactsAnalysis": "imdb-title-public-facts-analysis",
     "titleQuotes": "imdb-title-quotes",
+    "titleRatings": "imdb-title-ratings",
     "titleReleaseInfo": "imdb-title-release-info",
     "titleReviews": "imdb-title-reviews",
+    "titleSimilar": "imdb-title-similar",
     "titleTechnicalSpecs": "imdb-title-technical-specs",
     "titleTrivia": "imdb-title-trivia"
   },
@@ -49314,6 +58294,16 @@ export const groups = {
     "post": "instagram-post",
     "profile": "instagram-profile",
     "reels": "instagram-reels"
+  },
+  "jCrew": {
+    "jcrewCategories": "jcrew-categories",
+    "jcrewCategory": "jcrew-category",
+    "jcrewProduct": "jcrew-product",
+    "jcrewProductReviews": "jcrew-product-reviews",
+    "jcrewSearch": "jcrew-search",
+    "jcrewSizeChart": "jcrew-size-chart",
+    "jcrewStores": "jcrew-stores",
+    "jcrewSuggest": "jcrew-suggest"
   },
   "jobs": {
     "ashbyBoard": "jobs-ashby-board",
@@ -49391,11 +58381,30 @@ export const groups = {
     "seriesDetail": "kalshi-series-detail",
     "trades": "kalshi-trades"
   },
+  "kickstarter": {
+    "comments": "kickstarter-comments",
+    "discover": "kickstarter-discover",
+    "project": "kickstarter-project",
+    "updates": "kickstarter-updates"
+  },
   "kohlS": {
     "kohlsCategory": "kohls-category",
     "kohlsProductReviews": "kohls-product-reviews",
     "kohlsStores": "kohls-stores",
     "kohlsSuggest": "kohls-suggest"
+  },
+  "kylieCosmetics": {
+    "kyliecosmeticsCollectionProducts": "kyliecosmetics-collection-products",
+    "kyliecosmeticsCollections": "kyliecosmetics-collections",
+    "kyliecosmeticsPage": "kyliecosmetics-page",
+    "kyliecosmeticsPages": "kyliecosmetics-pages",
+    "kyliecosmeticsProduct": "kyliecosmetics-product",
+    "kyliecosmeticsProductRecommendations": "kyliecosmetics-product-recommendations",
+    "kyliecosmeticsProducts": "kyliecosmetics-products",
+    "kyliecosmeticsSearchSuggest": "kyliecosmetics-search-suggest",
+    "kyliecosmeticsSitemapUrls": "kyliecosmetics-sitemap-urls",
+    "kyliecosmeticsSitemaps": "kyliecosmetics-sitemaps",
+    "kyliecosmeticsStore": "kyliecosmetics-store"
   },
   "letterboxd": {
     "film": "letterboxd-film",
@@ -49484,9 +58493,20 @@ export const groups = {
     "teams": "mlb-teams",
     "transactions": "mlb-transactions"
   },
+  "monitors": {
+    "checks": "monitors-checks",
+    "create": "monitors-create",
+    "delete": "monitors-delete",
+    "get": "monitors-get",
+    "list": "monitors-list",
+    "update": "monitors-update"
+  },
   "nike": {
     "categories": "nike-categories",
     "product": "nike-product",
+    "productAvailability": "nike-product-availability",
+    "productDetails": "nike-product-details",
+    "productRecommendations": "nike-product-recommendations",
     "productReviews": "nike-product-reviews",
     "search": "nike-search",
     "stores": "nike-stores",
@@ -49501,6 +58521,19 @@ export const groups = {
     "indicesCountry": "numbeo-indices-country",
     "indicesRankings": "numbeo-indices-rankings",
     "indicesRankingsByCountry": "numbeo-indices-rankings-by-country"
+  },
+  "ohPolly": {
+    "ohpollyCollectionProducts": "ohpolly-collection-products",
+    "ohpollyCollections": "ohpolly-collections",
+    "ohpollyPage": "ohpolly-page",
+    "ohpollyPages": "ohpolly-pages",
+    "ohpollyProduct": "ohpolly-product",
+    "ohpollyProductRecommendations": "ohpolly-product-recommendations",
+    "ohpollyProducts": "ohpolly-products",
+    "ohpollySearchSuggest": "ohpolly-search-suggest",
+    "ohpollySitemapUrls": "ohpolly-sitemap-urls",
+    "ohpollySitemaps": "ohpolly-sitemaps",
+    "ohpollyStore": "ohpolly-store"
   },
   "oldNavy": {
     "oldnavyCategories": "oldnavy-categories",
@@ -49634,9 +58667,21 @@ export const groups = {
     "reviews": "producthunt-reviews",
     "search": "producthunt-search"
   },
+  "quince": {
+    "categories": "quince-categories",
+    "navigation": "quince-navigation",
+    "product": "quince-product",
+    "productFaq": "quince-product-faq",
+    "productReviews": "quince-product-reviews",
+    "search": "quince-search",
+    "sitemapUrls": "quince-sitemap-urls",
+    "sitemaps": "quince-sitemaps",
+    "suggest": "quince-suggest"
+  },
   "reddit": {
     "comments": "reddit-comments",
     "domainPosts": "reddit-domain-posts",
+    "leads": "reddit-leads",
     "post": "reddit-post",
     "search": "reddit-search",
     "subredditAbout": "reddit-subreddit-about",
@@ -49658,6 +58703,19 @@ export const groups = {
     "click": "referrals-click",
     "me": "referrals-me",
     "meEvents": "referrals-me-events"
+  },
+  "rothyS": {
+    "rothysCollectionProducts": "rothys-collection-products",
+    "rothysCollections": "rothys-collections",
+    "rothysPage": "rothys-page",
+    "rothysPages": "rothys-pages",
+    "rothysProduct": "rothys-product",
+    "rothysProductRecommendations": "rothys-product-recommendations",
+    "rothysProducts": "rothys-products",
+    "rothysSearchSuggest": "rothys-search-suggest",
+    "rothysSitemapUrls": "rothys-sitemap-urls",
+    "rothysSitemaps": "rothys-sitemaps",
+    "rothysStore": "rothys-store"
   },
   "rottenTomatoes": {
     "rottentomatoesBrowseMovies": "rottentomatoes-browse-movies",
@@ -49698,6 +58756,16 @@ export const groups = {
     "stores": "sephora-stores",
     "suggest": "sephora-suggest"
   },
+  "shein": {
+    "categoryFilters": "shein-category-filters",
+    "categoryGoods": "shein-category-goods",
+    "categoryNav": "shein-category-nav",
+    "productsAggregationFilters": "shein-products-aggregation-filters",
+    "productsDetail": "shein-products-detail",
+    "productsSearch": "shein-products-search",
+    "searchAutocomplete": "shein-search-autocomplete",
+    "searchKeywords": "shein-search-keywords"
+  },
   "shopApp": {
     "analysis": "shop-app-analysis",
     "categories": "shop-app-categories",
@@ -49732,6 +58800,19 @@ export const groups = {
   "similarWeb": {
     "search": "similarweb-search",
     "web": "similarweb-web"
+  },
+  "skims": {
+    "collectionProducts": "skims-collection-products",
+    "collections": "skims-collections",
+    "page": "skims-page",
+    "pages": "skims-pages",
+    "product": "skims-product",
+    "productRecommendations": "skims-product-recommendations",
+    "products": "skims-products",
+    "searchSuggest": "skims-search-suggest",
+    "sitemapUrls": "skims-sitemap-urls",
+    "sitemaps": "skims-sitemaps",
+    "store": "skims-store"
   },
   "sofaScore": {
     "sofascoreEvent": "sofascore-event",
@@ -49822,6 +58903,19 @@ export const groups = {
     "tagsList": "steam-tags-list",
     "topSellers": "steam-top-sellers"
   },
+  "steveMadden": {
+    "stevemaddenCollectionProducts": "stevemadden-collection-products",
+    "stevemaddenCollections": "stevemadden-collections",
+    "stevemaddenPage": "stevemadden-page",
+    "stevemaddenPages": "stevemadden-pages",
+    "stevemaddenProduct": "stevemadden-product",
+    "stevemaddenProductRecommendations": "stevemadden-product-recommendations",
+    "stevemaddenProducts": "stevemadden-products",
+    "stevemaddenSearchSuggest": "stevemadden-search-suggest",
+    "stevemaddenSitemapUrls": "stevemadden-sitemap-urls",
+    "stevemaddenSitemaps": "stevemadden-sitemaps",
+    "stevemaddenStore": "stevemadden-store"
+  },
   "stockX": {
     "stockxBrands": "stockx-brands",
     "stockxCategories": "stockx-categories",
@@ -49847,6 +58941,19 @@ export const groups = {
   "teslaJobs": {
     "job": "tesla-jobs-job",
     "list": "tesla-jobs-list"
+  },
+  "theBodyShop": {
+    "thebodyshopCollectionProducts": "thebodyshop-collection-products",
+    "thebodyshopCollections": "thebodyshop-collections",
+    "thebodyshopPage": "thebodyshop-page",
+    "thebodyshopPages": "thebodyshop-pages",
+    "thebodyshopProduct": "thebodyshop-product",
+    "thebodyshopProductRecommendations": "thebodyshop-product-recommendations",
+    "thebodyshopProducts": "thebodyshop-products",
+    "thebodyshopSearchSuggest": "thebodyshop-search-suggest",
+    "thebodyshopSitemapUrls": "thebodyshop-sitemap-urls",
+    "thebodyshopSitemaps": "thebodyshop-sitemaps",
+    "thebodyshopStore": "thebodyshop-store"
   },
   "threads": {
     "post": "threads-post",
@@ -49991,6 +59098,9 @@ export const groups = {
     "category": "vinted-category",
     "item": "vinted-item",
     "member": "vinted-member"
+  },
+  "walgreens": {
+    "stores": "walgreens-stores"
   },
   "walmart": {
     "product": "walmart-product",
@@ -50191,7 +59301,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 1222;
+export const operationCount = 1468;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -50199,6 +59309,11 @@ export const OperationIds = Object.freeze({
   "AccountDeletionCancel": "account-deletion-cancel",
   "AccountDeletionMyRequest": "account-deletion-my-request",
   "AccountDeletionRequest": "account-deletion-request",
+  "AdidasProduct": "adidas-product",
+  "AdidasSearch": "adidas-search",
+  "AdidasStore": "adidas-store",
+  "AdidasStores": "adidas-stores",
+  "AdidasSuggest": "adidas-suggest",
   "AgodaActivitiesSearch": "agoda-activities-search",
   "AgodaActivityDetail": "agoda-activity-detail",
   "AgodaFlightsItineraryAmenities": "agoda-flights-itinerary-amenities",
@@ -50214,6 +59329,17 @@ export const OperationIds = Object.freeze({
   "AirbnbRoomCalendar": "airbnb-room-calendar",
   "AirbnbRoomReviews": "airbnb-room-reviews",
   "AirbnbSearch": "airbnb-search",
+  "AllbirdsCollectionProducts": "allbirds-collection-products",
+  "AllbirdsCollections": "allbirds-collections",
+  "AllbirdsPage": "allbirds-page",
+  "AllbirdsPages": "allbirds-pages",
+  "AllbirdsProduct": "allbirds-product",
+  "AllbirdsProductRecommendations": "allbirds-product-recommendations",
+  "AllbirdsProducts": "allbirds-products",
+  "AllbirdsSearchSuggest": "allbirds-search-suggest",
+  "AllbirdsSitemapUrls": "allbirds-sitemap-urls",
+  "AllbirdsSitemaps": "allbirds-sitemaps",
+  "AllbirdsStore": "allbirds-store",
   "AmazonJobsJob": "amazon-jobs-job",
   "AmazonJobsSearch": "amazon-jobs-search",
   "AmazonProduct": "amazon-product",
@@ -50262,9 +59388,28 @@ export const OperationIds = Object.freeze({
   "ApplePodcastsShow": "apple-podcasts-show",
   "ApplePodcastsShowEpisodes": "apple-podcasts-show-episodes",
   "ApplePodcastsShowRelated": "apple-podcasts-show-related",
+  "AudibleCategories": "audible-categories",
+  "AudibleCategory": "audible-category",
+  "AudibleCharts": "audible-charts",
+  "AudibleEditorialList": "audible-editorial-list",
+  "AudibleProduct": "audible-product",
+  "AudibleProductRelated": "audible-product-related",
+  "AudibleProductReviews": "audible-product-reviews",
+  "AudibleProducts": "audible-products",
+  "AudibleSearch": "audible-search",
+  "AudibleSeries": "audible-series",
   "AutotraderDealer": "autotrader-dealer",
   "AutotraderSearch": "autotrader-search",
   "AutotraderVehicle": "autotrader-vehicle",
+  "BbbBusiness": "bbb-business",
+  "BbbBusinessComplaints": "bbb-business-complaints",
+  "BbbBusinessMoreInfo": "bbb-business-more-info",
+  "BbbBusinessReviews": "bbb-business-reviews",
+  "BbbCategory": "bbb-category",
+  "BbbScamtrackerDetail": "bbb-scamtracker-detail",
+  "BbbScamtrackerSearch": "bbb-scamtracker-search",
+  "BbbScamtrackerStateStats": "bbb-scamtracker-state-stats",
+  "BbbSearch": "bbb-search",
   "BestBuyBestbuyBrands": "bestbuy-brands",
   "BestBuyBestbuyCategories": "bestbuy-categories",
   "BestBuyBestbuyCategoriesTrending": "bestbuy-categories-trending",
@@ -50285,6 +59430,9 @@ export const OperationIds = Object.freeze({
   "BillingMePeriods": "billing-me-periods",
   "BillingMePortal": "billing-me-portal",
   "BillingMeRejections": "billing-me-rejections",
+  "BillingMeSubscriptionChange": "billing-me-subscription-change",
+  "BillingMeSubscriptionChangeCancel": "billing-me-subscription-change-cancel",
+  "BillingMeSubscriptionPreview": "billing-me-subscription-preview",
   "BingImages": "bing-images",
   "BingNews": "bing-news",
   "BingSearch": "bing-search",
@@ -50332,6 +59480,17 @@ export const OperationIds = Object.freeze({
   "BraveSearch": "brave-search",
   "BraveSuggest": "brave-suggest",
   "BraveVideos": "brave-videos",
+  "BrooklinenCollectionProducts": "brooklinen-collection-products",
+  "BrooklinenCollections": "brooklinen-collections",
+  "BrooklinenPage": "brooklinen-page",
+  "BrooklinenPages": "brooklinen-pages",
+  "BrooklinenProduct": "brooklinen-product",
+  "BrooklinenProductRecommendations": "brooklinen-product-recommendations",
+  "BrooklinenProducts": "brooklinen-products",
+  "BrooklinenSearchSuggest": "brooklinen-search-suggest",
+  "BrooklinenSitemapUrls": "brooklinen-sitemap-urls",
+  "BrooklinenSitemaps": "brooklinen-sitemaps",
+  "BrooklinenStore": "brooklinen-store",
   "CapterraProduct": "capterra-product",
   "CapterraReviews": "capterra-reviews",
   "CapterraSearch": "capterra-search",
@@ -50344,6 +59503,13 @@ export const OperationIds = Object.freeze({
   "CarMaxCarmaxVehicleRecommendations": "carmax-vehicle-recommendations",
   "CarsComCarsdotcomSearch": "carsdotcom-search",
   "CarsComCarsdotcomVehicle": "carsdotcom-vehicle",
+  "ChewyCategories": "chewy-categories",
+  "ChewyCategory": "chewy-category",
+  "ChewyGtinLookup": "chewy-gtin-lookup",
+  "ChewyProduct": "chewy-product",
+  "ChewyProducts": "chewy-products",
+  "ChewySearch": "chewy-search",
+  "ChewySuggest": "chewy-suggest",
   "ChromeWebStoreChromewebstoreCategories": "chromewebstore-categories",
   "ChromeWebStoreChromewebstoreCategory": "chromewebstore-category",
   "ChromeWebStoreChromewebstoreCharts": "chromewebstore-charts",
@@ -50377,6 +59543,17 @@ export const OperationIds = Object.freeze({
   "CoinGeckoTokenUnlocks": "coingecko-token-unlocks",
   "CoinGeckoTreasuries": "coingecko-treasuries",
   "CoinGeckoTrending": "coingecko-trending",
+  "ColeHaanColehaanCollectionProducts": "colehaan-collection-products",
+  "ColeHaanColehaanCollections": "colehaan-collections",
+  "ColeHaanColehaanPage": "colehaan-page",
+  "ColeHaanColehaanPages": "colehaan-pages",
+  "ColeHaanColehaanProduct": "colehaan-product",
+  "ColeHaanColehaanProductRecommendations": "colehaan-product-recommendations",
+  "ColeHaanColehaanProducts": "colehaan-products",
+  "ColeHaanColehaanSearchSuggest": "colehaan-search-suggest",
+  "ColeHaanColehaanSitemapUrls": "colehaan-sitemap-urls",
+  "ColeHaanColehaanSitemaps": "colehaan-sitemaps",
+  "ColeHaanColehaanStore": "colehaan-store",
   "CongressReport": "congress-report",
   "CongressStockDisclosures": "congress-stock-disclosures",
   "CostcoCategories": "costco-categories",
@@ -50395,6 +59572,9 @@ export const OperationIds = Object.freeze({
   "DatasetsAppsChartsSearch": "datasets-apps-charts-search",
   "DatasetsAppsReviewsSearch": "datasets-apps-reviews-search",
   "DatasetsAppsSearch": "datasets-apps-search",
+  "DatasetsBbbBusinessesFacets": "datasets-bbb-businesses-facets",
+  "DatasetsBbbBusinessesItem": "datasets-bbb-businesses-item",
+  "DatasetsBbbBusinessesSearch": "datasets-bbb-businesses-search",
   "DatasetsBoxofficemojoFacets": "datasets-boxofficemojo-facets",
   "DatasetsBoxofficemojoItem": "datasets-boxofficemojo-item",
   "DatasetsBoxofficemojoSearch": "datasets-boxofficemojo-search",
@@ -50406,6 +59586,9 @@ export const OperationIds = Object.freeze({
   "DatasetsChromeExtensionsSearch": "datasets-chrome-extensions-search",
   "DatasetsChromeExtensionsTrending": "datasets-chrome-extensions-trending",
   "DatasetsCreatorsSearch": "datasets-creators-search",
+  "DatasetsFacebookPagesFacets": "datasets-facebook-pages-facets",
+  "DatasetsFacebookPagesItem": "datasets-facebook-pages-item",
+  "DatasetsFacebookPagesSearch": "datasets-facebook-pages-search",
   "DatasetsGithubUsersFacets": "datasets-github-users-facets",
   "DatasetsGithubUsersItem": "datasets-github-users-item",
   "DatasetsGithubUsersNearby": "datasets-github-users-nearby",
@@ -50491,9 +59674,16 @@ export const OperationIds = Object.freeze({
   "DatasetsTrustmrrHistory": "datasets-trustmrr-history",
   "DatasetsTrustmrrItem": "datasets-trustmrr-item",
   "DatasetsTrustmrrSearch": "datasets-trustmrr-search",
+  "DatasetsVehicleListingsFacets": "datasets-vehicle-listings-facets",
+  "DatasetsVehicleListingsItem": "datasets-vehicle-listings-item",
+  "DatasetsVehicleListingsPriceHistory": "datasets-vehicle-listings-price-history",
+  "DatasetsVehicleListingsSearch": "datasets-vehicle-listings-search",
   "DatasetsXUsersFacets": "datasets-x-users-facets",
   "DatasetsXUsersItem": "datasets-x-users-item",
   "DatasetsXUsersSearch": "datasets-x-users-search",
+  "DatasetsYoutubeCreatorsFacets": "datasets-youtube-creators-facets",
+  "DatasetsYoutubeCreatorsItem": "datasets-youtube-creators-item",
+  "DatasetsYoutubeCreatorsSearch": "datasets-youtube-creators-search",
   "DepopBrands": "depop-brands",
   "DepopCategories": "depop-categories",
   "DepopItem": "depop-item",
@@ -50566,6 +59756,17 @@ export const OperationIds = Object.freeze({
   "EtsyShopListings": "etsy-shop-listings",
   "EtsyShopReviews": "etsy-shop-reviews",
   "EtsyShopSearch": "etsy-shop-search",
+  "EverlaneCollectionProducts": "everlane-collection-products",
+  "EverlaneCollections": "everlane-collections",
+  "EverlanePage": "everlane-page",
+  "EverlanePages": "everlane-pages",
+  "EverlaneProduct": "everlane-product",
+  "EverlaneProductRecommendations": "everlane-product-recommendations",
+  "EverlaneProducts": "everlane-products",
+  "EverlaneSearchSuggest": "everlane-search-suggest",
+  "EverlaneSitemapUrls": "everlane-sitemap-urls",
+  "EverlaneSitemaps": "everlane-sitemaps",
+  "EverlaneStore": "everlane-store",
   "ExpediaActivitiesSearch": "expedia-activities-search",
   "ExpediaFlightsSearch": "expedia-flights-search",
   "ExpediaLocationsSearch": "expedia-locations-search",
@@ -50575,9 +59776,32 @@ export const OperationIds = Object.freeze({
   "ExpediaPropertiesSearch": "expedia-properties-search",
   "FacebookMarketplaceSearch": "facebook-marketplace-search",
   "FacebookPage": "facebook-page",
+  "FashionNovaFashionnovaCollectionProducts": "fashionnova-collection-products",
+  "FashionNovaFashionnovaCollections": "fashionnova-collections",
+  "FashionNovaFashionnovaPage": "fashionnova-page",
+  "FashionNovaFashionnovaPages": "fashionnova-pages",
+  "FashionNovaFashionnovaProduct": "fashionnova-product",
+  "FashionNovaFashionnovaProductRecommendations": "fashionnova-product-recommendations",
+  "FashionNovaFashionnovaProducts": "fashionnova-products",
+  "FashionNovaFashionnovaSearchSuggest": "fashionnova-search-suggest",
+  "FashionNovaFashionnovaSitemapUrls": "fashionnova-sitemap-urls",
+  "FashionNovaFashionnovaSitemaps": "fashionnova-sitemaps",
+  "FashionNovaFashionnovaStore": "fashionnova-store",
   "FiverrGig": "fiverr-gig",
   "FiverrSearch": "fiverr-search",
   "FiverrSeller": "fiverr-seller",
+  "GdeltContext": "gdelt-context",
+  "GdeltSearch": "gdelt-search",
+  "GdeltTimeline": "gdelt-timeline",
+  "GdeltTonechart": "gdelt-tonechart",
+  "GdeltTvConceptEntities": "gdelt-tv-concept-entities",
+  "GdeltTvSearch": "gdelt-tv-search",
+  "GdeltTvShowchart": "gdelt-tv-showchart",
+  "GdeltTvStationchart": "gdelt-tv-stationchart",
+  "GdeltTvStationdetails": "gdelt-tv-stationdetails",
+  "GdeltTvTimeline": "gdelt-tv-timeline",
+  "GdeltTvVisualEntities": "gdelt-tv-visual-entities",
+  "GdeltTvWordcloud": "gdelt-tv-wordcloud",
   "GeocodingLookup": "geocoding-lookup",
   "GeocodingReverse": "geocoding-reverse",
   "GeocodingSearch": "geocoding-search",
@@ -50667,6 +59891,16 @@ export const OperationIds = Object.freeze({
   "GoogleTrendsTrending": "google-trends-trending",
   "GoogleTrendsTrendingDetail": "google-trends-trending-detail",
   "GoogleVideos": "google-videos",
+  "GymsharkCollectionProducts": "gymshark-collection-products",
+  "GymsharkCollections": "gymshark-collections",
+  "GymsharkPage": "gymshark-page",
+  "GymsharkPages": "gymshark-pages",
+  "GymsharkProduct": "gymshark-product",
+  "GymsharkProductRecommendations": "gymshark-product-recommendations",
+  "GymsharkProducts": "gymshark-products",
+  "GymsharkSitemapUrls": "gymshark-sitemap-urls",
+  "GymsharkSitemaps": "gymshark-sitemaps",
+  "GymsharkStore": "gymshark-store",
   "HMHmCategories": "hm-categories",
   "HMHmListing": "hm-listing",
   "HMHmProduct": "hm-product",
@@ -50674,6 +59908,20 @@ export const OperationIds = Object.freeze({
   "HMHmSearch": "hm-search",
   "HMHmSearchSuggestions": "hm-search-suggestions",
   "HMHmStores": "hm-stores",
+  "HomeDepotHomedepotCategories": "homedepot-categories",
+  "HomeDepotHomedepotCategory": "homedepot-category",
+  "HomeDepotHomedepotProduct": "homedepot-product",
+  "HomeDepotHomedepotProductQuestions": "homedepot-product-questions",
+  "HomeDepotHomedepotSearch": "homedepot-search",
+  "IkeaAvailability": "ikea-availability",
+  "IkeaCategory": "ikea-category",
+  "IkeaProduct": "ikea-product",
+  "IkeaReviews": "ikea-reviews",
+  "IkeaSearch": "ikea-search",
+  "IkeaStore": "ikea-store",
+  "IkeaStores": "ikea-stores",
+  "IkeaSuggest": "ikea-suggest",
+  "ImdbCharts": "imdb-charts",
   "ImdbName": "imdb-name",
   "ImdbNameAwards": "imdb-name-awards",
   "ImdbNameCredits": "imdb-name-credits",
@@ -50690,8 +59938,10 @@ export const OperationIds = Object.freeze({
   "ImdbTitleParentalGuide": "imdb-title-parental-guide",
   "ImdbTitlePublicFactsAnalysis": "imdb-title-public-facts-analysis",
   "ImdbTitleQuotes": "imdb-title-quotes",
+  "ImdbTitleRatings": "imdb-title-ratings",
   "ImdbTitleReleaseInfo": "imdb-title-release-info",
   "ImdbTitleReviews": "imdb-title-reviews",
+  "ImdbTitleSimilar": "imdb-title-similar",
   "ImdbTitleTechnicalSpecs": "imdb-title-technical-specs",
   "ImdbTitleTrivia": "imdb-title-trivia",
   "ImportYetiImportyetiCompany": "importyeti-company",
@@ -50708,6 +59958,14 @@ export const OperationIds = Object.freeze({
   "InstagramPost": "instagram-post",
   "InstagramProfile": "instagram-profile",
   "InstagramReels": "instagram-reels",
+  "JCrewJcrewCategories": "jcrew-categories",
+  "JCrewJcrewCategory": "jcrew-category",
+  "JCrewJcrewProduct": "jcrew-product",
+  "JCrewJcrewProductReviews": "jcrew-product-reviews",
+  "JCrewJcrewSearch": "jcrew-search",
+  "JCrewJcrewSizeChart": "jcrew-size-chart",
+  "JCrewJcrewStores": "jcrew-stores",
+  "JCrewJcrewSuggest": "jcrew-suggest",
   "JobsAshbyBoard": "jobs-ashby-board",
   "JobsCompanySearch": "jobs-company-search",
   "JobsEightfoldBoard": "jobs-eightfold-board",
@@ -50778,10 +60036,25 @@ export const OperationIds = Object.freeze({
   "KalshiSeries": "kalshi-series",
   "KalshiSeriesDetail": "kalshi-series-detail",
   "KalshiTrades": "kalshi-trades",
+  "KickstarterComments": "kickstarter-comments",
+  "KickstarterDiscover": "kickstarter-discover",
+  "KickstarterProject": "kickstarter-project",
+  "KickstarterUpdates": "kickstarter-updates",
   "KohlSKohlsCategory": "kohls-category",
   "KohlSKohlsProductReviews": "kohls-product-reviews",
   "KohlSKohlsStores": "kohls-stores",
   "KohlSKohlsSuggest": "kohls-suggest",
+  "KylieCosmeticsKyliecosmeticsCollectionProducts": "kyliecosmetics-collection-products",
+  "KylieCosmeticsKyliecosmeticsCollections": "kyliecosmetics-collections",
+  "KylieCosmeticsKyliecosmeticsPage": "kyliecosmetics-page",
+  "KylieCosmeticsKyliecosmeticsPages": "kyliecosmetics-pages",
+  "KylieCosmeticsKyliecosmeticsProduct": "kyliecosmetics-product",
+  "KylieCosmeticsKyliecosmeticsProductRecommendations": "kyliecosmetics-product-recommendations",
+  "KylieCosmeticsKyliecosmeticsProducts": "kyliecosmetics-products",
+  "KylieCosmeticsKyliecosmeticsSearchSuggest": "kyliecosmetics-search-suggest",
+  "KylieCosmeticsKyliecosmeticsSitemapUrls": "kyliecosmetics-sitemap-urls",
+  "KylieCosmeticsKyliecosmeticsSitemaps": "kyliecosmetics-sitemaps",
+  "KylieCosmeticsKyliecosmeticsStore": "kyliecosmetics-store",
   "LetterboxdFilm": "letterboxd-film",
   "LetterboxdFilmRatingHistogram": "letterboxd-film-rating-histogram",
   "LetterboxdFilmReviews": "letterboxd-film-reviews",
@@ -50847,8 +60120,17 @@ export const OperationIds = Object.freeze({
   "MlbTeamStats": "mlb-team-stats",
   "MlbTeams": "mlb-teams",
   "MlbTransactions": "mlb-transactions",
+  "MonitorsChecks": "monitors-checks",
+  "MonitorsCreate": "monitors-create",
+  "MonitorsDelete": "monitors-delete",
+  "MonitorsGet": "monitors-get",
+  "MonitorsList": "monitors-list",
+  "MonitorsUpdate": "monitors-update",
   "NikeCategories": "nike-categories",
   "NikeProduct": "nike-product",
+  "NikeProductAvailability": "nike-product-availability",
+  "NikeProductDetails": "nike-product-details",
+  "NikeProductRecommendations": "nike-product-recommendations",
   "NikeProductReviews": "nike-product-reviews",
   "NikeSearch": "nike-search",
   "NikeStores": "nike-stores",
@@ -50861,6 +60143,17 @@ export const OperationIds = Object.freeze({
   "NumbeoIndicesCountry": "numbeo-indices-country",
   "NumbeoIndicesRankings": "numbeo-indices-rankings",
   "NumbeoIndicesRankingsByCountry": "numbeo-indices-rankings-by-country",
+  "OhPollyOhpollyCollectionProducts": "ohpolly-collection-products",
+  "OhPollyOhpollyCollections": "ohpolly-collections",
+  "OhPollyOhpollyPage": "ohpolly-page",
+  "OhPollyOhpollyPages": "ohpolly-pages",
+  "OhPollyOhpollyProduct": "ohpolly-product",
+  "OhPollyOhpollyProductRecommendations": "ohpolly-product-recommendations",
+  "OhPollyOhpollyProducts": "ohpolly-products",
+  "OhPollyOhpollySearchSuggest": "ohpolly-search-suggest",
+  "OhPollyOhpollySitemapUrls": "ohpolly-sitemap-urls",
+  "OhPollyOhpollySitemaps": "ohpolly-sitemaps",
+  "OhPollyOhpollyStore": "ohpolly-store",
   "OldNavyOldnavyCategories": "oldnavy-categories",
   "OldNavyOldnavyCategory": "oldnavy-category",
   "OldNavyOldnavyProduct": "oldnavy-product",
@@ -50977,8 +60270,18 @@ export const OperationIds = Object.freeze({
   "ProductHuntProduct": "producthunt-product",
   "ProductHuntReviews": "producthunt-reviews",
   "ProductHuntSearch": "producthunt-search",
+  "QuinceCategories": "quince-categories",
+  "QuinceNavigation": "quince-navigation",
+  "QuinceProduct": "quince-product",
+  "QuinceProductFaq": "quince-product-faq",
+  "QuinceProductReviews": "quince-product-reviews",
+  "QuinceSearch": "quince-search",
+  "QuinceSitemapUrls": "quince-sitemap-urls",
+  "QuinceSitemaps": "quince-sitemaps",
+  "QuinceSuggest": "quince-suggest",
   "RedditComments": "reddit-comments",
   "RedditDomainPosts": "reddit-domain-posts",
+  "RedditLeads": "reddit-leads",
   "RedditPost": "reddit-post",
   "RedditSearch": "reddit-search",
   "RedditSubredditAbout": "reddit-subreddit-about",
@@ -50996,6 +60299,17 @@ export const OperationIds = Object.freeze({
   "ReferralsClick": "referrals-click",
   "ReferralsMe": "referrals-me",
   "ReferralsMeEvents": "referrals-me-events",
+  "RothySRothysCollectionProducts": "rothys-collection-products",
+  "RothySRothysCollections": "rothys-collections",
+  "RothySRothysPage": "rothys-page",
+  "RothySRothysPages": "rothys-pages",
+  "RothySRothysProduct": "rothys-product",
+  "RothySRothysProductRecommendations": "rothys-product-recommendations",
+  "RothySRothysProducts": "rothys-products",
+  "RothySRothysSearchSuggest": "rothys-search-suggest",
+  "RothySRothysSitemapUrls": "rothys-sitemap-urls",
+  "RothySRothysSitemaps": "rothys-sitemaps",
+  "RothySRothysStore": "rothys-store",
   "RottenTomatoesRottentomatoesBrowseMovies": "rottentomatoes-browse-movies",
   "RottenTomatoesRottentomatoesBrowseTv": "rottentomatoes-browse-tv",
   "RottenTomatoesRottentomatoesEpisode": "rottentomatoes-episode",
@@ -51027,6 +60341,14 @@ export const OperationIds = Object.freeze({
   "SephoraSearch": "sephora-search",
   "SephoraStores": "sephora-stores",
   "SephoraSuggest": "sephora-suggest",
+  "SheinCategoryFilters": "shein-category-filters",
+  "SheinCategoryGoods": "shein-category-goods",
+  "SheinCategoryNav": "shein-category-nav",
+  "SheinProductsAggregationFilters": "shein-products-aggregation-filters",
+  "SheinProductsDetail": "shein-products-detail",
+  "SheinProductsSearch": "shein-products-search",
+  "SheinSearchAutocomplete": "shein-search-autocomplete",
+  "SheinSearchKeywords": "shein-search-keywords",
   "ShopAppAnalysis": "shop-app-analysis",
   "ShopAppCategories": "shop-app-categories",
   "ShopAppCollectionProducts": "shop-app-collection-products",
@@ -51056,6 +60378,17 @@ export const OperationIds = Object.freeze({
   "ShopifyStore": "shopify-store",
   "SimilarWebSearch": "similarweb-search",
   "SimilarWebWeb": "similarweb-web",
+  "SkimsCollectionProducts": "skims-collection-products",
+  "SkimsCollections": "skims-collections",
+  "SkimsPage": "skims-page",
+  "SkimsPages": "skims-pages",
+  "SkimsProduct": "skims-product",
+  "SkimsProductRecommendations": "skims-product-recommendations",
+  "SkimsProducts": "skims-products",
+  "SkimsSearchSuggest": "skims-search-suggest",
+  "SkimsSitemapUrls": "skims-sitemap-urls",
+  "SkimsSitemaps": "skims-sitemaps",
+  "SkimsStore": "skims-store",
   "SofaScoreSofascoreEvent": "sofascore-event",
   "SofaScoreSofascoreEventH2h": "sofascore-event-h2h",
   "SofaScoreSofascoreEventIncidents": "sofascore-event-incidents",
@@ -51135,6 +60468,17 @@ export const OperationIds = Object.freeze({
   "SteamTags": "steam-tags",
   "SteamTagsList": "steam-tags-list",
   "SteamTopSellers": "steam-top-sellers",
+  "SteveMaddenStevemaddenCollectionProducts": "stevemadden-collection-products",
+  "SteveMaddenStevemaddenCollections": "stevemadden-collections",
+  "SteveMaddenStevemaddenPage": "stevemadden-page",
+  "SteveMaddenStevemaddenPages": "stevemadden-pages",
+  "SteveMaddenStevemaddenProduct": "stevemadden-product",
+  "SteveMaddenStevemaddenProductRecommendations": "stevemadden-product-recommendations",
+  "SteveMaddenStevemaddenProducts": "stevemadden-products",
+  "SteveMaddenStevemaddenSearchSuggest": "stevemadden-search-suggest",
+  "SteveMaddenStevemaddenSitemapUrls": "stevemadden-sitemap-urls",
+  "SteveMaddenStevemaddenSitemaps": "stevemadden-sitemaps",
+  "SteveMaddenStevemaddenStore": "stevemadden-store",
   "StockXStockxBrands": "stockx-brands",
   "StockXStockxCategories": "stockx-categories",
   "StockXStockxProduct": "stockx-product",
@@ -51153,6 +60497,17 @@ export const OperationIds = Object.freeze({
   "TargetSearch": "target-search",
   "TeslaJobsJob": "tesla-jobs-job",
   "TeslaJobsList": "tesla-jobs-list",
+  "TheBodyShopThebodyshopCollectionProducts": "thebodyshop-collection-products",
+  "TheBodyShopThebodyshopCollections": "thebodyshop-collections",
+  "TheBodyShopThebodyshopPage": "thebodyshop-page",
+  "TheBodyShopThebodyshopPages": "thebodyshop-pages",
+  "TheBodyShopThebodyshopProduct": "thebodyshop-product",
+  "TheBodyShopThebodyshopProductRecommendations": "thebodyshop-product-recommendations",
+  "TheBodyShopThebodyshopProducts": "thebodyshop-products",
+  "TheBodyShopThebodyshopSearchSuggest": "thebodyshop-search-suggest",
+  "TheBodyShopThebodyshopSitemapUrls": "thebodyshop-sitemap-urls",
+  "TheBodyShopThebodyshopSitemaps": "thebodyshop-sitemaps",
+  "TheBodyShopThebodyshopStore": "thebodyshop-store",
   "ThreadsPost": "threads-post",
   "ThreadsPostReplies": "threads-post-replies",
   "ThreadsProfile": "threads-profile",
@@ -51265,6 +60620,7 @@ export const OperationIds = Object.freeze({
   "VintedCategory": "vinted-category",
   "VintedItem": "vinted-item",
   "VintedMember": "vinted-member",
+  "WalgreensStores": "walgreens-stores",
   "WalmartProduct": "walmart-product",
   "WalmartProductReviews": "walmart-product-reviews",
   "WalmartSearch": "walmart-search",

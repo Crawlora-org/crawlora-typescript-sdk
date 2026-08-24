@@ -30,6 +30,222 @@ export interface ModelAccountdeletionAccountDeletionResponseDoc {
   "request"?: ModelAccountdeletionAccountDeletionRequestDoc;
 }
 
+export interface ModelAdidasBreadcrumb {
+  "link"?: string;
+  "text"?: string;
+}
+
+export interface ModelAdidasFilter {
+  "id"?: string;
+  "multiselect"?: boolean;
+  "title"?: string;
+  "values"?: Array<ModelAdidasFilterValue>;
+}
+
+export interface ModelAdidasFilterValue {
+  "count"?: number;
+  "name"?: string;
+  "value"?: string;
+}
+
+export interface ModelAdidasImage {
+  "sort_order"?: number;
+  "url"?: string;
+  "view"?: string;
+}
+
+export interface ModelAdidasProduct {
+  "alt_text"?: string;
+  "available_sizes"?: Array<string>;
+  "category"?: string;
+  "color_variations"?: Array<string>;
+  "discount_percent"?: number;
+  "division"?: string;
+  "generic_product_type"?: Array<string>;
+  "hover_image_url"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "is_flash"?: boolean;
+  "model_number"?: string;
+  "online_from"?: string;
+  "orderable"?: boolean;
+  "original_price"?: number;
+  "personalizable"?: boolean;
+  "preorderable"?: boolean;
+  "price"?: number;
+  "rating"?: number;
+  "rating_count"?: number;
+  "sport"?: Array<string>;
+  "subtitle"?: string;
+  "surface"?: Array<string>;
+  "title"?: string;
+  "unisex"?: boolean;
+  "url"?: string;
+}
+
+export interface ModelAdidasProductDetailResponse {
+  "base_model_number"?: string;
+  "brand"?: string;
+  "breadcrumbs"?: Array<ModelAdidasBreadcrumb>;
+  "canonical_url"?: string;
+  "category"?: string;
+  "color"?: string;
+  "current_price"?: number;
+  "description"?: string;
+  "discount_text"?: string;
+  "fetched_at"?: string;
+  "gender"?: string;
+  "images"?: Array<ModelAdidasImage>;
+  "model_number"?: string;
+  "name"?: string;
+  "outlet"?: boolean;
+  "product_id"?: string;
+  "product_type"?: string;
+  "sale"?: boolean;
+  "sale_price"?: number;
+  "source_url"?: string;
+  "sport"?: Array<string>;
+  "standard_price"?: number;
+  "variations"?: Array<ModelAdidasVariation>;
+}
+
+export interface ModelAdidasSearchResponse {
+  "breadcrumbs"?: Array<ModelAdidasBreadcrumb>;
+  "category"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "filters"?: Array<ModelAdidasFilter>;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelAdidasProduct>;
+  "query"?: string;
+  "sort"?: string;
+  "sort_options"?: Array<ModelAdidasSortOption>;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_products"?: number;
+}
+
+export interface ModelAdidasSortOption {
+  "id"?: string;
+  "selected"?: boolean;
+}
+
+export interface ModelAdidasStore {
+  "city"?: string;
+  "distance_miles"?: number;
+  "features"?: Array<string>;
+  "id"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "opening_hours"?: Array<ModelAdidasStoreDay>;
+  "phone"?: string;
+  "street"?: string;
+}
+
+export interface ModelAdidasStoreDay {
+  "closed"?: boolean;
+  "day"?: string;
+  "end"?: string;
+  "start"?: string;
+}
+
+export interface ModelAdidasStoreDayHours {
+  "day"?: string;
+  "from"?: string;
+  "status"?: string;
+  "to"?: string;
+}
+
+export interface ModelAdidasStoreDetailResponse {
+  "address_line"?: string;
+  "city"?: string;
+  "country_code"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "opening_hours"?: Array<ModelAdidasStoreDayHours>;
+  "phone"?: string;
+  "postal_code"?: string;
+  "services"?: Array<ModelAdidasStoreService>;
+  "source_url"?: string;
+  "status"?: string;
+  "store_id"?: string;
+  "url"?: string;
+}
+
+export interface ModelAdidasStoreResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "lat"?: number;
+  "lng"?: number;
+  "page"?: number;
+  "source_url"?: string;
+  "stores"?: Array<ModelAdidasStore>;
+  "total"?: number;
+}
+
+export interface ModelAdidasStoreService {
+  "name"?: string;
+  "type"?: string;
+}
+
+export interface ModelAdidasSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelAdidasSuggestion>;
+}
+
+export interface ModelAdidasSuggestion {
+  "id"?: string;
+  "image_url"?: string;
+  "price"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelAdidasVariation {
+  "gtin"?: string;
+  "size"?: string;
+  "sku"?: string;
+  "split_size"?: Array<string>;
+}
+
+export interface ModelAdidasProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelAdidasProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelAdidasSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAdidasSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAdidasStoreDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelAdidasStoreDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelAdidasStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelAdidasStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelAdidasSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelAdidasSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelAgodaActivitiesSearchResponse {
   "activities"?: Array<ModelAgodaActivitySummary>;
   "city_id"?: number;
@@ -1468,6 +1684,272 @@ export interface ModelAppstoreVersionHistoryResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelAudibleCategoriesResponse {
+  "categories"?: Array<ModelAudibleCategory>;
+  "source_url"?: string;
+}
+
+export interface ModelAudibleCategory {
+  "children"?: Array<ModelAudibleCategory>;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelAudibleCategoryEntry {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelAudibleCategoryLadder {
+  "path"?: Array<ModelAudibleCategoryEntry>;
+  "root"?: string;
+}
+
+export interface ModelAudibleCategoryResponse {
+  "children"?: Array<ModelAudibleCategory>;
+  "id"?: string;
+  "name"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelAudibleChartEntry {
+  "asin"?: string;
+  "authors"?: Array<string>;
+  "language"?: string;
+  "narrators"?: Array<string>;
+  "price_text"?: string;
+  "rank"?: number;
+  "rating"?: number;
+  "ratings_count"?: number;
+  "release_date"?: string;
+  "runtime_minutes"?: number;
+  "runtime_text"?: string;
+  "series"?: string;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelAudibleChartsResponse {
+  "access_level"?: string;
+  "category_id"?: string;
+  "chart"?: string;
+  "content_type"?: string;
+  "duration"?: string;
+  "entries"?: Array<ModelAudibleChartEntry>;
+  "language"?: string;
+  "originals_only"?: boolean;
+  "page"?: number;
+  "results_text"?: string;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelAudibleContributor {
+  "asin"?: string;
+  "name"?: string;
+}
+
+export interface ModelAudibleEditorialListResponse {
+  "list"?: string;
+  "shelves"?: Array<ModelAudibleEditorialShelf>;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelAudibleEditorialShelf {
+  "asins"?: Array<string>;
+  "heading"?: string;
+}
+
+export interface ModelAudiblePrice {
+  "credit_price"?: number;
+  "currency_code"?: string;
+  "list_price"?: number;
+}
+
+export interface ModelAudibleProductResponse {
+  "asin"?: string;
+  "authors"?: Array<ModelAudibleContributor>;
+  "categories"?: Array<ModelAudibleCategoryLadder>;
+  "description"?: string;
+  "format_type"?: string;
+  "image_url"?: string;
+  "is_preorderable"?: boolean;
+  "language"?: string;
+  "narrators"?: Array<ModelAudibleContributor>;
+  "price"?: ModelAudiblePrice;
+  "product_state"?: string;
+  "publisher"?: string;
+  "rating"?: ModelAudibleRating;
+  "release_date"?: string;
+  "runtime_minutes"?: number;
+  "sample_url"?: string;
+  "series"?: Array<ModelAudibleSeriesEntry>;
+  "source_url"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelAudibleProductsResponse {
+  "products"?: Array<ModelAudibleProductResponse>;
+  "requested"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelAudibleRating {
+  "num_reviews"?: number;
+  "overall"?: ModelAudibleRatingDistribution;
+  "performance"?: ModelAudibleRatingDistribution;
+  "story"?: ModelAudibleRatingDistribution;
+}
+
+export interface ModelAudibleRatingDistribution {
+  "average"?: number;
+  "display_average"?: string;
+  "five_star"?: number;
+  "four_star"?: number;
+  "num_ratings"?: number;
+  "one_star"?: number;
+  "three_star"?: number;
+  "two_star"?: number;
+}
+
+export interface ModelAudibleRelatedResponse {
+  "asin"?: string;
+  "limit"?: number;
+  "results"?: Array<ModelAudibleSearchResult>;
+  "similarity_type"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelAudibleReview {
+  "author_name"?: string;
+  "body"?: string;
+  "helpful_votes"?: number;
+  "id"?: string;
+  "overall_rating"?: number;
+  "performance_rating"?: number;
+  "story_rating"?: number;
+  "submitted_at"?: string;
+  "title"?: string;
+}
+
+export interface ModelAudibleReviewsResponse {
+  "asin"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "reviews"?: Array<ModelAudibleReview>;
+  "source_url"?: string;
+}
+
+export interface ModelAudibleSearchResponse {
+  "author"?: string;
+  "category_id"?: string;
+  "limit"?: number;
+  "narrator"?: string;
+  "page"?: number;
+  "query"?: string;
+  "results"?: Array<ModelAudibleSearchResult>;
+  "sort_by"?: string;
+  "source_url"?: string;
+  "title"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelAudibleSearchResult {
+  "asin"?: string;
+  "format_type"?: string;
+  "is_preorderable"?: boolean;
+  "language"?: string;
+  "product_state"?: string;
+  "release_date"?: string;
+  "runtime_minutes"?: number;
+  "subtitle"?: string;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelAudibleSeriesBook {
+  "asin"?: string;
+  "sequence"?: string;
+  "uri"?: string;
+}
+
+export interface ModelAudibleSeriesEntry {
+  "asin"?: string;
+  "sequence"?: string;
+  "title"?: string;
+  "uri"?: string;
+}
+
+export interface ModelAudibleSeriesResponse {
+  "asin"?: string;
+  "books"?: Array<ModelAudibleSeriesBook>;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelAudibleCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleChartsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleChartsResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleEditorialListResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleEditorialListResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleRelatedResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleRelatedResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAudibleSeriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelAudibleSeriesResponse;
+  "msg"?: string;
+}
+
 export interface ModelAutotraderBodyStyle {
   "code"?: string;
   "name"?: string;
@@ -1672,6 +2154,269 @@ export interface ModelAutotraderVehicleResponse {
 export interface ModelAutotraderSearchResponseDoc {
   "code"?: number;
   "data"?: ModelAutotraderSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbBusinessHoursDay {
+  "day"?: string;
+  "hours"?: string;
+}
+
+export interface ModelBbbBusinessResponse {
+  "accredited"?: boolean;
+  "accredited_since"?: string;
+  "additional_phone_numbers"?: Array<string>;
+  "additional_websites"?: Array<string>;
+  "address"?: string;
+  "alternate_names"?: Array<string>;
+  "bbb_file_opened"?: string;
+  "business_incorporated"?: string;
+  "business_management"?: string;
+  "business_started"?: string;
+  "categories"?: Array<string>;
+  "category"?: string;
+  "entity_type"?: string;
+  "hours"?: Array<ModelBbbBusinessHoursDay>;
+  "image_url"?: string;
+  "latest_reviews"?: Array<ModelBbbReviewPreview>;
+  "licensing_note"?: string;
+  "local_bbb"?: string;
+  "local_bbb_url"?: string;
+  "more_info_url"?: string;
+  "name"?: string;
+  "phone"?: string;
+  "products_and_services"?: Array<string>;
+  "rating"?: string;
+  "rating_reasons"?: Array<string>;
+  "social_media"?: Array<string>;
+  "source_url"?: string;
+  "url"?: string;
+  "website"?: string;
+  "years_in_business"?: string;
+}
+
+export interface ModelBbbBusinessSearchResult {
+  "accredited"?: boolean;
+  "address"?: string;
+  "categories"?: Array<string>;
+  "hq_profile_url"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "phone"?: string;
+  "quote_url"?: string;
+  "rating"?: string;
+  "service_areas"?: Array<string>;
+  "url"?: string;
+}
+
+export interface ModelBbbCategoryResponse {
+  "page"?: number;
+  "results"?: Array<ModelBbbBusinessSearchResult>;
+  "source_url"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelBbbComplaint {
+  "business_responses"?: Array<ModelBbbComplaintMessage>;
+  "customer_answers"?: Array<ModelBbbComplaintMessage>;
+  "date"?: string;
+  "id"?: string;
+  "status"?: string;
+  "text"?: string;
+  "type"?: string;
+}
+
+export interface ModelBbbComplaintMessage {
+  "date"?: string;
+  "text"?: string;
+}
+
+export interface ModelBbbComplaintsResponse {
+  "business_name"?: string;
+  "closed_last_12_months"?: number;
+  "complaints"?: Array<ModelBbbComplaint>;
+  "complaints_list_incomplete"?: boolean;
+  "period_text"?: string;
+  "source_url"?: string;
+  "submit_complaint_url"?: string;
+  "total_complaints"?: number;
+}
+
+export interface ModelBbbMoreInfoResponse {
+  "business_name"?: string;
+  "rating"?: string;
+  "rating_reasons"?: Array<string>;
+  "service_areas"?: Array<string>;
+  "source_url"?: string;
+}
+
+export interface ModelBbbRelatedCategory {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelBbbReviewItem {
+  "author"?: string;
+  "date"?: string;
+  "id"?: string;
+  "rating"?: number;
+  "responses"?: Array<ModelBbbReviewResponse>;
+  "text"?: string;
+}
+
+export interface ModelBbbReviewPreview {
+  "author"?: string;
+  "quote"?: string;
+  "url"?: string;
+}
+
+export interface ModelBbbReviewResponse {
+  "date"?: string;
+  "is_business"?: boolean;
+  "text"?: string;
+  "title"?: string;
+}
+
+export interface ModelBbbReviewsResponse {
+  "average_rating"?: number;
+  "page"?: number;
+  "reviews"?: Array<ModelBbbReviewItem>;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_reviews"?: number;
+}
+
+export interface ModelBbbSearchResponse {
+  "location"?: string;
+  "page"?: number;
+  "query"?: string;
+  "related_categories"?: Array<ModelBbbRelatedCategory>;
+  "results"?: Array<ModelBbbBusinessSearchResult>;
+  "source_url"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelBbbBusinessResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbBusinessResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbComplaintsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbComplaintsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbMoreInfoResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbMoreInfoResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbscamtrackerDetailResponse {
+  "business_name"?: string;
+  "date_reported"?: string;
+  "description"?: string;
+  "dollars_lost"?: string;
+  "id"?: string;
+  "scam_type"?: string;
+  "scammer_email"?: string;
+  "scammer_location"?: string;
+  "scammer_phone"?: string;
+  "scammer_url"?: string;
+  "source_url"?: string;
+  "targeted_location"?: string;
+}
+
+export interface ModelBbbscamtrackerScamResult {
+  "business_name_used"?: string;
+  "category"?: string;
+  "date_reported"?: string;
+  "description"?: string;
+  "dollars_lost"?: string;
+  "id"?: string;
+  "url"?: string;
+  "victim_location"?: string;
+}
+
+export interface ModelBbbscamtrackerScamTypeShare {
+  "count"?: number;
+  "pct"?: number;
+  "type"?: string;
+}
+
+export interface ModelBbbscamtrackerSearchResponse {
+  "date_from"?: string;
+  "date_to"?: string;
+  "max_dollars_lost"?: number;
+  "min_dollars_lost"?: number;
+  "page"?: number;
+  "query"?: string;
+  "results"?: Array<ModelBbbscamtrackerScamResult>;
+  "scam_type"?: string;
+  "scammer_state"?: string;
+  "source_url"?: string;
+  "state"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelBbbscamtrackerStateStat {
+  "code"?: string;
+  "country"?: string;
+  "losses"?: number;
+  "losses_per_capita"?: number;
+  "median_loss"?: number;
+  "name"?: string;
+  "pct_reporting_loss"?: number;
+  "population"?: number;
+  "reports"?: number;
+  "reports_per_capita"?: number;
+  "reports_with_loss"?: number;
+  "scam_type_breakdown"?: Array<ModelBbbscamtrackerScamTypeShare>;
+  "top_scam_type"?: string;
+  "yoy_change_pct"?: number;
+}
+
+export interface ModelBbbscamtrackerStateStatsResponse {
+  "aggregated_at"?: string;
+  "period"?: string;
+  "states"?: Array<ModelBbbscamtrackerStateStat>;
+}
+
+export interface ModelBbbscamtrackerDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbscamtrackerDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbscamtrackerSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbscamtrackerSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelBbbscamtrackerStateStatsResponseDoc {
+  "code"?: number;
+  "data"?: ModelBbbscamtrackerStateStatsResponse;
   "msg"?: string;
 }
 
@@ -1927,6 +2672,40 @@ export interface ModelBestbuyTrendingCategoriesResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelBillingStripeSubscriptionChangePreview {
+  "action"?: string;
+  "amount_due_cents"?: number;
+  "currency"?: string;
+  "current_period_end"?: string;
+  "current_plan"?: string;
+  "effective_at"?: string;
+  "next_renewal_amount_cents"?: number;
+  "preview_id"?: string;
+  "previewed_at"?: string;
+  "proration_date"?: number;
+  "remaining_credits_after_change"?: number;
+  "target_daily_credit_limit"?: number;
+  "target_included_credits"?: number;
+  "target_plan"?: string;
+  "target_rate_limit_per_minute"?: number;
+  "used_credits"?: number;
+}
+
+export interface ModelBillingStripeSubscriptionChangeResult {
+  "action"?: string;
+  "amount_due_cents"?: number;
+  "currency"?: string;
+  "current_plan"?: string;
+  "effective_at"?: string;
+  "hosted_invoice_url"?: string;
+  "invoice_id"?: string;
+  "local_sync_pending"?: boolean;
+  "payment_action_required"?: boolean;
+  "payment_client_secret"?: string;
+  "payment_status"?: string;
+  "target_plan"?: string;
+}
+
 export interface ModelBillingBillingEndpointLedgerDoc {
   "charged_requests"?: number;
   "credits"?: number;
@@ -2092,6 +2871,8 @@ export interface ModelBillingBillingStateDoc {
   "hard_limit"?: boolean;
   "included_credits"?: number;
   "overage_credits"?: number;
+  "pending_plan"?: string;
+  "pending_plan_effective_at"?: string;
   "period_end"?: string;
   "period_key"?: string;
   "period_start"?: string;
@@ -2312,6 +3093,25 @@ export interface ModelBillingStripeSessionResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelBillingStripeSubscriptionChangePreviewResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeSubscriptionChangePreview;
+  "msg"?: string;
+}
+
+export interface ModelBillingStripeSubscriptionChangeRequestDoc {
+  "idempotency_key"?: string;
+  "plan"?: string;
+  "previewed_at"?: string;
+  "proration_date"?: number;
+}
+
+export interface ModelBillingStripeSubscriptionChangeResultResponseDoc {
+  "code"?: number;
+  "data"?: ModelBillingStripeSubscriptionChangeResult;
+  "msg"?: string;
+}
+
 export interface ModelBingContextAttribute {
   "label"?: string;
   "value"?: string;
@@ -2369,6 +3169,7 @@ export interface ModelBingSearchPagination {
 
 export interface ModelBingSearchResponse {
   "context"?: ModelBingSearchContext;
+  "low_confidence"?: boolean;
   "news"?: Array<ModelBingNewsResult>;
   "pagination"?: ModelBingSearchPagination;
   "people_also_ask"?: Array<string>;
@@ -3526,6 +4327,7 @@ export interface ModelBrandLogo {
   "colors"?: Array<ModelBrandColor>;
   "mode"?: string;
   "resolution"?: ModelBrandResolution;
+  "theme"?: string;
   "type"?: string;
   "url"?: string;
 }
@@ -4266,6 +5068,268 @@ export interface ModelCarsdotcomVehicleResponse {
 export interface ModelCarsdotcomSearchResponseDoc {
   "code"?: number;
   "data"?: ModelCarsdotcomSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelChewyAnswer {
+  "helpful_count"?: number;
+  "id"?: string;
+  "is_staff"?: boolean;
+  "submitted_at"?: string;
+  "submitted_by"?: string;
+  "text"?: string;
+}
+
+export interface ModelChewyCategoriesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "group_id"?: string;
+  "groups"?: Array<ModelChewyCategoryGroup>;
+  "source_url"?: string;
+}
+
+export interface ModelChewyCategoryBreadcrumb {
+  "group_id"?: string;
+  "text"?: string;
+  "url_slug"?: string;
+}
+
+export interface ModelChewyCategoryFacet {
+  "name"?: string;
+  "options"?: Array<ModelChewyCategoryFacetOption>;
+  "value"?: string;
+}
+
+export interface ModelChewyCategoryFacetOption {
+  "display_label"?: string;
+  "name"?: string;
+  "product_count"?: number;
+  "url_slug"?: string;
+  "value"?: string;
+}
+
+export interface ModelChewyCategoryGroup {
+  "children"?: Array<ModelChewyCategoryGroup>;
+  "group_id"?: string;
+  "name"?: string;
+  "short_description"?: string;
+  "thumbnail_url"?: string;
+}
+
+export interface ModelChewyCategoryProduct {
+  "autoship_discount_pct"?: string;
+  "autoship_price"?: number;
+  "currency_code"?: string;
+  "has_more_choices"?: boolean;
+  "image_url"?: string;
+  "in_stock"?: boolean;
+  "is_autoship_allowed"?: boolean;
+  "is_chewy_exclusive"?: boolean;
+  "is_deal"?: boolean;
+  "is_new"?: boolean;
+  "manufacturer"?: string;
+  "name"?: string;
+  "parent_part_number"?: string;
+  "part_number"?: string;
+  "price"?: number;
+  "rating"?: number;
+  "rating_count"?: number;
+  "strike_price"?: number;
+  "thumbnail_urls"?: Array<string>;
+  "url"?: string;
+}
+
+export interface ModelChewyCategoryResponse {
+  "breadcrumbs"?: Array<ModelChewyCategoryBreadcrumb>;
+  "count"?: number;
+  "facets"?: Array<ModelChewyCategoryFacet>;
+  "fetched_at"?: string;
+  "group_id"?: string;
+  "name"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelChewyCategoryProduct>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelChewyGtinlookupResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "not_found"?: Array<string>;
+  "part_numbers"?: Record<string, string>;
+  "source_url"?: string;
+}
+
+export interface ModelChewyProduct {
+  "brand"?: string;
+  "brand_url"?: string;
+  "breadcrumbs"?: Array<ModelChewyProductBreadcrumb>;
+  "currency_code"?: string;
+  "description"?: string;
+  "entry_id"?: string;
+  "icons"?: Array<ModelChewyProductIcon>;
+  "images"?: Array<string>;
+  "in_stock"?: boolean;
+  "name"?: string;
+  "parent_entry_id"?: string;
+  "parent_part_number"?: string;
+  "part_number"?: string;
+  "price"?: number;
+  "questions"?: Array<ModelChewyProductQuestion>;
+  "questions_count"?: number;
+  "rating"?: number;
+  "rating_breakdown"?: Array<ModelChewyProductRatingBreakdown>;
+  "rating_count"?: number;
+  "reviews"?: Array<ModelChewyReview>;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelChewyProductBreadcrumb {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelChewyProductIcon {
+  "image_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelChewyProductQuestion {
+  "answers"?: Array<ModelChewyAnswer>;
+  "id"?: string;
+  "is_staff_answered"?: boolean;
+  "text"?: string;
+}
+
+export interface ModelChewyProductRatingBreakdown {
+  "count"?: number;
+  "percent"?: number;
+  "stars"?: number;
+}
+
+export interface ModelChewyProductResponse {
+  "fetched_at"?: string;
+  "product"?: ModelChewyProduct;
+  "source_url"?: string;
+}
+
+export interface ModelChewyProductSummary {
+  "brand"?: string;
+  "buyable"?: boolean;
+  "currency_code"?: string;
+  "discontinued"?: boolean;
+  "gtin"?: string;
+  "image_url"?: string;
+  "in_stock"?: boolean;
+  "list_price"?: number;
+  "manufacturer_part_number"?: string;
+  "name"?: string;
+  "on_special"?: boolean;
+  "parent_part_number"?: string;
+  "part_number"?: string;
+  "price"?: number;
+  "rating"?: number;
+  "rating_count"?: number;
+  "short_description"?: string;
+  "slug"?: string;
+  "thumbnail_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelChewyProductsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "not_found"?: Array<string>;
+  "products"?: Array<ModelChewyProductSummary>;
+  "source_url"?: string;
+}
+
+export interface ModelChewyReview {
+  "contributor_badge"?: string;
+  "helpful_count"?: number;
+  "id"?: string;
+  "incentivized"?: boolean;
+  "photo_urls"?: Array<string>;
+  "rating"?: number;
+  "submitted_at"?: string;
+  "submitted_by"?: string;
+  "text"?: string;
+  "title"?: string;
+}
+
+export interface ModelChewySearchResponse {
+  "breadcrumbs"?: Array<ModelChewyCategoryBreadcrumb>;
+  "count"?: number;
+  "facets"?: Array<ModelChewyCategoryFacet>;
+  "fetched_at"?: string;
+  "products"?: Array<ModelChewyCategoryProduct>;
+  "query"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelChewySuggestResponse {
+  "articles"?: Array<ModelChewySuggestedArticle>;
+  "fetched_at"?: string;
+  "redirect_url"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelChewySuggestion>;
+  "term"?: string;
+}
+
+export interface ModelChewySuggestedArticle {
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelChewySuggestion {
+  "term"?: string;
+  "url"?: string;
+}
+
+export interface ModelChewyCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelChewyCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelChewyCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelChewyCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelChewyGtinLookupResponseDoc {
+  "code"?: number;
+  "data"?: ModelChewyGtinlookupResponse;
+  "msg"?: string;
+}
+
+export interface ModelChewyProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelChewyProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelChewyProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelChewyProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelChewySearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelChewySearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelChewySuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelChewySuggestResponse;
   "msg"?: string;
 }
 
@@ -5494,6 +6558,21 @@ export interface ModelDatasetsAppsSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsBbbbusinessesFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsBbbbusinessesFacetItem>;
+}
+
+export interface ModelDatasetsBbbbusinessesSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsBbbbusinessRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsBoxOfficeMojoFacetResponse {
   "dataset"?: string;
   "facet"?: string;
@@ -5583,6 +6662,21 @@ export interface ModelDatasetsDatasetInfo {
 
 export interface ModelDatasetsDatasetListResponse {
   "items"?: Array<ModelDatasetsDatasetInfo>;
+}
+
+export interface ModelDatasetsFacebookPageFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsFacebookPageDatasetFacetItem>;
+}
+
+export interface ModelDatasetsFacebookPageSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsFacebookPageDatasetItem>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
 }
 
 export interface ModelDatasetsGithubUserFacetResponse {
@@ -6039,6 +7133,26 @@ export interface ModelDatasetsTrustmrrSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsVehicleListingFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsVehicleListingDatasetFacetItem>;
+}
+
+export interface ModelDatasetsVehicleListingPriceHistoryResponse {
+  "id"?: string;
+  "items"?: Array<ModelEsVehiclePriceHistoryRecord>;
+}
+
+export interface ModelDatasetsVehicleListingSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsVehicleListingRecord>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsXuserFacetResponse {
   "dataset"?: string;
   "facet"?: string;
@@ -6048,6 +7162,21 @@ export interface ModelDatasetsXuserFacetResponse {
 export interface ModelDatasetsXuserSearchResponse {
   "dataset"?: string;
   "items"?: Array<ModelEsXuserDatasetItem>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelDatasetsYoutubeCreatorFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsYoutubeCreatorDatasetFacetItem>;
+}
+
+export interface ModelDatasetsYoutubeCreatorSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsYoutubeCreatorDatasetItem>;
   "page"?: number;
   "page_size"?: number;
   "sort"?: string;
@@ -6099,6 +7228,24 @@ export interface ModelDatasetsApplePodcastsShowsSearchResponseDoc {
 export interface ModelDatasetsAppsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsAppsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsBbbBusinessResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsBbbbusinessRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsBbbBusinessesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsBbbbusinessesFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsBbbBusinessesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsBbbbusinessesSearchResponse;
   "msg"?: string;
 }
 
@@ -6165,6 +7312,24 @@ export interface ModelDatasetsChromeExtensionsSearchResponseDoc {
 export interface ModelDatasetsCreatorsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsCreatorsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsFacebookPageResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsFacebookPageCandidate;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsFacebookPagesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsFacebookPageFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsFacebookPagesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsFacebookPageSearchResponse;
   "msg"?: string;
 }
 
@@ -6660,6 +7825,30 @@ export interface ModelDatasetsTrustmrrSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDatasetsVehicleListingPriceHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsVehicleListingPriceHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsVehicleListingResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsVehicleListingRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsVehicleListingsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsVehicleListingFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsVehicleListingsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsVehicleListingSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelDatasetsXUserResponseDoc {
   "code"?: number;
   "data"?: ModelEsXuserRecord;
@@ -6675,6 +7864,24 @@ export interface ModelDatasetsXUsersFacetResponseDoc {
 export interface ModelDatasetsXUsersSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsXuserSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsYoutubeCreatorResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsYoutubeChannelCandidate;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsYoutubeCreatorsFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsYoutubeCreatorFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsYoutubeCreatorsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsYoutubeCreatorSearchResponse;
   "msg"?: string;
 }
 
@@ -8377,6 +9584,57 @@ export interface ModelEsApplePodcastsShowsDatasetFacetItem {
   "value"?: string;
 }
 
+export interface ModelEsBbbbusinessHoursDay {
+  "day"?: string;
+  "hours"?: string;
+}
+
+export interface ModelEsBbbbusinessRecord {
+  "accredited"?: boolean;
+  "accredited_since"?: string;
+  "additional_phone_numbers"?: Array<string>;
+  "additional_websites"?: Array<string>;
+  "address"?: string;
+  "alternate_names"?: Array<string>;
+  "bbb_file_opened"?: string;
+  "bbb_local_id"?: string;
+  "business_id"?: string;
+  "business_incorporated"?: string;
+  "business_management"?: string;
+  "business_started"?: string;
+  "categories"?: Array<string>;
+  "category"?: string;
+  "city"?: string;
+  "complaints_url"?: string;
+  "country"?: string;
+  "crawled_at"?: string;
+  "discovery_source"?: string;
+  "entity_type"?: string;
+  "hours"?: Array<ModelEsBbbbusinessHoursDay>;
+  "licensing_note"?: string;
+  "more_info_url"?: string;
+  "name"?: string;
+  "phone"?: string;
+  "products_and_services"?: Array<string>;
+  "rating"?: string;
+  "rating_rank"?: number;
+  "rating_reasons"?: Array<string>;
+  "reviews_url"?: string;
+  "run_id"?: string;
+  "schema_version"?: number;
+  "social_media"?: Array<string>;
+  "state"?: string;
+  "url"?: string;
+  "website"?: string;
+  "years_in_business"?: string;
+  "years_in_business_num"?: number;
+}
+
+export interface ModelEsBbbbusinessesFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
 export interface ModelEsBoxOfficeMojoDatasetFacetItem {
   "count"?: number;
   "value"?: string;
@@ -8599,6 +9857,47 @@ export interface ModelEsCreatorRecord {
   "unique_id"?: string;
   "verified"?: boolean;
   "video_count"?: number;
+}
+
+export interface ModelEsFacebookPageCandidate {
+  "address"?: string;
+  "category"?: string;
+  "discovered_at"?: string;
+  "discovery_source"?: string;
+  "email"?: string;
+  "hydrated_at"?: string;
+  "identifier"?: string;
+  "likes"?: number;
+  "page_id"?: string;
+  "phones"?: Array<string>;
+  "source_url"?: string;
+  "status"?: string;
+  "title"?: string;
+  "website"?: string;
+  "whatsapp"?: string;
+}
+
+export interface ModelEsFacebookPageDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsFacebookPageDatasetItem {
+  "address"?: string;
+  "category"?: string;
+  "discovered_at"?: string;
+  "discovery_source"?: string;
+  "email"?: string;
+  "hydrated_at"?: string;
+  "identifier"?: string;
+  "likes"?: number;
+  "page_id"?: string;
+  "phones"?: Array<string>;
+  "source_url"?: string;
+  "status"?: string;
+  "title"?: string;
+  "website"?: string;
+  "whatsapp"?: string;
 }
 
 export interface ModelEsFacetItem {
@@ -9645,6 +10944,11 @@ export interface ModelEsTechstackRecord {
   "scan_method"?: string;
   "schema_version"?: number;
   "scheme"?: string;
+  "secondary_only_technology_names"?: Array<string>;
+  "secondary_page_categories"?: Array<string>;
+  "secondary_pages"?: Array<ModelEsTechstackSecondaryPage>;
+  "secondary_pages_discovered"?: number;
+  "secondary_pages_fetched"?: number;
   "seed_source"?: string;
   "server_language"?: string;
   "source_url"?: string;
@@ -9654,6 +10958,12 @@ export interface ModelEsTechstackRecord {
   "technology_names"?: Array<string>;
   "tld"?: string;
   "web_server"?: string;
+}
+
+export interface ModelEsTechstackSecondaryPage {
+  "category"?: string;
+  "fetched"?: boolean;
+  "url"?: string;
 }
 
 export interface ModelEsTechstackTechnology {
@@ -9755,6 +11065,58 @@ export interface ModelEsTrustmrrStartupRecord {
   "x_profile_picture"?: string;
 }
 
+export interface ModelEsVehicleListingDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsVehicleListingRecord {
+  "accident_count"?: number;
+  "body_style"?: string;
+  "city"?: string;
+  "crawled_at"?: string;
+  "drive_type"?: string;
+  "engine"?: string;
+  "exterior_color"?: string;
+  "first_seen_at"?: string;
+  "fuel_type"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "interior_color"?: string;
+  "is_price_reduced"?: boolean;
+  "last_seen_at"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "make"?: string;
+  "mileage"?: number;
+  "model"?: string;
+  "owner_count"?: number;
+  "previous_price"?: number;
+  "price"?: number;
+  "run_id"?: string;
+  "schema_version"?: number;
+  "seller_name"?: string;
+  "seller_type"?: string;
+  "source"?: string;
+  "source_listing_id"?: string;
+  "state"?: string;
+  "transmission"?: string;
+  "trim"?: string;
+  "url"?: string;
+  "vin"?: string;
+  "year"?: number;
+}
+
+export interface ModelEsVehiclePriceHistoryRecord {
+  "crawled_at"?: string;
+  "id"?: string;
+  "price"?: number;
+  "schema_version"?: number;
+  "snapshot_date"?: string;
+  "source"?: string;
+  "source_listing_id"?: string;
+}
+
 export interface ModelEsWebsiteStatus {
   "checked_at"?: string;
   "dns_resolvable"?: boolean;
@@ -9831,6 +11193,53 @@ export interface ModelEsXuserRecord {
   "source_tier"?: string;
   "username"?: string;
   "verified_type"?: string;
+}
+
+export interface ModelEsYoutubeChannelCandidate {
+  "bio"?: string;
+  "channel_id"?: string;
+  "channel_name"?: string;
+  "channel_url"?: string;
+  "discovered_at"?: string;
+  "discovery_source"?: string;
+  "followers_count"?: number;
+  "followers_count_available"?: boolean;
+  "hydrated_at"?: string;
+  "joined_date"?: string;
+  "links"?: Array<string>;
+  "profile_pic"?: string;
+  "region"?: string;
+  "status"?: string;
+  "videos_count"?: number;
+  "videos_count_available"?: boolean;
+  "views_count"?: number;
+  "views_count_available"?: boolean;
+}
+
+export interface ModelEsYoutubeCreatorDatasetFacetItem {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelEsYoutubeCreatorDatasetItem {
+  "bio"?: string;
+  "channel_id"?: string;
+  "channel_name"?: string;
+  "channel_url"?: string;
+  "discovered_at"?: string;
+  "discovery_source"?: string;
+  "followers_count"?: number;
+  "followers_count_available"?: boolean;
+  "hydrated_at"?: string;
+  "joined_date"?: string;
+  "links"?: Array<string>;
+  "profile_pic"?: string;
+  "region"?: string;
+  "status"?: string;
+  "videos_count"?: number;
+  "videos_count_available"?: boolean;
+  "views_count"?: number;
+  "views_count_available"?: boolean;
 }
 
 export interface ModelEspnAthlete {
@@ -11068,6 +12477,259 @@ export interface ModelFiverrSellerResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelGdeltArticle {
+  "domain"?: string;
+  "language"?: string;
+  "seen_at"?: string;
+  "social_image_url"?: string;
+  "source_country"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelGdeltContextArticle {
+  "context"?: string;
+  "domain"?: string;
+  "is_quote"?: boolean;
+  "language"?: string;
+  "seen_at"?: string;
+  "sentence"?: string;
+  "social_image_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelGdeltContextResponse {
+  "articles"?: Array<ModelGdeltContextArticle>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "maxrecords"?: number;
+  "query"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelGdeltSearchResponse {
+  "articles"?: Array<ModelGdeltArticle>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "maxrecords"?: number;
+  "query"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelGdeltTvcapNlpEntityDetailsResponse {
+  "entities"?: Array<ModelGdeltTvconceptEntity>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelGdeltTvclip {
+  "caption"?: string;
+  "caption_concepts"?: string;
+  "clip_url"?: string;
+  "matched_at"?: string;
+  "onscreen_text"?: string;
+  "show"?: string;
+  "show_start_at"?: string;
+  "station"?: string;
+  "thumbnail_url"?: string;
+  "transcript"?: string;
+  "visual_entities"?: Array<string>;
+}
+
+export interface ModelGdeltTvclipSearchResponse {
+  "clips"?: Array<ModelGdeltTvclip>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "maxrecords"?: number;
+  "query"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+  "station"?: string;
+}
+
+export interface ModelGdeltTvconceptEntity {
+  "label"?: string;
+  "mid"?: string;
+}
+
+export interface ModelGdeltTvshowChartResponse {
+  "fetched_at"?: string;
+  "query"?: string;
+  "shows"?: Array<ModelGdeltTvshowCount>;
+  "source_url"?: string;
+}
+
+export interface ModelGdeltTvshowCount {
+  "count"?: number;
+  "show"?: string;
+}
+
+export interface ModelGdeltTvstation {
+  "id"?: string;
+  "label"?: string;
+  "label_long"?: string;
+}
+
+export interface ModelGdeltTvstationChartResponse {
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "stations"?: Array<ModelGdeltTvstationCount>;
+}
+
+export interface ModelGdeltTvstationCount {
+  "count"?: number;
+  "station"?: string;
+}
+
+export interface ModelGdeltTvstationDetailsResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "stations"?: Array<ModelGdeltTvstation>;
+}
+
+export interface ModelGdeltTvtimelineResponse {
+  "fetched_at"?: string;
+  "query"?: string;
+  "series"?: Array<ModelGdeltTimelineSeries>;
+  "source_url"?: string;
+  "station"?: string;
+}
+
+export interface ModelGdeltTvvisualEntity {
+  "label"?: string;
+}
+
+export interface ModelGdeltTvvisualEntityDetailsResponse {
+  "entities"?: Array<ModelGdeltTvvisualEntity>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelGdeltTvwordCloudEntry {
+  "count"?: number;
+  "label"?: string;
+}
+
+export interface ModelGdeltTvwordCloudResponse {
+  "channel"?: string;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "words"?: Array<ModelGdeltTvwordCloudEntry>;
+}
+
+export interface ModelGdeltTimelinePoint {
+  "date"?: string;
+  "value"?: number;
+}
+
+export interface ModelGdeltTimelineResponse {
+  "fetched_at"?: string;
+  "metric"?: string;
+  "query"?: string;
+  "series"?: Array<ModelGdeltTimelineSeries>;
+  "source_url"?: string;
+}
+
+export interface ModelGdeltTimelineSeries {
+  "points"?: Array<ModelGdeltTimelinePoint>;
+  "series"?: string;
+}
+
+export interface ModelGdeltToneChartArticle {
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelGdeltToneChartBin {
+  "bin"?: number;
+  "count"?: number;
+  "top_articles"?: Array<ModelGdeltToneChartArticle>;
+}
+
+export interface ModelGdeltToneChartResponse {
+  "bins"?: Array<ModelGdeltToneChartBin>;
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelGdeltContextResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltContextResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTimelineResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTimelineResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltToneChartResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltToneChartResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTvCapNlpEntityDetailsResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTvcapNlpEntityDetailsResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTvSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTvclipSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTvShowChartResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTvshowChartResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTvStationChartResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTvstationChartResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTvStationDetailsResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTvstationDetailsResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTvTimelineResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTvtimelineResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTvVisualEntityDetailsResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTvvisualEntityDetailsResponse;
+  "msg"?: string;
+}
+
+export interface ModelGdeltTvWordCloudResponseDoc {
+  "code"?: number;
+  "data"?: ModelGdeltTvwordCloudResponse;
+  "msg"?: string;
+}
+
 export interface ModelGeocodingAddress {
   "ISO3166-2-lvl4"?: string;
   "ISO3166-2-lvl6"?: string;
@@ -11385,6 +13047,20 @@ export interface ModelGoodreadsSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelGoogleAioverview {
+  "heading"?: string;
+  "sources"?: Array<string>;
+  "summary"?: string;
+}
+
+export interface ModelGoogleAdItem {
+  "display_link"?: string;
+  "link"?: string;
+  "position"?: number;
+  "snippet"?: string;
+  "title"?: string;
+}
+
 export interface ModelGoogleJobItem {
   "company"?: string;
   "employment"?: string;
@@ -11510,6 +13186,8 @@ export interface ModelGoogleSearchOption {
 }
 
 export interface ModelGoogleSearchResp {
+  "ads"?: Array<ModelGoogleAdItem>;
+  "ai_overview"?: ModelGoogleAioverview;
   "knowledge_graph"?: ModelGoogleKnowledgeGraph;
   "people_also_ask"?: Array<ModelGooglePeopleAlsoAskItem>;
   "people_also_search_for"?: Array<string>;
@@ -12271,6 +13949,423 @@ export interface ModelHmSuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelHomedepotCategoriesResponse {
+  "count"?: number;
+  "departments"?: Array<ModelHomedepotDepartment>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelHomedepotCategoryProduct {
+  "id"?: string;
+  "image"?: string;
+  "model"?: string;
+  "original_price"?: number;
+  "price"?: number;
+  "rating"?: number;
+  "review_count"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelHomedepotCategoryResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "path"?: string;
+  "products"?: Array<ModelHomedepotCategoryProduct>;
+  "source_url"?: string;
+  "title"?: string;
+  "total"?: number;
+}
+
+export interface ModelHomedepotDepartment {
+  "name"?: string;
+  "path"?: string;
+  "url"?: string;
+}
+
+export interface ModelHomedepotKeyFeature {
+  "name"?: string;
+  "value"?: string;
+}
+
+export interface ModelHomedepotProduct {
+  "brand"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "gtin"?: string;
+  "id"?: string;
+  "images"?: Array<string>;
+  "key_features"?: Array<ModelHomedepotKeyFeature>;
+  "model"?: string;
+  "price"?: number;
+  "rating"?: number;
+  "review_count"?: number;
+  "reviews"?: Array<ModelHomedepotProductReview>;
+  "sku"?: string;
+  "source_url"?: string;
+  "specifications"?: Array<ModelHomedepotSpecification>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelHomedepotProductQuestionsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "id"?: string;
+  "questions"?: Array<ModelHomedepotQuestion>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelHomedepotProductReview {
+  "author"?: string;
+  "body"?: string;
+  "headline"?: string;
+  "rating"?: number;
+}
+
+export interface ModelHomedepotQuestion {
+  "answer_count"?: number;
+  "answers"?: Array<ModelHomedepotQuestionAnswer>;
+  "author"?: string;
+  "date"?: string;
+  "id"?: string;
+  "text"?: string;
+}
+
+export interface ModelHomedepotQuestionAnswer {
+  "author"?: string;
+  "date"?: string;
+  "helpful_count"?: number;
+  "id"?: string;
+  "is_brand_answer"?: boolean;
+  "text"?: string;
+}
+
+export interface ModelHomedepotSearchResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "products"?: Array<ModelHomedepotCategoryProduct>;
+  "query"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelHomedepotSpecification {
+  "name"?: string;
+  "value"?: string;
+}
+
+export interface ModelHomedepotCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelHomedepotCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelHomedepotCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelHomedepotCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelHomedepotProductQuestionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelHomedepotProductQuestionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelHomedepotProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelHomedepotProduct;
+  "msg"?: string;
+}
+
+export interface ModelHomedepotSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelHomedepotSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelIkeaAvailabilityResponse {
+  "available_for_click_collect"?: boolean;
+  "available_for_home_delivery"?: boolean;
+  "click_collect"?: ModelIkeaPickupAvailability;
+  "country"?: string;
+  "fetched_at"?: string;
+  "home_delivery"?: ModelIkeaDeliveryAvailability;
+  "item_no"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelIkeaCategoryRef {
+  "key"?: string;
+  "name"?: string;
+}
+
+export interface ModelIkeaCategoryResponse {
+  "category_key"?: string;
+  "category_name"?: string;
+  "category_url"?: string;
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "language"?: string;
+  "offset"?: number;
+  "products"?: Array<ModelIkeaProductSummary>;
+  "sort"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelIkeaColor {
+  "hex"?: string;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelIkeaDeliveryAvailability {
+  "in_range"?: boolean;
+  "message_type"?: string;
+  "updated_at"?: string;
+}
+
+export interface ModelIkeaPickupAvailability {
+  "in_range"?: boolean;
+}
+
+export interface ModelIkeaPrice {
+  "currency_code"?: string;
+  "current"?: number;
+  "discount_amount"?: number;
+  "discount_percentage"?: number;
+  "formatted"?: string;
+  "previous"?: number;
+  "previous_formatted"?: string;
+  "tag"?: string;
+  "tag_text"?: string;
+  "valid_from"?: string;
+  "valid_to"?: string;
+}
+
+export interface ModelIkeaProduct {
+  "category_path"?: Array<ModelIkeaCategoryRef>;
+  "colors"?: Array<ModelIkeaColor>;
+  "filter_class"?: string;
+  "image_url"?: string;
+  "images"?: Array<ModelIkeaProductImage>;
+  "item_no"?: string;
+  "measure_text"?: string;
+  "name"?: string;
+  "price"?: ModelIkeaPrice;
+  "product_url"?: string;
+  "quick_facts"?: Array<ModelIkeaQuickFact>;
+  "rating"?: ModelIkeaRating;
+  "type_name"?: string;
+  "valid_design"?: string;
+  "variant_count"?: number;
+  "variants"?: Array<ModelIkeaVariant>;
+}
+
+export interface ModelIkeaProductImage {
+  "alt_text"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelIkeaProductResponse {
+  "fetched_at"?: string;
+  "product"?: ModelIkeaProduct;
+  "source_url"?: string;
+}
+
+export interface ModelIkeaProductSummary {
+  "colors"?: Array<ModelIkeaColor>;
+  "filter_class"?: string;
+  "image_url"?: string;
+  "item_no"?: string;
+  "measure_text"?: string;
+  "name"?: string;
+  "price"?: ModelIkeaPrice;
+  "product_url"?: string;
+  "rating"?: ModelIkeaRating;
+  "type_name"?: string;
+  "valid_design"?: string;
+  "variant_count"?: number;
+  "variants"?: Array<ModelIkeaVariant>;
+}
+
+export interface ModelIkeaQuickFact {
+  "name"?: string;
+  "type_name"?: string;
+}
+
+export interface ModelIkeaRating {
+  "count"?: number;
+  "value"?: number;
+}
+
+export interface ModelIkeaRelatedSearch {
+  "count"?: number;
+  "text"?: string;
+}
+
+export interface ModelIkeaReview {
+  "author"?: string;
+  "author_country"?: string;
+  "rating"?: number;
+  "text"?: string;
+  "title"?: string;
+}
+
+export interface ModelIkeaReviewsResponse {
+  "average_rating"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "item_no"?: string;
+  "rating_count"?: number;
+  "reviews"?: Array<ModelIkeaReview>;
+  "source_url"?: string;
+}
+
+export interface ModelIkeaSearchResponse {
+  "count"?: number;
+  "country"?: string;
+  "did_you_mean"?: Array<string>;
+  "fetched_at"?: string;
+  "language"?: string;
+  "products"?: Array<ModelIkeaProductSummary>;
+  "query"?: string;
+  "related_searches"?: Array<ModelIkeaRelatedSearch>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelIkeaStoreAddress {
+  "city"?: string;
+  "country"?: string;
+  "postal_code"?: string;
+  "state"?: string;
+  "street"?: string;
+}
+
+export interface ModelIkeaStoreAndDetail {
+  "address"?: ModelIkeaStoreAddress;
+  "geo"?: ModelIkeaStoreGeo;
+  "hours"?: Array<ModelIkeaStoreHours>;
+  "location_type"?: string;
+  "name"?: string;
+  "price_range"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelIkeaStoreGeo {
+  "latitude"?: number;
+  "longitude"?: number;
+}
+
+export interface ModelIkeaStoreHours {
+  "closes"?: string;
+  "days"?: Array<string>;
+  "opens"?: string;
+}
+
+export interface ModelIkeaStoreRef {
+  "location_type"?: string;
+  "name"?: string;
+  "region"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelIkeaStoreResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "store"?: ModelIkeaStoreAndDetail;
+}
+
+export interface ModelIkeaStoresResponse {
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "language"?: string;
+  "source_url"?: string;
+  "stores"?: Array<ModelIkeaStoreRef>;
+}
+
+export interface ModelIkeaSuggestResponse {
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "language"?: string;
+  "products"?: Array<ModelIkeaProductSummary>;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelIkeaRelatedSearch>;
+}
+
+export interface ModelIkeaVariant {
+  "image_url"?: string;
+  "item_no"?: string;
+  "name"?: string;
+  "price"?: ModelIkeaPrice;
+  "product_url"?: string;
+  "rating"?: ModelIkeaRating;
+  "type_name"?: string;
+  "valid_design"?: string;
+}
+
+export interface ModelIkeaAvailabilityResponseDoc {
+  "code"?: number;
+  "data"?: ModelIkeaAvailabilityResponse;
+  "msg"?: string;
+}
+
+export interface ModelIkeaCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelIkeaCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelIkeaProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelIkeaProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelIkeaReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelIkeaReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelIkeaSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelIkeaSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelIkeaStoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelIkeaStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelIkeaStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelIkeaStoresResponse;
+  "msg"?: string;
+}
+
+export interface ModelIkeaSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelIkeaSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelImdbAlternateTitle {
   "country"?: string;
   "title"?: string;
@@ -12293,6 +14388,27 @@ export interface ModelImdbAwardTitle {
   "id"?: string;
   "title"?: string;
   "url"?: string;
+}
+
+export interface ModelImdbChartResponse {
+  "chart"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+  "titles"?: Array<ModelImdbChartTitle>;
+}
+
+export interface ModelImdbChartTitle {
+  "cast"?: Array<ModelImdbPerson>;
+  "directors"?: Array<ModelImdbPerson>;
+  "id"?: string;
+  "rank"?: number;
+  "rating_count"?: number;
+  "rating_value"?: number;
+  "title"?: string;
+  "url"?: string;
+  "writers"?: Array<ModelImdbPerson>;
+  "year"?: number;
 }
 
 export interface ModelImdbCompanyItem {
@@ -12482,6 +14598,29 @@ export interface ModelImdbPublicFactsAnalysisSummary {
   "trivia_count"?: number;
 }
 
+export interface ModelImdbRatingCountrySummary {
+  "aggregate"?: number;
+  "country"?: string;
+  "vote_count"?: number;
+}
+
+export interface ModelImdbRatingHistogramBucket {
+  "rating"?: number;
+  "vote_count"?: number;
+}
+
+export interface ModelImdbRatingsResponse {
+  "countries"?: Array<ModelImdbRatingCountrySummary>;
+  "fetched_at"?: string;
+  "histogram"?: Array<ModelImdbRatingHistogramBucket>;
+  "id"?: string;
+  "rating_count"?: number;
+  "rating_value"?: number;
+  "source_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
 export interface ModelImdbReleaseInfoItem {
   "country"?: string;
   "date"?: string;
@@ -12572,6 +14711,27 @@ export interface ModelImdbSearchTitleResponse {
   "total"?: number;
 }
 
+export interface ModelImdbSimilarResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "source_url"?: string;
+  "titles"?: Array<ModelImdbSimilarTitle>;
+  "url"?: string;
+}
+
+export interface ModelImdbSimilarTitle {
+  "content_rating"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "rating_count"?: number;
+  "rating_value"?: number;
+  "runtime_minutes"?: number;
+  "title"?: string;
+  "title_type"?: string;
+  "url"?: string;
+  "year"?: number;
+}
+
 export interface ModelImdbTechnicalSpecItem {
   "name"?: string;
   "slug"?: string;
@@ -12649,6 +14809,12 @@ export interface ModelImdbTitleResponse {
   "year"?: string;
 }
 
+export interface ModelImdbChartsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbChartResponse;
+  "msg"?: string;
+}
+
 export interface ModelImdbCreditsResponseDoc {
   "code"?: number;
   "data"?: ModelImdbCreditsResponse;
@@ -12685,6 +14851,12 @@ export interface ModelImdbParentalGuideResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelImdbRatingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbRatingsResponse;
+  "msg"?: string;
+}
+
 export interface ModelImdbReleaseInfoResponseDoc {
   "code"?: number;
   "data"?: ModelImdbReleaseInfoResponse;
@@ -12706,6 +14878,12 @@ export interface ModelImdbSearchResponseDoc {
 export interface ModelImdbSearchTitleResponseDoc {
   "code"?: number;
   "data"?: ModelImdbSearchTitleResponse;
+  "msg"?: string;
+}
+
+export interface ModelImdbSimilarResponseDoc {
+  "code"?: number;
+  "data"?: ModelImdbSimilarResponse;
   "msg"?: string;
 }
 
@@ -13247,6 +15425,275 @@ export interface ModelInstagramProfileResponseDoc {
 export interface ModelInstagramReelsResponseDoc {
   "code"?: number;
   "data"?: ModelInstagramReelResponse;
+  "msg"?: string;
+}
+
+export interface ModelJcrewCategoriesResponse {
+  "categories"?: Array<ModelJcrewNavCategory>;
+  "departments"?: Array<string>;
+  "fetched_at"?: string;
+  "site"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelJcrewCategoryProduct {
+  "average_rating"?: number;
+  "badge"?: string;
+  "color_codes"?: Array<string>;
+  "currency"?: string;
+  "default_color_code"?: string;
+  "discount_max_percent"?: number;
+  "discount_min_percent"?: number;
+  "family_id"?: string;
+  "id"?: string;
+  "name"?: string;
+  "price"?: number;
+  "review_count"?: number;
+  "url"?: string;
+}
+
+export interface ModelJcrewCategoryResponse {
+  "category"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "gender"?: string;
+  "label"?: string;
+  "page"?: number;
+  "products"?: Array<ModelJcrewCategoryProduct>;
+  "result_count"?: number;
+  "site"?: string;
+  "source_url"?: string;
+  "total_pages"?: number;
+}
+
+export interface ModelJcrewFacet {
+  "is_range"?: boolean;
+  "label"?: string;
+  "name"?: string;
+  "options"?: Array<ModelJcrewFacetOption>;
+  "range_max"?: number;
+  "range_min"?: number;
+  "type"?: string;
+}
+
+export interface ModelJcrewFacetOption {
+  "count"?: number;
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelJcrewHour {
+  "open_intervals"?: Array<ModelJcrewTimeInterval>;
+}
+
+export interface ModelJcrewNavCategory {
+  "category"?: string;
+  "department"?: string;
+  "label"?: string;
+  "section"?: string;
+}
+
+export interface ModelJcrewProductColor {
+  "code"?: string;
+  "image_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelJcrewProductDetailResponse {
+  "average_rating"?: number;
+  "brand"?: string;
+  "category_id"?: string;
+  "colors"?: Array<ModelJcrewProductColor>;
+  "currency"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "fit_description"?: Array<string>;
+  "gender"?: string;
+  "list_price"?: number;
+  "name"?: string;
+  "pid"?: string;
+  "rating_count"?: number;
+  "site"?: string;
+  "sizes"?: Array<string>;
+  "skus"?: Array<ModelJcrewProductSku>;
+  "source_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelJcrewProductReviewsResponse {
+  "average_rating"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "pid"?: string;
+  "rating_count"?: number;
+  "rating_histogram"?: Array<number>;
+  "recommended_ratio"?: number;
+  "reviews"?: Array<ModelJcrewReview>;
+  "site"?: string;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_reviews"?: number;
+}
+
+export interface ModelJcrewProductSku {
+  "color_code"?: string;
+  "color_name"?: string;
+  "currency"?: string;
+  "orderable"?: boolean;
+  "price"?: number;
+  "size"?: string;
+}
+
+export interface ModelJcrewProductSummary {
+  "description"?: string;
+  "family_id"?: string;
+  "gender"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "orderable"?: boolean;
+  "price_max"?: number;
+  "price_min"?: number;
+  "sale_price_max"?: number;
+  "sale_price_min"?: number;
+  "url"?: string;
+}
+
+export interface ModelJcrewReview {
+  "author"?: string;
+  "body"?: string;
+  "created_at"?: string;
+  "headline"?: string;
+  "helpful_votes"?: number;
+  "id"?: string;
+  "location"?: string;
+  "not_helpful_votes"?: number;
+  "rating"?: number;
+  "updated_at"?: string;
+  "verified_purchase"?: boolean;
+}
+
+export interface ModelJcrewSearchResponse {
+  "count"?: number;
+  "facets"?: Array<ModelJcrewFacet>;
+  "fetched_at"?: string;
+  "filter"?: string;
+  "keyword"?: string;
+  "page"?: number;
+  "per_page"?: number;
+  "products"?: Array<ModelJcrewProductSummary>;
+  "site"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_products"?: number;
+}
+
+export interface ModelJcrewSizeChartResponse {
+  "columns"?: Array<string>;
+  "fetched_at"?: string;
+  "pid"?: string;
+  "site"?: string;
+  "sizes"?: Array<ModelJcrewSizeChartRow>;
+  "source_url"?: string;
+}
+
+export interface ModelJcrewSizeChartRow {
+  "imperial"?: Record<string, number>;
+  "metric"?: Record<string, number>;
+  "size"?: string;
+}
+
+export interface ModelJcrewStore {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "distance_miles"?: number;
+  "hours"?: Record<string, ModelJcrewHour>;
+  "id"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "phone"?: string;
+  "postal_code"?: string;
+  "region"?: string;
+  "services"?: Array<string>;
+}
+
+export interface ModelJcrewStoreResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "site"?: string;
+  "source_url"?: string;
+  "stores"?: Array<ModelJcrewStore>;
+}
+
+export interface ModelJcrewSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "query"?: string;
+  "site"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelJcrewSuggestion>;
+}
+
+export interface ModelJcrewSuggestion {
+  "query"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelJcrewTimeInterval {
+  "end"?: string;
+  "start"?: string;
+}
+
+export interface ModelJcrewCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJcrewCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJcrewCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelJcrewCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelJcrewProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelJcrewProductDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelJcrewProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelJcrewProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelJcrewSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelJcrewSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelJcrewSizeChartResponseDoc {
+  "code"?: number;
+  "data"?: ModelJcrewSizeChartResponse;
+  "msg"?: string;
+}
+
+export interface ModelJcrewStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelJcrewStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelJcrewSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelJcrewSuggestResponse;
   "msg"?: string;
 }
 
@@ -14174,6 +16621,160 @@ export interface ModelKalshiSeriesResponseDoc {
 export interface ModelKalshiTradesResponseDoc {
   "code"?: number;
   "data"?: ModelKalshiTradesResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickstarterCategory {
+  "id"?: number;
+  "name"?: string;
+  "parent_id"?: number;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelKickstarterComment {
+  "author_name"?: string;
+  "body"?: string;
+  "is_creator"?: boolean;
+  "posted_at"?: string;
+}
+
+export interface ModelKickstarterCommentsResult {
+  "comments"?: Array<ModelKickstarterComment>;
+  "total_count"?: number;
+}
+
+export interface ModelKickstarterCreator {
+  "avatar"?: string;
+  "id"?: number;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelKickstarterDiscoverResult {
+  "page"?: number;
+  "projects"?: Array<ModelKickstarterProject>;
+  "total_hits"?: number;
+}
+
+export interface ModelKickstarterLocation {
+  "country"?: string;
+  "displayable_name"?: string;
+  "id"?: number;
+  "name"?: string;
+  "short_name"?: string;
+}
+
+export interface ModelKickstarterPhoto {
+  "full"?: string;
+}
+
+export interface ModelKickstarterProject {
+  "backers_count"?: number;
+  "blurb"?: string;
+  "category"?: ModelKickstarterCategory;
+  "comments_count"?: number;
+  "converted_pledged_amount"?: number;
+  "country"?: string;
+  "created_at"?: string;
+  "creator"?: ModelKickstarterCreator;
+  "currency"?: string;
+  "currency_symbol"?: string;
+  "deadline"?: string;
+  "faq_count"?: number;
+  "goal"?: number;
+  "has_video"?: boolean;
+  "id"?: number;
+  "is_launched"?: boolean;
+  "launched_at"?: string;
+  "location"?: ModelKickstarterLocation;
+  "name"?: string;
+  "percent_funded"?: number;
+  "photo"?: ModelKickstarterPhoto;
+  "pledged"?: number;
+  "reward_tiers"?: Array<ModelKickstarterRewardTier>;
+  "risks_and_challenges"?: string;
+  "slug"?: string;
+  "spotlight"?: boolean;
+  "staff_pick"?: boolean;
+  "state"?: string;
+  "state_changed_at"?: string;
+  "story"?: string;
+  "updates_count"?: number;
+  "url"?: string;
+  "usd_pledged"?: number;
+}
+
+export interface ModelKickstarterRewardAddOn {
+  "amount"?: number;
+  "currency"?: string;
+  "description"?: string;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelKickstarterRewardItem {
+  "name"?: string;
+  "quantity"?: number;
+}
+
+export interface ModelKickstarterRewardTier {
+  "add_ons"?: Array<ModelKickstarterRewardAddOn>;
+  "amount"?: number;
+  "available"?: boolean;
+  "backers_count"?: number;
+  "currency"?: string;
+  "description"?: string;
+  "ends_at"?: string;
+  "estimated_delivery_on"?: string;
+  "featured"?: boolean;
+  "id"?: string;
+  "image"?: string;
+  "items"?: Array<ModelKickstarterRewardItem>;
+  "limit"?: number;
+  "name"?: string;
+  "remaining_quantity"?: number;
+  "shipping_enabled"?: boolean;
+  "shipping_preference"?: string;
+  "shipping_summary"?: string;
+}
+
+export interface ModelKickstarterUpdate {
+  "author_name"?: string;
+  "body"?: string;
+  "comments_count"?: number;
+  "is_creator"?: boolean;
+  "number"?: number;
+  "published_at"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelKickstarterUpdatesResult {
+  "updates"?: Array<ModelKickstarterUpdate>;
+}
+
+export interface ModelKickstarterCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickstarterCommentsResult;
+  "msg"?: string;
+}
+
+export interface ModelKickstarterDiscoverResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickstarterDiscoverResult;
+  "msg"?: string;
+}
+
+export interface ModelKickstarterProjectResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickstarterProject;
+  "msg"?: string;
+}
+
+export interface ModelKickstarterUpdatesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickstarterUpdatesResult;
   "msg"?: string;
 }
 
@@ -15751,6 +18352,14 @@ export interface ModelMlbTransactionsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelNikeAvailabilityResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "group_key"?: string;
+  "sizes"?: Array<ModelNikeSizeAvailability>;
+  "source_url"?: string;
+}
+
 export interface ModelNikeBreadcrumb {
   "name"?: string;
   "path"?: string;
@@ -15773,6 +18382,23 @@ export interface ModelNikeCategorySubcategory {
   "name"?: string;
   "path"?: string;
   "slug"?: string;
+}
+
+export interface ModelNikeColorDetail {
+  "color_code"?: string;
+  "color_description"?: string;
+  "currency"?: string;
+  "discount_percentage"?: number;
+  "grouping_label"?: string;
+  "images"?: Array<string>;
+  "initial_price"?: number;
+  "is_buyable"?: boolean;
+  "price"?: number;
+  "size_chart_url"?: string;
+  "sizes"?: Array<ModelNikeProductSize>;
+  "style_code"?: string;
+  "style_color"?: string;
+  "url"?: string;
 }
 
 export interface ModelNikeColorVariant {
@@ -15833,6 +18459,20 @@ export interface ModelNikeProductDetailResponse {
   "url"?: string;
 }
 
+export interface ModelNikeProductDetailsResponse {
+  "colors"?: Array<ModelNikeColorDetail>;
+  "count"?: number;
+  "description"?: string;
+  "fetched_at"?: string;
+  "genders"?: Array<string>;
+  "group_key"?: string;
+  "product_type"?: string;
+  "reason_to_buy"?: string;
+  "source_url"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+}
+
 export interface ModelNikeProductGroup {
   "badge_label"?: string;
   "colors"?: Array<ModelNikeColorVariant>;
@@ -15877,6 +18517,28 @@ export interface ModelNikeProductSize {
   "status"?: string;
 }
 
+export interface ModelNikeRecommendationsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "recommendations"?: Array<ModelNikeRecommendedProduct>;
+  "source_url"?: string;
+  "style_color"?: string;
+}
+
+export interface ModelNikeRecommendedProduct {
+  "currency"?: string;
+  "image_url"?: string;
+  "initial_price"?: number;
+  "price"?: number;
+  "price_type"?: string;
+  "rank"?: number;
+  "style_color"?: string;
+  "style_type"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
 export interface ModelNikeSearchResponse {
   "category"?: string;
   "count"?: number;
@@ -15889,6 +18551,16 @@ export interface ModelNikeSearchResponse {
   "source_url"?: string;
   "total_pages"?: number;
   "total_products"?: number;
+}
+
+export interface ModelNikeSizeAvailability {
+  "available"?: boolean;
+  "grouping_label"?: string;
+  "gtin"?: string;
+  "label"?: string;
+  "localized_label"?: string;
+  "ship"?: string;
+  "style_color"?: string;
 }
 
 export interface ModelNikeStore {
@@ -15938,9 +18610,21 @@ export interface ModelNikeTopLevelCategory {
   "path"?: string;
 }
 
+export interface ModelNikeAvailabilityResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeAvailabilityResponse;
+  "msg"?: string;
+}
+
 export interface ModelNikeCategoriesResponseDoc {
   "code"?: number;
   "data"?: ModelNikeCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelNikeProductDetailsResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeProductDetailsResponse;
   "msg"?: string;
 }
 
@@ -15953,6 +18637,12 @@ export interface ModelNikeProductResponseDoc {
 export interface ModelNikeProductReviewsResponseDoc {
   "code"?: number;
   "data"?: ModelNikeProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelNikeRecommendationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelNikeRecommendationsResponse;
   "msg"?: string;
 }
 
@@ -19128,6 +21818,242 @@ export interface ModelProducthuntSearchTopicDoc {
   "topic"?: { "id"?: string; "name"?: string };
 }
 
+export interface ModelQuinceCategoriesResponse {
+  "business_departments"?: Array<ModelQuinceFacetCount>;
+  "categories"?: Array<ModelQuinceFacetCount>;
+  "colors"?: Array<ModelQuinceFacetCount>;
+  "departments"?: Array<ModelQuinceFacetCount>;
+  "fetched_at"?: string;
+  "materials"?: Array<ModelQuinceFacetCount>;
+  "sizes"?: Array<ModelQuinceFacetCount>;
+}
+
+export interface ModelQuinceFacetCount {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelQuinceNavCategory {
+  "groups"?: Array<ModelQuinceNavGroup>;
+  "slug"?: string;
+  "title"?: string;
+}
+
+export interface ModelQuinceNavGroup {
+  "links"?: Array<ModelQuinceNavLink>;
+  "title"?: string;
+}
+
+export interface ModelQuinceNavLink {
+  "slug"?: string;
+  "text"?: string;
+}
+
+export interface ModelQuinceNavigationResponse {
+  "categories"?: Array<ModelQuinceNavCategory>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelQuinceProduct {
+  "business_department"?: string;
+  "category"?: string;
+  "color"?: string;
+  "currency"?: string;
+  "department"?: string;
+  "description"?: string;
+  "gender"?: string;
+  "handle"?: string;
+  "image_url"?: string;
+  "in_stock"?: boolean;
+  "material"?: Array<string>;
+  "max_price"?: number;
+  "min_price"?: number;
+  "primary_colors"?: Array<string>;
+  "product_id"?: number;
+  "product_type"?: string;
+  "sizes"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelQuinceProductFaqitem {
+  "answer"?: string;
+  "question"?: string;
+}
+
+export interface ModelQuinceProductFaqresponse {
+  "fetched_at"?: string;
+  "handle"?: string;
+  "questions"?: Array<ModelQuinceProductFaqitem>;
+  "source_url"?: string;
+}
+
+export interface ModelQuinceProductOptionGroup {
+  "name"?: string;
+  "values"?: Array<ModelQuinceProductOptionValue>;
+}
+
+export interface ModelQuinceProductOptionValue {
+  "display_name"?: string;
+  "display_type"?: string;
+  "hex_code"?: string;
+  "value"?: string;
+}
+
+export interface ModelQuinceProductResponse {
+  "average_rating"?: number;
+  "country"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "gender"?: string;
+  "handle"?: string;
+  "images"?: Array<string>;
+  "options"?: Array<ModelQuinceProductOptionGroup>;
+  "product_id"?: number;
+  "product_type"?: string;
+  "review_count"?: number;
+  "source_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "variants"?: Array<ModelQuinceProductVariant>;
+}
+
+export interface ModelQuinceProductReviewsResponse {
+  "average_rating"?: number;
+  "fetched_at"?: string;
+  "handle"?: string;
+  "review_count"?: number;
+  "reviews"?: Array<ModelQuinceReview>;
+  "source_url"?: string;
+}
+
+export interface ModelQuinceProductVariant {
+  "currency"?: string;
+  "id"?: number;
+  "in_stock"?: boolean;
+  "options"?: Record<string, string>;
+  "price"?: number;
+  "savings"?: string;
+  "sku"?: string;
+  "status"?: string;
+  "title"?: string;
+  "traditional_retail_price"?: number;
+}
+
+export interface ModelQuinceReview {
+  "author"?: string;
+  "body"?: string;
+  "date_published"?: string;
+  "rating"?: number;
+}
+
+export interface ModelQuinceSearchResponse {
+  "category"?: string;
+  "color"?: string;
+  "count"?: number;
+  "country"?: string;
+  "department"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "material"?: string;
+  "max_price"?: number;
+  "min_price"?: number;
+  "page"?: number;
+  "products"?: Array<ModelQuinceProduct>;
+  "query"?: string;
+  "size"?: string;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_results"?: number;
+}
+
+export interface ModelQuinceSitemapItem {
+  "loc"?: string;
+  "type"?: string;
+}
+
+export interface ModelQuinceSitemapUrlitem {
+  "handle"?: string;
+  "loc"?: string;
+  "type"?: string;
+}
+
+export interface ModelQuinceSitemapUrlsResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "source_url"?: string;
+  "type"?: string;
+  "urls"?: Array<ModelQuinceSitemapUrlitem>;
+}
+
+export interface ModelQuinceSitemapsResponse {
+  "fetched_at"?: string;
+  "sitemaps"?: Array<ModelQuinceSitemapItem>;
+  "source_url"?: string;
+}
+
+export interface ModelQuinceSuggestResponse {
+  "fetched_at"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelQuinceCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelQuinceNavigationResponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceNavigationResponse;
+  "msg"?: string;
+}
+
+export interface ModelQuinceProductFaqresponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceProductFaqresponse;
+  "msg"?: string;
+}
+
+export interface ModelQuinceProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelQuinceProductReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceProductReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelQuinceSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelQuinceSitemapUrlsResponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceSitemapUrlsResponse;
+  "msg"?: string;
+}
+
+export interface ModelQuinceSitemapsResponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceSitemapsResponse;
+  "msg"?: string;
+}
+
+export interface ModelQuinceSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelQuinceSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelRedditAuthor {
   "name"?: string;
   "profile_url"?: string;
@@ -19291,6 +22217,12 @@ export interface ModelRedditDomainPostsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelRedditLeadsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditleadsResponse;
+  "msg"?: string;
+}
+
 export interface ModelRedditMultiSubredditPostsResponseDoc {
   "code"?: number;
   "data"?: ModelRedditMultiSubredditPostsResponse;
@@ -19343,6 +22275,42 @@ export interface ModelRedditUserPostsResponseDoc {
   "code"?: number;
   "data"?: ModelRedditUserPostsResponse;
   "msg"?: string;
+}
+
+export interface ModelRedditleadsLead {
+  "author"?: string;
+  "comment_count"?: number;
+  "created"?: string;
+  "permalink"?: string;
+  "post_score"?: number;
+  "reason"?: string;
+  "score"?: number;
+  "signals"?: Array<ModelRedditleadsSignal>;
+  "subreddit"?: string;
+  "title"?: string;
+}
+
+export interface ModelRedditleadsResponse {
+  "classifier"?: string;
+  "degraded"?: boolean;
+  "leads"?: Array<ModelRedditleadsLead>;
+  "min_score"?: number;
+  "model"?: string;
+  "query"?: string;
+  "stats"?: ModelRedditleadsStats;
+  "subreddit"?: string;
+}
+
+export interface ModelRedditleadsSignal {
+  "id"?: string;
+  "label"?: string;
+}
+
+export interface ModelRedditleadsStats {
+  "classified"?: number;
+  "prefiltered"?: number;
+  "returned"?: number;
+  "scanned"?: number;
 }
 
 export interface ModelRedfinEstimateResponse {
@@ -20600,6 +23568,219 @@ export interface ModelSephoraSuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelSheinAggregationFilters {
+  "category"?: ModelSheinFacetCategory;
+  "filters"?: Array<ModelSheinFacetGroup>;
+  "keyword"?: string;
+  "max_price"?: string;
+  "min_price"?: string;
+}
+
+export interface ModelSheinAutocompleteResponse {
+  "suggestions"?: Array<ModelSheinAutocompleteSuggestion>;
+  "word"?: string;
+}
+
+export interface ModelSheinAutocompleteSuggestion {
+  "type"?: string;
+  "word"?: string;
+  "word_id"?: string;
+}
+
+export interface ModelSheinCategoryFiltersResponse {
+  "cat_id"?: string;
+  "currency"?: string;
+  "filters"?: Array<ModelSheinFilter>;
+  "max_price"?: number;
+  "min_price"?: number;
+}
+
+export interface ModelSheinCategoryGoodsResponse {
+  "cat_id"?: string;
+  "category_name"?: string;
+  "page"?: number;
+  "products"?: Array<ModelSheinProduct>;
+  "total"?: number;
+}
+
+export interface ModelSheinCategoryNavResponse {
+  "cat_id"?: string;
+  "navs"?: Array<ModelSheinNavTab>;
+}
+
+export interface ModelSheinColorVariant {
+  "color_image"?: string;
+  "color_name"?: string;
+  "goods_id"?: string;
+  "goods_sn"?: string;
+  "goods_url_name"?: string;
+  "image"?: string;
+}
+
+export interface ModelSheinFacetCategory {
+  "children"?: Array<ModelSheinFacetCategory>;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelSheinFacetGroup {
+  "id"?: string;
+  "name"?: string;
+  "options"?: Array<ModelSheinFacetOption>;
+}
+
+export interface ModelSheinFacetOption {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelSheinFilter {
+  "node_id"?: string;
+  "node_name"?: string;
+  "options"?: Array<ModelSheinFilterOption>;
+}
+
+export interface ModelSheinFilterOption {
+  "node_id"?: string;
+  "node_name"?: string;
+}
+
+export interface ModelSheinKeyword {
+  "from"?: string;
+  "type"?: string;
+  "word"?: string;
+  "word_id"?: string;
+}
+
+export interface ModelSheinNavTab {
+  "goods_id"?: string;
+  "nav_id"?: string;
+  "nav_img"?: string;
+  "nav_name"?: string;
+  "nav_type"?: string;
+}
+
+export interface ModelSheinProduct {
+  "brand_code"?: string;
+  "category_id"?: string;
+  "category_name"?: string;
+  "color_img"?: string;
+  "comment_avg"?: string;
+  "comment_count"?: number;
+  "detail_images"?: Array<string>;
+  "goods_id"?: string;
+  "goods_img"?: string;
+  "goods_name"?: string;
+  "goods_sn"?: string;
+  "goods_url_name"?: string;
+  "mall_code"?: string;
+  "on_sale"?: boolean;
+  "retail_price"?: string;
+  "sale_price"?: string;
+  "sold_out"?: boolean;
+  "spu"?: string;
+  "store_code"?: string;
+  "usd_price"?: string;
+}
+
+export interface ModelSheinProductDetail {
+  "brand_code"?: string;
+  "category_id"?: string;
+  "category_name"?: string;
+  "color_variants"?: Array<ModelSheinColorVariant>;
+  "description"?: string;
+  "goods_id"?: string;
+  "goods_name"?: string;
+  "goods_sn"?: string;
+  "images"?: Array<string>;
+  "on_sale"?: boolean;
+  "retail_price"?: string;
+  "sale_price"?: string;
+  "size_guide_url"?: string;
+  "sizes"?: Array<ModelSheinSizeOption>;
+  "skus"?: Array<ModelSheinSkuVariant>;
+  "store_code"?: string;
+  "usd_price"?: string;
+  "video_url"?: string;
+}
+
+export interface ModelSheinSearchKeywordsResponse {
+  "keywords"?: Array<ModelSheinKeyword>;
+}
+
+export interface ModelSheinSearchProductsResponse {
+  "keyword"?: string;
+  "origin_word"?: string;
+  "page"?: number;
+  "products"?: Array<ModelSheinProduct>;
+  "suggest_words"?: Array<string>;
+  "total"?: number;
+}
+
+export interface ModelSheinSizeOption {
+  "attr_id"?: string;
+  "attr_name"?: string;
+  "attr_value_id"?: string;
+  "attr_value_name"?: string;
+}
+
+export interface ModelSheinSkuVariant {
+  "retail_price"?: string;
+  "sale_price"?: string;
+  "sku_code"?: string;
+  "sku_sale_attr"?: string;
+  "stock"?: string;
+  "usd_price"?: string;
+}
+
+export interface ModelSheinAggregationFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinAggregationFilters;
+  "msg"?: string;
+}
+
+export interface ModelSheinAutocompleteResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinAutocompleteResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinCategoryFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinCategoryFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinCategoryGoodsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinCategoryGoodsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinCategoryNavResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinCategoryNavResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinProductDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinProductDetail;
+  "msg"?: string;
+}
+
+export interface ModelSheinProductsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinSearchProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinSearchKeywordsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinSearchKeywordsResponse;
+  "msg"?: string;
+}
+
 export interface ModelShopappAnalysisResponse {
   "currencies"?: Array<string>;
   "discounts"?: ModelShopappDiscountSummary;
@@ -20997,11 +24178,18 @@ export interface ModelShopifyCollectionItem {
 
 export interface ModelShopifyCollectionProductsResponse {
   "collection"?: string;
+  "facets"?: Record<string, Record<string, number>>;
+  "facets_stats"?: Record<string, ModelShopifyFacetStat>;
+  "filters"?: Record<string, Array<string>>;
   "limit"?: number;
   "page"?: number;
   "products"?: Array<ModelShopifyProductItem>;
+  "sort"?: "sortLTH" | "sortHTL" | "newest";
   "source_url"?: string;
   "store_url"?: string;
+  "total_items"?: number;
+  "total_pages"?: number;
+  "transport_mode"?: "ssr_embedded";
 }
 
 export interface ModelShopifyCollectionsResponse {
@@ -21010,6 +24198,13 @@ export interface ModelShopifyCollectionsResponse {
   "page"?: number;
   "source_url"?: string;
   "store_url"?: string;
+  "transport_mode"?: "ssr_embedded";
+}
+
+export interface ModelShopifyFacetStat {
+  "avg"?: number;
+  "max"?: number;
+  "min"?: number;
 }
 
 export interface ModelShopifyImageItem {
@@ -21045,6 +24240,7 @@ export interface ModelShopifyPageResponse {
   "page"?: ModelShopifyPageItem;
   "source_url"?: string;
   "store_url"?: string;
+  "transport_mode"?: "ssr_embedded";
 }
 
 export interface ModelShopifyPagesResponse {
@@ -21053,21 +24249,29 @@ export interface ModelShopifyPagesResponse {
   "pages"?: Array<ModelShopifyPageItem>;
   "source_url"?: string;
   "store_url"?: string;
+  "transport_mode"?: "ssr_embedded";
 }
 
 export interface ModelShopifyProductItem {
   "available"?: boolean;
+  "canonical_colour"?: string;
+  "collection_tags"?: Array<string>;
+  "colour"?: string;
   "compare_at_price"?: number;
   "created_at"?: string;
   "description"?: string;
+  "discount_percentage"?: number;
   "featured_image"?: string;
   "handle"?: string;
   "id"?: string;
   "images"?: Array<ModelShopifyImageItem>;
+  "labels"?: Array<string>;
   "options"?: Array<ModelShopifyOptionItem>;
   "price"?: number;
   "product_type"?: string;
   "published_at"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
   "tags"?: Array<string>;
   "title"?: string;
   "updated_at"?: string;
@@ -21084,20 +24288,29 @@ export interface ModelShopifyProductRecommendationsResponse {
   "products"?: Array<ModelShopifyProductItem>;
   "source_url"?: string;
   "store_url"?: string;
+  "transport_mode"?: "ssr_embedded";
 }
 
 export interface ModelShopifyProductResponse {
   "product"?: ModelShopifyProductItem;
   "source_url"?: string;
   "store_url"?: string;
+  "transport_mode"?: "ssr_embedded";
 }
 
 export interface ModelShopifyProductsResponse {
+  "facets"?: Record<string, Record<string, number>>;
+  "facets_stats"?: Record<string, ModelShopifyFacetStat>;
+  "filters"?: Record<string, Array<string>>;
   "limit"?: number;
   "page"?: number;
   "products"?: Array<ModelShopifyProductItem>;
+  "sort"?: "sortLTH" | "sortHTL" | "newest";
   "source_url"?: string;
   "store_url"?: string;
+  "total_items"?: number;
+  "total_pages"?: number;
+  "transport_mode"?: "ssr_embedded";
 }
 
 export interface ModelShopifySearchQueryItem {
@@ -21164,6 +24377,7 @@ export interface ModelShopifyStoreResponse {
   "requested_url"?: string;
   "source_domain"?: string;
   "source_url"?: string;
+  "transport_mode"?: "ssr_embedded";
 }
 
 export interface ModelShopifyVariantItem {
@@ -21174,6 +24388,7 @@ export interface ModelShopifyVariantItem {
   "featured_image"?: string;
   "grams"?: number;
   "id"?: string;
+  "inventory_quantity"?: number;
   "option1"?: string;
   "option2"?: string;
   "option3"?: string;
@@ -21248,6 +24463,72 @@ export interface ModelShopifySitemapUrlsResponseDoc {
 }
 
 export interface ModelShopifyStoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsCollectionProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyCollectionProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsCollectionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyCollectionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsPageResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyPageResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsPagesResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyPagesResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsProductRecommendationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyProductRecommendationsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifyProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsSearchSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifySearchSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsSitemapIndexResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifySitemapIndexResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsSitemapUrlsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopifySitemapUrlsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopifybrandsStoreResponseDoc {
   "code"?: number;
   "data"?: ModelShopifyStoreResponse;
   "msg"?: string;
@@ -23707,6 +26988,7 @@ export interface ModelTechstackResult {
   "detector_version"?: string;
   "final_url"?: string;
   "technologies"?: Array<ModelTechstackTechnology>;
+  "unmatched_evidence"?: ModelTechstackUnmatchedEvidence;
   "url"?: string;
 }
 
@@ -23716,6 +26998,11 @@ export interface ModelTechstackTechnology {
   "evidence"?: string;
   "name"?: string;
   "version"?: string;
+}
+
+export interface ModelTechstackUnmatchedEvidence {
+  "domains"?: Array<string>;
+  "generator"?: string;
 }
 
 export interface ModelTeslajobsListResponse {
@@ -26902,6 +30189,41 @@ export interface ModelVintedMemberResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelWalgreensStore {
+  "address_line1"?: string;
+  "brand"?: string;
+  "city"?: string;
+  "county"?: string;
+  "distance_miles"?: number;
+  "fax"?: string;
+  "intersection"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "name"?: string;
+  "pharmacy_close_time"?: string;
+  "pharmacy_open_time"?: string;
+  "phone"?: string;
+  "services"?: Array<string>;
+  "state"?: string;
+  "store_close_time"?: string;
+  "store_number"?: string;
+  "store_open_time"?: string;
+  "store_type"?: string;
+  "time_zone"?: string;
+  "zip"?: string;
+}
+
+export interface ModelWalgreensStoresResponse {
+  "stores"?: Array<ModelWalgreensStore>;
+  "total_count"?: number;
+}
+
+export interface ModelWalgreensStoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelWalgreensStoresResponse;
+  "msg"?: string;
+}
+
 export interface ModelWalmartProduct {
   "attributes"?: Record<string, string>;
   "availability"?: string;
@@ -27157,8 +30479,8 @@ export interface ModelWebBillingRejectionDoc {
   "message"?: string;
   "plan"?: string;
   "rate_limit_per_minute"?: number;
-  "reason"?: "insufficient_credits" | "daily_credit_limit" | "rate_limited";
-  "reset_scope"?: "daily" | "monthly" | "minute";
+  "reason"?: "insufficient_credits" | "daily_credit_limit" | "rate_limited" | "ip_rate_limited";
+  "reset_scope"?: "daily" | "monthly" | "minute" | "ip_window";
   "resets_at"?: string;
   "retry_after_seconds"?: number;
   "suggested_plan"?: string;
@@ -27181,6 +30503,114 @@ export interface ModelWebTechStackResponseDoc {
   "code"?: number;
   "data"?: ModelTechstackResult;
   "msg"?: string;
+}
+
+export interface ModelWebmonitorCheckDoc {
+  "added_urls"?: Array<string>;
+  "billed"?: boolean;
+  "changed"?: boolean;
+  "checked_at"?: string;
+  "diff"?: string;
+  "error"?: string;
+  "fingerprint"?: string;
+  "id"?: string;
+  "monitor_id"?: string;
+  "removed_urls"?: Array<string>;
+  "skipped"?: boolean;
+  "webhook_deliveries"?: Array<ModelWebmonitorWebhookDeliveryDoc>;
+}
+
+export interface ModelWebmonitorCheckListResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelWebmonitorCheckDoc>;
+  "msg"?: string;
+}
+
+export interface ModelWebmonitorCreateMonitorBodyDoc {
+  "cadence_minutes"?: number;
+  "enabled"?: boolean;
+  "name"?: string;
+  "notification"?: ModelWebmonitorNotificationBodyDoc;
+  "sitemap"?: ModelWebmonitorSitemapTargetBodyDoc;
+  "target_type"?: "page" | "sitemap";
+  "url"?: string;
+}
+
+export interface ModelWebmonitorMonitorDeleteResponseDoc {
+  "code"?: number;
+  "data"?: { "deleted"?: boolean };
+  "msg"?: string;
+}
+
+export interface ModelWebmonitorMonitorDoc {
+  "cadence_minutes"?: number;
+  "created_at"?: string;
+  "enabled"?: boolean;
+  "failures"?: number;
+  "id"?: string;
+  "last_changed_at"?: string;
+  "last_checked_at"?: string;
+  "last_error"?: string;
+  "name"?: string;
+  "next_check_at"?: string;
+  "notification"?: ModelWebmonitorNotificationDoc;
+  "sitemap"?: ModelWebmonitorSitemapTargetDoc;
+  "target_type"?: "page" | "sitemap";
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelWebmonitorMonitorListResponseDoc {
+  "code"?: number;
+  "data"?: Array<ModelWebmonitorMonitorDoc>;
+  "msg"?: string;
+}
+
+export interface ModelWebmonitorMonitorResponseDoc {
+  "code"?: number;
+  "data"?: ModelWebmonitorMonitorDoc;
+  "msg"?: string;
+}
+
+export interface ModelWebmonitorNotificationBodyDoc {
+  "events"?: Array<string>;
+  "webhook_secret"?: string;
+  "webhook_url"?: string;
+}
+
+export interface ModelWebmonitorNotificationDoc {
+  "events"?: Array<string>;
+  "webhook_url"?: string;
+}
+
+export interface ModelWebmonitorSitemapTargetBodyDoc {
+  "exclude_patterns"?: Array<string>;
+  "include_patterns"?: Array<string>;
+  "max_urls"?: number;
+}
+
+export interface ModelWebmonitorSitemapTargetDoc {
+  "exclude_patterns"?: Array<string>;
+  "include_patterns"?: Array<string>;
+  "max_urls"?: number;
+}
+
+export interface ModelWebmonitorUpdateMonitorBodyDoc {
+  "cadence_minutes"?: number;
+  "enabled"?: boolean;
+  "name"?: string;
+  "notification"?: ModelWebmonitorNotificationBodyDoc;
+  "sitemap"?: ModelWebmonitorSitemapTargetBodyDoc;
+  "target_type"?: "page" | "sitemap";
+}
+
+export interface ModelWebmonitorWebhookDeliveryDoc {
+  "attempts"?: number;
+  "delivered_at"?: string;
+  "error"?: string;
+  "event"?: "change.detected" | "run.completed";
+  "status"?: "delivered" | "rejected" | "failed" | "skipped_unsafe_url";
+  "status_code"?: number;
 }
 
 export interface ModelWhatnotBrowseResponse {
@@ -30439,6 +33869,36 @@ export interface ModelZillowSearchResponse {
   "results"?: Array<ModelZillowPropertyItem>;
 }
 
+export type AdidasProductResponse = CrawloraResponse<ModelAdidasProductResponseDoc>;
+export interface AdidasProductParams {
+  "product_id": string;
+}
+
+export type AdidasSearchResponse = CrawloraResponse<ModelAdidasSearchResponseDoc>;
+export interface AdidasSearchParams {
+  "query"?: string;
+  "category"?: string;
+  "sort"?: string;
+  "page"?: number;
+}
+
+export type AdidasStoreResponse = CrawloraResponse<ModelAdidasStoreDetailResponseDoc>;
+export interface AdidasStoreParams {
+  "store_id": string;
+}
+
+export type AdidasStoresResponse = CrawloraResponse<ModelAdidasStoresResponseDoc>;
+export interface AdidasStoresParams {
+  "lat": number;
+  "lng": number;
+  "page"?: number;
+}
+
+export type AdidasSuggestResponse = CrawloraResponse<ModelAdidasSuggestResponseDoc>;
+export interface AdidasSuggestParams {
+  "query": string;
+}
+
 export type AgodaActivitiesSearchResponse = CrawloraResponse<ModelAgodaActivitiesSearchResponseDoc>;
 export interface AgodaActivitiesSearchParams {
   "keyword"?: string;
@@ -30541,6 +34001,69 @@ export interface AirbnbSearchParams {
   "sw_lat"?: number;
   "sw_lng"?: number;
   "zoom"?: number;
+}
+
+export type AllbirdsCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface AllbirdsCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type AllbirdsCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface AllbirdsCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type AllbirdsPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface AllbirdsPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type AllbirdsPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface AllbirdsPageParams {
+  "handle": string;
+}
+
+export type AllbirdsProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface AllbirdsProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type AllbirdsProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface AllbirdsProductParams {
+  "handle": string;
+}
+
+export type AllbirdsProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface AllbirdsProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type AllbirdsSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface AllbirdsSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type AllbirdsSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface AllbirdsSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type AllbirdsSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface AllbirdsSitemapsParams {
+}
+
+export type AllbirdsStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface AllbirdsStoreParams {
 }
 
 export type AmazonJobsJobResponse = CrawloraResponse<ModelAmazonjobsJobResponseDoc>;
@@ -30909,6 +34432,72 @@ export interface AppStoreVersionHistoryParams {
   "lang"?: string;
 }
 
+export type AudibleCategoriesResponse = CrawloraResponse<ModelAudibleCategoriesResponseDoc>;
+export interface AudibleCategoriesParams {
+}
+
+export type AudibleCategoryResponse = CrawloraResponse<ModelAudibleCategoryResponseDoc>;
+export interface AudibleCategoryParams {
+  "id": string;
+}
+
+export type AudibleChartsResponse = CrawloraResponse<ModelAudibleChartsResponseDoc>;
+export interface AudibleChartsParams {
+  "chart"?: "most_listened" | "bestselling";
+  "content_type"?: "audiobooks" | "podcasts";
+  "category_id"?: string;
+  "access_level"?: "all" | "free" | "plus" | "premium";
+  "language"?: "all" | "danish" | "english" | "french" | "german" | "italian" | "japanese" | "polish" | "portuguese" | "russian" | "spanish" | "swedish";
+  "duration"?: "all" | "oneHourLess" | "oneToThreeHour" | "threeToSixHour" | "sixToTenHour" | "tenToTwentyHour" | "twentyHourMore";
+  "originals_only"?: boolean;
+  "page"?: number;
+}
+
+export type AudibleEditorialListResponse = CrawloraResponse<ModelAudibleEditorialListResponseDoc>;
+export interface AudibleEditorialListParams {
+  "list": "audiobooks" | "booktok" | "podcasts";
+}
+
+export type AudibleProductResponse = CrawloraResponse<ModelAudibleProductResponseDoc>;
+export interface AudibleProductParams {
+  "asin": string;
+}
+
+export type AudibleProductRelatedResponse = CrawloraResponse<ModelAudibleRelatedResponseDoc>;
+export interface AudibleProductRelatedParams {
+  "asin": string;
+  "similarity_type": "InTheSameSeries" | "ByTheSameNarrator" | "RawSimilarities" | "ByTheSameAuthor" | "NextInSameSeries";
+  "limit"?: number;
+}
+
+export type AudibleProductReviewsResponse = CrawloraResponse<ModelAudibleReviewsResponseDoc>;
+export interface AudibleProductReviewsParams {
+  "asin": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type AudibleProductsResponse = CrawloraResponse<ModelAudibleProductsResponseDoc>;
+export interface AudibleProductsParams {
+  "asins": string;
+}
+
+export type AudibleSearchResponse = CrawloraResponse<ModelAudibleSearchResponseDoc>;
+export interface AudibleSearchParams {
+  "q"?: string;
+  "title"?: string;
+  "author"?: string;
+  "narrator"?: string;
+  "category_id"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type AudibleSeriesResponse = CrawloraResponse<ModelAudibleSeriesResponseDoc>;
+export interface AudibleSeriesParams {
+  "asin": string;
+}
+
 export type AutotraderDealerResponse = CrawloraResponse<ModelAutotraderDealerResponse>;
 export interface AutotraderDealerParams {
   "id": string;
@@ -30936,6 +34525,63 @@ export interface AutotraderSearchParams {
 export type AutotraderVehicleResponse = CrawloraResponse<ModelAutotraderVehicleResponse>;
 export interface AutotraderVehicleParams {
   "id": string;
+}
+
+export type BbbBusinessResponse = CrawloraResponse<ModelBbbBusinessResponseDoc>;
+export interface BbbBusinessParams {
+  "url": string;
+}
+
+export type BbbBusinessComplaintsResponse = CrawloraResponse<ModelBbbComplaintsResponseDoc>;
+export interface BbbBusinessComplaintsParams {
+  "url": string;
+}
+
+export type BbbBusinessMoreInfoResponse = CrawloraResponse<ModelBbbMoreInfoResponseDoc>;
+export interface BbbBusinessMoreInfoParams {
+  "url": string;
+}
+
+export type BbbBusinessReviewsResponse = CrawloraResponse<ModelBbbReviewsResponseDoc>;
+export interface BbbBusinessReviewsParams {
+  "url": string;
+  "page"?: number;
+}
+
+export type BbbCategoryResponse = CrawloraResponse<ModelBbbCategoryResponseDoc>;
+export interface BbbCategoryParams {
+  "url": string;
+  "page"?: number;
+}
+
+export type BbbScamtrackerSearchResponse = CrawloraResponse<ModelBbbscamtrackerSearchResponseDoc>;
+export interface BbbScamtrackerSearchParams {
+  "query"?: string;
+  "scam_type"?: "Advance Fee Loan" | "Bank/Credit Card Company Imposter" | "Business Email Compromise" | "Charity" | "Counterfeit Product" | "COVID-19" | "Credit Cards" | "Credit Repair/Debt Relief" | "CryptoCurrency" | "Debt Collections" | "Employment" | "Fake Check/Money Order" | "Fake Invoice/Supplier Bill" | "Family/Friend Emergency" | "Foreign Money Exchange" | "Government Agency Imposter" | "Government Grant" | "Healthcare/Medicaid/Medicare" | "Home Improvement" | "Identity Theft" | "Investment" | "Moving" | "Online Purchase" | "Other" | "Phishing" | "Rental" | "Retail Business" | "Romance" | "Scholarship" | "Sweepstakes/Lottery/Prizes" | "Tax Collection" | "Tech Support" | "Travel/Vacation/Timeshare" | "Utility" | "Vanity Award" | "Worthless Problem-solving Service" | "Yellow Pages/Directories";
+  "state"?: string;
+  "scammer_state"?: string;
+  "date_from"?: string;
+  "date_to"?: string;
+  "min_dollars_lost"?: number;
+  "max_dollars_lost"?: number;
+  "page"?: number;
+}
+
+export type BbbScamtrackerStateStatsResponse = CrawloraResponse<ModelBbbscamtrackerStateStatsResponseDoc>;
+export interface BbbScamtrackerStateStatsParams {
+  "period"?: "30" | "90" | "365" | "all";
+}
+
+export type BbbScamtrackerDetailResponse = CrawloraResponse<ModelBbbscamtrackerDetailResponseDoc>;
+export interface BbbScamtrackerDetailParams {
+  "id": string;
+}
+
+export type BbbSearchResponse = CrawloraResponse<ModelBbbSearchResponseDoc>;
+export interface BbbSearchParams {
+  "query": string;
+  "location": string;
+  "page"?: number;
 }
 
 export type BestBuyBestbuyBrandsResponse = CrawloraResponse<ModelBestbuyBrandsResponseDoc>;
@@ -31044,6 +34690,22 @@ export interface BillingMePortalParams {
 
 export type BillingMeRejectionsResponse = CrawloraResponse<ModelBillingMyRejectionsResponseDoc>;
 export interface BillingMeRejectionsParams {
+}
+
+export type BillingMeSubscriptionChangeBody = CrawloraBody<ModelBillingStripeSubscriptionChangeRequestDoc>;
+export type BillingMeSubscriptionChangeResponse = CrawloraResponse<ModelBillingStripeSubscriptionChangeResultResponseDoc>;
+export interface BillingMeSubscriptionChangeParams {
+  "request": BillingMeSubscriptionChangeBody;
+}
+
+export type BillingMeSubscriptionChangeCancelResponse = CrawloraResponse<ModelBillingStripeSubscriptionChangeResultResponseDoc>;
+export interface BillingMeSubscriptionChangeCancelParams {
+}
+
+export type BillingMeSubscriptionPreviewBody = CrawloraBody<ModelBillingStripeSubscriptionChangeRequestDoc>;
+export type BillingMeSubscriptionPreviewResponse = CrawloraResponse<ModelBillingStripeSubscriptionChangePreviewResponseDoc>;
+export interface BillingMeSubscriptionPreviewParams {
+  "request": BillingMeSubscriptionPreviewBody;
 }
 
 export type BingImagesResponse = CrawloraResponse<ModelBingImagesResponseDoc>;
@@ -31402,6 +35064,69 @@ export interface BraveVideosParams {
   "date_to"?: string;
 }
 
+export type BrooklinenCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface BrooklinenCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type BrooklinenCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface BrooklinenCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type BrooklinenPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface BrooklinenPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type BrooklinenPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface BrooklinenPageParams {
+  "handle": string;
+}
+
+export type BrooklinenProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface BrooklinenProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type BrooklinenProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface BrooklinenProductParams {
+  "handle": string;
+}
+
+export type BrooklinenProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface BrooklinenProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type BrooklinenSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface BrooklinenSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type BrooklinenSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface BrooklinenSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type BrooklinenSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface BrooklinenSitemapsParams {
+}
+
+export type BrooklinenStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface BrooklinenStoreParams {
+}
+
 export type CapterraProductResponse = CrawloraResponse<ModelCapterraProductResponseDoc>;
 export interface CapterraProductParams {
   "product_id": string;
@@ -31477,6 +35202,48 @@ export interface CarsComCarsdotcomSearchParams {
 export type CarsComCarsdotcomVehicleResponse = CrawloraResponse<ModelCarsdotcomVehicleResponse>;
 export interface CarsComCarsdotcomVehicleParams {
   "listing_id": string;
+}
+
+export type ChewyCategoriesResponse = CrawloraResponse<ModelChewyCategoriesResponseDoc>;
+export interface ChewyCategoriesParams {
+  "group_id"?: string;
+  "depth"?: number;
+}
+
+export type ChewyCategoryResponse = CrawloraResponse<ModelChewyCategoryResponseDoc>;
+export interface ChewyCategoryParams {
+  "group_id": string;
+  "page"?: number;
+  "sort"?: "byRelevance" | "byNewest" | "byPopularity" | "byLowestPrice" | "byHighestPrice" | "byRating" | "byRatingCount";
+  "filter"?: Array<string>;
+}
+
+export type ChewyGtinLookupResponse = CrawloraResponse<ModelChewyGtinLookupResponseDoc>;
+export interface ChewyGtinLookupParams {
+  "gtins": string;
+}
+
+export type ChewyProductResponse = CrawloraResponse<ModelChewyProductResponseDoc>;
+export interface ChewyProductParams {
+  "id": string;
+}
+
+export type ChewyProductsResponse = CrawloraResponse<ModelChewyProductsResponseDoc>;
+export interface ChewyProductsParams {
+  "part_numbers": string;
+}
+
+export type ChewySearchResponse = CrawloraResponse<ModelChewySearchResponseDoc>;
+export interface ChewySearchParams {
+  "q": string;
+  "page"?: number;
+  "sort"?: "byRelevance" | "byNewest" | "byPopularity" | "byLowestPrice" | "byHighestPrice" | "byRating" | "byRatingCount";
+  "filter"?: Array<string>;
+}
+
+export type ChewySuggestResponse = CrawloraResponse<ModelChewySuggestResponseDoc>;
+export interface ChewySuggestParams {
+  "term": string;
 }
 
 export type ChromeWebStoreChromewebstoreCategoriesResponse = CrawloraResponse<ModelChromewebstoreCategoriesResponseDoc>;
@@ -31706,6 +35473,69 @@ export interface CoinGeckoTrendingParams {
   "vs_currency"?: "btc" | "eth" | "ltc" | "bch" | "bnb" | "eos" | "xrp" | "xlm" | "link" | "dot" | "yfi" | "sol" | "usd" | "aed" | "ars" | "aud" | "bdt" | "bhd" | "bmd" | "brl" | "cad" | "chf" | "clp" | "cny" | "czk" | "dkk" | "eur" | "gbp" | "gel" | "hkd" | "huf" | "idr" | "ils" | "inr" | "jpy" | "krw" | "kwd" | "lkr" | "mmk" | "mxn" | "myr" | "ngn" | "nok" | "nzd" | "php" | "pkr" | "pln" | "rub" | "sar" | "sek" | "sgd" | "thb" | "try" | "twd" | "uah" | "vef" | "vnd" | "zar" | "xdr" | "xag" | "xau" | "bits" | "sats";
 }
 
+export type ColeHaanColehaanCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface ColeHaanColehaanCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ColeHaanColehaanCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface ColeHaanColehaanCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ColeHaanColehaanPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface ColeHaanColehaanPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ColeHaanColehaanPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface ColeHaanColehaanPageParams {
+  "handle": string;
+}
+
+export type ColeHaanColehaanProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface ColeHaanColehaanProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ColeHaanColehaanProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface ColeHaanColehaanProductParams {
+  "handle": string;
+}
+
+export type ColeHaanColehaanProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface ColeHaanColehaanProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type ColeHaanColehaanSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface ColeHaanColehaanSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type ColeHaanColehaanSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface ColeHaanColehaanSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type ColeHaanColehaanSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface ColeHaanColehaanSitemapsParams {
+}
+
+export type ColeHaanColehaanStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface ColeHaanColehaanStoreParams {
+}
+
 export type CongressReportResponse = CrawloraResponse<ModelCongressReportResponseDoc>;
 export interface CongressReportParams {
   "url": string;
@@ -31899,6 +35729,40 @@ export interface DatasetsAppsSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsBbbBusinessesFacetsResponse = CrawloraResponse<ModelDatasetsBbbBusinessesFacetResponseDoc>;
+export interface DatasetsBbbBusinessesFacetsParams {
+  "facet": "category" | "state" | "city" | "rating" | "accredited" | "entity_type" | "run_id";
+  "q"?: string;
+  "category"?: string;
+  "state"?: string;
+  "city"?: string;
+  "rating"?: "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D+" | "D" | "D-" | "F";
+  "accredited"?: boolean;
+  "entity_type"?: string;
+  "run_id"?: string;
+}
+
+export type DatasetsBbbBusinessesItemResponse = CrawloraResponse<ModelDatasetsBbbBusinessResponseDoc>;
+export interface DatasetsBbbBusinessesItemParams {
+  "id": string;
+}
+
+export type DatasetsBbbBusinessesSearchResponse = CrawloraResponse<ModelDatasetsBbbBusinessesSearchResponseDoc>;
+export interface DatasetsBbbBusinessesSearchParams {
+  "q"?: string;
+  "category"?: string;
+  "state"?: string;
+  "city"?: string;
+  "rating"?: "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D+" | "D" | "D-" | "F";
+  "min_rating_rank"?: number;
+  "accredited"?: boolean;
+  "entity_type"?: string;
+  "run_id"?: string;
+  "sort"?: "relevance" | "rating_desc" | "rating_asc" | "accredited_first" | "name_asc" | "years_in_business_desc";
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsBoxofficemojoFacetsResponse = CrawloraResponse<ModelDatasetsBoxOfficeMojoFacetResponseDoc>;
 export interface DatasetsBoxofficemojoFacetsParams {
   "facet": "gross_band" | "years_active" | "lifetime_year" | "franchise_names" | "brand_names" | "genre_names" | "hydrated" | "is_billion_dollar" | "in_lifetime_top_1000_ww";
@@ -32042,6 +35906,50 @@ export interface DatasetsCreatorsSearchParams {
   "has_email"?: boolean;
   "include_inactive"?: boolean;
   "sort"?: "followers_desc" | "engagement_desc" | "likes_desc" | "relevance";
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsFacebookPagesFacetsResponse = CrawloraResponse<ModelDatasetsFacebookPagesFacetResponseDoc>;
+export interface DatasetsFacebookPagesFacetsParams {
+  "facet": "category" | "discovery_source";
+  "q"?: string;
+  "page_id"?: string;
+  "identifier"?: string;
+  "category"?: string;
+  "discovery_source"?: string;
+  "has_website"?: boolean;
+  "has_email"?: boolean;
+  "has_phone"?: boolean;
+  "has_whatsapp"?: boolean;
+  "min_likes"?: number;
+  "max_likes"?: number;
+  "hydrated_after"?: string;
+  "hydrated_before"?: string;
+  "sort"?: "relevance" | "likes_desc" | "likes_asc" | "hydrated_at_desc" | "hydrated_at_asc";
+}
+
+export type DatasetsFacebookPagesItemResponse = CrawloraResponse<ModelDatasetsFacebookPageResponseDoc>;
+export interface DatasetsFacebookPagesItemParams {
+  "page_id": string;
+}
+
+export type DatasetsFacebookPagesSearchResponse = CrawloraResponse<ModelDatasetsFacebookPagesSearchResponseDoc>;
+export interface DatasetsFacebookPagesSearchParams {
+  "q"?: string;
+  "page_id"?: string;
+  "identifier"?: string;
+  "category"?: string;
+  "discovery_source"?: string;
+  "has_website"?: boolean;
+  "has_email"?: boolean;
+  "has_phone"?: boolean;
+  "has_whatsapp"?: boolean;
+  "min_likes"?: number;
+  "max_likes"?: number;
+  "hydrated_after"?: string;
+  "hydrated_before"?: string;
+  "sort"?: "relevance" | "likes_desc" | "likes_asc" | "hydrated_at_desc" | "hydrated_at_asc";
   "page"?: number;
   "page_size"?: number;
 }
@@ -33173,6 +37081,66 @@ export interface DatasetsTrustmrrSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsVehicleListingsFacetsResponse = CrawloraResponse<ModelDatasetsVehicleListingsFacetResponseDoc>;
+export interface DatasetsVehicleListingsFacetsParams {
+  "facet": "source" | "make" | "model" | "trim" | "body_style" | "transmission" | "drive_type" | "fuel_type" | "seller_type" | "state" | "run_id";
+  "q"?: string;
+  "source"?: "carmax" | "autotrader" | "carsdotcom";
+  "make"?: string;
+  "model"?: string;
+  "trim"?: string;
+  "body_style"?: string;
+  "transmission"?: string;
+  "drive_type"?: string;
+  "fuel_type"?: string;
+  "seller_type"?: "retailer" | "dealer" | "private";
+  "state"?: string;
+  "vin"?: string;
+  "run_id"?: string;
+  "is_price_reduced"?: boolean;
+  "min_year"?: number;
+  "max_year"?: number;
+  "min_price"?: number;
+  "max_price"?: number;
+  "max_mileage"?: number;
+}
+
+export type DatasetsVehicleListingsItemResponse = CrawloraResponse<ModelDatasetsVehicleListingResponseDoc>;
+export interface DatasetsVehicleListingsItemParams {
+  "id": string;
+}
+
+export type DatasetsVehicleListingsPriceHistoryResponse = CrawloraResponse<ModelDatasetsVehicleListingPriceHistoryResponseDoc>;
+export interface DatasetsVehicleListingsPriceHistoryParams {
+  "id": string;
+}
+
+export type DatasetsVehicleListingsSearchResponse = CrawloraResponse<ModelDatasetsVehicleListingsSearchResponseDoc>;
+export interface DatasetsVehicleListingsSearchParams {
+  "q"?: string;
+  "source"?: "carmax" | "autotrader" | "carsdotcom";
+  "make"?: string;
+  "model"?: string;
+  "trim"?: string;
+  "body_style"?: string;
+  "transmission"?: string;
+  "drive_type"?: string;
+  "fuel_type"?: string;
+  "seller_type"?: "retailer" | "dealer" | "private";
+  "state"?: string;
+  "vin"?: string;
+  "run_id"?: string;
+  "is_price_reduced"?: boolean;
+  "min_year"?: number;
+  "max_year"?: number;
+  "min_price"?: number;
+  "max_price"?: number;
+  "max_mileage"?: number;
+  "sort"?: "relevance" | "recently_updated" | "newly_listed" | "price_asc" | "price_desc" | "mileage_asc" | "mileage_desc" | "year_desc" | "year_asc";
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsXUsersFacetsResponse = CrawloraResponse<ModelDatasetsXUsersFacetResponseDoc>;
 export interface DatasetsXUsersFacetsParams {
   "facet": "is_blue_verified" | "has_bio" | "has_external_url" | "source_tier";
@@ -33215,6 +37183,62 @@ export interface DatasetsXUsersSearchParams {
   "crawled_after"?: string;
   "crawled_before"?: string;
   "sort"?: "relevance" | "followers_desc" | "followers_asc" | "crawled_at_desc" | "crawled_at_asc" | "created_at_desc" | "created_at_asc";
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsYoutubeCreatorsFacetsResponse = CrawloraResponse<ModelDatasetsYoutubeCreatorsFacetResponseDoc>;
+export interface DatasetsYoutubeCreatorsFacetsParams {
+  "facet": "region" | "discovery_source";
+  "q"?: string;
+  "channel_id"?: string;
+  "region"?: string;
+  "discovery_source"?: string;
+  "has_bio"?: boolean;
+  "has_links"?: boolean;
+  "followers_count_available"?: boolean;
+  "videos_count_available"?: boolean;
+  "views_count_available"?: boolean;
+  "min_followers"?: number;
+  "max_followers"?: number;
+  "min_videos"?: number;
+  "max_videos"?: number;
+  "min_views"?: number;
+  "max_views"?: number;
+  "joined_after"?: string;
+  "joined_before"?: string;
+  "hydrated_after"?: string;
+  "hydrated_before"?: string;
+  "sort"?: "relevance" | "followers_desc" | "followers_asc" | "views_desc" | "videos_desc" | "hydrated_at_desc" | "hydrated_at_asc";
+}
+
+export type DatasetsYoutubeCreatorsItemResponse = CrawloraResponse<ModelDatasetsYoutubeCreatorResponseDoc>;
+export interface DatasetsYoutubeCreatorsItemParams {
+  "channel_id": string;
+}
+
+export type DatasetsYoutubeCreatorsSearchResponse = CrawloraResponse<ModelDatasetsYoutubeCreatorsSearchResponseDoc>;
+export interface DatasetsYoutubeCreatorsSearchParams {
+  "q"?: string;
+  "channel_id"?: string;
+  "region"?: string;
+  "discovery_source"?: string;
+  "has_bio"?: boolean;
+  "has_links"?: boolean;
+  "followers_count_available"?: boolean;
+  "videos_count_available"?: boolean;
+  "views_count_available"?: boolean;
+  "min_followers"?: number;
+  "max_followers"?: number;
+  "min_videos"?: number;
+  "max_videos"?: number;
+  "min_views"?: number;
+  "max_views"?: number;
+  "joined_after"?: string;
+  "joined_before"?: string;
+  "hydrated_after"?: string;
+  "hydrated_before"?: string;
+  "sort"?: "relevance" | "followers_desc" | "followers_asc" | "views_desc" | "videos_desc" | "hydrated_at_desc" | "hydrated_at_asc";
   "page"?: number;
   "page_size"?: number;
 }
@@ -33688,6 +37712,69 @@ export interface EtsyShopReviewsParams {
   "limit"?: number;
 }
 
+export type EverlaneCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface EverlaneCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type EverlaneCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface EverlaneCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type EverlanePagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface EverlanePagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type EverlanePageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface EverlanePageParams {
+  "handle": string;
+}
+
+export type EverlaneProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface EverlaneProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type EverlaneProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface EverlaneProductParams {
+  "handle": string;
+}
+
+export type EverlaneProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface EverlaneProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type EverlaneSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface EverlaneSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type EverlaneSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface EverlaneSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type EverlaneSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface EverlaneSitemapsParams {
+}
+
+export type EverlaneStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface EverlaneStoreParams {
+}
+
 export type ExpediaActivitiesSearchBody = CrawloraBody<ModelExpediaActivitySearchOption>;
 export type ExpediaActivitiesSearchResponse = CrawloraResponse<ModelExpediaExpediaActivitySearchResponseDoc>;
 export interface ExpediaActivitiesSearchParams {
@@ -33753,6 +37840,69 @@ export interface FacebookPageParams {
   "page": string;
 }
 
+export type FashionNovaFashionnovaCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface FashionNovaFashionnovaCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FashionNovaFashionnovaCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface FashionNovaFashionnovaCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FashionNovaFashionnovaPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface FashionNovaFashionnovaPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FashionNovaFashionnovaPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface FashionNovaFashionnovaPageParams {
+  "handle": string;
+}
+
+export type FashionNovaFashionnovaProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface FashionNovaFashionnovaProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FashionNovaFashionnovaProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface FashionNovaFashionnovaProductParams {
+  "handle": string;
+}
+
+export type FashionNovaFashionnovaProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface FashionNovaFashionnovaProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type FashionNovaFashionnovaSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface FashionNovaFashionnovaSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type FashionNovaFashionnovaSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface FashionNovaFashionnovaSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type FashionNovaFashionnovaSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface FashionNovaFashionnovaSitemapsParams {
+}
+
+export type FashionNovaFashionnovaStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface FashionNovaFashionnovaStoreParams {
+}
+
 export type FiverrGigResponse = CrawloraResponse<ModelFiverrGigResponseDoc>;
 export interface FiverrGigParams {
   "username": string;
@@ -33768,6 +37918,170 @@ export interface FiverrSearchParams {
 export type FiverrSellerResponse = CrawloraResponse<ModelFiverrSellerResponseDoc>;
 export interface FiverrSellerParams {
   "username": string;
+}
+
+export type GdeltContextResponse = CrawloraResponse<ModelGdeltContextResponseDoc>;
+export interface GdeltContextParams {
+  "query": string;
+  "domain"?: string;
+  "language"?: string;
+  "is_quote"?: boolean;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
+  "sort"?: "relevance" | "datedesc" | "dateasc";
+  "maxrecords"?: number;
+}
+
+export type GdeltSearchResponse = CrawloraResponse<ModelGdeltSearchResponseDoc>;
+export interface GdeltSearchParams {
+  "query": string;
+  "country"?: string;
+  "language"?: string;
+  "domain"?: string;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
+  "sort"?: "relevance" | "datedesc" | "dateasc" | "tonedesc" | "toneasc";
+  "maxrecords"?: number;
+}
+
+export type GdeltTimelineResponse = CrawloraResponse<ModelGdeltTimelineResponseDoc>;
+export interface GdeltTimelineParams {
+  "query": string;
+  "metric"?: "volume" | "volume_raw" | "tone" | "lang" | "country";
+  "country"?: string;
+  "language"?: string;
+  "domain"?: string;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
+  "smooth"?: number;
+}
+
+export type GdeltTonechartResponse = CrawloraResponse<ModelGdeltToneChartResponseDoc>;
+export interface GdeltTonechartParams {
+  "query": string;
+  "country"?: string;
+  "language"?: string;
+  "domain"?: string;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
+}
+
+export type GdeltTvConceptEntitiesResponse = CrawloraResponse<ModelGdeltTvCapNlpEntityDetailsResponseDoc>;
+export interface GdeltTvConceptEntitiesParams {
+  "limit"?: number;
+}
+
+export type GdeltTvSearchResponse = CrawloraResponse<ModelGdeltTvSearchResponseDoc>;
+export interface GdeltTvSearchParams {
+  "transcript"?: Array<string>;
+  "caption"?: Array<string>;
+  "concept"?: Array<string>;
+  "onscreen_text"?: Array<string>;
+  "visual"?: Array<string>;
+  "exclude_transcript"?: Array<string>;
+  "exclude_caption"?: Array<string>;
+  "exclude_concept"?: Array<string>;
+  "exclude_onscreen_text"?: Array<string>;
+  "exclude_visual"?: Array<string>;
+  "station": "CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV";
+  "show"?: string;
+  "day_of_week"?: number;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
+  "sort"?: "relevance" | "datedesc" | "dateasc";
+  "maxrecords"?: number;
+}
+
+export type GdeltTvShowchartResponse = CrawloraResponse<ModelGdeltTvShowChartResponseDoc>;
+export interface GdeltTvShowchartParams {
+  "transcript"?: Array<string>;
+  "caption"?: Array<string>;
+  "concept"?: Array<string>;
+  "onscreen_text"?: Array<string>;
+  "visual"?: Array<string>;
+  "exclude_transcript"?: Array<string>;
+  "exclude_caption"?: Array<string>;
+  "exclude_concept"?: Array<string>;
+  "exclude_onscreen_text"?: Array<string>;
+  "exclude_visual"?: Array<string>;
+  "station": Array<"CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV">;
+  "show"?: string;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
+}
+
+export type GdeltTvStationchartResponse = CrawloraResponse<ModelGdeltTvStationChartResponseDoc>;
+export interface GdeltTvStationchartParams {
+  "transcript"?: Array<string>;
+  "caption"?: Array<string>;
+  "concept"?: Array<string>;
+  "onscreen_text"?: Array<string>;
+  "visual"?: Array<string>;
+  "exclude_transcript"?: Array<string>;
+  "exclude_caption"?: Array<string>;
+  "exclude_concept"?: Array<string>;
+  "exclude_onscreen_text"?: Array<string>;
+  "exclude_visual"?: Array<string>;
+  "station": Array<"CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV">;
+  "show"?: string;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
+}
+
+export type GdeltTvStationdetailsResponse = CrawloraResponse<ModelGdeltTvStationDetailsResponseDoc>;
+export interface GdeltTvStationdetailsParams {
+}
+
+export type GdeltTvTimelineResponse = CrawloraResponse<ModelGdeltTvTimelineResponseDoc>;
+export interface GdeltTvTimelineParams {
+  "transcript"?: Array<string>;
+  "caption"?: Array<string>;
+  "concept"?: Array<string>;
+  "onscreen_text"?: Array<string>;
+  "visual"?: Array<string>;
+  "exclude_transcript"?: Array<string>;
+  "exclude_caption"?: Array<string>;
+  "exclude_concept"?: Array<string>;
+  "exclude_onscreen_text"?: Array<string>;
+  "exclude_visual"?: Array<string>;
+  "station": "CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV";
+  "show"?: string;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
+}
+
+export type GdeltTvVisualEntitiesResponse = CrawloraResponse<ModelGdeltTvVisualEntityDetailsResponseDoc>;
+export interface GdeltTvVisualEntitiesParams {
+  "limit"?: number;
+}
+
+export type GdeltTvWordcloudResponse = CrawloraResponse<ModelGdeltTvWordCloudResponseDoc>;
+export interface GdeltTvWordcloudParams {
+  "channel": "transcript" | "caption" | "concept" | "onscreen_text" | "visual";
+  "transcript"?: Array<string>;
+  "caption"?: Array<string>;
+  "concept"?: Array<string>;
+  "onscreen_text"?: Array<string>;
+  "visual"?: Array<string>;
+  "exclude_transcript"?: Array<string>;
+  "exclude_caption"?: Array<string>;
+  "exclude_concept"?: Array<string>;
+  "exclude_onscreen_text"?: Array<string>;
+  "exclude_visual"?: Array<string>;
+  "station": "CNN" | "MSNBC" | "FOXNEWS" | "BBCNEWS" | "KGO" | "KPIX" | "KNTV";
+  "show"?: string;
+  "day_of_week"?: string;
+  "timespan"?: string;
+  "from"?: string;
+  "to"?: string;
 }
 
 export type GeocodingLookupResponse = CrawloraResponse<ModelGeocodingLookupResponseDoc>;
@@ -34364,6 +38678,62 @@ export interface GooglePlaySuggestParams {
   "lang"?: string;
 }
 
+export type GymsharkCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface GymsharkCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type GymsharkCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface GymsharkCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type GymsharkPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface GymsharkPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type GymsharkPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface GymsharkPageParams {
+  "handle": string;
+}
+
+export type GymsharkProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface GymsharkProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type GymsharkProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface GymsharkProductParams {
+  "handle": string;
+}
+
+export type GymsharkProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface GymsharkProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type GymsharkSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface GymsharkSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type GymsharkSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface GymsharkSitemapsParams {
+}
+
+export type GymsharkStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface GymsharkStoreParams {
+}
+
 export type HMHmCategoriesResponse = CrawloraResponse<ModelHmCategoriesResponseDoc>;
 export interface HMHmCategoriesParams {
   "department"?: "women" | "men" | "kids" | "home" | "beauty";
@@ -34406,6 +38776,96 @@ export interface HMHmStoresParams {
   "lat"?: number;
   "lng"?: number;
   "radius_meters"?: number;
+}
+
+export type HomeDepotHomedepotCategoriesResponse = CrawloraResponse<ModelHomedepotCategoriesResponseDoc>;
+export interface HomeDepotHomedepotCategoriesParams {
+}
+
+export type HomeDepotHomedepotCategoryResponse = CrawloraResponse<ModelHomedepotCategoryResponseDoc>;
+export interface HomeDepotHomedepotCategoryParams {
+  "path": string;
+}
+
+export type HomeDepotHomedepotProductResponse = CrawloraResponse<ModelHomedepotProductResponseDoc>;
+export interface HomeDepotHomedepotProductParams {
+  "id": string;
+}
+
+export type HomeDepotHomedepotProductQuestionsResponse = CrawloraResponse<ModelHomedepotProductQuestionsResponseDoc>;
+export interface HomeDepotHomedepotProductQuestionsParams {
+  "id": string;
+}
+
+export type HomeDepotHomedepotSearchResponse = CrawloraResponse<ModelHomedepotSearchResponseDoc>;
+export interface HomeDepotHomedepotSearchParams {
+  "q": string;
+  "page"?: number;
+}
+
+export type IkeaAvailabilityResponse = CrawloraResponse<ModelIkeaAvailabilityResponseDoc>;
+export interface IkeaAvailabilityParams {
+  "item_no": string;
+  "country"?: string;
+}
+
+export type IkeaCategoryResponse = CrawloraResponse<ModelIkeaCategoryResponseDoc>;
+export interface IkeaCategoryParams {
+  "category": string;
+  "country"?: string;
+  "language"?: string;
+  "offset"?: number;
+  "size"?: number;
+  "sort"?: "relevance" | "price-low" | "price-high" | "newest" | "rating" | "name" | "popular" | "width" | "height" | "depth" | "length";
+}
+
+export type IkeaProductResponse = CrawloraResponse<ModelIkeaProductResponseDoc>;
+export interface IkeaProductParams {
+  "item_no": string;
+  "country"?: string;
+  "language"?: string;
+}
+
+export type IkeaReviewsResponse = CrawloraResponse<ModelIkeaReviewsResponseDoc>;
+export interface IkeaReviewsParams {
+  "item_no": string;
+  "country"?: string;
+  "language"?: string;
+}
+
+export type IkeaSearchResponse = CrawloraResponse<ModelIkeaSearchResponseDoc>;
+export interface IkeaSearchParams {
+  "q": string;
+  "country"?: string;
+  "language"?: string;
+  "size"?: number;
+}
+
+export type IkeaStoreResponse = CrawloraResponse<ModelIkeaStoreResponseDoc>;
+export interface IkeaStoreParams {
+  "slug": string;
+  "country"?: string;
+  "language"?: string;
+}
+
+export type IkeaStoresResponse = CrawloraResponse<ModelIkeaStoresResponseDoc>;
+export interface IkeaStoresParams {
+  "country"?: string;
+  "language"?: string;
+}
+
+export type IkeaSuggestResponse = CrawloraResponse<ModelIkeaSuggestResponseDoc>;
+export interface IkeaSuggestParams {
+  "q": string;
+  "country"?: string;
+  "language"?: string;
+  "size"?: number;
+}
+
+export type ImdbChartsResponse = CrawloraResponse<ModelImdbChartsResponseDoc>;
+export interface ImdbChartsParams {
+  "chart"?: "top_rated_movies" | "top_rated_tv_shows" | "most_popular_movies" | "most_popular_tv_shows" | "top_rated_english_movies" | "lowest_rated_movies";
+  "limit"?: number;
 }
 
 export type ImdbNameResponse = CrawloraResponse<ModelImdbNameResponseDoc>;
@@ -34532,6 +38992,12 @@ export interface ImdbTitleQuotesParams {
   "url"?: string;
 }
 
+export type ImdbTitleRatingsResponse = CrawloraResponse<ModelImdbRatingsResponseDoc>;
+export interface ImdbTitleRatingsParams {
+  "id"?: string;
+  "url"?: string;
+}
+
 export type ImdbTitleReleaseInfoResponse = CrawloraResponse<ModelImdbReleaseInfoResponseDoc>;
 export interface ImdbTitleReleaseInfoParams {
   "id"?: string;
@@ -34543,6 +39009,12 @@ export interface ImdbTitleReviewsParams {
   "id"?: string;
   "url"?: string;
   "limit"?: number;
+}
+
+export type ImdbTitleSimilarResponse = CrawloraResponse<ModelImdbSimilarResponseDoc>;
+export interface ImdbTitleSimilarParams {
+  "id"?: string;
+  "url"?: string;
 }
 
 export type ImdbTitleTechnicalSpecsResponse = CrawloraResponse<ModelImdbTechnicalSpecsResponseDoc>;
@@ -34643,6 +39115,61 @@ export type InstagramReelsResponse = CrawloraResponse<ModelInstagramReelsRespons
 export interface InstagramReelsParams {
   "id": string;
   "max_id"?: string;
+}
+
+export type JCrewJcrewCategoriesResponse = CrawloraResponse<ModelJcrewCategoriesResponseDoc>;
+export interface JCrewJcrewCategoriesParams {
+  "site"?: "jcrew" | "factory";
+  "department"?: string;
+}
+
+export type JCrewJcrewCategoryResponse = CrawloraResponse<ModelJcrewCategoryResponseDoc>;
+export interface JCrewJcrewCategoryParams {
+  "category": string;
+  "site"?: "jcrew" | "factory";
+  "page"?: number;
+}
+
+export type JCrewJcrewProductResponse = CrawloraResponse<ModelJcrewProductResponseDoc>;
+export interface JCrewJcrewProductParams {
+  "pid": string;
+  "site"?: "jcrew" | "factory";
+}
+
+export type JCrewJcrewProductReviewsResponse = CrawloraResponse<ModelJcrewProductReviewsResponseDoc>;
+export interface JCrewJcrewProductReviewsParams {
+  "pid": string;
+  "site"?: "jcrew" | "factory";
+  "page"?: number;
+}
+
+export type JCrewJcrewSearchResponse = CrawloraResponse<ModelJcrewSearchResponseDoc>;
+export interface JCrewJcrewSearchParams {
+  "keyword": string;
+  "site"?: "jcrew" | "factory";
+  "page"?: number;
+  "per_page"?: number;
+  "sort"?: "relevance" | "price_asc" | "price_desc";
+  "filter"?: string;
+}
+
+export type JCrewJcrewSizeChartResponse = CrawloraResponse<ModelJcrewSizeChartResponseDoc>;
+export interface JCrewJcrewSizeChartParams {
+  "pid": string;
+  "site"?: "jcrew" | "factory";
+}
+
+export type JCrewJcrewStoresResponse = CrawloraResponse<ModelJcrewStoresResponseDoc>;
+export interface JCrewJcrewStoresParams {
+  "site"?: "jcrew" | "factory";
+  "lat"?: number;
+  "lng"?: number;
+}
+
+export type JCrewJcrewSuggestResponse = CrawloraResponse<ModelJcrewSuggestResponseDoc>;
+export interface JCrewJcrewSuggestParams {
+  "query": string;
+  "site"?: "jcrew" | "factory";
 }
 
 export type JobsAshbyBoardResponse = CrawloraResponse<ModelJobsBoardResponseDoc>;
@@ -35157,6 +39684,34 @@ export interface KalshiTradesParams {
   "max_ts"?: number;
 }
 
+export type KickstarterCommentsResponse = CrawloraResponse<ModelKickstarterCommentsResponseDoc>;
+export interface KickstarterCommentsParams {
+  "creator": string;
+  "slug": string;
+}
+
+export type KickstarterDiscoverResponse = CrawloraResponse<ModelKickstarterDiscoverResponseDoc>;
+export interface KickstarterDiscoverParams {
+  "category_id"?: number;
+  "term"?: string;
+  "sort"?: "magic" | "popularity" | "newest" | "end_date" | "most_funded";
+  "page"?: number;
+  "state"?: Array<"upcoming" | "live" | "late_pledge" | "canceled" | "failed" | "successful">;
+  "staff_pick_only"?: boolean;
+}
+
+export type KickstarterProjectResponse = CrawloraResponse<ModelKickstarterProjectResponseDoc>;
+export interface KickstarterProjectParams {
+  "creator": string;
+  "slug": string;
+}
+
+export type KickstarterUpdatesResponse = CrawloraResponse<ModelKickstarterUpdatesResponseDoc>;
+export interface KickstarterUpdatesParams {
+  "creator": string;
+  "slug": string;
+}
+
 export type KohlSKohlsCategoryResponse = CrawloraResponse<ModelKohlsCategoryResponseDoc>;
 export interface KohlSKohlsCategoryParams {
   "category": string;
@@ -35176,6 +39731,69 @@ export interface KohlSKohlsStoresParams {
 export type KohlSKohlsSuggestResponse = CrawloraResponse<ModelKohlsSuggestResponseDoc>;
 export interface KohlSKohlsSuggestParams {
   "query": string;
+}
+
+export type KylieCosmeticsKyliecosmeticsCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type KylieCosmeticsKyliecosmeticsCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type KylieCosmeticsKyliecosmeticsPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type KylieCosmeticsKyliecosmeticsPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsPageParams {
+  "handle": string;
+}
+
+export type KylieCosmeticsKyliecosmeticsProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type KylieCosmeticsKyliecosmeticsProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsProductParams {
+  "handle": string;
+}
+
+export type KylieCosmeticsKyliecosmeticsProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type KylieCosmeticsKyliecosmeticsSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type KylieCosmeticsKyliecosmeticsSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type KylieCosmeticsKyliecosmeticsSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsSitemapsParams {
+}
+
+export type KylieCosmeticsKyliecosmeticsStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface KylieCosmeticsKyliecosmeticsStoreParams {
 }
 
 export type LetterboxdFilmResponse = CrawloraResponse<ModelLetterboxdFilmResponseDoc>;
@@ -35571,6 +40189,38 @@ export interface MlbTransactionsParams {
   "player_id"?: string;
 }
 
+export type MonitorsListResponse = CrawloraResponse<ModelWebmonitorMonitorListResponseDoc>;
+export interface MonitorsListParams {
+}
+
+export type MonitorsCreateBody = CrawloraBody<ModelWebmonitorCreateMonitorBodyDoc>;
+export type MonitorsCreateResponse = CrawloraResponse<ModelWebmonitorMonitorResponseDoc>;
+export interface MonitorsCreateParams {
+  "request": MonitorsCreateBody;
+}
+
+export type MonitorsDeleteResponse = CrawloraResponse<ModelWebmonitorMonitorDeleteResponseDoc>;
+export interface MonitorsDeleteParams {
+  "id": string;
+}
+
+export type MonitorsGetResponse = CrawloraResponse<ModelWebmonitorMonitorResponseDoc>;
+export interface MonitorsGetParams {
+  "id": string;
+}
+
+export type MonitorsUpdateBody = CrawloraBody<ModelWebmonitorUpdateMonitorBodyDoc>;
+export type MonitorsUpdateResponse = CrawloraResponse<ModelWebmonitorMonitorResponseDoc>;
+export interface MonitorsUpdateParams {
+  "id": string;
+  "request": MonitorsUpdateBody;
+}
+
+export type MonitorsChecksResponse = CrawloraResponse<ModelWebmonitorCheckListResponseDoc>;
+export interface MonitorsChecksParams {
+  "id": string;
+}
+
 export type NikeCategoriesResponse = CrawloraResponse<ModelNikeCategoriesResponseDoc>;
 export interface NikeCategoriesParams {
 }
@@ -35578,6 +40228,21 @@ export interface NikeCategoriesParams {
 export type NikeProductResponse = CrawloraResponse<ModelNikeProductResponseDoc>;
 export interface NikeProductParams {
   "slug": string;
+  "style_color": string;
+}
+
+export type NikeProductAvailabilityResponse = CrawloraResponse<ModelNikeAvailabilityResponseDoc>;
+export interface NikeProductAvailabilityParams {
+  "group_key": string;
+}
+
+export type NikeProductDetailsResponse = CrawloraResponse<ModelNikeProductDetailsResponseDoc>;
+export interface NikeProductDetailsParams {
+  "group_key": string;
+}
+
+export type NikeProductRecommendationsResponse = CrawloraResponse<ModelNikeRecommendationsResponseDoc>;
+export interface NikeProductRecommendationsParams {
   "style_color": string;
 }
 
@@ -35650,6 +40315,69 @@ export interface NumbeoIndicesRankingsParams {
 export type NumbeoIndicesRankingsByCountryResponse = CrawloraResponse<ModelNumbeoIndicesRankingsByCountryResponseDoc>;
 export interface NumbeoIndicesRankingsByCountryParams {
   "index": "quality-of-life" | "crime" | "health-care" | "pollution" | "traffic" | "property-investment";
+}
+
+export type OhPollyOhpollyCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface OhPollyOhpollyCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type OhPollyOhpollyCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface OhPollyOhpollyCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type OhPollyOhpollyPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface OhPollyOhpollyPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type OhPollyOhpollyPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface OhPollyOhpollyPageParams {
+  "handle": string;
+}
+
+export type OhPollyOhpollyProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface OhPollyOhpollyProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type OhPollyOhpollyProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface OhPollyOhpollyProductParams {
+  "handle": string;
+}
+
+export type OhPollyOhpollyProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface OhPollyOhpollyProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type OhPollyOhpollySearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface OhPollyOhpollySearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type OhPollyOhpollySitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface OhPollyOhpollySitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type OhPollyOhpollySitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface OhPollyOhpollySitemapsParams {
+}
+
+export type OhPollyOhpollyStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface OhPollyOhpollyStoreParams {
 }
 
 export type OldNavyOldnavyCategoriesResponse = CrawloraResponse<ModelOldnavyCategoriesResponseDoc>;
@@ -36434,6 +41162,58 @@ export interface ProductHuntSearchParams {
   "topics"?: string;
 }
 
+export type QuinceCategoriesResponse = CrawloraResponse<ModelQuinceCategoriesResponseDoc>;
+export interface QuinceCategoriesParams {
+}
+
+export type QuinceNavigationResponse = CrawloraResponse<ModelQuinceNavigationResponseDoc>;
+export interface QuinceNavigationParams {
+}
+
+export type QuinceProductResponse = CrawloraResponse<ModelQuinceProductResponseDoc>;
+export interface QuinceProductParams {
+  "handle": string;
+}
+
+export type QuinceProductFaqResponse = CrawloraResponse<ModelQuinceProductFaqresponseDoc>;
+export interface QuinceProductFaqParams {
+  "handle": string;
+}
+
+export type QuinceProductReviewsResponse = CrawloraResponse<ModelQuinceProductReviewsResponseDoc>;
+export interface QuinceProductReviewsParams {
+  "handle": string;
+}
+
+export type QuinceSearchResponse = CrawloraResponse<ModelQuinceSearchResponseDoc>;
+export interface QuinceSearchParams {
+  "q"?: string;
+  "department"?: string;
+  "category"?: string;
+  "material"?: string;
+  "color"?: string;
+  "size"?: string;
+  "min_price"?: number;
+  "max_price"?: number;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type QuinceSitemapUrlsResponse = CrawloraResponse<ModelQuinceSitemapUrlsResponseDoc>;
+export interface QuinceSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "subcollections" | "pages";
+  "limit"?: number;
+}
+
+export type QuinceSitemapsResponse = CrawloraResponse<ModelQuinceSitemapsResponseDoc>;
+export interface QuinceSitemapsParams {
+}
+
+export type QuinceSuggestResponse = CrawloraResponse<ModelQuinceSuggestResponseDoc>;
+export interface QuinceSuggestParams {
+  "q": string;
+}
+
 export type MetaReadyResponse = CrawloraResponse<ModelApiReadinessResponseDoc>;
 export interface MetaReadyParams {
 }
@@ -36454,6 +41234,17 @@ export interface RedditDomainPostsParams {
   "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
   "limit"?: number;
   "after"?: string;
+}
+
+export type RedditLeadsResponse = CrawloraResponse<ModelRedditLeadsResponseDoc>;
+export interface RedditLeadsParams {
+  "q": string;
+  "subreddit"?: string;
+  "sort"?: "relevance" | "hot" | "new" | "top" | "comments";
+  "time"?: "hour" | "day" | "week" | "month" | "year" | "all";
+  "limit"?: number;
+  "min_score"?: number;
+  "classifier"?: "auto" | "heuristic" | "llm";
 }
 
 export type RedditPostResponse = CrawloraResponse<ModelRedditPostResponseDoc>;
@@ -36574,6 +41365,69 @@ export interface ReferralsMeParams {
 export type ReferralsMeEventsResponse = CrawloraResponse<ModelReferralsReferralsEventsResponseDoc>;
 export interface ReferralsMeEventsParams {
   "limit"?: number;
+}
+
+export type RothySRothysCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface RothySRothysCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type RothySRothysCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface RothySRothysCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type RothySRothysPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface RothySRothysPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type RothySRothysPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface RothySRothysPageParams {
+  "handle": string;
+}
+
+export type RothySRothysProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface RothySRothysProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type RothySRothysProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface RothySRothysProductParams {
+  "handle": string;
+}
+
+export type RothySRothysProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface RothySRothysProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type RothySRothysSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface RothySRothysSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type RothySRothysSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface RothySRothysSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type RothySRothysSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface RothySRothysSitemapsParams {
+}
+
+export type RothySRothysStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface RothySRothysStoreParams {
 }
 
 export type RottenTomatoesRottentomatoesBrowseMoviesResponse = CrawloraResponse<ModelRottentomatoesBrowseResponseDoc>;
@@ -36801,6 +41655,55 @@ export interface SephoraSuggestParams {
   "query": string;
 }
 
+export type SheinCategoryFiltersResponse = CrawloraResponse<ModelSheinCategoryFiltersResponseDoc>;
+export interface SheinCategoryFiltersParams {
+  "cat_id": string;
+}
+
+export type SheinCategoryGoodsResponse = CrawloraResponse<ModelSheinCategoryGoodsResponseDoc>;
+export interface SheinCategoryGoodsParams {
+  "cat_id": string;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+}
+
+export type SheinCategoryNavResponse = CrawloraResponse<ModelSheinCategoryNavResponseDoc>;
+export interface SheinCategoryNavParams {
+  "cat_id": string;
+}
+
+export type SheinProductsAggregationFiltersResponse = CrawloraResponse<ModelSheinAggregationFiltersResponseDoc>;
+export interface SheinProductsAggregationFiltersParams {
+  "keyword": string;
+  "cat_id"?: string;
+}
+
+export type SheinProductsDetailResponse = CrawloraResponse<ModelSheinProductDetailResponseDoc>;
+export interface SheinProductsDetailParams {
+  "goods_id": string;
+  "goods_sn"?: string;
+}
+
+export type SheinProductsSearchResponse = CrawloraResponse<ModelSheinProductsSearchResponseDoc>;
+export interface SheinProductsSearchParams {
+  "keyword": string;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+}
+
+export type SheinSearchAutocompleteResponse = CrawloraResponse<ModelSheinAutocompleteResponseDoc>;
+export interface SheinSearchAutocompleteParams {
+  "word": string;
+}
+
+export type SheinSearchKeywordsResponse = CrawloraResponse<ModelSheinSearchKeywordsResponseDoc>;
+export interface SheinSearchKeywordsParams {
+  "scene"?: string;
+  "word_type"?: string;
+}
+
 export type ShopAppAnalysisResponse = CrawloraResponse<ModelShopappAnalysisResponseDoc>;
 export interface ShopAppAnalysisParams {
   "query": string;
@@ -36919,6 +41822,7 @@ export interface ShopifyCollectionProductsParams {
   "url": string;
   "page"?: number;
   "limit"?: number;
+  "sortBy"?: "sortLTH" | "sortHTL" | "newest";
 }
 
 export type ShopifyPagesResponse = CrawloraResponse<ModelShopifyPagesResponseDoc>;
@@ -36939,6 +41843,7 @@ export interface ShopifyProductsParams {
   "url": string;
   "page"?: number;
   "limit"?: number;
+  "sortBy"?: "sortLTH" | "sortHTL" | "newest";
 }
 
 export type ShopifyProductResponse = CrawloraResponse<ModelShopifyProductResponseDoc>;
@@ -36988,6 +41893,69 @@ export interface SimilarWebSearchParams {
 export type SimilarWebWebResponse = CrawloraResponse<ModelSimilarwebWebResponseDoc>;
 export interface SimilarWebWebParams {
   "domain": string;
+}
+
+export type SkimsCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface SkimsCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type SkimsCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface SkimsCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type SkimsPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface SkimsPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type SkimsPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface SkimsPageParams {
+  "handle": string;
+}
+
+export type SkimsProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface SkimsProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type SkimsProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface SkimsProductParams {
+  "handle": string;
+}
+
+export type SkimsProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface SkimsProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type SkimsSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface SkimsSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type SkimsSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface SkimsSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type SkimsSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface SkimsSitemapsParams {
+}
+
+export type SkimsStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface SkimsStoreParams {
 }
 
 export type SofaScoreSofascoreEventResponse = CrawloraResponse<ModelSofascoreEventResponseDoc>;
@@ -37590,6 +42558,69 @@ export interface SteamTopSellersParams {
   "l"?: string;
 }
 
+export type SteveMaddenStevemaddenCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface SteveMaddenStevemaddenCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type SteveMaddenStevemaddenCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface SteveMaddenStevemaddenCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type SteveMaddenStevemaddenPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface SteveMaddenStevemaddenPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type SteveMaddenStevemaddenPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface SteveMaddenStevemaddenPageParams {
+  "handle": string;
+}
+
+export type SteveMaddenStevemaddenProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface SteveMaddenStevemaddenProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type SteveMaddenStevemaddenProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface SteveMaddenStevemaddenProductParams {
+  "handle": string;
+}
+
+export type SteveMaddenStevemaddenProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface SteveMaddenStevemaddenProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type SteveMaddenStevemaddenSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface SteveMaddenStevemaddenSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type SteveMaddenStevemaddenSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface SteveMaddenStevemaddenSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type SteveMaddenStevemaddenSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface SteveMaddenStevemaddenSitemapsParams {
+}
+
+export type SteveMaddenStevemaddenStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface SteveMaddenStevemaddenStoreParams {
+}
+
 export type StockXStockxBrandsResponse = CrawloraResponse<ModelStockxBrandsResponseDoc>;
 export interface StockXStockxBrandsParams {
 }
@@ -37711,6 +42742,69 @@ export interface TeslaJobsListParams {
   "location"?: string;
   "page"?: number;
   "page_size"?: number;
+}
+
+export type TheBodyShopThebodyshopCollectionsResponse = CrawloraResponse<ModelShopifybrandsCollectionsResponseDoc>;
+export interface TheBodyShopThebodyshopCollectionsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type TheBodyShopThebodyshopCollectionProductsResponse = CrawloraResponse<ModelShopifybrandsCollectionProductsResponseDoc>;
+export interface TheBodyShopThebodyshopCollectionProductsParams {
+  "handle": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type TheBodyShopThebodyshopPagesResponse = CrawloraResponse<ModelShopifybrandsPagesResponseDoc>;
+export interface TheBodyShopThebodyshopPagesParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type TheBodyShopThebodyshopPageResponse = CrawloraResponse<ModelShopifybrandsPageResponseDoc>;
+export interface TheBodyShopThebodyshopPageParams {
+  "handle": string;
+}
+
+export type TheBodyShopThebodyshopProductsResponse = CrawloraResponse<ModelShopifybrandsProductsResponseDoc>;
+export interface TheBodyShopThebodyshopProductsParams {
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type TheBodyShopThebodyshopProductResponse = CrawloraResponse<ModelShopifybrandsProductResponseDoc>;
+export interface TheBodyShopThebodyshopProductParams {
+  "handle": string;
+}
+
+export type TheBodyShopThebodyshopProductRecommendationsResponse = CrawloraResponse<ModelShopifybrandsProductRecommendationsResponseDoc>;
+export interface TheBodyShopThebodyshopProductRecommendationsParams {
+  "handle": string;
+  "limit"?: number;
+  "intent"?: "related" | "complementary";
+}
+
+export type TheBodyShopThebodyshopSearchSuggestResponse = CrawloraResponse<ModelShopifybrandsSearchSuggestResponseDoc>;
+export interface TheBodyShopThebodyshopSearchSuggestParams {
+  "q": string;
+  "types"?: string;
+  "limit"?: number;
+}
+
+export type TheBodyShopThebodyshopSitemapUrlsResponse = CrawloraResponse<ModelShopifybrandsSitemapUrlsResponseDoc>;
+export interface TheBodyShopThebodyshopSitemapUrlsParams {
+  "type"?: "all" | "products" | "collections" | "pages" | "blogs" | "agentic_discovery" | "other";
+  "limit"?: number;
+}
+
+export type TheBodyShopThebodyshopSitemapsResponse = CrawloraResponse<ModelShopifybrandsSitemapIndexResponseDoc>;
+export interface TheBodyShopThebodyshopSitemapsParams {
+}
+
+export type TheBodyShopThebodyshopStoreResponse = CrawloraResponse<ModelShopifybrandsStoreResponseDoc>;
+export interface TheBodyShopThebodyshopStoreParams {
 }
 
 export type ThreadsPostResponse = CrawloraResponse<ModelThreadsPostResponseDoc>;
@@ -38466,6 +43560,13 @@ export interface VintedItemParams {
 export type VintedMemberResponse = CrawloraResponse<ModelVintedMemberResponseDoc>;
 export interface VintedMemberParams {
   "id": string;
+}
+
+export type WalgreensStoresResponse = CrawloraResponse<ModelWalgreensStoresResponseDoc>;
+export interface WalgreensStoresParams {
+  "latitude"?: number;
+  "longitude"?: number;
+  "zip"?: string;
 }
 
 export type WalmartProductResponse = CrawloraResponse<ModelWalmartProductResponseDoc>;
@@ -39330,6 +44431,14 @@ export interface ZillowSearchParams {
   "north"?: number;
 }
 
+export interface AdidasService {
+  product<T = AdidasProductResponse>(params: AdidasProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = AdidasSearchResponse>(params?: AdidasSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = AdidasStoreResponse>(params: AdidasStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stores<T = AdidasStoresResponse>(params: AdidasStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = AdidasSuggestResponse>(params: AdidasSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface AgodaService {
   activitiesSearch<T = AgodaActivitiesSearchResponse>(params?: AgodaActivitiesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   activityDetail<T = AgodaActivityDetailResponse>(params: AgodaActivityDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -39349,6 +44458,20 @@ export interface AirbnbService {
   roomCalendar<T = AirbnbRoomCalendarResponse>(params: AirbnbRoomCalendarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   roomReviews<T = AirbnbRoomReviewsResponse>(params: AirbnbRoomReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = AirbnbSearchResponse>(params: AirbnbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface AllbirdsService {
+  collections<T = AllbirdsCollectionsResponse>(params?: AllbirdsCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  collectionProducts<T = AllbirdsCollectionProductsResponse>(params: AllbirdsCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pages<T = AllbirdsPagesResponse>(params?: AllbirdsPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  page<T = AllbirdsPageResponse>(params: AllbirdsPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  products<T = AllbirdsProductsResponse>(params?: AllbirdsProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = AllbirdsProductResponse>(params: AllbirdsProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRecommendations<T = AllbirdsProductRecommendationsResponse>(params: AllbirdsProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchSuggest<T = AllbirdsSearchSuggestResponse>(params: AllbirdsSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapUrls<T = AllbirdsSitemapUrlsResponse>(params?: AllbirdsSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = AllbirdsSitemapsResponse>(params?: AllbirdsSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = AllbirdsStoreResponse>(params?: AllbirdsStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface AmazonJobsService {
@@ -39420,10 +44543,35 @@ export interface AppStoreService {
   versionHistory<T = AppStoreVersionHistoryResponse>(params: AppStoreVersionHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface AudibleService {
+  categories<T = AudibleCategoriesResponse>(params?: AudibleCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = AudibleCategoryResponse>(params: AudibleCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  charts<T = AudibleChartsResponse>(params?: AudibleChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  editorialList<T = AudibleEditorialListResponse>(params: AudibleEditorialListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = AudibleProductResponse>(params: AudibleProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRelated<T = AudibleProductRelatedResponse>(params: AudibleProductRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productReviews<T = AudibleProductReviewsResponse>(params: AudibleProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  products<T = AudibleProductsResponse>(params: AudibleProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = AudibleSearchResponse>(params?: AudibleSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  series<T = AudibleSeriesResponse>(params: AudibleSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface AutotraderService {
   dealer<T = AutotraderDealerResponse>(params: AutotraderDealerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = AutotraderSearchResponse>(params?: AutotraderSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   vehicle<T = AutotraderVehicleResponse>(params: AutotraderVehicleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface BbbService {
+  business<T = BbbBusinessResponse>(params: BbbBusinessParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  businessComplaints<T = BbbBusinessComplaintsResponse>(params: BbbBusinessComplaintsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  businessMoreInfo<T = BbbBusinessMoreInfoResponse>(params: BbbBusinessMoreInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  businessReviews<T = BbbBusinessReviewsResponse>(params: BbbBusinessReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = BbbCategoryResponse>(params: BbbCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  scamtrackerSearch<T = BbbScamtrackerSearchResponse>(params?: BbbScamtrackerSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  scamtrackerStateStats<T = BbbScamtrackerStateStatsResponse>(params?: BbbScamtrackerStateStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  scamtrackerDetail<T = BbbScamtrackerDetailResponse>(params: BbbScamtrackerDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = BbbSearchResponse>(params: BbbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface BestBuyService {
@@ -39450,6 +44598,9 @@ export interface BillingService {
   mePeriodStatementDownload<T = BillingMePeriodStatementDownloadResponse>(params: BillingMePeriodStatementDownloadParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mePortal<T = BillingMePortalResponse>(params: BillingMePortalParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meRejections<T = BillingMeRejectionsResponse>(params?: BillingMeRejectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  meSubscriptionChange<T = BillingMeSubscriptionChangeResponse>(params: BillingMeSubscriptionChangeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  meSubscriptionChangeCancel<T = BillingMeSubscriptionChangeCancelResponse>(params?: BillingMeSubscriptionChangeCancelParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  meSubscriptionPreview<T = BillingMeSubscriptionPreviewResponse>(params: BillingMeSubscriptionPreviewParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface BingService {
@@ -39517,6 +44668,20 @@ export interface BraveService {
   videos<T = BraveVideosResponse>(params: BraveVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface BrooklinenService {
+  collections<T = BrooklinenCollectionsResponse>(params?: BrooklinenCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  collectionProducts<T = BrooklinenCollectionProductsResponse>(params: BrooklinenCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pages<T = BrooklinenPagesResponse>(params?: BrooklinenPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  page<T = BrooklinenPageResponse>(params: BrooklinenPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  products<T = BrooklinenProductsResponse>(params?: BrooklinenProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = BrooklinenProductResponse>(params: BrooklinenProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRecommendations<T = BrooklinenProductRecommendationsResponse>(params: BrooklinenProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchSuggest<T = BrooklinenSearchSuggestResponse>(params: BrooklinenSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapUrls<T = BrooklinenSitemapUrlsResponse>(params?: BrooklinenSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = BrooklinenSitemapsResponse>(params?: BrooklinenSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = BrooklinenStoreResponse>(params?: BrooklinenStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface CapterraService {
   product<T = CapterraProductResponse>(params: CapterraProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reviews<T = CapterraReviewsResponse>(params: CapterraReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -39536,6 +44701,16 @@ export interface CarMaxService {
 export interface CarsComService {
   carsdotcomSearch<T = CarsComCarsdotcomSearchResponse>(params?: CarsComCarsdotcomSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   carsdotcomVehicle<T = CarsComCarsdotcomVehicleResponse>(params: CarsComCarsdotcomVehicleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ChewyService {
+  categories<T = ChewyCategoriesResponse>(params?: ChewyCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = ChewyCategoryResponse>(params: ChewyCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gtinLookup<T = ChewyGtinLookupResponse>(params: ChewyGtinLookupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = ChewyProductResponse>(params: ChewyProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  products<T = ChewyProductsResponse>(params: ChewyProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = ChewySearchResponse>(params: ChewySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = ChewySuggestResponse>(params: ChewySuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ChromeWebStoreService {
@@ -39577,6 +44752,20 @@ export interface CoinGeckoService {
   trending<T = CoinGeckoTrendingResponse>(params?: CoinGeckoTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface ColeHaanService {
+  colehaanCollections<T = ColeHaanColehaanCollectionsResponse>(params?: ColeHaanColehaanCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanCollectionProducts<T = ColeHaanColehaanCollectionProductsResponse>(params: ColeHaanColehaanCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanPages<T = ColeHaanColehaanPagesResponse>(params?: ColeHaanColehaanPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanPage<T = ColeHaanColehaanPageResponse>(params: ColeHaanColehaanPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanProducts<T = ColeHaanColehaanProductsResponse>(params?: ColeHaanColehaanProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanProduct<T = ColeHaanColehaanProductResponse>(params: ColeHaanColehaanProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanProductRecommendations<T = ColeHaanColehaanProductRecommendationsResponse>(params: ColeHaanColehaanProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanSearchSuggest<T = ColeHaanColehaanSearchSuggestResponse>(params: ColeHaanColehaanSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanSitemapUrls<T = ColeHaanColehaanSitemapUrlsResponse>(params?: ColeHaanColehaanSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanSitemaps<T = ColeHaanColehaanSitemapsResponse>(params?: ColeHaanColehaanSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  colehaanStore<T = ColeHaanColehaanStoreResponse>(params?: ColeHaanColehaanStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface CongressService {
   report<T = CongressReportResponse>(params: CongressReportParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   stockDisclosures<T = CongressStockDisclosuresResponse>(params?: CongressStockDisclosuresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -39611,6 +44800,9 @@ export interface DatasetsService {
   appsChartsSearch<T = DatasetsAppsChartsSearchResponse>(params?: DatasetsAppsChartsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsReviewsSearch<T = DatasetsAppsReviewsSearchResponse>(params?: DatasetsAppsReviewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   appsSearch<T = DatasetsAppsSearchResponse>(params?: DatasetsAppsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bbbBusinessesFacets<T = DatasetsBbbBusinessesFacetsResponse>(params: DatasetsBbbBusinessesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bbbBusinessesItem<T = DatasetsBbbBusinessesItemResponse>(params: DatasetsBbbBusinessesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  bbbBusinessesSearch<T = DatasetsBbbBusinessesSearchResponse>(params?: DatasetsBbbBusinessesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   boxofficemojoFacets<T = DatasetsBoxofficemojoFacetsResponse>(params: DatasetsBoxofficemojoFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   boxofficemojoItem<T = DatasetsBoxofficemojoItemResponse>(params: DatasetsBoxofficemojoItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   boxofficemojoSearch<T = DatasetsBoxofficemojoSearchResponse>(params?: DatasetsBoxofficemojoSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -39622,6 +44814,9 @@ export interface DatasetsService {
   chromeExtensionsSearch<T = DatasetsChromeExtensionsSearchResponse>(params?: DatasetsChromeExtensionsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   chromeExtensionsTrending<T = DatasetsChromeExtensionsTrendingResponse>(params?: DatasetsChromeExtensionsTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   creatorsSearch<T = DatasetsCreatorsSearchResponse>(params?: DatasetsCreatorsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  facebookPagesFacets<T = DatasetsFacebookPagesFacetsResponse>(params: DatasetsFacebookPagesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  facebookPagesItem<T = DatasetsFacebookPagesItemResponse>(params: DatasetsFacebookPagesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  facebookPagesSearch<T = DatasetsFacebookPagesSearchResponse>(params?: DatasetsFacebookPagesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUsersFacets<T = DatasetsGithubUsersFacetsResponse>(params: DatasetsGithubUsersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUsersItem<T = DatasetsGithubUsersItemResponse>(params: DatasetsGithubUsersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   githubUsersNearby<T = DatasetsGithubUsersNearbyResponse>(params: DatasetsGithubUsersNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -39706,9 +44901,16 @@ export interface DatasetsService {
   trustmrrHistory<T = DatasetsTrustmrrHistoryResponse>(params: DatasetsTrustmrrHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trustmrrItem<T = DatasetsTrustmrrItemResponse>(params: DatasetsTrustmrrItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trustmrrSearch<T = DatasetsTrustmrrSearchResponse>(params?: DatasetsTrustmrrSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  vehicleListingsFacets<T = DatasetsVehicleListingsFacetsResponse>(params: DatasetsVehicleListingsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  vehicleListingsItem<T = DatasetsVehicleListingsItemResponse>(params: DatasetsVehicleListingsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  vehicleListingsPriceHistory<T = DatasetsVehicleListingsPriceHistoryResponse>(params: DatasetsVehicleListingsPriceHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  vehicleListingsSearch<T = DatasetsVehicleListingsSearchResponse>(params?: DatasetsVehicleListingsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   xUsersFacets<T = DatasetsXUsersFacetsResponse>(params: DatasetsXUsersFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   xUsersItem<T = DatasetsXUsersItemResponse>(params: DatasetsXUsersItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   xUsersSearch<T = DatasetsXUsersSearchResponse>(params?: DatasetsXUsersSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  youtubeCreatorsFacets<T = DatasetsYoutubeCreatorsFacetsResponse>(params: DatasetsYoutubeCreatorsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  youtubeCreatorsItem<T = DatasetsYoutubeCreatorsItemResponse>(params: DatasetsYoutubeCreatorsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  youtubeCreatorsSearch<T = DatasetsYoutubeCreatorsSearchResponse>(params?: DatasetsYoutubeCreatorsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface DepopService {
@@ -39807,6 +45009,20 @@ export interface EtsyService {
   shopReviews<T = EtsyShopReviewsResponse>(params: EtsyShopReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface EverlaneService {
+  collections<T = EverlaneCollectionsResponse>(params?: EverlaneCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  collectionProducts<T = EverlaneCollectionProductsResponse>(params: EverlaneCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pages<T = EverlanePagesResponse>(params?: EverlanePagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  page<T = EverlanePageResponse>(params: EverlanePageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  products<T = EverlaneProductsResponse>(params?: EverlaneProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = EverlaneProductResponse>(params: EverlaneProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRecommendations<T = EverlaneProductRecommendationsResponse>(params: EverlaneProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchSuggest<T = EverlaneSearchSuggestResponse>(params: EverlaneSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapUrls<T = EverlaneSitemapUrlsResponse>(params?: EverlaneSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = EverlaneSitemapsResponse>(params?: EverlaneSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = EverlaneStoreResponse>(params?: EverlaneStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ExpediaService {
   activitiesSearch<T = ExpediaActivitiesSearchResponse>(params: ExpediaActivitiesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   flightsSearch<T = ExpediaFlightsSearchResponse>(params: ExpediaFlightsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -39822,10 +45038,39 @@ export interface FacebookService {
   page<T = FacebookPageResponse>(params: FacebookPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface FashionNovaService {
+  fashionnovaCollections<T = FashionNovaFashionnovaCollectionsResponse>(params?: FashionNovaFashionnovaCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaCollectionProducts<T = FashionNovaFashionnovaCollectionProductsResponse>(params: FashionNovaFashionnovaCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaPages<T = FashionNovaFashionnovaPagesResponse>(params?: FashionNovaFashionnovaPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaPage<T = FashionNovaFashionnovaPageResponse>(params: FashionNovaFashionnovaPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaProducts<T = FashionNovaFashionnovaProductsResponse>(params?: FashionNovaFashionnovaProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaProduct<T = FashionNovaFashionnovaProductResponse>(params: FashionNovaFashionnovaProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaProductRecommendations<T = FashionNovaFashionnovaProductRecommendationsResponse>(params: FashionNovaFashionnovaProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaSearchSuggest<T = FashionNovaFashionnovaSearchSuggestResponse>(params: FashionNovaFashionnovaSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaSitemapUrls<T = FashionNovaFashionnovaSitemapUrlsResponse>(params?: FashionNovaFashionnovaSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaSitemaps<T = FashionNovaFashionnovaSitemapsResponse>(params?: FashionNovaFashionnovaSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fashionnovaStore<T = FashionNovaFashionnovaStoreResponse>(params?: FashionNovaFashionnovaStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface FiverrService {
   gig<T = FiverrGigResponse>(params: FiverrGigParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = FiverrSearchResponse>(params: FiverrSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   seller<T = FiverrSellerResponse>(params: FiverrSellerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface GdeltService {
+  context<T = GdeltContextResponse>(params: GdeltContextParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = GdeltSearchResponse>(params: GdeltSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  timeline<T = GdeltTimelineResponse>(params: GdeltTimelineParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tonechart<T = GdeltTonechartResponse>(params: GdeltTonechartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvConceptEntities<T = GdeltTvConceptEntitiesResponse>(params?: GdeltTvConceptEntitiesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvSearch<T = GdeltTvSearchResponse>(params: GdeltTvSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvShowchart<T = GdeltTvShowchartResponse>(params: GdeltTvShowchartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvStationchart<T = GdeltTvStationchartResponse>(params: GdeltTvStationchartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvStationdetails<T = GdeltTvStationdetailsResponse>(params?: GdeltTvStationdetailsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvTimeline<T = GdeltTvTimelineResponse>(params: GdeltTvTimelineParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvVisualEntities<T = GdeltTvVisualEntitiesResponse>(params?: GdeltTvVisualEntitiesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tvWordcloud<T = GdeltTvWordcloudResponse>(params: GdeltTvWordcloudParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GeocodingService {
@@ -39938,6 +45183,19 @@ export interface GooglePlayService {
   suggest<T = GooglePlaySuggestResponse>(params: GooglePlaySuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface GymsharkService {
+  collections<T = GymsharkCollectionsResponse>(params?: GymsharkCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  collectionProducts<T = GymsharkCollectionProductsResponse>(params: GymsharkCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pages<T = GymsharkPagesResponse>(params?: GymsharkPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  page<T = GymsharkPageResponse>(params: GymsharkPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  products<T = GymsharkProductsResponse>(params?: GymsharkProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = GymsharkProductResponse>(params: GymsharkProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRecommendations<T = GymsharkProductRecommendationsResponse>(params: GymsharkProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapUrls<T = GymsharkSitemapUrlsResponse>(params?: GymsharkSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = GymsharkSitemapsResponse>(params?: GymsharkSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = GymsharkStoreResponse>(params?: GymsharkStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface HMService {
   hmCategories<T = HMHmCategoriesResponse>(params?: HMHmCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hmListing<T = HMHmListingResponse>(params: HMHmListingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -39948,7 +45206,27 @@ export interface HMService {
   hmStores<T = HMHmStoresResponse>(params?: HMHmStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface HomeDepotService {
+  homedepotCategories<T = HomeDepotHomedepotCategoriesResponse>(params?: HomeDepotHomedepotCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  homedepotCategory<T = HomeDepotHomedepotCategoryResponse>(params: HomeDepotHomedepotCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  homedepotProduct<T = HomeDepotHomedepotProductResponse>(params: HomeDepotHomedepotProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  homedepotProductQuestions<T = HomeDepotHomedepotProductQuestionsResponse>(params: HomeDepotHomedepotProductQuestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  homedepotSearch<T = HomeDepotHomedepotSearchResponse>(params: HomeDepotHomedepotSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface IkeaService {
+  availability<T = IkeaAvailabilityResponse>(params: IkeaAvailabilityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = IkeaCategoryResponse>(params: IkeaCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = IkeaProductResponse>(params: IkeaProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reviews<T = IkeaReviewsResponse>(params: IkeaReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = IkeaSearchResponse>(params: IkeaSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = IkeaStoreResponse>(params: IkeaStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stores<T = IkeaStoresResponse>(params?: IkeaStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = IkeaSuggestResponse>(params: IkeaSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ImdbService {
+  charts<T = ImdbChartsResponse>(params?: ImdbChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   name<T = ImdbNameResponse>(params?: ImdbNameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   nameAwards<T = ImdbNameAwardsResponse>(params?: ImdbNameAwardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   nameCredits<T = ImdbNameCreditsResponse>(params?: ImdbNameCreditsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -39965,8 +45243,10 @@ export interface ImdbService {
   titleParentalGuide<T = ImdbTitleParentalGuideResponse>(params?: ImdbTitleParentalGuideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titlePublicFactsAnalysis<T = ImdbTitlePublicFactsAnalysisResponse>(params?: ImdbTitlePublicFactsAnalysisParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleQuotes<T = ImdbTitleQuotesResponse>(params?: ImdbTitleQuotesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleRatings<T = ImdbTitleRatingsResponse>(params?: ImdbTitleRatingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleReleaseInfo<T = ImdbTitleReleaseInfoResponse>(params?: ImdbTitleReleaseInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleReviews<T = ImdbTitleReviewsResponse>(params?: ImdbTitleReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  titleSimilar<T = ImdbTitleSimilarResponse>(params?: ImdbTitleSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleTechnicalSpecs<T = ImdbTitleTechnicalSpecsResponse>(params?: ImdbTitleTechnicalSpecsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   titleTrivia<T = ImdbTitleTriviaResponse>(params?: ImdbTitleTriviaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
@@ -39995,6 +45275,17 @@ export interface InstagramService {
   post<T = InstagramPostResponse>(params: InstagramPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = InstagramProfileResponse>(params: InstagramProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reels<T = InstagramReelsResponse>(params: InstagramReelsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface JCrewService {
+  jcrewCategories<T = JCrewJcrewCategoriesResponse>(params?: JCrewJcrewCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jcrewCategory<T = JCrewJcrewCategoryResponse>(params: JCrewJcrewCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jcrewProduct<T = JCrewJcrewProductResponse>(params: JCrewJcrewProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jcrewProductReviews<T = JCrewJcrewProductReviewsResponse>(params: JCrewJcrewProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jcrewSearch<T = JCrewJcrewSearchResponse>(params: JCrewJcrewSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jcrewSizeChart<T = JCrewJcrewSizeChartResponse>(params: JCrewJcrewSizeChartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jcrewStores<T = JCrewJcrewStoresResponse>(params?: JCrewJcrewStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jcrewSuggest<T = JCrewJcrewSuggestResponse>(params: JCrewJcrewSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface JobsService {
@@ -40076,11 +45367,32 @@ export interface KalshiService {
   trades<T = KalshiTradesResponse>(params?: KalshiTradesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface KickstarterService {
+  comments<T = KickstarterCommentsResponse>(params: KickstarterCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  discover<T = KickstarterDiscoverResponse>(params?: KickstarterDiscoverParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  project<T = KickstarterProjectResponse>(params: KickstarterProjectParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  updates<T = KickstarterUpdatesResponse>(params: KickstarterUpdatesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface KohlSService {
   kohlsCategory<T = KohlSKohlsCategoryResponse>(params: KohlSKohlsCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   kohlsProductReviews<T = KohlSKohlsProductReviewsResponse>(params: KohlSKohlsProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   kohlsStores<T = KohlSKohlsStoresResponse>(params: KohlSKohlsStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   kohlsSuggest<T = KohlSKohlsSuggestResponse>(params: KohlSKohlsSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface KylieCosmeticsService {
+  kyliecosmeticsCollections<T = KylieCosmeticsKyliecosmeticsCollectionsResponse>(params?: KylieCosmeticsKyliecosmeticsCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsCollectionProducts<T = KylieCosmeticsKyliecosmeticsCollectionProductsResponse>(params: KylieCosmeticsKyliecosmeticsCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsPages<T = KylieCosmeticsKyliecosmeticsPagesResponse>(params?: KylieCosmeticsKyliecosmeticsPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsPage<T = KylieCosmeticsKyliecosmeticsPageResponse>(params: KylieCosmeticsKyliecosmeticsPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsProducts<T = KylieCosmeticsKyliecosmeticsProductsResponse>(params?: KylieCosmeticsKyliecosmeticsProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsProduct<T = KylieCosmeticsKyliecosmeticsProductResponse>(params: KylieCosmeticsKyliecosmeticsProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsProductRecommendations<T = KylieCosmeticsKyliecosmeticsProductRecommendationsResponse>(params: KylieCosmeticsKyliecosmeticsProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsSearchSuggest<T = KylieCosmeticsKyliecosmeticsSearchSuggestResponse>(params: KylieCosmeticsKyliecosmeticsSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsSitemapUrls<T = KylieCosmeticsKyliecosmeticsSitemapUrlsResponse>(params?: KylieCosmeticsKyliecosmeticsSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsSitemaps<T = KylieCosmeticsKyliecosmeticsSitemapsResponse>(params?: KylieCosmeticsKyliecosmeticsSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  kyliecosmeticsStore<T = KylieCosmeticsKyliecosmeticsStoreResponse>(params?: KylieCosmeticsKyliecosmeticsStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface LetterboxdService {
@@ -40176,9 +45488,21 @@ export interface MlbService {
   transactions<T = MlbTransactionsResponse>(params: MlbTransactionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface MonitorsService {
+  list<T = MonitorsListResponse>(params?: MonitorsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  create<T = MonitorsCreateResponse>(params: MonitorsCreateParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  delete<T = MonitorsDeleteResponse>(params: MonitorsDeleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  get<T = MonitorsGetResponse>(params: MonitorsGetParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  update<T = MonitorsUpdateResponse>(params: MonitorsUpdateParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  checks<T = MonitorsChecksResponse>(params: MonitorsChecksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface NikeService {
   categories<T = NikeCategoriesResponse>(params?: NikeCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   product<T = NikeProductResponse>(params: NikeProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productAvailability<T = NikeProductAvailabilityResponse>(params: NikeProductAvailabilityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productDetails<T = NikeProductDetailsResponse>(params: NikeProductDetailsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRecommendations<T = NikeProductRecommendationsResponse>(params: NikeProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   productReviews<T = NikeProductReviewsResponse>(params: NikeProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = NikeSearchResponse>(params?: NikeSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   stores<T = NikeStoresResponse>(params: NikeStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -40194,6 +45518,20 @@ export interface NumbeoService {
   indicesCountry<T = NumbeoIndicesCountryResponse>(params: NumbeoIndicesCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   indicesRankings<T = NumbeoIndicesRankingsResponse>(params: NumbeoIndicesRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   indicesRankingsByCountry<T = NumbeoIndicesRankingsByCountryResponse>(params: NumbeoIndicesRankingsByCountryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface OhPollyService {
+  ohpollyCollections<T = OhPollyOhpollyCollectionsResponse>(params?: OhPollyOhpollyCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollyCollectionProducts<T = OhPollyOhpollyCollectionProductsResponse>(params: OhPollyOhpollyCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollyPages<T = OhPollyOhpollyPagesResponse>(params?: OhPollyOhpollyPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollyPage<T = OhPollyOhpollyPageResponse>(params: OhPollyOhpollyPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollyProducts<T = OhPollyOhpollyProductsResponse>(params?: OhPollyOhpollyProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollyProduct<T = OhPollyOhpollyProductResponse>(params: OhPollyOhpollyProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollyProductRecommendations<T = OhPollyOhpollyProductRecommendationsResponse>(params: OhPollyOhpollyProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollySearchSuggest<T = OhPollyOhpollySearchSuggestResponse>(params: OhPollyOhpollySearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollySitemapUrls<T = OhPollyOhpollySitemapUrlsResponse>(params?: OhPollyOhpollySitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollySitemaps<T = OhPollyOhpollySitemapsResponse>(params?: OhPollyOhpollySitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ohpollyStore<T = OhPollyOhpollyStoreResponse>(params?: OhPollyOhpollyStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface OldNavyService {
@@ -40341,9 +45679,22 @@ export interface ProductHuntService {
   search<T = ProductHuntSearchResponse>(params: ProductHuntSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface QuinceService {
+  categories<T = QuinceCategoriesResponse>(params?: QuinceCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  navigation<T = QuinceNavigationResponse>(params?: QuinceNavigationParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = QuinceProductResponse>(params: QuinceProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productFaq<T = QuinceProductFaqResponse>(params: QuinceProductFaqParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productReviews<T = QuinceProductReviewsResponse>(params: QuinceProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = QuinceSearchResponse>(params?: QuinceSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapUrls<T = QuinceSitemapUrlsResponse>(params?: QuinceSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = QuinceSitemapsResponse>(params?: QuinceSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = QuinceSuggestResponse>(params: QuinceSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface RedditService {
   comments<T = RedditCommentsResponse>(params: RedditCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   domainPosts<T = RedditDomainPostsResponse>(params: RedditDomainPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  leads<T = RedditLeadsResponse>(params: RedditLeadsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   post<T = RedditPostResponse>(params: RedditPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = RedditSearchResponse>(params: RedditSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   subredditAbout<T = RedditSubredditAboutResponse>(params: RedditSubredditAboutParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -40367,6 +45718,20 @@ export interface ReferralsService {
   click<T = ReferralsClickResponse>(params: ReferralsClickParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   me<T = ReferralsMeResponse>(params?: ReferralsMeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   meEvents<T = ReferralsMeEventsResponse>(params?: ReferralsMeEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface RothySService {
+  rothysCollections<T = RothySRothysCollectionsResponse>(params?: RothySRothysCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysCollectionProducts<T = RothySRothysCollectionProductsResponse>(params: RothySRothysCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysPages<T = RothySRothysPagesResponse>(params?: RothySRothysPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysPage<T = RothySRothysPageResponse>(params: RothySRothysPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysProducts<T = RothySRothysProductsResponse>(params?: RothySRothysProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysProduct<T = RothySRothysProductResponse>(params: RothySRothysProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysProductRecommendations<T = RothySRothysProductRecommendationsResponse>(params: RothySRothysProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysSearchSuggest<T = RothySRothysSearchSuggestResponse>(params: RothySRothysSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysSitemapUrls<T = RothySRothysSitemapUrlsResponse>(params?: RothySRothysSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysSitemaps<T = RothySRothysSitemapsResponse>(params?: RothySRothysSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rothysStore<T = RothySRothysStoreResponse>(params?: RothySRothysStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface RottenTomatoesService {
@@ -40412,6 +45777,17 @@ export interface SephoraService {
   suggest<T = SephoraSuggestResponse>(params: SephoraSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface SheinService {
+  categoryFilters<T = SheinCategoryFiltersResponse>(params: SheinCategoryFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categoryGoods<T = SheinCategoryGoodsResponse>(params: SheinCategoryGoodsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categoryNav<T = SheinCategoryNavResponse>(params: SheinCategoryNavParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productsAggregationFilters<T = SheinProductsAggregationFiltersResponse>(params: SheinProductsAggregationFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productsDetail<T = SheinProductsDetailResponse>(params: SheinProductsDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productsSearch<T = SheinProductsSearchResponse>(params: SheinProductsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchAutocomplete<T = SheinSearchAutocompleteResponse>(params: SheinSearchAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchKeywords<T = SheinSearchKeywordsResponse>(params?: SheinSearchKeywordsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ShopAppService {
   analysis<T = ShopAppAnalysisResponse>(params: ShopAppAnalysisParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categories<T = ShopAppCategoriesResponse>(params?: ShopAppCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -40448,6 +45824,20 @@ export interface ShopifyService {
 export interface SimilarWebService {
   search<T = SimilarWebSearchResponse>(params: SimilarWebSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   web<T = SimilarWebWebResponse>(params: SimilarWebWebParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface SkimsService {
+  collections<T = SkimsCollectionsResponse>(params?: SkimsCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  collectionProducts<T = SkimsCollectionProductsResponse>(params: SkimsCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pages<T = SkimsPagesResponse>(params?: SkimsPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  page<T = SkimsPageResponse>(params: SkimsPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  products<T = SkimsProductsResponse>(params?: SkimsProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = SkimsProductResponse>(params: SkimsProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productRecommendations<T = SkimsProductRecommendationsResponse>(params: SkimsProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchSuggest<T = SkimsSearchSuggestResponse>(params: SkimsSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapUrls<T = SkimsSitemapUrlsResponse>(params?: SkimsSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = SkimsSitemapsResponse>(params?: SkimsSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = SkimsStoreResponse>(params?: SkimsStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface SofaScoreService {
@@ -40544,6 +45934,20 @@ export interface SteamService {
   topSellers<T = SteamTopSellersResponse>(params?: SteamTopSellersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface SteveMaddenService {
+  stevemaddenCollections<T = SteveMaddenStevemaddenCollectionsResponse>(params?: SteveMaddenStevemaddenCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenCollectionProducts<T = SteveMaddenStevemaddenCollectionProductsResponse>(params: SteveMaddenStevemaddenCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenPages<T = SteveMaddenStevemaddenPagesResponse>(params?: SteveMaddenStevemaddenPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenPage<T = SteveMaddenStevemaddenPageResponse>(params: SteveMaddenStevemaddenPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenProducts<T = SteveMaddenStevemaddenProductsResponse>(params?: SteveMaddenStevemaddenProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenProduct<T = SteveMaddenStevemaddenProductResponse>(params: SteveMaddenStevemaddenProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenProductRecommendations<T = SteveMaddenStevemaddenProductRecommendationsResponse>(params: SteveMaddenStevemaddenProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenSearchSuggest<T = SteveMaddenStevemaddenSearchSuggestResponse>(params: SteveMaddenStevemaddenSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenSitemapUrls<T = SteveMaddenStevemaddenSitemapUrlsResponse>(params?: SteveMaddenStevemaddenSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenSitemaps<T = SteveMaddenStevemaddenSitemapsResponse>(params?: SteveMaddenStevemaddenSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stevemaddenStore<T = SteveMaddenStevemaddenStoreResponse>(params?: SteveMaddenStevemaddenStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface StockXService {
   stockxBrands<T = StockXStockxBrandsResponse>(params?: StockXStockxBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   stockxCategories<T = StockXStockxCategoriesResponse>(params?: StockXStockxCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -40572,6 +45976,20 @@ export interface TargetService {
 export interface TeslaJobsService {
   job<T = TeslaJobsJobResponse>(params: TeslaJobsJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   list<T = TeslaJobsListResponse>(params?: TeslaJobsListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface TheBodyShopService {
+  thebodyshopCollections<T = TheBodyShopThebodyshopCollectionsResponse>(params?: TheBodyShopThebodyshopCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopCollectionProducts<T = TheBodyShopThebodyshopCollectionProductsResponse>(params: TheBodyShopThebodyshopCollectionProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopPages<T = TheBodyShopThebodyshopPagesResponse>(params?: TheBodyShopThebodyshopPagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopPage<T = TheBodyShopThebodyshopPageResponse>(params: TheBodyShopThebodyshopPageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopProducts<T = TheBodyShopThebodyshopProductsResponse>(params?: TheBodyShopThebodyshopProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopProduct<T = TheBodyShopThebodyshopProductResponse>(params: TheBodyShopThebodyshopProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopProductRecommendations<T = TheBodyShopThebodyshopProductRecommendationsResponse>(params: TheBodyShopThebodyshopProductRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopSearchSuggest<T = TheBodyShopThebodyshopSearchSuggestResponse>(params: TheBodyShopThebodyshopSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopSitemapUrls<T = TheBodyShopThebodyshopSitemapUrlsResponse>(params?: TheBodyShopThebodyshopSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopSitemaps<T = TheBodyShopThebodyshopSitemapsResponse>(params?: TheBodyShopThebodyshopSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  thebodyshopStore<T = TheBodyShopThebodyshopStoreResponse>(params?: TheBodyShopThebodyshopStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ThreadsService {
@@ -40738,6 +46156,10 @@ export interface VintedService {
   category<T = VintedCategoryResponse>(params: VintedCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   item<T = VintedItemResponse>(params: VintedItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   member<T = VintedMemberResponse>(params: VintedMemberParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface WalgreensService {
+  stores<T = WalgreensStoresResponse>(params?: WalgreensStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface WalmartService {
@@ -40952,8 +46374,10 @@ export interface ZillowService {
 }
 
 export interface CrawloraGeneratedGroups {
+  adidas: AdidasService;
   agoda: AgodaService;
   airbnb: AirbnbService;
+  allbirds: AllbirdsService;
   amazonJobs: AmazonJobsService;
   amazon: AmazonService;
   anime: AnimeService;
@@ -40961,7 +46385,9 @@ export interface CrawloraGeneratedGroups {
   appleJobs: AppleJobsService;
   applePodcasts: ApplePodcastsService;
   appStore: AppStoreService;
+  audible: AudibleService;
   autotrader: AutotraderService;
+  bbb: BbbService;
   bestBuy: BestBuyService;
   billing: BillingService;
   bing: BingService;
@@ -40970,11 +46396,14 @@ export interface CrawloraGeneratedGroups {
   boxOfficeMojo: BoxOfficeMojoService;
   brand: BrandService;
   brave: BraveService;
+  brooklinen: BrooklinenService;
   capterra: CapterraService;
   carMax: CarMaxService;
   carsCom: CarsComService;
+  chewy: ChewyService;
   chromeWebStore: ChromeWebStoreService;
   coinGecko: CoinGeckoService;
+  coleHaan: ColeHaanService;
   congress: CongressService;
   web: WebService;
   costco: CostcoService;
@@ -40987,9 +46416,12 @@ export interface CrawloraGeneratedGroups {
   eBay: EBayService;
   espn: EspnService;
   etsy: EtsyService;
+  everlane: EverlaneService;
   expedia: ExpediaService;
   facebook: FacebookService;
+  fashionNova: FashionNovaService;
   fiverr: FiverrService;
+  gdelt: GdeltService;
   geocoding: GeocodingService;
   gitHub: GitHubService;
   goodreads: GoodreadsService;
@@ -40997,16 +46429,22 @@ export interface CrawloraGeneratedGroups {
   google: GoogleService;
   googlePatents: GooglePatentsService;
   googlePlay: GooglePlayService;
+  gymshark: GymsharkService;
   hM: HMService;
+  homeDepot: HomeDepotService;
+  ikea: IkeaService;
   imdb: ImdbService;
   importYeti: ImportYetiService;
   indeed: IndeedService;
   instacart: InstacartService;
   instagram: InstagramService;
+  jCrew: JCrewService;
   jobs: JobsService;
   justWatch: JustWatchService;
   kalshi: KalshiService;
+  kickstarter: KickstarterService;
   kohlS: KohlSService;
+  kylieCosmetics: KylieCosmeticsService;
   letterboxd: LetterboxdService;
   linkedIn: LinkedInService;
   lululemon: LululemonService;
@@ -41017,8 +46455,10 @@ export interface CrawloraGeneratedGroups {
   metacritic: MetacriticService;
   metaculus: MetaculusService;
   mlb: MlbService;
+  monitors: MonitorsService;
   nike: NikeService;
   numbeo: NumbeoService;
+  ohPolly: OhPollyService;
   oldNavy: OldNavyService;
   openTable: OpenTableService;
   meta: MetaService;
@@ -41028,25 +46468,31 @@ export interface CrawloraGeneratedGroups {
   polymarket: PolymarketService;
   poshmark: PoshmarkService;
   productHunt: ProductHuntService;
+  quince: QuinceService;
   reddit: RedditService;
   redfin: RedfinService;
   referrals: ReferralsService;
+  rothyS: RothySService;
   rottenTomatoes: RottenTomatoesService;
   samSClub: SamSclubService;
   secEdgar: SecEdgarService;
   sephora: SephoraService;
+  shein: SheinService;
   shopApp: ShopAppService;
   shopify: ShopifyService;
   similarWeb: SimilarWebService;
+  skims: SkimsService;
   sofaScore: SofaScoreService;
   soundCloud: SoundCloudService;
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
   steam: SteamService;
+  steveMadden: SteveMaddenService;
   stockX: StockXService;
   strava: StravaService;
   target: TargetService;
   teslaJobs: TeslaJobsService;
+  theBodyShop: TheBodyShopService;
   threads: ThreadsService;
   ticketmaster: TicketmasterService;
   tiktok: TiktokService;
@@ -41064,6 +46510,7 @@ export interface CrawloraGeneratedGroups {
   accountDeletion: AccountDeletionService;
   usptoPatentPublicSearch: UsptoPatentPublicSearchService;
   vinted: VintedService;
+  walgreens: WalgreensService;
   walmart: WalmartService;
   wayfair: WayfairService;
   whatnot: WhatnotService;
@@ -41088,6 +46535,11 @@ export interface CrawloraGeneratedGroups {
 }
 
 export interface OperationParamsMap {
+  "adidas-product": AdidasProductParams;
+  "adidas-search": AdidasSearchParams;
+  "adidas-store": AdidasStoreParams;
+  "adidas-stores": AdidasStoresParams;
+  "adidas-suggest": AdidasSuggestParams;
   "agoda-activities-search": AgodaActivitiesSearchParams;
   "agoda-activity-detail": AgodaActivityDetailParams;
   "agoda-flights-itinerary-amenities": AgodaFlightsItineraryAmenitiesParams;
@@ -41103,6 +46555,17 @@ export interface OperationParamsMap {
   "airbnb-room-calendar": AirbnbRoomCalendarParams;
   "airbnb-room-reviews": AirbnbRoomReviewsParams;
   "airbnb-search": AirbnbSearchParams;
+  "allbirds-collections": AllbirdsCollectionsParams;
+  "allbirds-collection-products": AllbirdsCollectionProductsParams;
+  "allbirds-pages": AllbirdsPagesParams;
+  "allbirds-page": AllbirdsPageParams;
+  "allbirds-products": AllbirdsProductsParams;
+  "allbirds-product": AllbirdsProductParams;
+  "allbirds-product-recommendations": AllbirdsProductRecommendationsParams;
+  "allbirds-search-suggest": AllbirdsSearchSuggestParams;
+  "allbirds-sitemap-urls": AllbirdsSitemapUrlsParams;
+  "allbirds-sitemaps": AllbirdsSitemapsParams;
+  "allbirds-store": AllbirdsStoreParams;
   "amazon-jobs-job": AmazonJobsJobParams;
   "amazon-jobs-search": AmazonJobsSearchParams;
   "amazon-product": AmazonProductParams;
@@ -41151,9 +46614,28 @@ export interface OperationParamsMap {
   "appstore-similar": AppStoreSimilarParams;
   "appstore-suggest": AppStoreSuggestParams;
   "appstore-version-history": AppStoreVersionHistoryParams;
+  "audible-categories": AudibleCategoriesParams;
+  "audible-category": AudibleCategoryParams;
+  "audible-charts": AudibleChartsParams;
+  "audible-editorial-list": AudibleEditorialListParams;
+  "audible-product": AudibleProductParams;
+  "audible-product-related": AudibleProductRelatedParams;
+  "audible-product-reviews": AudibleProductReviewsParams;
+  "audible-products": AudibleProductsParams;
+  "audible-search": AudibleSearchParams;
+  "audible-series": AudibleSeriesParams;
   "autotrader-dealer": AutotraderDealerParams;
   "autotrader-search": AutotraderSearchParams;
   "autotrader-vehicle": AutotraderVehicleParams;
+  "bbb-business": BbbBusinessParams;
+  "bbb-business-complaints": BbbBusinessComplaintsParams;
+  "bbb-business-more-info": BbbBusinessMoreInfoParams;
+  "bbb-business-reviews": BbbBusinessReviewsParams;
+  "bbb-category": BbbCategoryParams;
+  "bbb-scamtracker-search": BbbScamtrackerSearchParams;
+  "bbb-scamtracker-state-stats": BbbScamtrackerStateStatsParams;
+  "bbb-scamtracker-detail": BbbScamtrackerDetailParams;
+  "bbb-search": BbbSearchParams;
   "bestbuy-brands": BestBuyBestbuyBrandsParams;
   "bestbuy-categories": BestBuyBestbuyCategoriesParams;
   "bestbuy-categories-trending": BestBuyBestbuyCategoriesTrendingParams;
@@ -41174,6 +46656,9 @@ export interface OperationParamsMap {
   "billing-me-period-statement-download": BillingMePeriodStatementDownloadParams;
   "billing-me-portal": BillingMePortalParams;
   "billing-me-rejections": BillingMeRejectionsParams;
+  "billing-me-subscription-change": BillingMeSubscriptionChangeParams;
+  "billing-me-subscription-change-cancel": BillingMeSubscriptionChangeCancelParams;
+  "billing-me-subscription-preview": BillingMeSubscriptionPreviewParams;
   "bing-images": BingImagesParams;
   "bing-news": BingNewsParams;
   "bing-search": BingSearchParams;
@@ -41221,6 +46706,17 @@ export interface OperationParamsMap {
   "brave-search": BraveSearchParams;
   "brave-suggest": BraveSuggestParams;
   "brave-videos": BraveVideosParams;
+  "brooklinen-collections": BrooklinenCollectionsParams;
+  "brooklinen-collection-products": BrooklinenCollectionProductsParams;
+  "brooklinen-pages": BrooklinenPagesParams;
+  "brooklinen-page": BrooklinenPageParams;
+  "brooklinen-products": BrooklinenProductsParams;
+  "brooklinen-product": BrooklinenProductParams;
+  "brooklinen-product-recommendations": BrooklinenProductRecommendationsParams;
+  "brooklinen-search-suggest": BrooklinenSearchSuggestParams;
+  "brooklinen-sitemap-urls": BrooklinenSitemapUrlsParams;
+  "brooklinen-sitemaps": BrooklinenSitemapsParams;
+  "brooklinen-store": BrooklinenStoreParams;
   "capterra-product": CapterraProductParams;
   "capterra-reviews": CapterraReviewsParams;
   "capterra-search": CapterraSearchParams;
@@ -41233,6 +46729,13 @@ export interface OperationParamsMap {
   "carmax-vehicle-recommendations": CarMaxCarmaxVehicleRecommendationsParams;
   "carsdotcom-search": CarsComCarsdotcomSearchParams;
   "carsdotcom-vehicle": CarsComCarsdotcomVehicleParams;
+  "chewy-categories": ChewyCategoriesParams;
+  "chewy-category": ChewyCategoryParams;
+  "chewy-gtin-lookup": ChewyGtinLookupParams;
+  "chewy-product": ChewyProductParams;
+  "chewy-products": ChewyProductsParams;
+  "chewy-search": ChewySearchParams;
+  "chewy-suggest": ChewySuggestParams;
   "chromewebstore-categories": ChromeWebStoreChromewebstoreCategoriesParams;
   "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryParams;
   "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsParams;
@@ -41266,6 +46769,17 @@ export interface OperationParamsMap {
   "coingecko-token-unlocks": CoinGeckoTokenUnlocksParams;
   "coingecko-treasuries": CoinGeckoTreasuriesParams;
   "coingecko-trending": CoinGeckoTrendingParams;
+  "colehaan-collections": ColeHaanColehaanCollectionsParams;
+  "colehaan-collection-products": ColeHaanColehaanCollectionProductsParams;
+  "colehaan-pages": ColeHaanColehaanPagesParams;
+  "colehaan-page": ColeHaanColehaanPageParams;
+  "colehaan-products": ColeHaanColehaanProductsParams;
+  "colehaan-product": ColeHaanColehaanProductParams;
+  "colehaan-product-recommendations": ColeHaanColehaanProductRecommendationsParams;
+  "colehaan-search-suggest": ColeHaanColehaanSearchSuggestParams;
+  "colehaan-sitemap-urls": ColeHaanColehaanSitemapUrlsParams;
+  "colehaan-sitemaps": ColeHaanColehaanSitemapsParams;
+  "colehaan-store": ColeHaanColehaanStoreParams;
   "congress-report": CongressReportParams;
   "congress-stock-disclosures": CongressStockDisclosuresParams;
   "contact": WebContactParams;
@@ -41286,6 +46800,9 @@ export interface OperationParamsMap {
   "datasets-apps-charts-search": DatasetsAppsChartsSearchParams;
   "datasets-apps-reviews-search": DatasetsAppsReviewsSearchParams;
   "datasets-apps-search": DatasetsAppsSearchParams;
+  "datasets-bbb-businesses-facets": DatasetsBbbBusinessesFacetsParams;
+  "datasets-bbb-businesses-item": DatasetsBbbBusinessesItemParams;
+  "datasets-bbb-businesses-search": DatasetsBbbBusinessesSearchParams;
   "datasets-boxofficemojo-facets": DatasetsBoxofficemojoFacetsParams;
   "datasets-boxofficemojo-item": DatasetsBoxofficemojoItemParams;
   "datasets-boxofficemojo-search": DatasetsBoxofficemojoSearchParams;
@@ -41297,6 +46814,9 @@ export interface OperationParamsMap {
   "datasets-chrome-extensions-search": DatasetsChromeExtensionsSearchParams;
   "datasets-chrome-extensions-trending": DatasetsChromeExtensionsTrendingParams;
   "datasets-creators-search": DatasetsCreatorsSearchParams;
+  "datasets-facebook-pages-facets": DatasetsFacebookPagesFacetsParams;
+  "datasets-facebook-pages-item": DatasetsFacebookPagesItemParams;
+  "datasets-facebook-pages-search": DatasetsFacebookPagesSearchParams;
   "datasets-github-users-facets": DatasetsGithubUsersFacetsParams;
   "datasets-github-users-item": DatasetsGithubUsersItemParams;
   "datasets-github-users-nearby": DatasetsGithubUsersNearbyParams;
@@ -41381,9 +46901,16 @@ export interface OperationParamsMap {
   "datasets-trustmrr-history": DatasetsTrustmrrHistoryParams;
   "datasets-trustmrr-item": DatasetsTrustmrrItemParams;
   "datasets-trustmrr-search": DatasetsTrustmrrSearchParams;
+  "datasets-vehicle-listings-facets": DatasetsVehicleListingsFacetsParams;
+  "datasets-vehicle-listings-item": DatasetsVehicleListingsItemParams;
+  "datasets-vehicle-listings-price-history": DatasetsVehicleListingsPriceHistoryParams;
+  "datasets-vehicle-listings-search": DatasetsVehicleListingsSearchParams;
   "datasets-x-users-facets": DatasetsXUsersFacetsParams;
   "datasets-x-users-item": DatasetsXUsersItemParams;
   "datasets-x-users-search": DatasetsXUsersSearchParams;
+  "datasets-youtube-creators-facets": DatasetsYoutubeCreatorsFacetsParams;
+  "datasets-youtube-creators-item": DatasetsYoutubeCreatorsItemParams;
+  "datasets-youtube-creators-search": DatasetsYoutubeCreatorsSearchParams;
   "depop-brands": DepopBrandsParams;
   "depop-categories": DepopCategoriesParams;
   "depop-item": DepopItemParams;
@@ -41457,6 +46984,17 @@ export interface OperationParamsMap {
   "etsy-shop": EtsyShopParams;
   "etsy-shop-listings": EtsyShopListingsParams;
   "etsy-shop-reviews": EtsyShopReviewsParams;
+  "everlane-collections": EverlaneCollectionsParams;
+  "everlane-collection-products": EverlaneCollectionProductsParams;
+  "everlane-pages": EverlanePagesParams;
+  "everlane-page": EverlanePageParams;
+  "everlane-products": EverlaneProductsParams;
+  "everlane-product": EverlaneProductParams;
+  "everlane-product-recommendations": EverlaneProductRecommendationsParams;
+  "everlane-search-suggest": EverlaneSearchSuggestParams;
+  "everlane-sitemap-urls": EverlaneSitemapUrlsParams;
+  "everlane-sitemaps": EverlaneSitemapsParams;
+  "everlane-store": EverlaneStoreParams;
   "expedia-activities-search": ExpediaActivitiesSearchParams;
   "expedia-flights-search": ExpediaFlightsSearchParams;
   "expedia-locations-search": ExpediaLocationsSearchParams;
@@ -41467,9 +47005,32 @@ export interface OperationParamsMap {
   "extract": WebExtractParams;
   "facebook-marketplace-search": FacebookMarketplaceSearchParams;
   "facebook-page": FacebookPageParams;
+  "fashionnova-collections": FashionNovaFashionnovaCollectionsParams;
+  "fashionnova-collection-products": FashionNovaFashionnovaCollectionProductsParams;
+  "fashionnova-pages": FashionNovaFashionnovaPagesParams;
+  "fashionnova-page": FashionNovaFashionnovaPageParams;
+  "fashionnova-products": FashionNovaFashionnovaProductsParams;
+  "fashionnova-product": FashionNovaFashionnovaProductParams;
+  "fashionnova-product-recommendations": FashionNovaFashionnovaProductRecommendationsParams;
+  "fashionnova-search-suggest": FashionNovaFashionnovaSearchSuggestParams;
+  "fashionnova-sitemap-urls": FashionNovaFashionnovaSitemapUrlsParams;
+  "fashionnova-sitemaps": FashionNovaFashionnovaSitemapsParams;
+  "fashionnova-store": FashionNovaFashionnovaStoreParams;
   "fiverr-gig": FiverrGigParams;
   "fiverr-search": FiverrSearchParams;
   "fiverr-seller": FiverrSellerParams;
+  "gdelt-context": GdeltContextParams;
+  "gdelt-search": GdeltSearchParams;
+  "gdelt-timeline": GdeltTimelineParams;
+  "gdelt-tonechart": GdeltTonechartParams;
+  "gdelt-tv-concept-entities": GdeltTvConceptEntitiesParams;
+  "gdelt-tv-search": GdeltTvSearchParams;
+  "gdelt-tv-showchart": GdeltTvShowchartParams;
+  "gdelt-tv-stationchart": GdeltTvStationchartParams;
+  "gdelt-tv-stationdetails": GdeltTvStationdetailsParams;
+  "gdelt-tv-timeline": GdeltTvTimelineParams;
+  "gdelt-tv-visual-entities": GdeltTvVisualEntitiesParams;
+  "gdelt-tv-wordcloud": GdeltTvWordcloudParams;
   "geocoding-lookup": GeocodingLookupParams;
   "geocoding-reverse": GeocodingReverseParams;
   "geocoding-search": GeocodingSearchParams;
@@ -41559,6 +47120,16 @@ export interface OperationParamsMap {
   "googleplay-search": GooglePlaySearchParams;
   "googleplay-similar": GooglePlaySimilarParams;
   "googleplay-suggest": GooglePlaySuggestParams;
+  "gymshark-collections": GymsharkCollectionsParams;
+  "gymshark-collection-products": GymsharkCollectionProductsParams;
+  "gymshark-pages": GymsharkPagesParams;
+  "gymshark-page": GymsharkPageParams;
+  "gymshark-products": GymsharkProductsParams;
+  "gymshark-product": GymsharkProductParams;
+  "gymshark-product-recommendations": GymsharkProductRecommendationsParams;
+  "gymshark-sitemap-urls": GymsharkSitemapUrlsParams;
+  "gymshark-sitemaps": GymsharkSitemapsParams;
+  "gymshark-store": GymsharkStoreParams;
   "hm-categories": HMHmCategoriesParams;
   "hm-listing": HMHmListingParams;
   "hm-product": HMHmProductParams;
@@ -41566,6 +47137,20 @@ export interface OperationParamsMap {
   "hm-search": HMHmSearchParams;
   "hm-search-suggestions": HMHmSearchSuggestionsParams;
   "hm-stores": HMHmStoresParams;
+  "homedepot-categories": HomeDepotHomedepotCategoriesParams;
+  "homedepot-category": HomeDepotHomedepotCategoryParams;
+  "homedepot-product": HomeDepotHomedepotProductParams;
+  "homedepot-product-questions": HomeDepotHomedepotProductQuestionsParams;
+  "homedepot-search": HomeDepotHomedepotSearchParams;
+  "ikea-availability": IkeaAvailabilityParams;
+  "ikea-category": IkeaCategoryParams;
+  "ikea-product": IkeaProductParams;
+  "ikea-reviews": IkeaReviewsParams;
+  "ikea-search": IkeaSearchParams;
+  "ikea-store": IkeaStoreParams;
+  "ikea-stores": IkeaStoresParams;
+  "ikea-suggest": IkeaSuggestParams;
+  "imdb-charts": ImdbChartsParams;
   "imdb-name": ImdbNameParams;
   "imdb-name-awards": ImdbNameAwardsParams;
   "imdb-name-credits": ImdbNameCreditsParams;
@@ -41582,8 +47167,10 @@ export interface OperationParamsMap {
   "imdb-title-parental-guide": ImdbTitleParentalGuideParams;
   "imdb-title-public-facts-analysis": ImdbTitlePublicFactsAnalysisParams;
   "imdb-title-quotes": ImdbTitleQuotesParams;
+  "imdb-title-ratings": ImdbTitleRatingsParams;
   "imdb-title-release-info": ImdbTitleReleaseInfoParams;
   "imdb-title-reviews": ImdbTitleReviewsParams;
+  "imdb-title-similar": ImdbTitleSimilarParams;
   "imdb-title-technical-specs": ImdbTitleTechnicalSpecsParams;
   "imdb-title-trivia": ImdbTitleTriviaParams;
   "importyeti-company": ImportYetiImportyetiCompanyParams;
@@ -41600,6 +47187,14 @@ export interface OperationParamsMap {
   "instagram-post": InstagramPostParams;
   "instagram-profile": InstagramProfileParams;
   "instagram-reels": InstagramReelsParams;
+  "jcrew-categories": JCrewJcrewCategoriesParams;
+  "jcrew-category": JCrewJcrewCategoryParams;
+  "jcrew-product": JCrewJcrewProductParams;
+  "jcrew-product-reviews": JCrewJcrewProductReviewsParams;
+  "jcrew-search": JCrewJcrewSearchParams;
+  "jcrew-size-chart": JCrewJcrewSizeChartParams;
+  "jcrew-stores": JCrewJcrewStoresParams;
+  "jcrew-suggest": JCrewJcrewSuggestParams;
   "jobs-ashby-board": JobsAshbyBoardParams;
   "jobs-company-search": JobsCompanySearchParams;
   "jobs-eightfold-board": JobsEightfoldBoardParams;
@@ -41670,10 +47265,25 @@ export interface OperationParamsMap {
   "kalshi-series": KalshiSeriesParams;
   "kalshi-series-detail": KalshiSeriesDetailParams;
   "kalshi-trades": KalshiTradesParams;
+  "kickstarter-comments": KickstarterCommentsParams;
+  "kickstarter-discover": KickstarterDiscoverParams;
+  "kickstarter-project": KickstarterProjectParams;
+  "kickstarter-updates": KickstarterUpdatesParams;
   "kohls-category": KohlSKohlsCategoryParams;
   "kohls-product-reviews": KohlSKohlsProductReviewsParams;
   "kohls-stores": KohlSKohlsStoresParams;
   "kohls-suggest": KohlSKohlsSuggestParams;
+  "kyliecosmetics-collections": KylieCosmeticsKyliecosmeticsCollectionsParams;
+  "kyliecosmetics-collection-products": KylieCosmeticsKyliecosmeticsCollectionProductsParams;
+  "kyliecosmetics-pages": KylieCosmeticsKyliecosmeticsPagesParams;
+  "kyliecosmetics-page": KylieCosmeticsKyliecosmeticsPageParams;
+  "kyliecosmetics-products": KylieCosmeticsKyliecosmeticsProductsParams;
+  "kyliecosmetics-product": KylieCosmeticsKyliecosmeticsProductParams;
+  "kyliecosmetics-product-recommendations": KylieCosmeticsKyliecosmeticsProductRecommendationsParams;
+  "kyliecosmetics-search-suggest": KylieCosmeticsKyliecosmeticsSearchSuggestParams;
+  "kyliecosmetics-sitemap-urls": KylieCosmeticsKyliecosmeticsSitemapUrlsParams;
+  "kyliecosmetics-sitemaps": KylieCosmeticsKyliecosmeticsSitemapsParams;
+  "kyliecosmetics-store": KylieCosmeticsKyliecosmeticsStoreParams;
   "letterboxd-film": LetterboxdFilmParams;
   "letterboxd-film-rating-histogram": LetterboxdFilmRatingHistogramParams;
   "letterboxd-film-reviews": LetterboxdFilmReviewsParams;
@@ -41737,8 +47347,17 @@ export interface OperationParamsMap {
   "mlb-team-stats": MlbTeamStatsParams;
   "mlb-teams": MlbTeamsParams;
   "mlb-transactions": MlbTransactionsParams;
+  "monitors-list": MonitorsListParams;
+  "monitors-create": MonitorsCreateParams;
+  "monitors-delete": MonitorsDeleteParams;
+  "monitors-get": MonitorsGetParams;
+  "monitors-update": MonitorsUpdateParams;
+  "monitors-checks": MonitorsChecksParams;
   "nike-categories": NikeCategoriesParams;
   "nike-product": NikeProductParams;
+  "nike-product-availability": NikeProductAvailabilityParams;
+  "nike-product-details": NikeProductDetailsParams;
+  "nike-product-recommendations": NikeProductRecommendationsParams;
   "nike-product-reviews": NikeProductReviewsParams;
   "nike-search": NikeSearchParams;
   "nike-stores": NikeStoresParams;
@@ -41751,6 +47370,17 @@ export interface OperationParamsMap {
   "numbeo-indices-country": NumbeoIndicesCountryParams;
   "numbeo-indices-rankings": NumbeoIndicesRankingsParams;
   "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryParams;
+  "ohpolly-collections": OhPollyOhpollyCollectionsParams;
+  "ohpolly-collection-products": OhPollyOhpollyCollectionProductsParams;
+  "ohpolly-pages": OhPollyOhpollyPagesParams;
+  "ohpolly-page": OhPollyOhpollyPageParams;
+  "ohpolly-products": OhPollyOhpollyProductsParams;
+  "ohpolly-product": OhPollyOhpollyProductParams;
+  "ohpolly-product-recommendations": OhPollyOhpollyProductRecommendationsParams;
+  "ohpolly-search-suggest": OhPollyOhpollySearchSuggestParams;
+  "ohpolly-sitemap-urls": OhPollyOhpollySitemapUrlsParams;
+  "ohpolly-sitemaps": OhPollyOhpollySitemapsParams;
+  "ohpolly-store": OhPollyOhpollyStoreParams;
   "oldnavy-categories": OldNavyOldnavyCategoriesParams;
   "oldnavy-category": OldNavyOldnavyCategoryParams;
   "oldnavy-product": OldNavyOldnavyProductParams;
@@ -41868,9 +47498,19 @@ export interface OperationParamsMap {
   "producthunt-makers": ProductHuntMakersParams;
   "producthunt-reviews": ProductHuntReviewsParams;
   "producthunt-search": ProductHuntSearchParams;
+  "quince-categories": QuinceCategoriesParams;
+  "quince-navigation": QuinceNavigationParams;
+  "quince-product": QuinceProductParams;
+  "quince-product-faq": QuinceProductFaqParams;
+  "quince-product-reviews": QuinceProductReviewsParams;
+  "quince-search": QuinceSearchParams;
+  "quince-sitemap-urls": QuinceSitemapUrlsParams;
+  "quince-sitemaps": QuinceSitemapsParams;
+  "quince-suggest": QuinceSuggestParams;
   "ready": MetaReadyParams;
   "reddit-comments": RedditCommentsParams;
   "reddit-domain-posts": RedditDomainPostsParams;
+  "reddit-leads": RedditLeadsParams;
   "reddit-post": RedditPostParams;
   "reddit-search": RedditSearchParams;
   "reddit-subreddit-about": RedditSubredditAboutParams;
@@ -41888,6 +47528,17 @@ export interface OperationParamsMap {
   "referrals-click": ReferralsClickParams;
   "referrals-me": ReferralsMeParams;
   "referrals-me-events": ReferralsMeEventsParams;
+  "rothys-collections": RothySRothysCollectionsParams;
+  "rothys-collection-products": RothySRothysCollectionProductsParams;
+  "rothys-pages": RothySRothysPagesParams;
+  "rothys-page": RothySRothysPageParams;
+  "rothys-products": RothySRothysProductsParams;
+  "rothys-product": RothySRothysProductParams;
+  "rothys-product-recommendations": RothySRothysProductRecommendationsParams;
+  "rothys-search-suggest": RothySRothysSearchSuggestParams;
+  "rothys-sitemap-urls": RothySRothysSitemapUrlsParams;
+  "rothys-sitemaps": RothySRothysSitemapsParams;
+  "rothys-store": RothySRothysStoreParams;
   "rottentomatoes-browse-movies": RottenTomatoesRottentomatoesBrowseMoviesParams;
   "rottentomatoes-browse-tv": RottenTomatoesRottentomatoesBrowseTvParams;
   "rottentomatoes-episode": RottenTomatoesRottentomatoesEpisodeParams;
@@ -41919,6 +47570,14 @@ export interface OperationParamsMap {
   "sephora-search": SephoraSearchParams;
   "sephora-stores": SephoraStoresParams;
   "sephora-suggest": SephoraSuggestParams;
+  "shein-category-filters": SheinCategoryFiltersParams;
+  "shein-category-goods": SheinCategoryGoodsParams;
+  "shein-category-nav": SheinCategoryNavParams;
+  "shein-products-aggregation-filters": SheinProductsAggregationFiltersParams;
+  "shein-products-detail": SheinProductsDetailParams;
+  "shein-products-search": SheinProductsSearchParams;
+  "shein-search-autocomplete": SheinSearchAutocompleteParams;
+  "shein-search-keywords": SheinSearchKeywordsParams;
   "shop-app-analysis": ShopAppAnalysisParams;
   "shop-app-categories": ShopAppCategoriesParams;
   "shop-app-product": ShopAppProductParams;
@@ -41948,6 +47607,17 @@ export interface OperationParamsMap {
   "shopify-store": ShopifyStoreParams;
   "similarweb-search": SimilarWebSearchParams;
   "similarweb-web": SimilarWebWebParams;
+  "skims-collections": SkimsCollectionsParams;
+  "skims-collection-products": SkimsCollectionProductsParams;
+  "skims-pages": SkimsPagesParams;
+  "skims-page": SkimsPageParams;
+  "skims-products": SkimsProductsParams;
+  "skims-product": SkimsProductParams;
+  "skims-product-recommendations": SkimsProductRecommendationsParams;
+  "skims-search-suggest": SkimsSearchSuggestParams;
+  "skims-sitemap-urls": SkimsSitemapUrlsParams;
+  "skims-sitemaps": SkimsSitemapsParams;
+  "skims-store": SkimsStoreParams;
   "sofascore-event": SofaScoreSofascoreEventParams;
   "sofascore-event-h2h": SofaScoreSofascoreEventH2hParams;
   "sofascore-event-incidents": SofaScoreSofascoreEventIncidentsParams;
@@ -42027,6 +47697,17 @@ export interface OperationParamsMap {
   "steam-tags": SteamTagsParams;
   "steam-tags-list": SteamTagsListParams;
   "steam-top-sellers": SteamTopSellersParams;
+  "stevemadden-collections": SteveMaddenStevemaddenCollectionsParams;
+  "stevemadden-collection-products": SteveMaddenStevemaddenCollectionProductsParams;
+  "stevemadden-pages": SteveMaddenStevemaddenPagesParams;
+  "stevemadden-page": SteveMaddenStevemaddenPageParams;
+  "stevemadden-products": SteveMaddenStevemaddenProductsParams;
+  "stevemadden-product": SteveMaddenStevemaddenProductParams;
+  "stevemadden-product-recommendations": SteveMaddenStevemaddenProductRecommendationsParams;
+  "stevemadden-search-suggest": SteveMaddenStevemaddenSearchSuggestParams;
+  "stevemadden-sitemap-urls": SteveMaddenStevemaddenSitemapUrlsParams;
+  "stevemadden-sitemaps": SteveMaddenStevemaddenSitemapsParams;
+  "stevemadden-store": SteveMaddenStevemaddenStoreParams;
   "stockx-brands": StockXStockxBrandsParams;
   "stockx-categories": StockXStockxCategoriesParams;
   "stockx-product": StockXStockxProductParams;
@@ -42045,6 +47726,17 @@ export interface OperationParamsMap {
   "target-search": TargetSearchParams;
   "tesla-jobs-job": TeslaJobsJobParams;
   "tesla-jobs-list": TeslaJobsListParams;
+  "thebodyshop-collections": TheBodyShopThebodyshopCollectionsParams;
+  "thebodyshop-collection-products": TheBodyShopThebodyshopCollectionProductsParams;
+  "thebodyshop-pages": TheBodyShopThebodyshopPagesParams;
+  "thebodyshop-page": TheBodyShopThebodyshopPageParams;
+  "thebodyshop-products": TheBodyShopThebodyshopProductsParams;
+  "thebodyshop-product": TheBodyShopThebodyshopProductParams;
+  "thebodyshop-product-recommendations": TheBodyShopThebodyshopProductRecommendationsParams;
+  "thebodyshop-search-suggest": TheBodyShopThebodyshopSearchSuggestParams;
+  "thebodyshop-sitemap-urls": TheBodyShopThebodyshopSitemapUrlsParams;
+  "thebodyshop-sitemaps": TheBodyShopThebodyshopSitemapsParams;
+  "thebodyshop-store": TheBodyShopThebodyshopStoreParams;
   "threads-post": ThreadsPostParams;
   "threads-post-replies": ThreadsPostRepliesParams;
   "threads-profile": ThreadsProfileParams;
@@ -42160,6 +47852,7 @@ export interface OperationParamsMap {
   "vinted-category": VintedCategoryParams;
   "vinted-item": VintedItemParams;
   "vinted-member": VintedMemberParams;
+  "walgreens-stores": WalgreensStoresParams;
   "walmart-product": WalmartProductParams;
   "walmart-product-reviews": WalmartProductReviewsParams;
   "walmart-search": WalmartSearchParams;
@@ -42313,6 +48006,11 @@ export interface OperationParamsMap {
 }
 
 export interface OperationResponseMap {
+  "adidas-product": AdidasProductResponse;
+  "adidas-search": AdidasSearchResponse;
+  "adidas-store": AdidasStoreResponse;
+  "adidas-stores": AdidasStoresResponse;
+  "adidas-suggest": AdidasSuggestResponse;
   "agoda-activities-search": AgodaActivitiesSearchResponse;
   "agoda-activity-detail": AgodaActivityDetailResponse;
   "agoda-flights-itinerary-amenities": AgodaFlightsItineraryAmenitiesResponse;
@@ -42328,6 +48026,17 @@ export interface OperationResponseMap {
   "airbnb-room-calendar": AirbnbRoomCalendarResponse;
   "airbnb-room-reviews": AirbnbRoomReviewsResponse;
   "airbnb-search": AirbnbSearchResponse;
+  "allbirds-collections": AllbirdsCollectionsResponse;
+  "allbirds-collection-products": AllbirdsCollectionProductsResponse;
+  "allbirds-pages": AllbirdsPagesResponse;
+  "allbirds-page": AllbirdsPageResponse;
+  "allbirds-products": AllbirdsProductsResponse;
+  "allbirds-product": AllbirdsProductResponse;
+  "allbirds-product-recommendations": AllbirdsProductRecommendationsResponse;
+  "allbirds-search-suggest": AllbirdsSearchSuggestResponse;
+  "allbirds-sitemap-urls": AllbirdsSitemapUrlsResponse;
+  "allbirds-sitemaps": AllbirdsSitemapsResponse;
+  "allbirds-store": AllbirdsStoreResponse;
   "amazon-jobs-job": AmazonJobsJobResponse;
   "amazon-jobs-search": AmazonJobsSearchResponse;
   "amazon-product": AmazonProductResponse;
@@ -42376,9 +48085,28 @@ export interface OperationResponseMap {
   "appstore-similar": AppStoreSimilarResponse;
   "appstore-suggest": AppStoreSuggestResponse;
   "appstore-version-history": AppStoreVersionHistoryResponse;
+  "audible-categories": AudibleCategoriesResponse;
+  "audible-category": AudibleCategoryResponse;
+  "audible-charts": AudibleChartsResponse;
+  "audible-editorial-list": AudibleEditorialListResponse;
+  "audible-product": AudibleProductResponse;
+  "audible-product-related": AudibleProductRelatedResponse;
+  "audible-product-reviews": AudibleProductReviewsResponse;
+  "audible-products": AudibleProductsResponse;
+  "audible-search": AudibleSearchResponse;
+  "audible-series": AudibleSeriesResponse;
   "autotrader-dealer": AutotraderDealerResponse;
   "autotrader-search": AutotraderSearchResponse;
   "autotrader-vehicle": AutotraderVehicleResponse;
+  "bbb-business": BbbBusinessResponse;
+  "bbb-business-complaints": BbbBusinessComplaintsResponse;
+  "bbb-business-more-info": BbbBusinessMoreInfoResponse;
+  "bbb-business-reviews": BbbBusinessReviewsResponse;
+  "bbb-category": BbbCategoryResponse;
+  "bbb-scamtracker-search": BbbScamtrackerSearchResponse;
+  "bbb-scamtracker-state-stats": BbbScamtrackerStateStatsResponse;
+  "bbb-scamtracker-detail": BbbScamtrackerDetailResponse;
+  "bbb-search": BbbSearchResponse;
   "bestbuy-brands": BestBuyBestbuyBrandsResponse;
   "bestbuy-categories": BestBuyBestbuyCategoriesResponse;
   "bestbuy-categories-trending": BestBuyBestbuyCategoriesTrendingResponse;
@@ -42399,6 +48127,9 @@ export interface OperationResponseMap {
   "billing-me-period-statement-download": BillingMePeriodStatementDownloadResponse;
   "billing-me-portal": BillingMePortalResponse;
   "billing-me-rejections": BillingMeRejectionsResponse;
+  "billing-me-subscription-change": BillingMeSubscriptionChangeResponse;
+  "billing-me-subscription-change-cancel": BillingMeSubscriptionChangeCancelResponse;
+  "billing-me-subscription-preview": BillingMeSubscriptionPreviewResponse;
   "bing-images": BingImagesResponse;
   "bing-news": BingNewsResponse;
   "bing-search": BingSearchResponse;
@@ -42446,6 +48177,17 @@ export interface OperationResponseMap {
   "brave-search": BraveSearchResponse;
   "brave-suggest": BraveSuggestResponse;
   "brave-videos": BraveVideosResponse;
+  "brooklinen-collections": BrooklinenCollectionsResponse;
+  "brooklinen-collection-products": BrooklinenCollectionProductsResponse;
+  "brooklinen-pages": BrooklinenPagesResponse;
+  "brooklinen-page": BrooklinenPageResponse;
+  "brooklinen-products": BrooklinenProductsResponse;
+  "brooklinen-product": BrooklinenProductResponse;
+  "brooklinen-product-recommendations": BrooklinenProductRecommendationsResponse;
+  "brooklinen-search-suggest": BrooklinenSearchSuggestResponse;
+  "brooklinen-sitemap-urls": BrooklinenSitemapUrlsResponse;
+  "brooklinen-sitemaps": BrooklinenSitemapsResponse;
+  "brooklinen-store": BrooklinenStoreResponse;
   "capterra-product": CapterraProductResponse;
   "capterra-reviews": CapterraReviewsResponse;
   "capterra-search": CapterraSearchResponse;
@@ -42458,6 +48200,13 @@ export interface OperationResponseMap {
   "carmax-vehicle-recommendations": CarMaxCarmaxVehicleRecommendationsResponse;
   "carsdotcom-search": CarsComCarsdotcomSearchResponse;
   "carsdotcom-vehicle": CarsComCarsdotcomVehicleResponse;
+  "chewy-categories": ChewyCategoriesResponse;
+  "chewy-category": ChewyCategoryResponse;
+  "chewy-gtin-lookup": ChewyGtinLookupResponse;
+  "chewy-product": ChewyProductResponse;
+  "chewy-products": ChewyProductsResponse;
+  "chewy-search": ChewySearchResponse;
+  "chewy-suggest": ChewySuggestResponse;
   "chromewebstore-categories": ChromeWebStoreChromewebstoreCategoriesResponse;
   "chromewebstore-category": ChromeWebStoreChromewebstoreCategoryResponse;
   "chromewebstore-charts": ChromeWebStoreChromewebstoreChartsResponse;
@@ -42491,6 +48240,17 @@ export interface OperationResponseMap {
   "coingecko-token-unlocks": CoinGeckoTokenUnlocksResponse;
   "coingecko-treasuries": CoinGeckoTreasuriesResponse;
   "coingecko-trending": CoinGeckoTrendingResponse;
+  "colehaan-collections": ColeHaanColehaanCollectionsResponse;
+  "colehaan-collection-products": ColeHaanColehaanCollectionProductsResponse;
+  "colehaan-pages": ColeHaanColehaanPagesResponse;
+  "colehaan-page": ColeHaanColehaanPageResponse;
+  "colehaan-products": ColeHaanColehaanProductsResponse;
+  "colehaan-product": ColeHaanColehaanProductResponse;
+  "colehaan-product-recommendations": ColeHaanColehaanProductRecommendationsResponse;
+  "colehaan-search-suggest": ColeHaanColehaanSearchSuggestResponse;
+  "colehaan-sitemap-urls": ColeHaanColehaanSitemapUrlsResponse;
+  "colehaan-sitemaps": ColeHaanColehaanSitemapsResponse;
+  "colehaan-store": ColeHaanColehaanStoreResponse;
   "congress-report": CongressReportResponse;
   "congress-stock-disclosures": CongressStockDisclosuresResponse;
   "contact": WebContactResponse;
@@ -42511,6 +48271,9 @@ export interface OperationResponseMap {
   "datasets-apps-charts-search": DatasetsAppsChartsSearchResponse;
   "datasets-apps-reviews-search": DatasetsAppsReviewsSearchResponse;
   "datasets-apps-search": DatasetsAppsSearchResponse;
+  "datasets-bbb-businesses-facets": DatasetsBbbBusinessesFacetsResponse;
+  "datasets-bbb-businesses-item": DatasetsBbbBusinessesItemResponse;
+  "datasets-bbb-businesses-search": DatasetsBbbBusinessesSearchResponse;
   "datasets-boxofficemojo-facets": DatasetsBoxofficemojoFacetsResponse;
   "datasets-boxofficemojo-item": DatasetsBoxofficemojoItemResponse;
   "datasets-boxofficemojo-search": DatasetsBoxofficemojoSearchResponse;
@@ -42522,6 +48285,9 @@ export interface OperationResponseMap {
   "datasets-chrome-extensions-search": DatasetsChromeExtensionsSearchResponse;
   "datasets-chrome-extensions-trending": DatasetsChromeExtensionsTrendingResponse;
   "datasets-creators-search": DatasetsCreatorsSearchResponse;
+  "datasets-facebook-pages-facets": DatasetsFacebookPagesFacetsResponse;
+  "datasets-facebook-pages-item": DatasetsFacebookPagesItemResponse;
+  "datasets-facebook-pages-search": DatasetsFacebookPagesSearchResponse;
   "datasets-github-users-facets": DatasetsGithubUsersFacetsResponse;
   "datasets-github-users-item": DatasetsGithubUsersItemResponse;
   "datasets-github-users-nearby": DatasetsGithubUsersNearbyResponse;
@@ -42606,9 +48372,16 @@ export interface OperationResponseMap {
   "datasets-trustmrr-history": DatasetsTrustmrrHistoryResponse;
   "datasets-trustmrr-item": DatasetsTrustmrrItemResponse;
   "datasets-trustmrr-search": DatasetsTrustmrrSearchResponse;
+  "datasets-vehicle-listings-facets": DatasetsVehicleListingsFacetsResponse;
+  "datasets-vehicle-listings-item": DatasetsVehicleListingsItemResponse;
+  "datasets-vehicle-listings-price-history": DatasetsVehicleListingsPriceHistoryResponse;
+  "datasets-vehicle-listings-search": DatasetsVehicleListingsSearchResponse;
   "datasets-x-users-facets": DatasetsXUsersFacetsResponse;
   "datasets-x-users-item": DatasetsXUsersItemResponse;
   "datasets-x-users-search": DatasetsXUsersSearchResponse;
+  "datasets-youtube-creators-facets": DatasetsYoutubeCreatorsFacetsResponse;
+  "datasets-youtube-creators-item": DatasetsYoutubeCreatorsItemResponse;
+  "datasets-youtube-creators-search": DatasetsYoutubeCreatorsSearchResponse;
   "depop-brands": DepopBrandsResponse;
   "depop-categories": DepopCategoriesResponse;
   "depop-item": DepopItemResponse;
@@ -42682,6 +48455,17 @@ export interface OperationResponseMap {
   "etsy-shop": EtsyShopResponse;
   "etsy-shop-listings": EtsyShopListingsResponse;
   "etsy-shop-reviews": EtsyShopReviewsResponse;
+  "everlane-collections": EverlaneCollectionsResponse;
+  "everlane-collection-products": EverlaneCollectionProductsResponse;
+  "everlane-pages": EverlanePagesResponse;
+  "everlane-page": EverlanePageResponse;
+  "everlane-products": EverlaneProductsResponse;
+  "everlane-product": EverlaneProductResponse;
+  "everlane-product-recommendations": EverlaneProductRecommendationsResponse;
+  "everlane-search-suggest": EverlaneSearchSuggestResponse;
+  "everlane-sitemap-urls": EverlaneSitemapUrlsResponse;
+  "everlane-sitemaps": EverlaneSitemapsResponse;
+  "everlane-store": EverlaneStoreResponse;
   "expedia-activities-search": ExpediaActivitiesSearchResponse;
   "expedia-flights-search": ExpediaFlightsSearchResponse;
   "expedia-locations-search": ExpediaLocationsSearchResponse;
@@ -42692,9 +48476,32 @@ export interface OperationResponseMap {
   "extract": WebExtractResponse;
   "facebook-marketplace-search": FacebookMarketplaceSearchResponse;
   "facebook-page": FacebookPageResponse;
+  "fashionnova-collections": FashionNovaFashionnovaCollectionsResponse;
+  "fashionnova-collection-products": FashionNovaFashionnovaCollectionProductsResponse;
+  "fashionnova-pages": FashionNovaFashionnovaPagesResponse;
+  "fashionnova-page": FashionNovaFashionnovaPageResponse;
+  "fashionnova-products": FashionNovaFashionnovaProductsResponse;
+  "fashionnova-product": FashionNovaFashionnovaProductResponse;
+  "fashionnova-product-recommendations": FashionNovaFashionnovaProductRecommendationsResponse;
+  "fashionnova-search-suggest": FashionNovaFashionnovaSearchSuggestResponse;
+  "fashionnova-sitemap-urls": FashionNovaFashionnovaSitemapUrlsResponse;
+  "fashionnova-sitemaps": FashionNovaFashionnovaSitemapsResponse;
+  "fashionnova-store": FashionNovaFashionnovaStoreResponse;
   "fiverr-gig": FiverrGigResponse;
   "fiverr-search": FiverrSearchResponse;
   "fiverr-seller": FiverrSellerResponse;
+  "gdelt-context": GdeltContextResponse;
+  "gdelt-search": GdeltSearchResponse;
+  "gdelt-timeline": GdeltTimelineResponse;
+  "gdelt-tonechart": GdeltTonechartResponse;
+  "gdelt-tv-concept-entities": GdeltTvConceptEntitiesResponse;
+  "gdelt-tv-search": GdeltTvSearchResponse;
+  "gdelt-tv-showchart": GdeltTvShowchartResponse;
+  "gdelt-tv-stationchart": GdeltTvStationchartResponse;
+  "gdelt-tv-stationdetails": GdeltTvStationdetailsResponse;
+  "gdelt-tv-timeline": GdeltTvTimelineResponse;
+  "gdelt-tv-visual-entities": GdeltTvVisualEntitiesResponse;
+  "gdelt-tv-wordcloud": GdeltTvWordcloudResponse;
   "geocoding-lookup": GeocodingLookupResponse;
   "geocoding-reverse": GeocodingReverseResponse;
   "geocoding-search": GeocodingSearchResponse;
@@ -42784,6 +48591,16 @@ export interface OperationResponseMap {
   "googleplay-search": GooglePlaySearchResponse;
   "googleplay-similar": GooglePlaySimilarResponse;
   "googleplay-suggest": GooglePlaySuggestResponse;
+  "gymshark-collections": GymsharkCollectionsResponse;
+  "gymshark-collection-products": GymsharkCollectionProductsResponse;
+  "gymshark-pages": GymsharkPagesResponse;
+  "gymshark-page": GymsharkPageResponse;
+  "gymshark-products": GymsharkProductsResponse;
+  "gymshark-product": GymsharkProductResponse;
+  "gymshark-product-recommendations": GymsharkProductRecommendationsResponse;
+  "gymshark-sitemap-urls": GymsharkSitemapUrlsResponse;
+  "gymshark-sitemaps": GymsharkSitemapsResponse;
+  "gymshark-store": GymsharkStoreResponse;
   "hm-categories": HMHmCategoriesResponse;
   "hm-listing": HMHmListingResponse;
   "hm-product": HMHmProductResponse;
@@ -42791,6 +48608,20 @@ export interface OperationResponseMap {
   "hm-search": HMHmSearchResponse;
   "hm-search-suggestions": HMHmSearchSuggestionsResponse;
   "hm-stores": HMHmStoresResponse;
+  "homedepot-categories": HomeDepotHomedepotCategoriesResponse;
+  "homedepot-category": HomeDepotHomedepotCategoryResponse;
+  "homedepot-product": HomeDepotHomedepotProductResponse;
+  "homedepot-product-questions": HomeDepotHomedepotProductQuestionsResponse;
+  "homedepot-search": HomeDepotHomedepotSearchResponse;
+  "ikea-availability": IkeaAvailabilityResponse;
+  "ikea-category": IkeaCategoryResponse;
+  "ikea-product": IkeaProductResponse;
+  "ikea-reviews": IkeaReviewsResponse;
+  "ikea-search": IkeaSearchResponse;
+  "ikea-store": IkeaStoreResponse;
+  "ikea-stores": IkeaStoresResponse;
+  "ikea-suggest": IkeaSuggestResponse;
+  "imdb-charts": ImdbChartsResponse;
   "imdb-name": ImdbNameResponse;
   "imdb-name-awards": ImdbNameAwardsResponse;
   "imdb-name-credits": ImdbNameCreditsResponse;
@@ -42807,8 +48638,10 @@ export interface OperationResponseMap {
   "imdb-title-parental-guide": ImdbTitleParentalGuideResponse;
   "imdb-title-public-facts-analysis": ImdbTitlePublicFactsAnalysisResponse;
   "imdb-title-quotes": ImdbTitleQuotesResponse;
+  "imdb-title-ratings": ImdbTitleRatingsResponse;
   "imdb-title-release-info": ImdbTitleReleaseInfoResponse;
   "imdb-title-reviews": ImdbTitleReviewsResponse;
+  "imdb-title-similar": ImdbTitleSimilarResponse;
   "imdb-title-technical-specs": ImdbTitleTechnicalSpecsResponse;
   "imdb-title-trivia": ImdbTitleTriviaResponse;
   "importyeti-company": ImportYetiImportyetiCompanyResponse;
@@ -42825,6 +48658,14 @@ export interface OperationResponseMap {
   "instagram-post": InstagramPostResponse;
   "instagram-profile": InstagramProfileResponse;
   "instagram-reels": InstagramReelsResponse;
+  "jcrew-categories": JCrewJcrewCategoriesResponse;
+  "jcrew-category": JCrewJcrewCategoryResponse;
+  "jcrew-product": JCrewJcrewProductResponse;
+  "jcrew-product-reviews": JCrewJcrewProductReviewsResponse;
+  "jcrew-search": JCrewJcrewSearchResponse;
+  "jcrew-size-chart": JCrewJcrewSizeChartResponse;
+  "jcrew-stores": JCrewJcrewStoresResponse;
+  "jcrew-suggest": JCrewJcrewSuggestResponse;
   "jobs-ashby-board": JobsAshbyBoardResponse;
   "jobs-company-search": JobsCompanySearchResponse;
   "jobs-eightfold-board": JobsEightfoldBoardResponse;
@@ -42895,10 +48736,25 @@ export interface OperationResponseMap {
   "kalshi-series": KalshiSeriesResponse;
   "kalshi-series-detail": KalshiSeriesDetailResponse;
   "kalshi-trades": KalshiTradesResponse;
+  "kickstarter-comments": KickstarterCommentsResponse;
+  "kickstarter-discover": KickstarterDiscoverResponse;
+  "kickstarter-project": KickstarterProjectResponse;
+  "kickstarter-updates": KickstarterUpdatesResponse;
   "kohls-category": KohlSKohlsCategoryResponse;
   "kohls-product-reviews": KohlSKohlsProductReviewsResponse;
   "kohls-stores": KohlSKohlsStoresResponse;
   "kohls-suggest": KohlSKohlsSuggestResponse;
+  "kyliecosmetics-collections": KylieCosmeticsKyliecosmeticsCollectionsResponse;
+  "kyliecosmetics-collection-products": KylieCosmeticsKyliecosmeticsCollectionProductsResponse;
+  "kyliecosmetics-pages": KylieCosmeticsKyliecosmeticsPagesResponse;
+  "kyliecosmetics-page": KylieCosmeticsKyliecosmeticsPageResponse;
+  "kyliecosmetics-products": KylieCosmeticsKyliecosmeticsProductsResponse;
+  "kyliecosmetics-product": KylieCosmeticsKyliecosmeticsProductResponse;
+  "kyliecosmetics-product-recommendations": KylieCosmeticsKyliecosmeticsProductRecommendationsResponse;
+  "kyliecosmetics-search-suggest": KylieCosmeticsKyliecosmeticsSearchSuggestResponse;
+  "kyliecosmetics-sitemap-urls": KylieCosmeticsKyliecosmeticsSitemapUrlsResponse;
+  "kyliecosmetics-sitemaps": KylieCosmeticsKyliecosmeticsSitemapsResponse;
+  "kyliecosmetics-store": KylieCosmeticsKyliecosmeticsStoreResponse;
   "letterboxd-film": LetterboxdFilmResponse;
   "letterboxd-film-rating-histogram": LetterboxdFilmRatingHistogramResponse;
   "letterboxd-film-reviews": LetterboxdFilmReviewsResponse;
@@ -42962,8 +48818,17 @@ export interface OperationResponseMap {
   "mlb-team-stats": MlbTeamStatsResponse;
   "mlb-teams": MlbTeamsResponse;
   "mlb-transactions": MlbTransactionsResponse;
+  "monitors-list": MonitorsListResponse;
+  "monitors-create": MonitorsCreateResponse;
+  "monitors-delete": MonitorsDeleteResponse;
+  "monitors-get": MonitorsGetResponse;
+  "monitors-update": MonitorsUpdateResponse;
+  "monitors-checks": MonitorsChecksResponse;
   "nike-categories": NikeCategoriesResponse;
   "nike-product": NikeProductResponse;
+  "nike-product-availability": NikeProductAvailabilityResponse;
+  "nike-product-details": NikeProductDetailsResponse;
+  "nike-product-recommendations": NikeProductRecommendationsResponse;
   "nike-product-reviews": NikeProductReviewsResponse;
   "nike-search": NikeSearchResponse;
   "nike-stores": NikeStoresResponse;
@@ -42976,6 +48841,17 @@ export interface OperationResponseMap {
   "numbeo-indices-country": NumbeoIndicesCountryResponse;
   "numbeo-indices-rankings": NumbeoIndicesRankingsResponse;
   "numbeo-indices-rankings-by-country": NumbeoIndicesRankingsByCountryResponse;
+  "ohpolly-collections": OhPollyOhpollyCollectionsResponse;
+  "ohpolly-collection-products": OhPollyOhpollyCollectionProductsResponse;
+  "ohpolly-pages": OhPollyOhpollyPagesResponse;
+  "ohpolly-page": OhPollyOhpollyPageResponse;
+  "ohpolly-products": OhPollyOhpollyProductsResponse;
+  "ohpolly-product": OhPollyOhpollyProductResponse;
+  "ohpolly-product-recommendations": OhPollyOhpollyProductRecommendationsResponse;
+  "ohpolly-search-suggest": OhPollyOhpollySearchSuggestResponse;
+  "ohpolly-sitemap-urls": OhPollyOhpollySitemapUrlsResponse;
+  "ohpolly-sitemaps": OhPollyOhpollySitemapsResponse;
+  "ohpolly-store": OhPollyOhpollyStoreResponse;
   "oldnavy-categories": OldNavyOldnavyCategoriesResponse;
   "oldnavy-category": OldNavyOldnavyCategoryResponse;
   "oldnavy-product": OldNavyOldnavyProductResponse;
@@ -43093,9 +48969,19 @@ export interface OperationResponseMap {
   "producthunt-makers": ProductHuntMakersResponse;
   "producthunt-reviews": ProductHuntReviewsResponse;
   "producthunt-search": ProductHuntSearchResponse;
+  "quince-categories": QuinceCategoriesResponse;
+  "quince-navigation": QuinceNavigationResponse;
+  "quince-product": QuinceProductResponse;
+  "quince-product-faq": QuinceProductFaqResponse;
+  "quince-product-reviews": QuinceProductReviewsResponse;
+  "quince-search": QuinceSearchResponse;
+  "quince-sitemap-urls": QuinceSitemapUrlsResponse;
+  "quince-sitemaps": QuinceSitemapsResponse;
+  "quince-suggest": QuinceSuggestResponse;
   "ready": MetaReadyResponse;
   "reddit-comments": RedditCommentsResponse;
   "reddit-domain-posts": RedditDomainPostsResponse;
+  "reddit-leads": RedditLeadsResponse;
   "reddit-post": RedditPostResponse;
   "reddit-search": RedditSearchResponse;
   "reddit-subreddit-about": RedditSubredditAboutResponse;
@@ -43113,6 +48999,17 @@ export interface OperationResponseMap {
   "referrals-click": ReferralsClickResponse;
   "referrals-me": ReferralsMeResponse;
   "referrals-me-events": ReferralsMeEventsResponse;
+  "rothys-collections": RothySRothysCollectionsResponse;
+  "rothys-collection-products": RothySRothysCollectionProductsResponse;
+  "rothys-pages": RothySRothysPagesResponse;
+  "rothys-page": RothySRothysPageResponse;
+  "rothys-products": RothySRothysProductsResponse;
+  "rothys-product": RothySRothysProductResponse;
+  "rothys-product-recommendations": RothySRothysProductRecommendationsResponse;
+  "rothys-search-suggest": RothySRothysSearchSuggestResponse;
+  "rothys-sitemap-urls": RothySRothysSitemapUrlsResponse;
+  "rothys-sitemaps": RothySRothysSitemapsResponse;
+  "rothys-store": RothySRothysStoreResponse;
   "rottentomatoes-browse-movies": RottenTomatoesRottentomatoesBrowseMoviesResponse;
   "rottentomatoes-browse-tv": RottenTomatoesRottentomatoesBrowseTvResponse;
   "rottentomatoes-episode": RottenTomatoesRottentomatoesEpisodeResponse;
@@ -43144,6 +49041,14 @@ export interface OperationResponseMap {
   "sephora-search": SephoraSearchResponse;
   "sephora-stores": SephoraStoresResponse;
   "sephora-suggest": SephoraSuggestResponse;
+  "shein-category-filters": SheinCategoryFiltersResponse;
+  "shein-category-goods": SheinCategoryGoodsResponse;
+  "shein-category-nav": SheinCategoryNavResponse;
+  "shein-products-aggregation-filters": SheinProductsAggregationFiltersResponse;
+  "shein-products-detail": SheinProductsDetailResponse;
+  "shein-products-search": SheinProductsSearchResponse;
+  "shein-search-autocomplete": SheinSearchAutocompleteResponse;
+  "shein-search-keywords": SheinSearchKeywordsResponse;
   "shop-app-analysis": ShopAppAnalysisResponse;
   "shop-app-categories": ShopAppCategoriesResponse;
   "shop-app-product": ShopAppProductResponse;
@@ -43173,6 +49078,17 @@ export interface OperationResponseMap {
   "shopify-store": ShopifyStoreResponse;
   "similarweb-search": SimilarWebSearchResponse;
   "similarweb-web": SimilarWebWebResponse;
+  "skims-collections": SkimsCollectionsResponse;
+  "skims-collection-products": SkimsCollectionProductsResponse;
+  "skims-pages": SkimsPagesResponse;
+  "skims-page": SkimsPageResponse;
+  "skims-products": SkimsProductsResponse;
+  "skims-product": SkimsProductResponse;
+  "skims-product-recommendations": SkimsProductRecommendationsResponse;
+  "skims-search-suggest": SkimsSearchSuggestResponse;
+  "skims-sitemap-urls": SkimsSitemapUrlsResponse;
+  "skims-sitemaps": SkimsSitemapsResponse;
+  "skims-store": SkimsStoreResponse;
   "sofascore-event": SofaScoreSofascoreEventResponse;
   "sofascore-event-h2h": SofaScoreSofascoreEventH2hResponse;
   "sofascore-event-incidents": SofaScoreSofascoreEventIncidentsResponse;
@@ -43252,6 +49168,17 @@ export interface OperationResponseMap {
   "steam-tags": SteamTagsResponse;
   "steam-tags-list": SteamTagsListResponse;
   "steam-top-sellers": SteamTopSellersResponse;
+  "stevemadden-collections": SteveMaddenStevemaddenCollectionsResponse;
+  "stevemadden-collection-products": SteveMaddenStevemaddenCollectionProductsResponse;
+  "stevemadden-pages": SteveMaddenStevemaddenPagesResponse;
+  "stevemadden-page": SteveMaddenStevemaddenPageResponse;
+  "stevemadden-products": SteveMaddenStevemaddenProductsResponse;
+  "stevemadden-product": SteveMaddenStevemaddenProductResponse;
+  "stevemadden-product-recommendations": SteveMaddenStevemaddenProductRecommendationsResponse;
+  "stevemadden-search-suggest": SteveMaddenStevemaddenSearchSuggestResponse;
+  "stevemadden-sitemap-urls": SteveMaddenStevemaddenSitemapUrlsResponse;
+  "stevemadden-sitemaps": SteveMaddenStevemaddenSitemapsResponse;
+  "stevemadden-store": SteveMaddenStevemaddenStoreResponse;
   "stockx-brands": StockXStockxBrandsResponse;
   "stockx-categories": StockXStockxCategoriesResponse;
   "stockx-product": StockXStockxProductResponse;
@@ -43270,6 +49197,17 @@ export interface OperationResponseMap {
   "target-search": TargetSearchResponse;
   "tesla-jobs-job": TeslaJobsJobResponse;
   "tesla-jobs-list": TeslaJobsListResponse;
+  "thebodyshop-collections": TheBodyShopThebodyshopCollectionsResponse;
+  "thebodyshop-collection-products": TheBodyShopThebodyshopCollectionProductsResponse;
+  "thebodyshop-pages": TheBodyShopThebodyshopPagesResponse;
+  "thebodyshop-page": TheBodyShopThebodyshopPageResponse;
+  "thebodyshop-products": TheBodyShopThebodyshopProductsResponse;
+  "thebodyshop-product": TheBodyShopThebodyshopProductResponse;
+  "thebodyshop-product-recommendations": TheBodyShopThebodyshopProductRecommendationsResponse;
+  "thebodyshop-search-suggest": TheBodyShopThebodyshopSearchSuggestResponse;
+  "thebodyshop-sitemap-urls": TheBodyShopThebodyshopSitemapUrlsResponse;
+  "thebodyshop-sitemaps": TheBodyShopThebodyshopSitemapsResponse;
+  "thebodyshop-store": TheBodyShopThebodyshopStoreResponse;
   "threads-post": ThreadsPostResponse;
   "threads-post-replies": ThreadsPostRepliesResponse;
   "threads-profile": ThreadsProfileResponse;
@@ -43385,6 +49323,7 @@ export interface OperationResponseMap {
   "vinted-category": VintedCategoryResponse;
   "vinted-item": VintedItemResponse;
   "vinted-member": VintedMemberResponse;
+  "walgreens-stores": WalgreensStoresResponse;
   "walmart-product": WalmartProductResponse;
   "walmart-product-reviews": WalmartProductReviewsResponse;
   "walmart-search": WalmartSearchResponse;
@@ -43538,6 +49477,11 @@ export interface OperationResponseMap {
 }
 
 export interface OperationRequiredParamsMap {
+  "adidas-product": true;
+  "adidas-search": false;
+  "adidas-store": true;
+  "adidas-stores": true;
+  "adidas-suggest": true;
   "agoda-activities-search": false;
   "agoda-activity-detail": true;
   "agoda-flights-itinerary-amenities": true;
@@ -43553,6 +49497,17 @@ export interface OperationRequiredParamsMap {
   "airbnb-room-calendar": true;
   "airbnb-room-reviews": true;
   "airbnb-search": true;
+  "allbirds-collections": false;
+  "allbirds-collection-products": true;
+  "allbirds-pages": false;
+  "allbirds-page": true;
+  "allbirds-products": false;
+  "allbirds-product": true;
+  "allbirds-product-recommendations": true;
+  "allbirds-search-suggest": true;
+  "allbirds-sitemap-urls": false;
+  "allbirds-sitemaps": false;
+  "allbirds-store": false;
   "amazon-jobs-job": true;
   "amazon-jobs-search": false;
   "amazon-product": true;
@@ -43601,9 +49556,28 @@ export interface OperationRequiredParamsMap {
   "appstore-similar": false;
   "appstore-suggest": true;
   "appstore-version-history": true;
+  "audible-categories": false;
+  "audible-category": true;
+  "audible-charts": false;
+  "audible-editorial-list": true;
+  "audible-product": true;
+  "audible-product-related": true;
+  "audible-product-reviews": true;
+  "audible-products": true;
+  "audible-search": false;
+  "audible-series": true;
   "autotrader-dealer": true;
   "autotrader-search": false;
   "autotrader-vehicle": true;
+  "bbb-business": true;
+  "bbb-business-complaints": true;
+  "bbb-business-more-info": true;
+  "bbb-business-reviews": true;
+  "bbb-category": true;
+  "bbb-scamtracker-search": false;
+  "bbb-scamtracker-state-stats": false;
+  "bbb-scamtracker-detail": true;
+  "bbb-search": true;
   "bestbuy-brands": false;
   "bestbuy-categories": false;
   "bestbuy-categories-trending": false;
@@ -43624,6 +49598,9 @@ export interface OperationRequiredParamsMap {
   "billing-me-period-statement-download": true;
   "billing-me-portal": true;
   "billing-me-rejections": false;
+  "billing-me-subscription-change": true;
+  "billing-me-subscription-change-cancel": false;
+  "billing-me-subscription-preview": true;
   "bing-images": true;
   "bing-news": true;
   "bing-search": true;
@@ -43671,6 +49648,17 @@ export interface OperationRequiredParamsMap {
   "brave-search": true;
   "brave-suggest": true;
   "brave-videos": true;
+  "brooklinen-collections": false;
+  "brooklinen-collection-products": true;
+  "brooklinen-pages": false;
+  "brooklinen-page": true;
+  "brooklinen-products": false;
+  "brooklinen-product": true;
+  "brooklinen-product-recommendations": true;
+  "brooklinen-search-suggest": true;
+  "brooklinen-sitemap-urls": false;
+  "brooklinen-sitemaps": false;
+  "brooklinen-store": false;
   "capterra-product": true;
   "capterra-reviews": true;
   "capterra-search": true;
@@ -43683,6 +49671,13 @@ export interface OperationRequiredParamsMap {
   "carmax-vehicle-recommendations": true;
   "carsdotcom-search": false;
   "carsdotcom-vehicle": true;
+  "chewy-categories": false;
+  "chewy-category": true;
+  "chewy-gtin-lookup": true;
+  "chewy-product": true;
+  "chewy-products": true;
+  "chewy-search": true;
+  "chewy-suggest": true;
   "chromewebstore-categories": false;
   "chromewebstore-category": true;
   "chromewebstore-charts": false;
@@ -43716,6 +49711,17 @@ export interface OperationRequiredParamsMap {
   "coingecko-token-unlocks": false;
   "coingecko-treasuries": false;
   "coingecko-trending": false;
+  "colehaan-collections": false;
+  "colehaan-collection-products": true;
+  "colehaan-pages": false;
+  "colehaan-page": true;
+  "colehaan-products": false;
+  "colehaan-product": true;
+  "colehaan-product-recommendations": true;
+  "colehaan-search-suggest": true;
+  "colehaan-sitemap-urls": false;
+  "colehaan-sitemaps": false;
+  "colehaan-store": false;
   "congress-report": true;
   "congress-stock-disclosures": false;
   "contact": true;
@@ -43736,6 +49742,9 @@ export interface OperationRequiredParamsMap {
   "datasets-apps-charts-search": false;
   "datasets-apps-reviews-search": false;
   "datasets-apps-search": false;
+  "datasets-bbb-businesses-facets": true;
+  "datasets-bbb-businesses-item": true;
+  "datasets-bbb-businesses-search": false;
   "datasets-boxofficemojo-facets": true;
   "datasets-boxofficemojo-item": true;
   "datasets-boxofficemojo-search": false;
@@ -43747,6 +49756,9 @@ export interface OperationRequiredParamsMap {
   "datasets-chrome-extensions-search": false;
   "datasets-chrome-extensions-trending": false;
   "datasets-creators-search": false;
+  "datasets-facebook-pages-facets": true;
+  "datasets-facebook-pages-item": true;
+  "datasets-facebook-pages-search": false;
   "datasets-github-users-facets": true;
   "datasets-github-users-item": true;
   "datasets-github-users-nearby": true;
@@ -43831,9 +49843,16 @@ export interface OperationRequiredParamsMap {
   "datasets-trustmrr-history": true;
   "datasets-trustmrr-item": true;
   "datasets-trustmrr-search": false;
+  "datasets-vehicle-listings-facets": true;
+  "datasets-vehicle-listings-item": true;
+  "datasets-vehicle-listings-price-history": true;
+  "datasets-vehicle-listings-search": false;
   "datasets-x-users-facets": true;
   "datasets-x-users-item": true;
   "datasets-x-users-search": false;
+  "datasets-youtube-creators-facets": true;
+  "datasets-youtube-creators-item": true;
+  "datasets-youtube-creators-search": false;
   "depop-brands": false;
   "depop-categories": false;
   "depop-item": true;
@@ -43907,6 +49926,17 @@ export interface OperationRequiredParamsMap {
   "etsy-shop": true;
   "etsy-shop-listings": true;
   "etsy-shop-reviews": true;
+  "everlane-collections": false;
+  "everlane-collection-products": true;
+  "everlane-pages": false;
+  "everlane-page": true;
+  "everlane-products": false;
+  "everlane-product": true;
+  "everlane-product-recommendations": true;
+  "everlane-search-suggest": true;
+  "everlane-sitemap-urls": false;
+  "everlane-sitemaps": false;
+  "everlane-store": false;
   "expedia-activities-search": true;
   "expedia-flights-search": true;
   "expedia-locations-search": true;
@@ -43917,9 +49947,32 @@ export interface OperationRequiredParamsMap {
   "extract": true;
   "facebook-marketplace-search": true;
   "facebook-page": true;
+  "fashionnova-collections": false;
+  "fashionnova-collection-products": true;
+  "fashionnova-pages": false;
+  "fashionnova-page": true;
+  "fashionnova-products": false;
+  "fashionnova-product": true;
+  "fashionnova-product-recommendations": true;
+  "fashionnova-search-suggest": true;
+  "fashionnova-sitemap-urls": false;
+  "fashionnova-sitemaps": false;
+  "fashionnova-store": false;
   "fiverr-gig": true;
   "fiverr-search": true;
   "fiverr-seller": true;
+  "gdelt-context": true;
+  "gdelt-search": true;
+  "gdelt-timeline": true;
+  "gdelt-tonechart": true;
+  "gdelt-tv-concept-entities": false;
+  "gdelt-tv-search": true;
+  "gdelt-tv-showchart": true;
+  "gdelt-tv-stationchart": true;
+  "gdelt-tv-stationdetails": false;
+  "gdelt-tv-timeline": true;
+  "gdelt-tv-visual-entities": false;
+  "gdelt-tv-wordcloud": true;
   "geocoding-lookup": true;
   "geocoding-reverse": true;
   "geocoding-search": false;
@@ -44009,6 +50062,16 @@ export interface OperationRequiredParamsMap {
   "googleplay-search": true;
   "googleplay-similar": true;
   "googleplay-suggest": true;
+  "gymshark-collections": false;
+  "gymshark-collection-products": true;
+  "gymshark-pages": false;
+  "gymshark-page": true;
+  "gymshark-products": false;
+  "gymshark-product": true;
+  "gymshark-product-recommendations": true;
+  "gymshark-sitemap-urls": false;
+  "gymshark-sitemaps": false;
+  "gymshark-store": false;
   "hm-categories": false;
   "hm-listing": true;
   "hm-product": true;
@@ -44016,6 +50079,20 @@ export interface OperationRequiredParamsMap {
   "hm-search": true;
   "hm-search-suggestions": false;
   "hm-stores": false;
+  "homedepot-categories": false;
+  "homedepot-category": true;
+  "homedepot-product": true;
+  "homedepot-product-questions": true;
+  "homedepot-search": true;
+  "ikea-availability": true;
+  "ikea-category": true;
+  "ikea-product": true;
+  "ikea-reviews": true;
+  "ikea-search": true;
+  "ikea-store": true;
+  "ikea-stores": false;
+  "ikea-suggest": true;
+  "imdb-charts": false;
   "imdb-name": false;
   "imdb-name-awards": false;
   "imdb-name-credits": false;
@@ -44032,8 +50109,10 @@ export interface OperationRequiredParamsMap {
   "imdb-title-parental-guide": false;
   "imdb-title-public-facts-analysis": false;
   "imdb-title-quotes": false;
+  "imdb-title-ratings": false;
   "imdb-title-release-info": false;
   "imdb-title-reviews": false;
+  "imdb-title-similar": false;
   "imdb-title-technical-specs": false;
   "imdb-title-trivia": false;
   "importyeti-company": true;
@@ -44050,6 +50129,14 @@ export interface OperationRequiredParamsMap {
   "instagram-post": true;
   "instagram-profile": true;
   "instagram-reels": true;
+  "jcrew-categories": false;
+  "jcrew-category": true;
+  "jcrew-product": true;
+  "jcrew-product-reviews": true;
+  "jcrew-search": true;
+  "jcrew-size-chart": true;
+  "jcrew-stores": false;
+  "jcrew-suggest": true;
   "jobs-ashby-board": true;
   "jobs-company-search": true;
   "jobs-eightfold-board": true;
@@ -44120,10 +50207,25 @@ export interface OperationRequiredParamsMap {
   "kalshi-series": false;
   "kalshi-series-detail": true;
   "kalshi-trades": false;
+  "kickstarter-comments": true;
+  "kickstarter-discover": false;
+  "kickstarter-project": true;
+  "kickstarter-updates": true;
   "kohls-category": true;
   "kohls-product-reviews": true;
   "kohls-stores": true;
   "kohls-suggest": true;
+  "kyliecosmetics-collections": false;
+  "kyliecosmetics-collection-products": true;
+  "kyliecosmetics-pages": false;
+  "kyliecosmetics-page": true;
+  "kyliecosmetics-products": false;
+  "kyliecosmetics-product": true;
+  "kyliecosmetics-product-recommendations": true;
+  "kyliecosmetics-search-suggest": true;
+  "kyliecosmetics-sitemap-urls": false;
+  "kyliecosmetics-sitemaps": false;
+  "kyliecosmetics-store": false;
   "letterboxd-film": true;
   "letterboxd-film-rating-histogram": true;
   "letterboxd-film-reviews": true;
@@ -44187,8 +50289,17 @@ export interface OperationRequiredParamsMap {
   "mlb-team-stats": true;
   "mlb-teams": false;
   "mlb-transactions": true;
+  "monitors-list": false;
+  "monitors-create": true;
+  "monitors-delete": true;
+  "monitors-get": true;
+  "monitors-update": true;
+  "monitors-checks": true;
   "nike-categories": false;
   "nike-product": true;
+  "nike-product-availability": true;
+  "nike-product-details": true;
+  "nike-product-recommendations": true;
   "nike-product-reviews": true;
   "nike-search": false;
   "nike-stores": true;
@@ -44201,6 +50312,17 @@ export interface OperationRequiredParamsMap {
   "numbeo-indices-country": true;
   "numbeo-indices-rankings": true;
   "numbeo-indices-rankings-by-country": true;
+  "ohpolly-collections": false;
+  "ohpolly-collection-products": true;
+  "ohpolly-pages": false;
+  "ohpolly-page": true;
+  "ohpolly-products": false;
+  "ohpolly-product": true;
+  "ohpolly-product-recommendations": true;
+  "ohpolly-search-suggest": true;
+  "ohpolly-sitemap-urls": false;
+  "ohpolly-sitemaps": false;
+  "ohpolly-store": false;
   "oldnavy-categories": false;
   "oldnavy-category": true;
   "oldnavy-product": true;
@@ -44318,9 +50440,19 @@ export interface OperationRequiredParamsMap {
   "producthunt-makers": true;
   "producthunt-reviews": true;
   "producthunt-search": true;
+  "quince-categories": false;
+  "quince-navigation": false;
+  "quince-product": true;
+  "quince-product-faq": true;
+  "quince-product-reviews": true;
+  "quince-search": false;
+  "quince-sitemap-urls": false;
+  "quince-sitemaps": false;
+  "quince-suggest": true;
   "ready": false;
   "reddit-comments": true;
   "reddit-domain-posts": true;
+  "reddit-leads": true;
   "reddit-post": true;
   "reddit-search": true;
   "reddit-subreddit-about": true;
@@ -44338,6 +50470,17 @@ export interface OperationRequiredParamsMap {
   "referrals-click": true;
   "referrals-me": false;
   "referrals-me-events": false;
+  "rothys-collections": false;
+  "rothys-collection-products": true;
+  "rothys-pages": false;
+  "rothys-page": true;
+  "rothys-products": false;
+  "rothys-product": true;
+  "rothys-product-recommendations": true;
+  "rothys-search-suggest": true;
+  "rothys-sitemap-urls": false;
+  "rothys-sitemaps": false;
+  "rothys-store": false;
   "rottentomatoes-browse-movies": false;
   "rottentomatoes-browse-tv": false;
   "rottentomatoes-episode": false;
@@ -44369,6 +50512,14 @@ export interface OperationRequiredParamsMap {
   "sephora-search": true;
   "sephora-stores": true;
   "sephora-suggest": true;
+  "shein-category-filters": true;
+  "shein-category-goods": true;
+  "shein-category-nav": true;
+  "shein-products-aggregation-filters": true;
+  "shein-products-detail": true;
+  "shein-products-search": true;
+  "shein-search-autocomplete": true;
+  "shein-search-keywords": false;
   "shop-app-analysis": true;
   "shop-app-categories": false;
   "shop-app-product": true;
@@ -44398,6 +50549,17 @@ export interface OperationRequiredParamsMap {
   "shopify-store": true;
   "similarweb-search": true;
   "similarweb-web": true;
+  "skims-collections": false;
+  "skims-collection-products": true;
+  "skims-pages": false;
+  "skims-page": true;
+  "skims-products": false;
+  "skims-product": true;
+  "skims-product-recommendations": true;
+  "skims-search-suggest": true;
+  "skims-sitemap-urls": false;
+  "skims-sitemaps": false;
+  "skims-store": false;
   "sofascore-event": true;
   "sofascore-event-h2h": true;
   "sofascore-event-incidents": true;
@@ -44477,6 +50639,17 @@ export interface OperationRequiredParamsMap {
   "steam-tags": false;
   "steam-tags-list": false;
   "steam-top-sellers": false;
+  "stevemadden-collections": false;
+  "stevemadden-collection-products": true;
+  "stevemadden-pages": false;
+  "stevemadden-page": true;
+  "stevemadden-products": false;
+  "stevemadden-product": true;
+  "stevemadden-product-recommendations": true;
+  "stevemadden-search-suggest": true;
+  "stevemadden-sitemap-urls": false;
+  "stevemadden-sitemaps": false;
+  "stevemadden-store": false;
   "stockx-brands": false;
   "stockx-categories": false;
   "stockx-product": true;
@@ -44495,6 +50668,17 @@ export interface OperationRequiredParamsMap {
   "target-search": true;
   "tesla-jobs-job": true;
   "tesla-jobs-list": false;
+  "thebodyshop-collections": false;
+  "thebodyshop-collection-products": true;
+  "thebodyshop-pages": false;
+  "thebodyshop-page": true;
+  "thebodyshop-products": false;
+  "thebodyshop-product": true;
+  "thebodyshop-product-recommendations": true;
+  "thebodyshop-search-suggest": true;
+  "thebodyshop-sitemap-urls": false;
+  "thebodyshop-sitemaps": false;
+  "thebodyshop-store": false;
   "threads-post": true;
   "threads-post-replies": true;
   "threads-profile": true;
@@ -44610,6 +50794,7 @@ export interface OperationRequiredParamsMap {
   "vinted-category": true;
   "vinted-item": true;
   "vinted-member": true;
+  "walgreens-stores": false;
   "walmart-product": true;
   "walmart-product-reviews": true;
   "walmart-search": true;
@@ -44770,6 +50955,11 @@ export type OperationRequestArgs<I extends OperationId> =
     : [params?: OperationParamsMap[I], options?: import('./index.js').CrawloraRequestOptions];
 
 export type OperationIdLiteral =
+  | "adidas-product"
+  | "adidas-search"
+  | "adidas-store"
+  | "adidas-stores"
+  | "adidas-suggest"
   | "agoda-activities-search"
   | "agoda-activity-detail"
   | "agoda-flights-itinerary-amenities"
@@ -44785,6 +50975,17 @@ export type OperationIdLiteral =
   | "airbnb-room-calendar"
   | "airbnb-room-reviews"
   | "airbnb-search"
+  | "allbirds-collections"
+  | "allbirds-collection-products"
+  | "allbirds-pages"
+  | "allbirds-page"
+  | "allbirds-products"
+  | "allbirds-product"
+  | "allbirds-product-recommendations"
+  | "allbirds-search-suggest"
+  | "allbirds-sitemap-urls"
+  | "allbirds-sitemaps"
+  | "allbirds-store"
   | "amazon-jobs-job"
   | "amazon-jobs-search"
   | "amazon-product"
@@ -44833,9 +51034,28 @@ export type OperationIdLiteral =
   | "appstore-similar"
   | "appstore-suggest"
   | "appstore-version-history"
+  | "audible-categories"
+  | "audible-category"
+  | "audible-charts"
+  | "audible-editorial-list"
+  | "audible-product"
+  | "audible-product-related"
+  | "audible-product-reviews"
+  | "audible-products"
+  | "audible-search"
+  | "audible-series"
   | "autotrader-dealer"
   | "autotrader-search"
   | "autotrader-vehicle"
+  | "bbb-business"
+  | "bbb-business-complaints"
+  | "bbb-business-more-info"
+  | "bbb-business-reviews"
+  | "bbb-category"
+  | "bbb-scamtracker-search"
+  | "bbb-scamtracker-state-stats"
+  | "bbb-scamtracker-detail"
+  | "bbb-search"
   | "bestbuy-brands"
   | "bestbuy-categories"
   | "bestbuy-categories-trending"
@@ -44856,6 +51076,9 @@ export type OperationIdLiteral =
   | "billing-me-period-statement-download"
   | "billing-me-portal"
   | "billing-me-rejections"
+  | "billing-me-subscription-change"
+  | "billing-me-subscription-change-cancel"
+  | "billing-me-subscription-preview"
   | "bing-images"
   | "bing-news"
   | "bing-search"
@@ -44903,6 +51126,17 @@ export type OperationIdLiteral =
   | "brave-search"
   | "brave-suggest"
   | "brave-videos"
+  | "brooklinen-collections"
+  | "brooklinen-collection-products"
+  | "brooklinen-pages"
+  | "brooklinen-page"
+  | "brooklinen-products"
+  | "brooklinen-product"
+  | "brooklinen-product-recommendations"
+  | "brooklinen-search-suggest"
+  | "brooklinen-sitemap-urls"
+  | "brooklinen-sitemaps"
+  | "brooklinen-store"
   | "capterra-product"
   | "capterra-reviews"
   | "capterra-search"
@@ -44915,6 +51149,13 @@ export type OperationIdLiteral =
   | "carmax-vehicle-recommendations"
   | "carsdotcom-search"
   | "carsdotcom-vehicle"
+  | "chewy-categories"
+  | "chewy-category"
+  | "chewy-gtin-lookup"
+  | "chewy-product"
+  | "chewy-products"
+  | "chewy-search"
+  | "chewy-suggest"
   | "chromewebstore-categories"
   | "chromewebstore-category"
   | "chromewebstore-charts"
@@ -44948,6 +51189,17 @@ export type OperationIdLiteral =
   | "coingecko-token-unlocks"
   | "coingecko-treasuries"
   | "coingecko-trending"
+  | "colehaan-collections"
+  | "colehaan-collection-products"
+  | "colehaan-pages"
+  | "colehaan-page"
+  | "colehaan-products"
+  | "colehaan-product"
+  | "colehaan-product-recommendations"
+  | "colehaan-search-suggest"
+  | "colehaan-sitemap-urls"
+  | "colehaan-sitemaps"
+  | "colehaan-store"
   | "congress-report"
   | "congress-stock-disclosures"
   | "contact"
@@ -44968,6 +51220,9 @@ export type OperationIdLiteral =
   | "datasets-apps-charts-search"
   | "datasets-apps-reviews-search"
   | "datasets-apps-search"
+  | "datasets-bbb-businesses-facets"
+  | "datasets-bbb-businesses-item"
+  | "datasets-bbb-businesses-search"
   | "datasets-boxofficemojo-facets"
   | "datasets-boxofficemojo-item"
   | "datasets-boxofficemojo-search"
@@ -44979,6 +51234,9 @@ export type OperationIdLiteral =
   | "datasets-chrome-extensions-search"
   | "datasets-chrome-extensions-trending"
   | "datasets-creators-search"
+  | "datasets-facebook-pages-facets"
+  | "datasets-facebook-pages-item"
+  | "datasets-facebook-pages-search"
   | "datasets-github-users-facets"
   | "datasets-github-users-item"
   | "datasets-github-users-nearby"
@@ -45063,9 +51321,16 @@ export type OperationIdLiteral =
   | "datasets-trustmrr-history"
   | "datasets-trustmrr-item"
   | "datasets-trustmrr-search"
+  | "datasets-vehicle-listings-facets"
+  | "datasets-vehicle-listings-item"
+  | "datasets-vehicle-listings-price-history"
+  | "datasets-vehicle-listings-search"
   | "datasets-x-users-facets"
   | "datasets-x-users-item"
   | "datasets-x-users-search"
+  | "datasets-youtube-creators-facets"
+  | "datasets-youtube-creators-item"
+  | "datasets-youtube-creators-search"
   | "depop-brands"
   | "depop-categories"
   | "depop-item"
@@ -45139,6 +51404,17 @@ export type OperationIdLiteral =
   | "etsy-shop"
   | "etsy-shop-listings"
   | "etsy-shop-reviews"
+  | "everlane-collections"
+  | "everlane-collection-products"
+  | "everlane-pages"
+  | "everlane-page"
+  | "everlane-products"
+  | "everlane-product"
+  | "everlane-product-recommendations"
+  | "everlane-search-suggest"
+  | "everlane-sitemap-urls"
+  | "everlane-sitemaps"
+  | "everlane-store"
   | "expedia-activities-search"
   | "expedia-flights-search"
   | "expedia-locations-search"
@@ -45149,9 +51425,32 @@ export type OperationIdLiteral =
   | "extract"
   | "facebook-marketplace-search"
   | "facebook-page"
+  | "fashionnova-collections"
+  | "fashionnova-collection-products"
+  | "fashionnova-pages"
+  | "fashionnova-page"
+  | "fashionnova-products"
+  | "fashionnova-product"
+  | "fashionnova-product-recommendations"
+  | "fashionnova-search-suggest"
+  | "fashionnova-sitemap-urls"
+  | "fashionnova-sitemaps"
+  | "fashionnova-store"
   | "fiverr-gig"
   | "fiverr-search"
   | "fiverr-seller"
+  | "gdelt-context"
+  | "gdelt-search"
+  | "gdelt-timeline"
+  | "gdelt-tonechart"
+  | "gdelt-tv-concept-entities"
+  | "gdelt-tv-search"
+  | "gdelt-tv-showchart"
+  | "gdelt-tv-stationchart"
+  | "gdelt-tv-stationdetails"
+  | "gdelt-tv-timeline"
+  | "gdelt-tv-visual-entities"
+  | "gdelt-tv-wordcloud"
   | "geocoding-lookup"
   | "geocoding-reverse"
   | "geocoding-search"
@@ -45241,6 +51540,16 @@ export type OperationIdLiteral =
   | "googleplay-search"
   | "googleplay-similar"
   | "googleplay-suggest"
+  | "gymshark-collections"
+  | "gymshark-collection-products"
+  | "gymshark-pages"
+  | "gymshark-page"
+  | "gymshark-products"
+  | "gymshark-product"
+  | "gymshark-product-recommendations"
+  | "gymshark-sitemap-urls"
+  | "gymshark-sitemaps"
+  | "gymshark-store"
   | "hm-categories"
   | "hm-listing"
   | "hm-product"
@@ -45248,6 +51557,20 @@ export type OperationIdLiteral =
   | "hm-search"
   | "hm-search-suggestions"
   | "hm-stores"
+  | "homedepot-categories"
+  | "homedepot-category"
+  | "homedepot-product"
+  | "homedepot-product-questions"
+  | "homedepot-search"
+  | "ikea-availability"
+  | "ikea-category"
+  | "ikea-product"
+  | "ikea-reviews"
+  | "ikea-search"
+  | "ikea-store"
+  | "ikea-stores"
+  | "ikea-suggest"
+  | "imdb-charts"
   | "imdb-name"
   | "imdb-name-awards"
   | "imdb-name-credits"
@@ -45264,8 +51587,10 @@ export type OperationIdLiteral =
   | "imdb-title-parental-guide"
   | "imdb-title-public-facts-analysis"
   | "imdb-title-quotes"
+  | "imdb-title-ratings"
   | "imdb-title-release-info"
   | "imdb-title-reviews"
+  | "imdb-title-similar"
   | "imdb-title-technical-specs"
   | "imdb-title-trivia"
   | "importyeti-company"
@@ -45282,6 +51607,14 @@ export type OperationIdLiteral =
   | "instagram-post"
   | "instagram-profile"
   | "instagram-reels"
+  | "jcrew-categories"
+  | "jcrew-category"
+  | "jcrew-product"
+  | "jcrew-product-reviews"
+  | "jcrew-search"
+  | "jcrew-size-chart"
+  | "jcrew-stores"
+  | "jcrew-suggest"
   | "jobs-ashby-board"
   | "jobs-company-search"
   | "jobs-eightfold-board"
@@ -45352,10 +51685,25 @@ export type OperationIdLiteral =
   | "kalshi-series"
   | "kalshi-series-detail"
   | "kalshi-trades"
+  | "kickstarter-comments"
+  | "kickstarter-discover"
+  | "kickstarter-project"
+  | "kickstarter-updates"
   | "kohls-category"
   | "kohls-product-reviews"
   | "kohls-stores"
   | "kohls-suggest"
+  | "kyliecosmetics-collections"
+  | "kyliecosmetics-collection-products"
+  | "kyliecosmetics-pages"
+  | "kyliecosmetics-page"
+  | "kyliecosmetics-products"
+  | "kyliecosmetics-product"
+  | "kyliecosmetics-product-recommendations"
+  | "kyliecosmetics-search-suggest"
+  | "kyliecosmetics-sitemap-urls"
+  | "kyliecosmetics-sitemaps"
+  | "kyliecosmetics-store"
   | "letterboxd-film"
   | "letterboxd-film-rating-histogram"
   | "letterboxd-film-reviews"
@@ -45419,8 +51767,17 @@ export type OperationIdLiteral =
   | "mlb-team-stats"
   | "mlb-teams"
   | "mlb-transactions"
+  | "monitors-list"
+  | "monitors-create"
+  | "monitors-delete"
+  | "monitors-get"
+  | "monitors-update"
+  | "monitors-checks"
   | "nike-categories"
   | "nike-product"
+  | "nike-product-availability"
+  | "nike-product-details"
+  | "nike-product-recommendations"
   | "nike-product-reviews"
   | "nike-search"
   | "nike-stores"
@@ -45433,6 +51790,17 @@ export type OperationIdLiteral =
   | "numbeo-indices-country"
   | "numbeo-indices-rankings"
   | "numbeo-indices-rankings-by-country"
+  | "ohpolly-collections"
+  | "ohpolly-collection-products"
+  | "ohpolly-pages"
+  | "ohpolly-page"
+  | "ohpolly-products"
+  | "ohpolly-product"
+  | "ohpolly-product-recommendations"
+  | "ohpolly-search-suggest"
+  | "ohpolly-sitemap-urls"
+  | "ohpolly-sitemaps"
+  | "ohpolly-store"
   | "oldnavy-categories"
   | "oldnavy-category"
   | "oldnavy-product"
@@ -45550,9 +51918,19 @@ export type OperationIdLiteral =
   | "producthunt-makers"
   | "producthunt-reviews"
   | "producthunt-search"
+  | "quince-categories"
+  | "quince-navigation"
+  | "quince-product"
+  | "quince-product-faq"
+  | "quince-product-reviews"
+  | "quince-search"
+  | "quince-sitemap-urls"
+  | "quince-sitemaps"
+  | "quince-suggest"
   | "ready"
   | "reddit-comments"
   | "reddit-domain-posts"
+  | "reddit-leads"
   | "reddit-post"
   | "reddit-search"
   | "reddit-subreddit-about"
@@ -45570,6 +51948,17 @@ export type OperationIdLiteral =
   | "referrals-click"
   | "referrals-me"
   | "referrals-me-events"
+  | "rothys-collections"
+  | "rothys-collection-products"
+  | "rothys-pages"
+  | "rothys-page"
+  | "rothys-products"
+  | "rothys-product"
+  | "rothys-product-recommendations"
+  | "rothys-search-suggest"
+  | "rothys-sitemap-urls"
+  | "rothys-sitemaps"
+  | "rothys-store"
   | "rottentomatoes-browse-movies"
   | "rottentomatoes-browse-tv"
   | "rottentomatoes-episode"
@@ -45601,6 +51990,14 @@ export type OperationIdLiteral =
   | "sephora-search"
   | "sephora-stores"
   | "sephora-suggest"
+  | "shein-category-filters"
+  | "shein-category-goods"
+  | "shein-category-nav"
+  | "shein-products-aggregation-filters"
+  | "shein-products-detail"
+  | "shein-products-search"
+  | "shein-search-autocomplete"
+  | "shein-search-keywords"
   | "shop-app-analysis"
   | "shop-app-categories"
   | "shop-app-product"
@@ -45630,6 +52027,17 @@ export type OperationIdLiteral =
   | "shopify-store"
   | "similarweb-search"
   | "similarweb-web"
+  | "skims-collections"
+  | "skims-collection-products"
+  | "skims-pages"
+  | "skims-page"
+  | "skims-products"
+  | "skims-product"
+  | "skims-product-recommendations"
+  | "skims-search-suggest"
+  | "skims-sitemap-urls"
+  | "skims-sitemaps"
+  | "skims-store"
   | "sofascore-event"
   | "sofascore-event-h2h"
   | "sofascore-event-incidents"
@@ -45709,6 +52117,17 @@ export type OperationIdLiteral =
   | "steam-tags"
   | "steam-tags-list"
   | "steam-top-sellers"
+  | "stevemadden-collections"
+  | "stevemadden-collection-products"
+  | "stevemadden-pages"
+  | "stevemadden-page"
+  | "stevemadden-products"
+  | "stevemadden-product"
+  | "stevemadden-product-recommendations"
+  | "stevemadden-search-suggest"
+  | "stevemadden-sitemap-urls"
+  | "stevemadden-sitemaps"
+  | "stevemadden-store"
   | "stockx-brands"
   | "stockx-categories"
   | "stockx-product"
@@ -45727,6 +52146,17 @@ export type OperationIdLiteral =
   | "target-search"
   | "tesla-jobs-job"
   | "tesla-jobs-list"
+  | "thebodyshop-collections"
+  | "thebodyshop-collection-products"
+  | "thebodyshop-pages"
+  | "thebodyshop-page"
+  | "thebodyshop-products"
+  | "thebodyshop-product"
+  | "thebodyshop-product-recommendations"
+  | "thebodyshop-search-suggest"
+  | "thebodyshop-sitemap-urls"
+  | "thebodyshop-sitemaps"
+  | "thebodyshop-store"
   | "threads-post"
   | "threads-post-replies"
   | "threads-profile"
@@ -45842,6 +52272,7 @@ export type OperationIdLiteral =
   | "vinted-category"
   | "vinted-item"
   | "vinted-member"
+  | "walgreens-stores"
   | "walmart-product"
   | "walmart-product-reviews"
   | "walmart-search"
@@ -45997,6 +52428,11 @@ export declare const OperationIds: Readonly<{
   AccountDeletionCancel: "account-deletion-cancel";
   AccountDeletionMyRequest: "account-deletion-my-request";
   AccountDeletionRequest: "account-deletion-request";
+  AdidasProduct: "adidas-product";
+  AdidasSearch: "adidas-search";
+  AdidasStore: "adidas-store";
+  AdidasStores: "adidas-stores";
+  AdidasSuggest: "adidas-suggest";
   AgodaActivitiesSearch: "agoda-activities-search";
   AgodaActivityDetail: "agoda-activity-detail";
   AgodaFlightsItineraryAmenities: "agoda-flights-itinerary-amenities";
@@ -46012,6 +52448,17 @@ export declare const OperationIds: Readonly<{
   AirbnbRoomCalendar: "airbnb-room-calendar";
   AirbnbRoomReviews: "airbnb-room-reviews";
   AirbnbSearch: "airbnb-search";
+  AllbirdsCollectionProducts: "allbirds-collection-products";
+  AllbirdsCollections: "allbirds-collections";
+  AllbirdsPage: "allbirds-page";
+  AllbirdsPages: "allbirds-pages";
+  AllbirdsProduct: "allbirds-product";
+  AllbirdsProductRecommendations: "allbirds-product-recommendations";
+  AllbirdsProducts: "allbirds-products";
+  AllbirdsSearchSuggest: "allbirds-search-suggest";
+  AllbirdsSitemapUrls: "allbirds-sitemap-urls";
+  AllbirdsSitemaps: "allbirds-sitemaps";
+  AllbirdsStore: "allbirds-store";
   AmazonJobsJob: "amazon-jobs-job";
   AmazonJobsSearch: "amazon-jobs-search";
   AmazonProduct: "amazon-product";
@@ -46060,9 +52507,28 @@ export declare const OperationIds: Readonly<{
   ApplePodcastsShow: "apple-podcasts-show";
   ApplePodcastsShowEpisodes: "apple-podcasts-show-episodes";
   ApplePodcastsShowRelated: "apple-podcasts-show-related";
+  AudibleCategories: "audible-categories";
+  AudibleCategory: "audible-category";
+  AudibleCharts: "audible-charts";
+  AudibleEditorialList: "audible-editorial-list";
+  AudibleProduct: "audible-product";
+  AudibleProductRelated: "audible-product-related";
+  AudibleProductReviews: "audible-product-reviews";
+  AudibleProducts: "audible-products";
+  AudibleSearch: "audible-search";
+  AudibleSeries: "audible-series";
   AutotraderDealer: "autotrader-dealer";
   AutotraderSearch: "autotrader-search";
   AutotraderVehicle: "autotrader-vehicle";
+  BbbBusiness: "bbb-business";
+  BbbBusinessComplaints: "bbb-business-complaints";
+  BbbBusinessMoreInfo: "bbb-business-more-info";
+  BbbBusinessReviews: "bbb-business-reviews";
+  BbbCategory: "bbb-category";
+  BbbScamtrackerDetail: "bbb-scamtracker-detail";
+  BbbScamtrackerSearch: "bbb-scamtracker-search";
+  BbbScamtrackerStateStats: "bbb-scamtracker-state-stats";
+  BbbSearch: "bbb-search";
   BestBuyBestbuyBrands: "bestbuy-brands";
   BestBuyBestbuyCategories: "bestbuy-categories";
   BestBuyBestbuyCategoriesTrending: "bestbuy-categories-trending";
@@ -46083,6 +52549,9 @@ export declare const OperationIds: Readonly<{
   BillingMePeriods: "billing-me-periods";
   BillingMePortal: "billing-me-portal";
   BillingMeRejections: "billing-me-rejections";
+  BillingMeSubscriptionChange: "billing-me-subscription-change";
+  BillingMeSubscriptionChangeCancel: "billing-me-subscription-change-cancel";
+  BillingMeSubscriptionPreview: "billing-me-subscription-preview";
   BingImages: "bing-images";
   BingNews: "bing-news";
   BingSearch: "bing-search";
@@ -46130,6 +52599,17 @@ export declare const OperationIds: Readonly<{
   BraveSearch: "brave-search";
   BraveSuggest: "brave-suggest";
   BraveVideos: "brave-videos";
+  BrooklinenCollectionProducts: "brooklinen-collection-products";
+  BrooklinenCollections: "brooklinen-collections";
+  BrooklinenPage: "brooklinen-page";
+  BrooklinenPages: "brooklinen-pages";
+  BrooklinenProduct: "brooklinen-product";
+  BrooklinenProductRecommendations: "brooklinen-product-recommendations";
+  BrooklinenProducts: "brooklinen-products";
+  BrooklinenSearchSuggest: "brooklinen-search-suggest";
+  BrooklinenSitemapUrls: "brooklinen-sitemap-urls";
+  BrooklinenSitemaps: "brooklinen-sitemaps";
+  BrooklinenStore: "brooklinen-store";
   CapterraProduct: "capterra-product";
   CapterraReviews: "capterra-reviews";
   CapterraSearch: "capterra-search";
@@ -46142,6 +52622,13 @@ export declare const OperationIds: Readonly<{
   CarMaxCarmaxVehicleRecommendations: "carmax-vehicle-recommendations";
   CarsComCarsdotcomSearch: "carsdotcom-search";
   CarsComCarsdotcomVehicle: "carsdotcom-vehicle";
+  ChewyCategories: "chewy-categories";
+  ChewyCategory: "chewy-category";
+  ChewyGtinLookup: "chewy-gtin-lookup";
+  ChewyProduct: "chewy-product";
+  ChewyProducts: "chewy-products";
+  ChewySearch: "chewy-search";
+  ChewySuggest: "chewy-suggest";
   ChromeWebStoreChromewebstoreCategories: "chromewebstore-categories";
   ChromeWebStoreChromewebstoreCategory: "chromewebstore-category";
   ChromeWebStoreChromewebstoreCharts: "chromewebstore-charts";
@@ -46175,6 +52662,17 @@ export declare const OperationIds: Readonly<{
   CoinGeckoTokenUnlocks: "coingecko-token-unlocks";
   CoinGeckoTreasuries: "coingecko-treasuries";
   CoinGeckoTrending: "coingecko-trending";
+  ColeHaanColehaanCollectionProducts: "colehaan-collection-products";
+  ColeHaanColehaanCollections: "colehaan-collections";
+  ColeHaanColehaanPage: "colehaan-page";
+  ColeHaanColehaanPages: "colehaan-pages";
+  ColeHaanColehaanProduct: "colehaan-product";
+  ColeHaanColehaanProductRecommendations: "colehaan-product-recommendations";
+  ColeHaanColehaanProducts: "colehaan-products";
+  ColeHaanColehaanSearchSuggest: "colehaan-search-suggest";
+  ColeHaanColehaanSitemapUrls: "colehaan-sitemap-urls";
+  ColeHaanColehaanSitemaps: "colehaan-sitemaps";
+  ColeHaanColehaanStore: "colehaan-store";
   CongressReport: "congress-report";
   CongressStockDisclosures: "congress-stock-disclosures";
   CostcoCategories: "costco-categories";
@@ -46193,6 +52691,9 @@ export declare const OperationIds: Readonly<{
   DatasetsAppsChartsSearch: "datasets-apps-charts-search";
   DatasetsAppsReviewsSearch: "datasets-apps-reviews-search";
   DatasetsAppsSearch: "datasets-apps-search";
+  DatasetsBbbBusinessesFacets: "datasets-bbb-businesses-facets";
+  DatasetsBbbBusinessesItem: "datasets-bbb-businesses-item";
+  DatasetsBbbBusinessesSearch: "datasets-bbb-businesses-search";
   DatasetsBoxofficemojoFacets: "datasets-boxofficemojo-facets";
   DatasetsBoxofficemojoItem: "datasets-boxofficemojo-item";
   DatasetsBoxofficemojoSearch: "datasets-boxofficemojo-search";
@@ -46204,6 +52705,9 @@ export declare const OperationIds: Readonly<{
   DatasetsChromeExtensionsSearch: "datasets-chrome-extensions-search";
   DatasetsChromeExtensionsTrending: "datasets-chrome-extensions-trending";
   DatasetsCreatorsSearch: "datasets-creators-search";
+  DatasetsFacebookPagesFacets: "datasets-facebook-pages-facets";
+  DatasetsFacebookPagesItem: "datasets-facebook-pages-item";
+  DatasetsFacebookPagesSearch: "datasets-facebook-pages-search";
   DatasetsGithubUsersFacets: "datasets-github-users-facets";
   DatasetsGithubUsersItem: "datasets-github-users-item";
   DatasetsGithubUsersNearby: "datasets-github-users-nearby";
@@ -46289,9 +52793,16 @@ export declare const OperationIds: Readonly<{
   DatasetsTrustmrrHistory: "datasets-trustmrr-history";
   DatasetsTrustmrrItem: "datasets-trustmrr-item";
   DatasetsTrustmrrSearch: "datasets-trustmrr-search";
+  DatasetsVehicleListingsFacets: "datasets-vehicle-listings-facets";
+  DatasetsVehicleListingsItem: "datasets-vehicle-listings-item";
+  DatasetsVehicleListingsPriceHistory: "datasets-vehicle-listings-price-history";
+  DatasetsVehicleListingsSearch: "datasets-vehicle-listings-search";
   DatasetsXUsersFacets: "datasets-x-users-facets";
   DatasetsXUsersItem: "datasets-x-users-item";
   DatasetsXUsersSearch: "datasets-x-users-search";
+  DatasetsYoutubeCreatorsFacets: "datasets-youtube-creators-facets";
+  DatasetsYoutubeCreatorsItem: "datasets-youtube-creators-item";
+  DatasetsYoutubeCreatorsSearch: "datasets-youtube-creators-search";
   DepopBrands: "depop-brands";
   DepopCategories: "depop-categories";
   DepopItem: "depop-item";
@@ -46364,6 +52875,17 @@ export declare const OperationIds: Readonly<{
   EtsyShopListings: "etsy-shop-listings";
   EtsyShopReviews: "etsy-shop-reviews";
   EtsyShopSearch: "etsy-shop-search";
+  EverlaneCollectionProducts: "everlane-collection-products";
+  EverlaneCollections: "everlane-collections";
+  EverlanePage: "everlane-page";
+  EverlanePages: "everlane-pages";
+  EverlaneProduct: "everlane-product";
+  EverlaneProductRecommendations: "everlane-product-recommendations";
+  EverlaneProducts: "everlane-products";
+  EverlaneSearchSuggest: "everlane-search-suggest";
+  EverlaneSitemapUrls: "everlane-sitemap-urls";
+  EverlaneSitemaps: "everlane-sitemaps";
+  EverlaneStore: "everlane-store";
   ExpediaActivitiesSearch: "expedia-activities-search";
   ExpediaFlightsSearch: "expedia-flights-search";
   ExpediaLocationsSearch: "expedia-locations-search";
@@ -46373,9 +52895,32 @@ export declare const OperationIds: Readonly<{
   ExpediaPropertiesSearch: "expedia-properties-search";
   FacebookMarketplaceSearch: "facebook-marketplace-search";
   FacebookPage: "facebook-page";
+  FashionNovaFashionnovaCollectionProducts: "fashionnova-collection-products";
+  FashionNovaFashionnovaCollections: "fashionnova-collections";
+  FashionNovaFashionnovaPage: "fashionnova-page";
+  FashionNovaFashionnovaPages: "fashionnova-pages";
+  FashionNovaFashionnovaProduct: "fashionnova-product";
+  FashionNovaFashionnovaProductRecommendations: "fashionnova-product-recommendations";
+  FashionNovaFashionnovaProducts: "fashionnova-products";
+  FashionNovaFashionnovaSearchSuggest: "fashionnova-search-suggest";
+  FashionNovaFashionnovaSitemapUrls: "fashionnova-sitemap-urls";
+  FashionNovaFashionnovaSitemaps: "fashionnova-sitemaps";
+  FashionNovaFashionnovaStore: "fashionnova-store";
   FiverrGig: "fiverr-gig";
   FiverrSearch: "fiverr-search";
   FiverrSeller: "fiverr-seller";
+  GdeltContext: "gdelt-context";
+  GdeltSearch: "gdelt-search";
+  GdeltTimeline: "gdelt-timeline";
+  GdeltTonechart: "gdelt-tonechart";
+  GdeltTvConceptEntities: "gdelt-tv-concept-entities";
+  GdeltTvSearch: "gdelt-tv-search";
+  GdeltTvShowchart: "gdelt-tv-showchart";
+  GdeltTvStationchart: "gdelt-tv-stationchart";
+  GdeltTvStationdetails: "gdelt-tv-stationdetails";
+  GdeltTvTimeline: "gdelt-tv-timeline";
+  GdeltTvVisualEntities: "gdelt-tv-visual-entities";
+  GdeltTvWordcloud: "gdelt-tv-wordcloud";
   GeocodingLookup: "geocoding-lookup";
   GeocodingReverse: "geocoding-reverse";
   GeocodingSearch: "geocoding-search";
@@ -46465,6 +53010,16 @@ export declare const OperationIds: Readonly<{
   GoogleTrendsTrending: "google-trends-trending";
   GoogleTrendsTrendingDetail: "google-trends-trending-detail";
   GoogleVideos: "google-videos";
+  GymsharkCollectionProducts: "gymshark-collection-products";
+  GymsharkCollections: "gymshark-collections";
+  GymsharkPage: "gymshark-page";
+  GymsharkPages: "gymshark-pages";
+  GymsharkProduct: "gymshark-product";
+  GymsharkProductRecommendations: "gymshark-product-recommendations";
+  GymsharkProducts: "gymshark-products";
+  GymsharkSitemapUrls: "gymshark-sitemap-urls";
+  GymsharkSitemaps: "gymshark-sitemaps";
+  GymsharkStore: "gymshark-store";
   HMHmCategories: "hm-categories";
   HMHmListing: "hm-listing";
   HMHmProduct: "hm-product";
@@ -46472,6 +53027,20 @@ export declare const OperationIds: Readonly<{
   HMHmSearch: "hm-search";
   HMHmSearchSuggestions: "hm-search-suggestions";
   HMHmStores: "hm-stores";
+  HomeDepotHomedepotCategories: "homedepot-categories";
+  HomeDepotHomedepotCategory: "homedepot-category";
+  HomeDepotHomedepotProduct: "homedepot-product";
+  HomeDepotHomedepotProductQuestions: "homedepot-product-questions";
+  HomeDepotHomedepotSearch: "homedepot-search";
+  IkeaAvailability: "ikea-availability";
+  IkeaCategory: "ikea-category";
+  IkeaProduct: "ikea-product";
+  IkeaReviews: "ikea-reviews";
+  IkeaSearch: "ikea-search";
+  IkeaStore: "ikea-store";
+  IkeaStores: "ikea-stores";
+  IkeaSuggest: "ikea-suggest";
+  ImdbCharts: "imdb-charts";
   ImdbName: "imdb-name";
   ImdbNameAwards: "imdb-name-awards";
   ImdbNameCredits: "imdb-name-credits";
@@ -46488,8 +53057,10 @@ export declare const OperationIds: Readonly<{
   ImdbTitleParentalGuide: "imdb-title-parental-guide";
   ImdbTitlePublicFactsAnalysis: "imdb-title-public-facts-analysis";
   ImdbTitleQuotes: "imdb-title-quotes";
+  ImdbTitleRatings: "imdb-title-ratings";
   ImdbTitleReleaseInfo: "imdb-title-release-info";
   ImdbTitleReviews: "imdb-title-reviews";
+  ImdbTitleSimilar: "imdb-title-similar";
   ImdbTitleTechnicalSpecs: "imdb-title-technical-specs";
   ImdbTitleTrivia: "imdb-title-trivia";
   ImportYetiImportyetiCompany: "importyeti-company";
@@ -46506,6 +53077,14 @@ export declare const OperationIds: Readonly<{
   InstagramPost: "instagram-post";
   InstagramProfile: "instagram-profile";
   InstagramReels: "instagram-reels";
+  JCrewJcrewCategories: "jcrew-categories";
+  JCrewJcrewCategory: "jcrew-category";
+  JCrewJcrewProduct: "jcrew-product";
+  JCrewJcrewProductReviews: "jcrew-product-reviews";
+  JCrewJcrewSearch: "jcrew-search";
+  JCrewJcrewSizeChart: "jcrew-size-chart";
+  JCrewJcrewStores: "jcrew-stores";
+  JCrewJcrewSuggest: "jcrew-suggest";
   JobsAshbyBoard: "jobs-ashby-board";
   JobsCompanySearch: "jobs-company-search";
   JobsEightfoldBoard: "jobs-eightfold-board";
@@ -46576,10 +53155,25 @@ export declare const OperationIds: Readonly<{
   KalshiSeries: "kalshi-series";
   KalshiSeriesDetail: "kalshi-series-detail";
   KalshiTrades: "kalshi-trades";
+  KickstarterComments: "kickstarter-comments";
+  KickstarterDiscover: "kickstarter-discover";
+  KickstarterProject: "kickstarter-project";
+  KickstarterUpdates: "kickstarter-updates";
   KohlSKohlsCategory: "kohls-category";
   KohlSKohlsProductReviews: "kohls-product-reviews";
   KohlSKohlsStores: "kohls-stores";
   KohlSKohlsSuggest: "kohls-suggest";
+  KylieCosmeticsKyliecosmeticsCollectionProducts: "kyliecosmetics-collection-products";
+  KylieCosmeticsKyliecosmeticsCollections: "kyliecosmetics-collections";
+  KylieCosmeticsKyliecosmeticsPage: "kyliecosmetics-page";
+  KylieCosmeticsKyliecosmeticsPages: "kyliecosmetics-pages";
+  KylieCosmeticsKyliecosmeticsProduct: "kyliecosmetics-product";
+  KylieCosmeticsKyliecosmeticsProductRecommendations: "kyliecosmetics-product-recommendations";
+  KylieCosmeticsKyliecosmeticsProducts: "kyliecosmetics-products";
+  KylieCosmeticsKyliecosmeticsSearchSuggest: "kyliecosmetics-search-suggest";
+  KylieCosmeticsKyliecosmeticsSitemapUrls: "kyliecosmetics-sitemap-urls";
+  KylieCosmeticsKyliecosmeticsSitemaps: "kyliecosmetics-sitemaps";
+  KylieCosmeticsKyliecosmeticsStore: "kyliecosmetics-store";
   LetterboxdFilm: "letterboxd-film";
   LetterboxdFilmRatingHistogram: "letterboxd-film-rating-histogram";
   LetterboxdFilmReviews: "letterboxd-film-reviews";
@@ -46645,8 +53239,17 @@ export declare const OperationIds: Readonly<{
   MlbTeamStats: "mlb-team-stats";
   MlbTeams: "mlb-teams";
   MlbTransactions: "mlb-transactions";
+  MonitorsChecks: "monitors-checks";
+  MonitorsCreate: "monitors-create";
+  MonitorsDelete: "monitors-delete";
+  MonitorsGet: "monitors-get";
+  MonitorsList: "monitors-list";
+  MonitorsUpdate: "monitors-update";
   NikeCategories: "nike-categories";
   NikeProduct: "nike-product";
+  NikeProductAvailability: "nike-product-availability";
+  NikeProductDetails: "nike-product-details";
+  NikeProductRecommendations: "nike-product-recommendations";
   NikeProductReviews: "nike-product-reviews";
   NikeSearch: "nike-search";
   NikeStores: "nike-stores";
@@ -46659,6 +53262,17 @@ export declare const OperationIds: Readonly<{
   NumbeoIndicesCountry: "numbeo-indices-country";
   NumbeoIndicesRankings: "numbeo-indices-rankings";
   NumbeoIndicesRankingsByCountry: "numbeo-indices-rankings-by-country";
+  OhPollyOhpollyCollectionProducts: "ohpolly-collection-products";
+  OhPollyOhpollyCollections: "ohpolly-collections";
+  OhPollyOhpollyPage: "ohpolly-page";
+  OhPollyOhpollyPages: "ohpolly-pages";
+  OhPollyOhpollyProduct: "ohpolly-product";
+  OhPollyOhpollyProductRecommendations: "ohpolly-product-recommendations";
+  OhPollyOhpollyProducts: "ohpolly-products";
+  OhPollyOhpollySearchSuggest: "ohpolly-search-suggest";
+  OhPollyOhpollySitemapUrls: "ohpolly-sitemap-urls";
+  OhPollyOhpollySitemaps: "ohpolly-sitemaps";
+  OhPollyOhpollyStore: "ohpolly-store";
   OldNavyOldnavyCategories: "oldnavy-categories";
   OldNavyOldnavyCategory: "oldnavy-category";
   OldNavyOldnavyProduct: "oldnavy-product";
@@ -46775,8 +53389,18 @@ export declare const OperationIds: Readonly<{
   ProductHuntProduct: "producthunt-product";
   ProductHuntReviews: "producthunt-reviews";
   ProductHuntSearch: "producthunt-search";
+  QuinceCategories: "quince-categories";
+  QuinceNavigation: "quince-navigation";
+  QuinceProduct: "quince-product";
+  QuinceProductFaq: "quince-product-faq";
+  QuinceProductReviews: "quince-product-reviews";
+  QuinceSearch: "quince-search";
+  QuinceSitemapUrls: "quince-sitemap-urls";
+  QuinceSitemaps: "quince-sitemaps";
+  QuinceSuggest: "quince-suggest";
   RedditComments: "reddit-comments";
   RedditDomainPosts: "reddit-domain-posts";
+  RedditLeads: "reddit-leads";
   RedditPost: "reddit-post";
   RedditSearch: "reddit-search";
   RedditSubredditAbout: "reddit-subreddit-about";
@@ -46794,6 +53418,17 @@ export declare const OperationIds: Readonly<{
   ReferralsClick: "referrals-click";
   ReferralsMe: "referrals-me";
   ReferralsMeEvents: "referrals-me-events";
+  RothySRothysCollectionProducts: "rothys-collection-products";
+  RothySRothysCollections: "rothys-collections";
+  RothySRothysPage: "rothys-page";
+  RothySRothysPages: "rothys-pages";
+  RothySRothysProduct: "rothys-product";
+  RothySRothysProductRecommendations: "rothys-product-recommendations";
+  RothySRothysProducts: "rothys-products";
+  RothySRothysSearchSuggest: "rothys-search-suggest";
+  RothySRothysSitemapUrls: "rothys-sitemap-urls";
+  RothySRothysSitemaps: "rothys-sitemaps";
+  RothySRothysStore: "rothys-store";
   RottenTomatoesRottentomatoesBrowseMovies: "rottentomatoes-browse-movies";
   RottenTomatoesRottentomatoesBrowseTv: "rottentomatoes-browse-tv";
   RottenTomatoesRottentomatoesEpisode: "rottentomatoes-episode";
@@ -46825,6 +53460,14 @@ export declare const OperationIds: Readonly<{
   SephoraSearch: "sephora-search";
   SephoraStores: "sephora-stores";
   SephoraSuggest: "sephora-suggest";
+  SheinCategoryFilters: "shein-category-filters";
+  SheinCategoryGoods: "shein-category-goods";
+  SheinCategoryNav: "shein-category-nav";
+  SheinProductsAggregationFilters: "shein-products-aggregation-filters";
+  SheinProductsDetail: "shein-products-detail";
+  SheinProductsSearch: "shein-products-search";
+  SheinSearchAutocomplete: "shein-search-autocomplete";
+  SheinSearchKeywords: "shein-search-keywords";
   ShopAppAnalysis: "shop-app-analysis";
   ShopAppCategories: "shop-app-categories";
   ShopAppCollectionProducts: "shop-app-collection-products";
@@ -46854,6 +53497,17 @@ export declare const OperationIds: Readonly<{
   ShopifyStore: "shopify-store";
   SimilarWebSearch: "similarweb-search";
   SimilarWebWeb: "similarweb-web";
+  SkimsCollectionProducts: "skims-collection-products";
+  SkimsCollections: "skims-collections";
+  SkimsPage: "skims-page";
+  SkimsPages: "skims-pages";
+  SkimsProduct: "skims-product";
+  SkimsProductRecommendations: "skims-product-recommendations";
+  SkimsProducts: "skims-products";
+  SkimsSearchSuggest: "skims-search-suggest";
+  SkimsSitemapUrls: "skims-sitemap-urls";
+  SkimsSitemaps: "skims-sitemaps";
+  SkimsStore: "skims-store";
   SofaScoreSofascoreEvent: "sofascore-event";
   SofaScoreSofascoreEventH2h: "sofascore-event-h2h";
   SofaScoreSofascoreEventIncidents: "sofascore-event-incidents";
@@ -46933,6 +53587,17 @@ export declare const OperationIds: Readonly<{
   SteamTags: "steam-tags";
   SteamTagsList: "steam-tags-list";
   SteamTopSellers: "steam-top-sellers";
+  SteveMaddenStevemaddenCollectionProducts: "stevemadden-collection-products";
+  SteveMaddenStevemaddenCollections: "stevemadden-collections";
+  SteveMaddenStevemaddenPage: "stevemadden-page";
+  SteveMaddenStevemaddenPages: "stevemadden-pages";
+  SteveMaddenStevemaddenProduct: "stevemadden-product";
+  SteveMaddenStevemaddenProductRecommendations: "stevemadden-product-recommendations";
+  SteveMaddenStevemaddenProducts: "stevemadden-products";
+  SteveMaddenStevemaddenSearchSuggest: "stevemadden-search-suggest";
+  SteveMaddenStevemaddenSitemapUrls: "stevemadden-sitemap-urls";
+  SteveMaddenStevemaddenSitemaps: "stevemadden-sitemaps";
+  SteveMaddenStevemaddenStore: "stevemadden-store";
   StockXStockxBrands: "stockx-brands";
   StockXStockxCategories: "stockx-categories";
   StockXStockxProduct: "stockx-product";
@@ -46951,6 +53616,17 @@ export declare const OperationIds: Readonly<{
   TargetSearch: "target-search";
   TeslaJobsJob: "tesla-jobs-job";
   TeslaJobsList: "tesla-jobs-list";
+  TheBodyShopThebodyshopCollectionProducts: "thebodyshop-collection-products";
+  TheBodyShopThebodyshopCollections: "thebodyshop-collections";
+  TheBodyShopThebodyshopPage: "thebodyshop-page";
+  TheBodyShopThebodyshopPages: "thebodyshop-pages";
+  TheBodyShopThebodyshopProduct: "thebodyshop-product";
+  TheBodyShopThebodyshopProductRecommendations: "thebodyshop-product-recommendations";
+  TheBodyShopThebodyshopProducts: "thebodyshop-products";
+  TheBodyShopThebodyshopSearchSuggest: "thebodyshop-search-suggest";
+  TheBodyShopThebodyshopSitemapUrls: "thebodyshop-sitemap-urls";
+  TheBodyShopThebodyshopSitemaps: "thebodyshop-sitemaps";
+  TheBodyShopThebodyshopStore: "thebodyshop-store";
   ThreadsPost: "threads-post";
   ThreadsPostReplies: "threads-post-replies";
   ThreadsProfile: "threads-profile";
@@ -47063,6 +53739,7 @@ export declare const OperationIds: Readonly<{
   VintedCategory: "vinted-category";
   VintedItem: "vinted-item";
   VintedMember: "vinted-member";
+  WalgreensStores: "walgreens-stores";
   WalmartProduct: "walmart-product";
   WalmartProductReviews: "walmart-product-reviews";
   WalmartSearch: "walmart-search";
