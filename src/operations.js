@@ -18444,6 +18444,11 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "is_infrastructure",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
         "name": "reachable",
         "type": "boolean"
       },
@@ -18574,6 +18579,11 @@ export const operations = {
       {
         "in": "query",
         "name": "has_captcha",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_infrastructure",
         "type": "boolean"
       },
       {
@@ -49164,6 +49174,69 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "ticketmaster-attraction-related": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-attraction-related",
+    "method": "GET",
+    "path": "/ticketmaster/attraction-related",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-attraction-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-attraction-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketmaster/attraction-reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "ticketmaster-discover-categories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -49395,6 +49468,25 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "ticketmaster-trending-attractions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-trending-attractions",
+    "method": "GET",
+    "path": "/ticketmaster/trending-attractions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "ticketmaster-venue": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -49405,6 +49497,32 @@ export const operations = {
     "id": "ticketmaster-venue",
     "method": "GET",
     "path": "/ticketmaster/venue",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketmaster-venue-enhanced-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketmaster-venue-enhanced-details",
+    "method": "GET",
+    "path": "/ticketmaster/venue-enhanced-details",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -49456,6 +49574,96 @@ export const operations = {
         "in": "query",
         "name": "sort",
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketweb-event": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketweb-event",
+    "method": "GET",
+    "path": "/ticketweb/event",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketweb-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketweb-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketweb/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ticketweb-venue": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "ticketweb-venue",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ticketweb/venue",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -58962,9 +59170,16 @@ export const groups = {
     "profilePosts": "threads-profile-posts",
     "search": "threads-search"
   },
+  "ticketWeb": {
+    "ticketwebEvent": "ticketweb-event",
+    "ticketwebSearch": "ticketweb-search",
+    "ticketwebVenue": "ticketweb-venue"
+  },
   "ticketmaster": {
     "attraction": "ticketmaster-attraction",
     "attractionEvents": "ticketmaster-attraction-events",
+    "attractionRelated": "ticketmaster-attraction-related",
+    "attractionReviews": "ticketmaster-attraction-reviews",
     "discoverCategories": "ticketmaster-discover-categories",
     "discoverCategoryEvents": "ticketmaster-discover-category-events",
     "discoverCities": "ticketmaster-discover-cities",
@@ -58972,7 +59187,9 @@ export const groups = {
     "event": "ticketmaster-event",
     "searchEvents": "ticketmaster-search-events",
     "suggest": "ticketmaster-suggest",
+    "trendingAttractions": "ticketmaster-trending-attractions",
     "venue": "ticketmaster-venue",
+    "venueEnhancedDetails": "ticketmaster-venue-enhanced-details",
     "venueEvents": "ticketmaster-venue-events"
   },
   "tiktok": {
@@ -59301,7 +59518,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 1468;
+export const operationCount = 1475;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -60513,8 +60730,13 @@ export const OperationIds = Object.freeze({
   "ThreadsProfile": "threads-profile",
   "ThreadsProfilePosts": "threads-profile-posts",
   "ThreadsSearch": "threads-search",
+  "TicketWebTicketwebEvent": "ticketweb-event",
+  "TicketWebTicketwebSearch": "ticketweb-search",
+  "TicketWebTicketwebVenue": "ticketweb-venue",
   "TicketmasterAttraction": "ticketmaster-attraction",
   "TicketmasterAttractionEvents": "ticketmaster-attraction-events",
+  "TicketmasterAttractionRelated": "ticketmaster-attraction-related",
+  "TicketmasterAttractionReviews": "ticketmaster-attraction-reviews",
   "TicketmasterDiscoverCategories": "ticketmaster-discover-categories",
   "TicketmasterDiscoverCategoryEvents": "ticketmaster-discover-category-events",
   "TicketmasterDiscoverCities": "ticketmaster-discover-cities",
@@ -60522,7 +60744,9 @@ export const OperationIds = Object.freeze({
   "TicketmasterEvent": "ticketmaster-event",
   "TicketmasterSearchEvents": "ticketmaster-search-events",
   "TicketmasterSuggest": "ticketmaster-suggest",
+  "TicketmasterTrendingAttractions": "ticketmaster-trending-attractions",
   "TicketmasterVenue": "ticketmaster-venue",
+  "TicketmasterVenueEnhancedDetails": "ticketmaster-venue-enhanced-details",
   "TicketmasterVenueEvents": "ticketmaster-venue-events",
   "TiktokCategory": "tiktok-category",
   "TiktokChallenge": "tiktok-challenge",
