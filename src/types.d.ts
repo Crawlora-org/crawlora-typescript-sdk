@@ -10925,6 +10925,7 @@ export interface ModelEsTechstackDatasetFacetItem {
 
 export interface ModelEsTechstackRecord {
   "analytics"?: Array<string>;
+  "block_matched"?: Array<string>;
   "categories"?: Array<string>;
   "category"?: string;
   "cdn"?: string;
@@ -10932,9 +10933,12 @@ export interface ModelEsTechstackRecord {
   "detector_version"?: string;
   "domain"?: string;
   "ecommerce"?: string;
+  "failure_reason"?: string;
   "final_url"?: string;
   "has_captcha"?: boolean;
+  "is_infrastructure"?: boolean;
   "method_version"?: string;
+  "probe_error"?: string;
   "probed_at"?: string;
   "rank"?: number;
   "reachable"?: boolean;
@@ -24541,11 +24545,13 @@ export interface ModelSimilarwebSearchResp {
 }
 
 export interface ModelSimilarwebSimilarWebResp {
+  "AiTrafficDetails"?: { "ReferralTraffic"?: number; "TopPrompts"?: { "ErrorMessage"?: string; "Prompts"?: Array<string>; "Status"?: number }; "TotalVisits"?: number; "Traffic"?: { "Distribution"?: { "Boundary"?: string; "Chart"?: Array<{ "History"?: Array<{ "Date"?: string; "Value"?: number }>; "Icon"?: string; "Name"?: string }>; "Chatbots"?: Array<{ "Icon"?: string; "Name"?: string; "Value"?: number }> }; "Split"?: Array<{ "Icon"?: string; "Name"?: string; "Rank"?: number }> } };
   "Category"?: string;
   "CategoryRank"?: { "Category"?: string; "Rank"?: string };
   "Competitors"?: { "TopSimilarityCompetitors"?: Array<unknown> };
   "Countries"?: Array<{ "Code"?: string; "Name"?: string; "UrlCode"?: string }>;
   "CountryRank"?: { "Country"?: number; "CountryCode"?: string; "Rank"?: number };
+  "DataSource"?: string;
   "Description"?: string;
   "Engagments"?: { "BounceRate"?: string; "Month"?: string; "PagePerVisit"?: string; "TimeOnSite"?: string; "Visits"?: string; "Year"?: string };
   "EstimatedMonthlyVisits"?: { "2024-09-01"?: number; "2024-10-01"?: number; "2024-11-01"?: number };
@@ -26982,16 +26988,6 @@ export interface ModelTargetSearchResponseDoc {
   "msg"?: string;
 }
 
-export interface ModelTechstackResult {
-  "categories"?: Array<string>;
-  "count"?: number;
-  "detector_version"?: string;
-  "final_url"?: string;
-  "technologies"?: Array<ModelTechstackTechnology>;
-  "unmatched_evidence"?: ModelTechstackUnmatchedEvidence;
-  "url"?: string;
-}
-
 export interface ModelTechstackTechnology {
   "categories"?: Array<string>;
   "confidence"?: string;
@@ -27147,9 +27143,12 @@ export interface ModelThreadsSearchResponseDoc {
 export interface ModelTicketmasterAttraction {
   "classification"?: ModelTicketmasterClassification;
   "discovery_id"?: string;
+  "has_artist_video"?: boolean;
   "id"?: string;
   "image_url"?: string;
   "name"?: string;
+  "setlist_source_url"?: string;
+  "setlists"?: Array<ModelTicketmasterSetlist>;
   "synopsis"?: string;
   "url"?: string;
 }
@@ -27162,10 +27161,32 @@ export interface ModelTicketmasterAttractionRef {
   "url"?: string;
 }
 
+export interface ModelTicketmasterAttractionRelatedResponse {
+  "attraction_id"?: string;
+  "attractions"?: Array<ModelTicketmasterAttractionRef>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
 export interface ModelTicketmasterAttractionResponse {
   "attraction"?: ModelTicketmasterAttraction;
   "fetched_at"?: string;
   "source_url"?: string;
+}
+
+export interface ModelTicketmasterAttractionReviewsResponse {
+  "ai_review_summary"?: string;
+  "attraction_id"?: string;
+  "average_rating"?: number;
+  "best_rating"?: number;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "reviews"?: Array<ModelTicketmasterReview>;
+  "source_url"?: string;
+  "time_zone"?: string;
+  "total"?: number;
 }
 
 export interface ModelTicketmasterClassification {
@@ -27292,6 +27313,37 @@ export interface ModelTicketmasterPresale {
   "start_time"?: string;
 }
 
+export interface ModelTicketmasterReview {
+  "city"?: string;
+  "date_created"?: string;
+  "nick_name"?: string;
+  "rating"?: number;
+  "review"?: string;
+  "title"?: string;
+  "venue"?: string;
+}
+
+export interface ModelTicketmasterSetlist {
+  "city_name"?: string;
+  "country_name"?: string;
+  "event_date"?: string;
+  "sets"?: Array<ModelTicketmasterSetlistSet>;
+  "tour_name"?: string;
+  "venue_name"?: string;
+}
+
+export interface ModelTicketmasterSetlistSet {
+  "name"?: string;
+  "songs"?: Array<ModelTicketmasterSetlistSong>;
+}
+
+export interface ModelTicketmasterSetlistSong {
+  "name"?: string;
+  "original_artist"?: string;
+  "performance_notes"?: string;
+  "pre_recorded"?: boolean;
+}
+
 export interface ModelTicketmasterSuggestion {
   "category"?: string;
   "event_count"?: number;
@@ -27309,9 +27361,36 @@ export interface ModelTicketmasterSuggestionsResponse {
   "suggestions"?: Array<ModelTicketmasterSuggestion>;
 }
 
+export interface ModelTicketmasterTrendingAttraction {
+  "discovery_id"?: string;
+  "genre"?: string;
+  "genre_id"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "images"?: Array<ModelTicketmasterTrendingAttractionImage>;
+  "name"?: string;
+  "rank"?: number;
+  "segment"?: string;
+  "segment_id"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterTrendingAttractionImage {
+  "ratio"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterTrendingAttractionsResponse {
+  "attractions"?: Array<ModelTicketmasterTrendingAttraction>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
 export interface ModelTicketmasterVenue {
   "address"?: string;
   "city"?: string;
+  "city_categories"?: Array<ModelTicketmasterVenueCityCategory>;
   "country"?: string;
   "discovery_id"?: string;
   "id"?: string;
@@ -27321,9 +27400,24 @@ export interface ModelTicketmasterVenue {
   "longitude"?: number;
   "name"?: string;
   "postal_code"?: string;
+  "seat_maps"?: Array<ModelTicketmasterVenueSeatMap>;
   "state"?: string;
   "time_zone"?: string;
   "url"?: string;
+}
+
+export interface ModelTicketmasterVenueCityCategory {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketmasterVenueEnhancedDetailsResponse {
+  "fetched_at"?: string;
+  "header_image_url"?: string;
+  "related_links"?: Array<ModelTicketmasterVenueRelatedLink>;
+  "source_url"?: string;
+  "venue_id"?: string;
 }
 
 export interface ModelTicketmasterVenueInfoBlock {
@@ -27346,15 +27440,38 @@ export interface ModelTicketmasterVenueRef {
   "url"?: string;
 }
 
+export interface ModelTicketmasterVenueRelatedLink {
+  "image_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
 export interface ModelTicketmasterVenueResponse {
   "fetched_at"?: string;
   "source_url"?: string;
   "venue"?: ModelTicketmasterVenue;
 }
 
+export interface ModelTicketmasterVenueSeatMap {
+  "image_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelTicketmasterAttractionRelatedResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterAttractionRelatedResponse;
+  "msg"?: string;
+}
+
 export interface ModelTicketmasterAttractionResponseDoc {
   "code"?: number;
   "data"?: ModelTicketmasterAttractionResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterAttractionReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterAttractionReviewsResponse;
   "msg"?: string;
 }
 
@@ -27388,9 +27505,164 @@ export interface ModelTicketmasterSuggestionsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTicketmasterTrendingAttractionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterTrendingAttractionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketmasterVenueEnhancedDetailsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketmasterVenueEnhancedDetailsResponse;
+  "msg"?: string;
+}
+
 export interface ModelTicketmasterVenueResponseDoc {
   "code"?: number;
   "data"?: ModelTicketmasterVenueResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketwebAttraction {
+  "category"?: string;
+  "genre"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelTicketwebDeliveryMethod {
+  "description"?: string;
+  "fee"?: string;
+  "name"?: string;
+}
+
+export interface ModelTicketwebEventDetail {
+  "age_restriction"?: number;
+  "age_restriction_message"?: string;
+  "announce_time"?: string;
+  "attractions"?: Array<ModelTicketwebAttraction>;
+  "currency"?: string;
+  "delivery_methods"?: Array<ModelTicketwebDeliveryMethod>;
+  "description"?: string;
+  "end_time"?: string;
+  "has_tickets"?: boolean;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "on_sale_time"?: string;
+  "price_range"?: ModelTicketwebPriceRange;
+  "sections"?: Array<ModelTicketwebTicketSection>;
+  "start_time"?: string;
+  "terms_and_conditions"?: string;
+  "url"?: string;
+  "venue"?: ModelTicketwebEventVenue;
+}
+
+export interface ModelTicketwebEventResponse {
+  "event"?: ModelTicketwebEventDetail;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelTicketwebEventSummary {
+  "availability"?: "in_stock" | "sold_out" | "unknown";
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "start_time"?: string;
+  "url"?: string;
+  "venue"?: ModelTicketwebVenueRef;
+}
+
+export interface ModelTicketwebEventVenue {
+  "address"?: string;
+  "city"?: string;
+  "country"?: string;
+  "id"?: string;
+  "map_image"?: string;
+  "name"?: string;
+  "postal_code"?: string;
+  "state"?: string;
+  "time_zone"?: string;
+}
+
+export interface ModelTicketwebPriceRange {
+  "max"?: number;
+  "min"?: number;
+}
+
+export interface ModelTicketwebSearchResponse {
+  "count"?: number;
+  "events"?: Array<ModelTicketwebEventSummary>;
+  "fetched_at"?: string;
+  "page"?: number;
+  "query"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelTicketwebTicketFees {
+  "credit_card"?: number;
+  "facility"?: number;
+  "per_ticket"?: number;
+  "rebate"?: number;
+  "taxes"?: number;
+}
+
+export interface ModelTicketwebTicketPrice {
+  "base"?: number;
+  "fees"?: ModelTicketwebTicketFees;
+  "max_purchase_limit"?: number;
+  "min_purchase_limit"?: number;
+  "name"?: string;
+  "sold_out"?: boolean;
+  "total"?: number;
+}
+
+export interface ModelTicketwebTicketSection {
+  "name"?: string;
+  "prices"?: Array<ModelTicketwebTicketPrice>;
+  "purchase_limit"?: number;
+  "sold_out"?: boolean;
+}
+
+export interface ModelTicketwebVenueDetail {
+  "address"?: string;
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketwebVenueRef {
+  "address"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelTicketwebVenueResponse {
+  "count"?: number;
+  "events"?: Array<ModelTicketwebEventSummary>;
+  "fetched_at"?: string;
+  "page"?: number;
+  "source_url"?: string;
+  "venue"?: ModelTicketwebVenueDetail;
+}
+
+export interface ModelTicketwebEventResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketwebEventResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketwebSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketwebSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelTicketwebVenueResponseDoc {
+  "code"?: number;
+  "data"?: ModelTicketwebVenueResponse;
   "msg"?: string;
 }
 
@@ -30468,6 +30740,19 @@ export interface ModelWebTechStackOption {
   "url": string;
 }
 
+export interface ModelWebTechStackResult {
+  "categories"?: Array<string>;
+  "count"?: number;
+  "detector_version"?: string;
+  "failure_reason"?: string;
+  "final_url"?: string;
+  "is_infrastructure"?: boolean;
+  "reachable"?: boolean;
+  "technologies"?: Array<ModelTechstackTechnology>;
+  "unmatched_evidence"?: ModelTechstackUnmatchedEvidence;
+  "url"?: string;
+}
+
 export interface ModelWebBillingRejectionDoc {
   "credit_cost"?: number;
   "credits_included"?: number;
@@ -30501,7 +30786,7 @@ export interface ModelWebScrapeResponseDoc {
 
 export interface ModelWebTechStackResponseDoc {
   "code"?: number;
-  "data"?: ModelTechstackResult;
+  "data"?: ModelWebTechStackResult;
   "msg"?: string;
 }
 
@@ -36993,6 +37278,7 @@ export interface DatasetsTechstackFacetsParams {
   "render_tier"?: "http" | "browser";
   "seed_source"?: string;
   "has_captcha"?: boolean;
+  "is_infrastructure"?: boolean;
   "reachable"?: boolean;
   "min_tech_count"?: number;
   "run_id"?: string;
@@ -37019,6 +37305,7 @@ export interface DatasetsTechstackSearchParams {
   "render_tier"?: "http" | "browser";
   "seed_source"?: string;
   "has_captcha"?: boolean;
+  "is_infrastructure"?: boolean;
   "reachable"?: boolean;
   "min_tech_count"?: number;
   "run_id"?: string;
@@ -42847,6 +43134,18 @@ export interface TicketmasterAttractionEventsParams {
   "sort"?: "relevance" | "date";
 }
 
+export type TicketmasterAttractionRelatedResponse = CrawloraResponse<ModelTicketmasterAttractionRelatedResponseDoc>;
+export interface TicketmasterAttractionRelatedParams {
+  "id": string;
+}
+
+export type TicketmasterAttractionReviewsResponse = CrawloraResponse<ModelTicketmasterAttractionReviewsResponseDoc>;
+export interface TicketmasterAttractionReviewsParams {
+  "id": string;
+  "offset"?: number;
+  "limit"?: number;
+}
+
 export type TicketmasterDiscoverCategoriesResponse = CrawloraResponse<ModelTicketmasterCategoriesResponseDoc>;
 export interface TicketmasterDiscoverCategoriesParams {
   "section"?: "all" | "concerts" | "sports" | "arts-theater" | "family";
@@ -42891,8 +43190,17 @@ export interface TicketmasterSuggestParams {
   "q": string;
 }
 
+export type TicketmasterTrendingAttractionsResponse = CrawloraResponse<ModelTicketmasterTrendingAttractionsResponseDoc>;
+export interface TicketmasterTrendingAttractionsParams {
+}
+
 export type TicketmasterVenueResponse = CrawloraResponse<ModelTicketmasterVenueResponseDoc>;
 export interface TicketmasterVenueParams {
+  "id": string;
+}
+
+export type TicketmasterVenueEnhancedDetailsResponse = CrawloraResponse<ModelTicketmasterVenueEnhancedDetailsResponseDoc>;
+export interface TicketmasterVenueEnhancedDetailsParams {
   "id": string;
 }
 
@@ -42901,6 +43209,23 @@ export interface TicketmasterVenueEventsParams {
   "id": string;
   "page"?: number;
   "sort"?: "relevance" | "date";
+}
+
+export type TicketWebTicketwebEventResponse = CrawloraResponse<ModelTicketwebEventResponseDoc>;
+export interface TicketWebTicketwebEventParams {
+  "id": string;
+}
+
+export type TicketWebTicketwebSearchResponse = CrawloraResponse<ModelTicketwebSearchResponseDoc>;
+export interface TicketWebTicketwebSearchParams {
+  "q": string;
+  "page"?: number;
+}
+
+export type TicketWebTicketwebVenueResponse = CrawloraResponse<ModelTicketwebVenueResponseDoc>;
+export interface TicketWebTicketwebVenueParams {
+  "id": string;
+  "page"?: number;
 }
 
 export type TiktokCategoryResponse = CrawloraResponse<ModelTiktokCategoryResponseDoc>;
@@ -46003,6 +46328,8 @@ export interface ThreadsService {
 export interface TicketmasterService {
   attraction<T = TicketmasterAttractionResponse>(params: TicketmasterAttractionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   attractionEvents<T = TicketmasterAttractionEventsResponse>(params: TicketmasterAttractionEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  attractionRelated<T = TicketmasterAttractionRelatedResponse>(params: TicketmasterAttractionRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  attractionReviews<T = TicketmasterAttractionReviewsResponse>(params: TicketmasterAttractionReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   discoverCategories<T = TicketmasterDiscoverCategoriesResponse>(params?: TicketmasterDiscoverCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   discoverCategoryEvents<T = TicketmasterDiscoverCategoryEventsResponse>(params: TicketmasterDiscoverCategoryEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   discoverCities<T = TicketmasterDiscoverCitiesResponse>(params?: TicketmasterDiscoverCitiesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -46010,8 +46337,16 @@ export interface TicketmasterService {
   event<T = TicketmasterEventResponse>(params: TicketmasterEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   searchEvents<T = TicketmasterSearchEventsResponse>(params: TicketmasterSearchEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   suggest<T = TicketmasterSuggestResponse>(params: TicketmasterSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trendingAttractions<T = TicketmasterTrendingAttractionsResponse>(params?: TicketmasterTrendingAttractionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   venue<T = TicketmasterVenueResponse>(params: TicketmasterVenueParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  venueEnhancedDetails<T = TicketmasterVenueEnhancedDetailsResponse>(params: TicketmasterVenueEnhancedDetailsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   venueEvents<T = TicketmasterVenueEventsResponse>(params: TicketmasterVenueEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface TicketWebService {
+  ticketwebEvent<T = TicketWebTicketwebEventResponse>(params: TicketWebTicketwebEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ticketwebSearch<T = TicketWebTicketwebSearchResponse>(params: TicketWebTicketwebSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ticketwebVenue<T = TicketWebTicketwebVenueResponse>(params: TicketWebTicketwebVenueParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface TiktokService {
@@ -46495,6 +46830,7 @@ export interface CrawloraGeneratedGroups {
   theBodyShop: TheBodyShopService;
   threads: ThreadsService;
   ticketmaster: TicketmasterService;
+  ticketWeb: TicketWebService;
   tiktok: TiktokService;
   tmdb: TmdbService;
   tripAdvisor: TripAdvisorService;
@@ -47744,6 +48080,8 @@ export interface OperationParamsMap {
   "threads-search": ThreadsSearchParams;
   "ticketmaster-attraction": TicketmasterAttractionParams;
   "ticketmaster-attraction-events": TicketmasterAttractionEventsParams;
+  "ticketmaster-attraction-related": TicketmasterAttractionRelatedParams;
+  "ticketmaster-attraction-reviews": TicketmasterAttractionReviewsParams;
   "ticketmaster-discover-categories": TicketmasterDiscoverCategoriesParams;
   "ticketmaster-discover-category-events": TicketmasterDiscoverCategoryEventsParams;
   "ticketmaster-discover-cities": TicketmasterDiscoverCitiesParams;
@@ -47751,8 +48089,13 @@ export interface OperationParamsMap {
   "ticketmaster-event": TicketmasterEventParams;
   "ticketmaster-search-events": TicketmasterSearchEventsParams;
   "ticketmaster-suggest": TicketmasterSuggestParams;
+  "ticketmaster-trending-attractions": TicketmasterTrendingAttractionsParams;
   "ticketmaster-venue": TicketmasterVenueParams;
+  "ticketmaster-venue-enhanced-details": TicketmasterVenueEnhancedDetailsParams;
   "ticketmaster-venue-events": TicketmasterVenueEventsParams;
+  "ticketweb-event": TicketWebTicketwebEventParams;
+  "ticketweb-search": TicketWebTicketwebSearchParams;
+  "ticketweb-venue": TicketWebTicketwebVenueParams;
   "tiktok-category": TiktokCategoryParams;
   "tiktok-video-comments": TiktokVideoCommentsParams;
   "tiktok-creative-center-hashtags": TiktokCreativeCenterHashtagsParams;
@@ -49215,6 +49558,8 @@ export interface OperationResponseMap {
   "threads-search": ThreadsSearchResponse;
   "ticketmaster-attraction": TicketmasterAttractionResponse;
   "ticketmaster-attraction-events": TicketmasterAttractionEventsResponse;
+  "ticketmaster-attraction-related": TicketmasterAttractionRelatedResponse;
+  "ticketmaster-attraction-reviews": TicketmasterAttractionReviewsResponse;
   "ticketmaster-discover-categories": TicketmasterDiscoverCategoriesResponse;
   "ticketmaster-discover-category-events": TicketmasterDiscoverCategoryEventsResponse;
   "ticketmaster-discover-cities": TicketmasterDiscoverCitiesResponse;
@@ -49222,8 +49567,13 @@ export interface OperationResponseMap {
   "ticketmaster-event": TicketmasterEventResponse;
   "ticketmaster-search-events": TicketmasterSearchEventsResponse;
   "ticketmaster-suggest": TicketmasterSuggestResponse;
+  "ticketmaster-trending-attractions": TicketmasterTrendingAttractionsResponse;
   "ticketmaster-venue": TicketmasterVenueResponse;
+  "ticketmaster-venue-enhanced-details": TicketmasterVenueEnhancedDetailsResponse;
   "ticketmaster-venue-events": TicketmasterVenueEventsResponse;
+  "ticketweb-event": TicketWebTicketwebEventResponse;
+  "ticketweb-search": TicketWebTicketwebSearchResponse;
+  "ticketweb-venue": TicketWebTicketwebVenueResponse;
   "tiktok-category": TiktokCategoryResponse;
   "tiktok-video-comments": TiktokVideoCommentsResponse;
   "tiktok-creative-center-hashtags": TiktokCreativeCenterHashtagsResponse;
@@ -50686,6 +51036,8 @@ export interface OperationRequiredParamsMap {
   "threads-search": true;
   "ticketmaster-attraction": true;
   "ticketmaster-attraction-events": true;
+  "ticketmaster-attraction-related": true;
+  "ticketmaster-attraction-reviews": true;
   "ticketmaster-discover-categories": false;
   "ticketmaster-discover-category-events": true;
   "ticketmaster-discover-cities": false;
@@ -50693,8 +51045,13 @@ export interface OperationRequiredParamsMap {
   "ticketmaster-event": true;
   "ticketmaster-search-events": true;
   "ticketmaster-suggest": true;
+  "ticketmaster-trending-attractions": false;
   "ticketmaster-venue": true;
+  "ticketmaster-venue-enhanced-details": true;
   "ticketmaster-venue-events": true;
+  "ticketweb-event": true;
+  "ticketweb-search": true;
+  "ticketweb-venue": true;
   "tiktok-category": false;
   "tiktok-video-comments": true;
   "tiktok-creative-center-hashtags": true;
@@ -52164,6 +52521,8 @@ export type OperationIdLiteral =
   | "threads-search"
   | "ticketmaster-attraction"
   | "ticketmaster-attraction-events"
+  | "ticketmaster-attraction-related"
+  | "ticketmaster-attraction-reviews"
   | "ticketmaster-discover-categories"
   | "ticketmaster-discover-category-events"
   | "ticketmaster-discover-cities"
@@ -52171,8 +52530,13 @@ export type OperationIdLiteral =
   | "ticketmaster-event"
   | "ticketmaster-search-events"
   | "ticketmaster-suggest"
+  | "ticketmaster-trending-attractions"
   | "ticketmaster-venue"
+  | "ticketmaster-venue-enhanced-details"
   | "ticketmaster-venue-events"
+  | "ticketweb-event"
+  | "ticketweb-search"
+  | "ticketweb-venue"
   | "tiktok-category"
   | "tiktok-video-comments"
   | "tiktok-creative-center-hashtags"
@@ -53632,8 +53996,13 @@ export declare const OperationIds: Readonly<{
   ThreadsProfile: "threads-profile";
   ThreadsProfilePosts: "threads-profile-posts";
   ThreadsSearch: "threads-search";
+  TicketWebTicketwebEvent: "ticketweb-event";
+  TicketWebTicketwebSearch: "ticketweb-search";
+  TicketWebTicketwebVenue: "ticketweb-venue";
   TicketmasterAttraction: "ticketmaster-attraction";
   TicketmasterAttractionEvents: "ticketmaster-attraction-events";
+  TicketmasterAttractionRelated: "ticketmaster-attraction-related";
+  TicketmasterAttractionReviews: "ticketmaster-attraction-reviews";
   TicketmasterDiscoverCategories: "ticketmaster-discover-categories";
   TicketmasterDiscoverCategoryEvents: "ticketmaster-discover-category-events";
   TicketmasterDiscoverCities: "ticketmaster-discover-cities";
@@ -53641,7 +54010,9 @@ export declare const OperationIds: Readonly<{
   TicketmasterEvent: "ticketmaster-event";
   TicketmasterSearchEvents: "ticketmaster-search-events";
   TicketmasterSuggest: "ticketmaster-suggest";
+  TicketmasterTrendingAttractions: "ticketmaster-trending-attractions";
   TicketmasterVenue: "ticketmaster-venue";
+  TicketmasterVenueEnhancedDetails: "ticketmaster-venue-enhanced-details";
   TicketmasterVenueEvents: "ticketmaster-venue-events";
   TiktokCategory: "tiktok-category";
   TiktokChallenge: "tiktok-challenge";
