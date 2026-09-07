@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 concurrency:
   group: publish-npmjs-${{ github.ref }}
@@ -21,9 +22,9 @@ jobs:
       PACKAGE_NAME: "@crawlora-org/sdk"
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "24"
           registry-url: "https://registry.npmjs.org"
           scope: "@crawlora-org"
       - name: Validate release tag
@@ -63,11 +64,7 @@ jobs:
           fi
       - name: Publish
         if: steps.package.outputs.published == 'false'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          test -n "${NODE_AUTH_TOKEN}"
-          npm publish --registry=https://registry.npmjs.org --access public
+        run: npm publish --registry=https://registry.npmjs.org --access public
       - name: Verify install
         run: |
           tmp="$(mktemp -d)"
