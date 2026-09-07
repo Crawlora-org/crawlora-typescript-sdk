@@ -25,8 +25,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: "24"
-          registry-url: "https://registry.npmjs.org"
-          scope: "@crawlora-org"
       - name: Validate release tag
         run: |
           version="$(node -p 'require("./package.json").version')"
@@ -64,7 +62,7 @@ jobs:
           fi
       - name: Publish
         if: steps.package.outputs.published == 'false'
-        run: npm publish --registry=https://registry.npmjs.org --access public
+        run: npm publish --registry=https://registry.npmjs.org --access public --tag latest
       - name: Verify install
         run: |
           tmp="$(mktemp -d)"
