@@ -22,6 +22,7 @@ POLICY = core.NamingPolicy(
     case_fn=lambda parts: (parts[0] + "".join(p[:1].upper() + p[1:] for p in parts[1:])) if parts else "call",
     dedup_sep="",
     tag_group_overrides={
+        "7NOW": "sevenNow",
         "AppStore": "appStore",
         "CoinGecko": "coinGecko",
         "GooglePlay": "googlePlay",
