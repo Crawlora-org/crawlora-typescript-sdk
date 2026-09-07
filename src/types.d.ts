@@ -9381,9 +9381,31 @@ export interface ModelContactSocialProfile {
   "url"?: string;
 }
 
+export interface ModelContactVerifiedAddress {
+  "address"?: string;
+  "status"?: "verified" | "risky" | "unverified" | "invalid";
+  "type"?: "personal" | "generic" | "role";
+}
+
+export interface ModelContactVerifyRequest {
+  "emails": Array<string>;
+}
+
+export interface ModelContactVerifyResponse {
+  "checked"?: number;
+  "results"?: Array<ModelContactVerifiedAddress>;
+  "smtp_enabled"?: boolean;
+}
+
 export interface ModelContactContactResponseDoc {
   "code"?: number;
   "data"?: ModelContactContactResult;
+  "msg"?: string;
+}
+
+export interface ModelContactVerifyResponseDoc {
+  "code"?: number;
+  "data"?: ModelContactVerifyResponse;
   "msg"?: string;
 }
 
@@ -53209,6 +53231,12 @@ export interface EBayEbaySellerShopParams {
   "page"?: number;
 }
 
+export type WebEmailVerifyBody = CrawloraBody<ModelContactVerifyRequest>;
+export type WebEmailVerifyResponse = CrawloraResponse<ModelContactVerifyResponseDoc>;
+export interface WebEmailVerifyParams {
+  "option": WebEmailVerifyBody;
+}
+
 export type EspnAthleteResponse = CrawloraResponse<ModelEspnAthleteResponseDoc>;
 export interface EspnAthleteParams {
   "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
@@ -62554,6 +62582,7 @@ export interface CongressService {
 export interface WebService {
   contact<T = WebContactResponse>(params: WebContactParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   antibotCheck<T = WebAntibotCheckResponse>(params: WebAntibotCheckParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  emailVerify<T = WebEmailVerifyResponse>(params: WebEmailVerifyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   extract<T = WebExtractResponse>(params: WebExtractParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   scrape<T = WebScrapeResponse>(params: WebScrapeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techstack<T = WebTechstackResponse>(params: WebTechstackParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -65482,6 +65511,7 @@ export interface OperationParamsMap {
   "ebay-seller-about": EBayEbaySellerAboutParams;
   "ebay-seller-feedback": EBayEbaySellerFeedbackParams;
   "ebay-seller-shop": EBayEbaySellerShopParams;
+  "email-verify": WebEmailVerifyParams;
   "espn-athlete": EspnAthleteParams;
   "espn-game-summary": EspnGameSummaryParams;
   "espn-news": EspnNewsParams;
@@ -67423,6 +67453,7 @@ export interface OperationResponseMap {
   "ebay-seller-about": EBayEbaySellerAboutResponse;
   "ebay-seller-feedback": EBayEbaySellerFeedbackResponse;
   "ebay-seller-shop": EBayEbaySellerShopResponse;
+  "email-verify": WebEmailVerifyResponse;
   "espn-athlete": EspnAthleteResponse;
   "espn-game-summary": EspnGameSummaryResponse;
   "espn-news": EspnNewsResponse;
@@ -69364,6 +69395,7 @@ export interface OperationRequiredParamsMap {
   "ebay-seller-about": true;
   "ebay-seller-feedback": true;
   "ebay-seller-shop": true;
+  "email-verify": true;
   "espn-athlete": true;
   "espn-game-summary": true;
   "espn-news": true;
@@ -71312,6 +71344,7 @@ export type OperationIdLiteral =
   | "ebay-seller-about"
   | "ebay-seller-feedback"
   | "ebay-seller-shop"
+  | "email-verify"
   | "espn-athlete"
   | "espn-game-summary"
   | "espn-news"
@@ -74415,6 +74448,7 @@ export declare const OperationIds: Readonly<{
   WayfairProduct: "wayfair-product";
   WebAntibotCheck: "antibot-check";
   WebContact: "contact";
+  WebEmailVerify: "email-verify";
   WebExtract: "extract";
   WebScrape: "web-scrape";
   WebTechstack: "web-techstack";

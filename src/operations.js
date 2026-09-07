@@ -27613,6 +27613,25 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "email-verify": {
+    "bodyParam": "option",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "email-verify",
+    "method": "POST",
+    "path": "/email/verify",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "espn-athlete": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -76620,6 +76639,7 @@ export const groups = {
   "web": {
     "antibotCheck": "antibot-check",
     "contact": "contact",
+    "emailVerify": "email-verify",
     "extract": "extract",
     "scrape": "web-scrape",
     "techstack": "web-techstack"
@@ -76852,7 +76872,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 1938;
+export const operationCount = 1939;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -78616,6 +78636,7 @@ export const OperationIds = Object.freeze({
   "WayfairProduct": "wayfair-product",
   "WebAntibotCheck": "antibot-check",
   "WebContact": "contact",
+  "WebEmailVerify": "email-verify",
   "WebExtract": "extract",
   "WebScrape": "web-scrape",
   "WebTechstack": "web-techstack",
