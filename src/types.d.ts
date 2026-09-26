@@ -42714,6 +42714,25 @@ export interface ModelRollingstoneHeadlineItem {
   "url"?: string;
 }
 
+export interface ModelRottentomatoesBrowseFilter {
+  "key"?: string;
+  "label"?: string;
+  "values"?: Array<ModelRottentomatoesBrowseFilterValue>;
+}
+
+export interface ModelRottentomatoesBrowseFilterValue {
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelRottentomatoesBrowseFiltersResponse {
+  "fetched_at"?: string;
+  "filters"?: Array<ModelRottentomatoesBrowseFilter>;
+  "list"?: string;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+}
+
 export interface ModelRottentomatoesBrowseItem {
   "critics_review_count"?: number;
   "date_created"?: string;
@@ -42732,10 +42751,64 @@ export interface ModelRottentomatoesBrowseResponse {
   "items"?: Array<ModelRottentomatoesBrowseItem>;
   "limit"?: number;
   "list"?: string;
+  "page_info"?: ModelRottentomatoesReviewPageInfo;
   "public_page_derived"?: boolean;
   "sort"?: string;
   "source_url"?: string;
   "title"?: string;
+}
+
+export interface ModelRottentomatoesCriticAuthor {
+  "badges"?: Array<string>;
+  "name"?: string;
+  "path"?: string;
+  "publication_label"?: string;
+  "publications"?: Array<ModelRottentomatoesCriticAuthorPublication>;
+}
+
+export interface ModelRottentomatoesCriticAuthorPublication {
+  "editorial_url"?: string;
+  "id"?: string;
+  "name"?: string;
+  "path"?: string;
+}
+
+export interface ModelRottentomatoesCriticsAuthorsResponse {
+  "after"?: string;
+  "authors"?: Array<ModelRottentomatoesCriticAuthor>;
+  "before"?: string;
+  "fetched_at"?: string;
+  "has_next_page"?: boolean;
+  "has_previous_page"?: boolean;
+  "inactive"?: boolean;
+  "letter"?: string;
+  "limit"?: number;
+  "next_cursor"?: string;
+  "previous_cursor"?: string;
+  "public_page_derived"?: boolean;
+  "search"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelRottentomatoesEditorialSearchResponse {
+  "fetched_at"?: string;
+  "has_next_page"?: boolean;
+  "limit"?: number;
+  "page"?: number;
+  "public_page_derived"?: boolean;
+  "query"?: string;
+  "results"?: Array<ModelRottentomatoesEditorialSearchResult>;
+  "source_url"?: string;
+  "total"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelRottentomatoesEditorialSearchResult {
+  "id"?: number;
+  "subtype"?: string;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
 }
 
 export interface ModelRottentomatoesEpisodeResponse {
@@ -42887,6 +42960,8 @@ export interface ModelRottentomatoesReviewMovieSummary {
 export interface ModelRottentomatoesReviewPageInfo {
   "end_cursor"?: string;
   "has_next_page"?: boolean;
+  "has_previous_page"?: boolean;
+  "start_cursor"?: string;
 }
 
 export interface ModelRottentomatoesReviewsResponse {
@@ -43013,15 +43088,65 @@ export interface ModelRottentomatoesSeriesSummary {
   "url"?: string;
 }
 
+export interface ModelRottentomatoesSitemap {
+  "family"?: string;
+  "index"?: number;
+  "last_modified"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesSitemapIndexResponse {
+  "fetched_at"?: string;
+  "public_page_derived"?: boolean;
+  "sitemaps"?: Array<ModelRottentomatoesSitemap>;
+  "source_url"?: string;
+}
+
+export interface ModelRottentomatoesSitemapUrl {
+  "last_modified"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesSitemapUrlresponse {
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "name"?: string;
+  "offset"?: number;
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "total"?: number;
+  "urls"?: Array<ModelRottentomatoesSitemapUrl>;
+}
+
 export interface ModelRottentomatoesTvseason {
   "name"?: string;
   "path"?: string;
   "url"?: string;
 }
 
+export interface ModelRottentomatoesBrowseFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesBrowseFiltersResponse;
+  "msg"?: string;
+}
+
 export interface ModelRottentomatoesBrowseResponseDoc {
   "code"?: number;
   "data"?: ModelRottentomatoesBrowseResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesCriticsAuthorsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesCriticsAuthorsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesEditorialSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesEditorialSearchResponse;
   "msg"?: string;
 }
 
@@ -43064,6 +43189,18 @@ export interface ModelRottentomatoesSeasonResponseDoc {
 export interface ModelRottentomatoesSeriesResponseDoc {
   "code"?: number;
   "data"?: ModelRottentomatoesSeriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesSitemapIndexResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesSitemapIndexResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesSitemapUrlresponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesSitemapUrlresponse;
   "msg"?: string;
 }
 
@@ -76655,17 +76792,51 @@ export type RothySRothysStoreResponse = CrawloraResponse<ModelShopifybrandsStore
 export interface RothySRothysStoreParams {
 }
 
+export type RottenTomatoesRottentomatoesBrowseFiltersResponse = CrawloraResponse<ModelRottentomatoesBrowseFiltersResponseDoc>;
+export interface RottenTomatoesRottentomatoesBrowseFiltersParams {
+  "list"?: "movies_in_theaters" | "movies_at_home" | "movies_coming_soon" | "tv_series_browse";
+}
+
 export type RottenTomatoesRottentomatoesBrowseMoviesResponse = CrawloraResponse<ModelRottentomatoesBrowseResponseDoc>;
 export interface RottenTomatoesRottentomatoesBrowseMoviesParams {
   "list"?: "movies_in_theaters" | "movies_at_home" | "movies_coming_soon";
-  "sort"?: "popular" | "newest" | "top_box_office";
+  "sort"?: "popular" | "newest" | "top_box_office" | "a_z" | "critic_highest" | "critic_lowest" | "audience_highest" | "audience_lowest";
+  "genres"?: "action" | "adventure" | "animation" | "anime" | "biography" | "comedy" | "crime" | "documentary" | "drama" | "entertainment" | "faith_and_spirituality" | "fantasy" | "game_show" | "lgbtq" | "health_and_wellness" | "history" | "holiday" | "horror" | "house_and_garden" | "kids_and_family" | "music" | "musical" | "mystery_and_thriller" | "nature" | "news" | "reality" | "romance" | "sci_fi" | "short" | "soap" | "special_interest" | "sports" | "stand_up" | "talk_show" | "travel" | "variety" | "war" | "western";
+  "ratings"?: "g" | "pg" | "pg_13" | "r" | "nc_17" | "nr" | "ur";
+  "audience"?: "verified_hot" | "upright" | "spilled";
+  "critics"?: "certified_fresh" | "fresh" | "rotten";
+  "affiliates"?: "theaters" | "fandango" | "apple-tv-plus" | "netflix" | "prime-video" | "disney-plus" | "max" | "peacock" | "hulu" | "paramount-plus" | "amc-plus" | "acorn-tv" | "apple-tv";
+  "after"?: string;
   "limit"?: number;
 }
 
 export type RottenTomatoesRottentomatoesBrowseTvResponse = CrawloraResponse<ModelRottentomatoesBrowseResponseDoc>;
 export interface RottenTomatoesRottentomatoesBrowseTvParams {
   "list"?: "tv_series_browse";
-  "sort"?: "popular" | "newest";
+  "sort"?: "popular" | "newest" | "a_z" | "critic_highest" | "critic_lowest" | "audience_highest" | "audience_lowest";
+  "genres"?: "action" | "adventure" | "animation" | "anime" | "biography" | "comedy" | "crime" | "documentary" | "drama" | "entertainment" | "faith_and_spirituality" | "fantasy" | "game_show" | "lgbtq" | "health_and_wellness" | "history" | "holiday" | "horror" | "house_and_garden" | "kids_and_family" | "music" | "musical" | "mystery_and_thriller" | "nature" | "news" | "reality" | "romance" | "sci_fi" | "short" | "soap" | "special_interest" | "sports" | "stand_up" | "talk_show" | "travel" | "variety" | "war" | "western";
+  "ratings"?: "tvy" | "tvy7" | "tvg" | "tvpg" | "tv14" | "tvma";
+  "audience"?: "upright" | "spilled";
+  "critics"?: "fresh" | "rotten";
+  "affiliates"?: "theaters" | "fandango" | "apple-tv-plus" | "netflix" | "prime-video" | "disney-plus" | "max" | "peacock" | "hulu" | "paramount-plus" | "amc-plus" | "acorn-tv" | "apple-tv";
+  "after"?: string;
+  "limit"?: number;
+}
+
+export type RottenTomatoesRottentomatoesCriticsAuthorsResponse = CrawloraResponse<ModelRottentomatoesCriticsAuthorsResponseDoc>;
+export interface RottenTomatoesRottentomatoesCriticsAuthorsParams {
+  "letter"?: "#" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z";
+  "search"?: string;
+  "inactive"?: boolean;
+  "after"?: string;
+  "before"?: string;
+  "limit"?: number;
+}
+
+export type RottenTomatoesRottentomatoesEditorialSearchResponse = CrawloraResponse<ModelRottentomatoesEditorialSearchResponseDoc>;
+export interface RottenTomatoesRottentomatoesEditorialSearchParams {
+  "query": string;
+  "page"?: number;
   "limit"?: number;
 }
 
@@ -76712,6 +76883,17 @@ export type RottenTomatoesRottentomatoesSeriesResponse = CrawloraResponse<ModelR
 export interface RottenTomatoesRottentomatoesSeriesParams {
   "path"?: string;
   "url"?: string;
+}
+
+export type RottenTomatoesRottentomatoesSitemapUrlsResponse = CrawloraResponse<ModelRottentomatoesSitemapUrlresponseDoc>;
+export interface RottenTomatoesRottentomatoesSitemapUrlsParams {
+  "name": string;
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type RottenTomatoesRottentomatoesSitemapsResponse = CrawloraResponse<ModelRottentomatoesSitemapIndexResponseDoc>;
+export interface RottenTomatoesRottentomatoesSitemapsParams {
 }
 
 export type RoverSitterSearchResponse = CrawloraResponse<ModelRoverSearchResponseDoc>;
@@ -85237,8 +85419,11 @@ export interface RothySService {
 }
 
 export interface RottenTomatoesService {
+  rottentomatoesBrowseFilters<T = RottenTomatoesRottentomatoesBrowseFiltersResponse>(params?: RottenTomatoesRottentomatoesBrowseFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesBrowseMovies<T = RottenTomatoesRottentomatoesBrowseMoviesResponse>(params?: RottenTomatoesRottentomatoesBrowseMoviesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesBrowseTv<T = RottenTomatoesRottentomatoesBrowseTvResponse>(params?: RottenTomatoesRottentomatoesBrowseTvParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesCriticsAuthors<T = RottenTomatoesRottentomatoesCriticsAuthorsResponse>(params?: RottenTomatoesRottentomatoesCriticsAuthorsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesEditorialSearch<T = RottenTomatoesRottentomatoesEditorialSearchResponse>(params: RottenTomatoesRottentomatoesEditorialSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesEpisode<T = RottenTomatoesRottentomatoesEpisodeResponse>(params?: RottenTomatoesRottentomatoesEpisodeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesMovie<T = RottenTomatoesRottentomatoesMovieResponse>(params?: RottenTomatoesRottentomatoesMovieParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesMovieReviews<T = RottenTomatoesRottentomatoesMovieReviewsResponse>(params?: RottenTomatoesRottentomatoesMovieReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -85246,6 +85431,8 @@ export interface RottenTomatoesService {
   rottentomatoesSearch<T = RottenTomatoesRottentomatoesSearchResponse>(params: RottenTomatoesRottentomatoesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesSeason<T = RottenTomatoesRottentomatoesSeasonResponse>(params?: RottenTomatoesRottentomatoesSeasonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesSeries<T = RottenTomatoesRottentomatoesSeriesResponse>(params?: RottenTomatoesRottentomatoesSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesSitemapUrls<T = RottenTomatoesRottentomatoesSitemapUrlsResponse>(params: RottenTomatoesRottentomatoesSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesSitemaps<T = RottenTomatoesRottentomatoesSitemapsResponse>(params?: RottenTomatoesRottentomatoesSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface RoverService {
@@ -89228,8 +89415,11 @@ export interface OperationParamsMap {
   "rothys-sitemap-urls": RothySRothysSitemapUrlsParams;
   "rothys-sitemaps": RothySRothysSitemapsParams;
   "rothys-store": RothySRothysStoreParams;
+  "rottentomatoes-browse-filters": RottenTomatoesRottentomatoesBrowseFiltersParams;
   "rottentomatoes-browse-movies": RottenTomatoesRottentomatoesBrowseMoviesParams;
   "rottentomatoes-browse-tv": RottenTomatoesRottentomatoesBrowseTvParams;
+  "rottentomatoes-critics-authors": RottenTomatoesRottentomatoesCriticsAuthorsParams;
+  "rottentomatoes-editorial-search": RottenTomatoesRottentomatoesEditorialSearchParams;
   "rottentomatoes-episode": RottenTomatoesRottentomatoesEpisodeParams;
   "rottentomatoes-movie": RottenTomatoesRottentomatoesMovieParams;
   "rottentomatoes-movie-reviews": RottenTomatoesRottentomatoesMovieReviewsParams;
@@ -89237,6 +89427,8 @@ export interface OperationParamsMap {
   "rottentomatoes-search": RottenTomatoesRottentomatoesSearchParams;
   "rottentomatoes-season": RottenTomatoesRottentomatoesSeasonParams;
   "rottentomatoes-series": RottenTomatoesRottentomatoesSeriesParams;
+  "rottentomatoes-sitemap-urls": RottenTomatoesRottentomatoesSitemapUrlsParams;
+  "rottentomatoes-sitemaps": RottenTomatoesRottentomatoesSitemapsParams;
   "rover-sitter-search": RoverSitterSearchParams;
   "rover-sitter-profile": RoverSitterProfileParams;
   "rover-trainer-search": RoverTrainerSearchParams;
@@ -92391,8 +92583,11 @@ export interface OperationResponseMap {
   "rothys-sitemap-urls": RothySRothysSitemapUrlsResponse;
   "rothys-sitemaps": RothySRothysSitemapsResponse;
   "rothys-store": RothySRothysStoreResponse;
+  "rottentomatoes-browse-filters": RottenTomatoesRottentomatoesBrowseFiltersResponse;
   "rottentomatoes-browse-movies": RottenTomatoesRottentomatoesBrowseMoviesResponse;
   "rottentomatoes-browse-tv": RottenTomatoesRottentomatoesBrowseTvResponse;
+  "rottentomatoes-critics-authors": RottenTomatoesRottentomatoesCriticsAuthorsResponse;
+  "rottentomatoes-editorial-search": RottenTomatoesRottentomatoesEditorialSearchResponse;
   "rottentomatoes-episode": RottenTomatoesRottentomatoesEpisodeResponse;
   "rottentomatoes-movie": RottenTomatoesRottentomatoesMovieResponse;
   "rottentomatoes-movie-reviews": RottenTomatoesRottentomatoesMovieReviewsResponse;
@@ -92400,6 +92595,8 @@ export interface OperationResponseMap {
   "rottentomatoes-search": RottenTomatoesRottentomatoesSearchResponse;
   "rottentomatoes-season": RottenTomatoesRottentomatoesSeasonResponse;
   "rottentomatoes-series": RottenTomatoesRottentomatoesSeriesResponse;
+  "rottentomatoes-sitemap-urls": RottenTomatoesRottentomatoesSitemapUrlsResponse;
+  "rottentomatoes-sitemaps": RottenTomatoesRottentomatoesSitemapsResponse;
   "rover-sitter-search": RoverSitterSearchResponse;
   "rover-sitter-profile": RoverSitterProfileResponse;
   "rover-trainer-search": RoverTrainerSearchResponse;
@@ -95554,8 +95751,11 @@ export interface OperationRequiredParamsMap {
   "rothys-sitemap-urls": false;
   "rothys-sitemaps": false;
   "rothys-store": false;
+  "rottentomatoes-browse-filters": false;
   "rottentomatoes-browse-movies": false;
   "rottentomatoes-browse-tv": false;
+  "rottentomatoes-critics-authors": false;
+  "rottentomatoes-editorial-search": true;
   "rottentomatoes-episode": false;
   "rottentomatoes-movie": false;
   "rottentomatoes-movie-reviews": false;
@@ -95563,6 +95763,8 @@ export interface OperationRequiredParamsMap {
   "rottentomatoes-search": true;
   "rottentomatoes-season": false;
   "rottentomatoes-series": false;
+  "rottentomatoes-sitemap-urls": true;
+  "rottentomatoes-sitemaps": false;
   "rover-sitter-search": true;
   "rover-sitter-profile": true;
   "rover-trainer-search": true;
@@ -98724,8 +98926,11 @@ export type OperationIdLiteral =
   | "rothys-sitemap-urls"
   | "rothys-sitemaps"
   | "rothys-store"
+  | "rottentomatoes-browse-filters"
   | "rottentomatoes-browse-movies"
   | "rottentomatoes-browse-tv"
+  | "rottentomatoes-critics-authors"
+  | "rottentomatoes-editorial-search"
   | "rottentomatoes-episode"
   | "rottentomatoes-movie"
   | "rottentomatoes-movie-reviews"
@@ -98733,6 +98938,8 @@ export type OperationIdLiteral =
   | "rottentomatoes-search"
   | "rottentomatoes-season"
   | "rottentomatoes-series"
+  | "rottentomatoes-sitemap-urls"
+  | "rottentomatoes-sitemaps"
   | "rover-sitter-search"
   | "rover-sitter-profile"
   | "rover-trainer-search"
@@ -101862,8 +102069,11 @@ export declare const OperationIds: Readonly<{
   RothySRothysSitemapUrls: "rothys-sitemap-urls";
   RothySRothysSitemaps: "rothys-sitemaps";
   RothySRothysStore: "rothys-store";
+  RottenTomatoesRottentomatoesBrowseFilters: "rottentomatoes-browse-filters";
   RottenTomatoesRottentomatoesBrowseMovies: "rottentomatoes-browse-movies";
   RottenTomatoesRottentomatoesBrowseTv: "rottentomatoes-browse-tv";
+  RottenTomatoesRottentomatoesCriticsAuthors: "rottentomatoes-critics-authors";
+  RottenTomatoesRottentomatoesEditorialSearch: "rottentomatoes-editorial-search";
   RottenTomatoesRottentomatoesEpisode: "rottentomatoes-episode";
   RottenTomatoesRottentomatoesMovie: "rottentomatoes-movie";
   RottenTomatoesRottentomatoesMovieReviews: "rottentomatoes-movie-reviews";
@@ -101871,6 +102081,8 @@ export declare const OperationIds: Readonly<{
   RottenTomatoesRottentomatoesSearch: "rottentomatoes-search";
   RottenTomatoesRottentomatoesSeason: "rottentomatoes-season";
   RottenTomatoesRottentomatoesSeries: "rottentomatoes-series";
+  RottenTomatoesRottentomatoesSitemapUrls: "rottentomatoes-sitemap-urls";
+  RottenTomatoesRottentomatoesSitemaps: "rottentomatoes-sitemaps";
   RoverSitterProfile: "rover-sitter-profile";
   RoverSitterSearch: "rover-sitter-search";
   RoverTrainerProfile: "rover-trainer-profile";

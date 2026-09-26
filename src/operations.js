@@ -83664,6 +83664,37 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "rottentomatoes-browse-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-browse-filters",
+    "method": "GET",
+    "path": "/rottentomatoes/browse/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "movies_in_theaters",
+          "movies_at_home",
+          "movies_coming_soon",
+          "tv_series_browse"
+        ],
+        "in": "query",
+        "name": "list",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "rottentomatoes-browse-movies": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -83693,10 +83724,119 @@ export const operations = {
         "enum": [
           "popular",
           "newest",
-          "top_box_office"
+          "top_box_office",
+          "a_z",
+          "critic_highest",
+          "critic_lowest",
+          "audience_highest",
+          "audience_lowest"
         ],
         "in": "query",
         "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "action",
+          "adventure",
+          "animation",
+          "anime",
+          "biography",
+          "comedy",
+          "crime",
+          "documentary",
+          "drama",
+          "entertainment",
+          "faith_and_spirituality",
+          "fantasy",
+          "game_show",
+          "lgbtq",
+          "health_and_wellness",
+          "history",
+          "holiday",
+          "horror",
+          "house_and_garden",
+          "kids_and_family",
+          "music",
+          "musical",
+          "mystery_and_thriller",
+          "nature",
+          "news",
+          "reality",
+          "romance",
+          "sci_fi",
+          "short",
+          "soap",
+          "special_interest",
+          "sports",
+          "stand_up",
+          "talk_show",
+          "travel",
+          "variety",
+          "war",
+          "western"
+        ],
+        "in": "query",
+        "name": "genres",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "g",
+          "pg",
+          "pg_13",
+          "r",
+          "nc_17",
+          "nr",
+          "ur"
+        ],
+        "in": "query",
+        "name": "ratings",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "verified_hot",
+          "upright",
+          "spilled"
+        ],
+        "in": "query",
+        "name": "audience",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "certified_fresh",
+          "fresh",
+          "rotten"
+        ],
+        "in": "query",
+        "name": "critics",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "theaters",
+          "fandango",
+          "apple-tv-plus",
+          "netflix",
+          "prime-video",
+          "disney-plus",
+          "max",
+          "peacock",
+          "hulu",
+          "paramount-plus",
+          "amc-plus",
+          "acorn-tv",
+          "apple-tv"
+        ],
+        "in": "query",
+        "name": "affiliates",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "after",
         "type": "string"
       },
       {
@@ -83735,11 +83875,233 @@ export const operations = {
       {
         "enum": [
           "popular",
-          "newest"
+          "newest",
+          "a_z",
+          "critic_highest",
+          "critic_lowest",
+          "audience_highest",
+          "audience_lowest"
         ],
         "in": "query",
         "name": "sort",
         "type": "string"
+      },
+      {
+        "enum": [
+          "action",
+          "adventure",
+          "animation",
+          "anime",
+          "biography",
+          "comedy",
+          "crime",
+          "documentary",
+          "drama",
+          "entertainment",
+          "faith_and_spirituality",
+          "fantasy",
+          "game_show",
+          "lgbtq",
+          "health_and_wellness",
+          "history",
+          "holiday",
+          "horror",
+          "house_and_garden",
+          "kids_and_family",
+          "music",
+          "musical",
+          "mystery_and_thriller",
+          "nature",
+          "news",
+          "reality",
+          "romance",
+          "sci_fi",
+          "short",
+          "soap",
+          "special_interest",
+          "sports",
+          "stand_up",
+          "talk_show",
+          "travel",
+          "variety",
+          "war",
+          "western"
+        ],
+        "in": "query",
+        "name": "genres",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "tvy",
+          "tvy7",
+          "tvg",
+          "tvpg",
+          "tv14",
+          "tvma"
+        ],
+        "in": "query",
+        "name": "ratings",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "upright",
+          "spilled"
+        ],
+        "in": "query",
+        "name": "audience",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "fresh",
+          "rotten"
+        ],
+        "in": "query",
+        "name": "critics",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "theaters",
+          "fandango",
+          "apple-tv-plus",
+          "netflix",
+          "prime-video",
+          "disney-plus",
+          "max",
+          "peacock",
+          "hulu",
+          "paramount-plus",
+          "amc-plus",
+          "acorn-tv",
+          "apple-tv"
+        ],
+        "in": "query",
+        "name": "affiliates",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-critics-authors": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-critics-authors",
+    "method": "GET",
+    "path": "/rottentomatoes/critics/authors",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "#",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z"
+        ],
+        "in": "query",
+        "name": "letter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "inactive",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-editorial-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-editorial-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rottentomatoes/editorial/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       },
       {
         "in": "query",
@@ -83979,6 +84341,62 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-sitemap-urls",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rottentomatoes/sitemap/urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "name",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-sitemaps",
+    "method": "GET",
+    "path": "/rottentomatoes/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -116871,15 +117289,20 @@ export const groups = {
     "rothysStore": "rothys-store"
   },
   "rottenTomatoes": {
+    "rottentomatoesBrowseFilters": "rottentomatoes-browse-filters",
     "rottentomatoesBrowseMovies": "rottentomatoes-browse-movies",
     "rottentomatoesBrowseTv": "rottentomatoes-browse-tv",
+    "rottentomatoesCriticsAuthors": "rottentomatoes-critics-authors",
+    "rottentomatoesEditorialSearch": "rottentomatoes-editorial-search",
     "rottentomatoesEpisode": "rottentomatoes-episode",
     "rottentomatoesMovie": "rottentomatoes-movie",
     "rottentomatoesMovieReviews": "rottentomatoes-movie-reviews",
     "rottentomatoesPerson": "rottentomatoes-person",
     "rottentomatoesSearch": "rottentomatoes-search",
     "rottentomatoesSeason": "rottentomatoes-season",
-    "rottentomatoesSeries": "rottentomatoes-series"
+    "rottentomatoesSeries": "rottentomatoes-series",
+    "rottentomatoesSitemapUrls": "rottentomatoes-sitemap-urls",
+    "rottentomatoesSitemaps": "rottentomatoes-sitemaps"
   },
   "rover": {
     "sitterProfile": "rover-sitter-profile",
@@ -118082,7 +118505,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 3160;
+export const operationCount = 3165;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -120313,8 +120736,11 @@ export const OperationIds = Object.freeze({
   "RothySRothysSitemapUrls": "rothys-sitemap-urls",
   "RothySRothysSitemaps": "rothys-sitemaps",
   "RothySRothysStore": "rothys-store",
+  "RottenTomatoesRottentomatoesBrowseFilters": "rottentomatoes-browse-filters",
   "RottenTomatoesRottentomatoesBrowseMovies": "rottentomatoes-browse-movies",
   "RottenTomatoesRottentomatoesBrowseTv": "rottentomatoes-browse-tv",
+  "RottenTomatoesRottentomatoesCriticsAuthors": "rottentomatoes-critics-authors",
+  "RottenTomatoesRottentomatoesEditorialSearch": "rottentomatoes-editorial-search",
   "RottenTomatoesRottentomatoesEpisode": "rottentomatoes-episode",
   "RottenTomatoesRottentomatoesMovie": "rottentomatoes-movie",
   "RottenTomatoesRottentomatoesMovieReviews": "rottentomatoes-movie-reviews",
@@ -120322,6 +120748,8 @@ export const OperationIds = Object.freeze({
   "RottenTomatoesRottentomatoesSearch": "rottentomatoes-search",
   "RottenTomatoesRottentomatoesSeason": "rottentomatoes-season",
   "RottenTomatoesRottentomatoesSeries": "rottentomatoes-series",
+  "RottenTomatoesRottentomatoesSitemapUrls": "rottentomatoes-sitemap-urls",
+  "RottenTomatoesRottentomatoesSitemaps": "rottentomatoes-sitemaps",
   "RoverSitterProfile": "rover-sitter-profile",
   "RoverSitterSearch": "rover-sitter-search",
   "RoverTrainerProfile": "rover-trainer-profile",
