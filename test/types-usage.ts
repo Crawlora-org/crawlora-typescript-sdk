@@ -1,4 +1,4 @@
-import type { BingSearchResponse, GoogleSearchBody } from "../src/types.js";
+import type { BingSearchResponse, WebEmailVerifyBody, WebEmailVerifyResponse } from "../src/types.js";
 import { CrawloraClient } from "../src/index.js";
 
 declare const client: CrawloraClient;
@@ -6,19 +6,18 @@ declare const client: CrawloraClient;
 const searchResponse: BingSearchResponse = await client.bing.search({ q: "coffee" });
 searchResponse.data?.results?.[0]?.title?.toUpperCase();
 
-const searchBody: GoogleSearchBody = {
-  country: "us",
-  keyword: "coffee",
-  language: "en"
+const emailVerifyBody: WebEmailVerifyBody = {
+  emails: ["jane@example.com"]
 };
 
-await client.google.search({ searchOption: searchBody });
+const emailVerifyResponse: WebEmailVerifyResponse = await client.web.emailVerify({ option: emailVerifyBody });
+emailVerifyResponse.data?.results?.[0]?.email;
 
 const dynamicResponse = await client.request("bing-search", { q: "coffee" });
 dynamicResponse.data?.results?.[0]?.title?.toUpperCase();
 
-const dynamicOperationResponse = await client.operation("google-search", { searchOption: searchBody });
-dynamicOperationResponse.data?.result?.[0]?.title?.toUpperCase();
+const dynamicOperationResponse = await client.operation("email-verify", { option: emailVerifyBody });
+dynamicOperationResponse.data?.results?.[0]?.email;
 
 // @ts-expect-error q is required for bing-search.
 await client.request("bing-search", {});

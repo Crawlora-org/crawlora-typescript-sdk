@@ -38,7 +38,7 @@ test("idempotency key is stable across retries on POST", async () => {
       return calls === 1 ? jsonResponse({ code: 503 }, 503) : jsonResponse({ code: 200, data: {} });
     }
   });
-  await client.google.search({ searchOption: { q: "c" } }); // POST
+  await client.web.emailVerify({ option: { emails: ["jane@example.com"] } }); // POST
   assert.equal(keys.length, 2);
   assert.ok(keys[0]);
   assert.equal(keys[0], keys[1]);

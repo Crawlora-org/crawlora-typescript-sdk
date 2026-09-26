@@ -68,8 +68,8 @@ test("fails before fetch when required parameters are missing", async () => {
     /Missing required query parameter: q/
   );
   await assert.rejects(
-    () => client.google.search(),
-    /Missing required body parameter: searchOption/
+    () => client.web.emailVerify(),
+    /Missing required body parameter: option/
   );
   assert.equal(calls, 0);
 });
@@ -165,8 +165,8 @@ test("request headers override default auth and content headers", async () => {
     }
   });
 
-  await client.google.search(
-    { searchOption: { q: "coffee" } },
+  await client.web.emailVerify(
+    { option: { emails: ["jane@example.com"] } },
     { headers: { "X-API-KEY": "api_request", "Content-Type": "application/custom+json" } }
   );
 
@@ -220,8 +220,8 @@ test("serializes JSON body requests", async () => {
     }
   });
 
-  await client.google.search({ searchOption: { q: "coffee" } });
-  assert.equal(body, JSON.stringify({ q: "coffee" }));
+  await client.web.emailVerify({ option: { emails: ["jane@example.com"] } });
+  assert.equal(body, JSON.stringify({ emails: ["jane@example.com"] }));
 });
 
 test("wraps API errors with status code body and headers", async () => {
@@ -372,7 +372,7 @@ test("wraps transport errors", async () => {
 });
 
 test("operation metadata count is stable", () => {
-  assert.equal(operationCount, 1939);
+  assert.equal(operationCount, 3159);
 });
 
 test("deprecated endpoints are not generated", () => {
@@ -389,9 +389,9 @@ test("generated declarations include typed endpoint groups", () => {
   assert.match(types, /export interface BingSearchParams/);
   assert.match(types, /"q": string;/);
   assert.match(types, /"count"\?: number;/);
-  assert.match(types, /export interface GoogleSearchParams/);
-  assert.match(types, /export type GoogleSearchBody = CrawloraBody<ModelGoogleSearchOption>;/);
-  assert.match(types, /"searchOption": GoogleSearchBody;/);
+  assert.match(types, /export interface WebEmailVerifyParams/);
+  assert.match(types, /export type WebEmailVerifyBody = CrawloraBody<ModelContactVerifyRequest>;/);
+  assert.match(types, /"option": WebEmailVerifyBody;/);
   assert.match(types, /export interface ModelEsGoogleBusiness \{[\s\S]*"review_count"\?: number \| null;/);
   assert.match(types, /export interface ModelEsGoogleBusinessDatasetItem \{[\s\S]*"review_count"\?: number \| null;/);
   assert.match(types, /export interface CrawloraGeneratedGroups/);
@@ -406,7 +406,7 @@ test("docs cover operations and recipes", () => {
   const operationsDoc = readFileSync(new URL("../docs/operations.md", import.meta.url), "utf8");
   const recipesDoc = readFileSync(new URL("../docs/recipes.md", import.meta.url), "utf8");
 
-  assert.match(operationsDoc, /Total operations: `1939`/);
+  assert.match(operationsDoc, /Total operations: `3159`/);
   assert.match(operationsDoc, /`bing-search`/);
   assert.match(operationsDoc, /`GET \/bing\/search`/);
   assert.match(operationsDoc, /`bing\.search`/);
