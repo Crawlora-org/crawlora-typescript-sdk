@@ -30648,6 +30648,7 @@ export interface ModelLivescienceAuthorSocialLink {
 export interface ModelLivescoreLivescoreNewsFeedItemDoc {
   "author"?: string;
   "categories"?: Array<string>;
+  "content"?: string;
   "description"?: string;
   "guid"?: string;
   "link"?: string;
@@ -30658,6 +30659,20 @@ export interface ModelLivescoreLivescoreNewsFeedItemDoc {
 export interface ModelLivescoreLivescoreNewsFeedResponseDoc {
   "code"?: number;
   "data"?: { "count"?: number; "items"?: Array<ModelLivescoreLivescoreNewsFeedItemDoc>; "source_url"?: string };
+  "msg"?: string;
+}
+
+export interface ModelLivescoreLivescoreNewsPublisherDoc {
+  "contact"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "telephone"?: string;
+  "website"?: string;
+}
+
+export interface ModelLivescoreLivescoreNewsPublishersResponseDoc {
+  "code"?: number;
+  "data"?: { "count"?: number; "publishers"?: Array<ModelLivescoreLivescoreNewsPublisherDoc>; "source_url"?: string };
   "msg"?: string;
 }
 
@@ -72597,6 +72612,11 @@ export interface LiveScoreLivescoreNewsCategoriesParams {
 
 export type LiveScoreLivescoreNewsFeedResponse = CrawloraResponse<ModelLivescoreLivescoreNewsFeedResponseDoc>;
 export interface LiveScoreLivescoreNewsFeedParams {
+  "include_content"?: boolean;
+}
+
+export type LiveScoreLivescoreNewsPublishersResponse = CrawloraResponse<ModelLivescoreLivescoreNewsPublishersResponseDoc>;
+export interface LiveScoreLivescoreNewsPublishersParams {
 }
 
 export type LiveScoreLivescorePlayerResponse = CrawloraResponse<ModelLivescoreResponseDoc>;
@@ -84269,6 +84289,7 @@ export interface LiveScoreService {
   livescoreNewsArticle<T = LiveScoreLivescoreNewsArticleResponse>(params: LiveScoreLivescoreNewsArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreNewsCategories<T = LiveScoreLivescoreNewsCategoriesResponse>(params?: LiveScoreLivescoreNewsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreNewsFeed<T = LiveScoreLivescoreNewsFeedResponse>(params?: LiveScoreLivescoreNewsFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  livescoreNewsPublishers<T = LiveScoreLivescoreNewsPublishersResponse>(params?: LiveScoreLivescoreNewsPublishersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescorePlayer<T = LiveScoreLivescorePlayerResponse>(params: LiveScoreLivescorePlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreScores<T = LiveScoreLivescoreScoresResponse>(params: LiveScoreLivescoreScoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreScoresToc<T = LiveScoreLivescoreScoresTocResponse>(params: LiveScoreLivescoreScoresTocParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -88529,6 +88550,7 @@ export interface OperationParamsMap {
   "livescore-news-article": LiveScoreLivescoreNewsArticleParams;
   "livescore-news-categories": LiveScoreLivescoreNewsCategoriesParams;
   "livescore-news-feed": LiveScoreLivescoreNewsFeedParams;
+  "livescore-news-publishers": LiveScoreLivescoreNewsPublishersParams;
   "livescore-player": LiveScoreLivescorePlayerParams;
   "livescore-scores": LiveScoreLivescoreScoresParams;
   "livescore-scores-toc": LiveScoreLivescoreScoresTocParams;
@@ -91691,6 +91713,7 @@ export interface OperationResponseMap {
   "livescore-news-article": LiveScoreLivescoreNewsArticleResponse;
   "livescore-news-categories": LiveScoreLivescoreNewsCategoriesResponse;
   "livescore-news-feed": LiveScoreLivescoreNewsFeedResponse;
+  "livescore-news-publishers": LiveScoreLivescoreNewsPublishersResponse;
   "livescore-player": LiveScoreLivescorePlayerResponse;
   "livescore-scores": LiveScoreLivescoreScoresResponse;
   "livescore-scores-toc": LiveScoreLivescoreScoresTocResponse;
@@ -94853,6 +94876,7 @@ export interface OperationRequiredParamsMap {
   "livescore-news-article": true;
   "livescore-news-categories": false;
   "livescore-news-feed": false;
+  "livescore-news-publishers": false;
   "livescore-player": true;
   "livescore-scores": true;
   "livescore-scores-toc": true;
@@ -98022,6 +98046,7 @@ export type OperationIdLiteral =
   | "livescore-news-article"
   | "livescore-news-categories"
   | "livescore-news-feed"
+  | "livescore-news-publishers"
   | "livescore-player"
   | "livescore-scores"
   | "livescore-scores-toc"
@@ -101140,6 +101165,7 @@ export declare const OperationIds: Readonly<{
   LiveScoreLivescoreNewsArticle: "livescore-news-article";
   LiveScoreLivescoreNewsCategories: "livescore-news-categories";
   LiveScoreLivescoreNewsFeed: "livescore-news-feed";
+  LiveScoreLivescoreNewsPublishers: "livescore-news-publishers";
   LiveScoreLivescorePlayer: "livescore-player";
   LiveScoreLivescoreScores: "livescore-scores";
   LiveScoreLivescoreScoresToc: "livescore-scores-toc";

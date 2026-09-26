@@ -61297,6 +61297,31 @@ export const operations = {
     "produces": [
       "application/json"
     ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "include_content",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "livescore-news-publishers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "livescore-news-publishers",
+    "method": "GET",
+    "path": "/livescore/news-publishers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
     "queryParams": [],
     "security": [
       "ApiKeyAuth"
@@ -115961,6 +115986,7 @@ export const groups = {
     "livescoreNewsArticle": "livescore-news-article",
     "livescoreNewsCategories": "livescore-news-categories",
     "livescoreNewsFeed": "livescore-news-feed",
+    "livescoreNewsPublishers": "livescore-news-publishers",
     "livescorePlayer": "livescore-player",
     "livescoreScores": "livescore-scores",
     "livescoreScoresToc": "livescore-scores-toc",
@@ -118056,7 +118082,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 3159;
+export const operationCount = 3160;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -119590,6 +119616,7 @@ export const OperationIds = Object.freeze({
   "LiveScoreLivescoreNewsArticle": "livescore-news-article",
   "LiveScoreLivescoreNewsCategories": "livescore-news-categories",
   "LiveScoreLivescoreNewsFeed": "livescore-news-feed",
+  "LiveScoreLivescoreNewsPublishers": "livescore-news-publishers",
   "LiveScoreLivescorePlayer": "livescore-player",
   "LiveScoreLivescoreScores": "livescore-scores",
   "LiveScoreLivescoreScoresToc": "livescore-scores-toc",
