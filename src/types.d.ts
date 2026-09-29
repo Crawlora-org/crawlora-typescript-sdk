@@ -21826,6 +21826,66 @@ export interface ModelFortuneRankingYearsResponse {
   "years"?: Array<string>;
 }
 
+export interface ModelFotmobFifaRankingPeriodData {
+  "data"?: Array<ModelFotmobFifaRankingPeriodItemDoc>;
+  "source_url"?: string;
+}
+
+export interface ModelFotmobFifaRankingPeriodItemDoc {
+  "periodId"?: string;
+  "periodName"?: string;
+}
+
+export interface ModelFotmobFifaRankingPeriodsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFotmobFifaRankingPeriodData;
+  "msg"?: string;
+}
+
+export interface ModelFotmobFifaRankingRowDoc {
+  "gainedRank"?: boolean;
+  "id"?: number;
+  "lostRank"?: boolean;
+  "name"?: string;
+  "pointsDiff"?: number;
+  "previousPoints"?: number;
+  "rank"?: number;
+  "totalPoints"?: number;
+}
+
+export interface ModelFotmobFifaRankingRowsDataDoc {
+  "data"?: Array<ModelFotmobFifaRankingRowDoc>;
+  "source_url"?: string;
+}
+
+export interface ModelFotmobFifaRankingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFotmobFifaRankingRowsDataDoc;
+  "msg"?: string;
+}
+
+export interface ModelFotmobNewsItemDoc {
+  "gmtTime"?: string;
+  "id"?: string;
+  "imageUrl"?: string;
+  "language"?: string;
+  "lead"?: string;
+  "page"?: ModelFotmobNewsItemPageDoc;
+  "sourceIconUrl"?: string;
+  "sourceStr"?: string;
+  "title"?: string;
+}
+
+export interface ModelFotmobNewsItemPageDoc {
+  "url"?: string;
+}
+
+export interface ModelFotmobNewsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelFotmobSourceNewsListDoc;
+  "msg"?: string;
+}
+
 export interface ModelFotmobResponseDoc {
   "code"?: number;
   "data"?: ModelFotmobSourceDataDoc;
@@ -21834,6 +21894,11 @@ export interface ModelFotmobResponseDoc {
 
 export interface ModelFotmobSourceDataDoc {
   "data"?: Record<string, unknown>;
+  "source_url"?: string;
+}
+
+export interface ModelFotmobSourceNewsListDoc {
+  "data"?: Array<ModelFotmobNewsItemDoc>;
   "source_url"?: string;
 }
 
@@ -21954,6 +22019,26 @@ export interface ModelFrance24HeadlineItem {
   "title"?: string;
   "type"?: string;
   "url"?: string;
+}
+
+export interface ModelFreemalaysiatodayNewsResponse {
+  "items"?: Array<ModelNewsplatformHeadlineItem>;
+}
+
+export interface ModelFreemalaysiatodaySectionsResponse {
+  "sections"?: Array<ModelNewsplatformSection>;
+}
+
+export interface ModelFreemalaysiatodayNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFreemalaysiatodayNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFreemalaysiatodaySectionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFreemalaysiatodaySectionsResponse;
+  "msg"?: string;
 }
 
 export interface ModelFtArticleResponse {
@@ -22431,6 +22516,62 @@ export interface ModelGeocodingSearchResponseDoc {
   "code"?: number;
   "data"?: ModelGeocodingSearchResponse;
   "msg"?: string;
+}
+
+export interface ModelGhanawebArchiveItem {
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelGhanawebArchiveMonth {
+  "month"?: string;
+  "updated_at"?: string;
+}
+
+export interface ModelGhanawebArchiveMonthsResponse {
+  "months"?: Array<ModelGhanawebArchiveMonth>;
+}
+
+export interface ModelGhanawebArchiveResponse {
+  "items"?: Array<ModelGhanawebArchiveItem>;
+  "limit"?: number;
+  "month"?: string;
+  "page"?: number;
+  "total"?: number;
+}
+
+export interface ModelGhanawebVideoItem {
+  "id"?: string;
+  "image_url"?: string;
+  "published_at"?: string;
+  "title"?: string;
+  "url"?: string;
+  "views"?: string;
+}
+
+export interface ModelGhanawebVideoResponse {
+  "embed_url"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "published_at"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelGhanawebVideoSection {
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelGhanawebVideoSectionsResponse {
+  "sections"?: Array<ModelGhanawebVideoSection>;
+}
+
+export interface ModelGhanawebVideosResponse {
+  "items"?: Array<ModelGhanawebVideoItem>;
+  "section"?: string;
 }
 
 export interface ModelGizmodoAuthorResponse {
@@ -27965,6 +28106,32 @@ export interface ModelJcrewSuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelJerusalempostAuthorArticle {
+  "published_at"?: string;
+  "summary"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelJerusalempostAuthorRef {
+  "slug"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelJerusalempostAuthorResponse {
+  "articles"?: Array<ModelJerusalempostAuthorArticle>;
+  "description"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelJerusalempostAuthorsResponse {
+  "authors"?: Array<ModelJerusalempostAuthorRef>;
+}
+
 export interface ModelJimmyjohnsMenuCategory {
   "category_id"?: number;
   "name"?: string;
@@ -30676,6 +30843,12 @@ export interface ModelLivescoreLivescoreNewsPublishersResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelLivescoreLivescoreSearchResponseDoc {
+  "code"?: number;
+  "data"?: { "query"?: string; "results"?: Record<string, unknown>; "source_url"?: string; "sport"?: string };
+  "msg"?: string;
+}
+
 export interface ModelLivescoreNewsCategoriesResponseDoc {
   "code"?: number;
   "data"?: { "categories"?: Array<ModelLivescoreNewsCategoryDoc> };
@@ -31245,6 +31418,70 @@ export interface ModelMediaiteAuthorResponse {
   "slug"?: string;
   "twitter"?: string;
   "url"?: string;
+}
+
+export interface ModelMedicalnewstodayArticleResponse {
+  "authors"?: Array<string>;
+  "description"?: string;
+  "image_url"?: string;
+  "paragraphs"?: Array<string>;
+  "paywalled"?: boolean;
+  "published_at"?: string;
+  "section"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelMedicalnewstodayAuthorResponse {
+  "articles"?: Array<ModelNewsplatformHeadlineItem>;
+  "bio"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelMedicalnewstodayHeadlinesResponse {
+  "items"?: Array<ModelNewsplatformHeadlineItem>;
+  "section"?: string;
+}
+
+export interface ModelMedicalnewstodayNewsResponse {
+  "items"?: Array<ModelNewsplatformHeadlineItem>;
+}
+
+export interface ModelMedicalnewstodaySectionsResponse {
+  "sections"?: Array<ModelNewsplatformSection>;
+}
+
+export interface ModelMedicalnewstodayArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelMedicalnewstodayArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelMedicalnewstodayAuthorResponseDoc {
+  "code"?: number;
+  "data"?: ModelMedicalnewstodayAuthorResponse;
+  "msg"?: string;
+}
+
+export interface ModelMedicalnewstodayHeadlinesResponseDoc {
+  "code"?: number;
+  "data"?: ModelMedicalnewstodayHeadlinesResponse;
+  "msg"?: string;
+}
+
+export interface ModelMedicalnewstodayNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMedicalnewstodayNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMedicalnewstodaySectionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMedicalnewstodaySectionsResponse;
+  "msg"?: string;
 }
 
 export interface ModelMenAuthorArticle {
@@ -32215,6 +32452,21 @@ export interface ModelMlbDecision {
   "winner"?: ModelMlbNamedRef;
 }
 
+export interface ModelMlbEditorialFeedResponse {
+  "fetched_at"?: string;
+  "items"?: Array<Record<string, unknown>>;
+  "language"?: string;
+  "limit"?: number;
+  "skip"?: number;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelMlbEnumValue {
+  "description"?: string;
+  "value"?: string;
+}
+
 export interface ModelMlbGameResponse {
   "away_boxscore"?: ModelMlbTeamBoxscore;
   "decisions"?: ModelMlbDecision;
@@ -32257,6 +32509,11 @@ export interface ModelMlbGameSummary {
   "venue"?: ModelMlbVenueRef;
 }
 
+export interface ModelMlbImageRef {
+  "type"?: string;
+  "url"?: string;
+}
+
 export interface ModelMlbInning {
   "away_errors"?: number;
   "away_hits"?: number;
@@ -32265,6 +32522,34 @@ export interface ModelMlbInning {
   "home_hits"?: number;
   "home_runs"?: number;
   "number"?: number;
+}
+
+export interface ModelMlbLeaderCategory {
+  "category"?: string;
+  "game_type"?: string;
+  "group"?: string;
+  "leaders"?: Array<ModelMlbLeaderEntry>;
+  "season"?: string;
+  "total"?: number;
+}
+
+export interface ModelMlbLeaderEntry {
+  "league"?: ModelMlbNamedRef;
+  "player"?: ModelMlbNamedRef;
+  "rank"?: number;
+  "season"?: string;
+  "stats"?: Record<string, unknown>;
+  "team"?: ModelMlbTeamRef;
+  "value"?: string;
+}
+
+export interface ModelMlbLeagueLeadersResponse {
+  "categories"?: Array<string>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "results"?: Array<ModelMlbLeaderCategory>;
+  "season"?: number;
+  "source_url"?: string;
 }
 
 export interface ModelMlbLinescore {
@@ -32280,9 +32565,60 @@ export interface ModelMlbLinescore {
   "scheduled_innings"?: number;
 }
 
+export interface ModelMlbMlbdiscoveryResponse {
+  "divisions"?: Array<ModelMlbNamedRef>;
+  "fetched_at"?: string;
+  "game_types"?: Array<ModelMlbEnumValue>;
+  "leader_categories"?: Array<ModelMlbEnumValue>;
+  "leagues"?: Array<ModelMlbNamedRef>;
+  "prospect_date_ranges"?: Array<ModelMlbEnumValue>;
+  "prospect_minimum_pa"?: Array<number>;
+  "prospect_positions"?: Array<ModelMlbEnumValue>;
+  "roster_types"?: Array<ModelMlbEnumValue>;
+  "sections"?: Array<ModelMlbNavigationItem>;
+  "source_url"?: string;
+  "sports"?: Array<ModelMlbNamedRef>;
+  "standings_types"?: Array<ModelMlbEnumValue>;
+  "stat_groups"?: Array<ModelMlbEnumValue>;
+  "stat_hitter_positions"?: Array<ModelMlbEnumValue>;
+  "stat_player_pools"?: Array<ModelMlbEnumValue>;
+  "stat_types"?: Array<ModelMlbEnumValue>;
+  "statcast_entity_types"?: Array<ModelMlbEnumValue>;
+  "statcast_expected_filter_types"?: Array<ModelMlbEnumValue>;
+  "statcast_expected_max_year"?: number;
+  "statcast_expected_min_year"?: number;
+  "statcast_expected_minimums"?: Array<ModelMlbEnumValue>;
+  "statcast_expected_sort_directions"?: Array<ModelMlbEnumValue>;
+  "statcast_expected_sort_fields"?: Array<ModelMlbEnumValue>;
+  "statcast_expected_types"?: Array<ModelMlbEnumValue>;
+  "statcast_leaderboards"?: Array<ModelMlbEnumValue>;
+  "statcast_max_year"?: number;
+  "statcast_min_year"?: number;
+  "statcast_minimum_bbe"?: Array<ModelMlbEnumValue>;
+  "statcast_oaa_max_year"?: number;
+  "statcast_oaa_min_year"?: number;
+  "statcast_oaa_minimums"?: Array<ModelMlbEnumValue>;
+  "statcast_oaa_positions"?: Array<ModelMlbEnumValue>;
+  "statcast_oaa_ranges"?: Array<ModelMlbEnumValue>;
+  "statcast_oaa_roles"?: Array<ModelMlbEnumValue>;
+  "statcast_oaa_sort_directions"?: Array<ModelMlbEnumValue>;
+  "statcast_oaa_sort_fields"?: Array<ModelMlbEnumValue>;
+  "statcast_oaa_types"?: Array<ModelMlbEnumValue>;
+  "statcast_positions"?: Array<ModelMlbEnumValue>;
+  "statcast_sort_directions"?: Array<ModelMlbEnumValue>;
+  "statcast_sort_fields"?: Array<ModelMlbEnumValue>;
+}
+
 export interface ModelMlbNamedRef {
   "id"?: number;
   "name"?: string;
+}
+
+export interface ModelMlbNavigationItem {
+  "children"?: Array<ModelMlbNavigationItem>;
+  "label"?: string;
+  "url"?: string;
+  "visible"?: boolean;
 }
 
 export interface ModelMlbPlay {
@@ -32343,6 +32679,57 @@ export interface ModelMlbPlayerResponse {
   "source_url"?: string;
 }
 
+export interface ModelMlbPlayerSuggestion {
+  "active"?: boolean;
+  "boxscore_name"?: string;
+  "display_name"?: string;
+  "headshots"?: Array<ModelMlbImageRef>;
+  "id"?: number;
+  "name"?: string;
+  "team_id"?: number;
+  "team_tri_code"?: string;
+  "use_last_name"?: string;
+  "use_name"?: string;
+}
+
+export interface ModelMlbProspectStat {
+  "age"?: number;
+  "average"?: string;
+  "batting_stats"?: Record<string, unknown>;
+  "blown_saves"?: number;
+  "era"?: string;
+  "holds"?: number;
+  "losses"?: number;
+  "name"?: string;
+  "pitching_stats"?: Record<string, unknown>;
+  "player_id"?: number;
+  "position"?: string;
+  "rank"?: number;
+  "saves"?: number;
+  "slug"?: string;
+  "team"?: string;
+  "team_id"?: number;
+  "team_level"?: string;
+  "wins"?: number;
+}
+
+export interface ModelMlbProspectStatsResponse {
+  "count"?: number;
+  "date_range"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "list_type"?: string;
+  "min_pa"?: number;
+  "offset"?: number;
+  "player_type"?: string;
+  "players"?: Array<ModelMlbProspectStat>;
+  "position"?: string;
+  "query"?: string;
+  "source_url"?: string;
+  "team_id"?: number;
+  "total"?: number;
+}
+
 export interface ModelMlbRosterPlayer {
   "jersey_number"?: string;
   "person"?: ModelMlbNamedRef;
@@ -32372,6 +32759,16 @@ export interface ModelMlbScheduleResponse {
   "total_games"?: number;
 }
 
+export interface ModelMlbSearchResponse {
+  "fetched_at"?: string;
+  "players"?: Array<ModelMlbPlayerSuggestion>;
+  "query"?: string;
+  "search_terms"?: Array<ModelMlbTermSuggestion>;
+  "source_url"?: string;
+  "teams"?: Array<ModelMlbTeamSuggestion>;
+  "topics"?: Array<ModelMlbTopicSuggestion>;
+}
+
 export interface ModelMlbStandingsGroup {
   "division"?: ModelMlbNamedRef;
   "league"?: ModelMlbNamedRef;
@@ -32380,6 +32777,7 @@ export interface ModelMlbStandingsGroup {
 }
 
 export interface ModelMlbStandingsResponse {
+  "date"?: string;
   "fetched_at"?: string;
   "groups"?: Array<ModelMlbStandingsGroup>;
   "season"?: number;
@@ -32414,9 +32812,62 @@ export interface ModelMlbStatSplit {
   "team"?: ModelMlbTeamRef;
 }
 
+export interface ModelMlbStatcastBoardResponse {
+  "board"?: string;
+  "end_year"?: number;
+  "fetched_at"?: string;
+  "filter_type"?: string;
+  "league_average"?: Array<unknown>;
+  "limit"?: number;
+  "minimum"?: string;
+  "offset"?: number;
+  "position"?: string;
+  "range"?: string;
+  "roles"?: Array<string>;
+  "rows"?: Array<ModelMlbStatcastRow>;
+  "sort"?: string;
+  "sort_dir"?: string;
+  "source_url"?: string;
+  "split"?: string;
+  "start_year"?: number;
+  "team_id"?: number;
+  "total"?: number;
+  "type"?: string;
+  "year"?: number;
+}
+
+export interface ModelMlbStatcastResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "min_bbe"?: string;
+  "offset"?: number;
+  "position"?: string;
+  "rows"?: Array<ModelMlbStatcastRow>;
+  "sort"?: string;
+  "sort_dir"?: string;
+  "source_url"?: string;
+  "team_id"?: number;
+  "total"?: number;
+  "type"?: string;
+  "year"?: number;
+}
+
+export interface ModelMlbStatcastRow {
+  "entity_id"?: string;
+  "metrics"?: Record<string, unknown>;
+  "name"?: string;
+  "position"?: string;
+  "qualified"?: boolean;
+  "rank"?: number;
+  "team"?: string;
+  "team_id"?: string;
+}
+
 export interface ModelMlbStatsResponse {
   "fetched_at"?: string;
   "group"?: string;
+  "limit"?: number;
+  "offset"?: number;
   "player_id"?: number;
   "season"?: number;
   "source_url"?: string;
@@ -32454,12 +32905,36 @@ export interface ModelMlbTeamRef {
   "name"?: string;
 }
 
+export interface ModelMlbTeamSuggestion {
+  "club_name"?: string;
+  "display_name"?: string;
+  "franchise_name"?: string;
+  "id"?: number;
+  "logos"?: Array<ModelMlbImageRef>;
+  "name"?: string;
+  "sport_id"?: number;
+  "team_name"?: string;
+  "tri_code"?: string;
+}
+
 export interface ModelMlbTeamsResponse {
   "count"?: number;
   "fetched_at"?: string;
   "season"?: number;
   "source_url"?: string;
   "teams"?: Array<ModelMlbTeam>;
+}
+
+export interface ModelMlbTermSuggestion {
+  "display_name"?: string;
+  "name"?: string;
+}
+
+export interface ModelMlbTopicSuggestion {
+  "display_name"?: string;
+  "fields"?: Array<number>;
+  "name"?: string;
+  "slug"?: string;
 }
 
 export interface ModelMlbTransaction {
@@ -32493,9 +32968,27 @@ export interface ModelMlbBoxscoreResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelMlbDiscoveryResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbMlbdiscoveryResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbEditorialFeedResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbEditorialFeedResponse;
+  "msg"?: string;
+}
+
 export interface ModelMlbGameResponseDoc {
   "code"?: number;
   "data"?: ModelMlbGameResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbLeagueLeadersResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbLeagueLeadersResponse;
   "msg"?: string;
 }
 
@@ -32511,6 +33004,12 @@ export interface ModelMlbPlayerResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelMlbProspectStatsResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbProspectStatsResponse;
+  "msg"?: string;
+}
+
 export interface ModelMlbRosterResponseDoc {
   "code"?: number;
   "data"?: ModelMlbRosterResponse;
@@ -32523,9 +33022,27 @@ export interface ModelMlbScheduleResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelMlbSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelMlbStandingsResponseDoc {
   "code"?: number;
   "data"?: ModelMlbStandingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbStatcastBoardResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbStatcastBoardResponse;
+  "msg"?: string;
+}
+
+export interface ModelMlbStatcastResponseDoc {
+  "code"?: number;
+  "data"?: ModelMlbStatcastResponse;
   "msg"?: string;
 }
 
@@ -32914,6 +33431,14 @@ export interface ModelMoneycontrolHeadlineItem {
   "url"?: string;
 }
 
+export interface ModelMotleyfoolAuthorResponse {
+  "articles"?: Array<ModelNewsplatformHeadlineItem>;
+  "biography"?: Array<string>;
+  "image_url"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
 export interface ModelNationafricaAuthorArticle {
   "premium"?: boolean;
   "summary"?: string;
@@ -33070,6 +33595,24 @@ export interface ModelNdtvAuthorResponse {
   "name"?: string;
   "same_as"?: Array<string>;
   "url"?: string;
+}
+
+export interface ModelNdtvHeadlineItem {
+  "author"?: string;
+  "image_url"?: string;
+  "published_at"?: string;
+  "summary"?: string;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelNdtvSearchResponse {
+  "has_more"?: boolean;
+  "items"?: Array<ModelNdtvHeadlineItem>;
+  "page"?: number;
+  "query"?: string;
+  "total_results"?: number;
 }
 
 export interface ModelNews18AuthorResponse {
@@ -40786,6 +41329,26 @@ export interface ModelPublicnewsGbnewsAuthorResponseDoc {
   "data"?: ModelGbnewsAuthorResponse;
 }
 
+export interface ModelPublicnewsGhanawebArchiveMonthsResponseDoc {
+  "data"?: ModelGhanawebArchiveMonthsResponse;
+}
+
+export interface ModelPublicnewsGhanawebArchiveResponseDoc {
+  "data"?: ModelGhanawebArchiveResponse;
+}
+
+export interface ModelPublicnewsGhanawebVideoResponseDoc {
+  "data"?: ModelGhanawebVideoResponse;
+}
+
+export interface ModelPublicnewsGhanawebVideoSectionsResponseDoc {
+  "data"?: ModelGhanawebVideoSectionsResponse;
+}
+
+export interface ModelPublicnewsGhanawebVideosResponseDoc {
+  "data"?: ModelGhanawebVideosResponse;
+}
+
 export interface ModelPublicnewsGizmodoAuthorResponseDoc {
   "data"?: ModelGizmodoAuthorResponse;
 }
@@ -40862,6 +41425,14 @@ export interface ModelPublicnewsIrishtimesAuthorResponseDoc {
   "data"?: ModelIrishtimesAuthorResponse;
 }
 
+export interface ModelPublicnewsJerusalemPostAuthorResponseDoc {
+  "data"?: ModelJerusalempostAuthorResponse;
+}
+
+export interface ModelPublicnewsJerusalemPostAuthorsResponseDoc {
+  "data"?: ModelJerusalempostAuthorsResponse;
+}
+
 export interface ModelPublicnewsKhaleejTimesAuthorResponseDoc {
   "data"?: ModelKhaleejtimesAuthorResponse;
 }
@@ -40910,6 +41481,10 @@ export interface ModelPublicnewsMoneycontrolAuthorResponseDoc {
   "data"?: ModelMoneycontrolAuthorResponse;
 }
 
+export interface ModelPublicnewsMotleyfoolAuthorResponseDoc {
+  "data"?: ModelMotleyfoolAuthorResponse;
+}
+
 export interface ModelPublicnewsNationAfricaAuthorResponseDoc {
   "data"?: ModelNationafricaAuthorResponse;
 }
@@ -40924,6 +41499,10 @@ export interface ModelPublicnewsNdtvArticleResponseDoc {
 
 export interface ModelPublicnewsNdtvAuthorResponseDoc {
   "data"?: ModelNdtvAuthorResponse;
+}
+
+export interface ModelPublicnewsNdtvSearchResponseDoc {
+  "data"?: ModelNdtvSearchResponse;
 }
 
 export interface ModelPublicnewsNews18AuthorResponseDoc {
@@ -41042,6 +41621,14 @@ export interface ModelPublicnewsSalonAuthorResponseDoc {
   "data"?: ModelSalonAuthorResponse;
 }
 
+export interface ModelPublicnewsSbsnewsAuthorResponseDoc {
+  "data"?: ModelSbsnewsAuthorResponse;
+}
+
+export interface ModelPublicnewsScienceAlertAuthorResponseDoc {
+  "data"?: ModelSciencealertAuthorResponse;
+}
+
 export interface ModelPublicnewsScreenrantAuthorResponseDoc {
   "data"?: ModelScreenrantAuthorResponse;
 }
@@ -41074,6 +41661,10 @@ export interface ModelPublicnewsSkyNewsVideosResponseDoc {
   "data"?: ModelSkynewsVideosResponse;
 }
 
+export interface ModelPublicnewsSkySportsAuthorResponseDoc {
+  "data"?: ModelSkysportsAuthorResponse;
+}
+
 export interface ModelPublicnewsSmhArticleResponseDoc {
   "data"?: ModelSmhArticleResponse;
 }
@@ -41088,6 +41679,74 @@ export interface ModelPublicnewsSpaceAuthorResponseDoc {
 
 export interface ModelPublicnewsSportingNewsAuthorResponseDoc {
   "data"?: ModelSportingnewsAuthorResponse;
+}
+
+export interface ModelPublicnewsSportskeedaAuthorResponseDoc {
+  "data"?: ModelSportskeedaAuthorResponse;
+}
+
+export interface ModelPublicnewsSportskeedaDepthChartResponseDoc {
+  "data"?: ModelSportskeedaDepthChartResponse;
+}
+
+export interface ModelPublicnewsSportskeedaFeedResponseDoc {
+  "data"?: ModelSportskeedaFeedResponse;
+}
+
+export interface ModelPublicnewsSportskeedaFootballDataResponseDoc {
+  "data"?: ModelSportskeedaFootballDataResponse;
+}
+
+export interface ModelPublicnewsSportskeedaFootballOptionsResponseDoc {
+  "data"?: ModelSportskeedaFootballOptionsResponse;
+}
+
+export interface ModelPublicnewsSportskeedaPageOptionsResponseDoc {
+  "data"?: ModelSportskeedaPageOptionsResponse;
+}
+
+export interface ModelPublicnewsSportskeedaPlayerStatsResponseDoc {
+  "data"?: ModelSportskeedaPlayerStatsResponse;
+}
+
+export interface ModelPublicnewsSportskeedaProfileResponseDoc {
+  "data"?: ModelSportskeedaProfileResponse;
+}
+
+export interface ModelPublicnewsSportskeedaSectionsResponseDoc {
+  "data"?: ModelSportskeedaSectionsResponse;
+}
+
+export interface ModelPublicnewsSportskeedaSitemapItemsResponseDoc {
+  "data"?: ModelSportskeedaSitemapItemsResponse;
+}
+
+export interface ModelPublicnewsSportskeedaSitemapsResponseDoc {
+  "data"?: ModelSportskeedaSitemapsResponse;
+}
+
+export interface ModelPublicnewsSportskeedaStandingsOptionsResponseDoc {
+  "data"?: ModelSportskeedaStandingsOptionsResponse;
+}
+
+export interface ModelPublicnewsSportskeedaTablesResponseDoc {
+  "data"?: ModelSportskeedaTablesResponse;
+}
+
+export interface ModelPublicnewsSportskeedaTaxonomySearchResponseDoc {
+  "data"?: ModelSportskeedaTaxonomySearchResponse;
+}
+
+export interface ModelPublicnewsSportskeedaTradeValuesResponseDoc {
+  "data"?: ModelSportskeedaTradeValuesResponse;
+}
+
+export interface ModelPublicnewsSportskeedaVideoResponseDoc {
+  "data"?: ModelSportskeedaVideoResponse;
+}
+
+export interface ModelPublicnewsSportskeedaVideosResponseDoc {
+  "data"?: ModelSportskeedaVideosResponse;
 }
 
 export interface ModelPublicnewsStandardAuthorResponseDoc {
@@ -42790,6 +43449,72 @@ export interface ModelRottentomatoesCriticsAuthorsResponse {
   "source_url"?: string;
 }
 
+export interface ModelRottentomatoesEditorialContentItem {
+  "author_id"?: number;
+  "excerpt"?: string;
+  "featured_media_id"?: number;
+  "id"?: number;
+  "modified_at"?: string;
+  "published_at"?: string;
+  "term_ids"?: Array<number>;
+  "title"?: string;
+  "type"?: "article" | "guide" | "gallery" | "hub-subpage" | "non-rt-publication" | "rt-hub" | "how-to" | "otg-article" | "prev" | "rt_poll" | "page";
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesEditorialContentResponse {
+  "fetched_at"?: string;
+  "has_next_page"?: boolean;
+  "limit"?: number;
+  "operator"?: "AND" | "OR";
+  "page"?: number;
+  "public_page_derived"?: boolean;
+  "query"?: string;
+  "results"?: Array<ModelRottentomatoesEditorialContentItem>;
+  "source_url"?: string;
+  "taxonomy"?: "categories" | "tags" | "related-movie-id" | "related-tv-season-id" | "related-tv-series-id" | "related-tv-episode-id" | "related-celebrity-id" | "publication" | "franchise" | "coauthors";
+  "term_ids"?: Array<number>;
+  "total"?: number;
+  "total_pages"?: number;
+  "type"?: "article" | "guide" | "gallery" | "hub-subpage" | "non-rt-publication" | "rt-hub" | "how-to" | "otg-article" | "prev" | "rt_poll" | "pages";
+}
+
+export interface ModelRottentomatoesEditorialContentType {
+  "label"?: string;
+  "value"?: "article" | "guide" | "gallery" | "hub-subpage" | "non-rt-publication" | "rt-hub" | "how-to" | "otg-article" | "prev" | "rt_poll" | "pages";
+}
+
+export interface ModelRottentomatoesEditorialContentTypesResponse {
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "types"?: Array<ModelRottentomatoesEditorialContentType>;
+  "verified_at"?: string;
+}
+
+export interface ModelRottentomatoesEditorialDetailLink {
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesEditorialDetailResponse {
+  "body_html"?: string;
+  "fetched_at"?: string;
+  "headings"?: Array<string>;
+  "image_url"?: string;
+  "images"?: Array<string>;
+  "links"?: Array<ModelRottentomatoesEditorialDetailLink>;
+  "modified_at"?: string;
+  "paragraphs"?: Array<string>;
+  "path"?: string;
+  "public_page_derived"?: boolean;
+  "published_at"?: string;
+  "source_url"?: string;
+  "subtitle"?: string;
+  "title"?: string;
+  "type"?: "article" | "gallery" | "guide" | "otg-article" | "prev";
+  "video_urls"?: Array<string>;
+}
+
 export interface ModelRottentomatoesEditorialSearchResponse {
   "fetched_at"?: string;
   "has_next_page"?: boolean;
@@ -42809,6 +43534,63 @@ export interface ModelRottentomatoesEditorialSearchResult {
   "title"?: string;
   "type"?: string;
   "url"?: string;
+}
+
+export interface ModelRottentomatoesEditorialSectionItem {
+  "image_url"?: string;
+  "published_at"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRottentomatoesEditorialSectionResponse {
+  "fetched_at"?: string;
+  "has_next_page"?: boolean;
+  "page"?: number;
+  "path"?: string;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelRottentomatoesEditorialSectionItem>;
+  "source_url"?: string;
+  "title"?: string;
+  "total_pages"?: number;
+}
+
+export interface ModelRottentomatoesEditorialTaxonomiesResponse {
+  "public_page_derived"?: boolean;
+  "source_url"?: string;
+  "taxonomies"?: Array<ModelRottentomatoesEditorialTaxonomy>;
+  "verified_at"?: string;
+}
+
+export interface ModelRottentomatoesEditorialTaxonomy {
+  "hierarchical"?: boolean;
+  "label"?: string;
+  "types"?: Array<string>;
+  "value"?: "categories" | "tags" | "related-movie-id" | "related-tv-season-id" | "related-tv-series-id" | "related-tv-episode-id" | "related-celebrity-id" | "publication" | "franchise" | "coauthors";
+}
+
+export interface ModelRottentomatoesEditorialTerm {
+  "count"?: number;
+  "description"?: string;
+  "id"?: number;
+  "link"?: string;
+  "name"?: string;
+  "parent"?: number;
+  "slug"?: string;
+}
+
+export interface ModelRottentomatoesEditorialTermsResponse {
+  "fetched_at"?: string;
+  "has_next_page"?: boolean;
+  "limit"?: number;
+  "page"?: number;
+  "public_page_derived"?: boolean;
+  "results"?: Array<ModelRottentomatoesEditorialTerm>;
+  "search"?: string;
+  "source_url"?: string;
+  "taxonomy"?: "categories" | "tags" | "related-movie-id" | "related-tv-season-id" | "related-tv-series-id" | "related-tv-episode-id" | "related-celebrity-id" | "publication" | "franchise" | "coauthors";
+  "total"?: number;
+  "total_pages"?: number;
 }
 
 export interface ModelRottentomatoesEpisodeResponse {
@@ -43144,9 +43926,45 @@ export interface ModelRottentomatoesCriticsAuthorsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelRottentomatoesEditorialContentResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesEditorialContentResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesEditorialContentTypesResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesEditorialContentTypesResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesEditorialDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesEditorialDetailResponse;
+  "msg"?: string;
+}
+
 export interface ModelRottentomatoesEditorialSearchResponseDoc {
   "code"?: number;
   "data"?: ModelRottentomatoesEditorialSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesEditorialSectionResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesEditorialSectionResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesEditorialTaxonomiesResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesEditorialTaxonomiesResponse;
+  "msg"?: string;
+}
+
+export interface ModelRottentomatoesEditorialTermsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRottentomatoesEditorialTermsResponse;
   "msg"?: string;
 }
 
@@ -43510,6 +44328,40 @@ export interface ModelSamsclubRelatedItemsResponseDoc {
   "code"?: number;
   "data"?: ModelSamsclubRelatedItemsResponse;
   "msg"?: string;
+}
+
+export interface ModelSbsnewsAuthorArticle {
+  "published_at"?: string;
+  "summary"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelSbsnewsAuthorResponse {
+  "articles"?: Array<ModelSbsnewsAuthorArticle>;
+  "biography"?: string;
+  "has_next_page"?: boolean;
+  "headshot_url"?: string;
+  "name"?: string;
+  "page"?: number;
+  "url"?: string;
+}
+
+export interface ModelSciencealertAuthorResponse {
+  "articles"?: Array<ModelNewsplatformHeadlineItem>;
+  "biography"?: Array<string>;
+  "has_next_page"?: boolean;
+  "image_url"?: string;
+  "name"?: string;
+  "page"?: number;
+  "slug"?: string;
+  "social_links"?: Array<ModelSciencealertAuthorSocialLink>;
+  "url"?: string;
+}
+
+export interface ModelSciencealertAuthorSocialLink {
+  "platform"?: string;
+  "url"?: string;
 }
 
 export interface ModelScmpArticleResponse {
@@ -46354,6 +47206,14 @@ export interface ModelSkynewsVideosResponse {
   "items"?: Array<ModelSkynewsHeadlineItem>;
 }
 
+export interface ModelSkysportsAuthorResponse {
+  "articles"?: Array<ModelNewsplatformHeadlineItem>;
+  "biography"?: Array<string>;
+  "job_title"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
 export interface ModelSlateArticleResponse {
   "authors"?: Array<string>;
   "description"?: string;
@@ -47855,6 +48715,353 @@ export interface ModelSportingnewsAuthorResponse {
   "slug"?: string;
   "social_links"?: Array<string>;
   "url"?: string;
+}
+
+export interface ModelSportskeedaAuthorResponse {
+  "articles"?: Array<ModelNewsplatformHeadlineItem>;
+  "biography"?: Array<string>;
+  "image_url"?: string;
+  "name"?: string;
+  "role"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaDataTable {
+  "columns"?: Array<string>;
+  "name"?: string;
+  "rows"?: Array<Array<ModelSportskeedaTableCell>>;
+}
+
+export interface ModelSportskeedaDepthChartPosition {
+  "name"?: string;
+  "players"?: Array<ModelSportskeedaPageView>;
+}
+
+export interface ModelSportskeedaDepthChartResponse {
+  "slug"?: string;
+  "teams"?: Array<ModelSportskeedaDepthChartTeam>;
+  "title"?: string;
+}
+
+export interface ModelSportskeedaDepthChartTeam {
+  "name"?: string;
+  "positions"?: Array<ModelSportskeedaDepthChartPosition>;
+  "slug"?: string;
+}
+
+export interface ModelSportskeedaFeedItem {
+  "age"?: string;
+  "category"?: string;
+  "image"?: string;
+  "section"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaFeedResponse {
+  "items"?: Array<ModelSportskeedaFeedItem>;
+  "next_page"?: number;
+  "page"?: number;
+  "slug"?: string;
+  "title"?: string;
+}
+
+export interface ModelSportskeedaFootballDataResponse {
+  "event"?: string;
+  "event_name"?: string;
+  "matchday"?: string;
+  "matchday_name"?: string;
+  "matches"?: Array<ModelSportskeedaFootballFixture>;
+  "next_matchday"?: string;
+  "previous_matchday"?: string;
+  "standings"?: Array<ModelSportskeedaFootballStanding>;
+  "status"?: "ok" | "no_matches";
+}
+
+export interface ModelSportskeedaFootballEvent {
+  "logo"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSportskeedaFootballFixture {
+  "away"?: string;
+  "away_score"?: string;
+  "away_slug"?: string;
+  "datetime"?: string;
+  "home"?: string;
+  "home_score"?: string;
+  "home_slug"?: string;
+  "id"?: string;
+  "postponed"?: boolean;
+  "result"?: string;
+  "slug"?: string;
+  "status"?: string;
+}
+
+export interface ModelSportskeedaFootballMatchday {
+  "end"?: string;
+  "match_count"?: number;
+  "name"?: string;
+  "selected"?: boolean;
+  "slug"?: string;
+  "start"?: string;
+}
+
+export interface ModelSportskeedaFootballOptionsResponse {
+  "event"?: string;
+  "events"?: Array<ModelSportskeedaFootballEvent>;
+  "matchdays"?: Array<ModelSportskeedaFootballMatchday>;
+}
+
+export interface ModelSportskeedaFootballStanding {
+  "draws"?: number;
+  "goal_difference"?: string;
+  "goals_against"?: string;
+  "goals_for"?: string;
+  "group"?: string;
+  "league"?: string;
+  "losses"?: number;
+  "played"?: number;
+  "points"?: number;
+  "position"?: number;
+  "qualification"?: string;
+  "team"?: string;
+  "team_code"?: string;
+  "team_slug"?: string;
+  "wins"?: number;
+}
+
+export interface ModelSportskeedaNavigationGroup {
+  "items"?: Array<ModelSportskeedaSectionLink>;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaPageFilter {
+  "label"?: string;
+  "name"?: string;
+  "values"?: Array<ModelSportskeedaPageFilterValue>;
+}
+
+export interface ModelSportskeedaPageFilterValue {
+  "name"?: string;
+  "selected"?: boolean;
+  "slug"?: string;
+  "value"?: string;
+}
+
+export interface ModelSportskeedaPageGroup {
+  "items"?: Array<ModelSportskeedaPageView>;
+  "name"?: string;
+}
+
+export interface ModelSportskeedaPageMenu {
+  "groups"?: Array<ModelSportskeedaPageGroup>;
+  "name"?: string;
+}
+
+export interface ModelSportskeedaPageOptionsResponse {
+  "filters"?: Array<ModelSportskeedaPageFilter>;
+  "menus"?: Array<ModelSportskeedaPageMenu>;
+  "slug"?: string;
+  "sports"?: Array<ModelSportskeedaPageView>;
+  "tabs"?: Array<ModelSportskeedaPageView>;
+  "title"?: string;
+  "views"?: Array<ModelSportskeedaPageView>;
+}
+
+export interface ModelSportskeedaPageView {
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSportskeedaPlayerSeasonStats {
+  "event_type"?: string;
+  "games_played"?: number;
+  "games_started"?: number;
+  "metrics"?: Record<string, unknown>;
+  "name"?: string;
+  "season"?: number;
+  "team"?: ModelSportskeedaPlayerStatsTeam;
+}
+
+export interface ModelSportskeedaPlayerStatsResponse {
+  "event_types"?: Array<ModelSportskeedaPageFilterValue>;
+  "records"?: Array<ModelSportskeedaPlayerSeasonStats>;
+  "selected_event_type"?: string;
+  "slug"?: string;
+  "sport"?: string;
+  "stat_fields"?: Array<string>;
+  "title"?: string;
+}
+
+export interface ModelSportskeedaPlayerStatsTeam {
+  "abbreviation"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSportskeedaProfileFact {
+  "name"?: string;
+  "value"?: string;
+}
+
+export interface ModelSportskeedaProfileResponse {
+  "description"?: string;
+  "facts"?: Array<ModelSportskeedaProfileFact>;
+  "kind"?: string;
+  "name"?: string;
+  "news"?: Array<ModelSportskeedaFeedItem>;
+  "slug"?: string;
+}
+
+export interface ModelSportskeedaScheduleMatch {
+  "competition"?: string;
+  "date_time"?: string;
+  "result"?: string;
+  "score_1"?: string;
+  "score_2"?: string;
+  "slug"?: string;
+  "status"?: string;
+  "team_1"?: string;
+  "team_2"?: string;
+  "venue"?: string;
+}
+
+export interface ModelSportskeedaSectionLink {
+  "external"?: boolean;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaSectionsResponse {
+  "navigation"?: Array<ModelSportskeedaNavigationGroup>;
+  "sections"?: Array<ModelSportskeedaSportSection>;
+}
+
+export interface ModelSportskeedaSitemapItem {
+  "last_modified"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaSitemapItemsResponse {
+  "has_more"?: boolean;
+  "items"?: Array<ModelSportskeedaSitemapItem>;
+  "limit"?: number;
+  "offset"?: number;
+  "sitemap_url"?: string;
+  "slug"?: string;
+  "total"?: number;
+}
+
+export interface ModelSportskeedaSitemapSource {
+  "last_modified"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaSitemapsResponse {
+  "sources"?: Array<ModelSportskeedaSitemapSource>;
+}
+
+export interface ModelSportskeedaSportSection {
+  "last_modified"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaStandingsOptionsResponse {
+  "conferences"?: Array<ModelSportskeedaPageView>;
+  "seasons"?: Array<number>;
+  "slug"?: string;
+}
+
+export interface ModelSportskeedaTableCell {
+  "slug"?: string;
+  "text"?: string;
+}
+
+export interface ModelSportskeedaTablesResponse {
+  "matches"?: Array<ModelSportskeedaScheduleMatch>;
+  "slug"?: string;
+  "status"?: string;
+  "tables"?: Array<ModelSportskeedaDataTable>;
+  "title"?: string;
+  "views"?: Array<ModelSportskeedaPageView>;
+}
+
+export interface ModelSportskeedaTaxonomyResult {
+  "id"?: string;
+  "image"?: string;
+  "path_slug"?: string;
+  "post_count"?: number;
+  "slug"?: string;
+  "taxonomy"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaTaxonomySearchResponse {
+  "query"?: string;
+  "results"?: Array<ModelSportskeedaTaxonomyResult>;
+  "taxonomies"?: Array<"category" | "event" | "team" | "player" | "wiki" | "wiki_tag">;
+}
+
+export interface ModelSportskeedaTradeValuePlayer {
+  "name"?: string;
+  "position"?: string;
+  "rank"?: number;
+  "slug"?: string;
+  "team"?: string;
+  "value"?: string;
+}
+
+export interface ModelSportskeedaTradeValuesResponse {
+  "limit"?: number;
+  "mode"?: string;
+  "next_offset"?: number;
+  "offset"?: number;
+  "players"?: Array<ModelSportskeedaTradeValuePlayer>;
+  "position"?: string;
+  "scoring"?: string;
+  "slug"?: string;
+  "superflex"?: boolean;
+  "total"?: number;
+  "updated_at"?: string;
+}
+
+export interface ModelSportskeedaVideoItem {
+  "channel"?: string;
+  "duration"?: string;
+  "image"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportskeedaVideoResponse {
+  "description"?: string;
+  "id"?: string;
+  "poster"?: string;
+  "slug"?: string;
+  "stream_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelSportskeedaVideosResponse {
+  "channels"?: Array<ModelSportskeedaPageView>;
+  "items"?: Array<ModelSportskeedaVideoItem>;
+  "slug"?: string;
+  "title"?: string;
 }
 
 export interface ModelSpotifyAlbumMeta {
@@ -57665,6 +58872,29 @@ export interface ModelWhatnotLiveShow {
   "url"?: string;
 }
 
+export interface ModelWhatnotSellerProfile {
+  "average_ship_days"?: number;
+  "bio"?: string;
+  "display_name"?: string;
+  "follower_count"?: number;
+  "following_count"?: number;
+  "is_live"?: boolean;
+  "is_premier_shop"?: boolean;
+  "is_verified_seller"?: boolean;
+  "rating"?: number;
+  "review_count"?: number;
+  "sold_count"?: number;
+  "username"?: string;
+}
+
+export interface ModelWhatnotSellerResponse {
+  "has_more"?: boolean;
+  "next_cursor"?: string;
+  "profile"?: ModelWhatnotSellerProfile;
+  "shows"?: Array<ModelWhatnotLiveShow>;
+  "total_count"?: number;
+}
+
 export interface ModelWhatnotBrowseResponseDoc {
   "code"?: number;
   "data"?: ModelWhatnotBrowseResponse;
@@ -57680,6 +58910,12 @@ export interface ModelWhatnotCategoriesResponseDoc {
 export interface ModelWhatnotLiveResponseDoc {
   "code"?: number;
   "data"?: ModelWhatnotLiveResponse;
+  "msg"?: string;
+}
+
+export interface ModelWhatnotSellerResponseDoc {
+  "code"?: number;
+  "data"?: ModelWhatnotSellerResponse;
   "msg"?: string;
 }
 
@@ -62445,6 +63681,19 @@ export interface AirbnbSearchParams {
   "zoom"?: number;
 }
 
+export type AlComAlcomHeadlinesResponse = CrawloraResponse<ModelPublicnewsHeadlinesResponseDoc>;
+export interface AlComAlcomHeadlinesParams {
+  "section": "news" | "sports" | "life";
+}
+
+export type AlComAlcomNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface AlComAlcomNewsParams {
+}
+
+export type AlComAlcomSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
+export interface AlComAlcomSectionsParams {
+}
+
 export type AlJazeeraAljazeeraArticleResponse = CrawloraResponse<ModelAljazeeraArticleResponseDoc>;
 export interface AlJazeeraAljazeeraArticleParams {
   "url": string;
@@ -64076,6 +65325,10 @@ export interface BootsSuggestParams {
   "q": string;
 }
 
+export type BostonGlobeBostonglobeNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface BostonGlobeBostonglobeNewsParams {
+}
+
 export type BoxOfficeMojoBoxofficemojoBrandResponse = CrawloraResponse<ModelBoxofficemojoTaxonomyDetailResponseDoc>;
 export interface BoxOfficeMojoBoxofficemojoBrandParams {
   "id"?: string;
@@ -65010,6 +66263,10 @@ export interface Chrono24SearchParams {
   "gender"?: "mens_unisex" | "womens";
   "watch_type"?: "watches" | "parts_accessories";
   "stock_info"?: "in_stock" | "on_order" | "on_request";
+}
+
+export type ClevelandComClevelandcomNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface ClevelandComClevelandcomNewsParams {
 }
 
 export type CnaArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
@@ -66563,7 +67820,7 @@ export interface DatasetsJournalistsFacetsParams {
   "facet": "outlet" | "vertical" | "topic" | "contact_type" | "record_type" | "role_type" | "email_kind" | "outreach_readiness_band";
   "q"?: string;
   "outlet"?: string;
-  "vertical"?: "tech" | "crypto" | "marketing" | "consumer_tech" | "consumer_policy" | "cybersecurity" | "health" | "gaming" | "climate" | "business" | "entertainment" | "sports" | "legal" | "science" | "politics" | "real_estate" | "automotive" | "travel" | "food" | "education" | "design" | "film_tv" | "fashion" | "music" | "personal_finance" | "tech_independent" | "culture_independent" | "local_news" | "construction" | "banking" | "retail" | "aerospace_defense" | "energy" | "agriculture" | "local_business";
+  "vertical"?: "tech" | "crypto" | "marketing" | "consumer_tech" | "consumer_policy" | "cybersecurity" | "health" | "gaming" | "climate" | "business" | "entertainment" | "sports" | "legal" | "science" | "politics" | "real_estate" | "automotive" | "travel" | "food" | "education" | "design" | "film_tv" | "fashion" | "music" | "personal_finance" | "tech_independent" | "culture_independent" | "local_news" | "construction" | "banking" | "retail" | "aerospace_defense" | "energy" | "agriculture" | "local_business" | "general_news";
   "topic"?: string;
   "contact_type"?: "email" | "social" | "none";
   "record_type"?: "person" | "desk" | "organization" | "syndicated_byline" | "unknown";
@@ -66582,7 +67839,7 @@ export type DatasetsJournalistsSearchResponse = CrawloraResponse<ModelDatasetsJo
 export interface DatasetsJournalistsSearchParams {
   "q"?: string;
   "outlet"?: string;
-  "vertical"?: "tech" | "crypto" | "marketing" | "consumer_tech" | "consumer_policy" | "cybersecurity" | "health" | "gaming" | "climate" | "business" | "entertainment" | "sports" | "legal" | "science" | "politics" | "real_estate" | "automotive" | "travel" | "food" | "education" | "design" | "film_tv" | "fashion" | "music" | "personal_finance" | "tech_independent" | "culture_independent" | "local_news" | "construction" | "banking" | "retail" | "aerospace_defense" | "energy" | "agriculture" | "local_business";
+  "vertical"?: "tech" | "crypto" | "marketing" | "consumer_tech" | "consumer_policy" | "cybersecurity" | "health" | "gaming" | "climate" | "business" | "entertainment" | "sports" | "legal" | "science" | "politics" | "real_estate" | "automotive" | "travel" | "food" | "education" | "design" | "film_tv" | "fashion" | "music" | "personal_finance" | "tech_independent" | "culture_independent" | "local_news" | "construction" | "banking" | "retail" | "aerospace_defense" | "energy" | "agriculture" | "local_business" | "general_news";
   "topic"?: string;
   "contact_type"?: "email" | "social" | "none";
   "record_type"?: "person" | "desk" | "organization" | "syndicated_byline" | "unknown";
@@ -69131,17 +70388,54 @@ export type FortuneSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsRe
 export interface FortuneSectionsParams {
 }
 
+export type FotMobFotmobAudioMatchesResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobAudioMatchesParams {
+}
+
+export type FotMobFotmobFifaRankingPeriodsResponse = CrawloraResponse<ModelFotmobFifaRankingPeriodsResponseDoc>;
+export interface FotMobFotmobFifaRankingPeriodsParams {
+  "gender": "men" | "women";
+}
+
+export type FotMobFotmobFifaRankingsResponse = CrawloraResponse<ModelFotmobFifaRankingsResponseDoc>;
+export interface FotMobFotmobFifaRankingsParams {
+  "gender": "men" | "women";
+  "period_id": string;
+}
+
+export type FotMobFotmobLatestNewsResponse = CrawloraResponse<ModelFotmobNewsListResponseDoc>;
+export interface FotMobFotmobLatestNewsParams {
+  "start_index"?: number;
+}
+
 export type FotMobFotmobLeagueResponse = CrawloraResponse<ModelFotmobResponseDoc>;
 export interface FotMobFotmobLeagueParams {
   "league_id": number;
+  "season"?: string;
+  "shotmap"?: boolean;
 }
 
 export type FotMobFotmobLeaguesResponse = CrawloraResponse<ModelFotmobResponseDoc>;
 export interface FotMobFotmobLeaguesParams {
 }
 
+export type FotMobFotmobLineupBuilderPlayersResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobLineupBuilderPlayersParams {
+  "player_ids": string;
+}
+
+export type FotMobFotmobLineupBuilderTeamResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobLineupBuilderTeamParams {
+  "team_id": string;
+}
+
 export type FotMobFotmobMatchResponse = CrawloraResponse<ModelFotmobResponseDoc>;
 export interface FotMobFotmobMatchParams {
+  "id": string;
+}
+
+export type FotMobFotmobMatchMediaResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobMatchMediaParams {
   "id": string;
 }
 
@@ -69155,6 +70449,11 @@ export type FotMobFotmobNewsResponse = CrawloraResponse<ModelFotmobResponseDoc>;
 export interface FotMobFotmobNewsParams {
   "league_id": string;
   "start_index"?: number;
+}
+
+export type FotMobFotmobNewsArticleResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobNewsArticleParams {
+  "id": string;
 }
 
 export type FotMobFotmobPlayerResponse = CrawloraResponse<ModelFotmobResponseDoc>;
@@ -69188,6 +70487,11 @@ export interface FotMobFotmobSearchParams {
   "term": string;
 }
 
+export type FotMobFotmobSeasonsResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobSeasonsParams {
+  "league_id": number;
+}
+
 export type FotMobFotmobStatsResponse = CrawloraResponse<ModelFotmobResponseDoc>;
 export interface FotMobFotmobStatsParams {
   "league_id": string;
@@ -69215,6 +70519,12 @@ export interface FotMobFotmobTeamParams {
   "id": string;
 }
 
+export type FotMobFotmobTeamFixturesResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobTeamFixturesParams {
+  "team_id": string;
+  "cursor": string;
+}
+
 export type FotMobFotmobTeamNewsResponse = CrawloraResponse<ModelFotmobResponseDoc>;
 export interface FotMobFotmobTeamNewsParams {
   "team_id": number;
@@ -69234,6 +70544,29 @@ export interface FotMobFotmobTransfersParams {
   "order_by"?: "lastModified" | "fee" | "date" | "name" | "fromClubName" | "toClubName";
   "exclude_extensions"?: boolean;
   "likely_only"?: boolean;
+}
+
+export type FotMobFotmobTrendingNewsResponse = CrawloraResponse<ModelFotmobNewsListResponseDoc>;
+export interface FotMobFotmobTrendingNewsParams {
+}
+
+export type FotMobFotmobTrendingSearchesResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobTrendingSearchesParams {
+}
+
+export type FotMobFotmobTvGuideResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobTvGuideParams {
+  "country": "us" | "se" | "gb" | "de" | "no" | "es" | "mx" | "ar" | "bo" | "cl" | "co" | "cr" | "ec" | "gt" | "hn" | "ni" | "pa" | "py" | "pe" | "uy" | "ve" | "da" | "ca" | "au" | "at" | "be" | "bg" | "hr" | "cy" | "cz" | "ee" | "fi" | "fr" | "gr" | "hu" | "is" | "ie" | "il" | "it" | "nl" | "pl" | "pt" | "ro" | "ru" | "ch" | "tr" | "za" | "br" | "in" | "me" | "id" | "th" | "mm" | "al" | "az" | "bl" | "ba" | "ks" | "la" | "li" | "mk" | "rs" | "sk" | "ua" | "essv" | "nz" | "bd" | "cn" | "gh" | "hk" | "jp" | "kr" | "ma" | "mt" | "my" | "ng" | "ph" | "pk" | "sg" | "si" | "tz";
+  "timezone"?: string;
+}
+
+export type FotMobFotmobTvGuideChannelsResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobTvGuideChannelsParams {
+  "country": "us" | "se" | "gb" | "de" | "no" | "es" | "mx" | "ar" | "bo" | "cl" | "co" | "cr" | "ec" | "gt" | "hn" | "ni" | "pa" | "py" | "pe" | "uy" | "ve" | "da" | "ca" | "au" | "at" | "be" | "bg" | "hr" | "cy" | "cz" | "ee" | "fi" | "fr" | "gr" | "hu" | "is" | "ie" | "il" | "it" | "nl" | "pl" | "pt" | "ro" | "ru" | "ch" | "tr" | "za" | "br" | "in" | "me" | "id" | "th" | "mm" | "al" | "az" | "bl" | "ba" | "ks" | "la" | "li" | "mk" | "rs" | "sk" | "ua" | "essv" | "nz" | "bd" | "cn" | "gh" | "hk" | "jp" | "kr" | "ma" | "mt" | "my" | "ng" | "ph" | "pk" | "sg" | "si" | "tz";
+}
+
+export type FotMobFotmobTvGuideCountriesResponse = CrawloraResponse<ModelFotmobResponseDoc>;
+export interface FotMobFotmobTvGuideCountriesParams {
 }
 
 export type FoxNewsFoxnewsArticleResponse = CrawloraResponse<ModelFoxnewsArticleResponseDoc>;
@@ -69267,6 +70600,24 @@ export type FoxNewsFoxnewsSectionsResponse = CrawloraResponse<ModelFoxnewsSectio
 export interface FoxNewsFoxnewsSectionsParams {
 }
 
+export type FoxSportsFoxsportsArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
+export interface FoxSportsFoxsportsArticleParams {
+  "url": string;
+}
+
+export type FoxSportsFoxsportsHeadlinesResponse = CrawloraResponse<ModelPublicnewsHeadlinesResponseDoc>;
+export interface FoxSportsFoxsportsHeadlinesParams {
+  "section": "top" | "mlb" | "nfl" | "college-football" | "ufl" | "nba" | "nhl" | "college-basketball" | "nascar" | "ufc" | "motor-sports" | "golf" | "soccer" | "fifa-world-cup" | "fifa-womens-world-cup" | "olympics" | "tennis" | "horseracing" | "westminster-kennel-club-dog-show" | "wnba" | "womens-college-basketball" | "world-baseball-classic" | "wwe";
+}
+
+export type FoxSportsFoxsportsNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface FoxSportsFoxsportsNewsParams {
+}
+
+export type FoxSportsFoxsportsSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
+export interface FoxSportsFoxsportsSectionsParams {
+}
+
 export type France24France24ArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
 export interface France24France24ArticleParams {
   "url": string;
@@ -69288,6 +70639,14 @@ export interface France24France24NewsParams {
 
 export type France24France24SectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
 export interface France24France24SectionsParams {
+}
+
+export type FreeMalaysiaTodayFreemalaysiatodayNewsResponse = CrawloraResponse<ModelFreemalaysiatodayNewsResponseDoc>;
+export interface FreeMalaysiaTodayFreemalaysiatodayNewsParams {
+}
+
+export type FreeMalaysiaTodayFreemalaysiatodaySectionsResponse = CrawloraResponse<ModelFreemalaysiatodaySectionsResponseDoc>;
+export interface FreeMalaysiaTodayFreemalaysiatodaySectionsParams {
 }
 
 export type FtArticleResponse = CrawloraResponse<ModelFtArticleResponseDoc>;
@@ -69595,6 +70954,49 @@ export interface GeocodingSearchParams {
   "addressdetails"?: boolean;
   "extratags"?: boolean;
   "namedetails"?: boolean;
+}
+
+export type GhanaWebGhanawebArchiveResponse = CrawloraResponse<ModelPublicnewsGhanawebArchiveResponseDoc>;
+export interface GhanaWebGhanawebArchiveParams {
+  "month": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type GhanaWebGhanawebArchiveMonthsResponse = CrawloraResponse<ModelPublicnewsGhanawebArchiveMonthsResponseDoc>;
+export interface GhanaWebGhanawebArchiveMonthsParams {
+}
+
+export type GhanaWebGhanawebArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
+export interface GhanaWebGhanawebArticleParams {
+  "url": string;
+}
+
+export type GhanaWebGhanawebHeadlinesResponse = CrawloraResponse<ModelPublicnewsHeadlinesResponseDoc>;
+export interface GhanaWebGhanawebHeadlinesParams {
+  "section": "news" | "sports" | "business" | "entertainment" | "africa" | "opinions" | "editorial" | "crime" | "regional" | "health" | "politics" | "tabloid" | "world" | "lifestyle" | "features";
+}
+
+export type GhanaWebGhanawebNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface GhanaWebGhanawebNewsParams {
+}
+
+export type GhanaWebGhanawebSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
+export interface GhanaWebGhanawebSectionsParams {
+}
+
+export type GhanaWebGhanawebVideoResponse = CrawloraResponse<ModelPublicnewsGhanawebVideoResponseDoc>;
+export interface GhanaWebGhanawebVideoParams {
+  "id": string;
+}
+
+export type GhanaWebGhanawebVideoSectionsResponse = CrawloraResponse<ModelPublicnewsGhanawebVideoSectionsResponseDoc>;
+export interface GhanaWebGhanawebVideoSectionsParams {
+}
+
+export type GhanaWebGhanawebVideosResponse = CrawloraResponse<ModelPublicnewsGhanawebVideosResponseDoc>;
+export interface GhanaWebGhanawebVideosParams {
+  "section": "news" | "sports" | "business" | "entertainment";
 }
 
 export type GitHubGithubOrgResponse = CrawloraResponse<ModelAppResponse>;
@@ -70911,6 +72313,10 @@ export interface HotelsComHotelsSearchParams {
   "request": HotelsComHotelsSearchBody;
 }
 
+export type HowToGeekHowtogeekNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface HowToGeekHowtogeekNewsParams {
+}
+
 export type HuffPostHuffpostArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
 export interface HuffPostHuffpostArticleParams {
   "url": string;
@@ -71614,6 +73020,33 @@ export type JCrewJcrewSuggestResponse = CrawloraResponse<ModelJcrewSuggestRespon
 export interface JCrewJcrewSuggestParams {
   "query": string;
   "site"?: "jcrew" | "factory";
+}
+
+export type JerusalemPostJerusalempostArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
+export interface JerusalemPostJerusalempostArticleParams {
+  "url": string;
+}
+
+export type JerusalemPostJerusalempostAuthorResponse = CrawloraResponse<ModelPublicnewsJerusalemPostAuthorResponseDoc>;
+export interface JerusalemPostJerusalempostAuthorParams {
+  "url": string;
+}
+
+export type JerusalemPostJerusalempostAuthorsResponse = CrawloraResponse<ModelPublicnewsJerusalemPostAuthorsResponseDoc>;
+export interface JerusalemPostJerusalempostAuthorsParams {
+}
+
+export type JerusalemPostJerusalempostHeadlinesResponse = CrawloraResponse<ModelPublicnewsHeadlinesResponseDoc>;
+export interface JerusalemPostJerusalempostHeadlinesParams {
+  "section": "aliyah" | "american-politics" | "arab-israeli-conflict" | "archaeology" | "bds-movement" | "all-news" | "banking-and-finance" | "business-and-innovation" | "business-opinion" | "christian-world" | "consumerism" | "culture" | "defense-and-tech" | "diaspora" | "environment" | "food-and-recipes" | "health-and-wellness" | "health-around-the-world" | "history" | "home" | "iran-news" | "israel-election-2026" | "israel-news" | "israel-politics" | "israeli-sports" | "j-spot" | "jewish-holidays" | "judaism" | "kabbalah" | "middle-east" | "must" | "nutrition" | "omg" | "opinion" | "science" | "tech-and-startups" | "terrorism" | "torah-portion" | "ukraine-russia-war" | "world-news";
+}
+
+export type JerusalemPostJerusalempostNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface JerusalemPostJerusalempostNewsParams {
+}
+
+export type JerusalemPostJerusalempostSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
+export interface JerusalemPostJerusalempostSectionsParams {
 }
 
 export type JimmyJohnsMenuResponse = CrawloraResponse<ModelJimmyjohnsMenuResponseDoc>;
@@ -72714,6 +74147,10 @@ export interface LiveScoreLivescoreCompetitionParams {
   "path": string;
 }
 
+export type LiveScoreLivescoreCompetitionsResponse = CrawloraResponse<ModelLivescoreResponseDoc>;
+export interface LiveScoreLivescoreCompetitionsParams {
+}
+
 export type LiveScoreLivescoreLiveScoresResponse = CrawloraResponse<ModelLivescoreResponseDoc>;
 export interface LiveScoreLivescoreLiveScoresParams {
   "sport": "soccer" | "hockey" | "basketball" | "tennis" | "cricket";
@@ -72776,6 +74213,13 @@ export interface LiveScoreLivescoreScoresTocParams {
   "sport": "soccer" | "hockey" | "basketball" | "tennis" | "cricket";
   "date": string;
   "timezone_offset"?: number;
+}
+
+export type LiveScoreLivescoreSearchResponse = CrawloraResponse<ModelLivescoreLivescoreSearchResponseDoc>;
+export interface LiveScoreLivescoreSearchParams {
+  "sport": "soccer" | "hockey" | "basketball" | "tennis" | "cricket";
+  "query"?: string;
+  "limit"?: number;
 }
 
 export type LiveScoreLivescoreSportsResponse = CrawloraResponse<ModelLivescoreSportsResponseDoc>;
@@ -73013,6 +74457,30 @@ export interface MediaiteNewsParams {
 
 export type MediaiteSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
 export interface MediaiteSectionsParams {
+}
+
+export type MedicalNewsTodayMedicalnewstodayArticleResponse = CrawloraResponse<ModelMedicalnewstodayArticleResponseDoc>;
+export interface MedicalNewsTodayMedicalnewstodayArticleParams {
+  "url": string;
+}
+
+export type MedicalNewsTodayMedicalnewstodayAuthorResponse = CrawloraResponse<ModelMedicalnewstodayAuthorResponseDoc>;
+export interface MedicalNewsTodayMedicalnewstodayAuthorParams {
+  "slug"?: string;
+  "url"?: string;
+}
+
+export type MedicalNewsTodayMedicalnewstodayHeadlinesResponse = CrawloraResponse<ModelMedicalnewstodayHeadlinesResponseDoc>;
+export interface MedicalNewsTodayMedicalnewstodayHeadlinesParams {
+  "section": "news";
+}
+
+export type MedicalNewsTodayMedicalnewstodayNewsResponse = CrawloraResponse<ModelMedicalnewstodayNewsResponseDoc>;
+export interface MedicalNewsTodayMedicalnewstodayNewsParams {
+}
+
+export type MedicalNewsTodayMedicalnewstodaySectionsResponse = CrawloraResponse<ModelMedicalnewstodaySectionsResponseDoc>;
+export interface MedicalNewsTodayMedicalnewstodaySectionsParams {
 }
 
 export type ManchesterEveningNewsMenArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
@@ -73386,6 +74854,18 @@ export type MirrorSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsRes
 export interface MirrorSectionsParams {
 }
 
+export type MlbDiscoveryResponse = CrawloraResponse<ModelMlbDiscoveryResponseDoc>;
+export interface MlbDiscoveryParams {
+}
+
+export type MlbEditorialFeedResponse = CrawloraResponse<ModelMlbEditorialFeedResponseDoc>;
+export interface MlbEditorialFeedParams {
+  "slug": string;
+  "language"?: "EN_US" | "ES_US";
+  "limit"?: number;
+  "skip"?: number;
+}
+
 export type MlbGameResponse = CrawloraResponse<ModelMlbGameResponseDoc>;
 export interface MlbGameParams {
   "id": string;
@@ -73401,11 +74881,32 @@ export interface MlbGamePlayByPlayParams {
   "id": string;
 }
 
+export type MlbLeagueLeadersResponse = CrawloraResponse<ModelMlbLeagueLeadersResponseDoc>;
+export interface MlbLeagueLeadersParams {
+  "categories": string;
+  "season"?: number;
+  "group"?: "hitting" | "pitching" | "fielding" | "catching" | "running" | "game" | "team" | "streak";
+  "game_type"?: "S" | "R" | "F" | "D" | "L" | "W" | "C" | "P" | "A" | "I" | "E";
+  "league_id"?: "103" | "104";
+  "limit"?: number;
+}
+
 export type MlbLeagueStatsResponse = CrawloraResponse<ModelMlbStatsResponseDoc>;
 export interface MlbLeagueStatsParams {
   "season"?: number;
-  "group": "hitting" | "pitching" | "fielding";
+  "group": "hitting" | "pitching" | "fielding" | "catching" | "running" | "game" | "team" | "streak";
+  "stat_type"?: "projected" | "projectedRos" | "yearByYear" | "yearByYearAdvanced" | "yearByYearPlayoffs" | "season" | "standard" | "advanced" | "career" | "careerRegularSeason" | "careerAdvanced" | "seasonAdvanced" | "careerStatSplits" | "careerPlayoffs" | "gameLog" | "playLog" | "pitchLog" | "pitchArsenal" | "outsAboveAverage" | "expectedStatistics" | "sabermetrics" | "sprayChart" | "tracking" | "vsPlayer" | "vsPlayerTotal" | "vsPlayer5Y" | "vsTeam" | "vsTeam5Y" | "vsTeamTotal" | "lastXGames" | "byDateRange" | "byDateRangeAdvanced" | "byMonth" | "byMonthPlayoffs" | "byDayOfWeek" | "byDayOfWeekPlayoffs" | "homeAndAway" | "homeAndAwayPlayoffs" | "winLoss" | "winLossPlayoffs" | "rankings" | "rankingsByYear" | "statsSingleSeason" | "statsSingleSeasonAdvanced" | "hotColdZones" | "availableStats" | "opponentsFaced" | "gameTypeStats" | "firstYearStats" | "lastYearStats" | "statSplits" | "statSplitsAdvanced" | "atGameStart" | "vsOpponents" | "sabermetricsMultiTeam" | "projected_Zips" | "projected_ZipsRos" | "projected_Zips2YR" | "projected_Zips3YR";
+  "game_type"?: "S" | "R" | "F" | "D" | "L" | "W" | "C" | "P" | "A" | "I" | "E";
+  "start_date"?: string;
+  "end_date"?: string;
+  "opponent_team_id"?: string;
+  "opponent_player_id"?: string;
+  "league_id"?: "103" | "104";
+  "team_id"?: string;
+  "position"?: "C" | "1B" | "2B" | "3B" | "SS" | "LF" | "CF" | "RF" | "DH" | "OF" | "IF";
+  "player_pool"?: "QUALIFIED" | "ALL";
   "limit"?: number;
+  "offset"?: number;
 }
 
 export type MlbPlayerResponse = CrawloraResponse<ModelMlbPlayerResponseDoc>;
@@ -73417,7 +74918,26 @@ export type MlbPlayerStatsResponse = CrawloraResponse<ModelMlbStatsResponseDoc>;
 export interface MlbPlayerStatsParams {
   "id": string;
   "season"?: number;
-  "group": "hitting" | "pitching" | "fielding";
+  "group": "hitting" | "pitching" | "fielding" | "catching" | "running" | "game" | "team" | "streak";
+  "stat_type"?: "projected" | "projectedRos" | "yearByYear" | "yearByYearAdvanced" | "yearByYearPlayoffs" | "season" | "standard" | "advanced" | "career" | "careerRegularSeason" | "careerAdvanced" | "seasonAdvanced" | "careerStatSplits" | "careerPlayoffs" | "gameLog" | "playLog" | "pitchLog" | "pitchArsenal" | "outsAboveAverage" | "expectedStatistics" | "sabermetrics" | "sprayChart" | "tracking" | "vsPlayer" | "vsPlayerTotal" | "vsPlayer5Y" | "vsTeam" | "vsTeam5Y" | "vsTeamTotal" | "lastXGames" | "byDateRange" | "byDateRangeAdvanced" | "byMonth" | "byMonthPlayoffs" | "byDayOfWeek" | "byDayOfWeekPlayoffs" | "homeAndAway" | "homeAndAwayPlayoffs" | "winLoss" | "winLossPlayoffs" | "rankings" | "rankingsByYear" | "statsSingleSeason" | "statsSingleSeasonAdvanced" | "hotColdZones" | "availableStats" | "opponentsFaced" | "gameTypeStats" | "firstYearStats" | "lastYearStats" | "statSplits" | "statSplitsAdvanced" | "atGameStart" | "vsOpponents" | "sabermetricsMultiTeam" | "projected_Zips" | "projected_ZipsRos" | "projected_Zips2YR" | "projected_Zips3YR";
+  "game_type"?: "S" | "R" | "F" | "D" | "L" | "W" | "C" | "P" | "A" | "I" | "E";
+  "start_date"?: string;
+  "end_date"?: string;
+  "opponent_team_id"?: string;
+  "opponent_player_id"?: string;
+}
+
+export type MlbProspectStatsResponse = CrawloraResponse<ModelMlbProspectStatsResponseDoc>;
+export interface MlbProspectStatsParams {
+  "list_type"?: "top100" | "all";
+  "team_id"?: string;
+  "date_range"?: "today" | "1day" | "10day" | "30day" | "springTraining" | "Year2019" | "Year2020" | "Year2021" | "Year2022" | "Year2023" | "Year2024" | "Year2025" | "Year2026";
+  "player_type"?: "batters" | "pitchers";
+  "min_pa"?: "1" | "5" | "10" | "25" | "50" | "100" | "150" | "200" | "250";
+  "position"?: "1b" | "2b" | "ss" | "3b" | "c" | "of" | "rhp" | "lhp";
+  "q"?: string;
+  "limit"?: number;
+  "offset"?: number;
 }
 
 export type MlbScheduleResponse = CrawloraResponse<ModelMlbScheduleResponseDoc>;
@@ -73426,26 +74946,83 @@ export interface MlbScheduleParams {
   "start_date"?: string;
   "end_date"?: string;
   "team_id"?: string;
+  "game_type"?: "S" | "R" | "F" | "D" | "L" | "W" | "C" | "P" | "A" | "I" | "E";
+}
+
+export type MlbSearchResponse = CrawloraResponse<ModelMlbSearchResponseDoc>;
+export interface MlbSearchParams {
+  "q": string;
 }
 
 export type MlbStandingsResponse = CrawloraResponse<ModelMlbStandingsResponseDoc>;
 export interface MlbStandingsParams {
   "season"?: number;
-  "type"?: "regularSeason" | "wildCard" | "springTraining";
+  "type"?: "regularSeason" | "wildCard" | "divisionLeaders" | "wildCardWithLeaders" | "firstHalf" | "secondHalf" | "springTraining" | "postseason" | "byDivision" | "byConference" | "byLeague" | "byOrganization" | "currentHalf";
+  "date"?: string;
+}
+
+export type MlbStatcastExpectedResponse = CrawloraResponse<ModelMlbStatcastBoardResponseDoc>;
+export interface MlbStatcastExpectedParams {
+  "type"?: "batter" | "pitcher" | "batter-team" | "pitcher-team";
+  "year"?: number;
+  "team_id"?: string;
+  "position"?: "C" | "1B" | "2B" | "SS" | "3B" | "LF" | "CF" | "RF" | "DH";
+  "filter_type"?: "bip" | "pa";
+  "minimum"?: "q" | "1" | "25" | "50" | "100" | "150" | "200" | "250" | "350" | "450" | "500" | "600";
+  "sort"?: "entity_name" | "entity_team_name" | "pa" | "bip" | "ba" | "est_ba" | "ba_minus_est_ba_diff" | "slg" | "est_slg" | "slg_minus_est_slg_diff" | "woba" | "est_woba" | "woba_minus_est_woba_diff" | "wobacon" | "est_wobacon" | "wobacon_minus_est_wobacon_diff" | "exit_velocity_avg" | "hard_hit_percent" | "barrels_per_bip" | "barrels_per_pa";
+  "sort_dir"?: "asc" | "desc";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type MlbStatcastResponse = CrawloraResponse<ModelMlbStatcastResponseDoc>;
+export interface MlbStatcastParams {
+  "type"?: "batter" | "pitcher" | "batter-team" | "pitcher-team";
+  "year"?: number;
+  "team_id"?: string;
+  "position"?: "C" | "1B" | "2B" | "SS" | "3B" | "LF" | "CF" | "RF" | "DH";
+  "min_bbe"?: "q" | "1" | "25" | "50" | "100" | "150" | "200" | "250" | "350" | "450" | "500" | "600";
+  "sort"?: "entity_name" | "bip" | "launch_angle_avg" | "sweet_spot_percent" | "exit_velocity_max" | "exit_velocity_avg" | "avg_best_speed" | "exit_velocity_fbld" | "distance_max" | "distance_hr_avg" | "hard_hit_ct" | "hard_hit_percent" | "hard_hit_per_swing" | "barrel_ct" | "barrels_per_bip" | "barrels_per_pa";
+  "sort_dir"?: "asc" | "desc";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type MlbStatcastOaaResponse = CrawloraResponse<ModelMlbStatcastBoardResponseDoc>;
+export interface MlbStatcastOaaParams {
+  "type"?: "Fielder" | "Fielding_Team" | "Batter" | "Batting_Team" | "Pitcher";
+  "start_year"?: number;
+  "end_year"?: number;
+  "split"?: "no" | "yes";
+  "team_id"?: string;
+  "range"?: "year" | "4" | "5" | "6" | "7" | "8" | "9";
+  "minimum"?: "q" | "10" | "25" | "50" | "75" | "100" | "150" | "200" | "250";
+  "position"?: "if" | "of" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+  "roles"?: string;
+  "sort"?: "entity_name" | "display_team_name" | "primary_pos_formatted" | "fielding_runs_prevented" | "outs_above_average" | "outs_above_average_infront" | "outs_above_average_lateral" | "outs_above_average_behind" | "actual_success_rate" | "adj_estimated_success_rate" | "diff_success_rate" | "n";
+  "sort_dir"?: "asc" | "desc";
+  "limit"?: number;
+  "offset"?: number;
 }
 
 export type MlbTeamRosterResponse = CrawloraResponse<ModelMlbRosterResponseDoc>;
 export interface MlbTeamRosterParams {
   "team_id": string;
   "season"?: number;
-  "roster_type"?: "active" | "40Man" | "fullSeason";
+  "roster_type"?: "40Man" | "fullSeason" | "fullRoster" | "nonRosterInvitees" | "active" | "allTime" | "depthChart" | "gameday" | "coach";
 }
 
 export type MlbTeamStatsResponse = CrawloraResponse<ModelMlbStatsResponseDoc>;
 export interface MlbTeamStatsParams {
   "team_id": string;
   "season"?: number;
-  "group": "hitting" | "pitching" | "fielding";
+  "group": "hitting" | "pitching" | "fielding" | "catching" | "running" | "game" | "team" | "streak";
+  "stat_type"?: "projected" | "projectedRos" | "yearByYear" | "yearByYearAdvanced" | "yearByYearPlayoffs" | "season" | "standard" | "advanced" | "career" | "careerRegularSeason" | "careerAdvanced" | "seasonAdvanced" | "careerStatSplits" | "careerPlayoffs" | "gameLog" | "playLog" | "pitchLog" | "pitchArsenal" | "outsAboveAverage" | "expectedStatistics" | "sabermetrics" | "sprayChart" | "tracking" | "vsPlayer" | "vsPlayerTotal" | "vsPlayer5Y" | "vsTeam" | "vsTeam5Y" | "vsTeamTotal" | "lastXGames" | "byDateRange" | "byDateRangeAdvanced" | "byMonth" | "byMonthPlayoffs" | "byDayOfWeek" | "byDayOfWeekPlayoffs" | "homeAndAway" | "homeAndAwayPlayoffs" | "winLoss" | "winLossPlayoffs" | "rankings" | "rankingsByYear" | "statsSingleSeason" | "statsSingleSeasonAdvanced" | "hotColdZones" | "availableStats" | "opponentsFaced" | "gameTypeStats" | "firstYearStats" | "lastYearStats" | "statSplits" | "statSplitsAdvanced" | "atGameStart" | "vsOpponents" | "sabermetricsMultiTeam" | "projected_Zips" | "projected_ZipsRos" | "projected_Zips2YR" | "projected_Zips3YR";
+  "game_type"?: "S" | "R" | "F" | "D" | "L" | "W" | "C" | "P" | "A" | "I" | "E";
+  "start_date"?: string;
+  "end_date"?: string;
+  "opponent_team_id"?: string;
+  "opponent_player_id"?: string;
 }
 
 export type MlbTeamsResponse = CrawloraResponse<ModelMlbTeamsResponseDoc>;
@@ -73459,6 +75036,10 @@ export interface MlbTransactionsParams {
   "end_date": string;
   "team_id"?: string;
   "player_id"?: string;
+}
+
+export type MliveNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface MliveNewsParams {
 }
 
 export type ModaOperandiModaoperandiCategoriesResponse = CrawloraResponse<ModelModaoperandiCategoriesDoc>;
@@ -73585,6 +75166,29 @@ export interface MonitorsChecksParams {
   "id": string;
 }
 
+export type TheMotleyFoolMotleyfoolArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
+export interface TheMotleyFoolMotleyfoolArticleParams {
+  "url": string;
+}
+
+export type TheMotleyFoolMotleyfoolAuthorResponse = CrawloraResponse<ModelPublicnewsMotleyfoolAuthorResponseDoc>;
+export interface TheMotleyFoolMotleyfoolAuthorParams {
+  "url": string;
+}
+
+export type TheMotleyFoolMotleyfoolHeadlinesResponse = CrawloraResponse<ModelPublicnewsHeadlinesResponseDoc>;
+export interface TheMotleyFoolMotleyfoolHeadlinesParams {
+  "section": "trending-news" | "news" | "market-movers" | "tech-stock-news" | "market-trends" | "crypto-news" | "markets" | "most-active-stocks" | "top-stock-gainers" | "top-stock-losers";
+}
+
+export type TheMotleyFoolMotleyfoolNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface TheMotleyFoolMotleyfoolNewsParams {
+}
+
+export type TheMotleyFoolMotleyfoolSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
+export interface TheMotleyFoolMotleyfoolSectionsParams {
+}
+
 export type NationAfricaNationafricaArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
 export interface NationAfricaNationafricaArticleParams {
   "url": string;
@@ -73673,6 +75277,12 @@ export interface NdtvHeadlinesParams {
 
 export type NdtvNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
 export interface NdtvNewsParams {
+}
+
+export type NdtvSearchResponse = CrawloraResponse<ModelPublicnewsNdtvSearchResponseDoc>;
+export interface NdtvSearchParams {
+  "query": string;
+  "page"?: number;
 }
 
 export type NdtvSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
@@ -73887,6 +75497,10 @@ export interface NineToFiveMacNewsParams {
 
 export type NineToFiveMacSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
 export interface NineToFiveMacSectionsParams {
+}
+
+export type NjComNjcomNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface NjComNjcomNewsParams {
 }
 
 export type NprArticleResponse = CrawloraResponse<ModelNprArticleResponseDoc>;
@@ -75677,6 +77291,10 @@ export interface PopeyesRewardsParams {
   "market"?: string;
 }
 
+export type PopularMechanicsPopularmechanicsNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface PopularMechanicsPopularmechanicsNewsParams {
+}
+
 export type PoshmarkBrandResponse = CrawloraResponse<ModelPoshmarkBrandResponse>;
 export interface PoshmarkBrandParams {
   "name": string;
@@ -76833,11 +78451,59 @@ export interface RottenTomatoesRottentomatoesCriticsAuthorsParams {
   "limit"?: number;
 }
 
+export type RottenTomatoesRottentomatoesEditorialContentResponse = CrawloraResponse<ModelRottentomatoesEditorialContentResponseDoc>;
+export interface RottenTomatoesRottentomatoesEditorialContentParams {
+  "type": "article" | "guide" | "gallery" | "hub-subpage" | "non-rt-publication" | "rt-hub" | "how-to" | "otg-article" | "prev" | "rt_poll" | "pages";
+  "query"?: string;
+  "page"?: number;
+  "limit"?: number;
+  "taxonomy"?: "categories" | "tags" | "related-movie-id" | "related-tv-season-id" | "related-tv-series-id" | "related-tv-episode-id" | "related-celebrity-id" | "publication" | "franchise" | "coauthors";
+  "term_ids"?: string;
+  "operator"?: "AND" | "OR";
+  "include_children"?: boolean;
+}
+
+export type RottenTomatoesRottentomatoesEditorialDetailResponse = CrawloraResponse<ModelRottentomatoesEditorialDetailResponseDoc>;
+export interface RottenTomatoesRottentomatoesEditorialDetailParams {
+  "path": string;
+}
+
 export type RottenTomatoesRottentomatoesEditorialSearchResponse = CrawloraResponse<ModelRottentomatoesEditorialSearchResponseDoc>;
 export interface RottenTomatoesRottentomatoesEditorialSearchParams {
   "query": string;
   "page"?: number;
   "limit"?: number;
+}
+
+export type RottenTomatoesRottentomatoesEditorialSectionResponse = CrawloraResponse<ModelRottentomatoesEditorialSectionResponseDoc>;
+export interface RottenTomatoesRottentomatoesEditorialSectionParams {
+  "path": string;
+  "page"?: number;
+}
+
+export type RottenTomatoesRottentomatoesEditorialTaxonomiesResponse = CrawloraResponse<ModelRottentomatoesEditorialTaxonomiesResponseDoc>;
+export interface RottenTomatoesRottentomatoesEditorialTaxonomiesParams {
+}
+
+export type RottenTomatoesRottentomatoesEditorialTermsResponse = CrawloraResponse<ModelRottentomatoesEditorialTermsResponseDoc>;
+export interface RottenTomatoesRottentomatoesEditorialTermsParams {
+  "taxonomy": "categories" | "tags" | "related-movie-id" | "related-tv-season-id" | "related-tv-series-id" | "related-tv-episode-id" | "related-celebrity-id" | "publication" | "franchise" | "coauthors";
+  "search"?: string;
+  "page"?: number;
+  "limit"?: number;
+  "hide_empty"?: boolean;
+  "order"?: "asc" | "desc";
+  "orderby"?: "id" | "include" | "name" | "slug" | "include_slugs" | "term_group" | "description" | "count";
+  "include"?: string;
+  "exclude"?: string;
+  "slug"?: string;
+  "post"?: number;
+  "offset"?: number;
+  "parent"?: number;
+}
+
+export type RottenTomatoesRottentomatoesEditorialTypesResponse = CrawloraResponse<ModelRottentomatoesEditorialContentTypesResponseDoc>;
+export interface RottenTomatoesRottentomatoesEditorialTypesParams {
 }
 
 export type RottenTomatoesRottentomatoesEpisodeResponse = CrawloraResponse<ModelRottentomatoesEpisodeResponseDoc>;
@@ -76991,6 +78657,53 @@ export interface SamSclubSamsclubProductParams {
 export type SamSclubSamsclubProductRelatedResponse = CrawloraResponse<ModelSamsclubRelatedItemsResponseDoc>;
 export interface SamSclubSamsclubProductRelatedParams {
   "id": string;
+}
+
+export type SbsNewsSbsnewsArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
+export interface SbsNewsSbsnewsArticleParams {
+  "url": string;
+}
+
+export type SbsNewsSbsnewsAuthorResponse = CrawloraResponse<ModelPublicnewsSbsnewsAuthorResponseDoc>;
+export interface SbsNewsSbsnewsAuthorParams {
+  "url": string;
+  "page"?: number;
+}
+
+export type SbsNewsSbsnewsHeadlinesResponse = CrawloraResponse<ModelPublicnewsHeadlinesResponseDoc>;
+export interface SbsNewsSbsnewsHeadlinesParams {
+  "section": "top" | "latest" | "australia" | "world" | "politics" | "indigenous" | "environment" | "life" | "cost-of-living" | "immigration" | "health-and-wellbeing" | "sport" | "education" | "technology-and-social-media" | "arts-and-entertainment";
+}
+
+export type SbsNewsSbsnewsNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface SbsNewsSbsnewsNewsParams {
+}
+
+export type SbsNewsSbsnewsSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
+export interface SbsNewsSbsnewsSectionsParams {
+}
+
+export type ScienceAlertSciencealertArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
+export interface ScienceAlertSciencealertArticleParams {
+  "url": string;
+}
+
+export type ScienceAlertSciencealertAuthorResponse = CrawloraResponse<ModelPublicnewsScienceAlertAuthorResponseDoc>;
+export interface ScienceAlertSciencealertAuthorParams {
+  "url": string;
+}
+
+export type ScienceAlertSciencealertHeadlinesResponse = CrawloraResponse<ModelPublicnewsHeadlinesResponseDoc>;
+export interface ScienceAlertSciencealertHeadlinesParams {
+  "section": "space" | "health" | "environment" | "humans" | "tech" | "nature" | "physics" | "this-week-in-science";
+}
+
+export type ScienceAlertSciencealertNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface ScienceAlertSciencealertNewsParams {
+}
+
+export type ScienceAlertSciencealertSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
+export interface ScienceAlertSciencealertSectionsParams {
 }
 
 export type ScmpArticleResponse = CrawloraResponse<ModelScmpArticleResponseDoc>;
@@ -77691,6 +79404,29 @@ export type SkyNewsSkynewsVideosResponse = CrawloraResponse<ModelPublicnewsSkyNe
 export interface SkyNewsSkynewsVideosParams {
 }
 
+export type SkySportsSkysportsArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
+export interface SkySportsSkysportsArticleParams {
+  "url": string;
+}
+
+export type SkySportsSkysportsAuthorResponse = CrawloraResponse<ModelPublicnewsSkySportsAuthorResponseDoc>;
+export interface SkySportsSkysportsAuthorParams {
+  "url": string;
+}
+
+export type SkySportsSkysportsHeadlinesResponse = CrawloraResponse<ModelPublicnewsHeadlinesResponseDoc>;
+export interface SkySportsSkysportsHeadlinesParams {
+  "section": "football" | "f1" | "cricket" | "rugby-union" | "rugby-league" | "golf" | "boxing" | "nfl" | "tennis" | "nba" | "racing" | "darts" | "netball" | "mma" | "more-sports" | "athletics" | "basketball" | "cycling" | "snooker" | "motor-sport" | "wwe" | "olympics";
+}
+
+export type SkySportsSkysportsNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface SkySportsSkysportsNewsParams {
+}
+
+export type SkySportsSkysportsSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
+export interface SkySportsSkysportsSectionsParams {
+}
+
 export type SlateArticleResponse = CrawloraResponse<ModelSlateArticleResponseDoc>;
 export interface SlateArticleParams {
   "url": string;
@@ -78064,6 +79800,125 @@ export interface SportingNewsSportingnewsNewsParams {
 
 export type SportingNewsSportingnewsSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
 export interface SportingNewsSportingnewsSectionsParams {
+}
+
+export type SportskeedaArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
+export interface SportskeedaArticleParams {
+  "slug"?: string;
+  "url"?: string;
+}
+
+export type SportskeedaAuthorResponse = CrawloraResponse<ModelPublicnewsSportskeedaAuthorResponseDoc>;
+export interface SportskeedaAuthorParams {
+  "slug"?: string;
+  "url"?: string;
+}
+
+export type SportskeedaDepthChartResponse = CrawloraResponse<ModelPublicnewsSportskeedaDepthChartResponseDoc>;
+export interface SportskeedaDepthChartParams {
+  "slug": "nfl/depth-chart";
+}
+
+export type SportskeedaFeedResponse = CrawloraResponse<ModelPublicnewsSportskeedaFeedResponseDoc>;
+export interface SportskeedaFeedParams {
+  "slug": string;
+  "page"?: number;
+}
+
+export type SportskeedaFootballDataResponse = CrawloraResponse<ModelPublicnewsSportskeedaFootballDataResponseDoc>;
+export interface SportskeedaFootballDataParams {
+  "event": string;
+  "matchday"?: string;
+}
+
+export type SportskeedaFootballOptionsResponse = CrawloraResponse<ModelPublicnewsSportskeedaFootballOptionsResponseDoc>;
+export interface SportskeedaFootballOptionsParams {
+  "event"?: string;
+}
+
+export type SportskeedaNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface SportskeedaNewsParams {
+}
+
+export type SportskeedaPageDataResponse = CrawloraResponse<ModelPublicnewsSportskeedaTablesResponseDoc>;
+export interface SportskeedaPageDataParams {
+  "slug": string;
+  "season"?: number;
+  "type"?: string;
+}
+
+export type SportskeedaPageOptionsResponse = CrawloraResponse<ModelPublicnewsSportskeedaPageOptionsResponseDoc>;
+export interface SportskeedaPageOptionsParams {
+  "slug": string;
+}
+
+export type SportskeedaPlayerStatsResponse = CrawloraResponse<ModelPublicnewsSportskeedaPlayerStatsResponseDoc>;
+export interface SportskeedaPlayerStatsParams {
+  "slug": string;
+  "event_type"?: "0" | "1" | "2" | "3";
+}
+
+export type SportskeedaProfileResponse = CrawloraResponse<ModelPublicnewsSportskeedaProfileResponseDoc>;
+export interface SportskeedaProfileParams {
+  "slug": string;
+}
+
+export type SportskeedaScheduleResponse = CrawloraResponse<ModelPublicnewsSportskeedaTablesResponseDoc>;
+export interface SportskeedaScheduleParams {
+  "slug": string;
+}
+
+export type SportskeedaSectionsResponse = CrawloraResponse<ModelPublicnewsSportskeedaSectionsResponseDoc>;
+export interface SportskeedaSectionsParams {
+}
+
+export type SportskeedaSitemapItemsResponse = CrawloraResponse<ModelPublicnewsSportskeedaSitemapItemsResponseDoc>;
+export interface SportskeedaSitemapItemsParams {
+  "slug"?: string;
+  "sitemap_url"?: string;
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type SportskeedaSitemapsResponse = CrawloraResponse<ModelPublicnewsSportskeedaSitemapsResponseDoc>;
+export interface SportskeedaSitemapsParams {
+}
+
+export type SportskeedaStandingsResponse = CrawloraResponse<ModelPublicnewsSportskeedaTablesResponseDoc>;
+export interface SportskeedaStandingsParams {
+  "slug": string;
+  "season"?: "2026" | "2025" | "2024" | "2023" | "2022" | "2021" | "2020" | "2019" | "2018" | "2017" | "2016" | "2015" | "2014" | "2013";
+}
+
+export type SportskeedaStandingsOptionsResponse = CrawloraResponse<ModelPublicnewsSportskeedaStandingsOptionsResponseDoc>;
+export interface SportskeedaStandingsOptionsParams {
+  "slug": string;
+  "season"?: "2026" | "2025" | "2024" | "2023" | "2022" | "2021" | "2020" | "2019" | "2018" | "2017" | "2016" | "2015" | "2014" | "2013";
+}
+
+export type SportskeedaTaxonomySearchResponse = CrawloraResponse<ModelPublicnewsSportskeedaTaxonomySearchResponseDoc>;
+export interface SportskeedaTaxonomySearchParams {
+  "q": string;
+}
+
+export type SportskeedaTradeValuesResponse = CrawloraResponse<ModelPublicnewsSportskeedaTradeValuesResponseDoc>;
+export interface SportskeedaTradeValuesParams {
+  "slug": "nfl/fantasy-football-trade-value-charts" | "nfl/dynasty-trade-value-charts";
+  "position"?: "All" | "QB" | "RB" | "WR" | "TE";
+  "scoring"?: "ppr" | "non_ppr" | "0.5_ppr";
+  "superflex"?: boolean;
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type SportskeedaVideoResponse = CrawloraResponse<ModelPublicnewsSportskeedaVideoResponseDoc>;
+export interface SportskeedaVideoParams {
+  "slug": string;
+}
+
+export type SportskeedaVideosResponse = CrawloraResponse<ModelPublicnewsSportskeedaVideosResponseDoc>;
+export interface SportskeedaVideosParams {
+  "slug"?: string;
 }
 
 export type SpotifyPodcastsCategoriesResponse = CrawloraResponse<ModelSpotifyBrowsePageResponseDoc>;
@@ -78453,6 +80308,10 @@ export interface StarbucksStoresParams {
   "lat"?: number;
   "lng"?: number;
   "market"?: "us" | "ca";
+}
+
+export type MinnesotaStarTribuneStartribuneNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
+export interface MinnesotaStarTribuneStartribuneNewsParams {
 }
 
 export type SteamAchievementsResponse = CrawloraResponse<ModelSteamAchievementsResponseDoc>;
@@ -81165,6 +83024,12 @@ export interface WhatnotLiveParams {
   "id": string;
 }
 
+export type WhatnotSellerResponse = CrawloraResponse<ModelWhatnotSellerResponseDoc>;
+export interface WhatnotSellerParams {
+  "username": string;
+  "cursor"?: string;
+}
+
 export type WingstopDeliveryStoreResponse = CrawloraResponse<ModelWingstopDeliveryStoreResponseDoc>;
 export interface WingstopDeliveryStoreParams {
   "address1": string;
@@ -82377,6 +84242,12 @@ export interface AirbnbService {
   search<T = AirbnbSearchResponse>(params: AirbnbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface AlComService {
+  alcomHeadlines<T = AlComAlcomHeadlinesResponse>(params: AlComAlcomHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  alcomNews<T = AlComAlcomNewsResponse>(params?: AlComAlcomNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  alcomSections<T = AlComAlcomSectionsResponse>(params?: AlComAlcomSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface AlJazeeraService {
   aljazeeraArticle<T = AlJazeeraAljazeeraArticleResponse>(params: AlJazeeraAljazeeraArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   aljazeeraAuthor<T = AlJazeeraAljazeeraAuthorResponse>(params?: AlJazeeraAljazeeraAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -82736,6 +84607,10 @@ export interface BootsService {
   suggest<T = BootsSuggestResponse>(params: BootsSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface BostonGlobeService {
+  bostonglobeNews<T = BostonGlobeBostonglobeNewsResponse>(params?: BostonGlobeBostonglobeNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface BoxOfficeMojoService {
   boxofficemojoBrand<T = BoxOfficeMojoBoxofficemojoBrandResponse>(params?: BoxOfficeMojoBoxofficemojoBrandParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   boxofficemojoBrands<T = BoxOfficeMojoBoxofficemojoBrandsResponse>(params?: BoxOfficeMojoBoxofficemojoBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -82950,6 +84825,10 @@ export interface Chrono24Service {
   listing<T = Chrono24ListingResponse>(params: Chrono24ListingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   models<T = Chrono24ModelsResponse>(params: Chrono24ModelsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = Chrono24SearchResponse>(params?: Chrono24SearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ClevelandComService {
+  clevelandcomNews<T = ClevelandComClevelandcomNewsResponse>(params?: ClevelandComClevelandcomNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface CnaService {
@@ -83676,22 +85555,37 @@ export interface FortuneService {
 }
 
 export interface FotMobService {
+  fotmobAudioMatches<T = FotMobFotmobAudioMatchesResponse>(params?: FotMobFotmobAudioMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobFifaRankingPeriods<T = FotMobFotmobFifaRankingPeriodsResponse>(params: FotMobFotmobFifaRankingPeriodsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobFifaRankings<T = FotMobFotmobFifaRankingsResponse>(params: FotMobFotmobFifaRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobLatestNews<T = FotMobFotmobLatestNewsResponse>(params?: FotMobFotmobLatestNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobLeague<T = FotMobFotmobLeagueResponse>(params: FotMobFotmobLeagueParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobLeagues<T = FotMobFotmobLeaguesResponse>(params?: FotMobFotmobLeaguesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobLineupBuilderPlayers<T = FotMobFotmobLineupBuilderPlayersResponse>(params: FotMobFotmobLineupBuilderPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobLineupBuilderTeam<T = FotMobFotmobLineupBuilderTeamResponse>(params: FotMobFotmobLineupBuilderTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobMatch<T = FotMobFotmobMatchResponse>(params: FotMobFotmobMatchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobMatchMedia<T = FotMobFotmobMatchMediaResponse>(params: FotMobFotmobMatchMediaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobMatches<T = FotMobFotmobMatchesResponse>(params: FotMobFotmobMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobNews<T = FotMobFotmobNewsResponse>(params: FotMobFotmobNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobNewsArticle<T = FotMobFotmobNewsArticleResponse>(params: FotMobFotmobNewsArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobPlayer<T = FotMobFotmobPlayerResponse>(params: FotMobFotmobPlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobPlayerMatchStats<T = FotMobFotmobPlayerMatchStatsResponse>(params: FotMobFotmobPlayerMatchStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobPlayerMatches<T = FotMobFotmobPlayerMatchesResponse>(params: FotMobFotmobPlayerMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobPlayerStats<T = FotMobFotmobPlayerStatsResponse>(params: FotMobFotmobPlayerStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobSearch<T = FotMobFotmobSearchResponse>(params: FotMobFotmobSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobSeasons<T = FotMobFotmobSeasonsResponse>(params: FotMobFotmobSeasonsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobStats<T = FotMobFotmobStatsResponse>(params: FotMobFotmobStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobStatsCategories<T = FotMobFotmobStatsCategoriesResponse>(params: FotMobFotmobStatsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobTable<T = FotMobFotmobTableResponse>(params: FotMobFotmobTableParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobTeam<T = FotMobFotmobTeamResponse>(params: FotMobFotmobTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobTeamFixtures<T = FotMobFotmobTeamFixturesResponse>(params: FotMobFotmobTeamFixturesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobTeamNews<T = FotMobFotmobTeamNewsResponse>(params: FotMobFotmobTeamNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fotmobTransfers<T = FotMobFotmobTransfersResponse>(params?: FotMobFotmobTransfersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobTrendingNews<T = FotMobFotmobTrendingNewsResponse>(params?: FotMobFotmobTrendingNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobTrendingSearches<T = FotMobFotmobTrendingSearchesResponse>(params?: FotMobFotmobTrendingSearchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobTvGuide<T = FotMobFotmobTvGuideResponse>(params: FotMobFotmobTvGuideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobTvGuideChannels<T = FotMobFotmobTvGuideChannelsResponse>(params: FotMobFotmobTvGuideChannelsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fotmobTvGuideCountries<T = FotMobFotmobTvGuideCountriesResponse>(params?: FotMobFotmobTvGuideCountriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface FoxNewsService {
@@ -83703,12 +85597,24 @@ export interface FoxNewsService {
   foxnewsSections<T = FoxNewsFoxnewsSectionsResponse>(params?: FoxNewsFoxnewsSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface FoxSportsService {
+  foxsportsArticle<T = FoxSportsFoxsportsArticleResponse>(params: FoxSportsFoxsportsArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  foxsportsHeadlines<T = FoxSportsFoxsportsHeadlinesResponse>(params: FoxSportsFoxsportsHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  foxsportsNews<T = FoxSportsFoxsportsNewsResponse>(params?: FoxSportsFoxsportsNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  foxsportsSections<T = FoxSportsFoxsportsSectionsResponse>(params?: FoxSportsFoxsportsSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface France24Service {
   france24Article<T = France24France24ArticleResponse>(params: France24France24ArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   france24Author<T = France24France24AuthorResponse>(params: France24France24AuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   france24Headlines<T = France24France24HeadlinesResponse>(params: France24France24HeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   france24News<T = France24France24NewsResponse>(params?: France24France24NewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   france24Sections<T = France24France24SectionsResponse>(params?: France24France24SectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface FreeMalaysiaTodayService {
+  freemalaysiatodayNews<T = FreeMalaysiaTodayFreemalaysiatodayNewsResponse>(params?: FreeMalaysiaTodayFreemalaysiatodayNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  freemalaysiatodaySections<T = FreeMalaysiaTodayFreemalaysiatodaySectionsResponse>(params?: FreeMalaysiaTodayFreemalaysiatodaySectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface FtService {
@@ -83763,6 +85669,18 @@ export interface GeocodingService {
   lookup<T = GeocodingLookupResponse>(params: GeocodingLookupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reverse<T = GeocodingReverseResponse>(params: GeocodingReverseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = GeocodingSearchResponse>(params?: GeocodingSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface GhanaWebService {
+  ghanawebArchive<T = GhanaWebGhanawebArchiveResponse>(params: GhanaWebGhanawebArchiveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ghanawebArchiveMonths<T = GhanaWebGhanawebArchiveMonthsResponse>(params?: GhanaWebGhanawebArchiveMonthsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ghanawebArticle<T = GhanaWebGhanawebArticleResponse>(params: GhanaWebGhanawebArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ghanawebHeadlines<T = GhanaWebGhanawebHeadlinesResponse>(params: GhanaWebGhanawebHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ghanawebNews<T = GhanaWebGhanawebNewsResponse>(params?: GhanaWebGhanawebNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ghanawebSections<T = GhanaWebGhanawebSectionsResponse>(params?: GhanaWebGhanawebSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ghanawebVideo<T = GhanaWebGhanawebVideoResponse>(params: GhanaWebGhanawebVideoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ghanawebVideoSections<T = GhanaWebGhanawebVideoSectionsResponse>(params?: GhanaWebGhanawebVideoSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  ghanawebVideos<T = GhanaWebGhanawebVideosResponse>(params: GhanaWebGhanawebVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GitHubService {
@@ -84058,6 +85976,10 @@ export interface HotelsComService {
   hotelsSearch<T = HotelsComHotelsSearchResponse>(params: HotelsComHotelsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface HowToGeekService {
+  howtogeekNews<T = HowToGeekHowtogeekNewsResponse>(params?: HowToGeekHowtogeekNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface HuffPostService {
   huffpostArticle<T = HuffPostHuffpostArticleResponse>(params: HuffPostHuffpostArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   huffpostAuthor<T = HuffPostHuffpostAuthorResponse>(params: HuffPostHuffpostAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -84234,6 +86156,15 @@ export interface JCrewService {
   jcrewSizeChart<T = JCrewJcrewSizeChartResponse>(params: JCrewJcrewSizeChartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jcrewStores<T = JCrewJcrewStoresResponse>(params?: JCrewJcrewStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   jcrewSuggest<T = JCrewJcrewSuggestResponse>(params: JCrewJcrewSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface JerusalemPostService {
+  jerusalempostArticle<T = JerusalemPostJerusalempostArticleResponse>(params: JerusalemPostJerusalempostArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jerusalempostAuthor<T = JerusalemPostJerusalempostAuthorResponse>(params: JerusalemPostJerusalempostAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jerusalempostAuthors<T = JerusalemPostJerusalempostAuthorsResponse>(params?: JerusalemPostJerusalempostAuthorsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jerusalempostHeadlines<T = JerusalemPostJerusalempostHeadlinesResponse>(params: JerusalemPostJerusalempostHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jerusalempostNews<T = JerusalemPostJerusalempostNewsResponse>(params?: JerusalemPostJerusalempostNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  jerusalempostSections<T = JerusalemPostJerusalempostSectionsResponse>(params?: JerusalemPostJerusalempostSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface JimmyJohnsService {
@@ -84464,6 +86395,7 @@ export interface LiveScienceService {
 
 export interface LiveScoreService {
   livescoreCompetition<T = LiveScoreLivescoreCompetitionResponse>(params: LiveScoreLivescoreCompetitionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  livescoreCompetitions<T = LiveScoreLivescoreCompetitionsResponse>(params?: LiveScoreLivescoreCompetitionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreLiveScores<T = LiveScoreLivescoreLiveScoresResponse>(params: LiveScoreLivescoreLiveScoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreMatch<T = LiveScoreLivescoreMatchResponse>(params: LiveScoreLivescoreMatchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreMatchStats<T = LiveScoreLivescoreMatchStatsResponse>(params: LiveScoreLivescoreMatchStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -84475,6 +86407,7 @@ export interface LiveScoreService {
   livescorePlayer<T = LiveScoreLivescorePlayerResponse>(params: LiveScoreLivescorePlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreScores<T = LiveScoreLivescoreScoresResponse>(params: LiveScoreLivescoreScoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreScoresToc<T = LiveScoreLivescoreScoresTocResponse>(params: LiveScoreLivescoreScoresTocParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  livescoreSearch<T = LiveScoreLivescoreSearchResponse>(params: LiveScoreLivescoreSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreSports<T = LiveScoreLivescoreSportsResponse>(params?: LiveScoreLivescoreSportsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   livescoreTeam<T = LiveScoreLivescoreTeamResponse>(params: LiveScoreLivescoreTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
@@ -84541,6 +86474,14 @@ export interface MediaiteService {
   headlines<T = MediaiteHeadlinesResponse>(params: MediaiteHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = MediaiteNewsResponse>(params?: MediaiteNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   sections<T = MediaiteSectionsResponse>(params?: MediaiteSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface MedicalNewsTodayService {
+  medicalnewstodayArticle<T = MedicalNewsTodayMedicalnewstodayArticleResponse>(params: MedicalNewsTodayMedicalnewstodayArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  medicalnewstodayAuthor<T = MedicalNewsTodayMedicalnewstodayAuthorResponse>(params?: MedicalNewsTodayMedicalnewstodayAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  medicalnewstodayHeadlines<T = MedicalNewsTodayMedicalnewstodayHeadlinesResponse>(params: MedicalNewsTodayMedicalnewstodayHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  medicalnewstodayNews<T = MedicalNewsTodayMedicalnewstodayNewsResponse>(params?: MedicalNewsTodayMedicalnewstodayNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  medicalnewstodaySections<T = MedicalNewsTodayMedicalnewstodaySectionsResponse>(params?: MedicalNewsTodayMedicalnewstodaySectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ManchesterEveningNewsService {
@@ -84626,18 +86567,30 @@ export interface MirrorService {
 }
 
 export interface MlbService {
+  discovery<T = MlbDiscoveryResponse>(params?: MlbDiscoveryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  editorialFeed<T = MlbEditorialFeedResponse>(params: MlbEditorialFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   game<T = MlbGameResponse>(params: MlbGameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   gameBoxscore<T = MlbGameBoxscoreResponse>(params: MlbGameBoxscoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   gamePlayByPlay<T = MlbGamePlayByPlayResponse>(params: MlbGamePlayByPlayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  leagueLeaders<T = MlbLeagueLeadersResponse>(params: MlbLeagueLeadersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   leagueStats<T = MlbLeagueStatsResponse>(params: MlbLeagueStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   player<T = MlbPlayerResponse>(params: MlbPlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playerStats<T = MlbPlayerStatsResponse>(params: MlbPlayerStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  prospectStats<T = MlbProspectStatsResponse>(params?: MlbProspectStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   schedule<T = MlbScheduleResponse>(params?: MlbScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = MlbSearchResponse>(params: MlbSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   standings<T = MlbStandingsResponse>(params?: MlbStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  statcastExpected<T = MlbStatcastExpectedResponse>(params?: MlbStatcastExpectedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  statcast<T = MlbStatcastResponse>(params?: MlbStatcastParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  statcastOaa<T = MlbStatcastOaaResponse>(params?: MlbStatcastOaaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   teamRoster<T = MlbTeamRosterResponse>(params: MlbTeamRosterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   teamStats<T = MlbTeamStatsResponse>(params: MlbTeamStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   teams<T = MlbTeamsResponse>(params?: MlbTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   transactions<T = MlbTransactionsResponse>(params: MlbTransactionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface MliveService {
+  news<T = MliveNewsResponse>(params?: MliveNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ModaOperandiService {
@@ -84673,6 +86626,14 @@ export interface MonitorsService {
   checks<T = MonitorsChecksResponse>(params: MonitorsChecksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TheMotleyFoolService {
+  motleyfoolArticle<T = TheMotleyFoolMotleyfoolArticleResponse>(params: TheMotleyFoolMotleyfoolArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  motleyfoolAuthor<T = TheMotleyFoolMotleyfoolAuthorResponse>(params: TheMotleyFoolMotleyfoolAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  motleyfoolHeadlines<T = TheMotleyFoolMotleyfoolHeadlinesResponse>(params: TheMotleyFoolMotleyfoolHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  motleyfoolNews<T = TheMotleyFoolMotleyfoolNewsResponse>(params?: TheMotleyFoolMotleyfoolNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  motleyfoolSections<T = TheMotleyFoolMotleyfoolSectionsResponse>(params?: TheMotleyFoolMotleyfoolSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface NationAfricaService {
   nationafricaArticle<T = NationAfricaNationafricaArticleResponse>(params: NationAfricaNationafricaArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   nationafricaAuthor<T = NationAfricaNationafricaAuthorResponse>(params?: NationAfricaNationafricaAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -84702,6 +86663,7 @@ export interface NdtvService {
   author<T = NdtvAuthorResponse>(params: NdtvAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   headlines<T = NdtvHeadlinesResponse>(params: NdtvHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = NdtvNewsResponse>(params?: NdtvNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = NdtvSearchResponse>(params: NdtvSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   sections<T = NdtvSectionsResponse>(params?: NdtvSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
@@ -84770,6 +86732,10 @@ export interface NineToFiveMacService {
   headlines<T = NineToFiveMacHeadlinesResponse>(params: NineToFiveMacHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = NineToFiveMacNewsResponse>(params?: NineToFiveMacNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   sections<T = NineToFiveMacSectionsResponse>(params?: NineToFiveMacSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface NjComService {
+  njcomNews<T = NjComNjcomNewsResponse>(params?: NjComNjcomNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface NprService {
@@ -85162,6 +87128,10 @@ export interface PopeyesService {
   rewards<T = PopeyesRewardsResponse>(params?: PopeyesRewardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface PopularMechanicsService {
+  popularmechanicsNews<T = PopularMechanicsPopularmechanicsNewsResponse>(params?: PopularMechanicsPopularmechanicsNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface PoshmarkService {
   brand<T = PoshmarkBrandResponse>(params: PoshmarkBrandParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   brands<T = PoshmarkBrandsResponse>(params?: PoshmarkBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -85423,7 +87393,13 @@ export interface RottenTomatoesService {
   rottentomatoesBrowseMovies<T = RottenTomatoesRottentomatoesBrowseMoviesResponse>(params?: RottenTomatoesRottentomatoesBrowseMoviesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesBrowseTv<T = RottenTomatoesRottentomatoesBrowseTvResponse>(params?: RottenTomatoesRottentomatoesBrowseTvParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesCriticsAuthors<T = RottenTomatoesRottentomatoesCriticsAuthorsResponse>(params?: RottenTomatoesRottentomatoesCriticsAuthorsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesEditorialContent<T = RottenTomatoesRottentomatoesEditorialContentResponse>(params: RottenTomatoesRottentomatoesEditorialContentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesEditorialDetail<T = RottenTomatoesRottentomatoesEditorialDetailResponse>(params: RottenTomatoesRottentomatoesEditorialDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesEditorialSearch<T = RottenTomatoesRottentomatoesEditorialSearchResponse>(params: RottenTomatoesRottentomatoesEditorialSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesEditorialSection<T = RottenTomatoesRottentomatoesEditorialSectionResponse>(params: RottenTomatoesRottentomatoesEditorialSectionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesEditorialTaxonomies<T = RottenTomatoesRottentomatoesEditorialTaxonomiesResponse>(params?: RottenTomatoesRottentomatoesEditorialTaxonomiesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesEditorialTerms<T = RottenTomatoesRottentomatoesEditorialTermsResponse>(params: RottenTomatoesRottentomatoesEditorialTermsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rottentomatoesEditorialTypes<T = RottenTomatoesRottentomatoesEditorialTypesResponse>(params?: RottenTomatoesRottentomatoesEditorialTypesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesEpisode<T = RottenTomatoesRottentomatoesEpisodeResponse>(params?: RottenTomatoesRottentomatoesEpisodeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesMovie<T = RottenTomatoesRottentomatoesMovieResponse>(params?: RottenTomatoesRottentomatoesMovieParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   rottentomatoesMovieReviews<T = RottenTomatoesRottentomatoesMovieReviewsResponse>(params?: RottenTomatoesRottentomatoesMovieReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -85464,6 +87440,22 @@ export interface SamSclubService {
   samsclubDepartments<T = SamSclubSamsclubDepartmentsResponse>(params?: SamSclubSamsclubDepartmentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   samsclubProduct<T = SamSclubSamsclubProductResponse>(params: SamSclubSamsclubProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   samsclubProductRelated<T = SamSclubSamsclubProductRelatedResponse>(params: SamSclubSamsclubProductRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface SbsNewsService {
+  sbsnewsArticle<T = SbsNewsSbsnewsArticleResponse>(params: SbsNewsSbsnewsArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sbsnewsAuthor<T = SbsNewsSbsnewsAuthorResponse>(params: SbsNewsSbsnewsAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sbsnewsHeadlines<T = SbsNewsSbsnewsHeadlinesResponse>(params: SbsNewsSbsnewsHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sbsnewsNews<T = SbsNewsSbsnewsNewsResponse>(params?: SbsNewsSbsnewsNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sbsnewsSections<T = SbsNewsSbsnewsSectionsResponse>(params?: SbsNewsSbsnewsSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ScienceAlertService {
+  sciencealertArticle<T = ScienceAlertSciencealertArticleResponse>(params: ScienceAlertSciencealertArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sciencealertAuthor<T = ScienceAlertSciencealertAuthorResponse>(params: ScienceAlertSciencealertAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sciencealertHeadlines<T = ScienceAlertSciencealertHeadlinesResponse>(params: ScienceAlertSciencealertHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sciencealertNews<T = ScienceAlertSciencealertNewsResponse>(params?: ScienceAlertSciencealertNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sciencealertSections<T = ScienceAlertSciencealertSectionsResponse>(params?: ScienceAlertSciencealertSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ScmpService {
@@ -85624,6 +87616,14 @@ export interface SkyNewsService {
   skynewsVideos<T = SkyNewsSkynewsVideosResponse>(params?: SkyNewsSkynewsVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface SkySportsService {
+  skysportsArticle<T = SkySportsSkysportsArticleResponse>(params: SkySportsSkysportsArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  skysportsAuthor<T = SkySportsSkysportsAuthorResponse>(params: SkySportsSkysportsAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  skysportsHeadlines<T = SkySportsSkysportsHeadlinesResponse>(params: SkySportsSkysportsHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  skysportsNews<T = SkySportsSkysportsNewsResponse>(params?: SkySportsSkysportsNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  skysportsSections<T = SkySportsSkysportsSectionsResponse>(params?: SkySportsSkysportsSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface SlateService {
   article<T = SlateArticleResponse>(params: SlateArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categories<T = SlateCategoriesResponse>(params?: SlateCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -85724,6 +87724,30 @@ export interface SportingNewsService {
   sportingnewsSections<T = SportingNewsSportingnewsSectionsResponse>(params?: SportingNewsSportingnewsSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface SportskeedaService {
+  article<T = SportskeedaArticleResponse>(params?: SportskeedaArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  author<T = SportskeedaAuthorResponse>(params?: SportskeedaAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  depthChart<T = SportskeedaDepthChartResponse>(params: SportskeedaDepthChartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  feed<T = SportskeedaFeedResponse>(params: SportskeedaFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  footballData<T = SportskeedaFootballDataResponse>(params: SportskeedaFootballDataParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  footballOptions<T = SportskeedaFootballOptionsResponse>(params?: SportskeedaFootballOptionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  news<T = SportskeedaNewsResponse>(params?: SportskeedaNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pageData<T = SportskeedaPageDataResponse>(params: SportskeedaPageDataParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pageOptions<T = SportskeedaPageOptionsResponse>(params: SportskeedaPageOptionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerStats<T = SportskeedaPlayerStatsResponse>(params: SportskeedaPlayerStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  profile<T = SportskeedaProfileResponse>(params: SportskeedaProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  schedule<T = SportskeedaScheduleResponse>(params: SportskeedaScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sections<T = SportskeedaSectionsResponse>(params?: SportskeedaSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapItems<T = SportskeedaSitemapItemsResponse>(params?: SportskeedaSitemapItemsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = SportskeedaSitemapsResponse>(params?: SportskeedaSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  standings<T = SportskeedaStandingsResponse>(params: SportskeedaStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  standingsOptions<T = SportskeedaStandingsOptionsResponse>(params: SportskeedaStandingsOptionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  taxonomySearch<T = SportskeedaTaxonomySearchResponse>(params: SportskeedaTaxonomySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tradeValues<T = SportskeedaTradeValuesResponse>(params: SportskeedaTradeValuesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  video<T = SportskeedaVideoResponse>(params: SportskeedaVideoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  videos<T = SportskeedaVideosResponse>(params?: SportskeedaVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface SpotifyPodcastsService {
   categories<T = SpotifyPodcastsCategoriesResponse>(params?: SpotifyPodcastsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   charts<T = SpotifyPodcastsChartsResponse>(params?: SpotifyPodcastsChartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -85782,6 +87806,10 @@ export interface StarbucksService {
   product<T = StarbucksProductResponse>(params: StarbucksProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   nutrition<T = StarbucksNutritionResponse>(params: StarbucksNutritionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   stores<T = StarbucksStoresResponse>(params?: StarbucksStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface MinnesotaStarTribuneService {
+  startribuneNews<T = MinnesotaStarTribuneStartribuneNewsResponse>(params?: MinnesotaStarTribuneStartribuneNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface SteamService {
@@ -86460,6 +88488,7 @@ export interface WhatnotService {
   browse<T = WhatnotBrowseResponse>(params: WhatnotBrowseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categories<T = WhatnotCategoriesResponse>(params?: WhatnotCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   live<T = WhatnotLiveResponse>(params: WhatnotLiveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  seller<T = WhatnotSellerResponse>(params: WhatnotSellerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface WingstopService {
@@ -86745,6 +88774,7 @@ export interface CrawloraGeneratedGroups {
   adidas: AdidasService;
   agoda: AgodaService;
   airbnb: AirbnbService;
+  alCom: AlComService;
   alJazeera: AlJazeeraService;
   allbirds: AllbirdsService;
   alt: AltService;
@@ -86781,6 +88811,7 @@ export interface CrawloraGeneratedGroups {
   bonhams: BonhamsService;
   booking: BookingService;
   boots: BootsService;
+  bostonGlobe: BostonGlobeService;
   boxOfficeMojo: BoxOfficeMojoService;
   brand: BrandService;
   brave: BraveService;
@@ -86803,6 +88834,7 @@ export interface CrawloraGeneratedGroups {
   chipotle: ChipotleService;
   chromeWebStore: ChromeWebStoreService;
   chrono24: Chrono24Service;
+  clevelandCom: ClevelandComService;
   cna: CnaService;
   cnbc: CnbcService;
   cnet: CnetService;
@@ -86865,13 +88897,16 @@ export interface CrawloraGeneratedGroups {
   fortune: FortuneService;
   fotMob: FotMobService;
   foxNews: FoxNewsService;
+  foxSports: FoxSportsService;
   france24: France24Service;
+  freeMalaysiaToday: FreeMalaysiaTodayService;
   ft: FtService;
   gameRant: GameRantService;
   gamesRadar: GamesRadarService;
   gbNews: GbNewsService;
   gdelt: GdeltService;
   geocoding: GeocodingService;
+  ghanaWeb: GhanaWebService;
   gitHub: GitHubService;
   gizmodo: GizmodoService;
   globalNews: GlobalNewsService;
@@ -86898,6 +88933,7 @@ export interface CrawloraGeneratedGroups {
   hollywoodReporter: HollywoodReporterService;
   homeDepot: HomeDepotService;
   hotelsCom: HotelsComService;
+  howToGeek: HowToGeekService;
   huffPost: HuffPostService;
   ign: IgnService;
   ikea: IkeaService;
@@ -86917,6 +88953,7 @@ export interface CrawloraGeneratedGroups {
   irishIndependent: IrishIndependentService;
   irishTimes: IrishTimesService;
   jCrew: JCrewService;
+  jerusalemPost: JerusalemPostService;
   jimmyJohns: JimmyJohnsService;
   jobs: JobsService;
   justEat: JustEatService;
@@ -86946,6 +88983,7 @@ export interface CrawloraGeneratedGroups {
   mashable: MashableService;
   mcDonalds: McDonaldsService;
   mediaite: MediaiteService;
+  medicalNewsToday: MedicalNewsTodayService;
   manchesterEveningNews: ManchesterEveningNewsService;
   mercari: MercariService;
   metaJobs: MetaJobsService;
@@ -86955,10 +88993,12 @@ export interface CrawloraGeneratedGroups {
   microsoftStore: MicrosoftStoreService;
   mirror: MirrorService;
   mlb: MlbService;
+  mlive: MliveService;
   modaOperandi: ModaOperandiService;
   moncler: MonclerService;
   moneycontrol: MoneycontrolService;
   monitors: MonitorsService;
+  theMotleyFool: TheMotleyFoolService;
   nationAfrica: NationAfricaService;
   nationalPost: NationalPostService;
   nbcNews: NbcNewsService;
@@ -86971,6 +89011,7 @@ export interface CrawloraGeneratedGroups {
   theNewYorker: TheNewYorkerService;
   nike: NikeService;
   nineToFiveMac: NineToFiveMacService;
+  njCom: NjComService;
   npr: NprService;
   numbeo: NumbeoService;
   newYorkDailyNews: NewYorkDailyNewsService;
@@ -87003,6 +89044,7 @@ export interface CrawloraGeneratedGroups {
   polygon: PolygonService;
   polymarket: PolymarketService;
   popeyes: PopeyesService;
+  popularMechanics: PopularMechanicsService;
   poshmark: PoshmarkService;
   prada: PradaService;
   pristineAuction: PristineAuctionService;
@@ -87032,6 +89074,8 @@ export interface CrawloraGeneratedGroups {
   rtNews: RtNewsService;
   salon: SalonService;
   samSClub: SamSclubService;
+  sbsNews: SbsNewsService;
+  scienceAlert: ScienceAlertService;
   scmp: ScmpService;
   screenRant: ScreenRantService;
   seatGeek: SeatGeekService;
@@ -87047,6 +89091,7 @@ export interface CrawloraGeneratedGroups {
   similarWeb: SimilarWebService;
   skims: SkimsService;
   skyNews: SkyNewsService;
+  skySports: SkySportsService;
   slate: SlateService;
   slickdeals: SlickdealsService;
   mitSloanManagementReview: MitSloanManagementReviewService;
@@ -87057,10 +89102,12 @@ export interface CrawloraGeneratedGroups {
   space: SpaceService;
   sparkFun: SparkFunService;
   sportingNews: SportingNewsService;
+  sportskeeda: SportskeedaService;
   spotifyPodcasts: SpotifyPodcastsService;
   spotify: SpotifyService;
   eveningStandard: EveningStandardService;
   starbucks: StarbucksService;
+  minnesotaStarTribune: MinnesotaStarTribuneService;
   steam: SteamService;
   steveMadden: SteveMaddenService;
   stockX: StockXService;
@@ -87222,6 +89269,9 @@ export interface OperationParamsMap {
   "airbnb-room-calendar": AirbnbRoomCalendarParams;
   "airbnb-room-reviews": AirbnbRoomReviewsParams;
   "airbnb-search": AirbnbSearchParams;
+  "alcom-headlines": AlComAlcomHeadlinesParams;
+  "alcom-news": AlComAlcomNewsParams;
+  "alcom-sections": AlComAlcomSectionsParams;
   "aljazeera-article": AlJazeeraAljazeeraArticleParams;
   "aljazeera-author": AlJazeeraAljazeeraAuthorParams;
   "aljazeera-categories": AlJazeeraAljazeeraCategoriesParams;
@@ -87473,6 +89523,7 @@ export interface OperationParamsMap {
   "booking-search": BookingSearchParams;
   "boots-search": BootsSearchParams;
   "boots-suggest": BootsSuggestParams;
+  "bostonglobe-news": BostonGlobeBostonglobeNewsParams;
   "boxofficemojo-brand": BoxOfficeMojoBoxofficemojoBrandParams;
   "boxofficemojo-brands": BoxOfficeMojoBoxofficemojoBrandsParams;
   "boxofficemojo-calendar": BoxOfficeMojoBoxofficemojoCalendarParams;
@@ -87623,6 +89674,7 @@ export interface OperationParamsMap {
   "chrono24-listing": Chrono24ListingParams;
   "chrono24-models": Chrono24ModelsParams;
   "chrono24-search": Chrono24SearchParams;
+  "clevelandcom-news": ClevelandComClevelandcomNewsParams;
   "cna-article": CnaArticleParams;
   "cna-author": CnaAuthorParams;
   "cna-headlines": CnaHeadlinesParams;
@@ -88164,33 +90216,54 @@ export interface OperationParamsMap {
   "fortune-ranking-lists": FortuneRankingListsParams;
   "fortune-ranking-years": FortuneRankingYearsParams;
   "fortune-sections": FortuneSectionsParams;
+  "fotmob-audio-matches": FotMobFotmobAudioMatchesParams;
+  "fotmob-fifa-ranking-periods": FotMobFotmobFifaRankingPeriodsParams;
+  "fotmob-fifa-rankings": FotMobFotmobFifaRankingsParams;
+  "fotmob-latest-news": FotMobFotmobLatestNewsParams;
   "fotmob-league": FotMobFotmobLeagueParams;
   "fotmob-leagues": FotMobFotmobLeaguesParams;
+  "fotmob-lineup-builder-players": FotMobFotmobLineupBuilderPlayersParams;
+  "fotmob-lineup-builder-team": FotMobFotmobLineupBuilderTeamParams;
   "fotmob-match": FotMobFotmobMatchParams;
+  "fotmob-match-media": FotMobFotmobMatchMediaParams;
   "fotmob-matches": FotMobFotmobMatchesParams;
   "fotmob-news": FotMobFotmobNewsParams;
+  "fotmob-news-article": FotMobFotmobNewsArticleParams;
   "fotmob-player": FotMobFotmobPlayerParams;
   "fotmob-player-match-stats": FotMobFotmobPlayerMatchStatsParams;
   "fotmob-player-matches": FotMobFotmobPlayerMatchesParams;
   "fotmob-player-stats": FotMobFotmobPlayerStatsParams;
   "fotmob-search": FotMobFotmobSearchParams;
+  "fotmob-seasons": FotMobFotmobSeasonsParams;
   "fotmob-stats": FotMobFotmobStatsParams;
   "fotmob-stats-categories": FotMobFotmobStatsCategoriesParams;
   "fotmob-table": FotMobFotmobTableParams;
   "fotmob-team": FotMobFotmobTeamParams;
+  "fotmob-team-fixtures": FotMobFotmobTeamFixturesParams;
   "fotmob-team-news": FotMobFotmobTeamNewsParams;
   "fotmob-transfers": FotMobFotmobTransfersParams;
+  "fotmob-trending-news": FotMobFotmobTrendingNewsParams;
+  "fotmob-trending-searches": FotMobFotmobTrendingSearchesParams;
+  "fotmob-tv-guide": FotMobFotmobTvGuideParams;
+  "fotmob-tv-guide-channels": FotMobFotmobTvGuideChannelsParams;
+  "fotmob-tv-guide-countries": FotMobFotmobTvGuideCountriesParams;
   "foxnews-article": FoxNewsFoxnewsArticleParams;
   "foxnews-author": FoxNewsFoxnewsAuthorParams;
   "foxnews-headlines": FoxNewsFoxnewsHeadlinesParams;
   "foxnews-news": FoxNewsFoxnewsNewsParams;
   "foxnews-search": FoxNewsFoxnewsSearchParams;
   "foxnews-sections": FoxNewsFoxnewsSectionsParams;
+  "foxsports-article": FoxSportsFoxsportsArticleParams;
+  "foxsports-headlines": FoxSportsFoxsportsHeadlinesParams;
+  "foxsports-news": FoxSportsFoxsportsNewsParams;
+  "foxsports-sections": FoxSportsFoxsportsSectionsParams;
   "france24-article": France24France24ArticleParams;
   "france24-author": France24France24AuthorParams;
   "france24-headlines": France24France24HeadlinesParams;
   "france24-news": France24France24NewsParams;
   "france24-sections": France24France24SectionsParams;
+  "freemalaysiatoday-news": FreeMalaysiaTodayFreemalaysiatodayNewsParams;
+  "freemalaysiatoday-sections": FreeMalaysiaTodayFreemalaysiatodaySectionsParams;
   "ft-article": FtArticleParams;
   "ft-author": FtAuthorParams;
   "ft-categories": FtCategoriesParams;
@@ -88227,6 +90300,15 @@ export interface OperationParamsMap {
   "geocoding-lookup": GeocodingLookupParams;
   "geocoding-reverse": GeocodingReverseParams;
   "geocoding-search": GeocodingSearchParams;
+  "ghanaweb-archive": GhanaWebGhanawebArchiveParams;
+  "ghanaweb-archive-months": GhanaWebGhanawebArchiveMonthsParams;
+  "ghanaweb-article": GhanaWebGhanawebArticleParams;
+  "ghanaweb-headlines": GhanaWebGhanawebHeadlinesParams;
+  "ghanaweb-news": GhanaWebGhanawebNewsParams;
+  "ghanaweb-sections": GhanaWebGhanawebSectionsParams;
+  "ghanaweb-video": GhanaWebGhanawebVideoParams;
+  "ghanaweb-video-sections": GhanaWebGhanawebVideoSectionsParams;
+  "ghanaweb-videos": GhanaWebGhanawebVideosParams;
   "github-org": GitHubGithubOrgParams;
   "github-org-repos": GitHubGithubOrgReposParams;
   "github-repo": GitHubGithubRepoParams;
@@ -88442,6 +90524,7 @@ export interface OperationParamsMap {
   "hotels-reviews": HotelsComHotelsReviewsParams;
   "hotels-reviews-archive": HotelsComHotelsReviewsArchiveParams;
   "hotels-search": HotelsComHotelsSearchParams;
+  "howtogeek-news": HowToGeekHowtogeekNewsParams;
   "huffpost-article": HuffPostHuffpostArticleParams;
   "huffpost-author": HuffPostHuffpostAuthorParams;
   "huffpost-headlines": HuffPostHuffpostHeadlinesParams;
@@ -88563,6 +90646,12 @@ export interface OperationParamsMap {
   "jcrew-size-chart": JCrewJcrewSizeChartParams;
   "jcrew-stores": JCrewJcrewStoresParams;
   "jcrew-suggest": JCrewJcrewSuggestParams;
+  "jerusalempost-article": JerusalemPostJerusalempostArticleParams;
+  "jerusalempost-author": JerusalemPostJerusalempostAuthorParams;
+  "jerusalempost-authors": JerusalemPostJerusalempostAuthorsParams;
+  "jerusalempost-headlines": JerusalemPostJerusalempostHeadlinesParams;
+  "jerusalempost-news": JerusalemPostJerusalempostNewsParams;
+  "jerusalempost-sections": JerusalemPostJerusalempostSectionsParams;
   "jimmy-johns-menu": JimmyJohnsMenuParams;
   "jimmy-johns-modifiers": JimmyJohnsModifiersParams;
   "jimmy-johns-nearby": JimmyJohnsNearbyParams;
@@ -88730,6 +90819,7 @@ export interface OperationParamsMap {
   "livescience-news": LiveScienceLivescienceNewsParams;
   "livescience-sections": LiveScienceLivescienceSectionsParams;
   "livescore-competition": LiveScoreLivescoreCompetitionParams;
+  "livescore-competitions": LiveScoreLivescoreCompetitionsParams;
   "livescore-live-scores": LiveScoreLivescoreLiveScoresParams;
   "livescore-match": LiveScoreLivescoreMatchParams;
   "livescore-match-stats": LiveScoreLivescoreMatchStatsParams;
@@ -88741,6 +90831,7 @@ export interface OperationParamsMap {
   "livescore-player": LiveScoreLivescorePlayerParams;
   "livescore-scores": LiveScoreLivescoreScoresParams;
   "livescore-scores-toc": LiveScoreLivescoreScoresTocParams;
+  "livescore-search": LiveScoreLivescoreSearchParams;
   "livescore-sports": LiveScoreLivescoreSportsParams;
   "livescore-team": LiveScoreLivescoreTeamParams;
   "lululemon-categories": LululemonCategoriesParams;
@@ -88783,6 +90874,11 @@ export interface OperationParamsMap {
   "mediaite-headlines": MediaiteHeadlinesParams;
   "mediaite-news": MediaiteNewsParams;
   "mediaite-sections": MediaiteSectionsParams;
+  "medicalnewstoday-article": MedicalNewsTodayMedicalnewstodayArticleParams;
+  "medicalnewstoday-author": MedicalNewsTodayMedicalnewstodayAuthorParams;
+  "medicalnewstoday-headlines": MedicalNewsTodayMedicalnewstodayHeadlinesParams;
+  "medicalnewstoday-news": MedicalNewsTodayMedicalnewstodayNewsParams;
+  "medicalnewstoday-sections": MedicalNewsTodayMedicalnewstodaySectionsParams;
   "men-article": ManchesterEveningNewsMenArticleParams;
   "men-author": ManchesterEveningNewsMenAuthorParams;
   "men-headlines": ManchesterEveningNewsMenHeadlinesParams;
@@ -88841,18 +90937,27 @@ export interface OperationParamsMap {
   "mirror-headlines": MirrorHeadlinesParams;
   "mirror-news": MirrorNewsParams;
   "mirror-sections": MirrorSectionsParams;
+  "mlb-discovery": MlbDiscoveryParams;
+  "mlb-editorial-feed": MlbEditorialFeedParams;
   "mlb-game": MlbGameParams;
   "mlb-game-boxscore": MlbGameBoxscoreParams;
   "mlb-game-play-by-play": MlbGamePlayByPlayParams;
+  "mlb-league-leaders": MlbLeagueLeadersParams;
   "mlb-league-stats": MlbLeagueStatsParams;
   "mlb-player": MlbPlayerParams;
   "mlb-player-stats": MlbPlayerStatsParams;
+  "mlb-prospect-stats": MlbProspectStatsParams;
   "mlb-schedule": MlbScheduleParams;
+  "mlb-search": MlbSearchParams;
   "mlb-standings": MlbStandingsParams;
+  "mlb-statcast-expected": MlbStatcastExpectedParams;
+  "mlb-statcast": MlbStatcastParams;
+  "mlb-statcast-oaa": MlbStatcastOaaParams;
   "mlb-team-roster": MlbTeamRosterParams;
   "mlb-team-stats": MlbTeamStatsParams;
   "mlb-teams": MlbTeamsParams;
   "mlb-transactions": MlbTransactionsParams;
+  "mlive-news": MliveNewsParams;
   "modaoperandi-categories": ModaOperandiModaoperandiCategoriesParams;
   "modaoperandi-designers": ModaOperandiModaoperandiDesignersParams;
   "modaoperandi-product": ModaOperandiModaoperandiProductParams;
@@ -88874,6 +90979,11 @@ export interface OperationParamsMap {
   "monitors-get": MonitorsGetParams;
   "monitors-update": MonitorsUpdateParams;
   "monitors-checks": MonitorsChecksParams;
+  "motleyfool-article": TheMotleyFoolMotleyfoolArticleParams;
+  "motleyfool-author": TheMotleyFoolMotleyfoolAuthorParams;
+  "motleyfool-headlines": TheMotleyFoolMotleyfoolHeadlinesParams;
+  "motleyfool-news": TheMotleyFoolMotleyfoolNewsParams;
+  "motleyfool-sections": TheMotleyFoolMotleyfoolSectionsParams;
   "nationafrica-article": NationAfricaNationafricaArticleParams;
   "nationafrica-author": NationAfricaNationafricaAuthorParams;
   "nationafrica-headlines": NationAfricaNationafricaHeadlinesParams;
@@ -88893,6 +91003,7 @@ export interface OperationParamsMap {
   "ndtv-author": NdtvAuthorParams;
   "ndtv-headlines": NdtvHeadlinesParams;
   "ndtv-news": NdtvNewsParams;
+  "ndtv-search": NdtvSearchParams;
   "ndtv-sections": NdtvSectionsParams;
   "news18-article": News18ArticleParams;
   "news18-author": News18AuthorParams;
@@ -88937,6 +91048,7 @@ export interface OperationParamsMap {
   "ninetofivemac-headlines": NineToFiveMacHeadlinesParams;
   "ninetofivemac-news": NineToFiveMacNewsParams;
   "ninetofivemac-sections": NineToFiveMacSectionsParams;
+  "njcom-news": NjComNjcomNewsParams;
   "npr-article": NprArticleParams;
   "npr-author": NprAuthorParams;
   "npr-categories": NprCategoriesParams;
@@ -89230,6 +91342,7 @@ export interface OperationParamsMap {
   "popeyes-promotions": PopeyesPromotionsParams;
   "popeyes-quests": PopeyesQuestsParams;
   "popeyes-rewards": PopeyesRewardsParams;
+  "popularmechanics-news": PopularMechanicsPopularmechanicsNewsParams;
   "poshmark-brand": PoshmarkBrandParams;
   "poshmark-brands": PoshmarkBrandsParams;
   "poshmark-categories": PoshmarkCategoriesParams;
@@ -89419,7 +91532,13 @@ export interface OperationParamsMap {
   "rottentomatoes-browse-movies": RottenTomatoesRottentomatoesBrowseMoviesParams;
   "rottentomatoes-browse-tv": RottenTomatoesRottentomatoesBrowseTvParams;
   "rottentomatoes-critics-authors": RottenTomatoesRottentomatoesCriticsAuthorsParams;
+  "rottentomatoes-editorial-content": RottenTomatoesRottentomatoesEditorialContentParams;
+  "rottentomatoes-editorial-detail": RottenTomatoesRottentomatoesEditorialDetailParams;
   "rottentomatoes-editorial-search": RottenTomatoesRottentomatoesEditorialSearchParams;
+  "rottentomatoes-editorial-section": RottenTomatoesRottentomatoesEditorialSectionParams;
+  "rottentomatoes-editorial-taxonomies": RottenTomatoesRottentomatoesEditorialTaxonomiesParams;
+  "rottentomatoes-editorial-terms": RottenTomatoesRottentomatoesEditorialTermsParams;
+  "rottentomatoes-editorial-types": RottenTomatoesRottentomatoesEditorialTypesParams;
   "rottentomatoes-episode": RottenTomatoesRottentomatoesEpisodeParams;
   "rottentomatoes-movie": RottenTomatoesRottentomatoesMovieParams;
   "rottentomatoes-movie-reviews": RottenTomatoesRottentomatoesMovieReviewsParams;
@@ -89448,6 +91567,16 @@ export interface OperationParamsMap {
   "samsclub-departments": SamSclubSamsclubDepartmentsParams;
   "samsclub-product": SamSclubSamsclubProductParams;
   "samsclub-product-related": SamSclubSamsclubProductRelatedParams;
+  "sbsnews-article": SbsNewsSbsnewsArticleParams;
+  "sbsnews-author": SbsNewsSbsnewsAuthorParams;
+  "sbsnews-headlines": SbsNewsSbsnewsHeadlinesParams;
+  "sbsnews-news": SbsNewsSbsnewsNewsParams;
+  "sbsnews-sections": SbsNewsSbsnewsSectionsParams;
+  "sciencealert-article": ScienceAlertSciencealertArticleParams;
+  "sciencealert-author": ScienceAlertSciencealertAuthorParams;
+  "sciencealert-headlines": ScienceAlertSciencealertHeadlinesParams;
+  "sciencealert-news": ScienceAlertSciencealertNewsParams;
+  "sciencealert-sections": ScienceAlertSciencealertSectionsParams;
   "scmp-article": ScmpArticleParams;
   "scmp-author": ScmpAuthorParams;
   "scmp-headlines": ScmpHeadlinesParams;
@@ -89561,6 +91690,11 @@ export interface OperationParamsMap {
   "skynews-sections": SkyNewsSkynewsSectionsParams;
   "skynews-video": SkyNewsSkynewsVideoParams;
   "skynews-videos": SkyNewsSkynewsVideosParams;
+  "skysports-article": SkySportsSkysportsArticleParams;
+  "skysports-author": SkySportsSkysportsAuthorParams;
+  "skysports-headlines": SkySportsSkysportsHeadlinesParams;
+  "skysports-news": SkySportsSkysportsNewsParams;
+  "skysports-sections": SkySportsSkysportsSectionsParams;
   "slate-article": SlateArticleParams;
   "slate-categories": SlateCategoriesParams;
   "slate-headlines": SlateHeadlinesParams;
@@ -89631,6 +91765,27 @@ export interface OperationParamsMap {
   "sportingnews-headlines": SportingNewsSportingnewsHeadlinesParams;
   "sportingnews-news": SportingNewsSportingnewsNewsParams;
   "sportingnews-sections": SportingNewsSportingnewsSectionsParams;
+  "sportskeeda-article": SportskeedaArticleParams;
+  "sportskeeda-author": SportskeedaAuthorParams;
+  "sportskeeda-depth-chart": SportskeedaDepthChartParams;
+  "sportskeeda-feed": SportskeedaFeedParams;
+  "sportskeeda-football-data": SportskeedaFootballDataParams;
+  "sportskeeda-football-options": SportskeedaFootballOptionsParams;
+  "sportskeeda-news": SportskeedaNewsParams;
+  "sportskeeda-page-data": SportskeedaPageDataParams;
+  "sportskeeda-page-options": SportskeedaPageOptionsParams;
+  "sportskeeda-player-stats": SportskeedaPlayerStatsParams;
+  "sportskeeda-profile": SportskeedaProfileParams;
+  "sportskeeda-schedule": SportskeedaScheduleParams;
+  "sportskeeda-sections": SportskeedaSectionsParams;
+  "sportskeeda-sitemap-items": SportskeedaSitemapItemsParams;
+  "sportskeeda-sitemaps": SportskeedaSitemapsParams;
+  "sportskeeda-standings": SportskeedaStandingsParams;
+  "sportskeeda-standings-options": SportskeedaStandingsOptionsParams;
+  "sportskeeda-taxonomy-search": SportskeedaTaxonomySearchParams;
+  "sportskeeda-trade-values": SportskeedaTradeValuesParams;
+  "sportskeeda-video": SportskeedaVideoParams;
+  "sportskeeda-videos": SportskeedaVideosParams;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesParams;
   "spotify-podcasts-charts": SpotifyPodcastsChartsParams;
   "spotify-podcasts-episode": SpotifyPodcastsEpisodeParams;
@@ -89679,6 +91834,7 @@ export interface OperationParamsMap {
   "starbucks-product": StarbucksProductParams;
   "starbucks-nutrition": StarbucksNutritionParams;
   "starbucks-stores": StarbucksStoresParams;
+  "startribune-news": MinnesotaStarTribuneStartribuneNewsParams;
   "steam-achievements": SteamAchievementsParams;
   "steam-app": SteamAppParams;
   "steam-category": SteamCategoryParams;
@@ -90140,6 +92296,7 @@ export interface OperationParamsMap {
   "whatnot-browse": WhatnotBrowseParams;
   "whatnot-categories": WhatnotCategoriesParams;
   "whatnot-live": WhatnotLiveParams;
+  "whatnot-seller": WhatnotSellerParams;
   "wingstop-delivery-store": WingstopDeliveryStoreParams;
   "wingstop-directory": WingstopDirectoryParams;
   "wingstop-flavors": WingstopFlavorsParams;
@@ -90390,6 +92547,9 @@ export interface OperationResponseMap {
   "airbnb-room-calendar": AirbnbRoomCalendarResponse;
   "airbnb-room-reviews": AirbnbRoomReviewsResponse;
   "airbnb-search": AirbnbSearchResponse;
+  "alcom-headlines": AlComAlcomHeadlinesResponse;
+  "alcom-news": AlComAlcomNewsResponse;
+  "alcom-sections": AlComAlcomSectionsResponse;
   "aljazeera-article": AlJazeeraAljazeeraArticleResponse;
   "aljazeera-author": AlJazeeraAljazeeraAuthorResponse;
   "aljazeera-categories": AlJazeeraAljazeeraCategoriesResponse;
@@ -90641,6 +92801,7 @@ export interface OperationResponseMap {
   "booking-search": BookingSearchResponse;
   "boots-search": BootsSearchResponse;
   "boots-suggest": BootsSuggestResponse;
+  "bostonglobe-news": BostonGlobeBostonglobeNewsResponse;
   "boxofficemojo-brand": BoxOfficeMojoBoxofficemojoBrandResponse;
   "boxofficemojo-brands": BoxOfficeMojoBoxofficemojoBrandsResponse;
   "boxofficemojo-calendar": BoxOfficeMojoBoxofficemojoCalendarResponse;
@@ -90791,6 +92952,7 @@ export interface OperationResponseMap {
   "chrono24-listing": Chrono24ListingResponse;
   "chrono24-models": Chrono24ModelsResponse;
   "chrono24-search": Chrono24SearchResponse;
+  "clevelandcom-news": ClevelandComClevelandcomNewsResponse;
   "cna-article": CnaArticleResponse;
   "cna-author": CnaAuthorResponse;
   "cna-headlines": CnaHeadlinesResponse;
@@ -91332,33 +93494,54 @@ export interface OperationResponseMap {
   "fortune-ranking-lists": FortuneRankingListsResponse;
   "fortune-ranking-years": FortuneRankingYearsResponse;
   "fortune-sections": FortuneSectionsResponse;
+  "fotmob-audio-matches": FotMobFotmobAudioMatchesResponse;
+  "fotmob-fifa-ranking-periods": FotMobFotmobFifaRankingPeriodsResponse;
+  "fotmob-fifa-rankings": FotMobFotmobFifaRankingsResponse;
+  "fotmob-latest-news": FotMobFotmobLatestNewsResponse;
   "fotmob-league": FotMobFotmobLeagueResponse;
   "fotmob-leagues": FotMobFotmobLeaguesResponse;
+  "fotmob-lineup-builder-players": FotMobFotmobLineupBuilderPlayersResponse;
+  "fotmob-lineup-builder-team": FotMobFotmobLineupBuilderTeamResponse;
   "fotmob-match": FotMobFotmobMatchResponse;
+  "fotmob-match-media": FotMobFotmobMatchMediaResponse;
   "fotmob-matches": FotMobFotmobMatchesResponse;
   "fotmob-news": FotMobFotmobNewsResponse;
+  "fotmob-news-article": FotMobFotmobNewsArticleResponse;
   "fotmob-player": FotMobFotmobPlayerResponse;
   "fotmob-player-match-stats": FotMobFotmobPlayerMatchStatsResponse;
   "fotmob-player-matches": FotMobFotmobPlayerMatchesResponse;
   "fotmob-player-stats": FotMobFotmobPlayerStatsResponse;
   "fotmob-search": FotMobFotmobSearchResponse;
+  "fotmob-seasons": FotMobFotmobSeasonsResponse;
   "fotmob-stats": FotMobFotmobStatsResponse;
   "fotmob-stats-categories": FotMobFotmobStatsCategoriesResponse;
   "fotmob-table": FotMobFotmobTableResponse;
   "fotmob-team": FotMobFotmobTeamResponse;
+  "fotmob-team-fixtures": FotMobFotmobTeamFixturesResponse;
   "fotmob-team-news": FotMobFotmobTeamNewsResponse;
   "fotmob-transfers": FotMobFotmobTransfersResponse;
+  "fotmob-trending-news": FotMobFotmobTrendingNewsResponse;
+  "fotmob-trending-searches": FotMobFotmobTrendingSearchesResponse;
+  "fotmob-tv-guide": FotMobFotmobTvGuideResponse;
+  "fotmob-tv-guide-channels": FotMobFotmobTvGuideChannelsResponse;
+  "fotmob-tv-guide-countries": FotMobFotmobTvGuideCountriesResponse;
   "foxnews-article": FoxNewsFoxnewsArticleResponse;
   "foxnews-author": FoxNewsFoxnewsAuthorResponse;
   "foxnews-headlines": FoxNewsFoxnewsHeadlinesResponse;
   "foxnews-news": FoxNewsFoxnewsNewsResponse;
   "foxnews-search": FoxNewsFoxnewsSearchResponse;
   "foxnews-sections": FoxNewsFoxnewsSectionsResponse;
+  "foxsports-article": FoxSportsFoxsportsArticleResponse;
+  "foxsports-headlines": FoxSportsFoxsportsHeadlinesResponse;
+  "foxsports-news": FoxSportsFoxsportsNewsResponse;
+  "foxsports-sections": FoxSportsFoxsportsSectionsResponse;
   "france24-article": France24France24ArticleResponse;
   "france24-author": France24France24AuthorResponse;
   "france24-headlines": France24France24HeadlinesResponse;
   "france24-news": France24France24NewsResponse;
   "france24-sections": France24France24SectionsResponse;
+  "freemalaysiatoday-news": FreeMalaysiaTodayFreemalaysiatodayNewsResponse;
+  "freemalaysiatoday-sections": FreeMalaysiaTodayFreemalaysiatodaySectionsResponse;
   "ft-article": FtArticleResponse;
   "ft-author": FtAuthorResponse;
   "ft-categories": FtCategoriesResponse;
@@ -91395,6 +93578,15 @@ export interface OperationResponseMap {
   "geocoding-lookup": GeocodingLookupResponse;
   "geocoding-reverse": GeocodingReverseResponse;
   "geocoding-search": GeocodingSearchResponse;
+  "ghanaweb-archive": GhanaWebGhanawebArchiveResponse;
+  "ghanaweb-archive-months": GhanaWebGhanawebArchiveMonthsResponse;
+  "ghanaweb-article": GhanaWebGhanawebArticleResponse;
+  "ghanaweb-headlines": GhanaWebGhanawebHeadlinesResponse;
+  "ghanaweb-news": GhanaWebGhanawebNewsResponse;
+  "ghanaweb-sections": GhanaWebGhanawebSectionsResponse;
+  "ghanaweb-video": GhanaWebGhanawebVideoResponse;
+  "ghanaweb-video-sections": GhanaWebGhanawebVideoSectionsResponse;
+  "ghanaweb-videos": GhanaWebGhanawebVideosResponse;
   "github-org": GitHubGithubOrgResponse;
   "github-org-repos": GitHubGithubOrgReposResponse;
   "github-repo": GitHubGithubRepoResponse;
@@ -91610,6 +93802,7 @@ export interface OperationResponseMap {
   "hotels-reviews": HotelsComHotelsReviewsResponse;
   "hotels-reviews-archive": HotelsComHotelsReviewsArchiveResponse;
   "hotels-search": HotelsComHotelsSearchResponse;
+  "howtogeek-news": HowToGeekHowtogeekNewsResponse;
   "huffpost-article": HuffPostHuffpostArticleResponse;
   "huffpost-author": HuffPostHuffpostAuthorResponse;
   "huffpost-headlines": HuffPostHuffpostHeadlinesResponse;
@@ -91731,6 +93924,12 @@ export interface OperationResponseMap {
   "jcrew-size-chart": JCrewJcrewSizeChartResponse;
   "jcrew-stores": JCrewJcrewStoresResponse;
   "jcrew-suggest": JCrewJcrewSuggestResponse;
+  "jerusalempost-article": JerusalemPostJerusalempostArticleResponse;
+  "jerusalempost-author": JerusalemPostJerusalempostAuthorResponse;
+  "jerusalempost-authors": JerusalemPostJerusalempostAuthorsResponse;
+  "jerusalempost-headlines": JerusalemPostJerusalempostHeadlinesResponse;
+  "jerusalempost-news": JerusalemPostJerusalempostNewsResponse;
+  "jerusalempost-sections": JerusalemPostJerusalempostSectionsResponse;
   "jimmy-johns-menu": JimmyJohnsMenuResponse;
   "jimmy-johns-modifiers": JimmyJohnsModifiersResponse;
   "jimmy-johns-nearby": JimmyJohnsNearbyResponse;
@@ -91898,6 +94097,7 @@ export interface OperationResponseMap {
   "livescience-news": LiveScienceLivescienceNewsResponse;
   "livescience-sections": LiveScienceLivescienceSectionsResponse;
   "livescore-competition": LiveScoreLivescoreCompetitionResponse;
+  "livescore-competitions": LiveScoreLivescoreCompetitionsResponse;
   "livescore-live-scores": LiveScoreLivescoreLiveScoresResponse;
   "livescore-match": LiveScoreLivescoreMatchResponse;
   "livescore-match-stats": LiveScoreLivescoreMatchStatsResponse;
@@ -91909,6 +94109,7 @@ export interface OperationResponseMap {
   "livescore-player": LiveScoreLivescorePlayerResponse;
   "livescore-scores": LiveScoreLivescoreScoresResponse;
   "livescore-scores-toc": LiveScoreLivescoreScoresTocResponse;
+  "livescore-search": LiveScoreLivescoreSearchResponse;
   "livescore-sports": LiveScoreLivescoreSportsResponse;
   "livescore-team": LiveScoreLivescoreTeamResponse;
   "lululemon-categories": LululemonCategoriesResponse;
@@ -91951,6 +94152,11 @@ export interface OperationResponseMap {
   "mediaite-headlines": MediaiteHeadlinesResponse;
   "mediaite-news": MediaiteNewsResponse;
   "mediaite-sections": MediaiteSectionsResponse;
+  "medicalnewstoday-article": MedicalNewsTodayMedicalnewstodayArticleResponse;
+  "medicalnewstoday-author": MedicalNewsTodayMedicalnewstodayAuthorResponse;
+  "medicalnewstoday-headlines": MedicalNewsTodayMedicalnewstodayHeadlinesResponse;
+  "medicalnewstoday-news": MedicalNewsTodayMedicalnewstodayNewsResponse;
+  "medicalnewstoday-sections": MedicalNewsTodayMedicalnewstodaySectionsResponse;
   "men-article": ManchesterEveningNewsMenArticleResponse;
   "men-author": ManchesterEveningNewsMenAuthorResponse;
   "men-headlines": ManchesterEveningNewsMenHeadlinesResponse;
@@ -92009,18 +94215,27 @@ export interface OperationResponseMap {
   "mirror-headlines": MirrorHeadlinesResponse;
   "mirror-news": MirrorNewsResponse;
   "mirror-sections": MirrorSectionsResponse;
+  "mlb-discovery": MlbDiscoveryResponse;
+  "mlb-editorial-feed": MlbEditorialFeedResponse;
   "mlb-game": MlbGameResponse;
   "mlb-game-boxscore": MlbGameBoxscoreResponse;
   "mlb-game-play-by-play": MlbGamePlayByPlayResponse;
+  "mlb-league-leaders": MlbLeagueLeadersResponse;
   "mlb-league-stats": MlbLeagueStatsResponse;
   "mlb-player": MlbPlayerResponse;
   "mlb-player-stats": MlbPlayerStatsResponse;
+  "mlb-prospect-stats": MlbProspectStatsResponse;
   "mlb-schedule": MlbScheduleResponse;
+  "mlb-search": MlbSearchResponse;
   "mlb-standings": MlbStandingsResponse;
+  "mlb-statcast-expected": MlbStatcastExpectedResponse;
+  "mlb-statcast": MlbStatcastResponse;
+  "mlb-statcast-oaa": MlbStatcastOaaResponse;
   "mlb-team-roster": MlbTeamRosterResponse;
   "mlb-team-stats": MlbTeamStatsResponse;
   "mlb-teams": MlbTeamsResponse;
   "mlb-transactions": MlbTransactionsResponse;
+  "mlive-news": MliveNewsResponse;
   "modaoperandi-categories": ModaOperandiModaoperandiCategoriesResponse;
   "modaoperandi-designers": ModaOperandiModaoperandiDesignersResponse;
   "modaoperandi-product": ModaOperandiModaoperandiProductResponse;
@@ -92042,6 +94257,11 @@ export interface OperationResponseMap {
   "monitors-get": MonitorsGetResponse;
   "monitors-update": MonitorsUpdateResponse;
   "monitors-checks": MonitorsChecksResponse;
+  "motleyfool-article": TheMotleyFoolMotleyfoolArticleResponse;
+  "motleyfool-author": TheMotleyFoolMotleyfoolAuthorResponse;
+  "motleyfool-headlines": TheMotleyFoolMotleyfoolHeadlinesResponse;
+  "motleyfool-news": TheMotleyFoolMotleyfoolNewsResponse;
+  "motleyfool-sections": TheMotleyFoolMotleyfoolSectionsResponse;
   "nationafrica-article": NationAfricaNationafricaArticleResponse;
   "nationafrica-author": NationAfricaNationafricaAuthorResponse;
   "nationafrica-headlines": NationAfricaNationafricaHeadlinesResponse;
@@ -92061,6 +94281,7 @@ export interface OperationResponseMap {
   "ndtv-author": NdtvAuthorResponse;
   "ndtv-headlines": NdtvHeadlinesResponse;
   "ndtv-news": NdtvNewsResponse;
+  "ndtv-search": NdtvSearchResponse;
   "ndtv-sections": NdtvSectionsResponse;
   "news18-article": News18ArticleResponse;
   "news18-author": News18AuthorResponse;
@@ -92105,6 +94326,7 @@ export interface OperationResponseMap {
   "ninetofivemac-headlines": NineToFiveMacHeadlinesResponse;
   "ninetofivemac-news": NineToFiveMacNewsResponse;
   "ninetofivemac-sections": NineToFiveMacSectionsResponse;
+  "njcom-news": NjComNjcomNewsResponse;
   "npr-article": NprArticleResponse;
   "npr-author": NprAuthorResponse;
   "npr-categories": NprCategoriesResponse;
@@ -92398,6 +94620,7 @@ export interface OperationResponseMap {
   "popeyes-promotions": PopeyesPromotionsResponse;
   "popeyes-quests": PopeyesQuestsResponse;
   "popeyes-rewards": PopeyesRewardsResponse;
+  "popularmechanics-news": PopularMechanicsPopularmechanicsNewsResponse;
   "poshmark-brand": PoshmarkBrandResponse;
   "poshmark-brands": PoshmarkBrandsResponse;
   "poshmark-categories": PoshmarkCategoriesResponse;
@@ -92587,7 +94810,13 @@ export interface OperationResponseMap {
   "rottentomatoes-browse-movies": RottenTomatoesRottentomatoesBrowseMoviesResponse;
   "rottentomatoes-browse-tv": RottenTomatoesRottentomatoesBrowseTvResponse;
   "rottentomatoes-critics-authors": RottenTomatoesRottentomatoesCriticsAuthorsResponse;
+  "rottentomatoes-editorial-content": RottenTomatoesRottentomatoesEditorialContentResponse;
+  "rottentomatoes-editorial-detail": RottenTomatoesRottentomatoesEditorialDetailResponse;
   "rottentomatoes-editorial-search": RottenTomatoesRottentomatoesEditorialSearchResponse;
+  "rottentomatoes-editorial-section": RottenTomatoesRottentomatoesEditorialSectionResponse;
+  "rottentomatoes-editorial-taxonomies": RottenTomatoesRottentomatoesEditorialTaxonomiesResponse;
+  "rottentomatoes-editorial-terms": RottenTomatoesRottentomatoesEditorialTermsResponse;
+  "rottentomatoes-editorial-types": RottenTomatoesRottentomatoesEditorialTypesResponse;
   "rottentomatoes-episode": RottenTomatoesRottentomatoesEpisodeResponse;
   "rottentomatoes-movie": RottenTomatoesRottentomatoesMovieResponse;
   "rottentomatoes-movie-reviews": RottenTomatoesRottentomatoesMovieReviewsResponse;
@@ -92616,6 +94845,16 @@ export interface OperationResponseMap {
   "samsclub-departments": SamSclubSamsclubDepartmentsResponse;
   "samsclub-product": SamSclubSamsclubProductResponse;
   "samsclub-product-related": SamSclubSamsclubProductRelatedResponse;
+  "sbsnews-article": SbsNewsSbsnewsArticleResponse;
+  "sbsnews-author": SbsNewsSbsnewsAuthorResponse;
+  "sbsnews-headlines": SbsNewsSbsnewsHeadlinesResponse;
+  "sbsnews-news": SbsNewsSbsnewsNewsResponse;
+  "sbsnews-sections": SbsNewsSbsnewsSectionsResponse;
+  "sciencealert-article": ScienceAlertSciencealertArticleResponse;
+  "sciencealert-author": ScienceAlertSciencealertAuthorResponse;
+  "sciencealert-headlines": ScienceAlertSciencealertHeadlinesResponse;
+  "sciencealert-news": ScienceAlertSciencealertNewsResponse;
+  "sciencealert-sections": ScienceAlertSciencealertSectionsResponse;
   "scmp-article": ScmpArticleResponse;
   "scmp-author": ScmpAuthorResponse;
   "scmp-headlines": ScmpHeadlinesResponse;
@@ -92729,6 +94968,11 @@ export interface OperationResponseMap {
   "skynews-sections": SkyNewsSkynewsSectionsResponse;
   "skynews-video": SkyNewsSkynewsVideoResponse;
   "skynews-videos": SkyNewsSkynewsVideosResponse;
+  "skysports-article": SkySportsSkysportsArticleResponse;
+  "skysports-author": SkySportsSkysportsAuthorResponse;
+  "skysports-headlines": SkySportsSkysportsHeadlinesResponse;
+  "skysports-news": SkySportsSkysportsNewsResponse;
+  "skysports-sections": SkySportsSkysportsSectionsResponse;
   "slate-article": SlateArticleResponse;
   "slate-categories": SlateCategoriesResponse;
   "slate-headlines": SlateHeadlinesResponse;
@@ -92799,6 +95043,27 @@ export interface OperationResponseMap {
   "sportingnews-headlines": SportingNewsSportingnewsHeadlinesResponse;
   "sportingnews-news": SportingNewsSportingnewsNewsResponse;
   "sportingnews-sections": SportingNewsSportingnewsSectionsResponse;
+  "sportskeeda-article": SportskeedaArticleResponse;
+  "sportskeeda-author": SportskeedaAuthorResponse;
+  "sportskeeda-depth-chart": SportskeedaDepthChartResponse;
+  "sportskeeda-feed": SportskeedaFeedResponse;
+  "sportskeeda-football-data": SportskeedaFootballDataResponse;
+  "sportskeeda-football-options": SportskeedaFootballOptionsResponse;
+  "sportskeeda-news": SportskeedaNewsResponse;
+  "sportskeeda-page-data": SportskeedaPageDataResponse;
+  "sportskeeda-page-options": SportskeedaPageOptionsResponse;
+  "sportskeeda-player-stats": SportskeedaPlayerStatsResponse;
+  "sportskeeda-profile": SportskeedaProfileResponse;
+  "sportskeeda-schedule": SportskeedaScheduleResponse;
+  "sportskeeda-sections": SportskeedaSectionsResponse;
+  "sportskeeda-sitemap-items": SportskeedaSitemapItemsResponse;
+  "sportskeeda-sitemaps": SportskeedaSitemapsResponse;
+  "sportskeeda-standings": SportskeedaStandingsResponse;
+  "sportskeeda-standings-options": SportskeedaStandingsOptionsResponse;
+  "sportskeeda-taxonomy-search": SportskeedaTaxonomySearchResponse;
+  "sportskeeda-trade-values": SportskeedaTradeValuesResponse;
+  "sportskeeda-video": SportskeedaVideoResponse;
+  "sportskeeda-videos": SportskeedaVideosResponse;
   "spotify-podcasts-categories": SpotifyPodcastsCategoriesResponse;
   "spotify-podcasts-charts": SpotifyPodcastsChartsResponse;
   "spotify-podcasts-episode": SpotifyPodcastsEpisodeResponse;
@@ -92847,6 +95112,7 @@ export interface OperationResponseMap {
   "starbucks-product": StarbucksProductResponse;
   "starbucks-nutrition": StarbucksNutritionResponse;
   "starbucks-stores": StarbucksStoresResponse;
+  "startribune-news": MinnesotaStarTribuneStartribuneNewsResponse;
   "steam-achievements": SteamAchievementsResponse;
   "steam-app": SteamAppResponse;
   "steam-category": SteamCategoryResponse;
@@ -93308,6 +95574,7 @@ export interface OperationResponseMap {
   "whatnot-browse": WhatnotBrowseResponse;
   "whatnot-categories": WhatnotCategoriesResponse;
   "whatnot-live": WhatnotLiveResponse;
+  "whatnot-seller": WhatnotSellerResponse;
   "wingstop-delivery-store": WingstopDeliveryStoreResponse;
   "wingstop-directory": WingstopDirectoryResponse;
   "wingstop-flavors": WingstopFlavorsResponse;
@@ -93558,6 +95825,9 @@ export interface OperationRequiredParamsMap {
   "airbnb-room-calendar": true;
   "airbnb-room-reviews": true;
   "airbnb-search": true;
+  "alcom-headlines": true;
+  "alcom-news": false;
+  "alcom-sections": false;
   "aljazeera-article": true;
   "aljazeera-author": false;
   "aljazeera-categories": false;
@@ -93809,6 +96079,7 @@ export interface OperationRequiredParamsMap {
   "booking-search": true;
   "boots-search": false;
   "boots-suggest": true;
+  "bostonglobe-news": false;
   "boxofficemojo-brand": false;
   "boxofficemojo-brands": false;
   "boxofficemojo-calendar": true;
@@ -93959,6 +96230,7 @@ export interface OperationRequiredParamsMap {
   "chrono24-listing": true;
   "chrono24-models": true;
   "chrono24-search": false;
+  "clevelandcom-news": false;
   "cna-article": true;
   "cna-author": false;
   "cna-headlines": true;
@@ -94500,33 +96772,54 @@ export interface OperationRequiredParamsMap {
   "fortune-ranking-lists": false;
   "fortune-ranking-years": false;
   "fortune-sections": false;
+  "fotmob-audio-matches": false;
+  "fotmob-fifa-ranking-periods": true;
+  "fotmob-fifa-rankings": true;
+  "fotmob-latest-news": false;
   "fotmob-league": true;
   "fotmob-leagues": false;
+  "fotmob-lineup-builder-players": true;
+  "fotmob-lineup-builder-team": true;
   "fotmob-match": true;
+  "fotmob-match-media": true;
   "fotmob-matches": true;
   "fotmob-news": true;
+  "fotmob-news-article": true;
   "fotmob-player": true;
   "fotmob-player-match-stats": true;
   "fotmob-player-matches": true;
   "fotmob-player-stats": true;
   "fotmob-search": true;
+  "fotmob-seasons": true;
   "fotmob-stats": true;
   "fotmob-stats-categories": true;
   "fotmob-table": true;
   "fotmob-team": true;
+  "fotmob-team-fixtures": true;
   "fotmob-team-news": true;
   "fotmob-transfers": false;
+  "fotmob-trending-news": false;
+  "fotmob-trending-searches": false;
+  "fotmob-tv-guide": true;
+  "fotmob-tv-guide-channels": true;
+  "fotmob-tv-guide-countries": false;
   "foxnews-article": true;
   "foxnews-author": false;
   "foxnews-headlines": true;
   "foxnews-news": false;
   "foxnews-search": true;
   "foxnews-sections": false;
+  "foxsports-article": true;
+  "foxsports-headlines": true;
+  "foxsports-news": false;
+  "foxsports-sections": false;
   "france24-article": true;
   "france24-author": true;
   "france24-headlines": true;
   "france24-news": false;
   "france24-sections": false;
+  "freemalaysiatoday-news": false;
+  "freemalaysiatoday-sections": false;
   "ft-article": true;
   "ft-author": false;
   "ft-categories": false;
@@ -94563,6 +96856,15 @@ export interface OperationRequiredParamsMap {
   "geocoding-lookup": true;
   "geocoding-reverse": true;
   "geocoding-search": false;
+  "ghanaweb-archive": true;
+  "ghanaweb-archive-months": false;
+  "ghanaweb-article": true;
+  "ghanaweb-headlines": true;
+  "ghanaweb-news": false;
+  "ghanaweb-sections": false;
+  "ghanaweb-video": true;
+  "ghanaweb-video-sections": false;
+  "ghanaweb-videos": true;
   "github-org": true;
   "github-org-repos": true;
   "github-repo": true;
@@ -94778,6 +97080,7 @@ export interface OperationRequiredParamsMap {
   "hotels-reviews": true;
   "hotels-reviews-archive": true;
   "hotels-search": true;
+  "howtogeek-news": false;
   "huffpost-article": true;
   "huffpost-author": true;
   "huffpost-headlines": true;
@@ -94899,6 +97202,12 @@ export interface OperationRequiredParamsMap {
   "jcrew-size-chart": true;
   "jcrew-stores": false;
   "jcrew-suggest": true;
+  "jerusalempost-article": true;
+  "jerusalempost-author": true;
+  "jerusalempost-authors": false;
+  "jerusalempost-headlines": true;
+  "jerusalempost-news": false;
+  "jerusalempost-sections": false;
   "jimmy-johns-menu": true;
   "jimmy-johns-modifiers": true;
   "jimmy-johns-nearby": true;
@@ -95066,6 +97375,7 @@ export interface OperationRequiredParamsMap {
   "livescience-news": false;
   "livescience-sections": false;
   "livescore-competition": true;
+  "livescore-competitions": false;
   "livescore-live-scores": true;
   "livescore-match": true;
   "livescore-match-stats": true;
@@ -95077,6 +97387,7 @@ export interface OperationRequiredParamsMap {
   "livescore-player": true;
   "livescore-scores": true;
   "livescore-scores-toc": true;
+  "livescore-search": true;
   "livescore-sports": false;
   "livescore-team": true;
   "lululemon-categories": false;
@@ -95119,6 +97430,11 @@ export interface OperationRequiredParamsMap {
   "mediaite-headlines": true;
   "mediaite-news": false;
   "mediaite-sections": false;
+  "medicalnewstoday-article": true;
+  "medicalnewstoday-author": false;
+  "medicalnewstoday-headlines": true;
+  "medicalnewstoday-news": false;
+  "medicalnewstoday-sections": false;
   "men-article": true;
   "men-author": false;
   "men-headlines": true;
@@ -95177,18 +97493,27 @@ export interface OperationRequiredParamsMap {
   "mirror-headlines": true;
   "mirror-news": false;
   "mirror-sections": false;
+  "mlb-discovery": false;
+  "mlb-editorial-feed": true;
   "mlb-game": true;
   "mlb-game-boxscore": true;
   "mlb-game-play-by-play": true;
+  "mlb-league-leaders": true;
   "mlb-league-stats": true;
   "mlb-player": true;
   "mlb-player-stats": true;
+  "mlb-prospect-stats": false;
   "mlb-schedule": false;
+  "mlb-search": true;
   "mlb-standings": false;
+  "mlb-statcast-expected": false;
+  "mlb-statcast": false;
+  "mlb-statcast-oaa": false;
   "mlb-team-roster": true;
   "mlb-team-stats": true;
   "mlb-teams": false;
   "mlb-transactions": true;
+  "mlive-news": false;
   "modaoperandi-categories": false;
   "modaoperandi-designers": true;
   "modaoperandi-product": true;
@@ -95210,6 +97535,11 @@ export interface OperationRequiredParamsMap {
   "monitors-get": true;
   "monitors-update": true;
   "monitors-checks": true;
+  "motleyfool-article": true;
+  "motleyfool-author": true;
+  "motleyfool-headlines": true;
+  "motleyfool-news": false;
+  "motleyfool-sections": false;
   "nationafrica-article": true;
   "nationafrica-author": false;
   "nationafrica-headlines": true;
@@ -95229,6 +97559,7 @@ export interface OperationRequiredParamsMap {
   "ndtv-author": true;
   "ndtv-headlines": true;
   "ndtv-news": false;
+  "ndtv-search": true;
   "ndtv-sections": false;
   "news18-article": true;
   "news18-author": true;
@@ -95273,6 +97604,7 @@ export interface OperationRequiredParamsMap {
   "ninetofivemac-headlines": true;
   "ninetofivemac-news": false;
   "ninetofivemac-sections": false;
+  "njcom-news": false;
   "npr-article": true;
   "npr-author": true;
   "npr-categories": false;
@@ -95566,6 +97898,7 @@ export interface OperationRequiredParamsMap {
   "popeyes-promotions": false;
   "popeyes-quests": false;
   "popeyes-rewards": false;
+  "popularmechanics-news": false;
   "poshmark-brand": true;
   "poshmark-brands": false;
   "poshmark-categories": false;
@@ -95755,7 +98088,13 @@ export interface OperationRequiredParamsMap {
   "rottentomatoes-browse-movies": false;
   "rottentomatoes-browse-tv": false;
   "rottentomatoes-critics-authors": false;
+  "rottentomatoes-editorial-content": true;
+  "rottentomatoes-editorial-detail": true;
   "rottentomatoes-editorial-search": true;
+  "rottentomatoes-editorial-section": true;
+  "rottentomatoes-editorial-taxonomies": false;
+  "rottentomatoes-editorial-terms": true;
+  "rottentomatoes-editorial-types": false;
   "rottentomatoes-episode": false;
   "rottentomatoes-movie": false;
   "rottentomatoes-movie-reviews": false;
@@ -95784,6 +98123,16 @@ export interface OperationRequiredParamsMap {
   "samsclub-departments": false;
   "samsclub-product": true;
   "samsclub-product-related": true;
+  "sbsnews-article": true;
+  "sbsnews-author": true;
+  "sbsnews-headlines": true;
+  "sbsnews-news": false;
+  "sbsnews-sections": false;
+  "sciencealert-article": true;
+  "sciencealert-author": true;
+  "sciencealert-headlines": true;
+  "sciencealert-news": false;
+  "sciencealert-sections": false;
   "scmp-article": true;
   "scmp-author": true;
   "scmp-headlines": true;
@@ -95897,6 +98246,11 @@ export interface OperationRequiredParamsMap {
   "skynews-sections": false;
   "skynews-video": true;
   "skynews-videos": false;
+  "skysports-article": true;
+  "skysports-author": true;
+  "skysports-headlines": true;
+  "skysports-news": false;
+  "skysports-sections": false;
   "slate-article": true;
   "slate-categories": false;
   "slate-headlines": false;
@@ -95967,6 +98321,27 @@ export interface OperationRequiredParamsMap {
   "sportingnews-headlines": true;
   "sportingnews-news": false;
   "sportingnews-sections": false;
+  "sportskeeda-article": false;
+  "sportskeeda-author": false;
+  "sportskeeda-depth-chart": true;
+  "sportskeeda-feed": true;
+  "sportskeeda-football-data": true;
+  "sportskeeda-football-options": false;
+  "sportskeeda-news": false;
+  "sportskeeda-page-data": true;
+  "sportskeeda-page-options": true;
+  "sportskeeda-player-stats": true;
+  "sportskeeda-profile": true;
+  "sportskeeda-schedule": true;
+  "sportskeeda-sections": false;
+  "sportskeeda-sitemap-items": false;
+  "sportskeeda-sitemaps": false;
+  "sportskeeda-standings": true;
+  "sportskeeda-standings-options": true;
+  "sportskeeda-taxonomy-search": true;
+  "sportskeeda-trade-values": true;
+  "sportskeeda-video": true;
+  "sportskeeda-videos": false;
   "spotify-podcasts-categories": false;
   "spotify-podcasts-charts": false;
   "spotify-podcasts-episode": false;
@@ -96015,6 +98390,7 @@ export interface OperationRequiredParamsMap {
   "starbucks-product": true;
   "starbucks-nutrition": true;
   "starbucks-stores": false;
+  "startribune-news": false;
   "steam-achievements": true;
   "steam-app": true;
   "steam-category": true;
@@ -96476,6 +98852,7 @@ export interface OperationRequiredParamsMap {
   "whatnot-browse": true;
   "whatnot-categories": false;
   "whatnot-live": true;
+  "whatnot-seller": true;
   "wingstop-delivery-store": true;
   "wingstop-directory": false;
   "wingstop-flavors": false;
@@ -96733,6 +99110,9 @@ export type OperationIdLiteral =
   | "airbnb-room-calendar"
   | "airbnb-room-reviews"
   | "airbnb-search"
+  | "alcom-headlines"
+  | "alcom-news"
+  | "alcom-sections"
   | "aljazeera-article"
   | "aljazeera-author"
   | "aljazeera-categories"
@@ -96984,6 +99364,7 @@ export type OperationIdLiteral =
   | "booking-search"
   | "boots-search"
   | "boots-suggest"
+  | "bostonglobe-news"
   | "boxofficemojo-brand"
   | "boxofficemojo-brands"
   | "boxofficemojo-calendar"
@@ -97134,6 +99515,7 @@ export type OperationIdLiteral =
   | "chrono24-listing"
   | "chrono24-models"
   | "chrono24-search"
+  | "clevelandcom-news"
   | "cna-article"
   | "cna-author"
   | "cna-headlines"
@@ -97675,33 +100057,54 @@ export type OperationIdLiteral =
   | "fortune-ranking-lists"
   | "fortune-ranking-years"
   | "fortune-sections"
+  | "fotmob-audio-matches"
+  | "fotmob-fifa-ranking-periods"
+  | "fotmob-fifa-rankings"
+  | "fotmob-latest-news"
   | "fotmob-league"
   | "fotmob-leagues"
+  | "fotmob-lineup-builder-players"
+  | "fotmob-lineup-builder-team"
   | "fotmob-match"
+  | "fotmob-match-media"
   | "fotmob-matches"
   | "fotmob-news"
+  | "fotmob-news-article"
   | "fotmob-player"
   | "fotmob-player-match-stats"
   | "fotmob-player-matches"
   | "fotmob-player-stats"
   | "fotmob-search"
+  | "fotmob-seasons"
   | "fotmob-stats"
   | "fotmob-stats-categories"
   | "fotmob-table"
   | "fotmob-team"
+  | "fotmob-team-fixtures"
   | "fotmob-team-news"
   | "fotmob-transfers"
+  | "fotmob-trending-news"
+  | "fotmob-trending-searches"
+  | "fotmob-tv-guide"
+  | "fotmob-tv-guide-channels"
+  | "fotmob-tv-guide-countries"
   | "foxnews-article"
   | "foxnews-author"
   | "foxnews-headlines"
   | "foxnews-news"
   | "foxnews-search"
   | "foxnews-sections"
+  | "foxsports-article"
+  | "foxsports-headlines"
+  | "foxsports-news"
+  | "foxsports-sections"
   | "france24-article"
   | "france24-author"
   | "france24-headlines"
   | "france24-news"
   | "france24-sections"
+  | "freemalaysiatoday-news"
+  | "freemalaysiatoday-sections"
   | "ft-article"
   | "ft-author"
   | "ft-categories"
@@ -97738,6 +100141,15 @@ export type OperationIdLiteral =
   | "geocoding-lookup"
   | "geocoding-reverse"
   | "geocoding-search"
+  | "ghanaweb-archive"
+  | "ghanaweb-archive-months"
+  | "ghanaweb-article"
+  | "ghanaweb-headlines"
+  | "ghanaweb-news"
+  | "ghanaweb-sections"
+  | "ghanaweb-video"
+  | "ghanaweb-video-sections"
+  | "ghanaweb-videos"
   | "github-org"
   | "github-org-repos"
   | "github-repo"
@@ -97953,6 +100365,7 @@ export type OperationIdLiteral =
   | "hotels-reviews"
   | "hotels-reviews-archive"
   | "hotels-search"
+  | "howtogeek-news"
   | "huffpost-article"
   | "huffpost-author"
   | "huffpost-headlines"
@@ -98074,6 +100487,12 @@ export type OperationIdLiteral =
   | "jcrew-size-chart"
   | "jcrew-stores"
   | "jcrew-suggest"
+  | "jerusalempost-article"
+  | "jerusalempost-author"
+  | "jerusalempost-authors"
+  | "jerusalempost-headlines"
+  | "jerusalempost-news"
+  | "jerusalempost-sections"
   | "jimmy-johns-menu"
   | "jimmy-johns-modifiers"
   | "jimmy-johns-nearby"
@@ -98241,6 +100660,7 @@ export type OperationIdLiteral =
   | "livescience-news"
   | "livescience-sections"
   | "livescore-competition"
+  | "livescore-competitions"
   | "livescore-live-scores"
   | "livescore-match"
   | "livescore-match-stats"
@@ -98252,6 +100672,7 @@ export type OperationIdLiteral =
   | "livescore-player"
   | "livescore-scores"
   | "livescore-scores-toc"
+  | "livescore-search"
   | "livescore-sports"
   | "livescore-team"
   | "lululemon-categories"
@@ -98294,6 +100715,11 @@ export type OperationIdLiteral =
   | "mediaite-headlines"
   | "mediaite-news"
   | "mediaite-sections"
+  | "medicalnewstoday-article"
+  | "medicalnewstoday-author"
+  | "medicalnewstoday-headlines"
+  | "medicalnewstoday-news"
+  | "medicalnewstoday-sections"
   | "men-article"
   | "men-author"
   | "men-headlines"
@@ -98352,18 +100778,27 @@ export type OperationIdLiteral =
   | "mirror-headlines"
   | "mirror-news"
   | "mirror-sections"
+  | "mlb-discovery"
+  | "mlb-editorial-feed"
   | "mlb-game"
   | "mlb-game-boxscore"
   | "mlb-game-play-by-play"
+  | "mlb-league-leaders"
   | "mlb-league-stats"
   | "mlb-player"
   | "mlb-player-stats"
+  | "mlb-prospect-stats"
   | "mlb-schedule"
+  | "mlb-search"
   | "mlb-standings"
+  | "mlb-statcast-expected"
+  | "mlb-statcast"
+  | "mlb-statcast-oaa"
   | "mlb-team-roster"
   | "mlb-team-stats"
   | "mlb-teams"
   | "mlb-transactions"
+  | "mlive-news"
   | "modaoperandi-categories"
   | "modaoperandi-designers"
   | "modaoperandi-product"
@@ -98385,6 +100820,11 @@ export type OperationIdLiteral =
   | "monitors-get"
   | "monitors-update"
   | "monitors-checks"
+  | "motleyfool-article"
+  | "motleyfool-author"
+  | "motleyfool-headlines"
+  | "motleyfool-news"
+  | "motleyfool-sections"
   | "nationafrica-article"
   | "nationafrica-author"
   | "nationafrica-headlines"
@@ -98404,6 +100844,7 @@ export type OperationIdLiteral =
   | "ndtv-author"
   | "ndtv-headlines"
   | "ndtv-news"
+  | "ndtv-search"
   | "ndtv-sections"
   | "news18-article"
   | "news18-author"
@@ -98448,6 +100889,7 @@ export type OperationIdLiteral =
   | "ninetofivemac-headlines"
   | "ninetofivemac-news"
   | "ninetofivemac-sections"
+  | "njcom-news"
   | "npr-article"
   | "npr-author"
   | "npr-categories"
@@ -98741,6 +101183,7 @@ export type OperationIdLiteral =
   | "popeyes-promotions"
   | "popeyes-quests"
   | "popeyes-rewards"
+  | "popularmechanics-news"
   | "poshmark-brand"
   | "poshmark-brands"
   | "poshmark-categories"
@@ -98930,7 +101373,13 @@ export type OperationIdLiteral =
   | "rottentomatoes-browse-movies"
   | "rottentomatoes-browse-tv"
   | "rottentomatoes-critics-authors"
+  | "rottentomatoes-editorial-content"
+  | "rottentomatoes-editorial-detail"
   | "rottentomatoes-editorial-search"
+  | "rottentomatoes-editorial-section"
+  | "rottentomatoes-editorial-taxonomies"
+  | "rottentomatoes-editorial-terms"
+  | "rottentomatoes-editorial-types"
   | "rottentomatoes-episode"
   | "rottentomatoes-movie"
   | "rottentomatoes-movie-reviews"
@@ -98959,6 +101408,16 @@ export type OperationIdLiteral =
   | "samsclub-departments"
   | "samsclub-product"
   | "samsclub-product-related"
+  | "sbsnews-article"
+  | "sbsnews-author"
+  | "sbsnews-headlines"
+  | "sbsnews-news"
+  | "sbsnews-sections"
+  | "sciencealert-article"
+  | "sciencealert-author"
+  | "sciencealert-headlines"
+  | "sciencealert-news"
+  | "sciencealert-sections"
   | "scmp-article"
   | "scmp-author"
   | "scmp-headlines"
@@ -99072,6 +101531,11 @@ export type OperationIdLiteral =
   | "skynews-sections"
   | "skynews-video"
   | "skynews-videos"
+  | "skysports-article"
+  | "skysports-author"
+  | "skysports-headlines"
+  | "skysports-news"
+  | "skysports-sections"
   | "slate-article"
   | "slate-categories"
   | "slate-headlines"
@@ -99142,6 +101606,27 @@ export type OperationIdLiteral =
   | "sportingnews-headlines"
   | "sportingnews-news"
   | "sportingnews-sections"
+  | "sportskeeda-article"
+  | "sportskeeda-author"
+  | "sportskeeda-depth-chart"
+  | "sportskeeda-feed"
+  | "sportskeeda-football-data"
+  | "sportskeeda-football-options"
+  | "sportskeeda-news"
+  | "sportskeeda-page-data"
+  | "sportskeeda-page-options"
+  | "sportskeeda-player-stats"
+  | "sportskeeda-profile"
+  | "sportskeeda-schedule"
+  | "sportskeeda-sections"
+  | "sportskeeda-sitemap-items"
+  | "sportskeeda-sitemaps"
+  | "sportskeeda-standings"
+  | "sportskeeda-standings-options"
+  | "sportskeeda-taxonomy-search"
+  | "sportskeeda-trade-values"
+  | "sportskeeda-video"
+  | "sportskeeda-videos"
   | "spotify-podcasts-categories"
   | "spotify-podcasts-charts"
   | "spotify-podcasts-episode"
@@ -99190,6 +101675,7 @@ export type OperationIdLiteral =
   | "starbucks-product"
   | "starbucks-nutrition"
   | "starbucks-stores"
+  | "startribune-news"
   | "steam-achievements"
   | "steam-app"
   | "steam-category"
@@ -99651,6 +102137,7 @@ export type OperationIdLiteral =
   | "whatnot-browse"
   | "whatnot-categories"
   | "whatnot-live"
+  | "whatnot-seller"
   | "wingstop-delivery-store"
   | "wingstop-directory"
   | "wingstop-flavors"
@@ -99886,6 +102373,9 @@ export declare const OperationIds: Readonly<{
   AirbnbRoomCalendar: "airbnb-room-calendar";
   AirbnbRoomReviews: "airbnb-room-reviews";
   AirbnbSearch: "airbnb-search";
+  AlComAlcomHeadlines: "alcom-headlines";
+  AlComAlcomNews: "alcom-news";
+  AlComAlcomSections: "alcom-sections";
   AlJazeeraAljazeeraArticle: "aljazeera-article";
   AlJazeeraAljazeeraAuthor: "aljazeera-author";
   AlJazeeraAljazeeraCategories: "aljazeera-categories";
@@ -100137,6 +102627,7 @@ export declare const OperationIds: Readonly<{
   BookingSearch: "booking-search";
   BootsSearch: "boots-search";
   BootsSuggest: "boots-suggest";
+  BostonGlobeBostonglobeNews: "bostonglobe-news";
   BoxOfficeMojoBoxofficemojoBrand: "boxofficemojo-brand";
   BoxOfficeMojoBoxofficemojoBrands: "boxofficemojo-brands";
   BoxOfficeMojoBoxofficemojoCalendar: "boxofficemojo-calendar";
@@ -100287,6 +102778,7 @@ export declare const OperationIds: Readonly<{
   Chrono24Listing: "chrono24-listing";
   Chrono24Models: "chrono24-models";
   Chrono24Search: "chrono24-search";
+  ClevelandComClevelandcomNews: "clevelandcom-news";
   CnaArticle: "cna-article";
   CnaAuthor: "cna-author";
   CnaHeadlines: "cna-headlines";
@@ -100828,33 +103320,54 @@ export declare const OperationIds: Readonly<{
   FortuneRankingLists: "fortune-ranking-lists";
   FortuneRankingYears: "fortune-ranking-years";
   FortuneSections: "fortune-sections";
+  FotMobFotmobAudioMatches: "fotmob-audio-matches";
+  FotMobFotmobFifaRankingPeriods: "fotmob-fifa-ranking-periods";
+  FotMobFotmobFifaRankings: "fotmob-fifa-rankings";
+  FotMobFotmobLatestNews: "fotmob-latest-news";
   FotMobFotmobLeague: "fotmob-league";
   FotMobFotmobLeagues: "fotmob-leagues";
+  FotMobFotmobLineupBuilderPlayers: "fotmob-lineup-builder-players";
+  FotMobFotmobLineupBuilderTeam: "fotmob-lineup-builder-team";
   FotMobFotmobMatch: "fotmob-match";
+  FotMobFotmobMatchMedia: "fotmob-match-media";
   FotMobFotmobMatches: "fotmob-matches";
   FotMobFotmobNews: "fotmob-news";
+  FotMobFotmobNewsArticle: "fotmob-news-article";
   FotMobFotmobPlayer: "fotmob-player";
   FotMobFotmobPlayerMatchStats: "fotmob-player-match-stats";
   FotMobFotmobPlayerMatches: "fotmob-player-matches";
   FotMobFotmobPlayerStats: "fotmob-player-stats";
   FotMobFotmobSearch: "fotmob-search";
+  FotMobFotmobSeasons: "fotmob-seasons";
   FotMobFotmobStats: "fotmob-stats";
   FotMobFotmobStatsCategories: "fotmob-stats-categories";
   FotMobFotmobTable: "fotmob-table";
   FotMobFotmobTeam: "fotmob-team";
+  FotMobFotmobTeamFixtures: "fotmob-team-fixtures";
   FotMobFotmobTeamNews: "fotmob-team-news";
   FotMobFotmobTransfers: "fotmob-transfers";
+  FotMobFotmobTrendingNews: "fotmob-trending-news";
+  FotMobFotmobTrendingSearches: "fotmob-trending-searches";
+  FotMobFotmobTvGuide: "fotmob-tv-guide";
+  FotMobFotmobTvGuideChannels: "fotmob-tv-guide-channels";
+  FotMobFotmobTvGuideCountries: "fotmob-tv-guide-countries";
   FoxNewsFoxnewsArticle: "foxnews-article";
   FoxNewsFoxnewsAuthor: "foxnews-author";
   FoxNewsFoxnewsHeadlines: "foxnews-headlines";
   FoxNewsFoxnewsNews: "foxnews-news";
   FoxNewsFoxnewsSearch: "foxnews-search";
   FoxNewsFoxnewsSections: "foxnews-sections";
+  FoxSportsFoxsportsArticle: "foxsports-article";
+  FoxSportsFoxsportsHeadlines: "foxsports-headlines";
+  FoxSportsFoxsportsNews: "foxsports-news";
+  FoxSportsFoxsportsSections: "foxsports-sections";
   France24France24Article: "france24-article";
   France24France24Author: "france24-author";
   France24France24Headlines: "france24-headlines";
   France24France24News: "france24-news";
   France24France24Sections: "france24-sections";
+  FreeMalaysiaTodayFreemalaysiatodayNews: "freemalaysiatoday-news";
+  FreeMalaysiaTodayFreemalaysiatodaySections: "freemalaysiatoday-sections";
   FtArticle: "ft-article";
   FtAuthor: "ft-author";
   FtCategories: "ft-categories";
@@ -100891,6 +103404,15 @@ export declare const OperationIds: Readonly<{
   GeocodingLookup: "geocoding-lookup";
   GeocodingReverse: "geocoding-reverse";
   GeocodingSearch: "geocoding-search";
+  GhanaWebGhanawebArchive: "ghanaweb-archive";
+  GhanaWebGhanawebArchiveMonths: "ghanaweb-archive-months";
+  GhanaWebGhanawebArticle: "ghanaweb-article";
+  GhanaWebGhanawebHeadlines: "ghanaweb-headlines";
+  GhanaWebGhanawebNews: "ghanaweb-news";
+  GhanaWebGhanawebSections: "ghanaweb-sections";
+  GhanaWebGhanawebVideo: "ghanaweb-video";
+  GhanaWebGhanawebVideoSections: "ghanaweb-video-sections";
+  GhanaWebGhanawebVideos: "ghanaweb-videos";
   GitHubGithubOrg: "github-org";
   GitHubGithubOrgRepos: "github-org-repos";
   GitHubGithubRepo: "github-repo";
@@ -101106,6 +103628,7 @@ export declare const OperationIds: Readonly<{
   HotelsComHotelsReviews: "hotels-reviews";
   HotelsComHotelsReviewsArchive: "hotels-reviews-archive";
   HotelsComHotelsSearch: "hotels-search";
+  HowToGeekHowtogeekNews: "howtogeek-news";
   HuffPostHuffpostArticle: "huffpost-article";
   HuffPostHuffpostAuthor: "huffpost-author";
   HuffPostHuffpostHeadlines: "huffpost-headlines";
@@ -101212,6 +103735,12 @@ export declare const OperationIds: Readonly<{
   JCrewJcrewSizeChart: "jcrew-size-chart";
   JCrewJcrewStores: "jcrew-stores";
   JCrewJcrewSuggest: "jcrew-suggest";
+  JerusalemPostJerusalempostArticle: "jerusalempost-article";
+  JerusalemPostJerusalempostAuthor: "jerusalempost-author";
+  JerusalemPostJerusalempostAuthors: "jerusalempost-authors";
+  JerusalemPostJerusalempostHeadlines: "jerusalempost-headlines";
+  JerusalemPostJerusalempostNews: "jerusalempost-news";
+  JerusalemPostJerusalempostSections: "jerusalempost-sections";
   JimmyJohnsMenu: "jimmy-johns-menu";
   JimmyJohnsModifiers: "jimmy-johns-modifiers";
   JimmyJohnsNearby: "jimmy-johns-nearby";
@@ -101365,6 +103894,7 @@ export declare const OperationIds: Readonly<{
   LiveScienceLivescienceNews: "livescience-news";
   LiveScienceLivescienceSections: "livescience-sections";
   LiveScoreLivescoreCompetition: "livescore-competition";
+  LiveScoreLivescoreCompetitions: "livescore-competitions";
   LiveScoreLivescoreLiveScores: "livescore-live-scores";
   LiveScoreLivescoreMatch: "livescore-match";
   LiveScoreLivescoreMatchStats: "livescore-match-stats";
@@ -101376,6 +103906,7 @@ export declare const OperationIds: Readonly<{
   LiveScoreLivescorePlayer: "livescore-player";
   LiveScoreLivescoreScores: "livescore-scores";
   LiveScoreLivescoreScoresToc: "livescore-scores-toc";
+  LiveScoreLivescoreSearch: "livescore-search";
   LiveScoreLivescoreSports: "livescore-sports";
   LiveScoreLivescoreTeam: "livescore-team";
   LiverpoolEchoLiverpoolechoArticle: "liverpoolecho-article";
@@ -101432,6 +103963,11 @@ export declare const OperationIds: Readonly<{
   MediaiteHeadlines: "mediaite-headlines";
   MediaiteNews: "mediaite-news";
   MediaiteSections: "mediaite-sections";
+  MedicalNewsTodayMedicalnewstodayArticle: "medicalnewstoday-article";
+  MedicalNewsTodayMedicalnewstodayAuthor: "medicalnewstoday-author";
+  MedicalNewsTodayMedicalnewstodayHeadlines: "medicalnewstoday-headlines";
+  MedicalNewsTodayMedicalnewstodayNews: "medicalnewstoday-news";
+  MedicalNewsTodayMedicalnewstodaySections: "medicalnewstoday-sections";
   MercariAutocomplete: "mercari-autocomplete";
   MercariHome: "mercari-home";
   MercariItem: "mercari-item";
@@ -101482,6 +104018,7 @@ export declare const OperationIds: Readonly<{
   MicrosoftStoreMicrosoftstoreSearch: "microsoftstore-search";
   MicrosoftStoreMicrosoftstoreSpotlight: "microsoftstore-spotlight";
   MicrosoftStoreMicrosoftstoreSuggest: "microsoftstore-suggest";
+  MinnesotaStarTribuneStartribuneNews: "startribune-news";
   MintLivemintArticle: "livemint-article";
   MintLivemintAuthor: "livemint-author";
   MintLivemintHeadlines: "livemint-headlines";
@@ -101497,18 +104034,27 @@ export declare const OperationIds: Readonly<{
   MitSloanManagementReviewSloanreviewCategories: "sloanreview-categories";
   MitSloanManagementReviewSloanreviewHeadlines: "sloanreview-headlines";
   MitSloanManagementReviewSloanreviewTopic: "sloanreview-topic";
+  MlbDiscovery: "mlb-discovery";
+  MlbEditorialFeed: "mlb-editorial-feed";
   MlbGame: "mlb-game";
   MlbGameBoxscore: "mlb-game-boxscore";
   MlbGamePlayByPlay: "mlb-game-play-by-play";
+  MlbLeagueLeaders: "mlb-league-leaders";
   MlbLeagueStats: "mlb-league-stats";
   MlbPlayer: "mlb-player";
   MlbPlayerStats: "mlb-player-stats";
+  MlbProspectStats: "mlb-prospect-stats";
   MlbSchedule: "mlb-schedule";
+  MlbSearch: "mlb-search";
   MlbStandings: "mlb-standings";
+  MlbStatcast: "mlb-statcast";
+  MlbStatcastExpected: "mlb-statcast-expected";
+  MlbStatcastOaa: "mlb-statcast-oaa";
   MlbTeamRoster: "mlb-team-roster";
   MlbTeamStats: "mlb-team-stats";
   MlbTeams: "mlb-teams";
   MlbTransactions: "mlb-transactions";
+  MliveNews: "mlive-news";
   ModaOperandiModaoperandiCategories: "modaoperandi-categories";
   ModaOperandiModaoperandiDesigners: "modaoperandi-designers";
   ModaOperandiModaoperandiProduct: "modaoperandi-product";
@@ -101549,6 +104095,7 @@ export declare const OperationIds: Readonly<{
   NdtvAuthor: "ndtv-author";
   NdtvHeadlines: "ndtv-headlines";
   NdtvNews: "ndtv-news";
+  NdtvSearch: "ndtv-search";
   NdtvSections: "ndtv-sections";
   NewYorkDailyNewsNydailynewsArticle: "nydailynews-article";
   NewYorkDailyNewsNydailynewsAuthor: "nydailynews-author";
@@ -101608,6 +104155,7 @@ export declare const OperationIds: Readonly<{
   NineToFiveMacHeadlines: "ninetofivemac-headlines";
   NineToFiveMacNews: "ninetofivemac-news";
   NineToFiveMacSections: "ninetofivemac-sections";
+  NjComNjcomNews: "njcom-news";
   NprArticle: "npr-article";
   NprAuthor: "npr-author";
   NprCategories: "npr-categories";
@@ -101885,6 +104433,7 @@ export declare const OperationIds: Readonly<{
   PopeyesPromotions: "popeyes-promotions";
   PopeyesQuests: "popeyes-quests";
   PopeyesRewards: "popeyes-rewards";
+  PopularMechanicsPopularmechanicsNews: "popularmechanics-news";
   PoshmarkBrand: "poshmark-brand";
   PoshmarkBrands: "poshmark-brands";
   PoshmarkCategories: "poshmark-categories";
@@ -102073,7 +104622,13 @@ export declare const OperationIds: Readonly<{
   RottenTomatoesRottentomatoesBrowseMovies: "rottentomatoes-browse-movies";
   RottenTomatoesRottentomatoesBrowseTv: "rottentomatoes-browse-tv";
   RottenTomatoesRottentomatoesCriticsAuthors: "rottentomatoes-critics-authors";
+  RottenTomatoesRottentomatoesEditorialContent: "rottentomatoes-editorial-content";
+  RottenTomatoesRottentomatoesEditorialDetail: "rottentomatoes-editorial-detail";
   RottenTomatoesRottentomatoesEditorialSearch: "rottentomatoes-editorial-search";
+  RottenTomatoesRottentomatoesEditorialSection: "rottentomatoes-editorial-section";
+  RottenTomatoesRottentomatoesEditorialTaxonomies: "rottentomatoes-editorial-taxonomies";
+  RottenTomatoesRottentomatoesEditorialTerms: "rottentomatoes-editorial-terms";
+  RottenTomatoesRottentomatoesEditorialTypes: "rottentomatoes-editorial-types";
   RottenTomatoesRottentomatoesEpisode: "rottentomatoes-episode";
   RottenTomatoesRottentomatoesMovie: "rottentomatoes-movie";
   RottenTomatoesRottentomatoesMovieReviews: "rottentomatoes-movie-reviews";
@@ -102102,6 +104657,16 @@ export declare const OperationIds: Readonly<{
   SamSclubSamsclubDepartments: "samsclub-departments";
   SamSclubSamsclubProduct: "samsclub-product";
   SamSclubSamsclubProductRelated: "samsclub-product-related";
+  SbsNewsSbsnewsArticle: "sbsnews-article";
+  SbsNewsSbsnewsAuthor: "sbsnews-author";
+  SbsNewsSbsnewsHeadlines: "sbsnews-headlines";
+  SbsNewsSbsnewsNews: "sbsnews-news";
+  SbsNewsSbsnewsSections: "sbsnews-sections";
+  ScienceAlertSciencealertArticle: "sciencealert-article";
+  ScienceAlertSciencealertAuthor: "sciencealert-author";
+  ScienceAlertSciencealertHeadlines: "sciencealert-headlines";
+  ScienceAlertSciencealertNews: "sciencealert-news";
+  ScienceAlertSciencealertSections: "sciencealert-sections";
   ScmpArticle: "scmp-article";
   ScmpAuthor: "scmp-author";
   ScmpHeadlines: "scmp-headlines";
@@ -102228,6 +104793,11 @@ export declare const OperationIds: Readonly<{
   SkyNewsSkynewsSections: "skynews-sections";
   SkyNewsSkynewsVideo: "skynews-video";
   SkyNewsSkynewsVideos: "skynews-videos";
+  SkySportsSkysportsArticle: "skysports-article";
+  SkySportsSkysportsAuthor: "skysports-author";
+  SkySportsSkysportsHeadlines: "skysports-headlines";
+  SkySportsSkysportsNews: "skysports-news";
+  SkySportsSkysportsSections: "skysports-sections";
   SlateArticle: "slate-article";
   SlateCategories: "slate-categories";
   SlateHeadlines: "slate-headlines";
@@ -102288,6 +104858,27 @@ export declare const OperationIds: Readonly<{
   SportingNewsSportingnewsHeadlines: "sportingnews-headlines";
   SportingNewsSportingnewsNews: "sportingnews-news";
   SportingNewsSportingnewsSections: "sportingnews-sections";
+  SportskeedaArticle: "sportskeeda-article";
+  SportskeedaAuthor: "sportskeeda-author";
+  SportskeedaDepthChart: "sportskeeda-depth-chart";
+  SportskeedaFeed: "sportskeeda-feed";
+  SportskeedaFootballData: "sportskeeda-football-data";
+  SportskeedaFootballOptions: "sportskeeda-football-options";
+  SportskeedaNews: "sportskeeda-news";
+  SportskeedaPageData: "sportskeeda-page-data";
+  SportskeedaPageOptions: "sportskeeda-page-options";
+  SportskeedaPlayerStats: "sportskeeda-player-stats";
+  SportskeedaProfile: "sportskeeda-profile";
+  SportskeedaSchedule: "sportskeeda-schedule";
+  SportskeedaSections: "sportskeeda-sections";
+  SportskeedaSitemapItems: "sportskeeda-sitemap-items";
+  SportskeedaSitemaps: "sportskeeda-sitemaps";
+  SportskeedaStandings: "sportskeeda-standings";
+  SportskeedaStandingsOptions: "sportskeeda-standings-options";
+  SportskeedaTaxonomySearch: "sportskeeda-taxonomy-search";
+  SportskeedaTradeValues: "sportskeeda-trade-values";
+  SportskeedaVideo: "sportskeeda-video";
+  SportskeedaVideos: "sportskeeda-videos";
   SpotifyAlbum: "spotify-album";
   SpotifyAlbumTracks: "spotify-album-tracks";
   SpotifyAlbumsSearch: "spotify-albums-search";
@@ -102507,6 +105098,11 @@ export declare const OperationIds: Readonly<{
   TheJournalIeThejournalHeadlines: "thejournal-headlines";
   TheJournalIeThejournalNews: "thejournal-news";
   TheJournalIeThejournalSections: "thejournal-sections";
+  TheMotleyFoolMotleyfoolArticle: "motleyfool-article";
+  TheMotleyFoolMotleyfoolAuthor: "motleyfool-author";
+  TheMotleyFoolMotleyfoolHeadlines: "motleyfool-headlines";
+  TheMotleyFoolMotleyfoolNews: "motleyfool-news";
+  TheMotleyFoolMotleyfoolSections: "motleyfool-sections";
   TheNewYorkerNewyorkerArticle: "newyorker-article";
   TheNewYorkerNewyorkerAuthor: "newyorker-author";
   TheNewYorkerNewyorkerHeadlines: "newyorker-headlines";
@@ -102820,6 +105416,7 @@ export declare const OperationIds: Readonly<{
   WhatnotBrowse: "whatnot-browse";
   WhatnotCategories: "whatnot-categories";
   WhatnotLive: "whatnot-live";
+  WhatnotSeller: "whatnot-seller";
   WingstopDeliveryStore: "wingstop-delivery-store";
   WingstopDirectory: "wingstop-directory";
   WingstopFlavors: "wingstop-flavors";

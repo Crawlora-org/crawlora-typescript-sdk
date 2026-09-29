@@ -1840,6 +1840,69 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "alcom-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "alcom-headlines",
+    "method": "GET",
+    "path": "/alcom/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "sports",
+          "life"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "alcom-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "alcom-news",
+    "method": "GET",
+    "path": "/alcom/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "alcom-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "alcom-sections",
+    "method": "GET",
+    "path": "/alcom/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "aljazeera-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -10618,6 +10681,23 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "bostonglobe-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "bostonglobe-news",
+    "method": "GET",
+    "path": "/bostonglobe/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "boxofficemojo-brand": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -16131,6 +16211,23 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "clevelandcom-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "clevelandcom-news",
+    "method": "GET",
+    "path": "/clevelandcom/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -25945,7 +26042,8 @@ export const operations = {
           "aerospace_defense",
           "energy",
           "agriculture",
-          "local_business"
+          "local_business",
+          "general_news"
         ],
         "in": "query",
         "name": "vertical",
@@ -26100,7 +26198,8 @@ export const operations = {
           "aerospace_defense",
           "energy",
           "agriculture",
-          "local_business"
+          "local_business",
+          "general_news"
         ],
         "in": "query",
         "name": "vertical",
@@ -40517,6 +40616,116 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "fotmob-audio-matches": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-audio-matches",
+    "method": "GET",
+    "path": "/fotmob/audio-matches",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-fifa-ranking-periods": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-fifa-ranking-periods",
+    "method": "GET",
+    "path": "/fotmob/fifa-ranking-periods",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "men",
+          "women"
+        ],
+        "in": "query",
+        "name": "gender",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-fifa-rankings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-fifa-rankings",
+    "method": "GET",
+    "path": "/fotmob/fifa-rankings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "men",
+          "women"
+        ],
+        "in": "query",
+        "name": "gender",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "period_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-latest-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-latest-news",
+    "method": "GET",
+    "path": "/fotmob/latest-news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "start_index",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "fotmob-league": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -40537,6 +40746,16 @@ export const operations = {
         "name": "league_id",
         "required": true,
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "shotmap",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -40562,6 +40781,58 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "fotmob-lineup-builder-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-lineup-builder-players",
+    "method": "GET",
+    "path": "/fotmob/lineup-builder-players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "player_ids",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-lineup-builder-team": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-lineup-builder-team",
+    "method": "GET",
+    "path": "/fotmob/lineup-builder-team",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "fotmob-match": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -40572,6 +40843,32 @@ export const operations = {
     "id": "fotmob-match",
     "method": "GET",
     "path": "/fotmob/match",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-match-media": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-match-media",
+    "method": "GET",
+    "path": "/fotmob/match-media",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -40644,6 +40941,32 @@ export const operations = {
         "in": "query",
         "name": "start_index",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-news-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-news-article",
+    "method": "GET",
+    "path": "/fotmob/news-article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -40812,6 +41135,32 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "fotmob-seasons": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-seasons",
+    "method": "GET",
+    "path": "/fotmob/seasons",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "league_id",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "fotmob-stats": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -40971,6 +41320,42 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "fotmob-team-fixtures": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "fotmob-team-fixtures",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fotmob/team-fixtures",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "fotmob-team-news": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -41098,6 +41483,286 @@ export const operations = {
         "type": "boolean"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-trending-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-trending-news",
+    "method": "GET",
+    "path": "/fotmob/trending-news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-trending-searches": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-trending-searches",
+    "method": "GET",
+    "path": "/fotmob/trending-searches",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-tv-guide": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-tv-guide",
+    "method": "GET",
+    "path": "/fotmob/tv-guide",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "us",
+          "se",
+          "gb",
+          "de",
+          "no",
+          "es",
+          "mx",
+          "ar",
+          "bo",
+          "cl",
+          "co",
+          "cr",
+          "ec",
+          "gt",
+          "hn",
+          "ni",
+          "pa",
+          "py",
+          "pe",
+          "uy",
+          "ve",
+          "da",
+          "ca",
+          "au",
+          "at",
+          "be",
+          "bg",
+          "hr",
+          "cy",
+          "cz",
+          "ee",
+          "fi",
+          "fr",
+          "gr",
+          "hu",
+          "is",
+          "ie",
+          "il",
+          "it",
+          "nl",
+          "pl",
+          "pt",
+          "ro",
+          "ru",
+          "ch",
+          "tr",
+          "za",
+          "br",
+          "in",
+          "me",
+          "id",
+          "th",
+          "mm",
+          "al",
+          "az",
+          "bl",
+          "ba",
+          "ks",
+          "la",
+          "li",
+          "mk",
+          "rs",
+          "sk",
+          "ua",
+          "essv",
+          "nz",
+          "bd",
+          "cn",
+          "gh",
+          "hk",
+          "jp",
+          "kr",
+          "ma",
+          "mt",
+          "my",
+          "ng",
+          "ph",
+          "pk",
+          "sg",
+          "si",
+          "tz"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "timezone",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-tv-guide-channels": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-tv-guide-channels",
+    "method": "GET",
+    "path": "/fotmob/tv-guide-channels",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "us",
+          "se",
+          "gb",
+          "de",
+          "no",
+          "es",
+          "mx",
+          "ar",
+          "bo",
+          "cl",
+          "co",
+          "cr",
+          "ec",
+          "gt",
+          "hn",
+          "ni",
+          "pa",
+          "py",
+          "pe",
+          "uy",
+          "ve",
+          "da",
+          "ca",
+          "au",
+          "at",
+          "be",
+          "bg",
+          "hr",
+          "cy",
+          "cz",
+          "ee",
+          "fi",
+          "fr",
+          "gr",
+          "hu",
+          "is",
+          "ie",
+          "il",
+          "it",
+          "nl",
+          "pl",
+          "pt",
+          "ro",
+          "ru",
+          "ch",
+          "tr",
+          "za",
+          "br",
+          "in",
+          "me",
+          "id",
+          "th",
+          "mm",
+          "al",
+          "az",
+          "bl",
+          "ba",
+          "ks",
+          "la",
+          "li",
+          "mk",
+          "rs",
+          "sk",
+          "ua",
+          "essv",
+          "nz",
+          "bd",
+          "cn",
+          "gh",
+          "hk",
+          "jp",
+          "kr",
+          "ma",
+          "mt",
+          "my",
+          "ng",
+          "ph",
+          "pk",
+          "sg",
+          "si",
+          "tz"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fotmob-tv-guide-countries": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fotmob-tv-guide-countries",
+    "method": "GET",
+    "path": "/fotmob/tv-guide-countries",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -41269,6 +41934,113 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "foxsports-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "foxsports-article",
+    "method": "GET",
+    "path": "/foxsports/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "foxsports-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "foxsports-headlines",
+    "method": "GET",
+    "path": "/foxsports/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "top",
+          "mlb",
+          "nfl",
+          "college-football",
+          "ufl",
+          "nba",
+          "nhl",
+          "college-basketball",
+          "nascar",
+          "ufc",
+          "motor-sports",
+          "golf",
+          "soccer",
+          "fifa-world-cup",
+          "fifa-womens-world-cup",
+          "olympics",
+          "tennis",
+          "horseracing",
+          "westminster-kennel-club-dog-show",
+          "wnba",
+          "womens-college-basketball",
+          "world-baseball-classic",
+          "wwe"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "foxsports-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "foxsports-news",
+    "method": "GET",
+    "path": "/foxsports/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "foxsports-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "foxsports-sections",
+    "method": "GET",
+    "path": "/foxsports/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "france24-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -41380,6 +42152,40 @@ export const operations = {
     "id": "france24-sections",
     "method": "GET",
     "path": "/france24/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "freemalaysiatoday-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "freemalaysiatoday-news",
+    "method": "GET",
+    "path": "/freemalaysiatoday/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "freemalaysiatoday-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "freemalaysiatoday-sections",
+    "method": "GET",
+    "path": "/freemalaysiatoday/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -43627,6 +44433,228 @@ export const operations = {
         "in": "query",
         "name": "namedetails",
         "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-archive": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-archive",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ghanaweb/archive",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "month",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-archive-months": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-archive-months",
+    "method": "GET",
+    "path": "/ghanaweb/archive/months",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-article",
+    "method": "GET",
+    "path": "/ghanaweb/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-headlines",
+    "method": "GET",
+    "path": "/ghanaweb/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "sports",
+          "business",
+          "entertainment",
+          "africa",
+          "opinions",
+          "editorial",
+          "crime",
+          "regional",
+          "health",
+          "politics",
+          "tabloid",
+          "world",
+          "lifestyle",
+          "features"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-news",
+    "method": "GET",
+    "path": "/ghanaweb/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-sections",
+    "method": "GET",
+    "path": "/ghanaweb/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-video": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-video",
+    "method": "GET",
+    "path": "/ghanaweb/video",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-video-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-video-sections",
+    "method": "GET",
+    "path": "/ghanaweb/video-sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ghanaweb-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ghanaweb-videos",
+    "method": "GET",
+    "path": "/ghanaweb/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "sports",
+          "business",
+          "entertainment"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -51042,6 +52070,23 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "howtogeek-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "howtogeek-news",
+    "method": "GET",
+    "path": "/howtogeek/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "huffpost-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -55125,6 +56170,171 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jerusalempost-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jerusalempost-article",
+    "method": "GET",
+    "path": "/jerusalempost/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jerusalempost-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jerusalempost-author",
+    "method": "GET",
+    "path": "/jerusalempost/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jerusalempost-authors": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jerusalempost-authors",
+    "method": "GET",
+    "path": "/jerusalempost/authors",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jerusalempost-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jerusalempost-headlines",
+    "method": "GET",
+    "path": "/jerusalempost/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "aliyah",
+          "american-politics",
+          "arab-israeli-conflict",
+          "archaeology",
+          "bds-movement",
+          "all-news",
+          "banking-and-finance",
+          "business-and-innovation",
+          "business-opinion",
+          "christian-world",
+          "consumerism",
+          "culture",
+          "defense-and-tech",
+          "diaspora",
+          "environment",
+          "food-and-recipes",
+          "health-and-wellness",
+          "health-around-the-world",
+          "history",
+          "home",
+          "iran-news",
+          "israel-election-2026",
+          "israel-news",
+          "israel-politics",
+          "israeli-sports",
+          "j-spot",
+          "jewish-holidays",
+          "judaism",
+          "kabbalah",
+          "middle-east",
+          "must",
+          "nutrition",
+          "omg",
+          "opinion",
+          "science",
+          "tech-and-startups",
+          "terrorism",
+          "torah-portion",
+          "ukraine-russia-war",
+          "world-news"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jerusalempost-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jerusalempost-news",
+    "method": "GET",
+    "path": "/jerusalempost/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jerusalempost-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jerusalempost-sections",
+    "method": "GET",
+    "path": "/jerusalempost/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -61099,6 +62309,25 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "livescore-competitions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "livescore-competitions",
+    "method": "GET",
+    "path": "/livescore/competitions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "livescore-live-scores": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -61457,6 +62686,49 @@ export const operations = {
       {
         "in": "query",
         "name": "timezone_offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "livescore-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "livescore-search",
+    "method": "GET",
+    "path": "/livescore/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "soccer",
+          "hockey",
+          "basketball",
+          "tennis",
+          "cricket"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
         "type": "integer"
       }
     ],
@@ -62765,6 +64037,119 @@ export const operations = {
     "id": "mediaite-sections",
     "method": "GET",
     "path": "/mediaite/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "medicalnewstoday-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "medicalnewstoday-article",
+    "method": "GET",
+    "path": "/medicalnewstoday/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "medicalnewstoday-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "medicalnewstoday-author",
+    "method": "GET",
+    "path": "/medicalnewstoday/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "medicalnewstoday-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "medicalnewstoday-headlines",
+    "method": "GET",
+    "path": "/medicalnewstoday/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "medicalnewstoday-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "medicalnewstoday-news",
+    "method": "GET",
+    "path": "/medicalnewstoday/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "medicalnewstoday-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "medicalnewstoday-sections",
+    "method": "GET",
+    "path": "/medicalnewstoday/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -64844,6 +66229,66 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "mlb-discovery": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-discovery",
+    "method": "GET",
+    "path": "/mlb/discovery",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-editorial-feed": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-editorial-feed",
+    "method": "GET",
+    "path": "/mlb/editorial-feed",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "EN_US",
+          "ES_US"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "skip",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "mlb-game": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -64918,6 +66363,82 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "mlb-league-leaders": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-league-leaders",
+    "method": "GET",
+    "path": "/mlb/league-leaders",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "categories",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "hitting",
+          "pitching",
+          "fielding",
+          "catching",
+          "running",
+          "game",
+          "team",
+          "streak"
+        ],
+        "in": "query",
+        "name": "group",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "S",
+          "R",
+          "F",
+          "D",
+          "L",
+          "W",
+          "C",
+          "P",
+          "A",
+          "I",
+          "E"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "103",
+          "104"
+        ],
+        "in": "query",
+        "name": "league_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "mlb-league-stats": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -64927,6 +66448,7 @@ export const operations = {
     "formParams": [],
     "id": "mlb-league-stats",
     "method": "GET",
+    "paginatable": true,
     "path": "/mlb/league-stats",
     "pathParams": [],
     "produces": [
@@ -64942,7 +66464,12 @@ export const operations = {
         "enum": [
           "hitting",
           "pitching",
-          "fielding"
+          "fielding",
+          "catching",
+          "running",
+          "game",
+          "team",
+          "streak"
         ],
         "in": "query",
         "name": "group",
@@ -64950,8 +66477,158 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "projected",
+          "projectedRos",
+          "yearByYear",
+          "yearByYearAdvanced",
+          "yearByYearPlayoffs",
+          "season",
+          "standard",
+          "advanced",
+          "career",
+          "careerRegularSeason",
+          "careerAdvanced",
+          "seasonAdvanced",
+          "careerStatSplits",
+          "careerPlayoffs",
+          "gameLog",
+          "playLog",
+          "pitchLog",
+          "pitchArsenal",
+          "outsAboveAverage",
+          "expectedStatistics",
+          "sabermetrics",
+          "sprayChart",
+          "tracking",
+          "vsPlayer",
+          "vsPlayerTotal",
+          "vsPlayer5Y",
+          "vsTeam",
+          "vsTeam5Y",
+          "vsTeamTotal",
+          "lastXGames",
+          "byDateRange",
+          "byDateRangeAdvanced",
+          "byMonth",
+          "byMonthPlayoffs",
+          "byDayOfWeek",
+          "byDayOfWeekPlayoffs",
+          "homeAndAway",
+          "homeAndAwayPlayoffs",
+          "winLoss",
+          "winLossPlayoffs",
+          "rankings",
+          "rankingsByYear",
+          "statsSingleSeason",
+          "statsSingleSeasonAdvanced",
+          "hotColdZones",
+          "availableStats",
+          "opponentsFaced",
+          "gameTypeStats",
+          "firstYearStats",
+          "lastYearStats",
+          "statSplits",
+          "statSplitsAdvanced",
+          "atGameStart",
+          "vsOpponents",
+          "sabermetricsMultiTeam",
+          "projected_Zips",
+          "projected_ZipsRos",
+          "projected_Zips2YR",
+          "projected_Zips3YR"
+        ],
+        "in": "query",
+        "name": "stat_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "S",
+          "R",
+          "F",
+          "D",
+          "L",
+          "W",
+          "C",
+          "P",
+          "A",
+          "I",
+          "E"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "opponent_team_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "opponent_player_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "103",
+          "104"
+        ],
+        "in": "query",
+        "name": "league_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "C",
+          "1B",
+          "2B",
+          "3B",
+          "SS",
+          "LF",
+          "CF",
+          "RF",
+          "DH",
+          "OF",
+          "IF"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "QUALIFIED",
+          "ALL"
+        ],
+        "in": "query",
+        "name": "player_pool",
+        "type": "string"
+      },
+      {
         "in": "query",
         "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
         "type": "integer"
       }
     ],
@@ -65015,12 +66692,229 @@ export const operations = {
         "enum": [
           "hitting",
           "pitching",
-          "fielding"
+          "fielding",
+          "catching",
+          "running",
+          "game",
+          "team",
+          "streak"
         ],
         "in": "query",
         "name": "group",
         "required": true,
         "type": "string"
+      },
+      {
+        "enum": [
+          "projected",
+          "projectedRos",
+          "yearByYear",
+          "yearByYearAdvanced",
+          "yearByYearPlayoffs",
+          "season",
+          "standard",
+          "advanced",
+          "career",
+          "careerRegularSeason",
+          "careerAdvanced",
+          "seasonAdvanced",
+          "careerStatSplits",
+          "careerPlayoffs",
+          "gameLog",
+          "playLog",
+          "pitchLog",
+          "pitchArsenal",
+          "outsAboveAverage",
+          "expectedStatistics",
+          "sabermetrics",
+          "sprayChart",
+          "tracking",
+          "vsPlayer",
+          "vsPlayerTotal",
+          "vsPlayer5Y",
+          "vsTeam",
+          "vsTeam5Y",
+          "vsTeamTotal",
+          "lastXGames",
+          "byDateRange",
+          "byDateRangeAdvanced",
+          "byMonth",
+          "byMonthPlayoffs",
+          "byDayOfWeek",
+          "byDayOfWeekPlayoffs",
+          "homeAndAway",
+          "homeAndAwayPlayoffs",
+          "winLoss",
+          "winLossPlayoffs",
+          "rankings",
+          "rankingsByYear",
+          "statsSingleSeason",
+          "statsSingleSeasonAdvanced",
+          "hotColdZones",
+          "availableStats",
+          "opponentsFaced",
+          "gameTypeStats",
+          "firstYearStats",
+          "lastYearStats",
+          "statSplits",
+          "statSplitsAdvanced",
+          "atGameStart",
+          "vsOpponents",
+          "sabermetricsMultiTeam",
+          "projected_Zips",
+          "projected_ZipsRos",
+          "projected_Zips2YR",
+          "projected_Zips3YR"
+        ],
+        "in": "query",
+        "name": "stat_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "S",
+          "R",
+          "F",
+          "D",
+          "L",
+          "W",
+          "C",
+          "P",
+          "A",
+          "I",
+          "E"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "opponent_team_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "opponent_player_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-prospect-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-prospect-stats",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/prospect-stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "top100",
+          "all"
+        ],
+        "in": "query",
+        "name": "list_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "today",
+          "1day",
+          "10day",
+          "30day",
+          "springTraining",
+          "Year2019",
+          "Year2020",
+          "Year2021",
+          "Year2022",
+          "Year2023",
+          "Year2024",
+          "Year2025",
+          "Year2026"
+        ],
+        "in": "query",
+        "name": "date_range",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "batters",
+          "pitchers"
+        ],
+        "in": "query",
+        "name": "player_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "150",
+          "200",
+          "250"
+        ],
+        "in": "query",
+        "name": "min_pa",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "1b",
+          "2b",
+          "ss",
+          "3b",
+          "c",
+          "of",
+          "rhp",
+          "lhp"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
       }
     ],
     "security": [
@@ -65061,6 +66955,48 @@ export const operations = {
         "in": "query",
         "name": "team_id",
         "type": "string"
+      },
+      {
+        "enum": [
+          "S",
+          "R",
+          "F",
+          "D",
+          "L",
+          "W",
+          "C",
+          "P",
+          "A",
+          "I",
+          "E"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-search",
+    "method": "GET",
+    "path": "/mlb/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -65091,11 +67027,417 @@ export const operations = {
         "enum": [
           "regularSeason",
           "wildCard",
-          "springTraining"
+          "divisionLeaders",
+          "wildCardWithLeaders",
+          "firstHalf",
+          "secondHalf",
+          "springTraining",
+          "postseason",
+          "byDivision",
+          "byConference",
+          "byLeague",
+          "byOrganization",
+          "currentHalf"
         ],
         "in": "query",
         "name": "type",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-leaders",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "pitcher",
+          "batter-team",
+          "pitcher-team"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "C",
+          "1B",
+          "2B",
+          "SS",
+          "3B",
+          "LF",
+          "CF",
+          "RF",
+          "DH"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "25",
+          "50",
+          "100",
+          "150",
+          "200",
+          "250",
+          "350",
+          "450",
+          "500",
+          "600"
+        ],
+        "in": "query",
+        "name": "min_bbe",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "bip",
+          "launch_angle_avg",
+          "sweet_spot_percent",
+          "exit_velocity_max",
+          "exit_velocity_avg",
+          "avg_best_speed",
+          "exit_velocity_fbld",
+          "distance_max",
+          "distance_hr_avg",
+          "hard_hit_ct",
+          "hard_hit_percent",
+          "hard_hit_per_swing",
+          "barrel_ct",
+          "barrels_per_bip",
+          "barrels_per_pa"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-expected": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-expected",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-expected",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "pitcher",
+          "batter-team",
+          "pitcher-team"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "C",
+          "1B",
+          "2B",
+          "SS",
+          "3B",
+          "LF",
+          "CF",
+          "RF",
+          "DH"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "bip",
+          "pa"
+        ],
+        "in": "query",
+        "name": "filter_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "25",
+          "50",
+          "100",
+          "150",
+          "200",
+          "250",
+          "350",
+          "450",
+          "500",
+          "600"
+        ],
+        "in": "query",
+        "name": "minimum",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "entity_team_name",
+          "pa",
+          "bip",
+          "ba",
+          "est_ba",
+          "ba_minus_est_ba_diff",
+          "slg",
+          "est_slg",
+          "slg_minus_est_slg_diff",
+          "woba",
+          "est_woba",
+          "woba_minus_est_woba_diff",
+          "wobacon",
+          "est_wobacon",
+          "wobacon_minus_est_wobacon_diff",
+          "exit_velocity_avg",
+          "hard_hit_percent",
+          "barrels_per_bip",
+          "barrels_per_pa"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-oaa": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-oaa",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-oaa",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Fielder",
+          "Fielding_Team",
+          "Batter",
+          "Batting_Team",
+          "Pitcher"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "end_year",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "no",
+          "yes"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "year",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "in": "query",
+        "name": "range",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "10",
+          "25",
+          "50",
+          "75",
+          "100",
+          "150",
+          "200",
+          "250"
+        ],
+        "in": "query",
+        "name": "minimum",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "if",
+          "of",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "roles",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "display_team_name",
+          "primary_pos_formatted",
+          "fielding_runs_prevented",
+          "outs_above_average",
+          "outs_above_average_infront",
+          "outs_above_average_lateral",
+          "outs_above_average_behind",
+          "actual_success_rate",
+          "adj_estimated_success_rate",
+          "diff_success_rate",
+          "n"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
       }
     ],
     "security": [
@@ -65130,9 +67472,15 @@ export const operations = {
       },
       {
         "enum": [
-          "active",
           "40Man",
-          "fullSeason"
+          "fullSeason",
+          "fullRoster",
+          "nonRosterInvitees",
+          "active",
+          "allTime",
+          "depthChart",
+          "gameday",
+          "coach"
         ],
         "in": "query",
         "name": "roster_type",
@@ -65171,11 +67519,120 @@ export const operations = {
         "enum": [
           "hitting",
           "pitching",
-          "fielding"
+          "fielding",
+          "catching",
+          "running",
+          "game",
+          "team",
+          "streak"
         ],
         "in": "query",
         "name": "group",
         "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "projected",
+          "projectedRos",
+          "yearByYear",
+          "yearByYearAdvanced",
+          "yearByYearPlayoffs",
+          "season",
+          "standard",
+          "advanced",
+          "career",
+          "careerRegularSeason",
+          "careerAdvanced",
+          "seasonAdvanced",
+          "careerStatSplits",
+          "careerPlayoffs",
+          "gameLog",
+          "playLog",
+          "pitchLog",
+          "pitchArsenal",
+          "outsAboveAverage",
+          "expectedStatistics",
+          "sabermetrics",
+          "sprayChart",
+          "tracking",
+          "vsPlayer",
+          "vsPlayerTotal",
+          "vsPlayer5Y",
+          "vsTeam",
+          "vsTeam5Y",
+          "vsTeamTotal",
+          "lastXGames",
+          "byDateRange",
+          "byDateRangeAdvanced",
+          "byMonth",
+          "byMonthPlayoffs",
+          "byDayOfWeek",
+          "byDayOfWeekPlayoffs",
+          "homeAndAway",
+          "homeAndAwayPlayoffs",
+          "winLoss",
+          "winLossPlayoffs",
+          "rankings",
+          "rankingsByYear",
+          "statsSingleSeason",
+          "statsSingleSeasonAdvanced",
+          "hotColdZones",
+          "availableStats",
+          "opponentsFaced",
+          "gameTypeStats",
+          "firstYearStats",
+          "lastYearStats",
+          "statSplits",
+          "statSplitsAdvanced",
+          "atGameStart",
+          "vsOpponents",
+          "sabermetricsMultiTeam",
+          "projected_Zips",
+          "projected_ZipsRos",
+          "projected_Zips2YR",
+          "projected_Zips3YR"
+        ],
+        "in": "query",
+        "name": "stat_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "S",
+          "R",
+          "F",
+          "D",
+          "L",
+          "W",
+          "C",
+          "P",
+          "A",
+          "I",
+          "E"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "opponent_team_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "opponent_player_id",
         "type": "string"
       }
     ],
@@ -65244,6 +67701,23 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlive-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlive-news",
+    "method": "GET",
+    "path": "/mlive/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -65912,6 +68386,124 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "motleyfool-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "motleyfool-article",
+    "method": "GET",
+    "path": "/motleyfool/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "motleyfool-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "motleyfool-author",
+    "method": "GET",
+    "path": "/motleyfool/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "motleyfool-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "motleyfool-headlines",
+    "method": "GET",
+    "path": "/motleyfool/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "trending-news",
+          "news",
+          "market-movers",
+          "tech-stock-news",
+          "market-trends",
+          "crypto-news",
+          "markets",
+          "most-active-stocks",
+          "top-stock-gainers",
+          "top-stock-losers"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "motleyfool-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "motleyfool-news",
+    "method": "GET",
+    "path": "/motleyfool/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "motleyfool-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "motleyfool-sections",
+    "method": "GET",
+    "path": "/motleyfool/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "nationafrica-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -66486,6 +69078,36 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ndtv-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ndtv-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ndtv/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -67690,6 +70312,23 @@ export const operations = {
     "id": "ninetofivemac-sections",
     "method": "GET",
     "path": "/ninetofivemac/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "njcom-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "njcom-news",
+    "method": "GET",
+    "path": "/njcom/news",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -77471,6 +80110,23 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "popularmechanics-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "popularmechanics-news",
+    "method": "GET",
+    "path": "/popularmechanics/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "poshmark-brand": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -84076,6 +86732,123 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "rottentomatoes-editorial-content": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-editorial-content",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rottentomatoes/editorial/content",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "article",
+          "guide",
+          "gallery",
+          "hub-subpage",
+          "non-rt-publication",
+          "rt-hub",
+          "how-to",
+          "otg-article",
+          "prev",
+          "rt_poll",
+          "pages"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "categories",
+          "tags",
+          "related-movie-id",
+          "related-tv-season-id",
+          "related-tv-series-id",
+          "related-tv-episode-id",
+          "related-celebrity-id",
+          "publication",
+          "franchise",
+          "coauthors"
+        ],
+        "in": "query",
+        "name": "taxonomy",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "term_ids",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "AND",
+          "OR"
+        ],
+        "in": "query",
+        "name": "operator",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "include_children",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-editorial-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-editorial-detail",
+    "method": "GET",
+    "path": "/rottentomatoes/editorial/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "path",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "rottentomatoes-editorial-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -84109,6 +86882,189 @@ export const operations = {
         "type": "integer"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-editorial-section": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-editorial-section",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rottentomatoes/editorial/section",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "path",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-editorial-taxonomies": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-editorial-taxonomies",
+    "method": "GET",
+    "path": "/rottentomatoes/editorial/taxonomies",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-editorial-terms": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-editorial-terms",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/rottentomatoes/editorial/terms",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "categories",
+          "tags",
+          "related-movie-id",
+          "related-tv-season-id",
+          "related-tv-series-id",
+          "related-tv-episode-id",
+          "related-celebrity-id",
+          "publication",
+          "franchise",
+          "coauthors"
+        ],
+        "in": "query",
+        "name": "taxonomy",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "hide_empty",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "id",
+          "include",
+          "name",
+          "slug",
+          "include_slugs",
+          "term_group",
+          "description",
+          "count"
+        ],
+        "in": "query",
+        "name": "orderby",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "include",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "post",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "parent",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "rottentomatoes-editorial-types": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "rottentomatoes-editorial-types",
+    "method": "GET",
+    "path": "/rottentomatoes/editorial/types",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -84910,6 +87866,251 @@ export const operations = {
     "pathParams": [
       "id"
     ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sbsnews-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sbsnews-article",
+    "method": "GET",
+    "path": "/sbsnews/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sbsnews-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sbsnews-author",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sbsnews/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sbsnews-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sbsnews-headlines",
+    "method": "GET",
+    "path": "/sbsnews/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "top",
+          "latest",
+          "australia",
+          "world",
+          "politics",
+          "indigenous",
+          "environment",
+          "life",
+          "cost-of-living",
+          "immigration",
+          "health-and-wellbeing",
+          "sport",
+          "education",
+          "technology-and-social-media",
+          "arts-and-entertainment"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sbsnews-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sbsnews-news",
+    "method": "GET",
+    "path": "/sbsnews/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sbsnews-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sbsnews-sections",
+    "method": "GET",
+    "path": "/sbsnews/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sciencealert-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sciencealert-article",
+    "method": "GET",
+    "path": "/sciencealert/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sciencealert-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sciencealert-author",
+    "method": "GET",
+    "path": "/sciencealert/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sciencealert-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sciencealert-headlines",
+    "method": "GET",
+    "path": "/sciencealert/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "space",
+          "health",
+          "environment",
+          "humans",
+          "tech",
+          "nature",
+          "physics",
+          "this-week-in-science"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sciencealert-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sciencealert-news",
+    "method": "GET",
+    "path": "/sciencealert/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sciencealert-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sciencealert-sections",
+    "method": "GET",
+    "path": "/sciencealert/sections",
+    "pathParams": [],
     "produces": [
       "application/json"
     ],
@@ -88842,6 +92043,136 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "skysports-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "skysports-article",
+    "method": "GET",
+    "path": "/skysports/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skysports-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "skysports-author",
+    "method": "GET",
+    "path": "/skysports/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skysports-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "skysports-headlines",
+    "method": "GET",
+    "path": "/skysports/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "football",
+          "f1",
+          "cricket",
+          "rugby-union",
+          "rugby-league",
+          "golf",
+          "boxing",
+          "nfl",
+          "tennis",
+          "nba",
+          "racing",
+          "darts",
+          "netball",
+          "mma",
+          "more-sports",
+          "athletics",
+          "basketball",
+          "cycling",
+          "snooker",
+          "motor-sport",
+          "wwe",
+          "olympics"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skysports-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "skysports-news",
+    "method": "GET",
+    "path": "/skysports/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "skysports-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "skysports-sections",
+    "method": "GET",
+    "path": "/skysports/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "slate-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -91013,6 +94344,629 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sportskeeda-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-article",
+    "method": "GET",
+    "path": "/sportskeeda/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-author",
+    "method": "GET",
+    "path": "/sportskeeda/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-depth-chart": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-depth-chart",
+    "method": "GET",
+    "path": "/sportskeeda/depth-chart",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl/depth-chart"
+        ],
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-feed": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-feed",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/feed",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-football-data": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-football-data",
+    "method": "GET",
+    "path": "/sportskeeda/football-data",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "matchday",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-football-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-football-options",
+    "method": "GET",
+    "path": "/sportskeeda/football-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-news",
+    "method": "GET",
+    "path": "/sportskeeda/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-page-data": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-page-data",
+    "method": "GET",
+    "path": "/sportskeeda/page-data",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-page-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-page-options",
+    "method": "GET",
+    "path": "/sportskeeda/page-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-player-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-player-stats",
+    "method": "GET",
+    "path": "/sportskeeda/player-stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "event_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-profile": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-profile",
+    "method": "GET",
+    "path": "/sportskeeda/profile",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-schedule",
+    "method": "GET",
+    "path": "/sportskeeda/schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-sections",
+    "method": "GET",
+    "path": "/sportskeeda/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-sitemap-items": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-sitemap-items",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/sitemap-items",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sitemap_url",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-sitemaps",
+    "method": "GET",
+    "path": "/sportskeeda/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-standings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-standings",
+    "method": "GET",
+    "path": "/sportskeeda/standings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2026",
+          "2025",
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2020",
+          "2019",
+          "2018",
+          "2017",
+          "2016",
+          "2015",
+          "2014",
+          "2013"
+        ],
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-standings-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-standings-options",
+    "method": "GET",
+    "path": "/sportskeeda/standings-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2026",
+          "2025",
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2020",
+          "2019",
+          "2018",
+          "2017",
+          "2016",
+          "2015",
+          "2014",
+          "2013"
+        ],
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-taxonomy-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-taxonomy-search",
+    "method": "GET",
+    "path": "/sportskeeda/taxonomy-search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-trade-values": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-trade-values",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/trade-values",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl/fantasy-football-trade-value-charts",
+          "nfl/dynasty-trade-value-charts"
+        ],
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "QB",
+          "RB",
+          "WR",
+          "TE"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ppr",
+          "non_ppr",
+          "0.5_ppr"
+        ],
+        "in": "query",
+        "name": "scoring",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "superflex",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-video": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-video",
+    "method": "GET",
+    "path": "/sportskeeda/video",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-videos",
+    "method": "GET",
+    "path": "/sportskeeda/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "spotify-album": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -93090,6 +97044,23 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "startribune-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "startribune-news",
+    "method": "GET",
+    "path": "/startribune/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -107868,6 +111839,37 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "whatnot-seller": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "whatnot-seller",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/whatnot/seller/{username}",
+    "pathParams": [
+      "username"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "wingstop-delivery-store": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -114545,6 +118547,11 @@ export const groups = {
     "roomReviews": "airbnb-room-reviews",
     "search": "airbnb-search"
   },
+  "alCom": {
+    "alcomHeadlines": "alcom-headlines",
+    "alcomNews": "alcom-news",
+    "alcomSections": "alcom-sections"
+  },
   "alJazeera": {
     "aljazeeraArticle": "aljazeera-article",
     "aljazeeraAuthor": "aljazeera-author",
@@ -114868,6 +118875,9 @@ export const groups = {
     "search": "boots-search",
     "suggest": "boots-suggest"
   },
+  "bostonGlobe": {
+    "bostonglobeNews": "bostonglobe-news"
+  },
   "boxOfficeMojo": {
     "boxofficemojoBrand": "boxofficemojo-brand",
     "boxofficemojoBrands": "boxofficemojo-brands",
@@ -115061,6 +119071,9 @@ export const groups = {
     "listing": "chrono24-listing",
     "models": "chrono24-models",
     "search": "chrono24-search"
+  },
+  "clevelandCom": {
+    "clevelandcomNews": "clevelandcom-news"
   },
   "cna": {
     "article": "cna-article",
@@ -115724,22 +119737,37 @@ export const groups = {
     "sections": "fortune-sections"
   },
   "fotMob": {
+    "fotmobAudioMatches": "fotmob-audio-matches",
+    "fotmobFifaRankingPeriods": "fotmob-fifa-ranking-periods",
+    "fotmobFifaRankings": "fotmob-fifa-rankings",
+    "fotmobLatestNews": "fotmob-latest-news",
     "fotmobLeague": "fotmob-league",
     "fotmobLeagues": "fotmob-leagues",
+    "fotmobLineupBuilderPlayers": "fotmob-lineup-builder-players",
+    "fotmobLineupBuilderTeam": "fotmob-lineup-builder-team",
     "fotmobMatch": "fotmob-match",
+    "fotmobMatchMedia": "fotmob-match-media",
     "fotmobMatches": "fotmob-matches",
     "fotmobNews": "fotmob-news",
+    "fotmobNewsArticle": "fotmob-news-article",
     "fotmobPlayer": "fotmob-player",
     "fotmobPlayerMatchStats": "fotmob-player-match-stats",
     "fotmobPlayerMatches": "fotmob-player-matches",
     "fotmobPlayerStats": "fotmob-player-stats",
     "fotmobSearch": "fotmob-search",
+    "fotmobSeasons": "fotmob-seasons",
     "fotmobStats": "fotmob-stats",
     "fotmobStatsCategories": "fotmob-stats-categories",
     "fotmobTable": "fotmob-table",
     "fotmobTeam": "fotmob-team",
+    "fotmobTeamFixtures": "fotmob-team-fixtures",
     "fotmobTeamNews": "fotmob-team-news",
-    "fotmobTransfers": "fotmob-transfers"
+    "fotmobTransfers": "fotmob-transfers",
+    "fotmobTrendingNews": "fotmob-trending-news",
+    "fotmobTrendingSearches": "fotmob-trending-searches",
+    "fotmobTvGuide": "fotmob-tv-guide",
+    "fotmobTvGuideChannels": "fotmob-tv-guide-channels",
+    "fotmobTvGuideCountries": "fotmob-tv-guide-countries"
   },
   "foxNews": {
     "foxnewsArticle": "foxnews-article",
@@ -115749,12 +119777,22 @@ export const groups = {
     "foxnewsSearch": "foxnews-search",
     "foxnewsSections": "foxnews-sections"
   },
+  "foxSports": {
+    "foxsportsArticle": "foxsports-article",
+    "foxsportsHeadlines": "foxsports-headlines",
+    "foxsportsNews": "foxsports-news",
+    "foxsportsSections": "foxsports-sections"
+  },
   "france24": {
     "france24Article": "france24-article",
     "france24Author": "france24-author",
     "france24Headlines": "france24-headlines",
     "france24News": "france24-news",
     "france24Sections": "france24-sections"
+  },
+  "freeMalaysiaToday": {
+    "freemalaysiatodayNews": "freemalaysiatoday-news",
+    "freemalaysiatodaySections": "freemalaysiatoday-sections"
   },
   "ft": {
     "article": "ft-article",
@@ -115803,6 +119841,17 @@ export const groups = {
     "lookup": "geocoding-lookup",
     "reverse": "geocoding-reverse",
     "search": "geocoding-search"
+  },
+  "ghanaWeb": {
+    "ghanawebArchive": "ghanaweb-archive",
+    "ghanawebArchiveMonths": "ghanaweb-archive-months",
+    "ghanawebArticle": "ghanaweb-article",
+    "ghanawebHeadlines": "ghanaweb-headlines",
+    "ghanawebNews": "ghanaweb-news",
+    "ghanawebSections": "ghanaweb-sections",
+    "ghanawebVideo": "ghanaweb-video",
+    "ghanawebVideoSections": "ghanaweb-video-sections",
+    "ghanawebVideos": "ghanaweb-videos"
   },
   "gitHub": {
     "githubOrg": "github-org",
@@ -116071,6 +120120,9 @@ export const groups = {
     "hotelsReviewsArchive": "hotels-reviews-archive",
     "hotelsSearch": "hotels-search"
   },
+  "howToGeek": {
+    "howtogeekNews": "howtogeek-news"
+  },
   "huffPost": {
     "huffpostArticle": "huffpost-article",
     "huffpostAuthor": "huffpost-author",
@@ -116208,6 +120260,14 @@ export const groups = {
     "jcrewSizeChart": "jcrew-size-chart",
     "jcrewStores": "jcrew-stores",
     "jcrewSuggest": "jcrew-suggest"
+  },
+  "jerusalemPost": {
+    "jerusalempostArticle": "jerusalempost-article",
+    "jerusalempostAuthor": "jerusalempost-author",
+    "jerusalempostAuthors": "jerusalempost-authors",
+    "jerusalempostHeadlines": "jerusalempost-headlines",
+    "jerusalempostNews": "jerusalempost-news",
+    "jerusalempostSections": "jerusalempost-sections"
   },
   "jimmyJohns": {
     "menu": "jimmy-johns-menu",
@@ -116397,6 +120457,7 @@ export const groups = {
   },
   "liveScore": {
     "livescoreCompetition": "livescore-competition",
+    "livescoreCompetitions": "livescore-competitions",
     "livescoreLiveScores": "livescore-live-scores",
     "livescoreMatch": "livescore-match",
     "livescoreMatchStats": "livescore-match-stats",
@@ -116408,6 +120469,7 @@ export const groups = {
     "livescorePlayer": "livescore-player",
     "livescoreScores": "livescore-scores",
     "livescoreScoresToc": "livescore-scores-toc",
+    "livescoreSearch": "livescore-search",
     "livescoreSports": "livescore-sports",
     "livescoreTeam": "livescore-team"
   },
@@ -116487,6 +120549,13 @@ export const groups = {
     "news": "mediaite-news",
     "sections": "mediaite-sections"
   },
+  "medicalNewsToday": {
+    "medicalnewstodayArticle": "medicalnewstoday-article",
+    "medicalnewstodayAuthor": "medicalnewstoday-author",
+    "medicalnewstodayHeadlines": "medicalnewstoday-headlines",
+    "medicalnewstodayNews": "medicalnewstoday-news",
+    "medicalnewstodaySections": "medicalnewstoday-sections"
+  },
   "mercari": {
     "autocomplete": "mercari-autocomplete",
     "home": "mercari-home",
@@ -116551,6 +120620,9 @@ export const groups = {
     "microsoftstoreSpotlight": "microsoftstore-spotlight",
     "microsoftstoreSuggest": "microsoftstore-suggest"
   },
+  "minnesotaStarTribune": {
+    "startribuneNews": "startribune-news"
+  },
   "mint": {
     "livemintArticle": "livemint-article",
     "livemintAuthor": "livemint-author",
@@ -116573,18 +120645,29 @@ export const groups = {
     "sloanreviewTopic": "sloanreview-topic"
   },
   "mlb": {
+    "discovery": "mlb-discovery",
+    "editorialFeed": "mlb-editorial-feed",
     "game": "mlb-game",
     "gameBoxscore": "mlb-game-boxscore",
     "gamePlayByPlay": "mlb-game-play-by-play",
+    "leagueLeaders": "mlb-league-leaders",
     "leagueStats": "mlb-league-stats",
     "player": "mlb-player",
     "playerStats": "mlb-player-stats",
+    "prospectStats": "mlb-prospect-stats",
     "schedule": "mlb-schedule",
+    "search": "mlb-search",
     "standings": "mlb-standings",
+    "statcast": "mlb-statcast",
+    "statcastExpected": "mlb-statcast-expected",
+    "statcastOaa": "mlb-statcast-oaa",
     "teamRoster": "mlb-team-roster",
     "teamStats": "mlb-team-stats",
     "teams": "mlb-teams",
     "transactions": "mlb-transactions"
+  },
+  "mlive": {
+    "news": "mlive-news"
   },
   "modaOperandi": {
     "modaoperandiCategories": "modaoperandi-categories",
@@ -116641,6 +120724,7 @@ export const groups = {
     "author": "ndtv-author",
     "headlines": "ndtv-headlines",
     "news": "ndtv-news",
+    "search": "ndtv-search",
     "sections": "ndtv-sections"
   },
   "newYorkDailyNews": {
@@ -116722,6 +120806,9 @@ export const groups = {
     "headlines": "ninetofivemac-headlines",
     "news": "ninetofivemac-news",
     "sections": "ninetofivemac-sections"
+  },
+  "njCom": {
+    "njcomNews": "njcom-news"
   },
   "npr": {
     "article": "npr-article",
@@ -117056,6 +121143,9 @@ export const groups = {
     "quests": "popeyes-quests",
     "rewards": "popeyes-rewards"
   },
+  "popularMechanics": {
+    "popularmechanicsNews": "popularmechanics-news"
+  },
   "poshmark": {
     "brand": "poshmark-brand",
     "brands": "poshmark-brands",
@@ -117293,7 +121383,13 @@ export const groups = {
     "rottentomatoesBrowseMovies": "rottentomatoes-browse-movies",
     "rottentomatoesBrowseTv": "rottentomatoes-browse-tv",
     "rottentomatoesCriticsAuthors": "rottentomatoes-critics-authors",
+    "rottentomatoesEditorialContent": "rottentomatoes-editorial-content",
+    "rottentomatoesEditorialDetail": "rottentomatoes-editorial-detail",
     "rottentomatoesEditorialSearch": "rottentomatoes-editorial-search",
+    "rottentomatoesEditorialSection": "rottentomatoes-editorial-section",
+    "rottentomatoesEditorialTaxonomies": "rottentomatoes-editorial-taxonomies",
+    "rottentomatoesEditorialTerms": "rottentomatoes-editorial-terms",
+    "rottentomatoesEditorialTypes": "rottentomatoes-editorial-types",
     "rottentomatoesEpisode": "rottentomatoes-episode",
     "rottentomatoesMovie": "rottentomatoes-movie",
     "rottentomatoesMovieReviews": "rottentomatoes-movie-reviews",
@@ -117330,6 +121426,20 @@ export const groups = {
     "samsclubDepartments": "samsclub-departments",
     "samsclubProduct": "samsclub-product",
     "samsclubProductRelated": "samsclub-product-related"
+  },
+  "sbsNews": {
+    "sbsnewsArticle": "sbsnews-article",
+    "sbsnewsAuthor": "sbsnews-author",
+    "sbsnewsHeadlines": "sbsnews-headlines",
+    "sbsnewsNews": "sbsnews-news",
+    "sbsnewsSections": "sbsnews-sections"
+  },
+  "scienceAlert": {
+    "sciencealertArticle": "sciencealert-article",
+    "sciencealertAuthor": "sciencealert-author",
+    "sciencealertHeadlines": "sciencealert-headlines",
+    "sciencealertNews": "sciencealert-news",
+    "sciencealertSections": "sciencealert-sections"
   },
   "scmp": {
     "article": "scmp-article",
@@ -117489,6 +121599,13 @@ export const groups = {
     "skynewsVideo": "skynews-video",
     "skynewsVideos": "skynews-videos"
   },
+  "skySports": {
+    "skysportsArticle": "skysports-article",
+    "skysportsAuthor": "skysports-author",
+    "skysportsHeadlines": "skysports-headlines",
+    "skysportsNews": "skysports-news",
+    "skysportsSections": "skysports-sections"
+  },
   "slate": {
     "article": "slate-article",
     "categories": "slate-categories",
@@ -117564,6 +121681,29 @@ export const groups = {
     "sportingnewsHeadlines": "sportingnews-headlines",
     "sportingnewsNews": "sportingnews-news",
     "sportingnewsSections": "sportingnews-sections"
+  },
+  "sportskeeda": {
+    "article": "sportskeeda-article",
+    "author": "sportskeeda-author",
+    "depthChart": "sportskeeda-depth-chart",
+    "feed": "sportskeeda-feed",
+    "footballData": "sportskeeda-football-data",
+    "footballOptions": "sportskeeda-football-options",
+    "news": "sportskeeda-news",
+    "pageData": "sportskeeda-page-data",
+    "pageOptions": "sportskeeda-page-options",
+    "playerStats": "sportskeeda-player-stats",
+    "profile": "sportskeeda-profile",
+    "schedule": "sportskeeda-schedule",
+    "sections": "sportskeeda-sections",
+    "sitemapItems": "sportskeeda-sitemap-items",
+    "sitemaps": "sportskeeda-sitemaps",
+    "standings": "sportskeeda-standings",
+    "standingsOptions": "sportskeeda-standings-options",
+    "taxonomySearch": "sportskeeda-taxonomy-search",
+    "tradeValues": "sportskeeda-trade-values",
+    "video": "sportskeeda-video",
+    "videos": "sportskeeda-videos"
   },
   "spotify": {
     "album": "spotify-album",
@@ -117839,6 +121979,13 @@ export const groups = {
     "thejournalHeadlines": "thejournal-headlines",
     "thejournalNews": "thejournal-news",
     "thejournalSections": "thejournal-sections"
+  },
+  "theMotleyFool": {
+    "motleyfoolArticle": "motleyfool-article",
+    "motleyfoolAuthor": "motleyfool-author",
+    "motleyfoolHeadlines": "motleyfool-headlines",
+    "motleyfoolNews": "motleyfool-news",
+    "motleyfoolSections": "motleyfool-sections"
   },
   "theNewYorker": {
     "newyorkerArticle": "newyorker-article",
@@ -118259,7 +122406,8 @@ export const groups = {
   "whatnot": {
     "browse": "whatnot-browse",
     "categories": "whatnot-categories",
-    "live": "whatnot-live"
+    "live": "whatnot-live",
+    "seller": "whatnot-seller"
   },
   "wingstop": {
     "deliveryStore": "wingstop-delivery-store",
@@ -118505,7 +122653,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 3165;
+export const operationCount = 3275;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -118553,6 +122701,9 @@ export const OperationIds = Object.freeze({
   "AirbnbRoomCalendar": "airbnb-room-calendar",
   "AirbnbRoomReviews": "airbnb-room-reviews",
   "AirbnbSearch": "airbnb-search",
+  "AlComAlcomHeadlines": "alcom-headlines",
+  "AlComAlcomNews": "alcom-news",
+  "AlComAlcomSections": "alcom-sections",
   "AlJazeeraAljazeeraArticle": "aljazeera-article",
   "AlJazeeraAljazeeraAuthor": "aljazeera-author",
   "AlJazeeraAljazeeraCategories": "aljazeera-categories",
@@ -118804,6 +122955,7 @@ export const OperationIds = Object.freeze({
   "BookingSearch": "booking-search",
   "BootsSearch": "boots-search",
   "BootsSuggest": "boots-suggest",
+  "BostonGlobeBostonglobeNews": "bostonglobe-news",
   "BoxOfficeMojoBoxofficemojoBrand": "boxofficemojo-brand",
   "BoxOfficeMojoBoxofficemojoBrands": "boxofficemojo-brands",
   "BoxOfficeMojoBoxofficemojoCalendar": "boxofficemojo-calendar",
@@ -118954,6 +123106,7 @@ export const OperationIds = Object.freeze({
   "Chrono24Listing": "chrono24-listing",
   "Chrono24Models": "chrono24-models",
   "Chrono24Search": "chrono24-search",
+  "ClevelandComClevelandcomNews": "clevelandcom-news",
   "CnaArticle": "cna-article",
   "CnaAuthor": "cna-author",
   "CnaHeadlines": "cna-headlines",
@@ -119495,33 +123648,54 @@ export const OperationIds = Object.freeze({
   "FortuneRankingLists": "fortune-ranking-lists",
   "FortuneRankingYears": "fortune-ranking-years",
   "FortuneSections": "fortune-sections",
+  "FotMobFotmobAudioMatches": "fotmob-audio-matches",
+  "FotMobFotmobFifaRankingPeriods": "fotmob-fifa-ranking-periods",
+  "FotMobFotmobFifaRankings": "fotmob-fifa-rankings",
+  "FotMobFotmobLatestNews": "fotmob-latest-news",
   "FotMobFotmobLeague": "fotmob-league",
   "FotMobFotmobLeagues": "fotmob-leagues",
+  "FotMobFotmobLineupBuilderPlayers": "fotmob-lineup-builder-players",
+  "FotMobFotmobLineupBuilderTeam": "fotmob-lineup-builder-team",
   "FotMobFotmobMatch": "fotmob-match",
+  "FotMobFotmobMatchMedia": "fotmob-match-media",
   "FotMobFotmobMatches": "fotmob-matches",
   "FotMobFotmobNews": "fotmob-news",
+  "FotMobFotmobNewsArticle": "fotmob-news-article",
   "FotMobFotmobPlayer": "fotmob-player",
   "FotMobFotmobPlayerMatchStats": "fotmob-player-match-stats",
   "FotMobFotmobPlayerMatches": "fotmob-player-matches",
   "FotMobFotmobPlayerStats": "fotmob-player-stats",
   "FotMobFotmobSearch": "fotmob-search",
+  "FotMobFotmobSeasons": "fotmob-seasons",
   "FotMobFotmobStats": "fotmob-stats",
   "FotMobFotmobStatsCategories": "fotmob-stats-categories",
   "FotMobFotmobTable": "fotmob-table",
   "FotMobFotmobTeam": "fotmob-team",
+  "FotMobFotmobTeamFixtures": "fotmob-team-fixtures",
   "FotMobFotmobTeamNews": "fotmob-team-news",
   "FotMobFotmobTransfers": "fotmob-transfers",
+  "FotMobFotmobTrendingNews": "fotmob-trending-news",
+  "FotMobFotmobTrendingSearches": "fotmob-trending-searches",
+  "FotMobFotmobTvGuide": "fotmob-tv-guide",
+  "FotMobFotmobTvGuideChannels": "fotmob-tv-guide-channels",
+  "FotMobFotmobTvGuideCountries": "fotmob-tv-guide-countries",
   "FoxNewsFoxnewsArticle": "foxnews-article",
   "FoxNewsFoxnewsAuthor": "foxnews-author",
   "FoxNewsFoxnewsHeadlines": "foxnews-headlines",
   "FoxNewsFoxnewsNews": "foxnews-news",
   "FoxNewsFoxnewsSearch": "foxnews-search",
   "FoxNewsFoxnewsSections": "foxnews-sections",
+  "FoxSportsFoxsportsArticle": "foxsports-article",
+  "FoxSportsFoxsportsHeadlines": "foxsports-headlines",
+  "FoxSportsFoxsportsNews": "foxsports-news",
+  "FoxSportsFoxsportsSections": "foxsports-sections",
   "France24France24Article": "france24-article",
   "France24France24Author": "france24-author",
   "France24France24Headlines": "france24-headlines",
   "France24France24News": "france24-news",
   "France24France24Sections": "france24-sections",
+  "FreeMalaysiaTodayFreemalaysiatodayNews": "freemalaysiatoday-news",
+  "FreeMalaysiaTodayFreemalaysiatodaySections": "freemalaysiatoday-sections",
   "FtArticle": "ft-article",
   "FtAuthor": "ft-author",
   "FtCategories": "ft-categories",
@@ -119558,6 +123732,15 @@ export const OperationIds = Object.freeze({
   "GeocodingLookup": "geocoding-lookup",
   "GeocodingReverse": "geocoding-reverse",
   "GeocodingSearch": "geocoding-search",
+  "GhanaWebGhanawebArchive": "ghanaweb-archive",
+  "GhanaWebGhanawebArchiveMonths": "ghanaweb-archive-months",
+  "GhanaWebGhanawebArticle": "ghanaweb-article",
+  "GhanaWebGhanawebHeadlines": "ghanaweb-headlines",
+  "GhanaWebGhanawebNews": "ghanaweb-news",
+  "GhanaWebGhanawebSections": "ghanaweb-sections",
+  "GhanaWebGhanawebVideo": "ghanaweb-video",
+  "GhanaWebGhanawebVideoSections": "ghanaweb-video-sections",
+  "GhanaWebGhanawebVideos": "ghanaweb-videos",
   "GitHubGithubOrg": "github-org",
   "GitHubGithubOrgRepos": "github-org-repos",
   "GitHubGithubRepo": "github-repo",
@@ -119773,6 +123956,7 @@ export const OperationIds = Object.freeze({
   "HotelsComHotelsReviews": "hotels-reviews",
   "HotelsComHotelsReviewsArchive": "hotels-reviews-archive",
   "HotelsComHotelsSearch": "hotels-search",
+  "HowToGeekHowtogeekNews": "howtogeek-news",
   "HuffPostHuffpostArticle": "huffpost-article",
   "HuffPostHuffpostAuthor": "huffpost-author",
   "HuffPostHuffpostHeadlines": "huffpost-headlines",
@@ -119879,6 +124063,12 @@ export const OperationIds = Object.freeze({
   "JCrewJcrewSizeChart": "jcrew-size-chart",
   "JCrewJcrewStores": "jcrew-stores",
   "JCrewJcrewSuggest": "jcrew-suggest",
+  "JerusalemPostJerusalempostArticle": "jerusalempost-article",
+  "JerusalemPostJerusalempostAuthor": "jerusalempost-author",
+  "JerusalemPostJerusalempostAuthors": "jerusalempost-authors",
+  "JerusalemPostJerusalempostHeadlines": "jerusalempost-headlines",
+  "JerusalemPostJerusalempostNews": "jerusalempost-news",
+  "JerusalemPostJerusalempostSections": "jerusalempost-sections",
   "JimmyJohnsMenu": "jimmy-johns-menu",
   "JimmyJohnsModifiers": "jimmy-johns-modifiers",
   "JimmyJohnsNearby": "jimmy-johns-nearby",
@@ -120032,6 +124222,7 @@ export const OperationIds = Object.freeze({
   "LiveScienceLivescienceNews": "livescience-news",
   "LiveScienceLivescienceSections": "livescience-sections",
   "LiveScoreLivescoreCompetition": "livescore-competition",
+  "LiveScoreLivescoreCompetitions": "livescore-competitions",
   "LiveScoreLivescoreLiveScores": "livescore-live-scores",
   "LiveScoreLivescoreMatch": "livescore-match",
   "LiveScoreLivescoreMatchStats": "livescore-match-stats",
@@ -120043,6 +124234,7 @@ export const OperationIds = Object.freeze({
   "LiveScoreLivescorePlayer": "livescore-player",
   "LiveScoreLivescoreScores": "livescore-scores",
   "LiveScoreLivescoreScoresToc": "livescore-scores-toc",
+  "LiveScoreLivescoreSearch": "livescore-search",
   "LiveScoreLivescoreSports": "livescore-sports",
   "LiveScoreLivescoreTeam": "livescore-team",
   "LiverpoolEchoLiverpoolechoArticle": "liverpoolecho-article",
@@ -120099,6 +124291,11 @@ export const OperationIds = Object.freeze({
   "MediaiteHeadlines": "mediaite-headlines",
   "MediaiteNews": "mediaite-news",
   "MediaiteSections": "mediaite-sections",
+  "MedicalNewsTodayMedicalnewstodayArticle": "medicalnewstoday-article",
+  "MedicalNewsTodayMedicalnewstodayAuthor": "medicalnewstoday-author",
+  "MedicalNewsTodayMedicalnewstodayHeadlines": "medicalnewstoday-headlines",
+  "MedicalNewsTodayMedicalnewstodayNews": "medicalnewstoday-news",
+  "MedicalNewsTodayMedicalnewstodaySections": "medicalnewstoday-sections",
   "MercariAutocomplete": "mercari-autocomplete",
   "MercariHome": "mercari-home",
   "MercariItem": "mercari-item",
@@ -120149,6 +124346,7 @@ export const OperationIds = Object.freeze({
   "MicrosoftStoreMicrosoftstoreSearch": "microsoftstore-search",
   "MicrosoftStoreMicrosoftstoreSpotlight": "microsoftstore-spotlight",
   "MicrosoftStoreMicrosoftstoreSuggest": "microsoftstore-suggest",
+  "MinnesotaStarTribuneStartribuneNews": "startribune-news",
   "MintLivemintArticle": "livemint-article",
   "MintLivemintAuthor": "livemint-author",
   "MintLivemintHeadlines": "livemint-headlines",
@@ -120164,18 +124362,27 @@ export const OperationIds = Object.freeze({
   "MitSloanManagementReviewSloanreviewCategories": "sloanreview-categories",
   "MitSloanManagementReviewSloanreviewHeadlines": "sloanreview-headlines",
   "MitSloanManagementReviewSloanreviewTopic": "sloanreview-topic",
+  "MlbDiscovery": "mlb-discovery",
+  "MlbEditorialFeed": "mlb-editorial-feed",
   "MlbGame": "mlb-game",
   "MlbGameBoxscore": "mlb-game-boxscore",
   "MlbGamePlayByPlay": "mlb-game-play-by-play",
+  "MlbLeagueLeaders": "mlb-league-leaders",
   "MlbLeagueStats": "mlb-league-stats",
   "MlbPlayer": "mlb-player",
   "MlbPlayerStats": "mlb-player-stats",
+  "MlbProspectStats": "mlb-prospect-stats",
   "MlbSchedule": "mlb-schedule",
+  "MlbSearch": "mlb-search",
   "MlbStandings": "mlb-standings",
+  "MlbStatcast": "mlb-statcast",
+  "MlbStatcastExpected": "mlb-statcast-expected",
+  "MlbStatcastOaa": "mlb-statcast-oaa",
   "MlbTeamRoster": "mlb-team-roster",
   "MlbTeamStats": "mlb-team-stats",
   "MlbTeams": "mlb-teams",
   "MlbTransactions": "mlb-transactions",
+  "MliveNews": "mlive-news",
   "ModaOperandiModaoperandiCategories": "modaoperandi-categories",
   "ModaOperandiModaoperandiDesigners": "modaoperandi-designers",
   "ModaOperandiModaoperandiProduct": "modaoperandi-product",
@@ -120216,6 +124423,7 @@ export const OperationIds = Object.freeze({
   "NdtvAuthor": "ndtv-author",
   "NdtvHeadlines": "ndtv-headlines",
   "NdtvNews": "ndtv-news",
+  "NdtvSearch": "ndtv-search",
   "NdtvSections": "ndtv-sections",
   "NewYorkDailyNewsNydailynewsArticle": "nydailynews-article",
   "NewYorkDailyNewsNydailynewsAuthor": "nydailynews-author",
@@ -120275,6 +124483,7 @@ export const OperationIds = Object.freeze({
   "NineToFiveMacHeadlines": "ninetofivemac-headlines",
   "NineToFiveMacNews": "ninetofivemac-news",
   "NineToFiveMacSections": "ninetofivemac-sections",
+  "NjComNjcomNews": "njcom-news",
   "NprArticle": "npr-article",
   "NprAuthor": "npr-author",
   "NprCategories": "npr-categories",
@@ -120552,6 +124761,7 @@ export const OperationIds = Object.freeze({
   "PopeyesPromotions": "popeyes-promotions",
   "PopeyesQuests": "popeyes-quests",
   "PopeyesRewards": "popeyes-rewards",
+  "PopularMechanicsPopularmechanicsNews": "popularmechanics-news",
   "PoshmarkBrand": "poshmark-brand",
   "PoshmarkBrands": "poshmark-brands",
   "PoshmarkCategories": "poshmark-categories",
@@ -120740,7 +124950,13 @@ export const OperationIds = Object.freeze({
   "RottenTomatoesRottentomatoesBrowseMovies": "rottentomatoes-browse-movies",
   "RottenTomatoesRottentomatoesBrowseTv": "rottentomatoes-browse-tv",
   "RottenTomatoesRottentomatoesCriticsAuthors": "rottentomatoes-critics-authors",
+  "RottenTomatoesRottentomatoesEditorialContent": "rottentomatoes-editorial-content",
+  "RottenTomatoesRottentomatoesEditorialDetail": "rottentomatoes-editorial-detail",
   "RottenTomatoesRottentomatoesEditorialSearch": "rottentomatoes-editorial-search",
+  "RottenTomatoesRottentomatoesEditorialSection": "rottentomatoes-editorial-section",
+  "RottenTomatoesRottentomatoesEditorialTaxonomies": "rottentomatoes-editorial-taxonomies",
+  "RottenTomatoesRottentomatoesEditorialTerms": "rottentomatoes-editorial-terms",
+  "RottenTomatoesRottentomatoesEditorialTypes": "rottentomatoes-editorial-types",
   "RottenTomatoesRottentomatoesEpisode": "rottentomatoes-episode",
   "RottenTomatoesRottentomatoesMovie": "rottentomatoes-movie",
   "RottenTomatoesRottentomatoesMovieReviews": "rottentomatoes-movie-reviews",
@@ -120769,6 +124985,16 @@ export const OperationIds = Object.freeze({
   "SamSclubSamsclubDepartments": "samsclub-departments",
   "SamSclubSamsclubProduct": "samsclub-product",
   "SamSclubSamsclubProductRelated": "samsclub-product-related",
+  "SbsNewsSbsnewsArticle": "sbsnews-article",
+  "SbsNewsSbsnewsAuthor": "sbsnews-author",
+  "SbsNewsSbsnewsHeadlines": "sbsnews-headlines",
+  "SbsNewsSbsnewsNews": "sbsnews-news",
+  "SbsNewsSbsnewsSections": "sbsnews-sections",
+  "ScienceAlertSciencealertArticle": "sciencealert-article",
+  "ScienceAlertSciencealertAuthor": "sciencealert-author",
+  "ScienceAlertSciencealertHeadlines": "sciencealert-headlines",
+  "ScienceAlertSciencealertNews": "sciencealert-news",
+  "ScienceAlertSciencealertSections": "sciencealert-sections",
   "ScmpArticle": "scmp-article",
   "ScmpAuthor": "scmp-author",
   "ScmpHeadlines": "scmp-headlines",
@@ -120895,6 +125121,11 @@ export const OperationIds = Object.freeze({
   "SkyNewsSkynewsSections": "skynews-sections",
   "SkyNewsSkynewsVideo": "skynews-video",
   "SkyNewsSkynewsVideos": "skynews-videos",
+  "SkySportsSkysportsArticle": "skysports-article",
+  "SkySportsSkysportsAuthor": "skysports-author",
+  "SkySportsSkysportsHeadlines": "skysports-headlines",
+  "SkySportsSkysportsNews": "skysports-news",
+  "SkySportsSkysportsSections": "skysports-sections",
   "SlateArticle": "slate-article",
   "SlateCategories": "slate-categories",
   "SlateHeadlines": "slate-headlines",
@@ -120955,6 +125186,27 @@ export const OperationIds = Object.freeze({
   "SportingNewsSportingnewsHeadlines": "sportingnews-headlines",
   "SportingNewsSportingnewsNews": "sportingnews-news",
   "SportingNewsSportingnewsSections": "sportingnews-sections",
+  "SportskeedaArticle": "sportskeeda-article",
+  "SportskeedaAuthor": "sportskeeda-author",
+  "SportskeedaDepthChart": "sportskeeda-depth-chart",
+  "SportskeedaFeed": "sportskeeda-feed",
+  "SportskeedaFootballData": "sportskeeda-football-data",
+  "SportskeedaFootballOptions": "sportskeeda-football-options",
+  "SportskeedaNews": "sportskeeda-news",
+  "SportskeedaPageData": "sportskeeda-page-data",
+  "SportskeedaPageOptions": "sportskeeda-page-options",
+  "SportskeedaPlayerStats": "sportskeeda-player-stats",
+  "SportskeedaProfile": "sportskeeda-profile",
+  "SportskeedaSchedule": "sportskeeda-schedule",
+  "SportskeedaSections": "sportskeeda-sections",
+  "SportskeedaSitemapItems": "sportskeeda-sitemap-items",
+  "SportskeedaSitemaps": "sportskeeda-sitemaps",
+  "SportskeedaStandings": "sportskeeda-standings",
+  "SportskeedaStandingsOptions": "sportskeeda-standings-options",
+  "SportskeedaTaxonomySearch": "sportskeeda-taxonomy-search",
+  "SportskeedaTradeValues": "sportskeeda-trade-values",
+  "SportskeedaVideo": "sportskeeda-video",
+  "SportskeedaVideos": "sportskeeda-videos",
   "SpotifyAlbum": "spotify-album",
   "SpotifyAlbumTracks": "spotify-album-tracks",
   "SpotifyAlbumsSearch": "spotify-albums-search",
@@ -121174,6 +125426,11 @@ export const OperationIds = Object.freeze({
   "TheJournalIeThejournalHeadlines": "thejournal-headlines",
   "TheJournalIeThejournalNews": "thejournal-news",
   "TheJournalIeThejournalSections": "thejournal-sections",
+  "TheMotleyFoolMotleyfoolArticle": "motleyfool-article",
+  "TheMotleyFoolMotleyfoolAuthor": "motleyfool-author",
+  "TheMotleyFoolMotleyfoolHeadlines": "motleyfool-headlines",
+  "TheMotleyFoolMotleyfoolNews": "motleyfool-news",
+  "TheMotleyFoolMotleyfoolSections": "motleyfool-sections",
   "TheNewYorkerNewyorkerArticle": "newyorker-article",
   "TheNewYorkerNewyorkerAuthor": "newyorker-author",
   "TheNewYorkerNewyorkerHeadlines": "newyorker-headlines",
@@ -121487,6 +125744,7 @@ export const OperationIds = Object.freeze({
   "WhatnotBrowse": "whatnot-browse",
   "WhatnotCategories": "whatnot-categories",
   "WhatnotLive": "whatnot-live",
+  "WhatnotSeller": "whatnot-seller",
   "WingstopDeliveryStore": "wingstop-delivery-store",
   "WingstopDirectory": "wingstop-directory",
   "WingstopFlavors": "wingstop-flavors",

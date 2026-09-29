@@ -311,3 +311,10 @@ const channel = await crawlora.request("twitch-channel", { login: "caedrel" });
 const streams = await crawlora.request("twitch-streams", { game: "league-of-legends", limit: 20 });
 const track = await crawlora.request("soundcloud-track", { url: "https://soundcloud.com/artist/track-name" });
 ```
+
+## News Publishers And Sports
+
+```ts
+const news = await crawlora.alCom.alcomNews();
+const sports = await crawlora.sportskeeda.news();
+```
