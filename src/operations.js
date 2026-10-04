@@ -1903,6 +1903,132 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "aliexpress-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "aliexpress-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/aliexpress/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "product_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "aliexpress-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "aliexpress-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/aliexpress/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "best_match",
+          "orders",
+          "price_asc",
+          "price_desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "free_shipping",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "choice",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "attr",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "aliexpress-search-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "aliexpress-search-filters",
+    "method": "GET",
+    "path": "/aliexpress/search-filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "aljazeera-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -3289,6 +3415,132 @@ export const operations = {
     "id": "androidauthority-sections",
     "method": "GET",
     "path": "/androidauthority/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "androidpolice-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "androidpolice-article",
+    "method": "GET",
+    "path": "/androidpolice/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "androidpolice-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "androidpolice-author",
+    "method": "GET",
+    "path": "/androidpolice/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "androidpolice-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "androidpolice-headlines",
+    "method": "GET",
+    "path": "/androidpolice/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "phones",
+          "tablets",
+          "gadgets",
+          "accessories",
+          "apps",
+          "entertainment",
+          "productivity",
+          "utilities",
+          "ai-machine-learning",
+          "operating-systems",
+          "wearables",
+          "smart-home",
+          "smart-tv",
+          "carriers",
+          "deals",
+          "videos",
+          "awards"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "androidpolice-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "androidpolice-news",
+    "method": "GET",
+    "path": "/androidpolice/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "androidpolice-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "androidpolice-sections",
+    "method": "GET",
+    "path": "/androidpolice/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -5776,6 +6028,100 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "appstore-collection": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "appstore-collection",
+    "method": "GET",
+    "path": "/appstore/collection",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "iphone",
+          "ipad",
+          "mac",
+          "vision",
+          "watch",
+          "tv"
+        ],
+        "in": "query",
+        "name": "platform",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "collection_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "appstore-collections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "appstore-collections",
+    "method": "GET",
+    "path": "/appstore/collections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "iphone",
+          "ipad",
+          "mac",
+          "vision",
+          "watch",
+          "tv"
+        ],
+        "in": "query",
+        "name": "platform",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "appstore-developer": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -7943,6 +8289,118 @@ export const operations = {
         "type": "integer"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "benzinga-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "benzinga-article",
+    "method": "GET",
+    "path": "/benzinga/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "benzinga-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "benzinga-headlines",
+    "method": "GET",
+    "path": "/benzinga/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "latest",
+          "technology-stocks",
+          "politics",
+          "health-care"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "benzinga-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "benzinga-news",
+    "method": "GET",
+    "path": "/benzinga/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "benzinga-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "benzinga-search",
+    "method": "GET",
+    "path": "/benzinga/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "benzinga-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "benzinga-sections",
+    "method": "GET",
+    "path": "/benzinga/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -12202,6 +12660,218 @@ export const operations = {
     "id": "breitbart-sections",
     "method": "GET",
     "path": "/breitbart/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brisbanetimes-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "brisbanetimes-article",
+    "method": "GET",
+    "path": "/brisbanetimes/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brisbanetimes-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "brisbanetimes-author",
+    "method": "GET",
+    "path": "/brisbanetimes/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brisbanetimes-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "brisbanetimes-headlines",
+    "method": "GET",
+    "path": "/brisbanetimes/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "national/queensland",
+          "politics",
+          "business",
+          "world",
+          "goodfood",
+          "lifestyle",
+          "traveller",
+          "sport",
+          "brisbane-news",
+          "politics/federal",
+          "politics/queensland",
+          "politics/nsw",
+          "politics/victoria",
+          "politics/western-australia",
+          "business/companies",
+          "business/markets",
+          "business/bullsnbears",
+          "business/the-economy",
+          "business/banking-and-finance",
+          "business/small-business",
+          "business/workplace",
+          "world/north-america",
+          "world/europe",
+          "world/asia",
+          "world/middle-east",
+          "world/south-america",
+          "world/africa",
+          "national",
+          "national/nsw",
+          "national/victoria",
+          "national/western-australia",
+          "opinion",
+          "property",
+          "property/news",
+          "property/living",
+          "sport/nrl",
+          "sport/rugby-union",
+          "sport/afl",
+          "sport/cricket",
+          "sport/soccer",
+          "sport/racing",
+          "sport/tennis",
+          "sport/netball",
+          "sport/basketball",
+          "sport/motorsport",
+          "sport/golf",
+          "sport/nfl",
+          "sport/athletics",
+          "sport/swimming",
+          "sport/boxing",
+          "goodfood/recipes",
+          "goodfood/tips-and-advice",
+          "goodfood/brisbane-eating-out",
+          "goodfood/drinks",
+          "culture",
+          "culture/movies",
+          "culture/tv-and-radio",
+          "culture/music",
+          "culture/celebrity",
+          "culture/books",
+          "culture/comedy",
+          "culture/dance",
+          "culture/musicals",
+          "culture/opera",
+          "culture/theatre",
+          "culture/art-and-design",
+          "culture/live-reviews",
+          "lifestyle/health-and-wellness",
+          "lifestyle/fashion",
+          "lifestyle/life-and-relationships",
+          "lifestyle/beauty",
+          "traveller/inspiration/destination-guides",
+          "traveller/inspiration",
+          "traveller/reviews-and-advice",
+          "traveller/travel-news",
+          "good-weekend",
+          "sunday-life",
+          "money",
+          "money/super-and-retirement",
+          "money/investing",
+          "money/banking",
+          "money/borrowing",
+          "money/saving",
+          "money/tax",
+          "money/planning-and-budgeting",
+          "education",
+          "healthcare",
+          "environment",
+          "environment/conservation",
+          "environment/climate-change",
+          "environment/sustainability",
+          "environment/weather",
+          "technology",
+          "technology/video-games",
+          "australia-higher-education",
+          "topic/media-and-marketing-5z7",
+          "topic/auctions-1nq1",
+          "topic/financing-1nq2",
+          "topic/style-luxury-1nij",
+          "topic/horoscopes-5yc",
+          "topic/home-technology-hqq",
+          "topic/phones-5zt",
+          "topic/gadgets-hqp",
+          "topic/explainers-1lz9"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brisbanetimes-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "brisbanetimes-news",
+    "method": "GET",
+    "path": "/brisbanetimes/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "brisbanetimes-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "brisbanetimes-sections",
+    "method": "GET",
+    "path": "/brisbanetimes/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -21130,6 +21800,114 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "dailykos-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "dailykos-article",
+    "method": "GET",
+    "path": "/dailykos/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dailykos-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "dailykos-headlines",
+    "method": "GET",
+    "path": "/dailykos/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "announcements",
+          "cartoon",
+          "daily-kos",
+          "partnerhub",
+          "news",
+          "news/business-and-economy",
+          "news/congress",
+          "news/courts",
+          "news/culture",
+          "news/elections",
+          "news/environment",
+          "news/health",
+          "news/immigration",
+          "news/justice",
+          "news/media",
+          "news/media-and-culture",
+          "news/national",
+          "news/science",
+          "news/series",
+          "news/stateandlocal",
+          "news/tech",
+          "news/videos",
+          "news/whitehouse",
+          "news/world"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dailykos-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "dailykos-news",
+    "method": "GET",
+    "path": "/dailykos/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dailykos-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "dailykos-sections",
+    "method": "GET",
+    "path": "/dailykos/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "dailymail-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -21247,6 +22025,141 @@ export const operations = {
     "id": "dailymail-sections",
     "method": "GET",
     "path": "/dailymail/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dailymaverick-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "dailymaverick-article",
+    "method": "GET",
+    "path": "/dailymaverick/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dailymaverick-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "dailymaverick-headlines",
+    "method": "GET",
+    "path": "/dailymaverick/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "2019-elections",
+          "2019-rugby-world-cup",
+          "africa",
+          "analysis",
+          "articles",
+          "blog",
+          "books",
+          "business-maverick",
+          "cartoons",
+          "companies",
+          "covid-19",
+          "crypto",
+          "culture",
+          "declassified-uk",
+          "dm168",
+          "economy",
+          "editorial",
+          "elections",
+          "fifa-world-cup-2026",
+          "international-finance",
+          "johannesburg",
+          "magazine",
+          "maverick-citizen",
+          "maverick-earth",
+          "maverick-insider",
+          "maverick-life",
+          "maverick-news",
+          "media",
+          "mining",
+          "motoring",
+          "multimedia",
+          "nelson-mandela-bay",
+          "op-eds",
+          "open-secrets",
+          "opinionistas",
+          "partner-content",
+          "people-of-the-year",
+          "personal-finance",
+          "podcasts",
+          "politics",
+          "sci-tech",
+          "scorpio",
+          "south-africa",
+          "sponsored-content",
+          "sport",
+          "tgifood",
+          "ukraine-crisis",
+          "webinars",
+          "weekend-wrap",
+          "world",
+          "world-cup-2018"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dailymaverick-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "dailymaverick-news",
+    "method": "GET",
+    "path": "/dailymaverick/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dailymaverick-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "dailymaverick-sections",
+    "method": "GET",
+    "path": "/dailymaverick/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -23402,6 +24315,292 @@ export const operations = {
         ],
         "in": "query",
         "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-doordash-stores-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-doordash-stores-facets",
+    "method": "GET",
+    "path": "/datasets/doordash-stores/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "country",
+          "state",
+          "city",
+          "tags",
+          "display_status",
+          "price_range",
+          "dash_pass_eligible"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tag",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "dash_pass_only",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-doordash-stores-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-doordash-stores-item",
+    "method": "GET",
+    "path": "/datasets/doordash-stores/items/{store_id}",
+    "pathParams": [
+      "store_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-doordash-stores-nearby": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "datasets-doordash-stores-nearby",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/doordash-stores/nearby",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "lat",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tag",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "dash_pass_only",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "offset",
+          "cursor"
+        ],
+        "in": "query",
+        "name": "pagination",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-doordash-stores-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "datasets-doordash-stores-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/doordash-stores/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tag",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "dash_pass_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lat",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "rating",
+          "distance",
+          "distance_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "offset",
+          "cursor"
+        ],
+        "in": "query",
+        "name": "pagination",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
         "type": "string"
       },
       {
@@ -31894,6 +33093,193 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "denverpost-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "denverpost-article",
+    "method": "GET",
+    "path": "/denverpost/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "denverpost-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "denverpost-author",
+    "method": "GET",
+    "path": "/denverpost/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "denverpost-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "denverpost-headlines",
+    "method": "GET",
+    "path": "/denverpost/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "latest-headlines",
+          "colorado",
+          "politics",
+          "crime-public-safety",
+          "courts",
+          "national",
+          "world",
+          "education",
+          "health",
+          "environment",
+          "transportation",
+          "housing",
+          "news-obituaries",
+          "photos-and-videos",
+          "weather",
+          "sports",
+          "sports-columnists",
+          "denver-broncos",
+          "colorado-rockies",
+          "denver-nuggets",
+          "colorado-avalanche",
+          "colorado-rapids",
+          "denver-summit-fc",
+          "college",
+          "colorado-preps",
+          "betting",
+          "golf",
+          "boxing-mma",
+          "sports-podcasts",
+          "business",
+          "colorado-real-estate",
+          "airlines",
+          "economy",
+          "energy",
+          "retail",
+          "colorado-technology",
+          "best-reviews",
+          "theknow",
+          "restaurants-food-drink",
+          "arts",
+          "culture",
+          "movies",
+          "television",
+          "music",
+          "theater",
+          "travel",
+          "parenting-family",
+          "bars",
+          "beer",
+          "outdoors",
+          "hiking",
+          "fall-colors",
+          "cycling",
+          "fitness",
+          "running",
+          "camping",
+          "fishing",
+          "hunting",
+          "water-sports",
+          "skiing",
+          "snowboarding",
+          "winter-sports",
+          "opinion",
+          "editorials",
+          "opinion-columnists",
+          "letters",
+          "endorsements",
+          "things-to-do",
+          "horoscopes",
+          "advice",
+          "home-garden",
+          "free-and-cheap",
+          "cannabis",
+          "recipes"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "denverpost-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "denverpost-news",
+    "method": "GET",
+    "path": "/denverpost/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "denverpost-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "denverpost-sections",
+    "method": "GET",
+    "path": "/denverpost/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "depop-brands": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -36193,6 +37579,153 @@ export const operations = {
     "id": "expedia-properties-search",
     "method": "POST",
     "path": "/expedia/properties/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expresstribune-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "expresstribune-article",
+    "method": "GET",
+    "path": "/expresstribune/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expresstribune-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "expresstribune-author",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/expresstribune/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expresstribune-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "expresstribune-headlines",
+    "method": "GET",
+    "path": "/expresstribune/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "home",
+          "latest",
+          "analysis",
+          "politics",
+          "cricket",
+          "movies",
+          "health",
+          "style",
+          "pakistan",
+          "sindh",
+          "punjab",
+          "balochistan",
+          "khyber-pakhtunkhwa",
+          "jammu-kashmir",
+          "gilgit-baltistan",
+          "business",
+          "world",
+          "sports",
+          "technology",
+          "games",
+          "gadget",
+          "life-style",
+          "art-books",
+          "music",
+          "film",
+          "fashion",
+          "gossip",
+          "tv",
+          "theatre",
+          "entertainment",
+          "opinion",
+          "editorial",
+          "blogs"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expresstribune-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "expresstribune-news",
+    "method": "GET",
+    "path": "/expresstribune/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "expresstribune-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "expresstribune-sections",
+    "method": "GET",
+    "path": "/expresstribune/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -46709,6 +48242,622 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "goodrx-answer": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-answer",
+    "method": "GET",
+    "path": "/goodrx/answer",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-answers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-answers",
+    "method": "GET",
+    "path": "/goodrx/answers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-brands": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-brands",
+    "method": "GET",
+    "path": "/goodrx/brands",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-class": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-class",
+    "method": "GET",
+    "path": "/goodrx/class",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-classes": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-classes",
+    "method": "GET",
+    "path": "/goodrx/classes",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-comparison": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-comparison",
+    "method": "GET",
+    "path": "/goodrx/comparison",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-comparisons": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-comparisons",
+    "method": "GET",
+    "path": "/goodrx/comparisons",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-condition": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-condition",
+    "method": "GET",
+    "path": "/goodrx/condition",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-condition-drugs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-condition-drugs",
+    "method": "GET",
+    "path": "/goodrx/condition-drugs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-conditions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-conditions",
+    "method": "GET",
+    "path": "/goodrx/conditions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-drug-guide": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-drug-guide",
+    "method": "GET",
+    "path": "/goodrx/drug-guide",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "side-effects",
+          "dosage",
+          "interactions"
+        ],
+        "in": "query",
+        "name": "topic",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-drug-guides": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-drug-guides",
+    "method": "GET",
+    "path": "/goodrx/drug-guides",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "side-effects",
+          "dosage",
+          "interactions"
+        ],
+        "in": "query",
+        "name": "topic",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "letter",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-drug-info": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-drug-info",
+    "method": "GET",
+    "path": "/goodrx/drug-info",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "people",
+          "pets"
+        ],
+        "in": "query",
+        "name": "audience",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-drug-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-drug-options",
+    "method": "GET",
+    "path": "/goodrx/drug-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-drug-prices": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-drug-prices",
+    "method": "GET",
+    "path": "/goodrx/drug-prices",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "form",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "dosage",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "quantity",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "latitude",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "zip_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-drugs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-drugs",
+    "method": "GET",
+    "path": "/goodrx/drugs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z"
+        ],
+        "in": "query",
+        "name": "letter",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-health-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-health-article",
+    "method": "GET",
+    "path": "/goodrx/health-article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "path",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-health-articles": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-health-articles",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/goodrx/health-articles",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "conditions",
+          "health-topic",
+          "well-being",
+          "pet-health",
+          "insurance",
+          "classes",
+          "drugs",
+          "healthcare-access",
+          "corporate",
+          "hcp",
+          "drug"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "topic",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-health-topics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-health-topics",
+    "method": "GET",
+    "path": "/goodrx/health-topics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "conditions",
+          "health-topic",
+          "well-being",
+          "pet-health",
+          "insurance",
+          "classes",
+          "drugs",
+          "healthcare-access",
+          "corporate",
+          "hcp",
+          "drug"
+        ],
+        "in": "query",
+        "name": "section",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "goodrx-pet-medications": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "goodrx-pet-medications",
+    "method": "GET",
+    "path": "/goodrx/pet-medications",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "google-finance-analyst-articles": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -49402,6 +51551,341 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "greystar-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-article",
+    "method": "GET",
+    "path": "/greystar/articles/{section}/{slug}",
+    "pathParams": [
+      "section",
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-articles": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-articles",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/greystar/articles",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "applying-and-leasing",
+          "general-guides",
+          "moving",
+          "blog"
+        ],
+        "in": "query",
+        "name": "section",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-location": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-location",
+    "method": "GET",
+    "path": "/greystar/location",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "state",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "neighborhood",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-locations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-locations",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/greystar/locations",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "state",
+          "city",
+          "neighborhood"
+        ],
+        "in": "query",
+        "name": "level",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-markets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-markets",
+    "method": "GET",
+    "path": "/greystar/markets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-newsroom": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-newsroom",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/greystar/newsroom",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-newsroom-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-newsroom-article",
+    "method": "GET",
+    "path": "/greystar/newsroom/{slug}",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-property": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-property",
+    "method": "GET",
+    "path": "/greystar/properties/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/greystar/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "market_area",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "neighborhood",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "number"
+      },
+      {
+        "enum": [
+          "relevance",
+          "name",
+          "price_asc",
+          "price_desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "grubhub-availability": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -50662,6 +53146,730 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-autocomplete": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-autocomplete",
+    "method": "GET",
+    "path": "/healthgrades/autocomplete",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-facilities-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-facilities-filters",
+    "method": "GET",
+    "path": "/healthgrades/facilities/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "hospital",
+          "pharmacy",
+          "group_practice",
+          "urgent_care"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "where",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-facilities-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-facilities-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/healthgrades/facilities/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "hospital",
+          "pharmacy",
+          "group_practice",
+          "urgent_care"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "where",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "bestmatch",
+          "distance",
+          "patientsatisfaction"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0.5",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "national"
+        ],
+        "in": "query",
+        "name": "distance",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "rating",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "award",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-facility": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-facility",
+    "method": "GET",
+    "path": "/healthgrades/facility",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-health-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-health-article",
+    "method": "GET",
+    "path": "/healthgrades/health-article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-health-articles": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-health-articles",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/healthgrades/health-articles",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "topic",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-health-topics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-health-topics",
+    "method": "GET",
+    "path": "/healthgrades/health-topics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-hospital": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-hospital",
+    "method": "GET",
+    "path": "/healthgrades/hospital",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-hospital-award-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-hospital-award-filters",
+    "method": "GET",
+    "path": "/healthgrades/hospital-awards/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "americas-best-hospitals",
+          "specialty-excellence-americas-best-care",
+          "patient-safety-excellence-award",
+          "outstanding-patient-experience-award",
+          "ob-gyn-care-excellence-awards",
+          "state-rankings"
+        ],
+        "in": "query",
+        "name": "award",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-hospital-awards": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-hospital-awards",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/healthgrades/hospital-awards",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "americas-best-hospitals",
+          "specialty-excellence-americas-best-care",
+          "patient-safety-excellence-award",
+          "outstanding-patient-experience-award",
+          "ob-gyn-care-excellence-awards",
+          "state-rankings"
+        ],
+        "in": "query",
+        "name": "award",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "top50",
+          "top100",
+          "top250"
+        ],
+        "in": "query",
+        "name": "list",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "top50",
+          "top100"
+        ],
+        "in": "query",
+        "name": "list_category",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "BAR",
+          "CVO",
+          "CWS",
+          "PCI",
+          "NSG",
+          "CCU",
+          "GIO",
+          "GSO",
+          "ORJ",
+          "NSC",
+          "ORT",
+          "OJO",
+          "OOR",
+          "OBP",
+          "PRS",
+          "PUL",
+          "ORS",
+          "NEU",
+          "OVSC",
+          "VAS"
+        ],
+        "in": "query",
+        "name": "specialty",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "GYS",
+          "LAB",
+          "OBG"
+        ],
+        "in": "query",
+        "name": "ob_gyn_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "name",
+          "distance"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "latitude",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-locations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-locations",
+    "method": "GET",
+    "path": "/healthgrades/locations",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-physician": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-physician",
+    "method": "GET",
+    "path": "/healthgrades/physician",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-physicians-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-physicians-filters",
+    "method": "GET",
+    "path": "/healthgrades/physicians/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "where",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-physicians-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-physicians-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/healthgrades/physicians/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "where",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "bestmatch",
+          "distance",
+          "ratings"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "F",
+          "M"
+        ],
+        "in": "query",
+        "name": "gender",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "national"
+        ],
+        "in": "query",
+        "name": "distance",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "*-40",
+          "41-50",
+          "51-60",
+          "61-70",
+          "71-*"
+        ],
+        "in": "query",
+        "name": "age",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "today",
+          "tomorrow",
+          "nextTwoWeeks",
+          "online",
+          "acceptsNewPatients",
+          "telehealth"
+        ],
+        "in": "query",
+        "name": "availability",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "in": "query",
+        "name": "rating",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "insurance",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "insurance_plan",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "clinical_focus",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "affiliated_hospital",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "specialty",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "affirming_care",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-specialties": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-specialties",
+    "method": "GET",
+    "path": "/healthgrades/specialties",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "healthgrades-top-searches": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "healthgrades-top-searches",
+    "method": "GET",
+    "path": "/healthgrades/top-searches",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -52061,6 +55269,149 @@ export const operations = {
     "id": "hotels-search",
     "method": "POST",
     "path": "/hotels/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "houston-chronicle-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "houston-chronicle-article",
+    "method": "GET",
+    "path": "/houston-chronicle/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "houston-chronicle-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "houston-chronicle-author",
+    "method": "GET",
+    "path": "/houston-chronicle/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "houston-chronicle-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "houston-chronicle-headlines",
+    "method": "GET",
+    "path": "/houston-chronicle/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news-houston-texas",
+          "news-houston-texas-trending",
+          "neighborhood",
+          "news-houston-texas-education",
+          "news-houston-texas-environment",
+          "health",
+          "news-houston-weather",
+          "politics",
+          "politics-houston",
+          "politics-texas",
+          "politics-us-world",
+          "business",
+          "business-energy",
+          "business-real-estate",
+          "business-tech",
+          "sports",
+          "sports-texans",
+          "sports-astros",
+          "sports-rockets",
+          "sports-college",
+          "sports-high-school",
+          "sports-dynamo",
+          "entertainment",
+          "lifestyle",
+          "food-restaurants",
+          "food-restaurants-reviews",
+          "food-restaurants-bbq",
+          "opinion",
+          "opinion-editorials",
+          "opinion-letters",
+          "opinion-columnists",
+          "news-interactives",
+          "news-investigations",
+          "la-voz",
+          "visuals"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "houston-chronicle-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "houston-chronicle-news",
+    "method": "GET",
+    "path": "/houston-chronicle/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "houston-chronicle-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "houston-chronicle-sections",
+    "method": "GET",
+    "path": "/houston-chronicle/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -55844,6 +59195,174 @@ export const operations = {
     "id": "irishtimes-sections",
     "method": "GET",
     "path": "/irishtimes/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "japantimes-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "japantimes-article",
+    "method": "GET",
+    "path": "/japantimes/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "japantimes-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "japantimes-author",
+    "method": "GET",
+    "path": "/japantimes/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "japantimes-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "japantimes-headlines",
+    "method": "GET",
+    "path": "/japantimes/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news-japan",
+          "news-japan-politics",
+          "news-japan-society",
+          "news-japan-crime-legal",
+          "news-japan-science-health",
+          "news-japan-explainer",
+          "news-japan-history",
+          "news-world",
+          "news-world-politics",
+          "news-world-crime-legal",
+          "news-world-science-health",
+          "news-world-society",
+          "news-asia-pacific",
+          "news-asia-pacific-politics",
+          "news-asia-pacific-crime-legal",
+          "news-asia-pacific-science-health",
+          "news-asia-pacific-society",
+          "business",
+          "business-companies",
+          "business-economy",
+          "business-markets",
+          "business-tech",
+          "sports",
+          "sports-sumo",
+          "sports-soccer",
+          "sports-baseball",
+          "sports-basketball",
+          "sports-tennis",
+          "sports-olympics",
+          "sports-more-sports",
+          "opinion",
+          "opinion-editorials",
+          "opinion-commentary",
+          "tag-geoeconomic-briefing",
+          "environment",
+          "environment-climate-change",
+          "environment-energy",
+          "environment-sustainability",
+          "environment-wildlife",
+          "environment-earth-science",
+          "life",
+          "life-travel",
+          "life-digital",
+          "life-food-drink",
+          "life-style-design",
+          "life-language",
+          "life-lifestyle",
+          "culture",
+          "culture-film",
+          "culture-books",
+          "culture-music",
+          "culture-art",
+          "culture-tv-streaming",
+          "culture-stage",
+          "culture-entertainment-news",
+          "community",
+          "community-voices",
+          "community-issues",
+          "community-how-tos",
+          "community-our-lives"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "japantimes-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "japantimes-news",
+    "method": "GET",
+    "path": "/japantimes/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "japantimes-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "japantimes-sections",
+    "method": "GET",
+    "path": "/japantimes/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -63151,6 +66670,223 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "makeuseof-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "makeuseof-article",
+    "method": "GET",
+    "path": "/makeuseof/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "makeuseof-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "makeuseof-author",
+    "method": "GET",
+    "path": "/makeuseof/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "makeuseof-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "makeuseof-headlines",
+    "method": "GET",
+    "path": "/makeuseof/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "windows",
+          "linux",
+          "google-android",
+          "apple",
+          "technology-explained",
+          "networking",
+          "security",
+          "productivity",
+          "creative",
+          "entertainment",
+          "streaming",
+          "smart-home",
+          "home",
+          "news"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "makeuseof-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "makeuseof-news",
+    "method": "GET",
+    "path": "/makeuseof/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "makeuseof-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "makeuseof-sections",
+    "method": "GET",
+    "path": "/makeuseof/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "malaymail-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "malaymail-article",
+    "method": "GET",
+    "path": "/malaymail/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "malaymail-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "malaymail-headlines",
+    "method": "GET",
+    "path": "/malaymail/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "malaysia",
+          "singapore",
+          "money",
+          "world",
+          "life",
+          "eat-drink",
+          "showbiz",
+          "opinion",
+          "sports",
+          "tech-gadgets",
+          "what-you-think"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "malaymail-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "malaymail-news",
+    "method": "GET",
+    "path": "/malaymail/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "malaymail-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "malaymail-sections",
+    "method": "GET",
+    "path": "/malaymail/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "manga-rankings": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -66813,6 +70549,120 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "mlb-prospect-rankings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-prospect-rankings",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/prospect-rankings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "top100",
+          "team",
+          "position",
+          "draft",
+          "international"
+        ],
+        "in": "query",
+        "name": "view",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2026",
+          "2025",
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2020",
+          "2019",
+          "2018",
+          "2017",
+          "2016",
+          "2015",
+          "2014",
+          "2013",
+          "2011",
+          "2012"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "team_slug",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1b",
+          "2b",
+          "ss",
+          "3b",
+          "c",
+          "of",
+          "rhp",
+          "lhp"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_filter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "rank",
+          "level",
+          "eta",
+          "age"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "mlb-prospect-stats": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -67170,6 +71020,3699 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "mlb-statcast-abs-challenges": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-abs-challenges",
+    "method": "GET",
+    "path": "/mlb/statcast-abs-challenges",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "batting-team",
+          "catcher",
+          "pitcher",
+          "catching-team",
+          "team-summary",
+          "league"
+        ],
+        "in": "query",
+        "name": "challenge_type",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "seasons",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "R",
+          "S",
+          "F",
+          "D",
+          "L",
+          "W"
+        ],
+        "in": "query",
+        "name": "game_types",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "for",
+          "against"
+        ],
+        "in": "query",
+        "name": "data_mode",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "chal",
+          "runs"
+        ],
+        "in": "query",
+        "name": "data_count",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "5",
+          "10",
+          "20"
+        ],
+        "in": "query",
+        "name": "min_challenges",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "5",
+          "10",
+          "20"
+        ],
+        "in": "query",
+        "name": "min_opponent_challenges",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "mlb",
+          "aaa"
+        ],
+        "in": "query",
+        "name": "level",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "vlow",
+          "low",
+          "med",
+          "high"
+        ],
+        "in": "query",
+        "name": "leverage",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "in",
+          "out"
+        ],
+        "in": "query",
+        "name": "ball_strike",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "low",
+          "med",
+          "high",
+          "vhigh"
+        ],
+        "in": "query",
+        "name": "breakeven",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1"
+        ],
+        "in": "query",
+        "name": "split_year",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "api_game_date_month_text",
+          "game_type",
+          "bat_position_code",
+          "lineup_cd",
+          "leverage_run_value_code",
+          "is_strike_calc",
+          "home_away",
+          "api_pitch_type_group03",
+          "gameday3_pitchzone_cd",
+          "abschallenge_breakeven_code"
+        ],
+        "in": "query",
+        "name": "splits",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "141",
+          "110",
+          "139",
+          "111",
+          "147",
+          "114",
+          "118",
+          "116",
+          "142",
+          "145",
+          "108",
+          "117",
+          "133",
+          "136",
+          "140",
+          "144",
+          "146",
+          "121",
+          "120",
+          "143",
+          "158",
+          "138",
+          "112",
+          "134",
+          "113",
+          "109",
+          "119",
+          "137",
+          "135",
+          "115"
+        ],
+        "in": "query",
+        "name": "challenge_team_ids",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "141",
+          "110",
+          "139",
+          "111",
+          "147",
+          "114",
+          "118",
+          "116",
+          "142",
+          "145",
+          "108",
+          "117",
+          "133",
+          "136",
+          "140",
+          "144",
+          "146",
+          "121",
+          "120",
+          "143",
+          "158",
+          "138",
+          "112",
+          "134",
+          "113",
+          "109",
+          "119",
+          "137",
+          "135",
+          "115"
+        ],
+        "in": "query",
+        "name": "opponent_team_ids",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "11",
+          "12",
+          "13",
+          "14",
+          "16",
+          "17",
+          "18",
+          "19"
+        ],
+        "in": "query",
+        "name": "shadow_zones",
+        "type": "array"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-active-spin": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-active-spin",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-active-spin",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "2026_spin-based",
+          "2026_observed",
+          "2025_spin-based",
+          "2025_observed",
+          "2024_spin-based",
+          "2024_observed",
+          "2023_spin-based",
+          "2023_observed",
+          "2022_spin-based",
+          "2022_observed",
+          "2021_spin-based",
+          "2021_observed",
+          "2020_spin-based",
+          "2020_observed",
+          "2019_observed",
+          "2018_observed",
+          "2017_observed"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "50",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "1500",
+          "2000",
+          "2500",
+          "3000"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "R",
+          "L"
+        ],
+        "in": "query",
+        "name": "hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "name_display_last_first",
+          "team_id",
+          "pitch_hand",
+          "formatted_active_spin_fourseam",
+          "formatted_active_spin_sinker",
+          "formatted_active_spin_cutter",
+          "formatted_active_spin_changeup",
+          "formatted_active_spin_splitter",
+          "formatted_active_spin_curve",
+          "formatted_active_spin_slider",
+          "formatted_active_spin_sweeper",
+          "formatted_active_spin_slurve"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-arm-angle": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-arm-angle",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-arm-angle",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "2026",
+          "2025",
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2020"
+        ],
+        "in": "query",
+        "name": "seasons",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "teams",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "R",
+          "F",
+          "D",
+          "L",
+          "W"
+        ],
+        "in": "query",
+        "name": "game_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_types",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "300",
+          "500",
+          "1000",
+          "1500",
+          "2000",
+          "2500",
+          "3000"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "300",
+          "500",
+          "1000",
+          "1500",
+          "2000"
+        ],
+        "in": "query",
+        "name": "min_group_pitches",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "year",
+          "api_game_date_month_text",
+          "api_pitch_type_group03",
+          "game_type",
+          "bat_side",
+          "fld_team_id"
+        ],
+        "in": "query",
+        "name": "group_by",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "name",
+          "team_name",
+          "pitch_hand",
+          "n_pitches",
+          "arm_angle",
+          "release_ball_x",
+          "relative_release_ball_x",
+          "release_ball_z",
+          "relative_shoulder_x",
+          "shoulder_z"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-arm-strength": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-arm-strength",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-arm-strength",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "player",
+          "team"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026",
+          "9999"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "arm_inf",
+          "arm_of",
+          "arm_1b",
+          "arm_2b",
+          "arm_3b",
+          "arm_ss",
+          "arm_lf",
+          "arm_cf",
+          "arm_rf"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "50",
+          "100",
+          "300",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_throws",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "fielder_name",
+          "team_name",
+          "total_throws",
+          "max_arm_strength",
+          "arm_overall",
+          "arm_inf",
+          "arm_of",
+          "arm_1b",
+          "arm_2b",
+          "arm_3b",
+          "arm_ss",
+          "arm_lf",
+          "arm_cf",
+          "arm_rf"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-arm-strength-player": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-arm-strength-player",
+    "method": "GET",
+    "path": "/mlb/statcast-arm-strength-player",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026",
+          "9999"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-arm-value": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-arm-value",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-arm-value",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Run",
+          "Fld",
+          "Pit",
+          "Batting Team",
+          "Pitching Team",
+          "League"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "r10_to_2b_210",
+          "r10_to_3b_210",
+          "r11_to_3b_10",
+          "r11_to_3b_2",
+          "r11_to_hp_10",
+          "r11_to_hp_2",
+          "r12_to_hp_10",
+          "r12_to_hp_2",
+          "r13_to_hp_0",
+          "r13_to_hp_1"
+        ],
+        "in": "query",
+        "name": "key_base_out",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "top",
+          "1",
+          "5",
+          "10",
+          "20",
+          "30",
+          "40",
+          "50",
+          "75",
+          "100",
+          "250",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "minimum_opps",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "end_year",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "no",
+          "yes"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147",
+          "split"
+        ],
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "0"
+        ],
+        "in": "query",
+        "name": "with_team_only",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "team_name",
+          "start_year",
+          "runner_runs",
+          "fielder_runs",
+          "runner_runs_swipe",
+          "runner_runs_snipe",
+          "runner_runs_freeze",
+          "fielder_runs_swipe",
+          "fielder_runs_snipe",
+          "fielder_runs_freeze",
+          "n_opp_xb",
+          "n_att_xb",
+          "rate_att_xb",
+          "est_rate_att_generic_runner",
+          "est_rate_att_generic_fielder",
+          "rate_att_xb_diff_runner",
+          "rate_att_xb_diff_fielder",
+          "n_safe",
+          "rate_safe",
+          "rate_safe_per_attempt"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-arm-value-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-arm-value-details",
+    "method": "GET",
+    "path": "/mlb/statcast-arm-value-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "entity_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Run",
+          "Fld",
+          "Pit"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "r10_to_2b_210",
+          "r10_to_3b_210",
+          "r11_to_3b_10",
+          "r11_to_3b_2",
+          "r11_to_hp_10",
+          "r11_to_hp_2",
+          "r12_to_hp_10",
+          "r12_to_hp_2",
+          "r13_to_hp_0",
+          "r13_to_hp_1"
+        ],
+        "in": "query",
+        "name": "key_base_out",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "top",
+          "1",
+          "5",
+          "10",
+          "20",
+          "30",
+          "40",
+          "50",
+          "75",
+          "100",
+          "250",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "minimum_opps",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "end_year",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "no",
+          "yes"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147",
+          "split"
+        ],
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "0"
+        ],
+        "in": "query",
+        "name": "with_team_only",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-baserunning": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-baserunning",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-baserunning",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "baserunning-run-value",
+          "basestealing-running-game",
+          "baserunning"
+        ],
+        "in": "query",
+        "name": "board",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Run",
+          "Bat",
+          "Batting Team",
+          "Pitching Team",
+          "Fld",
+          "Pit",
+          "League"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "no",
+          "yes"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "top",
+          "1",
+          "5",
+          "10",
+          "20",
+          "30",
+          "40",
+          "50",
+          "75",
+          "100",
+          "250",
+          "500",
+          "1000",
+          "1500",
+          "2000"
+        ],
+        "in": "query",
+        "name": "n",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "split",
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_team_only",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "all",
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "Advance",
+          "Out",
+          "Hold"
+        ],
+        "in": "query",
+        "name": "runner_moved",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "2B",
+          "3B"
+        ],
+        "in": "query",
+        "name": "target_base",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "prior_pk",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "r10_to_2b_210",
+          "r10_to_3b_210",
+          "r11_to_3b_10",
+          "r11_to_3b_2",
+          "r11_to_hp_10",
+          "r11_to_hp_2",
+          "r12_to_hp_10",
+          "r12_to_hp_2",
+          "r13_to_hp_0",
+          "r13_to_hp_1"
+        ],
+        "in": "query",
+        "name": "key_base_out",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "team_name",
+          "start_year",
+          "N_runner_moved",
+          "N_runner_moved_SBX",
+          "N_runner_moved_XB",
+          "runner_runs_SB2",
+          "runner_runs_SB3",
+          "runner_runs_SBX",
+          "runner_runs_XB",
+          "runner_runs_XB_freeze",
+          "runner_runs_XB_snipe",
+          "runner_runs_XB_swipe",
+          "runner_runs_tot",
+          "simple_stolen_on_running_act_SB2",
+          "simple_stolen_on_running_act_SB3",
+          "bk",
+          "catcher_name",
+          "cs",
+          "entity_id",
+          "fb",
+          "fielder_name",
+          "game_date",
+          "n_bk",
+          "n_cs",
+          "n_fb",
+          "n_init",
+          "n_minus",
+          "n_pk",
+          "n_plus",
+          "n_sb",
+          "net_act_minus",
+          "net_act_plus",
+          "pitcher_name",
+          "pk",
+          "r_primary_lead",
+          "r_primary_lead_sbx",
+          "r_sec_minus_prim_lead",
+          "r_sec_minus_prim_lead_sbx",
+          "r_secondary_lead",
+          "r_secondary_lead_sbx",
+          "r_sprint_speed_top50percent",
+          "rate_sbx",
+          "runner_moved_cd",
+          "runner_name",
+          "runs_stolen_on_running_act",
+          "sb",
+          "sba",
+          "simple_stolen_on_running_act",
+          "target_base",
+          "runner_runs",
+          "fielder_runs",
+          "runner_runs_swipe",
+          "runner_runs_snipe",
+          "runner_runs_freeze",
+          "fielder_runs_swipe",
+          "fielder_runs_snipe",
+          "fielder_runs_freeze",
+          "n_opp_xb",
+          "rate_att_xb",
+          "est_rate_att_generic_runner",
+          "est_rate_att_generic_fielder",
+          "rate_att_xb_diff_runner",
+          "rate_att_xb_diff_fielder",
+          "n_safe",
+          "rate_safe",
+          "rate_safe_per_attempt"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-bat-tracking": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-bat-tracking",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-bat-tracking",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "batting-team",
+          "pitcher",
+          "pitching-team",
+          "league"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Any",
+          "Playoff",
+          "Regular"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_swings",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_group_swings",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2",
+          "4",
+          "9"
+        ],
+        "in": "query",
+        "name": "contact_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "0"
+        ],
+        "in": "query",
+        "name": "is_hard_hit",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "1.1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "attack_zone",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "teams",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "00",
+          "01",
+          "02",
+          "10",
+          "11",
+          "12",
+          "20",
+          "21",
+          "22",
+          "30",
+          "31",
+          "32"
+        ],
+        "in": "query",
+        "name": "counts",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "year",
+          "api_game_date_month_text",
+          "bat_contact_code",
+          "api_pitch_type_group03",
+          "game_type",
+          "is_hit_into_play_hardhit",
+          "is_best_speed",
+          "pitch_hand",
+          "bat_side",
+          "is_pre_ball_count_3",
+          "is_pre_strike_count_2"
+        ],
+        "in": "query",
+        "name": "group_by",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "avg_batter_x_position",
+          "avg_batter_y_position",
+          "avg_intercept_x_vs_batter",
+          "avg_intercept_y_vs_batter",
+          "avg_foot_sep0",
+          "avg_foot_angle0",
+          "attack_direction_pullopp",
+          "rate_ideal_attack_angle",
+          "attack_angle",
+          "avg_plane_vertical_angle",
+          "avg_sweetspot_speed_mph",
+          "avg_sweetspot_speed_mph_qualified",
+          "avg_is_sweetspot_speed_high",
+          "avg_is_sweetspot_speed_high_qualified",
+          "squared_up",
+          "squared_up_qualified",
+          "squared_up_per_bat_contact",
+          "squared_up_per_swing",
+          "squared_up_with_speed",
+          "squared_up_with_speed_qualified",
+          "squared_up_with_speed_per_bat_contact",
+          "squared_up_with_speed_per_swing",
+          "swing_length_qualified",
+          "swords",
+          "swings_qualified",
+          "percent_qualified",
+          "hit_into_play_qualified",
+          "bat_contact",
+          "bat_contact_qualified",
+          "count",
+          "delta_run_exp",
+          "hit_into_play_per_swing",
+          "pitcher_delta_run_exp",
+          "strikes_swinging_qualified",
+          "sweetspot_speed_high_qualified",
+          "strike_swinging_per_swing",
+          "id",
+          "name",
+          "batter_name",
+          "b_name_display_first_last",
+          "savant_batter_id",
+          "team_id",
+          "team_name",
+          "side",
+          "n_sides",
+          "n_teams",
+          "bat_side_formatted"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-batted-ball": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-batted-ball",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-batted-ball",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "batting-team",
+          "pitcher",
+          "pitching-team",
+          "league"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "seasons",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "R",
+          "A",
+          "F",
+          "D",
+          "L",
+          "W"
+        ],
+        "in": "query",
+        "name": "game_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "api_game_date_month_text",
+          "game_type",
+          "api_pitch_type_group03",
+          "bat_side",
+          "pitch_hand"
+        ],
+        "in": "query",
+        "name": "splits",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "0"
+        ],
+        "in": "query",
+        "name": "split_year",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "teams",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_types",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "include_league_average",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "name",
+          "team_name",
+          "num_bbe",
+          "gb_rate",
+          "air_rate",
+          "fb_rate",
+          "ld_rate",
+          "pu_rate",
+          "pull_rate",
+          "straight_rate",
+          "oppo_rate",
+          "pull_gb_rate",
+          "straight_gb_rate",
+          "oppo_gb_rate",
+          "pull_air_rate",
+          "straight_air_rate",
+          "oppo_air_rate"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-birthday-index": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-birthday-index",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-birthday-index",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "pitcher"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "5",
+          "8",
+          "10"
+        ],
+        "in": "query",
+        "name": "min_games",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "show_inactives",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "player_name",
+          "is_player_active",
+          "birth_day_noyear_sort_hidden",
+          "age",
+          "daysUntil",
+          "birthday_index",
+          "birthday_games",
+          "birthday_pa",
+          "birthday_hits",
+          "birthday_hit_1b",
+          "birthday_hit_2b",
+          "birthday_hit_3b",
+          "birthday_hit_hr",
+          "birthday_strikeout",
+          "birthday_k_percent",
+          "birthday_walk",
+          "birthday_bb_percent",
+          "birthday_BA",
+          "non_birthday_BA",
+          "birthday_BA_diff",
+          "birthday_OPS",
+          "non_birthday_OPS",
+          "birthday_OPS_diff",
+          "birthday_wOBA",
+          "non_birthday_wOBA",
+          "birthday_wOBA_diff"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-catcher-blocking": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-catcher-blocking",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-catcher-blocking",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Cat",
+          "Pit",
+          "Pitching Team",
+          "League"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "50",
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2000",
+          "3000",
+          "4000",
+          "5000"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "end_year",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_team_only",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "team_name",
+          "start_year",
+          "N",
+          "catcher_runs",
+          "diff_runner_pbwp",
+          "N_runner_pbwp",
+          "x_runner_pbwp",
+          "diff_rate_runner_pbwp",
+          "freq_pbwp_1_easy",
+          "freq_pbwp_2_medium",
+          "freq_pbwp_3_tough",
+          "diff_runner_pbwp_1_easy",
+          "diff_runner_pbwp_2_medium",
+          "diff_runner_pbwp_3_tough"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-catcher-blocking-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-catcher-blocking-details",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-catcher-blocking-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "entity_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Cat",
+          "Pit",
+          "Pitching Team"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "end_year",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_team_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-catcher-framing": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-catcher-framing",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-catcher-framing",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "catcher",
+          "catching-team",
+          "batter",
+          "batting-team",
+          "pitcher",
+          "league"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Any",
+          "Playoff",
+          "Regular"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "1250",
+          "1500"
+        ],
+        "in": "query",
+        "name": "min_pitches",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "25",
+          "50",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "1250",
+          "1500"
+        ],
+        "in": "query",
+        "name": "min_results",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "in",
+          "out"
+        ],
+        "in": "query",
+        "name": "ball_strike",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "original",
+          "final"
+        ],
+        "in": "query",
+        "name": "call",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "name",
+          "team_name",
+          "pitches",
+          "pitches_shadow",
+          "rv_tot",
+          "pct_tot",
+          "pitches_shadow_top",
+          "rv_shadow_top",
+          "pct_shadow_top",
+          "pitches_shadow_bot",
+          "rv_shadow_bot",
+          "pct_shadow_bot",
+          "pitches_11",
+          "rv_11",
+          "pct_11",
+          "pitches_12",
+          "rv_12",
+          "pct_12",
+          "pitches_13",
+          "rv_13",
+          "pct_13",
+          "pitches_14",
+          "rv_14",
+          "pct_14",
+          "pitches_16",
+          "rv_16",
+          "pct_16",
+          "pitches_17",
+          "rv_17",
+          "pct_17",
+          "pitches_18",
+          "rv_18",
+          "pct_18",
+          "pitches_19",
+          "rv_19",
+          "pct_19",
+          "pitches_heart",
+          "rv_heart",
+          "pct_heart",
+          "pitches_chwa",
+          "rv_chwa",
+          "pct_chwa",
+          "pitches_bin_minus10",
+          "pitches_bin_minus9",
+          "pitches_bin_minus8",
+          "pitches_bin_minus7",
+          "pitches_bin_minus6",
+          "pitches_bin_minus5",
+          "pitches_bin_minus4",
+          "pitches_bin_minus3",
+          "pitches_bin_minus2",
+          "pitches_bin_minus1",
+          "pitches_bin_0",
+          "pitches_bin_1",
+          "pitches_bin_2",
+          "pitches_bin_3",
+          "pitches_bin_4",
+          "pitches_bin_5",
+          "pitches_bin_6",
+          "pitches_bin_7",
+          "pitches_bin_8",
+          "pitches_bin_9",
+          "pct_bin_minus10",
+          "pct_bin_minus9",
+          "pct_bin_minus8",
+          "pct_bin_minus7",
+          "pct_bin_minus6",
+          "pct_bin_minus5",
+          "pct_bin_minus4",
+          "pct_bin_minus3",
+          "pct_bin_minus2",
+          "pct_bin_minus1",
+          "pct_bin_0",
+          "pct_bin_1",
+          "pct_bin_2",
+          "pct_bin_3",
+          "pct_bin_4",
+          "pct_bin_5",
+          "pct_bin_6",
+          "pct_bin_7",
+          "pct_bin_8",
+          "pct_bin_9"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-catcher-framing-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-catcher-framing-details",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-catcher-framing-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "entity_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "catcher",
+          "catching-team",
+          "batter",
+          "batting-team",
+          "pitcher"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Any",
+          "Playoff",
+          "Regular"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "1250",
+          "1500"
+        ],
+        "in": "query",
+        "name": "min_pitches",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "25",
+          "50",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "1250",
+          "1500"
+        ],
+        "in": "query",
+        "name": "min_results",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "in",
+          "out"
+        ],
+        "in": "query",
+        "name": "ball_strike",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "original",
+          "final"
+        ],
+        "in": "query",
+        "name": "call",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-catcher-pop-time": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-catcher-pop-time",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-catcher-pop-time",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "111",
+          "113",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "15",
+          "20"
+        ],
+        "in": "query",
+        "name": "min2b",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "5",
+          "10",
+          "15",
+          "20"
+        ],
+        "in": "query",
+        "name": "min3b",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "catcher",
+          "team",
+          "age",
+          "arm",
+          "exchange",
+          "2b_attempts",
+          "2b_all",
+          "2b_caught_stealing",
+          "2b_stolen_bases",
+          "3b_attempts",
+          "3b_all",
+          "3b_caught_stealing",
+          "3b_stolen_bases"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-catcher-stance": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-catcher-stance",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-catcher-stance",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "catcher",
+          "catching-team",
+          "batter",
+          "batting-team",
+          "pitcher",
+          "league"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Any",
+          "Playoff",
+          "Regular"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "2500",
+          "5000",
+          "7500",
+          "10000",
+          "15000",
+          "20000"
+        ],
+        "in": "query",
+        "name": "min_pitches",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "25",
+          "50",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "2500",
+          "5000",
+          "7500",
+          "10000",
+          "15000",
+          "20000"
+        ],
+        "in": "query",
+        "name": "min_results",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "9999",
+          "4",
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "knee_code",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "111",
+          "113",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "teams",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "none",
+          "year",
+          "api_game_date_month_text",
+          "game_type",
+          "knee_code_overview",
+          "pitch_hand",
+          "bat_side",
+          "api_pitch_type_group03",
+          "knee_code"
+        ],
+        "in": "query",
+        "name": "group_by",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "name",
+          "id",
+          "team_id",
+          "team_name",
+          "year",
+          "pitches",
+          "skeletal_pitches",
+          "n_both_down",
+          "n_both_up",
+          "n_inside_down",
+          "n_l_down",
+          "n_leg_extended",
+          "n_one_down",
+          "n_outside_down",
+          "n_r_down",
+          "n_teams",
+          "pct_both_down",
+          "pct_both_up",
+          "pct_inside_down",
+          "pct_l_down",
+          "pct_leg_extended",
+          "pct_one_down",
+          "pct_outside_down",
+          "pct_r_down",
+          "one_knee_blocking",
+          "one_knee_blocking_162",
+          "one_knee_csaa",
+          "one_knee_csp",
+          "one_knee_framing",
+          "one_knee_framing_162",
+          "one_knee_pbwp",
+          "one_knee_pitching",
+          "one_knee_pitching_162",
+          "one_knee_ron_num",
+          "one_knee_ron_pbwp",
+          "one_knee_sba_csaa",
+          "one_knee_sba_num",
+          "one_knee_shadow_cs",
+          "one_knee_shadow_num",
+          "one_knee_throwing",
+          "one_knee_throwing_162",
+          "other_blocking",
+          "other_blocking_162",
+          "other_csaa",
+          "other_csp",
+          "other_framing",
+          "other_framing_162",
+          "other_pbwp",
+          "other_pitching",
+          "other_pitching_162",
+          "other_ron_num",
+          "other_ron_pbwp",
+          "other_sba_csaa",
+          "other_sba_num",
+          "other_shadow_cs",
+          "other_shadow_num",
+          "other_throwing",
+          "other_throwing_162",
+          "total_blocking",
+          "total_framing",
+          "total_frv",
+          "total_throwing",
+          "total_untracked"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-catcher-throwing": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-catcher-throwing",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-catcher-throwing",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Cat",
+          "Pitching Team",
+          "League"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "20",
+          "30",
+          "40",
+          "50",
+          "75",
+          "100"
+        ],
+        "in": "query",
+        "name": "minimum",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2B",
+          "3B",
+          "All"
+        ],
+        "in": "query",
+        "name": "target_base",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "split",
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "111",
+          "113",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_team_only",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "start_year",
+          "n",
+          "cs_raa",
+          "n_cs_aa",
+          "n_cs",
+          "rate_cs",
+          "n_xcs",
+          "rate_xcs",
+          "rate_cs_aa",
+          "seasonal_sprint_speed",
+          "distance_to_target",
+          "pop_time",
+          "exchange_time",
+          "arm_strength",
+          "n_xcs_with_flight_over_xcs",
+          "n_xcs_with_exchange_over_xcs",
+          "n_xcs_with_accuracy_over_xcs",
+          "n_xcs_with_ground_other_over_xcs",
+          "n_xcs_with_onfly_other_over_xcs",
+          "n_xcs_with_untracked_other_over_xcs"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-catcher-throwing-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-catcher-throwing-details",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-catcher-throwing-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "entity_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "20",
+          "30",
+          "40",
+          "50",
+          "75",
+          "100"
+        ],
+        "in": "query",
+        "name": "minimum",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2B",
+          "3B",
+          "All"
+        ],
+        "in": "query",
+        "name": "target_base",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "111",
+          "113",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_team_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "mlb-statcast-expected": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -67283,6 +74826,1070 @@ export const operations = {
         ],
         "in": "query",
         "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-fielding-run-value": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-fielding-run-value",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-fielding-run-value",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "fielder",
+          "fielding-team",
+          "batter",
+          "batting-team",
+          "pitcher"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Any",
+          "Regular",
+          "Playoff"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "0.1",
+          "1",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "750",
+          "1000",
+          "2500",
+          "5000"
+        ],
+        "in": "query",
+        "name": "minimum",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0.1",
+          "1",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "750",
+          "1000",
+          "2500",
+          "5000"
+        ],
+        "in": "query",
+        "name": "minimum_split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "11",
+          "12",
+          "111",
+          "112",
+          "121",
+          "13",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "team_id",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "year",
+          "api_game_date_month_text",
+          "position",
+          "game_type"
+        ],
+        "in": "query",
+        "name": "group_by",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "name",
+          "team_name",
+          "total_runs",
+          "inf_of_runs",
+          "range_runs",
+          "arm_runs",
+          "dp_runs",
+          "fielding_runs_prevented_on_rec1b",
+          "catching_runs",
+          "framing_runs",
+          "throwing_runs",
+          "blocking_runs",
+          "outs_total",
+          "outs_2",
+          "outs_3",
+          "outs_4",
+          "outs_5",
+          "outs_6",
+          "outs_7",
+          "outs_8",
+          "outs_9",
+          "tot_pa",
+          "year",
+          "api_game_date_month_mm",
+          "api_game_date_month_text",
+          "pos_id",
+          "game_type"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-first-base-receiving": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-first-base-receiving",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-first-base-receiving",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "fielder_3",
+          "throw_fielder_id",
+          "pitching-team",
+          "batting-team",
+          "league"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "R",
+          "F",
+          "D",
+          "L",
+          "W"
+        ],
+        "in": "query",
+        "name": "gameType[]",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "75",
+          "100",
+          "200",
+          "300",
+          "400",
+          "500",
+          "750",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "75",
+          "100",
+          "200",
+          "300",
+          "400",
+          "500",
+          "750",
+          "1000"
+        ],
+        "in": "query",
+        "name": "minSplit",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1"
+        ],
+        "in": "query",
+        "name": "splitYear",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "throw_height_code",
+          "throw_location_code_full",
+          "runners_on_cd"
+        ],
+        "in": "query",
+        "name": "split[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "111",
+          "113",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team[]",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "dateStart",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "dateEnd",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "fielder_3_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "70",
+          "71",
+          "72",
+          "73",
+          "74",
+          "75",
+          "76",
+          "77",
+          "78",
+          "79",
+          "80"
+        ],
+        "in": "query",
+        "name": "min_height_in_inches",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1"
+        ],
+        "in": "query",
+        "name": "is_hit_into_play_field_out",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "in": "query",
+        "name": "runners_on_cd[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "4",
+          "5",
+          "6"
+        ],
+        "in": "query",
+        "name": "throw_pos_id[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "1_Low",
+          "2_Mid",
+          "3_High"
+        ],
+        "in": "query",
+        "name": "throw_height_code[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "A. On Target",
+          "B. Scoop",
+          "C. Bounce",
+          "D. Low",
+          "E. Wide",
+          "F. High"
+        ],
+        "in": "query",
+        "name": "throw_location_code_full[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "-1",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "in": "query",
+        "name": "bin_time_X10[]",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "total_oaa",
+          "oaa_on_target",
+          "oaa_bounce",
+          "oaa_scoop",
+          "oaa_low",
+          "oaa_high",
+          "oaa_wide",
+          "n_on_target",
+          "n_bounce",
+          "n_scoop",
+          "n_low",
+          "n_high",
+          "n_wide",
+          "outs_on_target",
+          "outs_bounce",
+          "outs_scoop",
+          "outs_low",
+          "outs_high",
+          "outs_wide",
+          "n_outs",
+          "n_plays",
+          "avg_expected_rate_out"
+        ],
+        "in": "query",
+        "name": "sortColumn",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sortDirection",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-first-base-receiving-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-first-base-receiving-details",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-first-base-receiving-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "fielder_3",
+          "throw_fielder_id",
+          "pitching-team",
+          "batting-team",
+          "league"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "R",
+          "F",
+          "D",
+          "L",
+          "W"
+        ],
+        "in": "query",
+        "name": "gameType[]",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "75",
+          "100",
+          "200",
+          "300",
+          "400",
+          "500",
+          "750",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "75",
+          "100",
+          "200",
+          "300",
+          "400",
+          "500",
+          "750",
+          "1000"
+        ],
+        "in": "query",
+        "name": "minSplit",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "throw_height_code",
+          "throw_location_code_full",
+          "runners_on_cd"
+        ],
+        "in": "query",
+        "name": "split[]",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "0",
+          "1"
+        ],
+        "in": "query",
+        "name": "splitYear",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "111",
+          "113",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team[]",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "dateStart",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "dateEnd",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "fielder_3_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "70",
+          "71",
+          "72",
+          "73",
+          "74",
+          "75",
+          "76",
+          "77",
+          "78",
+          "79",
+          "80"
+        ],
+        "in": "query",
+        "name": "min_height_in_inches",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1"
+        ],
+        "in": "query",
+        "name": "is_hit_into_play_field_out",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "in": "query",
+        "name": "runners_on_cd[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "4",
+          "5",
+          "6"
+        ],
+        "in": "query",
+        "name": "throw_pos_id[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "1_Low",
+          "2_Mid",
+          "3_High"
+        ],
+        "in": "query",
+        "name": "throw_height_code[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "A. On Target",
+          "B. Scoop",
+          "C. Bounce",
+          "D. Low",
+          "E. Wide",
+          "F. High"
+        ],
+        "in": "query",
+        "name": "throw_location_code_full[]",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "-1",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "in": "query",
+        "name": "bin_time_X10[]",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-home-runs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-home-runs",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-home-runs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Batter",
+          "Pitcher"
+        ],
+        "in": "query",
+        "name": "player_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "5",
+          "10",
+          "15",
+          "20",
+          "25"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "adj_xhr",
+          "xhr"
+        ],
+        "in": "query",
+        "name": "cat",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "player",
+          "team",
+          "year",
+          "cat",
+          "avg_hr_trot",
+          "doubters",
+          "mostly_gone",
+          "no_doubters",
+          "no_doubter_per",
+          "hr_total",
+          "xhr",
+          "xhr_diff"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-home-runs-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-home-runs-details",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-home-runs-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Batter",
+          "Pitcher"
+        ],
+        "in": "query",
+        "name": "player_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "adj_xhr",
+          "xhr"
+        ],
+        "in": "query",
+        "name": "cat",
         "type": "string"
       },
       {
@@ -67416,6 +76023,3231 @@ export const operations = {
           "diff_success_rate",
           "n"
         ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-park-factors": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-park-factors",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-park-factors",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "year",
+          "venue",
+          "distance",
+          "distance-all",
+          "raw",
+          "dimensions"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "R",
+          "L"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "Day",
+          "Night",
+          "Roof Closed",
+          "Open Air"
+        ],
+        "in": "query",
+        "name": "condition",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "rolling",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "index_wOBA",
+          "index_wOBAcon",
+          "index_xwOBAcon",
+          "index_BACON",
+          "index_xBAcon",
+          "index_hardhit",
+          "index_runs",
+          "index_OBP",
+          "index_Hits",
+          "index_1B",
+          "index_2B",
+          "index_3B",
+          "index_HR",
+          "index_BB",
+          "index_SO"
+        ],
+        "in": "query",
+        "name": "stat",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "mlb",
+          "all"
+        ],
+        "in": "query",
+        "name": "parks",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-percentile": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-percentile",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-percentile",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "pitcher"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "pctl",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-pitch-arsenal": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-pitch-arsenal",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-pitch-arsenal",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "pitcher",
+          "batter"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "FF",
+          "CH",
+          "CU",
+          "FC",
+          "KN",
+          "SC",
+          "SI",
+          "SL",
+          "SV",
+          "FS",
+          "ST",
+          "CUKC",
+          "SIFT"
+        ],
+        "in": "query",
+        "name": "pitch_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "10",
+          "25",
+          "50",
+          "100",
+          "150",
+          "200",
+          "250",
+          "350",
+          "450",
+          "500",
+          "600"
+        ],
+        "in": "query",
+        "name": "min_pa",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "10",
+          "50",
+          "100",
+          "200",
+          "300",
+          "500",
+          "750"
+        ],
+        "in": "query",
+        "name": "min_pitches",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "player_name",
+          "team_name_alt",
+          "pitch_name",
+          "run_value_per_100",
+          "run_value",
+          "pitches",
+          "pitch_usage",
+          "pa",
+          "ba",
+          "slg",
+          "woba",
+          "whiff_percent",
+          "k_percent",
+          "put_away",
+          "est_ba",
+          "est_slg",
+          "est_woba",
+          "hard_hit_percent"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-pitch-arsenal-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-pitch-arsenal-details",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-pitch-arsenal-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "pitcher",
+          "batter"
+        ],
+        "in": "query",
+        "name": "player_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "FF",
+          "CH",
+          "CU",
+          "FC",
+          "KN",
+          "SC",
+          "SI",
+          "SL",
+          "SV",
+          "FS",
+          "ST",
+          "CUKC",
+          "SIFT"
+        ],
+        "in": "query",
+        "name": "pitch_type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-pitch-arsenals": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-pitch-arsenals",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-pitch-arsenals",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "2008",
+          "2009",
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "avg_speed",
+          "n_",
+          "avg_spin"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "R",
+          "L"
+        ],
+        "in": "query",
+        "name": "hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "1500",
+          "2000",
+          "2500",
+          "3000"
+        ],
+        "in": "query",
+        "name": "min_pitches",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ATH",
+          "ATL",
+          "AZ",
+          "BAL",
+          "BOS",
+          "CHC",
+          "CIN",
+          "CLE",
+          "COL",
+          "CWS",
+          "DET",
+          "HOU",
+          "KC",
+          "LAA",
+          "LAD",
+          "MIA",
+          "MIL",
+          "MIN",
+          "NYM",
+          "NYY",
+          "PHI",
+          "PIT",
+          "SD",
+          "SEA",
+          "SF",
+          "STL",
+          "TB",
+          "TEX",
+          "TOR",
+          "WSH"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "player_name",
+          "four_seam",
+          "sinker",
+          "cutter",
+          "slider",
+          "changeup",
+          "curve",
+          "splitter",
+          "sweeper",
+          "slurve"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-pitch-movement": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-pitch-movement",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-pitch-movement",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "2026",
+          "2025",
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2020",
+          "2019",
+          "2018",
+          "2017"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "FF",
+          "CH",
+          "CU",
+          "FC",
+          "FO",
+          "KN",
+          "SC",
+          "SI",
+          "SL",
+          "SV",
+          "FS",
+          "ST",
+          "ALL"
+        ],
+        "in": "query",
+        "name": "pitch_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "R",
+          "L"
+        ],
+        "in": "query",
+        "name": "hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "50",
+          "100",
+          "250",
+          "500",
+          "750",
+          "1000",
+          "1500",
+          "2000",
+          "2500",
+          "3000"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "pitcher_name",
+          "team_name_abbrev",
+          "pitch_hand",
+          "pitch_type_name",
+          "pitches_thrown",
+          "avg_speed",
+          "pitcher_break_z",
+          "diff_z",
+          "pitcher_break_x_hidden",
+          "diff_x",
+          "pitcher_break_z_induced",
+          "diff_z_induced_standard",
+          "diff_x_standard"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-pitch-tempo": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-pitch-tempo",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-pitch-tempo",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Pit",
+          "Bat",
+          "Pitching Team",
+          "Batting Team",
+          "League"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "10",
+          "50",
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2000",
+          "5000"
+        ],
+        "in": "query",
+        "name": "n",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1"
+        ],
+        "in": "query",
+        "name": "with_team_only",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "start_year",
+          "tot_n_empty",
+          "median_seconds_empty",
+          "empty_equiv",
+          "freq_hot_empty",
+          "freq_cold_empty",
+          "tot_n_onbase",
+          "median_seconds_onbase",
+          "onbase_equiv",
+          "freq_hot_onbase",
+          "freq_cold_onbase"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-pitch-tempo-player": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-pitch-tempo-player",
+    "method": "GET",
+    "path": "/mlb/statcast-pitch-tempo-player",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "entity_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Pit",
+          "Bat"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-pitch-timer": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-pitch-timer",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-pitch-timer",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Pit",
+          "Bat",
+          "Cat",
+          "Team",
+          "Opp"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "25",
+          "50",
+          "100",
+          "250",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_pitches",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1"
+        ],
+        "in": "query",
+        "name": "include_zeroes",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "violating",
+          "violated",
+          "net",
+          "ballsAgainst",
+          "ballsFor",
+          "strikesAgainst",
+          "strikesFor",
+          "division"
+        ],
+        "in": "query",
+        "name": "chart_sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "N_pitches",
+          "N_time_violations",
+          "N_pitcher_pitch_timer",
+          "N_batter_pitch_timer",
+          "N_batter_timeout",
+          "N_catcher_pitch_timer",
+          "N_defensive_shift",
+          "rate"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-player-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-player-details",
+    "method": "GET",
+    "path": "/mlb/statcast-player-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "batter",
+          "pitcher"
+        ],
+        "in": "query",
+        "name": "player_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-rolling": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-rolling",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-rolling",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "xwoba",
+          "woba",
+          "ba",
+          "xba",
+          "slg",
+          "xslg"
+        ],
+        "in": "query",
+        "name": "metric",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Batter",
+          "Pitcher"
+        ],
+        "in": "query",
+        "name": "role",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "50",
+          "100",
+          "250"
+        ],
+        "in": "query",
+        "name": "window_pa",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-run-value": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-run-value",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-run-value",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Batter",
+          "Pitcher"
+        ],
+        "in": "query",
+        "name": "group",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "Career",
+          "2026",
+          "2025",
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2020",
+          "2019",
+          "2018",
+          "2017",
+          "2016",
+          "2015",
+          "2014",
+          "2013",
+          "2012",
+          "2011",
+          "2010",
+          "2009",
+          "2008"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "10",
+          "25",
+          "50",
+          "75",
+          "100",
+          "150",
+          "200",
+          "250",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900",
+          "1000",
+          "1500"
+        ],
+        "in": "query",
+        "name": "min",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Neutral",
+          "Leveraged"
+        ],
+        "in": "query",
+        "name": "leverage",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "Swing-Take",
+          "Pitch Type",
+          "Attack Region",
+          "Bat-side"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Swing",
+          "Take",
+          "4-Seam Fastball",
+          "Changeup",
+          "Curveball",
+          "Cutter",
+          "Knuckleball",
+          "Screwball",
+          "Sinker",
+          "Slider",
+          "Slurve",
+          "Split-Finger",
+          "Sweeper",
+          "Heart",
+          "Shadow",
+          "Chase",
+          "Waste"
+        ],
+        "in": "query",
+        "name": "sub_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "player_name",
+          "team_name_abbrev",
+          "year",
+          "pa",
+          "pitches",
+          "runs_heart",
+          "runs_shadow",
+          "runs_chase",
+          "runs_waste",
+          "runs_all",
+          "runs_ff",
+          "runs_si",
+          "runs_fc",
+          "runs_ch",
+          "runs_fs",
+          "runs_cu",
+          "runs_sl",
+          "runs_st",
+          "runs_sv",
+          "runs_kn",
+          "runs_sc",
+          "delta_runs"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-running-game": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-running-game",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-running-game",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Pit",
+          "Pitching Team",
+          "League"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "Advance",
+          "Out",
+          "Hold"
+        ],
+        "in": "query",
+        "name": "runner_moved",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "2B",
+          "3B"
+        ],
+        "in": "query",
+        "name": "target_base",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "prior_pk",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000",
+          "1500",
+          "2000"
+        ],
+        "in": "query",
+        "name": "n",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "split",
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_team_only",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "entity_name",
+          "team_name",
+          "start_year",
+          "pitch_hand",
+          "key_pitch_hand",
+          "runs_prevented_on_running_attr",
+          "simple_prevented_on_running_attr",
+          "net_attr_plus",
+          "net_attr_minus",
+          "n_init",
+          "rate_sbx",
+          "n_plus",
+          "n_minus",
+          "r_sec_minus_prim_lead",
+          "r_sec_minus_prim_lead_sbx",
+          "n_sb",
+          "n_cs",
+          "n_pk",
+          "n_bk",
+          "n_fb",
+          "r_primary_lead",
+          "r_secondary_lead",
+          "r_primary_lead_sbx",
+          "r_secondary_lead_sbx"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-running-game-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-running-game-details",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-running-game-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "entity_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "Pit",
+          "Pitching Team"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Regular",
+          "Playoff",
+          "All"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "Advance",
+          "Out",
+          "Hold"
+        ],
+        "in": "query",
+        "name": "runner_moved",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "2B",
+          "3B"
+        ],
+        "in": "query",
+        "name": "target_base",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "All",
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "prior_pk",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000",
+          "1500",
+          "2000"
+        ],
+        "in": "query",
+        "name": "n",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "with_team_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-sprint-speed": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-sprint-speed",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-sprint-speed",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "min_season",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "max_season",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "140",
+          "139",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "5",
+          "10",
+          "25",
+          "50",
+          "75",
+          "100",
+          "150",
+          "200",
+          "250"
+        ],
+        "in": "query",
+        "name": "minimum_runs",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "player",
+          "team",
+          "position",
+          "age",
+          "competitive_runs",
+          "bolts",
+          "home_to_first",
+          "sprint_speed"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-sprint-speed-teams": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-sprint-speed-teams",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-sprint-speed-teams",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026",
+          "all"
+        ],
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "LAA",
+          "HOU",
+          "OAK",
+          "TOR",
+          "ATL",
+          "MIL",
+          "STL",
+          "CHC",
+          "ARI",
+          "LAD",
+          "SF",
+          "CLE",
+          "SEA",
+          "MIA",
+          "NYM",
+          "WSH",
+          "BAL",
+          "SD",
+          "PHI",
+          "PIT",
+          "TEX",
+          "TB",
+          "BOS",
+          "CIN",
+          "COL",
+          "KC",
+          "DET",
+          "MIN",
+          "CWS",
+          "NYY"
+        ],
+        "in": "query",
+        "name": "team",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "season",
+          "team",
+          "players",
+          "competitive_runs",
+          "average_sprint_speed",
+          "fastest_sprint_speed",
+          "slowest_sprint_speed",
+          "bolts",
+          "average_home_to_first"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-swing-path": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-swing-path",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-swing-path",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "batting-team",
+          "league"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_start",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Any",
+          "Exhibition",
+          "Playoff",
+          "Regular"
+        ],
+        "in": "query",
+        "name": "game_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_swings",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_group_swings",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2",
+          "4",
+          "9"
+        ],
+        "in": "query",
+        "name": "contact_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "0"
+        ],
+        "in": "query",
+        "name": "is_hard_hit",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "1.1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "attack_zone",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "name",
+          "team_name",
+          "avg_sweetspot_speed_mph",
+          "avg_plane_vertical_angle",
+          "attack_angle",
+          "attack_direction_pullopp",
+          "rate_ideal_attack_angle",
+          "avg_intercept_y_vs_plate",
+          "avg_intercept_y_vs_batter",
+          "avg_batter_y_position",
+          "avg_batter_x_position",
+          "avg_foot_sep0",
+          "avg_foot_angle0",
+          "n_swings"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-swing-timing": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-swing-timing",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-swing-timing",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "batter",
+          "batting-team",
+          "pitcher",
+          "pitching-team",
+          "league"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "seasons",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "R",
+          "A",
+          "F",
+          "D",
+          "L",
+          "W"
+        ],
+        "in": "query",
+        "name": "game_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "api_pitch_type_group03",
+          "api_pitch_type_group09",
+          "api_game_date_month_text",
+          "bat_contact_code",
+          "game_type",
+          "is_hit_into_play_hardhit",
+          "is_best_speed",
+          "timing_x_tiedupflail",
+          "timing_y_earlylate",
+          "timing_z_overunder",
+          "pitch_hand",
+          "bat_side",
+          "is_pre_ball_count_3",
+          "is_pre_strike_count_2",
+          "pitchzone_height_code",
+          "is_starter_pitcher"
+        ],
+        "in": "query",
+        "name": "splits",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_swings",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "0"
+        ],
+        "in": "query",
+        "name": "split_year",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "108",
+          "109",
+          "110",
+          "111",
+          "112",
+          "113",
+          "114",
+          "115",
+          "116",
+          "117",
+          "118",
+          "119",
+          "120",
+          "121",
+          "133",
+          "134",
+          "135",
+          "136",
+          "137",
+          "138",
+          "139",
+          "140",
+          "141",
+          "142",
+          "143",
+          "144",
+          "145",
+          "146",
+          "147",
+          "158"
+        ],
+        "in": "query",
+        "name": "teams",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2",
+          "4",
+          "9"
+        ],
+        "in": "query",
+        "name": "contact_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "1.1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "attack_zone",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "00",
+          "01",
+          "02",
+          "10",
+          "11",
+          "12",
+          "20",
+          "21",
+          "22",
+          "30",
+          "31",
+          "32"
+        ],
+        "in": "query",
+        "name": "counts",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "Tiedup",
+          "Centered",
+          "Flail"
+        ],
+        "in": "query",
+        "name": "swing_timing_x",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "Early",
+          "OnTime",
+          "Late"
+        ],
+        "in": "query",
+        "name": "swing_timing_y",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "Under",
+          "Linedup",
+          "Over"
+        ],
+        "in": "query",
+        "name": "swing_timing_z",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "is_timing_xyz_flawed",
+          "is_timing_xyz_perfect"
+        ],
+        "in": "query",
+        "name": "flags",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "is_timing_xyz_flawed",
+          "is_timing_xyz_perfect"
+        ],
+        "in": "query",
+        "name": "not_flags",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "name",
+          "team_name",
+          "pitch_hand_type",
+          "bat_side_type",
+          "n_swings",
+          "competitive_swings",
+          "strikes_swinging",
+          "miss_distance",
+          "flails",
+          "centers",
+          "tied_ups",
+          "earlys",
+          "on_times",
+          "lates",
+          "unders",
+          "lined_ups",
+          "overs",
+          "delta_run_exp",
+          "whiff_rate",
+          "competitive_percent",
+          "perfect_percent",
+          "flawed_percent"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort_dir",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-swing-timing-details": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-swing-timing-details",
+    "method": "GET",
+    "path": "/mlb/statcast-swing-timing-details",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "row_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "batter",
+          "pitcher"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "seasons",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "R",
+          "A",
+          "F",
+          "D",
+          "L",
+          "W"
+        ],
+        "in": "query",
+        "name": "game_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "api_pitch_type_group03",
+          "api_pitch_type_group09",
+          "api_game_date_month_text",
+          "bat_contact_code",
+          "game_type",
+          "is_hit_into_play_hardhit",
+          "is_best_speed",
+          "timing_x_tiedupflail",
+          "timing_y_earlylate",
+          "timing_z_overunder",
+          "pitch_hand",
+          "bat_side",
+          "is_pre_ball_count_3",
+          "is_pre_strike_count_2",
+          "pitchzone_height_code",
+          "is_starter_pitcher"
+        ],
+        "in": "query",
+        "name": "splits",
+        "type": "array"
+      },
+      {
+        "enum": [
+          "q",
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_swings",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "5",
+          "10",
+          "25",
+          "50",
+          "100",
+          "200",
+          "500",
+          "1000"
+        ],
+        "in": "query",
+        "name": "min_split",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1"
+        ],
+        "in": "query",
+        "name": "split_year",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "108",
+          "117",
+          "133",
+          "141",
+          "144",
+          "158",
+          "138",
+          "112",
+          "109",
+          "119",
+          "137",
+          "114",
+          "136",
+          "146",
+          "121",
+          "120",
+          "110",
+          "135",
+          "143",
+          "134",
+          "113",
+          "111",
+          "115",
+          "118",
+          "116",
+          "142",
+          "145",
+          "147"
+        ],
+        "in": "query",
+        "name": "teams",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "date_start",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_end",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "bat_side",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2",
+          "4",
+          "9"
+        ],
+        "in": "query",
+        "name": "contact_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "1.1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "attack_zone",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "L",
+          "R"
+        ],
+        "in": "query",
+        "name": "pitch_hand",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "FF",
+          "SI",
+          "FC",
+          "CH",
+          "FS",
+          "FO",
+          "SC",
+          "CU",
+          "SL",
+          "ST",
+          "SV",
+          "KN"
+        ],
+        "in": "query",
+        "name": "pitch_types",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "00",
+          "01",
+          "02",
+          "10",
+          "11",
+          "12",
+          "20",
+          "21",
+          "22",
+          "30",
+          "31",
+          "32"
+        ],
+        "in": "query",
+        "name": "counts",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "Tiedup",
+          "Centered",
+          "Flail"
+        ],
+        "in": "query",
+        "name": "swing_timing_x",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "Early",
+          "OnTime",
+          "Late"
+        ],
+        "in": "query",
+        "name": "swing_timing_y",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "Under",
+          "Linedup",
+          "Over"
+        ],
+        "in": "query",
+        "name": "swing_timing_z",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "is_timing_xyz_flawed",
+          "is_timing_xyz_perfect"
+        ],
+        "in": "query",
+        "name": "flags",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "is_timing_xyz_flawed",
+          "is_timing_xyz_perfect"
+        ],
+        "in": "query",
+        "name": "not_flags",
+        "type": "array"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-top-performers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-top-performers",
+    "method": "GET",
+    "path": "/mlb/statcast-top-performers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "mlb-statcast-year-to-year": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "mlb-statcast-year-to-year",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/mlb/statcast-year-to-year",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "Batter",
+          "Pitcher",
+          "Batter Team",
+          "Pitcher Team"
+        ],
+        "in": "query",
+        "name": "group",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ba",
+          "xba",
+          "obp",
+          "xobp",
+          "slg",
+          "xslg",
+          "iso",
+          "xiso",
+          "babip",
+          "woba",
+          "xwoba",
+          "wobacon",
+          "xwobacon",
+          "bacon",
+          "xbacon",
+          "hard_hit_percent",
+          "exit_velocity_avg",
+          "sweet_spot_percent",
+          "barrel_batted_rate",
+          "launch_angle_avg",
+          "avg_swing_speed",
+          "attack_angle",
+          "ideal_angle_rate",
+          "attack_direction",
+          "vertical_swing_path",
+          "avg_swing_length",
+          "fastball_velo",
+          "breaking_velo",
+          "offspeed_velo",
+          "barrels",
+          "popups_percent",
+          "flyballs_percent",
+          "linedrives_percent",
+          "groundballs_percent",
+          "pull_percent",
+          "straightaway_percent",
+          "opposite_percent",
+          "poorlyweak_percent",
+          "pull_percent_airballs",
+          "poorlytopped_percent",
+          "poorlyunder_percent",
+          "flareburner_percent",
+          "solidcontact_percent",
+          "hr_flyballs_percent",
+          "popups",
+          "flyballs",
+          "linedrives",
+          "groundballs",
+          "in_zone_percent",
+          "out_zone_percent",
+          "edge_percent",
+          "z_swing_percent",
+          "oz_swing_percent",
+          "iz_contact_percent",
+          "oz_contact_percent",
+          "whiff_percent",
+          "f_strike_percent",
+          "f_swing_percent",
+          "swing_percent",
+          "meatball_swing_percent",
+          "meatball_percent",
+          "z_swing_miss_percent",
+          "oz_swing_miss_percent",
+          "in_zone",
+          "out_zone",
+          "edge",
+          "in_zone_swing",
+          "out_zone_swing",
+          "in_zone_swing_miss",
+          "out_zone_swing_miss",
+          "pitch_count",
+          "pa",
+          "ab",
+          "hit",
+          "single",
+          "double",
+          "triple",
+          "home_run",
+          "walk",
+          "strikeout",
+          "k_percent",
+          "bb_percent",
+          "hbp",
+          "batted_ball",
+          "pitch_usage_fastball",
+          "pitch_usage_offspeed",
+          "pitch_usage_breaking",
+          "pitch_count_fastball",
+          "pitch_count_offspeed",
+          "pitch_count_breaking"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2025",
+          "2024",
+          "2023",
+          "2022",
+          "2021",
+          "2020",
+          "2019",
+          "2018",
+          "2017"
+        ],
+        "in": "query",
+        "name": "year",
+        "type": "string"
+      },
+      {
         "in": "query",
         "name": "sort",
         "type": "string"
@@ -68663,6 +80495,175 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "national-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "national-article",
+    "method": "GET",
+    "path": "/national/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "national-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "national-author",
+    "method": "GET",
+    "path": "/national/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "national-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "national-headlines",
+    "method": "GET",
+    "path": "/national/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "news/uae",
+          "news/gulf",
+          "news/mena",
+          "mena/arab-showcase",
+          "news/us",
+          "news/uk",
+          "news/europe",
+          "news/asia",
+          "business",
+          "business/aviation",
+          "business/economy",
+          "business/energy",
+          "business/money",
+          "business/property",
+          "business/banking",
+          "business/uk",
+          "business/markets",
+          "in-focus",
+          "opinion",
+          "opinion/comment",
+          "opinion/editorial",
+          "opinion/obituaries",
+          "opinion/cartoon",
+          "opinion/feedback",
+          "future",
+          "future/science",
+          "future/space",
+          "future/technology",
+          "climate",
+          "climate/environment",
+          "climate/road-to-net-zero",
+          "health",
+          "arts-culture",
+          "arts-culture/art-design",
+          "arts-culture/books",
+          "arts-culture/film-tv",
+          "arts-culture/music-stage",
+          "arts-culture/pop-culture",
+          "lifestyle",
+          "travel",
+          "lifestyle/fashion-beauty",
+          "lifestyle/food",
+          "lifestyle/motoring",
+          "magazine",
+          "lifestyle/luxury",
+          "lifestyle/home-garden",
+          "lifestyle/wellbeing",
+          "lifestyle/things-to-do",
+          "sport",
+          "sport/football",
+          "sport/cricket",
+          "sport/f1",
+          "sport/tennis",
+          "sport/combat-sports",
+          "sport/cycling",
+          "weekend"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "national-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "national-news",
+    "method": "GET",
+    "path": "/national/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "national-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "national-sections",
+    "method": "GET",
+    "path": "/national/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "nationalpost-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -68966,6 +80967,7 @@ export const operations = {
     "formParams": [],
     "id": "ndtv-author",
     "method": "GET",
+    "paginatable": true,
     "path": "/ndtv/author",
     "pathParams": [],
     "produces": [
@@ -68977,6 +80979,11 @@ export const operations = {
         "name": "url",
         "required": true,
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -69065,6 +81072,78 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "ndtv-latest-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ndtv-latest-videos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ndtv/latest-videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ndtv-live-blog": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ndtv-live-blog",
+    "method": "GET",
+    "path": "/ndtv/live-blog",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ndtv-live-blogs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ndtv-live-blogs",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ndtv/live-blogs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "ndtv-news": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -69125,6 +81204,95 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ndtv-video": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ndtv-video",
+    "method": "GET",
+    "path": "/ndtv/video",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ndtv-video-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ndtv-video-categories",
+    "method": "GET",
+    "path": "/ndtv/video-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ndtv-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ndtv-videos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/ndtv/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "business",
+          "entertainment",
+          "auto",
+          "exclusive",
+          "features",
+          "environment",
+          "fashion",
+          "travel",
+          "elections",
+          "comedy",
+          "property",
+          "art",
+          "beauty",
+          "lifestyle",
+          "tech360"
+        ],
+        "in": "query",
+        "name": "category",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -70174,6 +82342,177 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ninetofivegoogle-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ninetofivegoogle-article",
+    "method": "GET",
+    "path": "/ninetofivegoogle/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ninetofivegoogle-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ninetofivegoogle-author",
+    "method": "GET",
+    "path": "/ninetofivegoogle/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ninetofivegoogle-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ninetofivegoogle-headlines",
+    "method": "GET",
+    "path": "/ninetofivegoogle/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "gemini",
+          "google-pixel-9-pro-fold",
+          "google-pixel-9-pro-xl",
+          "google-pixel-9-pro",
+          "google-pixel-9",
+          "google-pixel-8-pro",
+          "google-pixel-8",
+          "google-pixel-watch-3",
+          "google-pixel-watch",
+          "google-pixel-buds-pro-2",
+          "google-pixel-buds-pro",
+          "google-nest-hub",
+          "google-nest-hub-max",
+          "google-nest-mini",
+          "google-nest-audio",
+          "nest-thermostat",
+          "nest-cam",
+          "google-nest-doorbell",
+          "android-17",
+          "android-auto",
+          "wear-os",
+          "samsung",
+          "oneplus",
+          "oppo",
+          "xiaomi",
+          "google-chrome",
+          "chrome-os",
+          "google-tv",
+          "android-tv",
+          "chromecast",
+          "chromecast-with-google-tv",
+          "gmail",
+          "google-meet",
+          "google-chat",
+          "google-calendar",
+          "google-keep",
+          "google-drive",
+          "google-docs",
+          "youtube",
+          "youtube-music",
+          "youtube-tv",
+          "android",
+          "android-14",
+          "android-15",
+          "android-15-beta",
+          "apk-insight",
+          "apps-and-updates-2",
+          "exclusives",
+          "fitbit",
+          "google",
+          "google-apps",
+          "google-assistant",
+          "google-home",
+          "google-pixel",
+          "pixel-11-buyers-guide",
+          "google-play",
+          "google-search",
+          "made-by-google",
+          "feature-exclusives",
+          "feature-review",
+          "feature-newsletter",
+          "feature-videos",
+          "feature-sponsored-post"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ninetofivegoogle-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ninetofivegoogle-news",
+    "method": "GET",
+    "path": "/ninetofivegoogle/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "ninetofivegoogle-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "ninetofivegoogle-sections",
+    "method": "GET",
+    "path": "/ninetofivegoogle/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -76205,6 +88544,99 @@ export const operations = {
     "id": "phonearena-sections",
     "method": "GET",
     "path": "/phonearena/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "physorg-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "physorg-article",
+    "method": "GET",
+    "path": "/physorg/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "physorg-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "physorg-headlines",
+    "method": "GET",
+    "path": "/physorg/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nanotech-news",
+          "physics-news",
+          "space-news",
+          "earth-news",
+          "chemistry-news",
+          "biology-news",
+          "science-news",
+          "breaking",
+          "editorials"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "physorg-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "physorg-news",
+    "method": "GET",
+    "path": "/physorg/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "physorg-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "physorg-sections",
+    "method": "GET",
+    "path": "/physorg/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -84936,6 +97368,412 @@ export const operations = {
         "in": "query",
         "name": "size",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-autocomplete": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-autocomplete",
+    "method": "GET",
+    "path": "/retailmenot/autocomplete",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "term",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-blog-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-blog-categories",
+    "method": "GET",
+    "path": "/retailmenot/blog-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-blog-post": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-blog-post",
+    "method": "GET",
+    "path": "/retailmenot/blog-post",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-blog-posts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-blog-posts",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/retailmenot/blog-posts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tag",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "date",
+          "modified",
+          "title",
+          "relevance"
+        ],
+        "in": "query",
+        "name": "order_by",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "desc",
+          "asc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-blog-tags": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-blog-tags",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/retailmenot/blog-tags",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-cashback": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-cashback",
+    "method": "GET",
+    "path": "/retailmenot/cashback",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-categories",
+    "method": "GET",
+    "path": "/retailmenot/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/retailmenot/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-deal-event": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-deal-event",
+    "method": "GET",
+    "path": "/retailmenot/deal-event",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-deal-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-deal-events",
+    "method": "GET",
+    "path": "/retailmenot/deal-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-home": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-home",
+    "method": "GET",
+    "path": "/retailmenot/home",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-store",
+    "method": "GET",
+    "path": "/retailmenot/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "domain",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "us",
+          "ca"
+        ],
+        "in": "query",
+        "name": "market",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "retailmenot-stores": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "retailmenot-stores",
+    "method": "GET",
+    "path": "/retailmenot/stores",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z",
+          "0-9"
+        ],
+        "in": "query",
+        "name": "letter",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "us",
+          "ca"
+        ],
+        "in": "query",
+        "name": "market",
+        "type": "string"
       }
     ],
     "security": [
@@ -94400,6 +107238,128 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sportskeeda-college-basketball-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-college-basketball-schedule",
+    "method": "GET",
+    "path": "/sportskeeda/college-basketball-schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "date",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-college-basketball-schedule-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-college-basketball-schedule-options",
+    "method": "GET",
+    "path": "/sportskeeda/college-basketball-schedule-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-cricket-commentary": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "sportskeeda-cricket-commentary",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/cricket-commentary",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "en",
+          "hi",
+          "ta",
+          "te",
+          "bho"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-cricket-match": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-cricket-match",
+    "method": "GET",
+    "path": "/sportskeeda/cricket-match",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sportskeeda-depth-chart": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -94423,6 +107383,186 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-draft-picks": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-draft-picks",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/draft-picks",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "round",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-draft-picks-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-draft-picks-options",
+    "method": "GET",
+    "path": "/sportskeeda/draft-picks-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-event-calendar": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-event-calendar",
+    "method": "GET",
+    "path": "/sportskeeda/event-calendar",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "us",
+          "india"
+        ],
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "NFL",
+          "Football",
+          "MLB",
+          "College Football",
+          "NBA",
+          "College Basketball",
+          "NHL",
+          "WNBA",
+          "Golf",
+          "Tennis",
+          "NASCAR",
+          "WWE",
+          "Boxing",
+          "UFC",
+          "MMA",
+          "Formula 1",
+          "College Baseball",
+          "IndyCar",
+          "AEW",
+          "MotoGP",
+          "Wrestling",
+          "Cricket",
+          "Table Tennis",
+          "Chess",
+          "Kabaddi",
+          "Hockey",
+          "Badminton",
+          "Athletics"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "2026-09",
+          "2026-10",
+          "2026-11",
+          "2026-12"
+        ],
+        "in": "query",
+        "name": "month",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "start_date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_date",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-event-calendar-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-event-calendar-options",
+    "method": "GET",
+    "path": "/sportskeeda/event-calendar-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -94509,6 +107649,123 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sportskeeda-guessing-game": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-guessing-game",
+    "method": "GET",
+    "path": "/sportskeeda/guessing-game",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "wwe/brainbuster-wwe-player-guessing-game",
+          "nfl/gridle-nfl-player-guessing-game"
+        ],
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-guessing-game-entities": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-guessing-game-entities",
+    "method": "GET",
+    "path": "/sportskeeda/guessing-game-entities",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "wwe/brainbuster-wwe-player-guessing-game",
+          "nfl/gridle-nfl-player-guessing-game"
+        ],
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-guessing-games": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-guessing-games",
+    "method": "GET",
+    "path": "/sportskeeda/guessing-games",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-nba-queries": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-nba-queries",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/nba-queries",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "player-stat",
+          "player-vs-team"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sportskeeda-news": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -94553,6 +107810,42 @@ export const operations = {
       {
         "in": "query",
         "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all-conferences",
+          "all-fbs-i-a",
+          "atlantic-coast",
+          "big-ten",
+          "mid-american",
+          "pac-12",
+          "southeastern",
+          "independents-fbs",
+          "big-12",
+          "conference-usa",
+          "mountain-west",
+          "sun-belt",
+          "aac",
+          "all-fcs-i-aa",
+          "big-sky",
+          "missouri-valley",
+          "ivy-league",
+          "mid-eastern-athletic",
+          "ohio-valley",
+          "patriot-league",
+          "pioneer-league",
+          "southern",
+          "southland",
+          "swac",
+          "northeast",
+          "independents-fcs",
+          "big-south",
+          "caa",
+          "united-athletic"
+        ],
+        "in": "query",
+        "name": "conference",
         "type": "string"
       }
     ],
@@ -94636,6 +107929,141 @@ export const operations = {
         "in": "query",
         "name": "slug",
         "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-quiz": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-quiz",
+    "method": "GET",
+    "path": "/sportskeeda/quiz",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-quiz-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-quiz-categories",
+    "method": "GET",
+    "path": "/sportskeeda/quiz-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-quizzes": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-quizzes",
+    "method": "GET",
+    "path": "/sportskeeda/quizzes",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "anime/quiz",
+          "cricket/quiz",
+          "daily-soaps/quiz",
+          "esports/quiz",
+          "fortnite/quiz",
+          "minecraft/quiz",
+          "movies/quiz",
+          "pokemon/quiz",
+          "shows/quiz",
+          "tennis/quiz",
+          "wwe/quiz"
+        ],
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-salary-cap": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-salary-cap",
+    "method": "GET",
+    "path": "/sportskeeda/salary-cap",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "player",
+          "cap_number",
+          "cut_pre_june_1_dead_money",
+          "cut_pre_june_1_cap_saving",
+          "cut_post_june_1_dead_money",
+          "cut_post_june_1_cap_saving",
+          "trade_pre_june_1_dead_money",
+          "trade_pre_june_1_cap_saving",
+          "trade_post_june_1_dead_money",
+          "trade_post_june_1_cap_saving",
+          "restructure_cap_saving",
+          "extension_cap_saving"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
         "type": "string"
       }
     ],
@@ -94854,6 +108282,30 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sportskeeda-topic": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-topic",
+    "method": "GET",
+    "path": "/sportskeeda/topic",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sportskeeda-trade-values": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -94920,6 +108372,174 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sportskeeda-transactions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-transactions",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/transactions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "022020",
+          "032020",
+          "042020",
+          "052020",
+          "062020",
+          "072020",
+          "082020",
+          "092020",
+          "102020",
+          "112020",
+          "122020",
+          "012021",
+          "022021",
+          "032021",
+          "042021",
+          "052021",
+          "062021",
+          "072021",
+          "082021",
+          "092021",
+          "102021",
+          "112021",
+          "122021",
+          "012022",
+          "022022",
+          "032022",
+          "042022",
+          "052022",
+          "062022",
+          "072022",
+          "082022",
+          "092022",
+          "102022",
+          "112022",
+          "122022",
+          "012023",
+          "022023",
+          "032023",
+          "042023",
+          "052023",
+          "062023",
+          "072023",
+          "082023",
+          "092023",
+          "102023",
+          "112023",
+          "122023",
+          "012024",
+          "022024",
+          "032024",
+          "042024",
+          "052024",
+          "062024",
+          "072024",
+          "082024",
+          "092024",
+          "102024",
+          "112024",
+          "122024",
+          "012025",
+          "022025",
+          "032025",
+          "042025",
+          "052025",
+          "062025",
+          "072025",
+          "082025",
+          "092025",
+          "102025",
+          "112025",
+          "122025",
+          "012026",
+          "022026",
+          "032026",
+          "042026",
+          "052026",
+          "062026",
+          "072026",
+          "082026",
+          "092026"
+        ],
+        "in": "query",
+        "name": "month",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-transactions-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-transactions-options",
+    "method": "GET",
+    "path": "/sportskeeda/transactions-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sportskeeda-video": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -94960,6 +108580,326 @@ export const operations = {
       {
         "in": "query",
         "name": "slug",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-wiki-activity": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-wiki-activity",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/wiki-activity",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "author_name",
+          "updated_at"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-wiki-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-wiki-article",
+    "method": "GET",
+    "path": "/sportskeeda/wiki-article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-wiki-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-wiki-categories",
+    "method": "GET",
+    "path": "/sportskeeda/wiki-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "minecraft",
+          "terraria",
+          "naruto",
+          "tiktok",
+          "youtube",
+          "gta",
+          "one-piece",
+          "sk-communities"
+        ],
+        "in": "query",
+        "name": "wiki",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-wiki-contributors": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-wiki-contributors",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/wiki-contributors",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "author_name",
+          "contributions",
+          "updated_at"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-wiki-issues": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-wiki-issues",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/wiki-issues",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "opened",
+          "closed"
+        ],
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-wiki-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-wiki-options",
+    "method": "GET",
+    "path": "/sportskeeda/wiki-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-wiki-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-wiki-pages",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sportskeeda/wiki-pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "minecraft",
+          "terraria",
+          "naruto",
+          "tiktok",
+          "youtube",
+          "gta",
+          "one-piece",
+          "sk-communities"
+        ],
+        "in": "query",
+        "name": "wiki",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "ASC",
+          "DESC"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "last_updated",
+          "page_size",
+          "ratings",
+          "issues_count"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sportskeeda-wiki-summary": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "sportskeeda-wiki-summary",
+    "method": "GET",
+    "path": "/sportskeeda/wiki-summary",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
         "type": "string"
       }
     ],
@@ -98774,6 +112714,839 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "streeteasy-areas": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-areas",
+    "method": "GET",
+    "path": "/streeteasy/areas",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-building": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-building",
+    "method": "GET",
+    "path": "/streeteasy/buildings/{slug}",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-market-data-catalog": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-market-data-catalog",
+    "method": "GET",
+    "path": "/streeteasy/market-data/catalog",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-market-data-series": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-market-data-series",
+    "method": "GET",
+    "path": "/streeteasy/market-data/series",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "medianAskingPPSF",
+          "medianAskingPPSFOneBd",
+          "medianAskingPPSFStudio",
+          "medianAskingPPSFThreePlusBd",
+          "medianAskingPPSFTwoBd",
+          "medianAskingPrice",
+          "medianAskingPriceCondo",
+          "medianAskingPriceCoop",
+          "medianAskingPriceSfr",
+          "medianAskingRent",
+          "medianAskingRentOneBd",
+          "medianAskingRentStudio",
+          "medianAskingRentThreePlusBd",
+          "medianAskingRentTwoBd",
+          "medianDaysMarket",
+          "medianDaysMarketCondo",
+          "medianDaysMarketCoop",
+          "medianRecordedSalesPrice",
+          "medianRecordedSalesPriceCondo",
+          "medianRecordedSalesPriceCoop",
+          "medianRecordedSalesPriceSfr",
+          "medianRentalDiscount",
+          "medianRentalDiscountOneBd",
+          "medianRentalDiscountStudio",
+          "medianRentalDiscountThreePlusBd",
+          "medianRentalDiscountTwoBd",
+          "newInventory",
+          "newInventoryCondo",
+          "newInventoryCoop",
+          "newInventorySfr",
+          "priceIndex",
+          "recordedSales",
+          "recordedSalesCondo",
+          "recordedSalesCoop",
+          "recordedSalesSfr",
+          "rentIndex",
+          "rentalConcessions",
+          "rentalInventory",
+          "rentalInventoryOneBd",
+          "rentalInventoryStudio",
+          "rentalInventoryThreePlusBd",
+          "rentalInventoryTwoBd",
+          "saleListRatio",
+          "saleListRatioCondo",
+          "saleListRatioCoop",
+          "saleListRatioSfr",
+          "salesInventory",
+          "salesInventoryCondo",
+          "salesInventoryCoop",
+          "salesInventoryOneBd",
+          "salesInventorySfr",
+          "salesInventoryStudio",
+          "salesInventoryThreePlusBd",
+          "salesInventoryTwoBd",
+          "shareOfRentalsDiscounted",
+          "shareOfRentalsDiscountedOneBd",
+          "shareOfRentalsDiscountedStudio",
+          "shareOfRentalsDiscountedThreePlusBd",
+          "shareOfRentalsDiscountedTwoBd",
+          "sharePriceCut",
+          "sharePriceCutCondo",
+          "sharePriceCutCoop",
+          "sharePriceCutSfr"
+        ],
+        "in": "query",
+        "name": "dataset",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_month",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_month",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-market-indices": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-market-indices",
+    "method": "GET",
+    "path": "/streeteasy/market-data/indices",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "start_month",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_month",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-market-inventory": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-market-inventory",
+    "method": "GET",
+    "path": "/streeteasy/market-data/inventory",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "start_month",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_month",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-quick-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-quick-search",
+    "method": "GET",
+    "path": "/streeteasy/quick-search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-rentals-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-rentals-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/streeteasy/rentals/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "area_id",
+        "required": true,
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "default",
+          "newest",
+          "recently_updated",
+          "price_desc",
+          "price_asc",
+          "largest",
+          "smallest"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_bedrooms",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_bedrooms",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_bathrooms",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_bathrooms",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_sqft",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_sqft",
+        "type": "integer"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "rental",
+          "condo",
+          "co-op",
+          "house",
+          "multifamily"
+        ],
+        "in": "query",
+        "name": "building_type",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "washer_dryer",
+          "dishwasher",
+          "private_outdoor_space",
+          "central_air",
+          "furnished",
+          "fireplace",
+          "loft",
+          "city_view",
+          "garden_view",
+          "park_view",
+          "skyline_view",
+          "water_view",
+          "elevator",
+          "doorman",
+          "laundry",
+          "gym",
+          "parking",
+          "shared_outdoor_space",
+          "pool",
+          "pied_a_terre",
+          "childrens_playroom",
+          "smoke_free",
+          "storage"
+        ],
+        "in": "query",
+        "name": "amenity",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "washer_dryer",
+          "dishwasher",
+          "private_outdoor_space",
+          "central_air",
+          "furnished",
+          "fireplace",
+          "loft",
+          "city_view",
+          "garden_view",
+          "park_view",
+          "skyline_view",
+          "water_view",
+          "elevator",
+          "doorman",
+          "laundry",
+          "gym",
+          "parking",
+          "shared_outdoor_space",
+          "pool",
+          "pied_a_terre",
+          "childrens_playroom",
+          "smoke_free",
+          "storage"
+        ],
+        "in": "query",
+        "name": "optional_amenity",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "pets_allowed",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "open_house",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "tour_3d",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "video_tour",
+        "type": "boolean"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "A",
+          "C",
+          "E",
+          "B",
+          "D",
+          "F",
+          "M",
+          "G",
+          "N",
+          "Q",
+          "R",
+          "W",
+          "J",
+          "Z",
+          "L",
+          "S",
+          "HBLR",
+          "PATH"
+        ],
+        "in": "query",
+        "name": "transit_line",
+        "type": "array"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-sales-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-sales-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/streeteasy/sales/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "area_id",
+        "required": true,
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "active",
+          "preview",
+          "coming_soon",
+          "in_contract",
+          "sold",
+          "unavailable"
+        ],
+        "in": "query",
+        "name": "sale_status",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "sponsor_unit",
+          "foreclosure",
+          "resale",
+          "restricted_sale"
+        ],
+        "in": "query",
+        "name": "sale_type",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "default",
+          "newest",
+          "recently_updated",
+          "price_desc",
+          "price_asc",
+          "largest",
+          "smallest"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_bedrooms",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_bedrooms",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_bathrooms",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_bathrooms",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_sqft",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_sqft",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_maintenance",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_maintenance",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_monthly_taxes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_monthly_taxes",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_price_per_sqft",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_price_per_sqft",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "include_unknown_price_per_sqft",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_year_built",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_year_built",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "prewar",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "pre_construction"
+        ],
+        "in": "query",
+        "name": "development",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "income_restricted",
+        "type": "boolean"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "school_id",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "zip_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "keywords",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "condo",
+          "co-op",
+          "house",
+          "multifamily"
+        ],
+        "in": "query",
+        "name": "building_type",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "washer_dryer",
+          "dishwasher",
+          "private_outdoor_space",
+          "central_air",
+          "furnished",
+          "fireplace",
+          "loft",
+          "city_view",
+          "garden_view",
+          "park_view",
+          "skyline_view",
+          "water_view",
+          "elevator",
+          "doorman",
+          "laundry",
+          "gym",
+          "parking",
+          "shared_outdoor_space",
+          "pool",
+          "pied_a_terre",
+          "childrens_playroom",
+          "smoke_free",
+          "storage"
+        ],
+        "in": "query",
+        "name": "amenity",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "washer_dryer",
+          "dishwasher",
+          "private_outdoor_space",
+          "central_air",
+          "furnished",
+          "fireplace",
+          "loft",
+          "city_view",
+          "garden_view",
+          "park_view",
+          "skyline_view",
+          "water_view",
+          "elevator",
+          "doorman",
+          "laundry",
+          "gym",
+          "parking",
+          "shared_outdoor_space",
+          "pool",
+          "pied_a_terre",
+          "childrens_playroom",
+          "smoke_free",
+          "storage"
+        ],
+        "in": "query",
+        "name": "optional_amenity",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "pets_allowed",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "open_house",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "tour_3d",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "video_tour",
+        "type": "boolean"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "A",
+          "C",
+          "E",
+          "B",
+          "D",
+          "F",
+          "M",
+          "G",
+          "N",
+          "Q",
+          "R",
+          "W",
+          "J",
+          "Z",
+          "L",
+          "S",
+          "HBLR",
+          "PATH"
+        ],
+        "in": "query",
+        "name": "transit_line",
+        "type": "array"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-school": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-school",
+    "method": "GET",
+    "path": "/streeteasy/schools/{slug}",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "streeteasy-unit": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "streeteasy-unit",
+    "method": "GET",
+    "path": "/streeteasy/units/{building_slug}/{unit}",
+    "pathParams": [
+      "building_slug",
+      "unit"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "stubhub-carousel": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -102218,6 +116991,162 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "theblaze-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "theblaze-article",
+    "method": "GET",
+    "path": "/theblaze/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "theblaze-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "theblaze-author",
+    "method": "GET",
+    "path": "/theblaze/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "theblaze-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "theblaze-headlines",
+    "method": "GET",
+    "path": "/theblaze/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "columns",
+          "columns/opinion",
+          "columns/analysis",
+          "tech",
+          "lifestyle",
+          "lifestyle/men",
+          "lifestyle/women",
+          "lifestyle/provisions",
+          "fearless",
+          "exclusive",
+          "original",
+          "politics",
+          "your-opinion",
+          "shows",
+          "shows/back-to-the-people",
+          "shows/blaze-news-tonight",
+          "shows/blaze-originals",
+          "shows/blazetv-specials",
+          "shows/come-take-it-with-sara-gonzales",
+          "shows/conservative-review-with-daniel-horowitz",
+          "shows/dusty-bluffs",
+          "shows/fearless-with-jason-whitlock",
+          "shows/glenn-tv",
+          "shows/kibbe-on-liberty",
+          "shows/live-free-with-josh-howerton",
+          "shows/making-the-argument-with-nick-freitas",
+          "shows/pat-gray-unleashed",
+          "shows/relatable",
+          "shows/rufo-lomez",
+          "shows/sara-gonzales-unfiltered",
+          "shows/steve-deace-show",
+          "shows/strange-encounters",
+          "shows/stu-and-dave-do-america",
+          "shows/the-auron-macintyre-show",
+          "shows/the-coverup",
+          "shows/glenn-beck-podcast",
+          "shows/the-glenn-beck-program",
+          "shows/the-john-doyle-show",
+          "shows/the-liz-wheeler-show",
+          "shows/the-rick-burgess-show",
+          "shows/zero-hour",
+          "contributors",
+          "jan-6-truth"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "theblaze-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "theblaze-news",
+    "method": "GET",
+    "path": "/theblaze/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "theblaze-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "theblaze-sections",
+    "method": "GET",
+    "path": "/theblaze/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "thebodyshop-collection-products": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -103148,6 +118077,128 @@ export const operations = {
     "id": "thejournal-sections",
     "method": "GET",
     "path": "/thejournal/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thenextweb-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "thenextweb-article",
+    "method": "GET",
+    "path": "/thenextweb/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thenextweb-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "thenextweb-author",
+    "method": "GET",
+    "path": "/thenextweb/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thenextweb-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "thenextweb-headlines",
+    "method": "GET",
+    "path": "/thenextweb/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "deep-tech",
+          "sustainability",
+          "ecosystems",
+          "data-security",
+          "fintech-ecommerce",
+          "future-of-work",
+          "startups-technology",
+          "investors-funding",
+          "government-policy",
+          "corporates-innovation"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thenextweb-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "thenextweb-news",
+    "method": "GET",
+    "path": "/thenextweb/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "thenextweb-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "thenextweb-sections",
+    "method": "GET",
+    "path": "/thenextweb/sections",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -105890,6 +120941,113 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "timeslive-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "timeslive-article",
+    "method": "GET",
+    "path": "/timeslive/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "timeslive-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "timeslive-headlines",
+    "method": "GET",
+    "path": "/timeslive/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "news",
+          "news/south-africa",
+          "news/africa",
+          "news/world",
+          "news/business",
+          "news/sci-tech",
+          "politics",
+          "opinion",
+          "ideas",
+          "investigations",
+          "tshisa-live",
+          "lifestyle",
+          "lifestyle/fashion",
+          "lifestyle/food",
+          "lifestyle/travel",
+          "lifestyle/books",
+          "lifestyle/spotlight",
+          "sport",
+          "sport/soccer",
+          "sport/rugby",
+          "sport/cricket",
+          "sport/arena-sports-show",
+          "motoring"
+        ],
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "timeslive-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "timeslive-news",
+    "method": "GET",
+    "path": "/timeslive/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "timeslive-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "timeslive-sections",
+    "method": "GET",
+    "path": "/timeslive/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "timesofindia-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -107727,17 +122885,32 @@ export const operations = {
         "type": "string"
       },
       {
+        "enum": [
+          "ML_SORTED",
+          "DEFAULT"
+        ],
         "in": "query",
         "name": "sort_type",
         "type": "string"
       },
       {
+        "enum": [
+          "FAVORABLE_RATING",
+          "DATE"
+        ],
         "in": "query",
         "name": "sort_by",
         "type": "string"
       },
       {
         "collectionFormat": "multi",
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
         "in": "query",
         "name": "ratings",
         "type": "array"
@@ -110902,6 +126075,175 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "vrbo-location-suggestions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "vrbo-location-suggestions",
+    "method": "GET",
+    "path": "/vrbo/locations/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "search_term",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "vrbo-property": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "vrbo-property",
+    "method": "GET",
+    "path": "/vrbo/properties/{property_id}",
+    "pathParams": [
+      "property_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "vrbo-property-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "vrbo-property-reviews",
+    "method": "GET",
+    "path": "/vrbo/properties/{property_id}/reviews",
+    "pathParams": [
+      "property_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "start_index",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "size",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "HIGHEST_TO_LOWEST_RATED",
+          "LOWEST_TO_HIGHEST_RATED",
+          "NEWEST_TO_OLDEST",
+          "NEWEST_TO_OLDEST_BY_LANGUAGE",
+          "NEWEST_TO_OLDEST_BY_RELEVANCY"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "include_recent_reviews",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "include_ratings_only_reviews",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "vrbo-rate-calendar": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "vrbo-rate-calendar",
+    "method": "GET",
+    "path": "/vrbo/properties/{property_id}/rate-calendar",
+    "pathParams": [
+      "property_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "vrbo-search": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "vrbo-search",
+    "method": "POST",
+    "path": "/vrbo/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "vrbo-travel-page-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "vrbo-travel-page-detail",
+    "method": "GET",
+    "path": "/vrbo/travel-pages/{slug}",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "vrbo-travel-pages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "vrbo-travel-pages",
+    "method": "GET",
+    "path": "/vrbo/travel-pages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "walesonline-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -111376,6 +126718,116 @@ export const operations = {
     "pathParams": [
       "id"
     ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wccftech-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "wccftech-article",
+    "method": "GET",
+    "path": "/wccftech/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wccftech-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "wccftech-author",
+    "method": "GET",
+    "path": "/wccftech/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wccftech-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "wccftech-headlines",
+    "method": "GET",
+    "path": "/wccftech/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wccftech-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "wccftech-news",
+    "method": "GET",
+    "path": "/wccftech/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wccftech-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "wccftech-sections",
+    "method": "GET",
+    "path": "/wccftech/sections",
+    "pathParams": [],
     "produces": [
       "application/json"
     ],
@@ -116371,6 +131823,112 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "yardbarker-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "yardbarker-article",
+    "method": "GET",
+    "path": "/yardbarker/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yardbarker-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "yardbarker-author",
+    "method": "GET",
+    "path": "/yardbarker/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yardbarker-headlines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "yardbarker-headlines",
+    "method": "GET",
+    "path": "/yardbarker/headlines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "section",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yardbarker-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "yardbarker-news",
+    "method": "GET",
+    "path": "/yardbarker/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yardbarker-sections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "yardbarker-sections",
+    "method": "GET",
+    "path": "/yardbarker/sections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "yelp-business": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -118559,6 +134117,11 @@ export const groups = {
     "aljazeeraHeadlines": "aljazeera-headlines",
     "aljazeeraTopic": "aljazeera-topic"
   },
+  "aliExpress": {
+    "aliexpressReviews": "aliexpress-reviews",
+    "aliexpressSearch": "aliexpress-search",
+    "aliexpressSearchFilters": "aliexpress-search-filters"
+  },
   "allbirds": {
     "collectionProducts": "allbirds-collection-products",
     "collections": "allbirds-collections",
@@ -118601,6 +134164,13 @@ export const groups = {
     "androidauthorityNews": "androidauthority-news",
     "androidauthoritySections": "androidauthority-sections"
   },
+  "androidPolice": {
+    "androidpoliceArticle": "androidpolice-article",
+    "androidpoliceAuthor": "androidpolice-author",
+    "androidpoliceHeadlines": "androidpolice-headlines",
+    "androidpoliceNews": "androidpolice-news",
+    "androidpoliceSections": "androidpolice-sections"
+  },
   "anime": {
     "airingSchedule": "anime-airing-schedule",
     "character": "anime-character",
@@ -118631,6 +134201,8 @@ export const groups = {
   "appStore": {
     "app": "appstore-app",
     "categories": "appstore-categories",
+    "collection": "appstore-collection",
+    "collections": "appstore-collections",
     "developer": "appstore-developer",
     "editorial": "appstore-editorial",
     "editorialCategory": "appstore-editorial-category",
@@ -118762,6 +134334,13 @@ export const groups = {
     "headlines": "bbc-headlines",
     "live": "bbc-live",
     "search": "bbc-search"
+  },
+  "benzinga": {
+    "article": "benzinga-article",
+    "headlines": "benzinga-headlines",
+    "news": "benzinga-news",
+    "search": "benzinga-search",
+    "sections": "benzinga-sections"
   },
   "bestBuy": {
     "bestbuyBrands": "bestbuy-brands",
@@ -118917,6 +134496,13 @@ export const groups = {
     "headlines": "breitbart-headlines",
     "news": "breitbart-news",
     "sections": "breitbart-sections"
+  },
+  "brisbaneTimes": {
+    "brisbanetimesArticle": "brisbanetimes-article",
+    "brisbanetimesAuthor": "brisbanetimes-author",
+    "brisbanetimesHeadlines": "brisbanetimes-headlines",
+    "brisbanetimesNews": "brisbanetimes-news",
+    "brisbanetimesSections": "brisbanetimes-sections"
   },
   "brooklinen": {
     "collectionProducts": "brooklinen-collection-products",
@@ -119222,12 +134808,24 @@ export const groups = {
     "dailyexpressNews": "dailyexpress-news",
     "dailyexpressSections": "dailyexpress-sections"
   },
+  "dailyKos": {
+    "dailykosArticle": "dailykos-article",
+    "dailykosHeadlines": "dailykos-headlines",
+    "dailykosNews": "dailykos-news",
+    "dailykosSections": "dailykos-sections"
+  },
   "dailyMail": {
     "dailymailArticle": "dailymail-article",
     "dailymailAuthor": "dailymail-author",
     "dailymailHeadlines": "dailymail-headlines",
     "dailymailNews": "dailymail-news",
     "dailymailSections": "dailymail-sections"
+  },
+  "dailyMaverick": {
+    "dailymaverickArticle": "dailymaverick-article",
+    "dailymaverickHeadlines": "dailymaverick-headlines",
+    "dailymaverickNews": "dailymaverick-news",
+    "dailymaverickSections": "dailymaverick-sections"
   },
   "dailyRecord": {
     "dailyrecordArticle": "dailyrecord-article",
@@ -119275,6 +134873,10 @@ export const groups = {
     "chromeExtensionsSearch": "datasets-chrome-extensions-search",
     "chromeExtensionsTrending": "datasets-chrome-extensions-trending",
     "creatorsSearch": "datasets-creators-search",
+    "doordashStoresFacets": "datasets-doordash-stores-facets",
+    "doordashStoresItem": "datasets-doordash-stores-item",
+    "doordashStoresNearby": "datasets-doordash-stores-nearby",
+    "doordashStoresSearch": "datasets-doordash-stores-search",
     "facebookPagesFacets": "datasets-facebook-pages-facets",
     "facebookPagesItem": "datasets-facebook-pages-item",
     "facebookPagesSearch": "datasets-facebook-pages-search",
@@ -119918,6 +135520,28 @@ export const groups = {
     "search": "goldin-search",
     "suggest": "goldin-suggest"
   },
+  "goodRx": {
+    "goodrxAnswer": "goodrx-answer",
+    "goodrxAnswers": "goodrx-answers",
+    "goodrxBrands": "goodrx-brands",
+    "goodrxClass": "goodrx-class",
+    "goodrxClasses": "goodrx-classes",
+    "goodrxComparison": "goodrx-comparison",
+    "goodrxComparisons": "goodrx-comparisons",
+    "goodrxCondition": "goodrx-condition",
+    "goodrxConditionDrugs": "goodrx-condition-drugs",
+    "goodrxConditions": "goodrx-conditions",
+    "goodrxDrugGuide": "goodrx-drug-guide",
+    "goodrxDrugGuides": "goodrx-drug-guides",
+    "goodrxDrugInfo": "goodrx-drug-info",
+    "goodrxDrugOptions": "goodrx-drug-options",
+    "goodrxDrugPrices": "goodrx-drug-prices",
+    "goodrxDrugs": "goodrx-drugs",
+    "goodrxHealthArticle": "goodrx-health-article",
+    "goodrxHealthArticles": "goodrx-health-articles",
+    "goodrxHealthTopics": "goodrx-health-topics",
+    "goodrxPetMedications": "goodrx-pet-medications"
+  },
   "goodreads": {
     "author": "goodreads-author",
     "authorBooks": "goodreads-author-books",
@@ -120017,6 +135641,17 @@ export const groups = {
     "soldListings": "grailed-sold-listings",
     "suggest": "grailed-suggest"
   },
+  "greystar": {
+    "article": "greystar-article",
+    "articles": "greystar-articles",
+    "location": "greystar-location",
+    "locations": "greystar-locations",
+    "markets": "greystar-markets",
+    "newsroom": "greystar-newsroom",
+    "newsroomArticle": "greystar-newsroom-article",
+    "property": "greystar-property",
+    "search": "greystar-search"
+  },
   "grubhub": {
     "availability": "grubhub-availability",
     "offers": "grubhub-offers",
@@ -120079,6 +135714,24 @@ export const groups = {
     "hbrHeadlines": "hbr-headlines",
     "hbrTopic": "hbr-topic"
   },
+  "healthgrades": {
+    "autocomplete": "healthgrades-autocomplete",
+    "facilitiesFilters": "healthgrades-facilities-filters",
+    "facilitiesSearch": "healthgrades-facilities-search",
+    "facility": "healthgrades-facility",
+    "healthArticle": "healthgrades-health-article",
+    "healthArticles": "healthgrades-health-articles",
+    "healthTopics": "healthgrades-health-topics",
+    "hospital": "healthgrades-hospital",
+    "hospitalAwardFilters": "healthgrades-hospital-award-filters",
+    "hospitalAwards": "healthgrades-hospital-awards",
+    "locations": "healthgrades-locations",
+    "physician": "healthgrades-physician",
+    "physiciansFilters": "healthgrades-physicians-filters",
+    "physiciansSearch": "healthgrades-physicians-search",
+    "specialties": "healthgrades-specialties",
+    "topSearches": "healthgrades-top-searches"
+  },
   "hermes": {
     "categories": "hermes-categories",
     "category": "hermes-category",
@@ -120119,6 +135772,13 @@ export const groups = {
     "hotelsReviews": "hotels-reviews",
     "hotelsReviewsArchive": "hotels-reviews-archive",
     "hotelsSearch": "hotels-search"
+  },
+  "houstonChronicle": {
+    "article": "houston-chronicle-article",
+    "author": "houston-chronicle-author",
+    "headlines": "houston-chronicle-headlines",
+    "news": "houston-chronicle-news",
+    "sections": "houston-chronicle-sections"
   },
   "howToGeek": {
     "howtogeekNews": "howtogeek-news"
@@ -120505,6 +136165,19 @@ export const groups = {
     "macysProductReviews": "macys-product-reviews",
     "macysSuggest": "macys-suggest"
   },
+  "makeUseOf": {
+    "makeuseofArticle": "makeuseof-article",
+    "makeuseofAuthor": "makeuseof-author",
+    "makeuseofHeadlines": "makeuseof-headlines",
+    "makeuseofNews": "makeuseof-news",
+    "makeuseofSections": "makeuseof-sections"
+  },
+  "malayMail": {
+    "malaymailArticle": "malaymail-article",
+    "malaymailHeadlines": "malaymail-headlines",
+    "malaymailNews": "malaymail-news",
+    "malaymailSections": "malaymail-sections"
+  },
   "manchesterEveningNews": {
     "menArticle": "men-article",
     "menAuthor": "men-author",
@@ -120654,13 +136327,59 @@ export const groups = {
     "leagueStats": "mlb-league-stats",
     "player": "mlb-player",
     "playerStats": "mlb-player-stats",
+    "prospectRankings": "mlb-prospect-rankings",
     "prospectStats": "mlb-prospect-stats",
     "schedule": "mlb-schedule",
     "search": "mlb-search",
     "standings": "mlb-standings",
     "statcast": "mlb-statcast",
+    "statcastAbsChallenges": "mlb-statcast-abs-challenges",
+    "statcastActiveSpin": "mlb-statcast-active-spin",
+    "statcastArmAngle": "mlb-statcast-arm-angle",
+    "statcastArmStrength": "mlb-statcast-arm-strength",
+    "statcastArmStrengthPlayer": "mlb-statcast-arm-strength-player",
+    "statcastArmValue": "mlb-statcast-arm-value",
+    "statcastArmValueDetails": "mlb-statcast-arm-value-details",
+    "statcastBaserunning": "mlb-statcast-baserunning",
+    "statcastBatTracking": "mlb-statcast-bat-tracking",
+    "statcastBattedBall": "mlb-statcast-batted-ball",
+    "statcastBirthdayIndex": "mlb-statcast-birthday-index",
+    "statcastCatcherBlocking": "mlb-statcast-catcher-blocking",
+    "statcastCatcherBlockingDetails": "mlb-statcast-catcher-blocking-details",
+    "statcastCatcherFraming": "mlb-statcast-catcher-framing",
+    "statcastCatcherFramingDetails": "mlb-statcast-catcher-framing-details",
+    "statcastCatcherPopTime": "mlb-statcast-catcher-pop-time",
+    "statcastCatcherStance": "mlb-statcast-catcher-stance",
+    "statcastCatcherThrowing": "mlb-statcast-catcher-throwing",
+    "statcastCatcherThrowingDetails": "mlb-statcast-catcher-throwing-details",
     "statcastExpected": "mlb-statcast-expected",
+    "statcastFieldingRunValue": "mlb-statcast-fielding-run-value",
+    "statcastFirstBaseReceiving": "mlb-statcast-first-base-receiving",
+    "statcastFirstBaseReceivingDetails": "mlb-statcast-first-base-receiving-details",
+    "statcastHomeRuns": "mlb-statcast-home-runs",
+    "statcastHomeRunsDetails": "mlb-statcast-home-runs-details",
     "statcastOaa": "mlb-statcast-oaa",
+    "statcastParkFactors": "mlb-statcast-park-factors",
+    "statcastPercentile": "mlb-statcast-percentile",
+    "statcastPitchArsenal": "mlb-statcast-pitch-arsenal",
+    "statcastPitchArsenalDetails": "mlb-statcast-pitch-arsenal-details",
+    "statcastPitchArsenals": "mlb-statcast-pitch-arsenals",
+    "statcastPitchMovement": "mlb-statcast-pitch-movement",
+    "statcastPitchTempo": "mlb-statcast-pitch-tempo",
+    "statcastPitchTempoPlayer": "mlb-statcast-pitch-tempo-player",
+    "statcastPitchTimer": "mlb-statcast-pitch-timer",
+    "statcastPlayerDetails": "mlb-statcast-player-details",
+    "statcastRolling": "mlb-statcast-rolling",
+    "statcastRunValue": "mlb-statcast-run-value",
+    "statcastRunningGame": "mlb-statcast-running-game",
+    "statcastRunningGameDetails": "mlb-statcast-running-game-details",
+    "statcastSprintSpeed": "mlb-statcast-sprint-speed",
+    "statcastSprintSpeedTeams": "mlb-statcast-sprint-speed-teams",
+    "statcastSwingPath": "mlb-statcast-swing-path",
+    "statcastSwingTiming": "mlb-statcast-swing-timing",
+    "statcastSwingTimingDetails": "mlb-statcast-swing-timing-details",
+    "statcastTopPerformers": "mlb-statcast-top-performers",
+    "statcastYearToYear": "mlb-statcast-year-to-year",
     "teamRoster": "mlb-team-roster",
     "teamStats": "mlb-team-stats",
     "teams": "mlb-teams",
@@ -120723,9 +136442,15 @@ export const groups = {
     "article": "ndtv-article",
     "author": "ndtv-author",
     "headlines": "ndtv-headlines",
+    "latestVideos": "ndtv-latest-videos",
+    "liveBlog": "ndtv-live-blog",
+    "liveBlogs": "ndtv-live-blogs",
     "news": "ndtv-news",
     "search": "ndtv-search",
-    "sections": "ndtv-sections"
+    "sections": "ndtv-sections",
+    "video": "ndtv-video",
+    "videoCategories": "ndtv-video-categories",
+    "videos": "ndtv-videos"
   },
   "newYorkDailyNews": {
     "nydailynewsArticle": "nydailynews-article",
@@ -120799,6 +136524,13 @@ export const groups = {
     "search": "nike-search",
     "stores": "nike-stores",
     "suggest": "nike-suggest"
+  },
+  "nineToFiveGoogle": {
+    "article": "ninetofivegoogle-article",
+    "author": "ninetofivegoogle-author",
+    "headlines": "ninetofivegoogle-headlines",
+    "news": "ninetofivegoogle-news",
+    "sections": "ninetofivegoogle-sections"
   },
   "nineToFiveMac": {
     "article": "ninetofivemac-article",
@@ -121014,6 +136746,12 @@ export const groups = {
     "phonearenaHeadlines": "phonearena-headlines",
     "phonearenaNews": "phonearena-news",
     "phonearenaSections": "phonearena-sections"
+  },
+  "physOrg": {
+    "physorgArticle": "physorg-article",
+    "physorgHeadlines": "physorg-headlines",
+    "physorgNews": "physorg-news",
+    "physorgSections": "physorg-sections"
   },
   "pinterest": {
     "board": "pinterest-board",
@@ -121326,6 +137064,21 @@ export const groups = {
     "locations": "resy-locations",
     "restaurant": "resy-restaurant",
     "search": "resy-search"
+  },
+  "retailMeNot": {
+    "retailmenotAutocomplete": "retailmenot-autocomplete",
+    "retailmenotBlogCategories": "retailmenot-blog-categories",
+    "retailmenotBlogPost": "retailmenot-blog-post",
+    "retailmenotBlogPosts": "retailmenot-blog-posts",
+    "retailmenotBlogTags": "retailmenot-blog-tags",
+    "retailmenotCashback": "retailmenot-cashback",
+    "retailmenotCategories": "retailmenot-categories",
+    "retailmenotCategory": "retailmenot-category",
+    "retailmenotDealEvent": "retailmenot-deal-event",
+    "retailmenotDealEvents": "retailmenot-deal-events",
+    "retailmenotHome": "retailmenot-home",
+    "retailmenotStore": "retailmenot-store",
+    "retailmenotStores": "retailmenot-stores"
   },
   "reuters": {
     "article": "reuters-article",
@@ -121685,15 +137438,31 @@ export const groups = {
   "sportskeeda": {
     "article": "sportskeeda-article",
     "author": "sportskeeda-author",
+    "collegeBasketballSchedule": "sportskeeda-college-basketball-schedule",
+    "collegeBasketballScheduleOptions": "sportskeeda-college-basketball-schedule-options",
+    "cricketCommentary": "sportskeeda-cricket-commentary",
+    "cricketMatch": "sportskeeda-cricket-match",
     "depthChart": "sportskeeda-depth-chart",
+    "draftPicks": "sportskeeda-draft-picks",
+    "draftPicksOptions": "sportskeeda-draft-picks-options",
+    "eventCalendar": "sportskeeda-event-calendar",
+    "eventCalendarOptions": "sportskeeda-event-calendar-options",
     "feed": "sportskeeda-feed",
     "footballData": "sportskeeda-football-data",
     "footballOptions": "sportskeeda-football-options",
+    "guessingGame": "sportskeeda-guessing-game",
+    "guessingGameEntities": "sportskeeda-guessing-game-entities",
+    "guessingGames": "sportskeeda-guessing-games",
+    "nbaQueries": "sportskeeda-nba-queries",
     "news": "sportskeeda-news",
     "pageData": "sportskeeda-page-data",
     "pageOptions": "sportskeeda-page-options",
     "playerStats": "sportskeeda-player-stats",
     "profile": "sportskeeda-profile",
+    "quiz": "sportskeeda-quiz",
+    "quizCategories": "sportskeeda-quiz-categories",
+    "quizzes": "sportskeeda-quizzes",
+    "salaryCap": "sportskeeda-salary-cap",
     "schedule": "sportskeeda-schedule",
     "sections": "sportskeeda-sections",
     "sitemapItems": "sportskeeda-sitemap-items",
@@ -121701,9 +137470,20 @@ export const groups = {
     "standings": "sportskeeda-standings",
     "standingsOptions": "sportskeeda-standings-options",
     "taxonomySearch": "sportskeeda-taxonomy-search",
+    "topic": "sportskeeda-topic",
     "tradeValues": "sportskeeda-trade-values",
+    "transactions": "sportskeeda-transactions",
+    "transactionsOptions": "sportskeeda-transactions-options",
     "video": "sportskeeda-video",
-    "videos": "sportskeeda-videos"
+    "videos": "sportskeeda-videos",
+    "wikiActivity": "sportskeeda-wiki-activity",
+    "wikiArticle": "sportskeeda-wiki-article",
+    "wikiCategories": "sportskeeda-wiki-categories",
+    "wikiContributors": "sportskeeda-wiki-contributors",
+    "wikiIssues": "sportskeeda-wiki-issues",
+    "wikiOptions": "sportskeeda-wiki-options",
+    "wikiPages": "sportskeeda-wiki-pages",
+    "wikiSummary": "sportskeeda-wiki-summary"
   },
   "spotify": {
     "album": "spotify-album",
@@ -121802,6 +137582,19 @@ export const groups = {
     "club": "strava-club",
     "routeDetail": "strava-route-detail",
     "routes": "strava-routes"
+  },
+  "streetEasy": {
+    "streeteasyAreas": "streeteasy-areas",
+    "streeteasyBuilding": "streeteasy-building",
+    "streeteasyMarketDataCatalog": "streeteasy-market-data-catalog",
+    "streeteasyMarketDataSeries": "streeteasy-market-data-series",
+    "streeteasyMarketIndices": "streeteasy-market-indices",
+    "streeteasyMarketInventory": "streeteasy-market-inventory",
+    "streeteasyQuickSearch": "streeteasy-quick-search",
+    "streeteasyRentalsSearch": "streeteasy-rentals-search",
+    "streeteasySalesSearch": "streeteasy-sales-search",
+    "streeteasySchool": "streeteasy-school",
+    "streeteasyUnit": "streeteasy-unit"
   },
   "stubHub": {
     "stubhubCarousel": "stubhub-carousel",
@@ -121918,6 +137711,13 @@ export const groups = {
     "theatlanticHeadlines": "theatlantic-headlines",
     "theatlanticSections": "theatlantic-sections"
   },
+  "theBlaze": {
+    "theblazeArticle": "theblaze-article",
+    "theblazeAuthor": "theblaze-author",
+    "theblazeHeadlines": "theblaze-headlines",
+    "theblazeNews": "theblaze-news",
+    "theblazeSections": "theblaze-sections"
+  },
   "theBodyShop": {
     "thebodyshopCollectionProducts": "thebodyshop-collection-products",
     "thebodyshopCollections": "thebodyshop-collections",
@@ -121944,6 +137744,20 @@ export const groups = {
     "dailycallerHeadlines": "dailycaller-headlines",
     "dailycallerNews": "dailycaller-news",
     "dailycallerSections": "dailycaller-sections"
+  },
+  "theDenverPost": {
+    "denverpostArticle": "denverpost-article",
+    "denverpostAuthor": "denverpost-author",
+    "denverpostHeadlines": "denverpost-headlines",
+    "denverpostNews": "denverpost-news",
+    "denverpostSections": "denverpost-sections"
+  },
+  "theExpressTribune": {
+    "expresstribuneArticle": "expresstribune-article",
+    "expresstribuneAuthor": "expresstribune-author",
+    "expresstribuneHeadlines": "expresstribune-headlines",
+    "expresstribuneNews": "expresstribune-news",
+    "expresstribuneSections": "expresstribune-sections"
   },
   "theHill": {
     "thehillArticle": "thehill-article",
@@ -121973,6 +137787,13 @@ export const groups = {
     "indianexpressNews": "indianexpress-news",
     "indianexpressSections": "indianexpress-sections"
   },
+  "theJapanTimes": {
+    "japantimesArticle": "japantimes-article",
+    "japantimesAuthor": "japantimes-author",
+    "japantimesHeadlines": "japantimes-headlines",
+    "japantimesNews": "japantimes-news",
+    "japantimesSections": "japantimes-sections"
+  },
   "theJournalIe": {
     "thejournalArticle": "thejournal-article",
     "thejournalAuthor": "thejournal-author",
@@ -121987,12 +137808,26 @@ export const groups = {
     "motleyfoolNews": "motleyfool-news",
     "motleyfoolSections": "motleyfool-sections"
   },
+  "theNational": {
+    "nationalArticle": "national-article",
+    "nationalAuthor": "national-author",
+    "nationalHeadlines": "national-headlines",
+    "nationalNews": "national-news",
+    "nationalSections": "national-sections"
+  },
   "theNewYorker": {
     "newyorkerArticle": "newyorker-article",
     "newyorkerAuthor": "newyorker-author",
     "newyorkerHeadlines": "newyorker-headlines",
     "newyorkerNews": "newyorker-news",
     "newyorkerSections": "newyorker-sections"
+  },
+  "theNextWeb": {
+    "thenextwebArticle": "thenextweb-article",
+    "thenextwebAuthor": "thenextweb-author",
+    "thenextwebHeadlines": "thenextweb-headlines",
+    "thenextwebNews": "thenextweb-news",
+    "thenextwebSections": "thenextweb-sections"
   },
   "theRealReal": {
     "therealrealAutocomplete": "therealreal-autocomplete",
@@ -122128,6 +137963,12 @@ export const groups = {
     "headlines": "time-headlines",
     "news": "time-news",
     "sections": "time-sections"
+  },
+  "timesLive": {
+    "timesliveArticle": "timeslive-article",
+    "timesliveHeadlines": "timeslive-headlines",
+    "timesliveNews": "timeslive-news",
+    "timesliveSections": "timeslive-sections"
   },
   "timesOfIndia": {
     "timesofindiaArticle": "timesofindia-article",
@@ -122348,6 +138189,15 @@ export const groups = {
     "news": "vox-news",
     "sections": "vox-sections"
   },
+  "vrbo": {
+    "locationSuggestions": "vrbo-location-suggestions",
+    "property": "vrbo-property",
+    "propertyReviews": "vrbo-property-reviews",
+    "rateCalendar": "vrbo-rate-calendar",
+    "search": "vrbo-search",
+    "travelPageDetail": "vrbo-travel-page-detail",
+    "travelPages": "vrbo-travel-pages"
+  },
   "walesOnline": {
     "walesonlineArticle": "walesonline-article",
     "walesonlineAuthor": "walesonline-author",
@@ -122378,6 +138228,13 @@ export const groups = {
     "categories": "wayfair-categories",
     "category": "wayfair-category",
     "product": "wayfair-product"
+  },
+  "wccftech": {
+    "article": "wccftech-article",
+    "author": "wccftech-author",
+    "headlines": "wccftech-headlines",
+    "news": "wccftech-news",
+    "sections": "wccftech-sections"
   },
   "web": {
     "antibotCheck": "antibot-check",
@@ -122572,6 +138429,13 @@ export const groups = {
     "category": "yahoo-tech-category",
     "home": "yahoo-tech-home"
   },
+  "yardbarker": {
+    "article": "yardbarker-article",
+    "author": "yardbarker-author",
+    "headlines": "yardbarker-headlines",
+    "news": "yardbarker-news",
+    "sections": "yardbarker-sections"
+  },
   "yelp": {
     "business": "yelp-business",
     "businessMenu": "yelp-business-menu",
@@ -122653,7 +138517,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 3275;
+export const operationCount = 3529;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -122709,6 +138573,9 @@ export const OperationIds = Object.freeze({
   "AlJazeeraAljazeeraCategories": "aljazeera-categories",
   "AlJazeeraAljazeeraHeadlines": "aljazeera-headlines",
   "AlJazeeraAljazeeraTopic": "aljazeera-topic",
+  "AliExpressAliexpressReviews": "aliexpress-reviews",
+  "AliExpressAliexpressSearch": "aliexpress-search",
+  "AliExpressAliexpressSearchFilters": "aliexpress-search-filters",
   "AllbirdsCollectionProducts": "allbirds-collection-products",
   "AllbirdsCollections": "allbirds-collections",
   "AllbirdsPage": "allbirds-page",
@@ -122741,6 +138608,11 @@ export const OperationIds = Object.freeze({
   "AndroidAuthorityAndroidauthorityHeadlines": "androidauthority-headlines",
   "AndroidAuthorityAndroidauthorityNews": "androidauthority-news",
   "AndroidAuthorityAndroidauthoritySections": "androidauthority-sections",
+  "AndroidPoliceAndroidpoliceArticle": "androidpolice-article",
+  "AndroidPoliceAndroidpoliceAuthor": "androidpolice-author",
+  "AndroidPoliceAndroidpoliceHeadlines": "androidpolice-headlines",
+  "AndroidPoliceAndroidpoliceNews": "androidpolice-news",
+  "AndroidPoliceAndroidpoliceSections": "androidpolice-sections",
   "AnimeAiringSchedule": "anime-airing-schedule",
   "AnimeCharacter": "anime-character",
   "AnimeCharacterSearch": "anime-character-search",
@@ -122764,6 +138636,8 @@ export const OperationIds = Object.freeze({
   "AppInsightsApkTeardownTimeline": "apkTeardownTimeline",
   "AppStoreApp": "appstore-app",
   "AppStoreCategories": "appstore-categories",
+  "AppStoreCollection": "appstore-collection",
+  "AppStoreCollections": "appstore-collections",
   "AppStoreDeveloper": "appstore-developer",
   "AppStoreEditorial": "appstore-editorial",
   "AppStoreEditorialCategory": "appstore-editorial-category",
@@ -122869,6 +138743,11 @@ export const OperationIds = Object.freeze({
   "BbcHeadlines": "bbc-headlines",
   "BbcLive": "bbc-live",
   "BbcSearch": "bbc-search",
+  "BenzingaArticle": "benzinga-article",
+  "BenzingaHeadlines": "benzinga-headlines",
+  "BenzingaNews": "benzinga-news",
+  "BenzingaSearch": "benzinga-search",
+  "BenzingaSections": "benzinga-sections",
   "BestBuyBestbuyBrands": "bestbuy-brands",
   "BestBuyBestbuyCategories": "bestbuy-categories",
   "BestBuyBestbuyCategoriesTrending": "bestbuy-categories-trending",
@@ -122988,6 +138867,11 @@ export const OperationIds = Object.freeze({
   "BreitbartHeadlines": "breitbart-headlines",
   "BreitbartNews": "breitbart-news",
   "BreitbartSections": "breitbart-sections",
+  "BrisbaneTimesBrisbanetimesArticle": "brisbanetimes-article",
+  "BrisbaneTimesBrisbanetimesAuthor": "brisbanetimes-author",
+  "BrisbaneTimesBrisbanetimesHeadlines": "brisbanetimes-headlines",
+  "BrisbaneTimesBrisbanetimesNews": "brisbanetimes-news",
+  "BrisbaneTimesBrisbanetimesSections": "brisbanetimes-sections",
   "BrooklinenCollectionProducts": "brooklinen-collection-products",
   "BrooklinenCollections": "brooklinen-collections",
   "BrooklinenPage": "brooklinen-page",
@@ -123222,11 +139106,19 @@ export const OperationIds = Object.freeze({
   "DailyExpressDailyexpressHeadlines": "dailyexpress-headlines",
   "DailyExpressDailyexpressNews": "dailyexpress-news",
   "DailyExpressDailyexpressSections": "dailyexpress-sections",
+  "DailyKosDailykosArticle": "dailykos-article",
+  "DailyKosDailykosHeadlines": "dailykos-headlines",
+  "DailyKosDailykosNews": "dailykos-news",
+  "DailyKosDailykosSections": "dailykos-sections",
   "DailyMailDailymailArticle": "dailymail-article",
   "DailyMailDailymailAuthor": "dailymail-author",
   "DailyMailDailymailHeadlines": "dailymail-headlines",
   "DailyMailDailymailNews": "dailymail-news",
   "DailyMailDailymailSections": "dailymail-sections",
+  "DailyMaverickDailymaverickArticle": "dailymaverick-article",
+  "DailyMaverickDailymaverickHeadlines": "dailymaverick-headlines",
+  "DailyMaverickDailymaverickNews": "dailymaverick-news",
+  "DailyMaverickDailymaverickSections": "dailymaverick-sections",
   "DailyRecordDailyrecordArticle": "dailyrecord-article",
   "DailyRecordDailyrecordAuthor": "dailyrecord-author",
   "DailyRecordDailyrecordHeadlines": "dailyrecord-headlines",
@@ -123266,6 +139158,10 @@ export const OperationIds = Object.freeze({
   "DatasetsChromeExtensionsSearch": "datasets-chrome-extensions-search",
   "DatasetsChromeExtensionsTrending": "datasets-chrome-extensions-trending",
   "DatasetsCreatorsSearch": "datasets-creators-search",
+  "DatasetsDoordashStoresFacets": "datasets-doordash-stores-facets",
+  "DatasetsDoordashStoresItem": "datasets-doordash-stores-item",
+  "DatasetsDoordashStoresNearby": "datasets-doordash-stores-nearby",
+  "DatasetsDoordashStoresSearch": "datasets-doordash-stores-search",
   "DatasetsFacebookPagesFacets": "datasets-facebook-pages-facets",
   "DatasetsFacebookPagesItem": "datasets-facebook-pages-item",
   "DatasetsFacebookPagesSearch": "datasets-facebook-pages-search",
@@ -123792,6 +139688,26 @@ export const OperationIds = Object.freeze({
   "GoldinListing": "goldin-listing",
   "GoldinSearch": "goldin-search",
   "GoldinSuggest": "goldin-suggest",
+  "GoodRxGoodrxAnswer": "goodrx-answer",
+  "GoodRxGoodrxAnswers": "goodrx-answers",
+  "GoodRxGoodrxBrands": "goodrx-brands",
+  "GoodRxGoodrxClass": "goodrx-class",
+  "GoodRxGoodrxClasses": "goodrx-classes",
+  "GoodRxGoodrxComparison": "goodrx-comparison",
+  "GoodRxGoodrxComparisons": "goodrx-comparisons",
+  "GoodRxGoodrxCondition": "goodrx-condition",
+  "GoodRxGoodrxConditionDrugs": "goodrx-condition-drugs",
+  "GoodRxGoodrxConditions": "goodrx-conditions",
+  "GoodRxGoodrxDrugGuide": "goodrx-drug-guide",
+  "GoodRxGoodrxDrugGuides": "goodrx-drug-guides",
+  "GoodRxGoodrxDrugInfo": "goodrx-drug-info",
+  "GoodRxGoodrxDrugOptions": "goodrx-drug-options",
+  "GoodRxGoodrxDrugPrices": "goodrx-drug-prices",
+  "GoodRxGoodrxDrugs": "goodrx-drugs",
+  "GoodRxGoodrxHealthArticle": "goodrx-health-article",
+  "GoodRxGoodrxHealthArticles": "goodrx-health-articles",
+  "GoodRxGoodrxHealthTopics": "goodrx-health-topics",
+  "GoodRxGoodrxPetMedications": "goodrx-pet-medications",
   "GoodreadsAuthor": "goodreads-author",
   "GoodreadsAuthorBooks": "goodreads-author-books",
   "GoodreadsAuthorQuotes": "goodreads-author-quotes",
@@ -123877,6 +139793,15 @@ export const OperationIds = Object.freeze({
   "GrailedSimilarListings": "grailed-similar-listings",
   "GrailedSoldListings": "grailed-sold-listings",
   "GrailedSuggest": "grailed-suggest",
+  "GreystarArticle": "greystar-article",
+  "GreystarArticles": "greystar-articles",
+  "GreystarLocation": "greystar-location",
+  "GreystarLocations": "greystar-locations",
+  "GreystarMarkets": "greystar-markets",
+  "GreystarNewsroom": "greystar-newsroom",
+  "GreystarNewsroomArticle": "greystar-newsroom-article",
+  "GreystarProperty": "greystar-property",
+  "GreystarSearch": "greystar-search",
   "GrubhubAvailability": "grubhub-availability",
   "GrubhubOffers": "grubhub-offers",
   "GrubhubRestaurant": "grubhub-restaurant",
@@ -123925,6 +139850,22 @@ export const OperationIds = Object.freeze({
   "HarvardBusinessReviewHbrCategories": "hbr-categories",
   "HarvardBusinessReviewHbrHeadlines": "hbr-headlines",
   "HarvardBusinessReviewHbrTopic": "hbr-topic",
+  "HealthgradesAutocomplete": "healthgrades-autocomplete",
+  "HealthgradesFacilitiesFilters": "healthgrades-facilities-filters",
+  "HealthgradesFacilitiesSearch": "healthgrades-facilities-search",
+  "HealthgradesFacility": "healthgrades-facility",
+  "HealthgradesHealthArticle": "healthgrades-health-article",
+  "HealthgradesHealthArticles": "healthgrades-health-articles",
+  "HealthgradesHealthTopics": "healthgrades-health-topics",
+  "HealthgradesHospital": "healthgrades-hospital",
+  "HealthgradesHospitalAwardFilters": "healthgrades-hospital-award-filters",
+  "HealthgradesHospitalAwards": "healthgrades-hospital-awards",
+  "HealthgradesLocations": "healthgrades-locations",
+  "HealthgradesPhysician": "healthgrades-physician",
+  "HealthgradesPhysiciansFilters": "healthgrades-physicians-filters",
+  "HealthgradesPhysiciansSearch": "healthgrades-physicians-search",
+  "HealthgradesSpecialties": "healthgrades-specialties",
+  "HealthgradesTopSearches": "healthgrades-top-searches",
   "HermesCategories": "hermes-categories",
   "HermesCategory": "hermes-category",
   "HermesProduct": "hermes-product",
@@ -123956,6 +139897,11 @@ export const OperationIds = Object.freeze({
   "HotelsComHotelsReviews": "hotels-reviews",
   "HotelsComHotelsReviewsArchive": "hotels-reviews-archive",
   "HotelsComHotelsSearch": "hotels-search",
+  "HoustonChronicleArticle": "houston-chronicle-article",
+  "HoustonChronicleAuthor": "houston-chronicle-author",
+  "HoustonChronicleHeadlines": "houston-chronicle-headlines",
+  "HoustonChronicleNews": "houston-chronicle-news",
+  "HoustonChronicleSections": "houston-chronicle-sections",
   "HowToGeekHowtogeekNews": "howtogeek-news",
   "HuffPostHuffpostArticle": "huffpost-article",
   "HuffPostHuffpostAuthor": "huffpost-author",
@@ -124259,6 +140205,15 @@ export const OperationIds = Object.freeze({
   "MacySMacysProduct": "macys-product",
   "MacySMacysProductReviews": "macys-product-reviews",
   "MacySMacysSuggest": "macys-suggest",
+  "MakeUseOfMakeuseofArticle": "makeuseof-article",
+  "MakeUseOfMakeuseofAuthor": "makeuseof-author",
+  "MakeUseOfMakeuseofHeadlines": "makeuseof-headlines",
+  "MakeUseOfMakeuseofNews": "makeuseof-news",
+  "MakeUseOfMakeuseofSections": "makeuseof-sections",
+  "MalayMailMalaymailArticle": "malaymail-article",
+  "MalayMailMalaymailHeadlines": "malaymail-headlines",
+  "MalayMailMalaymailNews": "malaymail-news",
+  "MalayMailMalaymailSections": "malaymail-sections",
   "ManchesterEveningNewsMenArticle": "men-article",
   "ManchesterEveningNewsMenAuthor": "men-author",
   "ManchesterEveningNewsMenHeadlines": "men-headlines",
@@ -124371,13 +140326,59 @@ export const OperationIds = Object.freeze({
   "MlbLeagueStats": "mlb-league-stats",
   "MlbPlayer": "mlb-player",
   "MlbPlayerStats": "mlb-player-stats",
+  "MlbProspectRankings": "mlb-prospect-rankings",
   "MlbProspectStats": "mlb-prospect-stats",
   "MlbSchedule": "mlb-schedule",
   "MlbSearch": "mlb-search",
   "MlbStandings": "mlb-standings",
   "MlbStatcast": "mlb-statcast",
+  "MlbStatcastAbsChallenges": "mlb-statcast-abs-challenges",
+  "MlbStatcastActiveSpin": "mlb-statcast-active-spin",
+  "MlbStatcastArmAngle": "mlb-statcast-arm-angle",
+  "MlbStatcastArmStrength": "mlb-statcast-arm-strength",
+  "MlbStatcastArmStrengthPlayer": "mlb-statcast-arm-strength-player",
+  "MlbStatcastArmValue": "mlb-statcast-arm-value",
+  "MlbStatcastArmValueDetails": "mlb-statcast-arm-value-details",
+  "MlbStatcastBaserunning": "mlb-statcast-baserunning",
+  "MlbStatcastBatTracking": "mlb-statcast-bat-tracking",
+  "MlbStatcastBattedBall": "mlb-statcast-batted-ball",
+  "MlbStatcastBirthdayIndex": "mlb-statcast-birthday-index",
+  "MlbStatcastCatcherBlocking": "mlb-statcast-catcher-blocking",
+  "MlbStatcastCatcherBlockingDetails": "mlb-statcast-catcher-blocking-details",
+  "MlbStatcastCatcherFraming": "mlb-statcast-catcher-framing",
+  "MlbStatcastCatcherFramingDetails": "mlb-statcast-catcher-framing-details",
+  "MlbStatcastCatcherPopTime": "mlb-statcast-catcher-pop-time",
+  "MlbStatcastCatcherStance": "mlb-statcast-catcher-stance",
+  "MlbStatcastCatcherThrowing": "mlb-statcast-catcher-throwing",
+  "MlbStatcastCatcherThrowingDetails": "mlb-statcast-catcher-throwing-details",
   "MlbStatcastExpected": "mlb-statcast-expected",
+  "MlbStatcastFieldingRunValue": "mlb-statcast-fielding-run-value",
+  "MlbStatcastFirstBaseReceiving": "mlb-statcast-first-base-receiving",
+  "MlbStatcastFirstBaseReceivingDetails": "mlb-statcast-first-base-receiving-details",
+  "MlbStatcastHomeRuns": "mlb-statcast-home-runs",
+  "MlbStatcastHomeRunsDetails": "mlb-statcast-home-runs-details",
   "MlbStatcastOaa": "mlb-statcast-oaa",
+  "MlbStatcastParkFactors": "mlb-statcast-park-factors",
+  "MlbStatcastPercentile": "mlb-statcast-percentile",
+  "MlbStatcastPitchArsenal": "mlb-statcast-pitch-arsenal",
+  "MlbStatcastPitchArsenalDetails": "mlb-statcast-pitch-arsenal-details",
+  "MlbStatcastPitchArsenals": "mlb-statcast-pitch-arsenals",
+  "MlbStatcastPitchMovement": "mlb-statcast-pitch-movement",
+  "MlbStatcastPitchTempo": "mlb-statcast-pitch-tempo",
+  "MlbStatcastPitchTempoPlayer": "mlb-statcast-pitch-tempo-player",
+  "MlbStatcastPitchTimer": "mlb-statcast-pitch-timer",
+  "MlbStatcastPlayerDetails": "mlb-statcast-player-details",
+  "MlbStatcastRolling": "mlb-statcast-rolling",
+  "MlbStatcastRunValue": "mlb-statcast-run-value",
+  "MlbStatcastRunningGame": "mlb-statcast-running-game",
+  "MlbStatcastRunningGameDetails": "mlb-statcast-running-game-details",
+  "MlbStatcastSprintSpeed": "mlb-statcast-sprint-speed",
+  "MlbStatcastSprintSpeedTeams": "mlb-statcast-sprint-speed-teams",
+  "MlbStatcastSwingPath": "mlb-statcast-swing-path",
+  "MlbStatcastSwingTiming": "mlb-statcast-swing-timing",
+  "MlbStatcastSwingTimingDetails": "mlb-statcast-swing-timing-details",
+  "MlbStatcastTopPerformers": "mlb-statcast-top-performers",
+  "MlbStatcastYearToYear": "mlb-statcast-year-to-year",
   "MlbTeamRoster": "mlb-team-roster",
   "MlbTeamStats": "mlb-team-stats",
   "MlbTeams": "mlb-teams",
@@ -124422,9 +140423,15 @@ export const OperationIds = Object.freeze({
   "NdtvArticle": "ndtv-article",
   "NdtvAuthor": "ndtv-author",
   "NdtvHeadlines": "ndtv-headlines",
+  "NdtvLatestVideos": "ndtv-latest-videos",
+  "NdtvLiveBlog": "ndtv-live-blog",
+  "NdtvLiveBlogs": "ndtv-live-blogs",
   "NdtvNews": "ndtv-news",
   "NdtvSearch": "ndtv-search",
   "NdtvSections": "ndtv-sections",
+  "NdtvVideo": "ndtv-video",
+  "NdtvVideoCategories": "ndtv-video-categories",
+  "NdtvVideos": "ndtv-videos",
   "NewYorkDailyNewsNydailynewsArticle": "nydailynews-article",
   "NewYorkDailyNewsNydailynewsAuthor": "nydailynews-author",
   "NewYorkDailyNewsNydailynewsHeadlines": "nydailynews-headlines",
@@ -124478,6 +140485,11 @@ export const OperationIds = Object.freeze({
   "NikeSearch": "nike-search",
   "NikeStores": "nike-stores",
   "NikeSuggest": "nike-suggest",
+  "NineToFiveGoogleArticle": "ninetofivegoogle-article",
+  "NineToFiveGoogleAuthor": "ninetofivegoogle-author",
+  "NineToFiveGoogleHeadlines": "ninetofivegoogle-headlines",
+  "NineToFiveGoogleNews": "ninetofivegoogle-news",
+  "NineToFiveGoogleSections": "ninetofivegoogle-sections",
   "NineToFiveMacArticle": "ninetofivemac-article",
   "NineToFiveMacAuthor": "ninetofivemac-author",
   "NineToFiveMacHeadlines": "ninetofivemac-headlines",
@@ -124649,6 +140661,10 @@ export const OperationIds = Object.freeze({
   "PhoneArenaPhonearenaHeadlines": "phonearena-headlines",
   "PhoneArenaPhonearenaNews": "phonearena-news",
   "PhoneArenaPhonearenaSections": "phonearena-sections",
+  "PhysOrgPhysorgArticle": "physorg-article",
+  "PhysOrgPhysorgHeadlines": "physorg-headlines",
+  "PhysOrgPhysorgNews": "physorg-news",
+  "PhysOrgPhysorgSections": "physorg-sections",
   "PinterestBoard": "pinterest-board",
   "PinterestCategories": "pinterest-categories",
   "PinterestIdea": "pinterest-idea",
@@ -124907,6 +140923,19 @@ export const OperationIds = Object.freeze({
   "ResyLocations": "resy-locations",
   "ResyRestaurant": "resy-restaurant",
   "ResySearch": "resy-search",
+  "RetailMeNotRetailmenotAutocomplete": "retailmenot-autocomplete",
+  "RetailMeNotRetailmenotBlogCategories": "retailmenot-blog-categories",
+  "RetailMeNotRetailmenotBlogPost": "retailmenot-blog-post",
+  "RetailMeNotRetailmenotBlogPosts": "retailmenot-blog-posts",
+  "RetailMeNotRetailmenotBlogTags": "retailmenot-blog-tags",
+  "RetailMeNotRetailmenotCashback": "retailmenot-cashback",
+  "RetailMeNotRetailmenotCategories": "retailmenot-categories",
+  "RetailMeNotRetailmenotCategory": "retailmenot-category",
+  "RetailMeNotRetailmenotDealEvent": "retailmenot-deal-event",
+  "RetailMeNotRetailmenotDealEvents": "retailmenot-deal-events",
+  "RetailMeNotRetailmenotHome": "retailmenot-home",
+  "RetailMeNotRetailmenotStore": "retailmenot-store",
+  "RetailMeNotRetailmenotStores": "retailmenot-stores",
   "ReutersArticle": "reuters-article",
   "ReutersArticles": "reuters-articles",
   "ReutersAuthor": "reuters-author",
@@ -125188,15 +141217,31 @@ export const OperationIds = Object.freeze({
   "SportingNewsSportingnewsSections": "sportingnews-sections",
   "SportskeedaArticle": "sportskeeda-article",
   "SportskeedaAuthor": "sportskeeda-author",
+  "SportskeedaCollegeBasketballSchedule": "sportskeeda-college-basketball-schedule",
+  "SportskeedaCollegeBasketballScheduleOptions": "sportskeeda-college-basketball-schedule-options",
+  "SportskeedaCricketCommentary": "sportskeeda-cricket-commentary",
+  "SportskeedaCricketMatch": "sportskeeda-cricket-match",
   "SportskeedaDepthChart": "sportskeeda-depth-chart",
+  "SportskeedaDraftPicks": "sportskeeda-draft-picks",
+  "SportskeedaDraftPicksOptions": "sportskeeda-draft-picks-options",
+  "SportskeedaEventCalendar": "sportskeeda-event-calendar",
+  "SportskeedaEventCalendarOptions": "sportskeeda-event-calendar-options",
   "SportskeedaFeed": "sportskeeda-feed",
   "SportskeedaFootballData": "sportskeeda-football-data",
   "SportskeedaFootballOptions": "sportskeeda-football-options",
+  "SportskeedaGuessingGame": "sportskeeda-guessing-game",
+  "SportskeedaGuessingGameEntities": "sportskeeda-guessing-game-entities",
+  "SportskeedaGuessingGames": "sportskeeda-guessing-games",
+  "SportskeedaNbaQueries": "sportskeeda-nba-queries",
   "SportskeedaNews": "sportskeeda-news",
   "SportskeedaPageData": "sportskeeda-page-data",
   "SportskeedaPageOptions": "sportskeeda-page-options",
   "SportskeedaPlayerStats": "sportskeeda-player-stats",
   "SportskeedaProfile": "sportskeeda-profile",
+  "SportskeedaQuiz": "sportskeeda-quiz",
+  "SportskeedaQuizCategories": "sportskeeda-quiz-categories",
+  "SportskeedaQuizzes": "sportskeeda-quizzes",
+  "SportskeedaSalaryCap": "sportskeeda-salary-cap",
   "SportskeedaSchedule": "sportskeeda-schedule",
   "SportskeedaSections": "sportskeeda-sections",
   "SportskeedaSitemapItems": "sportskeeda-sitemap-items",
@@ -125204,9 +141249,20 @@ export const OperationIds = Object.freeze({
   "SportskeedaStandings": "sportskeeda-standings",
   "SportskeedaStandingsOptions": "sportskeeda-standings-options",
   "SportskeedaTaxonomySearch": "sportskeeda-taxonomy-search",
+  "SportskeedaTopic": "sportskeeda-topic",
   "SportskeedaTradeValues": "sportskeeda-trade-values",
+  "SportskeedaTransactions": "sportskeeda-transactions",
+  "SportskeedaTransactionsOptions": "sportskeeda-transactions-options",
   "SportskeedaVideo": "sportskeeda-video",
   "SportskeedaVideos": "sportskeeda-videos",
+  "SportskeedaWikiActivity": "sportskeeda-wiki-activity",
+  "SportskeedaWikiArticle": "sportskeeda-wiki-article",
+  "SportskeedaWikiCategories": "sportskeeda-wiki-categories",
+  "SportskeedaWikiContributors": "sportskeeda-wiki-contributors",
+  "SportskeedaWikiIssues": "sportskeeda-wiki-issues",
+  "SportskeedaWikiOptions": "sportskeeda-wiki-options",
+  "SportskeedaWikiPages": "sportskeeda-wiki-pages",
+  "SportskeedaWikiSummary": "sportskeeda-wiki-summary",
   "SpotifyAlbum": "spotify-album",
   "SpotifyAlbumTracks": "spotify-album-tracks",
   "SpotifyAlbumsSearch": "spotify-albums-search",
@@ -125291,6 +141347,17 @@ export const OperationIds = Object.freeze({
   "StravaClub": "strava-club",
   "StravaRouteDetail": "strava-route-detail",
   "StravaRoutes": "strava-routes",
+  "StreetEasyStreeteasyAreas": "streeteasy-areas",
+  "StreetEasyStreeteasyBuilding": "streeteasy-building",
+  "StreetEasyStreeteasyMarketDataCatalog": "streeteasy-market-data-catalog",
+  "StreetEasyStreeteasyMarketDataSeries": "streeteasy-market-data-series",
+  "StreetEasyStreeteasyMarketIndices": "streeteasy-market-indices",
+  "StreetEasyStreeteasyMarketInventory": "streeteasy-market-inventory",
+  "StreetEasyStreeteasyQuickSearch": "streeteasy-quick-search",
+  "StreetEasyStreeteasyRentalsSearch": "streeteasy-rentals-search",
+  "StreetEasyStreeteasySalesSearch": "streeteasy-sales-search",
+  "StreetEasyStreeteasySchool": "streeteasy-school",
+  "StreetEasyStreeteasyUnit": "streeteasy-unit",
   "StubHubStubhubCarousel": "stubhub-carousel",
   "StubHubStubhubCategories": "stubhub-categories",
   "StubHubStubhubCategoryEvents": "stubhub-category-events",
@@ -125380,6 +141447,11 @@ export const OperationIds = Object.freeze({
   "TheAtlanticTheatlanticAuthor": "theatlantic-author",
   "TheAtlanticTheatlanticHeadlines": "theatlantic-headlines",
   "TheAtlanticTheatlanticSections": "theatlantic-sections",
+  "TheBlazeTheblazeArticle": "theblaze-article",
+  "TheBlazeTheblazeAuthor": "theblaze-author",
+  "TheBlazeTheblazeHeadlines": "theblaze-headlines",
+  "TheBlazeTheblazeNews": "theblaze-news",
+  "TheBlazeTheblazeSections": "theblaze-sections",
   "TheBodyShopThebodyshopCollectionProducts": "thebodyshop-collection-products",
   "TheBodyShopThebodyshopCollections": "thebodyshop-collections",
   "TheBodyShopThebodyshopPage": "thebodyshop-page",
@@ -125401,6 +141473,16 @@ export const OperationIds = Object.freeze({
   "TheDailyCallerDailycallerHeadlines": "dailycaller-headlines",
   "TheDailyCallerDailycallerNews": "dailycaller-news",
   "TheDailyCallerDailycallerSections": "dailycaller-sections",
+  "TheDenverPostDenverpostArticle": "denverpost-article",
+  "TheDenverPostDenverpostAuthor": "denverpost-author",
+  "TheDenverPostDenverpostHeadlines": "denverpost-headlines",
+  "TheDenverPostDenverpostNews": "denverpost-news",
+  "TheDenverPostDenverpostSections": "denverpost-sections",
+  "TheExpressTribuneExpresstribuneArticle": "expresstribune-article",
+  "TheExpressTribuneExpresstribuneAuthor": "expresstribune-author",
+  "TheExpressTribuneExpresstribuneHeadlines": "expresstribune-headlines",
+  "TheExpressTribuneExpresstribuneNews": "expresstribune-news",
+  "TheExpressTribuneExpresstribuneSections": "expresstribune-sections",
   "TheHillThehillArticle": "thehill-article",
   "TheHillThehillAuthor": "thehill-author",
   "TheHillThehillHeadlines": "thehill-headlines",
@@ -125421,6 +141503,11 @@ export const OperationIds = Object.freeze({
   "TheIndianExpressIndianexpressHeadlines": "indianexpress-headlines",
   "TheIndianExpressIndianexpressNews": "indianexpress-news",
   "TheIndianExpressIndianexpressSections": "indianexpress-sections",
+  "TheJapanTimesJapantimesArticle": "japantimes-article",
+  "TheJapanTimesJapantimesAuthor": "japantimes-author",
+  "TheJapanTimesJapantimesHeadlines": "japantimes-headlines",
+  "TheJapanTimesJapantimesNews": "japantimes-news",
+  "TheJapanTimesJapantimesSections": "japantimes-sections",
   "TheJournalIeThejournalArticle": "thejournal-article",
   "TheJournalIeThejournalAuthor": "thejournal-author",
   "TheJournalIeThejournalHeadlines": "thejournal-headlines",
@@ -125431,11 +141518,21 @@ export const OperationIds = Object.freeze({
   "TheMotleyFoolMotleyfoolHeadlines": "motleyfool-headlines",
   "TheMotleyFoolMotleyfoolNews": "motleyfool-news",
   "TheMotleyFoolMotleyfoolSections": "motleyfool-sections",
+  "TheNationalNationalArticle": "national-article",
+  "TheNationalNationalAuthor": "national-author",
+  "TheNationalNationalHeadlines": "national-headlines",
+  "TheNationalNationalNews": "national-news",
+  "TheNationalNationalSections": "national-sections",
   "TheNewYorkerNewyorkerArticle": "newyorker-article",
   "TheNewYorkerNewyorkerAuthor": "newyorker-author",
   "TheNewYorkerNewyorkerHeadlines": "newyorker-headlines",
   "TheNewYorkerNewyorkerNews": "newyorker-news",
   "TheNewYorkerNewyorkerSections": "newyorker-sections",
+  "TheNextWebThenextwebArticle": "thenextweb-article",
+  "TheNextWebThenextwebAuthor": "thenextweb-author",
+  "TheNextWebThenextwebHeadlines": "thenextweb-headlines",
+  "TheNextWebThenextwebNews": "thenextweb-news",
+  "TheNextWebThenextwebSections": "thenextweb-sections",
   "TheRealRealTherealrealAutocomplete": "therealreal-autocomplete",
   "TheRealRealTherealrealCategories": "therealreal-categories",
   "TheRealRealTherealrealCategory": "therealreal-category",
@@ -125543,6 +141640,10 @@ export const OperationIds = Object.freeze({
   "TimeHeadlines": "time-headlines",
   "TimeNews": "time-news",
   "TimeSections": "time-sections",
+  "TimesLiveTimesliveArticle": "timeslive-article",
+  "TimesLiveTimesliveHeadlines": "timeslive-headlines",
+  "TimesLiveTimesliveNews": "timeslive-news",
+  "TimesLiveTimesliveSections": "timeslive-sections",
   "TimesOfIndiaTimesofindiaArticle": "timesofindia-article",
   "TimesOfIndiaTimesofindiaAuthor": "timesofindia-author",
   "TimesOfIndiaTimesofindiaHeadlines": "timesofindia-headlines",
@@ -125704,6 +141805,13 @@ export const OperationIds = Object.freeze({
   "VoxHeadlines": "vox-headlines",
   "VoxNews": "vox-news",
   "VoxSections": "vox-sections",
+  "VrboLocationSuggestions": "vrbo-location-suggestions",
+  "VrboProperty": "vrbo-property",
+  "VrboPropertyReviews": "vrbo-property-reviews",
+  "VrboRateCalendar": "vrbo-rate-calendar",
+  "VrboSearch": "vrbo-search",
+  "VrboTravelPageDetail": "vrbo-travel-page-detail",
+  "VrboTravelPages": "vrbo-travel-pages",
   "WalesOnlineWalesonlineArticle": "walesonline-article",
   "WalesOnlineWalesonlineAuthor": "walesonline-author",
   "WalesOnlineWalesonlineHeadlines": "walesonline-headlines",
@@ -125723,6 +141831,11 @@ export const OperationIds = Object.freeze({
   "WayfairCategories": "wayfair-categories",
   "WayfairCategory": "wayfair-category",
   "WayfairProduct": "wayfair-product",
+  "WccftechArticle": "wccftech-article",
+  "WccftechAuthor": "wccftech-author",
+  "WccftechHeadlines": "wccftech-headlines",
+  "WccftechNews": "wccftech-news",
+  "WccftechSections": "wccftech-sections",
   "WebAntibotCheck": "antibot-check",
   "WebContact": "contact",
   "WebEmailVerify": "email-verify",
@@ -125874,6 +141987,11 @@ export const OperationIds = Object.freeze({
   "YahooTechArticle": "yahoo-tech-article",
   "YahooTechCategory": "yahoo-tech-category",
   "YahooTechHome": "yahoo-tech-home",
+  "YardbarkerArticle": "yardbarker-article",
+  "YardbarkerAuthor": "yardbarker-author",
+  "YardbarkerHeadlines": "yardbarker-headlines",
+  "YardbarkerNews": "yardbarker-news",
+  "YardbarkerSections": "yardbarker-sections",
   "YelpBusiness": "yelp-business",
   "YelpBusinessMenu": "yelp-business-menu",
   "YelpBusinessPhotos": "yelp-business-photos",
