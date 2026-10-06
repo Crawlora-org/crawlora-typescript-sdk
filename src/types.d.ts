@@ -4351,6 +4351,39 @@ export interface ModelAxiosHeadlinesResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelBaiduSearchPagination {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelBaiduSearchResponse {
+  "pagination"?: ModelBaiduSearchPagination;
+  "query"?: string;
+  "results"?: Array<ModelBaiduSearchResult>;
+}
+
+export interface ModelBaiduSearchResult {
+  "date"?: string;
+  "description"?: string;
+  "position"?: number;
+  "source"?: string;
+  "title"?: string;
+  "type"?: "web" | "video" | "baike";
+  "url"?: string;
+}
+
+export interface ModelBaiduSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelBaiduSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelBaiduSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelBalenciagaCategoriesResponse {
   "categories"?: Array<ModelBalenciagaCategory>;
   "count"?: number;
@@ -6141,7 +6174,14 @@ export interface ModelBingSuggestResponse {
   "suggestions"?: Array<ModelBingSuggestionResult>;
 }
 
+export interface ModelBingSuggestionEntity {
+  "description"?: string;
+  "image_url"?: string;
+  "name"?: string;
+}
+
 export interface ModelBingSuggestionResult {
+  "entity"?: ModelBingSuggestionEntity;
   "position"?: number;
   "query"?: string;
 }
@@ -7771,7 +7811,16 @@ export interface ModelBraveSuggestResponse {
   "suggestions"?: Array<ModelBraveSuggestionResult>;
 }
 
+export interface ModelBraveSuggestionEntity {
+  "category"?: string;
+  "description"?: string;
+  "image_url"?: string;
+  "logo"?: boolean;
+  "name"?: string;
+}
+
 export interface ModelBraveSuggestionResult {
+  "entity"?: ModelBraveSuggestionEntity;
   "position"?: number;
   "query"?: string;
 }
@@ -15986,6 +16035,12 @@ export interface ModelDuckduckgoSearchResponseDoc {
 export interface ModelDuckduckgoShoppingResponseDoc {
   "code"?: number;
   "data"?: ModelDuckduckgoShoppingResponse;
+  "msg"?: string;
+}
+
+export interface ModelDuckduckgoSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelSuggestResponse;
   "msg"?: string;
 }
 
@@ -24219,12 +24274,16 @@ export interface ModelGoogleSearchOption {
 
 export interface ModelGoogleSuggestResponse {
   "query"?: string;
+  "source"?: string;
   "suggestions"?: Array<ModelGoogleSuggestionResult>;
 }
 
 export interface ModelGoogleSuggestionResult {
+  "description"?: string;
   "position"?: number;
   "query"?: string;
+  "relevance"?: number;
+  "type"?: string;
 }
 
 export interface ModelGoogleVerticalPagination {
@@ -25181,6 +25240,11 @@ export interface ModelGreystarFaq {
   "question"?: string;
 }
 
+export interface ModelGreystarFacetCount {
+  "count"?: number;
+  "value"?: string;
+}
+
 export interface ModelGreystarFee {
   "amount"?: number;
   "category"?: string;
@@ -25215,6 +25279,21 @@ export interface ModelGreystarImage {
   "height"?: number;
   "url"?: string;
   "width"?: number;
+}
+
+export interface ModelGreystarListedUnit {
+  "banner"?: string;
+  "bathrooms"?: number;
+  "bedrooms"?: number;
+  "floorplan"?: string;
+  "max_price"?: number;
+  "min_base_rent_lease_term"?: number;
+  "min_price"?: number;
+  "price"?: number;
+  "required_monthly_fees_max"?: number;
+  "required_monthly_fees_min"?: number;
+  "unit_id"?: string;
+  "unit_number"?: string;
 }
 
 export interface ModelGreystarLocation {
@@ -25389,6 +25468,50 @@ export interface ModelGreystarUnit {
   "min_price"?: number;
   "unit_id"?: string;
   "unit_number"?: string;
+}
+
+export interface ModelGreystarUnitFacets {
+  "bathrooms"?: Array<ModelGreystarFacetCount>;
+  "bedrooms"?: Array<ModelGreystarFacetCount>;
+  "building_types"?: Array<ModelGreystarFacetCount>;
+  "highlights"?: Array<ModelGreystarFacetCount>;
+}
+
+export interface ModelGreystarUnitLocation {
+  "location"?: string;
+  "parent"?: string;
+  "url"?: string;
+}
+
+export interface ModelGreystarUnitLocationList {
+  "locations"?: Array<ModelGreystarUnitLocation>;
+  "total_count"?: number;
+}
+
+export interface ModelGreystarUnitProperty {
+  "address"?: string;
+  "city"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "matching_units"?: number;
+  "name"?: string;
+  "postal_code"?: string;
+  "property_id"?: string;
+  "state"?: string;
+  "state_name"?: string;
+  "thumbnail_url"?: string;
+  "units"?: Array<ModelGreystarListedUnit>;
+  "units_truncated"?: boolean;
+}
+
+export interface ModelGreystarUnitSearchResult {
+  "facets"?: ModelGreystarUnitFacets;
+  "location"?: string;
+  "page"?: number;
+  "per_page"?: number;
+  "properties"?: Array<ModelGreystarUnitProperty>;
+  "total_count"?: number;
+  "total_pages"?: number;
 }
 
 export interface ModelGrubhubAvailabilityResponse {
@@ -29103,10 +29226,6 @@ export interface ModelInstagramImageCandidate {
   "width"?: number;
 }
 
-export interface ModelInstagramImageVersions {
-  "candidates"?: Array<ModelInstagramImageCandidate>;
-}
-
 export interface ModelInstagramImageVersions2 {
   "candidates"?: Array<ModelInstagramImageCandidate>;
 }
@@ -29121,7 +29240,7 @@ export interface ModelInstagramMedia {
   "comment_count"?: number;
   "display_uri"?: string;
   "id"?: string;
-  "image_versions2"?: ModelInstagramImageVersions;
+  "image_versions2"?: ModelInstagramReelImageVersions;
   "like_count"?: number;
   "media_type"?: number;
   "play_count"?: number;
@@ -29180,6 +29299,16 @@ export interface ModelInstagramPost {
   "video_url"?: string;
   "view_count"?: number;
   "width"?: number;
+}
+
+export interface ModelInstagramReelImageCandidate {
+  "height"?: number;
+  "url"?: string;
+  "width"?: number;
+}
+
+export interface ModelInstagramReelImageVersions {
+  "candidates"?: Array<ModelInstagramReelImageCandidate>;
 }
 
 export interface ModelInstagramReelResponse {
@@ -45081,6 +45210,12 @@ export interface ModelQuinceSuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelQwantSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelRaisingcanesDirectoryChild {
   "is_store"?: boolean;
   "name"?: string;
@@ -54003,6 +54138,12 @@ export interface ModelStarbucksStoresResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelStartpageSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelSteamAchievementsResponse {
   "achievements"?: Array<ModelSteamGlobalAchievement>;
   "appid"?: string;
@@ -56052,6 +56193,16 @@ export interface ModelSubwayStoreResponseDoc {
   "code"?: number;
   "data"?: ModelSubwayStoreResponse;
   "msg"?: unknown;
+}
+
+export interface ModelSuggestResponse {
+  "query"?: string;
+  "suggestions"?: Array<ModelSuggestSuggestion>;
+}
+
+export interface ModelSuggestSuggestion {
+  "position"?: number;
+  "query"?: string;
 }
 
 export interface ModelSunAuthorArticle {
@@ -62728,6 +62879,7 @@ export interface ModelWebScrapeMetadata {
 
 export interface ModelWebScrapeOption {
   "backend"?: string;
+  "dedicated"?: boolean;
   "formats"?: Array<string>;
   "max_age"?: number;
   "only_main_content"?: boolean;
@@ -66082,6 +66234,37 @@ export interface ModelYahootechHomeResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelYandexSearchPagination {
+  "next_page"?: number;
+  "page"?: number;
+}
+
+export interface ModelYandexSearchResponse {
+  "pagination"?: ModelYandexSearchPagination;
+  "query"?: string;
+  "results"?: Array<ModelYandexSearchResult>;
+}
+
+export interface ModelYandexSearchResult {
+  "description"?: string;
+  "display_url"?: string;
+  "position"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelYandexSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelYandexSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelYandexSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelYardbarkerAuthorResponse {
   "articles"?: Array<ModelNewsplatformHeadlineItem>;
   "image_url"?: string;
@@ -66627,6 +66810,12 @@ export interface ModelYoutubeProfileResponseDoc {
 export interface ModelYoutubeSearchResponseDoc {
   "code"?: number;
   "data"?: ModelYoutubeSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelYoutubeSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelSuggestResponse;
   "msg"?: string;
 }
 
@@ -69218,6 +69407,18 @@ export interface AxiosHeadlinesParams {
   "topic": string;
 }
 
+export type BaiduSearchResponse = CrawloraResponse<ModelBaiduSearchResponseDoc>;
+export interface BaiduSearchParams {
+  "q": string;
+  "page"?: number;
+}
+
+export type BaiduSuggestResponse = CrawloraResponse<ModelBaiduSuggestResponseDoc>;
+export interface BaiduSuggestParams {
+  "q": string;
+  "count"?: number;
+}
+
 export type BalenciagaCategoriesResponse = CrawloraResponse<ModelBalenciagaCategoriesResponseDoc>;
 export interface BalenciagaCategoriesParams {
 }
@@ -69617,6 +69818,7 @@ export interface BingSuggestParams {
   "count"?: number;
   "country"?: string;
   "lang"?: string;
+  "rich"?: boolean;
 }
 
 export type BingVideosResponse = CrawloraResponse<ModelBingVideosResponseDoc>;
@@ -70094,6 +70296,7 @@ export interface BraveSuggestParams {
   "count"?: number;
   "country"?: "all" | "ar" | "at" | "au" | "be" | "br" | "ca" | "ch" | "cl" | "cn" | "de" | "dk" | "es" | "fi" | "fr" | "gb" | "gr" | "hk" | "id" | "in" | "it" | "jp" | "kr" | "mx" | "my" | "nl" | "no" | "nz" | "ph" | "pl" | "pt" | "ru" | "sa" | "se" | "sg" | "tr" | "tw" | "us" | "za";
   "lang"?: "de-de" | "en-ca" | "en-gb" | "en-in" | "en-us" | "fi-fi" | "fr-ca" | "fr-fr" | "ja-jp" | "pt-br" | "sq-al" | "sw-ke" | "zh-tw";
+  "rich"?: boolean;
 }
 
 export type BraveVideosResponse = CrawloraResponse<ModelBraveVideosResponseDoc>;
@@ -73907,6 +74110,13 @@ export interface DuckDuckGoSearchDuckduckgoShoppingParams {
   "region"?: string;
 }
 
+export type DuckDuckGoSearchDuckduckgoSuggestResponse = CrawloraResponse<ModelDuckduckgoSuggestResponseDoc>;
+export interface DuckDuckGoSearchDuckduckgoSuggestParams {
+  "q": string;
+  "count"?: number;
+  "region"?: string;
+}
+
 export type DuckDuckGoSearchDuckduckgoVideoResponse = CrawloraResponse<ModelDuckduckgoVideoResponseDoc>;
 export interface DuckDuckGoSearchDuckduckgoVideoParams {
   "q": string;
@@ -76386,6 +76596,8 @@ export interface GoogleSuggestParams {
   "count"?: number;
   "country"?: string;
   "lang"?: string;
+  "source"?: "web" | "youtube" | "shopping";
+  "rich"?: boolean;
 }
 
 export type GoogleTrendsCategoriesResponse = CrawloraResponse<ModelTrendsTrendsCategoriesResponseDoc>;
@@ -76767,6 +76979,25 @@ export interface GreystarSearchParams {
   "min_price"?: number;
   "max_price"?: number;
   "sort"?: "relevance" | "name" | "price_asc" | "price_desc";
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type GreystarUnitLocationsResponse = CrawloraResponse<ModelGreystarUnitLocationList>;
+export interface GreystarUnitLocationsParams {
+  "query"?: string;
+}
+
+export type GreystarUnitsResponse = CrawloraResponse<ModelGreystarUnitSearchResult>;
+export interface GreystarUnitsParams {
+  "location"?: string;
+  "bedrooms"?: Array<"0" | "1" | "2" | "3" | "4" | "5" | "6">;
+  "bathrooms"?: Array<"0" | "1" | "2" | "3" | "4">;
+  "building_type"?: Array<"Active Adult" | "Garden" | "High-Rise" | "Mid-Rise" | "Single Family Home" | "Student" | "Townhome">;
+  "highlights"?: Array<"airCon" | "dishwasher" | "eco" | "fitness" | "garages" | "limitedAccess" | "patioBalcony" | "pets" | "playground" | "pools" | "smokeFree" | "walkInClosets" | "washerDryer">;
+  "min_price"?: number;
+  "max_price"?: number;
+  "sort"?: "relevance" | "price_asc";
   "page"?: number;
   "per_page"?: number;
 }
@@ -83765,6 +83996,13 @@ export interface QuinceSuggestParams {
   "q": string;
 }
 
+export type QwantSuggestResponse = CrawloraResponse<ModelQwantSuggestResponseDoc>;
+export interface QwantSuggestParams {
+  "q": string;
+  "count"?: number;
+  "locale"?: string;
+}
+
 export type RaisingCaneSRaisingcanesDirectoryResponse = CrawloraResponse<ModelRaisingcanesDirectoryResponseDoc>;
 export interface RaisingCaneSRaisingcanesDirectoryParams {
   "path"?: string;
@@ -86497,6 +86735,12 @@ export interface StarbucksStoresParams {
   "lat"?: number;
   "lng"?: number;
   "market"?: "us" | "ca";
+}
+
+export type StartpageSuggestResponse = CrawloraResponse<ModelStartpageSuggestResponseDoc>;
+export interface StartpageSuggestParams {
+  "q": string;
+  "count"?: number;
 }
 
 export type MinnesotaStarTribuneStartribuneNewsResponse = CrawloraResponse<ModelPublicnewsNewsResponseDoc>;
@@ -90225,6 +90469,19 @@ export type YahooTechHomeResponse = CrawloraResponse<ModelYahootechHomeResponseD
 export interface YahooTechHomeParams {
 }
 
+export type YandexSearchResponse = CrawloraResponse<ModelYandexSearchResponseDoc>;
+export interface YandexSearchParams {
+  "q": string;
+  "page"?: number;
+}
+
+export type YandexSuggestResponse = CrawloraResponse<ModelYandexSuggestResponseDoc>;
+export interface YandexSuggestParams {
+  "q": string;
+  "count"?: number;
+  "lang"?: string;
+}
+
 export type YardbarkerArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
 export interface YardbarkerArticleParams {
   "url": string;
@@ -90387,6 +90644,14 @@ export interface YoutubeSearchParams {
   "hl"?: string;
   "gl"?: string;
   "params"?: string;
+}
+
+export type YoutubeSuggestResponse = CrawloraResponse<ModelYoutubeSuggestResponseDoc>;
+export interface YoutubeSuggestParams {
+  "q": string;
+  "count"?: number;
+  "hl"?: string;
+  "gl"?: string;
 }
 
 export type YoutubeTagResponse = CrawloraResponse<ModelYoutubeTagResponseDoc>;
@@ -90914,6 +91179,11 @@ export interface AxiosService {
   article<T = AxiosArticleResponse>(params: AxiosArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categories<T = AxiosCategoriesResponse>(params?: AxiosCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   headlines<T = AxiosHeadlinesResponse>(params: AxiosHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface BaiduService {
+  search<T = BaiduSearchResponse>(params: BaiduSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = BaiduSuggestResponse>(params: BaiduSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface BalenciagaService {
@@ -91776,6 +92046,7 @@ export interface DuckDuckGoSearchService {
   duckduckgoNews<T = DuckDuckGoSearchDuckduckgoNewsResponse>(params: DuckDuckGoSearchDuckduckgoNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   duckduckgoSearch<T = DuckDuckGoSearchDuckduckgoSearchResponse>(params: DuckDuckGoSearchDuckduckgoSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   duckduckgoShopping<T = DuckDuckGoSearchDuckduckgoShoppingResponse>(params: DuckDuckGoSearchDuckduckgoShoppingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  duckduckgoSuggest<T = DuckDuckGoSearchDuckduckgoSuggestResponse>(params: DuckDuckGoSearchDuckduckgoSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   duckduckgoVideo<T = DuckDuckGoSearchDuckduckgoVideoResponse>(params: DuckDuckGoSearchDuckduckgoVideoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
@@ -92415,6 +92686,8 @@ export interface GreystarService {
   newsroomArticle<T = GreystarNewsroomArticleResponse>(params: GreystarNewsroomArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   property<T = GreystarPropertyResponse>(params: GreystarPropertyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = GreystarSearchResponse>(params?: GreystarSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  unitLocations<T = GreystarUnitLocationsResponse>(params?: GreystarUnitLocationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  units<T = GreystarUnitsResponse>(params?: GreystarUnitsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GrubhubService {
@@ -93933,6 +94206,10 @@ export interface QuinceService {
   suggest<T = QuinceSuggestResponse>(params: QuinceSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface QwantService {
+  suggest<T = QwantSuggestResponse>(params: QwantSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface RaisingCaneSService {
   raisingcanesDirectory<T = RaisingCaneSRaisingcanesDirectoryResponse>(params?: RaisingCaneSRaisingcanesDirectoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   raisingcanesMenu<T = RaisingCaneSRaisingcanesMenuResponse>(params?: RaisingCaneSRaisingcanesMenuParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -94530,6 +94807,10 @@ export interface StarbucksService {
   product<T = StarbucksProductResponse>(params: StarbucksProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   nutrition<T = StarbucksNutritionResponse>(params: StarbucksNutritionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   stores<T = StarbucksStoresResponse>(params?: StarbucksStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface StartpageService {
+  suggest<T = StartpageSuggestResponse>(params: StartpageSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface MinnesotaStarTribuneService {
@@ -95455,6 +95736,11 @@ export interface YahooTechService {
   home<T = YahooTechHomeResponse>(params?: YahooTechHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface YandexService {
+  search<T = YandexSearchResponse>(params: YandexSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = YandexSuggestResponse>(params: YandexSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface YardbarkerService {
   article<T = YardbarkerArticleResponse>(params: YardbarkerArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   author<T = YardbarkerAuthorResponse>(params: YardbarkerAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -95491,6 +95777,7 @@ export interface YoutubeService {
   playlist<T = YoutubePlaylistResponse>(params: YoutubePlaylistParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = YoutubeProfileResponse>(params: YoutubeProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = YoutubeSearchResponse>(params?: YoutubeSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = YoutubeSuggestResponse>(params: YoutubeSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   tag<T = YoutubeTagResponse>(params: YoutubeTagParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   transcript<T = YoutubeTranscriptResponse>(params: YoutubeTranscriptParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   transcriptLanguages<T = YoutubeTranscriptLanguagesResponse>(params: YoutubeTranscriptLanguagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -95583,6 +95870,7 @@ export interface CrawloraGeneratedGroups {
   audible: AudibleService;
   autotrader: AutotraderService;
   axios: AxiosService;
+  baidu: BaiduService;
   balenciaga: BalenciagaService;
   barrons: BarronsService;
   bbb: BbbService;
@@ -95860,6 +96148,7 @@ export interface CrawloraGeneratedGroups {
   psastore: PsastoreService;
   punch: PunchService;
   quince: QuinceService;
+  qwant: QwantService;
   raisingCaneS: RaisingCaneSService;
   rappler: RapplerService;
   rawStory: RawStoryService;
@@ -95913,6 +96202,7 @@ export interface CrawloraGeneratedGroups {
   spotify: SpotifyService;
   eveningStandard: EveningStandardService;
   starbucks: StarbucksService;
+  startpage: StartpageService;
   minnesotaStarTribune: MinnesotaStarTribuneService;
   steam: SteamService;
   steveMadden: SteveMaddenService;
@@ -96011,6 +96301,7 @@ export interface CrawloraGeneratedGroups {
   yahooShopping: YahooShoppingService;
   yahooSports: YahooSportsService;
   yahooTech: YahooTechService;
+  yandex: YandexService;
   yardbarker: YardbarkerService;
   yelp: YelpService;
   yoox: YooxService;
@@ -96235,6 +96526,8 @@ export interface OperationParamsMap {
   "axios-article": AxiosArticleParams;
   "axios-categories": AxiosCategoriesParams;
   "axios-headlines": AxiosHeadlinesParams;
+  "baidu-search": BaiduSearchParams;
+  "baidu-suggest": BaiduSuggestParams;
   "balenciaga-categories": BalenciagaCategoriesParams;
   "balenciaga-category": BalenciagaCategoryParams;
   "balenciaga-product": BalenciagaProductParams;
@@ -96859,6 +97152,7 @@ export interface OperationParamsMap {
   "duckduckgo-news": DuckDuckGoSearchDuckduckgoNewsParams;
   "duckduckgo-search": DuckDuckGoSearchDuckduckgoSearchParams;
   "duckduckgo-shopping": DuckDuckGoSearchDuckduckgoShoppingParams;
+  "duckduckgo-suggest": DuckDuckGoSearchDuckduckgoSuggestParams;
   "duckduckgo-video": DuckDuckGoSearchDuckduckgoVideoParams;
   "dunkin-directory": DunkinDirectoryParams;
   "dunkin-menu": DunkinMenuParams;
@@ -97329,6 +97623,8 @@ export interface OperationParamsMap {
   "greystar-newsroom-article": GreystarNewsroomArticleParams;
   "greystar-property": GreystarPropertyParams;
   "greystar-search": GreystarSearchParams;
+  "greystar-unit-locations": GreystarUnitLocationsParams;
+  "greystar-units": GreystarUnitsParams;
   "grubhub-availability": GrubhubAvailabilityParams;
   "grubhub-offers": GrubhubOffersParams;
   "grubhub-restaurant": GrubhubRestaurantParams;
@@ -98418,6 +98714,7 @@ export interface OperationParamsMap {
   "quince-sitemap-urls": QuinceSitemapUrlsParams;
   "quince-sitemaps": QuinceSitemapsParams;
   "quince-suggest": QuinceSuggestParams;
+  "qwant-suggest": QwantSuggestParams;
   "raisingcanes-directory": RaisingCaneSRaisingcanesDirectoryParams;
   "raisingcanes-menu": RaisingCaneSRaisingcanesMenuParams;
   "raisingcanes-nearby": RaisingCaneSRaisingcanesNearbyParams;
@@ -98859,6 +99156,7 @@ export interface OperationParamsMap {
   "starbucks-product": StarbucksProductParams;
   "starbucks-nutrition": StarbucksNutritionParams;
   "starbucks-stores": StarbucksStoresParams;
+  "startpage-suggest": StartpageSuggestParams;
   "startribune-news": MinnesotaStarTribuneStartribuneNewsParams;
   "steam-achievements": SteamAchievementsParams;
   "steam-app": SteamAppParams;
@@ -99490,6 +99788,8 @@ export interface OperationParamsMap {
   "yahoo-tech-article": YahooTechArticleParams;
   "yahoo-tech-category": YahooTechCategoryParams;
   "yahoo-tech-home": YahooTechHomeParams;
+  "yandex-search": YandexSearchParams;
+  "yandex-suggest": YandexSuggestParams;
   "yardbarker-article": YardbarkerArticleParams;
   "yardbarker-author": YardbarkerAuthorParams;
   "yardbarker-headlines": YardbarkerHeadlinesParams;
@@ -99516,6 +99816,7 @@ export interface OperationParamsMap {
   "youtube-playlist": YoutubePlaylistParams;
   "youtube-profile": YoutubeProfileParams;
   "youtube-search": YoutubeSearchParams;
+  "youtube-suggest": YoutubeSuggestParams;
   "youtube-tag": YoutubeTagParams;
   "youtube-transcript": YoutubeTranscriptParams;
   "youtube-transcript-languages": YoutubeTranscriptLanguagesParams;
@@ -99767,6 +100068,8 @@ export interface OperationResponseMap {
   "axios-article": AxiosArticleResponse;
   "axios-categories": AxiosCategoriesResponse;
   "axios-headlines": AxiosHeadlinesResponse;
+  "baidu-search": BaiduSearchResponse;
+  "baidu-suggest": BaiduSuggestResponse;
   "balenciaga-categories": BalenciagaCategoriesResponse;
   "balenciaga-category": BalenciagaCategoryResponse;
   "balenciaga-product": BalenciagaProductResponse;
@@ -100391,6 +100694,7 @@ export interface OperationResponseMap {
   "duckduckgo-news": DuckDuckGoSearchDuckduckgoNewsResponse;
   "duckduckgo-search": DuckDuckGoSearchDuckduckgoSearchResponse;
   "duckduckgo-shopping": DuckDuckGoSearchDuckduckgoShoppingResponse;
+  "duckduckgo-suggest": DuckDuckGoSearchDuckduckgoSuggestResponse;
   "duckduckgo-video": DuckDuckGoSearchDuckduckgoVideoResponse;
   "dunkin-directory": DunkinDirectoryResponse;
   "dunkin-menu": DunkinMenuResponse;
@@ -100861,6 +101165,8 @@ export interface OperationResponseMap {
   "greystar-newsroom-article": GreystarNewsroomArticleResponse;
   "greystar-property": GreystarPropertyResponse;
   "greystar-search": GreystarSearchResponse;
+  "greystar-unit-locations": GreystarUnitLocationsResponse;
+  "greystar-units": GreystarUnitsResponse;
   "grubhub-availability": GrubhubAvailabilityResponse;
   "grubhub-offers": GrubhubOffersResponse;
   "grubhub-restaurant": GrubhubRestaurantResponse;
@@ -101950,6 +102256,7 @@ export interface OperationResponseMap {
   "quince-sitemap-urls": QuinceSitemapUrlsResponse;
   "quince-sitemaps": QuinceSitemapsResponse;
   "quince-suggest": QuinceSuggestResponse;
+  "qwant-suggest": QwantSuggestResponse;
   "raisingcanes-directory": RaisingCaneSRaisingcanesDirectoryResponse;
   "raisingcanes-menu": RaisingCaneSRaisingcanesMenuResponse;
   "raisingcanes-nearby": RaisingCaneSRaisingcanesNearbyResponse;
@@ -102391,6 +102698,7 @@ export interface OperationResponseMap {
   "starbucks-product": StarbucksProductResponse;
   "starbucks-nutrition": StarbucksNutritionResponse;
   "starbucks-stores": StarbucksStoresResponse;
+  "startpage-suggest": StartpageSuggestResponse;
   "startribune-news": MinnesotaStarTribuneStartribuneNewsResponse;
   "steam-achievements": SteamAchievementsResponse;
   "steam-app": SteamAppResponse;
@@ -103022,6 +103330,8 @@ export interface OperationResponseMap {
   "yahoo-tech-article": YahooTechArticleResponse;
   "yahoo-tech-category": YahooTechCategoryResponse;
   "yahoo-tech-home": YahooTechHomeResponse;
+  "yandex-search": YandexSearchResponse;
+  "yandex-suggest": YandexSuggestResponse;
   "yardbarker-article": YardbarkerArticleResponse;
   "yardbarker-author": YardbarkerAuthorResponse;
   "yardbarker-headlines": YardbarkerHeadlinesResponse;
@@ -103048,6 +103358,7 @@ export interface OperationResponseMap {
   "youtube-playlist": YoutubePlaylistResponse;
   "youtube-profile": YoutubeProfileResponse;
   "youtube-search": YoutubeSearchResponse;
+  "youtube-suggest": YoutubeSuggestResponse;
   "youtube-tag": YoutubeTagResponse;
   "youtube-transcript": YoutubeTranscriptResponse;
   "youtube-transcript-languages": YoutubeTranscriptLanguagesResponse;
@@ -103299,6 +103610,8 @@ export interface OperationRequiredParamsMap {
   "axios-article": true;
   "axios-categories": false;
   "axios-headlines": true;
+  "baidu-search": true;
+  "baidu-suggest": true;
   "balenciaga-categories": false;
   "balenciaga-category": true;
   "balenciaga-product": true;
@@ -103923,6 +104236,7 @@ export interface OperationRequiredParamsMap {
   "duckduckgo-news": true;
   "duckduckgo-search": true;
   "duckduckgo-shopping": true;
+  "duckduckgo-suggest": true;
   "duckduckgo-video": true;
   "dunkin-directory": false;
   "dunkin-menu": false;
@@ -104393,6 +104707,8 @@ export interface OperationRequiredParamsMap {
   "greystar-newsroom-article": true;
   "greystar-property": true;
   "greystar-search": false;
+  "greystar-unit-locations": false;
+  "greystar-units": false;
   "grubhub-availability": true;
   "grubhub-offers": true;
   "grubhub-restaurant": true;
@@ -105482,6 +105798,7 @@ export interface OperationRequiredParamsMap {
   "quince-sitemap-urls": false;
   "quince-sitemaps": false;
   "quince-suggest": true;
+  "qwant-suggest": true;
   "raisingcanes-directory": false;
   "raisingcanes-menu": false;
   "raisingcanes-nearby": true;
@@ -105923,6 +106240,7 @@ export interface OperationRequiredParamsMap {
   "starbucks-product": true;
   "starbucks-nutrition": true;
   "starbucks-stores": false;
+  "startpage-suggest": true;
   "startribune-news": false;
   "steam-achievements": true;
   "steam-app": true;
@@ -106554,6 +106872,8 @@ export interface OperationRequiredParamsMap {
   "yahoo-tech-article": true;
   "yahoo-tech-category": true;
   "yahoo-tech-home": false;
+  "yandex-search": true;
+  "yandex-suggest": true;
   "yardbarker-article": true;
   "yardbarker-author": true;
   "yardbarker-headlines": true;
@@ -106580,6 +106900,7 @@ export interface OperationRequiredParamsMap {
   "youtube-playlist": true;
   "youtube-profile": true;
   "youtube-search": false;
+  "youtube-suggest": true;
   "youtube-tag": true;
   "youtube-transcript": true;
   "youtube-transcript-languages": true;
@@ -106838,6 +107159,8 @@ export type OperationIdLiteral =
   | "axios-article"
   | "axios-categories"
   | "axios-headlines"
+  | "baidu-search"
+  | "baidu-suggest"
   | "balenciaga-categories"
   | "balenciaga-category"
   | "balenciaga-product"
@@ -107462,6 +107785,7 @@ export type OperationIdLiteral =
   | "duckduckgo-news"
   | "duckduckgo-search"
   | "duckduckgo-shopping"
+  | "duckduckgo-suggest"
   | "duckduckgo-video"
   | "dunkin-directory"
   | "dunkin-menu"
@@ -107932,6 +108256,8 @@ export type OperationIdLiteral =
   | "greystar-newsroom-article"
   | "greystar-property"
   | "greystar-search"
+  | "greystar-unit-locations"
+  | "greystar-units"
   | "grubhub-availability"
   | "grubhub-offers"
   | "grubhub-restaurant"
@@ -109021,6 +109347,7 @@ export type OperationIdLiteral =
   | "quince-sitemap-urls"
   | "quince-sitemaps"
   | "quince-suggest"
+  | "qwant-suggest"
   | "raisingcanes-directory"
   | "raisingcanes-menu"
   | "raisingcanes-nearby"
@@ -109462,6 +109789,7 @@ export type OperationIdLiteral =
   | "starbucks-product"
   | "starbucks-nutrition"
   | "starbucks-stores"
+  | "startpage-suggest"
   | "startribune-news"
   | "steam-achievements"
   | "steam-app"
@@ -110093,6 +110421,8 @@ export type OperationIdLiteral =
   | "yahoo-tech-article"
   | "yahoo-tech-category"
   | "yahoo-tech-home"
+  | "yandex-search"
+  | "yandex-suggest"
   | "yardbarker-article"
   | "yardbarker-author"
   | "yardbarker-headlines"
@@ -110119,6 +110449,7 @@ export type OperationIdLiteral =
   | "youtube-playlist"
   | "youtube-profile"
   | "youtube-search"
+  | "youtube-suggest"
   | "youtube-tag"
   | "youtube-transcript"
   | "youtube-transcript-languages"
@@ -110355,6 +110686,8 @@ export declare const OperationIds: Readonly<{
   AxiosArticle: "axios-article";
   AxiosCategories: "axios-categories";
   AxiosHeadlines: "axios-headlines";
+  BaiduSearch: "baidu-search";
+  BaiduSuggest: "baidu-suggest";
   BalenciagaCategories: "balenciaga-categories";
   BalenciagaCategory: "balenciaga-category";
   BalenciagaProduct: "balenciaga-product";
@@ -110967,6 +111300,7 @@ export declare const OperationIds: Readonly<{
   DuckDuckGoSearchDuckduckgoNews: "duckduckgo-news";
   DuckDuckGoSearchDuckduckgoSearch: "duckduckgo-search";
   DuckDuckGoSearchDuckduckgoShopping: "duckduckgo-shopping";
+  DuckDuckGoSearchDuckduckgoSuggest: "duckduckgo-suggest";
   DuckDuckGoSearchDuckduckgoVideo: "duckduckgo-video";
   DunkinDirectory: "dunkin-directory";
   DunkinMenu: "dunkin-menu";
@@ -111439,6 +111773,8 @@ export declare const OperationIds: Readonly<{
   GreystarNewsroomArticle: "greystar-newsroom-article";
   GreystarProperty: "greystar-property";
   GreystarSearch: "greystar-search";
+  GreystarUnitLocations: "greystar-unit-locations";
+  GreystarUnits: "greystar-units";
   GrubhubAvailability: "grubhub-availability";
   GrubhubOffers: "grubhub-offers";
   GrubhubRestaurant: "grubhub-restaurant";
@@ -112505,6 +112841,7 @@ export declare const OperationIds: Readonly<{
   QuinceSitemapUrls: "quince-sitemap-urls";
   QuinceSitemaps: "quince-sitemaps";
   QuinceSuggest: "quince-suggest";
+  QwantSuggest: "qwant-suggest";
   RaisingCaneSRaisingcanesDirectory: "raisingcanes-directory";
   RaisingCaneSRaisingcanesMenu: "raisingcanes-menu";
   RaisingCaneSRaisingcanesNearby: "raisingcanes-nearby";
@@ -112943,6 +113280,7 @@ export declare const OperationIds: Readonly<{
   StarbucksNutrition: "starbucks-nutrition";
   StarbucksProduct: "starbucks-product";
   StarbucksStores: "starbucks-stores";
+  StartpageSuggest: "startpage-suggest";
   SteamAchievements: "steam-achievements";
   SteamApp: "steam-app";
   SteamCategory: "steam-category";
@@ -113624,6 +113962,8 @@ export declare const OperationIds: Readonly<{
   YahooTechArticle: "yahoo-tech-article";
   YahooTechCategory: "yahoo-tech-category";
   YahooTechHome: "yahoo-tech-home";
+  YandexSearch: "yandex-search";
+  YandexSuggest: "yandex-suggest";
   YardbarkerArticle: "yardbarker-article";
   YardbarkerAuthor: "yardbarker-author";
   YardbarkerHeadlines: "yardbarker-headlines";
@@ -113650,6 +113990,7 @@ export declare const OperationIds: Readonly<{
   YoutubePlaylist: "youtube-playlist";
   YoutubeProfile: "youtube-profile";
   YoutubeSearch: "youtube-search";
+  YoutubeSuggest: "youtube-suggest";
   YoutubeTag: "youtube-tag";
   YoutubeTranscript: "youtube-transcript";
   YoutubeTranscriptLanguages: "youtube-transcript-languages";

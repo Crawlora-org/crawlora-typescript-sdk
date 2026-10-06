@@ -7483,6 +7483,69 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "baidu-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "baidu-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/baidu/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "baidu-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "baidu-suggest",
+    "method": "GET",
+    "path": "/baidu/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "balenciaga-categories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -9590,6 +9653,11 @@ export const operations = {
         "in": "query",
         "name": "lang",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "rich",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -12398,6 +12466,11 @@ export const operations = {
         "in": "query",
         "name": "lang",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "rich",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -34985,6 +35058,42 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "duckduckgo-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "duckduckgo-suggest",
+    "method": "GET",
+    "path": "/duckduckgo/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "duckduckgo-video": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -49618,6 +49727,21 @@ export const operations = {
         "in": "query",
         "name": "lang",
         "type": "string"
+      },
+      {
+        "enum": [
+          "web",
+          "youtube",
+          "shopping"
+        ],
+        "in": "query",
+        "name": "source",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "rich",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -51866,6 +51990,150 @@ export const operations = {
           "name",
           "price_asc",
           "price_desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "per_page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-unit-locations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-unit-locations",
+    "method": "GET",
+    "path": "/greystar/unit-locations",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "greystar-units": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "greystar-units",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/greystar/units",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "in": "query",
+        "name": "bedrooms",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "in": "query",
+        "name": "bathrooms",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "Active Adult",
+          "Garden",
+          "High-Rise",
+          "Mid-Rise",
+          "Single Family Home",
+          "Student",
+          "Townhome"
+        ],
+        "in": "query",
+        "name": "building_type",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "airCon",
+          "dishwasher",
+          "eco",
+          "fitness",
+          "garages",
+          "limitedAccess",
+          "patioBalcony",
+          "pets",
+          "playground",
+          "pools",
+          "smokeFree",
+          "walkInClosets",
+          "washerDryer"
+        ],
+        "in": "query",
+        "name": "highlights",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "number"
+      },
+      {
+        "enum": [
+          "relevance",
+          "price_asc"
         ],
         "in": "query",
         "name": "sort",
@@ -95331,6 +95599,42 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "qwant-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "qwant-suggest",
+    "method": "GET",
+    "path": "/qwant/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "locale",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "raisingcanes-directory": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -110982,6 +111286,37 @@ export const operations = {
         "in": "query",
         "name": "market",
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "startpage-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "startpage-suggest",
+    "method": "GET",
+    "path": "/startpage/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
       }
     ],
     "security": [
@@ -131823,6 +132158,74 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "yandex-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yandex-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/yandex/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "yandex-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "yandex-suggest",
+    "method": "GET",
+    "path": "/yandex/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "yardbarker-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -132639,6 +133042,47 @@ export const operations = {
       {
         "in": "query",
         "name": "params",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "youtube-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "youtube-suggest",
+    "method": "GET",
+    "path": "/youtube/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "hl",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "gl",
         "type": "string"
       }
     ],
@@ -134302,6 +134746,10 @@ export const groups = {
     "categories": "axios-categories",
     "headlines": "axios-headlines"
   },
+  "baidu": {
+    "search": "baidu-search",
+    "suggest": "baidu-suggest"
+  },
   "balenciaga": {
     "categories": "balenciaga-categories",
     "category": "balenciaga-category",
@@ -135063,6 +135511,7 @@ export const groups = {
     "duckduckgoNews": "duckduckgo-news",
     "duckduckgoSearch": "duckduckgo-search",
     "duckduckgoShopping": "duckduckgo-shopping",
+    "duckduckgoSuggest": "duckduckgo-suggest",
     "duckduckgoVideo": "duckduckgo-video"
   },
   "dunkin": {
@@ -135650,7 +136099,9 @@ export const groups = {
     "newsroom": "greystar-newsroom",
     "newsroomArticle": "greystar-newsroom-article",
     "property": "greystar-property",
-    "search": "greystar-search"
+    "search": "greystar-search",
+    "unitLocations": "greystar-unit-locations",
+    "units": "greystar-units"
   },
   "grubhub": {
     "availability": "grubhub-availability",
@@ -136994,6 +137445,9 @@ export const groups = {
     "sitemaps": "quince-sitemaps",
     "suggest": "quince-suggest"
   },
+  "qwant": {
+    "suggest": "qwant-suggest"
+  },
   "raisingCaneS": {
     "raisingcanesDirectory": "raisingcanes-directory",
     "raisingcanesMenu": "raisingcanes-menu",
@@ -137533,6 +137987,9 @@ export const groups = {
     "nutrition": "starbucks-nutrition",
     "product": "starbucks-product",
     "stores": "starbucks-stores"
+  },
+  "startpage": {
+    "suggest": "startpage-suggest"
   },
   "steam": {
     "achievements": "steam-achievements",
@@ -138429,6 +138886,10 @@ export const groups = {
     "category": "yahoo-tech-category",
     "home": "yahoo-tech-home"
   },
+  "yandex": {
+    "search": "yandex-search",
+    "suggest": "yandex-suggest"
+  },
   "yardbarker": {
     "article": "yardbarker-article",
     "author": "yardbarker-author",
@@ -138462,6 +138923,7 @@ export const groups = {
     "playlist": "youtube-playlist",
     "profile": "youtube-profile",
     "search": "youtube-search",
+    "suggest": "youtube-suggest",
     "tag": "youtube-tag",
     "transcript": "youtube-transcript",
     "transcriptLanguages": "youtube-transcript-languages",
@@ -138517,7 +138979,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 3529;
+export const operationCount = 3539;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -138718,6 +139180,8 @@ export const OperationIds = Object.freeze({
   "AxiosArticle": "axios-article",
   "AxiosCategories": "axios-categories",
   "AxiosHeadlines": "axios-headlines",
+  "BaiduSearch": "baidu-search",
+  "BaiduSuggest": "baidu-suggest",
   "BalenciagaCategories": "balenciaga-categories",
   "BalenciagaCategory": "balenciaga-category",
   "BalenciagaProduct": "balenciaga-product",
@@ -139330,6 +139794,7 @@ export const OperationIds = Object.freeze({
   "DuckDuckGoSearchDuckduckgoNews": "duckduckgo-news",
   "DuckDuckGoSearchDuckduckgoSearch": "duckduckgo-search",
   "DuckDuckGoSearchDuckduckgoShopping": "duckduckgo-shopping",
+  "DuckDuckGoSearchDuckduckgoSuggest": "duckduckgo-suggest",
   "DuckDuckGoSearchDuckduckgoVideo": "duckduckgo-video",
   "DunkinDirectory": "dunkin-directory",
   "DunkinMenu": "dunkin-menu",
@@ -139802,6 +140267,8 @@ export const OperationIds = Object.freeze({
   "GreystarNewsroomArticle": "greystar-newsroom-article",
   "GreystarProperty": "greystar-property",
   "GreystarSearch": "greystar-search",
+  "GreystarUnitLocations": "greystar-unit-locations",
+  "GreystarUnits": "greystar-units",
   "GrubhubAvailability": "grubhub-availability",
   "GrubhubOffers": "grubhub-offers",
   "GrubhubRestaurant": "grubhub-restaurant",
@@ -140868,6 +141335,7 @@ export const OperationIds = Object.freeze({
   "QuinceSitemapUrls": "quince-sitemap-urls",
   "QuinceSitemaps": "quince-sitemaps",
   "QuinceSuggest": "quince-suggest",
+  "QwantSuggest": "qwant-suggest",
   "RaisingCaneSRaisingcanesDirectory": "raisingcanes-directory",
   "RaisingCaneSRaisingcanesMenu": "raisingcanes-menu",
   "RaisingCaneSRaisingcanesNearby": "raisingcanes-nearby",
@@ -141306,6 +141774,7 @@ export const OperationIds = Object.freeze({
   "StarbucksNutrition": "starbucks-nutrition",
   "StarbucksProduct": "starbucks-product",
   "StarbucksStores": "starbucks-stores",
+  "StartpageSuggest": "startpage-suggest",
   "SteamAchievements": "steam-achievements",
   "SteamApp": "steam-app",
   "SteamCategory": "steam-category",
@@ -141987,6 +142456,8 @@ export const OperationIds = Object.freeze({
   "YahooTechArticle": "yahoo-tech-article",
   "YahooTechCategory": "yahoo-tech-category",
   "YahooTechHome": "yahoo-tech-home",
+  "YandexSearch": "yandex-search",
+  "YandexSuggest": "yandex-suggest",
   "YardbarkerArticle": "yardbarker-article",
   "YardbarkerAuthor": "yardbarker-author",
   "YardbarkerHeadlines": "yardbarker-headlines",
@@ -142013,6 +142484,7 @@ export const OperationIds = Object.freeze({
   "YoutubePlaylist": "youtube-playlist",
   "YoutubeProfile": "youtube-profile",
   "YoutubeSearch": "youtube-search",
+  "YoutubeSuggest": "youtube-suggest",
   "YoutubeTag": "youtube-tag",
   "YoutubeTranscript": "youtube-transcript",
   "YoutubeTranscriptLanguages": "youtube-transcript-languages",
