@@ -7883,6 +7883,30 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "bbb-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "bbb-article",
+    "method": "GET",
+    "path": "/bbb/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "bbb-business": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -7918,6 +7942,7 @@ export const operations = {
     "formParams": [],
     "id": "bbb-business-complaints",
     "method": "GET",
+    "paginatable": true,
     "path": "/bbb/business/complaints",
     "pathParams": [],
     "produces": [
@@ -7929,6 +7954,11 @@ export const operations = {
         "name": "url",
         "required": true,
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -8019,8 +8049,201 @@ export const operations = {
         "in": "query",
         "name": "page",
         "type": "integer"
+      },
+      {
+        "enum": [
+          "Relevance",
+          "Distance",
+          "Rating",
+          "AToZ",
+          "ZToA"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "5",
+          "10",
+          "25",
+          "50",
+          "100"
+        ],
+        "in": "query",
+        "name": "distance",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "F"
+        ],
+        "in": "query",
+        "name": "rating",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "category_id",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "state",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "accredited",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "get_quote",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "service_area",
+        "type": "boolean"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-local-bbb": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-local-bbb",
+    "method": "GET",
+    "path": "/bbb/local-bbb",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-local-bbbs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-local-bbbs",
+    "method": "GET",
+    "path": "/bbb/local-bbbs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "us",
+          "ca"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "region",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "bbb-news",
+    "method": "GET",
+    "path": "/bbb/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-news-topics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "bbb-news-topics",
+    "method": "GET",
+    "path": "/bbb/news/topics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-regions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-regions",
+    "method": "GET",
+    "path": "/bbb/regions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -8214,6 +8437,193 @@ export const operations = {
         "in": "query",
         "name": "page",
         "type": "integer"
+      },
+      {
+        "enum": [
+          "USA",
+          "CAN"
+        ],
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "Relevance",
+          "Distance",
+          "Rating",
+          "AToZ",
+          "ZToA"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "5",
+          "10",
+          "25",
+          "50",
+          "100"
+        ],
+        "in": "query",
+        "name": "distance",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "F"
+        ],
+        "in": "query",
+        "name": "rating",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "category_id",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "state",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "accredited",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "get_quote",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "service_area",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "bbb-search-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "bbb-search-filters",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/bbb/search/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_url",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "USA",
+          "CAN"
+        ],
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "Relevance",
+          "Distance",
+          "Rating",
+          "AToZ",
+          "ZToA"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "5",
+          "10",
+          "25",
+          "50",
+          "100"
+        ],
+        "in": "query",
+        "name": "distance",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "F"
+        ],
+        "in": "query",
+        "name": "rating",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "category_id",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "state",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "accredited",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "get_quote",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "service_area",
+        "type": "boolean"
       }
     ],
     "security": [
@@ -23373,7 +23783,9 @@ export const operations = {
           "rating",
           "accredited",
           "entity_type",
-          "run_id"
+          "run_id",
+          "alert_title",
+          "has_alerts"
         ],
         "in": "query",
         "name": "facet",
@@ -23424,6 +23836,21 @@ export const operations = {
         "in": "query",
         "name": "accredited",
         "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_alerts",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "alert_title",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_complaints",
+        "type": "integer"
       },
       {
         "in": "query",
@@ -23529,6 +23956,21 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "has_alerts",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "alert_title",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_complaints",
+        "type": "integer"
+      },
+      {
+        "in": "query",
         "name": "entity_type",
         "type": "string"
       },
@@ -23544,7 +23986,190 @@ export const operations = {
           "rating_asc",
           "accredited_first",
           "name_asc",
-          "years_in_business_desc"
+          "years_in_business_desc",
+          "complaints_desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-bbb-scamtracker-reports-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-bbb-scamtracker-reports-facets",
+    "method": "GET",
+    "path": "/datasets/bbb-scamtracker-reports/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "scam_type",
+          "state",
+          "country"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "scam_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "USA",
+          "CAN"
+        ],
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_loss",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_loss",
+        "type": "number"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-bbb-scamtracker-reports-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-bbb-scamtracker-reports-item",
+    "method": "GET",
+    "path": "/datasets/bbb-scamtracker-reports/items/{id}",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-bbb-scamtracker-reports-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-bbb-scamtracker-reports-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/bbb-scamtracker-reports/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "scam_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "USA",
+          "CAN"
+        ],
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_loss",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_loss",
+        "type": "number"
+      },
+      {
+        "enum": [
+          "relevance",
+          "reported_desc",
+          "reported_asc",
+          "loss_desc"
         ],
         "in": "query",
         "name": "sort",
@@ -27579,6 +28204,579 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-llms-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-llms-facets",
+    "method": "GET",
+    "path": "/datasets/llms/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "state",
+          "source_kind",
+          "generator",
+          "bot",
+          "policy",
+          "tld",
+          "category",
+          "robots_state",
+          "robots_default",
+          "blocked_crawler",
+          "partial_crawler",
+          "content_signal_train",
+          "full_state",
+          "home_status"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "text",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "present",
+          "absent",
+          "blocked",
+          "error",
+          "skipped"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "valid",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "shopify_agent_template",
+          "seo_plugin",
+          "platform_default",
+          "parked",
+          "custom"
+        ],
+        "in": "query",
+        "name": "source_kind",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "yoast",
+          "aioseo",
+          "rankmath",
+          "wix",
+          "shopify",
+          "parked"
+        ],
+        "in": "query",
+        "name": "generator",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "bot",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_links",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "mentions_mcp",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "mentions_openapi",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "placeholder",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "injection",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "full_valid",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "present",
+          "absent",
+          "blocked",
+          "error",
+          "skipped"
+        ],
+        "in": "query",
+        "name": "robots_state",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "allowed",
+          "partial",
+          "blocked"
+        ],
+        "in": "query",
+        "name": "robots_default",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-SearchBot",
+          "Claude-User",
+          "anthropic-ai",
+          "Google-Extended",
+          "PerplexityBot",
+          "Perplexity-User",
+          "CCBot",
+          "Bytespider",
+          "Applebot-Extended",
+          "Amazonbot",
+          "meta-externalagent",
+          "cohere-ai",
+          "Diffbot"
+        ],
+        "in": "query",
+        "name": "blocks_all",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-SearchBot",
+          "Claude-User",
+          "anthropic-ai",
+          "Google-Extended",
+          "PerplexityBot",
+          "Perplexity-User",
+          "CCBot",
+          "Bytespider",
+          "Applebot-Extended",
+          "Amazonbot",
+          "meta-externalagent",
+          "cohere-ai",
+          "Diffbot"
+        ],
+        "in": "query",
+        "name": "blocks_any",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-SearchBot",
+          "Claude-User",
+          "anthropic-ai",
+          "Google-Extended",
+          "PerplexityBot",
+          "Perplexity-User",
+          "CCBot",
+          "Bytespider",
+          "Applebot-Extended",
+          "Amazonbot",
+          "meta-externalagent",
+          "cohere-ai",
+          "Diffbot"
+        ],
+        "in": "query",
+        "name": "not_blocked",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "all_ai_blocked",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_train_blocked",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "content_signal_train",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tld",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "reachable",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "home_blocked",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_infrastructure",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-llms-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-llms-item",
+    "method": "GET",
+    "path": "/datasets/llms/items/{domain}",
+    "pathParams": [
+      "domain"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-llms-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-llms-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/llms/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "text",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "present",
+          "absent",
+          "blocked",
+          "error",
+          "skipped"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "valid",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "shopify_agent_template",
+          "seo_plugin",
+          "platform_default",
+          "parked",
+          "custom"
+        ],
+        "in": "query",
+        "name": "source_kind",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "yoast",
+          "aioseo",
+          "rankmath",
+          "wix",
+          "shopify",
+          "parked"
+        ],
+        "in": "query",
+        "name": "generator",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "bot",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_links",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "mentions_mcp",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "mentions_openapi",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "placeholder",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "injection",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "full_valid",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "present",
+          "absent",
+          "blocked",
+          "error",
+          "skipped"
+        ],
+        "in": "query",
+        "name": "robots_state",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "allowed",
+          "partial",
+          "blocked"
+        ],
+        "in": "query",
+        "name": "robots_default",
+        "type": "string"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-SearchBot",
+          "Claude-User",
+          "anthropic-ai",
+          "Google-Extended",
+          "PerplexityBot",
+          "Perplexity-User",
+          "CCBot",
+          "Bytespider",
+          "Applebot-Extended",
+          "Amazonbot",
+          "meta-externalagent",
+          "cohere-ai",
+          "Diffbot"
+        ],
+        "in": "query",
+        "name": "blocks_all",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-SearchBot",
+          "Claude-User",
+          "anthropic-ai",
+          "Google-Extended",
+          "PerplexityBot",
+          "Perplexity-User",
+          "CCBot",
+          "Bytespider",
+          "Applebot-Extended",
+          "Amazonbot",
+          "meta-externalagent",
+          "cohere-ai",
+          "Diffbot"
+        ],
+        "in": "query",
+        "name": "blocks_any",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-SearchBot",
+          "Claude-User",
+          "anthropic-ai",
+          "Google-Extended",
+          "PerplexityBot",
+          "Perplexity-User",
+          "CCBot",
+          "Bytespider",
+          "Applebot-Extended",
+          "Amazonbot",
+          "meta-externalagent",
+          "cohere-ai",
+          "Diffbot"
+        ],
+        "in": "query",
+        "name": "not_blocked",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "all_ai_blocked",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "min_train_blocked",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "yes",
+          "no"
+        ],
+        "in": "query",
+        "name": "content_signal_train",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tld",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "reachable",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "home_blocked",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "is_infrastructure",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "run_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "relevance",
+          "rank_asc",
+          "links_desc",
+          "bytes_desc",
+          "domain_asc",
+          "crawled_desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -33698,6 +34896,50 @@ export const operations = {
         "name": "query",
         "required": true,
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "developer-search": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "developer-search",
+    "method": "POST",
+    "path": "/developer/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "developer-sources": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "developer-sources",
+    "method": "GET",
+    "path": "/developer/sources",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -40417,7 +41659,12 @@ export const operations = {
           "table-tennis",
           "volleyball",
           "water-polo",
-          "winter-sports"
+          "winter-sports",
+          "moto-racing",
+          "ski-jumping",
+          "alpine-skiing",
+          "cross-country-skiing",
+          "biathlon"
         ],
         "in": "query",
         "name": "sport",
@@ -40428,6 +41675,96 @@ export const operations = {
         "in": "query",
         "name": "day_offset",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-entity-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-entity-news",
+    "method": "GET",
+    "path": "/flashscore/entity-news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "team",
+          "player",
+          "tournament",
+          "sport"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-box-score": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-box-score",
+    "method": "GET",
+    "path": "/flashscore/match-box-score",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-darts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-darts",
+    "method": "GET",
+    "path": "/flashscore/match-darts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -40538,6 +41875,58 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "flashscore-match-missing-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-missing-players",
+    "method": "GET",
+    "path": "/flashscore/match-missing-players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-momentum": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-momentum",
+    "method": "GET",
+    "path": "/flashscore/match-momentum",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "flashscore-match-news": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -40548,6 +41937,389 @@ export const operations = {
     "id": "flashscore-match-news",
     "method": "GET",
     "path": "/flashscore/match-news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-odds": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-odds",
+    "method": "GET",
+    "path": "/flashscore/match-odds",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "AE",
+          "AL",
+          "AM",
+          "AO",
+          "AR",
+          "AT",
+          "AU",
+          "AZ",
+          "BA",
+          "BD",
+          "BE",
+          "BG",
+          "BO",
+          "BR",
+          "BY",
+          "CA",
+          "CH",
+          "CI",
+          "CL",
+          "CM",
+          "CN",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "ET",
+          "FI",
+          "FR",
+          "GB",
+          "GE",
+          "GH",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HR",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IQ",
+          "IR",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KE",
+          "KG",
+          "KH",
+          "KR",
+          "KW",
+          "KZ",
+          "LA",
+          "LB",
+          "LK",
+          "LT",
+          "LU",
+          "LV",
+          "LY",
+          "MA",
+          "MD",
+          "ME",
+          "MK",
+          "MM",
+          "MN",
+          "MT",
+          "MX",
+          "MY",
+          "NG",
+          "NI",
+          "NL",
+          "NO",
+          "NP",
+          "NZ",
+          "PA",
+          "PE",
+          "PH",
+          "PK",
+          "PL",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "RS",
+          "RU",
+          "SA",
+          "SD",
+          "SE",
+          "SG",
+          "SI",
+          "SK",
+          "SN",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "TZ",
+          "UA",
+          "UG",
+          "US",
+          "UY",
+          "UZ",
+          "VE",
+          "VN",
+          "XK",
+          "ZA",
+          "ZM",
+          "ZW"
+        ],
+        "in": "query",
+        "name": "geo",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "AB",
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "BC",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "HI",
+          "IA",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MB",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NB",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NL",
+          "NM",
+          "NS",
+          "NT",
+          "NU",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "ON",
+          "OR",
+          "PA",
+          "PE",
+          "QC",
+          "RI",
+          "SC",
+          "SD",
+          "SK",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY",
+          "YT"
+        ],
+        "in": "query",
+        "name": "subdivision",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "HOME_DRAW_AWAY",
+          "HOME_AWAY",
+          "DRAW_NO_BET",
+          "DOUBLE_CHANCE",
+          "ASIAN_HANDICAP",
+          "EUROPEAN_HANDICAP",
+          "OVER_UNDER",
+          "BOTH_TEAMS_TO_SCORE",
+          "CORRECT_SCORE",
+          "HALF_FULL_TIME",
+          "ODD_OR_EVEN",
+          "TO_QUALIFY",
+          "NEXT_GOAL",
+          "TOP_POSITION_MERGED",
+          "TO_WIN_AND_TOP_POSITION",
+          "WIN_EACH_WAY"
+        ],
+        "in": "query",
+        "name": "betting_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "FULL_TIME",
+          "FULL_TIME_OVER_TIME",
+          "FIRST_HALF",
+          "SECOND_HALF",
+          "FIRST_PERIOD",
+          "FIRST_QUARTER",
+          "FIRST_SET",
+          "SECOND_SET"
+        ],
+        "in": "query",
+        "name": "scope",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-player-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-player-stats",
+    "method": "GET",
+    "path": "/flashscore/match-player-stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "player_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "top_stats",
+          "shots",
+          "attack",
+          "passes",
+          "defense",
+          "goalkeeping",
+          "general"
+        ],
+        "in": "query",
+        "name": "group",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-point-by-point": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-point-by-point",
+    "method": "GET",
+    "path": "/flashscore/match-point-by-point",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-predicted-lineups": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-predicted-lineups",
+    "method": "GET",
+    "path": "/flashscore/match-predicted-lineups",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-report": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-report",
+    "method": "GET",
+    "path": "/flashscore/match-report",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -40630,6 +42402,157 @@ export const operations = {
         "in": "query",
         "name": "id",
         "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-match-tv": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-match-tv",
+    "method": "GET",
+    "path": "/flashscore/match-tv",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "AE",
+          "AL",
+          "AM",
+          "AO",
+          "AR",
+          "AT",
+          "AU",
+          "AZ",
+          "BA",
+          "BD",
+          "BE",
+          "BG",
+          "BO",
+          "BR",
+          "BY",
+          "CA",
+          "CH",
+          "CI",
+          "CL",
+          "CM",
+          "CN",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "ET",
+          "FI",
+          "FR",
+          "GB",
+          "GE",
+          "GH",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HR",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IQ",
+          "IR",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KE",
+          "KG",
+          "KH",
+          "KR",
+          "KW",
+          "KZ",
+          "LA",
+          "LB",
+          "LK",
+          "LT",
+          "LU",
+          "LV",
+          "LY",
+          "MA",
+          "MD",
+          "ME",
+          "MK",
+          "MM",
+          "MN",
+          "MT",
+          "MX",
+          "MY",
+          "NG",
+          "NI",
+          "NL",
+          "NO",
+          "NP",
+          "NZ",
+          "PA",
+          "PE",
+          "PH",
+          "PK",
+          "PL",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "RS",
+          "RU",
+          "SA",
+          "SD",
+          "SE",
+          "SG",
+          "SI",
+          "SK",
+          "SN",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "TZ",
+          "UA",
+          "UG",
+          "US",
+          "UY",
+          "UZ",
+          "VE",
+          "VN",
+          "XK",
+          "ZA",
+          "ZM",
+          "ZW"
+        ],
+        "in": "query",
+        "name": "geo",
         "type": "string"
       }
     ],
@@ -40761,6 +42684,32 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "flashscore-news-article-body": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-news-article-body",
+    "method": "GET",
+    "path": "/flashscore/news-article-body",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "flashscore-news-categories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -40776,6 +42725,259 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-news-most-read": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-news-most-read",
+    "method": "GET",
+    "path": "/flashscore/news-most-read",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-odds-geos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-odds-geos",
+    "method": "GET",
+    "path": "/flashscore/odds-geos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-player": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-player",
+    "method": "GET",
+    "path": "/flashscore/player",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-player-fixtures": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-player-fixtures",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/flashscore/player-fixtures",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-player-injuries": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-player-injuries",
+    "method": "GET",
+    "path": "/flashscore/player-injuries",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-player-match-log": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-player-match-log",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/flashscore/player-match-log",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-player-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-player-news",
+    "method": "GET",
+    "path": "/flashscore/player-news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-player-results": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-player-results",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/flashscore/player-results",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-player-transfers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-player-transfers",
+    "method": "GET",
+    "path": "/flashscore/player-transfers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -40913,7 +43115,12 @@ export const operations = {
           "table-tennis",
           "volleyball",
           "water-polo",
-          "winter-sports"
+          "winter-sports",
+          "moto-racing",
+          "ski-jumping",
+          "alpine-skiing",
+          "cross-country-skiing",
+          "biathlon"
         ],
         "in": "query",
         "name": "sport",
@@ -40975,6 +43182,422 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "flashscore-team": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-team",
+    "method": "GET",
+    "path": "/flashscore/team",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-team-fixtures": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-team-fixtures",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/flashscore/team-fixtures",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-team-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-team-news",
+    "method": "GET",
+    "path": "/flashscore/team-news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-team-outright-odds": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-team-outright-odds",
+    "method": "GET",
+    "path": "/flashscore/team-outright-odds",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "AE",
+          "AL",
+          "AM",
+          "AO",
+          "AR",
+          "AT",
+          "AU",
+          "AZ",
+          "BA",
+          "BD",
+          "BE",
+          "BG",
+          "BO",
+          "BR",
+          "BY",
+          "CA",
+          "CH",
+          "CI",
+          "CL",
+          "CM",
+          "CN",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "ET",
+          "FI",
+          "FR",
+          "GB",
+          "GE",
+          "GH",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HR",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IQ",
+          "IR",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KE",
+          "KG",
+          "KH",
+          "KR",
+          "KW",
+          "KZ",
+          "LA",
+          "LB",
+          "LK",
+          "LT",
+          "LU",
+          "LV",
+          "LY",
+          "MA",
+          "MD",
+          "ME",
+          "MK",
+          "MM",
+          "MN",
+          "MT",
+          "MX",
+          "MY",
+          "NG",
+          "NI",
+          "NL",
+          "NO",
+          "NP",
+          "NZ",
+          "PA",
+          "PE",
+          "PH",
+          "PK",
+          "PL",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "RS",
+          "RU",
+          "SA",
+          "SD",
+          "SE",
+          "SG",
+          "SI",
+          "SK",
+          "SN",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "TZ",
+          "UA",
+          "UG",
+          "US",
+          "UY",
+          "UZ",
+          "VE",
+          "VN",
+          "XK",
+          "ZA",
+          "ZM",
+          "ZW"
+        ],
+        "in": "query",
+        "name": "geo",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "AB",
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "BC",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "HI",
+          "IA",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MB",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NB",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NL",
+          "NM",
+          "NS",
+          "NT",
+          "NU",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "ON",
+          "OR",
+          "PA",
+          "PE",
+          "QC",
+          "RI",
+          "SC",
+          "SD",
+          "SK",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY",
+          "YT"
+        ],
+        "in": "query",
+        "name": "subdivision",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-team-results": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-team-results",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/flashscore/team-results",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-team-squad": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-team-squad",
+    "method": "GET",
+    "path": "/flashscore/team-squad",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "scope",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-team-transfers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-team-transfers",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/flashscore/team-transfers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "arrivals",
+          "departures"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "flashscore-top-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -40990,6 +43613,32 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-tournament-archive-seasons": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-tournament-archive-seasons",
+    "method": "GET",
+    "path": "/flashscore/tournament-archive-seasons",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "stage_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -41020,6 +43669,228 @@ export const operations = {
         "in": "query",
         "name": "page",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "flashscore-tournament-outright-odds": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "flashscore-tournament-outright-odds",
+    "method": "GET",
+    "path": "/flashscore/tournament-outright-odds",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tournament_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "AE",
+          "AL",
+          "AM",
+          "AO",
+          "AR",
+          "AT",
+          "AU",
+          "AZ",
+          "BA",
+          "BD",
+          "BE",
+          "BG",
+          "BO",
+          "BR",
+          "BY",
+          "CA",
+          "CH",
+          "CI",
+          "CL",
+          "CM",
+          "CN",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "ET",
+          "FI",
+          "FR",
+          "GB",
+          "GE",
+          "GH",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HR",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IQ",
+          "IR",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KE",
+          "KG",
+          "KH",
+          "KR",
+          "KW",
+          "KZ",
+          "LA",
+          "LB",
+          "LK",
+          "LT",
+          "LU",
+          "LV",
+          "LY",
+          "MA",
+          "MD",
+          "ME",
+          "MK",
+          "MM",
+          "MN",
+          "MT",
+          "MX",
+          "MY",
+          "NG",
+          "NI",
+          "NL",
+          "NO",
+          "NP",
+          "NZ",
+          "PA",
+          "PE",
+          "PH",
+          "PK",
+          "PL",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "RS",
+          "RU",
+          "SA",
+          "SD",
+          "SE",
+          "SG",
+          "SI",
+          "SK",
+          "SN",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "TZ",
+          "UA",
+          "UG",
+          "US",
+          "UY",
+          "UZ",
+          "VE",
+          "VN",
+          "XK",
+          "ZA",
+          "ZM",
+          "ZW"
+        ],
+        "in": "query",
+        "name": "geo",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "AB",
+          "AK",
+          "AL",
+          "AR",
+          "AZ",
+          "BC",
+          "CA",
+          "CO",
+          "CT",
+          "DC",
+          "DE",
+          "FL",
+          "GA",
+          "HI",
+          "IA",
+          "ID",
+          "IL",
+          "IN",
+          "KS",
+          "KY",
+          "LA",
+          "MA",
+          "MB",
+          "MD",
+          "ME",
+          "MI",
+          "MN",
+          "MO",
+          "MS",
+          "MT",
+          "NB",
+          "NC",
+          "ND",
+          "NE",
+          "NH",
+          "NJ",
+          "NL",
+          "NM",
+          "NS",
+          "NT",
+          "NU",
+          "NV",
+          "NY",
+          "OH",
+          "OK",
+          "ON",
+          "OR",
+          "PA",
+          "PE",
+          "QC",
+          "RI",
+          "SC",
+          "SD",
+          "SK",
+          "TN",
+          "TX",
+          "UT",
+          "VA",
+          "VT",
+          "WA",
+          "WI",
+          "WV",
+          "WY",
+          "YT"
+        ],
+        "in": "query",
+        "name": "subdivision",
+        "type": "string"
       }
     ],
     "security": [
@@ -97422,6 +100293,257 @@ export const operations = {
       "JWTAuth"
     ]
   },
+  "research-cancel": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "research-cancel",
+    "method": "POST",
+    "path": "/research/jobs/{job_id}/cancel",
+    "pathParams": [
+      "job_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "research-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/research/jobs/{job_id}/events",
+    "pathParams": [
+      "job_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-inspect-paper": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "research-inspect-paper",
+    "method": "GET",
+    "path": "/research/papers/metadata",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "paper_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-read-paper": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "research-read-paper",
+    "method": "POST",
+    "path": "/research/papers/read",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-related-papers": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "research-related-papers",
+    "method": "POST",
+    "path": "/research/papers/related",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-results": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "research-results",
+    "method": "GET",
+    "path": "/research/jobs/{job_id}/results",
+    "pathParams": [
+      "job_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-search-papers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "research-search-papers",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/research/papers/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "collectionFormat": "multi",
+        "enum": [
+          "arxiv"
+        ],
+        "in": "query",
+        "name": "sources",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "multi",
+        "in": "query",
+        "name": "authors",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "published_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "published_to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-sources": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "research-sources",
+    "method": "GET",
+    "path": "/research/sources",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-start": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "research-start",
+    "method": "POST",
+    "path": "/research/jobs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "research-status": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "research-status",
+    "method": "GET",
+    "path": "/research/jobs/{job_id}",
+    "pathParams": [
+      "job_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "resy-availability": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -97446,7 +100568,6 @@ export const operations = {
       {
         "in": "query",
         "name": "date",
-        "required": true,
         "type": "string"
       },
       {
@@ -106085,6 +109206,200 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sofascore-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-categories",
+    "method": "GET",
+    "path": "/sofascore/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "american-football",
+          "aussie-rules",
+          "badminton",
+          "bandy",
+          "baseball",
+          "basketball",
+          "beach-volley",
+          "cricket",
+          "darts",
+          "esports",
+          "floorball",
+          "football",
+          "futsal",
+          "handball",
+          "ice-hockey",
+          "mma",
+          "minifootball",
+          "padel",
+          "rugby",
+          "snooker",
+          "table-tennis",
+          "tennis",
+          "volleyball",
+          "waterpolo"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-category-tournaments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-category-tournaments",
+    "method": "GET",
+    "path": "/sofascore/category-tournaments",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-draft": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-draft",
+    "method": "GET",
+    "path": "/sofascore/draft",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nba",
+          "nfl"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-draft-picks": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-draft-picks",
+    "method": "GET",
+    "path": "/sofascore/draft-picks",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nba",
+          "nfl"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "year",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "round",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-esports-game": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-esports-game",
+    "method": "GET",
+    "path": "/sofascore/esports-game",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "statistics",
+          "lineups",
+          "bans",
+          "rounds"
+        ],
+        "in": "query",
+        "name": "part",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sofascore-event": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -106095,6 +109410,220 @@ export const operations = {
     "id": "sofascore-event",
     "method": "GET",
     "path": "/sofascore/event",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-at-bat-pitches": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-at-bat-pitches",
+    "method": "GET",
+    "path": "/sofascore/event-at-bat-pitches",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "at_bat_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-at-bats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-at-bats",
+    "method": "GET",
+    "path": "/sofascore/event-at-bats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-average-positions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-average-positions",
+    "method": "GET",
+    "path": "/sofascore/event-average-positions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-baseball-top-performers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-baseball-top-performers",
+    "method": "GET",
+    "path": "/sofascore/event-baseball-top-performers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-best-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-best-players",
+    "method": "GET",
+    "path": "/sofascore/event-best-players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-comments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-comments",
+    "method": "GET",
+    "path": "/sofascore/event-comments",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-esports-games": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-esports-games",
+    "method": "GET",
+    "path": "/sofascore/event-esports-games",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-graph": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-graph",
+    "method": "GET",
+    "path": "/sofascore/event-graph",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -106137,6 +109666,32 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sofascore-event-highlights": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-highlights",
+    "method": "GET",
+    "path": "/sofascore/event-highlights",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sofascore-event-incidents": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -106147,6 +109702,32 @@ export const operations = {
     "id": "sofascore-event-incidents",
     "method": "GET",
     "path": "/sofascore/event-incidents",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-innings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-innings",
+    "method": "GET",
+    "path": "/sofascore/event-innings",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -106189,6 +109770,32 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sofascore-event-managers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-managers",
+    "method": "GET",
+    "path": "/sofascore/event-managers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sofascore-event-odds": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -106199,6 +109806,148 @@ export const operations = {
     "id": "sofascore-event-odds",
     "method": "GET",
     "path": "/sofascore/event-odds",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-player-heatmap": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-player-heatmap",
+    "method": "GET",
+    "path": "/sofascore/event-player-heatmap",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-player-statistics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-player-statistics",
+    "method": "GET",
+    "path": "/sofascore/event-player-statistics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-point-by-point": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-point-by-point",
+    "method": "GET",
+    "path": "/sofascore/event-point-by-point",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-pregame-form": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-pregame-form",
+    "method": "GET",
+    "path": "/sofascore/event-pregame-form",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-shotmap": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-shotmap",
+    "method": "GET",
+    "path": "/sofascore/event-shotmap",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -106241,6 +109990,147 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sofascore-event-team-heatmap": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-team-heatmap",
+    "method": "GET",
+    "path": "/sofascore/event-team-heatmap",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-team-streaks": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-team-streaks",
+    "method": "GET",
+    "path": "/sofascore/event-team-streaks",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-tennis-power": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-tennis-power",
+    "method": "GET",
+    "path": "/sofascore/event-tennis-power",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-tv-channels": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-tv-channels",
+    "method": "GET",
+    "path": "/sofascore/event-tv-channels",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-event-votes": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-event-votes",
+    "method": "GET",
+    "path": "/sofascore/event-votes",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sofascore-live-events": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -106258,13 +110148,272 @@ export const operations = {
     "queryParams": [
       {
         "enum": [
-          "football",
+          "american-football",
+          "aussie-rules",
+          "badminton",
+          "bandy",
+          "baseball",
           "basketball",
-          "tennis"
+          "beach-volley",
+          "cricket",
+          "darts",
+          "esports",
+          "floorball",
+          "football",
+          "futsal",
+          "handball",
+          "ice-hockey",
+          "mma",
+          "minifootball",
+          "padel",
+          "rugby",
+          "snooker",
+          "table-tennis",
+          "tennis",
+          "volleyball",
+          "waterpolo"
         ],
         "in": "query",
         "name": "sport",
         "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-manager": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-manager",
+    "method": "GET",
+    "path": "/sofascore/manager",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-manager-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-manager-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/manager-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-mma-card": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-mma-card",
+    "method": "GET",
+    "path": "/sofascore/mma-card",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "org_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "card_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "maincard",
+          "prelims",
+          "earlyprelims"
+        ],
+        "in": "query",
+        "name": "part",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-mma-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-mma-schedule",
+    "method": "GET",
+    "path": "/sofascore/mma-schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "org_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "month",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-odds-dropping": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-odds-dropping",
+    "method": "GET",
+    "path": "/sofascore/odds-dropping",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "american-football",
+          "aussie-rules",
+          "badminton",
+          "bandy",
+          "baseball",
+          "basketball",
+          "beach-volley",
+          "cricket",
+          "darts",
+          "esports",
+          "floorball",
+          "football",
+          "futsal",
+          "handball",
+          "ice-hockey",
+          "mma",
+          "minifootball",
+          "padel",
+          "rugby",
+          "snooker",
+          "table-tennis",
+          "tennis",
+          "volleyball",
+          "waterpolo"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-odds-winning": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-odds-winning",
+    "method": "GET",
+    "path": "/sofascore/odds-winning",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all",
+          "american-football",
+          "aussie-rules",
+          "badminton",
+          "bandy",
+          "baseball",
+          "basketball",
+          "beach-volley",
+          "cricket",
+          "darts",
+          "esports",
+          "floorball",
+          "football",
+          "futsal",
+          "handball",
+          "ice-hockey",
+          "mma",
+          "minifootball",
+          "padel",
+          "rugby",
+          "snooker",
+          "table-tennis",
+          "tennis",
+          "volleyball",
+          "waterpolo"
+        ],
+        "in": "query",
+        "name": "sport",
         "type": "string"
       }
     ],
@@ -106282,6 +110431,566 @@ export const operations = {
     "id": "sofascore-player",
     "method": "GET",
     "path": "/sofascore/player",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-attributes": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-attributes",
+    "method": "GET",
+    "path": "/sofascore/player-attributes",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/player-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-last-year-summary": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-last-year-summary",
+    "method": "GET",
+    "path": "/sofascore/player-last-year-summary",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-national-team-statistics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-national-team-statistics",
+    "method": "GET",
+    "path": "/sofascore/player-national-team-statistics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-penalty-history": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-penalty-history",
+    "method": "GET",
+    "path": "/sofascore/player-penalty-history",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-ratings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-ratings",
+    "method": "GET",
+    "path": "/sofascore/player-ratings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tournament_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall",
+          "home",
+          "away",
+          "regular_season",
+          "playoffs"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-season-heatmap": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-season-heatmap",
+    "method": "GET",
+    "path": "/sofascore/player-season-heatmap",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tournament_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-season-statistics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-season-statistics",
+    "method": "GET",
+    "path": "/sofascore/player-season-statistics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tournament_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall",
+          "home",
+          "away",
+          "regular_season",
+          "playoffs"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-statistical-rankings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-statistical-rankings",
+    "method": "GET",
+    "path": "/sofascore/player-statistical-rankings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-statistics-seasons": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-statistics-seasons",
+    "method": "GET",
+    "path": "/sofascore/player-statistics-seasons",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-tournaments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-tournaments",
+    "method": "GET",
+    "path": "/sofascore/player-tournaments",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-player-transfers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-player-transfers",
+    "method": "GET",
+    "path": "/sofascore/player-transfers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-ranking-types": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-ranking-types",
+    "method": "GET",
+    "path": "/sofascore/ranking-types",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-rankings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-rankings",
+    "method": "GET",
+    "path": "/sofascore/rankings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "34",
+          "35",
+          "36",
+          "37",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-referee": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-referee",
+    "method": "GET",
+    "path": "/sofascore/referee",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-referee-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-referee-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/referee-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-referee-statistics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-referee-statistics",
+    "method": "GET",
+    "path": "/sofascore/referee-statistics",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -106330,6 +111039,112 @@ export const operations = {
         "name": "round",
         "required": true,
         "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "prefix",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-scheduled-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-scheduled-events",
+    "method": "GET",
+    "path": "/sofascore/scheduled-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-scheduled-tournaments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-scheduled-tournaments",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/scheduled-tournaments",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "american-football",
+          "aussie-rules",
+          "badminton",
+          "bandy",
+          "baseball",
+          "basketball",
+          "beach-volley",
+          "cricket",
+          "darts",
+          "esports",
+          "floorball",
+          "football",
+          "futsal",
+          "handball",
+          "ice-hockey",
+          "mma",
+          "minifootball",
+          "padel",
+          "rugby",
+          "snooker",
+          "table-tennis",
+          "tennis",
+          "volleyball",
+          "waterpolo"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -106354,6 +111169,387 @@ export const operations = {
       {
         "in": "query",
         "name": "q",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-search-typed": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-search-typed",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/search-typed",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "events",
+          "teams",
+          "players",
+          "managers",
+          "referees",
+          "venues",
+          "unique_tournaments"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "american-football",
+          "aussie-rules",
+          "badminton",
+          "bandy",
+          "baseball",
+          "basketball",
+          "beach-volley",
+          "cricket",
+          "darts",
+          "esports",
+          "floorball",
+          "football",
+          "futsal",
+          "handball",
+          "ice-hockey",
+          "mma",
+          "minifootball",
+          "padel",
+          "rugby",
+          "snooker",
+          "table-tennis",
+          "tennis",
+          "volleyball",
+          "waterpolo"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-season-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-season-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/season-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "next",
+          "last"
+        ],
+        "in": "query",
+        "name": "direction",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-sports": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-sports",
+    "method": "GET",
+    "path": "/sofascore/sports",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-stage": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-stage",
+    "method": "GET",
+    "path": "/sofascore/stage",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-stage-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-stage-categories",
+    "method": "GET",
+    "path": "/sofascore/stage-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "motorsport",
+          "cycling"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-stage-driver-performance": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-stage-driver-performance",
+    "method": "GET",
+    "path": "/sofascore/stage-driver-performance",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-stage-featured": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-stage-featured",
+    "method": "GET",
+    "path": "/sofascore/stage-featured",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "motorsport",
+          "cycling"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-stage-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-stage-schedule",
+    "method": "GET",
+    "path": "/sofascore/stage-schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "motorsport",
+          "cycling"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-stage-seasons": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-stage-seasons",
+    "method": "GET",
+    "path": "/sofascore/stage-seasons",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-stage-standings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-stage-standings",
+    "method": "GET",
+    "path": "/sofascore/stage-standings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "competitor",
+          "team"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-stage-substages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-stage-substages",
+    "method": "GET",
+    "path": "/sofascore/stage-substages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
         "required": true,
         "type": "string"
       }
@@ -106431,6 +111627,32 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sofascore-team-achievements": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-achievements",
+    "method": "GET",
+    "path": "/sofascore/team-achievements",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sofascore-team-events": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -106473,6 +111695,242 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "sofascore-team-goal-distributions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-goal-distributions",
+    "method": "GET",
+    "path": "/sofascore/team-goal-distributions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tournament_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-near-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-near-events",
+    "method": "GET",
+    "path": "/sofascore/team-near-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-of-the-week": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-of-the-week",
+    "method": "GET",
+    "path": "/sofascore/team-of-the-week",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "period",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-of-the-week-periods": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-of-the-week-periods",
+    "method": "GET",
+    "path": "/sofascore/team-of-the-week-periods",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-performance": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-performance",
+    "method": "GET",
+    "path": "/sofascore/team-performance",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-player-statistics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-player-statistics",
+    "method": "GET",
+    "path": "/sofascore/team-player-statistics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tournament_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall",
+          "home",
+          "away",
+          "regular_season",
+          "playoffs"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-player-statistics-seasons": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-player-statistics-seasons",
+    "method": "GET",
+    "path": "/sofascore/team-player-statistics-seasons",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "sofascore-team-players": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -106491,6 +111949,508 @@ export const operations = {
       {
         "in": "query",
         "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-rankings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-rankings",
+    "method": "GET",
+    "path": "/sofascore/team-rankings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-season-statistics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-season-statistics",
+    "method": "GET",
+    "path": "/sofascore/team-season-statistics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tournament_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall",
+          "home",
+          "away",
+          "regular_season",
+          "playoffs"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-statistics-seasons": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-statistics-seasons",
+    "method": "GET",
+    "path": "/sofascore/team-statistics-seasons",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-top-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-top-players",
+    "method": "GET",
+    "path": "/sofascore/team-top-players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tournament_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall",
+          "regular_season",
+          "playoffs"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-tournaments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-tournaments",
+    "method": "GET",
+    "path": "/sofascore/team-tournaments",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "all",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-team-transfers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-team-transfers",
+    "method": "GET",
+    "path": "/sofascore/team-transfers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tennis-player-grand-slam-results": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tennis-player-grand-slam-results",
+    "method": "GET",
+    "path": "/sofascore/tennis-player-grand-slam-results",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-cuptree": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-cuptree",
+    "method": "GET",
+    "path": "/sofascore/tournament-cuptree",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-info": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-info",
+    "method": "GET",
+    "path": "/sofascore/tournament-info",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-player-of-the-season": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-player-of-the-season",
+    "method": "GET",
+    "path": "/sofascore/tournament-player-of-the-season",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-player-statistics": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-player-statistics",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/tournament-player-statistics",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "rating",
+          "goals",
+          "expectedGoals",
+          "assists",
+          "successfulDribbles",
+          "tackles",
+          "accuratePassesPercentage",
+          "bigChancesMissed",
+          "totalShots",
+          "goalConversionPercentage",
+          "interceptions",
+          "clearances",
+          "errorLeadToGoal",
+          "outfielderBlocks",
+          "bigChancesCreated",
+          "accuratePasses",
+          "keyPasses",
+          "saves",
+          "cleanSheet",
+          "penaltySave",
+          "savedShotsFromInsideTheBox",
+          "runsOut"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "desc",
+          "asc"
+        ],
+        "in": "query",
+        "name": "direction",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "total",
+          "perGame",
+          "per90"
+        ],
+        "in": "query",
+        "name": "accumulation",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "summary",
+          "attack",
+          "defence",
+          "passing",
+          "goalkeeper"
+        ],
+        "in": "query",
+        "name": "group",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "team",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "nationality",
+        "type": "array"
+      },
+      {
+        "collectionFormat": "csv",
+        "enum": [
+          "G",
+          "D",
+          "M",
+          "F"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "min_appearances",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "min_minutes",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-rounds": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-rounds",
+    "method": "GET",
+    "path": "/sofascore/tournament-rounds",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
         "required": true,
         "type": "string"
       }
@@ -106518,6 +112478,488 @@ export const operations = {
         "in": "query",
         "name": "id",
         "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-statistics-info": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-statistics-info",
+    "method": "GET",
+    "path": "/sofascore/tournament-statistics-info",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-team-of-the-season": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-team-of-the-season",
+    "method": "GET",
+    "path": "/sofascore/tournament-team-of-the-season",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-teams": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-teams",
+    "method": "GET",
+    "path": "/sofascore/tournament-teams",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-top-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-top-players",
+    "method": "GET",
+    "path": "/sofascore/tournament-top-players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall",
+          "regular_season",
+          "playoffs"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-top-teams": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-top-teams",
+    "method": "GET",
+    "path": "/sofascore/tournament-top-teams",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall",
+          "regular_season",
+          "playoffs"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-venues": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-venues",
+    "method": "GET",
+    "path": "/sofascore/tournament-venues",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournament-winners": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournament-winners",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/tournament-winners",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-tournaments-with-feature": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-tournaments-with-feature",
+    "method": "GET",
+    "path": "/sofascore/tournaments-with-feature",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "cuptree",
+          "standings",
+          "totw",
+          "power_rankings"
+        ],
+        "in": "query",
+        "name": "feature",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "american-football",
+          "aussie-rules",
+          "badminton",
+          "bandy",
+          "baseball",
+          "basketball",
+          "beach-volley",
+          "cricket",
+          "darts",
+          "esports",
+          "floorball",
+          "football",
+          "futsal",
+          "handball",
+          "ice-hockey",
+          "minifootball",
+          "rugby",
+          "snooker",
+          "table-tennis",
+          "tennis",
+          "volleyball",
+          "waterpolo"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-trending-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-trending-events",
+    "method": "GET",
+    "path": "/sofascore/trending-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-trending-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-trending-players",
+    "method": "GET",
+    "path": "/sofascore/trending-players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "football",
+          "basketball"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-venue": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-venue",
+    "method": "GET",
+    "path": "/sofascore/venue",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "sofascore-venue-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "sofascore-venue-events",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/sofascore/venue-events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "next",
+          "last"
+        ],
+        "in": "query",
+        "name": "direction",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "american-football",
+          "aussie-rules",
+          "badminton",
+          "bandy",
+          "baseball",
+          "basketball",
+          "beach-volley",
+          "cricket",
+          "darts",
+          "esports",
+          "floorball",
+          "football",
+          "futsal",
+          "handball",
+          "ice-hockey",
+          "mma",
+          "minifootball",
+          "padel",
+          "rugby",
+          "snooker",
+          "table-tennis",
+          "tennis",
+          "volleyball",
+          "waterpolo"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "tournament",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
         "type": "string"
       }
     ],
@@ -127171,6 +133613,133 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "web-capabilities": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "web-capabilities",
+    "method": "GET",
+    "path": "/web/capabilities",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "web-crawl": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "web-crawl",
+    "method": "POST",
+    "path": "/web/crawl",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "web-crawl-cancel": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "web-crawl-cancel",
+    "method": "POST",
+    "path": "/web/crawl/{job_id}/cancel",
+    "pathParams": [
+      "job_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "web-crawl-results": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "web-crawl-results",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/web/crawl/{job_id}/results",
+    "pathParams": [
+      "job_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "web-crawl-status": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "web-crawl-status",
+    "method": "GET",
+    "path": "/web/crawl/{job_id}",
+    "pathParams": [
+      "job_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "web-map": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "web-map",
+    "method": "POST",
+    "path": "/web/map",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "web-scrape": {
     "bodyParam": "scrapeOption",
     "bodyRequired": true,
@@ -127181,6 +133750,25 @@ export const operations = {
     "id": "web-scrape",
     "method": "POST",
     "path": "/web/scrape",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "web-search": {
+    "bodyParam": "request",
+    "bodyRequired": true,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "web-search",
+    "method": "POST",
+    "path": "/web/search",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -134766,15 +141354,22 @@ export const groups = {
     "topics": "barrons-topics"
   },
   "bbb": {
+    "article": "bbb-article",
     "business": "bbb-business",
     "businessComplaints": "bbb-business-complaints",
     "businessMoreInfo": "bbb-business-more-info",
     "businessReviews": "bbb-business-reviews",
     "category": "bbb-category",
+    "localBbb": "bbb-local-bbb",
+    "localBbbs": "bbb-local-bbbs",
+    "news": "bbb-news",
+    "newsTopics": "bbb-news-topics",
+    "regions": "bbb-regions",
     "scamtrackerDetail": "bbb-scamtracker-detail",
     "scamtrackerSearch": "bbb-scamtracker-search",
     "scamtrackerStateStats": "bbb-scamtracker-state-stats",
-    "search": "bbb-search"
+    "search": "bbb-search",
+    "searchFilters": "bbb-search-filters"
   },
   "bbc": {
     "article": "bbc-article",
@@ -135310,6 +141905,9 @@ export const groups = {
     "bbbBusinessesFacets": "datasets-bbb-businesses-facets",
     "bbbBusinessesItem": "datasets-bbb-businesses-item",
     "bbbBusinessesSearch": "datasets-bbb-businesses-search",
+    "bbbScamtrackerReportsFacets": "datasets-bbb-scamtracker-reports-facets",
+    "bbbScamtrackerReportsItem": "datasets-bbb-scamtracker-reports-item",
+    "bbbScamtrackerReportsSearch": "datasets-bbb-scamtracker-reports-search",
     "boxofficemojoFacets": "datasets-boxofficemojo-facets",
     "boxofficemojoItem": "datasets-boxofficemojo-item",
     "boxofficemojoSearch": "datasets-boxofficemojo-search",
@@ -135358,6 +141956,9 @@ export const groups = {
     "journalistsItem": "datasets-journalists-item",
     "journalistsSearch": "datasets-journalists-search",
     "list": "datasets-list",
+    "llmsFacets": "datasets-llms-facets",
+    "llmsItem": "datasets-llms-item",
+    "llmsSearch": "datasets-llms-search",
     "numbeoCitiesFacets": "datasets-numbeo-cities-facets",
     "numbeoCitiesItem": "datasets-numbeo-cities-item",
     "numbeoCitiesSearch": "datasets-numbeo-cities-search",
@@ -135719,24 +142320,54 @@ export const groups = {
     "calendar": "flashscore-calendar",
     "calendarCategories": "flashscore-calendar-categories",
     "competitions": "flashscore-competitions",
+    "entityNews": "flashscore-entity-news",
+    "matchBoxScore": "flashscore-match-box-score",
+    "matchDarts": "flashscore-match-darts",
     "matchH2h": "flashscore-match-h2h",
     "matchHighlights": "flashscore-match-highlights",
     "matchInfo": "flashscore-match-info",
     "matchLineups": "flashscore-match-lineups",
+    "matchMissingPlayers": "flashscore-match-missing-players",
+    "matchMomentum": "flashscore-match-momentum",
     "matchNews": "flashscore-match-news",
+    "matchOdds": "flashscore-match-odds",
+    "matchPlayerStats": "flashscore-match-player-stats",
+    "matchPointByPoint": "flashscore-match-point-by-point",
+    "matchPredictedLineups": "flashscore-match-predicted-lineups",
+    "matchReport": "flashscore-match-report",
     "matchStandings": "flashscore-match-standings",
     "matchStats": "flashscore-match-stats",
+    "matchTv": "flashscore-match-tv",
     "navigation": "flashscore-navigation",
     "news": "flashscore-news",
     "newsArticle": "flashscore-news-article",
+    "newsArticleBody": "flashscore-news-article-body",
     "newsCategories": "flashscore-news-categories",
+    "newsMostRead": "flashscore-news-most-read",
+    "oddsGeos": "flashscore-odds-geos",
+    "player": "flashscore-player",
+    "playerFixtures": "flashscore-player-fixtures",
+    "playerInjuries": "flashscore-player-injuries",
+    "playerMatchLog": "flashscore-player-match-log",
+    "playerNews": "flashscore-player-news",
+    "playerResults": "flashscore-player-results",
+    "playerTransfers": "flashscore-player-transfers",
     "rankingCategories": "flashscore-ranking-categories",
     "rankings": "flashscore-rankings",
     "scores": "flashscore-scores",
     "search": "flashscore-search",
     "sports": "flashscore-sports",
+    "team": "flashscore-team",
+    "teamFixtures": "flashscore-team-fixtures",
+    "teamNews": "flashscore-team-news",
+    "teamOutrightOdds": "flashscore-team-outright-odds",
+    "teamResults": "flashscore-team-results",
+    "teamSquad": "flashscore-team-squad",
+    "teamTransfers": "flashscore-team-transfers",
     "topSearch": "flashscore-top-search",
+    "tournamentArchiveSeasons": "flashscore-tournament-archive-seasons",
     "tournamentEvents": "flashscore-tournament-events",
+    "tournamentOutrightOdds": "flashscore-tournament-outright-odds",
     "tournamentSeasons": "flashscore-tournament-seasons",
     "tournamentStandings": "flashscore-tournament-standings",
     "tournamentStandingsViews": "flashscore-tournament-standings-views"
@@ -137510,6 +144141,20 @@ export const groups = {
     "me": "referrals-me",
     "meEvents": "referrals-me-events"
   },
+  "research": {
+    "inspectPaper": "research-inspect-paper",
+    "readPaper": "research-read-paper",
+    "relatedPapers": "research-related-papers",
+    "searchPapers": "research-search-papers",
+    "sources": "research-sources"
+  },
+  "researchJobs": {
+    "researchCancel": "research-cancel",
+    "researchEvents": "research-events",
+    "researchResults": "research-results",
+    "researchStart": "research-start",
+    "researchStatus": "research-status"
+  },
   "resy": {
     "availability": "resy-availability",
     "cuisines": "resy-cuisines",
@@ -137533,6 +144178,17 @@ export const groups = {
     "retailmenotHome": "retailmenot-home",
     "retailmenotStore": "retailmenot-store",
     "retailmenotStores": "retailmenot-stores"
+  },
+  "retrieval": {
+    "developerSearch": "developer-search",
+    "developerSources": "developer-sources",
+    "webCapabilities": "web-capabilities",
+    "webCrawl": "web-crawl",
+    "webCrawlCancel": "web-crawl-cancel",
+    "webCrawlResults": "web-crawl-results",
+    "webCrawlStatus": "web-crawl-status",
+    "webMap": "web-map",
+    "webSearch": "web-search"
   },
   "reuters": {
     "article": "reuters-article",
@@ -137832,21 +144488,115 @@ export const groups = {
     "searchAdvanced": "slickdeals-search-advanced"
   },
   "sofaScore": {
+    "sofascoreCategories": "sofascore-categories",
+    "sofascoreCategoryTournaments": "sofascore-category-tournaments",
+    "sofascoreDraft": "sofascore-draft",
+    "sofascoreDraftPicks": "sofascore-draft-picks",
+    "sofascoreEsportsGame": "sofascore-esports-game",
     "sofascoreEvent": "sofascore-event",
+    "sofascoreEventAtBatPitches": "sofascore-event-at-bat-pitches",
+    "sofascoreEventAtBats": "sofascore-event-at-bats",
+    "sofascoreEventAveragePositions": "sofascore-event-average-positions",
+    "sofascoreEventBaseballTopPerformers": "sofascore-event-baseball-top-performers",
+    "sofascoreEventBestPlayers": "sofascore-event-best-players",
+    "sofascoreEventComments": "sofascore-event-comments",
+    "sofascoreEventEsportsGames": "sofascore-event-esports-games",
+    "sofascoreEventGraph": "sofascore-event-graph",
     "sofascoreEventH2h": "sofascore-event-h2h",
+    "sofascoreEventHighlights": "sofascore-event-highlights",
     "sofascoreEventIncidents": "sofascore-event-incidents",
+    "sofascoreEventInnings": "sofascore-event-innings",
     "sofascoreEventLineups": "sofascore-event-lineups",
+    "sofascoreEventManagers": "sofascore-event-managers",
     "sofascoreEventOdds": "sofascore-event-odds",
+    "sofascoreEventPlayerHeatmap": "sofascore-event-player-heatmap",
+    "sofascoreEventPlayerStatistics": "sofascore-event-player-statistics",
+    "sofascoreEventPointByPoint": "sofascore-event-point-by-point",
+    "sofascoreEventPregameForm": "sofascore-event-pregame-form",
+    "sofascoreEventShotmap": "sofascore-event-shotmap",
     "sofascoreEventStatistics": "sofascore-event-statistics",
+    "sofascoreEventTeamHeatmap": "sofascore-event-team-heatmap",
+    "sofascoreEventTeamStreaks": "sofascore-event-team-streaks",
+    "sofascoreEventTennisPower": "sofascore-event-tennis-power",
+    "sofascoreEventTvChannels": "sofascore-event-tv-channels",
+    "sofascoreEventVotes": "sofascore-event-votes",
     "sofascoreLiveEvents": "sofascore-live-events",
+    "sofascoreManager": "sofascore-manager",
+    "sofascoreManagerEvents": "sofascore-manager-events",
+    "sofascoreMmaCard": "sofascore-mma-card",
+    "sofascoreMmaSchedule": "sofascore-mma-schedule",
+    "sofascoreOddsDropping": "sofascore-odds-dropping",
+    "sofascoreOddsWinning": "sofascore-odds-winning",
     "sofascorePlayer": "sofascore-player",
+    "sofascorePlayerAttributes": "sofascore-player-attributes",
+    "sofascorePlayerEvents": "sofascore-player-events",
+    "sofascorePlayerLastYearSummary": "sofascore-player-last-year-summary",
+    "sofascorePlayerNationalTeamStatistics": "sofascore-player-national-team-statistics",
+    "sofascorePlayerPenaltyHistory": "sofascore-player-penalty-history",
+    "sofascorePlayerRatings": "sofascore-player-ratings",
+    "sofascorePlayerSeasonHeatmap": "sofascore-player-season-heatmap",
+    "sofascorePlayerSeasonStatistics": "sofascore-player-season-statistics",
+    "sofascorePlayerStatisticalRankings": "sofascore-player-statistical-rankings",
+    "sofascorePlayerStatisticsSeasons": "sofascore-player-statistics-seasons",
+    "sofascorePlayerTournaments": "sofascore-player-tournaments",
+    "sofascorePlayerTransfers": "sofascore-player-transfers",
+    "sofascoreRankingTypes": "sofascore-ranking-types",
+    "sofascoreRankings": "sofascore-rankings",
+    "sofascoreReferee": "sofascore-referee",
+    "sofascoreRefereeEvents": "sofascore-referee-events",
+    "sofascoreRefereeStatistics": "sofascore-referee-statistics",
     "sofascoreRoundEvents": "sofascore-round-events",
+    "sofascoreScheduledEvents": "sofascore-scheduled-events",
+    "sofascoreScheduledTournaments": "sofascore-scheduled-tournaments",
     "sofascoreSearch": "sofascore-search",
+    "sofascoreSearchTyped": "sofascore-search-typed",
+    "sofascoreSeasonEvents": "sofascore-season-events",
+    "sofascoreSports": "sofascore-sports",
+    "sofascoreStage": "sofascore-stage",
+    "sofascoreStageCategories": "sofascore-stage-categories",
+    "sofascoreStageDriverPerformance": "sofascore-stage-driver-performance",
+    "sofascoreStageFeatured": "sofascore-stage-featured",
+    "sofascoreStageSchedule": "sofascore-stage-schedule",
+    "sofascoreStageSeasons": "sofascore-stage-seasons",
+    "sofascoreStageStandings": "sofascore-stage-standings",
+    "sofascoreStageSubstages": "sofascore-stage-substages",
     "sofascoreStandings": "sofascore-standings",
     "sofascoreTeam": "sofascore-team",
+    "sofascoreTeamAchievements": "sofascore-team-achievements",
     "sofascoreTeamEvents": "sofascore-team-events",
+    "sofascoreTeamGoalDistributions": "sofascore-team-goal-distributions",
+    "sofascoreTeamNearEvents": "sofascore-team-near-events",
+    "sofascoreTeamOfTheWeek": "sofascore-team-of-the-week",
+    "sofascoreTeamOfTheWeekPeriods": "sofascore-team-of-the-week-periods",
+    "sofascoreTeamPerformance": "sofascore-team-performance",
+    "sofascoreTeamPlayerStatistics": "sofascore-team-player-statistics",
+    "sofascoreTeamPlayerStatisticsSeasons": "sofascore-team-player-statistics-seasons",
     "sofascoreTeamPlayers": "sofascore-team-players",
-    "sofascoreTournamentSeasons": "sofascore-tournament-seasons"
+    "sofascoreTeamRankings": "sofascore-team-rankings",
+    "sofascoreTeamSeasonStatistics": "sofascore-team-season-statistics",
+    "sofascoreTeamStatisticsSeasons": "sofascore-team-statistics-seasons",
+    "sofascoreTeamTopPlayers": "sofascore-team-top-players",
+    "sofascoreTeamTournaments": "sofascore-team-tournaments",
+    "sofascoreTeamTransfers": "sofascore-team-transfers",
+    "sofascoreTennisPlayerGrandSlamResults": "sofascore-tennis-player-grand-slam-results",
+    "sofascoreTournamentCuptree": "sofascore-tournament-cuptree",
+    "sofascoreTournamentInfo": "sofascore-tournament-info",
+    "sofascoreTournamentPlayerOfTheSeason": "sofascore-tournament-player-of-the-season",
+    "sofascoreTournamentPlayerStatistics": "sofascore-tournament-player-statistics",
+    "sofascoreTournamentRounds": "sofascore-tournament-rounds",
+    "sofascoreTournamentSeasons": "sofascore-tournament-seasons",
+    "sofascoreTournamentStatisticsInfo": "sofascore-tournament-statistics-info",
+    "sofascoreTournamentTeamOfTheSeason": "sofascore-tournament-team-of-the-season",
+    "sofascoreTournamentTeams": "sofascore-tournament-teams",
+    "sofascoreTournamentTopPlayers": "sofascore-tournament-top-players",
+    "sofascoreTournamentTopTeams": "sofascore-tournament-top-teams",
+    "sofascoreTournamentVenues": "sofascore-tournament-venues",
+    "sofascoreTournamentWinners": "sofascore-tournament-winners",
+    "sofascoreTournamentsWithFeature": "sofascore-tournaments-with-feature",
+    "sofascoreTrendingEvents": "sofascore-trending-events",
+    "sofascoreTrendingPlayers": "sofascore-trending-players",
+    "sofascoreVenue": "sofascore-venue",
+    "sofascoreVenueEvents": "sofascore-venue-events"
   },
   "sonic": {
     "availability": "sonic-availability",
@@ -138979,7 +145729,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 3539;
+export const operationCount = 3695;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -139193,15 +145943,22 @@ export const OperationIds = Object.freeze({
   "BarronsHeadlines": "barrons-headlines",
   "BarronsNews": "barrons-news",
   "BarronsTopics": "barrons-topics",
+  "BbbArticle": "bbb-article",
   "BbbBusiness": "bbb-business",
   "BbbBusinessComplaints": "bbb-business-complaints",
   "BbbBusinessMoreInfo": "bbb-business-more-info",
   "BbbBusinessReviews": "bbb-business-reviews",
   "BbbCategory": "bbb-category",
+  "BbbLocalBbb": "bbb-local-bbb",
+  "BbbLocalBbbs": "bbb-local-bbbs",
+  "BbbNews": "bbb-news",
+  "BbbNewsTopics": "bbb-news-topics",
+  "BbbRegions": "bbb-regions",
   "BbbScamtrackerDetail": "bbb-scamtracker-detail",
   "BbbScamtrackerSearch": "bbb-scamtracker-search",
   "BbbScamtrackerStateStats": "bbb-scamtracker-state-stats",
   "BbbSearch": "bbb-search",
+  "BbbSearchFilters": "bbb-search-filters",
   "BbcArticle": "bbc-article",
   "BbcAuthor": "bbc-author",
   "BbcHeadlines": "bbc-headlines",
@@ -139611,6 +146368,9 @@ export const OperationIds = Object.freeze({
   "DatasetsBbbBusinessesFacets": "datasets-bbb-businesses-facets",
   "DatasetsBbbBusinessesItem": "datasets-bbb-businesses-item",
   "DatasetsBbbBusinessesSearch": "datasets-bbb-businesses-search",
+  "DatasetsBbbScamtrackerReportsFacets": "datasets-bbb-scamtracker-reports-facets",
+  "DatasetsBbbScamtrackerReportsItem": "datasets-bbb-scamtracker-reports-item",
+  "DatasetsBbbScamtrackerReportsSearch": "datasets-bbb-scamtracker-reports-search",
   "DatasetsBoxofficemojoFacets": "datasets-boxofficemojo-facets",
   "DatasetsBoxofficemojoItem": "datasets-boxofficemojo-item",
   "DatasetsBoxofficemojoSearch": "datasets-boxofficemojo-search",
@@ -139659,6 +146419,9 @@ export const OperationIds = Object.freeze({
   "DatasetsJournalistsItem": "datasets-journalists-item",
   "DatasetsJournalistsSearch": "datasets-journalists-search",
   "DatasetsList": "datasets-list",
+  "DatasetsLlmsFacets": "datasets-llms-facets",
+  "DatasetsLlmsItem": "datasets-llms-item",
+  "DatasetsLlmsSearch": "datasets-llms-search",
   "DatasetsNumbeoCitiesFacets": "datasets-numbeo-cities-facets",
   "DatasetsNumbeoCitiesItem": "datasets-numbeo-cities-item",
   "DatasetsNumbeoCitiesSearch": "datasets-numbeo-cities-search",
@@ -139952,24 +146715,54 @@ export const OperationIds = Object.freeze({
   "FlashscoreCalendar": "flashscore-calendar",
   "FlashscoreCalendarCategories": "flashscore-calendar-categories",
   "FlashscoreCompetitions": "flashscore-competitions",
+  "FlashscoreEntityNews": "flashscore-entity-news",
+  "FlashscoreMatchBoxScore": "flashscore-match-box-score",
+  "FlashscoreMatchDarts": "flashscore-match-darts",
   "FlashscoreMatchH2h": "flashscore-match-h2h",
   "FlashscoreMatchHighlights": "flashscore-match-highlights",
   "FlashscoreMatchInfo": "flashscore-match-info",
   "FlashscoreMatchLineups": "flashscore-match-lineups",
+  "FlashscoreMatchMissingPlayers": "flashscore-match-missing-players",
+  "FlashscoreMatchMomentum": "flashscore-match-momentum",
   "FlashscoreMatchNews": "flashscore-match-news",
+  "FlashscoreMatchOdds": "flashscore-match-odds",
+  "FlashscoreMatchPlayerStats": "flashscore-match-player-stats",
+  "FlashscoreMatchPointByPoint": "flashscore-match-point-by-point",
+  "FlashscoreMatchPredictedLineups": "flashscore-match-predicted-lineups",
+  "FlashscoreMatchReport": "flashscore-match-report",
   "FlashscoreMatchStandings": "flashscore-match-standings",
   "FlashscoreMatchStats": "flashscore-match-stats",
+  "FlashscoreMatchTv": "flashscore-match-tv",
   "FlashscoreNavigation": "flashscore-navigation",
   "FlashscoreNews": "flashscore-news",
   "FlashscoreNewsArticle": "flashscore-news-article",
+  "FlashscoreNewsArticleBody": "flashscore-news-article-body",
   "FlashscoreNewsCategories": "flashscore-news-categories",
+  "FlashscoreNewsMostRead": "flashscore-news-most-read",
+  "FlashscoreOddsGeos": "flashscore-odds-geos",
+  "FlashscorePlayer": "flashscore-player",
+  "FlashscorePlayerFixtures": "flashscore-player-fixtures",
+  "FlashscorePlayerInjuries": "flashscore-player-injuries",
+  "FlashscorePlayerMatchLog": "flashscore-player-match-log",
+  "FlashscorePlayerNews": "flashscore-player-news",
+  "FlashscorePlayerResults": "flashscore-player-results",
+  "FlashscorePlayerTransfers": "flashscore-player-transfers",
   "FlashscoreRankingCategories": "flashscore-ranking-categories",
   "FlashscoreRankings": "flashscore-rankings",
   "FlashscoreScores": "flashscore-scores",
   "FlashscoreSearch": "flashscore-search",
   "FlashscoreSports": "flashscore-sports",
+  "FlashscoreTeam": "flashscore-team",
+  "FlashscoreTeamFixtures": "flashscore-team-fixtures",
+  "FlashscoreTeamNews": "flashscore-team-news",
+  "FlashscoreTeamOutrightOdds": "flashscore-team-outright-odds",
+  "FlashscoreTeamResults": "flashscore-team-results",
+  "FlashscoreTeamSquad": "flashscore-team-squad",
+  "FlashscoreTeamTransfers": "flashscore-team-transfers",
   "FlashscoreTopSearch": "flashscore-top-search",
+  "FlashscoreTournamentArchiveSeasons": "flashscore-tournament-archive-seasons",
   "FlashscoreTournamentEvents": "flashscore-tournament-events",
+  "FlashscoreTournamentOutrightOdds": "flashscore-tournament-outright-odds",
   "FlashscoreTournamentSeasons": "flashscore-tournament-seasons",
   "FlashscoreTournamentStandings": "flashscore-tournament-standings",
   "FlashscoreTournamentStandingsViews": "flashscore-tournament-standings-views",
@@ -141384,6 +148177,16 @@ export const OperationIds = Object.freeze({
   "ReferralsClick": "referrals-click",
   "ReferralsMe": "referrals-me",
   "ReferralsMeEvents": "referrals-me-events",
+  "ResearchInspectPaper": "research-inspect-paper",
+  "ResearchJobsResearchCancel": "research-cancel",
+  "ResearchJobsResearchEvents": "research-events",
+  "ResearchJobsResearchResults": "research-results",
+  "ResearchJobsResearchStart": "research-start",
+  "ResearchJobsResearchStatus": "research-status",
+  "ResearchReadPaper": "research-read-paper",
+  "ResearchRelatedPapers": "research-related-papers",
+  "ResearchSearchPapers": "research-search-papers",
+  "ResearchSources": "research-sources",
   "ResyAvailability": "resy-availability",
   "ResyCuisines": "resy-cuisines",
   "ResyEventDetail": "resy-event-detail",
@@ -141404,6 +148207,15 @@ export const OperationIds = Object.freeze({
   "RetailMeNotRetailmenotHome": "retailmenot-home",
   "RetailMeNotRetailmenotStore": "retailmenot-store",
   "RetailMeNotRetailmenotStores": "retailmenot-stores",
+  "RetrievalDeveloperSearch": "developer-search",
+  "RetrievalDeveloperSources": "developer-sources",
+  "RetrievalWebCapabilities": "web-capabilities",
+  "RetrievalWebCrawl": "web-crawl",
+  "RetrievalWebCrawlCancel": "web-crawl-cancel",
+  "RetrievalWebCrawlResults": "web-crawl-results",
+  "RetrievalWebCrawlStatus": "web-crawl-status",
+  "RetrievalWebMap": "web-map",
+  "RetrievalWebSearch": "web-search",
   "ReutersArticle": "reuters-article",
   "ReutersArticles": "reuters-articles",
   "ReutersAuthor": "reuters-author",
@@ -141637,21 +148449,115 @@ export const OperationIds = Object.freeze({
   "SlickdealsPrimaryCategory": "slickdeals-primary-category",
   "SlickdealsSearch": "slickdeals-search",
   "SlickdealsSearchAdvanced": "slickdeals-search-advanced",
+  "SofaScoreSofascoreCategories": "sofascore-categories",
+  "SofaScoreSofascoreCategoryTournaments": "sofascore-category-tournaments",
+  "SofaScoreSofascoreDraft": "sofascore-draft",
+  "SofaScoreSofascoreDraftPicks": "sofascore-draft-picks",
+  "SofaScoreSofascoreEsportsGame": "sofascore-esports-game",
   "SofaScoreSofascoreEvent": "sofascore-event",
+  "SofaScoreSofascoreEventAtBatPitches": "sofascore-event-at-bat-pitches",
+  "SofaScoreSofascoreEventAtBats": "sofascore-event-at-bats",
+  "SofaScoreSofascoreEventAveragePositions": "sofascore-event-average-positions",
+  "SofaScoreSofascoreEventBaseballTopPerformers": "sofascore-event-baseball-top-performers",
+  "SofaScoreSofascoreEventBestPlayers": "sofascore-event-best-players",
+  "SofaScoreSofascoreEventComments": "sofascore-event-comments",
+  "SofaScoreSofascoreEventEsportsGames": "sofascore-event-esports-games",
+  "SofaScoreSofascoreEventGraph": "sofascore-event-graph",
   "SofaScoreSofascoreEventH2h": "sofascore-event-h2h",
+  "SofaScoreSofascoreEventHighlights": "sofascore-event-highlights",
   "SofaScoreSofascoreEventIncidents": "sofascore-event-incidents",
+  "SofaScoreSofascoreEventInnings": "sofascore-event-innings",
   "SofaScoreSofascoreEventLineups": "sofascore-event-lineups",
+  "SofaScoreSofascoreEventManagers": "sofascore-event-managers",
   "SofaScoreSofascoreEventOdds": "sofascore-event-odds",
+  "SofaScoreSofascoreEventPlayerHeatmap": "sofascore-event-player-heatmap",
+  "SofaScoreSofascoreEventPlayerStatistics": "sofascore-event-player-statistics",
+  "SofaScoreSofascoreEventPointByPoint": "sofascore-event-point-by-point",
+  "SofaScoreSofascoreEventPregameForm": "sofascore-event-pregame-form",
+  "SofaScoreSofascoreEventShotmap": "sofascore-event-shotmap",
   "SofaScoreSofascoreEventStatistics": "sofascore-event-statistics",
+  "SofaScoreSofascoreEventTeamHeatmap": "sofascore-event-team-heatmap",
+  "SofaScoreSofascoreEventTeamStreaks": "sofascore-event-team-streaks",
+  "SofaScoreSofascoreEventTennisPower": "sofascore-event-tennis-power",
+  "SofaScoreSofascoreEventTvChannels": "sofascore-event-tv-channels",
+  "SofaScoreSofascoreEventVotes": "sofascore-event-votes",
   "SofaScoreSofascoreLiveEvents": "sofascore-live-events",
+  "SofaScoreSofascoreManager": "sofascore-manager",
+  "SofaScoreSofascoreManagerEvents": "sofascore-manager-events",
+  "SofaScoreSofascoreMmaCard": "sofascore-mma-card",
+  "SofaScoreSofascoreMmaSchedule": "sofascore-mma-schedule",
+  "SofaScoreSofascoreOddsDropping": "sofascore-odds-dropping",
+  "SofaScoreSofascoreOddsWinning": "sofascore-odds-winning",
   "SofaScoreSofascorePlayer": "sofascore-player",
+  "SofaScoreSofascorePlayerAttributes": "sofascore-player-attributes",
+  "SofaScoreSofascorePlayerEvents": "sofascore-player-events",
+  "SofaScoreSofascorePlayerLastYearSummary": "sofascore-player-last-year-summary",
+  "SofaScoreSofascorePlayerNationalTeamStatistics": "sofascore-player-national-team-statistics",
+  "SofaScoreSofascorePlayerPenaltyHistory": "sofascore-player-penalty-history",
+  "SofaScoreSofascorePlayerRatings": "sofascore-player-ratings",
+  "SofaScoreSofascorePlayerSeasonHeatmap": "sofascore-player-season-heatmap",
+  "SofaScoreSofascorePlayerSeasonStatistics": "sofascore-player-season-statistics",
+  "SofaScoreSofascorePlayerStatisticalRankings": "sofascore-player-statistical-rankings",
+  "SofaScoreSofascorePlayerStatisticsSeasons": "sofascore-player-statistics-seasons",
+  "SofaScoreSofascorePlayerTournaments": "sofascore-player-tournaments",
+  "SofaScoreSofascorePlayerTransfers": "sofascore-player-transfers",
+  "SofaScoreSofascoreRankingTypes": "sofascore-ranking-types",
+  "SofaScoreSofascoreRankings": "sofascore-rankings",
+  "SofaScoreSofascoreReferee": "sofascore-referee",
+  "SofaScoreSofascoreRefereeEvents": "sofascore-referee-events",
+  "SofaScoreSofascoreRefereeStatistics": "sofascore-referee-statistics",
   "SofaScoreSofascoreRoundEvents": "sofascore-round-events",
+  "SofaScoreSofascoreScheduledEvents": "sofascore-scheduled-events",
+  "SofaScoreSofascoreScheduledTournaments": "sofascore-scheduled-tournaments",
   "SofaScoreSofascoreSearch": "sofascore-search",
+  "SofaScoreSofascoreSearchTyped": "sofascore-search-typed",
+  "SofaScoreSofascoreSeasonEvents": "sofascore-season-events",
+  "SofaScoreSofascoreSports": "sofascore-sports",
+  "SofaScoreSofascoreStage": "sofascore-stage",
+  "SofaScoreSofascoreStageCategories": "sofascore-stage-categories",
+  "SofaScoreSofascoreStageDriverPerformance": "sofascore-stage-driver-performance",
+  "SofaScoreSofascoreStageFeatured": "sofascore-stage-featured",
+  "SofaScoreSofascoreStageSchedule": "sofascore-stage-schedule",
+  "SofaScoreSofascoreStageSeasons": "sofascore-stage-seasons",
+  "SofaScoreSofascoreStageStandings": "sofascore-stage-standings",
+  "SofaScoreSofascoreStageSubstages": "sofascore-stage-substages",
   "SofaScoreSofascoreStandings": "sofascore-standings",
   "SofaScoreSofascoreTeam": "sofascore-team",
+  "SofaScoreSofascoreTeamAchievements": "sofascore-team-achievements",
   "SofaScoreSofascoreTeamEvents": "sofascore-team-events",
+  "SofaScoreSofascoreTeamGoalDistributions": "sofascore-team-goal-distributions",
+  "SofaScoreSofascoreTeamNearEvents": "sofascore-team-near-events",
+  "SofaScoreSofascoreTeamOfTheWeek": "sofascore-team-of-the-week",
+  "SofaScoreSofascoreTeamOfTheWeekPeriods": "sofascore-team-of-the-week-periods",
+  "SofaScoreSofascoreTeamPerformance": "sofascore-team-performance",
+  "SofaScoreSofascoreTeamPlayerStatistics": "sofascore-team-player-statistics",
+  "SofaScoreSofascoreTeamPlayerStatisticsSeasons": "sofascore-team-player-statistics-seasons",
   "SofaScoreSofascoreTeamPlayers": "sofascore-team-players",
+  "SofaScoreSofascoreTeamRankings": "sofascore-team-rankings",
+  "SofaScoreSofascoreTeamSeasonStatistics": "sofascore-team-season-statistics",
+  "SofaScoreSofascoreTeamStatisticsSeasons": "sofascore-team-statistics-seasons",
+  "SofaScoreSofascoreTeamTopPlayers": "sofascore-team-top-players",
+  "SofaScoreSofascoreTeamTournaments": "sofascore-team-tournaments",
+  "SofaScoreSofascoreTeamTransfers": "sofascore-team-transfers",
+  "SofaScoreSofascoreTennisPlayerGrandSlamResults": "sofascore-tennis-player-grand-slam-results",
+  "SofaScoreSofascoreTournamentCuptree": "sofascore-tournament-cuptree",
+  "SofaScoreSofascoreTournamentInfo": "sofascore-tournament-info",
+  "SofaScoreSofascoreTournamentPlayerOfTheSeason": "sofascore-tournament-player-of-the-season",
+  "SofaScoreSofascoreTournamentPlayerStatistics": "sofascore-tournament-player-statistics",
+  "SofaScoreSofascoreTournamentRounds": "sofascore-tournament-rounds",
   "SofaScoreSofascoreTournamentSeasons": "sofascore-tournament-seasons",
+  "SofaScoreSofascoreTournamentStatisticsInfo": "sofascore-tournament-statistics-info",
+  "SofaScoreSofascoreTournamentTeamOfTheSeason": "sofascore-tournament-team-of-the-season",
+  "SofaScoreSofascoreTournamentTeams": "sofascore-tournament-teams",
+  "SofaScoreSofascoreTournamentTopPlayers": "sofascore-tournament-top-players",
+  "SofaScoreSofascoreTournamentTopTeams": "sofascore-tournament-top-teams",
+  "SofaScoreSofascoreTournamentVenues": "sofascore-tournament-venues",
+  "SofaScoreSofascoreTournamentWinners": "sofascore-tournament-winners",
+  "SofaScoreSofascoreTournamentsWithFeature": "sofascore-tournaments-with-feature",
+  "SofaScoreSofascoreTrendingEvents": "sofascore-trending-events",
+  "SofaScoreSofascoreTrendingPlayers": "sofascore-trending-players",
+  "SofaScoreSofascoreVenue": "sofascore-venue",
+  "SofaScoreSofascoreVenueEvents": "sofascore-venue-events",
   "SonicAvailability": "sonic-availability",
   "SonicCategories": "sonic-categories",
   "SonicDeals": "sonic-deals",
