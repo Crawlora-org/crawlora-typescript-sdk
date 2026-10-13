@@ -23769,6 +23769,7 @@ export const operations = {
     "formParams": [],
     "id": "datasets-bbb-businesses-facets",
     "method": "GET",
+    "paginatable": true,
     "path": "/datasets/bbb-businesses/facets",
     "pathParams": [],
     "produces": [
@@ -23777,6 +23778,7 @@ export const operations = {
     "queryParams": [
       {
         "enum": [
+          "country",
           "category",
           "state",
           "city",
@@ -23794,12 +23796,31 @@ export const operations = {
       },
       {
         "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
         "name": "q",
         "type": "string"
       },
       {
         "in": "query",
         "name": "category",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "us",
+          "ca"
+        ],
+        "in": "query",
+        "name": "country",
         "type": "string"
       },
       {
@@ -23831,6 +23852,11 @@ export const operations = {
         "in": "query",
         "name": "rating",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_rating_rank",
+        "type": "integer"
       },
       {
         "in": "query",
@@ -23912,6 +23938,15 @@ export const operations = {
       {
         "in": "query",
         "name": "category",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "us",
+          "ca"
+        ],
+        "in": "query",
+        "name": "country",
         "type": "string"
       },
       {

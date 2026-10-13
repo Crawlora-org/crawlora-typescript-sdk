@@ -4723,8 +4723,10 @@ export interface ModelBbbBusinessResponse {
   "local_bbb_url"?: string;
   "more_info_url"?: string;
   "name"?: string;
+  "notice"?: string;
   "phone"?: string;
   "products_and_services"?: Array<string>;
+  "profile_under_review"?: boolean;
   "rating"?: string;
   "rating_reasons"?: Array<string>;
   "social_media"?: Array<string>;
@@ -4783,8 +4785,10 @@ export interface ModelBbbComplaintsResponse {
   "filed_last_12_months"?: number;
   "has_more"?: boolean;
   "hidden_complaints"?: number;
+  "notice"?: string;
   "page"?: number;
   "period_text"?: string;
+  "profile_under_review"?: boolean;
   "published_complaints"?: number;
   "source_url"?: string;
   "submit_complaint_url"?: string;
@@ -4930,6 +4934,7 @@ export interface ModelBbbdirectoryCountryRegions {
 export interface ModelBbbdirectoryLocalBbbchapter {
   "id"?: string;
   "name"?: string;
+  "news_url"?: string;
   "offices"?: Array<ModelBbbdirectoryOffice>;
   "open_to_public"?: boolean;
   "url"?: string;
@@ -4941,6 +4946,7 @@ export interface ModelBbbdirectoryLocalBbbresponse {
   "id"?: string;
   "languages"?: Array<string>;
   "name"?: string;
+  "news_url"?: string;
   "offices"?: Array<ModelBbbdirectoryOffice>;
   "open_to_public"?: boolean;
   "service_territory"?: Array<string>;
@@ -5055,11 +5061,15 @@ export interface ModelBbbnewsNewsItem {
 }
 
 export interface ModelBbbnewsNewsResponse {
-  "country"?: string;
+  "city"?: string;
+  "country"?: "us" | "ca";
   "items"?: Array<ModelBbbnewsNewsItem>;
+  "local_bbb_id"?: string;
+  "local_bbb_name"?: string;
   "page"?: number;
   "page_size"?: number;
   "source_url"?: string;
+  "state"?: string;
   "topic"?: string;
   "total"?: number;
 }
@@ -5071,8 +5081,12 @@ export interface ModelBbbnewsTopic {
 }
 
 export interface ModelBbbnewsTopicsResponse {
-  "country"?: string;
+  "city"?: string;
+  "country"?: "us" | "ca";
+  "local_bbb_id"?: string;
+  "local_bbb_name"?: string;
   "source_url"?: string;
+  "state"?: string;
   "topics"?: Array<ModelBbbnewsTopic>;
 }
 
@@ -13318,7 +13332,14 @@ export interface ModelDatasetsAppsSearchResponse {
 export interface ModelDatasetsBbbbusinessesFacetResponse {
   "dataset"?: string;
   "facet"?: string;
+  "has_more"?: boolean;
   "items"?: Array<ModelEsBbbbusinessesFacetItem>;
+  "limit"?: number;
+  "missing"?: number;
+  "offset"?: number;
+  "total"?: number;
+  "total_values"?: number;
+  "values_truncated"?: boolean;
 }
 
 export interface ModelDatasetsBbbbusinessesSearchResponse {
@@ -77135,12 +77156,16 @@ export interface DatasetsAppsSearchParams {
 
 export type DatasetsBbbBusinessesFacetsResponse = CrawloraResponse<ModelDatasetsBbbBusinessesFacetResponseDoc>;
 export interface DatasetsBbbBusinessesFacetsParams {
-  "facet": "category" | "state" | "city" | "rating" | "accredited" | "entity_type" | "run_id" | "alert_title" | "has_alerts";
+  "facet": "country" | "category" | "state" | "city" | "rating" | "accredited" | "entity_type" | "run_id" | "alert_title" | "has_alerts";
+  "limit"?: number;
+  "offset"?: number;
   "q"?: string;
   "category"?: string;
+  "country"?: "us" | "ca";
   "state"?: string;
   "city"?: string;
   "rating"?: "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D+" | "D" | "D-" | "F";
+  "min_rating_rank"?: number;
   "accredited"?: boolean;
   "has_alerts"?: boolean;
   "alert_title"?: string;
@@ -77158,6 +77183,7 @@ export type DatasetsBbbBusinessesSearchResponse = CrawloraResponse<ModelDatasets
 export interface DatasetsBbbBusinessesSearchParams {
   "q"?: string;
   "category"?: string;
+  "country"?: "us" | "ca";
   "state"?: string;
   "city"?: string;
   "rating"?: "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D+" | "D" | "D-" | "F";
