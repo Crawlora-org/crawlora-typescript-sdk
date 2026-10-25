@@ -35895,6 +35895,196 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "draftkings-casino-cleopatra-guide": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-casino-cleopatra-guide",
+    "method": "GET",
+    "path": "/draftkings/casino/slots/cleopatra-guide",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-casino-directory": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-casino-directory",
+    "method": "GET",
+    "path": "/draftkings/casino/directory",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-casino-slots-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-casino-slots-categories",
+    "method": "GET",
+    "path": "/draftkings/casino/slots/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-casino-slots-guide": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-casino-slots-guide",
+    "method": "GET",
+    "path": "/draftkings/casino/slots-guide",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-casino-wheel-of-fortune-guide": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-casino-wheel-of-fortune-guide",
+    "method": "GET",
+    "path": "/draftkings/casino/slots/wheel-of-fortune-guide",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-dfs-glossary": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-dfs-glossary",
+    "method": "GET",
+    "path": "/draftkings/dfs/glossary",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-dfs-guide": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-dfs-guide",
+    "method": "GET",
+    "path": "/draftkings/dfs/guide",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-dfs-nfl-best-ball-featured-contests": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-dfs-nfl-best-ball-featured-contests",
+    "method": "GET",
+    "path": "/draftkings/dfs/nfl-best-ball/featured-contests",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-dfs-rules-and-scoring": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-dfs-rules-and-scoring",
+    "method": "GET",
+    "path": "/draftkings/dfs/rules-and-scoring",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-dfs-sports": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-dfs-sports",
+    "method": "GET",
+    "path": "/draftkings/dfs/sports",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "draftkings-event": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -36118,6 +36308,122 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "draftkings-pick6-rule-page": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-pick6-rule-page",
+    "method": "GET",
+    "path": "/draftkings/pick6/rules/{slug}",
+    "pathParams": [
+      "slug"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-pick6-rules": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-pick6-rules",
+    "method": "GET",
+    "path": "/draftkings/pick6/rules",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-pick6-sports": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-pick6-sports",
+    "method": "GET",
+    "path": "/draftkings/pick6/sports",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-predictions-availability": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-predictions-availability",
+    "method": "GET",
+    "path": "/draftkings/predictions/availability",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-predictions-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-predictions-categories",
+    "method": "GET",
+    "path": "/draftkings/predictions/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-predictions-rules": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-predictions-rules",
+    "method": "GET",
+    "path": "/draftkings/predictions/rules",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "draftkings-quick-links": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -36128,6 +36434,65 @@ export const operations = {
     "id": "draftkings-quick-links",
     "method": "GET",
     "path": "/draftkings/sportsbook/quick-links",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-racing-race-info": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-racing-race-info",
+    "method": "GET",
+    "path": "/draftkings/racing/race/{race_id}",
+    "pathParams": [
+      "race_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-racing-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-racing-schedule",
+    "method": "GET",
+    "path": "/draftkings/racing/schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "draftkings-racing-tracks": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "draftkings-racing-tracks",
+    "method": "GET",
+    "path": "/draftkings/racing/tracks",
     "pathParams": [],
     "produces": [
       "application/json"
@@ -40060,6 +40425,3610 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-casino-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-casino-categories",
+    "method": "GET",
+    "path": "/fanduel/casino/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "mi",
+          "on"
+        ],
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-casino-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-casino-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/casino/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "mi",
+          "on"
+        ],
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all-games",
+          "new",
+          "slots",
+          "double-your-bet-category",
+          "jackpots",
+          "daily-jackpots",
+          "hot-slots",
+          "classic-reels-category",
+          "bonus-buy-category",
+          "high-limit-category",
+          "spooky-slots-category",
+          "exclusives",
+          "pick-play",
+          "arcade",
+          "blackjack",
+          "baccarat",
+          "roulette",
+          "table",
+          "livecasino",
+          "online-casino-favorites",
+          "explore-videos",
+          "motorcity-favorites",
+          "fallsview-favourites-category",
+          "the-wolf-den-category",
+          "sports-central"
+        ],
+        "in": "query",
+        "name": "category",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "provider",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "badge",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-casino-game": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-casino-game",
+    "method": "GET",
+    "path": "/fanduel/casino/game",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "mi",
+          "on"
+        ],
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "game",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-carryover-pools": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-carryover-pools",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/racing/carryover-pools",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "O",
+          "IC",
+          "SK",
+          "RO"
+        ],
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "track",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-filters",
+    "method": "GET",
+    "path": "/fanduel/racing/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-horse": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-horse",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/racing/horse",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-past-race": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-past-race",
+    "method": "GET",
+    "path": "/fanduel/racing/past-race",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "date",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "track",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "number",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-past-races": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-past-races",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/racing/past-races",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "date",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "track",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-past-tracks": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-past-tracks",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/racing/past-tracks",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "track",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-race": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-race",
+    "method": "GET",
+    "path": "/fanduel/racing/race",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "track",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "number",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "handicapping",
+          "timeform",
+          "pool_grids"
+        ],
+        "in": "query",
+        "name": "include",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-races": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-races",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/racing/races",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "track",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_country",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "T",
+          "H",
+          "Q",
+          "L"
+        ],
+        "in": "query",
+        "name": "race_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "O",
+          "IC",
+          "SK",
+          "RO"
+        ],
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "open",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "within_minutes",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "mtp",
+          "post_time",
+          "race_number"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-results": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-results",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/racing/results",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "track",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_country",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "T",
+          "H",
+          "Q",
+          "L"
+        ],
+        "in": "query",
+        "name": "race_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/racing/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "runner",
+          "jockey",
+          "trainer",
+          "owner"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "name",
+          "last_event"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-track": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-track",
+    "method": "GET",
+    "path": "/fanduel/racing/track",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "code",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-tracks": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-tracks",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/racing/tracks",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "country",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_country",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "T",
+          "H",
+          "Q",
+          "L"
+        ],
+        "in": "query",
+        "name": "race_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "finished",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "featured",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "name",
+          "mtp",
+          "wagerable_mtp",
+          "ivr"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-racing-wager-types": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-racing-wager-types",
+    "method": "GET",
+    "path": "/fanduel/racing/wager-types",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research",
+    "method": "GET",
+    "path": "/fanduel/research",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-article",
+    "method": "GET",
+    "path": "/fanduel/research/article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "article",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-articles": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-articles",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/research/articles",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "casino",
+          "nascar",
+          "ncaab",
+          "f1",
+          "ufc",
+          "boxing",
+          "ncaaf",
+          "womenssoccer",
+          "tv-and-podcast",
+          "nba",
+          "pga",
+          "tennis",
+          "nhl",
+          "mma",
+          "soccer",
+          "fanduel-sportsbook-promo-codes",
+          "sports-betting-101",
+          "horse-racing",
+          "wnba",
+          "predicts",
+          "mlb",
+          "canada",
+          "nfl"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_sport",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sub_category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "player",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "IMAGE",
+          "JWPLAYER"
+        ],
+        "in": "query",
+        "name": "hero_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "published_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "published_before",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "hide_deprioritized",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-author": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-author",
+    "method": "GET",
+    "path": "/fanduel/research/author",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "author",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-authors": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-authors",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/research/authors",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "casino",
+          "nascar",
+          "ncaab",
+          "f1",
+          "ufc",
+          "boxing",
+          "ncaaf",
+          "womenssoccer",
+          "tv-and-podcast",
+          "nba",
+          "pga",
+          "tennis",
+          "nhl",
+          "mma",
+          "soccer",
+          "fanduel-sportsbook-promo-codes",
+          "sports-betting-101",
+          "horse-racing",
+          "wnba",
+          "predicts",
+          "mlb",
+          "canada",
+          "nfl"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-featured-articles": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-featured-articles",
+    "method": "GET",
+    "path": "/fanduel/research/featured-articles",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "casino",
+          "nascar",
+          "ncaab",
+          "f1",
+          "ufc",
+          "boxing",
+          "ncaaf",
+          "womenssoccer",
+          "tv-and-podcast",
+          "nba",
+          "pga",
+          "tennis",
+          "nhl",
+          "mma",
+          "soccer",
+          "fanduel-sportsbook-promo-codes",
+          "sports-betting-101",
+          "horse-racing",
+          "wnba",
+          "predicts",
+          "mlb",
+          "canada",
+          "nfl"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-fixtures": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-fixtures",
+    "method": "GET",
+    "path": "/fanduel/research/fixtures",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nba",
+          "nfl",
+          "nhl",
+          "mlb"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-nfl-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-nfl-schedule",
+    "method": "GET",
+    "path": "/fanduel/research/nfl-schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "week",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "PRE",
+          "REGULAR",
+          "POST"
+        ],
+        "in": "query",
+        "name": "season_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-player-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-player-news",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/research/player-news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "nhl"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "INJURY",
+          "RECAP",
+          "TRANSACTION",
+          "LINEUP",
+          "GAME_UPDATE",
+          "OUTLOOK"
+        ],
+        "in": "query",
+        "name": "news_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "player",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "G",
+          "F",
+          "C",
+          "W",
+          "D",
+          "QB",
+          "DB",
+          "DL",
+          "K",
+          "LB",
+          "OL",
+          "P",
+          "RB",
+          "TE",
+          "WR",
+          "IF",
+          "OF",
+          "DH"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "include_non_primary",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-projection-slates": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-projection-slates",
+    "method": "GET",
+    "path": "/fanduel/research/projection-slates",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "mlb",
+          "nba",
+          "nfl",
+          "nhl",
+          "golf"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "week",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-projection-tables": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-projection-tables",
+    "method": "GET",
+    "path": "/fanduel/research/projection-tables",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "mlb",
+          "nba",
+          "nfl",
+          "nhl",
+          "golf"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-projections": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-projections",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/research/projections",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "mlb",
+          "nba",
+          "nfl",
+          "nhl",
+          "golf"
+        ],
+        "in": "query",
+        "name": "sport",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "DAILY",
+          "WEEKLY",
+          "YEARLY",
+          "REMAINING",
+          "PPR",
+          "SEASON_STATS"
+        ],
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "batters",
+          "pitchers",
+          "c",
+          "1b",
+          "2b",
+          "3b",
+          "ss",
+          "of",
+          "sp",
+          "rp",
+          "qb",
+          "rb",
+          "wr",
+          "te",
+          "flex",
+          "k",
+          "defense",
+          "all",
+          "pg",
+          "sg",
+          "guards",
+          "sf",
+          "pf",
+          "forwards",
+          "centers",
+          "skaters",
+          "goalies",
+          "wingers",
+          "d",
+          "idp"
+        ],
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "TOTAL",
+          "PER_GAME"
+        ],
+        "in": "query",
+        "name": "scope",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slate_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "event_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "week",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-quick-picks-daily": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-quick-picks-daily",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/research/podcasts/quick-picks-daily",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-sports": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-sports",
+    "method": "GET",
+    "path": "/fanduel/research/sports",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "casino",
+          "nascar",
+          "ncaab",
+          "f1",
+          "ufc",
+          "boxing",
+          "ncaaf",
+          "womenssoccer",
+          "tv-and-podcast",
+          "nba",
+          "pga",
+          "tennis",
+          "nhl",
+          "mma",
+          "soccer",
+          "fanduel-sportsbook-promo-codes",
+          "sports-betting-101",
+          "horse-racing",
+          "wnba",
+          "predicts",
+          "mlb",
+          "canada",
+          "nfl"
+        ],
+        "in": "query",
+        "name": "sport",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-research-sub-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-research-sub-categories",
+    "method": "GET",
+    "path": "/fanduel/research/sub-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-autocomplete": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-autocomplete",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/autocomplete",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-builder": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-builder",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/builder",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "yourway",
+          "head-to-head",
+          "player-combos",
+          "bullseye",
+          "player-podium",
+          "or-bets"
+        ],
+        "in": "query",
+        "name": "experience",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-builder-events": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-builder-events",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/builder/events",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "yourway",
+          "head-to-head",
+          "player-combos",
+          "bullseye",
+          "player-podium",
+          "or-bets"
+        ],
+        "in": "query",
+        "name": "experience",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-builder-quotes": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-builder-quotes",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/builder/quotes",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "ramp_event_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "choice_id",
+        "required": true,
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-competition": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-competition",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/competition",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "6423",
+          "1",
+          "7522",
+          "3",
+          "7511",
+          "7524",
+          "2",
+          "26420387",
+          "2593174",
+          "3503",
+          "6",
+          "5",
+          "4",
+          "8",
+          "1477",
+          "6422",
+          "468328",
+          "28608997",
+          "998917",
+          "4726642",
+          "10",
+          "2378961"
+        ],
+        "in": "query",
+        "name": "event_type_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "competition_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tab",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "market_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_markets",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-event": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-event",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/event",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tab",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "market_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-event-box-score": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-event-box-score",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/event/box-score",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-event-play-by-play": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-event-play-by-play",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/event/play-by-play",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "current",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-event-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-event-players",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/event/players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-event-score": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-event-score",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/event/score",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-event-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-event-stats",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/event/stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-events-status": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-events-status",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/events/status",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-home": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-home",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/home",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tab",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "competition_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "market_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_markets",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-league": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-league",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/league",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "custom_page_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tab",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "competition_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "market_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_markets",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-live": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-live",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/live",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "6423",
+          "1",
+          "7522",
+          "3",
+          "7511",
+          "7524",
+          "2",
+          "26420387",
+          "2593174",
+          "3503",
+          "6",
+          "5",
+          "4",
+          "8",
+          "1477",
+          "6422",
+          "468328",
+          "28608997",
+          "998917",
+          "4726642",
+          "10",
+          "2378961"
+        ],
+        "in": "query",
+        "name": "event_type_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "market_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_markets",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-live-count": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-live-count",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/live-count",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-live-data": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-live-data",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/live-data",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-live-scores": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-live-scores",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/live-scores",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "event_id",
+        "required": true,
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-market-prices": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-market-prices",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/market-prices",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "market_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-parlays": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-parlays",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/parlays",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "popular",
+          "all",
+          "next-to-start",
+          "event"
+        ],
+        "in": "query",
+        "name": "view",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "event_id",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "PARLAY",
+          "SGP",
+          "SGP_PLUS"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "6423",
+          "1",
+          "7522",
+          "3",
+          "7511",
+          "7524",
+          "2",
+          "26420387",
+          "2593174",
+          "3503",
+          "6",
+          "5",
+          "4",
+          "8",
+          "1477",
+          "6422",
+          "468328",
+          "28608997",
+          "998917",
+          "4726642",
+          "10",
+          "2378961"
+        ],
+        "in": "query",
+        "name": "event_type_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "competition_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_odds",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_odds",
+        "type": "number"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-player": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-player",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/player",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "player",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-player-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-player-news",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/sportsbook/player/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "player",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-player-props": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-player-props",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/player/props",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "player",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-player-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-player-stats",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/player/stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "player",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-players": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-players",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/sportsbook/players",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-promotions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-promotions",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/promotions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "home",
+          "league",
+          "sport"
+        ],
+        "in": "query",
+        "name": "context",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "custom_page_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "6423",
+          "1",
+          "7522",
+          "3",
+          "7511",
+          "7524",
+          "2",
+          "26420387",
+          "2593174",
+          "3503",
+          "6",
+          "5",
+          "4",
+          "8",
+          "1477",
+          "6422",
+          "468328",
+          "28608997",
+          "998917",
+          "4726642",
+          "10",
+          "2378961"
+        ],
+        "in": "query",
+        "name": "event_type_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tag",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-schedule",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "week",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "end_date",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-search",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "event",
+          "competition"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "6423",
+          "1",
+          "7522",
+          "3",
+          "7511",
+          "7524",
+          "2",
+          "26420387",
+          "2593174",
+          "3503",
+          "6",
+          "5",
+          "4",
+          "8",
+          "1477",
+          "6422",
+          "468328",
+          "28608997",
+          "998917",
+          "4726642",
+          "10",
+          "2378961"
+        ],
+        "in": "query",
+        "name": "event_type_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-search-tabs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-search-tabs",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/search/tabs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tab",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "pill",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "start_index",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "timezone",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-sport": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-sport",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/sport",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "6423",
+          "1",
+          "7522",
+          "3",
+          "7511",
+          "7524",
+          "2",
+          "26420387",
+          "2593174",
+          "3503",
+          "6",
+          "5",
+          "4",
+          "8",
+          "1477",
+          "6422",
+          "468328",
+          "28608997",
+          "998917",
+          "4726642",
+          "10",
+          "2378961"
+        ],
+        "in": "query",
+        "name": "event_type_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "tab",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "competition_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "market_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_markets",
+        "type": "boolean"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-sports": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-sports",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/sports",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ar",
+          "az",
+          "co",
+          "ct",
+          "dc",
+          "ia",
+          "il",
+          "in",
+          "ks",
+          "ky",
+          "la",
+          "ma",
+          "md",
+          "mi",
+          "mo",
+          "mr",
+          "nc",
+          "nj",
+          "ny",
+          "oh",
+          "on",
+          "pa",
+          "pr",
+          "tn",
+          "va",
+          "vt",
+          "wv",
+          "wy"
+        ],
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-standings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-standings",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/standings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-stats",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "competition_id",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-team-depth-chart": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-team-depth-chart",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/team/depth-chart",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football",
+          "college-basketball"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-team-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-team-news",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fanduel/sportsbook/team/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football",
+          "college-basketball"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-team-odds": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-team-odds",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/team/odds",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football",
+          "college-basketball"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-team-roster": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-team-roster",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/team/roster",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football",
+          "college-basketball"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "injured_only",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "position",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-team-schedule": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-team-schedule",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/team/schedule",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football",
+          "college-basketball"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-team-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-team-stats",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/team/stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football",
+          "college-basketball"
+        ],
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-teams": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-teams",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/teams",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "nfl",
+          "nba",
+          "mlb",
+          "college-football",
+          "college-basketball"
+        ],
+        "in": "query",
+        "name": "league",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fanduel-sportsbook-trending": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fanduel-sportsbook-trending",
+    "method": "GET",
+    "path": "/fanduel/sportsbook/trending",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "enriched",
+        "type": "boolean"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -46952,6 +50921,1293 @@ export const operations = {
         "in": "query",
         "name": "date_range",
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-amateur-stats": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-amateur-stats",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fussballde/amateur-stats",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "in": "query",
+        "name": "stat",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "3",
+          "6",
+          "8",
+          "4",
+          "5",
+          "7",
+          "9"
+        ],
+        "in": "query",
+        "name": "team_type",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "89",
+          "32",
+          "31",
+          "66",
+          "61",
+          "02",
+          "03",
+          "34",
+          "62",
+          "23",
+          "22",
+          "01",
+          "41",
+          "43",
+          "63",
+          "64",
+          "04",
+          "33",
+          "42",
+          "65",
+          "21",
+          "35"
+        ],
+        "in": "query",
+        "name": "federation_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-club": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-club",
+    "method": "GET",
+    "path": "/fussballde/club",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "club_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "8",
+          "3",
+          "7",
+          "6",
+          "11",
+          "2",
+          "21",
+          "9"
+        ],
+        "in": "query",
+        "name": "competition_kind",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-club-matches": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-club-matches",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fussballde/club-matches",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "club_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "next",
+          "previous"
+        ],
+        "in": "query",
+        "name": "kind",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "8",
+          "3",
+          "7",
+          "6",
+          "11",
+          "2",
+          "21",
+          "9"
+        ],
+        "in": "query",
+        "name": "competition_kind",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-club-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-club-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fussballde/club-search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "text",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "place",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-competition-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-competition-options",
+    "method": "GET",
+    "path": "/fussballde/competition-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "89",
+          "32",
+          "31",
+          "66",
+          "61",
+          "02",
+          "03",
+          "34",
+          "62",
+          "23",
+          "22",
+          "01",
+          "41",
+          "43",
+          "63",
+          "64",
+          "04",
+          "33",
+          "42",
+          "65",
+          "21",
+          "35"
+        ],
+        "in": "query",
+        "name": "federation_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "308",
+          "300",
+          "70",
+          "305",
+          "-300",
+          "-305",
+          "11",
+          "2",
+          "-2",
+          "12"
+        ],
+        "in": "query",
+        "name": "competition_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-competitions": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-competitions",
+    "method": "GET",
+    "path": "/fussballde/competitions",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "89",
+          "32",
+          "31",
+          "66",
+          "61",
+          "02",
+          "03",
+          "34",
+          "62",
+          "23",
+          "22",
+          "01",
+          "41",
+          "43",
+          "63",
+          "64",
+          "04",
+          "33",
+          "42",
+          "65",
+          "21",
+          "35"
+        ],
+        "in": "query",
+        "name": "federation_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "308",
+          "300",
+          "70",
+          "305",
+          "-300",
+          "-305",
+          "11",
+          "2",
+          "-2",
+          "12"
+        ],
+        "in": "query",
+        "name": "competition_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_type",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "league",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "area",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-federation": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-federation",
+    "method": "GET",
+    "path": "/fussballde/federation",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "89",
+          "32",
+          "31",
+          "66",
+          "61",
+          "02",
+          "03",
+          "34",
+          "62",
+          "23",
+          "22",
+          "01",
+          "41",
+          "43",
+          "63",
+          "64",
+          "04",
+          "33",
+          "42",
+          "65",
+          "21",
+          "35"
+        ],
+        "in": "query",
+        "name": "federation_id",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "nord",
+          "nordost",
+          "sued",
+          "suedwest",
+          "west"
+        ],
+        "in": "query",
+        "name": "regional_association",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-filters",
+    "method": "GET",
+    "path": "/fussballde/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "89",
+          "32",
+          "31",
+          "66",
+          "61",
+          "02",
+          "03",
+          "34",
+          "62",
+          "23",
+          "22",
+          "01",
+          "41",
+          "43",
+          "63",
+          "64",
+          "04",
+          "33",
+          "42",
+          "65",
+          "21",
+          "35"
+        ],
+        "in": "query",
+        "name": "federation_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-match": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-match",
+    "method": "GET",
+    "path": "/fussballde/match",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "match_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-match-calendar": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-match-calendar",
+    "method": "GET",
+    "path": "/fussballde/match-calendar",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "postal_code",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_types",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "8",
+          "3",
+          "7",
+          "6",
+          "11",
+          "2",
+          "21",
+          "9"
+        ],
+        "in": "query",
+        "name": "competition_kind",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-match-comparison": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-match-comparison",
+    "method": "GET",
+    "path": "/fussballde/match-comparison",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "match_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "history",
+          "meetings",
+          "season"
+        ],
+        "in": "query",
+        "name": "view",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-match-plan": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-match-plan",
+    "method": "GET",
+    "path": "/fussballde/match-plan",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "competition_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-matchday": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-matchday",
+    "method": "GET",
+    "path": "/fussballde/matchday",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "competition_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "matchday",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-national-top-scorers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-national-top-scorers",
+    "method": "GET",
+    "path": "/fussballde/national-top-scorers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "men",
+          "women"
+        ],
+        "in": "query",
+        "name": "team_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-news": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-news",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fussballde/news",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "all_news",
+          "magazin",
+          "regionalliga",
+          "verbaende",
+          "service",
+          "aktionen",
+          "helpcenter"
+        ],
+        "in": "query",
+        "name": "stream",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "nord",
+          "nordost",
+          "west",
+          "suedwest",
+          "bayern"
+        ],
+        "in": "query",
+        "name": "regional_league",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "allgemeines",
+          "app",
+          "liveticker",
+          "mannschaftsseite",
+          "profile",
+          "registrierung",
+          "training_service",
+          "widgets"
+        ],
+        "in": "query",
+        "name": "help_category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-news-article": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-news-article",
+    "method": "GET",
+    "path": "/fussballde/news-article",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "article_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-news-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-news-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fussballde/news-search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "news",
+          "pro_news"
+        ],
+        "in": "query",
+        "name": "channel",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-player": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-player",
+    "method": "GET",
+    "path": "/fussballde/player",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-player-matches": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-player-matches",
+    "method": "GET",
+    "path": "/fussballde/player-matches",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "player_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "team_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-player-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-player-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fussballde/player-search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "first_name",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "last_name",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "place",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-position-history": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-position-history",
+    "method": "GET",
+    "path": "/fussballde/position-history",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "competition_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-postal-codes": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-postal-codes",
+    "method": "GET",
+    "path": "/fussballde/postal-codes",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-table": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-table",
+    "method": "GET",
+    "path": "/fussballde/table",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "competition_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "overall",
+          "home_away",
+          "rounds",
+          "fairness",
+          "cross"
+        ],
+        "in": "query",
+        "name": "view",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "matchday",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-team": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-team",
+    "method": "GET",
+    "path": "/fussballde/team",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-team-matches": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-team-matches",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fussballde/team-matches",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "next",
+          "previous",
+          "wins",
+          "draws",
+          "losses"
+        ],
+        "in": "query",
+        "name": "kind",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_from",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "date_to",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "8",
+          "3",
+          "7",
+          "6",
+          "11",
+          "2",
+          "21",
+          "9"
+        ],
+        "in": "query",
+        "name": "competition_kind",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-team-squad": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-team-squad",
+    "method": "GET",
+    "path": "/fussballde/team-squad",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "team_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "season",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "squad",
+          "arrivals",
+          "departures"
+        ],
+        "in": "query",
+        "name": "kind",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "fussballde-top-scorers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "fussballde-top-scorers",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/fussballde/top-scorers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "competition_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
       }
     ],
     "security": [
@@ -61605,6 +66861,37 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "instagram-comments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "instagram-comments",
+    "method": "GET",
+    "path": "/instagram/post/comments",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "max_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "instagram-post": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -61660,6 +66947,33 @@ export const operations = {
     "path": "/instagram/reels/{id}",
     "pathParams": [
       "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "max_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "instagram-user-posts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "instagram-user-posts",
+    "method": "GET",
+    "path": "/instagram/user/{username}/posts",
+    "pathParams": [
+      "username"
     ],
     "produces": [
       "application/json"
@@ -64444,6 +69758,172 @@ export const operations = {
         "name": "path",
         "required": true,
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jumia-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jumia-categories",
+    "method": "GET",
+    "path": "/jumia/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ci",
+          "eg",
+          "ke",
+          "ma",
+          "ng",
+          "sn"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jumia-category": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jumia-category",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jumia/category",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ci",
+          "eg",
+          "ke",
+          "ma",
+          "ng",
+          "sn"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jumia-countries": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jumia-countries",
+    "method": "GET",
+    "path": "/jumia/countries",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jumia-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jumia-product",
+    "method": "GET",
+    "path": "/jumia/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jumia-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jumia-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jumia/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ci",
+          "eg",
+          "ke",
+          "ma",
+          "ng",
+          "sn"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
       }
     ],
     "security": [
@@ -99542,6 +105022,370 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "reddit-archive-comments-ids": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-archive-comments-ids",
+    "method": "GET",
+    "path": "/reddit/archive/comments/ids",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "ids",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-archive-comments-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-archive-comments-search",
+    "method": "GET",
+    "path": "/reddit/archive/comments/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subreddit",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "link_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "parent_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_before",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-archive-comments-tree": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-archive-comments-tree",
+    "method": "GET",
+    "path": "/reddit/archive/comments/{id}/tree",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "parent_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "start_breadth",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "start_depth",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-archive-posts-ids": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-archive-posts-ids",
+    "method": "GET",
+    "path": "/reddit/archive/posts/ids",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "ids",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-archive-posts-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-archive-posts-search",
+    "method": "GET",
+    "path": "/reddit/archive/posts/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subreddit",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url_exact",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "created_after",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_before",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-archive-subreddits-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-archive-subreddits-search",
+    "method": "GET",
+    "path": "/reddit/archive/subreddits/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_subscribers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "max_subscribers",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "over_18",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "created_utc",
+          "subscribers",
+          "subreddit"
+        ],
+        "in": "query",
+        "name": "sort_by",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reddit-archive-time-series": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reddit-archive-time-series",
+    "method": "GET",
+    "path": "/reddit/archive/time-series",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "posts_count",
+          "comments_count",
+          "posts_score_sum",
+          "comments_score_sum",
+          "posts_retrieval_delay_seconds_sum",
+          "comments_retrieval_delay_seconds_sum",
+          "subreddit_subscribers"
+        ],
+        "in": "query",
+        "name": "metric",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "subreddit",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "year",
+          "quarter",
+          "month",
+          "week",
+          "day",
+          "hour",
+          "minute"
+        ],
+        "in": "query",
+        "name": "precision",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_after",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "created_before",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "reddit-comments": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -106923,6 +112767,44 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "shein-brands": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-brands",
+    "method": "GET",
+    "path": "/shein/brands",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-categories",
+    "method": "GET",
+    "path": "/shein/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "shein-category-filters": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -107013,6 +112895,56 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-deals-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-deals-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/shein/deals/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-deals-tabs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-deals-tabs",
+    "method": "GET",
+    "path": "/shein/deals/tabs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -107173,6 +113105,113 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-store": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-store",
+    "method": "GET",
+    "path": "/shein/store",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "store_code",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-store-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-store-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/shein/store/products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "store_code",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-trending-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-trending-categories",
+    "method": "GET",
+    "path": "/shein/trending/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "shein-trending-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "shein-trending-filters",
+    "method": "GET",
+    "path": "/shein/trending/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -127552,6 +133591,112 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tiktok-mobile-collection-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-collection-detail",
+    "method": "GET",
+    "path": "/tiktok/mobile/collection/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "collection_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-collection-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-collection-list",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/collection/list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-collection-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-collection-videos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/collection/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "collection_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tiktok-mobile-comment-replies": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -127665,6 +133810,36 @@ export const operations = {
       {
         "in": "query",
         "name": "cursor",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-feed-offline": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-feed-offline",
+    "method": "GET",
+    "path": "/tiktok/mobile/feed/offline",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "pull_type",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
         "type": "integer"
       }
     ],
@@ -127844,6 +134019,77 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tiktok-mobile-live-hashtags": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-live-hashtags",
+    "method": "GET",
+    "path": "/tiktok/mobile/live/hashtags",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-live-room": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-live-room",
+    "method": "GET",
+    "path": "/tiktok/mobile/live/room",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "room_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-live-room-by-user": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-live-room-by-user",
+    "method": "GET",
+    "path": "/tiktok/mobile/live/room-by-user",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tiktok-mobile-live-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -127875,6 +134121,25 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tiktok-mobile-live-tabs": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-live-tabs",
+    "method": "GET",
+    "path": "/tiktok/mobile/live/tabs",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tiktok-mobile-music-beats": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -127893,6 +134158,98 @@ export const operations = {
       {
         "in": "query",
         "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-music-chart": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-music-chart",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/music/chart",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "chart_region",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-music-choices": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-music-choices",
+    "method": "GET",
+    "path": "/tiktok/mobile/music/choices",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-music-collection-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-music-collection-list",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/music/collection-list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
         "type": "integer"
       }
     ],
@@ -127928,6 +134285,32 @@ export const operations = {
         "in": "query",
         "name": "cursor",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-music-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-music-detail",
+    "method": "GET",
+    "path": "/tiktok/mobile/music/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "music_id",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -127991,6 +134374,15 @@ export const operations = {
         "in": "query",
         "name": "music_id",
         "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "fresh",
+          "popular"
+        ],
+        "in": "query",
+        "name": "sort",
         "type": "string"
       },
       {
@@ -128082,6 +134474,393 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tiktok-mobile-mv-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-mv-videos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/mv/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "mv_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-place-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-place-detail",
+    "method": "GET",
+    "path": "/tiktok/mobile/place/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "poi_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "review_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "review_cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "merged_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "video_cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "enter_from",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-place-info": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-place-info",
+    "method": "GET",
+    "path": "/tiktok/mobile/place/info",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "poi_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-place-media": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-place-media",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/place/media",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "poi_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "size",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "data_version",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-place-photos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-place-photos",
+    "method": "GET",
+    "path": "/tiktok/mobile/place/photos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "poi_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-place-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-place-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/place/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "poi_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "1",
+          "2"
+        ],
+        "in": "query",
+        "name": "sort_type",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-place-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-place-videos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/place/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "poi_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-playlist-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-playlist-detail",
+    "method": "GET",
+    "path": "/tiktok/mobile/playlist/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "mix_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "user_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sec_user_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-playlist-list": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-playlist-list",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/playlist/list",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sec_user_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-playlist-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-playlist-videos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/playlist/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "mix_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tiktok-mobile-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -128112,6 +134891,87 @@ export const operations = {
       {
         "in": "query",
         "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "search_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-search-effects": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-search-effects",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/search/effects",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "search_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-search-hashtags": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-search-hashtags",
+    "method": "GET",
+    "path": "/tiktok/mobile/search/hashtags",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
         "type": "integer"
       }
     ],
@@ -128150,6 +135010,58 @@ export const operations = {
         "in": "query",
         "name": "offset",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-search-photos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-search-photos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/search/photos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort_type",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "publish_time",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "search_source",
+        "type": "string"
       }
     ],
     "security": [
@@ -128211,6 +135123,68 @@ export const operations = {
         "in": "query",
         "name": "count",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-search-stream": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-search-stream",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/search/stream",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "search_source",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "3"
+        ],
+        "in": "query",
+        "name": "sort_type",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "publish_time",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "filter_selected",
+        "type": "string"
       }
     ],
     "security": [
@@ -128314,6 +135288,99 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tiktok-mobile-search-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-search-videos",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/search/videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "0",
+          "1",
+          "3"
+        ],
+        "in": "query",
+        "name": "sort_type",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "publish_time",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "search_source",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "search_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-translation-description": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-translation-description",
+    "method": "GET",
+    "path": "/tiktok/mobile/translation/description",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "item_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "target_lang",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "tiktok-mobile-trending-categories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -128376,6 +135443,328 @@ export const operations = {
         "in": "query",
         "name": "cursor",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-user-followers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-user-followers",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/user/followers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-user-following": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-user-following",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/user/following",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-user-original-effects": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-user-original-effects",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/user/original-effects",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-user-original-music": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-user-original-music",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/user/original-music",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-user-posts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-user-posts",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tiktok/mobile/user/posts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sec_user_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "sort_type",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-user-profile": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-user-profile",
+    "method": "GET",
+    "path": "/tiktok/mobile/user/profile",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "user_id",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sec_user_id",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-user-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-user-recommendations",
+    "method": "GET",
+    "path": "/tiktok/mobile/user/recommendations",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "count",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-video-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-video-detail",
+    "method": "GET",
+    "path": "/tiktok/mobile/video/detail",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "aweme_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tiktok-mobile-video-subtitles": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tiktok-mobile-video-subtitles",
+    "method": "GET",
+    "path": "/tiktok/mobile/video/subtitles",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "video_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "required": true,
+        "type": "string"
       }
     ],
     "security": [
@@ -140853,7 +148242,13 @@ export const operations = {
     "produces": [
       "application/json"
     ],
-    "queryParams": [],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "continuation_token",
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -140878,6 +148273,34 @@ export const operations = {
       {
         "in": "query",
         "name": "continuation_token",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "youtube-comment-replies": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "youtube-comment-replies",
+    "method": "GET",
+    "path": "/youtube/comments/{id}/replies",
+    "pathParams": [
+      "id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "continuation_token",
+        "required": true,
         "type": "string"
       }
     ],
@@ -143524,6 +150947,35 @@ export const groups = {
     "doordashStoreMenu": "doordash-store-menu",
     "doordashStoreReviews": "doordash-store-reviews"
   },
+  "draftKingsCasino": {
+    "draftkingsCasinoCleopatraGuide": "draftkings-casino-cleopatra-guide",
+    "draftkingsCasinoDirectory": "draftkings-casino-directory",
+    "draftkingsCasinoSlotsCategories": "draftkings-casino-slots-categories",
+    "draftkingsCasinoSlotsGuide": "draftkings-casino-slots-guide",
+    "draftkingsCasinoWheelOfFortuneGuide": "draftkings-casino-wheel-of-fortune-guide"
+  },
+  "draftKingsDailyFantasySports": {
+    "draftkingsDfsGlossary": "draftkings-dfs-glossary",
+    "draftkingsDfsGuide": "draftkings-dfs-guide",
+    "draftkingsDfsNflBestBallFeaturedContests": "draftkings-dfs-nfl-best-ball-featured-contests",
+    "draftkingsDfsRulesAndScoring": "draftkings-dfs-rules-and-scoring",
+    "draftkingsDfsSports": "draftkings-dfs-sports"
+  },
+  "draftKingsPick6": {
+    "draftkingsPick6RulePage": "draftkings-pick6-rule-page",
+    "draftkingsPick6Rules": "draftkings-pick6-rules",
+    "draftkingsPick6Sports": "draftkings-pick6-sports"
+  },
+  "draftKingsPredictions": {
+    "draftkingsPredictionsAvailability": "draftkings-predictions-availability",
+    "draftkingsPredictionsCategories": "draftkings-predictions-categories",
+    "draftkingsPredictionsRules": "draftkings-predictions-rules"
+  },
+  "draftKingsRacing": {
+    "draftkingsRacingRaceInfo": "draftkings-racing-race-info",
+    "draftkingsRacingSchedule": "draftkings-racing-schedule",
+    "draftkingsRacingTracks": "draftkings-racing-tracks"
+  },
   "draftKingsSportsbook": {
     "draftkingsEvent": "draftkings-event",
     "draftkingsEventContext": "draftkings-event-context",
@@ -143658,6 +151110,80 @@ export const groups = {
   "facebook": {
     "marketplaceSearch": "facebook-marketplace-search",
     "page": "facebook-page"
+  },
+  "fanDuel": {
+    "fanduelCasinoCategories": "fanduel-casino-categories",
+    "fanduelCasinoCategory": "fanduel-casino-category",
+    "fanduelCasinoGame": "fanduel-casino-game",
+    "fanduelRacingCarryoverPools": "fanduel-racing-carryover-pools",
+    "fanduelRacingFilters": "fanduel-racing-filters",
+    "fanduelRacingHorse": "fanduel-racing-horse",
+    "fanduelRacingPastRace": "fanduel-racing-past-race",
+    "fanduelRacingPastRaces": "fanduel-racing-past-races",
+    "fanduelRacingPastTracks": "fanduel-racing-past-tracks",
+    "fanduelRacingRace": "fanduel-racing-race",
+    "fanduelRacingRaces": "fanduel-racing-races",
+    "fanduelRacingResults": "fanduel-racing-results",
+    "fanduelRacingSearch": "fanduel-racing-search",
+    "fanduelRacingTrack": "fanduel-racing-track",
+    "fanduelRacingTracks": "fanduel-racing-tracks",
+    "fanduelRacingWagerTypes": "fanduel-racing-wager-types",
+    "fanduelResearch": "fanduel-research",
+    "fanduelResearchArticle": "fanduel-research-article",
+    "fanduelResearchArticles": "fanduel-research-articles",
+    "fanduelResearchAuthor": "fanduel-research-author",
+    "fanduelResearchAuthors": "fanduel-research-authors",
+    "fanduelResearchFeaturedArticles": "fanduel-research-featured-articles",
+    "fanduelResearchFixtures": "fanduel-research-fixtures",
+    "fanduelResearchNflSchedule": "fanduel-research-nfl-schedule",
+    "fanduelResearchPlayerNews": "fanduel-research-player-news",
+    "fanduelResearchProjectionSlates": "fanduel-research-projection-slates",
+    "fanduelResearchProjectionTables": "fanduel-research-projection-tables",
+    "fanduelResearchProjections": "fanduel-research-projections",
+    "fanduelResearchQuickPicksDaily": "fanduel-research-quick-picks-daily",
+    "fanduelResearchSports": "fanduel-research-sports",
+    "fanduelResearchSubCategories": "fanduel-research-sub-categories",
+    "fanduelSportsbookAutocomplete": "fanduel-sportsbook-autocomplete",
+    "fanduelSportsbookBuilder": "fanduel-sportsbook-builder",
+    "fanduelSportsbookBuilderEvents": "fanduel-sportsbook-builder-events",
+    "fanduelSportsbookBuilderQuotes": "fanduel-sportsbook-builder-quotes",
+    "fanduelSportsbookCompetition": "fanduel-sportsbook-competition",
+    "fanduelSportsbookEvent": "fanduel-sportsbook-event",
+    "fanduelSportsbookEventBoxScore": "fanduel-sportsbook-event-box-score",
+    "fanduelSportsbookEventPlayByPlay": "fanduel-sportsbook-event-play-by-play",
+    "fanduelSportsbookEventPlayers": "fanduel-sportsbook-event-players",
+    "fanduelSportsbookEventScore": "fanduel-sportsbook-event-score",
+    "fanduelSportsbookEventStats": "fanduel-sportsbook-event-stats",
+    "fanduelSportsbookEventsStatus": "fanduel-sportsbook-events-status",
+    "fanduelSportsbookHome": "fanduel-sportsbook-home",
+    "fanduelSportsbookLeague": "fanduel-sportsbook-league",
+    "fanduelSportsbookLive": "fanduel-sportsbook-live",
+    "fanduelSportsbookLiveCount": "fanduel-sportsbook-live-count",
+    "fanduelSportsbookLiveData": "fanduel-sportsbook-live-data",
+    "fanduelSportsbookLiveScores": "fanduel-sportsbook-live-scores",
+    "fanduelSportsbookMarketPrices": "fanduel-sportsbook-market-prices",
+    "fanduelSportsbookParlays": "fanduel-sportsbook-parlays",
+    "fanduelSportsbookPlayer": "fanduel-sportsbook-player",
+    "fanduelSportsbookPlayerNews": "fanduel-sportsbook-player-news",
+    "fanduelSportsbookPlayerProps": "fanduel-sportsbook-player-props",
+    "fanduelSportsbookPlayerStats": "fanduel-sportsbook-player-stats",
+    "fanduelSportsbookPlayers": "fanduel-sportsbook-players",
+    "fanduelSportsbookPromotions": "fanduel-sportsbook-promotions",
+    "fanduelSportsbookSchedule": "fanduel-sportsbook-schedule",
+    "fanduelSportsbookSearch": "fanduel-sportsbook-search",
+    "fanduelSportsbookSearchTabs": "fanduel-sportsbook-search-tabs",
+    "fanduelSportsbookSport": "fanduel-sportsbook-sport",
+    "fanduelSportsbookSports": "fanduel-sportsbook-sports",
+    "fanduelSportsbookStandings": "fanduel-sportsbook-standings",
+    "fanduelSportsbookStats": "fanduel-sportsbook-stats",
+    "fanduelSportsbookTeamDepthChart": "fanduel-sportsbook-team-depth-chart",
+    "fanduelSportsbookTeamNews": "fanduel-sportsbook-team-news",
+    "fanduelSportsbookTeamOdds": "fanduel-sportsbook-team-odds",
+    "fanduelSportsbookTeamRoster": "fanduel-sportsbook-team-roster",
+    "fanduelSportsbookTeamSchedule": "fanduel-sportsbook-team-schedule",
+    "fanduelSportsbookTeamStats": "fanduel-sportsbook-team-stats",
+    "fanduelSportsbookTeams": "fanduel-sportsbook-teams",
+    "fanduelSportsbookTrending": "fanduel-sportsbook-trending"
   },
   "fanatics": {
     "categories": "fanatics-categories",
@@ -143914,6 +151440,35 @@ export const groups = {
     "headlines": "ft-headlines",
     "news": "ft-news",
     "search": "ft-search"
+  },
+  "fussballDe": {
+    "fussballdeAmateurStats": "fussballde-amateur-stats",
+    "fussballdeClub": "fussballde-club",
+    "fussballdeClubMatches": "fussballde-club-matches",
+    "fussballdeClubSearch": "fussballde-club-search",
+    "fussballdeCompetitionOptions": "fussballde-competition-options",
+    "fussballdeCompetitions": "fussballde-competitions",
+    "fussballdeFederation": "fussballde-federation",
+    "fussballdeFilters": "fussballde-filters",
+    "fussballdeMatch": "fussballde-match",
+    "fussballdeMatchCalendar": "fussballde-match-calendar",
+    "fussballdeMatchComparison": "fussballde-match-comparison",
+    "fussballdeMatchPlan": "fussballde-match-plan",
+    "fussballdeMatchday": "fussballde-matchday",
+    "fussballdeNationalTopScorers": "fussballde-national-top-scorers",
+    "fussballdeNews": "fussballde-news",
+    "fussballdeNewsArticle": "fussballde-news-article",
+    "fussballdeNewsSearch": "fussballde-news-search",
+    "fussballdePlayer": "fussballde-player",
+    "fussballdePlayerMatches": "fussballde-player-matches",
+    "fussballdePlayerSearch": "fussballde-player-search",
+    "fussballdePositionHistory": "fussballde-position-history",
+    "fussballdePostalCodes": "fussballde-postal-codes",
+    "fussballdeTable": "fussballde-table",
+    "fussballdeTeam": "fussballde-team",
+    "fussballdeTeamMatches": "fussballde-team-matches",
+    "fussballdeTeamSquad": "fussballde-team-squad",
+    "fussballdeTopScorers": "fussballde-top-scorers"
   },
   "gameRant": {
     "gamerantArticle": "gamerant-article",
@@ -144392,9 +151947,11 @@ export const groups = {
     "trending": "instacart-trending"
   },
   "instagram": {
+    "comments": "instagram-comments",
     "post": "instagram-post",
     "profile": "instagram-profile",
-    "reels": "instagram-reels"
+    "reels": "instagram-reels",
+    "userPosts": "instagram-user-posts"
   },
   "investopedia": {
     "article": "investopedia-article",
@@ -144480,6 +152037,13 @@ export const groups = {
     "workablePostings": "jobs-workable-postings",
     "workdayBoard": "jobs-workday-board",
     "workdayJob": "jobs-workday-job"
+  },
+  "jumia": {
+    "categories": "jumia-categories",
+    "category": "jumia-category",
+    "countries": "jumia-countries",
+    "product": "jumia-product",
+    "search": "jumia-search"
   },
   "justEat": {
     "justeatRestaurant": "justeat-restaurant",
@@ -145547,6 +153111,13 @@ export const groups = {
     "store": "rebag-store"
   },
   "reddit": {
+    "archiveCommentsIds": "reddit-archive-comments-ids",
+    "archiveCommentsSearch": "reddit-archive-comments-search",
+    "archiveCommentsTree": "reddit-archive-comments-tree",
+    "archivePostsIds": "reddit-archive-posts-ids",
+    "archivePostsSearch": "reddit-archive-posts-search",
+    "archiveSubredditsSearch": "reddit-archive-subreddits-search",
+    "archiveTimeSeries": "reddit-archive-time-series",
     "comments": "reddit-comments",
     "domainPosts": "reddit-domain-posts",
     "leads": "reddit-leads",
@@ -145837,14 +153408,22 @@ export const groups = {
     "shakeshackStore": "shakeshack-store"
   },
   "shein": {
+    "brands": "shein-brands",
+    "categories": "shein-categories",
     "categoryFilters": "shein-category-filters",
     "categoryGoods": "shein-category-goods",
     "categoryNav": "shein-category-nav",
+    "dealsProducts": "shein-deals-products",
+    "dealsTabs": "shein-deals-tabs",
     "productsAggregationFilters": "shein-products-aggregation-filters",
     "productsDetail": "shein-products-detail",
     "productsSearch": "shein-products-search",
     "searchAutocomplete": "shein-search-autocomplete",
-    "searchKeywords": "shein-search-keywords"
+    "searchKeywords": "shein-search-keywords",
+    "store": "shein-store",
+    "storeProducts": "shein-store-products",
+    "trendingCategories": "shein-trending-categories",
+    "trendingFilters": "shein-trending-filters"
   },
   "shopApp": {
     "analysis": "shop-app-analysis",
@@ -146593,31 +154172,68 @@ export const groups = {
     "creativeCenterVideos": "tiktok-creative-center-videos",
     "explore": "tiktok-explore",
     "mobileAnchorList": "tiktok-mobile-anchor-list",
+    "mobileCollectionDetail": "tiktok-mobile-collection-detail",
+    "mobileCollectionList": "tiktok-mobile-collection-list",
+    "mobileCollectionVideos": "tiktok-mobile-collection-videos",
     "mobileCommentReplies": "tiktok-mobile-comment-replies",
     "mobileComments": "tiktok-mobile-comments",
     "mobileFeed": "tiktok-mobile-feed",
+    "mobileFeedOffline": "tiktok-mobile-feed-offline",
     "mobileFeedPost": "tiktok-mobile-feed-post",
     "mobileHashtag": "tiktok-mobile-hashtag",
     "mobileHashtagPosts": "tiktok-mobile-hashtag-posts",
     "mobileHashtags": "tiktok-mobile-hashtags",
     "mobileLiveEffects": "tiktok-mobile-live-effects",
     "mobileLiveGifts": "tiktok-mobile-live-gifts",
+    "mobileLiveHashtags": "tiktok-mobile-live-hashtags",
+    "mobileLiveRoom": "tiktok-mobile-live-room",
+    "mobileLiveRoomByUser": "tiktok-mobile-live-room-by-user",
     "mobileLiveSearch": "tiktok-mobile-live-search",
+    "mobileLiveTabs": "tiktok-mobile-live-tabs",
     "mobileMusicBeats": "tiktok-mobile-music-beats",
+    "mobileMusicChart": "tiktok-mobile-music-chart",
+    "mobileMusicChoices": "tiktok-mobile-music-choices",
+    "mobileMusicCollectionList": "tiktok-mobile-music-collection-list",
     "mobileMusicCollections": "tiktok-mobile-music-collections",
+    "mobileMusicDetail": "tiktok-mobile-music-detail",
     "mobileMusicPick": "tiktok-mobile-music-pick",
     "mobileMusicPosts": "tiktok-mobile-music-posts",
     "mobileMusicRelated": "tiktok-mobile-music-related",
     "mobileMusicTrending": "tiktok-mobile-music-trending",
+    "mobileMvVideos": "tiktok-mobile-mv-videos",
+    "mobilePlaceDetail": "tiktok-mobile-place-detail",
+    "mobilePlaceInfo": "tiktok-mobile-place-info",
+    "mobilePlaceMedia": "tiktok-mobile-place-media",
+    "mobilePlacePhotos": "tiktok-mobile-place-photos",
+    "mobilePlaceReviews": "tiktok-mobile-place-reviews",
+    "mobilePlaceVideos": "tiktok-mobile-place-videos",
+    "mobilePlaylistDetail": "tiktok-mobile-playlist-detail",
+    "mobilePlaylistList": "tiktok-mobile-playlist-list",
+    "mobilePlaylistVideos": "tiktok-mobile-playlist-videos",
     "mobileSearch": "tiktok-mobile-search",
+    "mobileSearchEffects": "tiktok-mobile-search-effects",
+    "mobileSearchHashtags": "tiktok-mobile-search-hashtags",
     "mobileSearchMusic": "tiktok-mobile-search-music",
+    "mobileSearchPhotos": "tiktok-mobile-search-photos",
     "mobileSearchPlace": "tiktok-mobile-search-place",
     "mobileSearchPreInfo": "tiktok-mobile-search-pre-info",
+    "mobileSearchStream": "tiktok-mobile-search-stream",
     "mobileSearchSug": "tiktok-mobile-search-sug",
     "mobileSearchTabs": "tiktok-mobile-search-tabs",
     "mobileSearchUser": "tiktok-mobile-search-user",
+    "mobileSearchVideos": "tiktok-mobile-search-videos",
+    "mobileTranslationDescription": "tiktok-mobile-translation-description",
     "mobileTrendingCategories": "tiktok-mobile-trending-categories",
     "mobileTrendingEffects": "tiktok-mobile-trending-effects",
+    "mobileUserFollowers": "tiktok-mobile-user-followers",
+    "mobileUserFollowing": "tiktok-mobile-user-following",
+    "mobileUserOriginalEffects": "tiktok-mobile-user-original-effects",
+    "mobileUserOriginalMusic": "tiktok-mobile-user-original-music",
+    "mobileUserPosts": "tiktok-mobile-user-posts",
+    "mobileUserProfile": "tiktok-mobile-user-profile",
+    "mobileUserRecommendations": "tiktok-mobile-user-recommendations",
+    "mobileVideoDetail": "tiktok-mobile-video-detail",
+    "mobileVideoSubtitles": "tiktok-mobile-video-subtitles",
     "popularTrendCountryIndustryMeta": "tiktok-popular-trend-country-industry-meta",
     "post": "tiktok-post",
     "profile": "tiktok-profile",
@@ -147143,6 +154759,7 @@ export const groups = {
     "channelSearch": "youtube-channel-search",
     "channelShorts": "youtube-channel-shorts",
     "channelVideos": "youtube-channel-videos",
+    "commentReplies": "youtube-comment-replies",
     "comments": "youtube-comments",
     "playlist": "youtube-playlist",
     "profile": "youtube-profile",
@@ -147203,7 +154820,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 3737;
+export const operationCount = 3915;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -148016,6 +155633,25 @@ export const OperationIds = Object.freeze({
   "DoorDashDoordashStoreItem": "doordash-store-item",
   "DoorDashDoordashStoreMenu": "doordash-store-menu",
   "DoorDashDoordashStoreReviews": "doordash-store-reviews",
+  "DraftKingsCasinoDraftkingsCasinoCleopatraGuide": "draftkings-casino-cleopatra-guide",
+  "DraftKingsCasinoDraftkingsCasinoDirectory": "draftkings-casino-directory",
+  "DraftKingsCasinoDraftkingsCasinoSlotsCategories": "draftkings-casino-slots-categories",
+  "DraftKingsCasinoDraftkingsCasinoSlotsGuide": "draftkings-casino-slots-guide",
+  "DraftKingsCasinoDraftkingsCasinoWheelOfFortuneGuide": "draftkings-casino-wheel-of-fortune-guide",
+  "DraftKingsDailyFantasySportsDraftkingsDfsGlossary": "draftkings-dfs-glossary",
+  "DraftKingsDailyFantasySportsDraftkingsDfsGuide": "draftkings-dfs-guide",
+  "DraftKingsDailyFantasySportsDraftkingsDfsNflBestBallFeaturedContests": "draftkings-dfs-nfl-best-ball-featured-contests",
+  "DraftKingsDailyFantasySportsDraftkingsDfsRulesAndScoring": "draftkings-dfs-rules-and-scoring",
+  "DraftKingsDailyFantasySportsDraftkingsDfsSports": "draftkings-dfs-sports",
+  "DraftKingsPick6DraftkingsPick6RulePage": "draftkings-pick6-rule-page",
+  "DraftKingsPick6DraftkingsPick6Rules": "draftkings-pick6-rules",
+  "DraftKingsPick6DraftkingsPick6Sports": "draftkings-pick6-sports",
+  "DraftKingsPredictionsDraftkingsPredictionsAvailability": "draftkings-predictions-availability",
+  "DraftKingsPredictionsDraftkingsPredictionsCategories": "draftkings-predictions-categories",
+  "DraftKingsPredictionsDraftkingsPredictionsRules": "draftkings-predictions-rules",
+  "DraftKingsRacingDraftkingsRacingRaceInfo": "draftkings-racing-race-info",
+  "DraftKingsRacingDraftkingsRacingSchedule": "draftkings-racing-schedule",
+  "DraftKingsRacingDraftkingsRacingTracks": "draftkings-racing-tracks",
   "DraftKingsSportsbookDraftkingsEvent": "draftkings-event",
   "DraftKingsSportsbookDraftkingsEventContext": "draftkings-event-context",
   "DraftKingsSportsbookDraftkingsEventMarkets": "draftkings-event-markets",
@@ -148119,6 +155755,78 @@ export const OperationIds = Object.freeze({
   "ExpediaPropertiesSearch": "expedia-properties-search",
   "FacebookMarketplaceSearch": "facebook-marketplace-search",
   "FacebookPage": "facebook-page",
+  "FanDuelFanduelCasinoCategories": "fanduel-casino-categories",
+  "FanDuelFanduelCasinoCategory": "fanduel-casino-category",
+  "FanDuelFanduelCasinoGame": "fanduel-casino-game",
+  "FanDuelFanduelRacingCarryoverPools": "fanduel-racing-carryover-pools",
+  "FanDuelFanduelRacingFilters": "fanduel-racing-filters",
+  "FanDuelFanduelRacingHorse": "fanduel-racing-horse",
+  "FanDuelFanduelRacingPastRace": "fanduel-racing-past-race",
+  "FanDuelFanduelRacingPastRaces": "fanduel-racing-past-races",
+  "FanDuelFanduelRacingPastTracks": "fanduel-racing-past-tracks",
+  "FanDuelFanduelRacingRace": "fanduel-racing-race",
+  "FanDuelFanduelRacingRaces": "fanduel-racing-races",
+  "FanDuelFanduelRacingResults": "fanduel-racing-results",
+  "FanDuelFanduelRacingSearch": "fanduel-racing-search",
+  "FanDuelFanduelRacingTrack": "fanduel-racing-track",
+  "FanDuelFanduelRacingTracks": "fanduel-racing-tracks",
+  "FanDuelFanduelRacingWagerTypes": "fanduel-racing-wager-types",
+  "FanDuelFanduelResearch": "fanduel-research",
+  "FanDuelFanduelResearchArticle": "fanduel-research-article",
+  "FanDuelFanduelResearchArticles": "fanduel-research-articles",
+  "FanDuelFanduelResearchAuthor": "fanduel-research-author",
+  "FanDuelFanduelResearchAuthors": "fanduel-research-authors",
+  "FanDuelFanduelResearchFeaturedArticles": "fanduel-research-featured-articles",
+  "FanDuelFanduelResearchFixtures": "fanduel-research-fixtures",
+  "FanDuelFanduelResearchNflSchedule": "fanduel-research-nfl-schedule",
+  "FanDuelFanduelResearchPlayerNews": "fanduel-research-player-news",
+  "FanDuelFanduelResearchProjectionSlates": "fanduel-research-projection-slates",
+  "FanDuelFanduelResearchProjectionTables": "fanduel-research-projection-tables",
+  "FanDuelFanduelResearchProjections": "fanduel-research-projections",
+  "FanDuelFanduelResearchQuickPicksDaily": "fanduel-research-quick-picks-daily",
+  "FanDuelFanduelResearchSports": "fanduel-research-sports",
+  "FanDuelFanduelResearchSubCategories": "fanduel-research-sub-categories",
+  "FanDuelFanduelSportsbookAutocomplete": "fanduel-sportsbook-autocomplete",
+  "FanDuelFanduelSportsbookBuilder": "fanduel-sportsbook-builder",
+  "FanDuelFanduelSportsbookBuilderEvents": "fanduel-sportsbook-builder-events",
+  "FanDuelFanduelSportsbookBuilderQuotes": "fanduel-sportsbook-builder-quotes",
+  "FanDuelFanduelSportsbookCompetition": "fanduel-sportsbook-competition",
+  "FanDuelFanduelSportsbookEvent": "fanduel-sportsbook-event",
+  "FanDuelFanduelSportsbookEventBoxScore": "fanduel-sportsbook-event-box-score",
+  "FanDuelFanduelSportsbookEventPlayByPlay": "fanduel-sportsbook-event-play-by-play",
+  "FanDuelFanduelSportsbookEventPlayers": "fanduel-sportsbook-event-players",
+  "FanDuelFanduelSportsbookEventScore": "fanduel-sportsbook-event-score",
+  "FanDuelFanduelSportsbookEventStats": "fanduel-sportsbook-event-stats",
+  "FanDuelFanduelSportsbookEventsStatus": "fanduel-sportsbook-events-status",
+  "FanDuelFanduelSportsbookHome": "fanduel-sportsbook-home",
+  "FanDuelFanduelSportsbookLeague": "fanduel-sportsbook-league",
+  "FanDuelFanduelSportsbookLive": "fanduel-sportsbook-live",
+  "FanDuelFanduelSportsbookLiveCount": "fanduel-sportsbook-live-count",
+  "FanDuelFanduelSportsbookLiveData": "fanduel-sportsbook-live-data",
+  "FanDuelFanduelSportsbookLiveScores": "fanduel-sportsbook-live-scores",
+  "FanDuelFanduelSportsbookMarketPrices": "fanduel-sportsbook-market-prices",
+  "FanDuelFanduelSportsbookParlays": "fanduel-sportsbook-parlays",
+  "FanDuelFanduelSportsbookPlayer": "fanduel-sportsbook-player",
+  "FanDuelFanduelSportsbookPlayerNews": "fanduel-sportsbook-player-news",
+  "FanDuelFanduelSportsbookPlayerProps": "fanduel-sportsbook-player-props",
+  "FanDuelFanduelSportsbookPlayerStats": "fanduel-sportsbook-player-stats",
+  "FanDuelFanduelSportsbookPlayers": "fanduel-sportsbook-players",
+  "FanDuelFanduelSportsbookPromotions": "fanduel-sportsbook-promotions",
+  "FanDuelFanduelSportsbookSchedule": "fanduel-sportsbook-schedule",
+  "FanDuelFanduelSportsbookSearch": "fanduel-sportsbook-search",
+  "FanDuelFanduelSportsbookSearchTabs": "fanduel-sportsbook-search-tabs",
+  "FanDuelFanduelSportsbookSport": "fanduel-sportsbook-sport",
+  "FanDuelFanduelSportsbookSports": "fanduel-sportsbook-sports",
+  "FanDuelFanduelSportsbookStandings": "fanduel-sportsbook-standings",
+  "FanDuelFanduelSportsbookStats": "fanduel-sportsbook-stats",
+  "FanDuelFanduelSportsbookTeamDepthChart": "fanduel-sportsbook-team-depth-chart",
+  "FanDuelFanduelSportsbookTeamNews": "fanduel-sportsbook-team-news",
+  "FanDuelFanduelSportsbookTeamOdds": "fanduel-sportsbook-team-odds",
+  "FanDuelFanduelSportsbookTeamRoster": "fanduel-sportsbook-team-roster",
+  "FanDuelFanduelSportsbookTeamSchedule": "fanduel-sportsbook-team-schedule",
+  "FanDuelFanduelSportsbookTeamStats": "fanduel-sportsbook-team-stats",
+  "FanDuelFanduelSportsbookTeams": "fanduel-sportsbook-teams",
+  "FanDuelFanduelSportsbookTrending": "fanduel-sportsbook-trending",
   "FanaticsCategories": "fanatics-categories",
   "FanaticsCategory": "fanatics-category",
   "FanaticsCollectFanaticscollectAuctions": "fanaticscollect-auctions",
@@ -148331,6 +156039,33 @@ export const OperationIds = Object.freeze({
   "FtHeadlines": "ft-headlines",
   "FtNews": "ft-news",
   "FtSearch": "ft-search",
+  "FussballDeFussballdeAmateurStats": "fussballde-amateur-stats",
+  "FussballDeFussballdeClub": "fussballde-club",
+  "FussballDeFussballdeClubMatches": "fussballde-club-matches",
+  "FussballDeFussballdeClubSearch": "fussballde-club-search",
+  "FussballDeFussballdeCompetitionOptions": "fussballde-competition-options",
+  "FussballDeFussballdeCompetitions": "fussballde-competitions",
+  "FussballDeFussballdeFederation": "fussballde-federation",
+  "FussballDeFussballdeFilters": "fussballde-filters",
+  "FussballDeFussballdeMatch": "fussballde-match",
+  "FussballDeFussballdeMatchCalendar": "fussballde-match-calendar",
+  "FussballDeFussballdeMatchComparison": "fussballde-match-comparison",
+  "FussballDeFussballdeMatchPlan": "fussballde-match-plan",
+  "FussballDeFussballdeMatchday": "fussballde-matchday",
+  "FussballDeFussballdeNationalTopScorers": "fussballde-national-top-scorers",
+  "FussballDeFussballdeNews": "fussballde-news",
+  "FussballDeFussballdeNewsArticle": "fussballde-news-article",
+  "FussballDeFussballdeNewsSearch": "fussballde-news-search",
+  "FussballDeFussballdePlayer": "fussballde-player",
+  "FussballDeFussballdePlayerMatches": "fussballde-player-matches",
+  "FussballDeFussballdePlayerSearch": "fussballde-player-search",
+  "FussballDeFussballdePositionHistory": "fussballde-position-history",
+  "FussballDeFussballdePostalCodes": "fussballde-postal-codes",
+  "FussballDeFussballdeTable": "fussballde-table",
+  "FussballDeFussballdeTeam": "fussballde-team",
+  "FussballDeFussballdeTeamMatches": "fussballde-team-matches",
+  "FussballDeFussballdeTeamSquad": "fussballde-team-squad",
+  "FussballDeFussballdeTopScorers": "fussballde-top-scorers",
   "GameRantGamerantArticle": "gamerant-article",
   "GameRantGamerantAuthor": "gamerant-author",
   "GameRantGamerantHeadlines": "gamerant-headlines",
@@ -148713,9 +156448,11 @@ export const OperationIds = Object.freeze({
   "InstacartSearchNearby": "instacart-search-nearby",
   "InstacartStores": "instacart-stores",
   "InstacartTrending": "instacart-trending",
+  "InstagramComments": "instagram-comments",
   "InstagramPost": "instagram-post",
   "InstagramProfile": "instagram-profile",
   "InstagramReels": "instagram-reels",
+  "InstagramUserPosts": "instagram-user-posts",
   "InvestopediaArticle": "investopedia-article",
   "InvestopediaAuthor": "investopedia-author",
   "InvestopediaHeadlines": "investopedia-headlines",
@@ -148785,6 +156522,11 @@ export const OperationIds = Object.freeze({
   "JobsWorkablePostings": "jobs-workable-postings",
   "JobsWorkdayBoard": "jobs-workday-board",
   "JobsWorkdayJob": "jobs-workday-job",
+  "JumiaCategories": "jumia-categories",
+  "JumiaCategory": "jumia-category",
+  "JumiaCountries": "jumia-countries",
+  "JumiaProduct": "jumia-product",
+  "JumiaSearch": "jumia-search",
   "JustEatJusteatRestaurant": "justeat-restaurant",
   "JustEatJusteatRestaurantMenu": "justeat-restaurant-menu",
   "JustEatJusteatSearch": "justeat-search",
@@ -149632,6 +157374,13 @@ export const OperationIds = Object.freeze({
   "RebagSitemapUrls": "rebag-sitemap-urls",
   "RebagSitemaps": "rebag-sitemaps",
   "RebagStore": "rebag-store",
+  "RedditArchiveCommentsIds": "reddit-archive-comments-ids",
+  "RedditArchiveCommentsSearch": "reddit-archive-comments-search",
+  "RedditArchiveCommentsTree": "reddit-archive-comments-tree",
+  "RedditArchivePostsIds": "reddit-archive-posts-ids",
+  "RedditArchivePostsSearch": "reddit-archive-posts-search",
+  "RedditArchiveSubredditsSearch": "reddit-archive-subreddits-search",
+  "RedditArchiveTimeSeries": "reddit-archive-time-series",
   "RedditComments": "reddit-comments",
   "RedditDomainPosts": "reddit-domain-posts",
   "RedditLeads": "reddit-leads",
@@ -149858,14 +157607,22 @@ export const OperationIds = Object.freeze({
   "ShakeShackShakeshackMenu": "shakeshack-menu",
   "ShakeShackShakeshackNearby": "shakeshack-nearby",
   "ShakeShackShakeshackStore": "shakeshack-store",
+  "SheinBrands": "shein-brands",
+  "SheinCategories": "shein-categories",
   "SheinCategoryFilters": "shein-category-filters",
   "SheinCategoryGoods": "shein-category-goods",
   "SheinCategoryNav": "shein-category-nav",
+  "SheinDealsProducts": "shein-deals-products",
+  "SheinDealsTabs": "shein-deals-tabs",
   "SheinProductsAggregationFilters": "shein-products-aggregation-filters",
   "SheinProductsDetail": "shein-products-detail",
   "SheinProductsSearch": "shein-products-search",
   "SheinSearchAutocomplete": "shein-search-autocomplete",
   "SheinSearchKeywords": "shein-search-keywords",
+  "SheinStore": "shein-store",
+  "SheinStoreProducts": "shein-store-products",
+  "SheinTrendingCategories": "shein-trending-categories",
+  "SheinTrendingFilters": "shein-trending-filters",
   "ShopAppAnalysis": "shop-app-analysis",
   "ShopAppCategories": "shop-app-categories",
   "ShopAppCollectionProducts": "shop-app-collection-products",
@@ -150482,31 +158239,68 @@ export const OperationIds = Object.freeze({
   "TiktokCreativeCenterVideos": "tiktok-creative-center-videos",
   "TiktokExplore": "tiktok-explore",
   "TiktokMobileAnchorList": "tiktok-mobile-anchor-list",
+  "TiktokMobileCollectionDetail": "tiktok-mobile-collection-detail",
+  "TiktokMobileCollectionList": "tiktok-mobile-collection-list",
+  "TiktokMobileCollectionVideos": "tiktok-mobile-collection-videos",
   "TiktokMobileCommentReplies": "tiktok-mobile-comment-replies",
   "TiktokMobileComments": "tiktok-mobile-comments",
   "TiktokMobileFeed": "tiktok-mobile-feed",
+  "TiktokMobileFeedOffline": "tiktok-mobile-feed-offline",
   "TiktokMobileFeedPost": "tiktok-mobile-feed-post",
   "TiktokMobileHashtag": "tiktok-mobile-hashtag",
   "TiktokMobileHashtagPosts": "tiktok-mobile-hashtag-posts",
   "TiktokMobileHashtags": "tiktok-mobile-hashtags",
   "TiktokMobileLiveEffects": "tiktok-mobile-live-effects",
   "TiktokMobileLiveGifts": "tiktok-mobile-live-gifts",
+  "TiktokMobileLiveHashtags": "tiktok-mobile-live-hashtags",
+  "TiktokMobileLiveRoom": "tiktok-mobile-live-room",
+  "TiktokMobileLiveRoomByUser": "tiktok-mobile-live-room-by-user",
   "TiktokMobileLiveSearch": "tiktok-mobile-live-search",
+  "TiktokMobileLiveTabs": "tiktok-mobile-live-tabs",
   "TiktokMobileMusicBeats": "tiktok-mobile-music-beats",
+  "TiktokMobileMusicChart": "tiktok-mobile-music-chart",
+  "TiktokMobileMusicChoices": "tiktok-mobile-music-choices",
+  "TiktokMobileMusicCollectionList": "tiktok-mobile-music-collection-list",
   "TiktokMobileMusicCollections": "tiktok-mobile-music-collections",
+  "TiktokMobileMusicDetail": "tiktok-mobile-music-detail",
   "TiktokMobileMusicPick": "tiktok-mobile-music-pick",
   "TiktokMobileMusicPosts": "tiktok-mobile-music-posts",
   "TiktokMobileMusicRelated": "tiktok-mobile-music-related",
   "TiktokMobileMusicTrending": "tiktok-mobile-music-trending",
+  "TiktokMobileMvVideos": "tiktok-mobile-mv-videos",
+  "TiktokMobilePlaceDetail": "tiktok-mobile-place-detail",
+  "TiktokMobilePlaceInfo": "tiktok-mobile-place-info",
+  "TiktokMobilePlaceMedia": "tiktok-mobile-place-media",
+  "TiktokMobilePlacePhotos": "tiktok-mobile-place-photos",
+  "TiktokMobilePlaceReviews": "tiktok-mobile-place-reviews",
+  "TiktokMobilePlaceVideos": "tiktok-mobile-place-videos",
+  "TiktokMobilePlaylistDetail": "tiktok-mobile-playlist-detail",
+  "TiktokMobilePlaylistList": "tiktok-mobile-playlist-list",
+  "TiktokMobilePlaylistVideos": "tiktok-mobile-playlist-videos",
   "TiktokMobileSearch": "tiktok-mobile-search",
+  "TiktokMobileSearchEffects": "tiktok-mobile-search-effects",
+  "TiktokMobileSearchHashtags": "tiktok-mobile-search-hashtags",
   "TiktokMobileSearchMusic": "tiktok-mobile-search-music",
+  "TiktokMobileSearchPhotos": "tiktok-mobile-search-photos",
   "TiktokMobileSearchPlace": "tiktok-mobile-search-place",
   "TiktokMobileSearchPreInfo": "tiktok-mobile-search-pre-info",
+  "TiktokMobileSearchStream": "tiktok-mobile-search-stream",
   "TiktokMobileSearchSug": "tiktok-mobile-search-sug",
   "TiktokMobileSearchTabs": "tiktok-mobile-search-tabs",
   "TiktokMobileSearchUser": "tiktok-mobile-search-user",
+  "TiktokMobileSearchVideos": "tiktok-mobile-search-videos",
+  "TiktokMobileTranslationDescription": "tiktok-mobile-translation-description",
   "TiktokMobileTrendingCategories": "tiktok-mobile-trending-categories",
   "TiktokMobileTrendingEffects": "tiktok-mobile-trending-effects",
+  "TiktokMobileUserFollowers": "tiktok-mobile-user-followers",
+  "TiktokMobileUserFollowing": "tiktok-mobile-user-following",
+  "TiktokMobileUserOriginalEffects": "tiktok-mobile-user-original-effects",
+  "TiktokMobileUserOriginalMusic": "tiktok-mobile-user-original-music",
+  "TiktokMobileUserPosts": "tiktok-mobile-user-posts",
+  "TiktokMobileUserProfile": "tiktok-mobile-user-profile",
+  "TiktokMobileUserRecommendations": "tiktok-mobile-user-recommendations",
+  "TiktokMobileVideoDetail": "tiktok-mobile-video-detail",
+  "TiktokMobileVideoSubtitles": "tiktok-mobile-video-subtitles",
   "TiktokPopularTrendCountryIndustryMeta": "tiktok-popular-trend-country-industry-meta",
   "TiktokPost": "tiktok-post",
   "TiktokProfile": "tiktok-profile",
@@ -150902,6 +158696,7 @@ export const OperationIds = Object.freeze({
   "YoutubeChannelSearch": "youtube-channel-search",
   "YoutubeChannelShorts": "youtube-channel-shorts",
   "YoutubeChannelVideos": "youtube-channel-videos",
+  "YoutubeCommentReplies": "youtube-comment-replies",
   "YoutubeComments": "youtube-comments",
   "YoutubePlaylist": "youtube-playlist",
   "YoutubeProfile": "youtube-profile",

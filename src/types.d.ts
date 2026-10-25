@@ -9137,6 +9137,87 @@ export interface ModelCarsdotcomSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelCasinoCasinoCleopatraGuideResponse {
+  "fetched_at"?: string;
+  "section_count"?: number;
+  "sections"?: Array<ModelCasinoCasinoSlotsGuideSection>;
+  "source_url"?: string;
+}
+
+export interface ModelCasinoCasinoDirectoryResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "links"?: Array<ModelCasinoCasinoLink>;
+  "source_url"?: string;
+}
+
+export interface ModelCasinoCasinoLink {
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelCasinoCasinoSlotsCategoriesResponse {
+  "categories"?: Array<ModelCasinoCasinoSlotsCategory>;
+  "category_count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelCasinoCasinoSlotsCategory {
+  "category_id"?: string;
+  "kind"?: "dynamic_games" | "top_games";
+  "name"?: string;
+}
+
+export interface ModelCasinoCasinoSlotsGuideResponse {
+  "fetched_at"?: string;
+  "section_count"?: number;
+  "sections"?: Array<ModelCasinoCasinoSlotsGuideSection>;
+  "source_url"?: string;
+}
+
+export interface ModelCasinoCasinoSlotsGuideSection {
+  "text"?: string;
+  "title"?: string;
+}
+
+export interface ModelCasinoCasinoWheelOfFortuneGuideResponse {
+  "fetched_at"?: string;
+  "section_count"?: number;
+  "sections"?: Array<ModelCasinoCasinoSlotsGuideSection>;
+  "source_url"?: string;
+}
+
+export interface ModelCasinoCasinoCleopatraGuideResponseDoc {
+  "code"?: number;
+  "data"?: ModelCasinoCasinoCleopatraGuideResponse;
+  "msg"?: string;
+}
+
+export interface ModelCasinoCasinoDirectoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelCasinoCasinoDirectoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelCasinoCasinoSlotsCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelCasinoCasinoSlotsCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelCasinoCasinoSlotsGuideResponseDoc {
+  "code"?: number;
+  "data"?: ModelCasinoCasinoSlotsGuideResponse;
+  "msg"?: string;
+}
+
+export interface ModelCasinoCasinoWheelOfFortuneGuideResponseDoc {
+  "code"?: number;
+  "data"?: ModelCasinoCasinoWheelOfFortuneGuideResponse;
+  "msg"?: string;
+}
+
 export interface ModelCbcAuthorArticle {
   "image_url"?: string;
   "published_at"?: string;
@@ -11821,8 +11902,10 @@ export interface ModelCostcoReview {
 
 export interface ModelCostcoSearchResponse {
   "category"?: string;
+  "is_partial"?: boolean;
   "products"?: Array<ModelCostcoProductSummary>;
   "query"?: string;
+  "source"?: "product_sitemap";
   "total_count"?: number;
 }
 
@@ -15501,6 +15584,128 @@ export interface ModelDeveloperretrievalDeveloperWarningDoc {
   "source_id"?: string;
 }
 
+export interface ModelDfsDfscontestType {
+  "description"?: string;
+  "name"?: string;
+}
+
+export interface ModelDfsDfsglossaryResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "term_count"?: number;
+  "terms"?: Array<ModelDfsDfsglossaryTerm>;
+}
+
+export interface ModelDfsDfsglossaryTerm {
+  "definition"?: string;
+  "term"?: string;
+}
+
+export interface ModelDfsDfsguideResponse {
+  "contest_type_count"?: number;
+  "contest_types"?: Array<ModelDfsDfscontestType>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "sport_page_count"?: number;
+  "sport_pages"?: Array<ModelDfsDfssportPage>;
+}
+
+export interface ModelDfsDfsnflbestBallContest {
+  "entry_fee_label"?: string;
+  "maximum_entries"?: number;
+  "name"?: string;
+  "top_prize_label"?: string;
+}
+
+export interface ModelDfsDfsnflbestBallContestsResponse {
+  "contest_count"?: number;
+  "contests"?: Array<ModelDfsDfsnflbestBallContest>;
+  "fetched_at"?: string;
+  "season"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelDfsDfsrulesAndScoringResponse {
+  "fetched_at"?: string;
+  "game_type_count"?: number;
+  "overview"?: ModelDfsDfsscoringRule;
+  "rule_count"?: number;
+  "source_url"?: string;
+  "sport_count"?: number;
+  "sports"?: Array<ModelDfsDfsrulesSport>;
+}
+
+export interface ModelDfsDfsrulesSport {
+  "id"?: number;
+  "name"?: string;
+  "rule_count"?: number;
+  "rules"?: Array<ModelDfsDfsscoringRule>;
+  "slug"?: string;
+  "sort_order"?: number;
+}
+
+export interface ModelDfsDfsscoringRule {
+  "content_html"?: string;
+  "content_text"?: string;
+  "game_types"?: Array<number>;
+  "name"?: string;
+  "slug"?: string;
+  "sort_order"?: number;
+}
+
+export interface ModelDfsDfssport {
+  "full_name"?: string;
+  "has_public_contests"?: boolean;
+  "id"?: number;
+  "is_enabled"?: boolean;
+  "region_full_name"?: string;
+  "sort_order"?: number;
+  "sport_code"?: string;
+}
+
+export interface ModelDfsDfssportPage {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelDfsDfssportsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "region_code"?: string;
+  "source_url"?: string;
+  "sports"?: Array<ModelDfsDfssport>;
+}
+
+export interface ModelDfsDfsGlossaryResponseDoc {
+  "code"?: number;
+  "data"?: ModelDfsDfsglossaryResponse;
+  "msg"?: string;
+}
+
+export interface ModelDfsDfsGuideResponseDoc {
+  "code"?: number;
+  "data"?: ModelDfsDfsguideResponse;
+  "msg"?: string;
+}
+
+export interface ModelDfsDfsNflbestBallFeaturedContestsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDfsDfsnflbestBallContestsResponse;
+  "msg"?: string;
+}
+
+export interface ModelDfsDfsRulesAndScoringResponseDoc {
+  "code"?: number;
+  "data"?: ModelDfsDfsrulesAndScoringResponse;
+  "msg"?: string;
+}
+
+export interface ModelDfsDfsSportsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDfsDfssportsResponse;
+  "msg"?: string;
+}
+
 export interface ModelDiagnosticsAntibotCheckRequest {
   "fast"?: boolean;
   "url": string;
@@ -16277,326 +16482,6 @@ export interface ModelDoordashStoreResponseDoc {
 export interface ModelDoordashStoreReviewsResponseDoc {
   "code"?: number;
   "data"?: ModelDoordashStoreReviewsResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsEvent {
-  "id"?: string;
-  "markets"?: Array<ModelDraftkingsMarket>;
-  "name"?: string;
-  "participants"?: Array<ModelDraftkingsParticipant>;
-  "start_time"?: string;
-  "status"?: string;
-}
-
-export interface ModelDraftkingsEventContextResponse {
-  "event_id"?: string;
-  "event_seo_id"?: string;
-  "fetched_at"?: string;
-  "league_id"?: string;
-  "league_seo_id"?: string;
-  "source_url"?: string;
-  "sport_id"?: string;
-  "sport_seo_id"?: string;
-}
-
-export interface ModelDraftkingsEventMarketsResponse {
-  "count"?: number;
-  "event_id"?: string;
-  "fetched_at"?: string;
-  "markets"?: Array<ModelDraftkingsMarket>;
-  "source_url"?: string;
-  "subcategory_id"?: string;
-}
-
-export interface ModelDraftkingsEventResponse {
-  "fetched_at"?: string;
-  "id"?: string;
-  "league_id"?: string;
-  "name"?: string;
-  "participants"?: Array<ModelDraftkingsParticipant>;
-  "source_url"?: string;
-  "sport_id"?: string;
-  "start_time"?: string;
-  "status"?: string;
-}
-
-export interface ModelDraftkingsFeaturedLeague {
-  "featured_order"?: number;
-  "has_live_offers"?: boolean;
-  "id"?: string;
-  "name"?: string;
-  "slug"?: string;
-  "sport"?: string;
-  "sport_id"?: string;
-  "tags"?: Array<string>;
-}
-
-export interface ModelDraftkingsFeaturedLeaguesResponse {
-  "count"?: number;
-  "fetched_at"?: string;
-  "leagues"?: Array<ModelDraftkingsFeaturedLeague>;
-  "source_url"?: string;
-}
-
-export interface ModelDraftkingsFuturesResponse {
-  "count"?: number;
-  "events"?: Array<ModelDraftkingsEvent>;
-  "fetched_at"?: string;
-  "league"?: string;
-  "league_id"?: string;
-  "source_url"?: string;
-  "sport"?: string;
-  "subcategory_id"?: string;
-}
-
-export interface ModelDraftkingsLeague {
-  "has_live_offers"?: boolean;
-  "id"?: string;
-  "name"?: string;
-  "slug"?: string;
-}
-
-export interface ModelDraftkingsLeagueEvent {
-  "id"?: string;
-  "name"?: string;
-  "participant_type"?: string;
-  "participants"?: Array<ModelDraftkingsParticipant>;
-  "start_time"?: string;
-  "status"?: string;
-  "tags"?: Array<string>;
-}
-
-export interface ModelDraftkingsLeagueEventsResponse {
-  "count"?: number;
-  "events"?: Array<ModelDraftkingsLeagueEvent>;
-  "fetched_at"?: string;
-  "league"?: string;
-  "league_id"?: string;
-  "source_url"?: string;
-  "sport"?: string;
-  "sport_id"?: string;
-}
-
-export interface ModelDraftkingsLeaguesResponse {
-  "count"?: number;
-  "fetched_at"?: string;
-  "source_url"?: string;
-  "sports"?: Array<ModelDraftkingsSport>;
-}
-
-export interface ModelDraftkingsLiveEvent {
-  "categories"?: Array<ModelDraftkingsMarketCategory>;
-  "id"?: string;
-  "league_id"?: string;
-  "markets"?: Array<ModelDraftkingsMarket>;
-  "name"?: string;
-  "participants"?: Array<ModelDraftkingsParticipant>;
-  "period"?: string;
-  "score"?: ModelDraftkingsLiveScore;
-  "sport_id"?: string;
-  "start_time"?: string;
-  "status"?: string;
-  "subcategories"?: Array<ModelDraftkingsMarketSubcategory>;
-}
-
-export interface ModelDraftkingsLiveResponse {
-  "count"?: number;
-  "events"?: Array<ModelDraftkingsLiveEvent>;
-  "fetched_at"?: string;
-  "source_url"?: string;
-}
-
-export interface ModelDraftkingsLiveScore {
-  "current"?: ModelDraftkingsLiveScoreLine;
-  "on_serve"?: string;
-  "periods"?: Array<ModelDraftkingsLiveScorePeriod>;
-}
-
-export interface ModelDraftkingsLiveScoreLine {
-  "away"?: string;
-  "home"?: string;
-}
-
-export interface ModelDraftkingsLiveScorePeriod {
-  "away"?: string;
-  "home"?: string;
-  "name"?: string;
-}
-
-export interface ModelDraftkingsMarket {
-  "id"?: string;
-  "selections"?: Array<ModelDraftkingsSelection>;
-  "subcategory_id"?: string;
-  "type"?: string;
-}
-
-export interface ModelDraftkingsMarketCategory {
-  "id"?: string;
-  "name"?: string;
-}
-
-export interface ModelDraftkingsMarketSubcategory {
-  "category_id"?: string;
-  "id"?: string;
-  "name"?: string;
-}
-
-export interface ModelDraftkingsOdds {
-  "american"?: string;
-  "decimal"?: string;
-  "fractional"?: string;
-}
-
-export interface ModelDraftkingsOddsResponse {
-  "count"?: number;
-  "events"?: Array<ModelDraftkingsEvent>;
-  "fetched_at"?: string;
-  "league"?: string;
-  "league_id"?: string;
-  "source_url"?: string;
-  "sport"?: string;
-}
-
-export interface ModelDraftkingsParticipant {
-  "id"?: string;
-  "name"?: string;
-  "role"?: string;
-}
-
-export interface ModelDraftkingsQuickLink {
-  "league_id"?: string;
-  "name"?: string;
-  "path"?: string;
-  "sport_id"?: string;
-}
-
-export interface ModelDraftkingsQuickLinksResponse {
-  "count"?: number;
-  "fetched_at"?: string;
-  "links"?: Array<ModelDraftkingsQuickLink>;
-  "source_url"?: string;
-}
-
-export interface ModelDraftkingsSelection {
-  "label"?: string;
-  "odds"?: ModelDraftkingsOdds;
-  "outcome_type"?: string;
-  "points"?: number;
-}
-
-export interface ModelDraftkingsSport {
-  "id"?: string;
-  "leagues"?: Array<ModelDraftkingsLeague>;
-  "name"?: string;
-  "slug"?: string;
-}
-
-export interface ModelDraftkingsTeam {
-  "id"?: string;
-  "name"?: string;
-  "slug"?: string;
-  "url"?: string;
-}
-
-export interface ModelDraftkingsTeamDetailResponse {
-  "abbreviation"?: string;
-  "city"?: string;
-  "fetched_at"?: string;
-  "id"?: string;
-  "leagues"?: Array<ModelDraftkingsTeamLeagueRef>;
-  "name"?: string;
-  "primary_color"?: string;
-  "secondary_color"?: string;
-  "short_name"?: string;
-  "source_url"?: string;
-  "sport"?: string;
-  "sport_id"?: string;
-}
-
-export interface ModelDraftkingsTeamLeagueRef {
-  "id"?: string;
-  "slug"?: string;
-}
-
-export interface ModelDraftkingsTeamsResponse {
-  "count"?: number;
-  "fetched_at"?: string;
-  "league"?: string;
-  "source_url"?: string;
-  "sport"?: string;
-  "teams"?: Array<ModelDraftkingsTeam>;
-}
-
-export interface ModelDraftkingsEventContextResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsEventContextResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsEventMarketsResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsEventMarketsResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsEventResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsEventResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsFeaturedLeaguesResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsFeaturedLeaguesResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsFuturesResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsFuturesResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsLeagueEventsResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsLeagueEventsResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsLeaguesResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsLeaguesResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsLiveResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsLiveResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsOddsResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsOddsResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsQuickLinksResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsQuickLinksResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsTeamResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsTeamDetailResponse;
-  "msg"?: string;
-}
-
-export interface ModelDraftkingsTeamsResponseDoc {
-  "code"?: number;
-  "data"?: ModelDraftkingsTeamsResponse;
   "msg"?: string;
 }
 
@@ -20832,6 +20717,2638 @@ export interface ModelFanaticsliveShowResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelFanduelCasinoCategoriesResponse {
+  "categories"?: Array<ModelFanduelCasinoCategory>;
+  "fetched_at"?: string;
+  "lobby"?: string;
+  "region"?: string;
+  "regions"?: Array<string>;
+}
+
+export interface ModelFanduelCasinoCategory {
+  "note"?: string;
+  "slug"?: string;
+  "title"?: string;
+}
+
+export interface ModelFanduelCasinoCategoryResponse {
+  "badges"?: Array<ModelFanduelCasinoCount>;
+  "cached_at"?: string;
+  "category"?: ModelFanduelCasinoCategory;
+  "category_total"?: number;
+  "fetched_at"?: string;
+  "games"?: Array<ModelFanduelCasinoGame>;
+  "limit"?: number;
+  "lobby"?: string;
+  "offset"?: number;
+  "providers"?: Array<ModelFanduelCasinoCount>;
+  "region"?: string;
+  "total"?: number;
+}
+
+export interface ModelFanduelCasinoCount {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelFanduelCasinoGame {
+  "badge"?: string;
+  "game_url"?: string;
+  "name"?: string;
+  "position"?: number;
+  "provider"?: string;
+  "site_wide_jackpot"?: boolean;
+  "slug"?: string;
+}
+
+export interface ModelFanduelCasinoGameResponse {
+  "badge"?: string;
+  "bet_range"?: string;
+  "category"?: string;
+  "description"?: string;
+  "features"?: Array<string>;
+  "fetched_at"?: string;
+  "game_id"?: string;
+  "max_bet"?: number;
+  "min_bet"?: number;
+  "name"?: string;
+  "players_now"?: number;
+  "provider_name"?: string;
+  "provider_ref"?: string;
+  "region"?: string;
+  "slug"?: string;
+  "studio"?: string;
+  "summary_tag"?: string;
+  "themes"?: Array<string>;
+  "trend"?: string;
+  "url"?: string;
+  "volatility"?: string;
+}
+
+export interface ModelFanduelQuickPicksDailyEpisode {
+  "duration_seconds"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "in_rss_playlist"?: boolean;
+  "published_at"?: string;
+  "summary"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelQuickPicksDailyResponse {
+  "episodes"?: Array<ModelFanduelQuickPicksDailyEpisode>;
+  "fetched_at"?: string;
+  "next_cursor"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "podcast"?: string;
+  "publisher"?: string;
+  "show_url"?: string;
+  "source_url"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelFanduelRacingAveragePace {
+  "early"?: number;
+  "finish"?: number;
+  "middle"?: number;
+  "races"?: number;
+}
+
+export interface ModelFanduelRacingCarryoverPool {
+  "amount"?: number;
+  "mtp"?: number;
+  "pool_type"?: string;
+  "post_time"?: string;
+  "race_number"?: number;
+  "race_status"?: ModelFanduelRacingCodeName;
+  "track_code"?: string;
+  "track_name"?: string;
+  "wager_type"?: ModelFanduelRacingCodeName;
+}
+
+export interface ModelFanduelRacingCarryoverResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "pools"?: Array<ModelFanduelRacingCarryoverPool>;
+  "total"?: number;
+}
+
+export interface ModelFanduelRacingCodeName {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelFanduelRacingCombo {
+  "payout"?: string;
+  "runner1"?: string;
+  "runner2"?: string;
+}
+
+export interface ModelFanduelRacingCount {
+  "code"?: string;
+  "count"?: number;
+  "name"?: string;
+}
+
+export interface ModelFanduelRacingEntry {
+  "current_odds"?: ModelFanduelRacingOdds;
+  "favorite"?: boolean;
+  "morning_line"?: ModelFanduelRacingOdds;
+  "number"?: number;
+  "number_color"?: string;
+  "pool_grids"?: Array<ModelFanduelRacingPoolGrid>;
+  "recent_odds"?: Array<ModelFanduelRacingRecentOdd>;
+  "runners"?: Array<ModelFanduelRacingRunner>;
+  "saddle_color"?: string;
+}
+
+export interface ModelFanduelRacingFavoriteRank {
+  "current_odds"?: number;
+  "high_speed"?: number;
+  "morning_line"?: number;
+  "power_rating"?: number;
+}
+
+export interface ModelFanduelRacingFiltersResponse {
+  "classes"?: Array<ModelFanduelRacingCount>;
+  "countries"?: Array<ModelFanduelRacingCount>;
+  "fetched_at"?: string;
+  "race_count"?: number;
+  "race_date"?: string;
+  "race_sorts"?: Array<string>;
+  "race_types"?: Array<ModelFanduelRacingCount>;
+  "statuses"?: Array<ModelFanduelRacingCount>;
+  "surfaces"?: Array<ModelFanduelRacingCount>;
+  "track_count"?: number;
+  "track_sorts"?: Array<string>;
+}
+
+export interface ModelFanduelRacingFinisher {
+  "entry"?: number;
+  "finish_status"?: string;
+  "number"?: string;
+  "place_payoff"?: number;
+  "position"?: number;
+  "runner"?: string;
+  "show_payoff"?: number;
+  "silk_url"?: string;
+  "timeform"?: ModelFanduelRacingFinisherTimeform;
+  "win_payoff"?: number;
+}
+
+export interface ModelFanduelRacingFinisherTimeform {
+  "beaten_lengths"?: number;
+  "beaten_text"?: string;
+  "post_race_report"?: string;
+  "starting_price"?: number;
+  "total_beaten_lengths"?: number;
+  "total_beaten_text"?: string;
+}
+
+export interface ModelFanduelRacingFreePick {
+  "info"?: string;
+  "number"?: number;
+}
+
+export interface ModelFanduelRacingHandicapping {
+  "average_pace"?: ModelFanduelRacingAveragePace;
+  "free_pick"?: ModelFanduelRacingFreePick;
+  "jockey_trainer"?: ModelFanduelRacingJockeyTrainer;
+  "past_results"?: ModelFanduelRacingPastResults;
+  "snapshot"?: ModelFanduelRacingSnapshot;
+  "speed_and_class"?: ModelFanduelRacingSpeedAndClass;
+}
+
+export interface ModelFanduelRacingHorseRace {
+  "claiming_price"?: number;
+  "date"?: string;
+  "description"?: string;
+  "distance"?: ModelFanduelRacingPastDistance;
+  "id"?: string;
+  "number"?: string;
+  "post_time"?: string;
+  "purse"?: number;
+  "race_class"?: ModelFanduelRacingCodeName;
+  "race_type"?: ModelFanduelRacingCodeName;
+  "result"?: ModelFanduelRacingFinisher;
+  "runner_count"?: number;
+  "surface"?: ModelFanduelRacingCodeName;
+  "track_code"?: string;
+  "track_condition"?: string;
+  "track_name"?: string;
+  "winning_time"?: number;
+}
+
+export interface ModelFanduelRacingHorseResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "races"?: Array<ModelFanduelRacingHorseRace>;
+  "starts"?: number;
+  "top3"?: number;
+  "total"?: number;
+  "win_percentage"?: number;
+  "wins"?: number;
+}
+
+export interface ModelFanduelRacingJockeyTrainer {
+  "jockey_entity_id"?: number;
+  "jockey_name"?: string;
+  "places"?: number;
+  "shows"?: number;
+  "starts"?: number;
+  "trainer_entity_id"?: number;
+  "trainer_name"?: string;
+  "wins"?: number;
+}
+
+export interface ModelFanduelRacingLastEvent {
+  "date"?: string;
+  "race"?: number;
+  "track"?: string;
+}
+
+export interface ModelFanduelRacingLegResult {
+  "leg"?: number;
+  "winning_entry"?: number;
+}
+
+export interface ModelFanduelRacingNextRace {
+  "mtp"?: number;
+  "number"?: string;
+  "post_time"?: string;
+  "status"?: ModelFanduelRacingCodeName;
+}
+
+export interface ModelFanduelRacingOdds {
+  "decimal"?: number;
+  "fractional"?: string;
+}
+
+export interface ModelFanduelRacingPastDistance {
+  "code"?: string;
+  "unit"?: string;
+  "value"?: number;
+}
+
+export interface ModelFanduelRacingPastEntry {
+  "favorite"?: boolean;
+  "final_odds"?: ModelFanduelRacingOdds;
+  "morning_line"?: ModelFanduelRacingOdds;
+  "number"?: number;
+  "number_color"?: string;
+  "runners"?: Array<ModelFanduelRacingPastRunner>;
+  "saddle_color"?: string;
+}
+
+export interface ModelFanduelRacingPastRaceResponse {
+  "claiming_price"?: number;
+  "date"?: string;
+  "description"?: string;
+  "distance"?: ModelFanduelRacingPastDistance;
+  "entries"?: Array<ModelFanduelRacingPastEntry>;
+  "fetched_at"?: string;
+  "has_replay"?: boolean;
+  "id"?: string;
+  "number"?: string;
+  "post_time"?: string;
+  "purse"?: number;
+  "race_class"?: ModelFanduelRacingCodeName;
+  "race_type"?: ModelFanduelRacingCodeName;
+  "results"?: ModelFanduelRacingResults;
+  "runner_count"?: number;
+  "surface"?: ModelFanduelRacingCodeName;
+  "track_code"?: string;
+  "track_condition"?: string;
+  "track_name"?: string;
+}
+
+export interface ModelFanduelRacingPastRaceSummary {
+  "claiming_price"?: number;
+  "date"?: string;
+  "description"?: string;
+  "distance"?: ModelFanduelRacingPastDistance;
+  "id"?: string;
+  "number"?: string;
+  "post_time"?: string;
+  "purse"?: number;
+  "race_class"?: ModelFanduelRacingCodeName;
+  "race_type"?: ModelFanduelRacingCodeName;
+  "runner_count"?: number;
+  "surface"?: ModelFanduelRacingCodeName;
+  "track_code"?: string;
+  "track_condition"?: string;
+  "track_name"?: string;
+}
+
+export interface ModelFanduelRacingPastRacesResponse {
+  "date"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "races"?: Array<ModelFanduelRacingPastRaceSummary>;
+  "total"?: number;
+  "track"?: string;
+}
+
+export interface ModelFanduelRacingPastResults {
+  "first"?: number;
+  "second"?: number;
+  "starts"?: number;
+  "third"?: number;
+  "top3_percentage"?: number;
+  "top3_percentage_ranking"?: string;
+  "win_percentage"?: number;
+  "win_percentage_ranking"?: string;
+}
+
+export interface ModelFanduelRacingPastRunner {
+  "age"?: number;
+  "birth_year"?: number;
+  "dam"?: string;
+  "dam_sire"?: string;
+  "entity_id"?: string;
+  "jockey"?: string;
+  "medication"?: string;
+  "name"?: string;
+  "owner"?: string;
+  "runner_id"?: string;
+  "scratched"?: boolean;
+  "sex"?: string;
+  "sire"?: string;
+  "trainer"?: string;
+  "weight"?: number;
+}
+
+export interface ModelFanduelRacingPastTrack {
+  "city"?: string;
+  "code"?: string;
+  "country"?: string;
+  "dates"?: Array<string>;
+  "dates_total"?: number;
+  "name"?: string;
+  "race_types"?: Array<string>;
+  "races_on_date"?: number;
+  "state"?: string;
+}
+
+export interface ModelFanduelRacingPastTracksResponse {
+  "date"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "total"?: number;
+  "track"?: string;
+  "tracks"?: Array<ModelFanduelRacingPastTrack>;
+}
+
+export interface ModelFanduelRacingPayoff {
+  "selections"?: Array<ModelFanduelRacingPayoffSelection>;
+  "wager_amount"?: number;
+  "wager_type"?: ModelFanduelRacingCodeName;
+}
+
+export interface ModelFanduelRacingPayoffSelection {
+  "payout"?: number;
+  "qualifier"?: string;
+  "selection"?: string;
+}
+
+export interface ModelFanduelRacingPool {
+  "amount"?: number;
+  "wager_type"?: ModelFanduelRacingCodeName;
+}
+
+export interface ModelFanduelRacingPoolCell {
+  "amount"?: number;
+  "status"?: string;
+  "target"?: number;
+}
+
+export interface ModelFanduelRacingPoolGrid {
+  "cells"?: Array<ModelFanduelRacingPoolCell>;
+  "wager_type"?: ModelFanduelRacingCodeName;
+}
+
+export interface ModelFanduelRacingProbable {
+  "amount"?: number;
+  "combos"?: Array<ModelFanduelRacingCombo>;
+  "min_wager"?: number;
+  "pool_amount_total"?: number;
+  "wager_type"?: ModelFanduelRacingCodeName;
+}
+
+export interface ModelFanduelRacingRaceResponse {
+  "age_restriction"?: string;
+  "analyst_verdict"?: string;
+  "claiming_price"?: number;
+  "country"?: string;
+  "description"?: string;
+  "distance"?: string;
+  "entries"?: Array<ModelFanduelRacingEntry>;
+  "fetched_at"?: string;
+  "has_replay"?: boolean;
+  "id"?: string;
+  "included"?: Array<string>;
+  "last_updated_ms"?: number;
+  "live_streaming"?: boolean;
+  "mtp"?: number;
+  "number"?: string;
+  "pools"?: Array<ModelFanduelRacingPool>;
+  "post_time"?: string;
+  "probables"?: Array<ModelFanduelRacingProbable>;
+  "purse"?: number;
+  "race_class"?: ModelFanduelRacingCodeName;
+  "race_date"?: string;
+  "race_type"?: ModelFanduelRacingCodeName;
+  "results"?: ModelFanduelRacingResults;
+  "runner_count"?: number;
+  "status"?: ModelFanduelRacingCodeName;
+  "surface"?: ModelFanduelRacingCodeName;
+  "track_code"?: string;
+  "track_condition"?: string;
+  "track_name"?: string;
+  "tvg_race_id"?: number;
+  "wagerable_runner_count"?: number;
+  "wagers"?: Array<ModelFanduelRacingWager>;
+  "will_pays"?: Array<ModelFanduelRacingWillPay>;
+}
+
+export interface ModelFanduelRacingRaceSummary {
+  "country"?: string;
+  "distance"?: string;
+  "id"?: string;
+  "live_streaming"?: boolean;
+  "mtp"?: number;
+  "number"?: string;
+  "post_time"?: string;
+  "purse"?: number;
+  "race_class"?: ModelFanduelRacingCodeName;
+  "race_date"?: string;
+  "race_type"?: ModelFanduelRacingCodeName;
+  "runner_count"?: number;
+  "status"?: ModelFanduelRacingCodeName;
+  "surface"?: ModelFanduelRacingCodeName;
+  "track_code"?: string;
+  "track_name"?: string;
+}
+
+export interface ModelFanduelRacingRacesResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "race_date"?: string;
+  "races"?: Array<ModelFanduelRacingRaceSummary>;
+  "total"?: number;
+}
+
+export interface ModelFanduelRacingRecentOdd {
+  "odds"?: string;
+  "trending"?: boolean;
+}
+
+export interface ModelFanduelRacingResultEntry {
+  "country"?: string;
+  "distance"?: string;
+  "id"?: string;
+  "live_streaming"?: boolean;
+  "mtp"?: number;
+  "number"?: string;
+  "post_time"?: string;
+  "purse"?: number;
+  "race_class"?: ModelFanduelRacingCodeName;
+  "race_date"?: string;
+  "race_type"?: ModelFanduelRacingCodeName;
+  "results"?: ModelFanduelRacingResults;
+  "runner_count"?: number;
+  "status"?: ModelFanduelRacingCodeName;
+  "surface"?: ModelFanduelRacingCodeName;
+  "track_code"?: string;
+  "track_name"?: string;
+}
+
+export interface ModelFanduelRacingResults {
+  "finishers"?: Array<ModelFanduelRacingFinisher>;
+  "payoffs"?: Array<ModelFanduelRacingPayoff>;
+  "winning_time"?: number;
+}
+
+export interface ModelFanduelRacingResultsResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "race_date"?: string;
+  "results"?: Array<ModelFanduelRacingResultEntry>;
+  "total"?: number;
+}
+
+export interface ModelFanduelRacingRunner {
+  "age"?: number;
+  "dam"?: string;
+  "dam_sire"?: string;
+  "favorite_rank"?: ModelFanduelRacingFavoriteRank;
+  "form_figures"?: string;
+  "handicapping"?: ModelFanduelRacingHandicapping;
+  "jockey"?: string;
+  "jockey_changed"?: boolean;
+  "medication"?: string;
+  "name"?: string;
+  "owner"?: string;
+  "rating_stars"?: number;
+  "runner_id"?: string;
+  "scratched"?: boolean;
+  "sex"?: string;
+  "sire"?: string;
+  "timeform"?: ModelFanduelRacingRunnerTimeform;
+  "trainer"?: string;
+  "weight"?: number;
+  "win_probability"?: number;
+}
+
+export interface ModelFanduelRacingRunnerTimeform {
+  "analyst_comment"?: string;
+  "flags"?: Array<string>;
+  "free_pick"?: ModelFanduelRacingFreePick;
+  "production_comment"?: string;
+  "tissue_price"?: number;
+}
+
+export interface ModelFanduelRacingSearchCounts {
+  "jockey"?: number;
+  "owner"?: number;
+  "runner"?: number;
+  "trainer"?: number;
+}
+
+export interface ModelFanduelRacingSearchItem {
+  "birth_year"?: number;
+  "id"?: number;
+  "last_event"?: ModelFanduelRacingLastEvent;
+  "name"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelRacingSearchResponse {
+  "counts"?: ModelFanduelRacingSearchCounts;
+  "fetched_at"?: string;
+  "items"?: Array<ModelFanduelRacingSearchItem>;
+  "limit"?: number;
+  "order"?: string;
+  "page"?: number;
+  "query"?: string;
+  "sort"?: string;
+  "total"?: number;
+  "type"?: string;
+}
+
+export interface ModelFanduelRacingSnapshot {
+  "days_off"?: number;
+  "horse_starts"?: number;
+  "horse_wins"?: number;
+  "normalised_power_rating"?: number;
+  "power_rating"?: number;
+  "power_rating_ranking"?: string;
+}
+
+export interface ModelFanduelRacingSpeedAndClass {
+  "avg_class_rating"?: number;
+  "avg_distance"?: number;
+  "avg_speed"?: number;
+  "high_speed"?: number;
+  "high_speed_ranking"?: string;
+  "last_class_rating"?: number;
+  "normalised_speed_rating"?: number;
+}
+
+export interface ModelFanduelRacingTrack {
+  "city"?: string;
+  "code"?: string;
+  "country"?: string;
+  "current_race"?: ModelFanduelRacingNextRace;
+  "featured"?: boolean;
+  "is_finished"?: boolean;
+  "ivr_code"?: number;
+  "name"?: string;
+  "number_of_races"?: number;
+  "race_types"?: Array<string>;
+  "short_name"?: string;
+  "state"?: string;
+}
+
+export interface ModelFanduelRacingTrackResponse {
+  "city"?: string;
+  "code"?: string;
+  "country"?: string;
+  "current_race"?: ModelFanduelRacingNextRace;
+  "featured"?: boolean;
+  "fetched_at"?: string;
+  "is_finished"?: boolean;
+  "ivr_code"?: number;
+  "name"?: string;
+  "number_of_races"?: number;
+  "race_types"?: Array<string>;
+  "races"?: Array<ModelFanduelRacingRaceSummary>;
+  "short_name"?: string;
+  "state"?: string;
+}
+
+export interface ModelFanduelRacingTracksResponse {
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "race_date"?: string;
+  "total"?: number;
+  "tracks"?: Array<ModelFanduelRacingTrack>;
+}
+
+export interface ModelFanduelRacingWager {
+  "max_wager"?: number;
+  "min_wager"?: number;
+  "wager_type"?: ModelFanduelRacingCodeName;
+}
+
+export interface ModelFanduelRacingWagerType {
+  "code"?: string;
+  "column_count"?: number;
+  "column_type"?: string;
+  "description"?: string;
+  "group"?: ModelFanduelRacingCodeName;
+  "id"?: number;
+  "is_box"?: boolean;
+  "is_key"?: boolean;
+  "is_wheel"?: boolean;
+  "leg_count"?: number;
+  "max_wager"?: number;
+  "min_wager"?: number;
+  "name"?: string;
+  "pools_per_entry"?: number;
+  "position_count"?: number;
+}
+
+export interface ModelFanduelRacingWagerTypesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "wager_types"?: Array<ModelFanduelRacingWagerType>;
+}
+
+export interface ModelFanduelRacingWillPay {
+  "leg_results"?: Array<ModelFanduelRacingLegResult>;
+  "payoff_type"?: string;
+  "payouts"?: Array<ModelFanduelRacingWillPayment>;
+  "wager_amount"?: number;
+  "wager_type"?: ModelFanduelRacingCodeName;
+}
+
+export interface ModelFanduelRacingWillPayment {
+  "entry"?: number;
+  "payout"?: number;
+  "required"?: number;
+}
+
+export interface ModelFanduelResearchArticleResponse {
+  "author"?: ModelFanduelResearchAuthorRef;
+  "blocks"?: Array<ModelFanduelResearchBlock>;
+  "description"?: string;
+  "fetched_at"?: string;
+  "hero_type"?: string;
+  "id"?: string;
+  "keywords"?: Array<string>;
+  "omitted_blocks"?: Record<string, number>;
+  "published_at"?: string;
+  "slug"?: string;
+  "sport"?: ModelFanduelResearchSportRef;
+  "sub_heading"?: string;
+  "tags"?: Array<ModelFanduelResearchTag>;
+  "text"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelResearchArticleSummary {
+  "author"?: ModelFanduelResearchAuthorRef;
+  "description"?: string;
+  "hero_type"?: string;
+  "id"?: string;
+  "published_at"?: string;
+  "slug"?: string;
+  "sport"?: ModelFanduelResearchSportRef;
+  "sub_heading"?: string;
+  "tags"?: Array<ModelFanduelResearchTag>;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelResearchArticlesResponse {
+  "articles"?: Array<ModelFanduelResearchArticleSummary>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "next_cursor"?: string;
+}
+
+export interface ModelFanduelResearchAuthor {
+  "bio"?: string;
+  "id"?: string;
+  "name"?: string;
+  "profile_image_url"?: string;
+  "slug"?: string;
+  "social"?: Array<ModelFanduelResearchSocial>;
+  "sports"?: Array<string>;
+  "sub_categories"?: Array<string>;
+  "thumbnail_url"?: string;
+}
+
+export interface ModelFanduelResearchAuthorRef {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelFanduelResearchAuthorResponse {
+  "bio"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "name"?: string;
+  "profile_image_url"?: string;
+  "slug"?: string;
+  "social"?: Array<ModelFanduelResearchSocial>;
+  "sports"?: Array<string>;
+  "sub_categories"?: Array<string>;
+  "thumbnail_url"?: string;
+}
+
+export interface ModelFanduelResearchAuthorsResponse {
+  "authors"?: Array<ModelFanduelResearchAuthor>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "next_cursor"?: string;
+}
+
+export interface ModelFanduelResearchBetLine {
+  "market_id"?: string;
+  "odds"?: string;
+  "selection_id"?: string;
+  "url"?: string;
+  "value"?: string;
+}
+
+export interface ModelFanduelResearchBlock {
+  "event_id"?: number;
+  "event_name"?: string;
+  "headers"?: Array<string>;
+  "league"?: string;
+  "level"?: number;
+  "market_id"?: string;
+  "market_name"?: string;
+  "rows"?: Array<Array<string>>;
+  "selection_ids"?: Array<number>;
+  "text"?: string;
+  "title"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelResearchClosingLines {
+  "spread"?: number;
+  "total"?: number;
+}
+
+export interface ModelFanduelResearchFeaturedArticlesResponse {
+  "articles"?: Array<ModelFanduelResearchArticleSummary>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "sport"?: ModelFanduelResearchSportRef;
+}
+
+export interface ModelFanduelResearchFixture {
+  "event_url"?: string;
+  "game_clock"?: string;
+  "head_to_head_slug"?: string;
+  "id"?: string;
+  "network"?: string;
+  "scheduled_end"?: string;
+  "scheduled_start"?: string;
+  "sport"?: ModelFanduelResearchSportRef;
+  "status"?: string;
+  "teams"?: Array<ModelFanduelResearchFixtureTeam>;
+}
+
+export interface ModelFanduelResearchFixtureLine {
+  "market_id"?: string;
+  "odds"?: number;
+  "points"?: number;
+  "selection_id"?: string;
+  "side"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelResearchFixtureTeam {
+  "abbreviation"?: string;
+  "id"?: string;
+  "money_line"?: ModelFanduelResearchFixtureLine;
+  "name"?: string;
+  "number_fire_id"?: number;
+  "score"?: number;
+  "side"?: string;
+  "spread"?: ModelFanduelResearchFixtureLine;
+  "total"?: ModelFanduelResearchFixtureLine;
+  "win_probability"?: number;
+}
+
+export interface ModelFanduelResearchFixturesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "fixtures"?: Array<ModelFanduelResearchFixture>;
+  "sport"?: string;
+}
+
+export interface ModelFanduelResearchItem {
+  "guid"?: string;
+  "image_url"?: string;
+  "published_at"?: string;
+  "summary"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelResearchNewsType {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelFanduelResearchNflGame {
+  "away_team"?: ModelFanduelResearchNflTeam;
+  "clock"?: string;
+  "closing_lines"?: ModelFanduelResearchClosingLines;
+  "head_to_head_slug"?: string;
+  "home_team"?: ModelFanduelResearchNflTeam;
+  "id"?: string;
+  "network"?: string;
+  "number_fire_id"?: number;
+  "odds"?: ModelFanduelResearchNflOdds;
+  "quarter"?: string;
+  "scheduled_time"?: string;
+  "season_type"?: string;
+  "status"?: string;
+  "venue"?: string;
+  "venue_type"?: string;
+  "weather"?: ModelFanduelResearchWeather;
+  "week"?: number;
+}
+
+export interface ModelFanduelResearchNflGameStats {
+  "fumbles_forced"?: number;
+  "interceptions_thrown"?: number;
+  "passing_yards"?: number;
+  "points"?: number;
+  "rushing_yards"?: number;
+}
+
+export interface ModelFanduelResearchNflLeader {
+  "attempts"?: number;
+  "carries"?: number;
+  "completions"?: number;
+  "name"?: string;
+  "position"?: string;
+  "receptions"?: number;
+  "targets"?: number;
+  "touchdowns"?: number;
+  "yards"?: number;
+}
+
+export interface ModelFanduelResearchNflLeaders {
+  "passing"?: ModelFanduelResearchNflLeader;
+  "receiving"?: ModelFanduelResearchNflLeader;
+  "rushing"?: ModelFanduelResearchNflLeader;
+}
+
+export interface ModelFanduelResearchNflOdds {
+  "away"?: ModelFanduelResearchNflSideOdds;
+  "event_id"?: number;
+  "home"?: ModelFanduelResearchNflSideOdds;
+  "scheduled_time"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelResearchNflRanks {
+  "defense"?: number;
+  "offense"?: number;
+  "passing_yards_per_game"?: number;
+  "rushing_yards_per_game"?: number;
+}
+
+export interface ModelFanduelResearchNflRecord {
+  "losses"?: number;
+  "ties"?: number;
+  "wins"?: number;
+}
+
+export interface ModelFanduelResearchNflScheduleResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "games"?: Array<ModelFanduelResearchNflGame>;
+  "season_type"?: string;
+  "week"?: number;
+}
+
+export interface ModelFanduelResearchNflSideOdds {
+  "money_line"?: ModelFanduelResearchBetLine;
+  "spread"?: ModelFanduelResearchBetLine;
+  "team_code"?: string;
+  "total"?: ModelFanduelResearchBetLine;
+}
+
+export interface ModelFanduelResearchNflTeam {
+  "average_passing_yards_per_game"?: number;
+  "average_rushing_yards_per_game"?: number;
+  "code"?: string;
+  "conference"?: string;
+  "division"?: string;
+  "game_stats"?: ModelFanduelResearchNflGameStats;
+  "leaders"?: ModelFanduelResearchNflLeaders;
+  "logo_url"?: string;
+  "name"?: string;
+  "number_fire_id"?: number;
+  "primary_color"?: string;
+  "ranks"?: ModelFanduelResearchNflRanks;
+  "record"?: ModelFanduelResearchNflRecord;
+  "secondary_color"?: string;
+  "short_name"?: string;
+  "slug"?: string;
+  "sportsbook_link"?: string;
+  "win_probability"?: number;
+}
+
+export interface ModelFanduelResearchPlayerNewsItem {
+  "analysis"?: string;
+  "attribution"?: string;
+  "author"?: ModelFanduelResearchAuthorRef;
+  "fact"?: string;
+  "id"?: string;
+  "news_type"?: ModelFanduelResearchNewsType;
+  "published_at"?: string;
+  "quant"?: string;
+  "slug"?: string;
+  "sport"?: ModelFanduelResearchSportRef;
+  "subject"?: ModelFanduelResearchSubject;
+  "title"?: string;
+  "updated_at"?: string;
+}
+
+export interface ModelFanduelResearchPlayerNewsResponse {
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "items"?: Array<ModelFanduelResearchPlayerNewsItem>;
+  "next_cursor"?: string;
+}
+
+export interface ModelFanduelResearchPlayerTeam {
+  "abbreviation"?: string;
+  "name"?: string;
+  "number_fire_id"?: number;
+}
+
+export interface ModelFanduelResearchProjectionEvent {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelFanduelResearchProjectionGame {
+  "away_team"?: ModelFanduelResearchProjectionTeam;
+  "game_time"?: string;
+  "home_team"?: ModelFanduelResearchProjectionTeam;
+}
+
+export interface ModelFanduelResearchProjectionPlayer {
+  "handedness"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "name"?: string;
+  "page_url"?: string;
+  "position"?: string;
+}
+
+export interface ModelFanduelResearchProjectionPosition {
+  "default"?: boolean;
+  "label"?: string;
+  "matches"?: Array<string>;
+  "player_kind"?: string;
+  "slug"?: string;
+}
+
+export interface ModelFanduelResearchProjectionRow {
+  "game"?: ModelFanduelResearchProjectionGame;
+  "player"?: ModelFanduelResearchProjectionPlayer;
+  "salary"?: number;
+  "stats"?: Record<string, unknown>;
+  "team"?: ModelFanduelResearchProjectionTeam;
+  "value"?: number;
+}
+
+export interface ModelFanduelResearchProjectionSlate {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelFanduelResearchProjectionSlatesResponse {
+  "count"?: number;
+  "date"?: string;
+  "events"?: Array<ModelFanduelResearchProjectionEvent>;
+  "fetched_at"?: string;
+  "season"?: number;
+  "slates"?: Array<ModelFanduelResearchProjectionSlate>;
+  "sport"?: string;
+  "week"?: number;
+}
+
+export interface ModelFanduelResearchProjectionTable {
+  "name"?: string;
+  "needs_event"?: boolean;
+  "needs_slate"?: boolean;
+  "positions"?: Array<ModelFanduelResearchProjectionPosition>;
+  "scopes"?: Array<string>;
+  "sport"?: string;
+  "table"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelResearchProjectionTablesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "sports"?: Array<string>;
+  "tables"?: Array<ModelFanduelResearchProjectionTable>;
+  "types"?: Array<string>;
+}
+
+export interface ModelFanduelResearchProjectionTeam {
+  "abbreviation"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelFanduelResearchProjectionsResponse {
+  "event_id"?: string;
+  "event_name"?: string;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "position"?: string;
+  "position_label"?: string;
+  "rows"?: Array<ModelFanduelResearchProjectionRow>;
+  "scope"?: string;
+  "slate_id"?: string;
+  "slate_name"?: string;
+  "sport"?: string;
+  "table"?: string;
+  "table_name"?: string;
+  "total"?: number;
+  "type"?: string;
+}
+
+export interface ModelFanduelResearchResponse {
+  "copyright"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "items"?: Array<ModelFanduelResearchItem>;
+  "language"?: string;
+  "last_build_date"?: string;
+  "site_url"?: string;
+  "source_url"?: string;
+  "title"?: string;
+}
+
+export interface ModelFanduelResearchSocial {
+  "account"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelResearchSport {
+  "content_sport"?: string;
+  "has_live_scoring"?: boolean;
+  "has_player_updates"?: boolean;
+  "name"?: string;
+  "player_news_types"?: Array<string>;
+  "positions"?: Array<string>;
+  "show_authors"?: boolean;
+  "slug"?: string;
+  "team_count"?: number;
+  "teams"?: Array<ModelFanduelResearchTeam>;
+}
+
+export interface ModelFanduelResearchSportRef {
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelFanduelResearchSportsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "sports"?: Array<ModelFanduelResearchSport>;
+}
+
+export interface ModelFanduelResearchSubCategoriesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "sub_categories"?: Array<ModelFanduelResearchSubCategory>;
+}
+
+export interface ModelFanduelResearchSubCategory {
+  "slug"?: string;
+  "sport"?: ModelFanduelResearchSportRef;
+  "title"?: string;
+}
+
+export interface ModelFanduelResearchSubject {
+  "abbreviation"?: string;
+  "name"?: string;
+  "number"?: number;
+  "number_fire_id"?: number;
+  "page_url"?: string;
+  "position"?: string;
+  "slug"?: string;
+  "team"?: ModelFanduelResearchPlayerTeam;
+  "type"?: string;
+}
+
+export interface ModelFanduelResearchTag {
+  "name"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelResearchTeam {
+  "abbreviation"?: string;
+  "identifier"?: string;
+  "name"?: string;
+  "number_fire_id"?: number;
+}
+
+export interface ModelFanduelResearchWeather {
+  "condition"?: string;
+  "humidity_pct"?: number;
+  "temp_f"?: number;
+  "wind_direction"?: string;
+  "wind_mph"?: number;
+}
+
+export interface ModelFanduelSportsbookAutocompleteResponse {
+  "fetched_at"?: string;
+  "query"?: string;
+  "suggestions"?: Array<ModelFanduelSportsbookSuggestion>;
+}
+
+export interface ModelFanduelSportsbookBetRecords {
+  "against_spread"?: ModelFanduelSportsbookWinLoss;
+  "money_line"?: ModelFanduelSportsbookWinLoss;
+  "over_under"?: ModelFanduelSportsbookWinLoss;
+}
+
+export interface ModelFanduelSportsbookBoxScoreColumn {
+  "key"?: string;
+  "label"?: string;
+}
+
+export interface ModelFanduelSportsbookBoxScoreGroup {
+  "columns"?: Array<ModelFanduelSportsbookBoxScoreColumn>;
+  "key"?: string;
+  "label"?: string;
+  "rows"?: Array<ModelFanduelSportsbookBoxScoreRow>;
+}
+
+export interface ModelFanduelSportsbookBoxScoreResponse {
+  "available"?: boolean;
+  "event_id"?: number;
+  "fetched_at"?: string;
+  "groups"?: Array<ModelFanduelSportsbookBoxScoreGroup>;
+  "score"?: ModelFanduelSportsbookScore;
+  "status"?: string;
+}
+
+export interface ModelFanduelSportsbookBoxScoreRow {
+  "id"?: string;
+  "name"?: string;
+  "player_id"?: string;
+  "position"?: string;
+  "stats"?: Record<string, string>;
+  "team"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderCard {
+  "available_options"?: Record<string, unknown>;
+  "description_template"?: string;
+  "id"?: string;
+  "legs"?: Array<Record<string, unknown>>;
+  "prop_key"?: string;
+  "props"?: Array<string>;
+  "selected_options"?: Record<string, unknown>;
+  "title"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderChoice {
+  "choice_id"?: string;
+  "description"?: string;
+  "status"?: string;
+  "template_id"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderCompetition {
+  "competition_id"?: number;
+  "event_ids"?: Array<number>;
+  "first_event_id"?: number;
+  "logo_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderEvent {
+  "abbreviation"?: string;
+  "away_logo_url"?: string;
+  "competition"?: string;
+  "competition_id"?: number;
+  "event_id"?: number;
+  "home_logo_url"?: string;
+  "name"?: string;
+  "start_time"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderEventsResponse {
+  "competitions"?: Array<ModelFanduelSportsbookBuilderCompetition>;
+  "events"?: Array<ModelFanduelSportsbookBuilderEvent>;
+  "experience"?: string;
+  "fetched_at"?: string;
+  "first_event_id"?: number;
+  "state"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderGroup {
+  "card_ids"?: Array<string>;
+  "id"?: string;
+  "layout_type"?: string;
+  "title"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderPlayer {
+  "headshot_url"?: string;
+  "id"?: string;
+  "name"?: string;
+  "short_name"?: string;
+  "team_id"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderResponse {
+  "cards"?: Array<ModelFanduelSportsbookBuilderCard>;
+  "choices"?: Array<ModelFanduelSportsbookBuilderChoice>;
+  "competition"?: string;
+  "competition_id"?: number;
+  "event_id"?: number;
+  "event_name"?: string;
+  "experience"?: string;
+  "fetched_at"?: string;
+  "game_status"?: string;
+  "groups"?: Array<ModelFanduelSportsbookBuilderGroup>;
+  "layout"?: Array<string>;
+  "periods"?: Array<string>;
+  "players"?: Array<ModelFanduelSportsbookBuilderPlayer>;
+  "ramp_event_id"?: number;
+  "start_time"?: string;
+  "state"?: string;
+  "status"?: string;
+  "teams"?: Array<ModelFanduelSportsbookBuilderTeam>;
+}
+
+export interface ModelFanduelSportsbookBuilderTeam {
+  "abbr"?: string;
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "side"?: string;
+}
+
+export interface ModelFanduelSportsbookChoiceFailure {
+  "choice_id"?: string;
+  "code"?: string;
+}
+
+export interface ModelFanduelSportsbookChoiceQuote {
+  "american_odds"?: number;
+  "bet_type"?: string;
+  "choice_id"?: string;
+  "decimal_odds"?: number;
+  "display_decimal_odds"?: number;
+  "features"?: Array<string>;
+  "fractional_odds"?: string;
+  "same_game_multi"?: boolean;
+}
+
+export interface ModelFanduelSportsbookChoiceQuotesResponse {
+  "failures"?: Array<ModelFanduelSportsbookChoiceFailure>;
+  "fetched_at"?: string;
+  "quotes"?: Array<ModelFanduelSportsbookChoiceQuote>;
+  "ramp_event_id"?: number;
+  "state"?: string;
+}
+
+export interface ModelFanduelSportsbookCompetition {
+  "competition_id"?: number;
+  "event_type_id"?: number;
+  "name"?: string;
+  "region"?: string;
+}
+
+export interface ModelFanduelSportsbookDepthChartPlayer {
+  "age"?: number;
+  "college"?: string;
+  "draft_pick"?: string;
+  "draft_round"?: string;
+  "draft_year"?: string;
+  "name"?: string;
+  "position"?: string;
+  "rank"?: string;
+  "slug"?: string;
+}
+
+export interface ModelFanduelSportsbookDepthChartResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "players"?: Array<ModelFanduelSportsbookDepthChartPlayer>;
+  "team"?: string;
+  "team_leaders"?: Record<string, unknown>;
+}
+
+export interface ModelFanduelSportsbookDirectoryPlayer {
+  "name"?: string;
+  "player_id"?: number;
+  "slug"?: string;
+}
+
+export interface ModelFanduelSportsbookEvent {
+  "competition_id"?: number;
+  "event_id"?: number;
+  "event_type_id"?: number;
+  "in_play"?: boolean;
+  "markets"?: Array<ModelFanduelSportsbookMarket>;
+  "name"?: string;
+  "open_date"?: string;
+  "video_available"?: boolean;
+}
+
+export interface ModelFanduelSportsbookEventPlayersResponse {
+  "away_team"?: ModelFanduelSportsbookTeam;
+  "competition"?: string;
+  "event_id"?: number;
+  "event_name"?: string;
+  "fetched_at"?: string;
+  "home_team"?: ModelFanduelSportsbookTeam;
+  "players"?: Array<ModelFanduelSportsbookPlayer>;
+  "scheduled_at"?: string;
+}
+
+export interface ModelFanduelSportsbookEventResponse {
+  "competition"?: ModelFanduelSportsbookCompetition;
+  "default_tab"?: string;
+  "event"?: ModelFanduelSportsbookEvent;
+  "fetched_at"?: string;
+  "market_types"?: Array<ModelFanduelSportsbookMarketTypeCount>;
+  "notes"?: Array<string>;
+  "selected_tab"?: string;
+  "state"?: string;
+  "tabs"?: Array<ModelFanduelSportsbookTab>;
+}
+
+export interface ModelFanduelSportsbookEventScoreResponse {
+  "event_id"?: number;
+  "fetched_at"?: string;
+  "live"?: ModelFanduelSportsbookLiveStatus;
+  "media_types"?: Array<string>;
+  "score"?: ModelFanduelSportsbookScore;
+}
+
+export interface ModelFanduelSportsbookEventStats {
+  "competition"?: string;
+  "competition_id"?: number;
+  "event_id"?: number;
+  "last_five_games"?: Array<ModelFanduelSportsbookFormLine>;
+  "other_widgets"?: Record<string, unknown>;
+  "spread_bets_percent"?: Array<ModelFanduelSportsbookSplit>;
+  "spread_money_percent"?: Array<ModelFanduelSportsbookSplit>;
+  "teams"?: Array<ModelFanduelSportsbookStatsTeam>;
+}
+
+export interface ModelFanduelSportsbookEventStatsResponse {
+  "fetched_at"?: string;
+  "stats"?: ModelFanduelSportsbookEventStats;
+}
+
+export interface ModelFanduelSportsbookEventStatus {
+  "event_id"?: number;
+  "game_phase"?: string;
+  "price_clock"?: string;
+  "status"?: string;
+  "status_clock"?: string;
+  "structure_clock"?: string;
+}
+
+export interface ModelFanduelSportsbookEventsStatusResponse {
+  "events"?: Array<ModelFanduelSportsbookEventStatus>;
+  "fetched_at"?: string;
+  "not_found"?: Array<number>;
+  "state"?: string;
+}
+
+export interface ModelFanduelSportsbookFormLine {
+  "name"?: string;
+  "results"?: Array<string>;
+  "selection_id"?: number;
+}
+
+export interface ModelFanduelSportsbookFutureOdd {
+  "description"?: string;
+  "market_type"?: string;
+  "odds"?: string;
+  "team"?: string;
+  "team_slug"?: string;
+}
+
+export interface ModelFanduelSportsbookGameLine {
+  "odds"?: string;
+  "value"?: string;
+}
+
+export interface ModelFanduelSportsbookGameSummary {
+  "away_score"?: number;
+  "away_slug"?: string;
+  "away_team"?: string;
+  "date"?: string;
+  "home_score"?: number;
+  "home_slug"?: string;
+  "home_team"?: string;
+  "title"?: string;
+  "venue"?: string;
+}
+
+export interface ModelFanduelSportsbookLeagueGame {
+  "away_code"?: string;
+  "away_score"?: number;
+  "away_slug"?: string;
+  "away_team"?: string;
+  "broadcast"?: string;
+  "bye_week"?: boolean;
+  "conference_game"?: boolean;
+  "home_code"?: string;
+  "home_score"?: number;
+  "home_slug"?: string;
+  "home_team"?: string;
+  "scheduled_time"?: string;
+  "status"?: string;
+  "title"?: string;
+  "venue"?: string;
+  "week"?: number;
+}
+
+export interface ModelFanduelSportsbookLeagueScheduleResponse {
+  "date"?: string;
+  "end_date"?: string;
+  "fetched_at"?: string;
+  "game_count"?: number;
+  "groups"?: Array<ModelFanduelSportsbookScheduleGroup>;
+  "league"?: string;
+  "week"?: ModelFanduelSportsbookScheduleWeek;
+  "weeks"?: Array<ModelFanduelSportsbookScheduleWeek>;
+}
+
+export interface ModelFanduelSportsbookLiveCountResponse {
+  "fetched_at"?: string;
+  "live_events"?: number;
+  "state"?: string;
+}
+
+export interface ModelFanduelSportsbookLiveDataResponse {
+  "events"?: Array<ModelFanduelSportsbookLiveEvent>;
+  "fetched_at"?: string;
+  "missing"?: Array<number>;
+}
+
+export interface ModelFanduelSportsbookLiveEvent {
+  "away_score"?: number;
+  "details"?: Record<string, unknown>;
+  "event_id"?: number;
+  "home_score"?: number;
+  "live"?: boolean;
+  "media_types"?: Array<string>;
+  "player_progress"?: Record<string, unknown>;
+  "player_stats"?: Record<string, unknown>;
+  "provider"?: string;
+  "sport"?: string;
+}
+
+export interface ModelFanduelSportsbookLiveScore {
+  "away_score"?: number;
+  "current_period"?: number;
+  "details"?: Record<string, unknown>;
+  "event_id"?: number;
+  "home_score"?: number;
+  "media_types"?: Array<string>;
+  "model_type"?: string;
+  "period"?: string;
+  "period_remaining_milliseconds"?: number;
+  "provider"?: string;
+  "sport"?: string;
+}
+
+export interface ModelFanduelSportsbookLiveScoresResponse {
+  "events"?: Array<ModelFanduelSportsbookLiveScore>;
+  "fetched_at"?: string;
+  "not_found"?: Array<number>;
+  "state"?: string;
+}
+
+export interface ModelFanduelSportsbookLiveStatus {
+  "box_score_available"?: boolean;
+  "competition"?: string;
+  "play_by_play_available"?: boolean;
+  "provider"?: string;
+  "quick_bets_available"?: boolean;
+  "score_available"?: boolean;
+  "status"?: string;
+}
+
+export interface ModelFanduelSportsbookMarket {
+  "betting_type"?: string;
+  "in_play"?: boolean;
+  "market_id"?: string;
+  "market_time"?: string;
+  "name"?: string;
+  "runners"?: Array<ModelFanduelSportsbookRunner>;
+  "same_game_parlay_eligible"?: boolean;
+  "status"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookMarketPrice {
+  "bet_delay_seconds"?: number;
+  "betting_type"?: string;
+  "in_play"?: boolean;
+  "market_id"?: string;
+  "runners"?: Array<ModelFanduelSportsbookPriceRunner>;
+  "same_game_parlay_eligible"?: boolean;
+  "status"?: string;
+}
+
+export interface ModelFanduelSportsbookMarketPricesResponse {
+  "fetched_at"?: string;
+  "markets"?: Array<ModelFanduelSportsbookMarketPrice>;
+  "missing"?: Array<string>;
+  "state"?: string;
+}
+
+export interface ModelFanduelSportsbookMarketTypeCount {
+  "count"?: number;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookNavLink {
+  "custom_page_id"?: string;
+  "display_order"?: number;
+  "icon"?: string;
+  "id"?: number;
+  "kind"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelSportsbookPageResponse {
+  "competition_id"?: number;
+  "competitions"?: Array<ModelFanduelSportsbookCompetition>;
+  "custom_page_id"?: string;
+  "default_tab"?: string;
+  "description"?: string;
+  "event_type_id"?: number;
+  "events"?: Array<ModelFanduelSportsbookEvent>;
+  "fetched_at"?: string;
+  "market_types"?: Array<ModelFanduelSportsbookMarketTypeCount>;
+  "page_type"?: string;
+  "selected_tab"?: string;
+  "state"?: string;
+  "tabs"?: Array<ModelFanduelSportsbookTab>;
+  "title"?: string;
+}
+
+export interface ModelFanduelSportsbookParlay {
+  "american_odds"?: number;
+  "away_team"?: string;
+  "competition_id"?: number;
+  "competition_name"?: string;
+  "decimal_odds"?: number;
+  "event_id"?: number;
+  "event_name"?: string;
+  "featured_by"?: string;
+  "home_team"?: string;
+  "id"?: string;
+  "is_editable"?: boolean;
+  "is_manually_created"?: boolean;
+  "legs"?: Array<ModelFanduelSportsbookParlayLeg>;
+  "narrative"?: string;
+  "total_bets"?: number;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookParlayEventGroup {
+  "away_team"?: string;
+  "event_id"?: number;
+  "event_name"?: string;
+  "home_team"?: string;
+  "open_date"?: string;
+  "parlay_ids"?: Array<string>;
+}
+
+export interface ModelFanduelSportsbookParlayFilter {
+  "competition_ids"?: Array<number>;
+  "id"?: string;
+  "text"?: string;
+}
+
+export interface ModelFanduelSportsbookParlayLeg {
+  "competition_id"?: number;
+  "event_id"?: number;
+  "event_name"?: string;
+  "market"?: string;
+  "market_id"?: string;
+  "market_type"?: string;
+  "selection"?: string;
+  "selection_id"?: number;
+}
+
+export interface ModelFanduelSportsbookParlayTypeCount {
+  "count"?: number;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookParlaysResponse {
+  "card_cap"?: number;
+  "event_groups"?: Array<ModelFanduelSportsbookParlayEventGroup>;
+  "event_id"?: number;
+  "fetched_at"?: string;
+  "filters"?: Array<ModelFanduelSportsbookParlayFilter>;
+  "parlays"?: Array<ModelFanduelSportsbookParlay>;
+  "state"?: string;
+  "truncated"?: boolean;
+  "types"?: Array<ModelFanduelSportsbookParlayTypeCount>;
+  "view"?: string;
+}
+
+export interface ModelFanduelSportsbookPeriodScore {
+  "away"?: number;
+  "home"?: number;
+  "period"?: string;
+}
+
+export interface ModelFanduelSportsbookPlacement {
+  "placement"?: string;
+  "promo_codes"?: Array<string>;
+}
+
+export interface ModelFanduelSportsbookPlayByPlayResponse {
+  "available"?: boolean;
+  "current"?: boolean;
+  "event_id"?: number;
+  "feed"?: Record<string, unknown>;
+  "fetched_at"?: string;
+  "status"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayer {
+  "abbreviated_name"?: string;
+  "name"?: string;
+  "number"?: string;
+  "player_id"?: string;
+  "position"?: string;
+  "team"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayerNewsResponse {
+  "articles"?: Array<ModelFanduelSportsbookTeamArticle>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "league"?: string;
+  "name"?: string;
+  "next_cursor"?: string;
+  "player"?: string;
+  "player_updates"?: Array<Record<string, unknown>>;
+}
+
+export interface ModelFanduelSportsbookPlayerPropEvent {
+  "date"?: string;
+  "event_id"?: number;
+  "event_name"?: string;
+  "markets"?: Array<ModelFanduelSportsbookPlayerPropMarket>;
+}
+
+export interface ModelFanduelSportsbookPlayerPropMarket {
+  "market_id"?: string;
+  "market_type"?: string;
+  "name"?: string;
+  "selections"?: Array<ModelFanduelSportsbookPlayerPropSelection>;
+}
+
+export interface ModelFanduelSportsbookPlayerPropSelection {
+  "handicap"?: number;
+  "odds"?: string;
+  "runner"?: string;
+  "selection_id"?: number;
+}
+
+export interface ModelFanduelSportsbookPlayerProps {
+  "events"?: Array<ModelFanduelSportsbookPlayerPropEvent>;
+  "player"?: string;
+  "slug"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayerPropsResponse {
+  "content_text"?: string;
+  "events"?: Array<ModelFanduelSportsbookPlayerPropEvent>;
+  "fetched_at"?: string;
+  "league"?: string;
+  "name"?: string;
+  "player"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayerResponse {
+  "fetched_at"?: string;
+  "game_log"?: unknown;
+  "league"?: string;
+  "name"?: string;
+  "news"?: Array<ModelFanduelSportsbookTeamArticle>;
+  "player"?: string;
+  "player_updates"?: Array<Record<string, unknown>>;
+  "position"?: string;
+  "projections"?: unknown;
+  "season"?: Record<string, unknown>;
+  "season_totals"?: unknown;
+  "stats"?: Record<string, unknown>;
+  "team"?: string;
+  "team_slug"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayerStatsResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "name"?: string;
+  "player"?: string;
+  "position"?: string;
+  "stats"?: Record<string, unknown>;
+}
+
+export interface ModelFanduelSportsbookPlayersResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "players"?: Array<ModelFanduelSportsbookDirectoryPlayer>;
+  "total"?: number;
+}
+
+export interface ModelFanduelSportsbookPriceRunner {
+  "american_odds"?: number;
+  "decimal_odds"?: number;
+  "fractional_odds"?: string;
+  "handicap"?: number;
+  "previous_american_odds"?: number;
+  "previous_decimal_odds"?: number;
+  "selection_id"?: number;
+  "status"?: string;
+}
+
+export interface ModelFanduelSportsbookPromotion {
+  "button_text"?: string;
+  "button_url"?: string;
+  "ends_at"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "products"?: Array<string>;
+  "promo_code"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+}
+
+export interface ModelFanduelSportsbookPromotionsResponse {
+  "context"?: string;
+  "custom_page_id"?: string;
+  "event_type_id"?: number;
+  "fetched_at"?: string;
+  "placements"?: Array<ModelFanduelSportsbookPlacement>;
+  "promotions"?: Array<ModelFanduelSportsbookPromotion>;
+  "state"?: string;
+  "tags"?: Array<ModelFanduelSportsbookTagCount>;
+}
+
+export interface ModelFanduelSportsbookRosterPlayer {
+  "college"?: string;
+  "experience"?: string;
+  "height"?: string;
+  "injury_status"?: string;
+  "name"?: string;
+  "number"?: string;
+  "photo_url"?: string;
+  "position"?: string;
+  "slug"?: string;
+  "status"?: string;
+  "weight"?: number;
+}
+
+export interface ModelFanduelSportsbookRosterResponse {
+  "fetched_at"?: string;
+  "injury_statuses"?: Array<ModelFanduelSportsbookValueCount>;
+  "league"?: string;
+  "players"?: Array<ModelFanduelSportsbookRosterPlayer>;
+  "positions"?: Array<ModelFanduelSportsbookValueCount>;
+  "statuses"?: Array<ModelFanduelSportsbookValueCount>;
+  "team"?: string;
+}
+
+export interface ModelFanduelSportsbookRunner {
+  "abbreviation"?: string;
+  "american_odds"?: number;
+  "decimal_odds"?: number;
+  "fractional_odds"?: string;
+  "handicap"?: number;
+  "is_player"?: boolean;
+  "jersey_number"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "previous_american_odds"?: number;
+  "previous_decimal_odds"?: number;
+  "selection_id"?: number;
+  "side"?: string;
+  "status"?: string;
+}
+
+export interface ModelFanduelSportsbookScheduleGame {
+  "bye_week"?: boolean;
+  "cancelled"?: boolean;
+  "date"?: string;
+  "location"?: string;
+  "opponent"?: ModelFanduelSportsbookTeamRef;
+  "opponent_record"?: string;
+  "opponent_score"?: number;
+  "postponed"?: boolean;
+  "team_score"?: number;
+  "venue"?: string;
+  "week"?: number;
+}
+
+export interface ModelFanduelSportsbookScheduleGroup {
+  "games"?: Array<ModelFanduelSportsbookLeagueGame>;
+  "season_type"?: string;
+  "title"?: string;
+}
+
+export interface ModelFanduelSportsbookScheduleResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "next_game"?: ModelFanduelSportsbookGameSummary;
+  "previous_game"?: ModelFanduelSportsbookGameSummary;
+  "seasons"?: Array<ModelFanduelSportsbookScheduleSeason>;
+  "team"?: string;
+}
+
+export interface ModelFanduelSportsbookScheduleSeason {
+  "games"?: Array<ModelFanduelSportsbookScheduleGame>;
+  "season_type"?: string;
+  "title"?: string;
+}
+
+export interface ModelFanduelSportsbookScheduleWeek {
+  "current_week"?: boolean;
+  "end_date"?: string;
+  "id"?: number;
+  "label"?: string;
+  "season_type"?: string;
+  "start_date"?: string;
+}
+
+export interface ModelFanduelSportsbookScore {
+  "away"?: number;
+  "clock"?: string;
+  "home"?: number;
+  "period_scores"?: Array<ModelFanduelSportsbookPeriodScore>;
+}
+
+export interface ModelFanduelSportsbookSearchAncestor {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchCompetition {
+  "competition_id"?: number;
+  "event_type_id"?: number;
+  "event_type_name"?: string;
+  "match_count"?: number;
+  "name"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchEvent {
+  "competition_id"?: number;
+  "competition_name"?: string;
+  "event_id"?: number;
+  "event_type_id"?: number;
+  "event_type_name"?: string;
+  "in_play"?: boolean;
+  "name"?: string;
+  "open_date"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchHit {
+  "ancestry"?: Array<ModelFanduelSportsbookSearchAncestor>;
+  "competition"?: string;
+  "competition_id"?: string;
+  "event_category"?: number;
+  "exchange_id"?: number;
+  "result_id"?: string;
+  "sport"?: string;
+  "sport_id"?: string;
+  "start_date"?: string;
+  "subtype"?: string;
+  "title"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchPill {
+  "id"?: number;
+  "title"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchResponse {
+  "competitions"?: Array<ModelFanduelSportsbookSearchCompetition>;
+  "events"?: Array<ModelFanduelSportsbookSearchEvent>;
+  "fetched_at"?: string;
+  "query"?: string;
+  "state"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchTab {
+  "id"?: string;
+  "title"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchTabsResponse {
+  "fetched_at"?: string;
+  "found"?: number;
+  "next_start_index"?: number;
+  "page_size"?: number;
+  "pill"?: string;
+  "pills"?: Array<ModelFanduelSportsbookSearchPill>;
+  "query"?: string;
+  "results"?: Array<ModelFanduelSportsbookSearchHit>;
+  "start_index"?: number;
+  "state"?: string;
+  "tab"?: string;
+  "tabs"?: Array<ModelFanduelSportsbookSearchTab>;
+  "total_results"?: number;
+}
+
+export interface ModelFanduelSportsbookSplit {
+  "name"?: string;
+  "percent"?: number;
+  "selection_id"?: number;
+}
+
+export interface ModelFanduelSportsbookSport {
+  "event_type_id"?: number;
+  "name"?: string;
+}
+
+export interface ModelFanduelSportsbookSportsResponse {
+  "fetched_at"?: string;
+  "popular_links"?: Array<ModelFanduelSportsbookNavLink>;
+  "quick_links"?: Array<ModelFanduelSportsbookNavLink>;
+  "sports"?: Array<ModelFanduelSportsbookSport>;
+  "state"?: string;
+  "states"?: Array<ModelFanduelSportsbookState>;
+  "teaser_competitions"?: Array<ModelFanduelSportsbookTeaserCompetition>;
+}
+
+export interface ModelFanduelSportsbookStandingsResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "team_count"?: number;
+  "teams"?: Array<ModelFanduelSportsbookStandingsTeam>;
+}
+
+export interface ModelFanduelSportsbookStandingsTeam {
+  "code"?: string;
+  "conference"?: string;
+  "division"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "short_name"?: string;
+  "slug"?: string;
+  "standing"?: Record<string, unknown>;
+}
+
+export interface ModelFanduelSportsbookState {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelFanduelSportsbookStatsListResponse {
+  "events"?: Array<ModelFanduelSportsbookEventStats>;
+  "fetched_at"?: string;
+}
+
+export interface ModelFanduelSportsbookStatsTeam {
+  "name"?: string;
+  "primary_color"?: string;
+  "secondary_color"?: string;
+  "selection_id"?: number;
+  "side"?: string;
+}
+
+export interface ModelFanduelSportsbookSuggestion {
+  "highlighted"?: string;
+  "text"?: string;
+}
+
+export interface ModelFanduelSportsbookTab {
+  "event_count"?: number;
+  "id"?: string;
+  "live_count"?: number;
+  "market_count"?: number;
+  "slug"?: string;
+  "title"?: string;
+}
+
+export interface ModelFanduelSportsbookTagCount {
+  "count"?: number;
+  "tag"?: string;
+}
+
+export interface ModelFanduelSportsbookTeam {
+  "abbreviation"?: string;
+  "color"?: string;
+  "conference"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "short_name"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamArticle {
+  "author"?: string;
+  "id"?: string;
+  "published_at"?: string;
+  "source"?: string;
+  "summary"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamGameOdds {
+  "money_line"?: ModelFanduelSportsbookGameLine;
+  "spread"?: ModelFanduelSportsbookGameLine;
+  "total"?: ModelFanduelSportsbookGameLine;
+}
+
+export interface ModelFanduelSportsbookTeamGameRef {
+  "event_url"?: string;
+  "home_game"?: boolean;
+  "opponent"?: string;
+  "scheduled_time"?: string;
+  "status"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamGroup {
+  "teams"?: Array<ModelFanduelSportsbookTeamSummary>;
+  "title"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamNewsResponse {
+  "articles"?: Array<ModelFanduelSportsbookTeamArticle>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "league"?: string;
+  "next_cursor"?: string;
+  "player_updates"?: Array<Record<string, unknown>>;
+  "team"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamOddsResponse {
+  "championship"?: string;
+  "championship_tab"?: string;
+  "fetched_at"?: string;
+  "future_odds"?: Array<ModelFanduelSportsbookFutureOdd>;
+  "league"?: string;
+  "next_games"?: Array<ModelFanduelSportsbookUpcomingGame>;
+  "player_props"?: Array<ModelFanduelSportsbookPlayerProps>;
+  "team"?: ModelFanduelSportsbookTeamRef;
+}
+
+export interface ModelFanduelSportsbookTeamRef {
+  "code"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "short_name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamStatsResponse {
+  "fetched_at"?: string;
+  "league"?: string;
+  "stats"?: Record<string, unknown>;
+  "team"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamSummary {
+  "bet_records"?: ModelFanduelSportsbookBetRecords;
+  "code"?: string;
+  "conference"?: string;
+  "division"?: string;
+  "head_coach"?: string;
+  "logo_url"?: string;
+  "market"?: string;
+  "name"?: string;
+  "next_game"?: ModelFanduelSportsbookTeamGameRef;
+  "primary_color"?: string;
+  "secondary_color"?: string;
+  "short_name"?: string;
+  "slug"?: string;
+  "sub_division"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamsResponse {
+  "fetched_at"?: string;
+  "groups"?: Array<ModelFanduelSportsbookTeamGroup>;
+  "league"?: string;
+  "sections"?: Array<string>;
+  "team_count"?: number;
+}
+
+export interface ModelFanduelSportsbookTeaserCompetition {
+  "competition_id"?: number;
+  "icon"?: string;
+  "name"?: string;
+  "starting_spread"?: number;
+}
+
+export interface ModelFanduelSportsbookTrendingItem {
+  "competition"?: string;
+  "display_name"?: string;
+  "event_id"?: number;
+  "event_name"?: string;
+  "expires_at"?: string;
+  "metadata"?: Record<string, unknown>;
+  "term"?: string;
+  "type"?: string;
+}
+
+export interface ModelFanduelSportsbookTrendingResponse {
+  "enriched"?: boolean;
+  "fetched_at"?: string;
+  "results"?: Array<ModelFanduelSportsbookTrendingItem>;
+  "terms"?: Array<string>;
+}
+
+export interface ModelFanduelSportsbookUpcomingGame {
+  "away_odds"?: ModelFanduelSportsbookTeamGameOdds;
+  "event_url"?: string;
+  "home_game"?: boolean;
+  "home_odds"?: ModelFanduelSportsbookTeamGameOdds;
+  "opponent"?: string;
+  "opponent_team"?: ModelFanduelSportsbookTeamRef;
+  "scheduled_time"?: string;
+  "status"?: string;
+  "venue"?: string;
+  "venue_type"?: string;
+  "week"?: number;
+}
+
+export interface ModelFanduelSportsbookValueCount {
+  "count"?: number;
+  "value"?: string;
+}
+
+export interface ModelFanduelSportsbookWinLoss {
+  "losses"?: number;
+  "ties"?: number;
+  "wins"?: number;
+}
+
+export interface ModelFanduelCasinoCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelCasinoCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelCasinoCategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelCasinoCategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelCasinoGameResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelCasinoGameResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelQuickPicksDailyResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelQuickPicksDailyResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingCarryoverResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingCarryoverResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingHorseResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingHorseResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingPastRaceResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingPastRaceResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingPastRacesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingPastRacesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingPastTracksResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingPastTracksResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingRaceResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingRaceResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingRacesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingRacesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingResultsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingResultsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingTrackResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingTrackResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingTracksResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingTracksResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelRacingWagerTypesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelRacingWagerTypesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchArticleResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchArticlesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchArticlesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchAuthorResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchAuthorResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchAuthorsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchAuthorsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchFeaturedArticlesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchFeaturedArticlesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchFixturesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchFixturesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchNflScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchNflScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchPlayerNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchPlayerNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchProjectionSlatesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchProjectionSlatesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchProjectionTablesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchProjectionTablesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchProjectionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchProjectionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchSportsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchSportsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelResearchSubCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelResearchSubCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookAutocompleteResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookAutocompleteResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookBoxScoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookBoxScoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookBuilderEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookBuilderResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookBuilderResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookChoiceQuotesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookChoiceQuotesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookDepthChartResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookDepthChartResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookEventPlayersResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookEventPlayersResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookEventResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookEventResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookEventScoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookEventScoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookEventStatsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookEventStatsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookEventsStatusResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookEventsStatusResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookLeagueScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookLeagueScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookLiveCountResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookLiveCountResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookLiveDataResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookLiveDataResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookLiveScoresResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookLiveScoresResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookMarketPricesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookMarketPricesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookPageResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookPageResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookParlaysResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookParlaysResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayByPlayResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookPlayByPlayResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayerNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookPlayerNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayerPropsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookPlayerPropsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayerResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookPlayerResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayerStatsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookPlayerStatsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookPlayersResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookPlayersResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookPromotionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookPromotionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookRosterResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookRosterResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookSearchTabsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookSearchTabsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookSportsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookSportsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookStandingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookStandingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookStatsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookStatsListResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookTeamNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamOddsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookTeamOddsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamStatsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookTeamStatsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookTeamsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookTeamsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFanduelSportsbookTrendingResponseDoc {
+  "code"?: number;
+  "data"?: ModelFanduelSportsbookTrendingResponse;
+  "msg"?: string;
+}
+
 export interface ModelFarfetchCategoriesResponse {
   "genders"?: Array<ModelFarfetchGenderCategories>;
 }
@@ -22496,18 +25013,25 @@ export interface ModelFlashscoreDartsLegDoc {
   "away_legs"?: number;
   "checkout"?: number;
   "home_legs"?: number;
+  "in_progress"?: boolean;
   "number"?: number;
+  "set"?: number;
   "start_score"?: number;
   "starter"?: "home" | "away";
   "visits"?: Array<ModelFlashscoreDartsVisitDoc>;
   "winner"?: "home" | "away";
 }
 
+export interface ModelFlashscoreDartsSetStatisticsDoc {
+  "set"?: number;
+  "statistics"?: Array<ModelFlashscoreDartsStatisticDoc>;
+}
+
 export interface ModelFlashscoreDartsStatisticDoc {
   "away"?: string;
   "home"?: string;
   "id"?: string;
-  "key"?: "average_3_darts" | "180_thrown" | "140_plus_thrown" | "100_plus_thrown" | "checkouts" | "checkouts_100_plus" | "highest_checkout";
+  "key"?: "average_3_darts" | "180_thrown" | "140_plus_thrown" | "100_plus_thrown" | "checkouts" | "checkouts_100_plus" | "highest_checkout" | "legs_won";
   "name"?: string;
 }
 
@@ -22604,6 +25128,7 @@ export interface ModelFlashscoreMatchBoxScoreTeamDoc {
 export interface ModelFlashscoreMatchDartsDataDoc {
   "legs"?: Array<ModelFlashscoreDartsLegDoc>;
   "match_id"?: string;
+  "set_statistics"?: Array<ModelFlashscoreDartsSetStatisticsDoc>;
   "source_url"?: string;
   "statistics"?: Array<ModelFlashscoreDartsStatisticDoc>;
   "statistics_url"?: string;
@@ -24427,6 +26952,695 @@ export interface ModelFtNewsResponseDoc {
 export interface ModelFtSearchResponseDoc {
   "code"?: number;
   "data"?: ModelFtSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeAmateurStatRow {
+  "away"?: ModelFussballdeTeamRef;
+  "competition_id"?: string;
+  "home"?: ModelFussballdeTeamRef;
+  "league"?: string;
+  "match_id"?: string;
+  "player"?: string;
+  "player_id"?: string;
+  "position"?: number;
+  "result"?: string;
+  "team"?: ModelFussballdeTeamRef;
+  "team_type"?: string;
+  "values"?: Array<ModelFussballdeStatValue>;
+}
+
+export interface ModelFussballdeAmateurStatsResponse {
+  "count"?: number;
+  "federation_id"?: string;
+  "final"?: boolean;
+  "limit"?: number;
+  "offset"?: number;
+  "rows"?: Array<ModelFussballdeAmateurStatRow>;
+  "season"?: string;
+  "stat"?: string;
+  "stat_name"?: string;
+  "team_type"?: string;
+}
+
+export interface ModelFussballdeClubDetail {
+  "club_id"?: string;
+  "federation"?: string;
+  "federation_id"?: string;
+  "junior_team_count"?: number;
+  "name"?: string;
+  "profile"?: Array<ModelFussballdeFactRow>;
+  "season"?: string;
+  "senior_team_count"?: number;
+  "team_count"?: number;
+  "teams"?: Array<ModelFussballdeClubTeam>;
+  "url"?: string;
+}
+
+export interface ModelFussballdeClubHit {
+  "city"?: string;
+  "club_id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "postal_code"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeClubMatchesResponse {
+  "club_id"?: string;
+  "count"?: number;
+  "date_from"?: string;
+  "date_to"?: string;
+  "final"?: boolean;
+  "kind"?: string;
+  "limit"?: number;
+  "matches"?: Array<ModelFussballdeMatchRow>;
+  "offset"?: number;
+}
+
+export interface ModelFussballdeClubSearchResponse {
+  "clubs"?: Array<ModelFussballdeClubHit>;
+  "count"?: number;
+  "final"?: boolean;
+  "limit"?: number;
+  "offset"?: number;
+  "place"?: string;
+  "text"?: string;
+  "total"?: number;
+}
+
+export interface ModelFussballdeClubTeam {
+  "competition"?: string;
+  "competition_id"?: string;
+  "competition_type"?: string;
+  "name"?: string;
+  "team_id"?: string;
+  "team_type"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeComparisonRow {
+  "away"?: string;
+  "home"?: string;
+  "label"?: string;
+}
+
+export interface ModelFussballdeCompetitionLink {
+  "id"?: string;
+  "kind"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeCompetitionOptionsResponse {
+  "competition_type"?: string;
+  "federation_id"?: string;
+  "season"?: string;
+  "team_types"?: Array<ModelFussballdeTeamTypeOption>;
+}
+
+export interface ModelFussballdeCompetitionRef {
+  "area_id"?: string;
+  "id"?: string;
+  "league_id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeCompetitionsResponse {
+  "area"?: string;
+  "competition_type"?: string;
+  "competitions"?: Array<ModelFussballdeCompetitionRef>;
+  "federation_id"?: string;
+  "league"?: string;
+  "season"?: string;
+  "team_type"?: string;
+}
+
+export interface ModelFussballdeFactRow {
+  "label"?: string;
+  "url"?: string;
+  "value"?: string;
+}
+
+export interface ModelFussballdeFederation {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelFussballdeFederationDetail {
+  "federation_id"?: string;
+  "name"?: string;
+  "news"?: Array<ModelFussballdeNewsItem>;
+  "profile"?: Array<ModelFussballdeFactRow>;
+  "regional_association"?: string;
+  "summary"?: Array<ModelFussballdeFactRow>;
+  "url"?: string;
+  "verband_id"?: string;
+}
+
+export interface ModelFussballdeFiltersResponse {
+  "competition_types"?: Record<string, Record<string, Array<ModelFussballdeOption>>>;
+  "current_season"?: string;
+  "default_competition_type"?: string;
+  "federations"?: Array<ModelFussballdeFederation>;
+  "seasons"?: Record<string, Array<ModelFussballdeOption>>;
+}
+
+export interface ModelFussballdeGoalEntry {
+  "minute"?: number;
+  "player"?: string;
+  "stoppage_minute"?: number;
+}
+
+export interface ModelFussballdeLeagueOption {
+  "areas"?: Array<ModelFussballdeOption>;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelFussballdeMatchCalendarResponse {
+  "count"?: number;
+  "date_from"?: string;
+  "date_to"?: string;
+  "matches"?: Array<ModelFussballdeMatchRow>;
+  "postal_code"?: string;
+  "truncated"?: boolean;
+}
+
+export interface ModelFussballdeMatchComparisonResponse {
+  "match_id"?: string;
+  "meetings"?: Array<ModelFussballdeMatchRow>;
+  "rows"?: Array<ModelFussballdeComparisonRow>;
+  "view"?: string;
+}
+
+export interface ModelFussballdeMatchDetail {
+  "assistants"?: Array<string>;
+  "away"?: ModelFussballdeTeamRef;
+  "away_goals"?: Array<ModelFussballdeGoalEntry>;
+  "away_score"?: number;
+  "competition"?: string;
+  "competition_id"?: string;
+  "date"?: string;
+  "events"?: Array<ModelFussballdeMatchEvent>;
+  "fourth_official"?: string;
+  "halftime_score"?: string;
+  "home"?: ModelFussballdeTeamRef;
+  "home_goals"?: Array<ModelFussballdeGoalEntry>;
+  "home_score"?: number;
+  "id"?: string;
+  "match_number"?: string;
+  "matchday"?: string;
+  "note"?: string;
+  "referee"?: string;
+  "result_qualifier"?: "after_extra_time" | "after_penalties" | "awarded" | "court_ruling" | "administrative_decision" | "test_match";
+  "spectators"?: string;
+  "status"?: "finished" | "scheduled" | "cancelled" | "annulled" | "abandoned" | "no_show" | "other";
+  "time"?: string;
+  "url"?: string;
+  "venue"?: string;
+}
+
+export interface ModelFussballdeMatchEvent {
+  "minute"?: number;
+  "side"?: string;
+  "type"?: string;
+}
+
+export interface ModelFussballdeMatchPlanResponse {
+  "competition_id"?: string;
+  "count"?: number;
+  "matches"?: Array<ModelFussballdeMatchRow>;
+  "rounds"?: Array<ModelFussballdeRoundRef>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeMatchRow {
+  "away"?: ModelFussballdeTeamRef;
+  "away_score"?: number;
+  "competition"?: string;
+  "date"?: string;
+  "home"?: ModelFussballdeTeamRef;
+  "home_score"?: number;
+  "id"?: string;
+  "league"?: string;
+  "match_number"?: string;
+  "note"?: string;
+  "result_qualifier"?: "after_extra_time" | "after_penalties" | "awarded" | "court_ruling" | "administrative_decision" | "test_match";
+  "round"?: string;
+  "status"?: "finished" | "scheduled" | "cancelled" | "annulled" | "abandoned" | "no_show" | "other";
+  "team_type"?: string;
+  "time"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeMatchdayResponse {
+  "competition_id"?: string;
+  "count"?: number;
+  "date"?: string;
+  "matchday"?: number;
+  "matchday_count"?: number;
+  "matches"?: Array<ModelFussballdeMatchRow>;
+  "rounds"?: Array<ModelFussballdeRoundRef>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeNationalScorer {
+  "club"?: string;
+  "club_id"?: string;
+  "goals"?: number;
+  "matches"?: number;
+  "name"?: string;
+  "player_id"?: string;
+  "position"?: number;
+}
+
+export interface ModelFussballdeNationalTopScorersResponse {
+  "levels"?: Array<ModelFussballdeScorerLevel>;
+  "note"?: string;
+  "team_type"?: string;
+}
+
+export interface ModelFussballdeNewsArticle {
+  "category"?: string;
+  "date"?: string;
+  "id"?: string;
+  "image_caption"?: string;
+  "image_url"?: string;
+  "paragraphs"?: Array<string>;
+  "time"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeNewsItem {
+  "category"?: string;
+  "date"?: string;
+  "excerpt"?: string;
+  "id"?: string;
+  "time"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeNewsResponse {
+  "count"?: number;
+  "final"?: boolean;
+  "items"?: Array<ModelFussballdeNewsItem>;
+  "limit"?: number;
+  "offset"?: number;
+  "stream"?: string;
+}
+
+export interface ModelFussballdeNewsSearchResponse {
+  "channel"?: string;
+  "count"?: number;
+  "final"?: boolean;
+  "items"?: Array<ModelFussballdeNewsItem>;
+  "limit"?: number;
+  "offset"?: number;
+  "q"?: string;
+  "total"?: number;
+}
+
+export interface ModelFussballdeOption {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelFussballdePlayerAppearance {
+  "goals"?: number;
+  "match"?: ModelFussballdeMatchRow;
+  "minutes"?: number;
+  "subbed_in_minute"?: number;
+  "subbed_out_minute"?: number;
+}
+
+export interface ModelFussballdePlayerDetail {
+  "birth_date"?: string;
+  "facts"?: Array<ModelFussballdeFactRow>;
+  "name"?: string;
+  "player_id"?: string;
+  "profile_type"?: string;
+  "stats"?: Array<ModelFussballdeStatEntry>;
+  "stats_season"?: string;
+  "team"?: string;
+  "team_id"?: string;
+  "team_type"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdePlayerHit {
+  "birth_date"?: string;
+  "name"?: string;
+  "player_id"?: string;
+  "team"?: string;
+  "team_type"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdePlayerMatchesResponse {
+  "appearances"?: Array<ModelFussballdePlayerAppearance>;
+  "competition"?: string;
+  "competitions"?: Array<ModelFussballdeOption>;
+  "count"?: number;
+  "player_id"?: string;
+  "season"?: string;
+  "team_id"?: string;
+  "teams"?: Array<ModelFussballdeOption>;
+}
+
+export interface ModelFussballdePlayerSearchResponse {
+  "count"?: number;
+  "final"?: boolean;
+  "first_name"?: string;
+  "last_name"?: string;
+  "limit"?: number;
+  "offset"?: number;
+  "place"?: string;
+  "players"?: Array<ModelFussballdePlayerHit>;
+  "total"?: number;
+}
+
+export interface ModelFussballdePositionHistoryResponse {
+  "competition_id"?: string;
+  "matchdays"?: number;
+  "teams"?: Array<ModelFussballdeTeamPositions>;
+}
+
+export interface ModelFussballdePostalCode {
+  "city"?: string;
+  "district"?: string;
+  "postal_code"?: string;
+}
+
+export interface ModelFussballdePostalCodesResponse {
+  "count"?: number;
+  "postal_codes"?: Array<ModelFussballdePostalCode>;
+  "q"?: string;
+}
+
+export interface ModelFussballdeRoundRef {
+  "id"?: string;
+  "name"?: string;
+  "open"?: boolean;
+}
+
+export interface ModelFussballdeScorerLevel {
+  "level"?: string;
+  "scorers"?: Array<ModelFussballdeNationalScorer>;
+}
+
+export interface ModelFussballdeScorerRow {
+  "goals"?: number;
+  "name"?: string;
+  "player_id"?: string;
+  "position"?: number;
+  "team"?: ModelFussballdeTeamRef;
+}
+
+export interface ModelFussballdeSeasonResult {
+  "competition"?: string;
+  "result"?: string;
+  "season"?: string;
+}
+
+export interface ModelFussballdeSquadPlayer {
+  "appearances"?: number;
+  "cells"?: Array<string>;
+  "goals"?: number;
+  "minutes"?: number;
+  "name"?: string;
+  "player_id"?: string;
+}
+
+export interface ModelFussballdeStandingsRow {
+  "cells"?: Array<string>;
+  "drawn"?: number;
+  "goal_difference"?: number;
+  "goals_against"?: number;
+  "goals_for"?: number;
+  "lost"?: number;
+  "played"?: number;
+  "points"?: number;
+  "position"?: number;
+  "team"?: ModelFussballdeTeamRef;
+  "won"?: number;
+}
+
+export interface ModelFussballdeStandingsTable {
+  "columns"?: Array<string>;
+  "rows"?: Array<ModelFussballdeStandingsRow>;
+  "title"?: string;
+}
+
+export interface ModelFussballdeStatEntry {
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelFussballdeStatValue {
+  "label"?: string;
+  "value"?: string;
+}
+
+export interface ModelFussballdeTableResponse {
+  "competition_id"?: string;
+  "matchday"?: number;
+  "tables"?: Array<ModelFussballdeStandingsTable>;
+  "view"?: string;
+}
+
+export interface ModelFussballdeTeamDetail {
+  "club_id"?: string;
+  "club_profile"?: Array<ModelFussballdeFactRow>;
+  "club_url"?: string;
+  "competitions"?: Array<ModelFussballdeCompetitionLink>;
+  "federation"?: string;
+  "federation_id"?: string;
+  "highest_league"?: string;
+  "history"?: Array<ModelFussballdeSeasonResult>;
+  "logo_url"?: string;
+  "name"?: string;
+  "summary"?: Array<ModelFussballdeFactRow>;
+  "team_id"?: string;
+  "team_type"?: string;
+  "url"?: string;
+  "venues"?: Array<ModelFussballdeFactRow>;
+}
+
+export interface ModelFussballdeTeamMatchesResponse {
+  "count"?: number;
+  "date_from"?: string;
+  "date_to"?: string;
+  "final"?: boolean;
+  "kind"?: string;
+  "limit"?: number;
+  "matches"?: Array<ModelFussballdeMatchRow>;
+  "offset"?: number;
+  "team_id"?: string;
+}
+
+export interface ModelFussballdeTeamPositions {
+  "positions"?: Array<number>;
+  "team"?: ModelFussballdeTeamRef;
+}
+
+export interface ModelFussballdeTeamRef {
+  "club_id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "team_id"?: string;
+  "url"?: string;
+}
+
+export interface ModelFussballdeTeamSquadResponse {
+  "columns"?: Array<string>;
+  "count"?: number;
+  "kind"?: string;
+  "players"?: Array<ModelFussballdeSquadPlayer>;
+  "season"?: string;
+  "team_id"?: string;
+}
+
+export interface ModelFussballdeTeamTypeOption {
+  "id"?: string;
+  "leagues"?: Array<ModelFussballdeLeagueOption>;
+  "name"?: string;
+}
+
+export interface ModelFussballdeTopScorersResponse {
+  "competition_id"?: string;
+  "count"?: number;
+  "final"?: boolean;
+  "limit"?: number;
+  "offset"?: number;
+  "scorers"?: Array<ModelFussballdeScorerRow>;
+  "title"?: string;
+}
+
+export interface ModelFussballdeAmateurStatsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeAmateurStatsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeClubMatchesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeClubMatchesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeClubResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeClubDetail;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeClubSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeClubSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeCompetitionOptionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeCompetitionOptionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeCompetitionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeCompetitionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeFederationResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeFederationDetail;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeMatchCalendarResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeMatchCalendarResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeMatchComparisonResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeMatchComparisonResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeMatchPlanResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeMatchPlanResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeMatchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeMatchDetail;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeMatchdayResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeMatchdayResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeNationalTopScorersResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeNationalTopScorersResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeNewsArticleResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeNewsArticle;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeNewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeNewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeNewsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeNewsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdePlayerMatchesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdePlayerMatchesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdePlayerResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdePlayerDetail;
+  "msg"?: string;
+}
+
+export interface ModelFussballdePlayerSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdePlayerSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdePositionHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdePositionHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdePostalCodesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdePostalCodesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeTableResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeTableResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeTeamMatchesResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeTeamMatchesResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeTeamResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeTeamDetail;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeTeamSquadResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeTeamSquadResponse;
+  "msg"?: string;
+}
+
+export interface ModelFussballdeTopScorersResponseDoc {
+  "code"?: number;
+  "data"?: ModelFussballdeTopScorersResponse;
   "msg"?: string;
 }
 
@@ -31095,6 +34309,51 @@ export interface ModelInstagramImageVersions2 {
   "candidates"?: Array<ModelInstagramImageCandidate>;
 }
 
+export interface ModelInstagramInstagramComment {
+  "comment_like_count"?: number;
+  "created_at"?: number;
+  "id"?: string;
+  "parent_comment_id"?: string;
+  "reply_count"?: number;
+  "text"?: string;
+  "user"?: ModelInstagramInstagramCommentUser;
+}
+
+export interface ModelInstagramInstagramCommentUser {
+  "id"?: string;
+  "profile_pic_url"?: string;
+  "username"?: string;
+}
+
+export interface ModelInstagramInstagramCommentsResponse {
+  "comments"?: Array<ModelInstagramInstagramComment>;
+  "paging_info"?: ModelInstagramPagingInfo;
+  "shortcode"?: string;
+}
+
+export interface ModelInstagramInstagramPostAuthor {
+  "id"?: string;
+  "username"?: string;
+}
+
+export interface ModelInstagramInstagramUserPost {
+  "accessibility_caption"?: string;
+  "caption"?: string;
+  "carousel_media_count"?: number;
+  "display_uri"?: string;
+  "id"?: string;
+  "media_type"?: number;
+  "product_type"?: string;
+  "shortcode"?: string;
+  "user"?: ModelInstagramInstagramPostAuthor;
+}
+
+export interface ModelInstagramInstagramUserPostsResponse {
+  "items"?: Array<ModelInstagramInstagramUserPost>;
+  "paging_info"?: ModelInstagramPagingInfo;
+  "username"?: string;
+}
+
 export interface ModelInstagramItem {
   "media"?: ModelInstagramMedia;
 }
@@ -31223,6 +34482,12 @@ export interface ModelInstagramVideoVersion {
   "width"?: number;
 }
 
+export interface ModelInstagramCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstagramInstagramCommentsResponse;
+  "msg"?: string;
+}
+
 export interface ModelInstagramPostResponseDoc {
   "code"?: number;
   "data"?: ModelInstagramMediaItem;
@@ -31238,6 +34503,12 @@ export interface ModelInstagramProfileResponseDoc {
 export interface ModelInstagramReelsResponseDoc {
   "code"?: number;
   "data"?: ModelInstagramReelResponse;
+  "msg"?: string;
+}
+
+export interface ModelInstagramUserPostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelInstagramInstagramUserPostsResponse;
   "msg"?: string;
 }
 
@@ -31876,6 +35147,127 @@ export interface ModelJobsSearchResponseDoc {
 export interface ModelJobsSignalsResponseDoc {
   "code"?: number;
   "data"?: ModelJobsHiringSignals;
+  "msg"?: string;
+}
+
+export interface ModelJumiaCategoriesResponse {
+  "categories"?: Array<ModelJumiaCategoryNode>;
+  "category"?: string;
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelJumiaCategoryNode {
+  "children"?: Array<ModelJumiaCategoryNode>;
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelJumiaCountriesResponse {
+  "count"?: number;
+  "countries"?: Array<ModelJumiaCountry>;
+}
+
+export interface ModelJumiaCountry {
+  "code"?: string;
+  "currency"?: string;
+  "domain"?: string;
+  "name"?: string;
+}
+
+export interface ModelJumiaListing {
+  "brand"?: string;
+  "categories"?: Array<string>;
+  "currency"?: string;
+  "discount_percent"?: number;
+  "image"?: string;
+  "jumia_express"?: boolean;
+  "name"?: string;
+  "official_store"?: boolean;
+  "original_price"?: number;
+  "out_of_stock"?: boolean;
+  "price"?: number;
+  "price_max"?: number;
+  "rating"?: number;
+  "rating_count"?: number;
+  "sku"?: string;
+  "url"?: string;
+}
+
+export interface ModelJumiaListingResponse {
+  "category"?: string;
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "has_next"?: boolean;
+  "page"?: number;
+  "products"?: Array<ModelJumiaListing>;
+  "query"?: string;
+  "source_url"?: string;
+  "total_count"?: number;
+}
+
+export interface ModelJumiaProduct {
+  "availability"?: string;
+  "brand"?: string;
+  "categories"?: Array<string>;
+  "country"?: string;
+  "currency"?: string;
+  "description"?: string;
+  "discount_percent"?: number;
+  "fetched_at"?: string;
+  "images"?: Array<string>;
+  "key_features"?: string;
+  "name"?: string;
+  "original_price"?: number;
+  "price"?: number;
+  "rating"?: number;
+  "rating_count"?: number;
+  "seller"?: ModelJumiaSeller;
+  "sku"?: string;
+  "specifications"?: Array<ModelJumiaSpecification>;
+  "url"?: string;
+}
+
+export interface ModelJumiaSeller {
+  "followers"?: number;
+  "id"?: string;
+  "name"?: string;
+  "score_percent"?: number;
+  "shipping_speed"?: string;
+  "url"?: string;
+}
+
+export interface ModelJumiaSpecification {
+  "name"?: string;
+  "value"?: string;
+}
+
+export interface ModelJumiaCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJumiaCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJumiaCountriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelJumiaCountriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelJumiaListingResponseDoc {
+  "code"?: number;
+  "data"?: ModelJumiaListingResponse;
+  "msg"?: string;
+}
+
+export interface ModelJumiaProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelJumiaProduct;
   "msg"?: string;
 }
 
@@ -42071,6 +45463,83 @@ export interface ModelPhonearenaAuthorSocialLink {
   "url"?: string;
 }
 
+export interface ModelPick6Pick6RuleDetailResponse {
+  "fetched_at"?: string;
+  "section_count"?: number;
+  "sections"?: Array<ModelPick6Pick6RuleSection>;
+  "slug"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelPick6Pick6RulePage {
+  "detail_endpoint_supported"?: boolean;
+  "slug"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelPick6Pick6RuleSection {
+  "text"?: string;
+  "title"?: string;
+}
+
+export interface ModelPick6Pick6RulesResponse {
+  "fetched_at"?: string;
+  "rule_page_count"?: number;
+  "rule_pages"?: Array<ModelPick6Pick6RulePage>;
+  "section_count"?: number;
+  "sections"?: Array<ModelPick6Pick6RuleSection>;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelPick6Pick6Sport {
+  "has_help_center_link"?: boolean;
+  "name"?: string;
+  "sport_code"?: string;
+  "url"?: string;
+}
+
+export interface ModelPick6Pick6SportCategory {
+  "items"?: Array<ModelPick6Pick6Sport>;
+  "name"?: string;
+}
+
+export interface ModelPick6Pick6SportsResponse {
+  "categories"?: Array<ModelPick6Pick6SportCategory>;
+  "category_count"?: number;
+  "linked_page_count"?: number;
+  "listed_item_count"?: number;
+  "restrictions"?: Array<ModelPick6Pick6SportsRestriction>;
+  "source_url"?: string;
+  "verified_on"?: string;
+}
+
+export interface ModelPick6Pick6SportsRestriction {
+  "jurisdictions"?: Array<string>;
+  "note"?: string;
+  "sport_codes"?: Array<string>;
+}
+
+export interface ModelPick6Pick6RuleDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelPick6Pick6RuleDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelPick6Pick6RulesResponseDoc {
+  "code"?: number;
+  "data"?: ModelPick6Pick6RulesResponse;
+  "msg"?: string;
+}
+
+export interface ModelPick6Pick6SportsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPick6Pick6SportsResponse;
+  "msg"?: string;
+}
+
 export interface ModelPinterestBoard {
   "cover_image_url"?: string;
   "description"?: string;
@@ -44420,6 +47889,85 @@ export interface ModelPradaStoresResponseDoc {
 export interface ModelPradaSuggestResponseDoc {
   "code"?: number;
   "data"?: ModelPradaSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelPredictionsPredictionsAvailabilityRegion {
+  "description"?: string;
+  "name"?: string;
+  "region_id"?: string;
+  "status"?: ModelPredictionsPredictionsAvailabilityStatus;
+  "status_description"?: string;
+  "status_label"?: string;
+}
+
+export interface ModelPredictionsPredictionsAvailabilityResponse {
+  "fetched_at"?: string;
+  "map_note"?: string;
+  "map_title"?: string;
+  "region_count"?: number;
+  "regions"?: Array<ModelPredictionsPredictionsAvailabilityRegion>;
+  "source_url"?: string;
+}
+
+export type ModelPredictionsPredictionsAvailabilityStatus = "all_markets_available" | "financial_markets_only" | "sports_markets_unavailable" | "no_markets_available";
+
+export interface ModelPredictionsPredictionsCategoriesResponse {
+  "categories"?: Array<ModelPredictionsPredictionsCategory>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "league_count"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelPredictionsPredictionsCategory {
+  "id"?: string;
+  "leagues"?: Array<ModelPredictionsPredictionsLeague>;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelPredictionsPredictionsLeague {
+  "id"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelPredictionsPredictionsRuleSource {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelPredictionsPredictionsRulesResponse {
+  "fetched_at"?: string;
+  "rule_source_count"?: number;
+  "rule_sources"?: Array<ModelPredictionsPredictionsRuleSource>;
+  "settlement_category_count"?: number;
+  "settlement_link_count"?: number;
+  "settlement_sources"?: Array<ModelPredictionsPredictionsSettlementSource>;
+  "source_url"?: string;
+}
+
+export interface ModelPredictionsPredictionsSettlementSource {
+  "category"?: string;
+  "links"?: Array<ModelPredictionsPredictionsRuleSource>;
+}
+
+export interface ModelPredictionsPredictionsAvailabilityResponseDoc {
+  "code"?: number;
+  "data"?: ModelPredictionsPredictionsAvailabilityResponse;
+  "msg"?: string;
+}
+
+export interface ModelPredictionsPredictionsCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelPredictionsPredictionsCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelPredictionsPredictionsRulesResponseDoc {
+  "code"?: number;
+  "data"?: ModelPredictionsPredictionsRulesResponse;
   "msg"?: string;
 }
 
@@ -47082,6 +50630,122 @@ export interface ModelQwantSuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelRacingRacingHorse {
+  "age"?: string;
+  "color"?: string;
+  "dam_name"?: string;
+  "name"?: string;
+  "sex"?: string;
+  "sire_name"?: string;
+  "where_bred"?: string;
+  "year_of_birth"?: number;
+}
+
+export interface ModelRacingRacingRace {
+  "post_time_utc"?: string;
+  "race_id"?: string;
+  "race_number"?: number;
+  "status"?: string;
+  "track_id"?: string;
+  "track_name"?: string;
+}
+
+export interface ModelRacingRacingRaceCard {
+  "distance"?: string;
+  "entries"?: Array<ModelRacingRacingRaceEntry>;
+  "entry_count"?: number;
+  "has_changes"?: boolean;
+  "has_results"?: boolean;
+  "id"?: string;
+  "live_odds_available"?: boolean;
+  "live_stream_status"?: string;
+  "name"?: string;
+  "number"?: number;
+  "post_time_utc"?: string;
+  "purse"?: number;
+  "replay_status"?: string;
+  "runner_count"?: number;
+  "status"?: string;
+  "surface"?: string;
+  "surface_condition"?: string;
+  "track_type"?: string;
+  "type"?: string;
+}
+
+export interface ModelRacingRacingRaceEntry {
+  "finish_position"?: number;
+  "horse"?: ModelRacingRacingHorse;
+  "live_odds"?: string;
+  "live_odds_favorite"?: boolean;
+  "morning_line_favorite"?: boolean;
+  "morning_line_odds"?: string;
+  "post_position"?: number;
+  "program_number"?: string;
+  "scratched"?: boolean;
+  "weight"?: string;
+}
+
+export interface ModelRacingRacingRaceInfoResponse {
+  "fetched_at"?: string;
+  "is_historic"?: boolean;
+  "race"?: ModelRacingRacingRaceCard;
+  "source_url"?: string;
+  "track"?: ModelRacingRacingRaceTrack;
+}
+
+export interface ModelRacingRacingRaceTrack {
+  "code"?: string;
+  "country_code"?: string;
+  "id"?: string;
+  "name"?: string;
+  "type"?: string;
+}
+
+export interface ModelRacingRacingScheduleResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "races"?: Array<ModelRacingRacingRace>;
+  "source_url"?: string;
+}
+
+export interface ModelRacingRacingTrack {
+  "active"?: boolean;
+  "code"?: string;
+  "country_code"?: string;
+  "id"?: string;
+  "live_stream_state"?: string;
+  "name"?: string;
+  "race_count"?: number;
+  "start_time"?: string;
+  "status"?: string;
+  "type"?: string;
+}
+
+export interface ModelRacingRacingTracksResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "tracks"?: Array<ModelRacingRacingTrack>;
+}
+
+export interface ModelRacingRacingRaceInfoResponseDoc {
+  "code"?: number;
+  "data"?: ModelRacingRacingRaceInfoResponse;
+  "msg"?: string;
+}
+
+export interface ModelRacingRacingScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelRacingRacingScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelRacingRacingTracksResponseDoc {
+  "code"?: number;
+  "data"?: ModelRacingRacingTracksResponse;
+  "msg"?: string;
+}
+
 export interface ModelRaisingcanesDirectoryChild {
   "is_store"?: boolean;
   "name"?: string;
@@ -47288,6 +50952,165 @@ export interface ModelReachplcAuthorResponse {
   "url"?: string;
 }
 
+export interface ModelRedditArchiveBatchSource {
+  "requests"?: number;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelRedditArchiveComment {
+  "author"?: string;
+  "author_flair_text"?: string;
+  "author_fullname"?: string;
+  "body"?: string;
+  "created_utc"?: number;
+  "depth"?: number;
+  "distinguished"?: string;
+  "id"?: string;
+  "link_id"?: string;
+  "name"?: string;
+  "parent_id"?: string;
+  "permalink"?: string;
+  "removed_by_category"?: string;
+  "retrieved_on"?: number;
+  "score"?: number;
+  "subreddit"?: string;
+  "subreddit_id"?: string;
+}
+
+export interface ModelRedditArchiveCommentTreeEntry {
+  "comment"?: ModelRedditArchiveCommentTreeNode;
+  "kind"?: "t1" | "more";
+  "more"?: ModelRedditArchiveMoreComments;
+}
+
+export interface ModelRedditArchiveCommentTreeNode {
+  "comment"?: ModelRedditArchiveComment;
+  "replies"?: Array<ModelRedditArchiveCommentTreeEntry>;
+}
+
+export interface ModelRedditArchiveCommentsIdsResponse {
+  "comments"?: Array<ModelRedditArchiveComment>;
+  "missing_ids"?: Array<string>;
+  "requested_count"?: number;
+  "returned_count"?: number;
+  "source"?: ModelRedditArchiveBatchSource;
+}
+
+export interface ModelRedditArchiveCommentsSearchResponse {
+  "author"?: string;
+  "comments"?: Array<ModelRedditArchiveComment>;
+  "created_after"?: string;
+  "created_before"?: string;
+  "limit"?: number;
+  "link_id"?: string;
+  "parent_id"?: string;
+  "query"?: string;
+  "sort"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "subreddit"?: string;
+}
+
+export interface ModelRedditArchiveCommentsTreeResponse {
+  "comments"?: Array<ModelRedditArchiveCommentTreeEntry>;
+  "limit"?: number;
+  "parent_id"?: string;
+  "post_id"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "start_breadth"?: number;
+  "start_depth"?: number;
+}
+
+export interface ModelRedditArchiveMoreComments {
+  "children"?: Array<string>;
+  "count"?: number;
+  "depth"?: number;
+  "id"?: string;
+  "name"?: string;
+  "parent_id"?: string;
+}
+
+export interface ModelRedditArchivePost {
+  "author"?: string;
+  "author_flair_text"?: string;
+  "author_fullname"?: string;
+  "created_utc"?: number;
+  "crosspost_parent"?: string;
+  "distinguished"?: string;
+  "id"?: string;
+  "link_flair_text"?: string;
+  "num_comments"?: number;
+  "over_18"?: boolean;
+  "post_hint"?: string;
+  "removed_by_category"?: string;
+  "retrieved_on"?: number;
+  "score"?: number;
+  "selftext"?: string;
+  "spoiler"?: boolean;
+  "subreddit"?: string;
+  "subreddit_id"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelRedditArchivePostsIdsResponse {
+  "missing_ids"?: Array<string>;
+  "posts"?: Array<ModelRedditArchivePost>;
+  "requested_count"?: number;
+  "returned_count"?: number;
+  "source"?: ModelRedditArchiveBatchSource;
+}
+
+export interface ModelRedditArchivePostsSearchResponse {
+  "author"?: string;
+  "created_after"?: string;
+  "created_before"?: string;
+  "limit"?: number;
+  "posts"?: Array<ModelRedditArchivePost>;
+  "query"?: string;
+  "sort"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "subreddit"?: string;
+  "url"?: string;
+  "url_exact"?: boolean;
+}
+
+export interface ModelRedditArchiveSubreddit {
+  "created_utc"?: number;
+  "display_name"?: string;
+  "id"?: string;
+  "over_18"?: boolean;
+  "retrieved_on"?: number;
+  "subscribers"?: number;
+}
+
+export interface ModelRedditArchiveSubredditsSearchResponse {
+  "limit"?: number;
+  "max_subscribers"?: number;
+  "min_subscribers"?: number;
+  "over_18"?: boolean;
+  "query"?: string;
+  "sort"?: string;
+  "sort_by"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "subreddits"?: Array<ModelRedditArchiveSubreddit>;
+}
+
+export interface ModelRedditArchiveTimeSeriesPoint {
+  "date"?: number;
+  "value"?: number;
+}
+
+export interface ModelRedditArchiveTimeSeriesResponse {
+  "created_after"?: string;
+  "created_before"?: string;
+  "metric"?: string;
+  "points"?: Array<ModelRedditArchiveTimeSeriesPoint>;
+  "precision"?: string;
+  "source"?: ModelRedditSourceDetail;
+  "subreddit"?: string;
+}
+
 export interface ModelRedditAuthor {
   "name"?: string;
   "profile_url"?: string;
@@ -47437,6 +51260,48 @@ export interface ModelRedditUserPostsResponse {
   "posts"?: Array<ModelRedditPost>;
   "source"?: ModelRedditSourceDetail;
   "username"?: string;
+}
+
+export interface ModelRedditArchiveCommentsIdsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditArchiveCommentsIdsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditArchiveCommentsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditArchiveCommentsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditArchiveCommentsTreeResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditArchiveCommentsTreeResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditArchivePostsIdsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditArchivePostsIdsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditArchivePostsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditArchivePostsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditArchiveSubredditsSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditArchiveSubredditsSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelRedditArchiveTimeSeriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelRedditArchiveTimeSeriesResponse;
+  "msg"?: string;
 }
 
 export interface ModelRedditCommentsResponseDoc {
@@ -52164,6 +56029,20 @@ export interface ModelSheinAutocompleteSuggestion {
   "word_id"?: string;
 }
 
+export interface ModelSheinBrandCategory {
+  "cat_id"?: string;
+  "category_name"?: string;
+}
+
+export interface ModelSheinBrandsResponse {
+  "categories"?: Array<ModelSheinBrandCategory>;
+}
+
+export interface ModelSheinCategoriesResponse {
+  "categories"?: Array<ModelSheinCategoryNode>;
+  "filters"?: Array<ModelSheinFilter>;
+}
+
 export interface ModelSheinCategoryFiltersResponse {
   "cat_id"?: string;
   "currency"?: string;
@@ -52185,6 +56064,12 @@ export interface ModelSheinCategoryNavResponse {
   "navs"?: Array<ModelSheinNavTab>;
 }
 
+export interface ModelSheinCategoryNode {
+  "cat_id"?: string;
+  "category_name"?: string;
+  "children"?: Array<ModelSheinCategoryNode>;
+}
+
 export interface ModelSheinColorVariant {
   "color_image"?: string;
   "color_name"?: string;
@@ -52192,6 +56077,47 @@ export interface ModelSheinColorVariant {
   "goods_sn"?: string;
   "goods_url_name"?: string;
   "image"?: string;
+}
+
+export interface ModelSheinDealCategory {
+  "cat_id"?: string;
+  "name"?: string;
+  "type"?: string;
+}
+
+export interface ModelSheinDealProduct {
+  "brand_code"?: string;
+  "category_id"?: string;
+  "category_name"?: string;
+  "color_img"?: string;
+  "comment_avg"?: string;
+  "comment_count"?: number;
+  "detail_images"?: Array<string>;
+  "goods_id"?: string;
+  "goods_img"?: string;
+  "goods_name"?: string;
+  "goods_sn"?: string;
+  "goods_url_name"?: string;
+  "is_new_coupon"?: boolean;
+  "mall_code"?: string;
+  "on_sale"?: boolean;
+  "retail_price"?: string;
+  "sale_price"?: string;
+  "sold_out"?: boolean;
+  "spu"?: string;
+  "store_code"?: string;
+  "usd_price"?: string;
+}
+
+export interface ModelSheinDealTabsResponse {
+  "categories"?: Array<ModelSheinDealCategory>;
+  "for_you_tab"?: string;
+}
+
+export interface ModelSheinDealsProductsResponse {
+  "page"?: number;
+  "products"?: Array<ModelSheinDealProduct>;
+  "total"?: number;
 }
 
 export interface ModelSheinFacetCategory {
@@ -52310,6 +56236,63 @@ export interface ModelSheinSkuVariant {
   "usd_price"?: string;
 }
 
+export interface ModelSheinStoreCategory {
+  "category_id"?: string;
+  "category_name"?: string;
+  "level"?: number;
+  "product_count"?: number;
+}
+
+export interface ModelSheinStoreProductsResponse {
+  "category_id"?: string;
+  "page"?: number;
+  "products"?: Array<ModelSheinProduct>;
+  "store_code"?: string;
+  "total"?: number;
+}
+
+export interface ModelSheinStoreResponse {
+  "categories"?: Array<ModelSheinStoreCategory>;
+  "followers"?: string;
+  "is_brand_store"?: boolean;
+  "is_choices_store"?: boolean;
+  "is_lifestyle_store"?: boolean;
+  "is_trends_store"?: boolean;
+  "seller_label"?: string;
+  "store_code"?: string;
+  "store_logo"?: string;
+  "store_name"?: string;
+}
+
+export interface ModelSheinTrendCollection {
+  "tab_id"?: string;
+  "tab_name"?: string;
+  "tab_name_en"?: string;
+  "tab_type"?: string;
+}
+
+export interface ModelSheinTrendFilterCategory {
+  "cat_id"?: string;
+  "category_name"?: string;
+}
+
+export interface ModelSheinTrendingCategoriesResponse {
+  "categories"?: Array<ModelSheinTrendingCategory>;
+}
+
+export interface ModelSheinTrendingCategory {
+  "cat_id"?: string;
+  "category_name"?: string;
+  "goods_id"?: string;
+  "image"?: string;
+  "store_code"?: string;
+}
+
+export interface ModelSheinTrendingFiltersResponse {
+  "categories"?: Array<ModelSheinTrendFilterCategory>;
+  "collections"?: Array<ModelSheinTrendCollection>;
+}
+
 export interface ModelSheinAggregationFiltersResponseDoc {
   "code"?: number;
   "data"?: ModelSheinAggregationFilters;
@@ -52319,6 +56302,18 @@ export interface ModelSheinAggregationFiltersResponseDoc {
 export interface ModelSheinAutocompleteResponseDoc {
   "code"?: number;
   "data"?: ModelSheinAutocompleteResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinBrandsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinBrandsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinCategoriesResponse;
   "msg"?: string;
 }
 
@@ -52340,6 +56335,18 @@ export interface ModelSheinCategoryNavResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelSheinDealTabsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinDealTabsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinDealsProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinDealsProductsResponse;
+  "msg"?: string;
+}
+
 export interface ModelSheinProductDetailResponseDoc {
   "code"?: number;
   "data"?: ModelSheinProductDetail;
@@ -52355,6 +56362,30 @@ export interface ModelSheinProductsSearchResponseDoc {
 export interface ModelSheinSearchKeywordsResponseDoc {
   "code"?: number;
   "data"?: ModelSheinSearchKeywordsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinStoreProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinStoreProductsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinStoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinStoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinTrendingCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinTrendingCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelSheinTrendingFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelSheinTrendingFiltersResponse;
   "msg"?: string;
 }
 
@@ -57591,6 +61622,326 @@ export interface ModelSportingnewsAuthorResponse {
   "slug"?: string;
   "social_links"?: Array<string>;
   "url"?: string;
+}
+
+export interface ModelSportsbookEvent {
+  "id"?: string;
+  "markets"?: Array<ModelSportsbookMarket>;
+  "name"?: string;
+  "participants"?: Array<ModelSportsbookParticipant>;
+  "start_time"?: string;
+  "status"?: string;
+}
+
+export interface ModelSportsbookEventContextResponse {
+  "event_id"?: string;
+  "event_seo_id"?: string;
+  "fetched_at"?: string;
+  "league_id"?: string;
+  "league_seo_id"?: string;
+  "source_url"?: string;
+  "sport_id"?: string;
+  "sport_seo_id"?: string;
+}
+
+export interface ModelSportsbookEventMarketsResponse {
+  "count"?: number;
+  "event_id"?: string;
+  "fetched_at"?: string;
+  "markets"?: Array<ModelSportsbookMarket>;
+  "source_url"?: string;
+  "subcategory_id"?: string;
+}
+
+export interface ModelSportsbookEventResponse {
+  "fetched_at"?: string;
+  "id"?: string;
+  "league_id"?: string;
+  "name"?: string;
+  "participants"?: Array<ModelSportsbookParticipant>;
+  "source_url"?: string;
+  "sport_id"?: string;
+  "start_time"?: string;
+  "status"?: string;
+}
+
+export interface ModelSportsbookFeaturedLeague {
+  "featured_order"?: number;
+  "has_live_offers"?: boolean;
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "sport"?: string;
+  "sport_id"?: string;
+  "tags"?: Array<string>;
+}
+
+export interface ModelSportsbookFeaturedLeaguesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "leagues"?: Array<ModelSportsbookFeaturedLeague>;
+  "source_url"?: string;
+}
+
+export interface ModelSportsbookFuturesResponse {
+  "count"?: number;
+  "events"?: Array<ModelSportsbookEvent>;
+  "fetched_at"?: string;
+  "league"?: string;
+  "league_id"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+  "subcategory_id"?: string;
+}
+
+export interface ModelSportsbookLeague {
+  "has_live_offers"?: boolean;
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSportsbookLeagueEvent {
+  "id"?: string;
+  "name"?: string;
+  "participant_type"?: string;
+  "participants"?: Array<ModelSportsbookParticipant>;
+  "start_time"?: string;
+  "status"?: string;
+  "tags"?: Array<string>;
+}
+
+export interface ModelSportsbookLeagueEventsResponse {
+  "count"?: number;
+  "events"?: Array<ModelSportsbookLeagueEvent>;
+  "fetched_at"?: string;
+  "league"?: string;
+  "league_id"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+  "sport_id"?: string;
+}
+
+export interface ModelSportsbookLeaguesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "sports"?: Array<ModelSportsbookSport>;
+}
+
+export interface ModelSportsbookLiveEvent {
+  "categories"?: Array<ModelSportsbookMarketCategory>;
+  "id"?: string;
+  "league_id"?: string;
+  "markets"?: Array<ModelSportsbookMarket>;
+  "name"?: string;
+  "participants"?: Array<ModelSportsbookParticipant>;
+  "period"?: string;
+  "score"?: ModelSportsbookLiveScore;
+  "sport_id"?: string;
+  "start_time"?: string;
+  "status"?: string;
+  "subcategories"?: Array<ModelSportsbookMarketSubcategory>;
+}
+
+export interface ModelSportsbookLiveResponse {
+  "count"?: number;
+  "events"?: Array<ModelSportsbookLiveEvent>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelSportsbookLiveScore {
+  "current"?: ModelSportsbookLiveScoreLine;
+  "on_serve"?: string;
+  "periods"?: Array<ModelSportsbookLiveScorePeriod>;
+}
+
+export interface ModelSportsbookLiveScoreLine {
+  "away"?: string;
+  "home"?: string;
+}
+
+export interface ModelSportsbookLiveScorePeriod {
+  "away"?: string;
+  "home"?: string;
+  "name"?: string;
+}
+
+export interface ModelSportsbookMarket {
+  "id"?: string;
+  "selections"?: Array<ModelSportsbookSelection>;
+  "subcategory_id"?: string;
+  "type"?: string;
+}
+
+export interface ModelSportsbookMarketCategory {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelSportsbookMarketSubcategory {
+  "category_id"?: string;
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelSportsbookOdds {
+  "american"?: string;
+  "decimal"?: string;
+  "fractional"?: string;
+}
+
+export interface ModelSportsbookOddsResponse {
+  "count"?: number;
+  "events"?: Array<ModelSportsbookEvent>;
+  "fetched_at"?: string;
+  "league"?: string;
+  "league_id"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+}
+
+export interface ModelSportsbookParticipant {
+  "id"?: string;
+  "name"?: string;
+  "role"?: string;
+}
+
+export interface ModelSportsbookQuickLink {
+  "league_id"?: string;
+  "name"?: string;
+  "path"?: string;
+  "sport_id"?: string;
+}
+
+export interface ModelSportsbookQuickLinksResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "links"?: Array<ModelSportsbookQuickLink>;
+  "source_url"?: string;
+}
+
+export interface ModelSportsbookSelection {
+  "label"?: string;
+  "odds"?: ModelSportsbookOdds;
+  "outcome_type"?: string;
+  "points"?: number;
+}
+
+export interface ModelSportsbookSport {
+  "id"?: string;
+  "leagues"?: Array<ModelSportsbookLeague>;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSportsbookTeam {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelSportsbookTeamDetailResponse {
+  "abbreviation"?: string;
+  "city"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "leagues"?: Array<ModelSportsbookTeamLeagueRef>;
+  "name"?: string;
+  "primary_color"?: string;
+  "secondary_color"?: string;
+  "short_name"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+  "sport_id"?: string;
+}
+
+export interface ModelSportsbookTeamLeagueRef {
+  "id"?: string;
+  "slug"?: string;
+}
+
+export interface ModelSportsbookTeamsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "league"?: string;
+  "source_url"?: string;
+  "sport"?: string;
+  "teams"?: Array<ModelSportsbookTeam>;
+}
+
+export interface ModelSportsbookEventContextResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookEventContextResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookEventMarketsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookEventMarketsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookEventResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookEventResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookFeaturedLeaguesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookFeaturedLeaguesResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookFuturesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookFuturesResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookLeagueEventsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookLeagueEventsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookLeaguesResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookLeaguesResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookLiveResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookLiveResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookOddsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookOddsResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookQuickLinksResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookQuickLinksResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookTeamResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookTeamDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelSportsbookTeamsResponseDoc {
+  "code"?: number;
+  "data"?: ModelSportsbookTeamsResponse;
+  "msg"?: string;
 }
 
 export interface ModelSportskeedaAuthorResponse {
@@ -64395,6 +68746,35 @@ export interface ModelTiktokmobileCategoryListResponse {
   "status_msg"?: string;
 }
 
+export interface ModelTiktokmobileCollectionDetailResponse {
+  "extra"?: unknown;
+  "item_archive"?: unknown;
+  "log_pb"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobileCollectionListResponse {
+  "cursor"?: number;
+  "extra"?: unknown;
+  "has_more"?: boolean;
+  "item_archive_detail_list"?: Array<unknown>;
+  "log_pb"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobileCollectionVideosResponse {
+  "extra"?: unknown;
+  "has_more"?: boolean;
+  "items"?: Array<unknown>;
+  "log_pb"?: unknown;
+  "max_cursor"?: number;
+  "min_cursor"?: number;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
 export interface ModelTiktokmobileCommentRepliesResponse {
   "comments"?: Array<unknown>;
   "cursor"?: number;
@@ -64415,6 +68795,7 @@ export interface ModelTiktokmobileCommentsResponse {
 
 export interface ModelTiktokmobileFeedItem {
   "author_id"?: number;
+  "author_id_str"?: string;
   "aweme_id"?: string;
   "create_time"?: number;
   "share_url"?: string;
@@ -64477,6 +68858,58 @@ export interface ModelTiktokmobileHotMusicResponse {
   "status_msg"?: string;
 }
 
+export interface ModelTiktokmobileLiveGameCategory {
+  "game_type"?: number;
+  "title"?: string;
+}
+
+export interface ModelTiktokmobileLiveGameTag {
+  "bundle_id"?: string;
+  "full_name"?: string;
+  "game_category"?: Array<ModelTiktokmobileLiveGameCategory>;
+  "gar"?: Array<unknown>;
+  "hashtag_id"?: Array<unknown>;
+  "hashtag_list"?: Array<ModelTiktokmobileLiveHashtag>;
+  "id"?: number;
+  "is_new_game"?: boolean;
+  "landscape"?: number;
+  "package_name"?: string;
+  "short_name"?: string;
+  "show_name"?: string;
+}
+
+export interface ModelTiktokmobileLiveHashtag {
+  "id"?: number;
+  "image"?: unknown;
+  "namespace"?: number;
+  "title"?: string;
+}
+
+export interface ModelTiktokmobileLiveRoomOwner {
+  "avatar"?: unknown;
+  "nickname"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelTiktokmobileLiveRoomStats {
+  "comment_count"?: number;
+  "enter_count"?: number;
+  "follow_count"?: number;
+  "like_count"?: number;
+  "replay_viewers"?: number;
+  "share_count"?: number;
+  "total_user"?: number;
+  "watch_user_count"?: number;
+}
+
+export interface ModelTiktokmobileLiveRoomStream {
+  "candidate_resolution"?: Array<string>;
+  "default_resolution"?: string;
+  "flv_pull_url"?: Record<string, string>;
+  "hls_pull_url"?: string;
+  "rtmp_pull_url"?: string;
+}
+
 export interface ModelTiktokmobileLiveSearchResponse {
   "cursor"?: number;
   "data"?: Array<unknown>;
@@ -64499,6 +68932,19 @@ export interface ModelTiktokmobileMusicBeatsSongsResponse {
   "status_msg"?: string;
 }
 
+export interface ModelTiktokmobileMusicChartResponse {
+  "chart_info"?: unknown;
+  "cover_image_url"?: string;
+  "cursor"?: number;
+  "extra"?: unknown;
+  "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "msg"?: string;
+  "music_list"?: Array<unknown>;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
 export interface ModelTiktokmobileMusicCollectionFeedResponse {
   "cursor"?: number;
   "extra"?: unknown;
@@ -64509,12 +68955,31 @@ export interface ModelTiktokmobileMusicCollectionFeedResponse {
   "status_msg"?: string;
 }
 
+export interface ModelTiktokmobileMusicDetailResponse {
+  "ai_recommend_music"?: unknown;
+  "ai_recommend_video"?: unknown;
+  "behind_the_song_exist"?: boolean;
+  "cost_time_info"?: unknown;
+  "extra"?: unknown;
+  "log_pb"?: unknown;
+  "msg"?: string;
+  "music_chart_rank"?: unknown;
+  "music_info"?: unknown;
+  "rec_list"?: unknown;
+  "similar_music"?: unknown;
+  "similar_music_ids"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
 export interface ModelTiktokmobileMusicFreshAwemeResponse {
   "aweme_list"?: Array<unknown>;
+  "can_pin_video"?: unknown;
   "cursor"?: number;
   "extra"?: unknown;
   "has_more"?: boolean;
   "log_pb"?: unknown;
+  "need_lazy_loading"?: unknown;
   "status_code"?: number;
   "status_msg"?: string;
 }
@@ -64540,14 +69005,90 @@ export interface ModelTiktokmobileMusicRelatedResponse {
   "status_msg"?: string;
 }
 
+export interface ModelTiktokmobilePlaceMediaResponse {
+  "data_version"?: string;
+  "extra"?: unknown;
+  "has_more"?: boolean;
+  "item_list"?: Array<unknown>;
+  "log_pb"?: unknown;
+  "next_cursor"?: string;
+  "pos"?: unknown;
+  "post_bottom_bar_style"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "title"?: string;
+}
+
 export interface ModelTiktokmobilePlacePoicontainer {
   "poi_info"?: Array<unknown>;
+}
+
+export interface ModelTiktokmobilePlaceReviewsResponse {
+  "collect_info"?: unknown;
+  "cursor"?: number;
+  "extra"?: unknown;
+  "folded_cursor"?: number;
+  "folded_has_more"?: boolean;
+  "has_more"?: boolean;
+  "is_hide_review_summary"?: boolean;
+  "landing_tab"?: number;
+  "log_pb"?: unknown;
+  "poi_id"?: string;
+  "poi_name"?: string;
+  "post_review_description"?: string;
+  "post_review_sub_description"?: string;
+  "review_summary"?: unknown;
+  "review_tags"?: Array<unknown>;
+  "reviews"?: Array<unknown>;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobilePlaylistDetailResponse {
+  "extra"?: unknown;
+  "is_collect"?: boolean;
+  "log_pb"?: unknown;
+  "mix"?: ModelTiktokmobilePlaylistSummary;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobilePlaylistListResponse {
+  "cursor"?: number;
+  "extra"?: unknown;
+  "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "mix_list"?: Array<ModelTiktokmobilePlaylistSummary>;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "total"?: number;
+}
+
+export interface ModelTiktokmobilePlaylistSummary {
+  "author"?: unknown;
+  "creator_name"?: string;
+  "last_add_video_timestamp"?: number;
+  "mix_id"?: string;
+  "mix_type"?: number;
+  "name"?: string;
+  "share_info"?: unknown;
+  "statistic"?: unknown;
+  "status"?: unknown;
+}
+
+export interface ModelTiktokmobilePlaylistVideosResponse {
+  "cursor"?: number;
+  "has_more"?: boolean;
+  "item_list"?: Array<unknown>;
+  "status_code"?: number;
+  "status_msg"?: string;
 }
 
 export interface ModelTiktokmobileSearchGeneralResponse {
   "cursor"?: number;
   "data"?: Array<unknown>;
   "has_more"?: boolean;
+  "search_id"?: string;
   "status_code"?: number;
   "status_msg"?: string;
 }
@@ -64601,12 +69142,100 @@ export interface ModelTiktokmobileSearchUsersResponse {
   "user_list"?: Array<unknown>;
 }
 
+export interface ModelTiktokmobileSearchVideosResponse {
+  "aweme_list"?: Array<unknown>;
+  "cursor"?: number;
+  "extra"?: unknown;
+  "feedback_type"?: string;
+  "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "search_id"?: string;
+  "search_item_list"?: Array<unknown>;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
 export interface ModelTiktokmobileStickerDiscoverResponse {
   "aweme_list"?: Array<unknown>;
   "cursor"?: number;
   "extra"?: unknown;
   "feed_session_id"?: string;
   "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobileSubtitleCue {
+  "end"?: string;
+  "end_ms"?: number;
+  "start"?: string;
+  "start_ms"?: number;
+  "text"?: string;
+}
+
+export interface ModelTiktokmobileUserFollowersResponse {
+  "extra"?: unknown;
+  "followers"?: Array<unknown>;
+  "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "max_time"?: number;
+  "min_time"?: number;
+  "myself_user_id"?: string;
+  "next_page_token"?: string;
+  "offset"?: number;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "total"?: number;
+}
+
+export interface ModelTiktokmobileUserOriginalEffectsResponse {
+  "cursor"?: number;
+  "effect"?: Array<unknown>;
+  "extra"?: unknown;
+  "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobileUserOriginalMusicResponse {
+  "cursor"?: number;
+  "extra"?: unknown;
+  "groups"?: Array<unknown>;
+  "has_more"?: boolean;
+  "honor_label"?: unknown;
+  "log_pb"?: unknown;
+  "music"?: Array<unknown>;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobileUserPostsResponse {
+  "aweme_list"?: Array<unknown>;
+  "extra"?: unknown;
+  "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "max_cursor"?: number;
+  "min_cursor"?: number;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobileUserProfileResponse {
+  "common"?: unknown;
+  "extra"?: unknown;
+  "header"?: unknown;
+  "log_pb"?: unknown;
+  "nav_bar"?: unknown;
+  "profile_tab"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobileVideoDetailResponse {
+  "aweme_detail"?: unknown;
+  "extra"?: unknown;
   "log_pb"?: unknown;
   "status_code"?: number;
   "status_msg"?: string;
@@ -64638,6 +69267,24 @@ export interface ModelTiktokmobileAnchorListResponseDoc {
 export interface ModelTiktokmobileCategoryListResponseDoc {
   "code"?: number;
   "data"?: ModelTiktokmobileCategoryListResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileCollectionDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileCollectionDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileCollectionListResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileCollectionListResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileCollectionVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileCollectionVideosResponse;
   "msg"?: string;
 }
 
@@ -64685,6 +69332,16 @@ export interface ModelTiktokmobileHashtagSearchResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTiktokmobileHashtagSuggestionsResponseDoc {
+  "extra"?: unknown;
+  "log_pb"?: unknown;
+  "rid"?: string;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "sug_list"?: Array<unknown>;
+  "words_query_record"?: unknown;
+}
+
 export interface ModelTiktokmobileHotMusicResponseDoc {
   "code"?: number;
   "data"?: ModelTiktokmobileHotMusicResponse;
@@ -64703,10 +69360,47 @@ export interface ModelTiktokmobileLiveGiftsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTiktokmobileLiveHashtagCatalogResponseDoc {
+  "extra"?: unknown;
+  "fetched_at"?: string;
+  "game_hashtag"?: ModelTiktokmobileLiveHashtag;
+  "game_tag_count"?: number;
+  "game_tag_list"?: Array<ModelTiktokmobileLiveGameTag>;
+  "hashtags"?: Array<ModelTiktokmobileLiveHashtag>;
+  "host"?: string;
+  "live_studio_hashtags"?: Array<ModelTiktokmobileLiveHashtag>;
+  "live_voice_hashtags"?: Array<ModelTiktokmobileLiveHashtag>;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "third_party_hashtags"?: Array<ModelTiktokmobileLiveHashtag>;
+}
+
+export interface ModelTiktokmobileLiveRoomInfoResponseDoc {
+  "cover"?: unknown;
+  "create_time"?: number;
+  "data"?: unknown;
+  "fetched_at"?: string;
+  "host"?: string;
+  "owner"?: ModelTiktokmobileLiveRoomOwner;
+  "room_id"?: string;
+  "stats"?: ModelTiktokmobileLiveRoomStats;
+  "status"?: number;
+  "stream"?: ModelTiktokmobileLiveRoomStream;
+  "title"?: string;
+  "user_count"?: number;
+  "user_id"?: string;
+}
+
 export interface ModelTiktokmobileLiveSearchResponseDoc {
   "code"?: number;
   "data"?: ModelTiktokmobileLiveSearchResponse;
   "msg"?: string;
+}
+
+export interface ModelTiktokmobileLiveTabsResponseDoc {
+  "data"?: Array<unknown>;
+  "extra"?: unknown;
+  "status_code"?: number;
 }
 
 export interface ModelTiktokmobileMusicBeatsSongsResponseDoc {
@@ -64715,9 +69409,40 @@ export interface ModelTiktokmobileMusicBeatsSongsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTiktokmobileMusicChartResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileMusicChartResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileMusicChoicesResponseDoc {
+  "extra"?: unknown;
+  "log_pb"?: unknown;
+  "music_list"?: Array<unknown>;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
 export interface ModelTiktokmobileMusicCollectionFeedResponseDoc {
   "code"?: number;
   "data"?: ModelTiktokmobileMusicCollectionFeedResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileMusicCollectionListResponseDoc {
+  "cursor"?: number;
+  "extra"?: unknown;
+  "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "mc_list"?: Array<unknown>;
+  "msg"?: string;
+  "status_code"?: number;
+  "status_msg"?: string;
+}
+
+export interface ModelTiktokmobileMusicDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileMusicDetailResponse;
   "msg"?: string;
 }
 
@@ -64739,6 +69464,140 @@ export interface ModelTiktokmobileMusicRelatedResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTiktokmobileMvFeedResponseDoc {
+  "aweme_list"?: Array<unknown>;
+  "cursor"?: number;
+  "extra"?: unknown;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "host"?: string;
+  "item_count"?: number;
+  "log_pb"?: unknown;
+  "mv_id"?: string;
+  "original_aweme_id"?: string;
+  "page_extra"?: unknown;
+  "top_awemes"?: Array<unknown>;
+}
+
+export interface ModelTiktokmobileOfflineFeedResponseDoc {
+  "count"?: number;
+  "fetched_at"?: string;
+  "host"?: string;
+  "items"?: Record<string, unknown>;
+  "note"?: string;
+  "pull_type"?: number;
+  "strings"?: Array<string>;
+}
+
+export interface ModelTiktokmobilePlaceDetailResponseDoc {
+  "fetched_at"?: string;
+  "frame_count"?: number;
+  "frames"?: Array<unknown>;
+  "has_more_posts"?: boolean;
+  "has_more_reviews"?: boolean;
+  "host"?: string;
+  "layout"?: Record<string, unknown>;
+  "nodes"?: Record<string, unknown>;
+  "page_id"?: string;
+  "poi_id"?: string;
+  "post_count"?: number;
+  "post_cursor"?: number;
+  "review_count"?: number;
+  "top_video_count"?: number;
+}
+
+export interface ModelTiktokmobilePlaceInfoResponseDoc {
+  "address"?: string;
+  "average_price"?: string;
+  "category"?: string;
+  "city_code"?: string;
+  "claim_store_status"?: boolean;
+  "cover"?: unknown;
+  "favorite_count"?: number;
+  "fetched_at"?: string;
+  "host"?: string;
+  "is_collected"?: boolean;
+  "latitude"?: string;
+  "longitude"?: string;
+  "name"?: string;
+  "no_rating"?: boolean;
+  "opening_hours"?: string;
+  "opening_status"?: boolean;
+  "parent_poi"?: unknown;
+  "place"?: Record<string, unknown>;
+  "poi_id"?: string;
+  "region_code"?: string;
+  "review_count"?: number;
+  "review_score"?: number;
+  "review_score_display"?: string;
+  "share_desc"?: string;
+  "share_url"?: string;
+  "video_count"?: number;
+}
+
+export interface ModelTiktokmobilePlaceMediaResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobilePlaceMediaResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobilePlacePhotosResponseDoc {
+  "categories"?: Array<unknown>;
+  "category_tab_info"?: unknown;
+  "fetched_at"?: string;
+  "host"?: string;
+  "photo_count"?: number;
+  "poi_id"?: string;
+  "title"?: string;
+}
+
+export interface ModelTiktokmobilePlaceReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobilePlaceReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobilePlaceVideosResponseDoc {
+  "aweme_list"?: Array<unknown>;
+  "cursor"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "host"?: string;
+  "item_count"?: number;
+  "poi_id"?: string;
+  "poi_info"?: unknown;
+}
+
+export interface ModelTiktokmobilePlaylistDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobilePlaylistDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobilePlaylistListResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobilePlaylistListResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobilePlaylistVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobilePlaylistVideosResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileSearchEffectsResponseDoc {
+  "bind_effects"?: unknown;
+  "collection"?: unknown;
+  "cursor"?: number;
+  "effects"?: Array<unknown>;
+  "has_more"?: boolean;
+  "search_id"?: string;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "use_hot"?: boolean;
+}
+
 export interface ModelTiktokmobileSearchGeneralResponseDoc {
   "code"?: number;
   "data"?: ModelTiktokmobileSearchGeneralResponse;
@@ -64749,6 +69608,20 @@ export interface ModelTiktokmobileSearchMusicResponseDoc {
   "code"?: number;
   "data"?: ModelTiktokmobileSearchMusicResponse;
   "msg"?: string;
+}
+
+export interface ModelTiktokmobileSearchPhotosResponseDoc {
+  "aweme_list"?: Array<unknown>;
+  "backtrace"?: unknown;
+  "cursor"?: number;
+  "extra"?: unknown;
+  "feedback_type"?: string;
+  "has_more"?: number;
+  "log_pb"?: unknown;
+  "response_cropped"?: number;
+  "search_item_list"?: Array<unknown>;
+  "status_code"?: number;
+  "status_msg"?: string;
 }
 
 export interface ModelTiktokmobileSearchPlaceResponseDoc {
@@ -64762,6 +69635,20 @@ export interface ModelTiktokmobileSearchPreInfoResponseDoc {
   "host"?: string;
   "pre_info_id"?: string;
   "ttl"?: number;
+}
+
+export interface ModelTiktokmobileSearchStreamResponseDoc {
+  "count"?: number;
+  "cursor"?: number;
+  "documents"?: Array<unknown>;
+  "fetched_at"?: string;
+  "frame_count"?: number;
+  "frames"?: Array<unknown>;
+  "has_more"?: boolean;
+  "host"?: string;
+  "keyword"?: string;
+  "offset"?: number;
+  "search_id"?: string;
 }
 
 export interface ModelTiktokmobileSearchSuggestionResponseDoc {
@@ -64784,10 +69671,104 @@ export interface ModelTiktokmobileSearchUsersResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTiktokmobileSearchVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileSearchVideosResponse;
+  "msg"?: string;
+}
+
 export interface ModelTiktokmobileStickerDiscoverResponseDoc {
   "code"?: number;
   "data"?: ModelTiktokmobileStickerDiscoverResponse;
   "msg"?: string;
+}
+
+export interface ModelTiktokmobileTranslationDescriptionResponseDoc {
+  "extra"?: unknown;
+  "fetched_at"?: string;
+  "format"?: number;
+  "host"?: string;
+  "item_id"?: string;
+  "log_pb"?: unknown;
+  "perf_metrics"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "target_lang"?: string;
+  "text"?: string;
+  "translated_client_text"?: unknown;
+  "variant"?: string;
+}
+
+export interface ModelTiktokmobileUserFollowersResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileUserFollowersResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileUserFollowingResponseDoc {
+  "extra"?: unknown;
+  "followings"?: Array<unknown>;
+  "has_more"?: boolean;
+  "log_pb"?: unknown;
+  "max_time"?: number;
+  "min_time"?: number;
+  "myself_user_id"?: unknown;
+  "next_page_token"?: string;
+  "offset"?: number;
+  "rec_has_more"?: boolean;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "total"?: number;
+}
+
+export interface ModelTiktokmobileUserOriginalEffectsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileUserOriginalEffectsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileUserOriginalMusicResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileUserOriginalMusicResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileUserPostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileUserPostsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileUserProfileResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileUserProfileResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileUserRecommendationsResponseDoc {
+  "extra"?: unknown;
+  "log_pb"?: unknown;
+  "status_code"?: number;
+  "status_msg"?: string;
+  "user_list"?: Array<unknown>;
+}
+
+export interface ModelTiktokmobileVideoDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelTiktokmobileVideoDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelTiktokmobileVideoSubtitlesResponseDoc {
+  "content_source"?: string;
+  "cue_count"?: number;
+  "cues"?: Array<ModelTiktokmobileSubtitleCue>;
+  "fetched_at"?: string;
+  "host"?: string;
+  "language"?: string;
+  "variant"?: string;
+  "video_id"?: string;
+  "webvtt"?: string;
 }
 
 export interface ModelTimeAuthorArticle {
@@ -72632,6 +77613,7 @@ export interface ModelYoutubeChannelShortsResponse {
   "channel_id"?: string;
   "channel_title"?: string;
   "channel_url"?: string;
+  "continuation_token"?: string;
   "handle"?: string;
   "shorts"?: Array<ModelYoutubeChannelShort>;
   "thumbnail"?: string;
@@ -80227,62 +85209,140 @@ export interface DoorDashDoordashStoreReviewsParams {
   "longitude": number;
 }
 
-export type DraftKingsSportsbookDraftkingsEventResponse = CrawloraResponse<ModelDraftkingsEventResponseDoc>;
+export type DraftKingsCasinoDraftkingsCasinoDirectoryResponse = CrawloraResponse<ModelCasinoCasinoDirectoryResponseDoc>;
+export interface DraftKingsCasinoDraftkingsCasinoDirectoryParams {
+}
+
+export type DraftKingsCasinoDraftkingsCasinoSlotsGuideResponse = CrawloraResponse<ModelCasinoCasinoSlotsGuideResponseDoc>;
+export interface DraftKingsCasinoDraftkingsCasinoSlotsGuideParams {
+}
+
+export type DraftKingsCasinoDraftkingsCasinoSlotsCategoriesResponse = CrawloraResponse<ModelCasinoCasinoSlotsCategoriesResponseDoc>;
+export interface DraftKingsCasinoDraftkingsCasinoSlotsCategoriesParams {
+}
+
+export type DraftKingsCasinoDraftkingsCasinoCleopatraGuideResponse = CrawloraResponse<ModelCasinoCasinoCleopatraGuideResponseDoc>;
+export interface DraftKingsCasinoDraftkingsCasinoCleopatraGuideParams {
+}
+
+export type DraftKingsCasinoDraftkingsCasinoWheelOfFortuneGuideResponse = CrawloraResponse<ModelCasinoCasinoWheelOfFortuneGuideResponseDoc>;
+export interface DraftKingsCasinoDraftkingsCasinoWheelOfFortuneGuideParams {
+}
+
+export type DraftKingsDailyFantasySportsDraftkingsDfsGlossaryResponse = CrawloraResponse<ModelDfsDfsGlossaryResponseDoc>;
+export interface DraftKingsDailyFantasySportsDraftkingsDfsGlossaryParams {
+}
+
+export type DraftKingsDailyFantasySportsDraftkingsDfsGuideResponse = CrawloraResponse<ModelDfsDfsGuideResponseDoc>;
+export interface DraftKingsDailyFantasySportsDraftkingsDfsGuideParams {
+}
+
+export type DraftKingsDailyFantasySportsDraftkingsDfsNflBestBallFeaturedContestsResponse = CrawloraResponse<ModelDfsDfsNflbestBallFeaturedContestsResponseDoc>;
+export interface DraftKingsDailyFantasySportsDraftkingsDfsNflBestBallFeaturedContestsParams {
+}
+
+export type DraftKingsDailyFantasySportsDraftkingsDfsRulesAndScoringResponse = CrawloraResponse<ModelDfsDfsRulesAndScoringResponseDoc>;
+export interface DraftKingsDailyFantasySportsDraftkingsDfsRulesAndScoringParams {
+}
+
+export type DraftKingsDailyFantasySportsDraftkingsDfsSportsResponse = CrawloraResponse<ModelDfsDfsSportsResponseDoc>;
+export interface DraftKingsDailyFantasySportsDraftkingsDfsSportsParams {
+}
+
+export type DraftKingsPick6DraftkingsPick6RulesResponse = CrawloraResponse<ModelPick6Pick6RulesResponseDoc>;
+export interface DraftKingsPick6DraftkingsPick6RulesParams {
+}
+
+export type DraftKingsPick6DraftkingsPick6RulePageResponse = CrawloraResponse<ModelPick6Pick6RuleDetailResponseDoc>;
+export interface DraftKingsPick6DraftkingsPick6RulePageParams {
+  "slug": "nfl" | "nba" | "nhl" | "pga-full-tournament" | "pga-single-round" | "mlb" | "wnba" | "nascar" | "cfb" | "cbb" | "soccer" | "valorant" | "miscellaneous" | "league-of-legends" | "counter-strike" | "call-of-duty" | "nfl-season-long" | "nba-season-long";
+}
+
+export type DraftKingsPick6DraftkingsPick6SportsResponse = CrawloraResponse<ModelPick6Pick6SportsResponseDoc>;
+export interface DraftKingsPick6DraftkingsPick6SportsParams {
+}
+
+export type DraftKingsPredictionsDraftkingsPredictionsAvailabilityResponse = CrawloraResponse<ModelPredictionsPredictionsAvailabilityResponseDoc>;
+export interface DraftKingsPredictionsDraftkingsPredictionsAvailabilityParams {
+}
+
+export type DraftKingsPredictionsDraftkingsPredictionsCategoriesResponse = CrawloraResponse<ModelPredictionsPredictionsCategoriesResponseDoc>;
+export interface DraftKingsPredictionsDraftkingsPredictionsCategoriesParams {
+}
+
+export type DraftKingsPredictionsDraftkingsPredictionsRulesResponse = CrawloraResponse<ModelPredictionsPredictionsRulesResponseDoc>;
+export interface DraftKingsPredictionsDraftkingsPredictionsRulesParams {
+}
+
+export type DraftKingsRacingDraftkingsRacingRaceInfoResponse = CrawloraResponse<ModelRacingRacingRaceInfoResponseDoc>;
+export interface DraftKingsRacingDraftkingsRacingRaceInfoParams {
+  "race_id": number;
+}
+
+export type DraftKingsRacingDraftkingsRacingScheduleResponse = CrawloraResponse<ModelRacingRacingScheduleResponseDoc>;
+export interface DraftKingsRacingDraftkingsRacingScheduleParams {
+}
+
+export type DraftKingsRacingDraftkingsRacingTracksResponse = CrawloraResponse<ModelRacingRacingTracksResponseDoc>;
+export interface DraftKingsRacingDraftkingsRacingTracksParams {
+}
+
+export type DraftKingsSportsbookDraftkingsEventResponse = CrawloraResponse<ModelSportsbookEventResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsEventParams {
   "event_id": string;
 }
 
-export type DraftKingsSportsbookDraftkingsEventContextResponse = CrawloraResponse<ModelDraftkingsEventContextResponseDoc>;
+export type DraftKingsSportsbookDraftkingsEventContextResponse = CrawloraResponse<ModelSportsbookEventContextResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsEventContextParams {
   "event_id": string;
 }
 
-export type DraftKingsSportsbookDraftkingsEventMarketsResponse = CrawloraResponse<ModelDraftkingsEventMarketsResponseDoc>;
+export type DraftKingsSportsbookDraftkingsEventMarketsResponse = CrawloraResponse<ModelSportsbookEventMarketsResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsEventMarketsParams {
   "event_id": string;
   "subcategory_id": string;
 }
 
-export type DraftKingsSportsbookDraftkingsFeaturedLeaguesResponse = CrawloraResponse<ModelDraftkingsFeaturedLeaguesResponseDoc>;
+export type DraftKingsSportsbookDraftkingsFeaturedLeaguesResponse = CrawloraResponse<ModelSportsbookFeaturedLeaguesResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsFeaturedLeaguesParams {
 }
 
-export type DraftKingsSportsbookDraftkingsFuturesResponse = CrawloraResponse<ModelDraftkingsFuturesResponseDoc>;
+export type DraftKingsSportsbookDraftkingsFuturesResponse = CrawloraResponse<ModelSportsbookFuturesResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsFuturesParams {
   "league_id": string;
   "subcategory_id": string;
 }
 
-export type DraftKingsSportsbookDraftkingsLeagueEventsResponse = CrawloraResponse<ModelDraftkingsLeagueEventsResponseDoc>;
+export type DraftKingsSportsbookDraftkingsLeagueEventsResponse = CrawloraResponse<ModelSportsbookLeagueEventsResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsLeagueEventsParams {
   "league_id": string;
 }
 
-export type DraftKingsSportsbookDraftkingsLeaguesResponse = CrawloraResponse<ModelDraftkingsLeaguesResponseDoc>;
+export type DraftKingsSportsbookDraftkingsLeaguesResponse = CrawloraResponse<ModelSportsbookLeaguesResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsLeaguesParams {
 }
 
-export type DraftKingsSportsbookDraftkingsLiveResponse = CrawloraResponse<ModelDraftkingsLiveResponseDoc>;
+export type DraftKingsSportsbookDraftkingsLiveResponse = CrawloraResponse<ModelSportsbookLiveResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsLiveParams {
 }
 
-export type DraftKingsSportsbookDraftkingsOddsResponse = CrawloraResponse<ModelDraftkingsOddsResponseDoc>;
+export type DraftKingsSportsbookDraftkingsOddsResponse = CrawloraResponse<ModelSportsbookOddsResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsOddsParams {
   "league_id": string;
 }
 
-export type DraftKingsSportsbookDraftkingsQuickLinksResponse = CrawloraResponse<ModelDraftkingsQuickLinksResponseDoc>;
+export type DraftKingsSportsbookDraftkingsQuickLinksResponse = CrawloraResponse<ModelSportsbookQuickLinksResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsQuickLinksParams {
 }
 
-export type DraftKingsSportsbookDraftkingsTeamResponse = CrawloraResponse<ModelDraftkingsTeamResponseDoc>;
+export type DraftKingsSportsbookDraftkingsTeamResponse = CrawloraResponse<ModelSportsbookTeamResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsTeamParams {
   "team_id": string;
   "sport": "football" | "hockey" | "basketball" | "baseball";
   "slug": string;
 }
 
-export type DraftKingsSportsbookDraftkingsTeamsResponse = CrawloraResponse<ModelDraftkingsTeamsResponseDoc>;
+export type DraftKingsSportsbookDraftkingsTeamsResponse = CrawloraResponse<ModelSportsbookTeamsResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsTeamsParams {
   "league": "nfl" | "nhl" | "nba" | "cbb" | "mlb" | "cfb";
 }
@@ -80942,6 +86002,525 @@ export interface FanaticsLiveFanaticsliveShowParams {
 export type FanaticsLiveFanaticsliveInstantRipsResponse = CrawloraResponse<ModelFanaticsliveInstantRipsResponseDoc>;
 export interface FanaticsLiveFanaticsliveInstantRipsParams {
   "id": string;
+}
+
+export type FanDuelFanduelCasinoCategoriesResponse = CrawloraResponse<ModelFanduelCasinoCategoriesResponseDoc>;
+export interface FanDuelFanduelCasinoCategoriesParams {
+  "region"?: "mi" | "on";
+}
+
+export type FanDuelFanduelCasinoCategoryResponse = CrawloraResponse<ModelFanduelCasinoCategoryResponseDoc>;
+export interface FanDuelFanduelCasinoCategoryParams {
+  "region"?: "mi" | "on";
+  "category": "all-games" | "new" | "slots" | "double-your-bet-category" | "jackpots" | "daily-jackpots" | "hot-slots" | "classic-reels-category" | "bonus-buy-category" | "high-limit-category" | "spooky-slots-category" | "exclusives" | "pick-play" | "arcade" | "blackjack" | "baccarat" | "roulette" | "table" | "livecasino" | "online-casino-favorites" | "explore-videos" | "motorcity-favorites" | "fallsview-favourites-category" | "the-wolf-den-category" | "sports-central";
+  "q"?: string;
+  "provider"?: string;
+  "badge"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FanDuelFanduelCasinoGameResponse = CrawloraResponse<ModelFanduelCasinoGameResponseDoc>;
+export interface FanDuelFanduelCasinoGameParams {
+  "region"?: "mi" | "on";
+  "game": string;
+}
+
+export type FanDuelFanduelRacingCarryoverPoolsResponse = CrawloraResponse<ModelFanduelRacingCarryoverResponseDoc>;
+export interface FanDuelFanduelRacingCarryoverPoolsParams {
+  "status"?: "O" | "IC" | "SK" | "RO";
+  "track"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelRacingFiltersResponse = CrawloraResponse<ModelFanduelRacingFiltersResponseDoc>;
+export interface FanDuelFanduelRacingFiltersParams {
+}
+
+export type FanDuelFanduelRacingHorseResponse = CrawloraResponse<ModelFanduelRacingHorseResponseDoc>;
+export interface FanDuelFanduelRacingHorseParams {
+  "id": string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelRacingPastRaceResponse = CrawloraResponse<ModelFanduelRacingPastRaceResponseDoc>;
+export interface FanDuelFanduelRacingPastRaceParams {
+  "date": string;
+  "track": string;
+  "number": string;
+}
+
+export type FanDuelFanduelRacingPastRacesResponse = CrawloraResponse<ModelFanduelRacingPastRacesResponseDoc>;
+export interface FanDuelFanduelRacingPastRacesParams {
+  "date": string;
+  "track"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelRacingPastTracksResponse = CrawloraResponse<ModelFanduelRacingPastTracksResponseDoc>;
+export interface FanDuelFanduelRacingPastTracksParams {
+  "date"?: string;
+  "track"?: string;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelRacingRaceResponse = CrawloraResponse<ModelFanduelRacingRaceResponseDoc>;
+export interface FanDuelFanduelRacingRaceParams {
+  "track": string;
+  "number": string;
+  "include"?: "handicapping" | "timeform" | "pool_grids";
+}
+
+export type FanDuelFanduelRacingRacesResponse = CrawloraResponse<ModelFanduelRacingRacesResponseDoc>;
+export interface FanDuelFanduelRacingRacesParams {
+  "track"?: string;
+  "country"?: string;
+  "exclude_country"?: string;
+  "race_type"?: "T" | "H" | "Q" | "L";
+  "status"?: "O" | "IC" | "SK" | "RO";
+  "open"?: boolean;
+  "within_minutes"?: number;
+  "sort"?: "mtp" | "post_time" | "race_number";
+  "order"?: "asc" | "desc";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelRacingResultsResponse = CrawloraResponse<ModelFanduelRacingResultsResponseDoc>;
+export interface FanDuelFanduelRacingResultsParams {
+  "track"?: string;
+  "country"?: string;
+  "exclude_country"?: string;
+  "race_type"?: "T" | "H" | "Q" | "L";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelRacingSearchResponse = CrawloraResponse<ModelFanduelRacingSearchResponseDoc>;
+export interface FanDuelFanduelRacingSearchParams {
+  "q": string;
+  "type"?: "runner" | "jockey" | "trainer" | "owner";
+  "sort"?: "name" | "last_event";
+  "order"?: "asc" | "desc";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelRacingTrackResponse = CrawloraResponse<ModelFanduelRacingTrackResponseDoc>;
+export interface FanDuelFanduelRacingTrackParams {
+  "code": string;
+}
+
+export type FanDuelFanduelRacingTracksResponse = CrawloraResponse<ModelFanduelRacingTracksResponseDoc>;
+export interface FanDuelFanduelRacingTracksParams {
+  "country"?: string;
+  "exclude_country"?: string;
+  "race_type"?: "T" | "H" | "Q" | "L";
+  "code"?: string;
+  "finished"?: boolean;
+  "featured"?: boolean;
+  "sort"?: "name" | "mtp" | "wagerable_mtp" | "ivr";
+  "order"?: "asc" | "desc";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelRacingWagerTypesResponse = CrawloraResponse<ModelFanduelRacingWagerTypesResponseDoc>;
+export interface FanDuelFanduelRacingWagerTypesParams {
+}
+
+export type FanDuelFanduelResearchResponse = CrawloraResponse<ModelFanduelResearchResponseDoc>;
+export interface FanDuelFanduelResearchParams {
+}
+
+export type FanDuelFanduelResearchArticleResponse = CrawloraResponse<ModelFanduelResearchArticleResponseDoc>;
+export interface FanDuelFanduelResearchArticleParams {
+  "article": string;
+}
+
+export type FanDuelFanduelResearchArticlesResponse = CrawloraResponse<ModelFanduelResearchArticlesResponseDoc>;
+export interface FanDuelFanduelResearchArticlesParams {
+  "sport"?: "casino" | "nascar" | "ncaab" | "f1" | "ufc" | "boxing" | "ncaaf" | "womenssoccer" | "tv-and-podcast" | "nba" | "pga" | "tennis" | "nhl" | "mma" | "soccer" | "fanduel-sportsbook-promo-codes" | "sports-betting-101" | "horse-racing" | "wnba" | "predicts" | "mlb" | "canada" | "nfl";
+  "exclude_sport"?: string;
+  "sub_category"?: string;
+  "team"?: number;
+  "player"?: number;
+  "author"?: string;
+  "hero_type"?: "IMAGE" | "JWPLAYER";
+  "published_after"?: string;
+  "published_before"?: string;
+  "hide_deprioritized"?: boolean;
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type FanDuelFanduelResearchAuthorResponse = CrawloraResponse<ModelFanduelResearchAuthorResponseDoc>;
+export interface FanDuelFanduelResearchAuthorParams {
+  "author": string;
+}
+
+export type FanDuelFanduelResearchAuthorsResponse = CrawloraResponse<ModelFanduelResearchAuthorsResponseDoc>;
+export interface FanDuelFanduelResearchAuthorsParams {
+  "sport"?: "casino" | "nascar" | "ncaab" | "f1" | "ufc" | "boxing" | "ncaaf" | "womenssoccer" | "tv-and-podcast" | "nba" | "pga" | "tennis" | "nhl" | "mma" | "soccer" | "fanduel-sportsbook-promo-codes" | "sports-betting-101" | "horse-racing" | "wnba" | "predicts" | "mlb" | "canada" | "nfl";
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type FanDuelFanduelResearchFeaturedArticlesResponse = CrawloraResponse<ModelFanduelResearchFeaturedArticlesResponseDoc>;
+export interface FanDuelFanduelResearchFeaturedArticlesParams {
+  "sport": "casino" | "nascar" | "ncaab" | "f1" | "ufc" | "boxing" | "ncaaf" | "womenssoccer" | "tv-and-podcast" | "nba" | "pga" | "tennis" | "nhl" | "mma" | "soccer" | "fanduel-sportsbook-promo-codes" | "sports-betting-101" | "horse-racing" | "wnba" | "predicts" | "mlb" | "canada" | "nfl";
+}
+
+export type FanDuelFanduelResearchFixturesResponse = CrawloraResponse<ModelFanduelResearchFixturesResponseDoc>;
+export interface FanDuelFanduelResearchFixturesParams {
+  "sport"?: "nba" | "nfl" | "nhl" | "mlb";
+}
+
+export type FanDuelFanduelResearchNflScheduleResponse = CrawloraResponse<ModelFanduelResearchNflScheduleResponseDoc>;
+export interface FanDuelFanduelResearchNflScheduleParams {
+  "week": number;
+  "season_type"?: "PRE" | "REGULAR" | "POST";
+}
+
+export type FanDuelFanduelResearchPlayerNewsResponse = CrawloraResponse<ModelFanduelResearchPlayerNewsResponseDoc>;
+export interface FanDuelFanduelResearchPlayerNewsParams {
+  "sport": "nfl" | "nba" | "mlb" | "nhl";
+  "news_type"?: "INJURY" | "RECAP" | "TRANSACTION" | "LINEUP" | "GAME_UPDATE" | "OUTLOOK";
+  "team"?: number;
+  "player"?: number;
+  "position"?: "G" | "F" | "C" | "W" | "D" | "QB" | "DB" | "DL" | "K" | "LB" | "OL" | "P" | "RB" | "TE" | "WR" | "IF" | "OF" | "DH";
+  "include_non_primary"?: boolean;
+  "limit"?: number;
+  "cursor"?: string;
+}
+
+export type FanDuelFanduelResearchQuickPicksDailyResponse = CrawloraResponse<ModelFanduelQuickPicksDailyResponseDoc>;
+export interface FanDuelFanduelResearchQuickPicksDailyParams {
+  "cursor"?: string;
+}
+
+export type FanDuelFanduelResearchProjectionSlatesResponse = CrawloraResponse<ModelFanduelResearchProjectionSlatesResponseDoc>;
+export interface FanDuelFanduelResearchProjectionSlatesParams {
+  "sport": "mlb" | "nba" | "nfl" | "nhl" | "golf";
+  "date"?: string;
+  "week"?: number;
+  "season"?: number;
+}
+
+export type FanDuelFanduelResearchProjectionTablesResponse = CrawloraResponse<ModelFanduelResearchProjectionTablesResponseDoc>;
+export interface FanDuelFanduelResearchProjectionTablesParams {
+  "sport"?: "mlb" | "nba" | "nfl" | "nhl" | "golf";
+}
+
+export type FanDuelFanduelResearchProjectionsResponse = CrawloraResponse<ModelFanduelResearchProjectionsResponseDoc>;
+export interface FanDuelFanduelResearchProjectionsParams {
+  "sport": "mlb" | "nba" | "nfl" | "nhl" | "golf";
+  "type": "DAILY" | "WEEKLY" | "YEARLY" | "REMAINING" | "PPR" | "SEASON_STATS";
+  "position"?: "batters" | "pitchers" | "c" | "1b" | "2b" | "3b" | "ss" | "of" | "sp" | "rp" | "qb" | "rb" | "wr" | "te" | "flex" | "k" | "defense" | "all" | "pg" | "sg" | "guards" | "sf" | "pf" | "forwards" | "centers" | "skaters" | "goalies" | "wingers" | "d" | "idp";
+  "scope"?: "TOTAL" | "PER_GAME";
+  "slate_id"?: string;
+  "event_id"?: string;
+  "date"?: string;
+  "week"?: number;
+  "season"?: number;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelResearchSportsResponse = CrawloraResponse<ModelFanduelResearchSportsResponseDoc>;
+export interface FanDuelFanduelResearchSportsParams {
+  "sport"?: "casino" | "nascar" | "ncaab" | "f1" | "ufc" | "boxing" | "ncaaf" | "womenssoccer" | "tv-and-podcast" | "nba" | "pga" | "tennis" | "nhl" | "mma" | "soccer" | "fanduel-sportsbook-promo-codes" | "sports-betting-101" | "horse-racing" | "wnba" | "predicts" | "mlb" | "canada" | "nfl";
+}
+
+export type FanDuelFanduelResearchSubCategoriesResponse = CrawloraResponse<ModelFanduelResearchSubCategoriesResponseDoc>;
+export interface FanDuelFanduelResearchSubCategoriesParams {
+}
+
+export type FanDuelFanduelSportsbookAutocompleteResponse = CrawloraResponse<ModelFanduelSportsbookAutocompleteResponseDoc>;
+export interface FanDuelFanduelSportsbookAutocompleteParams {
+  "q": string;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelSportsbookBuilderResponse = CrawloraResponse<ModelFanduelSportsbookBuilderResponseDoc>;
+export interface FanDuelFanduelSportsbookBuilderParams {
+  "event_id": number;
+  "experience"?: "yourway" | "head-to-head" | "player-combos" | "bullseye" | "player-podium" | "or-bets";
+  "state"?: string;
+}
+
+export type FanDuelFanduelSportsbookBuilderEventsResponse = CrawloraResponse<ModelFanduelSportsbookBuilderEventsResponseDoc>;
+export interface FanDuelFanduelSportsbookBuilderEventsParams {
+  "experience"?: "yourway" | "head-to-head" | "player-combos" | "bullseye" | "player-podium" | "or-bets";
+  "state"?: string;
+}
+
+export type FanDuelFanduelSportsbookBuilderQuotesResponse = CrawloraResponse<ModelFanduelSportsbookChoiceQuotesResponseDoc>;
+export interface FanDuelFanduelSportsbookBuilderQuotesParams {
+  "ramp_event_id": number;
+  "choice_id": Array<string>;
+  "state"?: string;
+}
+
+export type FanDuelFanduelSportsbookCompetitionResponse = CrawloraResponse<ModelFanduelSportsbookPageResponseDoc>;
+export interface FanDuelFanduelSportsbookCompetitionParams {
+  "event_type_id": "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961";
+  "competition_id": number;
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+  "tab"?: string;
+  "market_type"?: string;
+  "exclude_markets"?: boolean;
+}
+
+export type FanDuelFanduelSportsbookEventResponse = CrawloraResponse<ModelFanduelSportsbookEventResponseDoc>;
+export interface FanDuelFanduelSportsbookEventParams {
+  "event_id": number;
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+  "tab"?: string;
+  "market_type"?: string;
+}
+
+export type FanDuelFanduelSportsbookEventBoxScoreResponse = CrawloraResponse<ModelFanduelSportsbookBoxScoreResponseDoc>;
+export interface FanDuelFanduelSportsbookEventBoxScoreParams {
+  "event_id": number;
+}
+
+export type FanDuelFanduelSportsbookEventPlayByPlayResponse = CrawloraResponse<ModelFanduelSportsbookPlayByPlayResponseDoc>;
+export interface FanDuelFanduelSportsbookEventPlayByPlayParams {
+  "event_id": number;
+  "current"?: boolean;
+}
+
+export type FanDuelFanduelSportsbookEventPlayersResponse = CrawloraResponse<ModelFanduelSportsbookEventPlayersResponseDoc>;
+export interface FanDuelFanduelSportsbookEventPlayersParams {
+  "event_id": number;
+}
+
+export type FanDuelFanduelSportsbookEventScoreResponse = CrawloraResponse<ModelFanduelSportsbookEventScoreResponseDoc>;
+export interface FanDuelFanduelSportsbookEventScoreParams {
+  "event_id": number;
+}
+
+export type FanDuelFanduelSportsbookEventStatsResponse = CrawloraResponse<ModelFanduelSportsbookEventStatsResponseDoc>;
+export interface FanDuelFanduelSportsbookEventStatsParams {
+  "event_id": number;
+}
+
+export type FanDuelFanduelSportsbookEventsStatusResponse = CrawloraResponse<ModelFanduelSportsbookEventsStatusResponseDoc>;
+export interface FanDuelFanduelSportsbookEventsStatusParams {
+  "event_id": Array<string>;
+  "state"?: string;
+}
+
+export type FanDuelFanduelSportsbookHomeResponse = CrawloraResponse<ModelFanduelSportsbookPageResponseDoc>;
+export interface FanDuelFanduelSportsbookHomeParams {
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+  "tab"?: string;
+  "competition_id"?: number;
+  "market_type"?: string;
+  "exclude_markets"?: boolean;
+}
+
+export type FanDuelFanduelSportsbookLeagueResponse = CrawloraResponse<ModelFanduelSportsbookPageResponseDoc>;
+export interface FanDuelFanduelSportsbookLeagueParams {
+  "custom_page_id": string;
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+  "tab"?: string;
+  "competition_id"?: number;
+  "market_type"?: string;
+  "exclude_markets"?: boolean;
+}
+
+export type FanDuelFanduelSportsbookLiveResponse = CrawloraResponse<ModelFanduelSportsbookPageResponseDoc>;
+export interface FanDuelFanduelSportsbookLiveParams {
+  "event_type_id"?: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961";
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+  "market_type"?: string;
+  "exclude_markets"?: boolean;
+}
+
+export type FanDuelFanduelSportsbookLiveCountResponse = CrawloraResponse<ModelFanduelSportsbookLiveCountResponseDoc>;
+export interface FanDuelFanduelSportsbookLiveCountParams {
+  "state"?: string;
+}
+
+export type FanDuelFanduelSportsbookLiveDataResponse = CrawloraResponse<ModelFanduelSportsbookLiveDataResponseDoc>;
+export interface FanDuelFanduelSportsbookLiveDataParams {
+  "event_id": string;
+}
+
+export type FanDuelFanduelSportsbookLiveScoresResponse = CrawloraResponse<ModelFanduelSportsbookLiveScoresResponseDoc>;
+export interface FanDuelFanduelSportsbookLiveScoresParams {
+  "event_id": Array<string>;
+  "state"?: string;
+}
+
+export type FanDuelFanduelSportsbookMarketPricesResponse = CrawloraResponse<ModelFanduelSportsbookMarketPricesResponseDoc>;
+export interface FanDuelFanduelSportsbookMarketPricesParams {
+  "market_id": string;
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+}
+
+export type FanDuelFanduelSportsbookParlaysResponse = CrawloraResponse<ModelFanduelSportsbookParlaysResponseDoc>;
+export interface FanDuelFanduelSportsbookParlaysParams {
+  "view"?: "popular" | "all" | "next-to-start" | "event";
+  "event_id"?: number;
+  "type"?: "PARLAY" | "SGP" | "SGP_PLUS";
+  "event_type_id"?: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961";
+  "competition_id"?: string;
+  "min_odds"?: number;
+  "max_odds"?: number;
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+}
+
+export type FanDuelFanduelSportsbookPlayerResponse = CrawloraResponse<ModelFanduelSportsbookPlayerResponseDoc>;
+export interface FanDuelFanduelSportsbookPlayerParams {
+  "league": "nfl" | "nba";
+  "player": string;
+}
+
+export type FanDuelFanduelSportsbookPlayerNewsResponse = CrawloraResponse<ModelFanduelSportsbookPlayerNewsResponseDoc>;
+export interface FanDuelFanduelSportsbookPlayerNewsParams {
+  "league": "nfl" | "nba";
+  "player": string;
+  "cursor"?: string;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelSportsbookPlayerPropsResponse = CrawloraResponse<ModelFanduelSportsbookPlayerPropsResponseDoc>;
+export interface FanDuelFanduelSportsbookPlayerPropsParams {
+  "league": "nfl" | "nba";
+  "player": string;
+}
+
+export type FanDuelFanduelSportsbookPlayerStatsResponse = CrawloraResponse<ModelFanduelSportsbookPlayerStatsResponseDoc>;
+export interface FanDuelFanduelSportsbookPlayerStatsParams {
+  "league": "nfl" | "nba";
+  "player": string;
+}
+
+export type FanDuelFanduelSportsbookPlayersResponse = CrawloraResponse<ModelFanduelSportsbookPlayersResponseDoc>;
+export interface FanDuelFanduelSportsbookPlayersParams {
+  "league": "nfl" | "nba";
+  "q"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FanDuelFanduelSportsbookPromotionsResponse = CrawloraResponse<ModelFanduelSportsbookPromotionsResponseDoc>;
+export interface FanDuelFanduelSportsbookPromotionsParams {
+  "context"?: "home" | "league" | "sport";
+  "custom_page_id"?: string;
+  "event_type_id"?: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961";
+  "tag"?: string;
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+}
+
+export type FanDuelFanduelSportsbookScheduleResponse = CrawloraResponse<ModelFanduelSportsbookLeagueScheduleResponseDoc>;
+export interface FanDuelFanduelSportsbookScheduleParams {
+  "league": "nfl" | "nba" | "mlb" | "college-football";
+  "week"?: string;
+  "date"?: string;
+  "end_date"?: string;
+}
+
+export type FanDuelFanduelSportsbookSearchResponse = CrawloraResponse<ModelFanduelSportsbookSearchResponseDoc>;
+export interface FanDuelFanduelSportsbookSearchParams {
+  "q": string;
+  "type"?: "all" | "event" | "competition";
+  "event_type_id"?: "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961";
+  "limit"?: number;
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+}
+
+export type FanDuelFanduelSportsbookSearchTabsResponse = CrawloraResponse<ModelFanduelSportsbookSearchTabsResponseDoc>;
+export interface FanDuelFanduelSportsbookSearchTabsParams {
+  "q": string;
+  "tab"?: string;
+  "pill"?: string;
+  "start_index"?: number;
+  "timezone"?: string;
+  "state"?: string;
+}
+
+export type FanDuelFanduelSportsbookSportResponse = CrawloraResponse<ModelFanduelSportsbookPageResponseDoc>;
+export interface FanDuelFanduelSportsbookSportParams {
+  "event_type_id": "6423" | "1" | "7522" | "3" | "7511" | "7524" | "2" | "26420387" | "2593174" | "3503" | "6" | "5" | "4" | "8" | "1477" | "6422" | "468328" | "28608997" | "998917" | "4726642" | "10" | "2378961";
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+  "tab"?: string;
+  "competition_id"?: number;
+  "market_type"?: string;
+  "exclude_markets"?: boolean;
+}
+
+export type FanDuelFanduelSportsbookSportsResponse = CrawloraResponse<ModelFanduelSportsbookSportsResponseDoc>;
+export interface FanDuelFanduelSportsbookSportsParams {
+  "state"?: "ar" | "az" | "co" | "ct" | "dc" | "ia" | "il" | "in" | "ks" | "ky" | "la" | "ma" | "md" | "mi" | "mo" | "mr" | "nc" | "nj" | "ny" | "oh" | "on" | "pa" | "pr" | "tn" | "va" | "vt" | "wv" | "wy";
+}
+
+export type FanDuelFanduelSportsbookStandingsResponse = CrawloraResponse<ModelFanduelSportsbookStandingsResponseDoc>;
+export interface FanDuelFanduelSportsbookStandingsParams {
+  "league": "nfl" | "nba" | "mlb" | "college-football";
+}
+
+export type FanDuelFanduelSportsbookStatsResponse = CrawloraResponse<ModelFanduelSportsbookStatsListResponseDoc>;
+export interface FanDuelFanduelSportsbookStatsParams {
+  "competition_id"?: number;
+}
+
+export type FanDuelFanduelSportsbookTeamDepthChartResponse = CrawloraResponse<ModelFanduelSportsbookDepthChartResponseDoc>;
+export interface FanDuelFanduelSportsbookTeamDepthChartParams {
+  "league": "nfl" | "nba" | "mlb" | "college-football" | "college-basketball";
+  "team": string;
+}
+
+export type FanDuelFanduelSportsbookTeamNewsResponse = CrawloraResponse<ModelFanduelSportsbookTeamNewsResponseDoc>;
+export interface FanDuelFanduelSportsbookTeamNewsParams {
+  "league": "nfl" | "nba" | "mlb" | "college-football" | "college-basketball";
+  "team": string;
+  "cursor"?: string;
+  "limit"?: number;
+}
+
+export type FanDuelFanduelSportsbookTeamOddsResponse = CrawloraResponse<ModelFanduelSportsbookTeamOddsResponseDoc>;
+export interface FanDuelFanduelSportsbookTeamOddsParams {
+  "league": "nfl" | "nba" | "mlb" | "college-football" | "college-basketball";
+  "team": string;
+}
+
+export type FanDuelFanduelSportsbookTeamRosterResponse = CrawloraResponse<ModelFanduelSportsbookRosterResponseDoc>;
+export interface FanDuelFanduelSportsbookTeamRosterParams {
+  "league": "nfl" | "nba" | "mlb" | "college-football" | "college-basketball";
+  "team": string;
+  "injured_only"?: boolean;
+  "status"?: string;
+  "position"?: string;
+}
+
+export type FanDuelFanduelSportsbookTeamScheduleResponse = CrawloraResponse<ModelFanduelSportsbookScheduleResponseDoc>;
+export interface FanDuelFanduelSportsbookTeamScheduleParams {
+  "league": "nfl" | "nba" | "mlb" | "college-football" | "college-basketball";
+  "team": string;
+}
+
+export type FanDuelFanduelSportsbookTeamStatsResponse = CrawloraResponse<ModelFanduelSportsbookTeamStatsResponseDoc>;
+export interface FanDuelFanduelSportsbookTeamStatsParams {
+  "league": "nfl" | "nba" | "mlb" | "college-football" | "college-basketball";
+  "team": string;
+}
+
+export type FanDuelFanduelSportsbookTeamsResponse = CrawloraResponse<ModelFanduelSportsbookTeamsResponseDoc>;
+export interface FanDuelFanduelSportsbookTeamsParams {
+  "league"?: "nfl" | "nba" | "mlb" | "college-football" | "college-basketball";
+}
+
+export type FanDuelFanduelSportsbookTrendingResponse = CrawloraResponse<ModelFanduelSportsbookTrendingResponseDoc>;
+export interface FanDuelFanduelSportsbookTrendingParams {
+  "enriched"?: boolean;
 }
 
 export type FarfetchCategoriesResponse = CrawloraResponse<ModelFarfetchCategoriesResponseDoc>;
@@ -82010,6 +87589,200 @@ export interface FtSearchParams {
   "page"?: number;
   "sort"?: "relevance" | "date";
   "date_range"?: "now-24h" | "now-7d" | "now-30d" | "now-1y";
+}
+
+export type FussballDeFussballdeAmateurStatsResponse = CrawloraResponse<ModelFussballdeAmateurStatsResponseDoc>;
+export interface FussballDeFussballdeAmateurStatsParams {
+  "stat": "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
+  "season"?: string;
+  "team_type"?: "1" | "3" | "6" | "8" | "4" | "5" | "7" | "9";
+  "federation_id"?: "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FussballDeFussballdeClubResponse = CrawloraResponse<ModelFussballdeClubResponseDoc>;
+export interface FussballDeFussballdeClubParams {
+  "club_id": string;
+  "season"?: string;
+  "competition_kind"?: "1" | "8" | "3" | "7" | "6" | "11" | "2" | "21" | "9";
+}
+
+export type FussballDeFussballdeClubMatchesResponse = CrawloraResponse<ModelFussballdeClubMatchesResponseDoc>;
+export interface FussballDeFussballdeClubMatchesParams {
+  "club_id": string;
+  "kind"?: "all" | "next" | "previous";
+  "date_from"?: string;
+  "date_to"?: string;
+  "competition_kind"?: "1" | "8" | "3" | "7" | "6" | "11" | "2" | "21" | "9";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FussballDeFussballdeClubSearchResponse = CrawloraResponse<ModelFussballdeClubSearchResponseDoc>;
+export interface FussballDeFussballdeClubSearchParams {
+  "text"?: string;
+  "place"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FussballDeFussballdeCompetitionOptionsResponse = CrawloraResponse<ModelFussballdeCompetitionOptionsResponseDoc>;
+export interface FussballDeFussballdeCompetitionOptionsParams {
+  "federation_id": "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35";
+  "season": string;
+  "competition_type"?: "1" | "308" | "300" | "70" | "305" | "-300" | "-305" | "11" | "2" | "-2" | "12";
+}
+
+export type FussballDeFussballdeCompetitionsResponse = CrawloraResponse<ModelFussballdeCompetitionsResponseDoc>;
+export interface FussballDeFussballdeCompetitionsParams {
+  "federation_id": "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35";
+  "season": string;
+  "competition_type"?: "1" | "308" | "300" | "70" | "305" | "-300" | "-305" | "11" | "2" | "-2" | "12";
+  "team_type": string;
+  "league": string;
+  "area": string;
+}
+
+export type FussballDeFussballdeFederationResponse = CrawloraResponse<ModelFussballdeFederationResponseDoc>;
+export interface FussballDeFussballdeFederationParams {
+  "federation_id"?: "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35";
+  "regional_association"?: "nord" | "nordost" | "sued" | "suedwest" | "west";
+}
+
+export type FussballDeFussballdeFiltersResponse = CrawloraResponse<ModelFussballdeFiltersResponseDoc>;
+export interface FussballDeFussballdeFiltersParams {
+  "federation_id"?: "89" | "32" | "31" | "66" | "61" | "02" | "03" | "34" | "62" | "23" | "22" | "01" | "41" | "43" | "63" | "64" | "04" | "33" | "42" | "65" | "21" | "35";
+}
+
+export type FussballDeFussballdeMatchResponse = CrawloraResponse<ModelFussballdeMatchResponseDoc>;
+export interface FussballDeFussballdeMatchParams {
+  "match_id": string;
+}
+
+export type FussballDeFussballdeMatchCalendarResponse = CrawloraResponse<ModelFussballdeMatchCalendarResponseDoc>;
+export interface FussballDeFussballdeMatchCalendarParams {
+  "postal_code": string;
+  "date_from"?: string;
+  "date_to"?: string;
+  "team_types"?: string;
+  "competition_kind"?: "1" | "8" | "3" | "7" | "6" | "11" | "2" | "21" | "9";
+}
+
+export type FussballDeFussballdeMatchComparisonResponse = CrawloraResponse<ModelFussballdeMatchComparisonResponseDoc>;
+export interface FussballDeFussballdeMatchComparisonParams {
+  "match_id": string;
+  "view"?: "history" | "meetings" | "season";
+}
+
+export type FussballDeFussballdeMatchPlanResponse = CrawloraResponse<ModelFussballdeMatchPlanResponseDoc>;
+export interface FussballDeFussballdeMatchPlanParams {
+  "competition_id": string;
+  "team_id"?: string;
+  "date_from"?: string;
+  "date_to"?: string;
+}
+
+export type FussballDeFussballdeMatchdayResponse = CrawloraResponse<ModelFussballdeMatchdayResponseDoc>;
+export interface FussballDeFussballdeMatchdayParams {
+  "competition_id": string;
+  "date"?: string;
+  "matchday"?: number;
+}
+
+export type FussballDeFussballdeNationalTopScorersResponse = CrawloraResponse<ModelFussballdeNationalTopScorersResponseDoc>;
+export interface FussballDeFussballdeNationalTopScorersParams {
+  "team_type"?: "men" | "women";
+}
+
+export type FussballDeFussballdeNewsResponse = CrawloraResponse<ModelFussballdeNewsResponseDoc>;
+export interface FussballDeFussballdeNewsParams {
+  "stream"?: "all_news" | "magazin" | "regionalliga" | "verbaende" | "service" | "aktionen" | "helpcenter";
+  "regional_league"?: "nord" | "nordost" | "west" | "suedwest" | "bayern";
+  "help_category"?: "allgemeines" | "app" | "liveticker" | "mannschaftsseite" | "profile" | "registrierung" | "training_service" | "widgets";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FussballDeFussballdeNewsArticleResponse = CrawloraResponse<ModelFussballdeNewsArticleResponseDoc>;
+export interface FussballDeFussballdeNewsArticleParams {
+  "article_id": string;
+}
+
+export type FussballDeFussballdeNewsSearchResponse = CrawloraResponse<ModelFussballdeNewsSearchResponseDoc>;
+export interface FussballDeFussballdeNewsSearchParams {
+  "q": string;
+  "channel"?: "news" | "pro_news";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FussballDeFussballdePlayerResponse = CrawloraResponse<ModelFussballdePlayerResponseDoc>;
+export interface FussballDeFussballdePlayerParams {
+  "player_id": string;
+}
+
+export type FussballDeFussballdePlayerMatchesResponse = CrawloraResponse<ModelFussballdePlayerMatchesResponseDoc>;
+export interface FussballDeFussballdePlayerMatchesParams {
+  "player_id": string;
+  "season"?: string;
+  "team_id"?: string;
+}
+
+export type FussballDeFussballdePlayerSearchResponse = CrawloraResponse<ModelFussballdePlayerSearchResponseDoc>;
+export interface FussballDeFussballdePlayerSearchParams {
+  "first_name"?: string;
+  "last_name"?: string;
+  "place"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FussballDeFussballdePositionHistoryResponse = CrawloraResponse<ModelFussballdePositionHistoryResponseDoc>;
+export interface FussballDeFussballdePositionHistoryParams {
+  "competition_id": string;
+}
+
+export type FussballDeFussballdePostalCodesResponse = CrawloraResponse<ModelFussballdePostalCodesResponseDoc>;
+export interface FussballDeFussballdePostalCodesParams {
+  "q": string;
+}
+
+export type FussballDeFussballdeTableResponse = CrawloraResponse<ModelFussballdeTableResponseDoc>;
+export interface FussballDeFussballdeTableParams {
+  "competition_id": string;
+  "view"?: "overall" | "home_away" | "rounds" | "fairness" | "cross";
+  "matchday"?: number;
+}
+
+export type FussballDeFussballdeTeamResponse = CrawloraResponse<ModelFussballdeTeamResponseDoc>;
+export interface FussballDeFussballdeTeamParams {
+  "team_id": string;
+}
+
+export type FussballDeFussballdeTeamMatchesResponse = CrawloraResponse<ModelFussballdeTeamMatchesResponseDoc>;
+export interface FussballDeFussballdeTeamMatchesParams {
+  "team_id": string;
+  "kind"?: "all" | "next" | "previous" | "wins" | "draws" | "losses";
+  "date_from"?: string;
+  "date_to"?: string;
+  "competition_kind"?: "1" | "8" | "3" | "7" | "6" | "11" | "2" | "21" | "9";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type FussballDeFussballdeTeamSquadResponse = CrawloraResponse<ModelFussballdeTeamSquadResponseDoc>;
+export interface FussballDeFussballdeTeamSquadParams {
+  "team_id": string;
+  "season"?: string;
+  "kind"?: "squad" | "arrivals" | "departures";
+}
+
+export type FussballDeFussballdeTopScorersResponse = CrawloraResponse<ModelFussballdeTopScorersResponseDoc>;
+export interface FussballDeFussballdeTopScorersParams {
+  "competition_id": string;
+  "limit"?: number;
+  "offset"?: number;
 }
 
 export type GameRantGamerantArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
@@ -84521,6 +90294,12 @@ export interface InstacartTrendingParams {
   "postal_code": string;
 }
 
+export type InstagramCommentsResponse = CrawloraResponse<ModelInstagramCommentsResponseDoc>;
+export interface InstagramCommentsParams {
+  "url": string;
+  "max_id"?: string;
+}
+
 export type InstagramPostResponse = CrawloraResponse<ModelInstagramPostResponseDoc>;
 export interface InstagramPostParams {
   "id": string;
@@ -84535,6 +90314,12 @@ export interface InstagramProfileParams {
 export type InstagramReelsResponse = CrawloraResponse<ModelInstagramReelsResponseDoc>;
 export interface InstagramReelsParams {
   "id": string;
+  "max_id"?: string;
+}
+
+export type InstagramUserPostsResponse = CrawloraResponse<ModelInstagramUserPostsResponseDoc>;
+export interface InstagramUserPostsParams {
+  "username": string;
   "max_id"?: string;
 }
 
@@ -84991,6 +90776,35 @@ export interface JobsWorkdayJobParams {
   "datacenter": string;
   "site": string;
   "path": string;
+}
+
+export type JumiaCategoriesResponse = CrawloraResponse<ModelJumiaCategoriesResponseDoc>;
+export interface JumiaCategoriesParams {
+  "country": "ci" | "eg" | "ke" | "ma" | "ng" | "sn";
+  "category"?: string;
+}
+
+export type JumiaCategoryResponse = CrawloraResponse<ModelJumiaListingResponseDoc>;
+export interface JumiaCategoryParams {
+  "country": "ci" | "eg" | "ke" | "ma" | "ng" | "sn";
+  "category": string;
+  "page"?: number;
+}
+
+export type JumiaCountriesResponse = CrawloraResponse<ModelJumiaCountriesResponseDoc>;
+export interface JumiaCountriesParams {
+}
+
+export type JumiaProductResponse = CrawloraResponse<ModelJumiaProductResponseDoc>;
+export interface JumiaProductParams {
+  "url": string;
+}
+
+export type JumiaSearchResponse = CrawloraResponse<ModelJumiaListingResponseDoc>;
+export interface JumiaSearchParams {
+  "country": "ci" | "eg" | "ke" | "ma" | "ng" | "sn";
+  "q": string;
+  "page"?: number;
 }
 
 export type JustEatJusteatRestaurantResponse = CrawloraResponse<ModelJusteatRestaurantResponseDoc>;
@@ -90536,6 +96350,71 @@ export type RebagStoreResponse = CrawloraResponse<ModelShopifybrandsStoreRespons
 export interface RebagStoreParams {
 }
 
+export type RedditArchiveCommentsIdsResponse = CrawloraResponse<ModelRedditArchiveCommentsIdsResponseDoc>;
+export interface RedditArchiveCommentsIdsParams {
+  "ids": string;
+}
+
+export type RedditArchiveCommentsSearchResponse = CrawloraResponse<ModelRedditArchiveCommentsSearchResponseDoc>;
+export interface RedditArchiveCommentsSearchParams {
+  "author"?: string;
+  "subreddit"?: string;
+  "query"?: string;
+  "link_id"?: string;
+  "parent_id"?: string;
+  "created_after"?: string;
+  "created_before"?: string;
+  "sort"?: "asc" | "desc";
+  "limit"?: number;
+}
+
+export type RedditArchiveCommentsTreeResponse = CrawloraResponse<ModelRedditArchiveCommentsTreeResponseDoc>;
+export interface RedditArchiveCommentsTreeParams {
+  "id": string;
+  "parent_id"?: string;
+  "limit"?: number;
+  "start_breadth"?: number;
+  "start_depth"?: number;
+}
+
+export type RedditArchivePostsIdsResponse = CrawloraResponse<ModelRedditArchivePostsIdsResponseDoc>;
+export interface RedditArchivePostsIdsParams {
+  "ids": string;
+}
+
+export type RedditArchivePostsSearchResponse = CrawloraResponse<ModelRedditArchivePostsSearchResponseDoc>;
+export interface RedditArchivePostsSearchParams {
+  "query"?: string;
+  "author"?: string;
+  "subreddit"?: string;
+  "url"?: string;
+  "url_exact"?: boolean;
+  "created_after"?: string;
+  "created_before"?: string;
+  "sort"?: "asc" | "desc";
+  "limit"?: number;
+}
+
+export type RedditArchiveSubredditsSearchResponse = CrawloraResponse<ModelRedditArchiveSubredditsSearchResponseDoc>;
+export interface RedditArchiveSubredditsSearchParams {
+  "query": string;
+  "min_subscribers"?: number;
+  "max_subscribers"?: number;
+  "over_18"?: boolean;
+  "sort_by"?: "created_utc" | "subscribers" | "subreddit";
+  "sort"?: "asc" | "desc";
+  "limit"?: number;
+}
+
+export type RedditArchiveTimeSeriesResponse = CrawloraResponse<ModelRedditArchiveTimeSeriesResponseDoc>;
+export interface RedditArchiveTimeSeriesParams {
+  "metric": "posts_count" | "comments_count" | "posts_score_sum" | "comments_score_sum" | "posts_retrieval_delay_seconds_sum" | "comments_retrieval_delay_seconds_sum" | "subreddit_subscribers";
+  "subreddit"?: string;
+  "precision": "year" | "quarter" | "month" | "week" | "day" | "hour" | "minute";
+  "created_after": string;
+  "created_before": string;
+}
+
 export type RedditCommentsResponse = CrawloraResponse<ModelRedditCommentsResponseDoc>;
 export interface RedditCommentsParams {
   "id": string;
@@ -91805,6 +97684,14 @@ export interface ShakeShackShakeshackStoreParams {
   "path": string;
 }
 
+export type SheinBrandsResponse = CrawloraResponse<ModelSheinBrandsResponseDoc>;
+export interface SheinBrandsParams {
+}
+
+export type SheinCategoriesResponse = CrawloraResponse<ModelSheinCategoriesResponseDoc>;
+export interface SheinCategoriesParams {
+}
+
 export type SheinCategoryFiltersResponse = CrawloraResponse<ModelSheinCategoryFiltersResponseDoc>;
 export interface SheinCategoryFiltersParams {
   "cat_id": string;
@@ -91821,6 +97708,16 @@ export interface SheinCategoryGoodsParams {
 export type SheinCategoryNavResponse = CrawloraResponse<ModelSheinCategoryNavResponseDoc>;
 export interface SheinCategoryNavParams {
   "cat_id": string;
+}
+
+export type SheinDealsProductsResponse = CrawloraResponse<ModelSheinDealsProductsResponseDoc>;
+export interface SheinDealsProductsParams {
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type SheinDealsTabsResponse = CrawloraResponse<ModelSheinDealTabsResponseDoc>;
+export interface SheinDealsTabsParams {
 }
 
 export type SheinProductsAggregationFiltersResponse = CrawloraResponse<ModelSheinAggregationFiltersResponseDoc>;
@@ -91852,6 +97749,27 @@ export type SheinSearchKeywordsResponse = CrawloraResponse<ModelSheinSearchKeywo
 export interface SheinSearchKeywordsParams {
   "scene"?: string;
   "word_type"?: string;
+}
+
+export type SheinStoreResponse = CrawloraResponse<ModelSheinStoreResponseDoc>;
+export interface SheinStoreParams {
+  "store_code": string;
+}
+
+export type SheinStoreProductsResponse = CrawloraResponse<ModelSheinStoreProductsResponseDoc>;
+export interface SheinStoreProductsParams {
+  "store_code": string;
+  "category_id": string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type SheinTrendingCategoriesResponse = CrawloraResponse<ModelSheinTrendingCategoriesResponseDoc>;
+export interface SheinTrendingCategoriesParams {
+}
+
+export type SheinTrendingFiltersResponse = CrawloraResponse<ModelSheinTrendingFiltersResponseDoc>;
+export interface SheinTrendingFiltersParams {
 }
 
 export type ShopAppAnalysisResponse = CrawloraResponse<ModelShopappAnalysisResponseDoc>;
@@ -95443,6 +101361,25 @@ export type TiktokMobileAnchorListResponse = CrawloraResponse<ModelTiktokmobileA
 export interface TiktokMobileAnchorListParams {
 }
 
+export type TiktokMobileCollectionDetailResponse = CrawloraResponse<ModelTiktokmobileCollectionDetailResponseDoc>;
+export interface TiktokMobileCollectionDetailParams {
+  "collection_id": string;
+}
+
+export type TiktokMobileCollectionListResponse = CrawloraResponse<ModelTiktokmobileCollectionListResponseDoc>;
+export interface TiktokMobileCollectionListParams {
+  "user_id": string;
+  "cursor"?: number;
+  "count"?: number;
+}
+
+export type TiktokMobileCollectionVideosResponse = CrawloraResponse<ModelTiktokmobileCollectionVideosResponseDoc>;
+export interface TiktokMobileCollectionVideosParams {
+  "collection_id": string;
+  "cursor"?: number;
+  "count"?: number;
+}
+
 export type TiktokMobileCommentRepliesResponse = CrawloraResponse<ModelTiktokmobileCommentRepliesResponseDoc>;
 export interface TiktokMobileCommentRepliesParams {
   "aweme_id": string;
@@ -95462,6 +101399,12 @@ export type TiktokMobileFeedResponse = CrawloraResponse<ModelTiktokmobileFeedRes
 export interface TiktokMobileFeedParams {
   "count"?: number;
   "cursor"?: number;
+}
+
+export type TiktokMobileFeedOfflineResponse = CrawloraResponse<ModelTiktokmobileOfflineFeedResponseDoc>;
+export interface TiktokMobileFeedOfflineParams {
+  "pull_type"?: number;
+  "count"?: number;
 }
 
 export type TiktokMobileFeedPostResponse = CrawloraResponse<ModelTiktokmobileFeedPostResponseDoc>;
@@ -95496,10 +101439,28 @@ export type TiktokMobileLiveGiftsResponse = CrawloraResponse<ModelTiktokmobileLi
 export interface TiktokMobileLiveGiftsParams {
 }
 
+export type TiktokMobileLiveHashtagsResponse = CrawloraResponse<ModelTiktokmobileLiveHashtagCatalogResponseDoc>;
+export interface TiktokMobileLiveHashtagsParams {
+}
+
+export type TiktokMobileLiveRoomResponse = CrawloraResponse<ModelTiktokmobileLiveRoomInfoResponseDoc>;
+export interface TiktokMobileLiveRoomParams {
+  "room_id": string;
+}
+
+export type TiktokMobileLiveRoomByUserResponse = CrawloraResponse<ModelTiktokmobileLiveRoomInfoResponseDoc>;
+export interface TiktokMobileLiveRoomByUserParams {
+  "user_id": string;
+}
+
 export type TiktokMobileLiveSearchResponse = CrawloraResponse<ModelTiktokmobileLiveSearchResponseDoc>;
 export interface TiktokMobileLiveSearchParams {
   "keyword": string;
   "count"?: number;
+}
+
+export type TiktokMobileLiveTabsResponse = CrawloraResponse<ModelTiktokmobileLiveTabsResponseDoc>;
+export interface TiktokMobileLiveTabsParams {
 }
 
 export type TiktokMobileMusicBeatsResponse = CrawloraResponse<ModelTiktokmobileMusicBeatsSongsResponseDoc>;
@@ -95507,10 +101468,32 @@ export interface TiktokMobileMusicBeatsParams {
   "count"?: number;
 }
 
+export type TiktokMobileMusicChartResponse = CrawloraResponse<ModelTiktokmobileMusicChartResponseDoc>;
+export interface TiktokMobileMusicChartParams {
+  "chart_region"?: string;
+  "cursor"?: number;
+  "count"?: number;
+}
+
+export type TiktokMobileMusicChoicesResponse = CrawloraResponse<ModelTiktokmobileMusicChoicesResponseDoc>;
+export interface TiktokMobileMusicChoicesParams {
+}
+
+export type TiktokMobileMusicCollectionListResponse = CrawloraResponse<ModelTiktokmobileMusicCollectionListResponseDoc>;
+export interface TiktokMobileMusicCollectionListParams {
+  "count"?: number;
+  "cursor"?: number;
+}
+
 export type TiktokMobileMusicCollectionsResponse = CrawloraResponse<ModelTiktokmobileMusicCollectionFeedResponseDoc>;
 export interface TiktokMobileMusicCollectionsParams {
   "count"?: number;
   "cursor"?: number;
+}
+
+export type TiktokMobileMusicDetailResponse = CrawloraResponse<ModelTiktokmobileMusicDetailResponseDoc>;
+export interface TiktokMobileMusicDetailParams {
+  "music_id": string;
 }
 
 export type TiktokMobileMusicPickResponse = CrawloraResponse<ModelTiktokmobileMusicPickResponseDoc>;
@@ -95522,6 +101505,7 @@ export interface TiktokMobileMusicPickParams {
 export type TiktokMobileMusicPostsResponse = CrawloraResponse<ModelTiktokmobileMusicFreshAwemeResponseDoc>;
 export interface TiktokMobileMusicPostsParams {
   "music_id": string;
+  "sort"?: "fresh" | "popular";
   "count"?: number;
   "cursor"?: number;
 }
@@ -95539,11 +101523,96 @@ export interface TiktokMobileMusicTrendingParams {
   "cursor"?: number;
 }
 
+export type TiktokMobileMvVideosResponse = CrawloraResponse<ModelTiktokmobileMvFeedResponseDoc>;
+export interface TiktokMobileMvVideosParams {
+  "mv_id": string;
+  "cursor"?: number;
+}
+
+export type TiktokMobilePlaceDetailResponse = CrawloraResponse<ModelTiktokmobilePlaceDetailResponseDoc>;
+export interface TiktokMobilePlaceDetailParams {
+  "poi_id": string;
+  "review_count"?: number;
+  "review_cursor"?: number;
+  "merged_count"?: number;
+  "video_cursor"?: number;
+  "enter_from"?: string;
+}
+
+export type TiktokMobilePlaceInfoResponse = CrawloraResponse<ModelTiktokmobilePlaceInfoResponseDoc>;
+export interface TiktokMobilePlaceInfoParams {
+  "poi_id": string;
+}
+
+export type TiktokMobilePlaceMediaResponse = CrawloraResponse<ModelTiktokmobilePlaceMediaResponseDoc>;
+export interface TiktokMobilePlaceMediaParams {
+  "poi_id": string;
+  "cursor"?: string;
+  "size"?: number;
+  "data_version"?: string;
+}
+
+export type TiktokMobilePlacePhotosResponse = CrawloraResponse<ModelTiktokmobilePlacePhotosResponseDoc>;
+export interface TiktokMobilePlacePhotosParams {
+  "poi_id": string;
+}
+
+export type TiktokMobilePlaceReviewsResponse = CrawloraResponse<ModelTiktokmobilePlaceReviewsResponseDoc>;
+export interface TiktokMobilePlaceReviewsParams {
+  "poi_id": string;
+  "cursor"?: number;
+  "count"?: number;
+  "sort_type"?: "1" | "2";
+}
+
+export type TiktokMobilePlaceVideosResponse = CrawloraResponse<ModelTiktokmobilePlaceVideosResponseDoc>;
+export interface TiktokMobilePlaceVideosParams {
+  "poi_id": string;
+  "count"?: number;
+  "cursor"?: number;
+}
+
+export type TiktokMobilePlaylistDetailResponse = CrawloraResponse<ModelTiktokmobilePlaylistDetailResponseDoc>;
+export interface TiktokMobilePlaylistDetailParams {
+  "mix_id": string;
+  "user_id"?: string;
+  "sec_user_id"?: string;
+}
+
+export type TiktokMobilePlaylistListResponse = CrawloraResponse<ModelTiktokmobilePlaylistListResponseDoc>;
+export interface TiktokMobilePlaylistListParams {
+  "user_id"?: string;
+  "sec_user_id"?: string;
+  "cursor"?: number;
+}
+
+export type TiktokMobilePlaylistVideosResponse = CrawloraResponse<ModelTiktokmobilePlaylistVideosResponseDoc>;
+export interface TiktokMobilePlaylistVideosParams {
+  "mix_id": string;
+  "cursor"?: number;
+  "count"?: number;
+}
+
 export type TiktokMobileSearchResponse = CrawloraResponse<ModelTiktokmobileSearchGeneralResponseDoc>;
 export interface TiktokMobileSearchParams {
   "keyword": string;
   "count"?: number;
   "offset"?: number;
+  "search_id"?: string;
+}
+
+export type TiktokMobileSearchEffectsResponse = CrawloraResponse<ModelTiktokmobileSearchEffectsResponseDoc>;
+export interface TiktokMobileSearchEffectsParams {
+  "keyword": string;
+  "count"?: number;
+  "cursor"?: number;
+  "search_id"?: string;
+}
+
+export type TiktokMobileSearchHashtagsResponse = CrawloraResponse<ModelTiktokmobileHashtagSuggestionsResponseDoc>;
+export interface TiktokMobileSearchHashtagsParams {
+  "keyword": string;
+  "count"?: number;
 }
 
 export type TiktokMobileSearchMusicResponse = CrawloraResponse<ModelTiktokmobileSearchMusicResponseDoc>;
@@ -95551,6 +101620,16 @@ export interface TiktokMobileSearchMusicParams {
   "keyword": string;
   "count"?: number;
   "offset"?: number;
+}
+
+export type TiktokMobileSearchPhotosResponse = CrawloraResponse<ModelTiktokmobileSearchPhotosResponseDoc>;
+export interface TiktokMobileSearchPhotosParams {
+  "keyword": string;
+  "count"?: number;
+  "offset"?: number;
+  "sort_type"?: number;
+  "publish_time"?: number;
+  "search_source"?: string;
 }
 
 export type TiktokMobileSearchPlaceResponse = CrawloraResponse<ModelTiktokmobileSearchPlaceResponseDoc>;
@@ -95563,6 +101642,17 @@ export type TiktokMobileSearchPreInfoResponse = CrawloraResponse<ModelTiktokmobi
 export interface TiktokMobileSearchPreInfoParams {
   "keyword"?: string;
   "count"?: number;
+}
+
+export type TiktokMobileSearchStreamResponse = CrawloraResponse<ModelTiktokmobileSearchStreamResponseDoc>;
+export interface TiktokMobileSearchStreamParams {
+  "keyword": string;
+  "count"?: number;
+  "offset"?: number;
+  "search_source"?: string;
+  "sort_type"?: "0" | "1" | "3";
+  "publish_time"?: number;
+  "filter_selected"?: string;
 }
 
 export type TiktokMobileSearchSugResponse = CrawloraResponse<ModelTiktokmobileSearchSuggestionResponseDoc>;
@@ -95583,6 +101673,23 @@ export interface TiktokMobileSearchUserParams {
   "cursor"?: number;
 }
 
+export type TiktokMobileSearchVideosResponse = CrawloraResponse<ModelTiktokmobileSearchVideosResponseDoc>;
+export interface TiktokMobileSearchVideosParams {
+  "keyword": string;
+  "count"?: number;
+  "offset"?: number;
+  "sort_type"?: "0" | "1" | "3";
+  "publish_time"?: number;
+  "search_source"?: string;
+  "search_id"?: string;
+}
+
+export type TiktokMobileTranslationDescriptionResponse = CrawloraResponse<ModelTiktokmobileTranslationDescriptionResponseDoc>;
+export interface TiktokMobileTranslationDescriptionParams {
+  "item_id": string;
+  "target_lang"?: string;
+}
+
 export type TiktokMobileTrendingCategoriesResponse = CrawloraResponse<ModelTiktokmobileCategoryListResponseDoc>;
 export interface TiktokMobileTrendingCategoriesParams {
   "count"?: number;
@@ -95593,6 +101700,65 @@ export type TiktokMobileTrendingEffectsResponse = CrawloraResponse<ModelTiktokmo
 export interface TiktokMobileTrendingEffectsParams {
   "count"?: number;
   "cursor"?: number;
+}
+
+export type TiktokMobileUserFollowersResponse = CrawloraResponse<ModelTiktokmobileUserFollowersResponseDoc>;
+export interface TiktokMobileUserFollowersParams {
+  "user_id": string;
+  "count"?: number;
+  "cursor"?: number;
+}
+
+export type TiktokMobileUserFollowingResponse = CrawloraResponse<ModelTiktokmobileUserFollowingResponseDoc>;
+export interface TiktokMobileUserFollowingParams {
+  "user_id": string;
+  "count"?: number;
+  "cursor"?: number;
+}
+
+export type TiktokMobileUserOriginalEffectsResponse = CrawloraResponse<ModelTiktokmobileUserOriginalEffectsResponseDoc>;
+export interface TiktokMobileUserOriginalEffectsParams {
+  "user_id": string;
+  "cursor"?: number;
+  "count"?: number;
+}
+
+export type TiktokMobileUserOriginalMusicResponse = CrawloraResponse<ModelTiktokmobileUserOriginalMusicResponseDoc>;
+export interface TiktokMobileUserOriginalMusicParams {
+  "user_id": string;
+  "cursor"?: number;
+  "count"?: number;
+}
+
+export type TiktokMobileUserPostsResponse = CrawloraResponse<ModelTiktokmobileUserPostsResponseDoc>;
+export interface TiktokMobileUserPostsParams {
+  "user_id"?: string;
+  "sec_user_id"?: string;
+  "count"?: number;
+  "cursor"?: number;
+  "sort_type"?: number;
+}
+
+export type TiktokMobileUserProfileResponse = CrawloraResponse<ModelTiktokmobileUserProfileResponseDoc>;
+export interface TiktokMobileUserProfileParams {
+  "user_id"?: string;
+  "sec_user_id"?: string;
+}
+
+export type TiktokMobileUserRecommendationsResponse = CrawloraResponse<ModelTiktokmobileUserRecommendationsResponseDoc>;
+export interface TiktokMobileUserRecommendationsParams {
+  "count"?: number;
+}
+
+export type TiktokMobileVideoDetailResponse = CrawloraResponse<ModelTiktokmobileVideoDetailResponseDoc>;
+export interface TiktokMobileVideoDetailParams {
+  "aweme_id": string;
+}
+
+export type TiktokMobileVideoSubtitlesResponse = CrawloraResponse<ModelTiktokmobileVideoSubtitlesResponseDoc>;
+export interface TiktokMobileVideoSubtitlesParams {
+  "video_id": string;
+  "language": string;
 }
 
 export type TiktokPopularTrendCountryIndustryMetaResponse = CrawloraResponse<ModelPopulartrendCountryIndustryMetaResponseDoc>;
@@ -97887,6 +104053,7 @@ export interface YoutubeChannelSearchParams {
 export type YoutubeChannelShortsResponse = CrawloraResponse<ModelYoutubeChannelShortsResponseDoc>;
 export interface YoutubeChannelShortsParams {
   "id": string;
+  "continuation_token"?: string;
 }
 
 export type YoutubeChannelVideosResponse = CrawloraResponse<ModelYoutubeChannelFeedResponseDoc>;
@@ -97899,6 +104066,12 @@ export type YoutubeCommentsResponse = CrawloraResponse<ModelYoutubeCommentsRespo
 export interface YoutubeCommentsParams {
   "id": string;
   "continuation_token"?: string;
+}
+
+export type YoutubeCommentRepliesResponse = CrawloraResponse<ModelYoutubeCommentsResponseDoc>;
+export interface YoutubeCommentRepliesParams {
+  "id": string;
+  "continuation_token": string;
 }
 
 export type YoutubePlaylistResponse = CrawloraResponse<ModelYoutubePlaylistResponseDoc>;
@@ -99333,6 +105506,40 @@ export interface DoorDashService {
   doordashStoreReviews<T = DoorDashDoordashStoreReviewsResponse>(params: DoorDashDoordashStoreReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface DraftKingsCasinoService {
+  draftkingsCasinoDirectory<T = DraftKingsCasinoDraftkingsCasinoDirectoryResponse>(params?: DraftKingsCasinoDraftkingsCasinoDirectoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsCasinoSlotsGuide<T = DraftKingsCasinoDraftkingsCasinoSlotsGuideResponse>(params?: DraftKingsCasinoDraftkingsCasinoSlotsGuideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsCasinoSlotsCategories<T = DraftKingsCasinoDraftkingsCasinoSlotsCategoriesResponse>(params?: DraftKingsCasinoDraftkingsCasinoSlotsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsCasinoCleopatraGuide<T = DraftKingsCasinoDraftkingsCasinoCleopatraGuideResponse>(params?: DraftKingsCasinoDraftkingsCasinoCleopatraGuideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsCasinoWheelOfFortuneGuide<T = DraftKingsCasinoDraftkingsCasinoWheelOfFortuneGuideResponse>(params?: DraftKingsCasinoDraftkingsCasinoWheelOfFortuneGuideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface DraftKingsDailyFantasySportsService {
+  draftkingsDfsGlossary<T = DraftKingsDailyFantasySportsDraftkingsDfsGlossaryResponse>(params?: DraftKingsDailyFantasySportsDraftkingsDfsGlossaryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsDfsGuide<T = DraftKingsDailyFantasySportsDraftkingsDfsGuideResponse>(params?: DraftKingsDailyFantasySportsDraftkingsDfsGuideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsDfsNflBestBallFeaturedContests<T = DraftKingsDailyFantasySportsDraftkingsDfsNflBestBallFeaturedContestsResponse>(params?: DraftKingsDailyFantasySportsDraftkingsDfsNflBestBallFeaturedContestsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsDfsRulesAndScoring<T = DraftKingsDailyFantasySportsDraftkingsDfsRulesAndScoringResponse>(params?: DraftKingsDailyFantasySportsDraftkingsDfsRulesAndScoringParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsDfsSports<T = DraftKingsDailyFantasySportsDraftkingsDfsSportsResponse>(params?: DraftKingsDailyFantasySportsDraftkingsDfsSportsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface DraftKingsPick6Service {
+  draftkingsPick6Rules<T = DraftKingsPick6DraftkingsPick6RulesResponse>(params?: DraftKingsPick6DraftkingsPick6RulesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsPick6RulePage<T = DraftKingsPick6DraftkingsPick6RulePageResponse>(params: DraftKingsPick6DraftkingsPick6RulePageParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsPick6Sports<T = DraftKingsPick6DraftkingsPick6SportsResponse>(params?: DraftKingsPick6DraftkingsPick6SportsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface DraftKingsPredictionsService {
+  draftkingsPredictionsAvailability<T = DraftKingsPredictionsDraftkingsPredictionsAvailabilityResponse>(params?: DraftKingsPredictionsDraftkingsPredictionsAvailabilityParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsPredictionsCategories<T = DraftKingsPredictionsDraftkingsPredictionsCategoriesResponse>(params?: DraftKingsPredictionsDraftkingsPredictionsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsPredictionsRules<T = DraftKingsPredictionsDraftkingsPredictionsRulesResponse>(params?: DraftKingsPredictionsDraftkingsPredictionsRulesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface DraftKingsRacingService {
+  draftkingsRacingRaceInfo<T = DraftKingsRacingDraftkingsRacingRaceInfoResponse>(params: DraftKingsRacingDraftkingsRacingRaceInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsRacingSchedule<T = DraftKingsRacingDraftkingsRacingScheduleResponse>(params?: DraftKingsRacingDraftkingsRacingScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  draftkingsRacingTracks<T = DraftKingsRacingDraftkingsRacingTracksResponse>(params?: DraftKingsRacingDraftkingsRacingTracksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface DraftKingsSportsbookService {
   draftkingsEvent<T = DraftKingsSportsbookDraftkingsEventResponse>(params: DraftKingsSportsbookDraftkingsEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   draftkingsEventContext<T = DraftKingsSportsbookDraftkingsEventContextResponse>(params: DraftKingsSportsbookDraftkingsEventContextParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -99510,6 +105717,81 @@ export interface FanaticsLiveService {
   fanaticsliveShops<T = FanaticsLiveFanaticsliveShopsResponse>(params?: FanaticsLiveFanaticsliveShopsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fanaticsliveShow<T = FanaticsLiveFanaticsliveShowResponse>(params: FanaticsLiveFanaticsliveShowParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   fanaticsliveInstantRips<T = FanaticsLiveFanaticsliveInstantRipsResponse>(params: FanaticsLiveFanaticsliveInstantRipsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface FanDuelService {
+  fanduelCasinoCategories<T = FanDuelFanduelCasinoCategoriesResponse>(params?: FanDuelFanduelCasinoCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelCasinoCategory<T = FanDuelFanduelCasinoCategoryResponse>(params: FanDuelFanduelCasinoCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelCasinoGame<T = FanDuelFanduelCasinoGameResponse>(params: FanDuelFanduelCasinoGameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingCarryoverPools<T = FanDuelFanduelRacingCarryoverPoolsResponse>(params?: FanDuelFanduelRacingCarryoverPoolsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingFilters<T = FanDuelFanduelRacingFiltersResponse>(params?: FanDuelFanduelRacingFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingHorse<T = FanDuelFanduelRacingHorseResponse>(params: FanDuelFanduelRacingHorseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingPastRace<T = FanDuelFanduelRacingPastRaceResponse>(params: FanDuelFanduelRacingPastRaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingPastRaces<T = FanDuelFanduelRacingPastRacesResponse>(params: FanDuelFanduelRacingPastRacesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingPastTracks<T = FanDuelFanduelRacingPastTracksResponse>(params?: FanDuelFanduelRacingPastTracksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingRace<T = FanDuelFanduelRacingRaceResponse>(params: FanDuelFanduelRacingRaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingRaces<T = FanDuelFanduelRacingRacesResponse>(params?: FanDuelFanduelRacingRacesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingResults<T = FanDuelFanduelRacingResultsResponse>(params?: FanDuelFanduelRacingResultsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingSearch<T = FanDuelFanduelRacingSearchResponse>(params: FanDuelFanduelRacingSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingTrack<T = FanDuelFanduelRacingTrackResponse>(params: FanDuelFanduelRacingTrackParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingTracks<T = FanDuelFanduelRacingTracksResponse>(params?: FanDuelFanduelRacingTracksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelRacingWagerTypes<T = FanDuelFanduelRacingWagerTypesResponse>(params?: FanDuelFanduelRacingWagerTypesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearch<T = FanDuelFanduelResearchResponse>(params?: FanDuelFanduelResearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchArticle<T = FanDuelFanduelResearchArticleResponse>(params: FanDuelFanduelResearchArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchArticles<T = FanDuelFanduelResearchArticlesResponse>(params?: FanDuelFanduelResearchArticlesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchAuthor<T = FanDuelFanduelResearchAuthorResponse>(params: FanDuelFanduelResearchAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchAuthors<T = FanDuelFanduelResearchAuthorsResponse>(params?: FanDuelFanduelResearchAuthorsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchFeaturedArticles<T = FanDuelFanduelResearchFeaturedArticlesResponse>(params: FanDuelFanduelResearchFeaturedArticlesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchFixtures<T = FanDuelFanduelResearchFixturesResponse>(params?: FanDuelFanduelResearchFixturesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchNflSchedule<T = FanDuelFanduelResearchNflScheduleResponse>(params: FanDuelFanduelResearchNflScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchPlayerNews<T = FanDuelFanduelResearchPlayerNewsResponse>(params: FanDuelFanduelResearchPlayerNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchQuickPicksDaily<T = FanDuelFanduelResearchQuickPicksDailyResponse>(params?: FanDuelFanduelResearchQuickPicksDailyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchProjectionSlates<T = FanDuelFanduelResearchProjectionSlatesResponse>(params: FanDuelFanduelResearchProjectionSlatesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchProjectionTables<T = FanDuelFanduelResearchProjectionTablesResponse>(params?: FanDuelFanduelResearchProjectionTablesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchProjections<T = FanDuelFanduelResearchProjectionsResponse>(params: FanDuelFanduelResearchProjectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchSports<T = FanDuelFanduelResearchSportsResponse>(params?: FanDuelFanduelResearchSportsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelResearchSubCategories<T = FanDuelFanduelResearchSubCategoriesResponse>(params?: FanDuelFanduelResearchSubCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookAutocomplete<T = FanDuelFanduelSportsbookAutocompleteResponse>(params: FanDuelFanduelSportsbookAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookBuilder<T = FanDuelFanduelSportsbookBuilderResponse>(params: FanDuelFanduelSportsbookBuilderParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookBuilderEvents<T = FanDuelFanduelSportsbookBuilderEventsResponse>(params?: FanDuelFanduelSportsbookBuilderEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookBuilderQuotes<T = FanDuelFanduelSportsbookBuilderQuotesResponse>(params: FanDuelFanduelSportsbookBuilderQuotesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookCompetition<T = FanDuelFanduelSportsbookCompetitionResponse>(params: FanDuelFanduelSportsbookCompetitionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookEvent<T = FanDuelFanduelSportsbookEventResponse>(params: FanDuelFanduelSportsbookEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookEventBoxScore<T = FanDuelFanduelSportsbookEventBoxScoreResponse>(params: FanDuelFanduelSportsbookEventBoxScoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookEventPlayByPlay<T = FanDuelFanduelSportsbookEventPlayByPlayResponse>(params: FanDuelFanduelSportsbookEventPlayByPlayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookEventPlayers<T = FanDuelFanduelSportsbookEventPlayersResponse>(params: FanDuelFanduelSportsbookEventPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookEventScore<T = FanDuelFanduelSportsbookEventScoreResponse>(params: FanDuelFanduelSportsbookEventScoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookEventStats<T = FanDuelFanduelSportsbookEventStatsResponse>(params: FanDuelFanduelSportsbookEventStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookEventsStatus<T = FanDuelFanduelSportsbookEventsStatusResponse>(params: FanDuelFanduelSportsbookEventsStatusParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookHome<T = FanDuelFanduelSportsbookHomeResponse>(params?: FanDuelFanduelSportsbookHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookLeague<T = FanDuelFanduelSportsbookLeagueResponse>(params: FanDuelFanduelSportsbookLeagueParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookLive<T = FanDuelFanduelSportsbookLiveResponse>(params?: FanDuelFanduelSportsbookLiveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookLiveCount<T = FanDuelFanduelSportsbookLiveCountResponse>(params?: FanDuelFanduelSportsbookLiveCountParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookLiveData<T = FanDuelFanduelSportsbookLiveDataResponse>(params: FanDuelFanduelSportsbookLiveDataParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookLiveScores<T = FanDuelFanduelSportsbookLiveScoresResponse>(params: FanDuelFanduelSportsbookLiveScoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookMarketPrices<T = FanDuelFanduelSportsbookMarketPricesResponse>(params: FanDuelFanduelSportsbookMarketPricesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookParlays<T = FanDuelFanduelSportsbookParlaysResponse>(params?: FanDuelFanduelSportsbookParlaysParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookPlayer<T = FanDuelFanduelSportsbookPlayerResponse>(params: FanDuelFanduelSportsbookPlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookPlayerNews<T = FanDuelFanduelSportsbookPlayerNewsResponse>(params: FanDuelFanduelSportsbookPlayerNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookPlayerProps<T = FanDuelFanduelSportsbookPlayerPropsResponse>(params: FanDuelFanduelSportsbookPlayerPropsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookPlayerStats<T = FanDuelFanduelSportsbookPlayerStatsResponse>(params: FanDuelFanduelSportsbookPlayerStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookPlayers<T = FanDuelFanduelSportsbookPlayersResponse>(params: FanDuelFanduelSportsbookPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookPromotions<T = FanDuelFanduelSportsbookPromotionsResponse>(params?: FanDuelFanduelSportsbookPromotionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookSchedule<T = FanDuelFanduelSportsbookScheduleResponse>(params: FanDuelFanduelSportsbookScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookSearch<T = FanDuelFanduelSportsbookSearchResponse>(params: FanDuelFanduelSportsbookSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookSearchTabs<T = FanDuelFanduelSportsbookSearchTabsResponse>(params: FanDuelFanduelSportsbookSearchTabsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookSport<T = FanDuelFanduelSportsbookSportResponse>(params: FanDuelFanduelSportsbookSportParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookSports<T = FanDuelFanduelSportsbookSportsResponse>(params?: FanDuelFanduelSportsbookSportsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookStandings<T = FanDuelFanduelSportsbookStandingsResponse>(params: FanDuelFanduelSportsbookStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookStats<T = FanDuelFanduelSportsbookStatsResponse>(params?: FanDuelFanduelSportsbookStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookTeamDepthChart<T = FanDuelFanduelSportsbookTeamDepthChartResponse>(params: FanDuelFanduelSportsbookTeamDepthChartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookTeamNews<T = FanDuelFanduelSportsbookTeamNewsResponse>(params: FanDuelFanduelSportsbookTeamNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookTeamOdds<T = FanDuelFanduelSportsbookTeamOddsResponse>(params: FanDuelFanduelSportsbookTeamOddsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookTeamRoster<T = FanDuelFanduelSportsbookTeamRosterResponse>(params: FanDuelFanduelSportsbookTeamRosterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookTeamSchedule<T = FanDuelFanduelSportsbookTeamScheduleResponse>(params: FanDuelFanduelSportsbookTeamScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookTeamStats<T = FanDuelFanduelSportsbookTeamStatsResponse>(params: FanDuelFanduelSportsbookTeamStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookTeams<T = FanDuelFanduelSportsbookTeamsResponse>(params?: FanDuelFanduelSportsbookTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fanduelSportsbookTrending<T = FanDuelFanduelSportsbookTrendingResponse>(params?: FanDuelFanduelSportsbookTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface FarfetchService {
@@ -99753,6 +106035,36 @@ export interface FtService {
   headlines<T = FtHeadlinesResponse>(params: FtHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = FtNewsResponse>(params?: FtNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = FtSearchResponse>(params: FtSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface FussballDeService {
+  fussballdeAmateurStats<T = FussballDeFussballdeAmateurStatsResponse>(params: FussballDeFussballdeAmateurStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeClub<T = FussballDeFussballdeClubResponse>(params: FussballDeFussballdeClubParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeClubMatches<T = FussballDeFussballdeClubMatchesResponse>(params: FussballDeFussballdeClubMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeClubSearch<T = FussballDeFussballdeClubSearchResponse>(params?: FussballDeFussballdeClubSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeCompetitionOptions<T = FussballDeFussballdeCompetitionOptionsResponse>(params: FussballDeFussballdeCompetitionOptionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeCompetitions<T = FussballDeFussballdeCompetitionsResponse>(params: FussballDeFussballdeCompetitionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeFederation<T = FussballDeFussballdeFederationResponse>(params?: FussballDeFussballdeFederationParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeFilters<T = FussballDeFussballdeFiltersResponse>(params?: FussballDeFussballdeFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeMatch<T = FussballDeFussballdeMatchResponse>(params: FussballDeFussballdeMatchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeMatchCalendar<T = FussballDeFussballdeMatchCalendarResponse>(params: FussballDeFussballdeMatchCalendarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeMatchComparison<T = FussballDeFussballdeMatchComparisonResponse>(params: FussballDeFussballdeMatchComparisonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeMatchPlan<T = FussballDeFussballdeMatchPlanResponse>(params: FussballDeFussballdeMatchPlanParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeMatchday<T = FussballDeFussballdeMatchdayResponse>(params: FussballDeFussballdeMatchdayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeNationalTopScorers<T = FussballDeFussballdeNationalTopScorersResponse>(params?: FussballDeFussballdeNationalTopScorersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeNews<T = FussballDeFussballdeNewsResponse>(params?: FussballDeFussballdeNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeNewsArticle<T = FussballDeFussballdeNewsArticleResponse>(params: FussballDeFussballdeNewsArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeNewsSearch<T = FussballDeFussballdeNewsSearchResponse>(params: FussballDeFussballdeNewsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdePlayer<T = FussballDeFussballdePlayerResponse>(params: FussballDeFussballdePlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdePlayerMatches<T = FussballDeFussballdePlayerMatchesResponse>(params: FussballDeFussballdePlayerMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdePlayerSearch<T = FussballDeFussballdePlayerSearchResponse>(params?: FussballDeFussballdePlayerSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdePositionHistory<T = FussballDeFussballdePositionHistoryResponse>(params: FussballDeFussballdePositionHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdePostalCodes<T = FussballDeFussballdePostalCodesResponse>(params: FussballDeFussballdePostalCodesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeTable<T = FussballDeFussballdeTableResponse>(params: FussballDeFussballdeTableParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeTeam<T = FussballDeFussballdeTeamResponse>(params: FussballDeFussballdeTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeTeamMatches<T = FussballDeFussballdeTeamMatchesResponse>(params: FussballDeFussballdeTeamMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeTeamSquad<T = FussballDeFussballdeTeamSquadResponse>(params: FussballDeFussballdeTeamSquadParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  fussballdeTopScorers<T = FussballDeFussballdeTopScorersResponse>(params: FussballDeFussballdeTopScorersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface GameRantService {
@@ -100303,9 +106615,11 @@ export interface InstacartService {
 }
 
 export interface InstagramService {
+  comments<T = InstagramCommentsResponse>(params: InstagramCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   post<T = InstagramPostResponse>(params: InstagramPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = InstagramProfileResponse>(params: InstagramProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reels<T = InstagramReelsResponse>(params: InstagramReelsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  userPosts<T = InstagramUserPostsResponse>(params: InstagramUserPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface InvestopediaService {
@@ -100407,6 +106721,14 @@ export interface JobsService {
   workablePostings<T = JobsWorkablePostingsResponse>(params: JobsWorkablePostingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   workdayBoard<T = JobsWorkdayBoardResponse>(params: JobsWorkdayBoardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   workdayJob<T = JobsWorkdayJobResponse>(params: JobsWorkdayJobParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface JumiaService {
+  categories<T = JumiaCategoriesResponse>(params: JumiaCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  category<T = JumiaCategoryResponse>(params: JumiaCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  countries<T = JumiaCountriesResponse>(params?: JumiaCountriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = JumiaProductResponse>(params: JumiaProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = JumiaSearchResponse>(params: JumiaSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface JustEatService {
@@ -101588,6 +107910,13 @@ export interface RebagService {
 }
 
 export interface RedditService {
+  archiveCommentsIds<T = RedditArchiveCommentsIdsResponse>(params: RedditArchiveCommentsIdsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  archiveCommentsSearch<T = RedditArchiveCommentsSearchResponse>(params?: RedditArchiveCommentsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  archiveCommentsTree<T = RedditArchiveCommentsTreeResponse>(params: RedditArchiveCommentsTreeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  archivePostsIds<T = RedditArchivePostsIdsResponse>(params: RedditArchivePostsIdsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  archivePostsSearch<T = RedditArchivePostsSearchResponse>(params?: RedditArchivePostsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  archiveSubredditsSearch<T = RedditArchiveSubredditsSearchResponse>(params: RedditArchiveSubredditsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  archiveTimeSeries<T = RedditArchiveTimeSeriesResponse>(params: RedditArchiveTimeSeriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   comments<T = RedditCommentsResponse>(params: RedditCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   domainPosts<T = RedditDomainPostsResponse>(params: RedditDomainPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   leads<T = RedditLeadsResponse>(params: RedditLeadsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -101882,14 +108211,22 @@ export interface ShakeShackService {
 }
 
 export interface SheinService {
+  brands<T = SheinBrandsResponse>(params?: SheinBrandsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categories<T = SheinCategoriesResponse>(params?: SheinCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categoryFilters<T = SheinCategoryFiltersResponse>(params: SheinCategoryFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categoryGoods<T = SheinCategoryGoodsResponse>(params: SheinCategoryGoodsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   categoryNav<T = SheinCategoryNavResponse>(params: SheinCategoryNavParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dealsProducts<T = SheinDealsProductsResponse>(params?: SheinDealsProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dealsTabs<T = SheinDealsTabsResponse>(params?: SheinDealsTabsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   productsAggregationFilters<T = SheinProductsAggregationFiltersResponse>(params: SheinProductsAggregationFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   productsDetail<T = SheinProductsDetailResponse>(params: SheinProductsDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   productsSearch<T = SheinProductsSearchResponse>(params: SheinProductsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   searchAutocomplete<T = SheinSearchAutocompleteResponse>(params: SheinSearchAutocompleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   searchKeywords<T = SheinSearchKeywordsResponse>(params?: SheinSearchKeywordsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  store<T = SheinStoreResponse>(params: SheinStoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  storeProducts<T = SheinStoreProductsResponse>(params: SheinStoreProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trendingCategories<T = SheinTrendingCategoriesResponse>(params?: SheinTrendingCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  trendingFilters<T = SheinTrendingFiltersResponse>(params?: SheinTrendingFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ShopAppService {
@@ -102653,31 +108990,68 @@ export interface TiktokService {
   challenge<T = TiktokChallengeResponse>(params: TiktokChallengeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   challengeList<T = TiktokChallengeListResponse>(params: TiktokChallengeListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileAnchorList<T = TiktokMobileAnchorListResponse>(params?: TiktokMobileAnchorListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileCollectionDetail<T = TiktokMobileCollectionDetailResponse>(params: TiktokMobileCollectionDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileCollectionList<T = TiktokMobileCollectionListResponse>(params: TiktokMobileCollectionListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileCollectionVideos<T = TiktokMobileCollectionVideosResponse>(params: TiktokMobileCollectionVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileCommentReplies<T = TiktokMobileCommentRepliesResponse>(params: TiktokMobileCommentRepliesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileComments<T = TiktokMobileCommentsResponse>(params: TiktokMobileCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileFeed<T = TiktokMobileFeedResponse>(params?: TiktokMobileFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileFeedOffline<T = TiktokMobileFeedOfflineResponse>(params?: TiktokMobileFeedOfflineParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileFeedPost<T = TiktokMobileFeedPostResponse>(params?: TiktokMobileFeedPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileHashtag<T = TiktokMobileHashtagResponse>(params: TiktokMobileHashtagParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileHashtagPosts<T = TiktokMobileHashtagPostsResponse>(params: TiktokMobileHashtagPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileHashtags<T = TiktokMobileHashtagsResponse>(params: TiktokMobileHashtagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileLiveEffects<T = TiktokMobileLiveEffectsResponse>(params?: TiktokMobileLiveEffectsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileLiveGifts<T = TiktokMobileLiveGiftsResponse>(params?: TiktokMobileLiveGiftsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileLiveHashtags<T = TiktokMobileLiveHashtagsResponse>(params?: TiktokMobileLiveHashtagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileLiveRoom<T = TiktokMobileLiveRoomResponse>(params: TiktokMobileLiveRoomParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileLiveRoomByUser<T = TiktokMobileLiveRoomByUserResponse>(params: TiktokMobileLiveRoomByUserParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileLiveSearch<T = TiktokMobileLiveSearchResponse>(params: TiktokMobileLiveSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileLiveTabs<T = TiktokMobileLiveTabsResponse>(params?: TiktokMobileLiveTabsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileMusicBeats<T = TiktokMobileMusicBeatsResponse>(params?: TiktokMobileMusicBeatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileMusicChart<T = TiktokMobileMusicChartResponse>(params?: TiktokMobileMusicChartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileMusicChoices<T = TiktokMobileMusicChoicesResponse>(params?: TiktokMobileMusicChoicesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileMusicCollectionList<T = TiktokMobileMusicCollectionListResponse>(params?: TiktokMobileMusicCollectionListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileMusicCollections<T = TiktokMobileMusicCollectionsResponse>(params?: TiktokMobileMusicCollectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileMusicDetail<T = TiktokMobileMusicDetailResponse>(params: TiktokMobileMusicDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileMusicPick<T = TiktokMobileMusicPickResponse>(params?: TiktokMobileMusicPickParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileMusicPosts<T = TiktokMobileMusicPostsResponse>(params: TiktokMobileMusicPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileMusicRelated<T = TiktokMobileMusicRelatedResponse>(params: TiktokMobileMusicRelatedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileMusicTrending<T = TiktokMobileMusicTrendingResponse>(params?: TiktokMobileMusicTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileMvVideos<T = TiktokMobileMvVideosResponse>(params: TiktokMobileMvVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlaceDetail<T = TiktokMobilePlaceDetailResponse>(params: TiktokMobilePlaceDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlaceInfo<T = TiktokMobilePlaceInfoResponse>(params: TiktokMobilePlaceInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlaceMedia<T = TiktokMobilePlaceMediaResponse>(params: TiktokMobilePlaceMediaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlacePhotos<T = TiktokMobilePlacePhotosResponse>(params: TiktokMobilePlacePhotosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlaceReviews<T = TiktokMobilePlaceReviewsResponse>(params: TiktokMobilePlaceReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlaceVideos<T = TiktokMobilePlaceVideosResponse>(params: TiktokMobilePlaceVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlaylistDetail<T = TiktokMobilePlaylistDetailResponse>(params: TiktokMobilePlaylistDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlaylistList<T = TiktokMobilePlaylistListResponse>(params?: TiktokMobilePlaylistListParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobilePlaylistVideos<T = TiktokMobilePlaylistVideosResponse>(params: TiktokMobilePlaylistVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileSearch<T = TiktokMobileSearchResponse>(params: TiktokMobileSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileSearchEffects<T = TiktokMobileSearchEffectsResponse>(params: TiktokMobileSearchEffectsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileSearchHashtags<T = TiktokMobileSearchHashtagsResponse>(params: TiktokMobileSearchHashtagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileSearchMusic<T = TiktokMobileSearchMusicResponse>(params: TiktokMobileSearchMusicParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileSearchPhotos<T = TiktokMobileSearchPhotosResponse>(params: TiktokMobileSearchPhotosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileSearchPlace<T = TiktokMobileSearchPlaceResponse>(params: TiktokMobileSearchPlaceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileSearchPreInfo<T = TiktokMobileSearchPreInfoResponse>(params?: TiktokMobileSearchPreInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileSearchStream<T = TiktokMobileSearchStreamResponse>(params: TiktokMobileSearchStreamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileSearchSug<T = TiktokMobileSearchSugResponse>(params: TiktokMobileSearchSugParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileSearchTabs<T = TiktokMobileSearchTabsResponse>(params: TiktokMobileSearchTabsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileSearchUser<T = TiktokMobileSearchUserResponse>(params: TiktokMobileSearchUserParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileSearchVideos<T = TiktokMobileSearchVideosResponse>(params: TiktokMobileSearchVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileTranslationDescription<T = TiktokMobileTranslationDescriptionResponse>(params: TiktokMobileTranslationDescriptionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileTrendingCategories<T = TiktokMobileTrendingCategoriesResponse>(params?: TiktokMobileTrendingCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   mobileTrendingEffects<T = TiktokMobileTrendingEffectsResponse>(params?: TiktokMobileTrendingEffectsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileUserFollowers<T = TiktokMobileUserFollowersResponse>(params: TiktokMobileUserFollowersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileUserFollowing<T = TiktokMobileUserFollowingResponse>(params: TiktokMobileUserFollowingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileUserOriginalEffects<T = TiktokMobileUserOriginalEffectsResponse>(params: TiktokMobileUserOriginalEffectsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileUserOriginalMusic<T = TiktokMobileUserOriginalMusicResponse>(params: TiktokMobileUserOriginalMusicParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileUserPosts<T = TiktokMobileUserPostsResponse>(params?: TiktokMobileUserPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileUserProfile<T = TiktokMobileUserProfileResponse>(params?: TiktokMobileUserProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileUserRecommendations<T = TiktokMobileUserRecommendationsResponse>(params?: TiktokMobileUserRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileVideoDetail<T = TiktokMobileVideoDetailResponse>(params: TiktokMobileVideoDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mobileVideoSubtitles<T = TiktokMobileVideoSubtitlesResponse>(params: TiktokMobileVideoSubtitlesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   popularTrendCountryIndustryMeta<T = TiktokPopularTrendCountryIndustryMetaResponse>(params?: TiktokPopularTrendCountryIndustryMetaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   post<T = TiktokPostResponse>(params: TiktokPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profilePost<T = TiktokProfilePostResponse>(params: TiktokProfilePostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -103265,6 +109639,7 @@ export interface YoutubeService {
   channelShorts<T = YoutubeChannelShortsResponse>(params: YoutubeChannelShortsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   channelVideos<T = YoutubeChannelVideosResponse>(params: YoutubeChannelVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   comments<T = YoutubeCommentsResponse>(params: YoutubeCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  commentReplies<T = YoutubeCommentRepliesResponse>(params: YoutubeCommentRepliesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playlist<T = YoutubePlaylistResponse>(params: YoutubePlaylistParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   profile<T = YoutubeProfileResponse>(params: YoutubeProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = YoutubeSearchResponse>(params?: YoutubeSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -103439,6 +109814,11 @@ export interface CrawloraGeneratedGroups {
   discogs: DiscogsService;
   dominos: DominosService;
   doorDash: DoorDashService;
+  draftKingsCasino: DraftKingsCasinoService;
+  draftKingsDailyFantasySports: DraftKingsDailyFantasySportsService;
+  draftKingsPick6: DraftKingsPick6Service;
+  draftKingsPredictions: DraftKingsPredictionsService;
+  draftKingsRacing: DraftKingsRacingService;
   draftKingsSportsbook: DraftKingsSportsbookService;
   duckDuckGoSearch: DuckDuckGoSearchService;
   dunkin: DunkinService;
@@ -103458,6 +109838,7 @@ export interface CrawloraGeneratedGroups {
   fanatics: FanaticsService;
   fanaticsCollect: FanaticsCollectService;
   fanaticsLive: FanaticsLiveService;
+  fanDuel: FanDuelService;
   farfetch: FarfetchService;
   fashionNova: FashionNovaService;
   fashionphile: FashionphileService;
@@ -103476,6 +109857,7 @@ export interface CrawloraGeneratedGroups {
   france24: France24Service;
   freeMalaysiaToday: FreeMalaysiaTodayService;
   ft: FtService;
+  fussballDe: FussballDeService;
   gameRant: GameRantService;
   gamesRadar: GamesRadarService;
   gbNews: GbNewsService;
@@ -103536,6 +109918,7 @@ export interface CrawloraGeneratedGroups {
   jerusalemPost: JerusalemPostService;
   jimmyJohns: JimmyJohnsService;
   jobs: JobsService;
+  jumia: JumiaService;
   justEat: JustEatService;
   justWatch: JustWatchService;
   kalshi: KalshiService;
@@ -104647,6 +111030,25 @@ export interface OperationParamsMap {
   "doordash-store-item": DoorDashDoordashStoreItemParams;
   "doordash-store-menu": DoorDashDoordashStoreMenuParams;
   "doordash-store-reviews": DoorDashDoordashStoreReviewsParams;
+  "draftkings-casino-directory": DraftKingsCasinoDraftkingsCasinoDirectoryParams;
+  "draftkings-casino-slots-guide": DraftKingsCasinoDraftkingsCasinoSlotsGuideParams;
+  "draftkings-casino-slots-categories": DraftKingsCasinoDraftkingsCasinoSlotsCategoriesParams;
+  "draftkings-casino-cleopatra-guide": DraftKingsCasinoDraftkingsCasinoCleopatraGuideParams;
+  "draftkings-casino-wheel-of-fortune-guide": DraftKingsCasinoDraftkingsCasinoWheelOfFortuneGuideParams;
+  "draftkings-dfs-glossary": DraftKingsDailyFantasySportsDraftkingsDfsGlossaryParams;
+  "draftkings-dfs-guide": DraftKingsDailyFantasySportsDraftkingsDfsGuideParams;
+  "draftkings-dfs-nfl-best-ball-featured-contests": DraftKingsDailyFantasySportsDraftkingsDfsNflBestBallFeaturedContestsParams;
+  "draftkings-dfs-rules-and-scoring": DraftKingsDailyFantasySportsDraftkingsDfsRulesAndScoringParams;
+  "draftkings-dfs-sports": DraftKingsDailyFantasySportsDraftkingsDfsSportsParams;
+  "draftkings-pick6-rules": DraftKingsPick6DraftkingsPick6RulesParams;
+  "draftkings-pick6-rule-page": DraftKingsPick6DraftkingsPick6RulePageParams;
+  "draftkings-pick6-sports": DraftKingsPick6DraftkingsPick6SportsParams;
+  "draftkings-predictions-availability": DraftKingsPredictionsDraftkingsPredictionsAvailabilityParams;
+  "draftkings-predictions-categories": DraftKingsPredictionsDraftkingsPredictionsCategoriesParams;
+  "draftkings-predictions-rules": DraftKingsPredictionsDraftkingsPredictionsRulesParams;
+  "draftkings-racing-race-info": DraftKingsRacingDraftkingsRacingRaceInfoParams;
+  "draftkings-racing-schedule": DraftKingsRacingDraftkingsRacingScheduleParams;
+  "draftkings-racing-tracks": DraftKingsRacingDraftkingsRacingTracksParams;
   "draftkings-event": DraftKingsSportsbookDraftkingsEventParams;
   "draftkings-event-context": DraftKingsSportsbookDraftkingsEventContextParams;
   "draftkings-event-markets": DraftKingsSportsbookDraftkingsEventMarketsParams;
@@ -104771,6 +111173,78 @@ export interface OperationParamsMap {
   "fanaticslive-shops": FanaticsLiveFanaticsliveShopsParams;
   "fanaticslive-show": FanaticsLiveFanaticsliveShowParams;
   "fanaticslive-instant-rips": FanaticsLiveFanaticsliveInstantRipsParams;
+  "fanduel-casino-categories": FanDuelFanduelCasinoCategoriesParams;
+  "fanduel-casino-category": FanDuelFanduelCasinoCategoryParams;
+  "fanduel-casino-game": FanDuelFanduelCasinoGameParams;
+  "fanduel-racing-carryover-pools": FanDuelFanduelRacingCarryoverPoolsParams;
+  "fanduel-racing-filters": FanDuelFanduelRacingFiltersParams;
+  "fanduel-racing-horse": FanDuelFanduelRacingHorseParams;
+  "fanduel-racing-past-race": FanDuelFanduelRacingPastRaceParams;
+  "fanduel-racing-past-races": FanDuelFanduelRacingPastRacesParams;
+  "fanduel-racing-past-tracks": FanDuelFanduelRacingPastTracksParams;
+  "fanduel-racing-race": FanDuelFanduelRacingRaceParams;
+  "fanduel-racing-races": FanDuelFanduelRacingRacesParams;
+  "fanduel-racing-results": FanDuelFanduelRacingResultsParams;
+  "fanduel-racing-search": FanDuelFanduelRacingSearchParams;
+  "fanduel-racing-track": FanDuelFanduelRacingTrackParams;
+  "fanduel-racing-tracks": FanDuelFanduelRacingTracksParams;
+  "fanduel-racing-wager-types": FanDuelFanduelRacingWagerTypesParams;
+  "fanduel-research": FanDuelFanduelResearchParams;
+  "fanduel-research-article": FanDuelFanduelResearchArticleParams;
+  "fanduel-research-articles": FanDuelFanduelResearchArticlesParams;
+  "fanduel-research-author": FanDuelFanduelResearchAuthorParams;
+  "fanduel-research-authors": FanDuelFanduelResearchAuthorsParams;
+  "fanduel-research-featured-articles": FanDuelFanduelResearchFeaturedArticlesParams;
+  "fanduel-research-fixtures": FanDuelFanduelResearchFixturesParams;
+  "fanduel-research-nfl-schedule": FanDuelFanduelResearchNflScheduleParams;
+  "fanduel-research-player-news": FanDuelFanduelResearchPlayerNewsParams;
+  "fanduel-research-quick-picks-daily": FanDuelFanduelResearchQuickPicksDailyParams;
+  "fanduel-research-projection-slates": FanDuelFanduelResearchProjectionSlatesParams;
+  "fanduel-research-projection-tables": FanDuelFanduelResearchProjectionTablesParams;
+  "fanduel-research-projections": FanDuelFanduelResearchProjectionsParams;
+  "fanduel-research-sports": FanDuelFanduelResearchSportsParams;
+  "fanduel-research-sub-categories": FanDuelFanduelResearchSubCategoriesParams;
+  "fanduel-sportsbook-autocomplete": FanDuelFanduelSportsbookAutocompleteParams;
+  "fanduel-sportsbook-builder": FanDuelFanduelSportsbookBuilderParams;
+  "fanduel-sportsbook-builder-events": FanDuelFanduelSportsbookBuilderEventsParams;
+  "fanduel-sportsbook-builder-quotes": FanDuelFanduelSportsbookBuilderQuotesParams;
+  "fanduel-sportsbook-competition": FanDuelFanduelSportsbookCompetitionParams;
+  "fanduel-sportsbook-event": FanDuelFanduelSportsbookEventParams;
+  "fanduel-sportsbook-event-box-score": FanDuelFanduelSportsbookEventBoxScoreParams;
+  "fanduel-sportsbook-event-play-by-play": FanDuelFanduelSportsbookEventPlayByPlayParams;
+  "fanduel-sportsbook-event-players": FanDuelFanduelSportsbookEventPlayersParams;
+  "fanduel-sportsbook-event-score": FanDuelFanduelSportsbookEventScoreParams;
+  "fanduel-sportsbook-event-stats": FanDuelFanduelSportsbookEventStatsParams;
+  "fanduel-sportsbook-events-status": FanDuelFanduelSportsbookEventsStatusParams;
+  "fanduel-sportsbook-home": FanDuelFanduelSportsbookHomeParams;
+  "fanduel-sportsbook-league": FanDuelFanduelSportsbookLeagueParams;
+  "fanduel-sportsbook-live": FanDuelFanduelSportsbookLiveParams;
+  "fanduel-sportsbook-live-count": FanDuelFanduelSportsbookLiveCountParams;
+  "fanduel-sportsbook-live-data": FanDuelFanduelSportsbookLiveDataParams;
+  "fanduel-sportsbook-live-scores": FanDuelFanduelSportsbookLiveScoresParams;
+  "fanduel-sportsbook-market-prices": FanDuelFanduelSportsbookMarketPricesParams;
+  "fanduel-sportsbook-parlays": FanDuelFanduelSportsbookParlaysParams;
+  "fanduel-sportsbook-player": FanDuelFanduelSportsbookPlayerParams;
+  "fanduel-sportsbook-player-news": FanDuelFanduelSportsbookPlayerNewsParams;
+  "fanduel-sportsbook-player-props": FanDuelFanduelSportsbookPlayerPropsParams;
+  "fanduel-sportsbook-player-stats": FanDuelFanduelSportsbookPlayerStatsParams;
+  "fanduel-sportsbook-players": FanDuelFanduelSportsbookPlayersParams;
+  "fanduel-sportsbook-promotions": FanDuelFanduelSportsbookPromotionsParams;
+  "fanduel-sportsbook-schedule": FanDuelFanduelSportsbookScheduleParams;
+  "fanduel-sportsbook-search": FanDuelFanduelSportsbookSearchParams;
+  "fanduel-sportsbook-search-tabs": FanDuelFanduelSportsbookSearchTabsParams;
+  "fanduel-sportsbook-sport": FanDuelFanduelSportsbookSportParams;
+  "fanduel-sportsbook-sports": FanDuelFanduelSportsbookSportsParams;
+  "fanduel-sportsbook-standings": FanDuelFanduelSportsbookStandingsParams;
+  "fanduel-sportsbook-stats": FanDuelFanduelSportsbookStatsParams;
+  "fanduel-sportsbook-team-depth-chart": FanDuelFanduelSportsbookTeamDepthChartParams;
+  "fanduel-sportsbook-team-news": FanDuelFanduelSportsbookTeamNewsParams;
+  "fanduel-sportsbook-team-odds": FanDuelFanduelSportsbookTeamOddsParams;
+  "fanduel-sportsbook-team-roster": FanDuelFanduelSportsbookTeamRosterParams;
+  "fanduel-sportsbook-team-schedule": FanDuelFanduelSportsbookTeamScheduleParams;
+  "fanduel-sportsbook-team-stats": FanDuelFanduelSportsbookTeamStatsParams;
+  "fanduel-sportsbook-teams": FanDuelFanduelSportsbookTeamsParams;
+  "fanduel-sportsbook-trending": FanDuelFanduelSportsbookTrendingParams;
   "farfetch-categories": FarfetchCategoriesParams;
   "farfetch-designers": FarfetchDesignersParams;
   "farfetch-product": FarfetchProductParams;
@@ -104960,6 +111434,33 @@ export interface OperationParamsMap {
   "ft-headlines": FtHeadlinesParams;
   "ft-news": FtNewsParams;
   "ft-search": FtSearchParams;
+  "fussballde-amateur-stats": FussballDeFussballdeAmateurStatsParams;
+  "fussballde-club": FussballDeFussballdeClubParams;
+  "fussballde-club-matches": FussballDeFussballdeClubMatchesParams;
+  "fussballde-club-search": FussballDeFussballdeClubSearchParams;
+  "fussballde-competition-options": FussballDeFussballdeCompetitionOptionsParams;
+  "fussballde-competitions": FussballDeFussballdeCompetitionsParams;
+  "fussballde-federation": FussballDeFussballdeFederationParams;
+  "fussballde-filters": FussballDeFussballdeFiltersParams;
+  "fussballde-match": FussballDeFussballdeMatchParams;
+  "fussballde-match-calendar": FussballDeFussballdeMatchCalendarParams;
+  "fussballde-match-comparison": FussballDeFussballdeMatchComparisonParams;
+  "fussballde-match-plan": FussballDeFussballdeMatchPlanParams;
+  "fussballde-matchday": FussballDeFussballdeMatchdayParams;
+  "fussballde-national-top-scorers": FussballDeFussballdeNationalTopScorersParams;
+  "fussballde-news": FussballDeFussballdeNewsParams;
+  "fussballde-news-article": FussballDeFussballdeNewsArticleParams;
+  "fussballde-news-search": FussballDeFussballdeNewsSearchParams;
+  "fussballde-player": FussballDeFussballdePlayerParams;
+  "fussballde-player-matches": FussballDeFussballdePlayerMatchesParams;
+  "fussballde-player-search": FussballDeFussballdePlayerSearchParams;
+  "fussballde-position-history": FussballDeFussballdePositionHistoryParams;
+  "fussballde-postal-codes": FussballDeFussballdePostalCodesParams;
+  "fussballde-table": FussballDeFussballdeTableParams;
+  "fussballde-team": FussballDeFussballdeTeamParams;
+  "fussballde-team-matches": FussballDeFussballdeTeamMatchesParams;
+  "fussballde-team-squad": FussballDeFussballdeTeamSquadParams;
+  "fussballde-top-scorers": FussballDeFussballdeTopScorersParams;
   "gamerant-article": GameRantGamerantArticleParams;
   "gamerant-author": GameRantGamerantAuthorParams;
   "gamerant-headlines": GameRantGamerantHeadlinesParams;
@@ -105357,9 +111858,11 @@ export interface OperationParamsMap {
   "instacart-search-nearby": InstacartSearchNearbyParams;
   "instacart-stores": InstacartStoresParams;
   "instacart-trending": InstacartTrendingParams;
+  "instagram-comments": InstagramCommentsParams;
   "instagram-post": InstagramPostParams;
   "instagram-profile": InstagramProfileParams;
   "instagram-reels": InstagramReelsParams;
+  "instagram-user-posts": InstagramUserPostsParams;
   "investopedia-article": InvestopediaArticleParams;
   "investopedia-author": InvestopediaAuthorParams;
   "investopedia-headlines": InvestopediaHeadlinesParams;
@@ -105434,6 +111937,11 @@ export interface OperationParamsMap {
   "jobs-workable-postings": JobsWorkablePostingsParams;
   "jobs-workday-board": JobsWorkdayBoardParams;
   "jobs-workday-job": JobsWorkdayJobParams;
+  "jumia-categories": JumiaCategoriesParams;
+  "jumia-category": JumiaCategoryParams;
+  "jumia-countries": JumiaCountriesParams;
+  "jumia-product": JumiaProductParams;
+  "jumia-search": JumiaSearchParams;
   "justeat-restaurant": JustEatJusteatRestaurantParams;
   "justeat-restaurant-menu": JustEatJusteatRestaurantMenuParams;
   "justeat-search": JustEatJusteatSearchParams;
@@ -106285,6 +112793,13 @@ export interface OperationParamsMap {
   "rebag-sitemap-urls": RebagSitemapUrlsParams;
   "rebag-sitemaps": RebagSitemapsParams;
   "rebag-store": RebagStoreParams;
+  "reddit-archive-comments-ids": RedditArchiveCommentsIdsParams;
+  "reddit-archive-comments-search": RedditArchiveCommentsSearchParams;
+  "reddit-archive-comments-tree": RedditArchiveCommentsTreeParams;
+  "reddit-archive-posts-ids": RedditArchivePostsIdsParams;
+  "reddit-archive-posts-search": RedditArchivePostsSearchParams;
+  "reddit-archive-subreddits-search": RedditArchiveSubredditsSearchParams;
+  "reddit-archive-time-series": RedditArchiveTimeSeriesParams;
   "reddit-comments": RedditCommentsParams;
   "reddit-domain-posts": RedditDomainPostsParams;
   "reddit-leads": RedditLeadsParams;
@@ -106489,14 +113004,22 @@ export interface OperationParamsMap {
   "shakeshack-menu": ShakeShackShakeshackMenuParams;
   "shakeshack-nearby": ShakeShackShakeshackNearbyParams;
   "shakeshack-store": ShakeShackShakeshackStoreParams;
+  "shein-brands": SheinBrandsParams;
+  "shein-categories": SheinCategoriesParams;
   "shein-category-filters": SheinCategoryFiltersParams;
   "shein-category-goods": SheinCategoryGoodsParams;
   "shein-category-nav": SheinCategoryNavParams;
+  "shein-deals-products": SheinDealsProductsParams;
+  "shein-deals-tabs": SheinDealsTabsParams;
   "shein-products-aggregation-filters": SheinProductsAggregationFiltersParams;
   "shein-products-detail": SheinProductsDetailParams;
   "shein-products-search": SheinProductsSearchParams;
   "shein-search-autocomplete": SheinSearchAutocompleteParams;
   "shein-search-keywords": SheinSearchKeywordsParams;
+  "shein-store": SheinStoreParams;
+  "shein-store-products": SheinStoreProductsParams;
+  "shein-trending-categories": SheinTrendingCategoriesParams;
+  "shein-trending-filters": SheinTrendingFiltersParams;
   "shop-app-analysis": ShopAppAnalysisParams;
   "shop-app-categories": ShopAppCategoriesParams;
   "shop-app-product": ShopAppProductParams;
@@ -107080,31 +113603,68 @@ export interface OperationParamsMap {
   "tiktok-challenge": TiktokChallengeParams;
   "tiktok-challenge-list": TiktokChallengeListParams;
   "tiktok-mobile-anchor-list": TiktokMobileAnchorListParams;
+  "tiktok-mobile-collection-detail": TiktokMobileCollectionDetailParams;
+  "tiktok-mobile-collection-list": TiktokMobileCollectionListParams;
+  "tiktok-mobile-collection-videos": TiktokMobileCollectionVideosParams;
   "tiktok-mobile-comment-replies": TiktokMobileCommentRepliesParams;
   "tiktok-mobile-comments": TiktokMobileCommentsParams;
   "tiktok-mobile-feed": TiktokMobileFeedParams;
+  "tiktok-mobile-feed-offline": TiktokMobileFeedOfflineParams;
   "tiktok-mobile-feed-post": TiktokMobileFeedPostParams;
   "tiktok-mobile-hashtag": TiktokMobileHashtagParams;
   "tiktok-mobile-hashtag-posts": TiktokMobileHashtagPostsParams;
   "tiktok-mobile-hashtags": TiktokMobileHashtagsParams;
   "tiktok-mobile-live-effects": TiktokMobileLiveEffectsParams;
   "tiktok-mobile-live-gifts": TiktokMobileLiveGiftsParams;
+  "tiktok-mobile-live-hashtags": TiktokMobileLiveHashtagsParams;
+  "tiktok-mobile-live-room": TiktokMobileLiveRoomParams;
+  "tiktok-mobile-live-room-by-user": TiktokMobileLiveRoomByUserParams;
   "tiktok-mobile-live-search": TiktokMobileLiveSearchParams;
+  "tiktok-mobile-live-tabs": TiktokMobileLiveTabsParams;
   "tiktok-mobile-music-beats": TiktokMobileMusicBeatsParams;
+  "tiktok-mobile-music-chart": TiktokMobileMusicChartParams;
+  "tiktok-mobile-music-choices": TiktokMobileMusicChoicesParams;
+  "tiktok-mobile-music-collection-list": TiktokMobileMusicCollectionListParams;
   "tiktok-mobile-music-collections": TiktokMobileMusicCollectionsParams;
+  "tiktok-mobile-music-detail": TiktokMobileMusicDetailParams;
   "tiktok-mobile-music-pick": TiktokMobileMusicPickParams;
   "tiktok-mobile-music-posts": TiktokMobileMusicPostsParams;
   "tiktok-mobile-music-related": TiktokMobileMusicRelatedParams;
   "tiktok-mobile-music-trending": TiktokMobileMusicTrendingParams;
+  "tiktok-mobile-mv-videos": TiktokMobileMvVideosParams;
+  "tiktok-mobile-place-detail": TiktokMobilePlaceDetailParams;
+  "tiktok-mobile-place-info": TiktokMobilePlaceInfoParams;
+  "tiktok-mobile-place-media": TiktokMobilePlaceMediaParams;
+  "tiktok-mobile-place-photos": TiktokMobilePlacePhotosParams;
+  "tiktok-mobile-place-reviews": TiktokMobilePlaceReviewsParams;
+  "tiktok-mobile-place-videos": TiktokMobilePlaceVideosParams;
+  "tiktok-mobile-playlist-detail": TiktokMobilePlaylistDetailParams;
+  "tiktok-mobile-playlist-list": TiktokMobilePlaylistListParams;
+  "tiktok-mobile-playlist-videos": TiktokMobilePlaylistVideosParams;
   "tiktok-mobile-search": TiktokMobileSearchParams;
+  "tiktok-mobile-search-effects": TiktokMobileSearchEffectsParams;
+  "tiktok-mobile-search-hashtags": TiktokMobileSearchHashtagsParams;
   "tiktok-mobile-search-music": TiktokMobileSearchMusicParams;
+  "tiktok-mobile-search-photos": TiktokMobileSearchPhotosParams;
   "tiktok-mobile-search-place": TiktokMobileSearchPlaceParams;
   "tiktok-mobile-search-pre-info": TiktokMobileSearchPreInfoParams;
+  "tiktok-mobile-search-stream": TiktokMobileSearchStreamParams;
   "tiktok-mobile-search-sug": TiktokMobileSearchSugParams;
   "tiktok-mobile-search-tabs": TiktokMobileSearchTabsParams;
   "tiktok-mobile-search-user": TiktokMobileSearchUserParams;
+  "tiktok-mobile-search-videos": TiktokMobileSearchVideosParams;
+  "tiktok-mobile-translation-description": TiktokMobileTranslationDescriptionParams;
   "tiktok-mobile-trending-categories": TiktokMobileTrendingCategoriesParams;
   "tiktok-mobile-trending-effects": TiktokMobileTrendingEffectsParams;
+  "tiktok-mobile-user-followers": TiktokMobileUserFollowersParams;
+  "tiktok-mobile-user-following": TiktokMobileUserFollowingParams;
+  "tiktok-mobile-user-original-effects": TiktokMobileUserOriginalEffectsParams;
+  "tiktok-mobile-user-original-music": TiktokMobileUserOriginalMusicParams;
+  "tiktok-mobile-user-posts": TiktokMobileUserPostsParams;
+  "tiktok-mobile-user-profile": TiktokMobileUserProfileParams;
+  "tiktok-mobile-user-recommendations": TiktokMobileUserRecommendationsParams;
+  "tiktok-mobile-video-detail": TiktokMobileVideoDetailParams;
+  "tiktok-mobile-video-subtitles": TiktokMobileVideoSubtitlesParams;
   "tiktok-popular-trend-country-industry-meta": TiktokPopularTrendCountryIndustryMetaParams;
   "tiktok-post": TiktokPostParams;
   "tiktok-profile-post": TiktokProfilePostParams;
@@ -107506,6 +114066,7 @@ export interface OperationParamsMap {
   "youtube-channel-shorts": YoutubeChannelShortsParams;
   "youtube-channel-videos": YoutubeChannelVideosParams;
   "youtube-comments": YoutubeCommentsParams;
+  "youtube-comment-replies": YoutubeCommentRepliesParams;
   "youtube-playlist": YoutubePlaylistParams;
   "youtube-profile": YoutubeProfileParams;
   "youtube-search": YoutubeSearchParams;
@@ -108387,6 +114948,25 @@ export interface OperationResponseMap {
   "doordash-store-item": DoorDashDoordashStoreItemResponse;
   "doordash-store-menu": DoorDashDoordashStoreMenuResponse;
   "doordash-store-reviews": DoorDashDoordashStoreReviewsResponse;
+  "draftkings-casino-directory": DraftKingsCasinoDraftkingsCasinoDirectoryResponse;
+  "draftkings-casino-slots-guide": DraftKingsCasinoDraftkingsCasinoSlotsGuideResponse;
+  "draftkings-casino-slots-categories": DraftKingsCasinoDraftkingsCasinoSlotsCategoriesResponse;
+  "draftkings-casino-cleopatra-guide": DraftKingsCasinoDraftkingsCasinoCleopatraGuideResponse;
+  "draftkings-casino-wheel-of-fortune-guide": DraftKingsCasinoDraftkingsCasinoWheelOfFortuneGuideResponse;
+  "draftkings-dfs-glossary": DraftKingsDailyFantasySportsDraftkingsDfsGlossaryResponse;
+  "draftkings-dfs-guide": DraftKingsDailyFantasySportsDraftkingsDfsGuideResponse;
+  "draftkings-dfs-nfl-best-ball-featured-contests": DraftKingsDailyFantasySportsDraftkingsDfsNflBestBallFeaturedContestsResponse;
+  "draftkings-dfs-rules-and-scoring": DraftKingsDailyFantasySportsDraftkingsDfsRulesAndScoringResponse;
+  "draftkings-dfs-sports": DraftKingsDailyFantasySportsDraftkingsDfsSportsResponse;
+  "draftkings-pick6-rules": DraftKingsPick6DraftkingsPick6RulesResponse;
+  "draftkings-pick6-rule-page": DraftKingsPick6DraftkingsPick6RulePageResponse;
+  "draftkings-pick6-sports": DraftKingsPick6DraftkingsPick6SportsResponse;
+  "draftkings-predictions-availability": DraftKingsPredictionsDraftkingsPredictionsAvailabilityResponse;
+  "draftkings-predictions-categories": DraftKingsPredictionsDraftkingsPredictionsCategoriesResponse;
+  "draftkings-predictions-rules": DraftKingsPredictionsDraftkingsPredictionsRulesResponse;
+  "draftkings-racing-race-info": DraftKingsRacingDraftkingsRacingRaceInfoResponse;
+  "draftkings-racing-schedule": DraftKingsRacingDraftkingsRacingScheduleResponse;
+  "draftkings-racing-tracks": DraftKingsRacingDraftkingsRacingTracksResponse;
   "draftkings-event": DraftKingsSportsbookDraftkingsEventResponse;
   "draftkings-event-context": DraftKingsSportsbookDraftkingsEventContextResponse;
   "draftkings-event-markets": DraftKingsSportsbookDraftkingsEventMarketsResponse;
@@ -108511,6 +115091,78 @@ export interface OperationResponseMap {
   "fanaticslive-shops": FanaticsLiveFanaticsliveShopsResponse;
   "fanaticslive-show": FanaticsLiveFanaticsliveShowResponse;
   "fanaticslive-instant-rips": FanaticsLiveFanaticsliveInstantRipsResponse;
+  "fanduel-casino-categories": FanDuelFanduelCasinoCategoriesResponse;
+  "fanduel-casino-category": FanDuelFanduelCasinoCategoryResponse;
+  "fanduel-casino-game": FanDuelFanduelCasinoGameResponse;
+  "fanduel-racing-carryover-pools": FanDuelFanduelRacingCarryoverPoolsResponse;
+  "fanduel-racing-filters": FanDuelFanduelRacingFiltersResponse;
+  "fanduel-racing-horse": FanDuelFanduelRacingHorseResponse;
+  "fanduel-racing-past-race": FanDuelFanduelRacingPastRaceResponse;
+  "fanduel-racing-past-races": FanDuelFanduelRacingPastRacesResponse;
+  "fanduel-racing-past-tracks": FanDuelFanduelRacingPastTracksResponse;
+  "fanduel-racing-race": FanDuelFanduelRacingRaceResponse;
+  "fanduel-racing-races": FanDuelFanduelRacingRacesResponse;
+  "fanduel-racing-results": FanDuelFanduelRacingResultsResponse;
+  "fanduel-racing-search": FanDuelFanduelRacingSearchResponse;
+  "fanduel-racing-track": FanDuelFanduelRacingTrackResponse;
+  "fanduel-racing-tracks": FanDuelFanduelRacingTracksResponse;
+  "fanduel-racing-wager-types": FanDuelFanduelRacingWagerTypesResponse;
+  "fanduel-research": FanDuelFanduelResearchResponse;
+  "fanduel-research-article": FanDuelFanduelResearchArticleResponse;
+  "fanduel-research-articles": FanDuelFanduelResearchArticlesResponse;
+  "fanduel-research-author": FanDuelFanduelResearchAuthorResponse;
+  "fanduel-research-authors": FanDuelFanduelResearchAuthorsResponse;
+  "fanduel-research-featured-articles": FanDuelFanduelResearchFeaturedArticlesResponse;
+  "fanduel-research-fixtures": FanDuelFanduelResearchFixturesResponse;
+  "fanduel-research-nfl-schedule": FanDuelFanduelResearchNflScheduleResponse;
+  "fanduel-research-player-news": FanDuelFanduelResearchPlayerNewsResponse;
+  "fanduel-research-quick-picks-daily": FanDuelFanduelResearchQuickPicksDailyResponse;
+  "fanduel-research-projection-slates": FanDuelFanduelResearchProjectionSlatesResponse;
+  "fanduel-research-projection-tables": FanDuelFanduelResearchProjectionTablesResponse;
+  "fanduel-research-projections": FanDuelFanduelResearchProjectionsResponse;
+  "fanduel-research-sports": FanDuelFanduelResearchSportsResponse;
+  "fanduel-research-sub-categories": FanDuelFanduelResearchSubCategoriesResponse;
+  "fanduel-sportsbook-autocomplete": FanDuelFanduelSportsbookAutocompleteResponse;
+  "fanduel-sportsbook-builder": FanDuelFanduelSportsbookBuilderResponse;
+  "fanduel-sportsbook-builder-events": FanDuelFanduelSportsbookBuilderEventsResponse;
+  "fanduel-sportsbook-builder-quotes": FanDuelFanduelSportsbookBuilderQuotesResponse;
+  "fanduel-sportsbook-competition": FanDuelFanduelSportsbookCompetitionResponse;
+  "fanduel-sportsbook-event": FanDuelFanduelSportsbookEventResponse;
+  "fanduel-sportsbook-event-box-score": FanDuelFanduelSportsbookEventBoxScoreResponse;
+  "fanduel-sportsbook-event-play-by-play": FanDuelFanduelSportsbookEventPlayByPlayResponse;
+  "fanduel-sportsbook-event-players": FanDuelFanduelSportsbookEventPlayersResponse;
+  "fanduel-sportsbook-event-score": FanDuelFanduelSportsbookEventScoreResponse;
+  "fanduel-sportsbook-event-stats": FanDuelFanduelSportsbookEventStatsResponse;
+  "fanduel-sportsbook-events-status": FanDuelFanduelSportsbookEventsStatusResponse;
+  "fanduel-sportsbook-home": FanDuelFanduelSportsbookHomeResponse;
+  "fanduel-sportsbook-league": FanDuelFanduelSportsbookLeagueResponse;
+  "fanduel-sportsbook-live": FanDuelFanduelSportsbookLiveResponse;
+  "fanduel-sportsbook-live-count": FanDuelFanduelSportsbookLiveCountResponse;
+  "fanduel-sportsbook-live-data": FanDuelFanduelSportsbookLiveDataResponse;
+  "fanduel-sportsbook-live-scores": FanDuelFanduelSportsbookLiveScoresResponse;
+  "fanduel-sportsbook-market-prices": FanDuelFanduelSportsbookMarketPricesResponse;
+  "fanduel-sportsbook-parlays": FanDuelFanduelSportsbookParlaysResponse;
+  "fanduel-sportsbook-player": FanDuelFanduelSportsbookPlayerResponse;
+  "fanduel-sportsbook-player-news": FanDuelFanduelSportsbookPlayerNewsResponse;
+  "fanduel-sportsbook-player-props": FanDuelFanduelSportsbookPlayerPropsResponse;
+  "fanduel-sportsbook-player-stats": FanDuelFanduelSportsbookPlayerStatsResponse;
+  "fanduel-sportsbook-players": FanDuelFanduelSportsbookPlayersResponse;
+  "fanduel-sportsbook-promotions": FanDuelFanduelSportsbookPromotionsResponse;
+  "fanduel-sportsbook-schedule": FanDuelFanduelSportsbookScheduleResponse;
+  "fanduel-sportsbook-search": FanDuelFanduelSportsbookSearchResponse;
+  "fanduel-sportsbook-search-tabs": FanDuelFanduelSportsbookSearchTabsResponse;
+  "fanduel-sportsbook-sport": FanDuelFanduelSportsbookSportResponse;
+  "fanduel-sportsbook-sports": FanDuelFanduelSportsbookSportsResponse;
+  "fanduel-sportsbook-standings": FanDuelFanduelSportsbookStandingsResponse;
+  "fanduel-sportsbook-stats": FanDuelFanduelSportsbookStatsResponse;
+  "fanduel-sportsbook-team-depth-chart": FanDuelFanduelSportsbookTeamDepthChartResponse;
+  "fanduel-sportsbook-team-news": FanDuelFanduelSportsbookTeamNewsResponse;
+  "fanduel-sportsbook-team-odds": FanDuelFanduelSportsbookTeamOddsResponse;
+  "fanduel-sportsbook-team-roster": FanDuelFanduelSportsbookTeamRosterResponse;
+  "fanduel-sportsbook-team-schedule": FanDuelFanduelSportsbookTeamScheduleResponse;
+  "fanduel-sportsbook-team-stats": FanDuelFanduelSportsbookTeamStatsResponse;
+  "fanduel-sportsbook-teams": FanDuelFanduelSportsbookTeamsResponse;
+  "fanduel-sportsbook-trending": FanDuelFanduelSportsbookTrendingResponse;
   "farfetch-categories": FarfetchCategoriesResponse;
   "farfetch-designers": FarfetchDesignersResponse;
   "farfetch-product": FarfetchProductResponse;
@@ -108700,6 +115352,33 @@ export interface OperationResponseMap {
   "ft-headlines": FtHeadlinesResponse;
   "ft-news": FtNewsResponse;
   "ft-search": FtSearchResponse;
+  "fussballde-amateur-stats": FussballDeFussballdeAmateurStatsResponse;
+  "fussballde-club": FussballDeFussballdeClubResponse;
+  "fussballde-club-matches": FussballDeFussballdeClubMatchesResponse;
+  "fussballde-club-search": FussballDeFussballdeClubSearchResponse;
+  "fussballde-competition-options": FussballDeFussballdeCompetitionOptionsResponse;
+  "fussballde-competitions": FussballDeFussballdeCompetitionsResponse;
+  "fussballde-federation": FussballDeFussballdeFederationResponse;
+  "fussballde-filters": FussballDeFussballdeFiltersResponse;
+  "fussballde-match": FussballDeFussballdeMatchResponse;
+  "fussballde-match-calendar": FussballDeFussballdeMatchCalendarResponse;
+  "fussballde-match-comparison": FussballDeFussballdeMatchComparisonResponse;
+  "fussballde-match-plan": FussballDeFussballdeMatchPlanResponse;
+  "fussballde-matchday": FussballDeFussballdeMatchdayResponse;
+  "fussballde-national-top-scorers": FussballDeFussballdeNationalTopScorersResponse;
+  "fussballde-news": FussballDeFussballdeNewsResponse;
+  "fussballde-news-article": FussballDeFussballdeNewsArticleResponse;
+  "fussballde-news-search": FussballDeFussballdeNewsSearchResponse;
+  "fussballde-player": FussballDeFussballdePlayerResponse;
+  "fussballde-player-matches": FussballDeFussballdePlayerMatchesResponse;
+  "fussballde-player-search": FussballDeFussballdePlayerSearchResponse;
+  "fussballde-position-history": FussballDeFussballdePositionHistoryResponse;
+  "fussballde-postal-codes": FussballDeFussballdePostalCodesResponse;
+  "fussballde-table": FussballDeFussballdeTableResponse;
+  "fussballde-team": FussballDeFussballdeTeamResponse;
+  "fussballde-team-matches": FussballDeFussballdeTeamMatchesResponse;
+  "fussballde-team-squad": FussballDeFussballdeTeamSquadResponse;
+  "fussballde-top-scorers": FussballDeFussballdeTopScorersResponse;
   "gamerant-article": GameRantGamerantArticleResponse;
   "gamerant-author": GameRantGamerantAuthorResponse;
   "gamerant-headlines": GameRantGamerantHeadlinesResponse;
@@ -109097,9 +115776,11 @@ export interface OperationResponseMap {
   "instacart-search-nearby": InstacartSearchNearbyResponse;
   "instacart-stores": InstacartStoresResponse;
   "instacart-trending": InstacartTrendingResponse;
+  "instagram-comments": InstagramCommentsResponse;
   "instagram-post": InstagramPostResponse;
   "instagram-profile": InstagramProfileResponse;
   "instagram-reels": InstagramReelsResponse;
+  "instagram-user-posts": InstagramUserPostsResponse;
   "investopedia-article": InvestopediaArticleResponse;
   "investopedia-author": InvestopediaAuthorResponse;
   "investopedia-headlines": InvestopediaHeadlinesResponse;
@@ -109174,6 +115855,11 @@ export interface OperationResponseMap {
   "jobs-workable-postings": JobsWorkablePostingsResponse;
   "jobs-workday-board": JobsWorkdayBoardResponse;
   "jobs-workday-job": JobsWorkdayJobResponse;
+  "jumia-categories": JumiaCategoriesResponse;
+  "jumia-category": JumiaCategoryResponse;
+  "jumia-countries": JumiaCountriesResponse;
+  "jumia-product": JumiaProductResponse;
+  "jumia-search": JumiaSearchResponse;
   "justeat-restaurant": JustEatJusteatRestaurantResponse;
   "justeat-restaurant-menu": JustEatJusteatRestaurantMenuResponse;
   "justeat-search": JustEatJusteatSearchResponse;
@@ -110025,6 +116711,13 @@ export interface OperationResponseMap {
   "rebag-sitemap-urls": RebagSitemapUrlsResponse;
   "rebag-sitemaps": RebagSitemapsResponse;
   "rebag-store": RebagStoreResponse;
+  "reddit-archive-comments-ids": RedditArchiveCommentsIdsResponse;
+  "reddit-archive-comments-search": RedditArchiveCommentsSearchResponse;
+  "reddit-archive-comments-tree": RedditArchiveCommentsTreeResponse;
+  "reddit-archive-posts-ids": RedditArchivePostsIdsResponse;
+  "reddit-archive-posts-search": RedditArchivePostsSearchResponse;
+  "reddit-archive-subreddits-search": RedditArchiveSubredditsSearchResponse;
+  "reddit-archive-time-series": RedditArchiveTimeSeriesResponse;
   "reddit-comments": RedditCommentsResponse;
   "reddit-domain-posts": RedditDomainPostsResponse;
   "reddit-leads": RedditLeadsResponse;
@@ -110229,14 +116922,22 @@ export interface OperationResponseMap {
   "shakeshack-menu": ShakeShackShakeshackMenuResponse;
   "shakeshack-nearby": ShakeShackShakeshackNearbyResponse;
   "shakeshack-store": ShakeShackShakeshackStoreResponse;
+  "shein-brands": SheinBrandsResponse;
+  "shein-categories": SheinCategoriesResponse;
   "shein-category-filters": SheinCategoryFiltersResponse;
   "shein-category-goods": SheinCategoryGoodsResponse;
   "shein-category-nav": SheinCategoryNavResponse;
+  "shein-deals-products": SheinDealsProductsResponse;
+  "shein-deals-tabs": SheinDealsTabsResponse;
   "shein-products-aggregation-filters": SheinProductsAggregationFiltersResponse;
   "shein-products-detail": SheinProductsDetailResponse;
   "shein-products-search": SheinProductsSearchResponse;
   "shein-search-autocomplete": SheinSearchAutocompleteResponse;
   "shein-search-keywords": SheinSearchKeywordsResponse;
+  "shein-store": SheinStoreResponse;
+  "shein-store-products": SheinStoreProductsResponse;
+  "shein-trending-categories": SheinTrendingCategoriesResponse;
+  "shein-trending-filters": SheinTrendingFiltersResponse;
   "shop-app-analysis": ShopAppAnalysisResponse;
   "shop-app-categories": ShopAppCategoriesResponse;
   "shop-app-product": ShopAppProductResponse;
@@ -110820,31 +117521,68 @@ export interface OperationResponseMap {
   "tiktok-challenge": TiktokChallengeResponse;
   "tiktok-challenge-list": TiktokChallengeListResponse;
   "tiktok-mobile-anchor-list": TiktokMobileAnchorListResponse;
+  "tiktok-mobile-collection-detail": TiktokMobileCollectionDetailResponse;
+  "tiktok-mobile-collection-list": TiktokMobileCollectionListResponse;
+  "tiktok-mobile-collection-videos": TiktokMobileCollectionVideosResponse;
   "tiktok-mobile-comment-replies": TiktokMobileCommentRepliesResponse;
   "tiktok-mobile-comments": TiktokMobileCommentsResponse;
   "tiktok-mobile-feed": TiktokMobileFeedResponse;
+  "tiktok-mobile-feed-offline": TiktokMobileFeedOfflineResponse;
   "tiktok-mobile-feed-post": TiktokMobileFeedPostResponse;
   "tiktok-mobile-hashtag": TiktokMobileHashtagResponse;
   "tiktok-mobile-hashtag-posts": TiktokMobileHashtagPostsResponse;
   "tiktok-mobile-hashtags": TiktokMobileHashtagsResponse;
   "tiktok-mobile-live-effects": TiktokMobileLiveEffectsResponse;
   "tiktok-mobile-live-gifts": TiktokMobileLiveGiftsResponse;
+  "tiktok-mobile-live-hashtags": TiktokMobileLiveHashtagsResponse;
+  "tiktok-mobile-live-room": TiktokMobileLiveRoomResponse;
+  "tiktok-mobile-live-room-by-user": TiktokMobileLiveRoomByUserResponse;
   "tiktok-mobile-live-search": TiktokMobileLiveSearchResponse;
+  "tiktok-mobile-live-tabs": TiktokMobileLiveTabsResponse;
   "tiktok-mobile-music-beats": TiktokMobileMusicBeatsResponse;
+  "tiktok-mobile-music-chart": TiktokMobileMusicChartResponse;
+  "tiktok-mobile-music-choices": TiktokMobileMusicChoicesResponse;
+  "tiktok-mobile-music-collection-list": TiktokMobileMusicCollectionListResponse;
   "tiktok-mobile-music-collections": TiktokMobileMusicCollectionsResponse;
+  "tiktok-mobile-music-detail": TiktokMobileMusicDetailResponse;
   "tiktok-mobile-music-pick": TiktokMobileMusicPickResponse;
   "tiktok-mobile-music-posts": TiktokMobileMusicPostsResponse;
   "tiktok-mobile-music-related": TiktokMobileMusicRelatedResponse;
   "tiktok-mobile-music-trending": TiktokMobileMusicTrendingResponse;
+  "tiktok-mobile-mv-videos": TiktokMobileMvVideosResponse;
+  "tiktok-mobile-place-detail": TiktokMobilePlaceDetailResponse;
+  "tiktok-mobile-place-info": TiktokMobilePlaceInfoResponse;
+  "tiktok-mobile-place-media": TiktokMobilePlaceMediaResponse;
+  "tiktok-mobile-place-photos": TiktokMobilePlacePhotosResponse;
+  "tiktok-mobile-place-reviews": TiktokMobilePlaceReviewsResponse;
+  "tiktok-mobile-place-videos": TiktokMobilePlaceVideosResponse;
+  "tiktok-mobile-playlist-detail": TiktokMobilePlaylistDetailResponse;
+  "tiktok-mobile-playlist-list": TiktokMobilePlaylistListResponse;
+  "tiktok-mobile-playlist-videos": TiktokMobilePlaylistVideosResponse;
   "tiktok-mobile-search": TiktokMobileSearchResponse;
+  "tiktok-mobile-search-effects": TiktokMobileSearchEffectsResponse;
+  "tiktok-mobile-search-hashtags": TiktokMobileSearchHashtagsResponse;
   "tiktok-mobile-search-music": TiktokMobileSearchMusicResponse;
+  "tiktok-mobile-search-photos": TiktokMobileSearchPhotosResponse;
   "tiktok-mobile-search-place": TiktokMobileSearchPlaceResponse;
   "tiktok-mobile-search-pre-info": TiktokMobileSearchPreInfoResponse;
+  "tiktok-mobile-search-stream": TiktokMobileSearchStreamResponse;
   "tiktok-mobile-search-sug": TiktokMobileSearchSugResponse;
   "tiktok-mobile-search-tabs": TiktokMobileSearchTabsResponse;
   "tiktok-mobile-search-user": TiktokMobileSearchUserResponse;
+  "tiktok-mobile-search-videos": TiktokMobileSearchVideosResponse;
+  "tiktok-mobile-translation-description": TiktokMobileTranslationDescriptionResponse;
   "tiktok-mobile-trending-categories": TiktokMobileTrendingCategoriesResponse;
   "tiktok-mobile-trending-effects": TiktokMobileTrendingEffectsResponse;
+  "tiktok-mobile-user-followers": TiktokMobileUserFollowersResponse;
+  "tiktok-mobile-user-following": TiktokMobileUserFollowingResponse;
+  "tiktok-mobile-user-original-effects": TiktokMobileUserOriginalEffectsResponse;
+  "tiktok-mobile-user-original-music": TiktokMobileUserOriginalMusicResponse;
+  "tiktok-mobile-user-posts": TiktokMobileUserPostsResponse;
+  "tiktok-mobile-user-profile": TiktokMobileUserProfileResponse;
+  "tiktok-mobile-user-recommendations": TiktokMobileUserRecommendationsResponse;
+  "tiktok-mobile-video-detail": TiktokMobileVideoDetailResponse;
+  "tiktok-mobile-video-subtitles": TiktokMobileVideoSubtitlesResponse;
   "tiktok-popular-trend-country-industry-meta": TiktokPopularTrendCountryIndustryMetaResponse;
   "tiktok-post": TiktokPostResponse;
   "tiktok-profile-post": TiktokProfilePostResponse;
@@ -111246,6 +117984,7 @@ export interface OperationResponseMap {
   "youtube-channel-shorts": YoutubeChannelShortsResponse;
   "youtube-channel-videos": YoutubeChannelVideosResponse;
   "youtube-comments": YoutubeCommentsResponse;
+  "youtube-comment-replies": YoutubeCommentRepliesResponse;
   "youtube-playlist": YoutubePlaylistResponse;
   "youtube-profile": YoutubeProfileResponse;
   "youtube-search": YoutubeSearchResponse;
@@ -112127,6 +118866,25 @@ export interface OperationRequiredParamsMap {
   "doordash-store-item": true;
   "doordash-store-menu": true;
   "doordash-store-reviews": true;
+  "draftkings-casino-directory": false;
+  "draftkings-casino-slots-guide": false;
+  "draftkings-casino-slots-categories": false;
+  "draftkings-casino-cleopatra-guide": false;
+  "draftkings-casino-wheel-of-fortune-guide": false;
+  "draftkings-dfs-glossary": false;
+  "draftkings-dfs-guide": false;
+  "draftkings-dfs-nfl-best-ball-featured-contests": false;
+  "draftkings-dfs-rules-and-scoring": false;
+  "draftkings-dfs-sports": false;
+  "draftkings-pick6-rules": false;
+  "draftkings-pick6-rule-page": true;
+  "draftkings-pick6-sports": false;
+  "draftkings-predictions-availability": false;
+  "draftkings-predictions-categories": false;
+  "draftkings-predictions-rules": false;
+  "draftkings-racing-race-info": true;
+  "draftkings-racing-schedule": false;
+  "draftkings-racing-tracks": false;
   "draftkings-event": true;
   "draftkings-event-context": true;
   "draftkings-event-markets": true;
@@ -112251,6 +119009,78 @@ export interface OperationRequiredParamsMap {
   "fanaticslive-shops": false;
   "fanaticslive-show": true;
   "fanaticslive-instant-rips": true;
+  "fanduel-casino-categories": false;
+  "fanduel-casino-category": true;
+  "fanduel-casino-game": true;
+  "fanduel-racing-carryover-pools": false;
+  "fanduel-racing-filters": false;
+  "fanduel-racing-horse": true;
+  "fanduel-racing-past-race": true;
+  "fanduel-racing-past-races": true;
+  "fanduel-racing-past-tracks": false;
+  "fanduel-racing-race": true;
+  "fanduel-racing-races": false;
+  "fanduel-racing-results": false;
+  "fanduel-racing-search": true;
+  "fanduel-racing-track": true;
+  "fanduel-racing-tracks": false;
+  "fanduel-racing-wager-types": false;
+  "fanduel-research": false;
+  "fanduel-research-article": true;
+  "fanduel-research-articles": false;
+  "fanduel-research-author": true;
+  "fanduel-research-authors": false;
+  "fanduel-research-featured-articles": true;
+  "fanduel-research-fixtures": false;
+  "fanduel-research-nfl-schedule": true;
+  "fanduel-research-player-news": true;
+  "fanduel-research-quick-picks-daily": false;
+  "fanduel-research-projection-slates": true;
+  "fanduel-research-projection-tables": false;
+  "fanduel-research-projections": true;
+  "fanduel-research-sports": false;
+  "fanduel-research-sub-categories": false;
+  "fanduel-sportsbook-autocomplete": true;
+  "fanduel-sportsbook-builder": true;
+  "fanduel-sportsbook-builder-events": false;
+  "fanduel-sportsbook-builder-quotes": true;
+  "fanduel-sportsbook-competition": true;
+  "fanduel-sportsbook-event": true;
+  "fanduel-sportsbook-event-box-score": true;
+  "fanduel-sportsbook-event-play-by-play": true;
+  "fanduel-sportsbook-event-players": true;
+  "fanduel-sportsbook-event-score": true;
+  "fanduel-sportsbook-event-stats": true;
+  "fanduel-sportsbook-events-status": true;
+  "fanduel-sportsbook-home": false;
+  "fanduel-sportsbook-league": true;
+  "fanduel-sportsbook-live": false;
+  "fanduel-sportsbook-live-count": false;
+  "fanduel-sportsbook-live-data": true;
+  "fanduel-sportsbook-live-scores": true;
+  "fanduel-sportsbook-market-prices": true;
+  "fanduel-sportsbook-parlays": false;
+  "fanduel-sportsbook-player": true;
+  "fanduel-sportsbook-player-news": true;
+  "fanduel-sportsbook-player-props": true;
+  "fanduel-sportsbook-player-stats": true;
+  "fanduel-sportsbook-players": true;
+  "fanduel-sportsbook-promotions": false;
+  "fanduel-sportsbook-schedule": true;
+  "fanduel-sportsbook-search": true;
+  "fanduel-sportsbook-search-tabs": true;
+  "fanduel-sportsbook-sport": true;
+  "fanduel-sportsbook-sports": false;
+  "fanduel-sportsbook-standings": true;
+  "fanduel-sportsbook-stats": false;
+  "fanduel-sportsbook-team-depth-chart": true;
+  "fanduel-sportsbook-team-news": true;
+  "fanduel-sportsbook-team-odds": true;
+  "fanduel-sportsbook-team-roster": true;
+  "fanduel-sportsbook-team-schedule": true;
+  "fanduel-sportsbook-team-stats": true;
+  "fanduel-sportsbook-teams": false;
+  "fanduel-sportsbook-trending": false;
   "farfetch-categories": false;
   "farfetch-designers": true;
   "farfetch-product": true;
@@ -112440,6 +119270,33 @@ export interface OperationRequiredParamsMap {
   "ft-headlines": true;
   "ft-news": false;
   "ft-search": true;
+  "fussballde-amateur-stats": true;
+  "fussballde-club": true;
+  "fussballde-club-matches": true;
+  "fussballde-club-search": false;
+  "fussballde-competition-options": true;
+  "fussballde-competitions": true;
+  "fussballde-federation": false;
+  "fussballde-filters": false;
+  "fussballde-match": true;
+  "fussballde-match-calendar": true;
+  "fussballde-match-comparison": true;
+  "fussballde-match-plan": true;
+  "fussballde-matchday": true;
+  "fussballde-national-top-scorers": false;
+  "fussballde-news": false;
+  "fussballde-news-article": true;
+  "fussballde-news-search": true;
+  "fussballde-player": true;
+  "fussballde-player-matches": true;
+  "fussballde-player-search": false;
+  "fussballde-position-history": true;
+  "fussballde-postal-codes": true;
+  "fussballde-table": true;
+  "fussballde-team": true;
+  "fussballde-team-matches": true;
+  "fussballde-team-squad": true;
+  "fussballde-top-scorers": true;
   "gamerant-article": true;
   "gamerant-author": true;
   "gamerant-headlines": true;
@@ -112837,9 +119694,11 @@ export interface OperationRequiredParamsMap {
   "instacart-search-nearby": true;
   "instacart-stores": true;
   "instacart-trending": true;
+  "instagram-comments": true;
   "instagram-post": true;
   "instagram-profile": true;
   "instagram-reels": true;
+  "instagram-user-posts": true;
   "investopedia-article": true;
   "investopedia-author": true;
   "investopedia-headlines": true;
@@ -112914,6 +119773,11 @@ export interface OperationRequiredParamsMap {
   "jobs-workable-postings": true;
   "jobs-workday-board": true;
   "jobs-workday-job": true;
+  "jumia-categories": true;
+  "jumia-category": true;
+  "jumia-countries": false;
+  "jumia-product": true;
+  "jumia-search": true;
   "justeat-restaurant": true;
   "justeat-restaurant-menu": true;
   "justeat-search": true;
@@ -113765,6 +120629,13 @@ export interface OperationRequiredParamsMap {
   "rebag-sitemap-urls": false;
   "rebag-sitemaps": false;
   "rebag-store": false;
+  "reddit-archive-comments-ids": true;
+  "reddit-archive-comments-search": false;
+  "reddit-archive-comments-tree": true;
+  "reddit-archive-posts-ids": true;
+  "reddit-archive-posts-search": false;
+  "reddit-archive-subreddits-search": true;
+  "reddit-archive-time-series": true;
   "reddit-comments": true;
   "reddit-domain-posts": true;
   "reddit-leads": true;
@@ -113969,14 +120840,22 @@ export interface OperationRequiredParamsMap {
   "shakeshack-menu": true;
   "shakeshack-nearby": true;
   "shakeshack-store": true;
+  "shein-brands": false;
+  "shein-categories": false;
   "shein-category-filters": true;
   "shein-category-goods": true;
   "shein-category-nav": true;
+  "shein-deals-products": false;
+  "shein-deals-tabs": false;
   "shein-products-aggregation-filters": true;
   "shein-products-detail": true;
   "shein-products-search": true;
   "shein-search-autocomplete": true;
   "shein-search-keywords": false;
+  "shein-store": true;
+  "shein-store-products": true;
+  "shein-trending-categories": false;
+  "shein-trending-filters": false;
   "shop-app-analysis": true;
   "shop-app-categories": false;
   "shop-app-product": true;
@@ -114560,31 +121439,68 @@ export interface OperationRequiredParamsMap {
   "tiktok-challenge": true;
   "tiktok-challenge-list": true;
   "tiktok-mobile-anchor-list": false;
+  "tiktok-mobile-collection-detail": true;
+  "tiktok-mobile-collection-list": true;
+  "tiktok-mobile-collection-videos": true;
   "tiktok-mobile-comment-replies": true;
   "tiktok-mobile-comments": true;
   "tiktok-mobile-feed": false;
+  "tiktok-mobile-feed-offline": false;
   "tiktok-mobile-feed-post": false;
   "tiktok-mobile-hashtag": true;
   "tiktok-mobile-hashtag-posts": true;
   "tiktok-mobile-hashtags": true;
   "tiktok-mobile-live-effects": false;
   "tiktok-mobile-live-gifts": false;
+  "tiktok-mobile-live-hashtags": false;
+  "tiktok-mobile-live-room": true;
+  "tiktok-mobile-live-room-by-user": true;
   "tiktok-mobile-live-search": true;
+  "tiktok-mobile-live-tabs": false;
   "tiktok-mobile-music-beats": false;
+  "tiktok-mobile-music-chart": false;
+  "tiktok-mobile-music-choices": false;
+  "tiktok-mobile-music-collection-list": false;
   "tiktok-mobile-music-collections": false;
+  "tiktok-mobile-music-detail": true;
   "tiktok-mobile-music-pick": false;
   "tiktok-mobile-music-posts": true;
   "tiktok-mobile-music-related": true;
   "tiktok-mobile-music-trending": false;
+  "tiktok-mobile-mv-videos": true;
+  "tiktok-mobile-place-detail": true;
+  "tiktok-mobile-place-info": true;
+  "tiktok-mobile-place-media": true;
+  "tiktok-mobile-place-photos": true;
+  "tiktok-mobile-place-reviews": true;
+  "tiktok-mobile-place-videos": true;
+  "tiktok-mobile-playlist-detail": true;
+  "tiktok-mobile-playlist-list": false;
+  "tiktok-mobile-playlist-videos": true;
   "tiktok-mobile-search": true;
+  "tiktok-mobile-search-effects": true;
+  "tiktok-mobile-search-hashtags": true;
   "tiktok-mobile-search-music": true;
+  "tiktok-mobile-search-photos": true;
   "tiktok-mobile-search-place": true;
   "tiktok-mobile-search-pre-info": false;
+  "tiktok-mobile-search-stream": true;
   "tiktok-mobile-search-sug": true;
   "tiktok-mobile-search-tabs": true;
   "tiktok-mobile-search-user": true;
+  "tiktok-mobile-search-videos": true;
+  "tiktok-mobile-translation-description": true;
   "tiktok-mobile-trending-categories": false;
   "tiktok-mobile-trending-effects": false;
+  "tiktok-mobile-user-followers": true;
+  "tiktok-mobile-user-following": true;
+  "tiktok-mobile-user-original-effects": true;
+  "tiktok-mobile-user-original-music": true;
+  "tiktok-mobile-user-posts": false;
+  "tiktok-mobile-user-profile": false;
+  "tiktok-mobile-user-recommendations": false;
+  "tiktok-mobile-video-detail": true;
+  "tiktok-mobile-video-subtitles": true;
   "tiktok-popular-trend-country-industry-meta": false;
   "tiktok-post": true;
   "tiktok-profile-post": true;
@@ -114986,6 +121902,7 @@ export interface OperationRequiredParamsMap {
   "youtube-channel-shorts": true;
   "youtube-channel-videos": true;
   "youtube-comments": true;
+  "youtube-comment-replies": true;
   "youtube-playlist": true;
   "youtube-profile": true;
   "youtube-search": false;
@@ -115874,6 +122791,25 @@ export type OperationIdLiteral =
   | "doordash-store-item"
   | "doordash-store-menu"
   | "doordash-store-reviews"
+  | "draftkings-casino-directory"
+  | "draftkings-casino-slots-guide"
+  | "draftkings-casino-slots-categories"
+  | "draftkings-casino-cleopatra-guide"
+  | "draftkings-casino-wheel-of-fortune-guide"
+  | "draftkings-dfs-glossary"
+  | "draftkings-dfs-guide"
+  | "draftkings-dfs-nfl-best-ball-featured-contests"
+  | "draftkings-dfs-rules-and-scoring"
+  | "draftkings-dfs-sports"
+  | "draftkings-pick6-rules"
+  | "draftkings-pick6-rule-page"
+  | "draftkings-pick6-sports"
+  | "draftkings-predictions-availability"
+  | "draftkings-predictions-categories"
+  | "draftkings-predictions-rules"
+  | "draftkings-racing-race-info"
+  | "draftkings-racing-schedule"
+  | "draftkings-racing-tracks"
   | "draftkings-event"
   | "draftkings-event-context"
   | "draftkings-event-markets"
@@ -115998,6 +122934,78 @@ export type OperationIdLiteral =
   | "fanaticslive-shops"
   | "fanaticslive-show"
   | "fanaticslive-instant-rips"
+  | "fanduel-casino-categories"
+  | "fanduel-casino-category"
+  | "fanduel-casino-game"
+  | "fanduel-racing-carryover-pools"
+  | "fanduel-racing-filters"
+  | "fanduel-racing-horse"
+  | "fanduel-racing-past-race"
+  | "fanduel-racing-past-races"
+  | "fanduel-racing-past-tracks"
+  | "fanduel-racing-race"
+  | "fanduel-racing-races"
+  | "fanduel-racing-results"
+  | "fanduel-racing-search"
+  | "fanduel-racing-track"
+  | "fanduel-racing-tracks"
+  | "fanduel-racing-wager-types"
+  | "fanduel-research"
+  | "fanduel-research-article"
+  | "fanduel-research-articles"
+  | "fanduel-research-author"
+  | "fanduel-research-authors"
+  | "fanduel-research-featured-articles"
+  | "fanduel-research-fixtures"
+  | "fanduel-research-nfl-schedule"
+  | "fanduel-research-player-news"
+  | "fanduel-research-quick-picks-daily"
+  | "fanduel-research-projection-slates"
+  | "fanduel-research-projection-tables"
+  | "fanduel-research-projections"
+  | "fanduel-research-sports"
+  | "fanduel-research-sub-categories"
+  | "fanduel-sportsbook-autocomplete"
+  | "fanduel-sportsbook-builder"
+  | "fanduel-sportsbook-builder-events"
+  | "fanduel-sportsbook-builder-quotes"
+  | "fanduel-sportsbook-competition"
+  | "fanduel-sportsbook-event"
+  | "fanduel-sportsbook-event-box-score"
+  | "fanduel-sportsbook-event-play-by-play"
+  | "fanduel-sportsbook-event-players"
+  | "fanduel-sportsbook-event-score"
+  | "fanduel-sportsbook-event-stats"
+  | "fanduel-sportsbook-events-status"
+  | "fanduel-sportsbook-home"
+  | "fanduel-sportsbook-league"
+  | "fanduel-sportsbook-live"
+  | "fanduel-sportsbook-live-count"
+  | "fanduel-sportsbook-live-data"
+  | "fanduel-sportsbook-live-scores"
+  | "fanduel-sportsbook-market-prices"
+  | "fanduel-sportsbook-parlays"
+  | "fanduel-sportsbook-player"
+  | "fanduel-sportsbook-player-news"
+  | "fanduel-sportsbook-player-props"
+  | "fanduel-sportsbook-player-stats"
+  | "fanduel-sportsbook-players"
+  | "fanduel-sportsbook-promotions"
+  | "fanduel-sportsbook-schedule"
+  | "fanduel-sportsbook-search"
+  | "fanduel-sportsbook-search-tabs"
+  | "fanduel-sportsbook-sport"
+  | "fanduel-sportsbook-sports"
+  | "fanduel-sportsbook-standings"
+  | "fanduel-sportsbook-stats"
+  | "fanduel-sportsbook-team-depth-chart"
+  | "fanduel-sportsbook-team-news"
+  | "fanduel-sportsbook-team-odds"
+  | "fanduel-sportsbook-team-roster"
+  | "fanduel-sportsbook-team-schedule"
+  | "fanduel-sportsbook-team-stats"
+  | "fanduel-sportsbook-teams"
+  | "fanduel-sportsbook-trending"
   | "farfetch-categories"
   | "farfetch-designers"
   | "farfetch-product"
@@ -116187,6 +123195,33 @@ export type OperationIdLiteral =
   | "ft-headlines"
   | "ft-news"
   | "ft-search"
+  | "fussballde-amateur-stats"
+  | "fussballde-club"
+  | "fussballde-club-matches"
+  | "fussballde-club-search"
+  | "fussballde-competition-options"
+  | "fussballde-competitions"
+  | "fussballde-federation"
+  | "fussballde-filters"
+  | "fussballde-match"
+  | "fussballde-match-calendar"
+  | "fussballde-match-comparison"
+  | "fussballde-match-plan"
+  | "fussballde-matchday"
+  | "fussballde-national-top-scorers"
+  | "fussballde-news"
+  | "fussballde-news-article"
+  | "fussballde-news-search"
+  | "fussballde-player"
+  | "fussballde-player-matches"
+  | "fussballde-player-search"
+  | "fussballde-position-history"
+  | "fussballde-postal-codes"
+  | "fussballde-table"
+  | "fussballde-team"
+  | "fussballde-team-matches"
+  | "fussballde-team-squad"
+  | "fussballde-top-scorers"
   | "gamerant-article"
   | "gamerant-author"
   | "gamerant-headlines"
@@ -116584,9 +123619,11 @@ export type OperationIdLiteral =
   | "instacart-search-nearby"
   | "instacart-stores"
   | "instacart-trending"
+  | "instagram-comments"
   | "instagram-post"
   | "instagram-profile"
   | "instagram-reels"
+  | "instagram-user-posts"
   | "investopedia-article"
   | "investopedia-author"
   | "investopedia-headlines"
@@ -116661,6 +123698,11 @@ export type OperationIdLiteral =
   | "jobs-workable-postings"
   | "jobs-workday-board"
   | "jobs-workday-job"
+  | "jumia-categories"
+  | "jumia-category"
+  | "jumia-countries"
+  | "jumia-product"
+  | "jumia-search"
   | "justeat-restaurant"
   | "justeat-restaurant-menu"
   | "justeat-search"
@@ -117512,6 +124554,13 @@ export type OperationIdLiteral =
   | "rebag-sitemap-urls"
   | "rebag-sitemaps"
   | "rebag-store"
+  | "reddit-archive-comments-ids"
+  | "reddit-archive-comments-search"
+  | "reddit-archive-comments-tree"
+  | "reddit-archive-posts-ids"
+  | "reddit-archive-posts-search"
+  | "reddit-archive-subreddits-search"
+  | "reddit-archive-time-series"
   | "reddit-comments"
   | "reddit-domain-posts"
   | "reddit-leads"
@@ -117716,14 +124765,22 @@ export type OperationIdLiteral =
   | "shakeshack-menu"
   | "shakeshack-nearby"
   | "shakeshack-store"
+  | "shein-brands"
+  | "shein-categories"
   | "shein-category-filters"
   | "shein-category-goods"
   | "shein-category-nav"
+  | "shein-deals-products"
+  | "shein-deals-tabs"
   | "shein-products-aggregation-filters"
   | "shein-products-detail"
   | "shein-products-search"
   | "shein-search-autocomplete"
   | "shein-search-keywords"
+  | "shein-store"
+  | "shein-store-products"
+  | "shein-trending-categories"
+  | "shein-trending-filters"
   | "shop-app-analysis"
   | "shop-app-categories"
   | "shop-app-product"
@@ -118307,31 +125364,68 @@ export type OperationIdLiteral =
   | "tiktok-challenge"
   | "tiktok-challenge-list"
   | "tiktok-mobile-anchor-list"
+  | "tiktok-mobile-collection-detail"
+  | "tiktok-mobile-collection-list"
+  | "tiktok-mobile-collection-videos"
   | "tiktok-mobile-comment-replies"
   | "tiktok-mobile-comments"
   | "tiktok-mobile-feed"
+  | "tiktok-mobile-feed-offline"
   | "tiktok-mobile-feed-post"
   | "tiktok-mobile-hashtag"
   | "tiktok-mobile-hashtag-posts"
   | "tiktok-mobile-hashtags"
   | "tiktok-mobile-live-effects"
   | "tiktok-mobile-live-gifts"
+  | "tiktok-mobile-live-hashtags"
+  | "tiktok-mobile-live-room"
+  | "tiktok-mobile-live-room-by-user"
   | "tiktok-mobile-live-search"
+  | "tiktok-mobile-live-tabs"
   | "tiktok-mobile-music-beats"
+  | "tiktok-mobile-music-chart"
+  | "tiktok-mobile-music-choices"
+  | "tiktok-mobile-music-collection-list"
   | "tiktok-mobile-music-collections"
+  | "tiktok-mobile-music-detail"
   | "tiktok-mobile-music-pick"
   | "tiktok-mobile-music-posts"
   | "tiktok-mobile-music-related"
   | "tiktok-mobile-music-trending"
+  | "tiktok-mobile-mv-videos"
+  | "tiktok-mobile-place-detail"
+  | "tiktok-mobile-place-info"
+  | "tiktok-mobile-place-media"
+  | "tiktok-mobile-place-photos"
+  | "tiktok-mobile-place-reviews"
+  | "tiktok-mobile-place-videos"
+  | "tiktok-mobile-playlist-detail"
+  | "tiktok-mobile-playlist-list"
+  | "tiktok-mobile-playlist-videos"
   | "tiktok-mobile-search"
+  | "tiktok-mobile-search-effects"
+  | "tiktok-mobile-search-hashtags"
   | "tiktok-mobile-search-music"
+  | "tiktok-mobile-search-photos"
   | "tiktok-mobile-search-place"
   | "tiktok-mobile-search-pre-info"
+  | "tiktok-mobile-search-stream"
   | "tiktok-mobile-search-sug"
   | "tiktok-mobile-search-tabs"
   | "tiktok-mobile-search-user"
+  | "tiktok-mobile-search-videos"
+  | "tiktok-mobile-translation-description"
   | "tiktok-mobile-trending-categories"
   | "tiktok-mobile-trending-effects"
+  | "tiktok-mobile-user-followers"
+  | "tiktok-mobile-user-following"
+  | "tiktok-mobile-user-original-effects"
+  | "tiktok-mobile-user-original-music"
+  | "tiktok-mobile-user-posts"
+  | "tiktok-mobile-user-profile"
+  | "tiktok-mobile-user-recommendations"
+  | "tiktok-mobile-video-detail"
+  | "tiktok-mobile-video-subtitles"
   | "tiktok-popular-trend-country-industry-meta"
   | "tiktok-post"
   | "tiktok-profile-post"
@@ -118733,6 +125827,7 @@ export type OperationIdLiteral =
   | "youtube-channel-shorts"
   | "youtube-channel-videos"
   | "youtube-comments"
+  | "youtube-comment-replies"
   | "youtube-playlist"
   | "youtube-profile"
   | "youtube-search"
@@ -119585,6 +126680,25 @@ export declare const OperationIds: Readonly<{
   DoorDashDoordashStoreItem: "doordash-store-item";
   DoorDashDoordashStoreMenu: "doordash-store-menu";
   DoorDashDoordashStoreReviews: "doordash-store-reviews";
+  DraftKingsCasinoDraftkingsCasinoCleopatraGuide: "draftkings-casino-cleopatra-guide";
+  DraftKingsCasinoDraftkingsCasinoDirectory: "draftkings-casino-directory";
+  DraftKingsCasinoDraftkingsCasinoSlotsCategories: "draftkings-casino-slots-categories";
+  DraftKingsCasinoDraftkingsCasinoSlotsGuide: "draftkings-casino-slots-guide";
+  DraftKingsCasinoDraftkingsCasinoWheelOfFortuneGuide: "draftkings-casino-wheel-of-fortune-guide";
+  DraftKingsDailyFantasySportsDraftkingsDfsGlossary: "draftkings-dfs-glossary";
+  DraftKingsDailyFantasySportsDraftkingsDfsGuide: "draftkings-dfs-guide";
+  DraftKingsDailyFantasySportsDraftkingsDfsNflBestBallFeaturedContests: "draftkings-dfs-nfl-best-ball-featured-contests";
+  DraftKingsDailyFantasySportsDraftkingsDfsRulesAndScoring: "draftkings-dfs-rules-and-scoring";
+  DraftKingsDailyFantasySportsDraftkingsDfsSports: "draftkings-dfs-sports";
+  DraftKingsPick6DraftkingsPick6RulePage: "draftkings-pick6-rule-page";
+  DraftKingsPick6DraftkingsPick6Rules: "draftkings-pick6-rules";
+  DraftKingsPick6DraftkingsPick6Sports: "draftkings-pick6-sports";
+  DraftKingsPredictionsDraftkingsPredictionsAvailability: "draftkings-predictions-availability";
+  DraftKingsPredictionsDraftkingsPredictionsCategories: "draftkings-predictions-categories";
+  DraftKingsPredictionsDraftkingsPredictionsRules: "draftkings-predictions-rules";
+  DraftKingsRacingDraftkingsRacingRaceInfo: "draftkings-racing-race-info";
+  DraftKingsRacingDraftkingsRacingSchedule: "draftkings-racing-schedule";
+  DraftKingsRacingDraftkingsRacingTracks: "draftkings-racing-tracks";
   DraftKingsSportsbookDraftkingsEvent: "draftkings-event";
   DraftKingsSportsbookDraftkingsEventContext: "draftkings-event-context";
   DraftKingsSportsbookDraftkingsEventMarkets: "draftkings-event-markets";
@@ -119688,6 +126802,78 @@ export declare const OperationIds: Readonly<{
   ExpediaPropertiesSearch: "expedia-properties-search";
   FacebookMarketplaceSearch: "facebook-marketplace-search";
   FacebookPage: "facebook-page";
+  FanDuelFanduelCasinoCategories: "fanduel-casino-categories";
+  FanDuelFanduelCasinoCategory: "fanduel-casino-category";
+  FanDuelFanduelCasinoGame: "fanduel-casino-game";
+  FanDuelFanduelRacingCarryoverPools: "fanduel-racing-carryover-pools";
+  FanDuelFanduelRacingFilters: "fanduel-racing-filters";
+  FanDuelFanduelRacingHorse: "fanduel-racing-horse";
+  FanDuelFanduelRacingPastRace: "fanduel-racing-past-race";
+  FanDuelFanduelRacingPastRaces: "fanduel-racing-past-races";
+  FanDuelFanduelRacingPastTracks: "fanduel-racing-past-tracks";
+  FanDuelFanduelRacingRace: "fanduel-racing-race";
+  FanDuelFanduelRacingRaces: "fanduel-racing-races";
+  FanDuelFanduelRacingResults: "fanduel-racing-results";
+  FanDuelFanduelRacingSearch: "fanduel-racing-search";
+  FanDuelFanduelRacingTrack: "fanduel-racing-track";
+  FanDuelFanduelRacingTracks: "fanduel-racing-tracks";
+  FanDuelFanduelRacingWagerTypes: "fanduel-racing-wager-types";
+  FanDuelFanduelResearch: "fanduel-research";
+  FanDuelFanduelResearchArticle: "fanduel-research-article";
+  FanDuelFanduelResearchArticles: "fanduel-research-articles";
+  FanDuelFanduelResearchAuthor: "fanduel-research-author";
+  FanDuelFanduelResearchAuthors: "fanduel-research-authors";
+  FanDuelFanduelResearchFeaturedArticles: "fanduel-research-featured-articles";
+  FanDuelFanduelResearchFixtures: "fanduel-research-fixtures";
+  FanDuelFanduelResearchNflSchedule: "fanduel-research-nfl-schedule";
+  FanDuelFanduelResearchPlayerNews: "fanduel-research-player-news";
+  FanDuelFanduelResearchProjectionSlates: "fanduel-research-projection-slates";
+  FanDuelFanduelResearchProjectionTables: "fanduel-research-projection-tables";
+  FanDuelFanduelResearchProjections: "fanduel-research-projections";
+  FanDuelFanduelResearchQuickPicksDaily: "fanduel-research-quick-picks-daily";
+  FanDuelFanduelResearchSports: "fanduel-research-sports";
+  FanDuelFanduelResearchSubCategories: "fanduel-research-sub-categories";
+  FanDuelFanduelSportsbookAutocomplete: "fanduel-sportsbook-autocomplete";
+  FanDuelFanduelSportsbookBuilder: "fanduel-sportsbook-builder";
+  FanDuelFanduelSportsbookBuilderEvents: "fanduel-sportsbook-builder-events";
+  FanDuelFanduelSportsbookBuilderQuotes: "fanduel-sportsbook-builder-quotes";
+  FanDuelFanduelSportsbookCompetition: "fanduel-sportsbook-competition";
+  FanDuelFanduelSportsbookEvent: "fanduel-sportsbook-event";
+  FanDuelFanduelSportsbookEventBoxScore: "fanduel-sportsbook-event-box-score";
+  FanDuelFanduelSportsbookEventPlayByPlay: "fanduel-sportsbook-event-play-by-play";
+  FanDuelFanduelSportsbookEventPlayers: "fanduel-sportsbook-event-players";
+  FanDuelFanduelSportsbookEventScore: "fanduel-sportsbook-event-score";
+  FanDuelFanduelSportsbookEventStats: "fanduel-sportsbook-event-stats";
+  FanDuelFanduelSportsbookEventsStatus: "fanduel-sportsbook-events-status";
+  FanDuelFanduelSportsbookHome: "fanduel-sportsbook-home";
+  FanDuelFanduelSportsbookLeague: "fanduel-sportsbook-league";
+  FanDuelFanduelSportsbookLive: "fanduel-sportsbook-live";
+  FanDuelFanduelSportsbookLiveCount: "fanduel-sportsbook-live-count";
+  FanDuelFanduelSportsbookLiveData: "fanduel-sportsbook-live-data";
+  FanDuelFanduelSportsbookLiveScores: "fanduel-sportsbook-live-scores";
+  FanDuelFanduelSportsbookMarketPrices: "fanduel-sportsbook-market-prices";
+  FanDuelFanduelSportsbookParlays: "fanduel-sportsbook-parlays";
+  FanDuelFanduelSportsbookPlayer: "fanduel-sportsbook-player";
+  FanDuelFanduelSportsbookPlayerNews: "fanduel-sportsbook-player-news";
+  FanDuelFanduelSportsbookPlayerProps: "fanduel-sportsbook-player-props";
+  FanDuelFanduelSportsbookPlayerStats: "fanduel-sportsbook-player-stats";
+  FanDuelFanduelSportsbookPlayers: "fanduel-sportsbook-players";
+  FanDuelFanduelSportsbookPromotions: "fanduel-sportsbook-promotions";
+  FanDuelFanduelSportsbookSchedule: "fanduel-sportsbook-schedule";
+  FanDuelFanduelSportsbookSearch: "fanduel-sportsbook-search";
+  FanDuelFanduelSportsbookSearchTabs: "fanduel-sportsbook-search-tabs";
+  FanDuelFanduelSportsbookSport: "fanduel-sportsbook-sport";
+  FanDuelFanduelSportsbookSports: "fanduel-sportsbook-sports";
+  FanDuelFanduelSportsbookStandings: "fanduel-sportsbook-standings";
+  FanDuelFanduelSportsbookStats: "fanduel-sportsbook-stats";
+  FanDuelFanduelSportsbookTeamDepthChart: "fanduel-sportsbook-team-depth-chart";
+  FanDuelFanduelSportsbookTeamNews: "fanduel-sportsbook-team-news";
+  FanDuelFanduelSportsbookTeamOdds: "fanduel-sportsbook-team-odds";
+  FanDuelFanduelSportsbookTeamRoster: "fanduel-sportsbook-team-roster";
+  FanDuelFanduelSportsbookTeamSchedule: "fanduel-sportsbook-team-schedule";
+  FanDuelFanduelSportsbookTeamStats: "fanduel-sportsbook-team-stats";
+  FanDuelFanduelSportsbookTeams: "fanduel-sportsbook-teams";
+  FanDuelFanduelSportsbookTrending: "fanduel-sportsbook-trending";
   FanaticsCategories: "fanatics-categories";
   FanaticsCategory: "fanatics-category";
   FanaticsCollectFanaticscollectAuctions: "fanaticscollect-auctions";
@@ -119900,6 +127086,33 @@ export declare const OperationIds: Readonly<{
   FtHeadlines: "ft-headlines";
   FtNews: "ft-news";
   FtSearch: "ft-search";
+  FussballDeFussballdeAmateurStats: "fussballde-amateur-stats";
+  FussballDeFussballdeClub: "fussballde-club";
+  FussballDeFussballdeClubMatches: "fussballde-club-matches";
+  FussballDeFussballdeClubSearch: "fussballde-club-search";
+  FussballDeFussballdeCompetitionOptions: "fussballde-competition-options";
+  FussballDeFussballdeCompetitions: "fussballde-competitions";
+  FussballDeFussballdeFederation: "fussballde-federation";
+  FussballDeFussballdeFilters: "fussballde-filters";
+  FussballDeFussballdeMatch: "fussballde-match";
+  FussballDeFussballdeMatchCalendar: "fussballde-match-calendar";
+  FussballDeFussballdeMatchComparison: "fussballde-match-comparison";
+  FussballDeFussballdeMatchPlan: "fussballde-match-plan";
+  FussballDeFussballdeMatchday: "fussballde-matchday";
+  FussballDeFussballdeNationalTopScorers: "fussballde-national-top-scorers";
+  FussballDeFussballdeNews: "fussballde-news";
+  FussballDeFussballdeNewsArticle: "fussballde-news-article";
+  FussballDeFussballdeNewsSearch: "fussballde-news-search";
+  FussballDeFussballdePlayer: "fussballde-player";
+  FussballDeFussballdePlayerMatches: "fussballde-player-matches";
+  FussballDeFussballdePlayerSearch: "fussballde-player-search";
+  FussballDeFussballdePositionHistory: "fussballde-position-history";
+  FussballDeFussballdePostalCodes: "fussballde-postal-codes";
+  FussballDeFussballdeTable: "fussballde-table";
+  FussballDeFussballdeTeam: "fussballde-team";
+  FussballDeFussballdeTeamMatches: "fussballde-team-matches";
+  FussballDeFussballdeTeamSquad: "fussballde-team-squad";
+  FussballDeFussballdeTopScorers: "fussballde-top-scorers";
   GameRantGamerantArticle: "gamerant-article";
   GameRantGamerantAuthor: "gamerant-author";
   GameRantGamerantHeadlines: "gamerant-headlines";
@@ -120282,9 +127495,11 @@ export declare const OperationIds: Readonly<{
   InstacartSearchNearby: "instacart-search-nearby";
   InstacartStores: "instacart-stores";
   InstacartTrending: "instacart-trending";
+  InstagramComments: "instagram-comments";
   InstagramPost: "instagram-post";
   InstagramProfile: "instagram-profile";
   InstagramReels: "instagram-reels";
+  InstagramUserPosts: "instagram-user-posts";
   InvestopediaArticle: "investopedia-article";
   InvestopediaAuthor: "investopedia-author";
   InvestopediaHeadlines: "investopedia-headlines";
@@ -120354,6 +127569,11 @@ export declare const OperationIds: Readonly<{
   JobsWorkablePostings: "jobs-workable-postings";
   JobsWorkdayBoard: "jobs-workday-board";
   JobsWorkdayJob: "jobs-workday-job";
+  JumiaCategories: "jumia-categories";
+  JumiaCategory: "jumia-category";
+  JumiaCountries: "jumia-countries";
+  JumiaProduct: "jumia-product";
+  JumiaSearch: "jumia-search";
   JustEatJusteatRestaurant: "justeat-restaurant";
   JustEatJusteatRestaurantMenu: "justeat-restaurant-menu";
   JustEatJusteatSearch: "justeat-search";
@@ -121201,6 +128421,13 @@ export declare const OperationIds: Readonly<{
   RebagSitemapUrls: "rebag-sitemap-urls";
   RebagSitemaps: "rebag-sitemaps";
   RebagStore: "rebag-store";
+  RedditArchiveCommentsIds: "reddit-archive-comments-ids";
+  RedditArchiveCommentsSearch: "reddit-archive-comments-search";
+  RedditArchiveCommentsTree: "reddit-archive-comments-tree";
+  RedditArchivePostsIds: "reddit-archive-posts-ids";
+  RedditArchivePostsSearch: "reddit-archive-posts-search";
+  RedditArchiveSubredditsSearch: "reddit-archive-subreddits-search";
+  RedditArchiveTimeSeries: "reddit-archive-time-series";
   RedditComments: "reddit-comments";
   RedditDomainPosts: "reddit-domain-posts";
   RedditLeads: "reddit-leads";
@@ -121427,14 +128654,22 @@ export declare const OperationIds: Readonly<{
   ShakeShackShakeshackMenu: "shakeshack-menu";
   ShakeShackShakeshackNearby: "shakeshack-nearby";
   ShakeShackShakeshackStore: "shakeshack-store";
+  SheinBrands: "shein-brands";
+  SheinCategories: "shein-categories";
   SheinCategoryFilters: "shein-category-filters";
   SheinCategoryGoods: "shein-category-goods";
   SheinCategoryNav: "shein-category-nav";
+  SheinDealsProducts: "shein-deals-products";
+  SheinDealsTabs: "shein-deals-tabs";
   SheinProductsAggregationFilters: "shein-products-aggregation-filters";
   SheinProductsDetail: "shein-products-detail";
   SheinProductsSearch: "shein-products-search";
   SheinSearchAutocomplete: "shein-search-autocomplete";
   SheinSearchKeywords: "shein-search-keywords";
+  SheinStore: "shein-store";
+  SheinStoreProducts: "shein-store-products";
+  SheinTrendingCategories: "shein-trending-categories";
+  SheinTrendingFilters: "shein-trending-filters";
   ShopAppAnalysis: "shop-app-analysis";
   ShopAppCategories: "shop-app-categories";
   ShopAppCollectionProducts: "shop-app-collection-products";
@@ -122051,31 +129286,68 @@ export declare const OperationIds: Readonly<{
   TiktokCreativeCenterVideos: "tiktok-creative-center-videos";
   TiktokExplore: "tiktok-explore";
   TiktokMobileAnchorList: "tiktok-mobile-anchor-list";
+  TiktokMobileCollectionDetail: "tiktok-mobile-collection-detail";
+  TiktokMobileCollectionList: "tiktok-mobile-collection-list";
+  TiktokMobileCollectionVideos: "tiktok-mobile-collection-videos";
   TiktokMobileCommentReplies: "tiktok-mobile-comment-replies";
   TiktokMobileComments: "tiktok-mobile-comments";
   TiktokMobileFeed: "tiktok-mobile-feed";
+  TiktokMobileFeedOffline: "tiktok-mobile-feed-offline";
   TiktokMobileFeedPost: "tiktok-mobile-feed-post";
   TiktokMobileHashtag: "tiktok-mobile-hashtag";
   TiktokMobileHashtagPosts: "tiktok-mobile-hashtag-posts";
   TiktokMobileHashtags: "tiktok-mobile-hashtags";
   TiktokMobileLiveEffects: "tiktok-mobile-live-effects";
   TiktokMobileLiveGifts: "tiktok-mobile-live-gifts";
+  TiktokMobileLiveHashtags: "tiktok-mobile-live-hashtags";
+  TiktokMobileLiveRoom: "tiktok-mobile-live-room";
+  TiktokMobileLiveRoomByUser: "tiktok-mobile-live-room-by-user";
   TiktokMobileLiveSearch: "tiktok-mobile-live-search";
+  TiktokMobileLiveTabs: "tiktok-mobile-live-tabs";
   TiktokMobileMusicBeats: "tiktok-mobile-music-beats";
+  TiktokMobileMusicChart: "tiktok-mobile-music-chart";
+  TiktokMobileMusicChoices: "tiktok-mobile-music-choices";
+  TiktokMobileMusicCollectionList: "tiktok-mobile-music-collection-list";
   TiktokMobileMusicCollections: "tiktok-mobile-music-collections";
+  TiktokMobileMusicDetail: "tiktok-mobile-music-detail";
   TiktokMobileMusicPick: "tiktok-mobile-music-pick";
   TiktokMobileMusicPosts: "tiktok-mobile-music-posts";
   TiktokMobileMusicRelated: "tiktok-mobile-music-related";
   TiktokMobileMusicTrending: "tiktok-mobile-music-trending";
+  TiktokMobileMvVideos: "tiktok-mobile-mv-videos";
+  TiktokMobilePlaceDetail: "tiktok-mobile-place-detail";
+  TiktokMobilePlaceInfo: "tiktok-mobile-place-info";
+  TiktokMobilePlaceMedia: "tiktok-mobile-place-media";
+  TiktokMobilePlacePhotos: "tiktok-mobile-place-photos";
+  TiktokMobilePlaceReviews: "tiktok-mobile-place-reviews";
+  TiktokMobilePlaceVideos: "tiktok-mobile-place-videos";
+  TiktokMobilePlaylistDetail: "tiktok-mobile-playlist-detail";
+  TiktokMobilePlaylistList: "tiktok-mobile-playlist-list";
+  TiktokMobilePlaylistVideos: "tiktok-mobile-playlist-videos";
   TiktokMobileSearch: "tiktok-mobile-search";
+  TiktokMobileSearchEffects: "tiktok-mobile-search-effects";
+  TiktokMobileSearchHashtags: "tiktok-mobile-search-hashtags";
   TiktokMobileSearchMusic: "tiktok-mobile-search-music";
+  TiktokMobileSearchPhotos: "tiktok-mobile-search-photos";
   TiktokMobileSearchPlace: "tiktok-mobile-search-place";
   TiktokMobileSearchPreInfo: "tiktok-mobile-search-pre-info";
+  TiktokMobileSearchStream: "tiktok-mobile-search-stream";
   TiktokMobileSearchSug: "tiktok-mobile-search-sug";
   TiktokMobileSearchTabs: "tiktok-mobile-search-tabs";
   TiktokMobileSearchUser: "tiktok-mobile-search-user";
+  TiktokMobileSearchVideos: "tiktok-mobile-search-videos";
+  TiktokMobileTranslationDescription: "tiktok-mobile-translation-description";
   TiktokMobileTrendingCategories: "tiktok-mobile-trending-categories";
   TiktokMobileTrendingEffects: "tiktok-mobile-trending-effects";
+  TiktokMobileUserFollowers: "tiktok-mobile-user-followers";
+  TiktokMobileUserFollowing: "tiktok-mobile-user-following";
+  TiktokMobileUserOriginalEffects: "tiktok-mobile-user-original-effects";
+  TiktokMobileUserOriginalMusic: "tiktok-mobile-user-original-music";
+  TiktokMobileUserPosts: "tiktok-mobile-user-posts";
+  TiktokMobileUserProfile: "tiktok-mobile-user-profile";
+  TiktokMobileUserRecommendations: "tiktok-mobile-user-recommendations";
+  TiktokMobileVideoDetail: "tiktok-mobile-video-detail";
+  TiktokMobileVideoSubtitles: "tiktok-mobile-video-subtitles";
   TiktokPopularTrendCountryIndustryMeta: "tiktok-popular-trend-country-industry-meta";
   TiktokPost: "tiktok-post";
   TiktokProfile: "tiktok-profile";
@@ -122471,6 +129743,7 @@ export declare const OperationIds: Readonly<{
   YoutubeChannelSearch: "youtube-channel-search";
   YoutubeChannelShorts: "youtube-channel-shorts";
   YoutubeChannelVideos: "youtube-channel-videos";
+  YoutubeCommentReplies: "youtube-comment-replies";
   YoutubeComments: "youtube-comments";
   YoutubePlaylist: "youtube-playlist";
   YoutubeProfile: "youtube-profile";
