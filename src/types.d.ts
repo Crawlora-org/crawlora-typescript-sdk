@@ -1010,6 +1010,59 @@ export interface ModelAliexpressAttributeValue {
   "value"?: string;
 }
 
+export interface ModelAliexpressCategoriesResponse {
+  "categories"?: Array<ModelAliexpressCategory>;
+  "category_tab"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelAliexpressCategory {
+  "category_id"?: string;
+  "children"?: Array<ModelAliexpressCategory>;
+  "icon_url"?: string;
+  "id"?: string;
+  "level"?: number;
+  "name"?: string;
+  "parent_id"?: string;
+  "search_keyword"?: string;
+  "search_url"?: string;
+}
+
+export interface ModelAliexpressCategoryIdsResponse {
+  "categories"?: Array<ModelAliexpressWebCategory>;
+  "category_id"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "paths"?: Array<ModelAliexpressCategoryPath>;
+  "query"?: string;
+  "source"?: string;
+  "source_url"?: string;
+  "total_results"?: number;
+}
+
+export interface ModelAliexpressCategoryPath {
+  "depth"?: number;
+  "leaf_id"?: number;
+  "path"?: Array<number>;
+  "products"?: number;
+}
+
+export interface ModelAliexpressCategoryProductsResponse {
+  "category_id"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "products"?: Array<ModelAliexpressProductSummary>;
+  "slug"?: string;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_results"?: number;
+}
+
 export interface ModelAliexpressFiltersResponse {
   "attribute_groups"?: Array<ModelAliexpressAttributeGroup>;
   "fetched_at"?: string;
@@ -1086,9 +1139,69 @@ export interface ModelAliexpressSortOption {
   "value"?: string;
 }
 
+export interface ModelAliexpressSuggestResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "query"?: string;
+  "source_url"?: string;
+  "suggestions"?: Array<ModelAliexpressSuggestion>;
+}
+
+export interface ModelAliexpressSuggestion {
+  "keyword"?: string;
+  "url"?: string;
+}
+
 export interface ModelAliexpressSwitchOption {
   "label"?: string;
   "param"?: string;
+}
+
+export interface ModelAliexpressTrendingSearch {
+  "category"?: string;
+  "display_keyword"?: string;
+  "image_url"?: string;
+  "keyword"?: string;
+  "kind"?: string;
+  "label"?: string;
+  "search_url"?: string;
+}
+
+export interface ModelAliexpressTrendingSearchesResponse {
+  "available"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "items"?: Array<ModelAliexpressTrendingSearch>;
+  "limit"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelAliexpressWebCategory {
+  "category_id"?: number;
+  "leaf"?: boolean;
+  "level"?: number;
+  "parent_id"?: number;
+  "path"?: Array<number>;
+  "product_hits"?: number;
+}
+
+export interface ModelAliexpressCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelAliexpressCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelAliexpressCategoryIdsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAliexpressCategoryIdsResponse;
+  "msg"?: string;
+}
+
+export interface ModelAliexpressCategoryProductsResponseDoc {
+  "code"?: number;
+  "data"?: ModelAliexpressCategoryProductsResponse;
+  "msg"?: string;
 }
 
 export interface ModelAliexpressFiltersResponseDoc {
@@ -1106,6 +1219,18 @@ export interface ModelAliexpressReviewsResponseDoc {
 export interface ModelAliexpressSearchResponseDoc {
   "code"?: number;
   "data"?: ModelAliexpressSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelAliexpressSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelAliexpressSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelAliexpressTrendingSearchesResponseDoc {
+  "code"?: number;
+  "data"?: ModelAliexpressTrendingSearchesResponse;
   "msg"?: string;
 }
 
@@ -13531,6 +13656,21 @@ export interface ModelDatasetsAirbnbMarketSearchResponse {
   "total"?: number;
 }
 
+export interface ModelDatasetsApplePlaceFacetResponse {
+  "dataset"?: string;
+  "facet"?: string;
+  "items"?: Array<ModelEsApplePlaceDatasetFacetItem>;
+}
+
+export interface ModelDatasetsApplePlaceSearchResponse {
+  "dataset"?: string;
+  "items"?: Array<ModelEsApplePlaceDatasetItem>;
+  "page"?: number;
+  "page_size"?: number;
+  "sort"?: string;
+  "total"?: number;
+}
+
 export interface ModelDatasetsApplePodcastsShowsFacetResponse {
   "dataset"?: string;
   "facet"?: string;
@@ -14295,6 +14435,24 @@ export interface ModelDatasetsAirbnbMarketsNearbyResponseDoc {
 export interface ModelDatasetsAirbnbMarketsSearchResponseDoc {
   "code"?: number;
   "data"?: ModelDatasetsAirbnbMarketSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsApplePlaceResponseDoc {
+  "code"?: number;
+  "data"?: ModelEsApplePlaceRecord;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsApplePlacesFacetResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsApplePlaceFacetResponse;
+  "msg"?: string;
+}
+
+export interface ModelDatasetsApplePlacesSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDatasetsApplePlaceSearchResponse;
   "msg"?: string;
 }
 
@@ -16485,6 +16643,365 @@ export interface ModelDoordashStoreReviewsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelDramaboxAppTagRef {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelDramaboxAppTitle {
+  "cover_url"?: string;
+  "description"?: string;
+  "episodes"?: number;
+  "id"?: string;
+  "in_library"?: boolean;
+  "play_count"?: number;
+  "protagonist"?: string;
+  "shelf_time"?: string;
+  "shelf_time_ms"?: number;
+  "tag_refs"?: Array<ModelDramaboxAppTagRef>;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelDramaboxBook {
+  "cover_url"?: string;
+  "description"?: string;
+  "episodes"?: number;
+  "follows"?: number;
+  "genres"?: Array<ModelDramaboxGenre>;
+  "id"?: string;
+  "language"?: string;
+  "listed_at"?: string;
+  "rating"?: number;
+  "status"?: string;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+  "views_display"?: string;
+}
+
+export interface ModelDramaboxBrowseResponse {
+  "books"?: Array<ModelDramaboxBook>;
+  "genre_id"?: number;
+  "genre_name"?: string;
+  "language"?: string;
+  "page"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelDramaboxCategoriesResponse {
+  "groups"?: Array<ModelDramaboxCategoryGroup>;
+}
+
+export interface ModelDramaboxCategoryBooksResponse {
+  "has_more"?: boolean;
+  "limit"?: number;
+  "page"?: number;
+  "titles"?: Array<ModelDramaboxAppTitle>;
+}
+
+export interface ModelDramaboxCategoryGroup {
+  "key"?: string;
+  "options"?: Array<ModelDramaboxCategoryOption>;
+  "row"?: number;
+  "type"?: number;
+}
+
+export interface ModelDramaboxCategoryOption {
+  "name"?: string;
+  "value"?: string;
+}
+
+export interface ModelDramaboxChannel {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelDramaboxChannelsResponse {
+  "channels"?: Array<ModelDramaboxChannel>;
+}
+
+export interface ModelDramaboxDramaResponse {
+  "available_languages"?: Array<string>;
+  "cover_url"?: string;
+  "description"?: string;
+  "episode_count"?: number;
+  "episodes"?: Array<ModelDramaboxEpisode>;
+  "follows"?: number;
+  "genres"?: Array<ModelDramaboxGenre>;
+  "id"?: string;
+  "language"?: string;
+  "listed_at"?: string;
+  "related"?: Array<ModelDramaboxBook>;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "updated_at"?: string;
+  "url"?: string;
+  "views"?: number;
+}
+
+export interface ModelDramaboxEpisode {
+  "duration_ms"?: number;
+  "free"?: boolean;
+  "id"?: string;
+  "number"?: number;
+  "thumbnail_url"?: string;
+  "updated_at"?: string;
+}
+
+export interface ModelDramaboxGenre {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelDramaboxGenresResponse {
+  "genres"?: Array<ModelDramaboxGenre>;
+  "language"?: string;
+}
+
+export interface ModelDramaboxHomeResponse {
+  "featured"?: Array<ModelDramaboxBook>;
+  "language"?: string;
+  "shelves"?: Array<ModelDramaboxShelf>;
+}
+
+export interface ModelDramaboxMoreResponse {
+  "books"?: Array<ModelDramaboxBook>;
+  "language"?: string;
+  "name"?: string;
+  "page"?: number;
+  "position"?: string;
+  "total_pages"?: number;
+}
+
+export interface ModelDramaboxPerformerResponse {
+  "avatar"?: string;
+  "followed"?: boolean;
+  "gender"?: number;
+  "has_more"?: boolean;
+  "id"?: string;
+  "limit"?: number;
+  "name"?: string;
+  "page"?: number;
+  "titles"?: Array<ModelDramaboxAppTitle>;
+  "video_count"?: number;
+}
+
+export interface ModelDramaboxRankMeta {
+  "hot_code"?: string;
+  "sort"?: number;
+  "type"?: number;
+}
+
+export interface ModelDramaboxRankResponse {
+  "rank_type"?: number;
+  "tabs"?: Array<ModelDramaboxRankTab>;
+  "titles"?: Array<ModelDramaboxRankedTitle>;
+}
+
+export interface ModelDramaboxRankTab {
+  "name"?: string;
+  "type"?: number;
+}
+
+export interface ModelDramaboxRankedTitle {
+  "cover_url"?: string;
+  "data_from"?: string;
+  "description"?: string;
+  "episodes"?: number;
+  "id"?: string;
+  "in_library"?: boolean;
+  "position"?: number;
+  "protagonist"?: string;
+  "rank"?: ModelDramaboxRankMeta;
+  "shelf_time"?: string;
+  "shelf_time_ms"?: number;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelDramaboxRecommendResponse {
+  "has_more"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
+  "title"?: string;
+  "titles"?: Array<ModelDramaboxAppTitle>;
+}
+
+export interface ModelDramaboxSearchPerson {
+  "avatar"?: string;
+  "id"?: string;
+  "name"?: string;
+  "videos"?: number;
+}
+
+export interface ModelDramaboxSearchResponse {
+  "is_more"?: boolean;
+  "keyword"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "people"?: Array<ModelDramaboxSearchPerson>;
+  "titles"?: Array<ModelDramaboxAppTitle>;
+}
+
+export interface ModelDramaboxShelf {
+  "books"?: Array<ModelDramaboxBook>;
+  "id"?: number;
+  "name"?: string;
+  "position"?: string;
+}
+
+export interface ModelDramaboxSuggestItem {
+  "avatar"?: string;
+  "cover_url"?: string;
+  "id"?: string;
+  "kind"?: string;
+  "name"?: string;
+  "videos"?: number;
+}
+
+export interface ModelDramaboxSuggestResponse {
+  "items"?: Array<ModelDramaboxSuggestItem>;
+  "keyword"?: string;
+}
+
+export interface ModelDramaboxTagResponse {
+  "has_more"?: boolean;
+  "limit"?: number;
+  "page"?: number;
+  "tag_id"?: number;
+  "tag_name"?: string;
+  "titles"?: Array<ModelDramaboxAppTitle>;
+}
+
+export interface ModelDramaboxTheaterBanner {
+  "image_url"?: string;
+  "title"?: string;
+  "title_id"?: string;
+}
+
+export interface ModelDramaboxTheaterResponse {
+  "banners"?: Array<ModelDramaboxTheaterBanner>;
+  "channel"?: ModelDramaboxChannel;
+  "has_more"?: boolean;
+  "hot_words"?: Array<string>;
+  "limit"?: number;
+  "page"?: number;
+  "sections"?: Array<ModelDramaboxTheaterSection>;
+}
+
+export interface ModelDramaboxTheaterSection {
+  "style"?: string;
+  "title"?: string;
+  "titles"?: Array<ModelDramaboxAppTitle>;
+}
+
+export interface ModelDramaboxTrendingResponse {
+  "hot"?: Array<ModelDramaboxAppTitle>;
+  "new_releases"?: Array<ModelDramaboxAppTitle>;
+  "preset_keyword"?: string;
+  "rank_tabs"?: Array<ModelDramaboxRankTab>;
+  "trending"?: Array<ModelDramaboxAppTitle>;
+}
+
+export interface ModelDramaboxBrowseResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxBrowseResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxCategoryBooksResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxCategoryBooksResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxChannelsResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxChannelsResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxDramaResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxDramaResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxGenresResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxGenresResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxMoreResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxMoreResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxPerformerResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxPerformerResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxRankResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxRankResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxRecommendResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxRecommendResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxSuggestResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxTagResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxTagResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxTheaterResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxTheaterResponse;
+  "msg"?: string;
+}
+
+export interface ModelDramaboxTrendingResponseDoc {
+  "code"?: number;
+  "data"?: ModelDramaboxTrendingResponse;
+  "msg"?: string;
+}
+
 export interface ModelDuckduckgoImageResponse {
   "pagination"?: ModelDuckduckgoSearchPagination;
   "query"?: string;
@@ -17264,6 +17781,100 @@ export interface ModelEsAppReview {
   "url"?: string;
   "user_name"?: string;
   "version"?: string;
+}
+
+export interface ModelEsApplePlaceDatasetFacetItem {
+  "count"?: number;
+  "key"?: string;
+}
+
+export interface ModelEsApplePlaceDatasetItem {
+  "address"?: string;
+  "alt_phones"?: Array<string>;
+  "catalog_country"?: string;
+  "categories"?: Array<string>;
+  "category"?: string;
+  "category_ids"?: Array<string>;
+  "city"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "county"?: string;
+  "crawled_at"?: string;
+  "discovery_keyword"?: string;
+  "distance_m"?: number;
+  "first_seen_at"?: string;
+  "hours"?: Array<ModelEsApplePlaceHours>;
+  "hours_type"?: string;
+  "id"?: string;
+  "last_seen_at"?: string;
+  "latitude"?: number;
+  "location"?: ModelEsGeoPoint;
+  "longitude"?: number;
+  "name"?: string;
+  "neighborhood"?: string;
+  "phone"?: string;
+  "photo_url"?: string;
+  "place_id"?: string;
+  "postal_code"?: string;
+  "price_level"?: number;
+  "price_symbol"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "rating_max"?: number;
+  "schema_version"?: number;
+  "state"?: string;
+  "state_code"?: string;
+  "street"?: string;
+  "type"?: string;
+  "url"?: string;
+  "website"?: string;
+}
+
+export interface ModelEsApplePlaceHours {
+  "close"?: string;
+  "day"?: string;
+  "open"?: string;
+}
+
+export interface ModelEsApplePlaceRecord {
+  "address"?: string;
+  "alt_phones"?: Array<string>;
+  "catalog_country"?: string;
+  "categories"?: Array<string>;
+  "category"?: string;
+  "category_ids"?: Array<string>;
+  "city"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "county"?: string;
+  "crawled_at"?: string;
+  "discovery_keyword"?: string;
+  "first_seen_at"?: string;
+  "hours"?: Array<ModelEsApplePlaceHours>;
+  "hours_type"?: string;
+  "id"?: string;
+  "last_seen_at"?: string;
+  "latitude"?: number;
+  "location"?: ModelEsGeoPoint;
+  "longitude"?: number;
+  "name"?: string;
+  "neighborhood"?: string;
+  "phone"?: string;
+  "photo_url"?: string;
+  "place_id"?: string;
+  "postal_code"?: string;
+  "price_level"?: number;
+  "price_symbol"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "rating_max"?: number;
+  "schema_version"?: number;
+  "state"?: string;
+  "state_code"?: string;
+  "street"?: string;
+  "type"?: string;
+  "url"?: string;
+  "website"?: string;
 }
 
 export interface ModelEsApplePodcastsShowRecord {
@@ -35233,6 +35844,35 @@ export interface ModelJumiaProduct {
   "url"?: string;
 }
 
+export interface ModelJumiaRatingBucket {
+  "count"?: number;
+  "stars"?: number;
+}
+
+export interface ModelJumiaReview {
+  "author"?: string;
+  "date"?: string;
+  "rating"?: number;
+  "text"?: string;
+  "title"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelJumiaReviewsResponse {
+  "average_rating"?: number;
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "has_next"?: boolean;
+  "histogram"?: Array<ModelJumiaRatingBucket>;
+  "page"?: number;
+  "rating_count"?: number;
+  "review_count"?: number;
+  "reviews"?: Array<ModelJumiaReview>;
+  "sku"?: string;
+  "source_url"?: string;
+}
+
 export interface ModelJumiaSeller {
   "followers"?: number;
   "id"?: string;
@@ -35240,6 +35880,42 @@ export interface ModelJumiaSeller {
   "score_percent"?: number;
   "shipping_speed"?: string;
   "url"?: string;
+}
+
+export interface ModelJumiaSitemapFile {
+  "language"?: string;
+  "last_modified"?: string;
+  "name"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelJumiaSitemapUrl {
+  "image"?: string;
+  "last_modified"?: string;
+  "url"?: string;
+}
+
+export interface ModelJumiaSitemapUrlsResponse {
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "has_next"?: boolean;
+  "page"?: number;
+  "page_size"?: number;
+  "sitemap"?: string;
+  "source_url"?: string;
+  "total_count"?: number;
+  "urls"?: Array<ModelJumiaSitemapUrl>;
+}
+
+export interface ModelJumiaSitemapsResponse {
+  "count"?: number;
+  "country"?: string;
+  "fetched_at"?: string;
+  "sitemaps"?: Array<ModelJumiaSitemapFile>;
+  "source_url"?: string;
+  "type"?: string;
 }
 
 export interface ModelJumiaSpecification {
@@ -35268,6 +35944,24 @@ export interface ModelJumiaListingResponseDoc {
 export interface ModelJumiaProductResponseDoc {
   "code"?: number;
   "data"?: ModelJumiaProduct;
+  "msg"?: string;
+}
+
+export interface ModelJumiaReviewsResponseDoc {
+  "code"?: number;
+  "data"?: ModelJumiaReviewsResponse;
+  "msg"?: string;
+}
+
+export interface ModelJumiaSitemapUrlsResponseDoc {
+  "code"?: number;
+  "data"?: ModelJumiaSitemapUrlsResponse;
+  "msg"?: string;
+}
+
+export interface ModelJumiaSitemapsResponseDoc {
+  "code"?: number;
+  "data"?: ModelJumiaSitemapsResponse;
   "msg"?: string;
 }
 
@@ -36419,6 +37113,490 @@ export interface ModelKhaleejtimesAuthorResponse {
   "total_articles"?: number;
   "twitter_handle"?: string;
   "url"?: string;
+}
+
+export interface ModelKickCategoriesResponse {
+  "categories"?: Array<ModelKickCategory>;
+}
+
+export interface ModelKickCategory {
+  "icon"?: string;
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelKickCategoryHit {
+  "id"?: number;
+  "mature"?: boolean;
+  "name"?: string;
+  "slug"?: string;
+  "tags"?: Array<string>;
+  "thumbnail_url"?: string;
+  "url"?: string;
+  "viewers"?: number;
+}
+
+export interface ModelKickCategoryRef {
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelKickChannelChatroomResponse {
+  "account_age"?: ModelKickChatMode;
+  "chatroom_id"?: number;
+  "emotes_only"?: ModelKickChatMode;
+  "followers_only"?: ModelKickChatMode;
+  "gifts_enabled"?: boolean;
+  "rules"?: string;
+  "slow_mode"?: ModelKickChatMode;
+  "slug"?: string;
+  "subscribers_only"?: ModelKickChatMode;
+}
+
+export interface ModelKickChannelEmotesResponse {
+  "channel"?: Array<ModelKickEmote>;
+  "emoji"?: Array<ModelKickEmote>;
+  "global"?: Array<ModelKickEmote>;
+  "slug"?: string;
+}
+
+export interface ModelKickChannelHit {
+  "followers"?: number;
+  "id"?: number;
+  "live"?: boolean;
+  "profile_picture"?: string;
+  "slug"?: string;
+  "url"?: string;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelKickChannelLink {
+  "description"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "kind"?: string;
+  "order"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelKickChannelLinksResponse {
+  "links"?: Array<ModelKickChannelLink>;
+  "slug"?: string;
+}
+
+export interface ModelKickChannelRef {
+  "id"?: number;
+  "profile_picture"?: string;
+  "slug"?: string;
+  "url"?: string;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelKickChannelResponse {
+  "affiliate"?: boolean;
+  "banned"?: boolean;
+  "banner_url"?: string;
+  "bio"?: string;
+  "followers"?: number;
+  "id"?: number;
+  "live"?: ModelKickLiveStream;
+  "profile_picture"?: string;
+  "recent_categories"?: Array<ModelKickCategoryRef>;
+  "slug"?: string;
+  "socials"?: ModelKickSocials;
+  "subscription_enabled"?: boolean;
+  "url"?: string;
+  "username"?: string;
+  "verified"?: boolean;
+  "vod_enabled"?: boolean;
+}
+
+export interface ModelKickChannelStreamsResponse {
+  "slug"?: string;
+  "streams"?: Array<ModelKickStreamSession>;
+}
+
+export interface ModelKickChannelVideosResponse {
+  "slug"?: string;
+  "videos"?: Array<ModelKickVideo>;
+}
+
+export interface ModelKickChatMode {
+  "enabled"?: boolean;
+  "interval_seconds"?: number;
+  "minutes"?: number;
+}
+
+export interface ModelKickClip {
+  "category"?: ModelKickCategoryRef;
+  "channel"?: ModelKickChannelRef;
+  "created_at"?: string;
+  "duration_seconds"?: number;
+  "id"?: string;
+  "likes"?: number;
+  "mature"?: boolean;
+  "started_at"?: string;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "video_id"?: string;
+  "video_offset_seconds"?: number;
+  "views"?: number;
+}
+
+export interface ModelKickClipResponse {
+  "clip"?: ModelKickClip;
+}
+
+export interface ModelKickClipsResponse {
+  "category"?: string;
+  "clips"?: Array<ModelKickClip>;
+  "next_cursor"?: string;
+  "slug"?: string;
+  "sort"?: string;
+  "time"?: string;
+}
+
+export interface ModelKickDirectoryStream {
+  "category"?: ModelKickCategoryRef;
+  "channel"?: ModelKickChannelRef;
+  "id"?: string;
+  "language"?: string;
+  "mature"?: boolean;
+  "started_at"?: string;
+  "tags"?: Array<string>;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "viewers"?: number;
+}
+
+export interface ModelKickDropCampaign {
+  "category"?: ModelKickCategoryRef;
+  "channel_count"?: number;
+  "channels"?: Array<ModelKickDropChannel>;
+  "ends_at"?: string;
+  "id"?: string;
+  "name"?: string;
+  "organization"?: ModelKickDropOrganization;
+  "rewards"?: Array<ModelKickDropReward>;
+  "rule"?: string;
+  "starts_at"?: string;
+  "status"?: string;
+  "url"?: string;
+}
+
+export interface ModelKickDropChannel {
+  "id"?: number;
+  "profile_picture"?: string;
+  "slug"?: string;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelKickDropOrganization {
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelKickDropReward {
+  "category_id"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "required_units"?: number;
+}
+
+export interface ModelKickDropsResponse {
+  "campaigns"?: Array<ModelKickDropCampaign>;
+  "status"?: string;
+  "total"?: number;
+}
+
+export interface ModelKickEmote {
+  "id"?: number;
+  "image_url"?: string;
+  "name"?: string;
+  "subscribers_only"?: boolean;
+}
+
+export interface ModelKickGift {
+  "character_limit"?: number;
+  "id"?: string;
+  "kicks"?: number;
+  "name"?: string;
+  "pinned_seconds"?: number;
+  "tier"?: string;
+  "type"?: string;
+}
+
+export interface ModelKickGiftsResponse {
+  "gifts"?: Array<ModelKickGift>;
+}
+
+export interface ModelKickLanguage {
+  "code"?: string;
+  "name"?: string;
+}
+
+export interface ModelKickLanguagesResponse {
+  "languages"?: Array<ModelKickLanguage>;
+}
+
+export interface ModelKickLiveStream {
+  "categories"?: Array<ModelKickCategoryRef>;
+  "id"?: number;
+  "language"?: string;
+  "mature"?: boolean;
+  "started_at"?: string;
+  "tags"?: Array<string>;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "viewers"?: number;
+}
+
+export interface ModelKickLivestreamsResponse {
+  "category_id"?: number;
+  "language"?: string;
+  "livestreams"?: Array<ModelKickDirectoryStream>;
+  "next_cursor"?: string;
+  "sort"?: string;
+}
+
+export interface ModelKickSearchCategoriesResponse {
+  "categories"?: Array<ModelKickCategoryHit>;
+  "query"?: string;
+}
+
+export interface ModelKickSearchChannelsResponse {
+  "channels"?: Array<ModelKickChannelHit>;
+  "query"?: string;
+}
+
+export interface ModelKickSocials {
+  "discord"?: string;
+  "facebook"?: string;
+  "instagram"?: string;
+  "tiktok"?: string;
+  "twitter"?: string;
+  "youtube"?: string;
+}
+
+export interface ModelKickStreamSession {
+  "categories"?: Array<ModelKickCategoryRef>;
+  "duration_ms"?: number;
+  "id"?: number;
+  "language"?: string;
+  "live"?: boolean;
+  "mature"?: boolean;
+  "started_at"?: string;
+  "tags"?: Array<string>;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "video_url"?: string;
+  "video_uuid"?: string;
+  "video_views"?: number;
+  "viewer_count"?: number;
+}
+
+export interface ModelKickSubcategoriesResponse {
+  "category"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "reachable"?: number;
+  "subcategories"?: Array<ModelKickSubcategory>;
+  "total"?: number;
+}
+
+export interface ModelKickSubcategory {
+  "banner_url"?: string;
+  "description"?: string;
+  "followers"?: number;
+  "id"?: number;
+  "mature"?: boolean;
+  "name"?: string;
+  "parent_id"?: number;
+  "parent_name"?: string;
+  "parent_slug"?: string;
+  "slug"?: string;
+  "tags"?: Array<string>;
+  "url"?: string;
+  "viewers"?: number;
+}
+
+export interface ModelKickSubcategoryResponse {
+  "subcategory"?: ModelKickSubcategory;
+}
+
+export interface ModelKickTopChannelsResponse {
+  "channels"?: Array<ModelKickChannelHit>;
+}
+
+export interface ModelKickVideo {
+  "categories"?: Array<ModelKickCategoryRef>;
+  "duration_ms"?: number;
+  "id"?: number;
+  "language"?: string;
+  "live"?: boolean;
+  "mature"?: boolean;
+  "started_at"?: string;
+  "tags"?: Array<string>;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "uuid"?: string;
+  "views"?: number;
+}
+
+export interface ModelKickVideoResponse {
+  "categories"?: Array<ModelKickCategoryRef>;
+  "channel"?: ModelKickChannelRef;
+  "created_at"?: string;
+  "duration_ms"?: number;
+  "id"?: number;
+  "language"?: string;
+  "mature"?: boolean;
+  "started_at"?: string;
+  "status"?: string;
+  "tags"?: Array<string>;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "url"?: string;
+  "uuid"?: string;
+  "viewer_count"?: number;
+  "views"?: number;
+}
+
+export interface ModelKickCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickCategoryClipsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickClipsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickChannelChatroomResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickChannelChatroomResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickChannelClipsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickClipsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickChannelEmotesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickChannelEmotesResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickChannelLinksResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickChannelLinksResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickChannelResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickChannelResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickChannelStreamsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickChannelStreamsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickChannelVideosResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickChannelVideosResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickClipResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickClipResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickClipsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickClipsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickDropsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickDropsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickGiftsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickGiftsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickLanguagesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickLanguagesResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickLivestreamsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickLivestreamsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickSearchCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickSearchCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickSearchChannelsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickSearchChannelsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickSubcategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickSubcategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickSubcategoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickSubcategoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickTopChannelsResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickTopChannelsResponse;
+  "msg"?: string;
+}
+
+export interface ModelKickVideoResponseDoc {
+  "code"?: number;
+  "data"?: ModelKickVideoResponse;
+  "msg"?: string;
 }
 
 export interface ModelKickstarterCategory {
@@ -47971,6 +49149,192 @@ export interface ModelPredictionsPredictionsRulesResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelPricechartingBigMover {
+  "change"?: number;
+  "console"?: string;
+  "console_slug"?: string;
+  "id"?: number;
+  "name"?: string;
+  "price"?: number;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelPricechartingBigMoversResponse {
+  "categories"?: Array<ModelPricechartingCategory>;
+  "category"?: string;
+  "change_unit"?: string;
+  "price_label"?: string;
+  "products"?: Array<ModelPricechartingBigMover>;
+  "region"?: string;
+  "sort"?: string;
+  "title"?: string;
+}
+
+export interface ModelPricechartingCategoriesResponse {
+  "categories"?: Array<ModelPricechartingCategory>;
+  "category"?: string;
+  "consoles"?: Array<ModelPricechartingConsole>;
+}
+
+export interface ModelPricechartingCategory {
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelPricechartingConsole {
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelPricechartingConsoleProduct {
+  "complete_price"?: number;
+  "id"?: number;
+  "image_url"?: string;
+  "loose_price"?: number;
+  "name"?: string;
+  "new_price"?: number;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelPricechartingConsoleResponse {
+  "console"?: string;
+  "cursor"?: number;
+  "next_cursor"?: number;
+  "price_labels"?: Array<string>;
+  "products"?: Array<ModelPricechartingConsoleProduct>;
+  "sort"?: string;
+  "title"?: string;
+}
+
+export interface ModelPricechartingGradeCount {
+  "count"?: number;
+  "grade"?: number;
+}
+
+export interface ModelPricechartingPopulation {
+  "cgc"?: Array<ModelPricechartingGradeCount>;
+  "psa"?: Array<ModelPricechartingGradeCount>;
+}
+
+export interface ModelPricechartingPriceCell {
+  "change"?: number;
+  "label"?: string;
+  "price"?: number;
+}
+
+export interface ModelPricechartingPriceHistoryResponse {
+  "currency"?: string;
+  "population"?: ModelPricechartingPopulation;
+  "product"?: ModelPricechartingProductRef;
+  "series"?: Array<ModelPricechartingPriceSeries>;
+}
+
+export interface ModelPricechartingPricePoint {
+  "date"?: string;
+  "price"?: number;
+}
+
+export interface ModelPricechartingPriceSeries {
+  "label"?: string;
+  "points"?: Array<ModelPricechartingPricePoint>;
+  "tab"?: string;
+}
+
+export interface ModelPricechartingProduct {
+  "attributes"?: Record<string, string>;
+  "console"?: string;
+  "console_slug"?: string;
+  "full_prices"?: Array<ModelPricechartingPriceCell>;
+  "id"?: number;
+  "image_url"?: string;
+  "name"?: string;
+  "prices"?: Array<ModelPricechartingPriceCell>;
+  "recent_sales"?: Array<ModelPricechartingSale>;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelPricechartingProductRef {
+  "console"?: string;
+  "console_slug"?: string;
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelPricechartingProductResponse {
+  "product"?: ModelPricechartingProduct;
+}
+
+export interface ModelPricechartingSale {
+  "date"?: string;
+  "grade"?: string;
+  "item_id"?: string;
+  "item_url"?: string;
+  "price"?: number;
+  "source"?: string;
+  "tab"?: string;
+  "title"?: string;
+}
+
+export interface ModelPricechartingSearchProduct {
+  "category"?: string;
+  "complete_price"?: number;
+  "console"?: string;
+  "console_uid"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "loose_price"?: number;
+  "name"?: string;
+  "new_price"?: number;
+}
+
+export interface ModelPricechartingSearchResponse {
+  "products"?: Array<ModelPricechartingSearchProduct>;
+  "query"?: string;
+  "sort"?: string;
+  "total"?: number;
+}
+
+export interface ModelPricechartingBigMoversResponseDoc {
+  "code"?: number;
+  "data"?: ModelPricechartingBigMoversResponse;
+  "msg"?: string;
+}
+
+export interface ModelPricechartingCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelPricechartingCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelPricechartingConsoleResponseDoc {
+  "code"?: number;
+  "data"?: ModelPricechartingConsoleResponse;
+  "msg"?: string;
+}
+
+export interface ModelPricechartingPriceHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelPricechartingPriceHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelPricechartingProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelPricechartingProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelPricechartingSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelPricechartingSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelPristineauctionAuctionStatus {
   "slug"?: string;
 }
@@ -49268,6 +50632,24 @@ export interface ModelPsaPriceGuideSetResponse {
   "title"?: string;
 }
 
+export interface ModelPsaPriceGuideSetSummary {
+  "category_name"?: string;
+  "category_path"?: string;
+  "set_id"?: number;
+  "set_name"?: string;
+  "set_path"?: string;
+}
+
+export interface ModelPsaPriceGuideSetsResponse {
+  "category_path"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "query"?: string;
+  "sets"?: Array<ModelPsaPriceGuideSetSummary>;
+  "total_count"?: number;
+  "unavailable_categories"?: Array<string>;
+}
+
 export interface ModelPsaProBatFactsCategoriesResponse {
   "categories"?: Array<ModelPsaProBatFactsCategory>;
 }
@@ -49410,6 +50792,12 @@ export interface ModelPsaPriceGuideSearchResponseDoc {
 export interface ModelPsaPriceGuideSetResponseDoc {
   "code"?: number;
   "data"?: ModelPsaPriceGuideSetResponse;
+  "msg"?: string;
+}
+
+export interface ModelPsaPriceGuideSetsResponseDoc {
+  "code"?: number;
+  "data"?: ModelPsaPriceGuideSetsResponse;
   "msg"?: string;
 }
 
@@ -51511,6 +52899,263 @@ export interface ModelRedfinSearchResponse {
 export interface ModelRedfinSimilarResponse {
   "property_id"?: string;
   "results"?: Array<ModelRedfinPropertyItem>;
+}
+
+export interface ModelReelshortActor {
+  "imdb_url"?: string;
+  "name"?: string;
+  "photo_url"?: string;
+}
+
+export interface ModelReelshortBook {
+  "cover_url"?: string;
+  "description"?: string;
+  "episodes"?: number;
+  "favorites"?: number;
+  "first_paid_episode"?: number;
+  "has_trailer"?: boolean;
+  "id"?: string;
+  "language"?: string;
+  "plays"?: number;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelReelshortEpisode {
+  "free"?: boolean;
+  "id"?: string;
+  "kind"?: string;
+  "likes"?: number;
+  "number"?: number;
+  "published_at"?: string;
+  "thumbnail_url"?: string;
+  "url"?: string;
+}
+
+export interface ModelReelshortFandomCategoriesResponse {
+  "categories"?: Array<ModelReelshortFandomCategory>;
+}
+
+export interface ModelReelshortFandomCategory {
+  "description"?: string;
+  "id"?: number;
+  "name"?: string;
+  "posts"?: number;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelReelshortFandomPost {
+  "categories"?: Array<string>;
+  "excerpt"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "modified_at"?: string;
+  "published_at"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelReelshortFandomPostResponse {
+  "categories"?: Array<string>;
+  "content"?: string;
+  "excerpt"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "modified_at"?: string;
+  "published_at"?: string;
+  "slug"?: string;
+  "title"?: string;
+  "title_ids"?: Array<string>;
+  "url"?: string;
+}
+
+export interface ModelReelshortFandomPostsResponse {
+  "category"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "posts"?: Array<ModelReelshortFandomPost>;
+  "search"?: string;
+  "total"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelReelshortHomeResponse {
+  "language"?: string;
+  "shelves"?: Array<ModelReelshortShelf>;
+}
+
+export interface ModelReelshortMovieResponse {
+  "actors"?: Array<ModelReelshortActor>;
+  "ai_generated"?: boolean;
+  "badge"?: string;
+  "cover_url"?: string;
+  "description"?: string;
+  "dubbed"?: boolean;
+  "episode_count"?: number;
+  "episodes"?: Array<ModelReelshortEpisode>;
+  "favorites"?: number;
+  "first_paid_episode"?: number;
+  "id"?: string;
+  "imdb_url"?: string;
+  "language"?: string;
+  "online_at"?: string;
+  "original_language"?: string;
+  "plays"?: number;
+  "published_at"?: string;
+  "tags"?: Array<ModelReelshortTag>;
+  "title"?: string;
+  "update_status"?: number;
+  "url"?: string;
+}
+
+export interface ModelReelshortNewReleasesResponse {
+  "books"?: Array<ModelReelshortBook>;
+  "language"?: string;
+}
+
+export interface ModelReelshortRelatedTag {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelReelshortSearchResponse {
+  "books"?: Array<ModelReelshortBook>;
+  "keywords"?: string;
+  "language"?: string;
+  "page"?: number;
+  "total"?: number;
+  "total_pages"?: number;
+}
+
+export interface ModelReelshortShelf {
+  "books"?: Array<ModelReelshortBook>;
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelReelshortShelfResponse {
+  "books"?: Array<ModelReelshortBook>;
+  "id"?: number;
+  "name"?: string;
+  "total"?: number;
+}
+
+export interface ModelReelshortTag {
+  "category_id"?: string;
+  "id"?: string;
+  "kind"?: string;
+  "name"?: string;
+}
+
+export interface ModelReelshortTagBooksResponse {
+  "books"?: Array<ModelReelshortBook>;
+  "description"?: string;
+  "limit"?: number;
+  "page"?: number;
+  "related_tags"?: Array<ModelReelshortRelatedTag>;
+  "tag"?: ModelReelshortTag;
+  "top_titles"?: Array<ModelReelshortTitleRef>;
+  "total_items"?: number;
+}
+
+export interface ModelReelshortTagMatch {
+  "category_id"?: number;
+  "description"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "kind"?: string;
+  "name"?: string;
+  "titles"?: number;
+}
+
+export interface ModelReelshortTagSearchResponse {
+  "language"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "tags"?: Array<ModelReelshortTagMatch>;
+  "total"?: number;
+  "word"?: string;
+}
+
+export interface ModelReelshortTagsResponse {
+  "category"?: string;
+  "category_id"?: number;
+  "language"?: string;
+  "tags"?: Array<ModelReelshortTag>;
+}
+
+export interface ModelReelshortTitleRef {
+  "id"?: string;
+  "title"?: string;
+}
+
+export interface ModelReelshortFandomCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortFandomCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortFandomPostResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortFandomPostResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortFandomPostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortFandomPostsResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortMovieResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortMovieResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortNewReleasesResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortNewReleasesResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortShelfResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortShelfResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortTagBooksResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortTagBooksResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortTagSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortTagSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelReelshortTagsResponseDoc {
+  "code"?: number;
+  "data"?: ModelReelshortTagsResponse;
+  "msg"?: string;
 }
 
 export interface ModelReferralsReferralAttributionDoc {
@@ -66807,6 +68452,297 @@ export interface ModelTargetStoresResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelTcgplayerFacet {
+  "count"?: number;
+  "url_value"?: string;
+  "value"?: string;
+}
+
+export interface ModelTcgplayerFacets {
+  "card_types"?: Array<ModelTcgplayerFacet>;
+  "energy_types"?: Array<ModelTcgplayerFacet>;
+  "product_lines"?: Array<ModelTcgplayerFacet>;
+  "product_types"?: Array<ModelTcgplayerFacet>;
+  "rarities"?: Array<ModelTcgplayerFacet>;
+  "sets"?: Array<ModelTcgplayerFacet>;
+}
+
+export interface ModelTcgplayerFilterValue {
+  "abbreviation"?: string;
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelTcgplayerFiltersResponse {
+  "conditions"?: Array<ModelTcgplayerFilterValue>;
+  "languages"?: Array<ModelTcgplayerFilterValue>;
+  "listing_types"?: Array<string>;
+  "product_id"?: number;
+  "product_line"?: string;
+  "product_line_id"?: number;
+  "variants"?: Array<ModelTcgplayerFilterValue>;
+}
+
+export interface ModelTcgplayerListing {
+  "condition"?: string;
+  "direct_seller"?: boolean;
+  "gold_seller"?: boolean;
+  "language"?: string;
+  "listing_id"?: number;
+  "listing_type"?: string;
+  "price"?: number;
+  "printing"?: string;
+  "quantity"?: number;
+  "seller_city"?: string;
+  "seller_country"?: string;
+  "seller_name"?: string;
+  "seller_rating"?: number;
+  "seller_sales"?: string;
+  "seller_state"?: string;
+  "shipping_price"?: number;
+  "verified_seller"?: boolean;
+}
+
+export interface ModelTcgplayerListingFacets {
+  "conditions"?: Array<ModelTcgplayerFacet>;
+  "languages"?: Array<ModelTcgplayerFacet>;
+  "printings"?: Array<ModelTcgplayerFacet>;
+}
+
+export interface ModelTcgplayerListingsResponse {
+  "facets"?: ModelTcgplayerListingFacets;
+  "limit"?: number;
+  "listings"?: Array<ModelTcgplayerListing>;
+  "next_offset"?: number;
+  "offset"?: number;
+  "product_id"?: number;
+  "total"?: number;
+}
+
+export interface ModelTcgplayerPriceBucket {
+  "high_sale_price"?: number;
+  "high_sale_price_with_shipping"?: number;
+  "low_sale_price"?: number;
+  "low_sale_price_with_shipping"?: number;
+  "market_price"?: number;
+  "quantity_sold"?: number;
+  "start_date"?: string;
+  "transaction_count"?: number;
+}
+
+export interface ModelTcgplayerPriceGuideResponse {
+  "game"?: string;
+  "limit"?: number;
+  "next_offset"?: number;
+  "offset"?: number;
+  "rows"?: Array<ModelTcgplayerPriceGuideRow>;
+  "set_abbreviation"?: string;
+  "set_id"?: number;
+  "set_name"?: string;
+  "total"?: number;
+}
+
+export interface ModelTcgplayerPriceGuideRow {
+  "condition"?: string;
+  "language"?: string;
+  "low_price"?: number;
+  "market_price"?: number;
+  "name"?: string;
+  "number"?: string;
+  "printing"?: string;
+  "product_id"?: number;
+  "rarity"?: string;
+  "sales"?: number;
+}
+
+export interface ModelTcgplayerPriceHistoryResponse {
+  "product_id"?: number;
+  "range"?: string;
+  "skus"?: Array<ModelTcgplayerSkuhistory>;
+}
+
+export interface ModelTcgplayerPricePoint {
+  "buylist_market_price"?: number;
+  "listed_median_price"?: number;
+  "market_price"?: number;
+  "printing"?: string;
+}
+
+export interface ModelTcgplayerProduct {
+  "attributes"?: Record<string, string>;
+  "description"?: string;
+  "foil_only"?: boolean;
+  "image_url"?: string;
+  "lowest_price"?: number;
+  "lowest_price_with_shipping"?: number;
+  "market_price"?: number;
+  "median_price"?: number;
+  "name"?: string;
+  "normal_only"?: boolean;
+  "number"?: string;
+  "price_points"?: Array<ModelTcgplayerPricePoint>;
+  "product_id"?: number;
+  "product_line"?: string;
+  "product_line_url_name"?: string;
+  "product_type"?: string;
+  "rarity"?: string;
+  "sealed"?: boolean;
+  "set_code"?: string;
+  "set_name"?: string;
+  "skus"?: Array<ModelTcgplayerSku>;
+  "total_listings"?: number;
+  "total_sellers"?: number;
+  "url"?: string;
+}
+
+export interface ModelTcgplayerProductLine {
+  "direct"?: boolean;
+  "id"?: number;
+  "name"?: string;
+  "url_name"?: string;
+}
+
+export interface ModelTcgplayerProductLinesResponse {
+  "product_lines"?: Array<ModelTcgplayerProductLine>;
+}
+
+export interface ModelTcgplayerProductResponse {
+  "product"?: ModelTcgplayerProduct;
+}
+
+export interface ModelTcgplayerProductSummary {
+  "card_types"?: Array<string>;
+  "foil_only"?: boolean;
+  "image_url"?: string;
+  "lowest_price"?: number;
+  "lowest_price_with_shipping"?: number;
+  "market_price"?: number;
+  "median_price"?: number;
+  "name"?: string;
+  "number"?: string;
+  "product_id"?: number;
+  "product_line"?: string;
+  "rarity"?: string;
+  "sealed"?: boolean;
+  "set_code"?: string;
+  "set_name"?: string;
+  "total_listings"?: number;
+  "url"?: string;
+}
+
+export interface ModelTcgplayerSku {
+  "condition"?: string;
+  "language"?: string;
+  "sku"?: number;
+  "variant"?: string;
+}
+
+export interface ModelTcgplayerSkuhistory {
+  "average_daily_quantity_sold"?: number;
+  "average_daily_transaction_count"?: number;
+  "buckets"?: Array<ModelTcgplayerPriceBucket>;
+  "condition"?: string;
+  "language"?: string;
+  "sku"?: number;
+  "total_quantity_sold"?: number;
+  "total_transaction_count"?: number;
+  "variant"?: string;
+}
+
+export interface ModelTcgplayerSale {
+  "condition"?: string;
+  "language"?: string;
+  "listing_type"?: string;
+  "order_date"?: string;
+  "purchase_price"?: number;
+  "quantity"?: number;
+  "shipping_price"?: number;
+  "variant"?: string;
+}
+
+export interface ModelTcgplayerSalesResponse {
+  "product_id"?: number;
+  "sales"?: Array<ModelTcgplayerSale>;
+}
+
+export interface ModelTcgplayerSearchResponse {
+  "facets"?: ModelTcgplayerFacets;
+  "limit"?: number;
+  "next_offset"?: number;
+  "offset"?: number;
+  "products"?: Array<ModelTcgplayerProductSummary>;
+  "query"?: string;
+  "total"?: number;
+}
+
+export interface ModelTcgplayerSet {
+  "abbreviation"?: string;
+  "id"?: number;
+  "name"?: string;
+  "release_date"?: string;
+  "supplemental"?: boolean;
+  "url_name"?: string;
+}
+
+export interface ModelTcgplayerSetsResponse {
+  "product_line"?: string;
+  "sets"?: Array<ModelTcgplayerSet>;
+}
+
+export interface ModelTcgplayerFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcgplayerListingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerListingsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcgplayerPriceGuideResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerPriceGuideResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcgplayerPriceHistoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerPriceHistoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcgplayerProductLinesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerProductLinesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcgplayerProductResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerProductResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcgplayerSalesResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerSalesResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcgplayerSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelTcgplayerSetsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTcgplayerSetsResponse;
+  "msg"?: string;
+}
+
 export interface ModelTechcrunchAuthorArticle {
   "category"?: string;
   "title"?: string;
@@ -66852,6 +68788,135 @@ export interface ModelTechstackTechnology {
 export interface ModelTechstackUnmatchedEvidence {
   "domains"?: Array<string>;
   "generator"?: string;
+}
+
+export interface ModelTelegramBotResponse {
+  "avatar_url"?: string;
+  "description"?: string;
+  "monthly_users"?: number;
+  "name"?: string;
+  "url"?: string;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelTelegramChannelPostsResponse {
+  "has_more"?: boolean;
+  "next_before"?: number;
+  "posts"?: Array<ModelTelegramPost>;
+  "query"?: string;
+  "title"?: string;
+  "username"?: string;
+}
+
+export interface ModelTelegramChannelResponse {
+  "avatar_url"?: string;
+  "description"?: string;
+  "files_count"?: number;
+  "links_count"?: number;
+  "photos_count"?: number;
+  "preview_url"?: string;
+  "subscribers"?: number;
+  "subscribers_approximate"?: boolean;
+  "title"?: string;
+  "url"?: string;
+  "username"?: string;
+  "verified"?: boolean;
+  "videos_count"?: number;
+}
+
+export interface ModelTelegramForwardedRef {
+  "name"?: string;
+  "url"?: string;
+}
+
+export interface ModelTelegramGroupResponse {
+  "avatar_url"?: string;
+  "description"?: string;
+  "members"?: number;
+  "online"?: number;
+  "title"?: string;
+  "url"?: string;
+  "username"?: string;
+}
+
+export interface ModelTelegramLinkPreview {
+  "description"?: string;
+  "image_url"?: string;
+  "site_name"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelTelegramMedia {
+  "thumbnail_url"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelTelegramPost {
+  "author"?: string;
+  "edited"?: boolean;
+  "forwarded_from"?: ModelTelegramForwardedRef;
+  "id"?: number;
+  "link_preview"?: ModelTelegramLinkPreview;
+  "links"?: Array<string>;
+  "media"?: Array<ModelTelegramMedia>;
+  "published_at"?: string;
+  "reactions"?: Array<ModelTelegramReaction>;
+  "reply_to"?: ModelTelegramReplyRef;
+  "text"?: string;
+  "url"?: string;
+  "username"?: string;
+  "views"?: number;
+}
+
+export interface ModelTelegramPostResponse {
+  "post"?: ModelTelegramPost;
+}
+
+export interface ModelTelegramReaction {
+  "count"?: number;
+  "custom_emoji_id"?: string;
+  "emoji"?: string;
+  "paid"?: boolean;
+}
+
+export interface ModelTelegramReplyRef {
+  "author"?: string;
+  "id"?: number;
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelTelegramBotResponseDoc {
+  "code"?: number;
+  "data"?: ModelTelegramBotResponse;
+  "msg"?: string;
+}
+
+export interface ModelTelegramChannelPostsResponseDoc {
+  "code"?: number;
+  "data"?: ModelTelegramChannelPostsResponse;
+  "msg"?: string;
+}
+
+export interface ModelTelegramChannelResponseDoc {
+  "code"?: number;
+  "data"?: ModelTelegramChannelResponse;
+  "msg"?: string;
+}
+
+export interface ModelTelegramGroupResponseDoc {
+  "code"?: number;
+  "data"?: ModelTelegramGroupResponse;
+  "msg"?: string;
+}
+
+export interface ModelTelegramPostResponseDoc {
+  "code"?: number;
+  "data"?: ModelTelegramPostResponse;
+  "msg"?: string;
 }
 
 export interface ModelTelegraphAuthorArticle {
@@ -73511,6 +75576,200 @@ export interface ModelWalgreensStoresResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelWallapopCategoriesResponse {
+  "categories"?: Array<ModelWallapopCategory>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "max_depth"?: number;
+  "root_count"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelWallapopCategory {
+  "depth"?: number;
+  "id"?: number;
+  "is_leaf"?: boolean;
+  "name"?: string;
+  "parent_id"?: number;
+  "path"?: string;
+  "root_id"?: number;
+  "vertical_id"?: string;
+}
+
+export interface ModelWallapopFilterDefinition {
+  "format"?: string;
+  "id"?: string;
+  "is_search_enabled"?: boolean;
+  "label"?: string;
+  "options"?: Array<ModelWallapopFilterOption>;
+  "options_endpoint"?: string;
+  "reload_when_changed"?: boolean;
+  "search_params"?: Record<string, ModelWallapopFilterParamBinding>;
+  "selection"?: string;
+  "source"?: string;
+  "steps"?: Array<ModelWallapopFilterRangeStep>;
+  "title"?: string;
+  "type"?: string;
+  "unit"?: string;
+}
+
+export interface ModelWallapopFilterOption {
+  "id"?: string;
+  "title"?: string;
+}
+
+export interface ModelWallapopFilterOptionsResponse {
+  "brand"?: string;
+  "category_id"?: number;
+  "fetched_at"?: string;
+  "filter_id"?: string;
+  "next_cursor"?: string;
+  "options"?: Array<ModelWallapopFilterOption>;
+  "options_query"?: string;
+  "page_size"?: number;
+  "q"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelWallapopFilterParamBinding {
+  "param_key"?: string;
+  "param_value"?: string;
+}
+
+export interface ModelWallapopFilterRangeStep {
+  "end"?: number;
+  "increment"?: number;
+  "start"?: number;
+}
+
+export interface ModelWallapopFiltersResponse {
+  "category_id"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "filters"?: Array<ModelWallapopFilterDefinition>;
+  "query"?: string;
+  "root_category_id"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelWallapopItemDetailAttribute {
+  "key"?: string;
+  "text"?: string;
+  "title"?: string;
+  "value"?: string;
+}
+
+export interface ModelWallapopItemDetailCharacteristic {
+  "attribute"?: string;
+  "value"?: string;
+}
+
+export interface ModelWallapopItemDetailCondition {
+  "text"?: string;
+  "title"?: string;
+  "value"?: string;
+}
+
+export interface ModelWallapopItemDetailRelatedSearch {
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelWallapopItemDetailResponse {
+  "attributes"?: Array<ModelWallapopItemDetailAttribute>;
+  "category_id"?: number;
+  "characteristics"?: Array<ModelWallapopItemDetailCharacteristic>;
+  "condition"?: ModelWallapopItemDetailCondition;
+  "currency"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "hashtags"?: Array<string>;
+  "id"?: string;
+  "images"?: Array<string>;
+  "location"?: ModelWallapopListingLocation;
+  "price"?: number;
+  "related_searches"?: Array<ModelWallapopItemDetailRelatedSearch>;
+  "shipping"?: ModelWallapopListingShipping;
+  "slug"?: string;
+  "taxonomy"?: Array<ModelWallapopListingTaxonomy>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelWallapopListingCard {
+  "category_id"?: number;
+  "currency"?: string;
+  "id"?: string;
+  "images"?: Array<string>;
+  "location"?: ModelWallapopListingLocation;
+  "price"?: number;
+  "shipping"?: ModelWallapopListingShipping;
+  "slug"?: string;
+  "taxonomy"?: Array<ModelWallapopListingTaxonomy>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelWallapopListingLocation {
+  "city"?: string;
+  "country_code"?: string;
+  "region"?: string;
+  "region2"?: string;
+}
+
+export interface ModelWallapopListingShipping {
+  "item_is_shippable"?: boolean;
+  "user_allows_shipping"?: boolean;
+}
+
+export interface ModelWallapopListingTaxonomy {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelWallapopSearchResponse {
+  "category_id"?: number;
+  "count"?: number;
+  "country_code"?: string;
+  "fetched_at"?: string;
+  "items"?: Array<ModelWallapopListingCard>;
+  "next_cursor"?: string;
+  "query"?: string;
+  "sort"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelWallapopCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelWallapopCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelWallapopFilterOptionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelWallapopFilterOptionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelWallapopFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelWallapopFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelWallapopItemDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelWallapopItemDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelWallapopSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelWallapopSearchResponse;
+  "msg"?: string;
+}
+
 export interface ModelWalmartProduct {
   "attributes"?: Record<string, string>;
   "availability"?: string;
@@ -73704,6 +75963,272 @@ export interface ModelWapoNewsResponseDoc {
 export interface ModelWapoSectionsResponseDoc {
   "code"?: number;
   "data"?: ModelWapoSectionsResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadAuthor {
+  "avatar"?: string;
+  "name"?: string;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelWattpadCategoriesResponse {
+  "categories"?: Array<ModelWattpadCategory>;
+}
+
+export interface ModelWattpadCategory {
+  "id"?: number;
+  "name"?: string;
+  "name_english"?: string;
+}
+
+export interface ModelWattpadComment {
+  "author"?: string;
+  "author_avatar"?: string;
+  "body"?: string;
+  "created_at"?: string;
+  "id"?: string;
+  "is_reply"?: boolean;
+  "parent_id"?: string;
+  "replies"?: number;
+  "url"?: string;
+}
+
+export interface ModelWattpadLanguage {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelWattpadLanguagesResponse {
+  "languages"?: Array<ModelWattpadLanguage>;
+}
+
+export interface ModelWattpadPart {
+  "comments"?: number;
+  "created_at"?: string;
+  "draft"?: boolean;
+  "id"?: string;
+  "length"?: number;
+  "modified_at"?: string;
+  "reads"?: number;
+  "title"?: string;
+  "url"?: string;
+  "votes"?: number;
+  "word_count"?: number;
+}
+
+export interface ModelWattpadPartCommentsResponse {
+  "comments"?: Array<ModelWattpadComment>;
+  "limit"?: number;
+  "next_offset"?: number;
+  "offset"?: number;
+  "part_id"?: string;
+}
+
+export interface ModelWattpadPartDetail {
+  "comments"?: number;
+  "created_at"?: string;
+  "draft"?: boolean;
+  "id"?: string;
+  "length"?: number;
+  "modified_at"?: string;
+  "reads"?: number;
+  "story_id"?: string;
+  "story_title"?: string;
+  "title"?: string;
+  "url"?: string;
+  "votes"?: number;
+  "word_count"?: number;
+}
+
+export interface ModelWattpadPartResponse {
+  "part"?: ModelWattpadPartDetail;
+}
+
+export interface ModelWattpadRecommendationsResponse {
+  "stories"?: Array<ModelWattpadStory>;
+  "story_id"?: string;
+}
+
+export interface ModelWattpadSearchResponse {
+  "limit"?: number;
+  "next_offset"?: number;
+  "offset"?: number;
+  "stories"?: Array<ModelWattpadStory>;
+  "total"?: number;
+}
+
+export interface ModelWattpadSearchUsersResponse {
+  "limit"?: number;
+  "next_offset"?: number;
+  "offset"?: number;
+  "users"?: Array<ModelWattpadUserSummary>;
+}
+
+export interface ModelWattpadStory {
+  "author"?: ModelWattpadAuthor;
+  "category_ids"?: Array<number>;
+  "comments"?: number;
+  "completed"?: boolean;
+  "cover"?: string;
+  "created_at"?: string;
+  "description"?: string;
+  "id"?: string;
+  "language"?: ModelWattpadLanguage;
+  "mature"?: boolean;
+  "modified_at"?: string;
+  "parts"?: number;
+  "reads"?: number;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+  "votes"?: number;
+}
+
+export interface ModelWattpadStoryDetail {
+  "author"?: ModelWattpadAuthor;
+  "category_ids"?: Array<number>;
+  "comments"?: number;
+  "completed"?: boolean;
+  "copyright"?: number;
+  "cover"?: string;
+  "created_at"?: string;
+  "description"?: string;
+  "first_part_id"?: string;
+  "id"?: string;
+  "language"?: ModelWattpadLanguage;
+  "last_published_at"?: string;
+  "mature"?: boolean;
+  "modified_at"?: string;
+  "paid_model"?: string;
+  "parts"?: number;
+  "paywalled"?: boolean;
+  "rating"?: number;
+  "reads"?: number;
+  "tags"?: Array<string>;
+  "title"?: string;
+  "url"?: string;
+  "votes"?: number;
+}
+
+export interface ModelWattpadStoryPartsResponse {
+  "parts"?: Array<ModelWattpadPart>;
+  "story_id"?: string;
+  "title"?: string;
+  "total"?: number;
+}
+
+export interface ModelWattpadStoryResponse {
+  "story"?: ModelWattpadStoryDetail;
+}
+
+export interface ModelWattpadUserProfile {
+  "ambassador"?: boolean;
+  "avatar"?: string;
+  "background"?: string;
+  "description"?: string;
+  "followers"?: number;
+  "following"?: number;
+  "joined_at"?: string;
+  "lists"?: number;
+  "location"?: string;
+  "modified_at"?: string;
+  "name"?: string;
+  "stories_published"?: number;
+  "url"?: string;
+  "username"?: string;
+  "verified"?: boolean;
+  "votes_received"?: number;
+  "website"?: string;
+}
+
+export interface ModelWattpadUserResponse {
+  "user"?: ModelWattpadUserProfile;
+}
+
+export interface ModelWattpadUserStoriesResponse {
+  "limit"?: number;
+  "next_offset"?: number;
+  "offset"?: number;
+  "stories"?: Array<ModelWattpadStory>;
+  "total"?: number;
+  "username"?: string;
+}
+
+export interface ModelWattpadUserSummary {
+  "avatar"?: string;
+  "description"?: string;
+  "followers"?: number;
+  "name"?: string;
+  "stories_published"?: number;
+  "username"?: string;
+  "verified"?: boolean;
+}
+
+export interface ModelWattpadCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadLanguagesResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadLanguagesResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadPartCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadPartCommentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadPartResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadPartResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadRecommendationsResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadRecommendationsResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadSearchResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadSearchResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadSearchUsersResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadSearchUsersResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadStoryPartsResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadStoryPartsResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadStoryResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadStoryResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadUserResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadUserResponse;
+  "msg"?: string;
+}
+
+export interface ModelWattpadUserStoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelWattpadUserStoriesResponse;
   "msg"?: string;
 }
 
@@ -79372,6 +81897,25 @@ export type AlComAlcomSectionsResponse = CrawloraResponse<ModelPublicnewsSection
 export interface AlComAlcomSectionsParams {
 }
 
+export type AliExpressAliexpressCategoriesResponse = CrawloraResponse<ModelAliexpressCategoriesResponseDoc>;
+export interface AliExpressAliexpressCategoriesParams {
+  "category_tab"?: string;
+}
+
+export type AliExpressAliexpressCategoryIdsResponse = CrawloraResponse<ModelAliexpressCategoryIdsResponseDoc>;
+export interface AliExpressAliexpressCategoryIdsParams {
+  "q"?: string;
+  "category_id"?: number;
+  "page"?: number;
+}
+
+export type AliExpressAliexpressCategoryProductsResponse = CrawloraResponse<ModelAliexpressCategoryProductsResponseDoc>;
+export interface AliExpressAliexpressCategoryProductsParams {
+  "category_id": number;
+  "slug"?: string;
+  "page"?: number;
+}
+
 export type AliExpressAliexpressReviewsResponse = CrawloraResponse<ModelAliexpressReviewsResponseDoc>;
 export interface AliExpressAliexpressReviewsParams {
   "product_id": string;
@@ -79388,11 +81932,23 @@ export interface AliExpressAliexpressSearchParams {
   "free_shipping"?: boolean;
   "choice"?: boolean;
   "attr"?: string;
+  "cat_id"?: number;
 }
 
 export type AliExpressAliexpressSearchFiltersResponse = CrawloraResponse<ModelAliexpressFiltersResponseDoc>;
 export interface AliExpressAliexpressSearchFiltersParams {
   "q": string;
+}
+
+export type AliExpressAliexpressSuggestResponse = CrawloraResponse<ModelAliexpressSuggestResponseDoc>;
+export interface AliExpressAliexpressSuggestParams {
+  "q": string;
+  "limit"?: number;
+}
+
+export type AliExpressAliexpressTrendingSearchesResponse = CrawloraResponse<ModelAliexpressTrendingSearchesResponseDoc>;
+export interface AliExpressAliexpressTrendingSearchesParams {
+  "limit"?: number;
 }
 
 export type AlJazeeraAljazeeraArticleResponse = CrawloraResponse<ModelAljazeeraArticleResponseDoc>;
@@ -83010,6 +85566,61 @@ export interface DatasetsAirbnbMarketsSearchParams {
   "page_size"?: number;
 }
 
+export type DatasetsAppleMapsPlacesFacetsResponse = CrawloraResponse<ModelDatasetsApplePlacesFacetResponseDoc>;
+export interface DatasetsAppleMapsPlacesFacetsParams {
+  "facet": "category" | "country_code" | "state" | "city" | "price_symbol" | "catalog_country";
+  "q"?: string;
+  "category"?: string;
+  "city"?: string;
+  "state"?: string;
+  "country_code"?: string;
+  "postal_code"?: string;
+  "min_rating"?: number;
+  "min_rating_count"?: number;
+  "has_website"?: boolean;
+  "has_phone"?: boolean;
+  "lat"?: number;
+  "lon"?: number;
+  "radius_m"?: number;
+}
+
+export type DatasetsAppleMapsPlacesItemResponse = CrawloraResponse<ModelDatasetsApplePlaceResponseDoc>;
+export interface DatasetsAppleMapsPlacesItemParams {
+  "place_id": string;
+}
+
+export type DatasetsAppleMapsPlacesNearbyResponse = CrawloraResponse<ModelDatasetsApplePlacesSearchResponseDoc>;
+export interface DatasetsAppleMapsPlacesNearbyParams {
+  "lat": number;
+  "lon": number;
+  "radius_m": number;
+  "category"?: string;
+  "min_rating"?: number;
+  "min_rating_count"?: number;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type DatasetsAppleMapsPlacesSearchResponse = CrawloraResponse<ModelDatasetsApplePlacesSearchResponseDoc>;
+export interface DatasetsAppleMapsPlacesSearchParams {
+  "q"?: string;
+  "category"?: string;
+  "city"?: string;
+  "state"?: string;
+  "country_code"?: string;
+  "postal_code"?: string;
+  "min_rating"?: number;
+  "min_rating_count"?: number;
+  "has_website"?: boolean;
+  "has_phone"?: boolean;
+  "lat"?: number;
+  "lon"?: number;
+  "radius_m"?: number;
+  "sort"?: "relevance" | "rating_desc" | "review_count_desc" | "updated_at_desc" | "distance_asc";
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type DatasetsApplePodcastsShowsFacetsResponse = CrawloraResponse<ModelDatasetsApplePodcastsShowsFacetResponseDoc>;
 export interface DatasetsApplePodcastsShowsFacetsParams {
   "facet": "genre" | "genre_id" | "country" | "content_advisory_rating" | "run_id";
@@ -85345,6 +87956,103 @@ export interface DraftKingsSportsbookDraftkingsTeamParams {
 export type DraftKingsSportsbookDraftkingsTeamsResponse = CrawloraResponse<ModelSportsbookTeamsResponseDoc>;
 export interface DraftKingsSportsbookDraftkingsTeamsParams {
   "league": "nfl" | "nhl" | "nba" | "cbb" | "mlb" | "cfb";
+}
+
+export type DramaBoxDramaboxBrowseResponse = CrawloraResponse<ModelDramaboxBrowseResponseDoc>;
+export interface DramaBoxDramaboxBrowseParams {
+  "genre_id"?: number;
+  "page"?: number;
+  "language"?: "en" | "ko" | "zhHans" | "zh" | "es" | "ja" | "de" | "in" | "th" | "tl" | "pt" | "fr" | "ar" | "it";
+}
+
+export type DramaBoxDramaboxCategoriesResponse = CrawloraResponse<ModelDramaboxCategoriesResponseDoc>;
+export interface DramaBoxDramaboxCategoriesParams {
+}
+
+export type DramaBoxDramaboxCategoryBooksResponse = CrawloraResponse<ModelDramaboxCategoryBooksResponseDoc>;
+export interface DramaBoxDramaboxCategoryBooksParams {
+  "language"?: string;
+  "production"?: "3" | "1" | "2";
+  "dub"?: "1" | "0";
+  "genre"?: string;
+  "genre_2"?: string;
+  "sort"?: "1" | "2" | "3";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type DramaBoxDramaboxChannelsResponse = CrawloraResponse<ModelDramaboxChannelsResponseDoc>;
+export interface DramaBoxDramaboxChannelsParams {
+}
+
+export type DramaBoxDramaboxDramaResponse = CrawloraResponse<ModelDramaboxDramaResponseDoc>;
+export interface DramaBoxDramaboxDramaParams {
+  "id": string;
+}
+
+export type DramaBoxDramaboxGenresResponse = CrawloraResponse<ModelDramaboxGenresResponseDoc>;
+export interface DramaBoxDramaboxGenresParams {
+  "language"?: "en" | "ko" | "zhHans" | "zh" | "es" | "ja" | "de" | "in" | "th" | "tl" | "pt" | "fr" | "ar" | "it";
+}
+
+export type DramaBoxDramaboxHomeResponse = CrawloraResponse<ModelDramaboxHomeResponseDoc>;
+export interface DramaBoxDramaboxHomeParams {
+  "language"?: "en" | "ko" | "zhHans" | "zh" | "es" | "ja" | "de" | "in" | "th" | "tl" | "pt" | "fr" | "ar" | "it";
+}
+
+export type DramaBoxDramaboxMoreResponse = CrawloraResponse<ModelDramaboxMoreResponseDoc>;
+export interface DramaBoxDramaboxMoreParams {
+  "position": "trending" | "must-sees" | "hidden-gems";
+  "page"?: number;
+  "language"?: "en" | "ko" | "zhHans" | "zh" | "es" | "ja" | "de" | "in" | "th" | "tl" | "pt" | "fr" | "ar" | "it";
+}
+
+export type DramaBoxDramaboxPerformerResponse = CrawloraResponse<ModelDramaboxPerformerResponseDoc>;
+export interface DramaBoxDramaboxPerformerParams {
+  "performer_id": number;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type DramaBoxDramaboxRankResponse = CrawloraResponse<ModelDramaboxRankResponseDoc>;
+export interface DramaBoxDramaboxRankParams {
+  "rank_type"?: "1" | "2" | "3";
+}
+
+export type DramaBoxDramaboxRecommendResponse = CrawloraResponse<ModelDramaboxRecommendResponseDoc>;
+export interface DramaBoxDramaboxRecommendParams {
+  "page"?: number;
+}
+
+export type DramaBoxDramaboxSearchResponse = CrawloraResponse<ModelDramaboxSearchResponseDoc>;
+export interface DramaBoxDramaboxSearchParams {
+  "keyword": string;
+  "page"?: number;
+  "limit"?: number;
+  "sort"?: "1" | "2" | "3";
+}
+
+export type DramaBoxDramaboxSuggestResponse = CrawloraResponse<ModelDramaboxSuggestResponseDoc>;
+export interface DramaBoxDramaboxSuggestParams {
+  "keyword": string;
+}
+
+export type DramaBoxDramaboxTagResponse = CrawloraResponse<ModelDramaboxTagResponseDoc>;
+export interface DramaBoxDramaboxTagParams {
+  "tag_id": number;
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type DramaBoxDramaboxTheaterResponse = CrawloraResponse<ModelDramaboxTheaterResponseDoc>;
+export interface DramaBoxDramaboxTheaterParams {
+  "channel": "popular" | "new" | "rankings" | "categories" | "anime" | "live-action" | "vip" | "original";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type DramaBoxDramaboxTrendingResponse = CrawloraResponse<ModelDramaboxTrendingResponseDoc>;
+export interface DramaBoxDramaboxTrendingParams {
 }
 
 export type DuckDuckGoSearchDuckduckgoImageResponse = CrawloraResponse<ModelDuckduckgoImageResponseDoc>;
@@ -90800,11 +93508,32 @@ export interface JumiaProductParams {
   "url": string;
 }
 
+export type JumiaReviewsResponse = CrawloraResponse<ModelJumiaReviewsResponseDoc>;
+export interface JumiaReviewsParams {
+  "country": "ci" | "eg" | "ke" | "ma" | "ng" | "sn";
+  "sku": string;
+  "page"?: number;
+}
+
 export type JumiaSearchResponse = CrawloraResponse<ModelJumiaListingResponseDoc>;
 export interface JumiaSearchParams {
   "country": "ci" | "eg" | "ke" | "ma" | "ng" | "sn";
   "q": string;
   "page"?: number;
+}
+
+export type JumiaSitemapUrlsResponse = CrawloraResponse<ModelJumiaSitemapUrlsResponseDoc>;
+export interface JumiaSitemapUrlsParams {
+  "country": "ci" | "eg" | "ke" | "ma" | "ng" | "sn";
+  "sitemap": string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type JumiaSitemapsResponse = CrawloraResponse<ModelJumiaSitemapsResponseDoc>;
+export interface JumiaSitemapsParams {
+  "country": "ci" | "eg" | "ke" | "ma" | "ng" | "sn";
+  "type"?: "products" | "brands" | "categories" | "mlps";
 }
 
 export type JustEatJusteatRestaurantResponse = CrawloraResponse<ModelJusteatRestaurantResponseDoc>;
@@ -91215,6 +93944,120 @@ export interface KhaleejTimesKhaleejtimesNewsParams {
 
 export type KhaleejTimesKhaleejtimesSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
 export interface KhaleejTimesKhaleejtimesSectionsParams {
+}
+
+export type KickCategoriesResponse = CrawloraResponse<ModelKickCategoriesResponseDoc>;
+export interface KickCategoriesParams {
+}
+
+export type KickCategoryClipsResponse = CrawloraResponse<ModelKickCategoryClipsResponseDoc>;
+export interface KickCategoryClipsParams {
+  "slug": string;
+  "cursor"?: string;
+}
+
+export type KickChannelResponse = CrawloraResponse<ModelKickChannelResponseDoc>;
+export interface KickChannelParams {
+  "slug": string;
+}
+
+export type KickChannelChatroomResponse = CrawloraResponse<ModelKickChannelChatroomResponseDoc>;
+export interface KickChannelChatroomParams {
+  "slug": string;
+}
+
+export type KickChannelClipsResponse = CrawloraResponse<ModelKickChannelClipsResponseDoc>;
+export interface KickChannelClipsParams {
+  "slug": string;
+  "cursor"?: string;
+}
+
+export type KickChannelEmotesResponse = CrawloraResponse<ModelKickChannelEmotesResponseDoc>;
+export interface KickChannelEmotesParams {
+  "slug": string;
+}
+
+export type KickChannelLinksResponse = CrawloraResponse<ModelKickChannelLinksResponseDoc>;
+export interface KickChannelLinksParams {
+  "slug": string;
+}
+
+export type KickChannelStreamsResponse = CrawloraResponse<ModelKickChannelStreamsResponseDoc>;
+export interface KickChannelStreamsParams {
+  "slug": string;
+}
+
+export type KickChannelVideosResponse = CrawloraResponse<ModelKickChannelVideosResponseDoc>;
+export interface KickChannelVideosParams {
+  "slug": string;
+}
+
+export type KickClipResponse = CrawloraResponse<ModelKickClipResponseDoc>;
+export interface KickClipParams {
+  "id": string;
+}
+
+export type KickClipsResponse = CrawloraResponse<ModelKickClipsResponseDoc>;
+export interface KickClipsParams {
+  "sort"?: "date" | "views";
+  "time"?: "day" | "week" | "month" | "all";
+  "cursor"?: string;
+}
+
+export type KickDropsResponse = CrawloraResponse<ModelKickDropsResponseDoc>;
+export interface KickDropsParams {
+  "status"?: "active" | "expired" | "all";
+}
+
+export type KickGiftsResponse = CrawloraResponse<ModelKickGiftsResponseDoc>;
+export interface KickGiftsParams {
+}
+
+export type KickLanguagesResponse = CrawloraResponse<ModelKickLanguagesResponseDoc>;
+export interface KickLanguagesParams {
+}
+
+export type KickLivestreamsResponse = CrawloraResponse<ModelKickLivestreamsResponseDoc>;
+export interface KickLivestreamsParams {
+  "sort"?: "viewer_count_desc" | "featured";
+  "language"?: string;
+  "category_id"?: number;
+  "limit"?: number;
+  "after"?: string;
+}
+
+export type KickSearchCategoriesResponse = CrawloraResponse<ModelKickSearchCategoriesResponseDoc>;
+export interface KickSearchCategoriesParams {
+  "query": string;
+  "limit"?: number;
+}
+
+export type KickSearchChannelsResponse = CrawloraResponse<ModelKickSearchChannelsResponseDoc>;
+export interface KickSearchChannelsParams {
+  "query": string;
+  "live"?: boolean;
+  "limit"?: number;
+}
+
+export type KickSubcategoriesResponse = CrawloraResponse<ModelKickSubcategoriesResponseDoc>;
+export interface KickSubcategoriesParams {
+  "category"?: "games" | "irl" | "music" | "gambling" | "creative" | "alternative" | "chat-roulette";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type KickSubcategoryResponse = CrawloraResponse<ModelKickSubcategoryResponseDoc>;
+export interface KickSubcategoryParams {
+  "slug": string;
+}
+
+export type KickTopChannelsResponse = CrawloraResponse<ModelKickTopChannelsResponseDoc>;
+export interface KickTopChannelsParams {
+}
+
+export type KickVideoResponse = CrawloraResponse<ModelKickVideoResponseDoc>;
+export interface KickVideoParams {
+  "id": string;
 }
 
 export type KickstarterCommentsResponse = CrawloraResponse<ModelKickstarterCommentsResponseDoc>;
@@ -95752,6 +98595,49 @@ export interface PradaSuggestParams {
   "limit"?: number;
 }
 
+export type PriceChartingPricechartingBigMoversResponse = CrawloraResponse<ModelPricechartingBigMoversResponseDoc>;
+export interface PriceChartingPricechartingBigMoversParams {
+  "category"?: "video-games" | "coins" | "comic-books" | "funko-pops" | "pokemon-cards" | "dragon-ball-cards" | "lorcana-cards" | "magic-cards" | "marvel-cards" | "one-piece-cards" | "star-wars-cards" | "yugioh-cards" | "garbage-pail-cards" | "other-tcg-cards" | "other-cards" | "lego-sets";
+  "sort"?: "dollar-increase" | "dollar-decrease" | "percent-increase" | "percent-decrease";
+  "region"?: "all" | "japan" | "ntsc" | "pal";
+}
+
+export type PriceChartingPricechartingCategoriesResponse = CrawloraResponse<ModelPricechartingCategoriesResponseDoc>;
+export interface PriceChartingPricechartingCategoriesParams {
+  "category"?: string;
+}
+
+export type PriceChartingPricechartingConsoleResponse = CrawloraResponse<ModelPricechartingConsoleResponseDoc>;
+export interface PriceChartingPricechartingConsoleParams {
+  "console": string;
+  "sort"?: "popularity" | "highest-price" | "lowest-price" | "name";
+  "cursor"?: number;
+}
+
+export type PriceChartingPricechartingPriceHistoryResponse = CrawloraResponse<ModelPricechartingPriceHistoryResponseDoc>;
+export interface PriceChartingPricechartingPriceHistoryParams {
+  "id"?: number;
+  "url"?: string;
+  "console"?: string;
+  "slug"?: string;
+}
+
+export type PriceChartingPricechartingProductResponse = CrawloraResponse<ModelPricechartingProductResponseDoc>;
+export interface PriceChartingPricechartingProductParams {
+  "id"?: number;
+  "console"?: string;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export type PriceChartingPricechartingSearchResponse = CrawloraResponse<ModelPricechartingSearchResponseDoc>;
+export interface PriceChartingPricechartingSearchParams {
+  "q": string;
+  "console_uid"?: string;
+  "exclude_variants"?: boolean;
+  "sort"?: "popularity" | "highest-price" | "name";
+}
+
 export type PristineAuctionCategoriesResponse = CrawloraResponse<ModelPristineauctionCategoriesResponseDoc>;
 export interface PristineAuctionCategoriesParams {
 }
@@ -96010,6 +98896,14 @@ export interface PsaPriceGuideSetParams {
   "category_path": string;
   "set_path": string;
   "set_id": string;
+}
+
+export type PsaPriceGuideSetsResponse = CrawloraResponse<ModelPsaPriceGuideSetsResponseDoc>;
+export interface PsaPriceGuideSetsParams {
+  "query": string;
+  "category_path"?: "baseball-card-values" | "basketball-card-values" | "boxing-card-values" | "football-card-values" | "golf-card-values" | "hockey-card-values" | "soccer-card-values" | "non-sports-tcg-card-values" | "racing-card-values" | "sports-ticket-values" | "tennis-card-values" | "unopened-pack-values" | "presidential-autograph-values" | "sports-autograph-values" | "game-used-bat-values" | "graded-baseball-values";
+  "page"?: number;
+  "page_size"?: number;
 }
 
 export type PsaProbatfactsCategoriesResponse = CrawloraResponse<ModelPsaProbatFactsCategoriesResponseDoc>;
@@ -96547,6 +99441,72 @@ export interface RedfinSearchParams {
 export type RedfinSimilarResponse = CrawloraResponse<ModelRedfinSimilarResponse>;
 export interface RedfinSimilarParams {
   "property_id": string;
+}
+
+export type ReelShortReelshortFandomCategoriesResponse = CrawloraResponse<ModelReelshortFandomCategoriesResponseDoc>;
+export interface ReelShortReelshortFandomCategoriesParams {
+}
+
+export type ReelShortReelshortFandomPostResponse = CrawloraResponse<ModelReelshortFandomPostResponseDoc>;
+export interface ReelShortReelshortFandomPostParams {
+  "id": string;
+}
+
+export type ReelShortReelshortFandomPostsResponse = CrawloraResponse<ModelReelshortFandomPostsResponseDoc>;
+export interface ReelShortReelshortFandomPostsParams {
+  "search"?: string;
+  "category"?: "general-topic" | "movie-cast-list" | "top-movie-stories" | "where-to-watch" | "where-to-watch-2";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type ReelShortReelshortHomeResponse = CrawloraResponse<ModelReelshortHomeResponseDoc>;
+export interface ReelShortReelshortHomeParams {
+  "language"?: "en" | "es" | "pt" | "fr" | "de" | "it" | "ja" | "ko" | "th" | "id" | "tr" | "ar" | "ru" | "pl" | "ro" | "cs" | "bg" | "vi" | "zh-TW";
+}
+
+export type ReelShortReelshortMovieResponse = CrawloraResponse<ModelReelshortMovieResponseDoc>;
+export interface ReelShortReelshortMovieParams {
+  "id": string;
+}
+
+export type ReelShortReelshortNewReleasesResponse = CrawloraResponse<ModelReelshortNewReleasesResponseDoc>;
+export interface ReelShortReelshortNewReleasesParams {
+  "book_id": string;
+  "language"?: "en" | "es" | "pt" | "fr" | "de" | "it" | "ja" | "ko" | "th" | "id" | "tr" | "ar" | "ru" | "pl" | "ro" | "cs" | "bg" | "vi" | "zh-TW";
+}
+
+export type ReelShortReelshortSearchResponse = CrawloraResponse<ModelReelshortSearchResponseDoc>;
+export interface ReelShortReelshortSearchParams {
+  "keywords": string;
+  "page"?: number;
+  "language"?: "en" | "es" | "pt" | "fr" | "de" | "it" | "ja" | "ko" | "th" | "id" | "tr" | "ar" | "ru" | "pl" | "ro" | "cs" | "bg" | "vi" | "zh-TW";
+}
+
+export type ReelShortReelshortShelfResponse = CrawloraResponse<ModelReelshortShelfResponseDoc>;
+export interface ReelShortReelshortShelfParams {
+  "id": string;
+}
+
+export type ReelShortReelshortTagBooksResponse = CrawloraResponse<ModelReelshortTagBooksResponseDoc>;
+export interface ReelShortReelshortTagBooksParams {
+  "tag_id": string;
+  "page"?: number;
+  "limit"?: number;
+  "language"?: "en" | "es" | "pt" | "fr" | "de" | "it" | "ja" | "ko" | "th" | "id" | "tr" | "ar" | "ru" | "pl" | "ro" | "cs" | "bg" | "vi" | "zh-TW";
+}
+
+export type ReelShortReelshortTagSearchResponse = CrawloraResponse<ModelReelshortTagSearchResponseDoc>;
+export interface ReelShortReelshortTagSearchParams {
+  "word": string;
+  "page"?: number;
+  "language"?: "en" | "es" | "pt" | "fr" | "de" | "it" | "ja" | "ko" | "th" | "id" | "tr" | "ar" | "ru" | "pl" | "ro" | "cs" | "bg" | "vi" | "zh-TW";
+}
+
+export type ReelShortReelshortTagsResponse = CrawloraResponse<ModelReelshortTagsResponseDoc>;
+export interface ReelShortReelshortTagsParams {
+  "category": "actor" | "actress" | "identity" | "trope";
+  "language"?: "en" | "es" | "pt" | "fr" | "de" | "it" | "ja" | "ko" | "th" | "id" | "tr" | "ar" | "ru" | "pl" | "ro" | "cs" | "bg" | "vi" | "zh-TW";
 }
 
 export type ReferralsClickBody = CrawloraBody<ModelReferralsReferralClickRequestDoc>;
@@ -100557,6 +103517,76 @@ export interface TargetStoresParams {
   "within"?: number;
 }
 
+export type TcgplayerFiltersResponse = CrawloraResponse<ModelTcgplayerFiltersResponseDoc>;
+export interface TcgplayerFiltersParams {
+  "product_line"?: string;
+  "id"?: number;
+}
+
+export type TcgplayerListingsResponse = CrawloraResponse<ModelTcgplayerListingsResponseDoc>;
+export interface TcgplayerListingsParams {
+  "id": number;
+  "condition"?: "near-mint" | "lightly-played" | "moderately-played" | "heavily-played" | "damaged";
+  "printing"?: string;
+  "language"?: string;
+  "sort"?: "price" | "price-with-shipping";
+  "order"?: "asc" | "desc";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type TcgplayerPriceGuideResponse = CrawloraResponse<ModelTcgplayerPriceGuideResponseDoc>;
+export interface TcgplayerPriceGuideParams {
+  "set_id": number;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type TcgplayerPriceHistoryResponse = CrawloraResponse<ModelTcgplayerPriceHistoryResponseDoc>;
+export interface TcgplayerPriceHistoryParams {
+  "id": number;
+  "range"?: "month" | "quarter" | "semi-annual" | "annual";
+}
+
+export type TcgplayerProductResponse = CrawloraResponse<ModelTcgplayerProductResponseDoc>;
+export interface TcgplayerProductParams {
+  "id": number;
+}
+
+export type TcgplayerProductLinesResponse = CrawloraResponse<ModelTcgplayerProductLinesResponseDoc>;
+export interface TcgplayerProductLinesParams {
+}
+
+export type TcgplayerSalesResponse = CrawloraResponse<ModelTcgplayerSalesResponseDoc>;
+export interface TcgplayerSalesParams {
+  "id": number;
+  "condition"?: "near-mint" | "lightly-played" | "moderately-played" | "heavily-played" | "damaged" | "unopened";
+  "variant"?: string;
+  "language"?: string;
+  "listing_type"?: "all" | "with-photos" | "without-photos";
+}
+
+export type TcgplayerSearchResponse = CrawloraResponse<ModelTcgplayerSearchResponseDoc>;
+export interface TcgplayerSearchParams {
+  "q"?: string;
+  "product_line"?: string;
+  "set"?: string;
+  "product_type"?: string;
+  "rarity"?: string;
+  "card_type"?: string;
+  "min_price"?: number;
+  "max_price"?: number;
+  "sort"?: "market-price" | "lowest-price" | "lowest-price-with-shipping" | "median-price" | "listings" | "sales" | "product-name";
+  "order"?: "asc" | "desc";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type TcgplayerSetsResponse = CrawloraResponse<ModelTcgplayerSetsResponseDoc>;
+export interface TcgplayerSetsParams {
+  "product_line": string;
+}
+
 export type TechCrunchTechcrunchArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
 export interface TechCrunchTechcrunchArticleParams {
   "url": string;
@@ -100604,6 +103634,34 @@ export interface TechRadarTechradarNewsParams {
 
 export type TechRadarTechradarSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
 export interface TechRadarTechradarSectionsParams {
+}
+
+export type TelegramBotResponse = CrawloraResponse<ModelTelegramBotResponseDoc>;
+export interface TelegramBotParams {
+  "username": string;
+}
+
+export type TelegramChannelResponse = CrawloraResponse<ModelTelegramChannelResponseDoc>;
+export interface TelegramChannelParams {
+  "username": string;
+}
+
+export type TelegramChannelPostsResponse = CrawloraResponse<ModelTelegramChannelPostsResponseDoc>;
+export interface TelegramChannelPostsParams {
+  "username": string;
+  "before"?: number;
+  "query"?: string;
+}
+
+export type TelegramGroupResponse = CrawloraResponse<ModelTelegramGroupResponseDoc>;
+export interface TelegramGroupParams {
+  "username": string;
+}
+
+export type TelegramPostResponse = CrawloraResponse<ModelTelegramPostResponseDoc>;
+export interface TelegramPostParams {
+  "username": string;
+  "id": number;
 }
 
 export type TheTelegraphTelegraphArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
@@ -101470,7 +104528,7 @@ export interface TiktokMobileMusicBeatsParams {
 
 export type TiktokMobileMusicChartResponse = CrawloraResponse<ModelTiktokmobileMusicChartResponseDoc>;
 export interface TiktokMobileMusicChartParams {
-  "chart_region"?: string;
+  "chart_region"?: "AE" | "BR" | "CA" | "DE" | "EG" | "FR" | "JP" | "KR" | "LB" | "MX" | "NG" | "SA" | "TR" | "US" | "ZA";
   "cursor"?: number;
   "count"?: number;
 }
@@ -102931,6 +105989,49 @@ export interface WalgreensStoresParams {
   "zip"?: string;
 }
 
+export type WallapopCategoriesResponse = CrawloraResponse<ModelWallapopCategoriesResponseDoc>;
+export interface WallapopCategoriesParams {
+}
+
+export type WallapopFilterOptionsResponse = CrawloraResponse<ModelWallapopFilterOptionsResponseDoc>;
+export interface WallapopFilterOptionsParams {
+  "filter_id": string;
+  "category_id": number;
+  "brand"?: string;
+  "q"?: string;
+  "sort"?: "closest" | "most_relevance" | "newest" | "price_low_to_high" | "price_high_to_low";
+  "options_query"?: string;
+  "cursor"?: string;
+}
+
+export type WallapopFiltersResponse = CrawloraResponse<ModelWallapopFiltersResponseDoc>;
+export interface WallapopFiltersParams {
+  "q"?: string;
+  "category_id"?: number;
+}
+
+export type WallapopItemDetailResponse = CrawloraResponse<ModelWallapopItemDetailResponseDoc>;
+export interface WallapopItemDetailParams {
+  "url": string;
+}
+
+export type WallapopSearchResponse = CrawloraResponse<ModelWallapopSearchResponseDoc>;
+export interface WallapopSearchParams {
+  "q": string;
+  "latitude": number;
+  "longitude": number;
+  "category_id"?: number;
+  "sort"?: "closest" | "most_relevance" | "newest" | "price_low_to_high" | "price_high_to_low";
+  "min_price"?: number;
+  "max_price"?: number;
+  "condition"?: string;
+  "is_shippable"?: "true";
+  "time_filter"?: "today" | "lastWeek" | "lastMonth";
+  "distance_in_km"?: number;
+  "filter"?: Array<string>;
+  "cursor"?: string;
+}
+
 export type WalmartProductResponse = CrawloraResponse<ModelWalmartProductResponseDoc>;
 export interface WalmartProductParams {
   "item_id": string;
@@ -102971,6 +106072,71 @@ export interface WashingtonPostWapoNewsParams {
 
 export type WashingtonPostWapoSectionsResponse = CrawloraResponse<ModelWapoSectionsResponseDoc>;
 export interface WashingtonPostWapoSectionsParams {
+}
+
+export type WattpadCategoriesResponse = CrawloraResponse<ModelWattpadCategoriesResponseDoc>;
+export interface WattpadCategoriesParams {
+}
+
+export type WattpadLanguagesResponse = CrawloraResponse<ModelWattpadLanguagesResponseDoc>;
+export interface WattpadLanguagesParams {
+}
+
+export type WattpadPartResponse = CrawloraResponse<ModelWattpadPartResponseDoc>;
+export interface WattpadPartParams {
+  "part_id": string;
+}
+
+export type WattpadPartCommentsResponse = CrawloraResponse<ModelWattpadPartCommentsResponseDoc>;
+export interface WattpadPartCommentsParams {
+  "part_id": string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type WattpadSearchResponse = CrawloraResponse<ModelWattpadSearchResponseDoc>;
+export interface WattpadSearchParams {
+  "query"?: string;
+  "filter"?: "hot" | "new" | "featured";
+  "category"?: number;
+  "language"?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15" | "16" | "17" | "18" | "19" | "20" | "21" | "22" | "23" | "24" | "25" | "26" | "27" | "28" | "29" | "30" | "32" | "33" | "34" | "35" | "36" | "37" | "38" | "39" | "40" | "41" | "42" | "43" | "44" | "46" | "47" | "48" | "49" | "50" | "51" | "53";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type WattpadSearchUsersResponse = CrawloraResponse<ModelWattpadSearchUsersResponseDoc>;
+export interface WattpadSearchUsersParams {
+  "query": string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type WattpadStoryResponse = CrawloraResponse<ModelWattpadStoryResponseDoc>;
+export interface WattpadStoryParams {
+  "story_id": string;
+}
+
+export type WattpadStoryPartsResponse = CrawloraResponse<ModelWattpadStoryPartsResponseDoc>;
+export interface WattpadStoryPartsParams {
+  "story_id": string;
+}
+
+export type WattpadStoryRecommendationsResponse = CrawloraResponse<ModelWattpadRecommendationsResponseDoc>;
+export interface WattpadStoryRecommendationsParams {
+  "story_id": string;
+  "limit"?: number;
+}
+
+export type WattpadUserResponse = CrawloraResponse<ModelWattpadUserResponseDoc>;
+export interface WattpadUserParams {
+  "username": string;
+}
+
+export type WattpadUserStoriesResponse = CrawloraResponse<ModelWattpadUserStoriesResponseDoc>;
+export interface WattpadUserStoriesParams {
+  "username": string;
+  "limit"?: number;
+  "offset"?: number;
 }
 
 export type WayfairCategoriesResponse = CrawloraResponse<ModelWayfairCategoriesResponseDoc>;
@@ -104423,9 +107589,14 @@ export interface AlComService {
 }
 
 export interface AliExpressService {
+  aliexpressCategories<T = AliExpressAliexpressCategoriesResponse>(params?: AliExpressAliexpressCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  aliexpressCategoryIds<T = AliExpressAliexpressCategoryIdsResponse>(params?: AliExpressAliexpressCategoryIdsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  aliexpressCategoryProducts<T = AliExpressAliexpressCategoryProductsResponse>(params: AliExpressAliexpressCategoryProductsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   aliexpressReviews<T = AliExpressAliexpressReviewsResponse>(params: AliExpressAliexpressReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   aliexpressSearch<T = AliExpressAliexpressSearchResponse>(params: AliExpressAliexpressSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   aliexpressSearchFilters<T = AliExpressAliexpressSearchFiltersResponse>(params: AliExpressAliexpressSearchFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  aliexpressSuggest<T = AliExpressAliexpressSuggestResponse>(params: AliExpressAliexpressSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  aliexpressTrendingSearches<T = AliExpressAliexpressTrendingSearchesResponse>(params?: AliExpressAliexpressTrendingSearchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface AlJazeeraService {
@@ -105282,6 +108453,10 @@ export interface DatasetsService {
   airbnbMarketsItem<T = DatasetsAirbnbMarketsItemResponse>(params: DatasetsAirbnbMarketsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   airbnbMarketsNearby<T = DatasetsAirbnbMarketsNearbyResponse>(params: DatasetsAirbnbMarketsNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   airbnbMarketsSearch<T = DatasetsAirbnbMarketsSearchResponse>(params?: DatasetsAirbnbMarketsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  appleMapsPlacesFacets<T = DatasetsAppleMapsPlacesFacetsResponse>(params: DatasetsAppleMapsPlacesFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  appleMapsPlacesItem<T = DatasetsAppleMapsPlacesItemResponse>(params: DatasetsAppleMapsPlacesItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  appleMapsPlacesNearby<T = DatasetsAppleMapsPlacesNearbyResponse>(params: DatasetsAppleMapsPlacesNearbyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  appleMapsPlacesSearch<T = DatasetsAppleMapsPlacesSearchResponse>(params?: DatasetsAppleMapsPlacesSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   applePodcastsShowsFacets<T = DatasetsApplePodcastsShowsFacetsResponse>(params: DatasetsApplePodcastsShowsFacetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   applePodcastsShowsItem<T = DatasetsApplePodcastsShowsItemResponse>(params: DatasetsApplePodcastsShowsItemParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   applePodcastsShowsSearch<T = DatasetsApplePodcastsShowsSearchResponse>(params?: DatasetsApplePodcastsShowsSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -105553,6 +108728,25 @@ export interface DraftKingsSportsbookService {
   draftkingsQuickLinks<T = DraftKingsSportsbookDraftkingsQuickLinksResponse>(params?: DraftKingsSportsbookDraftkingsQuickLinksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   draftkingsTeam<T = DraftKingsSportsbookDraftkingsTeamResponse>(params: DraftKingsSportsbookDraftkingsTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   draftkingsTeams<T = DraftKingsSportsbookDraftkingsTeamsResponse>(params: DraftKingsSportsbookDraftkingsTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface DramaBoxService {
+  dramaboxBrowse<T = DramaBoxDramaboxBrowseResponse>(params?: DramaBoxDramaboxBrowseParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxCategories<T = DramaBoxDramaboxCategoriesResponse>(params?: DramaBoxDramaboxCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxCategoryBooks<T = DramaBoxDramaboxCategoryBooksResponse>(params?: DramaBoxDramaboxCategoryBooksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxChannels<T = DramaBoxDramaboxChannelsResponse>(params?: DramaBoxDramaboxChannelsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxDrama<T = DramaBoxDramaboxDramaResponse>(params: DramaBoxDramaboxDramaParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxGenres<T = DramaBoxDramaboxGenresResponse>(params?: DramaBoxDramaboxGenresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxHome<T = DramaBoxDramaboxHomeResponse>(params?: DramaBoxDramaboxHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxMore<T = DramaBoxDramaboxMoreResponse>(params: DramaBoxDramaboxMoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxPerformer<T = DramaBoxDramaboxPerformerResponse>(params: DramaBoxDramaboxPerformerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxRank<T = DramaBoxDramaboxRankResponse>(params?: DramaBoxDramaboxRankParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxRecommend<T = DramaBoxDramaboxRecommendResponse>(params?: DramaBoxDramaboxRecommendParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxSearch<T = DramaBoxDramaboxSearchResponse>(params: DramaBoxDramaboxSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxSuggest<T = DramaBoxDramaboxSuggestResponse>(params: DramaBoxDramaboxSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxTag<T = DramaBoxDramaboxTagResponse>(params: DramaBoxDramaboxTagParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxTheater<T = DramaBoxDramaboxTheaterResponse>(params: DramaBoxDramaboxTheaterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  dramaboxTrending<T = DramaBoxDramaboxTrendingResponse>(params?: DramaBoxDramaboxTrendingParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface DuckDuckGoSearchService {
@@ -106728,7 +109922,10 @@ export interface JumiaService {
   category<T = JumiaCategoryResponse>(params: JumiaCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   countries<T = JumiaCountriesResponse>(params?: JumiaCountriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   product<T = JumiaProductResponse>(params: JumiaProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reviews<T = JumiaReviewsResponse>(params: JumiaReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = JumiaSearchResponse>(params: JumiaSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemapUrls<T = JumiaSitemapUrlsResponse>(params: JumiaSitemapUrlsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sitemaps<T = JumiaSitemapsResponse>(params: JumiaSitemapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface JustEatService {
@@ -106802,6 +109999,30 @@ export interface KhaleejTimesService {
   khaleejtimesHeadlines<T = KhaleejTimesKhaleejtimesHeadlinesResponse>(params: KhaleejTimesKhaleejtimesHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   khaleejtimesNews<T = KhaleejTimesKhaleejtimesNewsResponse>(params?: KhaleejTimesKhaleejtimesNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   khaleejtimesSections<T = KhaleejTimesKhaleejtimesSectionsResponse>(params?: KhaleejTimesKhaleejtimesSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface KickService {
+  categories<T = KickCategoriesResponse>(params?: KickCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categoryClips<T = KickCategoryClipsResponse>(params: KickCategoryClipsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channel<T = KickChannelResponse>(params: KickChannelParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channelChatroom<T = KickChannelChatroomResponse>(params: KickChannelChatroomParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channelClips<T = KickChannelClipsResponse>(params: KickChannelClipsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channelEmotes<T = KickChannelEmotesResponse>(params: KickChannelEmotesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channelLinks<T = KickChannelLinksResponse>(params: KickChannelLinksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channelStreams<T = KickChannelStreamsResponse>(params: KickChannelStreamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channelVideos<T = KickChannelVideosResponse>(params: KickChannelVideosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  clip<T = KickClipResponse>(params: KickClipParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  clips<T = KickClipsResponse>(params?: KickClipsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  drops<T = KickDropsResponse>(params?: KickDropsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gifts<T = KickGiftsResponse>(params?: KickGiftsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  languages<T = KickLanguagesResponse>(params?: KickLanguagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  livestreams<T = KickLivestreamsResponse>(params?: KickLivestreamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchCategories<T = KickSearchCategoriesResponse>(params: KickSearchCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchChannels<T = KickSearchChannelsResponse>(params: KickSearchChannelsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  subcategories<T = KickSubcategoriesResponse>(params?: KickSubcategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  subcategory<T = KickSubcategoryResponse>(params: KickSubcategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  topChannels<T = KickTopChannelsResponse>(params?: KickTopChannelsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  video<T = KickVideoResponse>(params: KickVideoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface KickstarterService {
@@ -107765,6 +110986,15 @@ export interface PradaService {
   suggest<T = PradaSuggestResponse>(params: PradaSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface PriceChartingService {
+  pricechartingBigMovers<T = PriceChartingPricechartingBigMoversResponse>(params?: PriceChartingPricechartingBigMoversParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pricechartingCategories<T = PriceChartingPricechartingCategoriesResponse>(params?: PriceChartingPricechartingCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pricechartingConsole<T = PriceChartingPricechartingConsoleResponse>(params: PriceChartingPricechartingConsoleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pricechartingPriceHistory<T = PriceChartingPricechartingPriceHistoryResponse>(params?: PriceChartingPricechartingPriceHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pricechartingProduct<T = PriceChartingPricechartingProductResponse>(params?: PriceChartingPricechartingProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pricechartingSearch<T = PriceChartingPricechartingSearchResponse>(params: PriceChartingPricechartingSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface PristineAuctionService {
   categories<T = PristineAuctionCategoriesResponse>(params?: PristineAuctionCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   lotDetail<T = PristineAuctionLotDetailResponse>(params: PristineAuctionLotDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -107821,6 +111051,7 @@ export interface PsaService {
   priceGuideCategories<T = PsaPriceGuideCategoriesResponse>(params?: PsaPriceGuideCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   priceGuideSearch<T = PsaPriceGuideSearchResponse>(params: PsaPriceGuideSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   priceGuideSet<T = PsaPriceGuideSetResponse>(params: PsaPriceGuideSetParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  priceGuideSets<T = PsaPriceGuideSetsResponse>(params: PsaPriceGuideSetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   probatfactsCategories<T = PsaProbatfactsCategoriesResponse>(params?: PsaProbatfactsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   probatfactsGallery<T = PsaProbatfactsGalleryResponse>(params: PsaProbatfactsGalleryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   probatfactsSubject<T = PsaProbatfactsSubjectResponse>(params: PsaProbatfactsSubjectParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -107937,6 +111168,20 @@ export interface RedfinService {
   regionTrends<T = RedfinRegionTrendsResponse>(params: RedfinRegionTrendsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   search<T = RedfinSearchResponse>(params?: RedfinSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   similar<T = RedfinSimilarResponse>(params: RedfinSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ReelShortService {
+  reelshortFandomCategories<T = ReelShortReelshortFandomCategoriesResponse>(params?: ReelShortReelshortFandomCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortFandomPost<T = ReelShortReelshortFandomPostResponse>(params: ReelShortReelshortFandomPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortFandomPosts<T = ReelShortReelshortFandomPostsResponse>(params?: ReelShortReelshortFandomPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortHome<T = ReelShortReelshortHomeResponse>(params?: ReelShortReelshortHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortMovie<T = ReelShortReelshortMovieResponse>(params: ReelShortReelshortMovieParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortNewReleases<T = ReelShortReelshortNewReleasesResponse>(params: ReelShortReelshortNewReleasesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortSearch<T = ReelShortReelshortSearchResponse>(params: ReelShortReelshortSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortShelf<T = ReelShortReelshortShelfResponse>(params: ReelShortReelshortShelfParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortTagBooks<T = ReelShortReelshortTagBooksResponse>(params: ReelShortReelshortTagBooksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortTagSearch<T = ReelShortReelshortTagSearchResponse>(params: ReelShortReelshortTagSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  reelshortTags<T = ReelShortReelshortTagsResponse>(params: ReelShortReelshortTagsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ReferralsService {
@@ -108777,6 +112022,18 @@ export interface TargetService {
   stores<T = TargetStoresResponse>(params: TargetStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface TcgplayerService {
+  filters<T = TcgplayerFiltersResponse>(params?: TcgplayerFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  listings<T = TcgplayerListingsResponse>(params: TcgplayerListingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  priceGuide<T = TcgplayerPriceGuideResponse>(params: TcgplayerPriceGuideParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  priceHistory<T = TcgplayerPriceHistoryResponse>(params: TcgplayerPriceHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  product<T = TcgplayerProductResponse>(params: TcgplayerProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  productLines<T = TcgplayerProductLinesResponse>(params?: TcgplayerProductLinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sales<T = TcgplayerSalesResponse>(params: TcgplayerSalesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = TcgplayerSearchResponse>(params?: TcgplayerSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  sets<T = TcgplayerSetsResponse>(params: TcgplayerSetsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface TechCrunchService {
   techcrunchArticle<T = TechCrunchTechcrunchArticleResponse>(params: TechCrunchTechcrunchArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techcrunchAuthor<T = TechCrunchTechcrunchAuthorResponse>(params: TechCrunchTechcrunchAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -108791,6 +112048,14 @@ export interface TechRadarService {
   techradarHeadlines<T = TechRadarTechradarHeadlinesResponse>(params: TechRadarTechradarHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techradarNews<T = TechRadarTechradarNewsResponse>(params?: TechRadarTechradarNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   techradarSections<T = TechRadarTechradarSectionsResponse>(params?: TechRadarTechradarSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface TelegramService {
+  bot<T = TelegramBotResponse>(params: TelegramBotParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channel<T = TelegramChannelResponse>(params: TelegramChannelParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  channelPosts<T = TelegramChannelPostsResponse>(params: TelegramChannelPostsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  group<T = TelegramGroupResponse>(params: TelegramGroupParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  post<T = TelegramPostResponse>(params: TelegramPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface TheTelegraphService {
@@ -109363,6 +112628,14 @@ export interface WalgreensService {
   stores<T = WalgreensStoresResponse>(params?: WalgreensStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface WallapopService {
+  categories<T = WallapopCategoriesResponse>(params?: WallapopCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  filterOptions<T = WallapopFilterOptionsResponse>(params: WallapopFilterOptionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  filters<T = WallapopFiltersResponse>(params?: WallapopFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  itemDetail<T = WallapopItemDetailResponse>(params: WallapopItemDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = WallapopSearchResponse>(params: WallapopSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface WalmartService {
   product<T = WalmartProductResponse>(params: WalmartProductParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   productReviews<T = WalmartProductReviewsResponse>(params: WalmartProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -109375,6 +112648,20 @@ export interface WashingtonPostService {
   wapoHeadlines<T = WashingtonPostWapoHeadlinesResponse>(params: WashingtonPostWapoHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   wapoNews<T = WashingtonPostWapoNewsResponse>(params?: WashingtonPostWapoNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   wapoSections<T = WashingtonPostWapoSectionsResponse>(params?: WashingtonPostWapoSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface WattpadService {
+  categories<T = WattpadCategoriesResponse>(params?: WattpadCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  languages<T = WattpadLanguagesResponse>(params?: WattpadLanguagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  part<T = WattpadPartResponse>(params: WattpadPartParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  partComments<T = WattpadPartCommentsResponse>(params: WattpadPartCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = WattpadSearchResponse>(params?: WattpadSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchUsers<T = WattpadSearchUsersResponse>(params: WattpadSearchUsersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  story<T = WattpadStoryResponse>(params: WattpadStoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  storyParts<T = WattpadStoryPartsResponse>(params: WattpadStoryPartsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  storyRecommendations<T = WattpadStoryRecommendationsResponse>(params: WattpadStoryRecommendationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  user<T = WattpadUserResponse>(params: WattpadUserParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  userStories<T = WattpadUserStoriesResponse>(params: WattpadUserStoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface WayfairService {
@@ -109820,6 +113107,7 @@ export interface CrawloraGeneratedGroups {
   draftKingsPredictions: DraftKingsPredictionsService;
   draftKingsRacing: DraftKingsRacingService;
   draftKingsSportsbook: DraftKingsSportsbookService;
+  dramaBox: DramaBoxService;
   duckDuckGoSearch: DuckDuckGoSearchService;
   dunkin: DunkinService;
   dw: DwService;
@@ -109924,6 +113212,7 @@ export interface CrawloraGeneratedGroups {
   kalshi: KalshiService;
   kfc: KfcService;
   khaleejTimes: KhaleejTimesService;
+  kick: KickService;
   kickstarter: KickstarterService;
   kohlS: KohlSService;
   kotaku: KotakuService;
@@ -110015,6 +113304,7 @@ export interface CrawloraGeneratedGroups {
   popularMechanics: PopularMechanicsService;
   poshmark: PoshmarkService;
   prada: PradaService;
+  priceCharting: PriceChartingService;
   pristineAuction: PristineAuctionService;
   pristineMarketplace: PristineMarketplaceService;
   productHunt: ProductHuntService;
@@ -110030,6 +113320,7 @@ export interface CrawloraGeneratedGroups {
   rebag: RebagService;
   reddit: RedditService;
   redfin: RedfinService;
+  reelShort: ReelShortService;
   referrals: ReferralsService;
   researchJobs: ResearchJobsService;
   research: ResearchService;
@@ -110096,8 +113387,10 @@ export interface CrawloraGeneratedGroups {
   swiggy: SwiggyService;
   tacoBell: TacoBellService;
   target: TargetService;
+  tcgplayer: TcgplayerService;
   techCrunch: TechCrunchService;
   techRadar: TechRadarService;
+  telegram: TelegramService;
   theTelegraph: TheTelegraphService;
   tes: TesService;
   teslaJobs: TeslaJobsService;
@@ -110154,8 +113447,10 @@ export interface CrawloraGeneratedGroups {
   vrbo: VrboService;
   walesOnline: WalesOnlineService;
   walgreens: WalgreensService;
+  wallapop: WallapopService;
   walmart: WalmartService;
   washingtonPost: WashingtonPostService;
+  wattpad: WattpadService;
   wayfair: WayfairService;
   wccftech: WccftechService;
   wendys: WendysService;
@@ -110254,9 +113549,14 @@ export interface OperationParamsMap {
   "alcom-headlines": AlComAlcomHeadlinesParams;
   "alcom-news": AlComAlcomNewsParams;
   "alcom-sections": AlComAlcomSectionsParams;
+  "aliexpress-categories": AliExpressAliexpressCategoriesParams;
+  "aliexpress-category-ids": AliExpressAliexpressCategoryIdsParams;
+  "aliexpress-category-products": AliExpressAliexpressCategoryProductsParams;
   "aliexpress-reviews": AliExpressAliexpressReviewsParams;
   "aliexpress-search": AliExpressAliexpressSearchParams;
   "aliexpress-search-filters": AliExpressAliexpressSearchFiltersParams;
+  "aliexpress-suggest": AliExpressAliexpressSuggestParams;
+  "aliexpress-trending-searches": AliExpressAliexpressTrendingSearchesParams;
   "aljazeera-article": AlJazeeraAljazeeraArticleParams;
   "aljazeera-author": AlJazeeraAljazeeraAuthorParams;
   "aljazeera-categories": AlJazeeraAljazeeraCategoriesParams;
@@ -110841,6 +114141,10 @@ export interface OperationParamsMap {
   "datasets-airbnb-markets-item": DatasetsAirbnbMarketsItemParams;
   "datasets-airbnb-markets-nearby": DatasetsAirbnbMarketsNearbyParams;
   "datasets-airbnb-markets-search": DatasetsAirbnbMarketsSearchParams;
+  "datasets-apple-maps-places-facets": DatasetsAppleMapsPlacesFacetsParams;
+  "datasets-apple-maps-places-item": DatasetsAppleMapsPlacesItemParams;
+  "datasets-apple-maps-places-nearby": DatasetsAppleMapsPlacesNearbyParams;
+  "datasets-apple-maps-places-search": DatasetsAppleMapsPlacesSearchParams;
   "datasets-apple-podcasts-shows-facets": DatasetsApplePodcastsShowsFacetsParams;
   "datasets-apple-podcasts-shows-item": DatasetsApplePodcastsShowsItemParams;
   "datasets-apple-podcasts-shows-search": DatasetsApplePodcastsShowsSearchParams;
@@ -111061,6 +114365,22 @@ export interface OperationParamsMap {
   "draftkings-quick-links": DraftKingsSportsbookDraftkingsQuickLinksParams;
   "draftkings-team": DraftKingsSportsbookDraftkingsTeamParams;
   "draftkings-teams": DraftKingsSportsbookDraftkingsTeamsParams;
+  "dramabox-browse": DramaBoxDramaboxBrowseParams;
+  "dramabox-categories": DramaBoxDramaboxCategoriesParams;
+  "dramabox-category-books": DramaBoxDramaboxCategoryBooksParams;
+  "dramabox-channels": DramaBoxDramaboxChannelsParams;
+  "dramabox-drama": DramaBoxDramaboxDramaParams;
+  "dramabox-genres": DramaBoxDramaboxGenresParams;
+  "dramabox-home": DramaBoxDramaboxHomeParams;
+  "dramabox-more": DramaBoxDramaboxMoreParams;
+  "dramabox-performer": DramaBoxDramaboxPerformerParams;
+  "dramabox-rank": DramaBoxDramaboxRankParams;
+  "dramabox-recommend": DramaBoxDramaboxRecommendParams;
+  "dramabox-search": DramaBoxDramaboxSearchParams;
+  "dramabox-suggest": DramaBoxDramaboxSuggestParams;
+  "dramabox-tag": DramaBoxDramaboxTagParams;
+  "dramabox-theater": DramaBoxDramaboxTheaterParams;
+  "dramabox-trending": DramaBoxDramaboxTrendingParams;
   "duckduckgo-image": DuckDuckGoSearchDuckduckgoImageParams;
   "duckduckgo-news": DuckDuckGoSearchDuckduckgoNewsParams;
   "duckduckgo-search": DuckDuckGoSearchDuckduckgoSearchParams;
@@ -111941,7 +115261,10 @@ export interface OperationParamsMap {
   "jumia-category": JumiaCategoryParams;
   "jumia-countries": JumiaCountriesParams;
   "jumia-product": JumiaProductParams;
+  "jumia-reviews": JumiaReviewsParams;
   "jumia-search": JumiaSearchParams;
+  "jumia-sitemap-urls": JumiaSitemapUrlsParams;
+  "jumia-sitemaps": JumiaSitemapsParams;
   "justeat-restaurant": JustEatJusteatRestaurantParams;
   "justeat-restaurant-menu": JustEatJusteatRestaurantMenuParams;
   "justeat-search": JustEatJusteatSearchParams;
@@ -112000,6 +115323,27 @@ export interface OperationParamsMap {
   "khaleejtimes-headlines": KhaleejTimesKhaleejtimesHeadlinesParams;
   "khaleejtimes-news": KhaleejTimesKhaleejtimesNewsParams;
   "khaleejtimes-sections": KhaleejTimesKhaleejtimesSectionsParams;
+  "kick-categories": KickCategoriesParams;
+  "kick-category-clips": KickCategoryClipsParams;
+  "kick-channel": KickChannelParams;
+  "kick-channel-chatroom": KickChannelChatroomParams;
+  "kick-channel-clips": KickChannelClipsParams;
+  "kick-channel-emotes": KickChannelEmotesParams;
+  "kick-channel-links": KickChannelLinksParams;
+  "kick-channel-streams": KickChannelStreamsParams;
+  "kick-channel-videos": KickChannelVideosParams;
+  "kick-clip": KickClipParams;
+  "kick-clips": KickClipsParams;
+  "kick-drops": KickDropsParams;
+  "kick-gifts": KickGiftsParams;
+  "kick-languages": KickLanguagesParams;
+  "kick-livestreams": KickLivestreamsParams;
+  "kick-search-categories": KickSearchCategoriesParams;
+  "kick-search-channels": KickSearchChannelsParams;
+  "kick-subcategories": KickSubcategoriesParams;
+  "kick-subcategory": KickSubcategoryParams;
+  "kick-top-channels": KickTopChannelsParams;
+  "kick-video": KickVideoParams;
   "kickstarter-comments": KickstarterCommentsParams;
   "kickstarter-discover": KickstarterDiscoverParams;
   "kickstarter-project": KickstarterProjectParams;
@@ -112687,6 +116031,12 @@ export interface OperationParamsMap {
   "prada-search": PradaSearchParams;
   "prada-stores": PradaStoresParams;
   "prada-suggest": PradaSuggestParams;
+  "pricecharting-big-movers": PriceChartingPricechartingBigMoversParams;
+  "pricecharting-categories": PriceChartingPricechartingCategoriesParams;
+  "pricecharting-console": PriceChartingPricechartingConsoleParams;
+  "pricecharting-price-history": PriceChartingPricechartingPriceHistoryParams;
+  "pricecharting-product": PriceChartingPricechartingProductParams;
+  "pricecharting-search": PriceChartingPricechartingSearchParams;
   "pristine-auction-categories": PristineAuctionCategoriesParams;
   "pristine-auction-lot-detail": PristineAuctionLotDetailParams;
   "pristine-auction-search": PristineAuctionSearchParams;
@@ -112730,6 +116080,7 @@ export interface OperationParamsMap {
   "psa-price-guide-categories": PsaPriceGuideCategoriesParams;
   "psa-price-guide-search": PsaPriceGuideSearchParams;
   "psa-price-guide-set": PsaPriceGuideSetParams;
+  "psa-price-guide-sets": PsaPriceGuideSetsParams;
   "psa-probatfacts-categories": PsaProbatfactsCategoriesParams;
   "psa-probatfacts-gallery": PsaProbatfactsGalleryParams;
   "psa-probatfacts-subject": PsaProbatfactsSubjectParams;
@@ -112817,6 +116168,17 @@ export interface OperationParamsMap {
   "redfin-region-trends": RedfinRegionTrendsParams;
   "redfin-search": RedfinSearchParams;
   "redfin-similar": RedfinSimilarParams;
+  "reelshort-fandom-categories": ReelShortReelshortFandomCategoriesParams;
+  "reelshort-fandom-post": ReelShortReelshortFandomPostParams;
+  "reelshort-fandom-posts": ReelShortReelshortFandomPostsParams;
+  "reelshort-home": ReelShortReelshortHomeParams;
+  "reelshort-movie": ReelShortReelshortMovieParams;
+  "reelshort-new-releases": ReelShortReelshortNewReleasesParams;
+  "reelshort-search": ReelShortReelshortSearchParams;
+  "reelshort-shelf": ReelShortReelshortShelfParams;
+  "reelshort-tag-books": ReelShortReelshortTagBooksParams;
+  "reelshort-tag-search": ReelShortReelshortTagSearchParams;
+  "reelshort-tags": ReelShortReelshortTagsParams;
   "referrals-click": ReferralsClickParams;
   "referrals-me": ReferralsMeParams;
   "referrals-me-events": ReferralsMeEventsParams;
@@ -113457,6 +116819,15 @@ export interface OperationParamsMap {
   "target-reviews": TargetReviewsParams;
   "target-search": TargetSearchParams;
   "target-stores": TargetStoresParams;
+  "tcgplayer-filters": TcgplayerFiltersParams;
+  "tcgplayer-listings": TcgplayerListingsParams;
+  "tcgplayer-price-guide": TcgplayerPriceGuideParams;
+  "tcgplayer-price-history": TcgplayerPriceHistoryParams;
+  "tcgplayer-product": TcgplayerProductParams;
+  "tcgplayer-product-lines": TcgplayerProductLinesParams;
+  "tcgplayer-sales": TcgplayerSalesParams;
+  "tcgplayer-search": TcgplayerSearchParams;
+  "tcgplayer-sets": TcgplayerSetsParams;
   "techcrunch-article": TechCrunchTechcrunchArticleParams;
   "techcrunch-author": TechCrunchTechcrunchAuthorParams;
   "techcrunch-headlines": TechCrunchTechcrunchHeadlinesParams;
@@ -113467,6 +116838,11 @@ export interface OperationParamsMap {
   "techradar-headlines": TechRadarTechradarHeadlinesParams;
   "techradar-news": TechRadarTechradarNewsParams;
   "techradar-sections": TechRadarTechradarSectionsParams;
+  "telegram-bot": TelegramBotParams;
+  "telegram-channel": TelegramChannelParams;
+  "telegram-channel-posts": TelegramChannelPostsParams;
+  "telegram-group": TelegramGroupParams;
+  "telegram-post": TelegramPostParams;
   "telegraph-article": TheTelegraphTelegraphArticleParams;
   "telegraph-author": TheTelegraphTelegraphAuthorParams;
   "telegraph-headlines": TheTelegraphTelegraphHeadlinesParams;
@@ -113869,6 +117245,11 @@ export interface OperationParamsMap {
   "walesonline-news": WalesOnlineWalesonlineNewsParams;
   "walesonline-sections": WalesOnlineWalesonlineSectionsParams;
   "walgreens-stores": WalgreensStoresParams;
+  "wallapop-categories": WallapopCategoriesParams;
+  "wallapop-filter-options": WallapopFilterOptionsParams;
+  "wallapop-filters": WallapopFiltersParams;
+  "wallapop-item-detail": WallapopItemDetailParams;
+  "wallapop-search": WallapopSearchParams;
   "walmart-product": WalmartProductParams;
   "walmart-product-reviews": WalmartProductReviewsParams;
   "walmart-search": WalmartSearchParams;
@@ -113877,6 +117258,17 @@ export interface OperationParamsMap {
   "wapo-headlines": WashingtonPostWapoHeadlinesParams;
   "wapo-news": WashingtonPostWapoNewsParams;
   "wapo-sections": WashingtonPostWapoSectionsParams;
+  "wattpad-categories": WattpadCategoriesParams;
+  "wattpad-languages": WattpadLanguagesParams;
+  "wattpad-part": WattpadPartParams;
+  "wattpad-part-comments": WattpadPartCommentsParams;
+  "wattpad-search": WattpadSearchParams;
+  "wattpad-search-users": WattpadSearchUsersParams;
+  "wattpad-story": WattpadStoryParams;
+  "wattpad-story-parts": WattpadStoryPartsParams;
+  "wattpad-story-recommendations": WattpadStoryRecommendationsParams;
+  "wattpad-user": WattpadUserParams;
+  "wattpad-user-stories": WattpadUserStoriesParams;
   "wayfair-categories": WayfairCategoriesParams;
   "wayfair-category": WayfairCategoryParams;
   "wayfair-product": WayfairProductParams;
@@ -114172,9 +117564,14 @@ export interface OperationResponseMap {
   "alcom-headlines": AlComAlcomHeadlinesResponse;
   "alcom-news": AlComAlcomNewsResponse;
   "alcom-sections": AlComAlcomSectionsResponse;
+  "aliexpress-categories": AliExpressAliexpressCategoriesResponse;
+  "aliexpress-category-ids": AliExpressAliexpressCategoryIdsResponse;
+  "aliexpress-category-products": AliExpressAliexpressCategoryProductsResponse;
   "aliexpress-reviews": AliExpressAliexpressReviewsResponse;
   "aliexpress-search": AliExpressAliexpressSearchResponse;
   "aliexpress-search-filters": AliExpressAliexpressSearchFiltersResponse;
+  "aliexpress-suggest": AliExpressAliexpressSuggestResponse;
+  "aliexpress-trending-searches": AliExpressAliexpressTrendingSearchesResponse;
   "aljazeera-article": AlJazeeraAljazeeraArticleResponse;
   "aljazeera-author": AlJazeeraAljazeeraAuthorResponse;
   "aljazeera-categories": AlJazeeraAljazeeraCategoriesResponse;
@@ -114759,6 +118156,10 @@ export interface OperationResponseMap {
   "datasets-airbnb-markets-item": DatasetsAirbnbMarketsItemResponse;
   "datasets-airbnb-markets-nearby": DatasetsAirbnbMarketsNearbyResponse;
   "datasets-airbnb-markets-search": DatasetsAirbnbMarketsSearchResponse;
+  "datasets-apple-maps-places-facets": DatasetsAppleMapsPlacesFacetsResponse;
+  "datasets-apple-maps-places-item": DatasetsAppleMapsPlacesItemResponse;
+  "datasets-apple-maps-places-nearby": DatasetsAppleMapsPlacesNearbyResponse;
+  "datasets-apple-maps-places-search": DatasetsAppleMapsPlacesSearchResponse;
   "datasets-apple-podcasts-shows-facets": DatasetsApplePodcastsShowsFacetsResponse;
   "datasets-apple-podcasts-shows-item": DatasetsApplePodcastsShowsItemResponse;
   "datasets-apple-podcasts-shows-search": DatasetsApplePodcastsShowsSearchResponse;
@@ -114979,6 +118380,22 @@ export interface OperationResponseMap {
   "draftkings-quick-links": DraftKingsSportsbookDraftkingsQuickLinksResponse;
   "draftkings-team": DraftKingsSportsbookDraftkingsTeamResponse;
   "draftkings-teams": DraftKingsSportsbookDraftkingsTeamsResponse;
+  "dramabox-browse": DramaBoxDramaboxBrowseResponse;
+  "dramabox-categories": DramaBoxDramaboxCategoriesResponse;
+  "dramabox-category-books": DramaBoxDramaboxCategoryBooksResponse;
+  "dramabox-channels": DramaBoxDramaboxChannelsResponse;
+  "dramabox-drama": DramaBoxDramaboxDramaResponse;
+  "dramabox-genres": DramaBoxDramaboxGenresResponse;
+  "dramabox-home": DramaBoxDramaboxHomeResponse;
+  "dramabox-more": DramaBoxDramaboxMoreResponse;
+  "dramabox-performer": DramaBoxDramaboxPerformerResponse;
+  "dramabox-rank": DramaBoxDramaboxRankResponse;
+  "dramabox-recommend": DramaBoxDramaboxRecommendResponse;
+  "dramabox-search": DramaBoxDramaboxSearchResponse;
+  "dramabox-suggest": DramaBoxDramaboxSuggestResponse;
+  "dramabox-tag": DramaBoxDramaboxTagResponse;
+  "dramabox-theater": DramaBoxDramaboxTheaterResponse;
+  "dramabox-trending": DramaBoxDramaboxTrendingResponse;
   "duckduckgo-image": DuckDuckGoSearchDuckduckgoImageResponse;
   "duckduckgo-news": DuckDuckGoSearchDuckduckgoNewsResponse;
   "duckduckgo-search": DuckDuckGoSearchDuckduckgoSearchResponse;
@@ -115859,7 +119276,10 @@ export interface OperationResponseMap {
   "jumia-category": JumiaCategoryResponse;
   "jumia-countries": JumiaCountriesResponse;
   "jumia-product": JumiaProductResponse;
+  "jumia-reviews": JumiaReviewsResponse;
   "jumia-search": JumiaSearchResponse;
+  "jumia-sitemap-urls": JumiaSitemapUrlsResponse;
+  "jumia-sitemaps": JumiaSitemapsResponse;
   "justeat-restaurant": JustEatJusteatRestaurantResponse;
   "justeat-restaurant-menu": JustEatJusteatRestaurantMenuResponse;
   "justeat-search": JustEatJusteatSearchResponse;
@@ -115918,6 +119338,27 @@ export interface OperationResponseMap {
   "khaleejtimes-headlines": KhaleejTimesKhaleejtimesHeadlinesResponse;
   "khaleejtimes-news": KhaleejTimesKhaleejtimesNewsResponse;
   "khaleejtimes-sections": KhaleejTimesKhaleejtimesSectionsResponse;
+  "kick-categories": KickCategoriesResponse;
+  "kick-category-clips": KickCategoryClipsResponse;
+  "kick-channel": KickChannelResponse;
+  "kick-channel-chatroom": KickChannelChatroomResponse;
+  "kick-channel-clips": KickChannelClipsResponse;
+  "kick-channel-emotes": KickChannelEmotesResponse;
+  "kick-channel-links": KickChannelLinksResponse;
+  "kick-channel-streams": KickChannelStreamsResponse;
+  "kick-channel-videos": KickChannelVideosResponse;
+  "kick-clip": KickClipResponse;
+  "kick-clips": KickClipsResponse;
+  "kick-drops": KickDropsResponse;
+  "kick-gifts": KickGiftsResponse;
+  "kick-languages": KickLanguagesResponse;
+  "kick-livestreams": KickLivestreamsResponse;
+  "kick-search-categories": KickSearchCategoriesResponse;
+  "kick-search-channels": KickSearchChannelsResponse;
+  "kick-subcategories": KickSubcategoriesResponse;
+  "kick-subcategory": KickSubcategoryResponse;
+  "kick-top-channels": KickTopChannelsResponse;
+  "kick-video": KickVideoResponse;
   "kickstarter-comments": KickstarterCommentsResponse;
   "kickstarter-discover": KickstarterDiscoverResponse;
   "kickstarter-project": KickstarterProjectResponse;
@@ -116605,6 +120046,12 @@ export interface OperationResponseMap {
   "prada-search": PradaSearchResponse;
   "prada-stores": PradaStoresResponse;
   "prada-suggest": PradaSuggestResponse;
+  "pricecharting-big-movers": PriceChartingPricechartingBigMoversResponse;
+  "pricecharting-categories": PriceChartingPricechartingCategoriesResponse;
+  "pricecharting-console": PriceChartingPricechartingConsoleResponse;
+  "pricecharting-price-history": PriceChartingPricechartingPriceHistoryResponse;
+  "pricecharting-product": PriceChartingPricechartingProductResponse;
+  "pricecharting-search": PriceChartingPricechartingSearchResponse;
   "pristine-auction-categories": PristineAuctionCategoriesResponse;
   "pristine-auction-lot-detail": PristineAuctionLotDetailResponse;
   "pristine-auction-search": PristineAuctionSearchResponse;
@@ -116648,6 +120095,7 @@ export interface OperationResponseMap {
   "psa-price-guide-categories": PsaPriceGuideCategoriesResponse;
   "psa-price-guide-search": PsaPriceGuideSearchResponse;
   "psa-price-guide-set": PsaPriceGuideSetResponse;
+  "psa-price-guide-sets": PsaPriceGuideSetsResponse;
   "psa-probatfacts-categories": PsaProbatfactsCategoriesResponse;
   "psa-probatfacts-gallery": PsaProbatfactsGalleryResponse;
   "psa-probatfacts-subject": PsaProbatfactsSubjectResponse;
@@ -116735,6 +120183,17 @@ export interface OperationResponseMap {
   "redfin-region-trends": RedfinRegionTrendsResponse;
   "redfin-search": RedfinSearchResponse;
   "redfin-similar": RedfinSimilarResponse;
+  "reelshort-fandom-categories": ReelShortReelshortFandomCategoriesResponse;
+  "reelshort-fandom-post": ReelShortReelshortFandomPostResponse;
+  "reelshort-fandom-posts": ReelShortReelshortFandomPostsResponse;
+  "reelshort-home": ReelShortReelshortHomeResponse;
+  "reelshort-movie": ReelShortReelshortMovieResponse;
+  "reelshort-new-releases": ReelShortReelshortNewReleasesResponse;
+  "reelshort-search": ReelShortReelshortSearchResponse;
+  "reelshort-shelf": ReelShortReelshortShelfResponse;
+  "reelshort-tag-books": ReelShortReelshortTagBooksResponse;
+  "reelshort-tag-search": ReelShortReelshortTagSearchResponse;
+  "reelshort-tags": ReelShortReelshortTagsResponse;
   "referrals-click": ReferralsClickResponse;
   "referrals-me": ReferralsMeResponse;
   "referrals-me-events": ReferralsMeEventsResponse;
@@ -117375,6 +120834,15 @@ export interface OperationResponseMap {
   "target-reviews": TargetReviewsResponse;
   "target-search": TargetSearchResponse;
   "target-stores": TargetStoresResponse;
+  "tcgplayer-filters": TcgplayerFiltersResponse;
+  "tcgplayer-listings": TcgplayerListingsResponse;
+  "tcgplayer-price-guide": TcgplayerPriceGuideResponse;
+  "tcgplayer-price-history": TcgplayerPriceHistoryResponse;
+  "tcgplayer-product": TcgplayerProductResponse;
+  "tcgplayer-product-lines": TcgplayerProductLinesResponse;
+  "tcgplayer-sales": TcgplayerSalesResponse;
+  "tcgplayer-search": TcgplayerSearchResponse;
+  "tcgplayer-sets": TcgplayerSetsResponse;
   "techcrunch-article": TechCrunchTechcrunchArticleResponse;
   "techcrunch-author": TechCrunchTechcrunchAuthorResponse;
   "techcrunch-headlines": TechCrunchTechcrunchHeadlinesResponse;
@@ -117385,6 +120853,11 @@ export interface OperationResponseMap {
   "techradar-headlines": TechRadarTechradarHeadlinesResponse;
   "techradar-news": TechRadarTechradarNewsResponse;
   "techradar-sections": TechRadarTechradarSectionsResponse;
+  "telegram-bot": TelegramBotResponse;
+  "telegram-channel": TelegramChannelResponse;
+  "telegram-channel-posts": TelegramChannelPostsResponse;
+  "telegram-group": TelegramGroupResponse;
+  "telegram-post": TelegramPostResponse;
   "telegraph-article": TheTelegraphTelegraphArticleResponse;
   "telegraph-author": TheTelegraphTelegraphAuthorResponse;
   "telegraph-headlines": TheTelegraphTelegraphHeadlinesResponse;
@@ -117787,6 +121260,11 @@ export interface OperationResponseMap {
   "walesonline-news": WalesOnlineWalesonlineNewsResponse;
   "walesonline-sections": WalesOnlineWalesonlineSectionsResponse;
   "walgreens-stores": WalgreensStoresResponse;
+  "wallapop-categories": WallapopCategoriesResponse;
+  "wallapop-filter-options": WallapopFilterOptionsResponse;
+  "wallapop-filters": WallapopFiltersResponse;
+  "wallapop-item-detail": WallapopItemDetailResponse;
+  "wallapop-search": WallapopSearchResponse;
   "walmart-product": WalmartProductResponse;
   "walmart-product-reviews": WalmartProductReviewsResponse;
   "walmart-search": WalmartSearchResponse;
@@ -117795,6 +121273,17 @@ export interface OperationResponseMap {
   "wapo-headlines": WashingtonPostWapoHeadlinesResponse;
   "wapo-news": WashingtonPostWapoNewsResponse;
   "wapo-sections": WashingtonPostWapoSectionsResponse;
+  "wattpad-categories": WattpadCategoriesResponse;
+  "wattpad-languages": WattpadLanguagesResponse;
+  "wattpad-part": WattpadPartResponse;
+  "wattpad-part-comments": WattpadPartCommentsResponse;
+  "wattpad-search": WattpadSearchResponse;
+  "wattpad-search-users": WattpadSearchUsersResponse;
+  "wattpad-story": WattpadStoryResponse;
+  "wattpad-story-parts": WattpadStoryPartsResponse;
+  "wattpad-story-recommendations": WattpadStoryRecommendationsResponse;
+  "wattpad-user": WattpadUserResponse;
+  "wattpad-user-stories": WattpadUserStoriesResponse;
   "wayfair-categories": WayfairCategoriesResponse;
   "wayfair-category": WayfairCategoryResponse;
   "wayfair-product": WayfairProductResponse;
@@ -118090,9 +121579,14 @@ export interface OperationRequiredParamsMap {
   "alcom-headlines": true;
   "alcom-news": false;
   "alcom-sections": false;
+  "aliexpress-categories": false;
+  "aliexpress-category-ids": false;
+  "aliexpress-category-products": true;
   "aliexpress-reviews": true;
   "aliexpress-search": true;
   "aliexpress-search-filters": true;
+  "aliexpress-suggest": true;
+  "aliexpress-trending-searches": false;
   "aljazeera-article": true;
   "aljazeera-author": false;
   "aljazeera-categories": false;
@@ -118677,6 +122171,10 @@ export interface OperationRequiredParamsMap {
   "datasets-airbnb-markets-item": true;
   "datasets-airbnb-markets-nearby": true;
   "datasets-airbnb-markets-search": false;
+  "datasets-apple-maps-places-facets": true;
+  "datasets-apple-maps-places-item": true;
+  "datasets-apple-maps-places-nearby": true;
+  "datasets-apple-maps-places-search": false;
   "datasets-apple-podcasts-shows-facets": true;
   "datasets-apple-podcasts-shows-item": true;
   "datasets-apple-podcasts-shows-search": false;
@@ -118897,6 +122395,22 @@ export interface OperationRequiredParamsMap {
   "draftkings-quick-links": false;
   "draftkings-team": true;
   "draftkings-teams": true;
+  "dramabox-browse": false;
+  "dramabox-categories": false;
+  "dramabox-category-books": false;
+  "dramabox-channels": false;
+  "dramabox-drama": true;
+  "dramabox-genres": false;
+  "dramabox-home": false;
+  "dramabox-more": true;
+  "dramabox-performer": true;
+  "dramabox-rank": false;
+  "dramabox-recommend": false;
+  "dramabox-search": true;
+  "dramabox-suggest": true;
+  "dramabox-tag": true;
+  "dramabox-theater": true;
+  "dramabox-trending": false;
   "duckduckgo-image": true;
   "duckduckgo-news": true;
   "duckduckgo-search": true;
@@ -119777,7 +123291,10 @@ export interface OperationRequiredParamsMap {
   "jumia-category": true;
   "jumia-countries": false;
   "jumia-product": true;
+  "jumia-reviews": true;
   "jumia-search": true;
+  "jumia-sitemap-urls": true;
+  "jumia-sitemaps": true;
   "justeat-restaurant": true;
   "justeat-restaurant-menu": true;
   "justeat-search": true;
@@ -119836,6 +123353,27 @@ export interface OperationRequiredParamsMap {
   "khaleejtimes-headlines": true;
   "khaleejtimes-news": false;
   "khaleejtimes-sections": false;
+  "kick-categories": false;
+  "kick-category-clips": true;
+  "kick-channel": true;
+  "kick-channel-chatroom": true;
+  "kick-channel-clips": true;
+  "kick-channel-emotes": true;
+  "kick-channel-links": true;
+  "kick-channel-streams": true;
+  "kick-channel-videos": true;
+  "kick-clip": true;
+  "kick-clips": false;
+  "kick-drops": false;
+  "kick-gifts": false;
+  "kick-languages": false;
+  "kick-livestreams": false;
+  "kick-search-categories": true;
+  "kick-search-channels": true;
+  "kick-subcategories": false;
+  "kick-subcategory": true;
+  "kick-top-channels": false;
+  "kick-video": true;
   "kickstarter-comments": true;
   "kickstarter-discover": false;
   "kickstarter-project": true;
@@ -120523,6 +124061,12 @@ export interface OperationRequiredParamsMap {
   "prada-search": true;
   "prada-stores": false;
   "prada-suggest": true;
+  "pricecharting-big-movers": false;
+  "pricecharting-categories": false;
+  "pricecharting-console": true;
+  "pricecharting-price-history": false;
+  "pricecharting-product": false;
+  "pricecharting-search": true;
   "pristine-auction-categories": false;
   "pristine-auction-lot-detail": true;
   "pristine-auction-search": false;
@@ -120566,6 +124110,7 @@ export interface OperationRequiredParamsMap {
   "psa-price-guide-categories": false;
   "psa-price-guide-search": true;
   "psa-price-guide-set": true;
+  "psa-price-guide-sets": true;
   "psa-probatfacts-categories": false;
   "psa-probatfacts-gallery": true;
   "psa-probatfacts-subject": true;
@@ -120653,6 +124198,17 @@ export interface OperationRequiredParamsMap {
   "redfin-region-trends": true;
   "redfin-search": false;
   "redfin-similar": true;
+  "reelshort-fandom-categories": false;
+  "reelshort-fandom-post": true;
+  "reelshort-fandom-posts": false;
+  "reelshort-home": false;
+  "reelshort-movie": true;
+  "reelshort-new-releases": true;
+  "reelshort-search": true;
+  "reelshort-shelf": true;
+  "reelshort-tag-books": true;
+  "reelshort-tag-search": true;
+  "reelshort-tags": true;
   "referrals-click": true;
   "referrals-me": false;
   "referrals-me-events": false;
@@ -121293,6 +124849,15 @@ export interface OperationRequiredParamsMap {
   "target-reviews": true;
   "target-search": true;
   "target-stores": true;
+  "tcgplayer-filters": false;
+  "tcgplayer-listings": true;
+  "tcgplayer-price-guide": true;
+  "tcgplayer-price-history": true;
+  "tcgplayer-product": true;
+  "tcgplayer-product-lines": false;
+  "tcgplayer-sales": true;
+  "tcgplayer-search": false;
+  "tcgplayer-sets": true;
   "techcrunch-article": true;
   "techcrunch-author": true;
   "techcrunch-headlines": true;
@@ -121303,6 +124868,11 @@ export interface OperationRequiredParamsMap {
   "techradar-headlines": true;
   "techradar-news": false;
   "techradar-sections": false;
+  "telegram-bot": true;
+  "telegram-channel": true;
+  "telegram-channel-posts": true;
+  "telegram-group": true;
+  "telegram-post": true;
   "telegraph-article": true;
   "telegraph-author": true;
   "telegraph-headlines": true;
@@ -121705,6 +125275,11 @@ export interface OperationRequiredParamsMap {
   "walesonline-news": false;
   "walesonline-sections": false;
   "walgreens-stores": false;
+  "wallapop-categories": false;
+  "wallapop-filter-options": true;
+  "wallapop-filters": false;
+  "wallapop-item-detail": true;
+  "wallapop-search": true;
   "walmart-product": true;
   "walmart-product-reviews": true;
   "walmart-search": true;
@@ -121713,6 +125288,17 @@ export interface OperationRequiredParamsMap {
   "wapo-headlines": true;
   "wapo-news": false;
   "wapo-sections": false;
+  "wattpad-categories": false;
+  "wattpad-languages": false;
+  "wattpad-part": true;
+  "wattpad-part-comments": true;
+  "wattpad-search": false;
+  "wattpad-search-users": true;
+  "wattpad-story": true;
+  "wattpad-story-parts": true;
+  "wattpad-story-recommendations": true;
+  "wattpad-user": true;
+  "wattpad-user-stories": true;
   "wayfair-categories": false;
   "wayfair-category": true;
   "wayfair-product": true;
@@ -122015,9 +125601,14 @@ export type OperationIdLiteral =
   | "alcom-headlines"
   | "alcom-news"
   | "alcom-sections"
+  | "aliexpress-categories"
+  | "aliexpress-category-ids"
+  | "aliexpress-category-products"
   | "aliexpress-reviews"
   | "aliexpress-search"
   | "aliexpress-search-filters"
+  | "aliexpress-suggest"
+  | "aliexpress-trending-searches"
   | "aljazeera-article"
   | "aljazeera-author"
   | "aljazeera-categories"
@@ -122602,6 +126193,10 @@ export type OperationIdLiteral =
   | "datasets-airbnb-markets-item"
   | "datasets-airbnb-markets-nearby"
   | "datasets-airbnb-markets-search"
+  | "datasets-apple-maps-places-facets"
+  | "datasets-apple-maps-places-item"
+  | "datasets-apple-maps-places-nearby"
+  | "datasets-apple-maps-places-search"
   | "datasets-apple-podcasts-shows-facets"
   | "datasets-apple-podcasts-shows-item"
   | "datasets-apple-podcasts-shows-search"
@@ -122822,6 +126417,22 @@ export type OperationIdLiteral =
   | "draftkings-quick-links"
   | "draftkings-team"
   | "draftkings-teams"
+  | "dramabox-browse"
+  | "dramabox-categories"
+  | "dramabox-category-books"
+  | "dramabox-channels"
+  | "dramabox-drama"
+  | "dramabox-genres"
+  | "dramabox-home"
+  | "dramabox-more"
+  | "dramabox-performer"
+  | "dramabox-rank"
+  | "dramabox-recommend"
+  | "dramabox-search"
+  | "dramabox-suggest"
+  | "dramabox-tag"
+  | "dramabox-theater"
+  | "dramabox-trending"
   | "duckduckgo-image"
   | "duckduckgo-news"
   | "duckduckgo-search"
@@ -123702,7 +127313,10 @@ export type OperationIdLiteral =
   | "jumia-category"
   | "jumia-countries"
   | "jumia-product"
+  | "jumia-reviews"
   | "jumia-search"
+  | "jumia-sitemap-urls"
+  | "jumia-sitemaps"
   | "justeat-restaurant"
   | "justeat-restaurant-menu"
   | "justeat-search"
@@ -123761,6 +127375,27 @@ export type OperationIdLiteral =
   | "khaleejtimes-headlines"
   | "khaleejtimes-news"
   | "khaleejtimes-sections"
+  | "kick-categories"
+  | "kick-category-clips"
+  | "kick-channel"
+  | "kick-channel-chatroom"
+  | "kick-channel-clips"
+  | "kick-channel-emotes"
+  | "kick-channel-links"
+  | "kick-channel-streams"
+  | "kick-channel-videos"
+  | "kick-clip"
+  | "kick-clips"
+  | "kick-drops"
+  | "kick-gifts"
+  | "kick-languages"
+  | "kick-livestreams"
+  | "kick-search-categories"
+  | "kick-search-channels"
+  | "kick-subcategories"
+  | "kick-subcategory"
+  | "kick-top-channels"
+  | "kick-video"
   | "kickstarter-comments"
   | "kickstarter-discover"
   | "kickstarter-project"
@@ -124448,6 +128083,12 @@ export type OperationIdLiteral =
   | "prada-search"
   | "prada-stores"
   | "prada-suggest"
+  | "pricecharting-big-movers"
+  | "pricecharting-categories"
+  | "pricecharting-console"
+  | "pricecharting-price-history"
+  | "pricecharting-product"
+  | "pricecharting-search"
   | "pristine-auction-categories"
   | "pristine-auction-lot-detail"
   | "pristine-auction-search"
@@ -124491,6 +128132,7 @@ export type OperationIdLiteral =
   | "psa-price-guide-categories"
   | "psa-price-guide-search"
   | "psa-price-guide-set"
+  | "psa-price-guide-sets"
   | "psa-probatfacts-categories"
   | "psa-probatfacts-gallery"
   | "psa-probatfacts-subject"
@@ -124578,6 +128220,17 @@ export type OperationIdLiteral =
   | "redfin-region-trends"
   | "redfin-search"
   | "redfin-similar"
+  | "reelshort-fandom-categories"
+  | "reelshort-fandom-post"
+  | "reelshort-fandom-posts"
+  | "reelshort-home"
+  | "reelshort-movie"
+  | "reelshort-new-releases"
+  | "reelshort-search"
+  | "reelshort-shelf"
+  | "reelshort-tag-books"
+  | "reelshort-tag-search"
+  | "reelshort-tags"
   | "referrals-click"
   | "referrals-me"
   | "referrals-me-events"
@@ -125218,6 +128871,15 @@ export type OperationIdLiteral =
   | "target-reviews"
   | "target-search"
   | "target-stores"
+  | "tcgplayer-filters"
+  | "tcgplayer-listings"
+  | "tcgplayer-price-guide"
+  | "tcgplayer-price-history"
+  | "tcgplayer-product"
+  | "tcgplayer-product-lines"
+  | "tcgplayer-sales"
+  | "tcgplayer-search"
+  | "tcgplayer-sets"
   | "techcrunch-article"
   | "techcrunch-author"
   | "techcrunch-headlines"
@@ -125228,6 +128890,11 @@ export type OperationIdLiteral =
   | "techradar-headlines"
   | "techradar-news"
   | "techradar-sections"
+  | "telegram-bot"
+  | "telegram-channel"
+  | "telegram-channel-posts"
+  | "telegram-group"
+  | "telegram-post"
   | "telegraph-article"
   | "telegraph-author"
   | "telegraph-headlines"
@@ -125630,6 +129297,11 @@ export type OperationIdLiteral =
   | "walesonline-news"
   | "walesonline-sections"
   | "walgreens-stores"
+  | "wallapop-categories"
+  | "wallapop-filter-options"
+  | "wallapop-filters"
+  | "wallapop-item-detail"
+  | "wallapop-search"
   | "walmart-product"
   | "walmart-product-reviews"
   | "walmart-search"
@@ -125638,6 +129310,17 @@ export type OperationIdLiteral =
   | "wapo-headlines"
   | "wapo-news"
   | "wapo-sections"
+  | "wattpad-categories"
+  | "wattpad-languages"
+  | "wattpad-part"
+  | "wattpad-part-comments"
+  | "wattpad-search"
+  | "wattpad-search-users"
+  | "wattpad-story"
+  | "wattpad-story-parts"
+  | "wattpad-story-recommendations"
+  | "wattpad-user"
+  | "wattpad-user-stories"
   | "wayfair-categories"
   | "wayfair-category"
   | "wayfair-product"
@@ -125923,9 +129606,14 @@ export declare const OperationIds: Readonly<{
   AlJazeeraAljazeeraCategories: "aljazeera-categories";
   AlJazeeraAljazeeraHeadlines: "aljazeera-headlines";
   AlJazeeraAljazeeraTopic: "aljazeera-topic";
+  AliExpressAliexpressCategories: "aliexpress-categories";
+  AliExpressAliexpressCategoryIds: "aliexpress-category-ids";
+  AliExpressAliexpressCategoryProducts: "aliexpress-category-products";
   AliExpressAliexpressReviews: "aliexpress-reviews";
   AliExpressAliexpressSearch: "aliexpress-search";
   AliExpressAliexpressSearchFilters: "aliexpress-search-filters";
+  AliExpressAliexpressSuggest: "aliexpress-suggest";
+  AliExpressAliexpressTrendingSearches: "aliexpress-trending-searches";
   AllbirdsCollectionProducts: "allbirds-collection-products";
   AllbirdsCollections: "allbirds-collections";
   AllbirdsPage: "allbirds-page";
@@ -126498,6 +130186,10 @@ export declare const OperationIds: Readonly<{
   DatasetsAirbnbMarketsItem: "datasets-airbnb-markets-item";
   DatasetsAirbnbMarketsNearby: "datasets-airbnb-markets-nearby";
   DatasetsAirbnbMarketsSearch: "datasets-airbnb-markets-search";
+  DatasetsAppleMapsPlacesFacets: "datasets-apple-maps-places-facets";
+  DatasetsAppleMapsPlacesItem: "datasets-apple-maps-places-item";
+  DatasetsAppleMapsPlacesNearby: "datasets-apple-maps-places-nearby";
+  DatasetsAppleMapsPlacesSearch: "datasets-apple-maps-places-search";
   DatasetsApplePodcastsShowsFacets: "datasets-apple-podcasts-shows-facets";
   DatasetsApplePodcastsShowsItem: "datasets-apple-podcasts-shows-item";
   DatasetsApplePodcastsShowsSearch: "datasets-apple-podcasts-shows-search";
@@ -126711,6 +130403,22 @@ export declare const OperationIds: Readonly<{
   DraftKingsSportsbookDraftkingsQuickLinks: "draftkings-quick-links";
   DraftKingsSportsbookDraftkingsTeam: "draftkings-team";
   DraftKingsSportsbookDraftkingsTeams: "draftkings-teams";
+  DramaBoxDramaboxBrowse: "dramabox-browse";
+  DramaBoxDramaboxCategories: "dramabox-categories";
+  DramaBoxDramaboxCategoryBooks: "dramabox-category-books";
+  DramaBoxDramaboxChannels: "dramabox-channels";
+  DramaBoxDramaboxDrama: "dramabox-drama";
+  DramaBoxDramaboxGenres: "dramabox-genres";
+  DramaBoxDramaboxHome: "dramabox-home";
+  DramaBoxDramaboxMore: "dramabox-more";
+  DramaBoxDramaboxPerformer: "dramabox-performer";
+  DramaBoxDramaboxRank: "dramabox-rank";
+  DramaBoxDramaboxRecommend: "dramabox-recommend";
+  DramaBoxDramaboxSearch: "dramabox-search";
+  DramaBoxDramaboxSuggest: "dramabox-suggest";
+  DramaBoxDramaboxTag: "dramabox-tag";
+  DramaBoxDramaboxTheater: "dramabox-theater";
+  DramaBoxDramaboxTrending: "dramabox-trending";
   DuckDuckGoSearchDuckduckgoImage: "duckduckgo-image";
   DuckDuckGoSearchDuckduckgoNews: "duckduckgo-news";
   DuckDuckGoSearchDuckduckgoSearch: "duckduckgo-search";
@@ -127573,7 +131281,10 @@ export declare const OperationIds: Readonly<{
   JumiaCategory: "jumia-category";
   JumiaCountries: "jumia-countries";
   JumiaProduct: "jumia-product";
+  JumiaReviews: "jumia-reviews";
   JumiaSearch: "jumia-search";
+  JumiaSitemapUrls: "jumia-sitemap-urls";
+  JumiaSitemaps: "jumia-sitemaps";
   JustEatJusteatRestaurant: "justeat-restaurant";
   JustEatJusteatRestaurantMenu: "justeat-restaurant-menu";
   JustEatJusteatSearch: "justeat-search";
@@ -127632,6 +131343,27 @@ export declare const OperationIds: Readonly<{
   KhaleejTimesKhaleejtimesHeadlines: "khaleejtimes-headlines";
   KhaleejTimesKhaleejtimesNews: "khaleejtimes-news";
   KhaleejTimesKhaleejtimesSections: "khaleejtimes-sections";
+  KickCategories: "kick-categories";
+  KickCategoryClips: "kick-category-clips";
+  KickChannel: "kick-channel";
+  KickChannelChatroom: "kick-channel-chatroom";
+  KickChannelClips: "kick-channel-clips";
+  KickChannelEmotes: "kick-channel-emotes";
+  KickChannelLinks: "kick-channel-links";
+  KickChannelStreams: "kick-channel-streams";
+  KickChannelVideos: "kick-channel-videos";
+  KickClip: "kick-clip";
+  KickClips: "kick-clips";
+  KickDrops: "kick-drops";
+  KickGifts: "kick-gifts";
+  KickLanguages: "kick-languages";
+  KickLivestreams: "kick-livestreams";
+  KickSearchCategories: "kick-search-categories";
+  KickSearchChannels: "kick-search-channels";
+  KickSubcategories: "kick-subcategories";
+  KickSubcategory: "kick-subcategory";
+  KickTopChannels: "kick-top-channels";
+  KickVideo: "kick-video";
   KickstarterComments: "kickstarter-comments";
   KickstarterDiscover: "kickstarter-discover";
   KickstarterProject: "kickstarter-project";
@@ -128316,6 +132048,12 @@ export declare const OperationIds: Readonly<{
   PradaSearch: "prada-search";
   PradaStores: "prada-stores";
   PradaSuggest: "prada-suggest";
+  PriceChartingPricechartingBigMovers: "pricecharting-big-movers";
+  PriceChartingPricechartingCategories: "pricecharting-categories";
+  PriceChartingPricechartingConsole: "pricecharting-console";
+  PriceChartingPricechartingPriceHistory: "pricecharting-price-history";
+  PriceChartingPricechartingProduct: "pricecharting-product";
+  PriceChartingPricechartingSearch: "pricecharting-search";
   PristineAuctionCategories: "pristine-auction-categories";
   PristineAuctionLotDetail: "pristine-auction-lot-detail";
   PristineAuctionSearch: "pristine-auction-search";
@@ -128359,6 +132097,7 @@ export declare const OperationIds: Readonly<{
   PsaPriceGuideCategories: "psa-price-guide-categories";
   PsaPriceGuideSearch: "psa-price-guide-search";
   PsaPriceGuideSet: "psa-price-guide-set";
+  PsaPriceGuideSets: "psa-price-guide-sets";
   PsaProbatfactsCategories: "psa-probatfacts-categories";
   PsaProbatfactsGallery: "psa-probatfacts-gallery";
   PsaProbatfactsSubject: "psa-probatfacts-subject";
@@ -128445,6 +132184,17 @@ export declare const OperationIds: Readonly<{
   RedfinRegionTrends: "redfin-region-trends";
   RedfinSearch: "redfin-search";
   RedfinSimilar: "redfin-similar";
+  ReelShortReelshortFandomCategories: "reelshort-fandom-categories";
+  ReelShortReelshortFandomPost: "reelshort-fandom-post";
+  ReelShortReelshortFandomPosts: "reelshort-fandom-posts";
+  ReelShortReelshortHome: "reelshort-home";
+  ReelShortReelshortMovie: "reelshort-movie";
+  ReelShortReelshortNewReleases: "reelshort-new-releases";
+  ReelShortReelshortSearch: "reelshort-search";
+  ReelShortReelshortShelf: "reelshort-shelf";
+  ReelShortReelshortTagBooks: "reelshort-tag-books";
+  ReelShortReelshortTagSearch: "reelshort-tag-search";
+  ReelShortReelshortTags: "reelshort-tags";
   ReferralsClick: "referrals-click";
   ReferralsMe: "referrals-me";
   ReferralsMeEvents: "referrals-me-events";
@@ -129081,6 +132831,15 @@ export declare const OperationIds: Readonly<{
   TargetReviews: "target-reviews";
   TargetSearch: "target-search";
   TargetStores: "target-stores";
+  TcgplayerFilters: "tcgplayer-filters";
+  TcgplayerListings: "tcgplayer-listings";
+  TcgplayerPriceGuide: "tcgplayer-price-guide";
+  TcgplayerPriceHistory: "tcgplayer-price-history";
+  TcgplayerProduct: "tcgplayer-product";
+  TcgplayerProductLines: "tcgplayer-product-lines";
+  TcgplayerSales: "tcgplayer-sales";
+  TcgplayerSearch: "tcgplayer-search";
+  TcgplayerSets: "tcgplayer-sets";
   TechCrunchTechcrunchArticle: "techcrunch-article";
   TechCrunchTechcrunchAuthor: "techcrunch-author";
   TechCrunchTechcrunchHeadlines: "techcrunch-headlines";
@@ -129091,6 +132850,11 @@ export declare const OperationIds: Readonly<{
   TechRadarTechradarHeadlines: "techradar-headlines";
   TechRadarTechradarNews: "techradar-news";
   TechRadarTechradarSections: "techradar-sections";
+  TelegramBot: "telegram-bot";
+  TelegramChannel: "telegram-channel";
+  TelegramChannelPosts: "telegram-channel-posts";
+  TelegramGroup: "telegram-group";
+  TelegramPost: "telegram-post";
   TesJobDetail: "tes-job-detail";
   TesJobEmployer: "tes-job-employer";
   TesJobSearch: "tes-job-search";
@@ -129552,6 +133316,11 @@ export declare const OperationIds: Readonly<{
   WalgreensStores: "walgreens-stores";
   WallStreetJournalWsjArticle: "wsj-article";
   WallStreetJournalWsjAuthor: "wsj-author";
+  WallapopCategories: "wallapop-categories";
+  WallapopFilterOptions: "wallapop-filter-options";
+  WallapopFilters: "wallapop-filters";
+  WallapopItemDetail: "wallapop-item-detail";
+  WallapopSearch: "wallapop-search";
   WalmartProduct: "walmart-product";
   WalmartProductReviews: "walmart-product-reviews";
   WalmartSearch: "walmart-search";
@@ -129560,6 +133329,17 @@ export declare const OperationIds: Readonly<{
   WashingtonPostWapoHeadlines: "wapo-headlines";
   WashingtonPostWapoNews: "wapo-news";
   WashingtonPostWapoSections: "wapo-sections";
+  WattpadCategories: "wattpad-categories";
+  WattpadLanguages: "wattpad-languages";
+  WattpadPart: "wattpad-part";
+  WattpadPartComments: "wattpad-part-comments";
+  WattpadSearch: "wattpad-search";
+  WattpadSearchUsers: "wattpad-search-users";
+  WattpadStory: "wattpad-story";
+  WattpadStoryParts: "wattpad-story-parts";
+  WattpadStoryRecommendations: "wattpad-story-recommendations";
+  WattpadUser: "wattpad-user";
+  WattpadUserStories: "wattpad-user-stories";
   WayfairCategories: "wayfair-categories";
   WayfairCategory: "wayfair-category";
   WayfairProduct: "wayfair-product";

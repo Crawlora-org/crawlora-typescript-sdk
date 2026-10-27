@@ -1903,6 +1903,104 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "aliexpress-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "aliexpress-categories",
+    "method": "GET",
+    "path": "/aliexpress/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category_tab",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "aliexpress-category-ids": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "aliexpress-category-ids",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/aliexpress/category-ids",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "aliexpress-category-products": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "aliexpress-category-products",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/aliexpress/category-products",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "aliexpress-reviews": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -1997,6 +2095,11 @@ export const operations = {
         "in": "query",
         "name": "attr",
         "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cat_id",
+        "type": "integer"
       }
     ],
     "security": [
@@ -2023,6 +2126,62 @@ export const operations = {
         "name": "q",
         "required": true,
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "aliexpress-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "aliexpress-suggest",
+    "method": "GET",
+    "path": "/aliexpress/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "aliexpress-trending-searches": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "aliexpress-trending-searches",
+    "method": "GET",
+    "path": "/aliexpress/trending-searches",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
       }
     ],
     "security": [
@@ -23355,6 +23514,298 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "datasets-apple-maps-places-facets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apple-maps-places-facets",
+    "method": "GET",
+    "path": "/datasets/apple-maps-places/facets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "category",
+          "country_code",
+          "state",
+          "city",
+          "price_symbol",
+          "catalog_country"
+        ],
+        "in": "query",
+        "name": "facet",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "postal_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_rating_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "has_website",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_phone",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "lat",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-apple-maps-places-item": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apple-maps-places-item",
+    "method": "GET",
+    "path": "/datasets/apple-maps-places/items/{place_id}",
+    "pathParams": [
+      "place_id"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-apple-maps-places-nearby": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apple-maps-places-nearby",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/apple-maps-places/nearby",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "lat",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_rating_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "datasets-apple-maps-places-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "datasets-apple-maps-places-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/datasets/apple-maps-places/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "country_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "postal_code",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_rating",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "min_rating_count",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "has_website",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "has_phone",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "lat",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "lon",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "radius_m",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "relevance",
+          "rating_desc",
+          "review_count_desc",
+          "updated_at_desc",
+          "distance_asc"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "datasets-apple-podcasts-shows-facets": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -36576,6 +37027,606 @@ export const operations = {
         "type": "string"
       }
     ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-browse": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-browse",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/dramabox/browse",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "genre_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "en",
+          "ko",
+          "zhHans",
+          "zh",
+          "es",
+          "ja",
+          "de",
+          "in",
+          "th",
+          "tl",
+          "pt",
+          "fr",
+          "ar",
+          "it"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-categories",
+    "method": "GET",
+    "path": "/dramabox/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-category-books": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-category-books",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/dramabox/category-books",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "3",
+          "1",
+          "2"
+        ],
+        "in": "query",
+        "name": "production",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "0"
+        ],
+        "in": "query",
+        "name": "dub",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "genre_2",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-channels": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-channels",
+    "method": "GET",
+    "path": "/dramabox/channels",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-drama": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-drama",
+    "method": "GET",
+    "path": "/dramabox/drama",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-genres": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-genres",
+    "method": "GET",
+    "path": "/dramabox/genres",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "en",
+          "ko",
+          "zhHans",
+          "zh",
+          "es",
+          "ja",
+          "de",
+          "in",
+          "th",
+          "tl",
+          "pt",
+          "fr",
+          "ar",
+          "it"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-home": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-home",
+    "method": "GET",
+    "path": "/dramabox/home",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "en",
+          "ko",
+          "zhHans",
+          "zh",
+          "es",
+          "ja",
+          "de",
+          "in",
+          "th",
+          "tl",
+          "pt",
+          "fr",
+          "ar",
+          "it"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-more": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-more",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/dramabox/more",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "trending",
+          "must-sees",
+          "hidden-gems"
+        ],
+        "in": "query",
+        "name": "position",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "en",
+          "ko",
+          "zhHans",
+          "zh",
+          "es",
+          "ja",
+          "de",
+          "in",
+          "th",
+          "tl",
+          "pt",
+          "fr",
+          "ar",
+          "it"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-performer": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-performer",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/dramabox/performer",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "performer_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-rank": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-rank",
+    "method": "GET",
+    "path": "/dramabox/rank",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "rank_type",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-recommend": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-recommend",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/dramabox/recommend",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/dramabox/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "1",
+          "2",
+          "3"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-suggest": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-suggest",
+    "method": "GET",
+    "path": "/dramabox/suggest",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keyword",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-tag": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-tag",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/dramabox/tag",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tag_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-theater": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-theater",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/dramabox/theater",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "popular",
+          "new",
+          "rankings",
+          "categories",
+          "anime",
+          "live-action",
+          "vip",
+          "original"
+        ],
+        "in": "query",
+        "name": "channel",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "dramabox-trending": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "dramabox-trending",
+    "method": "GET",
+    "path": "/dramabox/trending",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
     "security": [
       "ApiKeyAuth"
     ]
@@ -69886,6 +70937,50 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "jumia-reviews": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jumia-reviews",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jumia/reviews",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ci",
+          "eg",
+          "ke",
+          "ma",
+          "ng",
+          "sn"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sku",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "jumia-search": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -69924,6 +71019,98 @@ export const operations = {
         "in": "query",
         "name": "page",
         "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jumia-sitemap-urls": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jumia-sitemap-urls",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/jumia/sitemap-urls",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ci",
+          "eg",
+          "ke",
+          "ma",
+          "ng",
+          "sn"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "sitemap",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "jumia-sitemaps": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [],
+    "formParams": [],
+    "id": "jumia-sitemaps",
+    "method": "GET",
+    "path": "/jumia/sitemaps",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "ci",
+          "eg",
+          "ke",
+          "ma",
+          "ng",
+          "sn"
+        ],
+        "in": "query",
+        "name": "country",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "products",
+          "brands",
+          "categories",
+          "mlps"
+        ],
+        "in": "query",
+        "name": "type",
+        "type": "string"
       }
     ],
     "security": [
@@ -72192,6 +73379,626 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-categories",
+    "method": "GET",
+    "path": "/kick/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-category-clips": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "kick-category-clips",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kick/category-clips",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-channel": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-channel",
+    "method": "GET",
+    "path": "/kick/channel",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-channel-chatroom": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-channel-chatroom",
+    "method": "GET",
+    "path": "/kick/channel-chatroom",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-channel-clips": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "kick-channel-clips",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kick/channel-clips",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-channel-emotes": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-channel-emotes",
+    "method": "GET",
+    "path": "/kick/channel-emotes",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-channel-links": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-channel-links",
+    "method": "GET",
+    "path": "/kick/channel-links",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-channel-streams": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-channel-streams",
+    "method": "GET",
+    "path": "/kick/channel-streams",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-channel-videos": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-channel-videos",
+    "method": "GET",
+    "path": "/kick/channel-videos",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-clip": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-clip",
+    "method": "GET",
+    "path": "/kick/clip",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-clips": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "kick-clips",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kick/clips",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "date",
+          "views"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "day",
+          "week",
+          "month",
+          "all"
+        ],
+        "in": "query",
+        "name": "time",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-drops": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-drops",
+    "method": "GET",
+    "path": "/kick/drops",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "active",
+          "expired",
+          "all"
+        ],
+        "in": "query",
+        "name": "status",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-gifts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-gifts",
+    "method": "GET",
+    "path": "/kick/gifts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-languages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-languages",
+    "method": "GET",
+    "path": "/kick/languages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-livestreams": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-livestreams",
+    "method": "GET",
+    "path": "/kick/livestreams",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "viewer_count_desc",
+          "featured"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "after",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-search-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-search-categories",
+    "method": "GET",
+    "path": "/kick/search-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-search-channels": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-search-channels",
+    "method": "GET",
+    "path": "/kick/search-channels",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "live",
+        "type": "boolean"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-subcategories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-subcategories",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/kick/subcategories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "games",
+          "irl",
+          "music",
+          "gambling",
+          "creative",
+          "alternative",
+          "chat-roulette"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-subcategory": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-subcategory",
+    "method": "GET",
+    "path": "/kick/subcategory",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "slug",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-top-channels": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-top-channels",
+    "method": "GET",
+    "path": "/kick/top-channels",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "kick-video": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "kick-video",
+    "method": "GET",
+    "path": "/kick/video",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -101700,6 +103507,268 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "pricecharting-big-movers": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "pricecharting-big-movers",
+    "method": "GET",
+    "path": "/pricecharting/big-movers",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "video-games",
+          "coins",
+          "comic-books",
+          "funko-pops",
+          "pokemon-cards",
+          "dragon-ball-cards",
+          "lorcana-cards",
+          "magic-cards",
+          "marvel-cards",
+          "one-piece-cards",
+          "star-wars-cards",
+          "yugioh-cards",
+          "garbage-pail-cards",
+          "other-tcg-cards",
+          "other-cards",
+          "lego-sets"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "dollar-increase",
+          "dollar-decrease",
+          "percent-increase",
+          "percent-decrease"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "japan",
+          "ntsc",
+          "pal"
+        ],
+        "in": "query",
+        "name": "region",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "pricecharting-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "pricecharting-categories",
+    "method": "GET",
+    "path": "/pricecharting/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "pricecharting-console": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "pricecharting-console",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/pricecharting/console",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "console",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "popularity",
+          "highest-price",
+          "lowest-price",
+          "name"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "pricecharting-price-history": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "pricecharting-price-history",
+    "method": "GET",
+    "path": "/pricecharting/price-history",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "console",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "pricecharting-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "pricecharting-product",
+    "method": "GET",
+    "path": "/pricecharting/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "console",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "slug",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "pricecharting-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "pricecharting-search",
+    "method": "GET",
+    "path": "/pricecharting/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "console_uid",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "exclude_variants",
+        "type": "boolean"
+      },
+      {
+        "enum": [
+          "popularity",
+          "highest-price",
+          "name"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "pristine-auction-categories": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -103098,6 +105167,66 @@ export const operations = {
         "name": "set_id",
         "required": true,
         "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "psa-price-guide-sets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "psa-price-guide-sets",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/psa/price-guide/sets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "baseball-card-values",
+          "basketball-card-values",
+          "boxing-card-values",
+          "football-card-values",
+          "golf-card-values",
+          "hockey-card-values",
+          "soccer-card-values",
+          "non-sports-tcg-card-values",
+          "racing-card-values",
+          "sports-ticket-values",
+          "tennis-card-values",
+          "unopened-pack-values",
+          "presidential-autograph-values",
+          "sports-autograph-values",
+          "game-used-bat-values",
+          "graded-baseball-values"
+        ],
+        "in": "query",
+        "name": "category_path",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "page_size",
+        "type": "integer"
       }
     ],
     "security": [
@@ -106147,6 +108276,486 @@ export const operations = {
         "in": "query",
         "name": "property_id",
         "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-fandom-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-fandom-categories",
+    "method": "GET",
+    "path": "/reelshort/fandom-categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-fandom-post": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-fandom-post",
+    "method": "GET",
+    "path": "/reelshort/fandom-post",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-fandom-posts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-fandom-posts",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/reelshort/fandom-posts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "search",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "general-topic",
+          "movie-cast-list",
+          "top-movie-stories",
+          "where-to-watch",
+          "where-to-watch-2"
+        ],
+        "in": "query",
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-home": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-home",
+    "method": "GET",
+    "path": "/reelshort/home",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "en",
+          "es",
+          "pt",
+          "fr",
+          "de",
+          "it",
+          "ja",
+          "ko",
+          "th",
+          "id",
+          "tr",
+          "ar",
+          "ru",
+          "pl",
+          "ro",
+          "cs",
+          "bg",
+          "vi",
+          "zh-TW"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-movie": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-movie",
+    "method": "GET",
+    "path": "/reelshort/movie",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-new-releases": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-new-releases",
+    "method": "GET",
+    "path": "/reelshort/new-releases",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "book_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "en",
+          "es",
+          "pt",
+          "fr",
+          "de",
+          "it",
+          "ja",
+          "ko",
+          "th",
+          "id",
+          "tr",
+          "ar",
+          "ru",
+          "pl",
+          "ro",
+          "cs",
+          "bg",
+          "vi",
+          "zh-TW"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/reelshort/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "keywords",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "en",
+          "es",
+          "pt",
+          "fr",
+          "de",
+          "it",
+          "ja",
+          "ko",
+          "th",
+          "id",
+          "tr",
+          "ar",
+          "ru",
+          "pl",
+          "ro",
+          "cs",
+          "bg",
+          "vi",
+          "zh-TW"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-shelf": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-shelf",
+    "method": "GET",
+    "path": "/reelshort/shelf",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-tag-books": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-tag-books",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/reelshort/tag-books",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "tag_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "en",
+          "es",
+          "pt",
+          "fr",
+          "de",
+          "it",
+          "ja",
+          "ko",
+          "th",
+          "id",
+          "tr",
+          "ar",
+          "ru",
+          "pl",
+          "ro",
+          "cs",
+          "bg",
+          "vi",
+          "zh-TW"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-tag-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-tag-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/reelshort/tag-search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "word",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "page",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "en",
+          "es",
+          "pt",
+          "fr",
+          "de",
+          "it",
+          "ja",
+          "ko",
+          "th",
+          "id",
+          "tr",
+          "ar",
+          "ru",
+          "pl",
+          "ro",
+          "cs",
+          "bg",
+          "vi",
+          "zh-TW"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "reelshort-tags": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "reelshort-tags",
+    "method": "GET",
+    "path": "/reelshort/tags",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "enum": [
+          "actor",
+          "actress",
+          "identity",
+          "trope"
+        ],
+        "in": "query",
+        "name": "category",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "enum": [
+          "en",
+          "es",
+          "pt",
+          "fr",
+          "de",
+          "it",
+          "ja",
+          "ko",
+          "th",
+          "id",
+          "tr",
+          "ar",
+          "ru",
+          "pl",
+          "ro",
+          "cs",
+          "bg",
+          "vi",
+          "zh-TW"
+        ],
+        "in": "query",
+        "name": "language",
         "type": "string"
       }
     ],
@@ -129051,6 +131660,411 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "tcgplayer-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-filters",
+    "method": "GET",
+    "path": "/tcgplayer/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "product_line",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tcgplayer-listings": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-listings",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tcgplayer/listings",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "near-mint",
+          "lightly-played",
+          "moderately-played",
+          "heavily-played",
+          "damaged"
+        ],
+        "in": "query",
+        "name": "condition",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "printing",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "price",
+          "price-with-shipping"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tcgplayer-price-guide": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-price-guide",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tcgplayer/price-guide",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "set_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tcgplayer-price-history": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-price-history",
+    "method": "GET",
+    "path": "/tcgplayer/price-history",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "month",
+          "quarter",
+          "semi-annual",
+          "annual"
+        ],
+        "in": "query",
+        "name": "range",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tcgplayer-product": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-product",
+    "method": "GET",
+    "path": "/tcgplayer/product",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tcgplayer-product-lines": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-product-lines",
+    "method": "GET",
+    "path": "/tcgplayer/product-lines",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tcgplayer-sales": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-sales",
+    "method": "GET",
+    "path": "/tcgplayer/sales",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "near-mint",
+          "lightly-played",
+          "moderately-played",
+          "heavily-played",
+          "damaged",
+          "unopened"
+        ],
+        "in": "query",
+        "name": "condition",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "variant",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "all",
+          "with-photos",
+          "without-photos"
+        ],
+        "in": "query",
+        "name": "listing_type",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tcgplayer-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/tcgplayer/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "product_line",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "set",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "product_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "rarity",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "card_type",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "number"
+      },
+      {
+        "enum": [
+          "market-price",
+          "lowest-price",
+          "lowest-price-with-shipping",
+          "median-price",
+          "listings",
+          "sales",
+          "product-name"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "in": "query",
+        "name": "order",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "tcgplayer-sets": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "tcgplayer-sets",
+    "method": "GET",
+    "path": "/tcgplayer/sets",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "product_line",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "techcrunch-article": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -129326,6 +132340,152 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "telegram-bot": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "telegram-bot",
+    "method": "GET",
+    "path": "/telegram/bot",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "username",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "telegram-channel": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "telegram-channel",
+    "method": "GET",
+    "path": "/telegram/channel",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "username",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "telegram-channel-posts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "telegram-channel-posts",
+    "method": "GET",
+    "path": "/telegram/channel-posts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "username",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "before",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "telegram-group": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "telegram-group",
+    "method": "GET",
+    "path": "/telegram/group",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "username",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "telegram-post": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "telegram-post",
+    "method": "GET",
+    "path": "/telegram/post",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "username",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -134185,6 +137345,23 @@ export const operations = {
     ],
     "queryParams": [
       {
+        "enum": [
+          "AE",
+          "BR",
+          "CA",
+          "DE",
+          "EG",
+          "FR",
+          "JP",
+          "KR",
+          "LB",
+          "MX",
+          "NG",
+          "SA",
+          "TR",
+          "US",
+          "ZA"
+        ],
         "in": "query",
         "name": "chart_region",
         "type": "string"
@@ -142030,6 +145207,257 @@ export const operations = {
       "ApiKeyAuth"
     ]
   },
+  "wallapop-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wallapop-categories",
+    "method": "GET",
+    "path": "/wallapop/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wallapop-filter-options": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "wallapop-filter-options",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/wallapop/filter-options",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "filter_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "brand",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "closest",
+          "most_relevance",
+          "newest",
+          "price_low_to_high",
+          "price_high_to_low"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "options_query",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wallapop-filters": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wallapop-filters",
+    "method": "GET",
+    "path": "/wallapop/filters",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wallapop-item-detail": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wallapop-item-detail",
+    "method": "GET",
+    "path": "/wallapop/item",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "url",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wallapop-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "cursorParams": [
+      "cursor"
+    ],
+    "formParams": [],
+    "id": "wallapop-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/wallapop/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "q",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "latitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "longitude",
+        "required": true,
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "category_id",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "closest",
+          "most_relevance",
+          "newest",
+          "price_low_to_high",
+          "price_high_to_low"
+        ],
+        "in": "query",
+        "name": "sort",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "min_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "max_price",
+        "type": "number"
+      },
+      {
+        "in": "query",
+        "name": "condition",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "true"
+        ],
+        "in": "query",
+        "name": "is_shippable",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "today",
+          "lastWeek",
+          "lastMonth"
+        ],
+        "in": "query",
+        "name": "time_filter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "distance_in_km",
+        "type": "integer"
+      },
+      {
+        "collectionFormat": "csv",
+        "in": "query",
+        "name": "filter",
+        "type": "array"
+      },
+      {
+        "in": "query",
+        "name": "cursor",
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
   "walmart-product": {
     "bodyParam": null,
     "bodyRequired": false,
@@ -142229,6 +145657,398 @@ export const operations = {
       "application/json"
     ],
     "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-categories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-categories",
+    "method": "GET",
+    "path": "/wattpad/categories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-languages": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-languages",
+    "method": "GET",
+    "path": "/wattpad/languages",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-part": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-part",
+    "method": "GET",
+    "path": "/wattpad/part",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "part_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-part-comments": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-part-comments",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/wattpad/part-comments",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "part_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-search": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-search",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/wattpad/search",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "type": "string"
+      },
+      {
+        "enum": [
+          "hot",
+          "new",
+          "featured"
+        ],
+        "in": "query",
+        "name": "filter",
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "category",
+        "type": "integer"
+      },
+      {
+        "enum": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "53"
+        ],
+        "in": "query",
+        "name": "language",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-search-users": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-search-users",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/wattpad/search-users",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-story": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-story",
+    "method": "GET",
+    "path": "/wattpad/story",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "story_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-story-parts": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-story-parts",
+    "method": "GET",
+    "path": "/wattpad/story-parts",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "story_id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-story-recommendations": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-story-recommendations",
+    "method": "GET",
+    "path": "/wattpad/story-recommendations",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "story_id",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-user": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-user",
+    "method": "GET",
+    "path": "/wattpad/user",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "username",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "security": [
+      "ApiKeyAuth"
+    ]
+  },
+  "wattpad-user-stories": {
+    "bodyParam": null,
+    "bodyRequired": false,
+    "consumes": [
+      "application/json"
+    ],
+    "formParams": [],
+    "id": "wattpad-user-stories",
+    "method": "GET",
+    "paginatable": true,
+    "path": "/wattpad/user-stories",
+    "pathParams": [],
+    "produces": [
+      "application/json"
+    ],
+    "queryParams": [
+      {
+        "in": "query",
+        "name": "username",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "in": "query",
+        "name": "limit",
+        "type": "integer"
+      },
+      {
+        "in": "query",
+        "name": "offset",
+        "type": "integer"
+      }
+    ],
     "security": [
       "ApiKeyAuth"
     ]
@@ -150003,9 +153823,14 @@ export const groups = {
     "aljazeeraTopic": "aljazeera-topic"
   },
   "aliExpress": {
+    "aliexpressCategories": "aliexpress-categories",
+    "aliexpressCategoryIds": "aliexpress-category-ids",
+    "aliexpressCategoryProducts": "aliexpress-category-products",
     "aliexpressReviews": "aliexpress-reviews",
     "aliexpressSearch": "aliexpress-search",
-    "aliexpressSearchFilters": "aliexpress-search-filters"
+    "aliexpressSearchFilters": "aliexpress-search-filters",
+    "aliexpressSuggest": "aliexpress-suggest",
+    "aliexpressTrendingSearches": "aliexpress-trending-searches"
   },
   "allbirds": {
     "collectionProducts": "allbirds-collection-products",
@@ -150750,6 +154575,10 @@ export const groups = {
     "airbnbMarketsItem": "datasets-airbnb-markets-item",
     "airbnbMarketsNearby": "datasets-airbnb-markets-nearby",
     "airbnbMarketsSearch": "datasets-airbnb-markets-search",
+    "appleMapsPlacesFacets": "datasets-apple-maps-places-facets",
+    "appleMapsPlacesItem": "datasets-apple-maps-places-item",
+    "appleMapsPlacesNearby": "datasets-apple-maps-places-nearby",
+    "appleMapsPlacesSearch": "datasets-apple-maps-places-search",
     "applePodcastsShowsFacets": "datasets-apple-podcasts-shows-facets",
     "applePodcastsShowsItem": "datasets-apple-podcasts-shows-item",
     "applePodcastsShowsSearch": "datasets-apple-podcasts-shows-search",
@@ -150989,6 +154818,24 @@ export const groups = {
     "draftkingsQuickLinks": "draftkings-quick-links",
     "draftkingsTeam": "draftkings-team",
     "draftkingsTeams": "draftkings-teams"
+  },
+  "dramaBox": {
+    "dramaboxBrowse": "dramabox-browse",
+    "dramaboxCategories": "dramabox-categories",
+    "dramaboxCategoryBooks": "dramabox-category-books",
+    "dramaboxChannels": "dramabox-channels",
+    "dramaboxDrama": "dramabox-drama",
+    "dramaboxGenres": "dramabox-genres",
+    "dramaboxHome": "dramabox-home",
+    "dramaboxMore": "dramabox-more",
+    "dramaboxPerformer": "dramabox-performer",
+    "dramaboxRank": "dramabox-rank",
+    "dramaboxRecommend": "dramabox-recommend",
+    "dramaboxSearch": "dramabox-search",
+    "dramaboxSuggest": "dramabox-suggest",
+    "dramaboxTag": "dramabox-tag",
+    "dramaboxTheater": "dramabox-theater",
+    "dramaboxTrending": "dramabox-trending"
   },
   "duckDuckGoSearch": {
     "duckduckgoImage": "duckduckgo-image",
@@ -152043,7 +155890,10 @@ export const groups = {
     "category": "jumia-category",
     "countries": "jumia-countries",
     "product": "jumia-product",
-    "search": "jumia-search"
+    "reviews": "jumia-reviews",
+    "search": "jumia-search",
+    "sitemapUrls": "jumia-sitemap-urls",
+    "sitemaps": "jumia-sitemaps"
   },
   "justEat": {
     "justeatRestaurant": "justeat-restaurant",
@@ -152112,6 +155962,29 @@ export const groups = {
     "khaleejtimesHeadlines": "khaleejtimes-headlines",
     "khaleejtimesNews": "khaleejtimes-news",
     "khaleejtimesSections": "khaleejtimes-sections"
+  },
+  "kick": {
+    "categories": "kick-categories",
+    "categoryClips": "kick-category-clips",
+    "channel": "kick-channel",
+    "channelChatroom": "kick-channel-chatroom",
+    "channelClips": "kick-channel-clips",
+    "channelEmotes": "kick-channel-emotes",
+    "channelLinks": "kick-channel-links",
+    "channelStreams": "kick-channel-streams",
+    "channelVideos": "kick-channel-videos",
+    "clip": "kick-clip",
+    "clips": "kick-clips",
+    "drops": "kick-drops",
+    "gifts": "kick-gifts",
+    "languages": "kick-languages",
+    "livestreams": "kick-livestreams",
+    "searchCategories": "kick-search-categories",
+    "searchChannels": "kick-search-channels",
+    "subcategories": "kick-subcategories",
+    "subcategory": "kick-subcategory",
+    "topChannels": "kick-top-channels",
+    "video": "kick-video"
   },
   "kickstarter": {
     "comments": "kickstarter-comments",
@@ -152979,6 +156852,14 @@ export const groups = {
     "stores": "prada-stores",
     "suggest": "prada-suggest"
   },
+  "priceCharting": {
+    "pricechartingBigMovers": "pricecharting-big-movers",
+    "pricechartingCategories": "pricecharting-categories",
+    "pricechartingConsole": "pricecharting-console",
+    "pricechartingPriceHistory": "pricecharting-price-history",
+    "pricechartingProduct": "pricecharting-product",
+    "pricechartingSearch": "pricecharting-search"
+  },
   "pristineAuction": {
     "categories": "pristine-auction-categories",
     "lotDetail": "pristine-auction-lot-detail",
@@ -153031,6 +156912,7 @@ export const groups = {
     "priceGuideCategories": "psa-price-guide-categories",
     "priceGuideSearch": "psa-price-guide-search",
     "priceGuideSet": "psa-price-guide-set",
+    "priceGuideSets": "psa-price-guide-sets",
     "probatfactsCategories": "psa-probatfacts-categories",
     "probatfactsGallery": "psa-probatfacts-gallery",
     "probatfactsSubject": "psa-probatfacts-subject",
@@ -153137,6 +157019,19 @@ export const groups = {
     "regionTrends": "redfin-region-trends",
     "search": "redfin-search",
     "similar": "redfin-similar"
+  },
+  "reelShort": {
+    "reelshortFandomCategories": "reelshort-fandom-categories",
+    "reelshortFandomPost": "reelshort-fandom-post",
+    "reelshortFandomPosts": "reelshort-fandom-posts",
+    "reelshortHome": "reelshort-home",
+    "reelshortMovie": "reelshort-movie",
+    "reelshortNewReleases": "reelshort-new-releases",
+    "reelshortSearch": "reelshort-search",
+    "reelshortShelf": "reelshort-shelf",
+    "reelshortTagBooks": "reelshort-tag-books",
+    "reelshortTagSearch": "reelshort-tag-search",
+    "reelshortTags": "reelshort-tags"
   },
   "referrals": {
     "click": "referrals-click",
@@ -153898,6 +157793,17 @@ export const groups = {
     "search": "target-search",
     "stores": "target-stores"
   },
+  "tcgplayer": {
+    "filters": "tcgplayer-filters",
+    "listings": "tcgplayer-listings",
+    "priceGuide": "tcgplayer-price-guide",
+    "priceHistory": "tcgplayer-price-history",
+    "product": "tcgplayer-product",
+    "productLines": "tcgplayer-product-lines",
+    "sales": "tcgplayer-sales",
+    "search": "tcgplayer-search",
+    "sets": "tcgplayer-sets"
+  },
   "techCrunch": {
     "techcrunchArticle": "techcrunch-article",
     "techcrunchAuthor": "techcrunch-author",
@@ -153911,6 +157817,13 @@ export const groups = {
     "techradarHeadlines": "techradar-headlines",
     "techradarNews": "techradar-news",
     "techradarSections": "techradar-sections"
+  },
+  "telegram": {
+    "bot": "telegram-bot",
+    "channel": "telegram-channel",
+    "channelPosts": "telegram-channel-posts",
+    "group": "telegram-group",
+    "post": "telegram-post"
   },
   "tes": {
     "jobDetail": "tes-job-detail",
@@ -154509,6 +158422,13 @@ export const groups = {
     "wsjArticle": "wsj-article",
     "wsjAuthor": "wsj-author"
   },
+  "wallapop": {
+    "categories": "wallapop-categories",
+    "filterOptions": "wallapop-filter-options",
+    "filters": "wallapop-filters",
+    "itemDetail": "wallapop-item-detail",
+    "search": "wallapop-search"
+  },
   "walmart": {
     "product": "walmart-product",
     "productReviews": "walmart-product-reviews",
@@ -154520,6 +158440,19 @@ export const groups = {
     "wapoHeadlines": "wapo-headlines",
     "wapoNews": "wapo-news",
     "wapoSections": "wapo-sections"
+  },
+  "wattpad": {
+    "categories": "wattpad-categories",
+    "languages": "wattpad-languages",
+    "part": "wattpad-part",
+    "partComments": "wattpad-part-comments",
+    "search": "wattpad-search",
+    "searchUsers": "wattpad-search-users",
+    "story": "wattpad-story",
+    "storyParts": "wattpad-story-parts",
+    "storyRecommendations": "wattpad-story-recommendations",
+    "user": "wattpad-user",
+    "userStories": "wattpad-user-stories"
   },
   "wayfair": {
     "categories": "wayfair-categories",
@@ -154820,7 +158753,7 @@ export const groups = {
   }
 };
 
-export const operationCount = 3915;
+export const operationCount = 4012;
 
 // PascalCase aliases for every operation id, for discoverable, typo-safe
 // dynamic calls: client.request(OperationIds.BingSearch, { q: "coffee" }).
@@ -154876,9 +158809,14 @@ export const OperationIds = Object.freeze({
   "AlJazeeraAljazeeraCategories": "aljazeera-categories",
   "AlJazeeraAljazeeraHeadlines": "aljazeera-headlines",
   "AlJazeeraAljazeeraTopic": "aljazeera-topic",
+  "AliExpressAliexpressCategories": "aliexpress-categories",
+  "AliExpressAliexpressCategoryIds": "aliexpress-category-ids",
+  "AliExpressAliexpressCategoryProducts": "aliexpress-category-products",
   "AliExpressAliexpressReviews": "aliexpress-reviews",
   "AliExpressAliexpressSearch": "aliexpress-search",
   "AliExpressAliexpressSearchFilters": "aliexpress-search-filters",
+  "AliExpressAliexpressSuggest": "aliexpress-suggest",
+  "AliExpressAliexpressTrendingSearches": "aliexpress-trending-searches",
   "AllbirdsCollectionProducts": "allbirds-collection-products",
   "AllbirdsCollections": "allbirds-collections",
   "AllbirdsPage": "allbirds-page",
@@ -155451,6 +159389,10 @@ export const OperationIds = Object.freeze({
   "DatasetsAirbnbMarketsItem": "datasets-airbnb-markets-item",
   "DatasetsAirbnbMarketsNearby": "datasets-airbnb-markets-nearby",
   "DatasetsAirbnbMarketsSearch": "datasets-airbnb-markets-search",
+  "DatasetsAppleMapsPlacesFacets": "datasets-apple-maps-places-facets",
+  "DatasetsAppleMapsPlacesItem": "datasets-apple-maps-places-item",
+  "DatasetsAppleMapsPlacesNearby": "datasets-apple-maps-places-nearby",
+  "DatasetsAppleMapsPlacesSearch": "datasets-apple-maps-places-search",
   "DatasetsApplePodcastsShowsFacets": "datasets-apple-podcasts-shows-facets",
   "DatasetsApplePodcastsShowsItem": "datasets-apple-podcasts-shows-item",
   "DatasetsApplePodcastsShowsSearch": "datasets-apple-podcasts-shows-search",
@@ -155664,6 +159606,22 @@ export const OperationIds = Object.freeze({
   "DraftKingsSportsbookDraftkingsQuickLinks": "draftkings-quick-links",
   "DraftKingsSportsbookDraftkingsTeam": "draftkings-team",
   "DraftKingsSportsbookDraftkingsTeams": "draftkings-teams",
+  "DramaBoxDramaboxBrowse": "dramabox-browse",
+  "DramaBoxDramaboxCategories": "dramabox-categories",
+  "DramaBoxDramaboxCategoryBooks": "dramabox-category-books",
+  "DramaBoxDramaboxChannels": "dramabox-channels",
+  "DramaBoxDramaboxDrama": "dramabox-drama",
+  "DramaBoxDramaboxGenres": "dramabox-genres",
+  "DramaBoxDramaboxHome": "dramabox-home",
+  "DramaBoxDramaboxMore": "dramabox-more",
+  "DramaBoxDramaboxPerformer": "dramabox-performer",
+  "DramaBoxDramaboxRank": "dramabox-rank",
+  "DramaBoxDramaboxRecommend": "dramabox-recommend",
+  "DramaBoxDramaboxSearch": "dramabox-search",
+  "DramaBoxDramaboxSuggest": "dramabox-suggest",
+  "DramaBoxDramaboxTag": "dramabox-tag",
+  "DramaBoxDramaboxTheater": "dramabox-theater",
+  "DramaBoxDramaboxTrending": "dramabox-trending",
   "DuckDuckGoSearchDuckduckgoImage": "duckduckgo-image",
   "DuckDuckGoSearchDuckduckgoNews": "duckduckgo-news",
   "DuckDuckGoSearchDuckduckgoSearch": "duckduckgo-search",
@@ -156526,7 +160484,10 @@ export const OperationIds = Object.freeze({
   "JumiaCategory": "jumia-category",
   "JumiaCountries": "jumia-countries",
   "JumiaProduct": "jumia-product",
+  "JumiaReviews": "jumia-reviews",
   "JumiaSearch": "jumia-search",
+  "JumiaSitemapUrls": "jumia-sitemap-urls",
+  "JumiaSitemaps": "jumia-sitemaps",
   "JustEatJusteatRestaurant": "justeat-restaurant",
   "JustEatJusteatRestaurantMenu": "justeat-restaurant-menu",
   "JustEatJusteatSearch": "justeat-search",
@@ -156585,6 +160546,27 @@ export const OperationIds = Object.freeze({
   "KhaleejTimesKhaleejtimesHeadlines": "khaleejtimes-headlines",
   "KhaleejTimesKhaleejtimesNews": "khaleejtimes-news",
   "KhaleejTimesKhaleejtimesSections": "khaleejtimes-sections",
+  "KickCategories": "kick-categories",
+  "KickCategoryClips": "kick-category-clips",
+  "KickChannel": "kick-channel",
+  "KickChannelChatroom": "kick-channel-chatroom",
+  "KickChannelClips": "kick-channel-clips",
+  "KickChannelEmotes": "kick-channel-emotes",
+  "KickChannelLinks": "kick-channel-links",
+  "KickChannelStreams": "kick-channel-streams",
+  "KickChannelVideos": "kick-channel-videos",
+  "KickClip": "kick-clip",
+  "KickClips": "kick-clips",
+  "KickDrops": "kick-drops",
+  "KickGifts": "kick-gifts",
+  "KickLanguages": "kick-languages",
+  "KickLivestreams": "kick-livestreams",
+  "KickSearchCategories": "kick-search-categories",
+  "KickSearchChannels": "kick-search-channels",
+  "KickSubcategories": "kick-subcategories",
+  "KickSubcategory": "kick-subcategory",
+  "KickTopChannels": "kick-top-channels",
+  "KickVideo": "kick-video",
   "KickstarterComments": "kickstarter-comments",
   "KickstarterDiscover": "kickstarter-discover",
   "KickstarterProject": "kickstarter-project",
@@ -157269,6 +161251,12 @@ export const OperationIds = Object.freeze({
   "PradaSearch": "prada-search",
   "PradaStores": "prada-stores",
   "PradaSuggest": "prada-suggest",
+  "PriceChartingPricechartingBigMovers": "pricecharting-big-movers",
+  "PriceChartingPricechartingCategories": "pricecharting-categories",
+  "PriceChartingPricechartingConsole": "pricecharting-console",
+  "PriceChartingPricechartingPriceHistory": "pricecharting-price-history",
+  "PriceChartingPricechartingProduct": "pricecharting-product",
+  "PriceChartingPricechartingSearch": "pricecharting-search",
   "PristineAuctionCategories": "pristine-auction-categories",
   "PristineAuctionLotDetail": "pristine-auction-lot-detail",
   "PristineAuctionSearch": "pristine-auction-search",
@@ -157312,6 +161300,7 @@ export const OperationIds = Object.freeze({
   "PsaPriceGuideCategories": "psa-price-guide-categories",
   "PsaPriceGuideSearch": "psa-price-guide-search",
   "PsaPriceGuideSet": "psa-price-guide-set",
+  "PsaPriceGuideSets": "psa-price-guide-sets",
   "PsaProbatfactsCategories": "psa-probatfacts-categories",
   "PsaProbatfactsGallery": "psa-probatfacts-gallery",
   "PsaProbatfactsSubject": "psa-probatfacts-subject",
@@ -157398,6 +161387,17 @@ export const OperationIds = Object.freeze({
   "RedfinRegionTrends": "redfin-region-trends",
   "RedfinSearch": "redfin-search",
   "RedfinSimilar": "redfin-similar",
+  "ReelShortReelshortFandomCategories": "reelshort-fandom-categories",
+  "ReelShortReelshortFandomPost": "reelshort-fandom-post",
+  "ReelShortReelshortFandomPosts": "reelshort-fandom-posts",
+  "ReelShortReelshortHome": "reelshort-home",
+  "ReelShortReelshortMovie": "reelshort-movie",
+  "ReelShortReelshortNewReleases": "reelshort-new-releases",
+  "ReelShortReelshortSearch": "reelshort-search",
+  "ReelShortReelshortShelf": "reelshort-shelf",
+  "ReelShortReelshortTagBooks": "reelshort-tag-books",
+  "ReelShortReelshortTagSearch": "reelshort-tag-search",
+  "ReelShortReelshortTags": "reelshort-tags",
   "ReferralsClick": "referrals-click",
   "ReferralsMe": "referrals-me",
   "ReferralsMeEvents": "referrals-me-events",
@@ -158034,6 +162034,15 @@ export const OperationIds = Object.freeze({
   "TargetReviews": "target-reviews",
   "TargetSearch": "target-search",
   "TargetStores": "target-stores",
+  "TcgplayerFilters": "tcgplayer-filters",
+  "TcgplayerListings": "tcgplayer-listings",
+  "TcgplayerPriceGuide": "tcgplayer-price-guide",
+  "TcgplayerPriceHistory": "tcgplayer-price-history",
+  "TcgplayerProduct": "tcgplayer-product",
+  "TcgplayerProductLines": "tcgplayer-product-lines",
+  "TcgplayerSales": "tcgplayer-sales",
+  "TcgplayerSearch": "tcgplayer-search",
+  "TcgplayerSets": "tcgplayer-sets",
   "TechCrunchTechcrunchArticle": "techcrunch-article",
   "TechCrunchTechcrunchAuthor": "techcrunch-author",
   "TechCrunchTechcrunchHeadlines": "techcrunch-headlines",
@@ -158044,6 +162053,11 @@ export const OperationIds = Object.freeze({
   "TechRadarTechradarHeadlines": "techradar-headlines",
   "TechRadarTechradarNews": "techradar-news",
   "TechRadarTechradarSections": "techradar-sections",
+  "TelegramBot": "telegram-bot",
+  "TelegramChannel": "telegram-channel",
+  "TelegramChannelPosts": "telegram-channel-posts",
+  "TelegramGroup": "telegram-group",
+  "TelegramPost": "telegram-post",
   "TesJobDetail": "tes-job-detail",
   "TesJobEmployer": "tes-job-employer",
   "TesJobSearch": "tes-job-search",
@@ -158505,6 +162519,11 @@ export const OperationIds = Object.freeze({
   "WalgreensStores": "walgreens-stores",
   "WallStreetJournalWsjArticle": "wsj-article",
   "WallStreetJournalWsjAuthor": "wsj-author",
+  "WallapopCategories": "wallapop-categories",
+  "WallapopFilterOptions": "wallapop-filter-options",
+  "WallapopFilters": "wallapop-filters",
+  "WallapopItemDetail": "wallapop-item-detail",
+  "WallapopSearch": "wallapop-search",
   "WalmartProduct": "walmart-product",
   "WalmartProductReviews": "walmart-product-reviews",
   "WalmartSearch": "walmart-search",
@@ -158513,6 +162532,17 @@ export const OperationIds = Object.freeze({
   "WashingtonPostWapoHeadlines": "wapo-headlines",
   "WashingtonPostWapoNews": "wapo-news",
   "WashingtonPostWapoSections": "wapo-sections",
+  "WattpadCategories": "wattpad-categories",
+  "WattpadLanguages": "wattpad-languages",
+  "WattpadPart": "wattpad-part",
+  "WattpadPartComments": "wattpad-part-comments",
+  "WattpadSearch": "wattpad-search",
+  "WattpadSearchUsers": "wattpad-search-users",
+  "WattpadStory": "wattpad-story",
+  "WattpadStoryParts": "wattpad-story-parts",
+  "WattpadStoryRecommendations": "wattpad-story-recommendations",
+  "WattpadUser": "wattpad-user",
+  "WattpadUserStories": "wattpad-user-stories",
   "WayfairCategories": "wayfair-categories",
   "WayfairCategory": "wayfair-category",
   "WayfairProduct": "wayfair-product",
