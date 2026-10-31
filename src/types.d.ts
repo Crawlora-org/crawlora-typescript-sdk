@@ -6924,6 +6924,808 @@ export interface ModelBlueskyTrendingTopicsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelBo3Achievement {
+  "date"?: string;
+  "title"?: string;
+  "tournament_id"?: number;
+  "tournament_name"?: string;
+  "tournament_slug"?: string;
+}
+
+export interface ModelBo3EarningPlayer {
+  "id"?: number;
+  "is_coach"?: boolean;
+  "nickname"?: string;
+  "six_month_avg_rating"?: number;
+  "slug"?: string;
+  "total_prize_usd"?: number;
+}
+
+export interface ModelBo3EconomyBaselineResponse {
+  "cells"?: Array<ModelBo3EconomyCell>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelBo3EconomyCell {
+  "enemy_level"?: "-1" | "0" | "1" | "2";
+  "rounds"?: number;
+  "team_level"?: "-1" | "0" | "1" | "2";
+  "win_rate"?: number;
+  "wins"?: number;
+}
+
+export interface ModelBo3FeedCategory {
+  "id"?: number;
+  "title"?: string;
+}
+
+export interface ModelBo3ForumCategoriesResponse {
+  "categories"?: Array<ModelBo3ForumCategory>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelBo3ForumCategory {
+  "id"?: number;
+  "slug"?: string;
+  "title"?: string;
+}
+
+export interface ModelBo3ForumFeedResponse {
+  "category"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "offset"?: number;
+  "sort"?: "activity" | "newest" | "comments" | "rating";
+  "source_url"?: string;
+  "threads"?: Array<ModelBo3ForumThread>;
+  "total"?: number;
+}
+
+export interface ModelBo3ForumThread {
+  "author"?: ModelBo3PersonRef;
+  "category"?: string;
+  "category_id"?: number;
+  "comments"?: number;
+  "created_at"?: string;
+  "id"?: number;
+  "last_activity_at"?: string;
+  "pinned"?: boolean;
+  "rating"?: number;
+  "slug"?: string;
+  "title"?: string;
+}
+
+export interface ModelBo3GameRow {
+  "begin_at"?: string;
+  "duration_seconds"?: number;
+  "id"?: number;
+  "loser_name"?: string;
+  "loser_score"?: number;
+  "map"?: string;
+  "number"?: number;
+  "rounds"?: Array<ModelBo3RoundRow>;
+  "rounds_count"?: number;
+  "side_results"?: Array<ModelBo3SideResult>;
+  "state"?: string;
+  "status"?: string;
+  "winner_name"?: string;
+  "winner_score"?: number;
+}
+
+export interface ModelBo3Insight {
+  "facts"?: Array<string>;
+  "team"?: string;
+}
+
+export interface ModelBo3LeaderboardResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "from"?: string;
+  "limit"?: number;
+  "min_games_count"?: number;
+  "next_offset"?: number;
+  "offset"?: number;
+  "order"?: "desc" | "asc";
+  "players"?: Array<ModelBo3TopPlayer>;
+  "sort"?: "rating" | "kd" | "kills" | "damage" | "assists" | "headshots" | "games" | "rounds";
+  "source_url"?: string;
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+  "to"?: string;
+}
+
+export interface ModelBo3Links {
+  "facebook"?: string;
+  "instagram"?: string;
+  "twitch"?: string;
+  "twitter"?: string;
+  "website"?: string;
+  "youtube"?: string;
+}
+
+export interface ModelBo3Mvprow {
+  "article_url"?: string;
+  "game"?: string;
+  "id"?: number;
+  "player"?: ModelBo3PersonRef;
+  "team"?: ModelBo3TransferTeam;
+  "tournament"?: ModelBo3TournamentRef;
+  "type"?: string;
+}
+
+export interface ModelBo3MapRow {
+  "begin_at"?: string;
+  "loser_score"?: number;
+  "map"?: string;
+  "number"?: number;
+  "status"?: "upcoming" | "current" | "finished";
+  "winner_score"?: number;
+  "winner_team_id"?: number;
+  "winner_team_name"?: string;
+}
+
+export interface ModelBo3MatchGamesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "games"?: Array<ModelBo3GameRow>;
+  "match_id"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelBo3MatchHistoryResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "matches"?: Array<ModelBo3MatchSummary>;
+  "offset"?: number;
+  "source_url"?: string;
+  "status"?: string;
+  "total"?: number;
+}
+
+export interface ModelBo3MatchInfo {
+  "best_of"?: number;
+  "end_time"?: string;
+  "event_type"?: "lan" | "online";
+  "fetched_at"?: string;
+  "game"?: string;
+  "id"?: number;
+  "insights"?: Array<ModelBo3Insight>;
+  "live_coverage"?: boolean;
+  "maps"?: Array<ModelBo3MapRow>;
+  "prediction"?: ModelBo3Prediction;
+  "round"?: string;
+  "slug"?: string;
+  "source_url"?: string;
+  "stage"?: string;
+  "stars"?: number;
+  "start_time"?: string;
+  "status"?: "upcoming" | "current" | "finished" | "defwin";
+  "streams"?: Array<ModelBo3Stream>;
+  "teams"?: Array<ModelBo3Team>;
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+  "tournament"?: ModelBo3TournamentRef;
+  "url"?: string;
+}
+
+export interface ModelBo3MatchPlayerStats {
+  "multikills"?: Record<string, number>;
+  "nickname"?: string;
+  "opponent"?: string;
+  "player_id"?: number;
+  "stats"?: Record<string, number>;
+  "team"?: string;
+  "win"?: boolean;
+}
+
+export interface ModelBo3MatchPlayersResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "players"?: Array<ModelBo3MatchPlayerStats>;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelBo3MatchSummary {
+  "best_of"?: number;
+  "end_time"?: string;
+  "game"?: string;
+  "id"?: number;
+  "live_coverage"?: boolean;
+  "maps"?: Array<ModelBo3MapRow>;
+  "prediction"?: ModelBo3Prediction;
+  "slug"?: string;
+  "stars"?: number;
+  "start_time"?: string;
+  "status"?: "upcoming" | "current" | "finished" | "defwin";
+  "teams"?: Array<ModelBo3Team>;
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+  "tournament"?: ModelBo3TournamentRef;
+  "url"?: string;
+}
+
+export interface ModelBo3NewsCategoriesResponse {
+  "categories"?: Array<ModelBo3FeedCategory>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelBo3NewsFeedResponse {
+  "category"?: number;
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "has_more"?: boolean;
+  "items"?: Array<ModelBo3NewsItem>;
+  "limit"?: number;
+  "offset"?: number;
+  "section"?: "news" | "article" | "wiki" | "predictions";
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelBo3NewsItem {
+  "author"?: ModelBo3PersonRef;
+  "category"?: string;
+  "category_id"?: number;
+  "description"?: string;
+  "game"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "likes"?: number;
+  "pinned"?: boolean;
+  "published_at"?: string;
+  "slug"?: string;
+  "tags"?: Array<ModelBo3TagRef>;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelBo3PersonRef {
+  "id"?: number;
+  "nickname"?: string;
+  "slug"?: string;
+}
+
+export interface ModelBo3PlayerInfo {
+  "achievement_count"?: number;
+  "achievements"?: Array<ModelBo3Achievement>;
+  "alternative_names"?: Array<string>;
+  "birthday"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "fetched_at"?: string;
+  "first_name"?: string;
+  "game"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "is_coach"?: boolean;
+  "joined_team_at"?: string;
+  "last_name"?: string;
+  "links"?: ModelBo3Links;
+  "nickname"?: string;
+  "role"?: string;
+  "six_month_avg_rating"?: number;
+  "slug"?: string;
+  "source_url"?: string;
+  "team"?: ModelBo3TeamRef;
+  "total_prize_usd"?: number;
+}
+
+export interface ModelBo3Prediction {
+  "team1_score"?: number;
+  "team2_score"?: number;
+  "winner_team_id"?: number;
+}
+
+export interface ModelBo3Prize {
+  "place"?: string;
+  "points"?: number;
+  "prize_usd"?: number;
+  "team_id"?: number;
+}
+
+export interface ModelBo3RankedPlayer {
+  "country_code"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "nickname"?: string;
+  "rating"?: number;
+  "slug"?: string;
+}
+
+export interface ModelBo3RankingRow {
+  "country"?: string;
+  "country_code"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "points"?: number;
+  "rank"?: number;
+  "rank_change"?: number;
+  "region"?: string;
+  "roster"?: Array<ModelBo3RankedPlayer>;
+  "slug"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelBo3RecentLine {
+  "accuracy"?: number;
+  "assists"?: number;
+  "avg_kill_cost"?: number;
+  "damage"?: number;
+  "deaths"?: number;
+  "equipment_value"?: number;
+  "first_deaths"?: number;
+  "first_kills"?: number;
+  "headshot_ratio"?: number;
+  "headshots"?: number;
+  "hits"?: number;
+  "kills"?: number;
+  "money_saved"?: number;
+  "multikills"?: number;
+  "nickname"?: string;
+  "player_slug"?: string;
+  "rating"?: number;
+  "shots"?: number;
+  "team_slug"?: string;
+  "trade_deaths"?: number;
+  "trade_kills"?: number;
+}
+
+export interface ModelBo3RecentMap {
+  "game_id"?: number;
+  "game_number"?: number;
+  "map"?: string;
+  "won"?: boolean;
+}
+
+export interface ModelBo3RecentMatch {
+  "lines"?: Array<ModelBo3RecentLine>;
+  "maps"?: Array<ModelBo3RecentMap>;
+  "match_slug"?: string;
+  "opponent"?: ModelBo3TeamRef;
+  "rounds"?: number;
+  "started_at"?: string;
+  "tournament_slug"?: string;
+}
+
+export interface ModelBo3RecentMatchesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "matches"?: Array<ModelBo3RecentMatch>;
+  "opponent"?: string;
+  "slug"?: string;
+  "source_url"?: string;
+  "subject"?: "team" | "player";
+  "tournament"?: string;
+}
+
+export interface ModelBo3RecordRow {
+  "average"?: number;
+  "begin_at"?: string;
+  "country_code"?: string;
+  "detail"?: string;
+  "map"?: string;
+  "match_slug"?: string;
+  "opponents"?: Array<string>;
+  "player"?: ModelBo3PersonRef;
+  "round_number"?: number;
+  "series"?: string;
+  "side"?: "CT" | "T";
+  "team_name"?: string;
+  "type"?: string;
+  "unit"?: string;
+  "value"?: number;
+}
+
+export interface ModelBo3RecordsFeedResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "from"?: string;
+  "has_more"?: boolean;
+  "items"?: Array<ModelBo3RecordRow>;
+  "limit"?: number;
+  "offset"?: number;
+  "source_url"?: string;
+  "to"?: string;
+  "total"?: number;
+  "types"?: Array<string>;
+}
+
+export interface ModelBo3RoundRow {
+  "duration_seconds"?: number;
+  "end_reason"?: string;
+  "loser_score"?: number;
+  "number"?: number;
+  "winner_name"?: string;
+  "winner_score"?: number;
+  "winner_side"?: string;
+}
+
+export interface ModelBo3SideResult {
+  "loser_name"?: string;
+  "loser_score"?: number;
+  "loser_side"?: string;
+  "order"?: number;
+  "overtime"?: boolean;
+  "winner_name"?: string;
+  "winner_score"?: number;
+  "winner_side"?: string;
+}
+
+export interface ModelBo3SquadPlayer {
+  "first_name"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "is_coach"?: boolean;
+  "is_standin"?: boolean;
+  "last_name"?: string;
+  "nickname"?: string;
+  "slug"?: string;
+}
+
+export interface ModelBo3StageRow {
+  "end_date"?: string;
+  "format_type"?: string;
+  "hold"?: boolean;
+  "id"?: number;
+  "promotion_team_count"?: number;
+  "sequence"?: number;
+  "start_date"?: string;
+  "title"?: string;
+}
+
+export interface ModelBo3StatsResponse {
+  "fetched_at"?: string;
+  "from"?: string;
+  "id"?: number;
+  "kind"?: string;
+  "name"?: string;
+  "rows"?: Array<Record<string, unknown>>;
+  "slug"?: string;
+  "source_url"?: string;
+  "stats"?: Record<string, number>;
+  "subject"?: "team" | "player";
+  "to"?: string;
+}
+
+export interface ModelBo3Stream {
+  "language"?: string;
+  "name"?: string;
+  "official"?: boolean;
+  "platform"?: "twitch" | "youtube" | "kick" | "other";
+  "url"?: string;
+  "viewer_count"?: number;
+}
+
+export interface ModelBo3TagRef {
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelBo3Team {
+  "country"?: string;
+  "country_code"?: string;
+  "id"?: number;
+  "logo_url"?: string;
+  "name"?: string;
+  "rank"?: number;
+  "score"?: number;
+  "slug"?: string;
+  "winner"?: boolean;
+}
+
+export interface ModelBo3TeamEarningsRow {
+  "country"?: string;
+  "country_code"?: string;
+  "earnings_usd"?: number;
+  "logo_url"?: string;
+  "name"?: string;
+  "players"?: Array<ModelBo3EarningPlayer>;
+  "position"?: number;
+  "region"?: string;
+  "slug"?: string;
+  "team_id"?: number;
+  "tournament_wins"?: number;
+}
+
+export interface ModelBo3TeamInfo {
+  "achievement_count"?: number;
+  "achievements"?: Array<ModelBo3Achievement>;
+  "acronym"?: string;
+  "alternative_names"?: Array<string>;
+  "country"?: string;
+  "country_code"?: string;
+  "established_date"?: string;
+  "fetched_at"?: string;
+  "game"?: string;
+  "id"?: number;
+  "links"?: ModelBo3Links;
+  "logo_url"?: string;
+  "name"?: string;
+  "rank"?: number;
+  "rank_change"?: number;
+  "region"?: string;
+  "roster"?: Array<ModelBo3TeamMember>;
+  "six_month_earnings_usd"?: number;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelBo3TeamMember {
+  "birthday"?: string;
+  "first_name"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "last_name"?: string;
+  "nickname"?: string;
+  "six_month_avg_rating"?: number;
+  "slug"?: string;
+}
+
+export interface ModelBo3TeamPrizeMoneyResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "from"?: string;
+  "game"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "offset"?: number;
+  "source_url"?: string;
+  "teams"?: Array<ModelBo3TeamEarningsRow>;
+  "to"?: string;
+  "total"?: number;
+}
+
+export interface ModelBo3TeamRankingDatesResponse {
+  "count"?: number;
+  "dates"?: Array<string>;
+  "fetched_at"?: string;
+  "game"?: string;
+  "regions"?: Array<string>;
+  "source_url"?: string;
+}
+
+export interface ModelBo3TeamRankingsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "official"?: boolean;
+  "page"?: number;
+  "per_page"?: number;
+  "ranking_date"?: string;
+  "region"?: string;
+  "source"?: "internal" | "valve_official";
+  "source_url"?: string;
+  "teams"?: Array<ModelBo3RankingRow>;
+  "total_pages"?: number;
+  "total_teams"?: number;
+}
+
+export interface ModelBo3TeamRef {
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelBo3TopPlayer {
+  "country_code"?: string;
+  "games"?: number;
+  "image_url"?: string;
+  "nickname"?: string;
+  "player_id"?: number;
+  "position"?: number;
+  "rounds"?: number;
+  "slug"?: string;
+  "stats"?: Record<string, number>;
+  "team_id"?: number;
+  "team_name"?: string;
+}
+
+export interface ModelBo3TournamentInfo {
+  "city"?: string;
+  "country"?: string;
+  "description"?: string;
+  "end_date"?: string;
+  "event_type"?: "lan" | "online";
+  "fetched_at"?: string;
+  "game"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "name"?: string;
+  "prize_usd"?: number;
+  "prizes"?: Array<ModelBo3Prize>;
+  "region"?: string;
+  "series"?: string;
+  "slug"?: string;
+  "source_url"?: string;
+  "stages"?: Array<ModelBo3TournamentStage>;
+  "start_date"?: string;
+  "status"?: "current" | "upcoming" | "finished";
+  "teams"?: Array<ModelBo3TournamentTeam>;
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+}
+
+export interface ModelBo3TournamentListItem {
+  "end_date"?: string;
+  "event_type"?: "lan" | "online";
+  "game"?: string;
+  "id"?: number;
+  "image_url"?: string;
+  "name"?: string;
+  "prize_usd"?: number;
+  "slug"?: string;
+  "start_date"?: string;
+  "status"?: "current" | "upcoming" | "finished";
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+  "url"?: string;
+}
+
+export interface ModelBo3TournamentListResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "offset"?: number;
+  "source_url"?: string;
+  "total"?: number;
+  "tournaments"?: Array<ModelBo3TournamentListItem>;
+}
+
+export interface ModelBo3TournamentMvpsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "mvps"?: Array<ModelBo3Mvprow>;
+  "offset"?: number;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelBo3TournamentMapPoolResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "maps"?: Array<ModelBo3TournamentMapRow>;
+  "slug"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelBo3TournamentMapRow {
+  "banned_maps"?: number;
+  "ct_round_wins"?: number;
+  "ct_win_percent"?: number;
+  "games"?: number;
+  "map"?: string;
+  "picked_maps"?: number;
+  "rounds"?: number;
+  "t_round_wins"?: number;
+}
+
+export interface ModelBo3TournamentRef {
+  "id"?: number;
+  "name"?: string;
+  "prize_usd"?: number;
+  "slug"?: string;
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+}
+
+export interface ModelBo3TournamentSquad {
+  "logo_url"?: string;
+  "players"?: Array<ModelBo3SquadPlayer>;
+  "team_id"?: number;
+  "team_name"?: string;
+  "team_slug"?: string;
+}
+
+export interface ModelBo3TournamentSquadsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "slug"?: string;
+  "source_url"?: string;
+  "squads"?: Array<ModelBo3TournamentSquad>;
+}
+
+export interface ModelBo3TournamentStage {
+  "end_date"?: string;
+  "format_type"?: string;
+  "id"?: number;
+  "sequence"?: number;
+  "start_date"?: string;
+  "status"?: string;
+  "title"?: string;
+}
+
+export interface ModelBo3TournamentStagesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "slug"?: string;
+  "source_url"?: string;
+  "stages"?: Array<ModelBo3StageRow>;
+}
+
+export interface ModelBo3TournamentTeam {
+  "logo_url"?: string;
+  "name"?: string;
+  "place"?: string;
+  "prize_usd"?: number;
+  "slug"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelBo3TransferRow {
+  "action"?: "join" | "change" | "leave";
+  "action_code"?: number;
+  "compensation"?: string;
+  "date"?: string;
+  "from"?: ModelBo3TransferTeam;
+  "game"?: string;
+  "id"?: number;
+  "is_coach"?: boolean;
+  "nickname"?: string;
+  "player_id"?: number;
+  "player_slug"?: string;
+  "source_url"?: string;
+  "to"?: ModelBo3TransferTeam;
+}
+
+export interface ModelBo3TransferTeam {
+  "id"?: number;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelBo3TransfersResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "offset"?: number;
+  "source_url"?: string;
+  "total"?: number;
+  "transfers"?: Array<ModelBo3TransferRow>;
+}
+
+export interface ModelBo3ValorantLeaderboardResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "from"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "min_games_count"?: number;
+  "offset"?: number;
+  "order"?: "desc" | "asc";
+  "players"?: Array<ModelBo3ValorantPlayer>;
+  "sort"?: "acs" | "kills" | "deaths" | "damage" | "assists" | "first_kills" | "clutches" | "first_duels" | "games" | "rounds";
+  "source_url"?: string;
+  "to"?: string;
+  "total"?: number;
+}
+
+export interface ModelBo3ValorantPlayer {
+  "games"?: number;
+  "nickname"?: string;
+  "player_id"?: number;
+  "position"?: number;
+  "rounds"?: number;
+  "slug"?: string;
+  "stats"?: Record<string, number>;
+}
+
 export interface ModelBonhamsAuctionLotsResponse {
   "auction_id"?: string;
   "page"?: number;
@@ -30493,6 +31295,456 @@ export interface ModelGoogleplaySuggestResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelGosugamersBattleRoyalePlayer {
+  "country_code"?: string;
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelGosugamersBattleRoyaleTeam {
+  "country_code"?: string;
+  "id"?: string;
+  "kill_points"?: number;
+  "kills"?: number;
+  "name"?: string;
+  "placement"?: number;
+  "placement_points"?: number;
+  "players"?: Array<ModelGosugamersBattleRoyalePlayer>;
+  "points_addition"?: number;
+  "points_deduction"?: number;
+  "slug"?: string;
+  "total_points"?: number;
+}
+
+export interface ModelGosugamersBroadcastTalent {
+  "country_code"?: string;
+  "country_name"?: string;
+  "game"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "language_code"?: string;
+  "name"?: string;
+  "roles"?: Array<string>;
+  "slug"?: string;
+  "url"?: string;
+}
+
+export interface ModelGosugamersEncountersResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "match_id"?: string;
+  "matches"?: Array<ModelGosugamersMatchSummary>;
+  "source_url"?: string;
+  "team1_id"?: string;
+  "team2_id"?: string;
+}
+
+export interface ModelGosugamersGame {
+  "name"?: string;
+  "slug"?: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+}
+
+export interface ModelGosugamersGameMap {
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelGosugamersGamePick {
+  "image_url"?: string;
+  "pick"?: string;
+  "player"?: ModelGosugamersGamePlayer;
+  "slot"?: number;
+  "type"?: number;
+}
+
+export interface ModelGosugamersGamePlayer {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelGosugamersGameRef {
+  "id"?: string;
+  "number"?: number;
+}
+
+export interface ModelGosugamersGameRound {
+  "overtime"?: boolean;
+  "period"?: number;
+  "team1_score"?: number;
+  "team2_score"?: number;
+}
+
+export interface ModelGosugamersGameTeam {
+  "first_pick"?: boolean;
+  "id"?: string;
+  "lineup"?: Array<ModelGosugamersGamePlayer>;
+  "logo_url"?: string;
+  "name"?: string;
+  "picks"?: Array<ModelGosugamersGamePick>;
+  "placement"?: number;
+  "score"?: number;
+  "side"?: string;
+  "slug"?: string;
+  "winner"?: boolean;
+}
+
+export interface ModelGosugamersGameVod {
+  "channel"?: string;
+  "host"?: number;
+  "thumb_url"?: string;
+  "title"?: string;
+  "video_id"?: string;
+}
+
+export interface ModelGosugamersGamesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "games"?: Array<ModelGosugamersGame>;
+  "source_url"?: string;
+}
+
+export interface ModelGosugamersMatchDetail {
+  "best_of"?: number;
+  "fetched_at"?: string;
+  "finished"?: boolean;
+  "game"?: string;
+  "game_numbers"?: Array<number>;
+  "games"?: Array<ModelGosugamersGameRef>;
+  "group"?: string;
+  "id"?: string;
+  "opponents"?: Array<ModelGosugamersOpponent>;
+  "round"?: string;
+  "source_url"?: string;
+  "stage"?: string;
+  "start_time"?: string;
+  "streams"?: Array<ModelGosugamersStream>;
+  "tournament"?: ModelGosugamersTournamentRef;
+  "url"?: string;
+  "venue"?: string;
+}
+
+export interface ModelGosugamersMatchGameResponse {
+  "battle_royale_teams"?: Array<ModelGosugamersBattleRoyaleTeam>;
+  "best_of"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "id"?: string;
+  "map"?: ModelGosugamersGameMap;
+  "match_number"?: number;
+  "number"?: number;
+  "player_based"?: boolean;
+  "round"?: string;
+  "rounds"?: Array<ModelGosugamersGameRound>;
+  "source_url"?: string;
+  "start_time"?: string;
+  "teams"?: Array<ModelGosugamersGameTeam>;
+  "vods"?: Array<ModelGosugamersGameVod>;
+}
+
+export interface ModelGosugamersMatchListResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "matches"?: Array<ModelGosugamersMatchSummary>;
+  "page"?: number;
+  "page_size"?: number;
+  "source_url"?: string;
+  "total_pages"?: number;
+  "total_rows"?: number;
+}
+
+export interface ModelGosugamersMatchSummary {
+  "finished"?: boolean;
+  "game"?: string;
+  "group"?: string;
+  "id"?: string;
+  "match_number"?: number;
+  "round"?: string;
+  "stage"?: string;
+  "start_time"?: string;
+  "teams"?: Array<ModelGosugamersTeam>;
+  "tournament"?: ModelGosugamersTournamentRef;
+  "url"?: string;
+  "venue"?: string;
+}
+
+export interface ModelGosugamersOpponent {
+  "country"?: string;
+  "country_code"?: string;
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "placement"?: number;
+  "score"?: number;
+  "slug"?: string;
+  "tag"?: string;
+  "winner"?: boolean;
+  "world_ranking"?: number;
+}
+
+export interface ModelGosugamersParticipant {
+  "country_code"?: string;
+  "country_name"?: string;
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "ranking"?: number;
+  "slug"?: string;
+  "type"?: string;
+  "url"?: string;
+}
+
+export interface ModelGosugamersPlayerDetail {
+  "about"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "current_team"?: ModelGosugamersTeamStint;
+  "draws"?: number;
+  "earnings_usd"?: number;
+  "elo_rating"?: number;
+  "facebook"?: string;
+  "fetched_at"?: string;
+  "first_name"?: string;
+  "game"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "last_name"?: string;
+  "losses"?: number;
+  "name"?: string;
+  "previous_teams"?: Array<ModelGosugamersTeamStint>;
+  "region"?: string;
+  "region_ranking"?: number;
+  "source_url"?: string;
+  "streak"?: number;
+  "twitter"?: string;
+  "url"?: string;
+  "win_rate_percent"?: number;
+  "wins"?: number;
+  "world_ranking"?: number;
+  "youtube"?: string;
+}
+
+export interface ModelGosugamersRankRegion {
+  "id"?: number;
+  "name"?: string;
+}
+
+export interface ModelGosugamersRankedTeam {
+  "elo"?: number;
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "previous_rank"?: number;
+  "rank"?: number;
+  "rank_change"?: number;
+  "rank_change_name"?: string;
+  "slug"?: string;
+  "tag"?: string;
+  "url"?: string;
+}
+
+export interface ModelGosugamersRankingsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "q"?: string;
+  "region_id"?: number;
+  "regions"?: Array<ModelGosugamersRankRegion>;
+  "source_url"?: string;
+  "teams"?: Array<ModelGosugamersRankedTeam>;
+  "total_pages"?: number;
+  "total_rows"?: number;
+}
+
+export interface ModelGosugamersRosterPlayer {
+  "country"?: string;
+  "country_code"?: string;
+  "id"?: string;
+  "joined_at"?: string;
+  "left_at"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelGosugamersStageGroup {
+  "format"?: string;
+  "id"?: string;
+  "name"?: string;
+  "participant_count"?: number;
+  "participants"?: Array<ModelGosugamersParticipant>;
+  "result_type"?: string;
+  "start_time"?: string;
+  "status"?: string;
+}
+
+export interface ModelGosugamersStageGroupsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "groups"?: Array<ModelGosugamersStageGroup>;
+  "source_url"?: string;
+  "stage_id"?: string;
+  "stage_name"?: string;
+  "tournament_id"?: string;
+}
+
+export interface ModelGosugamersStageInfo {
+  "id"?: string;
+  "live"?: boolean;
+  "name"?: string;
+  "order"?: number;
+  "status"?: string;
+}
+
+export interface ModelGosugamersStream {
+  "language"?: string;
+  "live"?: boolean;
+  "platform_id"?: number;
+  "thumbnail_url"?: string;
+  "title"?: string;
+  "viewer_count"?: number;
+}
+
+export interface ModelGosugamersTeam {
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "score"?: number;
+  "slug"?: string;
+  "tag"?: string;
+  "winner"?: boolean;
+}
+
+export interface ModelGosugamersTeamDetail {
+  "about"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "draws"?: number;
+  "earnings_usd"?: number;
+  "elo_rating"?: number;
+  "facebook"?: string;
+  "fetched_at"?: string;
+  "game"?: string;
+  "id"?: string;
+  "logo_url"?: string;
+  "losses"?: number;
+  "name"?: string;
+  "region"?: string;
+  "region_ranking"?: number;
+  "roster"?: Array<ModelGosugamersRosterPlayer>;
+  "slug"?: string;
+  "source_url"?: string;
+  "streak"?: number;
+  "tag"?: string;
+  "twitter"?: string;
+  "upcoming_matches"?: Array<ModelGosugamersMatchSummary>;
+  "url"?: string;
+  "win_rate_percent"?: number;
+  "wins"?: number;
+  "world_ranking"?: number;
+  "youtube"?: string;
+}
+
+export interface ModelGosugamersTeamResultsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "matches"?: Array<ModelGosugamersMatchSummary>;
+  "page"?: number;
+  "page_size"?: number;
+  "source_url"?: string;
+  "team_id"?: string;
+  "total_pages"?: number;
+  "total_rows"?: number;
+}
+
+export interface ModelGosugamersTeamStint {
+  "joined_at"?: string;
+  "left_at"?: string;
+  "name"?: string;
+  "position"?: string;
+  "slug"?: string;
+  "tag"?: string;
+  "team_id"?: string;
+}
+
+export interface ModelGosugamersTournamentDetail {
+  "country"?: string;
+  "description"?: string;
+  "fetched_at"?: string;
+  "game"?: string;
+  "game_name"?: string;
+  "image_url"?: string;
+  "lan"?: boolean;
+  "prize_pool_usd"?: number;
+  "source_url"?: string;
+  "sponsors"?: Array<string>;
+  "stages"?: Array<ModelGosugamersStageInfo>;
+  "start_time"?: string;
+  "status"?: string;
+  "tournament"?: ModelGosugamersTournamentRef;
+  "upcoming_matches"?: Array<ModelGosugamersMatchSummary>;
+  "venue"?: string;
+}
+
+export interface ModelGosugamersTournamentParticipantsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "participants"?: Array<ModelGosugamersParticipant>;
+  "source_url"?: string;
+  "tournament_id"?: string;
+}
+
+export interface ModelGosugamersTournamentRef {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelGosugamersTournamentRow {
+  "featured"?: boolean;
+  "game"?: string;
+  "game_name"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "participant_count"?: number;
+  "prize_currency"?: string;
+  "prize_pool"?: number;
+  "prize_pool_usd"?: number;
+  "slug"?: string;
+  "start_time"?: string;
+  "status"?: string;
+  "url"?: string;
+}
+
+export interface ModelGosugamersTournamentTalentsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "talents"?: Array<ModelGosugamersBroadcastTalent>;
+  "tournament_id"?: string;
+}
+
+export interface ModelGosugamersTournamentsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "game"?: string;
+  "page"?: number;
+  "page_size"?: number;
+  "q"?: string;
+  "source_url"?: string;
+  "state"?: "all" | "ongoing" | "upcoming" | "past";
+  "total_pages"?: number;
+  "total_rows"?: number;
+  "tournaments"?: Array<ModelGosugamersTournamentRow>;
+}
+
 export interface ModelGqAuthorArticle {
   "image_url"?: string;
   "published_at"?: string;
@@ -38943,6 +40195,460 @@ export interface ModelLivescoreSportsResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelLolesportsCompletedEventsResponse {
+  "count"?: number;
+  "events"?: Array<ModelLolesportsEvent>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "tournament_id"?: string;
+}
+
+export interface ModelLolesportsDetailsFrame {
+  "participants"?: Array<ModelLolesportsDetailsParticipant>;
+  "timestamp"?: string;
+}
+
+export interface ModelLolesportsDetailsParticipant {
+  "ability_power"?: number;
+  "armor"?: number;
+  "assists"?: number;
+  "attack_damage"?: number;
+  "attack_speed"?: number;
+  "champion_damage_share"?: number;
+  "creep_score"?: number;
+  "critical_chance"?: number;
+  "deaths"?: number;
+  "items"?: Array<number>;
+  "kill_participation"?: number;
+  "kills"?: number;
+  "level"?: number;
+  "life_steal"?: number;
+  "magic_resistance"?: number;
+  "participant_id"?: number;
+  "rune_ids"?: Array<number>;
+  "rune_style_id"?: number;
+  "rune_sub_style_id"?: number;
+  "skill_order"?: Array<string>;
+  "tenacity"?: number;
+  "total_gold_earned"?: number;
+  "wards_destroyed"?: number;
+  "wards_placed"?: number;
+}
+
+export interface ModelLolesportsEvent {
+  "block_name"?: string;
+  "games"?: Array<ModelLolesportsGameVods>;
+  "league"?: ModelLolesportsEventLeague;
+  "match"?: ModelLolesportsMatch;
+  "start_time"?: string;
+  "state"?: "unstarted" | "inProgress" | "completed";
+  "type"?: string;
+}
+
+export interface ModelLolesportsEventDetailResponse {
+  "fetched_at"?: string;
+  "games"?: Array<ModelLolesportsGame>;
+  "id"?: string;
+  "league"?: ModelLolesportsEventLeague;
+  "source_url"?: string;
+  "strategy"?: ModelLolesportsStrategy;
+  "streams"?: Array<ModelLolesportsStream>;
+  "teams"?: Array<ModelLolesportsTeam>;
+  "tournament_id"?: string;
+  "type"?: string;
+}
+
+export interface ModelLolesportsEventLeague {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelLolesportsGprleague {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "teams"?: number;
+}
+
+export interface ModelLolesportsGprpoint {
+  "date"?: string;
+  "elo"?: number;
+  "rank"?: number;
+  "score"?: number;
+}
+
+export interface ModelLolesportsGprrecord {
+  "losses"?: number;
+  "wins"?: number;
+}
+
+export interface ModelLolesportsGprresponse {
+  "count"?: number;
+  "end_date"?: string;
+  "fetched_at"?: string;
+  "leagues"?: Array<ModelLolesportsGprleague>;
+  "season"?: "current" | "2025" | "2024";
+  "seasons"?: Array<ModelLolesportsGprseasonLink>;
+  "source_url"?: string;
+  "start_date"?: string;
+  "teams"?: Array<ModelLolesportsGprteam>;
+  "total"?: number;
+}
+
+export interface ModelLolesportsGprseasonLink {
+  "kind"?: "current" | "worlds";
+  "season"?: string;
+  "url"?: string;
+  "year"?: string;
+}
+
+export interface ModelLolesportsGprteam {
+  "average_opponent_gpr"?: number;
+  "date_calculated"?: string;
+  "elo"?: number;
+  "game_record"?: ModelLolesportsGprrecord;
+  "history"?: Array<ModelLolesportsGprpoint>;
+  "match_record"?: ModelLolesportsGprrecord;
+  "previous_rank"?: number;
+  "previous_score"?: number;
+  "rank"?: number;
+  "rank_change"?: number;
+  "score"?: number;
+  "team"?: ModelLolesportsGprteamRef;
+  "tournaments"?: Array<ModelLolesportsGprtournament>;
+}
+
+export interface ModelLolesportsGprteamRef {
+  "code"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "league"?: string;
+  "league_id"?: string;
+  "league_slug"?: string;
+  "name"?: string;
+  "slug"?: string;
+}
+
+export interface ModelLolesportsGprtournament {
+  "end_time"?: string;
+  "id"?: string;
+  "league"?: string;
+  "losses"?: number;
+  "name"?: string;
+  "placement"?: number;
+  "region_slug"?: string;
+  "slug"?: string;
+  "start_time"?: string;
+  "state"?: string;
+  "wins"?: number;
+}
+
+export interface ModelLolesportsGame {
+  "id"?: string;
+  "number"?: number;
+  "sides"?: Array<ModelLolesportsGameSide>;
+  "state"?: "unneeded" | "unstarted" | "inProgress" | "completed";
+  "vods"?: Array<ModelLolesportsVod>;
+}
+
+export interface ModelLolesportsGameDetailsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "frames"?: Array<ModelLolesportsDetailsFrame>;
+  "game_id"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelLolesportsGameSide {
+  "side"?: "blue" | "red";
+  "team_id"?: string;
+}
+
+export interface ModelLolesportsGameVods {
+  "id"?: string;
+  "vods"?: Array<ModelLolesportsVod>;
+}
+
+export interface ModelLolesportsGameWindowResponse {
+  "blue"?: ModelLolesportsTeamMetadata;
+  "count"?: number;
+  "fetched_at"?: string;
+  "frames"?: Array<ModelLolesportsWindowFrame>;
+  "game_id"?: string;
+  "match_id"?: string;
+  "patch"?: string;
+  "red"?: ModelLolesportsTeamMetadata;
+  "source_url"?: string;
+}
+
+export interface ModelLolesportsHomeLeague {
+  "name"?: string;
+  "region"?: string;
+}
+
+export interface ModelLolesportsLeague {
+  "display_status"?: "force_selected" | "selected" | "not_selected" | "hidden";
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "priority"?: number;
+  "region"?: string;
+  "slug"?: string;
+}
+
+export interface ModelLolesportsLeaguesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "leagues"?: Array<ModelLolesportsLeague>;
+  "source_url"?: string;
+}
+
+export interface ModelLolesportsLiveResponse {
+  "count"?: number;
+  "events"?: Array<ModelLolesportsEvent>;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelLolesportsMatch {
+  "flags"?: Array<string>;
+  "id"?: string;
+  "strategy"?: ModelLolesportsStrategy;
+  "teams"?: Array<ModelLolesportsTeam>;
+}
+
+export interface ModelLolesportsNewsArticle {
+  "authors"?: Array<string>;
+  "description"?: string;
+  "external"?: boolean;
+  "external_url"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "path"?: string;
+  "published_at"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelLolesportsNewsResponse {
+  "articles"?: Array<ModelLolesportsNewsArticle>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "hl"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelLolesportsParticipantMetadata {
+  "champion_id"?: string;
+  "participant_id"?: number;
+  "player_id"?: string;
+  "role"?: "top" | "jungle" | "mid" | "bottom" | "support";
+  "summoner_name"?: string;
+}
+
+export interface ModelLolesportsPlayer {
+  "first_name"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "last_name"?: string;
+  "role"?: "top" | "jungle" | "mid" | "bottom" | "support" | "none";
+  "summoner_name"?: string;
+}
+
+export interface ModelLolesportsRanking {
+  "ordinal"?: number;
+  "teams"?: Array<ModelLolesportsTeam>;
+}
+
+export interface ModelLolesportsRecord {
+  "losses"?: number;
+  "wins"?: number;
+}
+
+export interface ModelLolesportsScheduleResponse {
+  "count"?: number;
+  "events"?: Array<ModelLolesportsEvent>;
+  "fetched_at"?: string;
+  "newer_page_token"?: string;
+  "older_page_token"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelLolesportsSeason {
+  "end_time"?: string;
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "split_count"?: number;
+  "splits"?: Array<ModelLolesportsSplit>;
+  "start_time"?: string;
+}
+
+export interface ModelLolesportsSeasonLeague {
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+}
+
+export interface ModelLolesportsSeasonsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "league_id"?: string;
+  "region"?: string;
+  "season_id"?: string;
+  "seasons"?: Array<ModelLolesportsSeason>;
+  "source_url"?: string;
+}
+
+export interface ModelLolesportsSplit {
+  "description"?: string;
+  "end_time"?: string;
+  "id"?: string;
+  "name"?: string;
+  "region"?: string;
+  "slug"?: string;
+  "start_time"?: string;
+  "tournaments"?: Array<ModelLolesportsSplitTournament>;
+}
+
+export interface ModelLolesportsSplitTournament {
+  "id"?: string;
+  "league"?: ModelLolesportsSeasonLeague;
+  "name"?: string;
+}
+
+export interface ModelLolesportsStandingMatch {
+  "flags"?: Array<string>;
+  "id"?: string;
+  "previous_match_ids"?: Array<string>;
+  "state"?: string;
+  "teams"?: Array<ModelLolesportsTeam>;
+}
+
+export interface ModelLolesportsStandingSection {
+  "matches"?: Array<ModelLolesportsStandingMatch>;
+  "name"?: string;
+  "rankings"?: Array<ModelLolesportsRanking>;
+}
+
+export interface ModelLolesportsStandingStage {
+  "id"?: string;
+  "name"?: string;
+  "sections"?: Array<ModelLolesportsStandingSection>;
+  "slug"?: string;
+  "type"?: string;
+}
+
+export interface ModelLolesportsStandingsResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "stages"?: Array<ModelLolesportsStandingStage>;
+  "tournament_id"?: string;
+}
+
+export interface ModelLolesportsStrategy {
+  "count"?: number;
+  "type"?: string;
+}
+
+export interface ModelLolesportsStream {
+  "locale"?: string;
+  "parameter"?: string;
+  "provider"?: string;
+}
+
+export interface ModelLolesportsTeam {
+  "code"?: string;
+  "game_wins"?: number;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "outcome"?: "win" | "loss";
+  "record"?: ModelLolesportsRecord;
+  "slug"?: string;
+}
+
+export interface ModelLolesportsTeamDetail {
+  "code"?: string;
+  "home_league"?: ModelLolesportsHomeLeague;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "players"?: Array<ModelLolesportsPlayer>;
+  "slug"?: string;
+  "status"?: "active" | "archived";
+}
+
+export interface ModelLolesportsTeamMetadata {
+  "participants"?: Array<ModelLolesportsParticipantMetadata>;
+  "team_id"?: string;
+}
+
+export interface ModelLolesportsTeamTotals {
+  "barons"?: number;
+  "dragons"?: Array<string>;
+  "inhibitors"?: number;
+  "participants"?: Array<ModelLolesportsWindowParticipant>;
+  "total_gold"?: number;
+  "total_kills"?: number;
+  "towers"?: number;
+}
+
+export interface ModelLolesportsTeamsResponse {
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "limit"?: number;
+  "page"?: number;
+  "source_url"?: string;
+  "teams"?: Array<ModelLolesportsTeamDetail>;
+  "total"?: number;
+}
+
+export interface ModelLolesportsTournament {
+  "end_date"?: string;
+  "id"?: string;
+  "slug"?: string;
+  "start_date"?: string;
+}
+
+export interface ModelLolesportsTournamentsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "league_id"?: string;
+  "source_url"?: string;
+  "tournaments"?: Array<ModelLolesportsTournament>;
+}
+
+export interface ModelLolesportsVod {
+  "end_millis"?: number;
+  "id"?: string;
+  "locale"?: string;
+  "parameter"?: string;
+  "provider"?: string;
+  "start_millis"?: number;
+}
+
+export interface ModelLolesportsWindowFrame {
+  "blue"?: ModelLolesportsTeamTotals;
+  "game_state"?: "in_game" | "paused" | "finished";
+  "red"?: ModelLolesportsTeamTotals;
+  "timestamp"?: string;
+}
+
+export interface ModelLolesportsWindowParticipant {
+  "assists"?: number;
+  "creep_score"?: number;
+  "current_health"?: number;
+  "deaths"?: number;
+  "kills"?: number;
+  "level"?: number;
+  "max_health"?: number;
+  "participant_id"?: number;
+  "total_gold"?: number;
+}
+
 export interface ModelLululemonCategoriesResponse {
   "categories"?: Array<ModelLululemonCategoryEntry>;
   "count"?: number;
@@ -44150,6 +45856,551 @@ export interface ModelOldnavyStoresResponseDoc {
   "code"?: number;
   "data"?: ModelOldnavyStoreResponse;
   "msg"?: string;
+}
+
+export interface ModelOpendotaAbilitiesResponse {
+  "abilities"?: Array<ModelOpendotaAbilitySummary>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelOpendotaAbilitySummary {
+  "behavior"?: Array<string>;
+  "bkb_pierce"?: string;
+  "cooldown"?: string;
+  "damage_type"?: string;
+  "description"?: string;
+  "dispellable"?: string;
+  "innate"?: boolean;
+  "key"?: string;
+  "mana_cost"?: string;
+  "name"?: string;
+  "target_team"?: string;
+  "target_type"?: string;
+}
+
+export interface ModelOpendotaBenchmark {
+  "metric"?: string;
+  "points"?: Array<ModelOpendotaBenchmarkPoint>;
+}
+
+export interface ModelOpendotaBenchmarkPoint {
+  "percentile"?: number;
+  "value"?: number;
+}
+
+export interface ModelOpendotaBenchmarksResponse {
+  "benchmarks"?: Array<ModelOpendotaBenchmark>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "hero_id"?: number;
+  "hero_name"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaConstantEntry {
+  "balanced"?: boolean;
+  "date"?: string;
+  "id"?: string;
+  "name"?: string;
+  "value"?: number;
+}
+
+export interface ModelOpendotaConstantsResponse {
+  "count"?: number;
+  "entries"?: Array<ModelOpendotaConstantEntry>;
+  "fetched_at"?: string;
+  "resource"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaDistributionsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "ranks"?: Array<ModelOpendotaRankTierRow>;
+  "source_url"?: string;
+  "total_players"?: number;
+}
+
+export interface ModelOpendotaDurationBin {
+  "games"?: number;
+  "start_minute"?: number;
+  "win_rate_percent"?: number;
+  "wins"?: number;
+}
+
+export interface ModelOpendotaHero {
+  "attack_type"?: "Melee" | "Ranged";
+  "id"?: number;
+  "localized_name"?: string;
+  "name"?: string;
+  "primary_attr"?: "agi" | "all" | "int" | "str";
+}
+
+export interface ModelOpendotaHeroDurationsResponse {
+  "bins"?: Array<ModelOpendotaDurationBin>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "hero_id"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaHeroItemsResponse {
+  "fetched_at"?: string;
+  "hero_id"?: number;
+  "phases"?: Array<ModelOpendotaItemPhase>;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaHeroMatchupsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "hero_id"?: number;
+  "matchups"?: Array<ModelOpendotaHeroRecord>;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaHeroRecord {
+  "games"?: number;
+  "hero_id"?: number;
+  "localized_name"?: string;
+  "win_rate_percent"?: number;
+  "wins"?: number;
+}
+
+export interface ModelOpendotaHeroStat {
+  "attack_range"?: number;
+  "attack_type"?: "Melee" | "Ranged";
+  "base_armor"?: number;
+  "base_attack_max"?: number;
+  "base_attack_min"?: number;
+  "base_health"?: number;
+  "base_mana"?: number;
+  "id"?: number;
+  "localized_name"?: string;
+  "move_speed"?: number;
+  "name"?: string;
+  "primary_attr"?: "agi" | "all" | "int" | "str";
+  "pro"?: ModelOpendotaPickWin;
+  "public"?: ModelOpendotaPickWin;
+  "rank_brackets"?: Array<ModelOpendotaRankBracket>;
+  "roles"?: Array<string>;
+  "turbo"?: ModelOpendotaPickWin;
+}
+
+export interface ModelOpendotaHeroStatsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "heroes"?: Array<ModelOpendotaHeroStat>;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaHeroesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "heroes"?: Array<ModelOpendotaHero>;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaItemAbility {
+  "description"?: string;
+  "title"?: string;
+  "type"?: string;
+}
+
+export interface ModelOpendotaItemAttribute {
+  "key"?: string;
+  "value"?: string;
+}
+
+export interface ModelOpendotaItemCount {
+  "count"?: number;
+  "item_id"?: number;
+  "name"?: string;
+}
+
+export interface ModelOpendotaItemPhase {
+  "items"?: Array<ModelOpendotaItemCount>;
+  "phase"?: "start_game" | "early_game" | "mid_game" | "late_game";
+}
+
+export interface ModelOpendotaItemSummary {
+  "abilities"?: Array<ModelOpendotaItemAbility>;
+  "attributes"?: Array<ModelOpendotaItemAttribute>;
+  "behavior"?: string;
+  "components"?: Array<string>;
+  "cooldown"?: string;
+  "cost_gold"?: number;
+  "id"?: number;
+  "key"?: string;
+  "mana_cost"?: string;
+  "name"?: string;
+  "quality"?: string;
+}
+
+export interface ModelOpendotaItemsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "items"?: Array<ModelOpendotaItemSummary>;
+  "qualities"?: Array<string>;
+  "source_url"?: string;
+  "total"?: number;
+}
+
+export interface ModelOpendotaLeague {
+  "banner"?: string;
+  "id"?: number;
+  "name"?: string;
+  "ticket"?: string;
+  "tier"?: string;
+}
+
+export interface ModelOpendotaLeagueDetailResponse {
+  "fetched_at"?: string;
+  "league"?: ModelOpendotaLeague;
+  "source_url"?: string;
+  "teams"?: Array<ModelOpendotaTeam>;
+}
+
+export interface ModelOpendotaLeagueMatch {
+  "dire_name"?: string;
+  "dire_score"?: number;
+  "dire_team_id"?: number;
+  "duration_seconds"?: number;
+  "league_id"?: number;
+  "match_id"?: number;
+  "radiant_name"?: string;
+  "radiant_score"?: number;
+  "radiant_team_id"?: number;
+  "radiant_win"?: boolean;
+  "series_id"?: number;
+  "series_type"?: number;
+  "start_time"?: string;
+}
+
+export interface ModelOpendotaLeagueMatchIdsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "league_id"?: number;
+  "match_ids"?: Array<number>;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaLeagueMatchesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "league_id"?: number;
+  "matches"?: Array<ModelOpendotaLeagueMatch>;
+  "source_url"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelOpendotaLeaguesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "leagues"?: Array<ModelOpendotaLeague>;
+  "source_url"?: string;
+  "tier_filter"?: string;
+}
+
+export interface ModelOpendotaLiveMatch {
+  "delay_seconds"?: number;
+  "dire_name"?: string;
+  "dire_score"?: number;
+  "game_time_seconds"?: number;
+  "last_update_time"?: number;
+  "league_id"?: number;
+  "match_id"?: number;
+  "players"?: Array<ModelOpendotaLivePlayer>;
+  "radiant_lead"?: number;
+  "radiant_name"?: string;
+  "radiant_score"?: number;
+  "spectators"?: number;
+}
+
+export interface ModelOpendotaLiveMatchesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "matches"?: Array<ModelOpendotaLiveMatch>;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaLivePlayer {
+  "hero_id"?: number;
+  "name"?: string;
+  "team_code"?: "0" | "1";
+  "team_slot"?: "1" | "2" | "3" | "4" | "5";
+}
+
+export interface ModelOpendotaMatchDetail {
+  "dire"?: ModelOpendotaMatchTeam;
+  "dire_score"?: number;
+  "duration_seconds"?: number;
+  "fetched_at"?: string;
+  "league_id"?: number;
+  "league_name"?: string;
+  "match_id"?: number;
+  "patch"?: number;
+  "players"?: Array<ModelOpendotaMatchPlayer>;
+  "radiant"?: ModelOpendotaMatchTeam;
+  "radiant_score"?: number;
+  "radiant_win"?: boolean;
+  "source_url"?: string;
+  "start_time"?: string;
+}
+
+export interface ModelOpendotaMatchPlayer {
+  "assists"?: number;
+  "deaths"?: number;
+  "denies"?: number;
+  "gold_per_min"?: number;
+  "hero_damage"?: number;
+  "hero_id"?: number;
+  "is_radiant"?: boolean;
+  "kills"?: number;
+  "last_hits"?: number;
+  "level"?: number;
+  "name"?: string;
+  "net_worth"?: number;
+  "tower_damage"?: number;
+  "xp_per_min"?: number;
+}
+
+export interface ModelOpendotaMatchTeam {
+  "id"?: number;
+  "logo_url"?: string;
+  "name"?: string;
+  "tag"?: string;
+}
+
+export interface ModelOpendotaPatchAbilityChange {
+  "key"?: string;
+  "notes"?: Array<string>;
+}
+
+export interface ModelOpendotaPatchHeroChange {
+  "abilities"?: Array<ModelOpendotaPatchAbilityChange>;
+  "general"?: Array<string>;
+  "hero_id"?: number;
+  "key"?: string;
+  "name"?: string;
+  "talents"?: Array<string>;
+}
+
+export interface ModelOpendotaPatchIndexEntry {
+  "heroes_changed"?: number;
+  "items_changed"?: number;
+  "patch"?: string;
+  "version"?: string;
+}
+
+export interface ModelOpendotaPatchItemChange {
+  "key"?: string;
+  "notes"?: Array<string>;
+}
+
+export interface ModelOpendotaPatchNotesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "general"?: Array<string>;
+  "heroes"?: Array<ModelOpendotaPatchHeroChange>;
+  "items"?: Array<ModelOpendotaPatchItemChange>;
+  "misc"?: Array<string>;
+  "patch"?: string;
+  "patches"?: Array<ModelOpendotaPatchIndexEntry>;
+  "source_url"?: string;
+  "version"?: string;
+}
+
+export interface ModelOpendotaPickWin {
+  "bans"?: number;
+  "picks"?: number;
+  "win_rate_percent"?: number;
+  "wins"?: number;
+}
+
+export interface ModelOpendotaProMatch {
+  "dire_name"?: string;
+  "dire_score"?: number;
+  "dire_team_id"?: number;
+  "duration_seconds"?: number;
+  "league_id"?: number;
+  "league_name"?: string;
+  "match_id"?: number;
+  "radiant_name"?: string;
+  "radiant_score"?: number;
+  "radiant_team_id"?: number;
+  "radiant_win"?: boolean;
+  "series_id"?: number;
+  "start_time"?: string;
+  "version"?: number;
+}
+
+export interface ModelOpendotaProMatchesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "matches"?: Array<ModelOpendotaProMatch>;
+  "next_less_than_match_id"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaProPlayer {
+  "country_code"?: string;
+  "is_pro"?: boolean;
+  "name"?: string;
+  "persona_name"?: string;
+  "team_id"?: number;
+  "team_name"?: string;
+  "team_tag"?: string;
+}
+
+export interface ModelOpendotaProPlayersResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "limit"?: number;
+  "next_offset"?: number;
+  "offset"?: number;
+  "players"?: Array<ModelOpendotaProPlayer>;
+  "q"?: string;
+  "source_url"?: string;
+  "team_id"?: number;
+  "total_count"?: number;
+}
+
+export interface ModelOpendotaRankBracket {
+  "bracket"?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
+  "name"?: "Herald" | "Guardian" | "Crusader" | "Archon" | "Legend" | "Ancient" | "Divine" | "Immortal";
+  "picks"?: number;
+  "win_rate_percent"?: number;
+  "wins"?: number;
+}
+
+export interface ModelOpendotaRankTierRow {
+  "cumulative_percent"?: number;
+  "cumulative_players"?: number;
+  "medal"?: string;
+  "players"?: number;
+  "rank_tier"?: number;
+  "share_percent"?: number;
+  "stars"?: number;
+}
+
+export interface ModelOpendotaRecordRow {
+  "hero_id"?: number;
+  "hero_name"?: string;
+  "match_id"?: number;
+  "rank"?: number;
+  "score"?: number;
+  "start_time"?: string;
+}
+
+export interface ModelOpendotaRecordsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "field"?: string;
+  "rows"?: Array<ModelOpendotaRecordRow>;
+  "source_url"?: string;
+}
+
+export interface ModelOpendotaScenarioRow {
+  "games"?: number;
+  "hero_id"?: number;
+  "hero_name"?: string;
+  "is_radiant"?: boolean;
+  "item"?: string;
+  "lane_role"?: number;
+  "region_id"?: number;
+  "scenario"?: string;
+  "time_seconds"?: number;
+  "win_rate_percent"?: number;
+  "wins"?: number;
+}
+
+export interface ModelOpendotaScenariosResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "kind"?: "item-timings" | "lane-roles" | "misc";
+  "rows"?: Array<ModelOpendotaScenarioRow>;
+  "source_url"?: string;
+  "timings"?: Array<number>;
+  "total"?: number;
+}
+
+export interface ModelOpendotaTeam {
+  "delta"?: number;
+  "id"?: number;
+  "last_match_id"?: number;
+  "last_match_time"?: string;
+  "logo_url"?: string;
+  "losses"?: number;
+  "name"?: string;
+  "rating"?: number;
+  "tag"?: string;
+  "wins"?: number;
+}
+
+export interface ModelOpendotaTeamHeroesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "heroes"?: Array<ModelOpendotaHeroRecord>;
+  "source_url"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelOpendotaTeamMatch {
+  "dire_score"?: number;
+  "duration_seconds"?: number;
+  "league_id"?: number;
+  "league_name"?: string;
+  "match_id"?: number;
+  "opposing_team_id"?: number;
+  "opposing_team_logo_url"?: string;
+  "opposing_team_name"?: string;
+  "radiant"?: boolean;
+  "radiant_score"?: number;
+  "radiant_win"?: boolean;
+  "start_time"?: string;
+  "team_win"?: boolean;
+}
+
+export interface ModelOpendotaTeamMatchesResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "matches"?: Array<ModelOpendotaTeamMatch>;
+  "source_url"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelOpendotaTeamPlayer {
+  "games_played"?: number;
+  "is_current_team_member"?: boolean;
+  "name"?: string;
+  "wins"?: number;
+}
+
+export interface ModelOpendotaTeamPlayersResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "players"?: Array<ModelOpendotaTeamPlayer>;
+  "source_url"?: string;
+  "team_id"?: number;
+}
+
+export interface ModelOpendotaTeamResponse {
+  "fetched_at"?: string;
+  "source_url"?: string;
+  "team"?: ModelOpendotaTeam;
+}
+
+export interface ModelOpendotaTeamsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "next_page"?: number;
+  "page"?: number;
+  "source_url"?: string;
+  "teams"?: Array<ModelOpendotaTeam>;
 }
 
 export interface ModelOpenseaAccount {
@@ -52901,6 +55152,126 @@ export interface ModelRedfinSimilarResponse {
   "results"?: Array<ModelRedfinPropertyItem>;
 }
 
+export interface ModelRednoteChannel {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelRednoteComment {
+  "author"?: ModelRednoteCommentAuthor;
+  "comment_id"?: string;
+  "content"?: string;
+  "created_at"?: number;
+  "ip_location"?: string;
+  "like_count"?: number;
+  "sub_comment_count"?: number;
+  "sub_comments"?: Array<ModelRednoteComment>;
+}
+
+export interface ModelRednoteCommentAuthor {
+  "avatar_url"?: string;
+  "nickname"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelRednoteCommentsResponse {
+  "count"?: number;
+  "cursor"?: string;
+  "has_more"?: boolean;
+  "items"?: Array<ModelRednoteComment>;
+  "note_id"?: string;
+}
+
+export interface ModelRednoteExploreCard {
+  "author"?: ModelRednoteNoteAuthor;
+  "cover_url"?: string;
+  "liked_count"?: number;
+  "note_id"?: string;
+  "note_url"?: string;
+  "title"?: string;
+  "type"?: string;
+  "xsec_token"?: string;
+}
+
+export interface ModelRednoteExploreResponse {
+  "channel_id"?: string;
+  "channels"?: Array<ModelRednoteChannel>;
+  "count"?: number;
+  "items"?: Array<ModelRednoteExploreCard>;
+}
+
+export interface ModelRednoteNoteAuthor {
+  "avatar_url"?: string;
+  "nickname"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelRednoteNoteResponse {
+  "author"?: ModelRednoteNoteAuthor;
+  "description"?: string;
+  "image_urls"?: Array<string>;
+  "note_id"?: string;
+  "published_at"?: string;
+  "stats"?: ModelRednoteNoteStats;
+  "tags"?: Array<ModelRednoteNoteTag>;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+  "video_duration_seconds"?: number;
+  "video_url"?: string;
+}
+
+export interface ModelRednoteNoteStats {
+  "collected_count"?: number;
+  "comment_count"?: number;
+  "liked_count"?: number;
+  "share_count"?: number;
+}
+
+export interface ModelRednoteNoteTag {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelRednoteSuggestItem {
+  "highlight_flags"?: Array<boolean>;
+  "search_type"?: string;
+  "text"?: string;
+  "type"?: string;
+}
+
+export interface ModelRednoteSuggestResponse {
+  "count"?: number;
+  "items"?: Array<ModelRednoteSuggestItem>;
+  "keyword"?: string;
+  "search_cpl_id"?: string;
+  "word_request_id"?: string;
+}
+
+export interface ModelRednoteCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelRednoteCommentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelRednoteExploreResponseDoc {
+  "code"?: number;
+  "data"?: ModelRednoteExploreResponse;
+  "msg"?: string;
+}
+
+export interface ModelRednoteNoteResponseDoc {
+  "code"?: number;
+  "data"?: ModelRednoteNoteResponse;
+  "msg"?: string;
+}
+
+export interface ModelRednoteSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelRednoteSuggestResponse;
+  "msg"?: string;
+}
+
 export interface ModelReelshortActor {
   "imdb_url"?: string;
   "name"?: string;
@@ -58414,6 +60785,401 @@ export interface ModelShopappSuggestionsResponseDoc {
 export interface ModelShopappVariantsResponseDoc {
   "code"?: number;
   "data"?: ModelShopappVariantsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeBanner {
+  "banner_id"?: number;
+  "campaign_unit_id"?: number;
+  "end_time"?: number;
+  "image"?: string;
+  "slot_id"?: number;
+  "start_time"?: number;
+  "url"?: string;
+}
+
+export interface ModelShopeeBannersResponse {
+  "banners"?: Array<ModelShopeeBanner>;
+  "ratio"?: number;
+  "region"?: string;
+  "slot"?: string;
+  "space_key"?: string;
+}
+
+export interface ModelShopeeCategoriesResponse {
+  "categories"?: Array<ModelShopeeCategoryNode>;
+  "region"?: string;
+  "total_roots"?: number;
+}
+
+export interface ModelShopeeCategoryDetail {
+  "category_id"?: number;
+  "display_names"?: Array<ModelShopeeLocalizedName>;
+  "image"?: string;
+  "level"?: number;
+  "name"?: string;
+  "parent_category_ids"?: Array<number>;
+}
+
+export interface ModelShopeeCategoryDetailResponse {
+  "categories"?: Array<ModelShopeeCategoryDetail>;
+  "catids"?: Array<number>;
+  "region"?: string;
+}
+
+export interface ModelShopeeCategoryNode {
+  "category_id"?: number;
+  "children"?: Array<ModelShopeeCategoryNode>;
+  "display_name"?: string;
+  "image"?: string;
+  "level"?: number;
+  "name"?: string;
+  "parent_category_id"?: number;
+}
+
+export interface ModelShopeeFlashSaleItem {
+  "category_ids"?: Array<number>;
+  "discount"?: string;
+  "end_time"?: number;
+  "flash_sale_stock"?: number;
+  "historical_sold"?: number;
+  "image"?: string;
+  "item_id"?: number;
+  "name"?: string;
+  "official_shop"?: boolean;
+  "price"?: number;
+  "price_before_discount"?: number;
+  "promo_name"?: string;
+  "rating"?: number;
+  "rating_count"?: number;
+  "shop_id"?: number;
+  "shopee_choice"?: boolean;
+  "start_time"?: number;
+  "stock"?: number;
+  "tags"?: Array<string>;
+  "url"?: string;
+}
+
+export interface ModelShopeeFlashSaleResponse {
+  "items"?: Array<ModelShopeeFlashSaleItem>;
+  "limit"?: number;
+  "offset"?: number;
+  "region"?: string;
+  "session"?: ModelShopeeFlashSaleSession;
+}
+
+export interface ModelShopeeFlashSaleSession {
+  "end_time"?: number;
+  "promotion_id"?: number;
+  "start_time"?: number;
+  "status"?: number;
+}
+
+export interface ModelShopeeFooterBlock {
+  "sections"?: Array<ModelShopeeFooterSection>;
+}
+
+export interface ModelShopeeFooterLink {
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopeeFooterMedia {
+  "image"?: string;
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopeeFooterQr {
+  "extra_images"?: Array<ModelShopeeFooterMedia>;
+  "image"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopeeFooterResponse {
+  "blocks"?: Array<ModelShopeeFooterBlock>;
+  "layout_id"?: number;
+  "layout_name"?: string;
+  "mobile_blocks"?: Array<ModelShopeeFooterBlock>;
+  "region"?: string;
+}
+
+export interface ModelShopeeFooterSection {
+  "images"?: Array<ModelShopeeFooterMedia>;
+  "links"?: Array<ModelShopeeFooterLink>;
+  "qr"?: ModelShopeeFooterQr;
+  "simple"?: ModelShopeeFooterSimple;
+  "social_media"?: Array<ModelShopeeFooterMedia>;
+  "title"?: string;
+  "type"?: number;
+}
+
+export interface ModelShopeeFooterSimple {
+  "image"?: string;
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopeeHomeBanner {
+  "image"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopeeHomeCampaign {
+  "image"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopeeHomeCategoriesResponse {
+  "categories"?: Array<ModelShopeeHomeCategory>;
+  "region"?: string;
+  "total"?: number;
+}
+
+export interface ModelShopeeHomeCategory {
+  "category_id"?: number;
+  "display_name"?: string;
+  "image"?: string;
+  "level"?: number;
+  "name"?: string;
+  "parent_category_id"?: number;
+}
+
+export interface ModelShopeeHomeLiveSession {
+  "cover"?: string;
+  "session_id"?: number;
+  "shop_id"?: number;
+  "title"?: string;
+  "view_count"?: number;
+}
+
+export interface ModelShopeeHomeResponse {
+  "banners"?: Array<ModelShopeeHomeBanner>;
+  "campaigns"?: Array<ModelShopeeHomeCampaign>;
+  "components"?: Array<string>;
+  "flash_sale"?: Array<ModelShopeeFlashSaleItem>;
+  "live_sessions"?: Array<ModelShopeeHomeLiveSession>;
+  "prefills"?: Array<string>;
+  "region"?: string;
+  "squares"?: Array<ModelShopeeHomeSquare>;
+}
+
+export interface ModelShopeeHomeSquare {
+  "image"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopeeLocalizedName {
+  "is_default"?: boolean;
+  "lang"?: string;
+  "value"?: string;
+}
+
+export interface ModelShopeeLocationFiltersResponse {
+  "groups"?: Array<ModelShopeeLocationGroup>;
+  "region"?: string;
+}
+
+export interface ModelShopeeLocationGroup {
+  "group"?: string;
+  "group_name"?: string;
+  "location_tag_ids"?: Array<string>;
+  "locations"?: Array<string>;
+  "translated_group"?: string;
+  "translated_locations"?: Array<string>;
+}
+
+export interface ModelShopeeMallCategoriesResponse {
+  "categories"?: Array<ModelShopeeMallCategory>;
+  "region"?: string;
+  "total"?: number;
+}
+
+export interface ModelShopeeMallCategory {
+  "category_id"?: number;
+  "image"?: string;
+  "name"?: string;
+}
+
+export interface ModelShopeeMallShop {
+  "brand_name"?: string;
+  "ctime"?: number;
+  "logo"?: string;
+  "logo_pc"?: string;
+  "name"?: string;
+  "redirect_url"?: string;
+  "shop_id"?: number;
+  "shop_type"?: number;
+  "user_id"?: number;
+  "username"?: string;
+}
+
+export interface ModelShopeePrefillItem {
+  "hint"?: string;
+  "image"?: string;
+  "url"?: string;
+}
+
+export interface ModelShopeePrefillsResponse {
+  "prefills"?: Array<ModelShopeePrefillItem>;
+  "region"?: string;
+}
+
+export interface ModelShopeeSearchFilterGroup {
+  "display_name"?: string;
+  "dynamic"?: boolean;
+  "name"?: string;
+  "options"?: Array<ModelShopeeSearchFilterOption>;
+  "ui_type"?: number;
+}
+
+export interface ModelShopeeSearchFilterOption {
+  "display_name"?: string;
+  "name"?: string;
+  "value"?: string;
+}
+
+export interface ModelShopeeSearchFiltersResponse {
+  "category"?: string;
+  "groups"?: Array<ModelShopeeSearchFilterGroup>;
+  "keyword"?: string;
+  "region"?: string;
+  "shortcuts"?: Array<ModelShopeeSearchFilterOption>;
+}
+
+export interface ModelShopeeSearchHint {
+  "category_id"?: number;
+  "category_name"?: string;
+  "item_ids"?: Array<number>;
+  "keyword"?: string;
+  "position"?: number;
+  "record_type"?: number;
+  "source_type"?: number;
+}
+
+export interface ModelShopeeSearchHintsResponse {
+  "algorithm"?: string;
+  "hints"?: Array<ModelShopeeSearchHint>;
+  "keyword"?: string;
+  "region"?: string;
+  "search_keyword_type"?: number;
+  "version"?: number;
+}
+
+export interface ModelShopeeShopInfoResponse {
+  "description"?: string;
+  "images"?: string;
+  "name"?: string;
+  "official_shop"?: boolean;
+  "region"?: string;
+  "shop_id"?: number;
+  "shopee_verified"?: boolean;
+  "status"?: number;
+  "user_id"?: number;
+}
+
+export interface ModelShopeeShopsResponse {
+  "limit"?: number;
+  "offset"?: number;
+  "region"?: string;
+  "shops"?: Array<ModelShopeeMallShop>;
+  "total"?: number;
+}
+
+export interface ModelShopeeSuggestResponse {
+  "keyword"?: string;
+  "region"?: string;
+  "suggestions"?: Array<string>;
+}
+
+export interface ModelShopeeBannersResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeBannersResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeCategoryDetailResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeCategoryDetailResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeFlashSaleResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeFlashSaleResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeFooterResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeFooterResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeHomeCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeHomeCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeHomeResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeHomeResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeLocationFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeLocationFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeMallCategoriesResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeMallCategoriesResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeePrefillsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeePrefillsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeSearchFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeSearchFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeSearchHintsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeSearchHintsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeShopInfoResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeShopInfoResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeShopsResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeShopsResponse;
+  "msg"?: string;
+}
+
+export interface ModelShopeeSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelShopeeSuggestResponse;
   "msg"?: string;
 }
 
@@ -75191,6 +77957,702 @@ export interface ModelVintedMemberResponseDoc {
   "msg"?: string;
 }
 
+export interface ModelVlrAdvancedLine {
+  "agent"?: string;
+  "clutches_1v1"?: number;
+  "clutches_1v2"?: number;
+  "clutches_1v3"?: number;
+  "clutches_1v4"?: number;
+  "clutches_1v5"?: number;
+  "defuses"?: number;
+  "econ_rating"?: number;
+  "multikills_2k"?: number;
+  "multikills_3k"?: number;
+  "multikills_4k"?: number;
+  "multikills_5k"?: number;
+  "plants"?: number;
+  "player"?: ModelVlrMatrixPlayer;
+}
+
+export interface ModelVlrAgentPick {
+  "agent"?: string;
+  "percent"?: number;
+}
+
+export interface ModelVlrAgentUsage {
+  "acs"?: number;
+  "adr"?: number;
+  "agent"?: string;
+  "assists"?: number;
+  "assists_per_round"?: number;
+  "deaths"?: number;
+  "first_deaths"?: number;
+  "first_kills"?: number;
+  "first_kills_per_round"?: number;
+  "kast_percent"?: number;
+  "kd"?: number;
+  "kills"?: number;
+  "kills_per_round"?: number;
+  "rating"?: number;
+  "rounds"?: number;
+  "use"?: string;
+}
+
+export interface ModelVlrArticleDetail {
+  "author"?: string;
+  "external_links"?: Array<string>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "images"?: Array<string>;
+  "paragraphs"?: Array<string>;
+  "published_at"?: string;
+  "references"?: Array<ModelVlrArticleRef>;
+  "source_url"?: string;
+  "text"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrArticleRef {
+  "id"?: string;
+  "name"?: string;
+  "slug"?: string;
+  "type"?: "team" | "player" | "event";
+  "url"?: string;
+}
+
+export interface ModelVlrBuyBucket {
+  "buy"?: "eco" | "half" | "full";
+  "label"?: string;
+  "teams"?: Array<ModelVlrBuyOutcome>;
+}
+
+export interface ModelVlrBuyOutcome {
+  "team"?: string;
+  "vs_eco"?: ModelVlrRatio;
+  "vs_full"?: ModelVlrRatio;
+  "vs_half"?: ModelVlrRatio;
+}
+
+export interface ModelVlrCompositionMatch {
+  "agents"?: Array<string>;
+  "match_id"?: string;
+  "opponent"?: string;
+  "result"?: "win" | "loss";
+}
+
+export interface ModelVlrEconomyBlock {
+  "buy_buckets"?: Array<ModelVlrBuyBucket>;
+  "game_id"?: string;
+  "map"?: string;
+  "map_number"?: number;
+  "rounds"?: Array<ModelVlrEconomyRound>;
+  "teams"?: Array<ModelVlrTeamEconomy>;
+}
+
+export interface ModelVlrEconomyRound {
+  "pistol"?: boolean;
+  "round"?: number;
+  "team1_bank_k"?: number;
+  "team1_buy"?: "eco" | "half" | "full";
+  "team1_loadout_k"?: number;
+  "team2_bank_k"?: number;
+  "team2_buy"?: "eco" | "half" | "full";
+  "team2_loadout_k"?: number;
+  "winner_side"?: "attack" | "defense";
+  "winner_team"?: string;
+}
+
+export interface ModelVlrEventAgentsResponse {
+  "agents"?: Array<string>;
+  "compositions"?: Array<ModelVlrMapCompositions>;
+  "event_id"?: string;
+  "fetched_at"?: string;
+  "maps"?: Array<ModelVlrMapAgentRow>;
+  "overall"?: ModelVlrMapAgentRow;
+  "source_url"?: string;
+}
+
+export interface ModelVlrEventDetail {
+  "dates"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "location"?: string;
+  "name"?: string;
+  "prize"?: string;
+  "series"?: string;
+  "source_url"?: string;
+  "subtitle"?: string;
+  "teams"?: Array<ModelVlrTeamRef>;
+}
+
+export interface ModelVlrEventMatchesResponse {
+  "count"?: number;
+  "event_id"?: string;
+  "fetched_at"?: string;
+  "matches"?: Array<ModelVlrMatchSummary>;
+  "source_url"?: string;
+}
+
+export interface ModelVlrEventRef {
+  "id"?: string;
+  "name"?: string;
+  "series"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrEventStatsResponse {
+  "count"?: number;
+  "event_id"?: string;
+  "fetched_at"?: string;
+  "players"?: Array<ModelVlrStatsRow>;
+  "side"?: "all" | "t" | "ct";
+  "source_url"?: string;
+}
+
+export interface ModelVlrEventSummary {
+  "country_code"?: string;
+  "dates"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "name"?: string;
+  "prize"?: string;
+  "status"?: "upcoming" | "ongoing" | "completed";
+  "url"?: string;
+}
+
+export interface ModelVlrEventsResponse {
+  "count"?: number;
+  "events"?: Array<ModelVlrEventSummary>;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "page"?: number;
+  "region"?: string;
+  "source_url"?: string;
+  "tier"?: string;
+}
+
+export interface ModelVlrForumCategoriesResponse {
+  "categories"?: Array<ModelVlrForumCategory>;
+  "count"?: number;
+  "fetched_at"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelVlrForumCategory {
+  "description"?: string;
+  "group"?: string;
+  "last_post_time"?: string;
+  "last_poster"?: string;
+  "last_thread_id"?: string;
+  "name"?: string;
+  "posts"?: number;
+  "slug"?: "valorant-discussion" | "off-topic" | "site-feedback";
+  "threads"?: number;
+}
+
+export interface ModelVlrForumThread {
+  "author"?: string;
+  "category"?: string;
+  "category_name"?: string;
+  "frags"?: number;
+  "id"?: string;
+  "last_active"?: string;
+  "last_poster"?: string;
+  "pinned"?: boolean;
+  "posted"?: string;
+  "replies"?: number;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrForumThreadsResponse {
+  "category"?: string;
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "page"?: number;
+  "source_url"?: string;
+  "threads"?: Array<ModelVlrForumThread>;
+}
+
+export interface ModelVlrH2Hmatch {
+  "date"?: string;
+  "event"?: string;
+  "id"?: string;
+  "stage"?: string;
+  "team1_score"?: number;
+  "team2_score"?: number;
+  "url"?: string;
+  "winner"?: "team1" | "team2";
+}
+
+export interface ModelVlrHeadToHead {
+  "matches"?: Array<ModelVlrH2Hmatch>;
+  "team1"?: string;
+  "team2"?: string;
+}
+
+export interface ModelVlrHistoryResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "id"?: string;
+  "matches"?: Array<ModelVlrTeamMatch>;
+  "page"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelVlrKillMatrix {
+  "mode"?: "overall" | "first_kills" | "op_kills";
+  "rows"?: Array<ModelVlrMatrixRow>;
+}
+
+export interface ModelVlrMapAgentRow {
+  "attack_win_percent"?: number;
+  "defense_win_percent"?: number;
+  "games"?: number;
+  "map"?: string;
+  "pick_rates"?: Array<ModelVlrAgentPick>;
+}
+
+export interface ModelVlrMapCompositions {
+  "map"?: string;
+  "teams"?: Array<ModelVlrTeamComposition>;
+}
+
+export interface ModelVlrMapResult {
+  "duration"?: string;
+  "id"?: string;
+  "name"?: string;
+  "number"?: number;
+  "picked_by"?: string;
+  "players"?: Array<ModelVlrPlayerLine>;
+  "teams"?: Array<ModelVlrMapTeamResult>;
+}
+
+export interface ModelVlrMapSide {
+  "first_rounds"?: number;
+  "round_win_percent"?: number;
+  "rounds_lost"?: number;
+  "rounds_won"?: number;
+}
+
+export interface ModelVlrMapTeamResult {
+  "name"?: string;
+  "rounds"?: ModelVlrRoundSplit;
+  "score"?: number;
+}
+
+export interface ModelVlrMatchDetail {
+  "all_maps_players"?: Array<ModelVlrPlayerLine>;
+  "event"?: ModelVlrEventRef;
+  "fetched_at"?: string;
+  "format"?: string;
+  "head_to_head"?: ModelVlrHeadToHead;
+  "id"?: string;
+  "maps"?: Array<ModelVlrMapResult>;
+  "note"?: string;
+  "past_matches"?: Array<ModelVlrPastMatches>;
+  "source_url"?: string;
+  "start_time_utc"?: string;
+  "status"?: string;
+  "teams"?: Array<ModelVlrTeamScore>;
+  "url"?: string;
+}
+
+export interface ModelVlrMatchEconomy {
+  "all_maps"?: ModelVlrEconomyBlock;
+  "available"?: boolean;
+  "fetched_at"?: string;
+  "id"?: string;
+  "maps"?: Array<ModelVlrEconomyBlock>;
+  "source_url"?: string;
+}
+
+export interface ModelVlrMatchListResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "matches"?: Array<ModelVlrMatchSummary>;
+  "page"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelVlrMatchPerformance {
+  "all_maps"?: ModelVlrPerformanceBlock;
+  "available"?: boolean;
+  "fetched_at"?: string;
+  "id"?: string;
+  "maps"?: Array<ModelVlrPerformanceBlock>;
+  "source_url"?: string;
+}
+
+export interface ModelVlrMatchRounds {
+  "available"?: boolean;
+  "fetched_at"?: string;
+  "id"?: string;
+  "maps"?: Array<ModelVlrRoundsBlock>;
+  "source_url"?: string;
+}
+
+export interface ModelVlrMatchSummary {
+  "date"?: string;
+  "eta"?: string;
+  "event"?: string;
+  "has_stats"?: boolean;
+  "has_vods"?: boolean;
+  "id"?: string;
+  "note"?: string;
+  "series"?: string;
+  "status"?: "upcoming" | "live" | "completed";
+  "teams"?: Array<ModelVlrMatchTeam>;
+  "time_label"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrMatchTeam {
+  "country_code"?: string;
+  "name"?: string;
+  "score"?: number;
+  "winner"?: boolean;
+}
+
+export interface ModelVlrMatrixCell {
+  "deaths"?: number;
+  "diff"?: number;
+  "kills"?: number;
+  "opponent"?: ModelVlrMatrixPlayer;
+}
+
+export interface ModelVlrMatrixPlayer {
+  "name"?: string;
+  "team"?: string;
+}
+
+export interface ModelVlrMatrixRow {
+  "player"?: ModelVlrMatrixPlayer;
+  "vs"?: Array<ModelVlrMatrixCell>;
+}
+
+export interface ModelVlrNewsItem {
+  "author"?: string;
+  "country_code"?: string;
+  "date"?: string;
+  "description"?: string;
+  "id"?: string;
+  "title"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrNewsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "items"?: Array<ModelVlrNewsItem>;
+  "page"?: number;
+  "source_url"?: string;
+}
+
+export interface ModelVlrPastMatch {
+  "date"?: string;
+  "id"?: string;
+  "opponent"?: string;
+  "result"?: "win" | "loss";
+  "score"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrPastMatches {
+  "matches"?: Array<ModelVlrPastMatch>;
+  "team"?: string;
+}
+
+export interface ModelVlrPerformanceBlock {
+  "advanced"?: Array<ModelVlrAdvancedLine>;
+  "game_id"?: string;
+  "kill_matrices"?: Array<ModelVlrKillMatrix>;
+  "map"?: string;
+  "map_number"?: number;
+}
+
+export interface ModelVlrPlayerDetail {
+  "agent_stats"?: Array<ModelVlrAgentUsage>;
+  "alias"?: string;
+  "country"?: string;
+  "country_code"?: string;
+  "current_teams"?: Array<ModelVlrPlayerTeam>;
+  "fetched_at"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "links"?: Array<string>;
+  "past_teams"?: Array<ModelVlrPlayerTeam>;
+  "real_name"?: string;
+  "recent_matches"?: Array<ModelVlrTeamMatch>;
+  "source_url"?: string;
+}
+
+export interface ModelVlrPlayerLine {
+  "acs"?: number;
+  "adr"?: number;
+  "agents"?: Array<string>;
+  "assists"?: number;
+  "country_code"?: string;
+  "deaths"?: number;
+  "first_deaths"?: number;
+  "first_kills"?: number;
+  "fk_diff"?: number;
+  "headshot_percent"?: number;
+  "id"?: string;
+  "kast_percent"?: number;
+  "kd_diff"?: number;
+  "kills"?: number;
+  "name"?: string;
+  "rating"?: number;
+  "team"?: string;
+}
+
+export interface ModelVlrPlayerRef {
+  "country_code"?: string;
+  "id"?: string;
+  "name"?: string;
+  "team"?: string;
+}
+
+export interface ModelVlrPlayerTeam {
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "period"?: string;
+  "tag"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrRankingRow {
+  "country"?: string;
+  "earnings"?: string;
+  "last_match_id"?: string;
+  "rank"?: number;
+  "rating"?: number;
+  "record"?: string;
+  "streak"?: string;
+  "team"?: ModelVlrTeamRef;
+}
+
+export interface ModelVlrRankingsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "region"?: string;
+  "source_url"?: string;
+  "teams"?: Array<ModelVlrRankingRow>;
+  "total"?: number;
+}
+
+export interface ModelVlrRatio {
+  "played"?: number;
+  "won"?: number;
+}
+
+export interface ModelVlrRosterMember {
+  "alias"?: string;
+  "country_code"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "real_name"?: string;
+  "role"?: "player" | "captain" | "coach" | "manager" | "analyst" | "staff";
+}
+
+export interface ModelVlrRoundEvent {
+  "player"?: string;
+  "player_team"?: string;
+  "time"?: string;
+  "type"?: "kill" | "plant" | "defuse";
+  "victim"?: string;
+  "weapon"?: string;
+}
+
+export interface ModelVlrRoundLoadout {
+  "agent"?: string;
+  "armor"?: string;
+  "credits_left"?: number;
+  "player"?: string;
+  "spent"?: number;
+  "team"?: string;
+  "weapon"?: string;
+}
+
+export interface ModelVlrRoundLog {
+  "attacking_team"?: string;
+  "events"?: Array<ModelVlrRoundEvent>;
+  "loadouts"?: Array<ModelVlrRoundLoadout>;
+  "round"?: number;
+  "score_after"?: ModelVlrRoundScore;
+  "spike_detonated"?: boolean;
+  "winner_team"?: string;
+}
+
+export interface ModelVlrRoundScore {
+  "team1"?: number;
+  "team2"?: number;
+}
+
+export interface ModelVlrRoundSplit {
+  "attack"?: number;
+  "defend"?: number;
+  "overtime"?: number;
+}
+
+export interface ModelVlrRoundsBlock {
+  "game_id"?: string;
+  "map"?: string;
+  "map_number"?: number;
+  "rounds"?: Array<ModelVlrRoundLog>;
+}
+
+export interface ModelVlrSearchCounts {
+  "events"?: number;
+  "players"?: number;
+  "teams"?: number;
+}
+
+export interface ModelVlrSearchResponse {
+  "count"?: number;
+  "counts"?: ModelVlrSearchCounts;
+  "fetched_at"?: string;
+  "query"?: string;
+  "results"?: Array<ModelVlrSearchResult>;
+  "source_url"?: string;
+  "type"?: "all" | "teams" | "events" | "players";
+}
+
+export interface ModelVlrSearchResult {
+  "date_range"?: string;
+  "description"?: string;
+  "id"?: string;
+  "image_url"?: string;
+  "inactive"?: boolean;
+  "kind"?: "team" | "event" | "player";
+  "name"?: string;
+  "prize_pool"?: string;
+  "successor"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrStatsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "has_more"?: boolean;
+  "page"?: number;
+  "players"?: Array<ModelVlrStatsRow>;
+  "source_url"?: string;
+}
+
+export interface ModelVlrStatsRow {
+  "acs"?: number;
+  "adr"?: number;
+  "agent_usage"?: Array<string>;
+  "agents"?: Array<string>;
+  "assists"?: number;
+  "assists_per_round"?: number;
+  "clutch_percent"?: number;
+  "clutches_total"?: number;
+  "clutches_won"?: number;
+  "deaths"?: number;
+  "first_death_percent"?: number;
+  "first_deaths"?: number;
+  "first_kill_percent"?: number;
+  "first_kills"?: number;
+  "fk_fd_ratio"?: number;
+  "headshot_percent"?: number;
+  "kast_percent"?: number;
+  "kd"?: number;
+  "kills"?: number;
+  "kills_per_round"?: number;
+  "maps"?: number;
+  "max_kills"?: number;
+  "player"?: ModelVlrPlayerRef;
+  "rating"?: number;
+  "rounds"?: number;
+}
+
+export interface ModelVlrTeamComposition {
+  "agents_used"?: Array<string>;
+  "matches"?: Array<ModelVlrCompositionMatch>;
+  "team"?: string;
+  "team_id"?: string;
+}
+
+export interface ModelVlrTeamDetail {
+  "country"?: string;
+  "country_code"?: string;
+  "fetched_at"?: string;
+  "id"?: string;
+  "links"?: Array<string>;
+  "logo_url"?: string;
+  "name"?: string;
+  "news"?: Array<ModelVlrNewsItem>;
+  "recent_matches"?: Array<ModelVlrTeamMatch>;
+  "roster"?: Array<ModelVlrRosterMember>;
+  "source_url"?: string;
+  "tag"?: string;
+}
+
+export interface ModelVlrTeamEconomy {
+  "bonus_rounds"?: ModelVlrRatio;
+  "pistol_conversion"?: ModelVlrRatio;
+  "pistol_rounds"?: ModelVlrRatio;
+  "team"?: string;
+}
+
+export interface ModelVlrTeamMapRow {
+  "attack"?: ModelVlrMapSide;
+  "defense"?: ModelVlrMapSide;
+  "losses"?: number;
+  "map"?: string;
+  "played"?: number;
+  "win_percent"?: number;
+  "wins"?: number;
+}
+
+export interface ModelVlrTeamMapsResponse {
+  "count"?: number;
+  "fetched_at"?: string;
+  "maps"?: Array<ModelVlrTeamMapRow>;
+  "source_url"?: string;
+  "team_id"?: string;
+}
+
+export interface ModelVlrTeamMatch {
+  "date"?: string;
+  "event"?: string;
+  "id"?: string;
+  "opponent"?: string;
+  "result"?: "win" | "loss";
+  "score"?: string;
+  "stage"?: string;
+  "team"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrTeamRef {
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "tag"?: string;
+  "url"?: string;
+}
+
+export interface ModelVlrTeamScore {
+  "id"?: string;
+  "logo_url"?: string;
+  "name"?: string;
+  "score"?: number;
+  "tag"?: string;
+  "url"?: string;
+  "winner"?: boolean;
+}
+
 export interface ModelVoxAuthorArticle {
   "category"?: string;
   "excerpt"?: string;
@@ -78053,6 +81515,126 @@ export interface ModelXdaAuthorResponse {
   "social_links"?: Array<ModelValnetAuthorSocialLink>;
   "title"?: string;
   "url"?: string;
+}
+
+export interface ModelXiaohongshuChannel {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelXiaohongshuComment {
+  "author"?: ModelXiaohongshuCommentAuthor;
+  "comment_id"?: string;
+  "content"?: string;
+  "created_at"?: number;
+  "ip_location"?: string;
+  "like_count"?: number;
+  "sub_comment_count"?: number;
+  "sub_comments"?: Array<ModelXiaohongshuComment>;
+}
+
+export interface ModelXiaohongshuCommentAuthor {
+  "avatar_url"?: string;
+  "nickname"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelXiaohongshuCommentsResponse {
+  "count"?: number;
+  "cursor"?: string;
+  "has_more"?: boolean;
+  "items"?: Array<ModelXiaohongshuComment>;
+  "note_id"?: string;
+}
+
+export interface ModelXiaohongshuExploreCard {
+  "author"?: ModelXiaohongshuNoteAuthor;
+  "cover_url"?: string;
+  "liked_count"?: number;
+  "note_id"?: string;
+  "note_url"?: string;
+  "title"?: string;
+  "type"?: string;
+  "xsec_token"?: string;
+}
+
+export interface ModelXiaohongshuExploreResponse {
+  "channel_id"?: string;
+  "channels"?: Array<ModelXiaohongshuChannel>;
+  "count"?: number;
+  "items"?: Array<ModelXiaohongshuExploreCard>;
+}
+
+export interface ModelXiaohongshuNoteAuthor {
+  "avatar_url"?: string;
+  "nickname"?: string;
+  "user_id"?: string;
+}
+
+export interface ModelXiaohongshuNoteResponse {
+  "author"?: ModelXiaohongshuNoteAuthor;
+  "description"?: string;
+  "image_urls"?: Array<string>;
+  "note_id"?: string;
+  "published_at"?: string;
+  "stats"?: ModelXiaohongshuNoteStats;
+  "tags"?: Array<ModelXiaohongshuNoteTag>;
+  "title"?: string;
+  "type"?: string;
+  "url"?: string;
+  "video_duration_seconds"?: number;
+  "video_url"?: string;
+}
+
+export interface ModelXiaohongshuNoteStats {
+  "collected_count"?: number;
+  "comment_count"?: number;
+  "liked_count"?: number;
+  "share_count"?: number;
+}
+
+export interface ModelXiaohongshuNoteTag {
+  "id"?: string;
+  "name"?: string;
+}
+
+export interface ModelXiaohongshuSuggestItem {
+  "highlight_flags"?: Array<boolean>;
+  "search_type"?: string;
+  "text"?: string;
+  "type"?: string;
+}
+
+export interface ModelXiaohongshuSuggestResponse {
+  "count"?: number;
+  "items"?: Array<ModelXiaohongshuSuggestItem>;
+  "keyword"?: string;
+  "search_cpl_id"?: string;
+  "word_request_id"?: string;
+}
+
+export interface ModelXiaohongshuCommentsResponseDoc {
+  "code"?: number;
+  "data"?: ModelXiaohongshuCommentsResponse;
+  "msg"?: string;
+}
+
+export interface ModelXiaohongshuExploreResponseDoc {
+  "code"?: number;
+  "data"?: ModelXiaohongshuExploreResponse;
+  "msg"?: string;
+}
+
+export interface ModelXiaohongshuNoteResponseDoc {
+  "code"?: number;
+  "data"?: ModelXiaohongshuNoteResponse;
+  "msg"?: string;
+}
+
+export interface ModelXiaohongshuSuggestResponseDoc {
+  "code"?: number;
+  "data"?: ModelXiaohongshuSuggestResponse;
+  "msg"?: string;
 }
 
 export interface ModelYahooautosArticleResponse {
@@ -83589,6 +87171,218 @@ export interface BlueskySearchActorsParams {
 
 export type BlueskyTrendingTopicsResponse = CrawloraResponse<ModelBlueskyTrendingTopicsResponseDoc>;
 export interface BlueskyTrendingTopicsParams {
+}
+
+export type Bo3EconomyBaselineResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3EconomyBaselineResponse }>;
+export interface Bo3EconomyBaselineParams {
+}
+
+export type Bo3ForumResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3ForumFeedResponse }>;
+export interface Bo3ForumParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+  "category"?: number;
+  "sort"?: "activity" | "newest" | "comments" | "rating";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3ForumCategoriesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3ForumCategoriesResponse }>;
+export interface Bo3ForumCategoriesParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+}
+
+export type Bo3MatchResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3MatchInfo }>;
+export interface Bo3MatchParams {
+  "slug": string;
+}
+
+export type Bo3MatchGamesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3MatchGamesResponse }>;
+export interface Bo3MatchGamesParams {
+  "match_id": number;
+}
+
+export type Bo3MatchHistoryResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3MatchHistoryResponse }>;
+export interface Bo3MatchHistoryParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+  "status"?: "finished" | "defwin" | "upcoming" | "current";
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+  "from"?: string;
+  "to"?: string;
+  "sort"?: "newest" | "oldest";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3MatchPlayersResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3MatchPlayersResponse }>;
+export interface Bo3MatchPlayersParams {
+  "slug": string;
+}
+
+export type Bo3NewsCategoriesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3NewsCategoriesResponse }>;
+export interface Bo3NewsCategoriesParams {
+}
+
+export type Bo3NewsFeedResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3NewsFeedResponse }>;
+export interface Bo3NewsFeedParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+  "section"?: "news" | "article" | "wiki" | "predictions";
+  "category"?: number;
+  "sort"?: "newest" | "oldest";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3PlayerResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3PlayerInfo }>;
+export interface Bo3PlayerParams {
+  "slug": string;
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+}
+
+export type Bo3PlayerLeaderboardResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3LeaderboardResponse }>;
+export interface Bo3PlayerLeaderboardParams {
+  "from"?: string;
+  "to"?: string;
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+  "sort"?: "rating" | "kd" | "kills" | "damage" | "assists" | "headshots" | "games" | "rounds";
+  "order"?: "desc" | "asc";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3PlayerRecentMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3RecentMatchesResponse }>;
+export interface Bo3PlayerRecentMatchesParams {
+  "slug": string;
+  "opponent"?: string;
+  "tournament"?: string;
+  "limit"?: number;
+}
+
+export type Bo3PlayerStatsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3StatsResponse }>;
+export interface Bo3PlayerStatsParams {
+  "slug": string;
+  "kind"?: "general" | "maps" | "accuracy";
+  "from"?: string;
+  "to"?: string;
+}
+
+export type Bo3RecordsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3RecordsFeedResponse }>;
+export interface Bo3RecordsParams {
+  "from"?: string;
+  "to"?: string;
+  "record_type"?: string;
+  "match"?: string;
+  "tournament"?: string;
+  "team"?: string;
+  "player"?: string;
+  "sort"?: "newest" | "oldest";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3TeamResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TeamInfo }>;
+export interface Bo3TeamParams {
+  "slug": string;
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+}
+
+export type Bo3TeamPrizeMoneyResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TeamPrizeMoneyResponse }>;
+export interface Bo3TeamPrizeMoneyParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+  "from"?: string;
+  "to"?: string;
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3TeamRankingDatesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TeamRankingDatesResponse }>;
+export interface Bo3TeamRankingDatesParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+}
+
+export type Bo3TeamRankingsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TeamRankingsResponse }>;
+export interface Bo3TeamRankingsParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+  "region"?: string;
+  "date"?: string;
+  "page"?: number;
+  "per_page"?: number;
+}
+
+export type Bo3TeamRecentMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3RecentMatchesResponse }>;
+export interface Bo3TeamRecentMatchesParams {
+  "slug": string;
+  "opponent"?: string;
+  "tournament"?: string;
+  "limit"?: number;
+}
+
+export type Bo3TeamStatsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3StatsResponse }>;
+export interface Bo3TeamStatsParams {
+  "slug": string;
+  "kind"?: "general" | "advanced" | "accuracy" | "economy" | "map-pool";
+  "from"?: string;
+  "to"?: string;
+}
+
+export type Bo3TournamentResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TournamentInfo }>;
+export interface Bo3TournamentParams {
+  "slug": string;
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+}
+
+export type Bo3TournamentMapPoolResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TournamentMapPoolResponse }>;
+export interface Bo3TournamentMapPoolParams {
+  "slug": string;
+}
+
+export type Bo3TournamentMvpsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TournamentMvpsResponse }>;
+export interface Bo3TournamentMvpsParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3TournamentSquadsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TournamentSquadsResponse }>;
+export interface Bo3TournamentSquadsParams {
+  "slug": string;
+}
+
+export type Bo3TournamentStagesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TournamentStagesResponse }>;
+export interface Bo3TournamentStagesParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+  "slug": string;
+}
+
+export type Bo3TournamentsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TournamentListResponse }>;
+export interface Bo3TournamentsParams {
+  "game"?: "cs2" | "valorant" | "lol" | "dota2" | "r6siege" | "mlbb";
+  "status"?: "current" | "upcoming" | "finished";
+  "tier"?: "s" | "a" | "b" | "c" | "d";
+  "event_type"?: "lan" | "online";
+  "sort"?: "newest" | "oldest" | "prize";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3TransfersResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3TransfersResponse }>;
+export interface Bo3TransfersParams {
+  "team_id"?: number;
+  "player_id"?: number;
+  "action"?: "join" | "change" | "leave";
+  "role"?: "player" | "coach";
+  "sort"?: "newest" | "oldest";
+  "offset"?: number;
+  "limit"?: number;
+}
+
+export type Bo3ValorantLeaderboardResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelBo3ValorantLeaderboardResponse }>;
+export interface Bo3ValorantLeaderboardParams {
+  "from"?: string;
+  "to"?: string;
+  "sort"?: "acs" | "kills" | "deaths" | "damage" | "assists" | "first_kills" | "clutches" | "first_duels" | "games" | "rounds";
+  "order"?: "desc" | "asc";
+  "offset"?: number;
+  "limit"?: number;
 }
 
 export type BonhamsAuctionSearchResponse = CrawloraResponse<ModelBonhamsAuctionSearchResponseDoc>;
@@ -91670,6 +95464,104 @@ export interface GooglePlaySuggestParams {
   "lang"?: string;
 }
 
+export type GosuGamersGosugamersEncountersResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersEncountersResponse }>;
+export interface GosuGamersGosugamersEncountersParams {
+  "game": "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "match_id": string;
+  "team1_id": string;
+  "team2_id": string;
+}
+
+export type GosuGamersGosugamersGamesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersGamesResponse }>;
+export interface GosuGamersGosugamersGamesParams {
+}
+
+export type GosuGamersGosugamersMatchResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersMatchDetail }>;
+export interface GosuGamersGosugamersMatchParams {
+  "game": "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "tournament_id": string;
+  "match_id": string;
+}
+
+export type GosuGamersGosugamersMatchGameResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersMatchGameResponse }>;
+export interface GosuGamersGosugamersMatchGameParams {
+  "game_id": string;
+}
+
+export type GosuGamersGosugamersMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersMatchListResponse }>;
+export interface GosuGamersGosugamersMatchesParams {
+  "game"?: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type GosuGamersGosugamersPlayerResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersPlayerDetail }>;
+export interface GosuGamersGosugamersPlayerParams {
+  "game": "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "player_id": string;
+}
+
+export type GosuGamersGosugamersRankingsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersRankingsResponse }>;
+export interface GosuGamersGosugamersRankingsParams {
+  "game": "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "region_id"?: number;
+  "q"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type GosuGamersGosugamersResultsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersMatchListResponse }>;
+export interface GosuGamersGosugamersResultsParams {
+  "game"?: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type GosuGamersGosugamersStageGroupsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersStageGroupsResponse }>;
+export interface GosuGamersGosugamersStageGroupsParams {
+  "tournament_id": string;
+  "stage_id": string;
+}
+
+export type GosuGamersGosugamersTeamResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersTeamDetail }>;
+export interface GosuGamersGosugamersTeamParams {
+  "game": "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "team_id": string;
+}
+
+export type GosuGamersGosugamersTeamResultsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersTeamResultsResponse }>;
+export interface GosuGamersGosugamersTeamResultsParams {
+  "team_id": string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
+export type GosuGamersGosugamersTournamentResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersTournamentDetail }>;
+export interface GosuGamersGosugamersTournamentParams {
+  "game": "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "tournament_id": string;
+}
+
+export type GosuGamersGosugamersTournamentParticipantsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersTournamentParticipantsResponse }>;
+export interface GosuGamersGosugamersTournamentParticipantsParams {
+  "game": "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "tournament_id": string;
+}
+
+export type GosuGamersGosugamersTournamentTalentsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersTournamentTalentsResponse }>;
+export interface GosuGamersGosugamersTournamentTalentsParams {
+  "tournament_id": string;
+}
+
+export type GosuGamersGosugamersTournamentsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelGosugamersTournamentsResponse }>;
+export interface GosuGamersGosugamersTournamentsParams {
+  "game"?: "dota2" | "counterstrike" | "lol" | "valorant" | "mobile-legends" | "pubg-mobile" | "wild-rift" | "free-fire" | "battlegrounds-mobile-india";
+  "state"?: "all" | "ongoing" | "upcoming" | "past";
+  "q"?: string;
+  "page"?: number;
+  "page_size"?: number;
+}
+
 export type GqArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
 export interface GqArticleParams {
   "url": string;
@@ -94575,6 +98467,92 @@ export interface LiveScoreLivescoreTeamParams {
   "path": string;
 }
 
+export type LoLesportsLolesportsCompletedEventsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsCompletedEventsResponse }>;
+export interface LoLesportsLolesportsCompletedEventsParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+  "tournament_id": string;
+}
+
+export type LoLesportsLolesportsEventResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsEventDetailResponse }>;
+export interface LoLesportsLolesportsEventParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+  "match_id": string;
+}
+
+export type LoLesportsLolesportsGameDetailsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsGameDetailsResponse }>;
+export interface LoLesportsLolesportsGameDetailsParams {
+  "game_id": string;
+  "starting_time"?: string;
+  "participant_ids"?: string;
+}
+
+export type LoLesportsLolesportsGameWindowResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsGameWindowResponse }>;
+export interface LoLesportsLolesportsGameWindowParams {
+  "game_id": string;
+  "starting_time"?: string;
+}
+
+export type LoLesportsLolesportsGprResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsGprresponse }>;
+export interface LoLesportsLolesportsGprParams {
+  "season"?: "current" | "2025" | "2024";
+  "league"?: string;
+  "limit"?: number;
+  "history"?: boolean;
+}
+
+export type LoLesportsLolesportsLeaguesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsLeaguesResponse }>;
+export interface LoLesportsLolesportsLeaguesParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+}
+
+export type LoLesportsLolesportsLiveResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsLiveResponse }>;
+export interface LoLesportsLolesportsLiveParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+}
+
+export type LoLesportsLolesportsNewsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsNewsResponse }>;
+export interface LoLesportsLolesportsNewsParams {
+  "hl"?: "cs-CZ" | "de-DE" | "el-GR" | "en-AU" | "en-GB" | "en-PH" | "en-SG" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "id-ID" | "it-IT" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "ro-RO" | "ru-RU" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+  "limit"?: number;
+}
+
+export type LoLesportsLolesportsScheduleResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsScheduleResponse }>;
+export interface LoLesportsLolesportsScheduleParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+  "league_id"?: string;
+  "page_token"?: string;
+}
+
+export type LoLesportsLolesportsSeasonsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsSeasonsResponse }>;
+export interface LoLesportsLolesportsSeasonsParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+  "season_id"?: string;
+  "region"?: string;
+  "league_id"?: string;
+}
+
+export type LoLesportsLolesportsStandingsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsStandingsResponse }>;
+export interface LoLesportsLolesportsStandingsParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+  "tournament_id": string;
+}
+
+export type LoLesportsLolesportsTeamsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsTeamsResponse }>;
+export interface LoLesportsLolesportsTeamsParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+  "slug"?: string;
+  "q"?: string;
+  "status"?: "active" | "archived";
+  "page"?: number;
+  "limit"?: number;
+}
+
+export type LoLesportsLolesportsTournamentsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelLolesportsTournamentsResponse }>;
+export interface LoLesportsLolesportsTournamentsParams {
+  "hl"?: "cs-CZ" | "de-DE" | "en-US" | "es-ES" | "es-MX" | "fr-FR" | "hu-HU" | "ja-JP" | "ko-KR" | "pl-PL" | "pt-BR" | "th-TH" | "tr-TR" | "vi-VN" | "zh-TW";
+  "league_id": string;
+}
+
 export type LululemonCategoriesResponse = CrawloraResponse<ModelLululemonCategoriesResponseDoc>;
 export interface LululemonCategoriesParams {
   "section"?: "new-featured" | "women" | "men" | "accessories" | "bags" | "activity" | "we-made-too-much";
@@ -96993,6 +100971,150 @@ export interface OldNavyOldnavyStoresParams {
   "lat"?: number;
   "lng"?: number;
   "brand"?: "on" | "gap" | "br" | "at";
+}
+
+export type OpenDotaOpendotaAbilitiesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaAbilitiesResponse }>;
+export interface OpenDotaOpendotaAbilitiesParams {
+  "q"?: string;
+  "limit"?: number;
+}
+
+export type OpenDotaOpendotaBenchmarksResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaBenchmarksResponse }>;
+export interface OpenDotaOpendotaBenchmarksParams {
+  "hero_id": number;
+}
+
+export type OpenDotaOpendotaConstantsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaConstantsResponse }>;
+export interface OpenDotaOpendotaConstantsParams {
+  "resource": "game_mode" | "lobby_type" | "patch" | "region" | "cluster" | "item_ids" | "ability_ids" | "permanent_buffs" | "xp_level" | "countries" | "order_types" | "player_colors";
+}
+
+export type OpenDotaOpendotaHeroDurationsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaHeroDurationsResponse }>;
+export interface OpenDotaOpendotaHeroDurationsParams {
+  "hero_id": number;
+}
+
+export type OpenDotaOpendotaHeroItemsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaHeroItemsResponse }>;
+export interface OpenDotaOpendotaHeroItemsParams {
+  "hero_id": number;
+}
+
+export type OpenDotaOpendotaHeroMatchupsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaHeroMatchupsResponse }>;
+export interface OpenDotaOpendotaHeroMatchupsParams {
+  "hero_id": number;
+}
+
+export type OpenDotaOpendotaHeroStatsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaHeroStatsResponse }>;
+export interface OpenDotaOpendotaHeroStatsParams {
+  "primary_attr"?: "agi" | "all" | "int" | "str";
+  "attack_type"?: "Melee" | "Ranged";
+  "role"?: "Carry" | "Disabler" | "Durable" | "Escape" | "Initiator" | "Nuker" | "Pusher" | "Support";
+  "sort"?: "id" | "name" | "pro_pick" | "pro_win" | "pro_ban" | "pro_win_rate" | "pub_pick" | "pub_win" | "pub_win_rate" | "turbo_pick" | "turbo_win_rate";
+  "desc"?: boolean;
+  "limit"?: number;
+}
+
+export type OpenDotaOpendotaHeroesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaHeroesResponse }>;
+export interface OpenDotaOpendotaHeroesParams {
+}
+
+export type OpenDotaOpendotaItemsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaItemsResponse }>;
+export interface OpenDotaOpendotaItemsParams {
+  "q"?: string;
+  "quality"?: string;
+  "limit"?: number;
+}
+
+export type OpenDotaOpendotaLeagueResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaLeagueDetailResponse }>;
+export interface OpenDotaOpendotaLeagueParams {
+  "league_id": number;
+}
+
+export type OpenDotaOpendotaLeagueMatchIdsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaLeagueMatchIdsResponse }>;
+export interface OpenDotaOpendotaLeagueMatchIdsParams {
+  "league_id": number;
+}
+
+export type OpenDotaOpendotaLeagueMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaLeagueMatchesResponse }>;
+export interface OpenDotaOpendotaLeagueMatchesParams {
+  "league_id": number;
+  "team_id"?: number;
+}
+
+export type OpenDotaOpendotaLeaguesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaLeaguesResponse }>;
+export interface OpenDotaOpendotaLeaguesParams {
+  "tier"?: "amateur" | "excluded" | "premium" | "professional" | "unrated";
+}
+
+export type OpenDotaOpendotaLiveResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaLiveMatchesResponse }>;
+export interface OpenDotaOpendotaLiveParams {
+}
+
+export type OpenDotaOpendotaMatchResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaMatchDetail }>;
+export interface OpenDotaOpendotaMatchParams {
+  "id": number;
+}
+
+export type OpenDotaOpendotaPatchNotesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaPatchNotesResponse }>;
+export interface OpenDotaOpendotaPatchNotesParams {
+  "patch"?: string;
+}
+
+export type OpenDotaOpendotaProMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaProMatchesResponse }>;
+export interface OpenDotaOpendotaProMatchesParams {
+  "less_than_match_id"?: number;
+}
+
+export type OpenDotaOpendotaProPlayersResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaProPlayersResponse }>;
+export interface OpenDotaOpendotaProPlayersParams {
+  "team_id"?: number;
+  "q"?: string;
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type OpenDotaOpendotaRankDistributionResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaDistributionsResponse }>;
+export interface OpenDotaOpendotaRankDistributionParams {
+}
+
+export type OpenDotaOpendotaRecordsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaRecordsResponse }>;
+export interface OpenDotaOpendotaRecordsParams {
+  "field": "kills" | "deaths" | "assists" | "last_hits" | "denies" | "gold_per_min" | "xp_per_min" | "hero_damage" | "tower_damage" | "hero_healing" | "duration";
+}
+
+export type OpenDotaOpendotaScenariosResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaScenariosResponse }>;
+export interface OpenDotaOpendotaScenariosParams {
+  "kind": "item-timings" | "lane-roles" | "misc";
+  "hero_id"?: number;
+  "item"?: string;
+  "lane_role"?: number;
+  "scenario"?: "courier_kill" | "first_blood" | "neg_chat_1min" | "pos_chat_1min";
+  "limit"?: number;
+}
+
+export type OpenDotaOpendotaTeamResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaTeamResponse }>;
+export interface OpenDotaOpendotaTeamParams {
+  "team_id": number;
+}
+
+export type OpenDotaOpendotaTeamHeroesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaTeamHeroesResponse }>;
+export interface OpenDotaOpendotaTeamHeroesParams {
+  "team_id": number;
+}
+
+export type OpenDotaOpendotaTeamMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaTeamMatchesResponse }>;
+export interface OpenDotaOpendotaTeamMatchesParams {
+  "team_id": number;
+}
+
+export type OpenDotaOpendotaTeamPlayersResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaTeamPlayersResponse }>;
+export interface OpenDotaOpendotaTeamPlayersParams {
+  "team_id": number;
+}
+
+export type OpenDotaOpendotaTeamsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelOpendotaTeamsResponse }>;
+export interface OpenDotaOpendotaTeamsParams {
+  "page"?: number;
 }
 
 export type OpenSeaOpenseaActivityResponse = CrawloraResponse<ModelOpenseaActivityResponseDoc>;
@@ -99443,6 +103565,29 @@ export interface RedfinSimilarParams {
   "property_id": string;
 }
 
+export type RednoteExploreResponse = CrawloraResponse<ModelRednoteExploreResponseDoc>;
+export interface RednoteExploreParams {
+  "channel_id"?: string;
+}
+
+export type RednoteNoteResponse = CrawloraResponse<ModelRednoteNoteResponseDoc>;
+export interface RednoteNoteParams {
+  "url"?: string;
+  "note_id"?: string;
+}
+
+export type RednoteNoteCommentsResponse = CrawloraResponse<ModelRednoteCommentsResponseDoc>;
+export interface RednoteNoteCommentsParams {
+  "url"?: string;
+  "note_id"?: string;
+  "cursor"?: string;
+}
+
+export type RednoteSearchSuggestResponse = CrawloraResponse<ModelRednoteSuggestResponseDoc>;
+export interface RednoteSearchSuggestParams {
+  "keyword": string;
+}
+
 export type ReelShortReelshortFandomCategoriesResponse = CrawloraResponse<ModelReelshortFandomCategoriesResponseDoc>;
 export interface ReelShortReelshortFandomCategoriesParams {
 }
@@ -100835,6 +104980,94 @@ export type ShopAppSuggestionsResponse = CrawloraResponse<ModelShopappSuggestion
 export interface ShopAppSuggestionsParams {
   "query": string;
   "limit"?: number;
+}
+
+export type ShopeeBannersResponse = CrawloraResponse<ModelShopeeBannersResponseDoc>;
+export interface ShopeeBannersParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+  "slot"?: "HOME_CAROUSEL_01" | "HOME_SKINNY_01" | "HOME_NUZ_CAROUSEL_01" | "HOME_FLOATING" | "HOME_POPUP_01" | "HOME_MALL_01";
+  "space_key"?: string;
+}
+
+export type ShopeeCategoriesResponse = CrawloraResponse<ModelShopeeCategoriesResponseDoc>;
+export interface ShopeeCategoriesParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+}
+
+export type ShopeeCategoryDetailResponse = CrawloraResponse<ModelShopeeCategoryDetailResponseDoc>;
+export interface ShopeeCategoryDetailParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+  "catids": string;
+}
+
+export type ShopeeFlashSaleResponse = CrawloraResponse<ModelShopeeFlashSaleResponseDoc>;
+export interface ShopeeFlashSaleParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type ShopeeFooterResponse = CrawloraResponse<ModelShopeeFooterResponseDoc>;
+export interface ShopeeFooterParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+}
+
+export type ShopeeHomeResponse = CrawloraResponse<ModelShopeeHomeResponseDoc>;
+export interface ShopeeHomeParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+}
+
+export type ShopeeHomeCategoriesResponse = CrawloraResponse<ModelShopeeHomeCategoriesResponseDoc>;
+export interface ShopeeHomeCategoriesParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+}
+
+export type ShopeeLocationFiltersResponse = CrawloraResponse<ModelShopeeLocationFiltersResponseDoc>;
+export interface ShopeeLocationFiltersParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+}
+
+export type ShopeeMallCategoriesResponse = CrawloraResponse<ModelShopeeMallCategoriesResponseDoc>;
+export interface ShopeeMallCategoriesParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+}
+
+export type ShopeePrefillsResponse = CrawloraResponse<ModelShopeePrefillsResponseDoc>;
+export interface ShopeePrefillsParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+}
+
+export type ShopeeSearchFiltersResponse = CrawloraResponse<ModelShopeeSearchFiltersResponseDoc>;
+export interface ShopeeSearchFiltersParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+  "keyword"?: string;
+  "category"?: string;
+}
+
+export type ShopeeSearchHintsResponse = CrawloraResponse<ModelShopeeSearchHintsResponseDoc>;
+export interface ShopeeSearchHintsParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+  "keyword": string;
+  "version"?: number;
+}
+
+export type ShopeeShopInfoResponse = CrawloraResponse<ModelShopeeShopInfoResponseDoc>;
+export interface ShopeeShopInfoParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+  "shop_id": number;
+}
+
+export type ShopeeShopsResponse = CrawloraResponse<ModelShopeeShopsResponseDoc>;
+export interface ShopeeShopsParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+  "limit"?: number;
+  "offset"?: number;
+}
+
+export type ShopeeSuggestResponse = CrawloraResponse<ModelShopeeSuggestResponseDoc>;
+export interface ShopeeSuggestParams {
+  "region"?: "my" | "sg" | "id" | "th" | "vn" | "ph" | "tw" | "br" | "mx" | "co" | "cl";
+  "keyword": string;
 }
 
 export type ShopifyCollectionsResponse = CrawloraResponse<ModelShopifyCollectionsResponseDoc>;
@@ -105894,6 +110127,141 @@ export interface VintedMemberParams {
   "id": string;
 }
 
+export type VlrEventResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrEventDetail }>;
+export interface VlrEventParams {
+  "id": string;
+}
+
+export type VlrEventAgentsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrEventAgentsResponse }>;
+export interface VlrEventAgentsParams {
+  "id": string;
+}
+
+export type VlrEventMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrEventMatchesResponse }>;
+export interface VlrEventMatchesParams {
+  "id": string;
+}
+
+export type VlrEventStatsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrEventStatsResponse }>;
+export interface VlrEventStatsParams {
+  "id": string;
+  "side"?: "all" | "t" | "ct";
+}
+
+export type VlrEventsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrEventsResponse }>;
+export interface VlrEventsParams {
+  "tier"?: "all" | "vct" | "vcl" | "t3" | "gc" | "cg" | "off";
+  "region"?: "all" | "americas" | "emea" | "pacific" | "china";
+  "page"?: number;
+}
+
+export type VlrForumCategoriesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrForumCategoriesResponse }>;
+export interface VlrForumCategoriesParams {
+}
+
+export type VlrForumThreadsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrForumThreadsResponse }>;
+export interface VlrForumThreadsParams {
+  "category"?: "valorant-discussion" | "off-topic" | "site-feedback";
+  "page"?: number;
+}
+
+export type VlrMatchResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrMatchDetail }>;
+export interface VlrMatchParams {
+  "id": string;
+}
+
+export type VlrMatchEconomyResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrMatchEconomy }>;
+export interface VlrMatchEconomyParams {
+  "id": string;
+}
+
+export type VlrMatchPerformanceResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrMatchPerformance }>;
+export interface VlrMatchPerformanceParams {
+  "id": string;
+}
+
+export type VlrMatchRoundsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrMatchRounds }>;
+export interface VlrMatchRoundsParams {
+  "id": string;
+}
+
+export type VlrMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrMatchListResponse }>;
+export interface VlrMatchesParams {
+  "page"?: number;
+}
+
+export type VlrNewsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrNewsResponse }>;
+export interface VlrNewsParams {
+  "page"?: number;
+}
+
+export type VlrNewsArticleResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrArticleDetail }>;
+export interface VlrNewsArticleParams {
+  "id": string;
+}
+
+export type VlrPlayerResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrPlayerDetail }>;
+export interface VlrPlayerParams {
+  "id": string;
+}
+
+export type VlrPlayerMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrHistoryResponse }>;
+export interface VlrPlayerMatchesParams {
+  "id": string;
+  "page"?: number;
+}
+
+export type VlrRankingsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrRankingsResponse }>;
+export interface VlrRankingsParams {
+  "region"?: "north-america" | "europe" | "brazil" | "asia-pacific" | "korea" | "china" | "japan" | "la-s" | "la-n" | "oceania" | "mena" | "gc" | "collegiate";
+  "limit"?: number;
+}
+
+export type VlrResultsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrMatchListResponse }>;
+export interface VlrResultsParams {
+  "page"?: number;
+}
+
+export type VlrSearchResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrSearchResponse }>;
+export interface VlrSearchParams {
+  "q": string;
+  "type"?: "all" | "teams" | "events" | "players";
+}
+
+export type VlrStatsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrStatsResponse }>;
+export interface VlrStatsParams {
+  "tier"?: string;
+  "region"?: string;
+  "timespan"?: "all" | "30d" | "60d" | "90d" | "2026" | "2025" | "2024" | "2023" | "2022" | "2021" | "2020";
+  "side"?: "all" | "t" | "ct";
+  "role"?: string;
+  "agent"?: string;
+  "map"?: string;
+  "min_rounds"?: number;
+  "from"?: string;
+  "to"?: string;
+  "min_rating"?: "0" | "1300" | "1400" | "1500" | "1550" | "1650" | "1750" | "1850";
+  "sort"?: "rating" | "maps" | "rnd" | "acs" | "kd" | "kast" | "adr" | "kpr" | "apr" | "fkfd" | "fkpr" | "fdpr" | "hsp" | "clp" | "cl" | "kmax" | "k" | "d" | "a" | "fk" | "fd";
+  "dir"?: "asc" | "desc";
+  "page"?: number;
+}
+
+export type VlrTeamResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrTeamDetail }>;
+export interface VlrTeamParams {
+  "id": string;
+}
+
+export type VlrTeamMapsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrTeamMapsResponse }>;
+export interface VlrTeamMapsParams {
+  "id": string;
+}
+
+export type VlrTeamMatchesResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelVlrHistoryResponse }>;
+export interface VlrTeamMatchesParams {
+  "id": string;
+  "page"?: number;
+}
+
 export type VoxArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
 export interface VoxArticleParams {
   "url": string;
@@ -106575,6 +110943,31 @@ export interface XdaNewsParams {
 
 export type XdaSectionsResponse = CrawloraResponse<ModelPublicnewsSectionsResponseDoc>;
 export interface XdaSectionsParams {
+}
+
+export type XiaohongshuExploreResponse = CrawloraResponse<ModelXiaohongshuExploreResponseDoc>;
+export interface XiaohongshuExploreParams {
+  "channel_id"?: string;
+}
+
+export type XiaohongshuNoteResponse = CrawloraResponse<ModelXiaohongshuNoteResponseDoc>;
+export interface XiaohongshuNoteParams {
+  "url"?: string;
+  "note_id"?: string;
+  "xsec_token"?: string;
+}
+
+export type XiaohongshuNoteCommentsResponse = CrawloraResponse<ModelXiaohongshuCommentsResponseDoc>;
+export interface XiaohongshuNoteCommentsParams {
+  "url"?: string;
+  "note_id"?: string;
+  "xsec_token"?: string;
+  "cursor"?: string;
+}
+
+export type XiaohongshuSearchSuggestResponse = CrawloraResponse<ModelXiaohongshuSuggestResponseDoc>;
+export interface XiaohongshuSearchSuggestParams {
+  "keyword": string;
 }
 
 export type YahooAutosArticleResponse = CrawloraResponse<ModelYahooautosArticleResponseDoc>;
@@ -107963,6 +112356,37 @@ export interface BlueskyService {
   profile<T = BlueskyProfileResponse>(params: BlueskyProfileParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   searchActors<T = BlueskySearchActorsResponse>(params: BlueskySearchActorsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   trendingTopics<T = BlueskyTrendingTopicsResponse>(params?: BlueskyTrendingTopicsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface Bo3Service {
+  economyBaseline<T = Bo3EconomyBaselineResponse>(params?: Bo3EconomyBaselineParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  forum<T = Bo3ForumResponse>(params?: Bo3ForumParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  forumCategories<T = Bo3ForumCategoriesResponse>(params?: Bo3ForumCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  match<T = Bo3MatchResponse>(params: Bo3MatchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  matchGames<T = Bo3MatchGamesResponse>(params: Bo3MatchGamesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  matchHistory<T = Bo3MatchHistoryResponse>(params?: Bo3MatchHistoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  matchPlayers<T = Bo3MatchPlayersResponse>(params: Bo3MatchPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  newsCategories<T = Bo3NewsCategoriesResponse>(params?: Bo3NewsCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  newsFeed<T = Bo3NewsFeedResponse>(params?: Bo3NewsFeedParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  player<T = Bo3PlayerResponse>(params: Bo3PlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerLeaderboard<T = Bo3PlayerLeaderboardResponse>(params?: Bo3PlayerLeaderboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerRecentMatches<T = Bo3PlayerRecentMatchesResponse>(params: Bo3PlayerRecentMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerStats<T = Bo3PlayerStatsResponse>(params: Bo3PlayerStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  records<T = Bo3RecordsResponse>(params?: Bo3RecordsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  team<T = Bo3TeamResponse>(params: Bo3TeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamPrizeMoney<T = Bo3TeamPrizeMoneyResponse>(params?: Bo3TeamPrizeMoneyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamRankingDates<T = Bo3TeamRankingDatesResponse>(params?: Bo3TeamRankingDatesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamRankings<T = Bo3TeamRankingsResponse>(params?: Bo3TeamRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamRecentMatches<T = Bo3TeamRecentMatchesResponse>(params: Bo3TeamRecentMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamStats<T = Bo3TeamStatsResponse>(params: Bo3TeamStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournament<T = Bo3TournamentResponse>(params: Bo3TournamentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournamentMapPool<T = Bo3TournamentMapPoolResponse>(params: Bo3TournamentMapPoolParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournamentMvps<T = Bo3TournamentMvpsResponse>(params?: Bo3TournamentMvpsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournamentSquads<T = Bo3TournamentSquadsResponse>(params: Bo3TournamentSquadsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournamentStages<T = Bo3TournamentStagesResponse>(params: Bo3TournamentStagesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  tournaments<T = Bo3TournamentsResponse>(params?: Bo3TournamentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  transfers<T = Bo3TransfersResponse>(params?: Bo3TransfersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  valorantLeaderboard<T = Bo3ValorantLeaderboardResponse>(params?: Bo3ValorantLeaderboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface BonhamsService {
@@ -109497,6 +113921,24 @@ export interface GooglePlayService {
   suggest<T = GooglePlaySuggestResponse>(params: GooglePlaySuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface GosuGamersService {
+  gosugamersEncounters<T = GosuGamersGosugamersEncountersResponse>(params: GosuGamersGosugamersEncountersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersGames<T = GosuGamersGosugamersGamesResponse>(params?: GosuGamersGosugamersGamesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersMatch<T = GosuGamersGosugamersMatchResponse>(params: GosuGamersGosugamersMatchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersMatchGame<T = GosuGamersGosugamersMatchGameResponse>(params: GosuGamersGosugamersMatchGameParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersMatches<T = GosuGamersGosugamersMatchesResponse>(params?: GosuGamersGosugamersMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersPlayer<T = GosuGamersGosugamersPlayerResponse>(params: GosuGamersGosugamersPlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersRankings<T = GosuGamersGosugamersRankingsResponse>(params: GosuGamersGosugamersRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersResults<T = GosuGamersGosugamersResultsResponse>(params?: GosuGamersGosugamersResultsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersStageGroups<T = GosuGamersGosugamersStageGroupsResponse>(params: GosuGamersGosugamersStageGroupsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersTeam<T = GosuGamersGosugamersTeamResponse>(params: GosuGamersGosugamersTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersTeamResults<T = GosuGamersGosugamersTeamResultsResponse>(params: GosuGamersGosugamersTeamResultsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersTournament<T = GosuGamersGosugamersTournamentResponse>(params: GosuGamersGosugamersTournamentParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersTournamentParticipants<T = GosuGamersGosugamersTournamentParticipantsResponse>(params: GosuGamersGosugamersTournamentParticipantsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersTournamentTalents<T = GosuGamersGosugamersTournamentTalentsResponse>(params: GosuGamersGosugamersTournamentTalentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gosugamersTournaments<T = GosuGamersGosugamersTournamentsResponse>(params?: GosuGamersGosugamersTournamentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface GqService {
   article<T = GqArticleResponse>(params: GqArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   author<T = GqAuthorResponse>(params?: GqAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -110156,6 +114598,22 @@ export interface LiveScoreService {
   livescoreTeam<T = LiveScoreLivescoreTeamResponse>(params: LiveScoreLivescoreTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface LoLesportsService {
+  lolesportsCompletedEvents<T = LoLesportsLolesportsCompletedEventsResponse>(params: LoLesportsLolesportsCompletedEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsEvent<T = LoLesportsLolesportsEventResponse>(params: LoLesportsLolesportsEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsGameDetails<T = LoLesportsLolesportsGameDetailsResponse>(params: LoLesportsLolesportsGameDetailsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsGameWindow<T = LoLesportsLolesportsGameWindowResponse>(params: LoLesportsLolesportsGameWindowParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsGpr<T = LoLesportsLolesportsGprResponse>(params?: LoLesportsLolesportsGprParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsLeagues<T = LoLesportsLolesportsLeaguesResponse>(params?: LoLesportsLolesportsLeaguesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsLive<T = LoLesportsLolesportsLiveResponse>(params?: LoLesportsLolesportsLiveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsNews<T = LoLesportsLolesportsNewsResponse>(params?: LoLesportsLolesportsNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsSchedule<T = LoLesportsLolesportsScheduleResponse>(params?: LoLesportsLolesportsScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsSeasons<T = LoLesportsLolesportsSeasonsResponse>(params?: LoLesportsLolesportsSeasonsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsStandings<T = LoLesportsLolesportsStandingsResponse>(params: LoLesportsLolesportsStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsTeams<T = LoLesportsLolesportsTeamsResponse>(params?: LoLesportsLolesportsTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  lolesportsTournaments<T = LoLesportsLolesportsTournamentsResponse>(params: LoLesportsLolesportsTournamentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface LululemonService {
   categories<T = LululemonCategoriesResponse>(params?: LululemonCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   category<T = LululemonCategoryResponse>(params: LululemonCategoryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -110646,6 +115104,35 @@ export interface OldNavyService {
   oldnavyProductReviews<T = OldNavyOldnavyProductReviewsResponse>(params: OldNavyOldnavyProductReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   oldnavySearch<T = OldNavyOldnavySearchResponse>(params: OldNavyOldnavySearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   oldnavyStores<T = OldNavyOldnavyStoresResponse>(params?: OldNavyOldnavyStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface OpenDotaService {
+  opendotaAbilities<T = OpenDotaOpendotaAbilitiesResponse>(params?: OpenDotaOpendotaAbilitiesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaBenchmarks<T = OpenDotaOpendotaBenchmarksResponse>(params: OpenDotaOpendotaBenchmarksParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaConstants<T = OpenDotaOpendotaConstantsResponse>(params: OpenDotaOpendotaConstantsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaHeroDurations<T = OpenDotaOpendotaHeroDurationsResponse>(params: OpenDotaOpendotaHeroDurationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaHeroItems<T = OpenDotaOpendotaHeroItemsResponse>(params: OpenDotaOpendotaHeroItemsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaHeroMatchups<T = OpenDotaOpendotaHeroMatchupsResponse>(params: OpenDotaOpendotaHeroMatchupsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaHeroStats<T = OpenDotaOpendotaHeroStatsResponse>(params?: OpenDotaOpendotaHeroStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaHeroes<T = OpenDotaOpendotaHeroesResponse>(params?: OpenDotaOpendotaHeroesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaItems<T = OpenDotaOpendotaItemsResponse>(params?: OpenDotaOpendotaItemsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaLeague<T = OpenDotaOpendotaLeagueResponse>(params: OpenDotaOpendotaLeagueParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaLeagueMatchIds<T = OpenDotaOpendotaLeagueMatchIdsResponse>(params: OpenDotaOpendotaLeagueMatchIdsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaLeagueMatches<T = OpenDotaOpendotaLeagueMatchesResponse>(params: OpenDotaOpendotaLeagueMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaLeagues<T = OpenDotaOpendotaLeaguesResponse>(params?: OpenDotaOpendotaLeaguesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaLive<T = OpenDotaOpendotaLiveResponse>(params?: OpenDotaOpendotaLiveParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaMatch<T = OpenDotaOpendotaMatchResponse>(params: OpenDotaOpendotaMatchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaPatchNotes<T = OpenDotaOpendotaPatchNotesResponse>(params?: OpenDotaOpendotaPatchNotesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaProMatches<T = OpenDotaOpendotaProMatchesResponse>(params?: OpenDotaOpendotaProMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaProPlayers<T = OpenDotaOpendotaProPlayersResponse>(params?: OpenDotaOpendotaProPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaRankDistribution<T = OpenDotaOpendotaRankDistributionResponse>(params?: OpenDotaOpendotaRankDistributionParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaRecords<T = OpenDotaOpendotaRecordsResponse>(params: OpenDotaOpendotaRecordsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaScenarios<T = OpenDotaOpendotaScenariosResponse>(params: OpenDotaOpendotaScenariosParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaTeam<T = OpenDotaOpendotaTeamResponse>(params: OpenDotaOpendotaTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaTeamHeroes<T = OpenDotaOpendotaTeamHeroesResponse>(params: OpenDotaOpendotaTeamHeroesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaTeamMatches<T = OpenDotaOpendotaTeamMatchesResponse>(params: OpenDotaOpendotaTeamMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaTeamPlayers<T = OpenDotaOpendotaTeamPlayersResponse>(params: OpenDotaOpendotaTeamPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  opendotaTeams<T = OpenDotaOpendotaTeamsResponse>(params?: OpenDotaOpendotaTeamsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface OpenSeaService {
@@ -111170,6 +115657,13 @@ export interface RedfinService {
   similar<T = RedfinSimilarResponse>(params: RedfinSimilarParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface RednoteService {
+  explore<T = RednoteExploreResponse>(params?: RednoteExploreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  note<T = RednoteNoteResponse>(params?: RednoteNoteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  noteComments<T = RednoteNoteCommentsResponse>(params?: RednoteNoteCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchSuggest<T = RednoteSearchSuggestResponse>(params: RednoteSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface ReelShortService {
   reelshortFandomCategories<T = ReelShortReelshortFandomCategoriesResponse>(params?: ReelShortReelshortFandomCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   reelshortFandomPost<T = ReelShortReelshortFandomPostResponse>(params: ReelShortReelshortFandomPostParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -111491,6 +115985,24 @@ export interface ShopAppService {
   shopReviews<T = ShopAppShopReviewsResponse>(params: ShopAppShopReviewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   shopTypeahead<T = ShopAppShopTypeaheadResponse>(params: ShopAppShopTypeaheadParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   suggestions<T = ShopAppSuggestionsResponse>(params: ShopAppSuggestionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface ShopeeService {
+  banners<T = ShopeeBannersResponse>(params?: ShopeeBannersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categories<T = ShopeeCategoriesResponse>(params?: ShopeeCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  categoryDetail<T = ShopeeCategoryDetailResponse>(params: ShopeeCategoryDetailParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  flashSale<T = ShopeeFlashSaleResponse>(params?: ShopeeFlashSaleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  footer<T = ShopeeFooterResponse>(params?: ShopeeFooterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  home<T = ShopeeHomeResponse>(params?: ShopeeHomeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  homeCategories<T = ShopeeHomeCategoriesResponse>(params?: ShopeeHomeCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  locationFilters<T = ShopeeLocationFiltersResponse>(params?: ShopeeLocationFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  mallCategories<T = ShopeeMallCategoriesResponse>(params?: ShopeeMallCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  prefills<T = ShopeePrefillsResponse>(params?: ShopeePrefillsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchFilters<T = ShopeeSearchFiltersResponse>(params?: ShopeeSearchFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchHints<T = ShopeeSearchHintsResponse>(params: ShopeeSearchHintsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shopInfo<T = ShopeeShopInfoResponse>(params: ShopeeShopInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  shops<T = ShopeeShopsResponse>(params?: ShopeeShopsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  suggest<T = ShopeeSuggestResponse>(params: ShopeeSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface ShopifyService {
@@ -112598,6 +117110,32 @@ export interface VintedService {
   member<T = VintedMemberResponse>(params: VintedMemberParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface VlrService {
+  event<T = VlrEventResponse>(params: VlrEventParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventAgents<T = VlrEventAgentsResponse>(params: VlrEventAgentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventMatches<T = VlrEventMatchesResponse>(params: VlrEventMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  eventStats<T = VlrEventStatsResponse>(params: VlrEventStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  events<T = VlrEventsResponse>(params?: VlrEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  forumCategories<T = VlrForumCategoriesResponse>(params?: VlrForumCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  forumThreads<T = VlrForumThreadsResponse>(params?: VlrForumThreadsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  match<T = VlrMatchResponse>(params: VlrMatchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  matchEconomy<T = VlrMatchEconomyResponse>(params: VlrMatchEconomyParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  matchPerformance<T = VlrMatchPerformanceResponse>(params: VlrMatchPerformanceParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  matchRounds<T = VlrMatchRoundsResponse>(params: VlrMatchRoundsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  matches<T = VlrMatchesResponse>(params?: VlrMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  news<T = VlrNewsResponse>(params?: VlrNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  newsArticle<T = VlrNewsArticleResponse>(params: VlrNewsArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  player<T = VlrPlayerResponse>(params: VlrPlayerParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerMatches<T = VlrPlayerMatchesResponse>(params: VlrPlayerMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  rankings<T = VlrRankingsResponse>(params?: VlrRankingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  results<T = VlrResultsResponse>(params?: VlrResultsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  search<T = VlrSearchResponse>(params: VlrSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  stats<T = VlrStatsResponse>(params?: VlrStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  team<T = VlrTeamResponse>(params: VlrTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamMaps<T = VlrTeamMapsResponse>(params: VlrTeamMapsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamMatches<T = VlrTeamMatchesResponse>(params: VlrTeamMatchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface VoxService {
   article<T = VoxArticleResponse>(params: VoxArticleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   author<T = VoxAuthorResponse>(params: VoxAuthorParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -112765,6 +117303,13 @@ export interface XdaService {
   headlines<T = XdaHeadlinesResponse>(params: XdaHeadlinesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = XdaNewsResponse>(params?: XdaNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   sections<T = XdaSectionsResponse>(params?: XdaSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface XiaohongshuService {
+  explore<T = XiaohongshuExploreResponse>(params?: XiaohongshuExploreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  note<T = XiaohongshuNoteResponse>(params?: XiaohongshuNoteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  noteComments<T = XiaohongshuNoteCommentsResponse>(params?: XiaohongshuNoteCommentsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  searchSuggest<T = XiaohongshuSearchSuggestResponse>(params: XiaohongshuSearchSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface YahooAutosService {
@@ -113039,6 +117584,7 @@ export interface CrawloraGeneratedGroups {
   bleacherReport: BleacherReportService;
   bloomberg: BloombergService;
   bluesky: BlueskyService;
+  bo3: Bo3Service;
   bonhams: BonhamsService;
   booking: BookingService;
   boots: BootsService;
@@ -113165,6 +117711,7 @@ export interface CrawloraGeneratedGroups {
   google: GoogleService;
   googlePatents: GooglePatentsService;
   googlePlay: GooglePlayService;
+  gosuGamers: GosuGamersService;
   gq: GqService;
   grailed: GrailedService;
   greystar: GreystarService;
@@ -113227,6 +117774,7 @@ export interface CrawloraGeneratedGroups {
   liverpoolEcho: LiverpoolEchoService;
   liveScience: LiveScienceService;
   liveScore: LiveScoreService;
+  loLEsports: LoLesportsService;
   lululemon: LululemonService;
   macRumors: MacRumorsService;
   macyS: MacySService;
@@ -113277,6 +117825,7 @@ export interface CrawloraGeneratedGroups {
   nzHerald: NzHeraldService;
   ohPolly: OhPollyService;
   oldNavy: OldNavyService;
+  openDota: OpenDotaService;
   openSea: OpenSeaService;
   openTable: OpenTableService;
   otto: OttoService;
@@ -113320,6 +117869,7 @@ export interface CrawloraGeneratedGroups {
   rebag: RebagService;
   reddit: RedditService;
   redfin: RedfinService;
+  rednote: RednoteService;
   reelShort: ReelShortService;
   referrals: ReferralsService;
   researchJobs: ResearchJobsService;
@@ -113351,6 +117901,7 @@ export interface CrawloraGeneratedGroups {
   shakeShack: ShakeShackService;
   shein: SheinService;
   shopApp: ShopAppService;
+  shopee: ShopeeService;
   shopify: ShopifyService;
   similarWeb: SimilarWebService;
   skims: SkimsService;
@@ -113443,6 +117994,7 @@ export interface CrawloraGeneratedGroups {
   vestiaire: VestiaireService;
   vice: ViceService;
   vinted: VintedService;
+  vlr: VlrService;
   vox: VoxService;
   vrbo: VrboService;
   walesOnline: WalesOnlineService;
@@ -113464,6 +118016,7 @@ export interface CrawloraGeneratedGroups {
   x: XService;
   xbox: XboxService;
   xda: XdaService;
+  xiaohongshu: XiaohongshuService;
   yahooAutos: YahooAutosService;
   yahooEntertainment: YahooEntertainmentService;
   yahooFinance: YahooFinanceService;
@@ -113815,6 +118368,34 @@ export interface OperationParamsMap {
   "bluesky-profile": BlueskyProfileParams;
   "bluesky-search-actors": BlueskySearchActorsParams;
   "bluesky-trending-topics": BlueskyTrendingTopicsParams;
+  "bo3-economy-baseline": Bo3EconomyBaselineParams;
+  "bo3-forum": Bo3ForumParams;
+  "bo3-forum-categories": Bo3ForumCategoriesParams;
+  "bo3-match": Bo3MatchParams;
+  "bo3-match-games": Bo3MatchGamesParams;
+  "bo3-match-history": Bo3MatchHistoryParams;
+  "bo3-match-players": Bo3MatchPlayersParams;
+  "bo3-news-categories": Bo3NewsCategoriesParams;
+  "bo3-news-feed": Bo3NewsFeedParams;
+  "bo3-player": Bo3PlayerParams;
+  "bo3-player-leaderboard": Bo3PlayerLeaderboardParams;
+  "bo3-player-recent-matches": Bo3PlayerRecentMatchesParams;
+  "bo3-player-stats": Bo3PlayerStatsParams;
+  "bo3-records": Bo3RecordsParams;
+  "bo3-team": Bo3TeamParams;
+  "bo3-team-prize-money": Bo3TeamPrizeMoneyParams;
+  "bo3-team-ranking-dates": Bo3TeamRankingDatesParams;
+  "bo3-team-rankings": Bo3TeamRankingsParams;
+  "bo3-team-recent-matches": Bo3TeamRecentMatchesParams;
+  "bo3-team-stats": Bo3TeamStatsParams;
+  "bo3-tournament": Bo3TournamentParams;
+  "bo3-tournament-map-pool": Bo3TournamentMapPoolParams;
+  "bo3-tournament-mvps": Bo3TournamentMvpsParams;
+  "bo3-tournament-squads": Bo3TournamentSquadsParams;
+  "bo3-tournament-stages": Bo3TournamentStagesParams;
+  "bo3-tournaments": Bo3TournamentsParams;
+  "bo3-transfers": Bo3TransfersParams;
+  "bo3-valorant-leaderboard": Bo3ValorantLeaderboardParams;
   "bonhams-auction-search": BonhamsAuctionSearchParams;
   "bonhams-auction-detail": BonhamsAuctionDetailParams;
   "bonhams-auction-lots": BonhamsAuctionLotsParams;
@@ -114960,6 +119541,21 @@ export interface OperationParamsMap {
   "googleplay-search": GooglePlaySearchParams;
   "googleplay-similar": GooglePlaySimilarParams;
   "googleplay-suggest": GooglePlaySuggestParams;
+  "gosugamers-encounters": GosuGamersGosugamersEncountersParams;
+  "gosugamers-games": GosuGamersGosugamersGamesParams;
+  "gosugamers-match": GosuGamersGosugamersMatchParams;
+  "gosugamers-match-game": GosuGamersGosugamersMatchGameParams;
+  "gosugamers-matches": GosuGamersGosugamersMatchesParams;
+  "gosugamers-player": GosuGamersGosugamersPlayerParams;
+  "gosugamers-rankings": GosuGamersGosugamersRankingsParams;
+  "gosugamers-results": GosuGamersGosugamersResultsParams;
+  "gosugamers-stage-groups": GosuGamersGosugamersStageGroupsParams;
+  "gosugamers-team": GosuGamersGosugamersTeamParams;
+  "gosugamers-team-results": GosuGamersGosugamersTeamResultsParams;
+  "gosugamers-tournament": GosuGamersGosugamersTournamentParams;
+  "gosugamers-tournament-participants": GosuGamersGosugamersTournamentParticipantsParams;
+  "gosugamers-tournament-talents": GosuGamersGosugamersTournamentTalentsParams;
+  "gosugamers-tournaments": GosuGamersGosugamersTournamentsParams;
   "gq-article": GqArticleParams;
   "gq-author": GqAuthorParams;
   "gq-headlines": GqHeadlinesParams;
@@ -115433,6 +120029,19 @@ export interface OperationParamsMap {
   "livescore-search": LiveScoreLivescoreSearchParams;
   "livescore-sports": LiveScoreLivescoreSportsParams;
   "livescore-team": LiveScoreLivescoreTeamParams;
+  "lolesports-completed-events": LoLesportsLolesportsCompletedEventsParams;
+  "lolesports-event": LoLesportsLolesportsEventParams;
+  "lolesports-game-details": LoLesportsLolesportsGameDetailsParams;
+  "lolesports-game-window": LoLesportsLolesportsGameWindowParams;
+  "lolesports-gpr": LoLesportsLolesportsGprParams;
+  "lolesports-leagues": LoLesportsLolesportsLeaguesParams;
+  "lolesports-live": LoLesportsLolesportsLiveParams;
+  "lolesports-news": LoLesportsLolesportsNewsParams;
+  "lolesports-schedule": LoLesportsLolesportsScheduleParams;
+  "lolesports-seasons": LoLesportsLolesportsSeasonsParams;
+  "lolesports-standings": LoLesportsLolesportsStandingsParams;
+  "lolesports-teams": LoLesportsLolesportsTeamsParams;
+  "lolesports-tournaments": LoLesportsLolesportsTournamentsParams;
   "lululemon-categories": LululemonCategoriesParams;
   "lululemon-category": LululemonCategoryParams;
   "lululemon-outfit": LululemonOutfitParams;
@@ -115775,6 +120384,32 @@ export interface OperationParamsMap {
   "oldnavy-product-reviews": OldNavyOldnavyProductReviewsParams;
   "oldnavy-search": OldNavyOldnavySearchParams;
   "oldnavy-stores": OldNavyOldnavyStoresParams;
+  "opendota-abilities": OpenDotaOpendotaAbilitiesParams;
+  "opendota-benchmarks": OpenDotaOpendotaBenchmarksParams;
+  "opendota-constants": OpenDotaOpendotaConstantsParams;
+  "opendota-hero-durations": OpenDotaOpendotaHeroDurationsParams;
+  "opendota-hero-items": OpenDotaOpendotaHeroItemsParams;
+  "opendota-hero-matchups": OpenDotaOpendotaHeroMatchupsParams;
+  "opendota-hero-stats": OpenDotaOpendotaHeroStatsParams;
+  "opendota-heroes": OpenDotaOpendotaHeroesParams;
+  "opendota-items": OpenDotaOpendotaItemsParams;
+  "opendota-league": OpenDotaOpendotaLeagueParams;
+  "opendota-league-match-ids": OpenDotaOpendotaLeagueMatchIdsParams;
+  "opendota-league-matches": OpenDotaOpendotaLeagueMatchesParams;
+  "opendota-leagues": OpenDotaOpendotaLeaguesParams;
+  "opendota-live": OpenDotaOpendotaLiveParams;
+  "opendota-match": OpenDotaOpendotaMatchParams;
+  "opendota-patch-notes": OpenDotaOpendotaPatchNotesParams;
+  "opendota-pro-matches": OpenDotaOpendotaProMatchesParams;
+  "opendota-pro-players": OpenDotaOpendotaProPlayersParams;
+  "opendota-rank-distribution": OpenDotaOpendotaRankDistributionParams;
+  "opendota-records": OpenDotaOpendotaRecordsParams;
+  "opendota-scenarios": OpenDotaOpendotaScenariosParams;
+  "opendota-team": OpenDotaOpendotaTeamParams;
+  "opendota-team-heroes": OpenDotaOpendotaTeamHeroesParams;
+  "opendota-team-matches": OpenDotaOpendotaTeamMatchesParams;
+  "opendota-team-players": OpenDotaOpendotaTeamPlayersParams;
+  "opendota-teams": OpenDotaOpendotaTeamsParams;
   "opensea-activity": OpenSeaOpenseaActivityParams;
   "opensea-categories": OpenSeaOpenseaCategoriesParams;
   "opensea-chains": OpenSeaOpenseaChainsParams;
@@ -116168,6 +120803,10 @@ export interface OperationParamsMap {
   "redfin-region-trends": RedfinRegionTrendsParams;
   "redfin-search": RedfinSearchParams;
   "redfin-similar": RedfinSimilarParams;
+  "rednote-explore": RednoteExploreParams;
+  "rednote-note": RednoteNoteParams;
+  "rednote-note-comments": RednoteNoteCommentsParams;
+  "rednote-search-suggest": RednoteSearchSuggestParams;
   "reelshort-fandom-categories": ReelShortReelshortFandomCategoriesParams;
   "reelshort-fandom-post": ReelShortReelshortFandomPostParams;
   "reelshort-fandom-posts": ReelShortReelshortFandomPostsParams;
@@ -116398,6 +121037,21 @@ export interface OperationParamsMap {
   "shop-app-shop-reviews": ShopAppShopReviewsParams;
   "shop-app-shop-typeahead": ShopAppShopTypeaheadParams;
   "shop-app-suggestions": ShopAppSuggestionsParams;
+  "shopee-banners": ShopeeBannersParams;
+  "shopee-categories": ShopeeCategoriesParams;
+  "shopee-category-detail": ShopeeCategoryDetailParams;
+  "shopee-flash-sale": ShopeeFlashSaleParams;
+  "shopee-footer": ShopeeFooterParams;
+  "shopee-home": ShopeeHomeParams;
+  "shopee-home-categories": ShopeeHomeCategoriesParams;
+  "shopee-location-filters": ShopeeLocationFiltersParams;
+  "shopee-mall-categories": ShopeeMallCategoriesParams;
+  "shopee-prefills": ShopeePrefillsParams;
+  "shopee-search-filters": ShopeeSearchFiltersParams;
+  "shopee-search-hints": ShopeeSearchHintsParams;
+  "shopee-shop-info": ShopeeShopInfoParams;
+  "shopee-shops": ShopeeShopsParams;
+  "shopee-suggest": ShopeeSuggestParams;
   "shopify-collections": ShopifyCollectionsParams;
   "shopify-collection-products": ShopifyCollectionProductsParams;
   "shopify-pages": ShopifyPagesParams;
@@ -117227,6 +121881,29 @@ export interface OperationParamsMap {
   "vinted-category": VintedCategoryParams;
   "vinted-item": VintedItemParams;
   "vinted-member": VintedMemberParams;
+  "vlr-event": VlrEventParams;
+  "vlr-event-agents": VlrEventAgentsParams;
+  "vlr-event-matches": VlrEventMatchesParams;
+  "vlr-event-stats": VlrEventStatsParams;
+  "vlr-events": VlrEventsParams;
+  "vlr-forum-categories": VlrForumCategoriesParams;
+  "vlr-forum-threads": VlrForumThreadsParams;
+  "vlr-match": VlrMatchParams;
+  "vlr-match-economy": VlrMatchEconomyParams;
+  "vlr-match-performance": VlrMatchPerformanceParams;
+  "vlr-match-rounds": VlrMatchRoundsParams;
+  "vlr-matches": VlrMatchesParams;
+  "vlr-news": VlrNewsParams;
+  "vlr-news-article": VlrNewsArticleParams;
+  "vlr-player": VlrPlayerParams;
+  "vlr-player-matches": VlrPlayerMatchesParams;
+  "vlr-rankings": VlrRankingsParams;
+  "vlr-results": VlrResultsParams;
+  "vlr-search": VlrSearchParams;
+  "vlr-stats": VlrStatsParams;
+  "vlr-team": VlrTeamParams;
+  "vlr-team-maps": VlrTeamMapsParams;
+  "vlr-team-matches": VlrTeamMatchesParams;
   "vox-article": VoxArticleParams;
   "vox-author": VoxAuthorParams;
   "vox-headlines": VoxHeadlinesParams;
@@ -117342,6 +122019,10 @@ export interface OperationParamsMap {
   "xda-headlines": XdaHeadlinesParams;
   "xda-news": XdaNewsParams;
   "xda-sections": XdaSectionsParams;
+  "xiaohongshu-explore": XiaohongshuExploreParams;
+  "xiaohongshu-note": XiaohongshuNoteParams;
+  "xiaohongshu-note-comments": XiaohongshuNoteCommentsParams;
+  "xiaohongshu-search-suggest": XiaohongshuSearchSuggestParams;
   "yahoo-autos-article": YahooAutosArticleParams;
   "yahoo-autos-category": YahooAutosCategoryParams;
   "yahoo-autos-home": YahooAutosHomeParams;
@@ -117830,6 +122511,34 @@ export interface OperationResponseMap {
   "bluesky-profile": BlueskyProfileResponse;
   "bluesky-search-actors": BlueskySearchActorsResponse;
   "bluesky-trending-topics": BlueskyTrendingTopicsResponse;
+  "bo3-economy-baseline": Bo3EconomyBaselineResponse;
+  "bo3-forum": Bo3ForumResponse;
+  "bo3-forum-categories": Bo3ForumCategoriesResponse;
+  "bo3-match": Bo3MatchResponse;
+  "bo3-match-games": Bo3MatchGamesResponse;
+  "bo3-match-history": Bo3MatchHistoryResponse;
+  "bo3-match-players": Bo3MatchPlayersResponse;
+  "bo3-news-categories": Bo3NewsCategoriesResponse;
+  "bo3-news-feed": Bo3NewsFeedResponse;
+  "bo3-player": Bo3PlayerResponse;
+  "bo3-player-leaderboard": Bo3PlayerLeaderboardResponse;
+  "bo3-player-recent-matches": Bo3PlayerRecentMatchesResponse;
+  "bo3-player-stats": Bo3PlayerStatsResponse;
+  "bo3-records": Bo3RecordsResponse;
+  "bo3-team": Bo3TeamResponse;
+  "bo3-team-prize-money": Bo3TeamPrizeMoneyResponse;
+  "bo3-team-ranking-dates": Bo3TeamRankingDatesResponse;
+  "bo3-team-rankings": Bo3TeamRankingsResponse;
+  "bo3-team-recent-matches": Bo3TeamRecentMatchesResponse;
+  "bo3-team-stats": Bo3TeamStatsResponse;
+  "bo3-tournament": Bo3TournamentResponse;
+  "bo3-tournament-map-pool": Bo3TournamentMapPoolResponse;
+  "bo3-tournament-mvps": Bo3TournamentMvpsResponse;
+  "bo3-tournament-squads": Bo3TournamentSquadsResponse;
+  "bo3-tournament-stages": Bo3TournamentStagesResponse;
+  "bo3-tournaments": Bo3TournamentsResponse;
+  "bo3-transfers": Bo3TransfersResponse;
+  "bo3-valorant-leaderboard": Bo3ValorantLeaderboardResponse;
   "bonhams-auction-search": BonhamsAuctionSearchResponse;
   "bonhams-auction-detail": BonhamsAuctionDetailResponse;
   "bonhams-auction-lots": BonhamsAuctionLotsResponse;
@@ -118975,6 +123684,21 @@ export interface OperationResponseMap {
   "googleplay-search": GooglePlaySearchResponse;
   "googleplay-similar": GooglePlaySimilarResponse;
   "googleplay-suggest": GooglePlaySuggestResponse;
+  "gosugamers-encounters": GosuGamersGosugamersEncountersResponse;
+  "gosugamers-games": GosuGamersGosugamersGamesResponse;
+  "gosugamers-match": GosuGamersGosugamersMatchResponse;
+  "gosugamers-match-game": GosuGamersGosugamersMatchGameResponse;
+  "gosugamers-matches": GosuGamersGosugamersMatchesResponse;
+  "gosugamers-player": GosuGamersGosugamersPlayerResponse;
+  "gosugamers-rankings": GosuGamersGosugamersRankingsResponse;
+  "gosugamers-results": GosuGamersGosugamersResultsResponse;
+  "gosugamers-stage-groups": GosuGamersGosugamersStageGroupsResponse;
+  "gosugamers-team": GosuGamersGosugamersTeamResponse;
+  "gosugamers-team-results": GosuGamersGosugamersTeamResultsResponse;
+  "gosugamers-tournament": GosuGamersGosugamersTournamentResponse;
+  "gosugamers-tournament-participants": GosuGamersGosugamersTournamentParticipantsResponse;
+  "gosugamers-tournament-talents": GosuGamersGosugamersTournamentTalentsResponse;
+  "gosugamers-tournaments": GosuGamersGosugamersTournamentsResponse;
   "gq-article": GqArticleResponse;
   "gq-author": GqAuthorResponse;
   "gq-headlines": GqHeadlinesResponse;
@@ -119448,6 +124172,19 @@ export interface OperationResponseMap {
   "livescore-search": LiveScoreLivescoreSearchResponse;
   "livescore-sports": LiveScoreLivescoreSportsResponse;
   "livescore-team": LiveScoreLivescoreTeamResponse;
+  "lolesports-completed-events": LoLesportsLolesportsCompletedEventsResponse;
+  "lolesports-event": LoLesportsLolesportsEventResponse;
+  "lolesports-game-details": LoLesportsLolesportsGameDetailsResponse;
+  "lolesports-game-window": LoLesportsLolesportsGameWindowResponse;
+  "lolesports-gpr": LoLesportsLolesportsGprResponse;
+  "lolesports-leagues": LoLesportsLolesportsLeaguesResponse;
+  "lolesports-live": LoLesportsLolesportsLiveResponse;
+  "lolesports-news": LoLesportsLolesportsNewsResponse;
+  "lolesports-schedule": LoLesportsLolesportsScheduleResponse;
+  "lolesports-seasons": LoLesportsLolesportsSeasonsResponse;
+  "lolesports-standings": LoLesportsLolesportsStandingsResponse;
+  "lolesports-teams": LoLesportsLolesportsTeamsResponse;
+  "lolesports-tournaments": LoLesportsLolesportsTournamentsResponse;
   "lululemon-categories": LululemonCategoriesResponse;
   "lululemon-category": LululemonCategoryResponse;
   "lululemon-outfit": LululemonOutfitResponse;
@@ -119790,6 +124527,32 @@ export interface OperationResponseMap {
   "oldnavy-product-reviews": OldNavyOldnavyProductReviewsResponse;
   "oldnavy-search": OldNavyOldnavySearchResponse;
   "oldnavy-stores": OldNavyOldnavyStoresResponse;
+  "opendota-abilities": OpenDotaOpendotaAbilitiesResponse;
+  "opendota-benchmarks": OpenDotaOpendotaBenchmarksResponse;
+  "opendota-constants": OpenDotaOpendotaConstantsResponse;
+  "opendota-hero-durations": OpenDotaOpendotaHeroDurationsResponse;
+  "opendota-hero-items": OpenDotaOpendotaHeroItemsResponse;
+  "opendota-hero-matchups": OpenDotaOpendotaHeroMatchupsResponse;
+  "opendota-hero-stats": OpenDotaOpendotaHeroStatsResponse;
+  "opendota-heroes": OpenDotaOpendotaHeroesResponse;
+  "opendota-items": OpenDotaOpendotaItemsResponse;
+  "opendota-league": OpenDotaOpendotaLeagueResponse;
+  "opendota-league-match-ids": OpenDotaOpendotaLeagueMatchIdsResponse;
+  "opendota-league-matches": OpenDotaOpendotaLeagueMatchesResponse;
+  "opendota-leagues": OpenDotaOpendotaLeaguesResponse;
+  "opendota-live": OpenDotaOpendotaLiveResponse;
+  "opendota-match": OpenDotaOpendotaMatchResponse;
+  "opendota-patch-notes": OpenDotaOpendotaPatchNotesResponse;
+  "opendota-pro-matches": OpenDotaOpendotaProMatchesResponse;
+  "opendota-pro-players": OpenDotaOpendotaProPlayersResponse;
+  "opendota-rank-distribution": OpenDotaOpendotaRankDistributionResponse;
+  "opendota-records": OpenDotaOpendotaRecordsResponse;
+  "opendota-scenarios": OpenDotaOpendotaScenariosResponse;
+  "opendota-team": OpenDotaOpendotaTeamResponse;
+  "opendota-team-heroes": OpenDotaOpendotaTeamHeroesResponse;
+  "opendota-team-matches": OpenDotaOpendotaTeamMatchesResponse;
+  "opendota-team-players": OpenDotaOpendotaTeamPlayersResponse;
+  "opendota-teams": OpenDotaOpendotaTeamsResponse;
   "opensea-activity": OpenSeaOpenseaActivityResponse;
   "opensea-categories": OpenSeaOpenseaCategoriesResponse;
   "opensea-chains": OpenSeaOpenseaChainsResponse;
@@ -120183,6 +124946,10 @@ export interface OperationResponseMap {
   "redfin-region-trends": RedfinRegionTrendsResponse;
   "redfin-search": RedfinSearchResponse;
   "redfin-similar": RedfinSimilarResponse;
+  "rednote-explore": RednoteExploreResponse;
+  "rednote-note": RednoteNoteResponse;
+  "rednote-note-comments": RednoteNoteCommentsResponse;
+  "rednote-search-suggest": RednoteSearchSuggestResponse;
   "reelshort-fandom-categories": ReelShortReelshortFandomCategoriesResponse;
   "reelshort-fandom-post": ReelShortReelshortFandomPostResponse;
   "reelshort-fandom-posts": ReelShortReelshortFandomPostsResponse;
@@ -120413,6 +125180,21 @@ export interface OperationResponseMap {
   "shop-app-shop-reviews": ShopAppShopReviewsResponse;
   "shop-app-shop-typeahead": ShopAppShopTypeaheadResponse;
   "shop-app-suggestions": ShopAppSuggestionsResponse;
+  "shopee-banners": ShopeeBannersResponse;
+  "shopee-categories": ShopeeCategoriesResponse;
+  "shopee-category-detail": ShopeeCategoryDetailResponse;
+  "shopee-flash-sale": ShopeeFlashSaleResponse;
+  "shopee-footer": ShopeeFooterResponse;
+  "shopee-home": ShopeeHomeResponse;
+  "shopee-home-categories": ShopeeHomeCategoriesResponse;
+  "shopee-location-filters": ShopeeLocationFiltersResponse;
+  "shopee-mall-categories": ShopeeMallCategoriesResponse;
+  "shopee-prefills": ShopeePrefillsResponse;
+  "shopee-search-filters": ShopeeSearchFiltersResponse;
+  "shopee-search-hints": ShopeeSearchHintsResponse;
+  "shopee-shop-info": ShopeeShopInfoResponse;
+  "shopee-shops": ShopeeShopsResponse;
+  "shopee-suggest": ShopeeSuggestResponse;
   "shopify-collections": ShopifyCollectionsResponse;
   "shopify-collection-products": ShopifyCollectionProductsResponse;
   "shopify-pages": ShopifyPagesResponse;
@@ -121242,6 +126024,29 @@ export interface OperationResponseMap {
   "vinted-category": VintedCategoryResponse;
   "vinted-item": VintedItemResponse;
   "vinted-member": VintedMemberResponse;
+  "vlr-event": VlrEventResponse;
+  "vlr-event-agents": VlrEventAgentsResponse;
+  "vlr-event-matches": VlrEventMatchesResponse;
+  "vlr-event-stats": VlrEventStatsResponse;
+  "vlr-events": VlrEventsResponse;
+  "vlr-forum-categories": VlrForumCategoriesResponse;
+  "vlr-forum-threads": VlrForumThreadsResponse;
+  "vlr-match": VlrMatchResponse;
+  "vlr-match-economy": VlrMatchEconomyResponse;
+  "vlr-match-performance": VlrMatchPerformanceResponse;
+  "vlr-match-rounds": VlrMatchRoundsResponse;
+  "vlr-matches": VlrMatchesResponse;
+  "vlr-news": VlrNewsResponse;
+  "vlr-news-article": VlrNewsArticleResponse;
+  "vlr-player": VlrPlayerResponse;
+  "vlr-player-matches": VlrPlayerMatchesResponse;
+  "vlr-rankings": VlrRankingsResponse;
+  "vlr-results": VlrResultsResponse;
+  "vlr-search": VlrSearchResponse;
+  "vlr-stats": VlrStatsResponse;
+  "vlr-team": VlrTeamResponse;
+  "vlr-team-maps": VlrTeamMapsResponse;
+  "vlr-team-matches": VlrTeamMatchesResponse;
   "vox-article": VoxArticleResponse;
   "vox-author": VoxAuthorResponse;
   "vox-headlines": VoxHeadlinesResponse;
@@ -121357,6 +126162,10 @@ export interface OperationResponseMap {
   "xda-headlines": XdaHeadlinesResponse;
   "xda-news": XdaNewsResponse;
   "xda-sections": XdaSectionsResponse;
+  "xiaohongshu-explore": XiaohongshuExploreResponse;
+  "xiaohongshu-note": XiaohongshuNoteResponse;
+  "xiaohongshu-note-comments": XiaohongshuNoteCommentsResponse;
+  "xiaohongshu-search-suggest": XiaohongshuSearchSuggestResponse;
   "yahoo-autos-article": YahooAutosArticleResponse;
   "yahoo-autos-category": YahooAutosCategoryResponse;
   "yahoo-autos-home": YahooAutosHomeResponse;
@@ -121845,6 +126654,34 @@ export interface OperationRequiredParamsMap {
   "bluesky-profile": true;
   "bluesky-search-actors": true;
   "bluesky-trending-topics": false;
+  "bo3-economy-baseline": false;
+  "bo3-forum": false;
+  "bo3-forum-categories": false;
+  "bo3-match": true;
+  "bo3-match-games": true;
+  "bo3-match-history": false;
+  "bo3-match-players": true;
+  "bo3-news-categories": false;
+  "bo3-news-feed": false;
+  "bo3-player": true;
+  "bo3-player-leaderboard": false;
+  "bo3-player-recent-matches": true;
+  "bo3-player-stats": true;
+  "bo3-records": false;
+  "bo3-team": true;
+  "bo3-team-prize-money": false;
+  "bo3-team-ranking-dates": false;
+  "bo3-team-rankings": false;
+  "bo3-team-recent-matches": true;
+  "bo3-team-stats": true;
+  "bo3-tournament": true;
+  "bo3-tournament-map-pool": true;
+  "bo3-tournament-mvps": false;
+  "bo3-tournament-squads": true;
+  "bo3-tournament-stages": true;
+  "bo3-tournaments": false;
+  "bo3-transfers": false;
+  "bo3-valorant-leaderboard": false;
   "bonhams-auction-search": false;
   "bonhams-auction-detail": true;
   "bonhams-auction-lots": true;
@@ -122990,6 +127827,21 @@ export interface OperationRequiredParamsMap {
   "googleplay-search": true;
   "googleplay-similar": true;
   "googleplay-suggest": true;
+  "gosugamers-encounters": true;
+  "gosugamers-games": false;
+  "gosugamers-match": true;
+  "gosugamers-match-game": true;
+  "gosugamers-matches": false;
+  "gosugamers-player": true;
+  "gosugamers-rankings": true;
+  "gosugamers-results": false;
+  "gosugamers-stage-groups": true;
+  "gosugamers-team": true;
+  "gosugamers-team-results": true;
+  "gosugamers-tournament": true;
+  "gosugamers-tournament-participants": true;
+  "gosugamers-tournament-talents": true;
+  "gosugamers-tournaments": false;
   "gq-article": true;
   "gq-author": false;
   "gq-headlines": true;
@@ -123463,6 +128315,19 @@ export interface OperationRequiredParamsMap {
   "livescore-search": true;
   "livescore-sports": false;
   "livescore-team": true;
+  "lolesports-completed-events": true;
+  "lolesports-event": true;
+  "lolesports-game-details": true;
+  "lolesports-game-window": true;
+  "lolesports-gpr": false;
+  "lolesports-leagues": false;
+  "lolesports-live": false;
+  "lolesports-news": false;
+  "lolesports-schedule": false;
+  "lolesports-seasons": false;
+  "lolesports-standings": true;
+  "lolesports-teams": false;
+  "lolesports-tournaments": true;
   "lululemon-categories": false;
   "lululemon-category": true;
   "lululemon-outfit": true;
@@ -123805,6 +128670,32 @@ export interface OperationRequiredParamsMap {
   "oldnavy-product-reviews": true;
   "oldnavy-search": true;
   "oldnavy-stores": false;
+  "opendota-abilities": false;
+  "opendota-benchmarks": true;
+  "opendota-constants": true;
+  "opendota-hero-durations": true;
+  "opendota-hero-items": true;
+  "opendota-hero-matchups": true;
+  "opendota-hero-stats": false;
+  "opendota-heroes": false;
+  "opendota-items": false;
+  "opendota-league": true;
+  "opendota-league-match-ids": true;
+  "opendota-league-matches": true;
+  "opendota-leagues": false;
+  "opendota-live": false;
+  "opendota-match": true;
+  "opendota-patch-notes": false;
+  "opendota-pro-matches": false;
+  "opendota-pro-players": false;
+  "opendota-rank-distribution": false;
+  "opendota-records": true;
+  "opendota-scenarios": true;
+  "opendota-team": true;
+  "opendota-team-heroes": true;
+  "opendota-team-matches": true;
+  "opendota-team-players": true;
+  "opendota-teams": false;
   "opensea-activity": false;
   "opensea-categories": false;
   "opensea-chains": false;
@@ -124198,6 +129089,10 @@ export interface OperationRequiredParamsMap {
   "redfin-region-trends": true;
   "redfin-search": false;
   "redfin-similar": true;
+  "rednote-explore": false;
+  "rednote-note": false;
+  "rednote-note-comments": false;
+  "rednote-search-suggest": true;
   "reelshort-fandom-categories": false;
   "reelshort-fandom-post": true;
   "reelshort-fandom-posts": false;
@@ -124428,6 +129323,21 @@ export interface OperationRequiredParamsMap {
   "shop-app-shop-reviews": true;
   "shop-app-shop-typeahead": true;
   "shop-app-suggestions": true;
+  "shopee-banners": false;
+  "shopee-categories": false;
+  "shopee-category-detail": true;
+  "shopee-flash-sale": false;
+  "shopee-footer": false;
+  "shopee-home": false;
+  "shopee-home-categories": false;
+  "shopee-location-filters": false;
+  "shopee-mall-categories": false;
+  "shopee-prefills": false;
+  "shopee-search-filters": false;
+  "shopee-search-hints": true;
+  "shopee-shop-info": true;
+  "shopee-shops": false;
+  "shopee-suggest": true;
   "shopify-collections": true;
   "shopify-collection-products": true;
   "shopify-pages": true;
@@ -125257,6 +130167,29 @@ export interface OperationRequiredParamsMap {
   "vinted-category": true;
   "vinted-item": true;
   "vinted-member": true;
+  "vlr-event": true;
+  "vlr-event-agents": true;
+  "vlr-event-matches": true;
+  "vlr-event-stats": true;
+  "vlr-events": false;
+  "vlr-forum-categories": false;
+  "vlr-forum-threads": false;
+  "vlr-match": true;
+  "vlr-match-economy": true;
+  "vlr-match-performance": true;
+  "vlr-match-rounds": true;
+  "vlr-matches": false;
+  "vlr-news": false;
+  "vlr-news-article": true;
+  "vlr-player": true;
+  "vlr-player-matches": true;
+  "vlr-rankings": false;
+  "vlr-results": false;
+  "vlr-search": true;
+  "vlr-stats": false;
+  "vlr-team": true;
+  "vlr-team-maps": true;
+  "vlr-team-matches": true;
   "vox-article": true;
   "vox-author": true;
   "vox-headlines": true;
@@ -125372,6 +130305,10 @@ export interface OperationRequiredParamsMap {
   "xda-headlines": true;
   "xda-news": false;
   "xda-sections": false;
+  "xiaohongshu-explore": false;
+  "xiaohongshu-note": false;
+  "xiaohongshu-note-comments": false;
+  "xiaohongshu-search-suggest": true;
   "yahoo-autos-article": true;
   "yahoo-autos-category": true;
   "yahoo-autos-home": false;
@@ -125867,6 +130804,34 @@ export type OperationIdLiteral =
   | "bluesky-profile"
   | "bluesky-search-actors"
   | "bluesky-trending-topics"
+  | "bo3-economy-baseline"
+  | "bo3-forum"
+  | "bo3-forum-categories"
+  | "bo3-match"
+  | "bo3-match-games"
+  | "bo3-match-history"
+  | "bo3-match-players"
+  | "bo3-news-categories"
+  | "bo3-news-feed"
+  | "bo3-player"
+  | "bo3-player-leaderboard"
+  | "bo3-player-recent-matches"
+  | "bo3-player-stats"
+  | "bo3-records"
+  | "bo3-team"
+  | "bo3-team-prize-money"
+  | "bo3-team-ranking-dates"
+  | "bo3-team-rankings"
+  | "bo3-team-recent-matches"
+  | "bo3-team-stats"
+  | "bo3-tournament"
+  | "bo3-tournament-map-pool"
+  | "bo3-tournament-mvps"
+  | "bo3-tournament-squads"
+  | "bo3-tournament-stages"
+  | "bo3-tournaments"
+  | "bo3-transfers"
+  | "bo3-valorant-leaderboard"
   | "bonhams-auction-search"
   | "bonhams-auction-detail"
   | "bonhams-auction-lots"
@@ -127012,6 +131977,21 @@ export type OperationIdLiteral =
   | "googleplay-search"
   | "googleplay-similar"
   | "googleplay-suggest"
+  | "gosugamers-encounters"
+  | "gosugamers-games"
+  | "gosugamers-match"
+  | "gosugamers-match-game"
+  | "gosugamers-matches"
+  | "gosugamers-player"
+  | "gosugamers-rankings"
+  | "gosugamers-results"
+  | "gosugamers-stage-groups"
+  | "gosugamers-team"
+  | "gosugamers-team-results"
+  | "gosugamers-tournament"
+  | "gosugamers-tournament-participants"
+  | "gosugamers-tournament-talents"
+  | "gosugamers-tournaments"
   | "gq-article"
   | "gq-author"
   | "gq-headlines"
@@ -127485,6 +132465,19 @@ export type OperationIdLiteral =
   | "livescore-search"
   | "livescore-sports"
   | "livescore-team"
+  | "lolesports-completed-events"
+  | "lolesports-event"
+  | "lolesports-game-details"
+  | "lolesports-game-window"
+  | "lolesports-gpr"
+  | "lolesports-leagues"
+  | "lolesports-live"
+  | "lolesports-news"
+  | "lolesports-schedule"
+  | "lolesports-seasons"
+  | "lolesports-standings"
+  | "lolesports-teams"
+  | "lolesports-tournaments"
   | "lululemon-categories"
   | "lululemon-category"
   | "lululemon-outfit"
@@ -127827,6 +132820,32 @@ export type OperationIdLiteral =
   | "oldnavy-product-reviews"
   | "oldnavy-search"
   | "oldnavy-stores"
+  | "opendota-abilities"
+  | "opendota-benchmarks"
+  | "opendota-constants"
+  | "opendota-hero-durations"
+  | "opendota-hero-items"
+  | "opendota-hero-matchups"
+  | "opendota-hero-stats"
+  | "opendota-heroes"
+  | "opendota-items"
+  | "opendota-league"
+  | "opendota-league-match-ids"
+  | "opendota-league-matches"
+  | "opendota-leagues"
+  | "opendota-live"
+  | "opendota-match"
+  | "opendota-patch-notes"
+  | "opendota-pro-matches"
+  | "opendota-pro-players"
+  | "opendota-rank-distribution"
+  | "opendota-records"
+  | "opendota-scenarios"
+  | "opendota-team"
+  | "opendota-team-heroes"
+  | "opendota-team-matches"
+  | "opendota-team-players"
+  | "opendota-teams"
   | "opensea-activity"
   | "opensea-categories"
   | "opensea-chains"
@@ -128220,6 +133239,10 @@ export type OperationIdLiteral =
   | "redfin-region-trends"
   | "redfin-search"
   | "redfin-similar"
+  | "rednote-explore"
+  | "rednote-note"
+  | "rednote-note-comments"
+  | "rednote-search-suggest"
   | "reelshort-fandom-categories"
   | "reelshort-fandom-post"
   | "reelshort-fandom-posts"
@@ -128450,6 +133473,21 @@ export type OperationIdLiteral =
   | "shop-app-shop-reviews"
   | "shop-app-shop-typeahead"
   | "shop-app-suggestions"
+  | "shopee-banners"
+  | "shopee-categories"
+  | "shopee-category-detail"
+  | "shopee-flash-sale"
+  | "shopee-footer"
+  | "shopee-home"
+  | "shopee-home-categories"
+  | "shopee-location-filters"
+  | "shopee-mall-categories"
+  | "shopee-prefills"
+  | "shopee-search-filters"
+  | "shopee-search-hints"
+  | "shopee-shop-info"
+  | "shopee-shops"
+  | "shopee-suggest"
   | "shopify-collections"
   | "shopify-collection-products"
   | "shopify-pages"
@@ -129279,6 +134317,29 @@ export type OperationIdLiteral =
   | "vinted-category"
   | "vinted-item"
   | "vinted-member"
+  | "vlr-event"
+  | "vlr-event-agents"
+  | "vlr-event-matches"
+  | "vlr-event-stats"
+  | "vlr-events"
+  | "vlr-forum-categories"
+  | "vlr-forum-threads"
+  | "vlr-match"
+  | "vlr-match-economy"
+  | "vlr-match-performance"
+  | "vlr-match-rounds"
+  | "vlr-matches"
+  | "vlr-news"
+  | "vlr-news-article"
+  | "vlr-player"
+  | "vlr-player-matches"
+  | "vlr-rankings"
+  | "vlr-results"
+  | "vlr-search"
+  | "vlr-stats"
+  | "vlr-team"
+  | "vlr-team-maps"
+  | "vlr-team-matches"
   | "vox-article"
   | "vox-author"
   | "vox-headlines"
@@ -129394,6 +134455,10 @@ export type OperationIdLiteral =
   | "xda-headlines"
   | "xda-news"
   | "xda-sections"
+  | "xiaohongshu-explore"
+  | "xiaohongshu-note"
+  | "xiaohongshu-note-comments"
+  | "xiaohongshu-search-suggest"
   | "yahoo-autos-article"
   | "yahoo-autos-category"
   | "yahoo-autos-home"
@@ -129867,6 +134932,34 @@ export declare const OperationIds: Readonly<{
   BlueskyProfile: "bluesky-profile";
   BlueskySearchActors: "bluesky-search-actors";
   BlueskyTrendingTopics: "bluesky-trending-topics";
+  Bo3EconomyBaseline: "bo3-economy-baseline";
+  Bo3Forum: "bo3-forum";
+  Bo3ForumCategories: "bo3-forum-categories";
+  Bo3Match: "bo3-match";
+  Bo3MatchGames: "bo3-match-games";
+  Bo3MatchHistory: "bo3-match-history";
+  Bo3MatchPlayers: "bo3-match-players";
+  Bo3NewsCategories: "bo3-news-categories";
+  Bo3NewsFeed: "bo3-news-feed";
+  Bo3Player: "bo3-player";
+  Bo3PlayerLeaderboard: "bo3-player-leaderboard";
+  Bo3PlayerRecentMatches: "bo3-player-recent-matches";
+  Bo3PlayerStats: "bo3-player-stats";
+  Bo3Records: "bo3-records";
+  Bo3Team: "bo3-team";
+  Bo3TeamPrizeMoney: "bo3-team-prize-money";
+  Bo3TeamRankingDates: "bo3-team-ranking-dates";
+  Bo3TeamRankings: "bo3-team-rankings";
+  Bo3TeamRecentMatches: "bo3-team-recent-matches";
+  Bo3TeamStats: "bo3-team-stats";
+  Bo3Tournament: "bo3-tournament";
+  Bo3TournamentMapPool: "bo3-tournament-map-pool";
+  Bo3TournamentMvps: "bo3-tournament-mvps";
+  Bo3TournamentSquads: "bo3-tournament-squads";
+  Bo3TournamentStages: "bo3-tournament-stages";
+  Bo3Tournaments: "bo3-tournaments";
+  Bo3Transfers: "bo3-transfers";
+  Bo3ValorantLeaderboard: "bo3-valorant-leaderboard";
   BonhamsAuctionDetail: "bonhams-auction-detail";
   BonhamsAuctionLots: "bonhams-auction-lots";
   BonhamsAuctionSearch: "bonhams-auction-search";
@@ -131000,6 +136093,21 @@ export declare const OperationIds: Readonly<{
   GoogleTrendsTrending: "google-trends-trending";
   GoogleTrendsTrendingDetail: "google-trends-trending-detail";
   GoogleVideos: "google-videos";
+  GosuGamersGosugamersEncounters: "gosugamers-encounters";
+  GosuGamersGosugamersGames: "gosugamers-games";
+  GosuGamersGosugamersMatch: "gosugamers-match";
+  GosuGamersGosugamersMatchGame: "gosugamers-match-game";
+  GosuGamersGosugamersMatches: "gosugamers-matches";
+  GosuGamersGosugamersPlayer: "gosugamers-player";
+  GosuGamersGosugamersRankings: "gosugamers-rankings";
+  GosuGamersGosugamersResults: "gosugamers-results";
+  GosuGamersGosugamersStageGroups: "gosugamers-stage-groups";
+  GosuGamersGosugamersTeam: "gosugamers-team";
+  GosuGamersGosugamersTeamResults: "gosugamers-team-results";
+  GosuGamersGosugamersTournament: "gosugamers-tournament";
+  GosuGamersGosugamersTournamentParticipants: "gosugamers-tournament-participants";
+  GosuGamersGosugamersTournamentTalents: "gosugamers-tournament-talents";
+  GosuGamersGosugamersTournaments: "gosugamers-tournaments";
   GqArticle: "gq-article";
   GqAuthor: "gq-author";
   GqHeadlines: "gq-headlines";
@@ -131444,6 +136552,19 @@ export declare const OperationIds: Readonly<{
   LiverpoolEchoLiverpoolechoHeadlines: "liverpoolecho-headlines";
   LiverpoolEchoLiverpoolechoNews: "liverpoolecho-news";
   LiverpoolEchoLiverpoolechoSections: "liverpoolecho-sections";
+  LoLesportsLolesportsCompletedEvents: "lolesports-completed-events";
+  LoLesportsLolesportsEvent: "lolesports-event";
+  LoLesportsLolesportsGameDetails: "lolesports-game-details";
+  LoLesportsLolesportsGameWindow: "lolesports-game-window";
+  LoLesportsLolesportsGpr: "lolesports-gpr";
+  LoLesportsLolesportsLeagues: "lolesports-leagues";
+  LoLesportsLolesportsLive: "lolesports-live";
+  LoLesportsLolesportsNews: "lolesports-news";
+  LoLesportsLolesportsSchedule: "lolesports-schedule";
+  LoLesportsLolesportsSeasons: "lolesports-seasons";
+  LoLesportsLolesportsStandings: "lolesports-standings";
+  LoLesportsLolesportsTeams: "lolesports-teams";
+  LoLesportsLolesportsTournaments: "lolesports-tournaments";
   LosAngelesTimesLatimesArticle: "latimes-article";
   LosAngelesTimesLatimesAuthor: "latimes-author";
   LosAngelesTimesLatimesHeadlines: "latimes-headlines";
@@ -131788,6 +136909,32 @@ export declare const OperationIds: Readonly<{
   OldNavyOldnavyProductReviews: "oldnavy-product-reviews";
   OldNavyOldnavySearch: "oldnavy-search";
   OldNavyOldnavyStores: "oldnavy-stores";
+  OpenDotaOpendotaAbilities: "opendota-abilities";
+  OpenDotaOpendotaBenchmarks: "opendota-benchmarks";
+  OpenDotaOpendotaConstants: "opendota-constants";
+  OpenDotaOpendotaHeroDurations: "opendota-hero-durations";
+  OpenDotaOpendotaHeroItems: "opendota-hero-items";
+  OpenDotaOpendotaHeroMatchups: "opendota-hero-matchups";
+  OpenDotaOpendotaHeroStats: "opendota-hero-stats";
+  OpenDotaOpendotaHeroes: "opendota-heroes";
+  OpenDotaOpendotaItems: "opendota-items";
+  OpenDotaOpendotaLeague: "opendota-league";
+  OpenDotaOpendotaLeagueMatchIds: "opendota-league-match-ids";
+  OpenDotaOpendotaLeagueMatches: "opendota-league-matches";
+  OpenDotaOpendotaLeagues: "opendota-leagues";
+  OpenDotaOpendotaLive: "opendota-live";
+  OpenDotaOpendotaMatch: "opendota-match";
+  OpenDotaOpendotaPatchNotes: "opendota-patch-notes";
+  OpenDotaOpendotaProMatches: "opendota-pro-matches";
+  OpenDotaOpendotaProPlayers: "opendota-pro-players";
+  OpenDotaOpendotaRankDistribution: "opendota-rank-distribution";
+  OpenDotaOpendotaRecords: "opendota-records";
+  OpenDotaOpendotaScenarios: "opendota-scenarios";
+  OpenDotaOpendotaTeam: "opendota-team";
+  OpenDotaOpendotaTeamHeroes: "opendota-team-heroes";
+  OpenDotaOpendotaTeamMatches: "opendota-team-matches";
+  OpenDotaOpendotaTeamPlayers: "opendota-team-players";
+  OpenDotaOpendotaTeams: "opendota-teams";
   OpenSeaOpenseaActivity: "opensea-activity";
   OpenSeaOpenseaCategories: "opensea-categories";
   OpenSeaOpenseaChains: "opensea-chains";
@@ -132184,6 +137331,10 @@ export declare const OperationIds: Readonly<{
   RedfinRegionTrends: "redfin-region-trends";
   RedfinSearch: "redfin-search";
   RedfinSimilar: "redfin-similar";
+  RednoteExplore: "rednote-explore";
+  RednoteNote: "rednote-note";
+  RednoteNoteComments: "rednote-note-comments";
+  RednoteSearchSuggest: "rednote-search-suggest";
   ReelShortReelshortFandomCategories: "reelshort-fandom-categories";
   ReelShortReelshortFandomPost: "reelshort-fandom-post";
   ReelShortReelshortFandomPosts: "reelshort-fandom-posts";
@@ -132436,6 +137587,21 @@ export declare const OperationIds: Readonly<{
   ShopAppShopReviews: "shop-app-shop-reviews";
   ShopAppShopTypeahead: "shop-app-shop-typeahead";
   ShopAppSuggestions: "shop-app-suggestions";
+  ShopeeBanners: "shopee-banners";
+  ShopeeCategories: "shopee-categories";
+  ShopeeCategoryDetail: "shopee-category-detail";
+  ShopeeFlashSale: "shopee-flash-sale";
+  ShopeeFooter: "shopee-footer";
+  ShopeeHome: "shopee-home";
+  ShopeeHomeCategories: "shopee-home-categories";
+  ShopeeLocationFilters: "shopee-location-filters";
+  ShopeeMallCategories: "shopee-mall-categories";
+  ShopeePrefills: "shopee-prefills";
+  ShopeeSearchFilters: "shopee-search-filters";
+  ShopeeSearchHints: "shopee-search-hints";
+  ShopeeShopInfo: "shopee-shop-info";
+  ShopeeShops: "shopee-shops";
+  ShopeeSuggest: "shopee-suggest";
   ShopifyCollectionProducts: "shopify-collection-products";
   ShopifyCollections: "shopify-collections";
   ShopifyPage: "shopify-page";
@@ -133296,6 +138462,29 @@ export declare const OperationIds: Readonly<{
   VintedCategory: "vinted-category";
   VintedItem: "vinted-item";
   VintedMember: "vinted-member";
+  VlrEvent: "vlr-event";
+  VlrEventAgents: "vlr-event-agents";
+  VlrEventMatches: "vlr-event-matches";
+  VlrEventStats: "vlr-event-stats";
+  VlrEvents: "vlr-events";
+  VlrForumCategories: "vlr-forum-categories";
+  VlrForumThreads: "vlr-forum-threads";
+  VlrMatch: "vlr-match";
+  VlrMatchEconomy: "vlr-match-economy";
+  VlrMatchPerformance: "vlr-match-performance";
+  VlrMatchRounds: "vlr-match-rounds";
+  VlrMatches: "vlr-matches";
+  VlrNews: "vlr-news";
+  VlrNewsArticle: "vlr-news-article";
+  VlrPlayer: "vlr-player";
+  VlrPlayerMatches: "vlr-player-matches";
+  VlrRankings: "vlr-rankings";
+  VlrResults: "vlr-results";
+  VlrSearch: "vlr-search";
+  VlrStats: "vlr-stats";
+  VlrTeam: "vlr-team";
+  VlrTeamMaps: "vlr-team-maps";
+  VlrTeamMatches: "vlr-team-matches";
   VoxArticle: "vox-article";
   VoxAuthor: "vox-author";
   VoxHeadlines: "vox-headlines";
@@ -133408,6 +138597,10 @@ export declare const OperationIds: Readonly<{
   XdaHeadlines: "xda-headlines";
   XdaNews: "xda-news";
   XdaSections: "xda-sections";
+  XiaohongshuExplore: "xiaohongshu-explore";
+  XiaohongshuNote: "xiaohongshu-note";
+  XiaohongshuNoteComments: "xiaohongshu-note-comments";
+  XiaohongshuSearchSuggest: "xiaohongshu-search-suggest";
   YahooAutosArticle: "yahoo-autos-article";
   YahooAutosCategory: "yahoo-autos-category";
   YahooAutosHome: "yahoo-autos-home";
