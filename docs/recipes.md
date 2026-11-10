@@ -44,6 +44,17 @@ const brand = await crawlora.brand.retrieve({ domain: "stripe.com" });
 Omit `include_metrics` for the 1-credit feed mode. Set it to `true` for the
 3-credit anonymous HTML mode with public post and comment engagement metrics.
 
+## Formula 1, BoardGameGeek, and Cricbuzz
+
+The 1.51.0 contract adds these public platform groups. The full generated
+reference is in [`operations.md`](operations.md).
+
+```js
+const seasons = await crawlora.request("formula1-seasons", {});
+const taxonomy = await crawlora.request("boardgamegeek-taxonomy", {});
+const navigation = await crawlora.request("cricbuzz-navigation", {});
+```
+
 ## Company Job Searches
 
 Search public job listings directly from employer career sites:
