@@ -22170,6 +22170,16 @@ export interface ModelEonlineAuthorResponse {
   "url"?: string;
 }
 
+export interface ModelEpicgamesPromotionsResponse {
+  "Catalog"?: Record<string, unknown>;
+}
+
+export interface ModelEpicgamesFreePromotionsResponseDoc {
+  "code"?: number;
+  "data"?: ModelEpicgamesPromotionsResponse;
+  "msg"?: string;
+}
+
 export interface ModelEsAirbnbDensityCell {
   "geohash"?: string;
   "lat"?: number;
@@ -40100,6 +40110,43 @@ export interface ModelHealthgradesSuggestionsResponseDoc {
   "data"?: ModelHealthgradesSuggestionResponse;
 }
 
+export interface ModelHearthstoneCardFiltersResponse {
+  "filters"?: Record<string, unknown>;
+  "query_options"?: Record<string, Array<string>>;
+  "sort_groups"?: Array<string>;
+  "sort_mappings"?: Array<ModelHearthstoneCardSortMapping>;
+  "sort_options"?: Array<string>;
+  "sort_source_url"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelHearthstoneCardSortMapping {
+  "label_key"?: string;
+  "order"?: string;
+  "slug"?: string;
+  "sort"?: string;
+}
+
+export type ModelHearthstoneCardsResponse = Record<string, unknown>;
+
+export interface ModelHearthstoneCardFiltersResponseDoc {
+  "code"?: number;
+  "data"?: ModelHearthstoneCardFiltersResponse;
+  "msg"?: string;
+}
+
+export interface ModelHearthstoneCardResponseDoc {
+  "code"?: number;
+  "data"?: ModelHearthstoneCardsResponse;
+  "msg"?: string;
+}
+
+export interface ModelHearthstoneCardsListResponseDoc {
+  "code"?: number;
+  "data"?: ModelHearthstoneCardsResponse;
+  "msg"?: string;
+}
+
 export interface ModelHermesCatalogueProduct {
   "last_modified"?: string;
   "product_id"?: string;
@@ -40379,6 +40426,12 @@ export interface ModelHltvEvent {
   "url"?: string;
 }
 
+export interface ModelHltvEventPlacement {
+  "placement"?: string;
+  "prize"?: string;
+  "team"?: ModelHltvTeamRef;
+}
+
 export interface ModelHltvEventRef {
   "id"?: number;
   "name"?: string;
@@ -40390,6 +40443,7 @@ export interface ModelHltvEventResponse {
   "id"?: number;
   "location"?: string;
   "name"?: string;
+  "placements"?: Array<ModelHltvEventPlacement>;
   "prize_pool"?: string;
   "start_date"?: string;
   "status"?: string;
@@ -40497,6 +40551,16 @@ export interface ModelHltvMatchesResponse {
   "matches"?: Array<ModelHltvMatch>;
 }
 
+export interface ModelHltvPlayerMatch {
+  "event"?: string;
+  "match_id"?: number;
+  "opponent"?: string;
+  "result"?: string;
+  "score"?: Array<number>;
+  "starts_at"?: string;
+  "url"?: string;
+}
+
 export interface ModelHltvPlayerResponse {
   "age"?: string;
   "country"?: string;
@@ -40504,8 +40568,10 @@ export interface ModelHltvPlayerResponse {
   "id"?: number;
   "nickname"?: string;
   "real_name"?: string;
+  "recent_matches"?: Array<ModelHltvPlayerMatch>;
   "role_stats"?: Array<ModelHltvPlayerRoleStat>;
   "team"?: ModelHltvTeamRef;
+  "upcoming_matches"?: Array<ModelHltvPlayerMatch>;
   "url"?: string;
 }
 
@@ -40587,6 +40653,16 @@ export interface ModelHltvSearchResponse {
   "query"?: string;
 }
 
+export interface ModelHltvTeamMatch {
+  "date"?: string;
+  "event"?: ModelHltvEventRef;
+  "match_id"?: number;
+  "score"?: Array<number>;
+  "teams"?: Array<ModelHltvTeamRef>;
+  "url"?: string;
+  "winner"?: number;
+}
+
 export interface ModelHltvTeamRanking {
   "name"?: string;
   "rank"?: string;
@@ -40605,7 +40681,24 @@ export interface ModelHltvTeamResponse {
   "logo_url"?: string;
   "name"?: string;
   "rankings"?: Array<ModelHltvTeamRanking>;
+  "recent_results"?: Array<ModelHltvTeamMatch>;
   "roster"?: Array<ModelHltvRosterMember>;
+  "stats"?: ModelHltvTeamStatsSummary;
+  "upcoming_matches"?: Array<ModelHltvTeamUpcomingMatch>;
+  "url"?: string;
+}
+
+export interface ModelHltvTeamStatsSummary {
+  "timespan"?: string;
+  "win_rate"?: string;
+  "win_streak"?: number;
+}
+
+export interface ModelHltvTeamUpcomingMatch {
+  "event"?: ModelHltvEventRef;
+  "match_id"?: number;
+  "starts_at"?: string;
+  "teams"?: Array<ModelHltvTeamRef>;
   "url"?: string;
 }
 
@@ -53210,7 +53303,9 @@ export interface ModelNbaDetailTeam {
 }
 
 export interface ModelNbaEnumsData {
+  "ahead_behinds"?: Array<string>;
   "blocked"?: Array<string>;
+  "clutch_times"?: Array<string>;
   "defense_categories"?: Array<string>;
   "game_date_format"?: string;
   "league_ids"?: Array<string>;
@@ -54494,6 +54589,30 @@ export interface ModelNfhsTeam {
 export interface ModelNfhsTournamentInfo {
   "tournament"?: unknown;
   "tournament_game"?: unknown;
+}
+
+export type ModelNhlGamecenterResponse = Record<string, unknown>;
+
+export type ModelNhlScheduleResponse = Record<string, unknown>;
+
+export type ModelNhlStandingsResponse = Record<string, unknown>;
+
+export interface ModelNhlGamecenterResponseDoc {
+  "code"?: number;
+  "data"?: ModelNhlGamecenterResponse;
+  "msg"?: string;
+}
+
+export interface ModelNhlScheduleResponseDoc {
+  "code"?: number;
+  "data"?: ModelNhlScheduleResponse;
+  "msg"?: string;
+}
+
+export interface ModelNhlStandingsResponseDoc {
+  "code"?: number;
+  "data"?: ModelNhlStandingsResponse;
+  "msg"?: string;
 }
 
 export interface ModelNikeAvailabilityResponse {
@@ -70197,6 +70316,102 @@ export interface ModelSephoraSuggestResponseDoc {
   "code"?: number;
   "data"?: ModelSephoraSuggestResponse;
   "msg"?: string;
+}
+
+export interface ModelSerebiiEventCategoriesResponse {
+  "categories"?: Array<ModelSerebiiEventCategory>;
+}
+
+export interface ModelSerebiiEventCategory {
+  "category"?: string;
+  "name"?: string;
+  "source_url"?: string;
+}
+
+export interface ModelSerebiiEventOnlyMovesResponse {
+  "page_title"?: string;
+  "source_url"?: string;
+  "tables"?: Array<ModelSerebiiNativeDataTable>;
+}
+
+export interface ModelSerebiiEventOnlyResearchResponse {
+  "page_title"?: string;
+  "source_url"?: string;
+  "table"?: ModelSerebiiNativeDataTable;
+}
+
+export interface ModelSerebiiEventRecord {
+  "dates"?: string;
+  "duration"?: string;
+  "focus"?: string;
+  "location"?: string;
+  "name"?: string;
+  "source_links"?: Array<ModelSerebiiSourceLink>;
+  "special_move"?: string;
+}
+
+export interface ModelSerebiiEventsResponse {
+  "category"?: ModelSerebiiEventCategory;
+  "records"?: Array<ModelSerebiiEventRecord>;
+  "source_url"?: string;
+}
+
+export interface ModelSerebiiNativeDataCell {
+  "column_span"?: number;
+  "links"?: Array<ModelSerebiiSourceLink>;
+  "row_span"?: number;
+  "text"?: string;
+}
+
+export interface ModelSerebiiNativeDataRow {
+  "cells"?: Array<ModelSerebiiNativeDataCell>;
+}
+
+export interface ModelSerebiiNativeDataTable {
+  "column_labels"?: Array<string>;
+  "heading"?: string;
+  "rows"?: Array<ModelSerebiiNativeDataRow>;
+}
+
+export interface ModelSerebiiNativeEventDetailResponse {
+  "category"?: string;
+  "filename"?: string;
+  "overview"?: string;
+  "page_title"?: string;
+  "source_url"?: string;
+  "tables"?: Array<ModelSerebiiNativeDataTable>;
+}
+
+export interface ModelSerebiiSourceLink {
+  "column"?: string;
+  "text"?: string;
+  "url"?: string;
+}
+
+export interface ModelSerebiiSpotlightHourRecord {
+  "date_label"?: string;
+  "extra_effects"?: string;
+  "pokemon_focus"?: string;
+  "pokemon_links"?: Array<ModelSerebiiSourceLink>;
+}
+
+export interface ModelSerebiiSpotlightHoursResponse {
+  "records"?: Array<ModelSerebiiSpotlightHourRecord>;
+  "source_url"?: string;
+}
+
+export interface ModelSerebiiUnownEventRecord {
+  "available_letters"?: string;
+  "date"?: string;
+  "event"?: string;
+  "event_links"?: Array<ModelSerebiiSourceLink>;
+  "locations"?: Array<string>;
+  "restrictions"?: string;
+}
+
+export interface ModelSerebiiUnownEventsResponse {
+  "records"?: Array<ModelSerebiiUnownEventRecord>;
+  "source_url"?: string;
 }
 
 export interface ModelSevennewsauAuthorResponse {
@@ -105219,6 +105434,13 @@ export type ENewsEonlineSectionsResponse = CrawloraResponse<ModelPublicnewsSecti
 export interface ENewsEonlineSectionsParams {
 }
 
+export type EpicGamesStoreEpicgamesFreePromotionsResponse = CrawloraResponse<ModelEpicgamesFreePromotionsResponseDoc>;
+export interface EpicGamesStoreEpicgamesFreePromotionsParams {
+  "locale"?: string;
+  "country"?: string;
+  "allowCountries"?: string;
+}
+
 export type EspnAthleteResponse = CrawloraResponse<ModelEspnAthleteResponseDoc>;
 export interface EspnAthleteParams {
   "sport": "football" | "basketball" | "baseball" | "hockey" | "soccer";
@@ -110049,6 +110271,54 @@ export interface HealthgradesSpecialtiesParams {
 
 export type HealthgradesTopSearchesResponse = CrawloraResponse<ModelHealthgradesSuggestionsResponseDoc>;
 export interface HealthgradesTopSearchesParams {
+}
+
+export type HearthstoneCardResponse = CrawloraResponse<ModelHearthstoneCardResponseDoc>;
+export interface HearthstoneCardParams {
+  "id": string;
+}
+
+export type HearthstoneCardsResponse = CrawloraResponse<ModelHearthstoneCardsListResponseDoc>;
+export interface HearthstoneCardsParams {
+  "page"?: number;
+  "pageSize"?: number;
+  "locale"?: string;
+  "class"?: string;
+  "set"?: string;
+  "sort"?: string;
+  "order"?: "asc" | "desc";
+  "gameMode"?: string;
+  "collectible"?: Array<"0" | "1">;
+  "textFilter"?: string;
+  "filterLocale"?: string;
+  "deckcode"?: string;
+  "cardSetId"?: Array<number>;
+  "spellSchoolId"?: Array<number>;
+  "rarityId"?: Array<number>;
+  "cardTypeId"?: Array<number>;
+  "manaCost"?: Array<string>;
+  "attack"?: Array<string>;
+  "health"?: Array<string>;
+  "armor"?: Array<string>;
+  "rarity"?: string;
+  "type"?: Array<string>;
+  "bgCardType"?: string;
+  "keyword"?: string;
+  "minionType"?: string;
+  "deckFormat"?: string;
+  "tier"?: Array<"1" | "2" | "3" | "4" | "5" | "6" | "7">;
+  "mercenaryRole"?: string;
+  "mercenaryFaction"?: string;
+  "viewMode"?: "grid" | "table";
+  "cardBackCategory"?: string;
+  "spellSchool"?: string;
+  "faction"?: string;
+  "bgGameMode"?: string;
+  "zilliaxMod"?: boolean;
+}
+
+export type HearthstoneFiltersResponse = CrawloraResponse<ModelHearthstoneCardFiltersResponseDoc>;
+export interface HearthstoneFiltersParams {
 }
 
 export type HermesCategoriesResponse = CrawloraResponse<ModelHermesCategoriesResponseDoc>;
@@ -115165,6 +115435,14 @@ export interface NbaHustleStatsParams {
   "game_id": string;
 }
 
+export type NbaHustleTeamResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaHustleTeamParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
+}
+
 export type NbaLeagueGameLogResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
 export interface NbaLeagueGameLogParams {
   "league_id"?: "00";
@@ -115187,6 +115465,14 @@ export interface NbaLineupsParams {
 
 export type NbaNewsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaNewsResponse }>;
 export interface NbaNewsParams {
+}
+
+export type NbaOppPtShotResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaOppPtShotParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
 }
 
 export type NbaPlayByPlayResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaPlayByPlayResponse }>;
@@ -115216,6 +115502,18 @@ export interface NbaPlayerCareerStatsParams {
   "league_id"?: "00";
 }
 
+export type NbaPlayerClutchResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaPlayerClutchParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
+  "measure_type"?: "Base" | "Advanced" | "Misc" | "Scoring" | "Defense" | "Opponent";
+  "clutch_time"?: "Last 5 Minutes";
+  "ahead_behind"?: "Ahead or Behind";
+  "point_diff"?: "5";
+}
+
 export type NbaPlayerDashPtShotsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
 export interface NbaPlayerDashPtShotsParams {
   "player_id": number;
@@ -115225,10 +115523,32 @@ export interface NbaPlayerDashPtShotsParams {
   "per_mode"?: "PerGame";
 }
 
+export type NbaPlayerGameLogsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaPlayerGameLogsParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "player_id": number;
+}
+
 export type NbaPlayerInfoResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
 export interface NbaPlayerInfoParams {
   "player_id": number;
   "league_id"?: "00";
+}
+
+export type NbaPlayerProfileV2Response = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaPlayerProfileV2Params {
+  "player_id": number;
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
+}
+
+export type NbaPlayerPtShotResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaPlayerPtShotParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
 }
 
 export type NbaPlayerStatsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
@@ -115238,6 +115558,15 @@ export interface NbaPlayerStatsParams {
   "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
   "measure_type"?: "Base" | "Advanced" | "Misc" | "Scoring" | "Defense" | "Opponent";
   "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
+}
+
+export type NbaPlayerStreakFinderResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaPlayerStreakFinderParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "player_id"?: number;
+  "min_games"?: number;
 }
 
 export type NbaPlayersResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
@@ -115297,10 +115626,62 @@ export interface NbaSynergyPlayTypesParams {
   "type_grouping"?: "offensive";
 }
 
+export type NbaTeamDashPtPassResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaTeamDashPtPassParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
+  "team_id": number;
+}
+
+export type NbaTeamDashPtShotsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaTeamDashPtShotsParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
+  "team_id": number;
+}
+
 export type NbaTeamDetailsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
 export interface NbaTeamDetailsParams {
   "team_id": number;
   "league_id"?: "00";
+}
+
+export type NbaTeamGameLogsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaTeamGameLogsParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "team_id": number;
+}
+
+export type NbaTeamInfoCommonResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaTeamInfoCommonParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "team_id": number;
+}
+
+export type NbaTeamOnOffResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaTeamOnOffParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
+  "measure_type"?: "Base" | "Advanced" | "Misc" | "Scoring" | "Defense" | "Opponent";
+  "team_id": number;
+}
+
+export type NbaTeamPtShotResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaTeamPtShotParams {
+  "league_id"?: "00";
+  "season"?: string;
+  "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
+  "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
 }
 
 export type NbaTeamRosterResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
@@ -115337,6 +115718,11 @@ export interface NbaTeamStatsLeadersParams {
   "season_type"?: "Regular Season" | "Playoffs" | "Pre Season" | "All Star";
   "per_mode"?: "PerGame" | "Totals" | "Per36" | "Per48" | "Per100Possessions" | "MinutesPer" | "PerPossession";
   "scope"?: "S";
+}
+
+export type NbaTeamYearsResponse = CrawloraResponse<ModelAppResponse & { "data"?: ModelNbaTablesResponse }>;
+export interface NbaTeamYearsParams {
+  "league_id"?: "00";
 }
 
 export type NbcNewsNbcArticleResponse = CrawloraResponse<ModelNbcArticleResponseDoc>;
@@ -115732,6 +116118,30 @@ export interface NfhsSuggestParams {
   "search_term": string;
   "scope"?: string;
   "size"?: number;
+}
+
+export type NhlGamecenterBoxscoreResponse = CrawloraResponse<ModelNhlGamecenterResponseDoc>;
+export interface NhlGamecenterBoxscoreParams {
+  "game_id": string;
+}
+
+export type NhlGamecenterPlayByPlayResponse = CrawloraResponse<ModelNhlGamecenterResponseDoc>;
+export interface NhlGamecenterPlayByPlayParams {
+  "game_id": string;
+}
+
+export type NhlScheduleResponse = CrawloraResponse<ModelNhlScheduleResponseDoc>;
+export interface NhlScheduleParams {
+  "date"?: string;
+}
+
+export type NhlSeasonsResponse = CrawloraResponse<ModelAppResponse>;
+export interface NhlSeasonsParams {
+}
+
+export type NhlStandingsResponse = CrawloraResponse<ModelNhlStandingsResponseDoc>;
+export interface NhlStandingsParams {
+  "date"?: string;
 }
 
 export type NikeCategoriesResponse = CrawloraResponse<ModelNikeCategoriesResponseDoc>;
@@ -120512,6 +120922,76 @@ export interface SephoraStoresParams {
 export type SephoraSuggestResponse = CrawloraResponse<ModelSephoraSuggestResponseDoc>;
 export interface SephoraSuggestParams {
   "query": string;
+}
+
+export type SerebiiPokemongoEventDetailCommunityDayResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailCommunityDayParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoEventCategoriesResponse = CrawloraResponse<ModelSerebiiEventCategoriesResponse>;
+export interface SerebiiPokemongoEventCategoriesParams {
+}
+
+export type SerebiiPokemongoEventOnlyMovesResponse = CrawloraResponse<ModelSerebiiEventOnlyMovesResponse>;
+export interface SerebiiPokemongoEventOnlyMovesParams {
+}
+
+export type SerebiiPokemongoEventOnlyResearchResponse = CrawloraResponse<ModelSerebiiEventOnlyResearchResponse>;
+export interface SerebiiPokemongoEventOnlyResearchParams {
+}
+
+export type SerebiiPokemongoEventsResponse = CrawloraResponse<ModelSerebiiEventsResponse>;
+export interface SerebiiPokemongoEventsParams {
+  "category": "events.shtml" | "reallifeevents.shtml" | "ticketevents.shtml" | "communityday.shtml" | "raidday.shtml" | "maxbattleday.shtml" | "incenseday.shtml" | "limitedresearchday.shtml" | "hatchday.shtml";
+}
+
+export type SerebiiPokemongoEventDetailGlobalResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailGlobalParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoEventDetailHatchDayResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailHatchDayParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoEventDetailIncenseDayResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailIncenseDayParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoEventDetailResearchDayResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailResearchDayParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoEventDetailMaxBattleDayResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailMaxBattleDayParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoEventDetailRaidDayResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailRaidDayParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoEventDetailRealLifeResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailRealLifeParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoSpotlightHoursResponse = CrawloraResponse<ModelSerebiiSpotlightHoursResponse>;
+export interface SerebiiPokemongoSpotlightHoursParams {
+}
+
+export type SerebiiPokemongoEventDetailTicketResponse = CrawloraResponse<ModelSerebiiNativeEventDetailResponse>;
+export interface SerebiiPokemongoEventDetailTicketParams {
+  "filename": string;
+}
+
+export type SerebiiPokemongoUnownEventsResponse = CrawloraResponse<ModelSerebiiUnownEventsResponse>;
+export interface SerebiiPokemongoUnownEventsParams {
 }
 
 export type SevenNewsAustraliaArticleResponse = CrawloraResponse<ModelPublicnewsArticleResponseDoc>;
@@ -129690,6 +130170,10 @@ export interface ENewsService {
   eonlineSections<T = ENewsEonlineSectionsResponse>(params?: ENewsEonlineSectionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
+export interface EpicGamesStoreService {
+  epicgamesFreePromotions<T = EpicGamesStoreEpicgamesFreePromotionsResponse>(params?: EpicGamesStoreEpicgamesFreePromotionsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
 export interface EspnService {
   athlete<T = EspnAthleteResponse>(params: EspnAthleteParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   gameSummary<T = EspnGameSummaryResponse>(params: EspnGameSummaryParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -130651,6 +131135,12 @@ export interface HealthgradesService {
   physiciansSearch<T = HealthgradesPhysiciansSearchResponse>(params: HealthgradesPhysiciansSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   specialties<T = HealthgradesSpecialtiesResponse>(params?: HealthgradesSpecialtiesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   topSearches<T = HealthgradesTopSearchesResponse>(params?: HealthgradesTopSearchesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface HearthstoneService {
+  card<T = HearthstoneCardResponse>(params: HearthstoneCardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  cards<T = HearthstoneCardsResponse>(params?: HearthstoneCardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  filters<T = HearthstoneFiltersResponse>(params?: HearthstoneFiltersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface HermesService {
@@ -131690,16 +132180,23 @@ export interface NbaService {
   games<T = NbaGamesResponse>(params?: NbaGamesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   homepageLeaders<T = NbaHomepageLeadersResponse>(params?: NbaHomepageLeadersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   hustleStats<T = NbaHustleStatsResponse>(params: NbaHustleStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  hustleTeam<T = NbaHustleTeamResponse>(params?: NbaHustleTeamParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   leagueGameLog<T = NbaLeagueGameLogResponse>(params?: NbaLeagueGameLogParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   lineups<T = NbaLineupsResponse>(params?: NbaLineupsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   news<T = NbaNewsResponse>(params?: NbaNewsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  oppPtShot<T = NbaOppPtShotResponse>(params?: NbaOppPtShotParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playByPlay<T = NbaPlayByPlayResponse>(params: NbaPlayByPlayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playerAwards<T = NbaPlayerAwardsResponse>(params: NbaPlayerAwardsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playerBioStats<T = NbaPlayerBioStatsResponse>(params?: NbaPlayerBioStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playerCareerStats<T = NbaPlayerCareerStatsResponse>(params: NbaPlayerCareerStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerClutch<T = NbaPlayerClutchResponse>(params?: NbaPlayerClutchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playerDashPtShots<T = NbaPlayerDashPtShotsResponse>(params: NbaPlayerDashPtShotsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerGameLogs<T = NbaPlayerGameLogsResponse>(params: NbaPlayerGameLogsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playerInfo<T = NbaPlayerInfoResponse>(params: NbaPlayerInfoParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerProfileV2<T = NbaPlayerProfileV2Response>(params: NbaPlayerProfileV2Params, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerPtShot<T = NbaPlayerPtShotResponse>(params?: NbaPlayerPtShotParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playerStats<T = NbaPlayerStatsResponse>(params?: NbaPlayerStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  playerStreakFinder<T = NbaPlayerStreakFinderResponse>(params?: NbaPlayerStreakFinderParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   players<T = NbaPlayersResponse>(params?: NbaPlayersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   playoffPicture<T = NbaPlayoffPictureResponse>(params?: NbaPlayoffPictureParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   ptDefend<T = NbaPtDefendResponse>(params?: NbaPtDefendParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
@@ -131707,11 +132204,18 @@ export interface NbaService {
   scoreboard<T = NbaScoreboardResponse>(params?: NbaScoreboardParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   standings<T = NbaStandingsResponse>(params?: NbaStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   synergyPlayTypes<T = NbaSynergyPlayTypesResponse>(params?: NbaSynergyPlayTypesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamDashPtPass<T = NbaTeamDashPtPassResponse>(params: NbaTeamDashPtPassParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamDashPtShots<T = NbaTeamDashPtShotsResponse>(params: NbaTeamDashPtShotsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   teamDetails<T = NbaTeamDetailsResponse>(params: NbaTeamDetailsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamGameLogs<T = NbaTeamGameLogsResponse>(params: NbaTeamGameLogsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamInfoCommon<T = NbaTeamInfoCommonResponse>(params: NbaTeamInfoCommonParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamOnOff<T = NbaTeamOnOffResponse>(params: NbaTeamOnOffParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamPtShot<T = NbaTeamPtShotResponse>(params?: NbaTeamPtShotParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   teamRoster<T = NbaTeamRosterResponse>(params: NbaTeamRosterParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   teamShotLocations<T = NbaTeamShotLocationsResponse>(params?: NbaTeamShotLocationsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   teamStats<T = NbaTeamStatsResponse>(params?: NbaTeamStatsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   teamStatsLeaders<T = NbaTeamStatsLeadersResponse>(params: NbaTeamStatsLeadersParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  teamYears<T = NbaTeamYearsResponse>(params?: NbaTeamYearsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface NbcNewsService {
@@ -131813,6 +132317,14 @@ export interface NfhsService {
   sports<T = NfhsSportsResponse>(params?: NfhsSportsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   states<T = NfhsStatesResponse>(params?: NfhsStatesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   suggest<T = NfhsSuggestResponse>(params: NfhsSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface NhlService {
+  gamecenterBoxscore<T = NhlGamecenterBoxscoreResponse>(params: NhlGamecenterBoxscoreParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  gamecenterPlayByPlay<T = NhlGamecenterPlayByPlayResponse>(params: NhlGamecenterPlayByPlayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  schedule<T = NhlScheduleResponse>(params?: NhlScheduleParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  seasons<T = NhlSeasonsResponse>(params?: NhlSeasonsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  standings<T = NhlStandingsResponse>(params?: NhlStandingsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface NikeService {
@@ -132841,6 +133353,24 @@ export interface SephoraService {
   search<T = SephoraSearchResponse>(params: SephoraSearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   stores<T = SephoraStoresResponse>(params: SephoraStoresParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
   suggest<T = SephoraSuggestResponse>(params: SephoraSuggestParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+}
+
+export interface SerebiiService {
+  pokemongoEventDetailCommunityDay<T = SerebiiPokemongoEventDetailCommunityDayResponse>(params: SerebiiPokemongoEventDetailCommunityDayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventCategories<T = SerebiiPokemongoEventCategoriesResponse>(params?: SerebiiPokemongoEventCategoriesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventOnlyMoves<T = SerebiiPokemongoEventOnlyMovesResponse>(params?: SerebiiPokemongoEventOnlyMovesParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventOnlyResearch<T = SerebiiPokemongoEventOnlyResearchResponse>(params?: SerebiiPokemongoEventOnlyResearchParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEvents<T = SerebiiPokemongoEventsResponse>(params: SerebiiPokemongoEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventDetailGlobal<T = SerebiiPokemongoEventDetailGlobalResponse>(params: SerebiiPokemongoEventDetailGlobalParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventDetailHatchDay<T = SerebiiPokemongoEventDetailHatchDayResponse>(params: SerebiiPokemongoEventDetailHatchDayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventDetailIncenseDay<T = SerebiiPokemongoEventDetailIncenseDayResponse>(params: SerebiiPokemongoEventDetailIncenseDayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventDetailResearchDay<T = SerebiiPokemongoEventDetailResearchDayResponse>(params: SerebiiPokemongoEventDetailResearchDayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventDetailMaxBattleDay<T = SerebiiPokemongoEventDetailMaxBattleDayResponse>(params: SerebiiPokemongoEventDetailMaxBattleDayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventDetailRaidDay<T = SerebiiPokemongoEventDetailRaidDayResponse>(params: SerebiiPokemongoEventDetailRaidDayParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventDetailRealLife<T = SerebiiPokemongoEventDetailRealLifeResponse>(params: SerebiiPokemongoEventDetailRealLifeParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoSpotlightHours<T = SerebiiPokemongoSpotlightHoursResponse>(params?: SerebiiPokemongoSpotlightHoursParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoEventDetailTicket<T = SerebiiPokemongoEventDetailTicketResponse>(params: SerebiiPokemongoEventDetailTicketParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
+  pokemongoUnownEvents<T = SerebiiPokemongoUnownEventsResponse>(params?: SerebiiPokemongoUnownEventsParams, options?: import('./index.js').CrawloraRequestOptions): Promise<T>;
 }
 
 export interface SevenNewsAustraliaService {
@@ -134671,6 +135201,7 @@ export interface CrawloraGeneratedGroups {
   economicTimes: EconomicTimesService;
   engadget: EngadgetService;
   eNews: ENewsService;
+  epicGamesStore: EpicGamesStoreService;
   espn: EspnService;
   etsy: EtsyService;
   euronews: EuronewsService;
@@ -134739,6 +135270,7 @@ export interface CrawloraGeneratedGroups {
   gymshark: GymsharkService;
   harvardBusinessReview: HarvardBusinessReviewService;
   healthgrades: HealthgradesService;
+  hearthstone: HearthstoneService;
   hermes: HermesService;
   hindustanTimes: HindustanTimesService;
   hltv: HltvService;
@@ -134840,6 +135372,7 @@ export interface CrawloraGeneratedGroups {
   newsweek: NewsweekService;
   theNewYorker: TheNewYorkerService;
   nfhs: NfhsService;
+  nhl: NhlService;
   nike: NikeService;
   nineToFiveGoogle: NineToFiveGoogleService;
   nineToFiveMac: NineToFiveMacService;
@@ -134929,6 +135462,7 @@ export interface CrawloraGeneratedGroups {
   seattleTimes: SeattleTimesService;
   secEdgar: SecEdgarService;
   sephora: SephoraService;
+  serebii: SerebiiService;
   sevenNewsAustralia: SevenNewsAustraliaService;
   sfgate: SfgateService;
   shakeShack: ShakeShackService;
@@ -136162,6 +136696,7 @@ export interface OperationParamsMap {
   "eonline-headlines": ENewsEonlineHeadlinesParams;
   "eonline-news": ENewsEonlineNewsParams;
   "eonline-sections": ENewsEonlineSectionsParams;
+  "epicgames-free-promotions": EpicGamesStoreEpicgamesFreePromotionsParams;
   "espn-athlete": EspnAthleteParams;
   "espn-game-summary": EspnGameSummaryParams;
   "espn-news": EspnNewsParams;
@@ -136922,6 +137457,9 @@ export interface OperationParamsMap {
   "healthgrades-physicians-search": HealthgradesPhysiciansSearchParams;
   "healthgrades-specialties": HealthgradesSpecialtiesParams;
   "healthgrades-top-searches": HealthgradesTopSearchesParams;
+  "hearthstone-card": HearthstoneCardParams;
+  "hearthstone-cards": HearthstoneCardsParams;
+  "hearthstone-filters": HearthstoneFiltersParams;
   "hermes-categories": HermesCategoriesParams;
   "hermes-category": HermesCategoryParams;
   "hermes-product": HermesProductParams;
@@ -137688,16 +138226,23 @@ export interface OperationParamsMap {
   "nba-games": NbaGamesParams;
   "nba-homepage-leaders": NbaHomepageLeadersParams;
   "nba-hustle-stats": NbaHustleStatsParams;
+  "nba-hustle-team": NbaHustleTeamParams;
   "nba-league-game-log": NbaLeagueGameLogParams;
   "nba-lineups": NbaLineupsParams;
   "nba-news": NbaNewsParams;
+  "nba-opp-pt-shot": NbaOppPtShotParams;
   "nba-play-by-play": NbaPlayByPlayParams;
   "nba-player-awards": NbaPlayerAwardsParams;
   "nba-player-bio-stats": NbaPlayerBioStatsParams;
   "nba-player-career-stats": NbaPlayerCareerStatsParams;
+  "nba-player-clutch": NbaPlayerClutchParams;
   "nba-player-dash-pt-shots": NbaPlayerDashPtShotsParams;
+  "nba-player-game-logs": NbaPlayerGameLogsParams;
   "nba-player-info": NbaPlayerInfoParams;
+  "nba-player-profile-v2": NbaPlayerProfileV2Params;
+  "nba-player-pt-shot": NbaPlayerPtShotParams;
   "nba-player-stats": NbaPlayerStatsParams;
+  "nba-player-streak-finder": NbaPlayerStreakFinderParams;
   "nba-players": NbaPlayersParams;
   "nba-playoff-picture": NbaPlayoffPictureParams;
   "nba-pt-defend": NbaPtDefendParams;
@@ -137705,11 +138250,18 @@ export interface OperationParamsMap {
   "nba-scoreboard": NbaScoreboardParams;
   "nba-standings": NbaStandingsParams;
   "nba-synergy-play-types": NbaSynergyPlayTypesParams;
+  "nba-team-dash-pt-pass": NbaTeamDashPtPassParams;
+  "nba-team-dash-pt-shots": NbaTeamDashPtShotsParams;
   "nba-team-details": NbaTeamDetailsParams;
+  "nba-team-game-logs": NbaTeamGameLogsParams;
+  "nba-team-info-common": NbaTeamInfoCommonParams;
+  "nba-team-on-off": NbaTeamOnOffParams;
+  "nba-team-pt-shot": NbaTeamPtShotParams;
   "nba-team-roster": NbaTeamRosterParams;
   "nba-team-shot-locations": NbaTeamShotLocationsParams;
   "nba-team-stats": NbaTeamStatsParams;
   "nba-team-stats-leaders": NbaTeamStatsLeadersParams;
+  "nba-team-years": NbaTeamYearsParams;
   "nbc-article": NbcNewsNbcArticleParams;
   "nbc-author": NbcNewsNbcAuthorParams;
   "nbc-headlines": NbcNewsNbcHeadlinesParams;
@@ -137781,6 +138333,11 @@ export interface OperationParamsMap {
   "nfhs-sports": NfhsSportsParams;
   "nfhs-states": NfhsStatesParams;
   "nfhs-suggest": NfhsSuggestParams;
+  "nhl-gamecenter-boxscore": NhlGamecenterBoxscoreParams;
+  "nhl-gamecenter-play-by-play": NhlGamecenterPlayByPlayParams;
+  "nhl-schedule": NhlScheduleParams;
+  "nhl-seasons": NhlSeasonsParams;
+  "nhl-standings": NhlStandingsParams;
   "nike-categories": NikeCategoriesParams;
   "nike-product": NikeProductParams;
   "nike-product-availability": NikeProductAvailabilityParams;
@@ -138542,6 +139099,21 @@ export interface OperationParamsMap {
   "sephora-search": SephoraSearchParams;
   "sephora-stores": SephoraStoresParams;
   "sephora-suggest": SephoraSuggestParams;
+  "serebii-pokemongo-event-detail-community-day": SerebiiPokemongoEventDetailCommunityDayParams;
+  "serebii-pokemongo-event-categories": SerebiiPokemongoEventCategoriesParams;
+  "serebii-pokemongo-event-only-moves": SerebiiPokemongoEventOnlyMovesParams;
+  "serebii-pokemongo-event-only-research": SerebiiPokemongoEventOnlyResearchParams;
+  "serebii-pokemongo-events": SerebiiPokemongoEventsParams;
+  "serebii-pokemongo-event-detail-global": SerebiiPokemongoEventDetailGlobalParams;
+  "serebii-pokemongo-event-detail-hatch-day": SerebiiPokemongoEventDetailHatchDayParams;
+  "serebii-pokemongo-event-detail-incense-day": SerebiiPokemongoEventDetailIncenseDayParams;
+  "serebii-pokemongo-event-detail-research-day": SerebiiPokemongoEventDetailResearchDayParams;
+  "serebii-pokemongo-event-detail-max-battle-day": SerebiiPokemongoEventDetailMaxBattleDayParams;
+  "serebii-pokemongo-event-detail-raid-day": SerebiiPokemongoEventDetailRaidDayParams;
+  "serebii-pokemongo-event-detail-real-life": SerebiiPokemongoEventDetailRealLifeParams;
+  "serebii-pokemongo-spotlight-hours": SerebiiPokemongoSpotlightHoursParams;
+  "serebii-pokemongo-event-detail-ticket": SerebiiPokemongoEventDetailTicketParams;
+  "serebii-pokemongo-unown-events": SerebiiPokemongoUnownEventsParams;
   "sevennewsau-article": SevenNewsAustraliaArticleParams;
   "sevennewsau-author": SevenNewsAustraliaAuthorParams;
   "sevennewsau-headlines": SevenNewsAustraliaHeadlinesParams;
@@ -140896,6 +141468,7 @@ export interface OperationResponseMap {
   "eonline-headlines": ENewsEonlineHeadlinesResponse;
   "eonline-news": ENewsEonlineNewsResponse;
   "eonline-sections": ENewsEonlineSectionsResponse;
+  "epicgames-free-promotions": EpicGamesStoreEpicgamesFreePromotionsResponse;
   "espn-athlete": EspnAthleteResponse;
   "espn-game-summary": EspnGameSummaryResponse;
   "espn-news": EspnNewsResponse;
@@ -141656,6 +142229,9 @@ export interface OperationResponseMap {
   "healthgrades-physicians-search": HealthgradesPhysiciansSearchResponse;
   "healthgrades-specialties": HealthgradesSpecialtiesResponse;
   "healthgrades-top-searches": HealthgradesTopSearchesResponse;
+  "hearthstone-card": HearthstoneCardResponse;
+  "hearthstone-cards": HearthstoneCardsResponse;
+  "hearthstone-filters": HearthstoneFiltersResponse;
   "hermes-categories": HermesCategoriesResponse;
   "hermes-category": HermesCategoryResponse;
   "hermes-product": HermesProductResponse;
@@ -142422,16 +142998,23 @@ export interface OperationResponseMap {
   "nba-games": NbaGamesResponse;
   "nba-homepage-leaders": NbaHomepageLeadersResponse;
   "nba-hustle-stats": NbaHustleStatsResponse;
+  "nba-hustle-team": NbaHustleTeamResponse;
   "nba-league-game-log": NbaLeagueGameLogResponse;
   "nba-lineups": NbaLineupsResponse;
   "nba-news": NbaNewsResponse;
+  "nba-opp-pt-shot": NbaOppPtShotResponse;
   "nba-play-by-play": NbaPlayByPlayResponse;
   "nba-player-awards": NbaPlayerAwardsResponse;
   "nba-player-bio-stats": NbaPlayerBioStatsResponse;
   "nba-player-career-stats": NbaPlayerCareerStatsResponse;
+  "nba-player-clutch": NbaPlayerClutchResponse;
   "nba-player-dash-pt-shots": NbaPlayerDashPtShotsResponse;
+  "nba-player-game-logs": NbaPlayerGameLogsResponse;
   "nba-player-info": NbaPlayerInfoResponse;
+  "nba-player-profile-v2": NbaPlayerProfileV2Response;
+  "nba-player-pt-shot": NbaPlayerPtShotResponse;
   "nba-player-stats": NbaPlayerStatsResponse;
+  "nba-player-streak-finder": NbaPlayerStreakFinderResponse;
   "nba-players": NbaPlayersResponse;
   "nba-playoff-picture": NbaPlayoffPictureResponse;
   "nba-pt-defend": NbaPtDefendResponse;
@@ -142439,11 +143022,18 @@ export interface OperationResponseMap {
   "nba-scoreboard": NbaScoreboardResponse;
   "nba-standings": NbaStandingsResponse;
   "nba-synergy-play-types": NbaSynergyPlayTypesResponse;
+  "nba-team-dash-pt-pass": NbaTeamDashPtPassResponse;
+  "nba-team-dash-pt-shots": NbaTeamDashPtShotsResponse;
   "nba-team-details": NbaTeamDetailsResponse;
+  "nba-team-game-logs": NbaTeamGameLogsResponse;
+  "nba-team-info-common": NbaTeamInfoCommonResponse;
+  "nba-team-on-off": NbaTeamOnOffResponse;
+  "nba-team-pt-shot": NbaTeamPtShotResponse;
   "nba-team-roster": NbaTeamRosterResponse;
   "nba-team-shot-locations": NbaTeamShotLocationsResponse;
   "nba-team-stats": NbaTeamStatsResponse;
   "nba-team-stats-leaders": NbaTeamStatsLeadersResponse;
+  "nba-team-years": NbaTeamYearsResponse;
   "nbc-article": NbcNewsNbcArticleResponse;
   "nbc-author": NbcNewsNbcAuthorResponse;
   "nbc-headlines": NbcNewsNbcHeadlinesResponse;
@@ -142515,6 +143105,11 @@ export interface OperationResponseMap {
   "nfhs-sports": NfhsSportsResponse;
   "nfhs-states": NfhsStatesResponse;
   "nfhs-suggest": NfhsSuggestResponse;
+  "nhl-gamecenter-boxscore": NhlGamecenterBoxscoreResponse;
+  "nhl-gamecenter-play-by-play": NhlGamecenterPlayByPlayResponse;
+  "nhl-schedule": NhlScheduleResponse;
+  "nhl-seasons": NhlSeasonsResponse;
+  "nhl-standings": NhlStandingsResponse;
   "nike-categories": NikeCategoriesResponse;
   "nike-product": NikeProductResponse;
   "nike-product-availability": NikeProductAvailabilityResponse;
@@ -143276,6 +143871,21 @@ export interface OperationResponseMap {
   "sephora-search": SephoraSearchResponse;
   "sephora-stores": SephoraStoresResponse;
   "sephora-suggest": SephoraSuggestResponse;
+  "serebii-pokemongo-event-detail-community-day": SerebiiPokemongoEventDetailCommunityDayResponse;
+  "serebii-pokemongo-event-categories": SerebiiPokemongoEventCategoriesResponse;
+  "serebii-pokemongo-event-only-moves": SerebiiPokemongoEventOnlyMovesResponse;
+  "serebii-pokemongo-event-only-research": SerebiiPokemongoEventOnlyResearchResponse;
+  "serebii-pokemongo-events": SerebiiPokemongoEventsResponse;
+  "serebii-pokemongo-event-detail-global": SerebiiPokemongoEventDetailGlobalResponse;
+  "serebii-pokemongo-event-detail-hatch-day": SerebiiPokemongoEventDetailHatchDayResponse;
+  "serebii-pokemongo-event-detail-incense-day": SerebiiPokemongoEventDetailIncenseDayResponse;
+  "serebii-pokemongo-event-detail-research-day": SerebiiPokemongoEventDetailResearchDayResponse;
+  "serebii-pokemongo-event-detail-max-battle-day": SerebiiPokemongoEventDetailMaxBattleDayResponse;
+  "serebii-pokemongo-event-detail-raid-day": SerebiiPokemongoEventDetailRaidDayResponse;
+  "serebii-pokemongo-event-detail-real-life": SerebiiPokemongoEventDetailRealLifeResponse;
+  "serebii-pokemongo-spotlight-hours": SerebiiPokemongoSpotlightHoursResponse;
+  "serebii-pokemongo-event-detail-ticket": SerebiiPokemongoEventDetailTicketResponse;
+  "serebii-pokemongo-unown-events": SerebiiPokemongoUnownEventsResponse;
   "sevennewsau-article": SevenNewsAustraliaArticleResponse;
   "sevennewsau-author": SevenNewsAustraliaAuthorResponse;
   "sevennewsau-headlines": SevenNewsAustraliaHeadlinesResponse;
@@ -145630,6 +146240,7 @@ export interface OperationRequiredParamsMap {
   "eonline-headlines": true;
   "eonline-news": false;
   "eonline-sections": false;
+  "epicgames-free-promotions": false;
   "espn-athlete": true;
   "espn-game-summary": true;
   "espn-news": true;
@@ -146390,6 +147001,9 @@ export interface OperationRequiredParamsMap {
   "healthgrades-physicians-search": true;
   "healthgrades-specialties": false;
   "healthgrades-top-searches": false;
+  "hearthstone-card": true;
+  "hearthstone-cards": false;
+  "hearthstone-filters": false;
   "hermes-categories": false;
   "hermes-category": true;
   "hermes-product": true;
@@ -147156,16 +147770,23 @@ export interface OperationRequiredParamsMap {
   "nba-games": false;
   "nba-homepage-leaders": false;
   "nba-hustle-stats": true;
+  "nba-hustle-team": false;
   "nba-league-game-log": false;
   "nba-lineups": false;
   "nba-news": false;
+  "nba-opp-pt-shot": false;
   "nba-play-by-play": true;
   "nba-player-awards": true;
   "nba-player-bio-stats": false;
   "nba-player-career-stats": true;
+  "nba-player-clutch": false;
   "nba-player-dash-pt-shots": true;
+  "nba-player-game-logs": true;
   "nba-player-info": true;
+  "nba-player-profile-v2": true;
+  "nba-player-pt-shot": false;
   "nba-player-stats": false;
+  "nba-player-streak-finder": false;
   "nba-players": false;
   "nba-playoff-picture": false;
   "nba-pt-defend": false;
@@ -147173,11 +147794,18 @@ export interface OperationRequiredParamsMap {
   "nba-scoreboard": false;
   "nba-standings": false;
   "nba-synergy-play-types": false;
+  "nba-team-dash-pt-pass": true;
+  "nba-team-dash-pt-shots": true;
   "nba-team-details": true;
+  "nba-team-game-logs": true;
+  "nba-team-info-common": true;
+  "nba-team-on-off": true;
+  "nba-team-pt-shot": false;
   "nba-team-roster": true;
   "nba-team-shot-locations": false;
   "nba-team-stats": false;
   "nba-team-stats-leaders": true;
+  "nba-team-years": false;
   "nbc-article": true;
   "nbc-author": true;
   "nbc-headlines": true;
@@ -147249,6 +147877,11 @@ export interface OperationRequiredParamsMap {
   "nfhs-sports": false;
   "nfhs-states": false;
   "nfhs-suggest": true;
+  "nhl-gamecenter-boxscore": true;
+  "nhl-gamecenter-play-by-play": true;
+  "nhl-schedule": false;
+  "nhl-seasons": false;
+  "nhl-standings": false;
   "nike-categories": false;
   "nike-product": true;
   "nike-product-availability": true;
@@ -148010,6 +148643,21 @@ export interface OperationRequiredParamsMap {
   "sephora-search": true;
   "sephora-stores": true;
   "sephora-suggest": true;
+  "serebii-pokemongo-event-detail-community-day": true;
+  "serebii-pokemongo-event-categories": false;
+  "serebii-pokemongo-event-only-moves": false;
+  "serebii-pokemongo-event-only-research": false;
+  "serebii-pokemongo-events": true;
+  "serebii-pokemongo-event-detail-global": true;
+  "serebii-pokemongo-event-detail-hatch-day": true;
+  "serebii-pokemongo-event-detail-incense-day": true;
+  "serebii-pokemongo-event-detail-research-day": true;
+  "serebii-pokemongo-event-detail-max-battle-day": true;
+  "serebii-pokemongo-event-detail-raid-day": true;
+  "serebii-pokemongo-event-detail-real-life": true;
+  "serebii-pokemongo-spotlight-hours": false;
+  "serebii-pokemongo-event-detail-ticket": true;
+  "serebii-pokemongo-unown-events": false;
   "sevennewsau-article": true;
   "sevennewsau-author": false;
   "sevennewsau-headlines": true;
@@ -150371,6 +151019,7 @@ export type OperationIdLiteral =
   | "eonline-headlines"
   | "eonline-news"
   | "eonline-sections"
+  | "epicgames-free-promotions"
   | "espn-athlete"
   | "espn-game-summary"
   | "espn-news"
@@ -151131,6 +151780,9 @@ export type OperationIdLiteral =
   | "healthgrades-physicians-search"
   | "healthgrades-specialties"
   | "healthgrades-top-searches"
+  | "hearthstone-card"
+  | "hearthstone-cards"
+  | "hearthstone-filters"
   | "hermes-categories"
   | "hermes-category"
   | "hermes-product"
@@ -151897,16 +152549,23 @@ export type OperationIdLiteral =
   | "nba-games"
   | "nba-homepage-leaders"
   | "nba-hustle-stats"
+  | "nba-hustle-team"
   | "nba-league-game-log"
   | "nba-lineups"
   | "nba-news"
+  | "nba-opp-pt-shot"
   | "nba-play-by-play"
   | "nba-player-awards"
   | "nba-player-bio-stats"
   | "nba-player-career-stats"
+  | "nba-player-clutch"
   | "nba-player-dash-pt-shots"
+  | "nba-player-game-logs"
   | "nba-player-info"
+  | "nba-player-profile-v2"
+  | "nba-player-pt-shot"
   | "nba-player-stats"
+  | "nba-player-streak-finder"
   | "nba-players"
   | "nba-playoff-picture"
   | "nba-pt-defend"
@@ -151914,11 +152573,18 @@ export type OperationIdLiteral =
   | "nba-scoreboard"
   | "nba-standings"
   | "nba-synergy-play-types"
+  | "nba-team-dash-pt-pass"
+  | "nba-team-dash-pt-shots"
   | "nba-team-details"
+  | "nba-team-game-logs"
+  | "nba-team-info-common"
+  | "nba-team-on-off"
+  | "nba-team-pt-shot"
   | "nba-team-roster"
   | "nba-team-shot-locations"
   | "nba-team-stats"
   | "nba-team-stats-leaders"
+  | "nba-team-years"
   | "nbc-article"
   | "nbc-author"
   | "nbc-headlines"
@@ -151990,6 +152656,11 @@ export type OperationIdLiteral =
   | "nfhs-sports"
   | "nfhs-states"
   | "nfhs-suggest"
+  | "nhl-gamecenter-boxscore"
+  | "nhl-gamecenter-play-by-play"
+  | "nhl-schedule"
+  | "nhl-seasons"
+  | "nhl-standings"
   | "nike-categories"
   | "nike-product"
   | "nike-product-availability"
@@ -152751,6 +153422,21 @@ export type OperationIdLiteral =
   | "sephora-search"
   | "sephora-stores"
   | "sephora-suggest"
+  | "serebii-pokemongo-event-detail-community-day"
+  | "serebii-pokemongo-event-categories"
+  | "serebii-pokemongo-event-only-moves"
+  | "serebii-pokemongo-event-only-research"
+  | "serebii-pokemongo-events"
+  | "serebii-pokemongo-event-detail-global"
+  | "serebii-pokemongo-event-detail-hatch-day"
+  | "serebii-pokemongo-event-detail-incense-day"
+  | "serebii-pokemongo-event-detail-research-day"
+  | "serebii-pokemongo-event-detail-max-battle-day"
+  | "serebii-pokemongo-event-detail-raid-day"
+  | "serebii-pokemongo-event-detail-real-life"
+  | "serebii-pokemongo-spotlight-hours"
+  | "serebii-pokemongo-event-detail-ticket"
+  | "serebii-pokemongo-unown-events"
   | "sevennewsau-article"
   | "sevennewsau-author"
   | "sevennewsau-headlines"
@@ -155080,6 +155766,7 @@ export declare const OperationIds: Readonly<{
   EntertainmentWeeklyEwHeadlines: "ew-headlines";
   EntertainmentWeeklyEwNews: "ew-news";
   EntertainmentWeeklyEwSections: "ew-sections";
+  EpicGamesStoreEpicgamesFreePromotions: "epicgames-free-promotions";
   EspnAthlete: "espn-athlete";
   EspnGameSummary: "espn-game-summary";
   EspnNews: "espn-news";
@@ -155845,6 +156532,9 @@ export declare const OperationIds: Readonly<{
   HealthgradesPhysiciansSearch: "healthgrades-physicians-search";
   HealthgradesSpecialties: "healthgrades-specialties";
   HealthgradesTopSearches: "healthgrades-top-searches";
+  HearthstoneCard: "hearthstone-card";
+  HearthstoneCards: "hearthstone-cards";
+  HearthstoneFilters: "hearthstone-filters";
   HermesCategories: "hermes-categories";
   HermesCategory: "hermes-category";
   HermesProduct: "hermes-product";
@@ -156582,16 +157272,23 @@ export declare const OperationIds: Readonly<{
   NbaGames: "nba-games";
   NbaHomepageLeaders: "nba-homepage-leaders";
   NbaHustleStats: "nba-hustle-stats";
+  NbaHustleTeam: "nba-hustle-team";
   NbaLeagueGameLog: "nba-league-game-log";
   NbaLineups: "nba-lineups";
   NbaNews: "nba-news";
+  NbaOppPtShot: "nba-opp-pt-shot";
   NbaPlayByPlay: "nba-play-by-play";
   NbaPlayerAwards: "nba-player-awards";
   NbaPlayerBioStats: "nba-player-bio-stats";
   NbaPlayerCareerStats: "nba-player-career-stats";
+  NbaPlayerClutch: "nba-player-clutch";
   NbaPlayerDashPtShots: "nba-player-dash-pt-shots";
+  NbaPlayerGameLogs: "nba-player-game-logs";
   NbaPlayerInfo: "nba-player-info";
+  NbaPlayerProfileV2: "nba-player-profile-v2";
+  NbaPlayerPtShot: "nba-player-pt-shot";
   NbaPlayerStats: "nba-player-stats";
+  NbaPlayerStreakFinder: "nba-player-streak-finder";
   NbaPlayers: "nba-players";
   NbaPlayoffPicture: "nba-playoff-picture";
   NbaPtDefend: "nba-pt-defend";
@@ -156599,11 +157296,18 @@ export declare const OperationIds: Readonly<{
   NbaScoreboard: "nba-scoreboard";
   NbaStandings: "nba-standings";
   NbaSynergyPlayTypes: "nba-synergy-play-types";
+  NbaTeamDashPtPass: "nba-team-dash-pt-pass";
+  NbaTeamDashPtShots: "nba-team-dash-pt-shots";
   NbaTeamDetails: "nba-team-details";
+  NbaTeamGameLogs: "nba-team-game-logs";
+  NbaTeamInfoCommon: "nba-team-info-common";
+  NbaTeamOnOff: "nba-team-on-off";
+  NbaTeamPtShot: "nba-team-pt-shot";
   NbaTeamRoster: "nba-team-roster";
   NbaTeamShotLocations: "nba-team-shot-locations";
   NbaTeamStats: "nba-team-stats";
   NbaTeamStatsLeaders: "nba-team-stats-leaders";
+  NbaTeamYears: "nba-team-years";
   NbcNewsCall: "nbc-news";
   NbcNewsNbcArticle: "nbc-article";
   NbcNewsNbcAuthor: "nbc-author";
@@ -156690,6 +157394,11 @@ export declare const OperationIds: Readonly<{
   NfhsSports: "nfhs-sports";
   NfhsStates: "nfhs-states";
   NfhsSuggest: "nfhs-suggest";
+  NhlGamecenterBoxscore: "nhl-gamecenter-boxscore";
+  NhlGamecenterPlayByPlay: "nhl-gamecenter-play-by-play";
+  NhlSchedule: "nhl-schedule";
+  NhlSeasons: "nhl-seasons";
+  NhlStandings: "nhl-standings";
   NikeCategories: "nike-categories";
   NikeProduct: "nike-product";
   NikeProductAvailability: "nike-product-availability";
@@ -157443,6 +158152,21 @@ export declare const OperationIds: Readonly<{
   SephoraSearch: "sephora-search";
   SephoraStores: "sephora-stores";
   SephoraSuggest: "sephora-suggest";
+  SerebiiPokemongoEventCategories: "serebii-pokemongo-event-categories";
+  SerebiiPokemongoEventDetailCommunityDay: "serebii-pokemongo-event-detail-community-day";
+  SerebiiPokemongoEventDetailGlobal: "serebii-pokemongo-event-detail-global";
+  SerebiiPokemongoEventDetailHatchDay: "serebii-pokemongo-event-detail-hatch-day";
+  SerebiiPokemongoEventDetailIncenseDay: "serebii-pokemongo-event-detail-incense-day";
+  SerebiiPokemongoEventDetailMaxBattleDay: "serebii-pokemongo-event-detail-max-battle-day";
+  SerebiiPokemongoEventDetailRaidDay: "serebii-pokemongo-event-detail-raid-day";
+  SerebiiPokemongoEventDetailRealLife: "serebii-pokemongo-event-detail-real-life";
+  SerebiiPokemongoEventDetailResearchDay: "serebii-pokemongo-event-detail-research-day";
+  SerebiiPokemongoEventDetailTicket: "serebii-pokemongo-event-detail-ticket";
+  SerebiiPokemongoEventOnlyMoves: "serebii-pokemongo-event-only-moves";
+  SerebiiPokemongoEventOnlyResearch: "serebii-pokemongo-event-only-research";
+  SerebiiPokemongoEvents: "serebii-pokemongo-events";
+  SerebiiPokemongoSpotlightHours: "serebii-pokemongo-spotlight-hours";
+  SerebiiPokemongoUnownEvents: "serebii-pokemongo-unown-events";
   SevenNewsAustraliaArticle: "sevennewsau-article";
   SevenNewsAustraliaAuthor: "sevennewsau-author";
   SevenNewsAustraliaHeadlines: "sevennewsau-headlines";
